@@ -1,0 +1,58 @@
+/* === Custom colors === */
+$custom-colors: (
+	'black': #212326,
+	'charcoal': #393c41,
+	'dark-gray': #5d626a,
+	'light-gray': #d3d5d9,
+	'off-white': #ecedee,
+	'white': #fefefe,
+	'dark-fuschia': #6e1042,
+	'dark-violet': #411E4F,
+	'dark-indigo': #1A267D,
+	'dark-blue': #17405c,
+	'dark-aqua': #0e5953,
+	'dark-green': #0b5329,
+	'light-fuschia': #AD1457,
+	'light-violet': #6C3483,
+	'light-indigo': #4653B0,
+	'light-blue': #2874A6,
+	'light-aqua': #148f85,
+	'light-green': #117a3d,
+	'dark-chartreuse': #3d5e0f,
+	'dark-yellow': #878700,
+	'dark-gold': #8c7000,
+	'dark-orange': #784e12,
+	'dark-umber': #6E2C00,
+	'dark-red': #641E16,
+	'light-chartreuse': #699b23,
+	'light-yellow': #b0b000,
+	'light-gold': #c29b00,
+	'light-orange': #c2770e,
+	'light-umber': #b8510d,
+	'light-red': #922B21,
+);
+
+@each $color, $code in $custom-colors {
+	.has-#{$color}-background-color {
+		background-color: $code;
+	}
+
+	.has-#{$color}-color {
+		color: $code;
+	}
+
+	.wp-block-button__link {
+
+		&.has-#{$color}-background-color {
+			background-color: $code;
+
+			&:hover {
+				background-color: scale-color($code, $lightness: -15%);
+			}
+		}
+
+		&.has-#{$color}-color {
+				color: $code;
+		}
+	}
+}

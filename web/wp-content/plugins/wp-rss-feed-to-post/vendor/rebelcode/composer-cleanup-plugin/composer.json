@@ -1,0 +1,30 @@
+{
+    "name": "rebelcode/composer-cleanup-plugin",
+    "type": "composer-plugin",
+    "description": "A composer cleanup plugin, to remove tests and documentation to save space",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RebelCode",
+            "email": "dev@rebelcode.com"
+        },
+        {
+            "name": "Barry vd. Heuvel",
+            "email": "barryvdh@gmail.com"
+        }
+    ],
+    "require": {
+        "composer-plugin-api": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Barryvdh\\Composer\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        },
+        "class": "Barryvdh\\Composer\\CleanupPlugin"
+    }
+}

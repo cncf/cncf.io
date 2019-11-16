@@ -1,0 +1,267 @@
+# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
+defaults: &defaults
+  docker:
+    - image: quay.io/pantheon-public/build-tools-ci:3.x
+  working_directory: ~/example_wordpress_composer
+  environment:
+    #=========================================================================
+    # In addition to the environment variables defined in this file, also
+    # add the following variables in the Circle CI UI.
+    #
+    # See: https://circleci.com/docs/2.0/environment-variables/
+    #
+    # TERMINUS_SITE:  Name of the Pantheon site to run tests on, e.g. my_site.
+    # TERMINUS_TOKEN: The Pantheon machine token.
+    # GITHUB_TOKEN:   The GitHub personal access token.
+    # GIT_EMAIL:      The email address to use when making commits.
+    #
+    # TEST_SITE_NAME: The name of the test site to provide when installing.
+    # ADMIN_PASSWORD: The admin password to use when installing.
+    # ADMIN_EMAIL:    The email address to give the admin when installing.
+    #=========================================================================
+    TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+
+    # The variables below usually do not need to be modified.
+    
+    #======================================================================================================================================
+    # Circle CI 2.0 does not yet expand environment variables so they have to be manually EXPORTed
+    # Once environment variables can be expanded the variables below can be uncommented and the EXPORTs in set-up-globals.sh can be removed
+    # See: https://discuss.circleci.com/t/unclear-how-to-work-with-user-variables-circleci-provided-env-variables/12810/11
+    # See: https://discuss.circleci.com/t/environment-variable-expansion-in-working-directory/11322
+    # See: https://discuss.circleci.com/t/circle-2-0-global-environment-variables/8681
+    #======================================================================================================================================
+    # See set-up-globals.sh for more environment variables
+    
+    NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
+    ADMIN_USERNAME: admin
+    # BUILD_TOOLS_VERSION: 2.0.0-beta6
+    TERM: dumb
+
+version: 2
+jobs:
+    # @todo: common initialization, maybe
+    build:
+        <<: *defaults
+        # override the default image with drupaldocker/php as this job
+        # doesn't need Pantheon specific items such as Terminus that are
+        # in the quay.io/pantheon-public/build-tools-ci image
+        docker:
+            - image: drupaldocker/php:7.2-cli
+        steps:
+            - checkout
+
+            - restore_cache:
+                keys:
+                    - composer-cache
+
+            - run:
+                name: install dev dependencies
+                command: composer install --no-ansi --no-interaction --optimize-autoloader --no-progress
+
+            - save_cache:
+                key: composer-cache
+                paths:
+                    - $HOME/.composer/cache
+
+            - persist_to_workspace:
+                # Must be relative path from working_directory
+                root: .
+                # Must be relative path from root
+                paths:
+                    - vendor
+
+    code_sniff_unit_test:
+        <<: *defaults
+        # override the default image with drupaldocker/php as this job
+        # doesn't need Pantheon specific items such as Terminus that are
+        # in the quay.io/pantheon-public/build-tools-ci image
+        docker:
+            - image: drupaldocker/php:7.2-cli
+        steps:
+            - checkout
+
+            - attach_workspace:
+                # Must be absolute path or relative path from working_directory
+                at: /tmp
+
+            - run:
+                name: copy vendor/web
+                command: cp -r /tmp/vendor .
+
+            - run:
+                name: check for WordPress coding standards
+                command: composer -n code-sniff
+            
+            - run:
+                name: run unit tests
+                command: composer -n unit-test
+
+    build_css_js:
+        <<: *defaults
+        docker:
+            - image: circleci/node:9.9-stretch
+        steps:
+            - checkout
+
+            - run:
+                name: Check current version of node
+                command: npm -v
+
+            - run:
+                name: compile css/js
+                command: 'cd $HOME/example_wordpress_composer/web/wp-content/themes/lfevents/; npm install; npm run build'
+
+            - persist_to_workspace:
+                root: web/wp-content/themes/lfevents
+                paths:
+                    - dist
+
+
+    build_and_deploy_lfeventsci:
+        <<: *defaults
+        steps:
+            - checkout
+
+            - restore_cache:
+                keys:
+                    - composer-cache
+                    - terminus-install
+
+            - attach_workspace:
+                at: /tmp                    
+
+            - run:
+                name: copy dist
+                command: cp -r /tmp/dist $HOME/example_wordpress_composer/web/wp-content/themes/lfevents/
+
+            - run:
+                name: dependencies
+                command: ./.circleci/set-up-globals.sh
+
+            - run:
+                name: build assets
+                command: composer -n build-assets
+
+            - run:
+                name: deploy to Pantheon
+                command: ./.circleci/deploy-to-pantheon.sh $TERMINUS_SITE
+
+    build_and_deploy_lfasiallcci:
+        <<: *defaults
+        steps:
+            - checkout
+
+            - restore_cache:
+                keys:
+                    - composer-cache
+                    - terminus-install
+
+            - attach_workspace:
+                at: /tmp                    
+
+            - run:
+                name: copy dist
+                command: cp -r /tmp/dist $HOME/example_wordpress_composer/web/wp-content/themes/lfevents/
+
+            - run:
+                name: dependencies
+                command: ./.circleci/set-up-globals.sh
+
+            - run:
+                name: build assets
+                command: composer -n build-assets
+
+            - run:
+                name: deploy to Pantheon
+                command: ./.circleci/deploy-to-pantheon.sh $TERMINUS_SITE2
+
+    behat_test_lfeventsci:
+        <<: *defaults
+        steps:
+            - checkout
+
+            - attach_workspace:
+                # Must be absolute path or relative path from working_directory
+                at: /tmp
+
+            - restore_cache:
+                keys:
+                    - terminus-install
+
+            - run:
+                name: copy vendor
+                command: cp -r /tmp/vendor .
+            
+            - run:
+                name: dependencies
+                command: ./.circleci/set-up-globals.sh
+
+            - run:
+                name: run Behat tests
+                command: ./.circleci/behat-test.sh
+
+            - run:
+                name: run Behat cleanup
+                command: ./.circleci/behat-test-cleanup.sh
+                when: always
+
+    wraith_test_lfeventsci:
+        docker:
+            - image: liquidweb/wraith
+
+        steps:
+            - checkout
+
+            - run:
+                name: run Wraith tests
+                command: ./.circleci/wraith-test.sh $TERMINUS_SITE 
+
+            - store_artifacts:
+                path: ./wraith/shots     
+
+    wraith_test_lfasiallcci:
+        docker:
+            - image: liquidweb/wraith
+
+        steps:
+            - checkout
+
+            - run:
+                name: run Wraith tests
+                command: ./.circleci/wraith-test.sh $TERMINUS_SITE2
+
+            - store_artifacts:
+                path: ./wraith/shots     
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      # Install dev dependencies
+      - build
+      - build_css_js
+      # Build and deploy
+      - build_and_deploy_lfeventsci:
+            requires:
+                - build_css_js
+      - build_and_deploy_lfasiallcci:
+            requires:
+                - build_css_js
+      # Code sniff and unit text first
+      - code_sniff_unit_test:
+            requires:
+                - build
+      # Run Behat tests after deploy so they can be done on Pantheon
+    # commenting out behat tests until we need them.
+    #   - behat_test_lfeventsci:
+    #         requires:
+    #             - build
+    #             - build_and_deploy_lfeventsci
+      - wraith_test_lfeventsci:
+            requires:
+                - build_and_deploy_lfeventsci
+                # - behat_test_lfeventsci               
+      - wraith_test_lfasiallcci:
+            requires:
+                - build_and_deploy_lfasiallcci
+                # - build_and_deploy_lfasiallcci                

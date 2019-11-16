@@ -1,0 +1,1520 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP RSS Aggregator - Feed to Post\n"
+"POT-Creation-Date: 2015-04-15 18:33+0800\n"
+"PO-Revision-Date: 2015-04-15 18:34+0800\n"
+"Last-Translator: \n"
+"Language-Team: WP RSS Aggregator <info@wprssaggregator.com>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:60
+msgid "Keep typing..."
+msgstr ""
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:61
+msgid "Looking for"
+msgstr ""
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:158
+msgid "Author in feed"
+msgstr ""
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:159
+#: ../includes/wprss-ftp-meta.php:1467
+msgid "Existing user"
+msgstr "Existující uživatel"
+
+#: ../includes/wprss-ftp-appender.php:14
+msgid "The name given to this feed source."
+msgstr "Název přidělený tomuto zdroji."
+
+#: ../includes/wprss-ftp-appender.php:15
+msgid "The title of the imported post."
+msgstr "Název importovaného příspěvku."
+
+#: ../includes/wprss-ftp-appender.php:16
+msgid "The URL of the imported post on your site."
+msgstr "URL adresa importovaných příspěvků na vaší stránku."
+
+#: ../includes/wprss-ftp-appender.php:17
+msgid "The URL of the site, from which the post was imported."
+msgstr "URL adresa stránky, ze které se příspěvky importují."
+
+#: ../includes/wprss-ftp-appender.php:18
+msgid "The date the imported post was imported."
+msgstr "Datum, kdy byly příspěvky importovány."
+
+#: ../includes/wprss-ftp-appender.php:19
+msgid "The URL of the original post on the feed source site."
+msgstr "URL adresa původních příspěvků ze zdrojové stránky."
+
+#: ../includes/wprss-ftp-appender.php:20
+msgid "The name of the imported post's author, if available"
+msgstr "Jméno autora importovaných příspěvků, v případě dostupnosti"
+
+#: ../includes/wprss-ftp-appender.php:21
+msgid "The date the imported post was published, if available."
+msgstr "Původní datum zveřejnění příspěvků, v případě dostupnosti."
+
+#: ../includes/wprss-ftp-appender.php:22
+msgid "The URL of the post author, if available."
+msgstr "URL adresa autora příspěvků, v případě dostupnosti."
+
+#: ../includes/wprss-ftp-converter.php:722
+msgid "Failed to find a working full text rss service."
+msgstr "Nastala chyba při hledání full-textové rss služby."
+
+#: ../includes/wprss-ftp-debug.php:35
+msgid "WPRSS_FTP_Debug class is a singleton class and cannot be redeclared."
+msgstr "WPRSS_FTP_Debug třída je singleton a nemůže být znovu deklarována."
+
+#: ../includes/wprss-ftp-debug.php:89
+msgid ""
+"All posts created by the Feed To Post add-on are being deleted in the "
+"background."
+msgstr ""
+"Všechny příspěvky vytvořené doplňkem Feed To Post se odstraňují na pozadí."
+
+#: ../includes/wprss-ftp-debug.php:103
+msgid "Delete imported posts (Feed To Post)"
+msgstr "Smazat importované příspěvky (Feed To Post)"
+
+#: ../includes/wprss-ftp-debug.php:104
+msgid ""
+"Click the red button to delete all posts imported by the Feed to Post add-on."
+msgstr ""
+"Klikněte na červené tlačítko pro smazání všech importovaných příspěvku přes "
+"Feed to Post doplněk."
+
+#: ../includes/wprss-ftp-debug.php:105
+msgid ""
+"<em><strong>Note:</strong> This is a server-intensive process and can take "
+"long, depending on how much posts you have imported.</em>"
+msgstr ""
+"<em><strong>Upozornění:</strong> Tato operace používá velké množství výkonu "
+"vašeho serveru, rychlost provedení záleží na počtu importovaných příspěvcích."
+"</em>"
+
+#: ../includes/wprss-ftp-debug.php:109
+msgid "Delete all imported posts"
+msgstr "Vymazat všechny naimportované příspěvky"
+
+#: ../includes/wprss-ftp-debug.php:124
+msgid "Feed To Post Error Log"
+msgstr "Feed To Post log chyb"
+
+#: ../includes/wprss-ftp-debug.php:133
+msgid "Clear log"
+msgstr "Vymazat log"
+
+#: ../includes/wprss-ftp-feed-assistant.php:138
+#, php-format
+msgid "Couldn't fetch any feed items from %s"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:198
+msgid "The item has no title!"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:218
+msgid "The item has no content!"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:238
+msgid "The item has no date!"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:240
+msgid "ago"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:298
+msgid ""
+"No images were found in the feed. Try enabling <strong>'Force Full "
+"Content.'</strong>"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:298
+#, php-format
+msgid "Found highest-resolution image in the item's %s"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:317
+msgid "Facebook feed sources should generally leave this unchecked."
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:319
+msgid "YouTube feed sources should generally leave this unchecked."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:18
+msgid ""
+"Choose the site where the posts from the source will be imported.\n"
+"\n"
+"This option can only be changed if you are on the main site of your "
+"multisite network."
+msgstr ""
+"Zvolte stránku, ze které budou importovány příspěvky.\n"
+"\n"
+"Toto nastavení lze měnit pouze z hlavní administrace v případě multisite."
+
+#: ../includes/wprss-ftp-help.php:19
+msgid ""
+"Choose the post type you want to import the imported feeds to.\n"
+"\n"
+"Changing this option will affect your taxonomy options further down this "
+"page."
+msgstr ""
+"Zvolte typ příspěvků, které budou importované ze zdrojů.\n"
+"\n"
+"Změna této položky ovlivní možnosti u taxonomií."
+
+#: ../includes/wprss-ftp-help.php:20
+msgid "Choose the status for imported posts."
+msgstr "Nastavit stav pro importované příspěvky."
+
+#: ../includes/wprss-ftp-help.php:21
+msgid "Choose the post format to assign to imported feeds."
+msgstr "Nastavit formát importovaných příspěvků."
+
+#: ../includes/wprss-ftp-help.php:22
+msgid "Choose the date to use for imported posts."
+msgstr "Zvolte datum, které se použije u importovaných příspěvků."
+
+#: ../includes/wprss-ftp-help.php:23
+msgid "Check this box to enable comments for imported posts from this source."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:24
+msgid ""
+"Check this box to forcefully attempt to retrieve the full feed content, if "
+"the feed only provides excerpts."
+msgstr ""
+"Zaškrtněte pro zapnutí funkce, která se pokusí stáhnout celý text článku, i "
+"když zdroj nabízí jen výpisek."
+
+#: ../includes/wprss-ftp-help.php:25
+msgid ""
+"Check this box to allow embedded content in posts (<code>iframe</code>, "
+"<code>embed</code> and <code>object</code> content)."
+msgstr ""
+"Zaškrtněte pro povolení embedovaného obsahu v příspěvcích (<code>iframe</"
+"code>, <code>embed</code> a <code>object</code> obsah)."
+
+#: ../includes/wprss-ftp-help.php:26
+msgid ""
+"Check this box to add a link back to the original post, at the beginning of "
+"the post's content."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:27
+msgid ""
+"Check this box to show the source link only when viewing a post by itself "
+"and not when viewing a series of posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:28
+msgid ""
+"Enter the text to use when linking back to the original post source.\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t\tWrap a phrase in asterisk symbols (<strong>*link to "
+"post*</strong>) to turn it into the link to the <strong>original post</"
+"strong>,\n"
+"\t\t\t\t\t\t\t\t\t\tor in double asterisk symbols (<strong>**link to "
+"source**</strong>) to turn it into a link to the post <strong>feed source</"
+"strong>"
+msgstr ""
+"Vložte text, který se použije ve zpětném odkazu na původní článek.\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t\tNapište text do hvězdiček (<strong>*text odkazu*</"
+"strong>) a odkaz bude směřovat na <strong>původní článek</strong>,\n"
+"\t\t\t\t\t\t\t\t\t\t, nebo napište dvě hzvědičky (<strong>**text odkazu**</"
+"strong>) a doakz bude směřovat na <strong>zdroj</strong>"
+
+#: ../includes/wprss-ftp-help.php:32
+msgid ""
+"Check this box to add a rel=\"canonical\" link to the head of imported posts."
+msgstr ""
+"Zaškrtněte pro přidání rel=\"canonical\" do zápatí importovaných příspěvků."
+
+#: ../includes/wprss-ftp-help.php:33
+msgid ""
+"Check this box if having trouble saving feed item images locally. This "
+"allows requests to local IPs."
+msgstr ""
+"Zaškrtněte pokud máte potíže s ukládáním položek zdrojů lokálně. Toto povolí "
+"požadavky na lokální IP adresu."
+
+#: ../includes/wprss-ftp-help.php:34
+msgid ""
+"Choose the service to use for converting your RSS feeds into full text RSS "
+"feeds.\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t\tFree services are available for use instantly, with no "
+"registration required, but are known to occasionally be unreliable and "
+"slow.\n"
+"\t\t\t\t\t\t\t\t\t\t\n"
+"                                        Paid and premium services provide "
+"maximum reliability and performance, and will require you to obtain an "
+"<strong>API key</strong>.\n"
+"\n"
+"                                        Our premium service, usable via the "
+"<strong>Full Text RSS Feeds</strong> add-on, uses your <em>activated</em> "
+"license key for the add-on as an API key."
+msgstr ""
+"Zvolte služub, která převede vaše RSS zdroje na full-textové RSS zdroje.\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t\tSlužby, které jsou zdarma většinou nevyžadují "
+"registraci, ale jsou pomalejší a občas i nedostupné.\n"
+"\t\t\t\t\t\t\t\t\t\t\n"
+"                                        Placené a prémiové služby poskytují "
+"maximální spolehlivost a výkon. Pro jejich použití musíte získat <strong> "
+"API klíč </strong>.\n"
+"\n"
+"                                        Naše prémiová je k dispozici za "
+"pomocí doplňku <strong>Full Text RSS Feeds</strong>. Jako API klíč používá "
+"váš <em>aktivovaný</em> licenční klíč."
+
+#: ../includes/wprss-ftp-help.php:43
+msgid ""
+"Check this box to import the images from the post into your local media "
+"library."
+msgstr "Zaškrtněte pro importování obrázků z naim"
+
+#: ../includes/wprss-ftp-help.php:44
+msgid ""
+"Set the minimum size that you would like for imported images (in pixels).\n"
+"\n"
+"This option applies to images saved in the media library, as well as the "
+"featured image."
+msgstr ""
+"Nastavte minimální velikost, kterou chcete pro importované obrázky (v "
+"pixelech).\n"
+"\n"
+"Tato možnost ovlivní obrázky uložené v knihovně médií, a také doporučené "
+"obrázky."
+
+#: ../includes/wprss-ftp-help.php:45
+msgid "Check this box to enable featured images for imported posts."
+msgstr ""
+"Zaškrtněte pro povolení doporučených obrázků pro importované příspěvky."
+
+#: ../includes/wprss-ftp-help.php:46
+msgid "Choose which image in the post to use as a featured image."
+msgstr "Zvolte jaký obrázek bude použit jako doporučený u příspevku."
+
+#: ../includes/wprss-ftp-help.php:47
+msgid ""
+"Check this box to use the feed channel's image, if available, before "
+"resorting to the source fallback image"
+msgstr ""
+"Zaškrtněte pro použití obrázku z kanálu zdroje, pokud je k dispozici, "
+"předtím než se použije záložní obrázek pro zdroj"
+
+#: ../includes/wprss-ftp-help.php:48
+msgid ""
+"Check this box to remove the featured image from imported posts' content.\n"
+"\n"
+"                                        This is particularly useful if you "
+"are retrieving the featured image from the post's content and your theme is "
+"showing the image twice. This option will remove the image in the post "
+"content, and leave the featured image."
+msgstr ""
+"Zaškrtněte pro odstranění doporučeného obrázku z obsahu importovaných "
+"příspěvků.\n"
+"\n"
+"                                       Toto je užitečné zejména, pokud "
+"získáváte doporučený obrázek z obsahu příspěvku a váš vzhled zobrazuje tento "
+"obrázek dvakrát. Tato volba odstraní obrázek z obsahu příspěvku a ponechá "
+"doporučený obrázek."
+
+#: ../includes/wprss-ftp-help.php:51
+msgid ""
+"Check this box to only import posts that have a featured image imported.\n"
+"\n"
+"Posts that fail to retrieve a featured image are not imported."
+msgstr ""
+"Zaškrtněte pro importovaný pouze příspěvků, které mají importovaný "
+"doporučený obrázek.\n"
+"\n"
+"Příspěvky, které nebudou mít doporučený obrázek nebudou importovány."
+
+#: ../includes/wprss-ftp-help.php:55
+msgid ""
+"Choose the author to assign to the post.\n"
+"\n"
+"You can choose to use an existing user on your site as the author, or use "
+"the original author from the feed item."
+msgstr ""
+"Zvolte autora, který se přiřadí k příspěvku.\n"
+"\n"
+"Můžete zvolit existujícího uživatele na vaší stránce, nebo původního autora "
+"ze zdroje."
+
+#: ../includes/wprss-ftp-help.php:56
+msgid "This user is used if the plugin fails to determine an author or user."
+msgstr ""
+"Tento uživatel je použit v případě, že doplněk nerozpozná autora, nebo "
+"uživatele."
+
+#: ../includes/wprss-ftp-help.php:59
+msgid ""
+"Check this box to show the prepended text only when viewing a post by itself "
+"and not when viewing a series of posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:60
+msgid ""
+"Check this box to show the appended text only when viewing a post by itself "
+"and not when viewing a series of posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:63
+msgid ""
+"Click the <strong>Add New</strong> button to add a taxonomy section. In each "
+"section:\n"
+"\n"
+"                                        <ol>\n"
+"                                            <li>Choose the <strong>Taxonomy</"
+"strong> to use - such as <em>Category</em> or <em>Tags</em></li>\n"
+"                                            <li>Then choose the "
+"<strong>terms</strong> to assign to imported posts</li>\n"
+"                                            <li>If you want to import the "
+"terms from feed items, tick the <q>auto create</q> checkbox.</li>\n"
+"                                        </ol>"
+msgstr ""
+"Klikněte na tlačítko <strong>Přidat nový</strong> pro přidání sekce "
+"taxonomie. V každé sekci:\n"
+"\n"
+"                                        <ol>\n"
+"                                            <li>Zvolte <strong>Taxonomii</"
+"strong> pro použití - např. <em>Kategorie</em>, nebo <em>Tagy</em></li>\n"
+"                                            <li>Poté zvolte <strong>typ</"
+"strong>, který se přiřadí importovaným příspěvkům</li>\n"
+"                                            <li>Pokud chcete importovat typ "
+"z příspěvků zdroje, zaškrtněte <q>automaticky vytvořit</q>.</li>\n"
+"                                        </ol>"
+
+#: ../includes/wprss-ftp-help.php:72
+msgid ""
+"For each extraction rule, you'll need to enter the:\n"
+"\n"
+"                                        <ul id=\"wprss-ftp-extraction-rules-"
+"desc\">\n"
+"                                            <li>\n"
+"                                                <strong>CSS Selector:</"
+"strong>\n"
+"                                                Enter the CSS selector(s) "
+"for the HTML element(s) you want to manipulate\n"
+"                                            </li>\n"
+"                                            <li>\n"
+"                                                <strong>Manipulation:</"
+"strong>\n"
+"                                                Choose what you want to do "
+"with the matching element(s)\n"
+"                                            </li>\n"
+"                                        </ul>"
+msgstr ""
+"Pro každé pravidlo extrakce bude zapotřebí zadat:\n"
+"\n"
+"                                        <ul id=\"wprss-ftp-extraction-rules-"
+"desc\">\n"
+"                                            <li>\n"
+"                                                <strong>CSS selektor:</"
+"strong>\n"
+"                                                Napište CSS selektor(y) pro "
+"HTML element(y), se kterými chcete manipulovat\n"
+"                                            </li>\n"
+"                                            <li>\n"
+"                                                <strong>Manipulace:</"
+"strong>\n"
+"                                                Zvolte co chcete měnit na "
+"vybraných elementech\n"
+"                                            </li>\n"
+"                                        </ul>"
+
+#: ../includes/wprss-ftp-help.php:86
+msgid ""
+"For each mapping, you will need to enter the:\n"
+"\n"
+"                                        <ul id=\"wprss-ftp-custom-fields-desc"
+"\">\n"
+"                                            <li>\n"
+"                                                <strong>Namespace:</strong>\n"
+"                                                Choose the namespace of the "
+"tag that you wish to read.\n"
+"                                            </li>\n"
+"\n"
+"                                            <li>\n"
+"                                                <strong>RSS Tag:</strong>\n"
+"                                                Enter the name of the tag in "
+"the RSS feed, excluding the namespace prefix.<br/>\n"
+"                                                <em>For instance,</em> for "
+"iTunes artist tag, use just <code>artist</code>, <strong>not</strong> "
+"<code>im:artist</code>.\n"
+"                                            </li>\n"
+"\n"
+"                                            <li>\n"
+"                                                <strong>Meta field name:</"
+"strong>\n"
+"                                                Enter the name of the post "
+"meta field, where you wish to store the data.\n"
+"                                            </li>\n"
+"                                        </ul>"
+msgstr ""
+"Pro každé mapování bude zapotřebí zadat:\n"
+"\n"
+"                                        <ul id=\"wprss-ftp-custom-fields-desc"
+"\">\n"
+"                                            <li>\n"
+"                                                <strong>Jmenný prostor:</"
+"strong>\n"
+"                                                Zvolte jmenný prostor, který "
+"chcete přečíst.\n"
+"                                            </li>\n"
+"\n"
+"                                            <li>\n"
+"                                                <strong>RSS tag:</strong>\n"
+"                                                Napište název tagu z RSS "
+"zdroje, mimo prefix jmenného prostoru.<br/>\n"
+"                                                <em>Například,</em> pro tag "
+"umelcě v iTunes, použijte pouze <code>umělec</code>, <strong>a ne</strong> "
+"<code>jájsem:umělec</code>.\n"
+"                                            </li>\n"
+"\n"
+"                                            <li>\n"
+"                                                <strong>Meta pole:</strong>\n"
+"                                                Napište název pro meta pole "
+"příspevku, u kterých chcete uložit data.\n"
+"                                            </li>\n"
+"                                        </ul>"
+
+#: ../includes/wprss-ftp-help.php:105 ../includes/wprss-ftp-meta.php:1170
+msgid ""
+"Use this button to detect the namespaces being used by this feed source."
+msgstr ""
+"Použijte toto tlačítko k detekci jmenných prostorů, které jsou použiti v "
+"tomto zdroji."
+
+#: ../includes/wprss-ftp-help.php:106
+msgid ""
+"These namespaces are used for mapping RSS data into imported posts' meta "
+"data, in the <strong>Custom Fields</strong> section when creating/editing "
+"feed sources."
+msgstr ""
+"Tyto jmenné prostory jsou použity pro mapování RSS data do meta dat "
+"importovaných příspěvků v <strong>Vlastní pole</strong> sekci, když se "
+"vytváří/editují zdroje."
+
+#: ../includes/wprss-ftp-help.php:109
+msgid ""
+"Tick this box to re-enable the <strong>Feed Items</strong> and turn off post "
+"conversion for some feed sources.\n"
+"\t\t\t\t\t\t\t\t\t\t\n"
+"\t\t\t\t\t\t\t\t\t\tThis will also allow you to activate the "
+"<strong>Categories</strong> and <strong>Excerpts &amp; Thumbnails</strong> "
+"add-ons."
+msgstr ""
+"Zaškrtněte pro znovu povolení <strong>Feed Items</strong> a vypnutí konverze "
+"příspěvku pro některé zdroje.\n"
+"\t\t\t\t\t\t\t\t\t\t\n"
+"\t\t\t\t\t\t\t\t\t\tTato volba vám umožní aktivovat doplňky "
+"<strong>Categories</strong> a <strong>Excerpts &amp; Thumbnails</strong>."
+
+#: ../includes/wprss-ftp-help.php:114
+msgid "The service or algorithm to use for shortening"
+msgstr "Služba, nebo algoritmus použitý pro zkracování"
+
+#: ../includes/wprss-ftp-help.php:115
+msgid "This key will be used for requests to the Google URL Shortener API"
+msgstr "Tento klíč bude použit pro požadavky na Google URL zkracovač API"
+
+#: ../includes/wprss-ftp-images.php:28
+msgid "WPRSS_FTP_Images class is a singleton class and cannot be redeclared."
+msgstr "WPRSS_FTP_Images třída je singleton a nemůže být znovu deklarována."
+
+#: ../includes/wprss-ftp-legacy.php:36
+msgid "Feed to Post Compatibility"
+msgstr "Feed to Post kompatibilita"
+
+#: ../includes/wprss-ftp-legacy.php:43
+msgid "Legacy Feed Items"
+msgstr "Původní položky zdroje"
+
+#: ../includes/wprss-ftp-legacy.php:57
+msgid "Change how Feed to Post works with WP RSS Aggregator"
+msgstr "Změní způsob, jakým Fedd to Post pracuje s WP RSS Aggregator"
+
+#: ../includes/wprss-ftp-meta.php:38
+msgid "WPRSS_FTP_Meta class is a singleton class and cannot be redeclared."
+msgstr ""
+"WPRSS_FTP_Meta třída je singleton class a nemůže být znovu deklarována."
+
+#: ../includes/wprss-ftp-meta.php:101
+msgid "Feed to Post - General"
+msgstr "Feed to Post - Obecné"
+
+#: ../includes/wprss-ftp-meta.php:109
+msgid "Feed to Post - Images"
+msgstr "Feed to Post - Obrázky"
+
+#: ../includes/wprss-ftp-meta.php:117
+msgid "Feed to Post - Taxonomies"
+msgstr "Feed to Post - Taxonomie"
+
+#: ../includes/wprss-ftp-meta.php:125
+msgid "Feed to Post - Author"
+msgstr "Feed to Post - Autor"
+
+#: ../includes/wprss-ftp-meta.php:133
+msgid "Feed to Post - Prepend To Content"
+msgstr "Feed to Post - Před obsahem"
+
+#: ../includes/wprss-ftp-meta.php:141
+msgid "Feed to Post - Append To Content"
+msgstr "Feed to Post - Za obsahem"
+
+#: ../includes/wprss-ftp-meta.php:149
+msgid "Feed to Post - Extraction Rules"
+msgstr "Feed to Post - Pravidla extrakce"
+
+#: ../includes/wprss-ftp-meta.php:157
+msgid "Feed to Post - Custom Field Mapping"
+msgstr "Feed to Post - Mapování vlastních polí"
+
+#: ../includes/wprss-ftp-meta.php:165
+msgid "Feed to Post - Word Trimming"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:174
+msgid "Feed to Post - Multi Language"
+msgstr "Feed to Post - Vícejazyčnost"
+
+#: ../includes/wprss-ftp-meta.php:187
+msgid "Default Thumbnail"
+msgstr "Výchozí obrázek"
+
+#: ../includes/wprss-ftp-meta.php:209
+msgid "Post to site"
+msgstr "Příspěvky na stránku"
+
+#: ../includes/wprss-ftp-meta.php:214 ../includes/wprss-ftp-settings.php:270
+#: ../wp-rss-feed-to-post.php:787
+msgid "Post Type"
+msgstr "Druh příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:220 ../includes/wprss-ftp-settings.php:279
+msgid "Post Status"
+msgstr "Stav příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:226 ../includes/wprss-ftp-settings.php:288
+msgid "Post Format"
+msgstr "Formát příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:232 ../includes/wprss-ftp-settings.php:297
+msgid "Post Date"
+msgstr "Datum příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:238 ../includes/wprss-ftp-settings.php:306
+msgid "Enable Comments"
+msgstr "Povolit komentáře"
+
+#: ../includes/wprss-ftp-meta.php:243
+msgid "Force full content"
+msgstr "Vynutit celý obsah"
+
+#: ../includes/wprss-ftp-meta.php:248
+msgid "Allow Embedded Content"
+msgstr "Povolit embedovaný obsah"
+
+#: ../includes/wprss-ftp-meta.php:253 ../includes/wprss-ftp-settings.php:405
+msgid "Canonical Link"
+msgstr "Kanonický odkaz"
+
+#: ../includes/wprss-ftp-meta.php:262
+msgid "Post Taxonomy"
+msgstr "Taxonomie příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:263
+msgid "Choose the taxonomy to apply to imported feeds."
+msgstr "Zvolte taxonomii, která se použije pro importované zdroje."
+
+#: ../includes/wprss-ftp-meta.php:265 ../includes/wprss-ftp-meta.php:273
+msgid "Please wait ..."
+msgstr "Prosím počkejte ..."
+
+#: ../includes/wprss-ftp-meta.php:270
+msgid "Post Terms"
+msgstr "Typ příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:271
+msgid "Choose the taxonomy terms to apply to imported feeds."
+msgstr "Zvolte typ taxonomie, který se aplikuje na importované zdroje."
+
+#: ../includes/wprss-ftp-meta.php:277
+msgid "Post Tags"
+msgstr "Tagy příspěvků"
+
+#: ../includes/wprss-ftp-meta.php:278
+msgid ""
+"Enter the post tags, comma separated, to assign to posts imported from this "
+"source."
+msgstr ""
+"Vložte tagy příspěvku, které budou přiřazeny importovaným příspěvkům z toho "
+"zdroje. "
+
+#: ../includes/wprss-ftp-meta.php:280 ../includes/wprss-ftp-settings.php:998
+msgid "Post tags, comma separated"
+msgstr "Tagy příspěvků, oddělené čárkou"
+
+#: ../includes/wprss-ftp-meta.php:285
+msgid "Auto create terms"
+msgstr "Automaticky vytvořit typy"
+
+#: ../includes/wprss-ftp-meta.php:286
+msgid ""
+"Check this box to automatically create terms for the taxonomy selected above."
+msgstr "Zaškrtněte pro automatické vytvoření typů pro taxonomie zvolené výše."
+
+#: ../includes/wprss-ftp-meta.php:296 ../includes/wprss-ftp-meta.php:555
+msgid "Post Author"
+msgstr "Autor příspěvků"
+
+#: ../includes/wprss-ftp-meta.php:297
+msgid "Choose the author to use for imported feeds"
+msgstr "Zvolte autora pro importované zdroje"
+
+#: ../includes/wprss-ftp-meta.php:303
+msgid "If feed author does not exist"
+msgstr "V případě, že autor neexistuje"
+
+#: ../includes/wprss-ftp-meta.php:304
+msgid ""
+"If the above option is set to get the author from the feed, choose what to "
+"do when the feed author is not a user on the site."
+msgstr ""
+"Pokud je volba výše nastavena na hodnotu: získat autora ze zdroje, zvolte co "
+"se má stát pokud není autor ze zdroje uživatelem na stránce."
+
+#: ../includes/wprss-ftp-meta.php:310 ../includes/wprss-ftp-meta.php:317
+msgid "Fallback Author"
+msgstr "Záložní autor"
+
+#: ../includes/wprss-ftp-meta.php:318
+msgid ""
+"Choose the user to use if the above option is set to \"Use Existing\", or if "
+"the feed does not specify an author."
+msgstr ""
+"Zvolte uživatele k použití pokud je volba výše nastavena na hodnotu \"Použít "
+"existující\", nebo pokud ve zdroji autor chybí."
+
+#: ../includes/wprss-ftp-meta.php:329
+msgid "Import images"
+msgstr "Importovat obrázky"
+
+#: ../includes/wprss-ftp-meta.php:335
+msgid "Image minimum width"
+msgstr "Minimální šířka pro obrázek"
+
+#: ../includes/wprss-ftp-meta.php:336
+msgid "Choose the minimum width for image imports."
+msgstr "Zvolte minimální šířku pro importované obrázky."
+
+#: ../includes/wprss-ftp-meta.php:343
+msgid "Image minimum height"
+msgstr "Minimální výška pro obrázky"
+
+#: ../includes/wprss-ftp-meta.php:344
+msgid "Choose the minimum height for image imports."
+msgstr "Zvolte minimální výšku pro importované obrázky"
+
+#: ../includes/wprss-ftp-meta.php:351
+msgid "Enable featured images"
+msgstr "Povolit"
+
+#: ../includes/wprss-ftp-meta.php:358
+msgid "Featured Image to use"
+msgstr "Doporučený obrázek"
+
+#: ../includes/wprss-ftp-meta.php:361
+msgid "First image in post content"
+msgstr "První obrázek z obsahu příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:362
+msgid "Last image in post content"
+msgstr "Poslední obrázek z obsahu příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:363
+msgid "Feed &lt;media:thumbnail&gt; tag"
+msgstr "Zdroj &lt;media:thumbnail&gt; tag"
+
+#: ../includes/wprss-ftp-meta.php:364
+msgid "Use the fallback featured image."
+msgstr "Použít záložní doporučený obrázek."
+
+#: ../includes/wprss-ftp-meta.php:365
+msgid "Enclosure tag"
+msgstr "Uzavírací tag"
+
+#: ../includes/wprss-ftp-meta.php:370
+msgid "Remove featured image from post content"
+msgstr "Odstranit doporučený obrázek z obsahu příspěvku"
+
+#: ../includes/wprss-ftp-meta.php:376
+msgid "Posts must have a featured image"
+msgstr "Příspěvky musí mít doporučený obrázek"
+
+#: ../includes/wprss-ftp-meta.php:386
+msgid "Prepend text to post content"
+msgstr "Přidat text před příspěvek"
+
+#: ../includes/wprss-ftp-meta.php:387 ../includes/wprss-ftp-meta.php:401
+msgid ""
+"Use the following placeholders to replace with the post's details: <br /"
+">(Hover over them for a description of what they represent)"
+msgstr ""
+"Použít následující zástupné detaily, které nahradí detaily příspěvků: <br/"
+">(Přejedtě přes ně myší pro zobrazení více podrobností)"
+
+#: ../includes/wprss-ftp-meta.php:393
+msgid "Prepend only to singular posts "
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:400
+msgid "Append text to post content"
+msgstr "Přidat text za příspěvek"
+
+#: ../includes/wprss-ftp-meta.php:407
+msgid "Append only to singular posts"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:417
+msgid "Extraction Rules"
+msgstr "Pravidla při přebírání článků"
+
+#: ../includes/wprss-ftp-meta.php:422
+msgid "Remove the matching element(s)"
+msgstr "Odstranit odpovídající prvky"
+
+#: ../includes/wprss-ftp-meta.php:423
+msgid "Remove element(s), but keep contents"
+msgstr "Odstranit prvky, ale ponechat obsah"
+
+#: ../includes/wprss-ftp-meta.php:424
+msgid "Keep only the matched element(s)"
+msgstr "Ponechat pouze odpovídající prvky"
+
+#: ../includes/wprss-ftp-meta.php:444
+msgid "Custom Field Mapping"
+msgstr "Mapování vlastních polí"
+
+#: ../includes/wprss-ftp-meta.php:455 ../includes/wprss-ftp-meta.php:459
+msgid "Enabled"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:458
+msgid "Use General Settings"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:460
+msgid "Disabled"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:464 ../includes/wprss-ftp-settings.php:386
+msgid "Word Limit"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:465
+msgid "Default"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:469
+msgid "Trimming type"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:474
+msgid "Use General Setting"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:475 ../includes/wprss-ftp-settings.php:804
+msgid "Trim the content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:476 ../includes/wprss-ftp-settings.php:805
+msgid "Generate an excerpt"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:507
+msgid "Post Language"
+msgstr "Jazyk příspevku"
+
+#: ../includes/wprss-ftp-meta.php:508
+msgid "Choose the language to assign to posts imported from this source"
+msgstr "Zvolte jazyk pro importované položky z tohoto zdroje"
+
+#: ../includes/wprss-ftp-meta.php:765 ../includes/wprss-ftp-meta.php:1015
+#: ../includes/wprss-ftp-meta.php:1131
+msgid "Add New"
+msgstr "Přidat nový"
+
+#: ../includes/wprss-ftp-meta.php:792
+msgid "Image minimum dimensions"
+msgstr "Minimální rozměry obrázku"
+
+#: ../includes/wprss-ftp-meta.php:796
+msgid "Image Width"
+msgstr "Šířka obrázku"
+
+#: ../includes/wprss-ftp-meta.php:797
+msgid "Width"
+msgstr "Šířka"
+
+#: ../includes/wprss-ftp-meta.php:799
+msgid "Height"
+msgstr "Výška"
+
+#: ../includes/wprss-ftp-meta.php:800
+msgid "Image Height"
+msgstr "Výška obrázku"
+
+#: ../includes/wprss-ftp-meta.php:858
+msgid "Add text at the beginning of posts' content."
+msgstr "Přidat text na začátek příspěvku."
+
+#: ../includes/wprss-ftp-meta.php:899
+msgid "Add text at the end of posts' content."
+msgstr "Přidat text na konec příspěvku."
+
+#: ../includes/wprss-ftp-meta.php:954
+msgid "CSS Selector"
+msgstr "CSS selektor"
+
+#: ../includes/wprss-ftp-meta.php:1045
+msgid ""
+"This allows you to retrieve data from any RSS tag in feed items, then store "
+"it in a custom meta field in imported posts."
+msgstr ""
+"Toto umožní získat data z libovolného RSS tagu v položkách zdroje, a poté je "
+"uloží jako vlastní meta pole v importovaných příspěvcích."
+
+#: ../includes/wprss-ftp-meta.php:1055
+#, php-format
+msgid ""
+"To use this option, you first need to add the namespaces that you want to "
+"use in the <a %s>Feed to Post settings page</a>."
+msgstr ""
+"Pro použití této volby, musíte nejprve přidat jmenné prostory, které budou "
+"použity v < %s>Feed to Post stránce nastavení</a>."
+
+#: ../includes/wprss-ftp-meta.php:1073 ../includes/wprss-ftp-meta.php:1432
+msgid "Choose a namespace"
+msgstr "Zvolte jmenný prostor"
+
+#: ../includes/wprss-ftp-meta.php:1085
+msgid "RSS Tag"
+msgstr "RSS tag"
+
+#: ../includes/wprss-ftp-meta.php:1087
+msgid "Meta field name"
+msgstr "Název meta pole"
+
+#: ../includes/wprss-ftp-meta.php:1091
+msgid "Remove"
+msgstr "Odstranit"
+
+#: ../includes/wprss-ftp-meta.php:1139
+#, php-format
+msgid ""
+"You can add and change your namespaces from the <a %s>Feed to Post settings "
+"page</a>."
+msgstr ""
+"Můžete přidat a měnit jmenné prostory přes < %s>Feed to Post stránka "
+"nastavení</a>."
+
+#: ../includes/wprss-ftp-meta.php:1156
+msgid "Namespace Detector"
+msgstr "Detektor jmenných prostorů"
+
+#: ../includes/wprss-ftp-meta.php:1162
+msgid "Detect namespaces in Feed Source"
+msgstr "Detekovat jmenný prostor ve zdroji"
+
+#: ../includes/wprss-ftp-meta.php:1252
+msgid "Fallback Featured Image"
+msgstr "Záložní doporučený obrázek"
+
+#: ../includes/wprss-ftp-meta.php:1495
+msgid ""
+"The custom meta field 'xyz' of the imported post. Change 'xyz' to the name "
+"of any meta field you want."
+msgstr ""
+"Vlastní meta pole 'xyz' importovaného příspěvku. Změňte 'xyz' na libovolný "
+"název."
+
+#: ../includes/wprss-ftp-meta.php:1496
+msgid ""
+"The custom meta field 'xyz' of this feed source. Change 'xyz' to the name of "
+"any meta field you want."
+msgstr ""
+"Vlastní meta pole 'xyz' tohoto zdroje. Změňte 'xyz' na libovolný název."
+
+#: ../includes/wprss-ftp-meta.php:1556
+msgid "Not Registered"
+msgstr "Nezaregistrováno"
+
+#: ../includes/wprss-ftp-settings.php:47
+msgid "WPRSS_FTP_Settings class is a singleton class and cannot be redeclared."
+msgstr "WPRSS_FTP_Settings třída je singleton a nemůže být deklarována."
+
+#: ../includes/wprss-ftp-settings.php:224
+msgid "General Settings"
+msgstr "Obecné nastavení"
+
+#: ../includes/wprss-ftp-settings.php:231
+msgid "Taxonomies"
+msgstr "Štítky"
+
+#: ../includes/wprss-ftp-settings.php:238
+msgid "Authors"
+msgstr "Autoři"
+
+#: ../includes/wprss-ftp-settings.php:245
+msgid "Images"
+msgstr "Obrázky"
+
+#: ../includes/wprss-ftp-settings.php:252
+msgid "Full Text RSS"
+msgstr "Celý text z RSS"
+
+#: ../includes/wprss-ftp-settings.php:259
+msgid "Custom Namespaces"
+msgstr "Vlastní jmenné prostory"
+
+#: ../includes/wprss-ftp-settings.php:315
+msgid "Link back to source?"
+msgstr "Zpětný odkaz na zdroj?"
+
+#: ../includes/wprss-ftp-settings.php:324
+msgid "Only add source link when viewing singular posts "
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:333
+msgid "Source Link Text"
+msgstr "Text odkazu zdroje"
+
+#: ../includes/wprss-ftp-settings.php:395
+msgid "Trimming Type"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:441
+msgid "Author for imported items"
+msgstr "Autor pro importované položky"
+
+#: ../includes/wprss-ftp-settings.php:465
+msgid "Save Images Locally"
+msgstr "Uložit obrázky lokálně"
+
+#: ../includes/wprss-ftp-settings.php:474
+msgid "Image minimum size"
+msgstr "Minimální velikost obrázku"
+
+#: ../includes/wprss-ftp-settings.php:483
+msgid "Use a featured image"
+msgstr "Použít doporučený obrázek"
+
+#: ../includes/wprss-ftp-settings.php:493
+msgid "Featured image to use"
+msgstr "Který doporučený obrázek se má použít"
+
+#: ../includes/wprss-ftp-settings.php:503
+msgid "Fallback to Feed Image"
+msgstr "Záložní obrázek"
+
+#: ../includes/wprss-ftp-settings.php:526
+msgid "Full Text RSS service"
+msgstr "Full-textová RSS služba"
+
+#: ../includes/wprss-ftp-settings.php:534
+msgid "FeedsAPI Key"
+msgstr "FeedsAPI klíč"
+
+#: ../includes/wprss-ftp-settings.php:545
+msgid "Namespaces"
+msgstr "Jmenné prostory"
+
+#: ../includes/wprss-ftp-settings.php:555
+msgid "Feed to Post License"
+msgstr "Feed to Post licence"
+
+#: ../includes/wprss-ftp-settings.php:562
+msgid "License Key"
+msgstr "Licenční klíč"
+
+#: ../includes/wprss-ftp-settings.php:570
+#: ../includes/wprss-ftp-settings.php:1262
+msgid "Activate License"
+msgstr "Aktivovat licenci"
+
+#: ../includes/wprss-ftp-settings.php:594
+msgid "General settings about imported posts"
+msgstr "Obecné nastavení importovaných položek"
+
+#: ../includes/wprss-ftp-settings.php:602
+msgid "Settings about post authors and users."
+msgstr "Nastavení autorů příspěvků a uživatelů"
+
+#: ../includes/wprss-ftp-settings.php:611
+msgid "Settings about post taxonomies and tags."
+msgstr "Nastavení pro taxonomií a tagy příspevků."
+
+#: ../includes/wprss-ftp-settings.php:620
+msgid "Configure how to handle images found in feeds."
+msgstr "Nastavení pro zpracování obrázků získaných ze zdroje."
+
+#: ../includes/wprss-ftp-settings.php:629
+msgid "Configure your full text RSS options."
+msgstr "Nastavení celého textu z RSS zdroje."
+
+#: ../includes/wprss-ftp-settings.php:638
+msgid "Manage your RSS feed Namespaces."
+msgstr "Upravte vaše jmenné prostory pro RSS zdroje."
+
+#: ../includes/wprss-ftp-settings.php:778
+msgid "Source link text"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:845
+msgid ""
+"Enter the maximum number of words to import for posts. Leave blank to use no "
+"limit."
+msgstr ""
+"Napište maximální počet slov, které se naimportují do příspěvku. Ponechte "
+"prázdné pro vypnutí limitu."
+
+#: ../includes/wprss-ftp-settings.php:869
+msgid "Learn more about canonical pages."
+msgstr "Více informací o kanonických stránkách."
+
+#: ../includes/wprss-ftp-settings.php:987
+msgid "Loading taxonomy terms ..."
+msgstr "Načítání typů taxonomie ..."
+
+#: ../includes/wprss-ftp-settings.php:999
+msgid "Enter the post tags, comma separated, to attach to all imported posts."
+msgstr "Přidat tagy ke všem naimportovaným příspěvkům. Tagy oddělte čárkou"
+
+#: ../includes/wprss-ftp-settings.php:1161
+#, php-format
+msgid ""
+"Enter your FeedsAPI key. Don't have one? <a %s>Get one here (at a special "
+"discounted rate)</a>."
+msgstr ""
+"Vložte váš FeedsAPI klíč. Don't have one? <a %s>Získejte klíč zde "
+"(zvýhodněná nabídka)</a>"
+
+#: ../includes/wprss-ftp-settings.php:1194 ../wp-rss-feed-to-post.php:666
+msgid "Name"
+msgstr "Název"
+
+#: ../includes/wprss-ftp-settings.php:1195 ../wp-rss-feed-to-post.php:667
+msgid "URL"
+msgstr "URL"
+
+#: ../includes/wprss-ftp-settings.php:1204
+msgid "Add Another Namespace"
+msgstr "Přidat další jmenný prostor"
+
+#: ../includes/wprss-ftp-settings.php:1241
+msgid "Enter your license key"
+msgstr "Vložte váš licenční klíč"
+
+#: ../includes/wprss-ftp-settings.php:1257
+msgid "active"
+msgstr "aktivní"
+
+#: ../includes/wprss-ftp-settings.php:1259
+msgid "Deactivate License"
+msgstr "Deaktivovat licenci"
+
+#: ../includes/wprss-ftp-settings.php:1449
+msgid "If the author in the feed is not an existing user"
+msgstr "V případě, že autor ze zdroje neodpovídá existujícímu uživateli"
+
+#: ../includes/wprss-ftp-settings.php:1455
+#: ../includes/wprss-ftp-settings.php:1476
+msgid "Use the fallback user"
+msgstr "Použít záložního uživatele"
+
+#: ../includes/wprss-ftp-settings.php:1456
+msgid "Create a user for the author"
+msgstr "Vytvořit uživatele pro autora"
+
+#: ../includes/wprss-ftp-settings.php:1470
+msgid "If the author is missing from the feed"
+msgstr "V případě, že chybí autor ve zdroji"
+
+#: ../includes/wprss-ftp-settings.php:1477
+msgid "Do not import the post"
+msgstr "Neimporotvat příspěvek"
+
+#: ../includes/wprss-ftp-settings.php:1495
+msgid "Fallback User"
+msgstr "Záložní uživatel"
+
+#: ../includes/wprss-ftp-settings.php:1505
+msgid "Fallback user:"
+msgstr "Záložní uživatel:"
+
+#: ../includes/wprss-ftp-settings.php:1649
+msgid "Standard"
+msgstr "Standardní"
+
+#: ../includes/wprss-ftp-settings.php:1650
+msgid "Aside"
+msgstr "Stranou"
+
+#: ../includes/wprss-ftp-settings.php:1651
+msgid "Chat"
+msgstr "Chat"
+
+#: ../includes/wprss-ftp-settings.php:1652
+msgid "Link"
+msgstr "Odkaz"
+
+#: ../includes/wprss-ftp-settings.php:1653
+msgid "Quote"
+msgstr "Citát"
+
+#: ../includes/wprss-ftp-settings.php:1654
+msgid "Status"
+msgstr "Stav"
+
+#: ../includes/wprss-ftp-settings.php:1655
+msgid "Audio"
+msgstr "Zvuk"
+
+#: ../includes/wprss-ftp-settings.php:1656
+msgid "Image"
+msgstr "Obrázek"
+
+#: ../includes/wprss-ftp-settings.php:1657
+msgid "Video"
+msgstr "Video"
+
+#: ../includes/wprss-ftp-settings.php:1658
+msgid "Gallery"
+msgstr "Galerie"
+
+#: ../includes/wprss-ftp-settings.php:1755
+msgid "Original post date"
+msgstr "Původní datum příspěvku"
+
+#: ../includes/wprss-ftp-settings.php:1756
+msgid "Feed import date"
+msgstr "Datum importu zdroje"
+
+#: ../includes/wprss-ftp-settings.php:1770
+msgid "Free Services"
+msgstr "Služby zdarma"
+
+#: ../includes/wprss-ftp-settings.php:1771
+msgid "FeedsAPI service"
+msgstr "FeedsAPI služba"
+
+#: ../includes/wprss-ftp-settings.php:1802
+msgid "No Namespace"
+msgstr "Žádné jmenné prostory"
+
+#: ../includes/wprss-ftp-taxonomies.php:13
+#, php-format
+msgid ""
+"<span class='ftp-tax-no-terms'>The <strong>%s</strong> taxonomy has no "
+"available terms.</span>"
+msgstr ""
+"<span class='ftp-tax-no-terms'><strong>%s</strong> taxonomie nemá žádné "
+"dostupné typy.</span>"
+
+#: ../includes/wprss-ftp-taxonomies.php:201
+#, php-format
+msgid ""
+"<p id='ftp-no-taxonomies'>The Post Type <strong>%s</strong>  has no "
+"taxonomies available!</p>"
+msgstr ""
+"<p id='ftp-no-taxonomies'>Druh příspěvku <strong>%s</strong>  nemá k "
+"dispozici žádné taxonomie!</p>"
+
+#: ../includes/wprss-ftp-taxonomies.php:234
+msgid "Auto create terms from the feed items for this taxonomy"
+msgstr "Automaticky vytvořit typy z položek pro tuto taxonomii"
+
+#: ../includes/wprss-ftp-taxonomies.php:237
+msgid "Refresh the terms, if they've changed"
+msgstr "Obnovit typy, pokud byly změněny"
+
+#: ../includes/wprss-ftp-taxonomies.php:239
+msgid "Refresh terms"
+msgstr "Obnovit typy"
+
+#: ../includes/wprss-ftp-taxonomies.php:242
+msgid "Remove this entry"
+msgstr "Odstranit tento záznam"
+
+#: ../includes/wprss-ftp-taxonomies.php:244
+msgid "Remove row"
+msgstr "Odstranit řádek"
+
+#: ../includes/wprss-ftp-taxonomies.php:252
+msgid "Feed Title"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:253
+msgid "Feed Content"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:276
+msgid "Enter comma separated words or phrases"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:56
+msgid "URL Shortening"
+msgstr "Zkracování URL"
+
+#: ../includes/wprss-ftp-url-shortener.php:63
+#: ../includes/wprss-ftp-url-shortener.php:137
+msgid "Method"
+msgstr "Metoda"
+
+#: ../includes/wprss-ftp-url-shortener.php:71
+msgid "Google API Key"
+msgstr "Google API klíč"
+
+#: ../includes/wprss-ftp-url-shortener.php:83
+msgid "Configure URL Shortening"
+msgstr "Nastavit zkracování URL"
+
+#: ../includes/wprss-ftp-url-shortener.php:120
+#, php-format
+msgid "Learn more about the <a %s>Google URL Shortener API</a>"
+msgstr "Více informací o <a %s>Google  zkracovač URL API</a>"
+
+#: ../includes/wprss-ftp-url-shortener.php:156
+msgid "None"
+msgstr "Žádný"
+
+#: ../includes/wprss-ftp-url-shortener.php:169
+msgid "Feed to Post - URL Shortening"
+msgstr "Feed to Post- zkracování URL"
+
+#: ../includes/wprss-ftp-url-shortener.php:207
+msgid "Google URL Shortener API"
+msgstr "Google zkracovač URL API"
+
+#: ../includes/wprss-ftp-utils.php:201
+msgid ""
+"We could not retrieve the list of sites, because the network has no sites or "
+"is too large!"
+msgstr ""
+"Nepodařilo se stáhnout seznam stránek, protože síť nemá žádné stránky, nebo "
+"jsou příliš velké!"
+
+#: ../includes/wprss-ftp-utils.php:489
+msgid "No taxonomies for the selected post type were found!"
+msgstr "Žádné taxonomie nebyly pro zvolený typ příspěvku nalezeny!"
+
+#: ../includes/wprss-ftp-utils.php:530 ../includes/wprss-ftp-utils.php:545
+msgid "No terms were found for this taxonomy."
+msgstr "Žádné typy nebyly nalezeny pro tuto taxonomii."
+
+#: ../includes/wprss-ftp-utils.php:634
+#, php-format
+msgid ""
+"<strong>WP RSS Aggregator (Feed to Post):</strong> The <em>Source Link Text</"
+"em> option has been replaced with the <em>Append and Prepend to Content</em> "
+"options.\n"
+"\t\t\t\t\t\t\tYour saved settings for this old option has been automatically "
+"converted and added to the new option for all feed sources.<br/> Read more "
+"about it <a %s>here</a>."
+msgstr ""
+"<strong>WP RSS Aggregator (Feed to Post):</strong> Možnost<em> Text odkazu "
+"na zdroj </em>byla nahrazena možností <em>Přidat před/za obsah</em>.\n"
+"\t\t\t\t\t\t\tVaše uložené nastavení pro tuto starou možnost bude "
+"automaticky zkonvertováno a přidáno do nové možnosti pro všechny zdroje.<br/"
+"> Přečíst více <a %s>zde</a>."
+
+#: ../includes/wprss-ftp-utils.php:739
+msgid "Invalid feed source given."
+msgstr "Neplatný zdroj."
+
+#: ../includes/wprss-ftp-utils.php:746
+msgid ""
+"Failed to read feed source XML. Check that your URL is a valid feed source "
+"URL"
+msgstr ""
+"Nepodařilo se přečíst XML zdroje. Zkontrolujte zda-li je vaše URL adresa "
+"validní zdroj "
+
+#: ../includes/wprss-ftp-utils.php:761
+msgid ""
+"Failed to parse the RSS feed XML. The feed may contain errors or is not a "
+"valid feed source."
+msgstr ""
+"Nepodařilo se zpracovat XML RSS zdroje. Zdroj může obsah chyby, nebo se "
+"nejedná o validní zdroj."
+
+#: ../wp-rss-feed-to-post.php:371
+#, php-format
+msgid ""
+"The Feed to Post add-on disables the shortcode functionality by default. <a "
+"href=\"%1$s\" target=\"_blank\">Read why here</a> and <a href=\"%2$s\" "
+"target=\"_blank\">how to re-enable it here.</a>"
+msgstr ""
+"Feed to Post doplněk deaktivuje shortcode ve výchozím nastavení. <a href="
+"\"%1$s\" target=\"_blank\">Přečtěte si zde proč</a> a <a href=\"%2$s\" "
+"target=\"_blank\">jak aktivovat zde.</a>"
+
+#: ../wp-rss-feed-to-post.php:553
+#, php-format
+msgid ""
+"<a href=\"%1$s\" target=\"_blank\">Read why here</a> and <a href=\"%2$s\" "
+"target=\"_blank\">how to re-enable it here.</a>"
+msgstr ""
+"<a href=\"%1$s\" target=\"_blank\">Přečtetě si zde proč</a> a <a href=\"%2$s"
+"\" target=\"_blank\">jak znovu povolit zde.</a>"
+
+#: ../wp-rss-feed-to-post.php:619
+msgid "Loading taxonomies..."
+msgstr "Načítání taxonomií..."
+
+#: ../wp-rss-feed-to-post.php:620
+msgid ""
+"You are importing into WP RSS Aggregator's <strong>Feed Items</strong>.<br/"
+">The Feed to Post settings for this feed source will <strong>not</strong> "
+"affect the items imported."
+msgstr ""
+"Importujete do WP RSS Aggregatoru <strong>Feed Items</strong>.<br/>Feed to "
+"Post nastavení pro tento zdroj <strong>nebude</strong> ovlivněn tímto "
+"importem."
+
+#: ../wp-rss-feed-to-post.php:629 ../wp-rss-feed-to-post.php:646
+msgid "Please Wait..."
+msgstr "Prosím počkejte..."
+
+#: ../wp-rss-feed-to-post.php:630
+msgid "Choose terms"
+msgstr "Zvolte typ"
+
+#: ../wp-rss-feed-to-post.php:631
+msgid "Choose a taxonomy"
+msgstr "Zvolte taxonomii"
+
+#: ../wp-rss-feed-to-post.php:632
+msgid "Choose a field to filter on"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:633
+msgid "No terms matched "
+msgstr "Žádné typy nenalzeny"
+
+#: ../wp-rss-feed-to-post.php:634
+msgid "No taxonomy matched "
+msgstr "Nebyla nalezena žádná taxonomie"
+
+#: ../wp-rss-feed-to-post.php:635
+msgid "No fields matched "
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:647
+msgid "Namespace"
+msgstr "Jmenný prostor"
+
+#: ../wp-rss-feed-to-post.php:648
+msgid "with URL"
+msgstr "s URL"
+
+#: ../wp-rss-feed-to-post.php:649
+msgid "Please specify a feed source URL first."
+msgstr "Zvolte nejdříve adresu zdroje."
+
+#: ../wp-rss-feed-to-post.php:980
+msgid "Fetch Posts"
+msgstr "Získat příspěvky"
+
+#: ../wp-rss-feed-to-post.php:990
+msgid "View Posts"
+msgstr "Zobrazit příspěvky"
+
+#: ../wp-rss-feed-to-post.php:1000
+msgid "Delete Posts"
+msgstr "Smazat příspěvky"
+
+#: ../wp-rss-feed-to-post.php:1010
+msgid "Delete posts imported by this feed source"
+msgstr "Odstranit příspěvky importované z tohoto zdroje"
+
+#: ../wp-rss-feed-to-post.php:1068
+msgid ""
+"<strong>Note:</strong> Your <em>license codes</em> and your Category "
+"<em>Post Terms</em> options for Feed to Post add-on are not exported."
+msgstr ""
+"<strong>Upozornění:</strong>Váš<em>licenční kód</em>, Category <em>, Post "
+"Terms</em> a nastavení pro Feed to Post nejsou exportovány."
+
+#: ../wp-rss-feed-to-post.php:1145
+#, php-format
+msgid ""
+"The Feed to Post add-on requires WordPress version <strong>%s</strong> or "
+"higher."
+msgstr ""
+" Feed to Post doplněk vyžaduje WordPress ve verzi <strong>%s</strong>, nebo "
+"vyšší."
+
+#: ../wp-rss-feed-to-post.php:1156
+#, php-format
+msgid ""
+"Please install and activate WP RSS Aggregator, at version <strong>%s</"
+"strong> or higher, for the Feed to Post add-on to work."
+msgstr ""
+"Prosím nainstalujte a aktivujte si WP RSS Aggregator, ve verzi <strong>%s</"
+"strong>, nebo vyšší. Jinak vám nebude Feed to Post doplněk fungovat."
+
+#: ../wp-rss-feed-to-post.php:1167
+msgid ""
+"The following WP RSS Aggregator add-ons have been disabled by the Feed-to-"
+"Post add-on"
+msgstr ""
+"Následující WP RSS aggregator doplňky byly deaktivovány doplňkem Feed-to-Post"
+
+#: ../wp-rss-feed-to-post.php:1178
+msgid ""
+"The posts for the selected feed source are being deleted in the background."
+msgstr "Příspěvky pro zvolený zdroj jsou smazány na pozadí."
+
+#~ msgid ""
+#~ "Tick this box to enable comments for imported posts from this source."
+#~ msgstr "Zaškrtněte pro povolení komentářů importovaných z tohoto zdroje."
+
+#~ msgid ""
+#~ "Tick this box to add a link back to the original post, at the end of the "
+#~ "post's content."
+#~ msgstr "Zaškrtněte pro přidání zpětného odkazu na původní příspěvek."
+
+#~ msgid ""
+#~ "Remember to <a href=\"%s\">enter your plugin license code</a> for the WP "
+#~ "RSS Aggregator <b>Feed to Post</b> add-on, to benefit from updates and "
+#~ "support."
+#~ msgstr ""
+#~ "Nezapomeňte <a href=\"%s\">vložit váš licenční kód</a> pro WP RSS "
+#~ "Aggregator <b>Feed to Post</b> doplněk, aby jste získaly aktualizace a "
+#~ "podporu."
+
+#~ msgid "Dismiss this notification"
+#~ msgstr "Zavřít upozornění"

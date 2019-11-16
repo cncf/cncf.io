@@ -1,0 +1,79 @@
+.home-card {
+  position: relative;
+  text-align: center;
+  border-radius: rem-calc(6);
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  @include breakpoint(large) {
+    border: rem-calc(8) solid $white;
+    border-radius: rem-calc(14);
+    margin-bottom: 0;
+  }
+
+  .bg-image {
+    background-size: cover;
+    mix-blend-mode: multiply;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0.5;
+
+    &.black-text {
+      mix-blend-mode: overlay;
+    }
+  }
+
+  .card-header {
+    position: relative;
+    z-index: 2;
+    padding: 8%;
+  }
+
+  .card-header-link {
+    display: block;
+    color: inherit;
+  }
+
+  .meta-container {
+    display: block;
+    padding-top: 6%;
+    font-size: rem-calc(14);
+  }
+
+  .date {
+    display: block;
+    font-weight: $global-weight-bold;
+  }
+
+  .country {
+    display: block;
+  }
+
+  .card-footer {
+    position: relative;
+    z-index: 2;
+    padding: 0.5rem;
+    margin-top: -4%;
+
+    .links {
+      @include button-group('.link', 0);
+      @include button-group-expand('.link', 0);
+      margin: 0;
+      box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.2);
+    }
+
+    .link {
+      @include button(false, transparent, rgba(255,255,255,0.05), inherit, solid);
+      font-weight: $global-weight-bold;
+    }
+
+    .link + .link {
+      border-left-color: rgba(0,0,0,0.2);
+    }
+  }
+}

@@ -1,0 +1,212 @@
+// --------------------------------------------------
+// Module: Box Model
+// --------------------------------------------------
+
+.site-container {
+  position: relative;
+  overflow: hidden;
+  max-width: rem-calc(1800);
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 0 rem-calc(400) rem-calc(200) rgba(0,0,0,0.2);
+}
+
+.relative { position: relative; }
+.static { position: static; }
+
+.clearfix { @include clearfix; }
+
+
+//
+// Display helper classes
+// --------------------------------------------------
+.display-block { display: block; }
+.display-inline { display: inline; }
+.display-inline-block { display: inline-block;; }
+
+
+//
+// Margin helper classes
+// --------------------------------------------------
+
+// Margin for all four sides
+.no-margin {
+  margin: 0 !important;
+}
+.tiny-margin {
+  margin: $global-margin/4 !important;
+}
+.small-margin {
+  margin: $global-margin/2 !important;
+}
+.medium-margin {
+  margin: $global-margin !important;
+}
+.large-margin {
+  margin: $global-margin*2 !important;
+}
+.xlarge-margin {
+  margin: $global-margin*3 !important;
+}
+
+// Margin for top and bottom
+.tiny-margin-y {
+  margin-top: $global-margin/4 !important;
+  margin-bottom: $global-margin/4 !important;
+}
+.small-margin-y {
+  margin-top: $global-margin/2 !important;
+  margin-bottom: $global-margin/2 !important;
+}
+.medium-margin-y {
+  margin-top: $global-margin !important;
+  margin-bottom: $global-margin !important;
+}
+.large-margin-y {
+  margin-top: $global-margin*2 !important;
+  margin-bottom: $global-margin*2 !important;
+}
+.xlarge-margin-y {
+  margin-top: $global-margin*3 !important;
+  margin-bottom: $global-margin*3 !important;
+}
+
+// Margin for right and left
+.tiny-margin-x {
+  margin-right: $global-margin/4 !important;
+  margin-left: $global-margin/4 !important;
+}
+.small-margin-x {
+  margin-right: $global-margin/2 !important;
+  margin-left: $global-margin/2 !important;
+}
+.medium-margin-x {
+  margin-right: $global-margin !important;
+  margin-left: $global-margin !important;
+}
+.large-margin-x {
+  margin-right: $global-margin*2 !important;
+  margin-left: $global-margin*2 !important;
+}
+.xlarge-margin-x {
+  margin-right: $global-margin*3 !important;
+  margin-left: $global-margin*3 !important;
+}
+
+// Margin for individual sides
+$sides: top right bottom left;
+@each $side in $sides {
+  $i: index($sides, $side);
+
+  .no-margin-#{$side} {
+    margin-#{$side}: 0 !important;
+  }
+  .tiny-margin-#{$side} {
+    margin-#{$side}: $global-margin/4 !important;
+  }
+  .small-margin-#{$side} {
+    margin-#{$side}: $global-margin/2 !important;
+  }
+  .medium-margin-#{$side} {
+    margin-#{$side}: $global-margin !important;
+  }
+  .large-margin-#{$side} {
+    margin-#{$side}: $global-margin*2 !important;
+  }
+  .xlarge-margin-#{$side} {
+    margin-#{$side}: $global-margin*3 !important;
+  }
+}
+
+
+//
+// Padding helper classes
+// --------------------------------------------------
+
+// Padding for all four sides
+.no-padding {
+  padding: 0 !important;
+}
+.tiny-padding {
+  padding: $global-margin/4 !important;
+}
+.small-padding {
+  padding: $global-margin/2 !important;
+}
+.medium-padding {
+  padding: $global-margin !important;
+}
+.large-padding {
+  padding: $global-margin*2 !important;
+}
+.xlarge-padding {
+  padding: $global-margin*3 !important;
+}
+
+// Padding for top and bottom
+.tiny-padding-y {
+  padding-top: $global-margin/4 !important;
+  padding-bottom: $global-margin/4 !important;
+}
+.small-padding-y {
+  padding-top: $global-margin/2 !important;
+  padding-bottom: $global-margin/2 !important;
+}
+.medium-padding-y {
+  padding-top: $global-margin !important;
+  padding-bottom: $global-margin !important;
+}
+.large-padding-y {
+  padding-top: $global-margin*2 !important;
+  padding-bottom: $global-margin*2 !important;
+}
+.xlarge-padding-y {
+  padding-top: $global-margin*3 !important;
+  padding-bottom: $global-margin*3 !important;
+}
+
+// Padding for right and left
+.tiny-padding-x {
+  padding-right: $global-margin/4 !important;
+  padding-left: $global-margin/4 !important;
+}
+.small-padding-x {
+  padding-right: $global-margin/2 !important;
+  padding-left: $global-margin/2 !important;
+}
+.medium-padding-x {
+  padding-right: $global-margin !important;
+  padding-left: $global-margin !important;
+}
+.large-padding-x {
+  padding-right: $global-margin*2 !important;
+  padding-left: $global-margin*2 !important;
+}
+.xlarge-padding-x {
+  padding-right: $global-margin*3 !important;
+  padding-left: $global-margin*3 !important;
+}
+
+// Padding for individual sides
+$sides: top right bottom left;
+@each $side in $sides {
+  $i: index($sides, $side);
+  .no-padding-#{$side} {
+    padding-#{$side}: 0 !important;
+  }
+  .tiny-padding-#{$side} {
+    padding-#{$side}: $global-margin/4 !important;
+  }
+  .small-padding-#{$side} {
+    padding-#{$side}: $global-margin/2 !important;
+  }
+  .medium-padding-#{$side} {
+    padding-#{$side}: $global-margin !important;
+  }
+  .large-padding-#{$side} {
+    padding-#{$side}: $global-margin*2 !important;
+  }
+  .xlarge-padding-#{$side} {
+    padding-#{$side}: $global-margin*3 !important;
+  }
+}

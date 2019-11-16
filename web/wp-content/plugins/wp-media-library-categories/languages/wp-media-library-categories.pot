@@ -1,0 +1,97 @@
+# Copyright (C) jeffrey-wp.com
+# This file is distributed under the same license as the Media Library Categories package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Media Library Categories Premium\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-media-library-"
+"categories\n"
+"POT-Creation-Date: 2019-01-26 22:37+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Jeffrey-WP\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: index.php:95
+msgid ""
+"Thank you for using the <strong>Media Library Categories Premium</strong> "
+"plugin."
+msgstr ""
+
+#: index.php:96
+msgid ""
+"By default the WordPress Media Library uses the same categories as "
+"WordPress does (such as in posts &amp; pages).<br />\n"
+"                    If you want to use separate categories for the "
+"WordPress Media Library take a look at our <a href=\"https://codecanyon.net/"
+"item/media-library-categories-premium/6691290/support?ref=jeffrey-wp\" "
+"target=\"_blank\">Frequently asked questions</a>."
+msgstr ""
+
+#: index.php:334 index.php:345
+msgid "View all categories"
+msgstr ""
+
+#: index.php:373 index.php:374 index.php:527
+msgid "Categories"
+msgstr ""
+
+#: index.php:378
+msgid "Add"
+msgstr ""
+
+#: index.php:384
+msgid "Remove"
+msgstr ""
+
+#: index.php:389 index.php:390
+msgid "Remove all categories"
+msgstr ""
+
+#: index.php:511
+msgid "Category changes are saved."
+msgstr ""
+
+#: index.php:715
+msgid "All Uncategorized"
+msgstr ""
+
+#: index.php:716
+msgid "All categories"
+msgstr ""
+
+#: index.php:717
+msgid "Reset All Filters"
+msgstr ""
+
+#: index.php:718
+msgid "author"
+msgstr ""
+
+#: index.php:719
+msgid "authors"
+msgstr ""
+
+#: index.php:721
+msgid "Saved."
+msgstr ""
+
+#: index.php:722
+msgid "Something went wrong."
+msgstr ""
+
+#: index.php:723
+msgid "Save Changes"
+msgstr ""
+
+#: index.php:724
+msgid "Select All"
+msgstr ""

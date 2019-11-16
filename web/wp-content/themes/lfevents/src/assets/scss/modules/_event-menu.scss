@@ -1,0 +1,295 @@
+.menu-toggler {
+  &, &:hover, &:focus {
+    background-color: transparent;
+    margin: 0;
+    outline: 0;
+  }
+}
+
+.event-home-link img {
+  display: block;
+  width: auto;
+  max-height: 4rem;
+  min-height: 4rem;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.event-header {
+  @include clearfix;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(10,59,97,100);
+  box-shadow: 0 0.5rem 0 0 rgba(0,0,0,0.2);
+  color: #ffffff;
+
+  .admin-bar &.is-stuck {
+    top: 32px !important;
+  }
+
+  a {
+    color: inherit !important;
+  }
+
+  .pre-nav {
+    display: flex;
+    align-content: stretch;
+
+    @include breakpoint(large) {
+      display: none;
+    }
+
+    a {
+      @include button();
+      @include button-style(transparent, transparent, $white);
+      font-weight: bold;
+      font-size: 1rem;
+      margin: 0 1rem 0 0;
+      flex-grow: 1;
+    }
+
+    .menu-toggler {
+      flex-grow: 0;
+    }
+  }
+}
+
+#popout-header-link {
+  flex-grow: 1.5;
+
+  a {
+    position: relative;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    transform-origin: 0 0;
+    transition: transform 0.2s ease-in-out 0s,
+                box-shadow 0.2s ease-in-out 0s,
+                background-color 0.1s ease-in-out 0s,
+                border-bottom-right-radius 0.2s ease-in-out 0s;
+
+    .event-header.is-stuck & {
+      background-color: transparent !important;
+      transition: transform 0.3s ease-in-out 0.3s,
+                  box-shadow 0.3s ease-in-out 0.3s,
+                  background-color 0.3s ease-in-out 0.6s,
+                  border-bottom-right-radius 0.3s ease-in-out 0.3s;
+
+      img {
+        transition: transform 0.3s ease-in-out 0.3s;
+      }
+    }
+
+    .event-header:not(.is-stuck) & {
+      border-bottom-right-radius: 1rem;
+      box-shadow: -0.125rem 0.25rem 0 0.25rem rgba(0,0,0,0.2);
+      transform: scaleY(1.4);
+
+      img {
+        transform: scaleX(1.26) scaleY(0.9);
+      }
+    }
+  }
+
+  img {
+    transition: transform 0.2s ease-in-out 0s;
+  }
+}
+
+
+.event-menu {
+  clear: both;
+  background-color: inherit;
+
+  ul, li { background-color: inherit; }
+
+  ul {
+    list-style: none;
+    margin: 0 !important;
+  }
+
+  .event-menu-list {
+    @include button-group('.page_item', 0);
+    @include button-group-expand('.page_item', 0);
+
+    @include breakpoint(medium down) {
+      @include button-group-stack('.page_item');
+    }
+
+    > li {
+
+      @include breakpoint(large) {
+        &.current_page_item > a,
+        &.current_page_ancestor > a {
+          position: relative;
+          background-color: rgba(0,0,0,0.2);
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: calc(100% + 1px);
+            right: -1px;
+            left: -1px;
+            background-color: inherit;
+            height: 0.5rem;
+          }
+        }
+      }
+
+      &:first-child { // HACK: We should add a class w/ a WP walker for this selector
+        @include breakpoint(medium down) {
+          display: none;
+        }
+      }
+
+      &.other-events {
+        @include breakpoint(medium down) {
+          border-top: 4px solid rgba(255,255,255,0.2);
+          margin-top: 2em;
+        }
+
+        > a {
+          @include breakpoint(medium down) {
+            display: none;
+          }
+        }
+
+        img {
+          width: 13rem;
+          margin: 0.5em;
+        }
+
+        .children li:first-child a, .children li:last-child a {
+          flex-direction: column;
+        }
+
+        .children li:first-child img, .children li:last-child img {
+          width: 16rem;
+
+          @include breakpoint(large) {
+            min-width: 16rem;
+          }
+        }
+      }
+
+      a {
+        @include button();
+        @include button-style(transparent, rgba(0,0,0,0.2), $white);
+        font-weight: bold;
+        font-size: rem-calc(12);
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoint(large) {
+          min-height: 100%;
+        }
+
+        @include breakpoint(xlarge) {
+          font-size: rem-calc(14);
+        }
+      }
+
+      > a {
+        @include breakpoint(medium down) {
+          justify-content: left;
+          font-weight: 900;
+          font-size: rem-calc(14);
+        }
+      }
+    }
+
+    .page_item_has_children {
+      position: relative;
+
+      @include breakpoint(medium down) {
+        &:not(.other-events) a {
+          justify-content: left;
+        }
+
+        > a[href="#"] {
+          opacity: 0.6;
+          padding-bottom: 0;
+          cursor: default;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+        &:not(.other-events) .children a {
+          padding-left: 1.5em;
+
+          &::before {
+            content: '—';
+            color: rgba(255,255,255,0.6);
+            margin-right: 0.75em;
+          }
+        }
+      }
+
+      @include breakpoint(medium down) {
+        .children {
+          background: transparent !important;
+        }
+      }
+
+      @include breakpoint(large) {
+        > a {
+          @include button-dropdown(0.4em, currentColor, 1rem);
+          cursor: default;
+
+          &::after {
+            opacity: 0.7;
+            top: 0.1em;
+            transition: transform 0.2s ease-in-out;
+          }
+        }
+
+        &:hover > a {
+          background-color: rgba(0,0,0,0.2);
+        }
+
+        &:hover > a::after {
+          transform: scaleY(-1);
+        }
+
+        .children {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          min-width: 100%;
+          box-shadow: 0 0.25rem 0 0.25rem rgba(0,0,0,0.2);
+          visibility: hidden;
+          opacity: 0;
+          transition: opacity 0.4s;
+          max-height: calc(100vh - 6rem);
+          overflow: auto;
+
+          a {
+            display: block;
+            font-size: rem-calc(12);
+            border-top-color: rgba(255,255,255,0.1);
+
+            @include breakpoint(large) {
+              font-size: rem-calc(14);
+            }
+          }
+
+          .current_page_item > a {
+            background-color: rgba(0,0,0,0.2);
+          }
+        }
+
+        &:hover > .children {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      &:not(.other-events) .children a {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-cgb-block-tab-container-block  {
+  // background: $blue;
+  border: 2px dashed #ddd;
+  // color: $black;
+  // margin: 0 auto;
+  // max-width: 740px;
+  padding: 1rem;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}

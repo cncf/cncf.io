@@ -1,0 +1,1421 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WP RSS Aggregator - Feed to Post\n"
+"POT-Creation-Date: 2017-10-17 15:15+0200\n"
+"PO-Revision-Date: 2015-04-15 18:33+0800\n"
+"Last-Translator: \n"
+"Language-Team: WP RSS Aggregator <info@wprssaggregator.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop;->__\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/Aventura/Wprss/FeedToPost/Component/Settings.php:55
+#: ../includes/wprss-ftp-settings.php:286
+msgid "General Settings"
+msgstr ""
+
+#: ../includes/Aventura/Wprss/FeedToPost/Component/Settings.php:56
+msgid "General settings about imported posts."
+msgstr ""
+
+#: ../includes/Aventura/Wprss/FeedToPost/Component/Settings.php:60
+#: ../includes/wprss-ftp-meta.php:223 ../includes/wprss-ftp-settings.php:338
+#: ../wp-rss-feed-to-post.php:867
+msgid "Post Type"
+msgstr ""
+
+#: ../includes/Aventura/Wprss/FeedToPost/Component/Tooltips.php:32
+msgid "Enables the spinning of imported posts using the SpinnerChief API."
+msgstr ""
+
+#: ../includes/libraries/EDD_licensing/EDD_SL_Plugin_Updater.php:174
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+
+#: ../includes/libraries/EDD_licensing/EDD_SL_Plugin_Updater.php:181
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+"\">update now</a>."
+msgstr ""
+
+#: ../includes/libraries/EDD_licensing/EDD_SL_Plugin_Updater.php:321
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: ../includes/libraries/EDD_licensing/EDD_SL_Plugin_Updater.php:321
+msgid "Error"
+msgstr ""
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:60
+msgid "Keep typing..."
+msgstr ""
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:61
+msgid "Looking for"
+msgstr ""
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:158
+msgid "Author in feed"
+msgstr ""
+
+#: ../includes/wprss-ftp-admin-user-ajax.php:159
+#: ../includes/wprss-ftp-meta.php:1528
+msgid "Existing user"
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:14
+msgid "The name given to this feed source."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:15
+msgid "The title of the imported post."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:16
+msgid "The URL of the imported post on your site."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:17
+msgid "The URL of the site, from which the post was imported."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:18
+msgid "The date the imported post was imported."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:19
+msgid "The URL of the original post on the feed source site."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:20
+msgid "The name of the imported post's author, if available"
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:21
+msgid "The date the imported post was published, if available."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:22
+msgid "The URL of the post author, if available."
+msgstr ""
+
+#: ../includes/wprss-ftp-appender.php:23
+msgid ""
+"The original remote URL of the image that was used as the featured image, if "
+"any. Otherwise, empty."
+msgstr ""
+
+#: ../includes/wprss-ftp-converter.php:731
+msgid "Failed to find a working full text rss service."
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:35
+msgid "WPRSS_FTP_Debug class is a singleton class and cannot be redeclared."
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:89
+msgid ""
+"All posts created by the Feed To Post add-on are being deleted in the "
+"background."
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:103
+msgid "Delete imported posts (Feed To Post)"
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:104
+msgid ""
+"Click the red button to delete all posts imported by the Feed to Post add-on."
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:105
+msgid ""
+"<em><strong>Note:</strong> This is a server-intensive process and can take "
+"long, depending on how much posts you have imported.</em>"
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:109
+msgid "Delete all imported posts"
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:124
+msgid "Feed To Post Error Log"
+msgstr ""
+
+#: ../includes/wprss-ftp-debug.php:133
+msgid "Clear log"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:138
+#, php-format
+msgid "Couldn't fetch any feed items from %s"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:197
+msgid "The item has no title!"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:217
+msgid "The item has no content!"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:237
+msgid "The item has no date!"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:240
+msgid "In"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:240
+msgid "ago"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:298
+msgid ""
+"No images were found in the feed. Try enabling <strong>'Force Full "
+"Content.'</strong>"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:298
+#, php-format
+msgid "Found highest-resolution image in the item's %s"
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:317
+msgid "Facebook feed sources should generally leave this unchecked."
+msgstr ""
+
+#: ../includes/wprss-ftp-feed-assistant.php:319
+msgid "YouTube feed sources should generally leave this unchecked."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:18
+msgid ""
+"Choose the site where the posts from the source will be imported.\n"
+"\n"
+"This option can only be changed if you are on the main site of your "
+"multisite network."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:19
+msgid ""
+"Choose the post type you want to import the imported feeds to.\n"
+"\n"
+"Changing this option will affect your taxonomy options further down this "
+"page."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:20
+msgid "Choose the status for imported posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:21
+msgid "Choose the post format to assign to imported feeds."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:22
+msgid "Choose the date to use for imported posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:23
+msgid "Check this box to enable comments for imported posts from this source."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:24
+msgid ""
+"Check this box to forcefully attempt to retrieve the full feed content, if "
+"the feed only provides excerpts. This uses the free full text service by "
+"default, which is limited to 5 feed items per source. To pull in the full "
+"content for all posts you must use the premium Full Text RSS Feeds add-on "
+"alongside Feed to Post."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:25
+msgid ""
+"Check this box to allow embedded content in posts (<code>iframe</code>, "
+"<code>embed</code> and <code>object</code> content)."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:26
+msgid ""
+"Check this box to add a link back to the original post, at the beginning of "
+"the post's content."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:27
+msgid ""
+"Check this box to show the source link only when viewing a post by itself "
+"and not when viewing a series of posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:28
+msgid ""
+"Enter the text to use when linking back to the original post source.\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t\tWrap a phrase in asterisk symbols (<strong>*link to "
+"post*</strong>) to turn it into the link to the <strong>original post</"
+"strong>,\n"
+"\t\t\t\t\t\t\t\t\t\tor in double asterisk symbols (<strong>**link to "
+"source**</strong>) to turn it into a link to the post <strong>feed source</"
+"strong>"
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:32
+msgid ""
+"Check this box to add a rel=\"canonical\" link to the head of imported posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:33
+msgid ""
+"Check this box if having trouble saving feed item images locally. This "
+"allows requests to local IPs."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:34
+msgid ""
+"Choose the service to use for converting your RSS feeds into full text RSS "
+"feeds.\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t\tFree services are available for use instantly, with no "
+"registration required, but are known to occasionally be unreliable and "
+"slow.\n"
+"\n"
+"                                        Paid and premium services provide "
+"maximum reliability and performance, and will require you to obtain an "
+"<strong>API key</strong>.\n"
+"\n"
+"                                        Our premium service, usable via the "
+"<strong>Full Text RSS Feeds</strong> add-on, uses your <em>activated</em> "
+"license key for the add-on as an API key."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:43
+msgid ""
+"Check this box to import the images from the post into your local media "
+"library."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:44
+msgid ""
+"Unchecking this has no effect on featured images. See \"Enable featured "
+"images\" for more information."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:45
+msgid ""
+"Set the minimum size that you would like for imported images (in pixels).\n"
+"\n"
+"This option applies to images saved in the media library, as well as the "
+"featured image."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:46
+msgid "Check this box to enable featured images for imported posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:47
+msgid ""
+"Note: It is mandatory for the featured images to be downloaded to your local "
+"website, even if \"Import images\" is unchecked. An external URL cannot be "
+"set as the featured image for a post. This is a WordPress convention which "
+"cannot be overridden."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:48
+msgid "Choose which image in the post to use as a featured image."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:49
+msgid ""
+"Check this box to use the feed channel's image, if available, before "
+"resorting to the source fallback image"
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:50
+msgid ""
+"Check this box to remove the featured image from imported posts' content.\n"
+"\n"
+"                                        This is particularly useful if you "
+"are retrieving the featured image from the post's content and your theme is "
+"showing the image twice. This option will remove the image in the post "
+"content, and leave the featured image."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:53
+msgid ""
+"Check this box to only import posts that have a featured image imported.\n"
+"\n"
+"Posts that fail to retrieve a featured image are not imported."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:57
+msgid ""
+"Choose the author to assign to the post.\n"
+"\n"
+"You can choose to use an existing user on your site as the author, or use "
+"the original author from the feed item."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:58
+msgid "This user is used if the plugin fails to determine an author or user."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:61
+msgid ""
+"Check this box to show the prepended text only when viewing a post by itself "
+"and not when viewing a series of posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:62
+msgid ""
+"Check this box to show the appended text only when viewing a post by itself "
+"and not when viewing a series of posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:65
+msgid ""
+"Click the <strong>Add New</strong> button to add a taxonomy section. In each "
+"section:\n"
+"\n"
+"                                        <ol>\n"
+"                                            <li>Choose the <strong>Taxonomy</"
+"strong> to use - such as <em>Category</em> or <em>Tags</em></li>\n"
+"                                            <li>Then choose the "
+"<strong>terms</strong> to assign to imported posts</li>\n"
+"                                            <li>If you want to import the "
+"terms from feed items, tick the <q>auto create</q> checkbox.</li>\n"
+"                                            <li>Optionally, set the "
+"filtering options to apply to the selected terms.</li>\n"
+"                                        </ol>"
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:75
+msgid ""
+"For each extraction rule, you'll need to enter the:\n"
+"\n"
+"                                        <ul id=\"wprss-ftp-extraction-rules-"
+"desc\">\n"
+"                                            <li>\n"
+"                                                <strong>CSS Selector:</"
+"strong>\n"
+"                                                Enter the CSS selector(s) "
+"for the HTML element(s) you want to manipulate\n"
+"                                            </li>\n"
+"                                            <li>\n"
+"                                                <strong>Manipulation:</"
+"strong>\n"
+"                                                Choose what you want to do "
+"with the matching element(s)\n"
+"                                            </li>\n"
+"                                        </ul>\n"
+"\n"
+"                                        Each extraction rule is a CSS "
+"Selector, coupled with a removal type.\n"
+"                                        The plugin will scan the post "
+"content when it is imported, and for each extraction rule,\n"
+"                                        any matching elements are removed "
+"according to the removal type chosen."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:93
+msgid ""
+"For each mapping, you will need to enter the:\n"
+"\n"
+"                                        <ul id=\"wprss-ftp-custom-fields-desc"
+"\">\n"
+"                                            <li>\n"
+"                                                <strong>Namespace:</strong>\n"
+"                                                Choose the namespace of the "
+"tag that you wish to read.\n"
+"                                            </li>\n"
+"\n"
+"                                            <li>\n"
+"                                                <strong>RSS Tag:</strong>\n"
+"                                                Enter the name of the tag in "
+"the RSS feed, excluding the namespace prefix.<br/>\n"
+"                                                <em>For instance,</em> for "
+"iTunes artist tag, use just <code>artist</code>, <strong>not</strong> "
+"<code>im:artist</code>.\n"
+"                                            </li>\n"
+"\n"
+"                                            <li>\n"
+"                                                <strong>Meta field name:</"
+"strong>\n"
+"                                                Enter the name of the post "
+"meta field, where you wish to store the data.\n"
+"                                            </li>\n"
+"                                        </ul>"
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:112 ../includes/wprss-ftp-meta.php:1227
+msgid ""
+"Use this button to detect the namespaces being used by this feed source."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:113
+msgid ""
+"These namespaces are used for mapping RSS data into imported posts' meta "
+"data, in the <strong>Custom Fields</strong> section when creating/editing "
+"feed sources."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:116
+msgid ""
+"Tick this box to re-enable the <strong>Feed Items</strong> and turn off post "
+"conversion for some feed sources."
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:119
+msgid "The service or algorithm to use for shortening"
+msgstr ""
+
+#: ../includes/wprss-ftp-help.php:120
+msgid "This key will be used for requests to the Google URL Shortener API"
+msgstr ""
+
+#: ../includes/wprss-ftp-images.php:47
+msgid "WPRSS_FTP_Images class is a singleton class and cannot be redeclared."
+msgstr ""
+
+#: ../includes/wprss-ftp-legacy.php:44
+msgid "Feed to Post Compatibility"
+msgstr ""
+
+#: ../includes/wprss-ftp-legacy.php:52
+msgid "Legacy Feed Items"
+msgstr ""
+
+#: ../includes/wprss-ftp-legacy.php:66
+msgid "Change how Feed to Post works with WP RSS Aggregator"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:40
+msgid "WPRSS_FTP_Meta class is a singleton class and cannot be redeclared."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:105
+msgid "Feed to Post - General"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:113
+msgid "Feed to Post - Images"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:121
+msgid "Feed to Post - Taxonomies"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:129
+msgid "Feed to Post - Author"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:137
+msgid "Feed to Post - Prepend To Content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:145
+msgid "Feed to Post - Append To Content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:153
+msgid "Feed to Post - Extraction Rules"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:159
+#, php-format
+msgid ""
+"<p>Extraction rules allow you to remove unwanted material from imported "
+"posts’ content. This is particularly useful to remove elements such as "
+"social network sharing buttons and advertisements. <a href=\"%1$s\" target="
+"\"_blank\">Learn how to find the required CSS Selector here.</a></p>"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:166
+msgid "Feed to Post - Custom Field Mapping"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:174
+msgid "Feed to Post - Word Trimming"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:183
+msgid "Feed to Post - Multi Language"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:196
+msgid "Default Thumbnail"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:218
+msgid "Post to site"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:229 ../includes/wprss-ftp-settings.php:347
+msgid "Post Status"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:235 ../includes/wprss-ftp-settings.php:356
+msgid "Post Format"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:241 ../includes/wprss-ftp-settings.php:365
+msgid "Post Date"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:247 ../includes/wprss-ftp-settings.php:374
+msgid "Enable Comments"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:252
+msgid "Force Full Content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:257
+msgid "Allow Embedded Content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:262 ../includes/wprss-ftp-settings.php:473
+msgid "Canonical Link"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:271
+msgid "Post Taxonomy"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:272
+msgid "Choose the taxonomy to apply to imported feeds."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:274 ../includes/wprss-ftp-meta.php:290
+msgid "Please wait ..."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:278
+msgid "Taxonomy Compare Method"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:279
+msgid "Choose how the keywords compare with the terms"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:281
+msgid "Choose a method"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:287
+msgid "Post Terms"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:288
+msgid "Choose the taxonomy terms to apply to imported feeds."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:294
+msgid "Post Tags"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:295
+msgid ""
+"Enter the post tags, comma separated, to assign to posts imported from this "
+"source."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:297 ../includes/wprss-ftp-settings.php:1058
+msgid "Post tags, comma separated"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:302
+msgid "Auto create terms"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:303
+msgid ""
+"Check this box to automatically create terms for the taxonomy selected above."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:313 ../includes/wprss-ftp-meta.php:580
+msgid "Post Author"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:314
+msgid "Choose the author to use for imported feeds"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:320
+msgid "If feed author does not exist"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:321
+msgid ""
+"If the above option is set to get the author from the feed, choose what to "
+"do when the feed author is not a user on the site."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:327 ../includes/wprss-ftp-meta.php:334
+msgid "Fallback Author"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:335
+msgid ""
+"Choose the user to use if the above option is set to \"Use Existing\", or if "
+"the feed does not specify an author."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:346
+msgid "Import images"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:351
+msgid "Image minimum width"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:352
+msgid "Choose the minimum width for image imports."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:358
+msgid "Image minimum height"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:359
+msgid "Choose the minimum height for image imports."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:366
+msgid "Enable featured images"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:372
+msgid "Featured Image to use"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:375
+msgid "First image in post content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:376
+msgid "Last image in post content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:377
+msgid "Feed &lt;media:thumbnail&gt; tag"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:378
+msgid "Use the fallback featured image"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:379
+msgid "Enclosure tag"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:384
+msgid "Remove featured image from post content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:390
+msgid "Posts must have a featured image"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:400
+msgid "Prepend text to post content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:401 ../includes/wprss-ftp-meta.php:415
+msgid ""
+"Use the following placeholders to replace with the post's details: <br /"
+">(Hover over them for a description of what they represent)"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:407
+msgid "Prepend only to singular posts "
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:414
+msgid "Append text to post content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:421
+msgid "Append only to singular posts"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:431
+msgid "Extraction Rules"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:436
+msgid "Remove the matching element(s)"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:437
+msgid "Remove element(s), but keep contents"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:438
+msgid "Keep only the matched element(s)"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:458
+msgid "Custom Field Mapping"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:469 ../includes/wprss-ftp-meta.php:473
+msgid "Enabled"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:472
+msgid "Use General Settings"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:474
+msgid "Disabled"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:478 ../includes/wprss-ftp-settings.php:454
+msgid "Word Limit"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:479
+msgid "Default"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:483
+msgid "Trimming type"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:488
+msgid "Use General Setting"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:489 ../includes/wprss-ftp-settings.php:864
+msgid "Trim the content"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:490 ../includes/wprss-ftp-settings.php:865
+msgid "Generate an excerpt"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:521
+msgid "Post Language"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:522
+msgid "Choose the language to assign to posts imported from this source"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:801 ../includes/wprss-ftp-meta.php:1072
+#: ../includes/wprss-ftp-meta.php:1188
+msgid "Add New"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:828
+msgid "Image minimum dimensions"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:832
+msgid "Image Width"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:833
+msgid "Width"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:835
+msgid "Height"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:836
+msgid "Image Height"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:915
+msgid "Add text at the beginning of posts' content."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:956
+msgid "Add text at the end of posts' content."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1011
+msgid "CSS Selector"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1102
+msgid ""
+"This allows you to retrieve data from any RSS tag in feed items, then store "
+"it in a custom meta field in imported posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1112
+#, php-format
+msgid ""
+"To use this option, you first need to add the namespaces that you want to "
+"use in the <a %s>Feed to Post settings page</a>."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1130 ../includes/wprss-ftp-meta.php:1493
+msgid "Choose a namespace"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1142
+msgid "RSS Tag"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1144
+msgid "Meta field name"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1148
+msgid "Remove"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1196
+#, php-format
+msgid ""
+"You can add and change your namespaces from the <a %s>Feed to Post settings "
+"page</a>."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1213
+msgid "Namespace Detector"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1219
+msgid "Detect namespaces in Feed Source"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1309
+msgid "Fallback Featured Image"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1556
+msgid ""
+"The custom meta field 'xyz' of the imported post. Change 'xyz' to the name "
+"of any meta field you want."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1557
+msgid ""
+"The custom meta field 'xyz' of this feed source. Change 'xyz' to the name of "
+"any meta field you want."
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1617
+msgid "Not Registered"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1630
+msgid "All"
+msgstr ""
+
+#: ../includes/wprss-ftp-meta.php:1631
+msgid "Any"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:53
+msgid "WPRSS_FTP_Settings class is a singleton class and cannot be redeclared."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:261
+msgid "Click here to view documentation for this section in a new tab"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:294
+msgid "Taxonomies"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:302
+msgid "Authors"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:310
+msgid "Images"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:318
+msgid "Full Text RSS"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:326
+msgid "Custom Namespaces"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:383
+msgid "Link back to source?"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:392
+msgid "Only add source link when viewing singular posts "
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:401
+msgid "Source Link Text"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:463
+msgid "Trimming Type"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:486
+msgid "Taxonomy"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:509
+msgid "Author for imported items"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:533
+msgid "Save Images Locally"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:542
+msgid "Image minimum size"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:551
+msgid "Use a featured image"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:561
+msgid "Featured image to use"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:571
+msgid "Fallback to Feed Image"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:594
+msgid "Full Text RSS service"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:605
+msgid "Namespaces"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:615
+msgid "Feed to Post License"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:622
+msgid "License Key"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:630
+#: ../includes/wprss-ftp-settings.php:1302
+msgid "Activate License"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:654
+msgid "General settings about imported posts"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:662
+msgid "Settings about post authors and users."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:671
+msgid "Settings about post taxonomies and tags."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:680
+msgid "Configure how to handle images found in feeds."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:689
+msgid "Configure your full text RSS options."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:698
+msgid "Manage your RSS feed Namespaces."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:838
+msgid "Source link text"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:905
+msgid ""
+"Enter the maximum number of words to import for posts. Leave blank to use no "
+"limit."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:929
+msgid "Learn more about canonical pages."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1047
+msgid "Loading taxonomy terms ..."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1059
+msgid "Enter the post tags, comma separated, to attach to all imported posts."
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1234 ../wp-rss-feed-to-post.php:746
+msgid "Name"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1235 ../wp-rss-feed-to-post.php:747
+msgid "URL"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1244
+msgid "Add Another Namespace"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1281
+msgid "Enter your license key"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1297
+msgid "active"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1299
+msgid "Deactivate License"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1497
+msgid "If the author in the feed is not an existing user"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1503
+#: ../includes/wprss-ftp-settings.php:1524
+msgid "Use the fallback user"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1504
+msgid "Create a user for the author"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1518
+msgid "If the author is missing from the feed"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1525
+msgid "Do not import the post"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1543
+msgid "Fallback User"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1553
+msgid "Fallback user:"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1697
+msgid "Standard"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1698
+msgid "Aside"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1699
+msgid "Chat"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1700
+msgid "Link"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1701
+msgid "Quote"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1702
+msgid "Status"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1703
+msgid "Audio"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1704
+msgid "Image"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1705
+msgid "Video"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1706
+msgid "Gallery"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1803
+msgid "Original post date"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1804
+msgid "Feed import date"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1818
+msgid "Free Services"
+msgstr ""
+
+#: ../includes/wprss-ftp-settings.php:1849
+msgid "No Namespace"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:13
+#, php-format
+msgid ""
+"<span class='ftp-tax-no-terms'>The <strong>%s</strong> taxonomy has no "
+"available terms.</span>"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:202
+#, php-format
+msgid ""
+"<p id='ftp-no-taxonomies'>The Post Type <strong>%s</strong>  has no "
+"taxonomies available!</p>"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:228
+msgid "Refresh the terms, if they've changed"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:230
+msgid "Refresh terms"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:233
+msgid "Remove this entry"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:235
+msgid "Remove row"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:252
+#, php-format
+msgid ""
+"Auto create terms from the feed items for this taxonomy. <a href=\"%1$s\" "
+"target=\"_blank\">Learn more here.</a>"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:258
+msgid "Feed Title"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:259
+msgid "Feed Content"
+msgstr ""
+
+#: ../includes/wprss-ftp-taxonomies.php:295
+msgid "Enter comma separated words or phrases"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:62
+msgid "URL Shortening"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:70
+#: ../includes/wprss-ftp-url-shortener.php:144
+msgid "Method"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:78
+msgid "Google API Key"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:90
+msgid "Configure URL Shortening"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:127
+#, php-format
+msgid ""
+"Learn more about the <a %s target=\"_blank\">Google URL Shortener API</a>"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:163
+msgid "None"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:176
+msgid "Feed to Post - URL Shortening"
+msgstr ""
+
+#: ../includes/wprss-ftp-url-shortener.php:214
+msgid "Google URL Shortener API"
+msgstr ""
+
+#: ../includes/wprss-ftp-utils.php:201
+msgid ""
+"We could not retrieve the list of sites, because the network has no sites or "
+"is too large!"
+msgstr ""
+
+#: ../includes/wprss-ftp-utils.php:489
+msgid "No taxonomies for the selected post type were found!"
+msgstr ""
+
+#: ../includes/wprss-ftp-utils.php:530 ../includes/wprss-ftp-utils.php:545
+msgid "No terms were found for this taxonomy."
+msgstr ""
+
+#: ../includes/wprss-ftp-utils.php:634
+#, php-format
+msgid ""
+"<strong>WP RSS Aggregator (Feed to Post):</strong> The <em>Source Link Text</"
+"em> option has been replaced with the <em>Append and Prepend to Content</em> "
+"options.\n"
+"\t\t\t\t\t\t\tYour saved settings for this old option has been automatically "
+"converted and added to the new option for all feed sources.<br/> Read more "
+"about it <a %s>here</a>."
+msgstr ""
+
+#: ../includes/wprss-ftp-utils.php:739
+msgid "Invalid feed source given."
+msgstr ""
+
+#: ../includes/wprss-ftp-utils.php:746
+msgid ""
+"Failed to read feed source XML. Check that your URL is a valid feed source "
+"URL"
+msgstr ""
+
+#: ../includes/wprss-ftp-utils.php:761
+msgid ""
+"Failed to parse the RSS feed XML. The feed may contain errors or is not a "
+"valid feed source."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:434
+#, php-format
+msgid ""
+"The Feed to Post add-on disables the shortcode functionality by default. <a "
+"href=\"%1$s\" target=\"_blank\">Read why here</a> and <a href=\"%2$s\" "
+"target=\"_blank\">how to re-enable it here.</a>"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:633
+#, php-format
+msgid ""
+"<a href=\"%1$s\" target=\"_blank\">Read why here</a> and <a href=\"%2$s\" "
+"target=\"_blank\">how to re-enable it here.</a>"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:699
+msgid "Loading taxonomies..."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:700
+msgid ""
+"You are importing into WP RSS Aggregator's <strong>Feed Items</strong>.<br/"
+">The Feed to Post settings for this feed source will <strong>not</strong> "
+"affect the items imported."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:709 ../wp-rss-feed-to-post.php:726
+msgid "Please Wait..."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:710
+msgid "Choose terms"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:711
+msgid "Choose a taxonomy"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:712
+msgid "Choose a field to filter on"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:713
+msgid "No terms matched "
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:714
+msgid "No taxonomy matched "
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:715
+msgid "No fields matched "
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:727
+msgid "Namespace"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:728
+msgid "with URL"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:729
+msgid "Please specify a feed source URL first."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1064
+msgid "Fetch Posts"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1074
+msgid "View Posts"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1084
+msgid "Delete Posts"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1094
+msgid "Delete posts imported by this feed source"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1153
+msgid ""
+"<strong>Note:</strong> Your <em>license codes</em> and your Category "
+"<em>Post Terms</em> options for Feed to Post add-on are not exported."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1234
+#, php-format
+msgid ""
+"The Feed to Post add-on requires WordPress version <strong>%s</strong> or "
+"higher."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1245
+#, php-format
+msgid ""
+"<p>The %3$s - %1$s plugin has been <strong>deactivated</strong> due to "
+"unsatisfied critical dependencies.</br>Please install and activate %3$s, at "
+"version <strong>%2$s</strong> or higher, for the %1$s add-on to work.</"
+"br>You can read more about %3$s dependencies <a target=\"_blank\" href="
+"\"http://docs.wprssaggregator.com/broken-plugin-dependencies/\">here</a>.</p>"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1258
+msgid ""
+"The following WP RSS Aggregator add-ons have been disabled by the Feed-to-"
+"Post add-on"
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1269
+msgid ""
+"The posts for the selected feed source are being deleted in the background."
+msgstr ""
+
+#: ../wp-rss-feed-to-post.php:1512
+#, php-format
+msgid "%1$s. %2$s has been deactivated."
+msgstr ""

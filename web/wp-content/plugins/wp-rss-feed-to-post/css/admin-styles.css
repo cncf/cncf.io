@@ -1,0 +1,553 @@
+.wpra-metabox-row {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+select#ftp-fallback-author-method {
+	margin-right: 10px;
+}
+
+#wprss-ftp-genenaral-metabox .inside h3 {
+	background: transparent;
+	border: 0 solid transparent;
+	font-weight: bold;
+	padding: 6px 0;
+	cursor: auto;
+
+	user-select: initial;
+	-webkit-user-select: initial;
+	-ms-user-select: initial;
+	-moz-user-select: initial;
+	-o-user-select: initial;
+}
+
+input[type="checkbox"].meta-checkbox{
+	margin-right: 6px;
+}
+
+input#ftp-source-link-text, input#wprss_ftp_source_link_text {
+	width: 500px;
+	vertical-align: middle;
+}
+@media screen and (max-width: 782px) {
+	input#ftp-source-link-text, input#wprss_ftp_source_link_text {
+		width: 100%;
+	}
+}
+
+/* Side metaboxes table fix */
+#side-sortables > .postbox .wprss-form-table tr th {
+	line-height: 25px;
+}
+
+
+/* Word limit number roller in General Settings */
+#ftp-word-limit {
+	width: 85px;
+}
+
+
+/*
+ * Styles for disabled settings in core
+ */
+.wprss-inactive {
+	background: #eee;
+	cursor: not-allowed;
+}
+.wprss-inactive th,
+.wprss-inactive td label{
+	color: #999;
+	cursor: not-allowed;
+}
+
+
+.dimension-divider {
+	margin-right: 8px;
+}
+
+#post_tags,
+#wprss_ftp_post_tags {
+	width: 450px;
+}
+
+
+/* post_append editor */
+#post-append-container {
+	position: relative;
+	display: block;
+}
+#post-append-container #post-append-placeholder {
+	display: block;
+	margin-top: 10px;
+	vertical-align: top;
+}
+#post-append-container #post-append-editor-container {
+	display: block;
+	padding-bottom: 10px;
+	vertical-align: top;
+}
+
+#post-append-container #post-append-placeholder table td {
+	padding: 5px;
+}
+
+#wp-wprsspostappend-editor-container {
+	background: white;
+}
+
+#ftp-min-width,
+#ftp-min-height,
+#wprss_ftp_image_min_width,
+#wprss_ftp_image_min_height {
+	width: 80px;
+}
+
+
+tr.wprss-tr-hr:not(:first-child) {
+	border-top: 1px solid #dadada !important;
+}
+
+.wprss-ftp-inactive-meta > label {
+	color: #999;
+}
+
+
+/* ERROR LOG TEXT AREA */
+#wprss-ftp-error-log-textarea {
+    width: 800px;
+    height: 400px;
+    font-family: Menlo, Monaco, monospace;
+    background: none;
+    white-space: pre;
+    overflow: auto;
+    display: block;
+    background: rgb( 255, 245, 245 );
+}
+
+span#wprss-ftp-authors-options > * {
+	vertical-align: middle;
+}
+
+
+table#wprss-ftp-placeholders-table td {
+	padding: 7px 10px !important;
+}
+
+
+/* POST TYPE COLUMN */
+body.post-type-wprss_feed.edit-php table.wp-list-table.posts thead th#post-type {
+    width: 110px !important;
+}
+
+
+/* EXTRACTION RULES SETTINGS */
+div.wprss-ftp-extraction-rule-section {
+	display: block !important;
+	margin-bottom: 15px !important;
+}
+
+div.wprss-ftp-extraction-rule-section > input[type="text"] {
+	margin-right: 8px !important;
+}
+
+div.wprss-ftp-extraction-rule-section > select.wprss-ftp-extraction-rules-manipulation-type {
+	margin-right: 8px !important;
+}
+
+button.wprss-ftp-add-extraction-rule {
+	display: inline-block !important;
+	margin-bottom: 10px !important;
+	vertical-align: baseline !important;
+}
+button#wprss-ftp-add-namespace {
+	vertical-align: middle;
+}
+
+
+/* CUSTOM NAMESPACE STYLES */
+div.wprss-ftp-namespace-section {
+	position: relative;
+	display: block !important;
+	margin-bottom: 15px !important;
+}
+div.wprss-ftp-namespace-section > input {
+	width: 250px !important;
+}
+
+/* screen width <= 1010px */
+@media only screen and (max-width: 1010px) {
+	div.wprss-ftp-namespace-section > input {
+		display: block !important;
+		width: 100% !important;
+		margin-bottom: 20px;
+	}
+	div.wprss-ftp-namespace-section > input:first-child {
+		width: calc( 100% - 40px ) !important;
+		margin-bottom: 5px;
+	}
+	div.wprss-ftp-namespace-section > button {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+/* screen width >= 782px (WordPress repsonsive width) */
+@media only screen and (max-width: 782px) {
+	div.wprss-ftp-namespace-section > button {
+		padding: 9px 10px !important;
+		width: 40px !important;
+		height: auto !important;
+		line-height: 1.5 !important;
+	}
+	div.wprss-ftp-namespace-section > input:first-child {
+		width: calc( 100% - 48px ) !important;
+	}
+}
+
+
+
+
+
+/* CUSTOM FIELDS STYLES */
+div.wprss-ftp-custom-fields-section {
+	position: relative;
+}
+div.wprss-ftp-custom-fields-section > * {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px 10px 0;
+}
+div.wprss-ftp-custom-fields-section > *:not(button) {
+	width: 180px;
+}
+div.wprss-ftp-custom-fields-section > button {
+	width: auto;
+}
+
+/* screen width < 1375px */
+@media only screen and (max-width: 1375px) {
+	div.wprss-ftp-custom-fields-section > *:not(button) {
+		width: 150px;
+	}
+}
+
+
+/* screen width < 1290px */
+@media only screen and (max-width: 1290px) {
+	div.wprss-ftp-custom-fields-section {
+		margin-bottom: 20px !important;
+	}
+	div.wprss-ftp-custom-fields-section > input:nth-child(2) {
+		margin: 0 10px 0 0 !important;
+		width: calc( 50% - 10px );
+		display: inline-block;
+	}
+	div.wprss-ftp-custom-fields-section > input:nth-child(3) {
+		margin: 0 !important;
+		width: 50%;
+		display: inline-block;
+	}
+	div.wprss-ftp-custom-fields-section > select {
+		display: block !important;
+		width: calc( 100% - 40px );
+	}
+	div.wprss-ftp-custom-fields-section > button {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+/* screen width < 782px */
+@media only screen and (max-width: 782px) {
+	.wprss-ftp-remove-custom-mapping {
+		padding: 3px 13px !important;
+		font-size: 20px !important;
+		height: 36px !important;
+	}
+	div.wprss-ftp-custom-fields-section > select {
+		display: block !important;
+		width: calc( 100% - 52px );
+	}
+}
+
+button#wprss-ftp-add-custom-mapping {
+	display: inline-block;
+	margin-bottom: 10px;
+	vertical-align: baseline !important;
+}
+
+
+/* CUSTOM FIELDS META DESCRIPTION */
+#wprss-ftp-extraction-rules-desc,
+#wprss-ftp-custom-fields-desc {
+	list-style: initial !important;
+	margin-left: 18px;
+}
+#wprss-ftp-extraction-rules-desc > li,
+#wprss-ftp-custom-fields-desc > li {
+	margin-bottom: 10px;
+}
+
+
+/* NAMESPACE DETECTOR */
+#wprss-ftp-namespace-detector-refresh {
+	margin-top: 10px;
+	vertical-align: baseline;
+}
+#wprss-ftp-namespace-detector-results {
+	padding: 10px 0;
+}
+#wprss-ftp-namespace-detector-results .fa-check {
+	color: green;
+}
+
+#wprss-ftp-url-shortening-metabox table tr > th {
+	display: none;
+}
+
+
+/* Authors radio styles */
+.ftp-author-using-in-feed {
+	display: block;
+	line-height: 25px;
+}
+.ftp-author-using-in-feed:not(:last-child) {
+	margin-bottom: 15px;
+}
+.ftp-author-using-in-feed > input[type="radio"] {
+	vertical-align: text-bottom;
+}
+.ftp-author-using-in-feed > input[type="radio"] + label {
+	margin-right: 10px;
+}
+
+label[for="ftp-no-author-skip-0"], label[for="ftp-no-author-skip-1"],
+label[for="ftp-author-fallback-method-0"], label[for="ftp-author-fallback-method-1"]  {
+	vertical-align: text-bottom;
+}
+span.wprss-ftp-authors-hide-if-using-existing {
+	display: block;
+	padding: 10px 0;
+	margin-top: 10px;
+	border-top: 1px solid #ddd;
+}
+@media screen and (min-width: 782px) {
+	span.wprss-ftp-authors-hide-if-using-existing {
+		width: 430px;
+	}
+}
+
+tr.wprss-ftp-authors-hide-if-using-existing
+span.wprss-ftp-authors-hide-if-using-existing {
+	padding: 0;
+	margin: 0;
+	border: 0 solid transparent;
+}
+
+/* Taxonomy Styles */
+.ftp-terms + div.chosen-container {
+	width: 100% !important;
+}
+.ftp-taxonomy-section > td {
+	padding: 20px 10px !important;
+}
+.ftp-taxonomy-section > th {
+	width: 160px;
+	max-width: 160px;
+	padding: 22px 5px;
+}
+.ftp-taxonomy + div.chosen-container {
+	display: block;
+	width: 100% !important;
+}
+.chosen-container-multi {
+	line-height: 29px;
+}
+.ftp-taxonomy-section {
+	display: table-row;
+}
+.ftp-tax-section-refresh,
+.ftp-tax-section-remove {
+	height: 30px !important;
+	line-height: 30px !important;
+}
+.ftp-tax-section-refresh {
+	margin-right: 5px;
+}
+
+.ftp-tax-section-refresh span,
+.ftp-tax-section-remove span {
+	display: none;
+}
+
+.ftp-no-taxonomies {
+	margin: 0;
+}
+
+/* Settings page Add New Taxonomy section */
+	#ftp-add-taxonomy {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	#wprss-ftp-taxonomies-add-section th {
+		width: auto !important;
+		max-width: none !important;
+	}
+
+
+.ftp-tax-terms-wrapper {
+    display: flex;
+}
+
+
+.ftp-tax-row-buttons {
+	display: inline-block;
+	float: right;
+        margin-left: 10px;
+        flex-shrink: 0;
+}
+
+@media screen and (max-width: 1220px) {
+    .ftp-tax-row-buttons {
+        margin-left: 0;
+    }
+}
+
+.ftp-taxonomy-conditions-wrapper {
+    margin-top: 24px;
+}
+
+.ftp-terms-wrapper {
+    width: 100%;
+}
+
+a.ftp-edit-tax {
+	font-size: 90%;
+	margin-top: 6px;
+	text-decoration: none;
+	line-height: 28px;
+}
+
+div.chosen-container > ul > li > input {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
+
+tr span.ftp-tax-no-terms.disabled {
+	color: #999;
+}
+
+
+@media screen and (max-width: 1220px) {
+	.ftp-taxonomy-section {
+		display: table-row;
+	}
+	.ftp-taxonomy-section > td {
+		position: relative;
+		padding-bottom: 49px !important;
+	}
+	.ftp-tax-row-buttons {
+		position: absolute;
+		padding: 5px;
+		left: 5px;
+		bottom: 5px;
+		height: 30px;
+	}
+	.ftp-tax-section-refresh span,
+	.ftp-tax-section-remove span {
+		display: inline;
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	.ftp-taxonomy-section {
+		display: block;
+		position: relative;
+	}
+
+	.ftp-taxonomy-section > th,
+	#wprss-ftp-taxonomies-add-section th {
+		padding: 10px;
+		text-align: left;
+	}
+	.ftp-taxonomy-section > td {
+		background: #f3f3f3;
+	}
+	a.ftp-edit-tax {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		margin-top: 0px
+	}
+
+	#wprss-ftp-taxonomies-add-section td {
+		padding: 0 10px;
+	}
+}
+
+#wprss-ftp-author-metabox table.wprss-form-table tr th {
+	padding: 18px 20px;
+}
+
+
+/* WORD TRIMMING */
+#wprss-ftp-word-trimming-metabox .wprss-form-table {
+	margin-top: 15px;
+}
+#wprss-ftp-word-trimming-metabox .wprss-form-table tr > * {
+	display: block;
+	line-height: 0 !important;
+}
+#wprss-ftp-word-trimming-metabox .wprss-form-table tr > td {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+/* Feed Assistant styling */
+@media screen and (max-width: 500px) {
+	.wprss-fa-hint {
+		float: none;
+		display: block;
+	}
+}
+@media screen and (min-width: 501px) {
+	.wprss-fa-hint {
+		float: right;
+	}
+}
+
+.wprss-fa-hint {
+	margin: 10px 0;
+}
+
+/* ok hint */
+.fa-check, .wprss-hint-green {
+	color: green;
+}
+
+/* error hint */
+.fa-times, .wprss-hint-red {
+	color: #b71919;
+}
+
+/* warning hint */
+.fa-warning, .wprss-hint-yellow {
+	color: #d19e5b;
+}
+
+/* To be removed when added to Core */
+.wprss-section-tooltip-handle,
+.wprss-section-tooltip-handle:hover,
+.wprss-section-tooltip-handle:active,
+.wprss-section-tooltip-handle:visited,
+.wprss-section-tooltip-handle:link,
+.wprss-section-tooltip-handle:focus {
+    color: #006799;
+    margin-left: 5px;
+    text-decoration: none;
+    outline: none;
+    cursor: help;
+    font-size: 15px;
+}

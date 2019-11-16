@@ -1,0 +1,183 @@
+.hamburger-icon {
+  @include hamburger($white, $white, 20px, 16px, 2px, 3);
+}
+
+// About Page nav
+.main-header {
+  @include clearfix;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(10,59,97,100);
+  box-shadow: 0 0.5rem 0 0 rgba(0,0,0,0.2);
+  color: #ffffff;
+  padding: 1rem;
+
+  @include breakpoint(medium down) {
+    &.is-at-bottom {
+      top: 0 !important;
+    }
+  }
+
+  @include breakpoint(large) {
+    padding: 0.5rem;
+  }
+
+  @include breakpoint(xxlarge) {
+    padding: 1rem 1.5rem;
+  }
+
+  .admin-bar &.is-stuck {
+    top: 32px !important;
+  }
+
+  a {
+    color: #ffffff !important;
+  }
+
+  .home-link {
+    display: inline-block;
+    padding: 0.5rem;
+
+    img {
+      width: 63vw;
+      height: 4.5vw; // width ÷ 14
+
+      @include breakpoint(medium) {
+        width: rem-calc(260);
+        height: rem-calc(18.571); // width ÷ 14
+      }
+      @include breakpoint(large) {
+        width: rem-calc(260);
+        height: rem-calc(18.571); // width ÷ 14
+      }
+      @include breakpoint(xlarge) {
+        width: rem-calc(300);
+        height: rem-calc(21.428); // width ÷ 14
+      }
+      @include breakpoint(xxlarge) {
+        width: rem-calc(380);
+        height: rem-calc(27.143); // width ÷ 14
+      }
+    }
+  }
+
+  .main-menu {
+
+    @include breakpoint(large) {
+      // display: inline-block;
+      float: right;
+    }
+
+    ul {
+      @include menu-base();
+      @include menu-direction(vertical);
+
+      @include breakpoint(large) {
+        @include menu-direction(horizontal);
+      }
+
+      > li {
+
+        a {
+          line-height: inherit;
+
+          &:hover {
+            background-color: rgba(0,0,0,0.2);
+            box-shadow: 0 1rem 0 0 rgba(0,0,0,0.2), 0 -1rem 0 0 rgba(0,0,0,0.2);
+          }
+
+          @include breakpoint(large) {
+            font-size: rem-calc(12);
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+          }
+          @include breakpoint(xlarge) {
+            font-size: rem-calc(14);
+            padding-right: 1rem;
+            padding-left: 1rem;
+          }
+          @include breakpoint(xxlarge) {
+            font-size: rem-calc(16);
+          }
+
+        }
+
+        @include breakpoint(large) {
+          &.current-menu-item > a,
+          &.current-lfe_about_page-ancestor > a {
+            background-color: rgba(0,0,0,0.2);
+            box-shadow: 0 1rem 0 0 rgba(0,0,0,0.2), 0 -1rem 0 0 rgba(0,0,0,0.2);
+          }
+        }
+
+        @include breakpoint(xxlarge) {
+          &.current-menu-item > a,
+          &.current-lfe_about_page-ancestor > a {
+            box-shadow: 0 1.5rem 0 0 rgba(0,0,0,0.2), 0 -1rem 0 0 rgba(0,0,0,0.2);
+          }
+        }
+
+        &.external-link > a::after {
+          content: url(/wp-content/themes/lfevents/dist/assets/images/external-link-alt-white.svg);
+          display: inline-block;
+          width: 0.875em;
+          margin-left: 0.25em;
+          opacity: 0.6;
+        }
+
+        &.external-link:hover > a::after {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+
+// WP post navigation
+.post-navigation {
+  @include clearfix;
+}
+
+.nav-previous {
+  float:left;
+
+  a::before {
+    content: '\2190';
+    margin-right: 0.25em;
+  }
+}
+
+.nav-next {
+  float:right;
+
+    a::after {
+      content: '\2192';
+      margin-left: 0.25em;
+    }
+}
+
+.nav-previous a,
+.nav-next a {
+  @include button(false, $off-white, $white-smoke, $primary-color, solid);
+}
+
+
+// Homepage call-to-action buttons
+.homepage--call-to-action {
+
+  a {
+    display: inline-block;
+    margin: 0.85em 1em;
+    font-size: rem-calc(12);
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:first-child {
+      @include button();
+      font-size: rem-calc(12);
+      border-radius: rem-calc(8);
+      margin: 0;
+    }
+  }
+}

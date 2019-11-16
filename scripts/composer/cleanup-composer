@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Exit immediately on errors, and echo commands as they are executed.
+set -ex
+
+if [ -d "web/wp/wp-content/mu-plugins/" ]; then
+  rsync -a web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
+fi
+
+if [ -f "web/wp/wp-config.php" ]; then
+  rm web/wp/wp-config.php
+fi
+
+if [ -d "web/wp/wp-content" ]; then
+  rm -rf web/wp/wp-content
+fi

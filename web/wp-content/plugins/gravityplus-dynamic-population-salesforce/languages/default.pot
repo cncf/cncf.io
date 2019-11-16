@@ -1,0 +1,126 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gravity Forms Dynamic Population Pro: "
+"Salesforce\n"
+"POT-Creation-Date: 2019-03-04 20:43-0500\n"
+"PO-Revision-Date: 2017-11-15 01:31-0500\n"
+"Last-Translator: Naomi C. Bush <hello@naomicbush.com>\n"
+"Language-Team: gravity+ <support@gravityplus.pro>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html__;esc_html_e;_x;_ex;"
+"esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../includes\n"
+
+#: ../includes/class-auto-upgrader.php:125
+msgid "Gravity Forms "
+msgstr ""
+
+#: ../includes/class-auto-upgrader.php:139
+#, php-format
+msgid ""
+"%sRegister%s your copy of %s to receive access to automatic updates "
+"and support. Need a license key? %sPurchase one now%s."
+msgstr ""
+
+#: ../includes/class-auto-upgrader.php:279
+#, php-format
+msgid "View version %s Details"
+msgstr ""
+
+#: ../includes/class-auto-upgrader.php:305
+msgid ""
+"An unexpected error occurred. Unable to find version details for "
+"this plugin. Please contact gravity+ Support."
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:254
+msgid "Salesforce"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:420
+msgid "Type"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:430
+#: ../includes/views/field-setting-dynamic_choices.php:10
+msgid "Object"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:450
+#: ../includes/views/field-setting-dynamic_choices.php:26
+msgid "Field"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:471
+msgid "Choice Label"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:483
+msgid "Choice Value"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:504
+msgid "Search Fields"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:507
+msgid ""
+"Select your Salesforce field name, then select the form field that "
+"has the value to be used to search for the Salesforce record"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:518
+msgid "Required Fields"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:521
+msgid ""
+"Select the form field that will be populated with the value for the "
+"Salesforce required field"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:524
+msgid "Object ID"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:538
+msgid "Other Fields"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:541
+msgid ""
+"Select your Salesforce field name, then select the form field that "
+"will be populated with the value for that field"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:585
+#: ../includes/class-dynamic-population-salesforce.php:755
+#: ../includes/class-dynamic-population-salesforce.php:798
+#: ../includes/class-dynamic-population-salesforce.php:1730
+msgid "Select"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:590
+msgid "Picklist values"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:595
+msgid "List of records"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:602
+msgid "A single record"
+msgstr ""
+
+#: ../includes/class-dynamic-population-salesforce.php:626
+msgid "...Select picklist field"
+msgstr ""
+
+#: ../includes/views/field-setting-dynamic_choices.php:15
+msgid "Select object"
+msgstr ""

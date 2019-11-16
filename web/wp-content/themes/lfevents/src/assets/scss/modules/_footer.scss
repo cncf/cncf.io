@@ -1,0 +1,121 @@
+.site-footer {
+  padding: 2rem 1rem 4rem;
+  background-color: $charcoal;
+  color: $light-gray;
+  box-shadow: inset 0 10px 0 0 rgba(0,0,0,0.1);
+  font-size: rem-calc(12);
+
+  @include breakpoint(large) {
+    padding: 4rem 1rem 6rem;
+  }
+
+  a {
+    color: $white-smoke;
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  > * {
+
+    @include breakpoint(large) {
+      max-width: 50rem;
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 3;
+
+    @include breakpoint(large) {
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    li {
+      @include breakpoint(medium) {
+        display: inline-block;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.event-footer {
+  background-color: rgba(10,59,97,100);
+  color: #ffffff;
+  text-align: center;
+
+  a, button {
+    color: inherit !important;
+    cursor: pointer;
+  }
+
+  .dropdown-pane {
+    width: auto;
+    border: 0px;
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+  }
+
+  .event-social-links-header {
+    box-shadow: inset 0 0 0 calc(100vw + 100vh) rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+    margin: 0;
+    padding: 1rem;
+  }
+
+
+  .event-social-links {
+    padding: 2rem 1rem 0.5rem;
+    list-style: none;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 0.75rem 0.75rem;
+      opacity: 0.7;
+
+      @include breakpoint(medium) {
+        margin: 0 1rem 1rem;
+      }
+
+      @include breakpoint(large) {
+        margin: 0 1.5rem 1.5rem;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      svg {
+        display: block;
+        fill: currentColor;
+        width: rem-calc(30);
+        height: rem-calc(30);
+
+        @include breakpoint(medium) {
+          width: rem-calc(40);
+          height: rem-calc(40);
+        }
+
+        @include breakpoint(xlarge) {
+          width: rem-calc(50);
+          height: rem-calc(50);
+        }
+      }
+    }
+  }
+}

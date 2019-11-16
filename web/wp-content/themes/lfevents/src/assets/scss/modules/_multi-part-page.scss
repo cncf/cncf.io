@@ -1,0 +1,94 @@
+#multi-part-page {
+
+  @include breakpoint(large) {
+    @include xy-grid;
+  }
+}
+
+.multi-part-page--menu {
+
+  @include breakpoint(medium down) {
+    border-bottom: $hr-border;
+    margin-bottom: $global-margin;
+  }
+
+  @include breakpoint(large) {
+    @include xy-cell(3);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-bottom: $global-margin;
+
+    @include breakpoint(large) {
+      max-height: calc(100vh - 7em);
+      overflow: auto;
+
+      background:
+      /* Shadow covers */
+      linear-gradient(white 30%, rgba(255,255,255,0)),
+      linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+
+      /* Shadows */
+      radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+      radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+
+      background-repeat: no-repeat;
+      background-color: white;
+      background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+
+      /* Opera doesn't support this in the shorthand */
+      background-attachment: local, local, scroll, scroll;
+
+    }
+
+    li {
+      margin-top: rem-calc(20);
+      line-height: 1.3;
+
+      @include breakpoint(large) {
+        margin-top: rem-calc(2);
+      }
+    }
+
+    a {
+      font-weight: bold;
+
+      @include breakpoint(large) {
+        display: block;
+        padding: rem-calc(10) rem-calc(12);
+      }
+
+      &.is-active {
+        background-color: rgba(0,0,0,0.1);
+        background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+        border-radius: rem-calc(4);
+        color: $charcoal;
+      }
+    }
+  }
+}
+
+.multi-part-page--content {
+
+  @include breakpoint(large) {
+    @include xy-cell(9);
+  }
+
+  .wp-block-cgb-block-tab-container-block {
+    @include clearfix;
+    padding-bottom: $global-margin;
+    position: relative;
+  }
+}
+
+.magellan-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include breakpoint(large) {
+    top: -4rem;
+  }
+}
