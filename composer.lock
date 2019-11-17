@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f99f9d29a83f912c4d50b7601a229204",
+    "content-hash": "36612963f3f1ac694eca8c1653464563",
     "packages": [
         {
             "name": "composer/installers",
@@ -532,24 +532,6 @@
             "homepage": "https://wordpress.org/plugins/china-video-block/"
         },
         {
-            "name": "wpackagist-plugin/clone-page-tree",
-            "version": "0.1.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/clone-page-tree/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/clone-page-tree.zip?timestamp=1559703217"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/clone-page-tree/"
-        },
-        {
             "name": "wpackagist-plugin/flying-pages",
             "version": "2.1.1",
             "source": {
@@ -566,24 +548,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/flying-pages/"
-        },
-        {
-            "name": "wpackagist-plugin/gravity-forms-custom-post-types",
-            "version": "3.1.15",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gravity-forms-custom-post-types/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gravity-forms-custom-post-types.zip?timestamp=1554488172"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gravity-forms-custom-post-types/"
         },
         {
             "name": "wpackagist-plugin/gutenberg",
@@ -676,24 +640,6 @@
             "homepage": "https://wordpress.org/plugins/post-meta-controls/"
         },
         {
-            "name": "wpackagist-plugin/post-type-switcher",
-            "version": "3.2.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/post-type-switcher/",
-                "reference": "tags/3.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-type-switcher.3.2.0.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/post-type-switcher/"
-        },
-        {
             "name": "wpackagist-plugin/redirection",
             "version": "4.4.2",
             "source": {
@@ -728,24 +674,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/safe-svg/"
-        },
-        {
-            "name": "wpackagist-plugin/ultimate-blocks",
-            "version": "2.1.7",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ultimate-blocks/",
-                "reference": "tags/2.1.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ultimate-blocks.2.1.7.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ultimate-blocks/"
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
@@ -800,24 +728,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-nested-pages/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-rss-aggregator",
-            "version": "4.16",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-rss-aggregator/",
-                "reference": "tags/4.16"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-rss-aggregator.4.16.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-rss-aggregator/"
         }
     ],
     "packages-dev": [
