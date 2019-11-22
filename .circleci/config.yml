@@ -1,7 +1,7 @@
 # https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
 defaults: &defaults
   docker:
-    - image: quay.io/pantheon-public/build-tools-ci:3.x
+    - image: quay.io/pantheon-public/build-tools-ci:6.x
   working_directory: ~/example_wordpress_composer
   environment:
     #=========================================================================
