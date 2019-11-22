@@ -45,6 +45,9 @@ echo
 # Exit immediately on errors
 set -ex
 
+# install fonts
+apt-get install fonts-arphic-bkai00mp  fonts-arphic-bsmi00lp  fonts-arphic-gbsn00lp fonts-arphic-gkai00mp
+
 # Run the Wraith tests
 cd wraith
 cp configs/capture.yaml.template configs/capture.yaml 
