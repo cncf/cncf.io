@@ -157,7 +157,6 @@ class Cncf_Mu_Admin {
 		);
 		register_post_type( 'cncf_projects', $opts );
 
-
 	}
 
 
@@ -673,6 +672,13 @@ class Cncf_Mu_Admin {
 		// Return the $sidebars array with our sidebar now included.
 		return $sidebars;
 
+	}
+
+	/**
+	 * Removes unneeded menu items from the admin.
+	 */
+	public function remove_menu_items() {
+		remove_menu_page( 'edit-comments.php' );
 	}
 
 }
