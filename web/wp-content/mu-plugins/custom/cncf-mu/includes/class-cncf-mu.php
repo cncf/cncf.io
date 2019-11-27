@@ -1,15 +1,16 @@
 <?php
+
 /**
  * The file that defines the core plugin class
  *
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://example.com
+ * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    LFEvents
- * @subpackage LFEvents/includes
+ * @package    Cncf_Mu
+ * @subpackage Cncf_Mu/includes
  */
 
 /**
@@ -22,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    LFEvents
- * @subpackage LFEvents/includes
- * @author     Your Name <email@example.com>
+ * @package    Cncf_Mu
+ * @subpackage Cncf_Mu/includes
+ * @author     Chris Abraham <cjyabraham@gmail.com>
  */
-class LFEvents {
+class Cncf_Mu {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -34,7 +35,7 @@ class LFEvents {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      LFEvents_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Cncf_Mu_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -43,9 +44,9 @@ class LFEvents {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $lfevents    The string used to uniquely identify this plugin.
+	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
-	protected $lfevents;
+	protected $plugin_name;
 
 	/**
 	 * The current version of the plugin.
@@ -66,12 +67,12 @@ class LFEvents {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'LFEVENTS_VERSION' ) ) {
-			$this->version = LFEVENTS_VERSION;
+		if ( defined( 'CNCF_MU_VERSION' ) ) {
+			$this->version = CNCF_MU_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->lfevents = 'lfevents';
+		$this->plugin_name = 'cncf-mu';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -85,10 +86,10 @@ class LFEvents {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - LFEvents_Loader. Orchestrates the hooks of the plugin.
-	 * - LFEvents_i18n. Defines internationalization functionality.
-	 * - LFEvents_Admin. Defines all hooks for the admin area.
-	 * - LFEvents_Public. Defines all hooks for the public side of the site.
+	 * - Cncf_Mu_Loader. Orchestrates the hooks of the plugin.
+	 * - Cncf_Mu_i18n. Defines internationalization functionality.
+	 * - Cncf_Mu_Admin. Defines all hooks for the admin area.
+	 * - Cncf_Mu_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -102,33 +103,33 @@ class LFEvents {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lfevents-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cncf-mu-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lfevents-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cncf-mu-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-lfevents-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-cncf-mu-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-lfevents-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-cncf-mu-public.php';
 
-		$this->loader = new LFEvents_Loader();
+		$this->loader = new Cncf_Mu_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the LFEvents_i18n class in order to set the domain and to register the hook
+	 * Uses the Cncf_Mu_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -136,7 +137,7 @@ class LFEvents {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new LFEvents_i18n();
+		$plugin_i18n = new Cncf_Mu_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -151,17 +152,10 @@ class LFEvents {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new LFEvents_Admin( $this->get_lfevents(), $this->get_version() );
+		$plugin_admin = new Cncf_Mu_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'init', $plugin_admin, 'new_cpts' );
-		$this->loader->add_action( 'init', $plugin_admin, 'register_event_categories' );
-		$this->loader->add_filter( 'pmc_create_sidebar', $plugin_admin, 'create_sidebar' );
-		$this->loader->add_action( 'init', $plugin_admin, 'change_page_label' );
-		$this->loader->add_action( 'restrict_manage_posts', $plugin_admin, 'event_filters' );
-		$this->loader->add_action( 'pre_get_posts', $plugin_admin, 'event_list_filter' );
-		$this->loader->add_action( 'save_post', $plugin_admin, 'synchronize_noindex_meta' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 	}
 
@@ -174,11 +168,11 @@ class LFEvents {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new LFEvents_Public( $this->get_lfevents(), $this->get_version() );
-		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		$this->loader->add_action( 'template_redirect', $plugin_public, 'redirects' );
-		$this->loader->add_action( 'wp_footer', $plugin_public, 'my_deregister_scripts' );
+		$plugin_public = new Cncf_Mu_Public( $this->get_plugin_name(), $this->get_version() );
+
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
 	}
 
 	/**
@@ -197,15 +191,15 @@ class LFEvents {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_lfevents() {
-		return $this->lfevents;
+	public function get_plugin_name() {
+		return $this->plugin_name;
 	}
 
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    LFEvents_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Cncf_Mu_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

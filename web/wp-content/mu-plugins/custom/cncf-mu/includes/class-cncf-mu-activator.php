@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Fired during plugin activation
  *
- * @link       http://example.com
+ * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    LFEvents
- * @subpackage LFEvents/includes
+ * @package    Cncf_Mu
+ * @subpackage Cncf_Mu/includes
  */
 
 /**
@@ -15,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    LFEvents
- * @subpackage LFEvents/includes
- * @author     Your Name <email@example.com>
+ * @package    Cncf_Mu
+ * @subpackage Cncf_Mu/includes
+ * @author     Chris Abraham <cjyabraham@gmail.com>
  */
-class LFEvents_Activator {
+class Cncf_Mu_Activator {
 
 	/**
 	 * Short Description. (use period)

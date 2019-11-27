@@ -1,20 +1,8 @@
-/**
- * Summary. (use period)
- *
- * Description. (use period)
- *
- * @link   URL
- * @file   This files defines the MyClass class.
- * @author AuthorName.
- * @since  x.x.x
- * @package xxx
- */
-
 (function( $ ) {
 	'use strict';
 
 	/**
-	 * All of the code for your public-facing JavaScript source
+	 * All of the code for your admin-facing JavaScript source
 	 * should reside in this file.
 	 *
 	 * Note: It has been assumed you will write jQuery code here, so the

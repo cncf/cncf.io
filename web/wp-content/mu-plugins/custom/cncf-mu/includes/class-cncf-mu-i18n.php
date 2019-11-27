@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Define the internationalization functionality
  *
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://example.com
+ * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    LFEvents
- * @subpackage LFEvents/includes
+ * @package    Cncf_Mu
+ * @subpackage Cncf_Mu/includes
  */
 
 /**
@@ -19,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    LFEvents
- * @subpackage LFEvents/includes
- * @author     Your Name <email@example.com>
+ * @package    Cncf_Mu
+ * @subpackage Cncf_Mu/includes
+ * @author     Chris Abraham <cjyabraham@gmail.com>
  */
-class LFEvents_I18n {
+class Cncf_Mu_i18n {
 
 
 	/**
@@ -34,7 +35,7 @@ class LFEvents_I18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'lfevents',
+			'cncf-mu',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
