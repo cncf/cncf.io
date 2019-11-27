@@ -79,20 +79,85 @@ class Cncf_Mu_Admin {
 
 		$opts = array(
 			'labels'       => array(
-				'name'          => __( 'About Pages' ),
-				'singular_name' => __( 'About Page' ),
-				'all_items'     => __( 'All About Pages' ),
+				'name'          => __( 'People' ),
+				'singular_name' => __( 'Person' ),
+				'all_items'     => __( 'All People' ),
 			),
 			'public'       => true,
 			'has_archive'  => true,
 			'show_in_rest' => true,
-			'hierarchical' => true,
-			'menu_icon'    => 'dashicons-info',
-			'rewrite'      => array( 'slug' => 'about' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'page-attributes' ),
+			'hierarchical' => false,
+			'menu_icon'    => 'dashicons-buddicons-buddypress-logo',
+			'rewrite'      => array( 'slug' => 'person' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
 		);
+		register_post_type( 'cncf_person', $opts );
 
-		register_post_type( 'lfe_about_page', $opts );
+		$opts = array(
+			'labels'       => array(
+				'name'          => __( 'Case Studies' ),
+				'singular_name' => __( 'Case Study' ),
+				'all_items'     => __( 'All Case Studies' ),
+			),
+			'public'       => true,
+			'has_archive'  => true,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+			'menu_icon'    => 'dashicons-awards',
+			'rewrite'      => array( 'slug' => 'case-study' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+		);
+		register_post_type( 'cncf_case_study', $opts );
+
+		$opts = array(
+			'labels'       => array(
+				'name'          => __( 'Webinars' ),
+				'singular_name' => __( 'Webinar' ),
+				'all_items'     => __( 'All Webinars' ),
+			),
+			'public'       => true,
+			'has_archive'  => true,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+			'menu_icon'    => 'dashicons-video-alt3',
+			'rewrite'      => array( 'slug' => 'webinar' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+		);
+		register_post_type( 'cncf_webinar', $opts );
+
+		$opts = array(
+			'labels'       => array(
+				'name'          => __( 'Events We\'ll Be At' ),
+				'singular_name' => __( 'Event' ),
+				'all_items'     => __( 'All Events' ),
+			),
+			'public'       => true,
+			'has_archive'  => true,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+			'menu_icon'    => 'dashicons-calendar',
+			'rewrite'      => array( 'slug' => 'events' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+		);
+		register_post_type( 'cncf_events_wba', $opts );
+
+		$opts = array(
+			'labels'       => array(
+				'name'          => __( 'Projects' ),
+				'singular_name' => __( 'Project' ),
+				'all_items'     => __( 'All Projects' ),
+			),
+			'public'       => true,
+			'has_archive'  => true,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+			'menu_icon'    => 'dashicons-hammer',
+			'rewrite'      => array( 'slug' => 'projects' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+		);
+		register_post_type( 'cncf_projects', $opts );
+
+
 	}
 
 
