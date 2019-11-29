@@ -158,6 +158,7 @@ class Cncf_Mu {
 		$this->loader->add_action( 'init', $plugin_admin, 'register_cpts' );
 		$this->loader->add_filter( 'pmc_create_sidebar', $plugin_admin, 'create_sidebar' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'remove_menu_items' );
+		$this->loader->add_action( 'init', $plugin_admin, 'register_taxonomies' );
 
 	}
 
