@@ -213,18 +213,25 @@ class Cncf_Mu_Admin {
 							'initial_open' => true,
 							'settings' => array(
 								array(
-									'type'          => 'date_range', // Required.
+									'type'          => 'date_single', // Required.
 									'data_type'     => 'meta',
 									'unavailable_dates' => array(),
-									'data_key'      => 'dates', // Required if 'data_type' is 'meta' or 'localstorage'.
-									// Use 'data_key_prefix' to set a custom prefix for this setting 'data_key'.
-									// If 'data_key_prefix' is not assigned, the 'data_key_prefix' from the sidebar
-									// where this setting is nested will be used.
-									'label'         => __( 'Event Dates', 'my_plugin' ),
+									'data_key'      => 'date_start', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Start Date', 'my_plugin' ),
 									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
 									'ui_border_top' => true, // Display CSS border-top in the editor control.
 									'default_value' => '', // A string with a date that matches 'format'.
-									// To see the available formats check: http://momentjs.com/docs/#/parsing/string-format/.
+									'format'        => 'YYYY/MM/DD',
+								),
+								array(
+									'type'          => 'date_single', // Required.
+									'data_type'     => 'meta',
+									'unavailable_dates' => array(),
+									'data_key'      => 'date_end', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'End Date', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '', // A string with a date that matches 'format'.
 									'format'        => 'YYYY/MM/DD',
 								),
 								array(
@@ -254,7 +261,6 @@ class Cncf_Mu_Admin {
 									'label'           => __( 'Hosts', 'my_plugin' ),
 									'register_meta'   => true, // This option is applicable only if 'data_type' is 'meta'.
 									'ui_border_top'   => true, // Display CSS border-top in the editor control.
-									// Setting checkbox_multiple specific options:
 									'default_value'   => array( 'cncf-organized' ), // Value/s from the 'options'.
 									'use_toggle'      => false, // Use toggle control instead of checkbox.
 									'options'         => array( // Required.
