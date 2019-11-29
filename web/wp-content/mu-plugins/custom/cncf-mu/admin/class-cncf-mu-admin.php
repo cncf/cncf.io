@@ -89,7 +89,7 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 			'menu_icon'    => 'dashicons-buddicons-buddypress-logo',
 			'rewrite'      => array( 'slug' => 'person' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_person', $opts );
 
@@ -105,7 +105,7 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 			'menu_icon'    => 'dashicons-awards',
 			'rewrite'      => array( 'slug' => 'case-study' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_case_study', $opts );
 
@@ -121,13 +121,13 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 			'menu_icon'    => 'dashicons-video-alt3',
 			'rewrite'      => array( 'slug' => 'webinar' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_webinar', $opts );
 
 		$opts = array(
 			'labels'       => array(
-				'name'          => __( 'Events We\'ll Be At' ),
+				'name'          => __( 'Events' ),
 				'singular_name' => __( 'Event' ),
 				'all_items'     => __( 'All Events' ),
 			),
@@ -137,9 +137,9 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 			'menu_icon'    => 'dashicons-calendar',
 			'rewrite'      => array( 'slug' => 'events' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
-		register_post_type( 'cncf_events_wba', $opts );
+		register_post_type( 'cncf_events', $opts );
 
 		$opts = array(
 			'labels'       => array(
@@ -153,7 +153,7 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 			'menu_icon'    => 'dashicons-hammer',
 			'rewrite'      => array( 'slug' => 'projects' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_projects', $opts );
 

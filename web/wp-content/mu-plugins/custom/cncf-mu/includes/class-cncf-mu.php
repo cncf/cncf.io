@@ -176,7 +176,7 @@ class Cncf_Mu {
 		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'wp_footer', $plugin_public, 'deregister_scripts' );
 		$this->loader->add_action( 'wp_footer', $plugin_public, 'insert_google_analytics' );
-		$this->loader->add_filter( 'wp_resource_hints', $plugin_public, 'change_to_preconnect_resource_hints' );
+		$this->loader->add_filter( 'wp_resource_hints', $plugin_public, 'change_to_preconnect_resource_hints', 10, 2 );
 
 	}
 
