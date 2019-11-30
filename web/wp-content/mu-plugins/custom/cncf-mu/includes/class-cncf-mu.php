@@ -153,7 +153,7 @@ class Cncf_Mu {
 
 		$plugin_admin = new Cncf_Mu_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_cpts' );
 		$this->loader->add_filter( 'pmc_create_sidebar', $plugin_admin, 'create_sidebar' );

@@ -121,7 +121,7 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 			'menu_icon'    => 'dashicons-video-alt3',
 			'rewrite'      => array( 'slug' => 'webinar' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+			'supports'     => array( 'title', 'editor', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_webinar', $opts );
 
@@ -277,6 +277,90 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
+		$sidebar = array(
+			'id'              => 'cncf-sidebar-webinar',
+			'id_prefix'       => 'cncf_',
+			'label'           => __( 'Webinar Settings' ),
+			'post_type'       => 'cncf_webinar',
+			'data_key_prefix' => 'cncf_',
+			'icon_dashicon'   => 'admin-settings',
+			'tabs'            => array(
+				array(
+					'label'  => __( 'Tab label' ),
+					'panels' => array(
+						array(
+							'label'    => __( 'General' ),
+							'initial_open' => true,
+							'settings' => array(
+								array(
+									'type'          => 'date_single', // Required.
+									'data_type'     => 'meta',
+									'unavailable_dates' => array(),
+									'data_key'      => 'date', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Date', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '', // A string with a date that matches 'format'.
+									'format'        => 'YYYY/MM/DD',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'time', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Time' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => '10:00 - 11:00 AM CST',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'registration_url', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Registration URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://zoom.com.cn/webinar/register/WN_sMLQLH1JQbWa8CBUtzj0_A',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'recording_url', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Recording URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://www.youtube.com/watch?v=95pkfWf8DgA',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'speakers', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Speakers' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'Radu Matei, Software Engineer @ Microsoft',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'slides_url', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Registration URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://www.cncf.io/wp-content/uploads/2019/11/StackRox-Webinar-2019-11-12.pdf',
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+		$sidebars[] = $sidebar;
+
 		// Return the $sidebars array with our sidebar now included.
 		return $sidebars;
 
@@ -300,14 +384,67 @@ class Cncf_Mu_Admin {
 			'new_item_name'     => __( 'New Country Name', 'textdomain' ),
 			'menu_name'         => __( 'Countries', 'textdomain' ),
 		);
-
 		$args   = [
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => true,
 		];
-
 		register_taxonomy( 'cncf-country', array( 'cncf_event' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Projects', 'textdomain' ),
+			'singular_name'     => __( 'Project', 'textdomain' ),
+			'search_items'      => __( 'Projects', 'textdomain' ),
+			'all_items'         => __( 'All Projects', 'textdomain' ),
+			'edit_item'         => __( 'Edit Project', 'textdomain' ),
+			'update_item'       => __( 'Update Project', 'textdomain' ),
+			'add_new_item'      => __( 'Add New Project', 'textdomain' ),
+			'new_item_name'     => __( 'New Project Name', 'textdomain' ),
+			'menu_name'         => __( 'Projects', 'textdomain' ),
+		);
+		$args   = [
+			'labels'       => $labels,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+		];
+		register_taxonomy( 'cncf-project', array( 'cncf_webinar' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Companies', 'textdomain' ),
+			'singular_name'     => __( 'Company', 'textdomain' ),
+			'search_items'      => __( 'Companies', 'textdomain' ),
+			'all_items'         => __( 'All Companies', 'textdomain' ),
+			'edit_item'         => __( 'Edit Company', 'textdomain' ),
+			'update_item'       => __( 'Update Company', 'textdomain' ),
+			'add_new_item'      => __( 'Add New Company', 'textdomain' ),
+			'new_item_name'     => __( 'New Company Name', 'textdomain' ),
+			'menu_name'         => __( 'Companies', 'textdomain' ),
+		);
+		$args   = [
+			'labels'       => $labels,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+		];
+		register_taxonomy( 'cncf-company', array( 'cncf_webinar' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Topics', 'textdomain' ),
+			'singular_name'     => __( 'Topic', 'textdomain' ),
+			'search_items'      => __( 'Topics', 'textdomain' ),
+			'all_items'         => __( 'All Topics', 'textdomain' ),
+			'edit_item'         => __( 'Edit Topic', 'textdomain' ),
+			'update_item'       => __( 'Update Topic', 'textdomain' ),
+			'add_new_item'      => __( 'Add New Topic', 'textdomain' ),
+			'new_item_name'     => __( 'New Topic Name', 'textdomain' ),
+			'menu_name'         => __( 'Topics', 'textdomain' ),
+		);
+		$args   = [
+			'labels'       => $labels,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+		];
+		register_taxonomy( 'cncf-topic', array( 'cncf_webinar' ), $args );
+
 	}
 
 
