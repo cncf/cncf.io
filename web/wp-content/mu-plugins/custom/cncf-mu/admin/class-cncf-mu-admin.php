@@ -89,7 +89,7 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 			'menu_icon'    => 'dashicons-buddicons-buddypress-logo',
 			'rewrite'      => array( 'slug' => 'person' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
 		);
 		register_post_type( 'cncf_person', $opts );
 
@@ -361,6 +361,99 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
+		$sidebar = array(
+			'id'              => 'cncf-sidebar-person',
+			'id_prefix'       => 'cncf_',
+			'label'           => __( 'Person Settings' ),
+			'post_type'       => 'cncf_person',
+			'data_key_prefix' => 'cncf_',
+			'icon_dashicon'   => 'admin-settings',
+			'tabs'            => array(
+				array(
+					'label'  => __( 'Tab label' ),
+					'panels' => array(
+						array(
+							'label'    => __( 'General' ),
+							'initial_open' => true,
+							'settings' => array(
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'company', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Company and/or Title' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'DigitalOcean',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'linkedin', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'LinkedIn URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://www.linkedin.com/in/gilbert-song-939ba737/',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'twitter', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Twitter URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://twitter.com/Gilbert_Songs',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'github', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'GitHub URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://github.com/Gilbert88',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'wechat', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'WeChat URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://web.wechat.com/donaldliu1874',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'website', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Website URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://www.weave.works/',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'youtube', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'YouTube URL' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://www.youtube.com/channel/UCJsK5Zbq0dyFZUBtMTHzxjQ',
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+		$sidebars[] = $sidebar;
+
 		// Return the $sidebars array with our sidebar now included.
 		return $sidebars;
 
@@ -445,6 +538,23 @@ class Cncf_Mu_Admin {
 		];
 		register_taxonomy( 'cncf-topic', array( 'cncf_webinar' ), $args );
 
+		$labels = array(
+			'name'              => __( 'Person Categories', 'textdomain' ),
+			'singular_name'     => __( 'Category', 'textdomain' ),
+			'search_items'      => __( 'Categories', 'textdomain' ),
+			'all_items'         => __( 'All Categories', 'textdomain' ),
+			'edit_item'         => __( 'Edit Category', 'textdomain' ),
+			'update_item'       => __( 'Update Category', 'textdomain' ),
+			'add_new_item'      => __( 'Add New Category', 'textdomain' ),
+			'new_item_name'     => __( 'New Category Name', 'textdomain' ),
+			'menu_name'         => __( 'Person Categories', 'textdomain' ),
+		);
+		$args   = [
+			'labels'       => $labels,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+		];
+		register_taxonomy( 'cncf-person-category', array( 'cncf_person' ), $args );
 	}
 
 
