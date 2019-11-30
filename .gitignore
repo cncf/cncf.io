@@ -118,6 +118,7 @@ Thumbs.db
 # Allowing other premium plugins #
 !web/wp-content/plugins/search-filter-pro
 !web/wp-content/plugins/stackable-ultimate-gutenberg-blocks-premium
+!web/wp-content/plugins/wp-all-import-pro
 
 # Allowing custom plugins
 !web/wp-content/plugins/text-on-image-block

@@ -245,16 +245,6 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://www.cloudfoundry.org/event/summit/',
 								),
 								array(
-									'type'          => 'text', // Required.
-									'data_type'     => 'meta',
-									'data_key'      => 'schedule_email', // Required if 'data_type' is 'meta'.
-									'label'         => __( 'Email to Schedule a Meeting' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => '',
-									'placeholder'   => 'meeting@cncf.io',
-								),
-								array(
 									'type'            => 'checkbox_multiple', // Required.
 									'data_type'       => 'meta', // Available: 'meta', 'localstorage', 'none'.
 									'data_key'        => 'hosts', // Required if 'data_type' is 'meta' or 'localstorage'.
@@ -268,6 +258,16 @@ class Cncf_Mu_Admin {
 										'lf-organized' => __( 'LF-organized', 'my_plugin' ),
 										'third-party' => __( 'Third party', 'my_plugin' ),
 									),
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'city', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'City' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'Hamilton',
 								),
 							),
 						),
