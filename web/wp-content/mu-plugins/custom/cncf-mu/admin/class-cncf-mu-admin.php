@@ -49,7 +49,7 @@ class Cncf_Mu_Admin {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -168,36 +168,36 @@ class Cncf_Mu_Admin {
 	public function create_sidebar( $sidebars ) {
 		// First we define the sidebar with it's tabs, panels and settings.
 		$palette = array(
-			'dark-fuschia' => '#6e1042',
-			'dark-violet' => '#411E4F',
-			'dark-indigo' => '#1A267D',
-			'dark-blue' => '#17405c',
-			'dark-aqua' => '#0e5953',
-			'dark-green' => '#0b5329',
+			'dark-fuschia'     => '#6e1042',
+			'dark-violet'      => '#411E4F',
+			'dark-indigo'      => '#1A267D',
+			'dark-blue'        => '#17405c',
+			'dark-aqua'        => '#0e5953',
+			'dark-green'       => '#0b5329',
 
-			'light-fuschia' => '#AD1457',
-			'light-violet' => '#6C3483',
-			'light-indigo' => '#4653B0',
-			'light-blue' => '#2874A6',
-			'light-aqua' => '#148f85',
-			'light-green' => '#117a3d',
+			'light-fuschia'    => '#AD1457',
+			'light-violet'     => '#6C3483',
+			'light-indigo'     => '#4653B0',
+			'light-blue'       => '#2874A6',
+			'light-aqua'       => '#148f85',
+			'light-green'      => '#117a3d',
 
-			'dark-chartreuse' => '#3d5e0f',
-			'dark-yellow' => '#878700',
-			'dark-gold' => '#8c7000',
-			'dark-orange' => '#784e12',
-			'dark-umber' => '#6E2C00',
-			'dark-red'   => '#641E16',
+			'dark-chartreuse'  => '#3d5e0f',
+			'dark-yellow'      => '#878700',
+			'dark-gold'        => '#8c7000',
+			'dark-orange'      => '#784e12',
+			'dark-umber'       => '#6E2C00',
+			'dark-red'         => '#641E16',
 
 			'light-chartreuse' => '#699b23',
-			'light-yellow' => '#b0b000',
-			'light-gold' => '#c29b00',
-			'light-orange' => '#c2770e',
-			'light-umber' => '#b8510d',
-			'light-red'   => '#922B21',
+			'light-yellow'     => '#b0b000',
+			'light-gold'       => '#c29b00',
+			'light-orange'     => '#c2770e',
+			'light-umber'      => '#b8510d',
+			'light-red'        => '#922B21',
 		);
 
-		$sidebar = array(
+		$sidebar    = array(
 			'id'              => 'cncf-sidebar-event',
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Event Settings' ),
@@ -209,30 +209,30 @@ class Cncf_Mu_Admin {
 					'label'  => __( 'Tab label' ),
 					'panels' => array(
 						array(
-							'label'    => __( 'General' ),
+							'label'        => __( 'General' ),
 							'initial_open' => true,
-							'settings' => array(
+							'settings'     => array(
 								array(
-									'type'          => 'date_single', // Required.
-									'data_type'     => 'meta',
+									'type'              => 'date_single', // Required.
+									'data_type'         => 'meta',
 									'unavailable_dates' => array(),
-									'data_key'      => 'date_start', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Start Date', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => '', // A string with a date that matches 'format'.
-									'format'        => 'YYYY/MM/DD',
+									'data_key'          => 'date_start', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'             => __( 'Start Date', 'my_plugin' ),
+									'register_meta'     => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top'     => true, // Display CSS border-top in the editor control.
+									'default_value'     => '', // A string with a date that matches 'format'.
+									'format'            => 'YYYY/MM/DD',
 								),
 								array(
-									'type'          => 'date_single', // Required.
-									'data_type'     => 'meta',
+									'type'              => 'date_single', // Required.
+									'data_type'         => 'meta',
 									'unavailable_dates' => array(),
-									'data_key'      => 'date_end', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'End Date', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
-									'default_value' => '', // A string with a date that matches 'format'.
-									'format'        => 'YYYY/MM/DD',
+									'data_key'          => 'date_end', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'             => __( 'End Date', 'my_plugin' ),
+									'register_meta'     => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top'     => false, // Display CSS border-top in the editor control.
+									'default_value'     => '', // A string with a date that matches 'format'.
+									'format'            => 'YYYY/MM/DD',
 								),
 								array(
 									'type'          => 'text', // Required.
@@ -245,18 +245,18 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://www.cloudfoundry.org/event/summit/',
 								),
 								array(
-									'type'            => 'radio', // Required.
-									'data_type'       => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'        => 'hosts', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'           => __( 'Hosts', 'my_plugin' ),
-									'register_meta'   => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top'   => true, // Display CSS border-top in the editor control.
-									'default_value'   => array( 'cncf-organized' ), // Value/s from the 'options'.
-									'use_toggle'      => false, // Use toggle control instead of checkbox.
-									'options'         => array( // Required.
+									'type'          => 'radio', // Required.
+									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
+									'data_key'      => 'hosts', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Hosts', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => array( 'cncf-organized' ), // Value/s from the 'options'.
+									'use_toggle'    => false, // Use toggle control instead of checkbox.
+									'options'       => array( // Required.
 										'cncf-organized' => __( 'CNCF-organized', 'my_plugin' ),
-										'lf-organized' => __( 'LF-organized', 'my_plugin' ),
-										'third-party' => __( 'Third party', 'my_plugin' ),
+										'lf-organized'   => __( 'LF-organized', 'my_plugin' ),
+										'third-party'    => __( 'Third party', 'my_plugin' ),
 									),
 								),
 								array(
@@ -277,7 +277,7 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
-		$sidebar = array(
+		$sidebar    = array(
 			'id'              => 'cncf-sidebar-webinar',
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Webinar Settings' ),
@@ -289,19 +289,19 @@ class Cncf_Mu_Admin {
 					'label'  => __( 'Tab label' ),
 					'panels' => array(
 						array(
-							'label'    => __( 'General' ),
+							'label'        => __( 'General' ),
 							'initial_open' => true,
-							'settings' => array(
+							'settings'     => array(
 								array(
-									'type'          => 'date_single', // Required.
-									'data_type'     => 'meta',
+									'type'              => 'date_single', // Required.
+									'data_type'         => 'meta',
 									'unavailable_dates' => array(),
-									'data_key'      => 'date', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Date', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => '', // A string with a date that matches 'format'.
-									'format'        => 'YYYY/MM/DD',
+									'data_key'          => 'date', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'             => __( 'Date', 'my_plugin' ),
+									'register_meta'     => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top'     => true, // Display CSS border-top in the editor control.
+									'default_value'     => '', // A string with a date that matches 'format'.
+									'format'            => 'YYYY/MM/DD',
 								),
 								array(
 									'type'          => 'text', // Required.
@@ -361,7 +361,7 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
-		$sidebar = array(
+		$sidebar    = array(
 			'id'              => 'cncf-sidebar-person',
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Person Settings' ),
@@ -373,9 +373,9 @@ class Cncf_Mu_Admin {
 					'label'  => __( 'Tab label' ),
 					'panels' => array(
 						array(
-							'label'    => __( 'General' ),
+							'label'        => __( 'General' ),
 							'initial_open' => true,
-							'settings' => array(
+							'settings'     => array(
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
@@ -454,7 +454,7 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
-		$sidebar = array(
+		$sidebar    = array(
 			'id'              => 'cncf-sidebar-case-study',
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Case Study Settings' ),
@@ -466,60 +466,60 @@ class Cncf_Mu_Admin {
 					'label'  => __( 'Tab label' ),
 					'panels' => array(
 						array(
-							'label'    => __( 'General' ),
+							'label'        => __( 'General' ),
 							'initial_open' => true,
-							'settings' => array(
+							'settings'     => array(
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
 									'data_key'      => 'type', // Required if 'data_type' is 'meta'.
 									'label'         => __( 'Case Study Type' ),
-									'help'            => __( 'This value will appear in the Case Study tile "READ THE ___ CASE STUDY"', 'my_plugin' ),
+									'help'          => __( 'This value will appear in the Case Study tile "READ THE ___ CASE STUDY"', 'my_plugin' ),
 									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
 									'ui_border_top' => true, // Display CSS border-top in the editor control.
 									'default_value' => '',
 									'placeholder'   => 'Kubernetes',
 								),
 								array(
-									'type'            => 'radio', // Required.
-									'data_type'       => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'        => 'product_type', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'           => __( 'Product Type', 'my_plugin' ),
-									'register_meta'   => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top'   => true, // Display CSS border-top in the editor control.
-									'default_value'   => 'installer', // Value/s from the 'options'.
-									'use_toggle'      => false, // Use toggle control instead of checkbox.
-									'options'         => array( // Required.
-										'installer' => __( 'Installer', 'my_plugin' ),
+									'type'          => 'radio', // Required.
+									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
+									'data_key'      => 'product_type', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Product Type', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => 'installer', // Value/s from the 'options'.
+									'use_toggle'    => false, // Use toggle control instead of checkbox.
+									'options'       => array( // Required.
+										'installer'    => __( 'Installer', 'my_plugin' ),
 										'distribution' => __( 'Distribution', 'my_plugin' ),
-										'hosted' => __( 'Hosted', 'my_plugin' ),
+										'hosted'       => __( 'Hosted', 'my_plugin' ),
 									),
 								),
 								array(
-									'type'            => 'radio', // Required.
-									'data_type'       => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'        => 'cloud_type', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'           => __( 'Cloud Type', 'my_plugin' ),
-									'register_meta'   => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top'   => true, // Display CSS border-top in the editor control.
-									'default_value'   => 'public', // Value/s from the 'options'.
-									'use_toggle'      => false, // Use toggle control instead of checkbox.
-									'options'         => array( // Required.
-										'public' => __( 'Public', 'my_plugin' ),
-										'hybrid' => __( 'Hybrid', 'my_plugin' ),
+									'type'          => 'radio', // Required.
+									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
+									'data_key'      => 'cloud_type', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Cloud Type', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => 'public', // Value/s from the 'options'.
+									'use_toggle'    => false, // Use toggle control instead of checkbox.
+									'options'       => array( // Required.
+										'public'  => __( 'Public', 'my_plugin' ),
+										'hybrid'  => __( 'Hybrid', 'my_plugin' ),
 										'private' => __( 'Private', 'my_plugin' ),
 									),
 								),
 								array(
-									'type'            => 'radio', // Required.
-									'data_type'       => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'        => 'language', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'           => __( 'Language', 'my_plugin' ),
-									'register_meta'   => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top'   => true, // Display CSS border-top in the editor control.
-									'default_value'   => 'english', // Value/s from the 'options'.
-									'use_toggle'      => false, // Use toggle control instead of checkbox.
-									'options'         => array( // Required.
+									'type'          => 'radio', // Required.
+									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
+									'data_key'      => 'language', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Language', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => 'english', // Value/s from the 'options'.
+									'use_toggle'    => false, // Use toggle control instead of checkbox.
+									'options'       => array( // Required.
 										'english' => __( 'English', 'my_plugin' ),
 										'chinese' => __( 'Chinese', 'my_plugin' ),
 									),
@@ -563,15 +563,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Projects', 'textdomain' ),
-			'singular_name'     => __( 'Project', 'textdomain' ),
-			'search_items'      => __( 'Projects', 'textdomain' ),
-			'all_items'         => __( 'All Projects', 'textdomain' ),
-			'edit_item'         => __( 'Edit Project', 'textdomain' ),
-			'update_item'       => __( 'Update Project', 'textdomain' ),
-			'add_new_item'      => __( 'Add New Project', 'textdomain' ),
-			'new_item_name'     => __( 'New Project Name', 'textdomain' ),
-			'menu_name'         => __( 'Projects', 'textdomain' ),
+			'name'          => __( 'Projects', 'textdomain' ),
+			'singular_name' => __( 'Project', 'textdomain' ),
+			'search_items'  => __( 'Projects', 'textdomain' ),
+			'all_items'     => __( 'All Projects', 'textdomain' ),
+			'edit_item'     => __( 'Edit Project', 'textdomain' ),
+			'update_item'   => __( 'Update Project', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Project', 'textdomain' ),
+			'new_item_name' => __( 'New Project Name', 'textdomain' ),
+			'menu_name'     => __( 'Projects', 'textdomain' ),
 		);
 		$args   = [
 			'labels'       => $labels,
@@ -581,15 +581,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Companies', 'textdomain' ),
-			'singular_name'     => __( 'Company', 'textdomain' ),
-			'search_items'      => __( 'Companies', 'textdomain' ),
-			'all_items'         => __( 'All Companies', 'textdomain' ),
-			'edit_item'         => __( 'Edit Company', 'textdomain' ),
-			'update_item'       => __( 'Update Company', 'textdomain' ),
-			'add_new_item'      => __( 'Add New Company', 'textdomain' ),
-			'new_item_name'     => __( 'New Company Name', 'textdomain' ),
-			'menu_name'         => __( 'Companies', 'textdomain' ),
+			'name'          => __( 'Companies', 'textdomain' ),
+			'singular_name' => __( 'Company', 'textdomain' ),
+			'search_items'  => __( 'Companies', 'textdomain' ),
+			'all_items'     => __( 'All Companies', 'textdomain' ),
+			'edit_item'     => __( 'Edit Company', 'textdomain' ),
+			'update_item'   => __( 'Update Company', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Company', 'textdomain' ),
+			'new_item_name' => __( 'New Company Name', 'textdomain' ),
+			'menu_name'     => __( 'Companies', 'textdomain' ),
 		);
 		$args   = [
 			'labels'       => $labels,
@@ -599,15 +599,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-company', array( 'cncf_webinar' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Topics', 'textdomain' ),
-			'singular_name'     => __( 'Topic', 'textdomain' ),
-			'search_items'      => __( 'Topics', 'textdomain' ),
-			'all_items'         => __( 'All Topics', 'textdomain' ),
-			'edit_item'         => __( 'Edit Topic', 'textdomain' ),
-			'update_item'       => __( 'Update Topic', 'textdomain' ),
-			'add_new_item'      => __( 'Add New Topic', 'textdomain' ),
-			'new_item_name'     => __( 'New Topic Name', 'textdomain' ),
-			'menu_name'         => __( 'Topics', 'textdomain' ),
+			'name'          => __( 'Topics', 'textdomain' ),
+			'singular_name' => __( 'Topic', 'textdomain' ),
+			'search_items'  => __( 'Topics', 'textdomain' ),
+			'all_items'     => __( 'All Topics', 'textdomain' ),
+			'edit_item'     => __( 'Edit Topic', 'textdomain' ),
+			'update_item'   => __( 'Update Topic', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Topic', 'textdomain' ),
+			'new_item_name' => __( 'New Topic Name', 'textdomain' ),
+			'menu_name'     => __( 'Topics', 'textdomain' ),
 		);
 		$args   = [
 			'labels'       => $labels,
@@ -617,15 +617,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-topic', array( 'cncf_webinar' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Person Categories', 'textdomain' ),
-			'singular_name'     => __( 'Category', 'textdomain' ),
-			'search_items'      => __( 'Categories', 'textdomain' ),
-			'all_items'         => __( 'All Categories', 'textdomain' ),
-			'edit_item'         => __( 'Edit Category', 'textdomain' ),
-			'update_item'       => __( 'Update Category', 'textdomain' ),
-			'add_new_item'      => __( 'Add New Category', 'textdomain' ),
-			'new_item_name'     => __( 'New Category Name', 'textdomain' ),
-			'menu_name'         => __( 'Person Categories', 'textdomain' ),
+			'name'          => __( 'Person Categories', 'textdomain' ),
+			'singular_name' => __( 'Category', 'textdomain' ),
+			'search_items'  => __( 'Categories', 'textdomain' ),
+			'all_items'     => __( 'All Categories', 'textdomain' ),
+			'edit_item'     => __( 'Edit Category', 'textdomain' ),
+			'update_item'   => __( 'Update Category', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Category', 'textdomain' ),
+			'new_item_name' => __( 'New Category Name', 'textdomain' ),
+			'menu_name'     => __( 'Person Categories', 'textdomain' ),
 		);
 		$args   = [
 			'labels'       => $labels,
@@ -635,15 +635,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-person-category', array( 'cncf_person' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Challenges', 'textdomain' ),
-			'singular_name'     => __( 'Challenge', 'textdomain' ),
-			'search_items'      => __( 'Challenges', 'textdomain' ),
-			'all_items'         => __( 'All Challenges', 'textdomain' ),
-			'edit_item'         => __( 'Edit Challenge', 'textdomain' ),
-			'update_item'       => __( 'Update Challenge', 'textdomain' ),
-			'add_new_item'      => __( 'Add New Challenge', 'textdomain' ),
-			'new_item_name'     => __( 'New Challenge Name', 'textdomain' ),
-			'menu_name'         => __( 'Challenges', 'textdomain' ),
+			'name'          => __( 'Challenges', 'textdomain' ),
+			'singular_name' => __( 'Challenge', 'textdomain' ),
+			'search_items'  => __( 'Challenges', 'textdomain' ),
+			'all_items'     => __( 'All Challenges', 'textdomain' ),
+			'edit_item'     => __( 'Edit Challenge', 'textdomain' ),
+			'update_item'   => __( 'Update Challenge', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Challenge', 'textdomain' ),
+			'new_item_name' => __( 'New Challenge Name', 'textdomain' ),
+			'menu_name'     => __( 'Challenges', 'textdomain' ),
 		);
 		$args   = [
 			'labels'       => $labels,
@@ -653,15 +653,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-challenge', array( 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Industries', 'textdomain' ),
-			'singular_name'     => __( 'Industry', 'textdomain' ),
-			'search_items'      => __( 'Industries', 'textdomain' ),
-			'all_items'         => __( 'All Industries', 'textdomain' ),
-			'edit_item'         => __( 'Edit Industry', 'textdomain' ),
-			'update_item'       => __( 'Update Industry', 'textdomain' ),
-			'add_new_item'      => __( 'Add New Industry', 'textdomain' ),
-			'new_item_name'     => __( 'New Industry Name', 'textdomain' ),
-			'menu_name'         => __( 'Industries', 'textdomain' ),
+			'name'          => __( 'Industries', 'textdomain' ),
+			'singular_name' => __( 'Industry', 'textdomain' ),
+			'search_items'  => __( 'Industries', 'textdomain' ),
+			'all_items'     => __( 'All Industries', 'textdomain' ),
+			'edit_item'     => __( 'Edit Industry', 'textdomain' ),
+			'update_item'   => __( 'Update Industry', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Industry', 'textdomain' ),
+			'new_item_name' => __( 'New Industry Name', 'textdomain' ),
+			'menu_name'     => __( 'Industries', 'textdomain' ),
 		);
 		$args   = [
 			'labels'       => $labels,
