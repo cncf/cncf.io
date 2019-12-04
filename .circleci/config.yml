@@ -92,9 +92,9 @@ jobs:
                 name: check for WordPress coding standards
                 command: composer -n code-sniff
             
-            - run:
-                name: run unit tests
-                command: composer -n unit-test
+            # - run:
+            #     name: run unit tests
+            #     command: composer -n unit-test
 
     build_css_js:
         <<: *defaults
