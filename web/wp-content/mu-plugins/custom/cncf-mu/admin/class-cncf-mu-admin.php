@@ -555,11 +555,11 @@ class Cncf_Mu_Admin {
 			'new_item_name'     => __( 'New Country Name', 'textdomain' ),
 			'menu_name'         => __( 'Countries', 'textdomain' ),
 		);
-		$args   = [
+		$args   = array(
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => true,
-		];
+		);
 		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study' ), $args );
 
 		$labels = array(
@@ -573,11 +573,11 @@ class Cncf_Mu_Admin {
 			'new_item_name' => __( 'New Project Name', 'textdomain' ),
 			'menu_name'     => __( 'Projects', 'textdomain' ),
 		);
-		$args   = [
+		$args   = array(
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => false,
-		];
+		);
 		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study' ), $args );
 
 		$labels = array(
@@ -591,11 +591,11 @@ class Cncf_Mu_Admin {
 			'new_item_name' => __( 'New Company Name', 'textdomain' ),
 			'menu_name'     => __( 'Companies', 'textdomain' ),
 		);
-		$args   = [
+		$args   = array(
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => false,
-		];
+		);
 		register_taxonomy( 'cncf-company', array( 'cncf_webinar' ), $args );
 
 		$labels = array(
@@ -609,11 +609,11 @@ class Cncf_Mu_Admin {
 			'new_item_name' => __( 'New Topic Name', 'textdomain' ),
 			'menu_name'     => __( 'Topics', 'textdomain' ),
 		);
-		$args   = [
+		$args   = array(
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => false,
-		];
+		);
 		register_taxonomy( 'cncf-topic', array( 'cncf_webinar' ), $args );
 
 		$labels = array(
@@ -627,11 +627,11 @@ class Cncf_Mu_Admin {
 			'new_item_name' => __( 'New Category Name', 'textdomain' ),
 			'menu_name'     => __( 'Person Categories', 'textdomain' ),
 		);
-		$args   = [
+		$args   = array(
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => false,
-		];
+		);
 		register_taxonomy( 'cncf-person-category', array( 'cncf_person' ), $args );
 
 		$labels = array(
@@ -645,11 +645,11 @@ class Cncf_Mu_Admin {
 			'new_item_name' => __( 'New Challenge Name', 'textdomain' ),
 			'menu_name'     => __( 'Challenges', 'textdomain' ),
 		);
-		$args   = [
+		$args   = array(
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => false,
-		];
+		);
 		register_taxonomy( 'cncf-challenge', array( 'cncf_case_study' ), $args );
 
 		$labels = array(
@@ -663,11 +663,11 @@ class Cncf_Mu_Admin {
 			'new_item_name' => __( 'New Industry Name', 'textdomain' ),
 			'menu_name'     => __( 'Industries', 'textdomain' ),
 		);
-		$args   = [
+		$args   = array(
 			'labels'       => $labels,
 			'show_in_rest' => true,
 			'hierarchical' => false,
-		];
+		);
 		register_taxonomy( 'cncf-industry', array( 'cncf_case_study' ), $args );
 	}
 

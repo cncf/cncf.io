@@ -23,7 +23,7 @@
  * @subpackage Cncf_Mu/includes
  * @author     Chris Abraham <cjyabraham@gmail.com>
  */
-class Cncf_Mu_i18n {
+class Cncf_Mu_I18n {
 
 
 	/**

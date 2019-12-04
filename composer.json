@@ -96,7 +96,7 @@
     ],
     "code-sniff": [
       "./vendor/bin/phpcs --config-set installed_paths ~/example_wordpress_composer/vendor/wp-coding-standards/wpcs",
-      "./vendor/bin/phpcs -n --ignore=*gulpfile*,*plugins*,*twentytwenty* --standard=WordPress ./web/wp-content"
+      "./vendor/bin/phpcs -n -s --ignore=*gulpfile*,*plugins*,*twentytwenty* --standard=WordPress ./web/wp-content"
     ],
     "unit-test": [
       "./vendor/bin/phpunit tests/unit/*"
