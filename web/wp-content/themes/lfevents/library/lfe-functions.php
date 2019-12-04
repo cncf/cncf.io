@@ -26,7 +26,7 @@ function is_lfeventsci() {
  * @return array
  */
 function lfe_get_related_events( $parent_id ) {
-	$related_events = [];
+	$related_events = array();
 
 	$related_events_override = get_post_meta( $parent_id, 'lfes_related_events', true );
 
@@ -587,7 +587,7 @@ add_filter( 'the_seo_framework_image_generation_params', 'my_tsf_custom_image_ge
  *                            May be (for example) 'breadcrumb' or 'article' for structured data.
  * @return array $params
  */
-function my_tsf_custom_image_generation_args( $params = [], $args = null, $context = 'social' ) {
+function my_tsf_custom_image_generation_args( $params = array(), $args = null, $context = 'social' ) {
 
 	// Let's not mess with non-social sharing images.
 	if ( 'social' !== $context ) {
@@ -612,7 +612,7 @@ function my_tsf_custom_image_generation_args( $params = [], $args = null, $conte
 
 	if ( $has_parent ) {
 		$params['cbs'] = array_merge(
-			[ '_parent' => 'my_tsf_get_parent_social_meta_image' ],
+			array( '_parent' => 'my_tsf_get_parent_social_meta_image' ),
 			$params['cbs']
 		);
 	}
@@ -639,8 +639,8 @@ function my_tsf_get_parent_social_meta_image( $args = null, $size = 'full' ) {
 	$post_id   = isset( $args['id'] ) ? $args['id'] : $tsf->get_the_real_ID();
 	$parent_id = wp_get_post_parent_id( $post_id );
 
-	yield [
+	yield array(
 		'url' => $tsf->get_post_meta_item( '_social_image_url', $parent_id ),
 		'id'  => $tsf->get_post_meta_item( '_social_image_id', $parent_id ),
-	];
+	);
 }
