@@ -202,7 +202,7 @@ class Cncf_Mu_Admin {
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Event Settings' ),
 			'post_type'       => 'cncf_event',
-			'data_key_prefix' => 'cncf_',
+			'data_key_prefix' => 'cncf_event_',
 			'icon_dashicon'   => 'admin-settings',
 			'tabs'            => array(
 				array(
@@ -282,7 +282,7 @@ class Cncf_Mu_Admin {
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Webinar Settings' ),
 			'post_type'       => 'cncf_webinar',
-			'data_key_prefix' => 'cncf_',
+			'data_key_prefix' => 'cncf_webinar_',
 			'icon_dashicon'   => 'admin-settings',
 			'tabs'            => array(
 				array(
@@ -366,7 +366,7 @@ class Cncf_Mu_Admin {
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Person Settings' ),
 			'post_type'       => 'cncf_person',
-			'data_key_prefix' => 'cncf_',
+			'data_key_prefix' => 'cncf_person_',
 			'icon_dashicon'   => 'admin-settings',
 			'tabs'            => array(
 				array(
@@ -459,7 +459,7 @@ class Cncf_Mu_Admin {
 			'id_prefix'       => 'cncf_',
 			'label'           => __( 'Case Study Settings' ),
 			'post_type'       => 'cncf_case_study',
-			'data_key_prefix' => 'cncf_',
+			'data_key_prefix' => 'cncf_case_study_',
 			'icon_dashicon'   => 'admin-settings',
 			'tabs'            => array(
 				array(
@@ -523,6 +523,145 @@ class Cncf_Mu_Admin {
 										'english' => __( 'English', 'my_plugin' ),
 										'chinese' => __( 'Chinese', 'my_plugin' ),
 									),
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+		$sidebars[] = $sidebar;
+
+		$sidebar    = array(
+			'id'              => 'cncf-sidebar-project',
+			'id_prefix'       => 'cncf_',
+			'label'           => __( 'Project Settings' ),
+			'post_type'       => 'cncf_project',
+			'data_key_prefix' => 'cncf_project_',
+			'icon_dashicon'   => 'admin-settings',
+			'tabs'            => array(
+				array(
+					'label'  => __( 'Tab label' ),
+					'panels' => array(
+						array(
+							'label'        => __( 'General' ),
+							'initial_open' => true,
+							'settings'     => array(
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'external_url', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'URL to Project Site' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://www.envoyproxy.io/',
+								),
+								array(
+									'type'          => 'radio', // Required.
+									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
+									'data_key'      => 'project_stage', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Stage', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => array( 'sandbox' ), // Value/s from the 'options'.
+									'use_toggle'    => false, // Use toggle control instead of checkbox.
+									'options'       => array( // Required.
+										'sandbox' => __( 'Sandbox', 'my_plugin' ),
+										'incubating'   => __( 'Incubating', 'my_plugin' ),
+										'graduated'    => __( 'Graduated', 'my_plugin' ),
+										'archived'    => __( 'Archived', 'my_plugin' ),
+									),
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'github', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'GitHub' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://github.com/coredns/coredns',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'blog', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Blog' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://blog.coredns.io/',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'logos', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Logos' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://github.com/cncf/artwork/blob/master/examples/graduated.md#coredns-logos',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'mail', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Mail' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://groups.google.com/forum/#!forum/coredns-discuss',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'slack', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Slack' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://cloud-native.slack.com/messages/coredns/',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'stack_overflow', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Stack Overflow' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://stackoverflow.com/questions/tagged/coredns',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'twitter', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Twitter' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://twitter.com/corednsio',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'youtube', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'YouTube' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://www.youtube.com/channel/UCbWRJZxiaQ8twm6sh7UymoQ',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'gitter', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Gitter' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'https://gitter.im/jaegertracing/Lobby',
 								),
 							),
 						),
