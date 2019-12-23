@@ -111,6 +111,22 @@ class Cncf_Mu_Admin {
 
 		$opts = array(
 			'labels'       => array(
+				'name'          => __( 'Case Studies - Chinese' ),
+				'singular_name' => __( 'Case Study - Chinese' ),
+				'all_items'     => __( 'All Case Studies' ),
+			),
+			'public'       => true,
+			'has_archive'  => true,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+			'menu_icon'    => 'dashicons-awards',
+			'rewrite'      => array( 'slug' => 'case-study-ch' ),
+			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+		);
+		register_post_type( 'cncf_case_study_ch', $opts );
+
+		$opts = array(
+			'labels'       => array(
 				'name'          => __( 'Webinars' ),
 				'singular_name' => __( 'Webinar' ),
 				'all_items'     => __( 'All Webinars' ),
@@ -508,20 +524,72 @@ class Cncf_Mu_Admin {
 										'public'  => __( 'Public', 'my_plugin' ),
 										'hybrid'  => __( 'Hybrid', 'my_plugin' ),
 										'private' => __( 'Private', 'my_plugin' ),
+										'multi'   => __( 'Multi', 'my_plugin' ),
+									),
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+		$sidebars[] = $sidebar;
+
+		$sidebar    = array(
+			'id'              => 'cncf-sidebar-case-study',
+			'id_prefix'       => 'cncf_',
+			'label'           => __( 'Case Study Settings' ),
+			'post_type'       => 'cncf_case_study_ch',
+			'data_key_prefix' => 'cncf_case_study_ch_',
+			'icon_dashicon'   => 'admin-settings',
+			'tabs'            => array(
+				array(
+					'label'  => __( 'Tab label' ),
+					'panels' => array(
+						array(
+							'label'        => __( 'General' ),
+							'initial_open' => true,
+							'settings'     => array(
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
+									'data_key'      => 'type', // Required if 'data_type' is 'meta'.
+									'label'         => __( 'Case Study Type' ),
+									'help'          => __( 'This value will appear in the Case Study tile "阅读 ___ 案例研究"', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => '',
+									'placeholder'   => 'Kubernetes',
+								),
+								array(
+									'type'          => 'radio', // Required.
+									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
+									'data_key'      => 'product_type', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Product Type', 'my_plugin' ),
+									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
+									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'default_value' => 'installer', // Value/s from the 'options'.
+									'use_toggle'    => false, // Use toggle control instead of checkbox.
+									'options'       => array( // Required.
+										'installer'    => __( '安装程序 (Installer)', 'my_plugin' ),
+										'distribution' => __( '发行版 (Distribution)', 'my_plugin' ),
+										'hosted'       => __( '托管 (Hosted)', 'my_plugin' ),
 									),
 								),
 								array(
 									'type'          => 'radio', // Required.
 									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'      => 'language', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Language', 'my_plugin' ),
+									'data_key'      => 'cloud_type', // Required if 'data_type' is 'meta' or 'localstorage'.
+									'label'         => __( 'Cloud Type', 'my_plugin' ),
 									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
 									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => 'english', // Value/s from the 'options'.
+									'default_value' => 'public', // Value/s from the 'options'.
 									'use_toggle'    => false, // Use toggle control instead of checkbox.
 									'options'       => array( // Required.
-										'english' => __( 'English', 'my_plugin' ),
-										'chinese' => __( 'Chinese', 'my_plugin' ),
+										'public'  => __( '公有 (Public)', 'my_plugin' ),
+										'hybrid'  => __( '混合 (Hybrid)', 'my_plugin' ),
+										'private' => __( '私有 (Private)', 'my_plugin' ),
+										'multi' => __( '多云 (Multi)', 'my_plugin' ),
 									),
 								),
 							),
@@ -702,6 +770,26 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study' ), $args );
 
 		$labels = array(
+			'name'              => __( 'Countries', 'textdomain' ),
+			'singular_name'     => __( 'Country', 'textdomain' ),
+			'search_items'      => __( 'Countries', 'textdomain' ),
+			'all_items'         => __( 'All Countries', 'textdomain' ),
+			'parent_item'       => __( 'Parent Continent', 'textdomain' ),
+			'parent_item_colon' => __( 'Parent Continent:', 'textdomain' ),
+			'edit_item'         => __( 'Edit Country', 'textdomain' ),
+			'update_item'       => __( 'Update Country', 'textdomain' ),
+			'add_new_item'      => __( 'Add New Country', 'textdomain' ),
+			'new_item_name'     => __( 'New Country Name', 'textdomain' ),
+			'menu_name'         => __( 'Countries', 'textdomain' ),
+		);
+		$args   = array(
+			'labels'       => $labels,
+			'show_in_rest' => true,
+			'hierarchical' => true,
+		);
+		register_taxonomy( 'cncf-country-ch', array( 'cncf_case_study_ch' ), $args );
+
+		$labels = array(
 			'name'          => __( 'Projects', 'textdomain' ),
 			'singular_name' => __( 'Project', 'textdomain' ),
 			'search_items'  => __( 'Projects', 'textdomain' ),
@@ -717,7 +805,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest' => true,
 			'hierarchical' => false,
 		);
-		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study' ), $args );
+		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch' ), $args );
 
 		$labels = array(
 			'name'          => __( 'Companies', 'textdomain' ),
@@ -792,6 +880,24 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-challenge', array( 'cncf_case_study' ), $args );
 
 		$labels = array(
+			'name'          => __( 'Challenges', 'textdomain' ),
+			'singular_name' => __( 'Challenge', 'textdomain' ),
+			'search_items'  => __( 'Challenges', 'textdomain' ),
+			'all_items'     => __( 'All Challenges', 'textdomain' ),
+			'edit_item'     => __( 'Edit Challenge', 'textdomain' ),
+			'update_item'   => __( 'Update Challenge', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Challenge', 'textdomain' ),
+			'new_item_name' => __( 'New Challenge Name', 'textdomain' ),
+			'menu_name'     => __( 'Challenges', 'textdomain' ),
+		);
+		$args   = array(
+			'labels'       => $labels,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+		);
+		register_taxonomy( 'cncf-challenge-ch', array( 'cncf_case_study_ch' ), $args );
+
+		$labels = array(
 			'name'          => __( 'Industries', 'textdomain' ),
 			'singular_name' => __( 'Industry', 'textdomain' ),
 			'search_items'  => __( 'Industries', 'textdomain' ),
@@ -808,6 +914,24 @@ class Cncf_Mu_Admin {
 			'hierarchical' => false,
 		);
 		register_taxonomy( 'cncf-industry', array( 'cncf_case_study' ), $args );
+
+		$labels = array(
+			'name'          => __( 'Industries', 'textdomain' ),
+			'singular_name' => __( 'Industry', 'textdomain' ),
+			'search_items'  => __( 'Industries', 'textdomain' ),
+			'all_items'     => __( 'All Industries', 'textdomain' ),
+			'edit_item'     => __( 'Edit Industry', 'textdomain' ),
+			'update_item'   => __( 'Update Industry', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Industry', 'textdomain' ),
+			'new_item_name' => __( 'New Industry Name', 'textdomain' ),
+			'menu_name'     => __( 'Industries', 'textdomain' ),
+		);
+		$args   = array(
+			'labels'       => $labels,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+		);
+		register_taxonomy( 'cncf-industry-ch', array( 'cncf_case_study_ch' ), $args );
 	}
 
 
