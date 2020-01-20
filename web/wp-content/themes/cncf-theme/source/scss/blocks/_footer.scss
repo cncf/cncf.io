@@ -1,0 +1,49 @@
+.footer {
+  margin-top: 4rem;
+  background: white;
+  padding: 1.5rem 1rem;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p,
+  a {
+    color: #999;
+  }
+
+  a {
+    display: flex;
+    font-size: 0.8rem;
+    text-decoration: none;
+    align-items: center;
+    flex-shrink: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  svg {
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  .cred {
+    margin-top: 0.5rem;
+    display: block;
+
+    a {
+      display: inline-block;
+    }
+    p {
+      text-align: right;
+      width: 100%;
+    }
+
+    img {
+      height: 10px;
+      width: auto;
+    }
+  }
+}

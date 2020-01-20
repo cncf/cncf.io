@@ -1,0 +1,46 @@
+.site-header {
+  padding: 2rem 1rem;
+  background: white;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search {
+    form {
+      display: flex;
+    }
+
+    input {
+      padding: 0.25rem;
+      font-size: 15px;
+      font-weight: bold;
+      display: inline-block;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-left: 0.2rem;
+      padding: 0.25rem;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: #808285;
+      color: white;
+      display: inline-block;
+      border: 1px solid #808285;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .search {
+      margin-top: 1rem;
+    }
+
+    .container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

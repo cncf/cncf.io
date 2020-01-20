@@ -1,0 +1,198 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $white;
+	min-width: 320px;
+	font-family: $font-primary;
+	font-size: 0.75em; // 12px body font mobile
+	@media (min-width: 375px) {
+		font-size: 0.875em; // 14px
+	}
+	@media (min-width: 800px) {
+		font-size: 1em; // 16px
+	}
+	@media (min-width: 1200px) {
+		font-size: 18px; // 18px
+	}
+	color: $black;
+	font-weight: 400;
+	&.menu-active {
+		overflow: hidden;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1150px;
+	margin: auto;
+}
+
+.wrap {
+	padding: 0em 12px;
+	@media (min-width: 500px) {
+		padding: 0em 24px;
+	}
+}
+
+.box-shadow {
+	box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
+}
+
+.trans {
+	transition: all 0.25s ease-out;
+}
+
+// reset UL properly now
+ul {
+	margin-left: 0;
+	padding-left: 0;
+	list-style-type: none;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+.button {
+	width: auto;
+	min-width: 100px;
+	border: 0;
+	cursor: pointer;
+
+	padding: 0px; // reset
+	text-decoration: none;
+	display: inline-block;
+	box-sizing: border-box;
+	text-align: center;
+
+	border-radius: 25px;
+	padding: 0.75rem 1.5rem;
+
+	background: $white;
+	color: $black;
+
+	transition: all 0.25s ease-out;
+	a {
+		color: $black;
+	}
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+	&:hover {
+		background: black;
+		color: white;
+	}
+
+	&.larger {
+		font-size: 1rem;
+		border: 1.5px solid $black;
+		padding: 0.75rem 1rem;
+	}
+
+	&.top {
+		margin-top: 1rem;
+	}
+}
+
+// Pagination (Blog) - maybe update?
+.pagination {
+	text-align: center;
+
+	ul {
+		display: inline-block;
+		background-color: $white;
+		white-space: nowrap;
+		padding: 1em;
+	}
+
+	li {
+		float: left;
+		display: inline;
+		overflow: hidden;
+		border: 1px solid $red;
+		margin-right: 5px;
+	}
+
+	.ellipsis {
+		vertical-align: baseline;
+	}
+
+	a,
+	span {
+		margin: 0;
+		text-decoration: none;
+		padding: 0;
+		line-height: 1em;
+		font-size: 1em;
+		font-weight: normal;
+		padding: 0.75em;
+		min-width: 1em;
+		display: block;
+		&:hover,
+		&:focus {
+			background-color: $red;
+			color: $white;
+		}
+	}
+
+	.active {
+		background-color: $red;
+		a {
+			color: $white;
+		}
+	}
+}
+
+/*
+|--------------------------------------------
+| Images in background
+|--------------------------------------------
+*/
+
+.background-image-wrapper {
+	overflow: hidden;
+	position: relative;
+}
+
+figure {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+
+.figure-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	z-index: 1;
+}
+
+.content-wrapper {
+	position: relative;
+	z-index: 2;
+}
+
+/*
+|-----------------------------------------------
+| Block A Href
+|-----------------------------------------------
+*/
+
+.box-link {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 3;
+}
