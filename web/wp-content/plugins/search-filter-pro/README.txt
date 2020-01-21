@@ -4,7 +4,7 @@ Donate link:
 Tags: posts, custom posts, products, category, filter, taxonomy, post meta, custom fields, search, wordpress, post type, post date, author
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 2.4.6
+Stable tag: 2.5.0
 
 Search and Filtering for posts, products and custom posts. Allow your users to Search & Filter by taxonomies, custom fields and more.
 
@@ -56,6 +56,32 @@ Great for searching in your online shop, tested with: WooCommerce and WP eCommer
 
 
 == Changelog ==
+
+= 2.5.0 =
+* Fix - issues with number range fields not setting the "max" value by default
+* Fix - some errors were being thrown when checking if a term exists
+* Fix - some php warnings related to an object being countable
+* Fix - issues with forming the URL for taxonomy archives in certain circumstances
+* Fix - an issue with the current author being detected when enabling this feature on author archives
+* Fix - issues with multiple date pickers and auto submit activating properly when selecting a date
+* Fix - a warning about an undefined variable
+* Fix - an issue with reset form not working properly on taxonomy archives
+* Fix - allow `update_post_cache` action in admin
+* Fix - an issue with URL encoding in pagination
+* Fix - an issue with whitespace being removed from user choices in choice fields
+* Fix - a Polylang issue with the wrong language form being loaded, when auto submit is off
+* Fix - an issue with URL encoding in sort order fields
+* Fix - an issue where our meta queries (in query settings) were not respecting WordPress Time Zone when "current date" was used
+* Fix - an issue when using the OR comparison inside a field, and non latin characters
+* Fix - an issue with searches not working when pressing the back button on iOS Safari
+* Fix - an issue with stock status not being stored on the parent product in a variable product
+* Fix - an issue with WooCommerce shop page, where it was not registering as `filtered` when using the search input box
+* Fix - issues detecting post meta for WC variations
+* Fix - added date and datetime meta type options for ordering by meta values
+* Fix - re-fix mobile Safari back button issue
+* New - added "Relevance" to default order by and sort fields
+* New - an issue where multiple meta keys with the same name (but different cases) were not being correctly detected
+* Improvement - updates to license page
 
 = 2.4.6 =
 * Fix - properly disable `maintain search form state` as this was causing potential security issues

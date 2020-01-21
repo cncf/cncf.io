@@ -41,7 +41,6 @@ class Search_Filter_Wp_Data
                 self::$wp_transients_loaded[$taxonomy_name] = true; //never do `get_transient` more than once
 
                 $wp_tax_terms = Search_Filter_Wp_Cache::get_transient(self::$wp_tax_terms_cache_key . $taxonomy_name);
-                //var_dump($wp_tax_terms);
 
                 if (!empty($wp_tax_terms)) {
                     foreach ($wp_tax_terms as $taxonomy_term) {
@@ -131,8 +130,9 @@ class Search_Filter_Wp_Data
 
         //else, term name does not exist, so fetch it
         $term = get_term_by( $by, $term_name, $taxonomy_name );
-
-        if ( !is_wp_error( $term ) ) {
+		
+        //if ( !is_wp_error( $term ) ) {
+        if ( $term ) {
             self::$wp_tax_terms[$taxonomy_name]["id"][$term->term_id] = $term;
             self::$wp_tax_terms[$taxonomy_name]["slug"][$term->slug] = $term;
 

@@ -821,7 +821,7 @@ class Search_Filter_Generate_Input {
 		$select_field_max['name'] = $args['name'].'_max';
 		$select_field_max['attributes']['class'] .= ' sf-range-max';
 		$select_field_max['defaults'] = array($args['default_max']);
-		
+
 		$value_min_html = $this->select($select_field_min);
 		$value_max_html = $this->select($select_field_max);
 		
@@ -831,9 +831,7 @@ class Search_Filter_Generate_Input {
 		
 		?>
 		<div <?php echo $attibutes_html; ?>>
-		
 			<?php echo $value_min_html; ?><span class="sf-range-values-seperator"><?php echo $args['number_values_seperator']; ?></span><?php echo $value_max_html; ?>
-			
 		</div>
 		<?php
 		

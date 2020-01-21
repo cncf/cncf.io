@@ -64,6 +64,7 @@ class Search_Filter_Third_Party
 			// -- polylang
 			add_filter('sf_archive_results_url', array($this, 'pll_sf_archive_results_url'), 10, 3); //
 			add_filter('sf_ajax_results_url', array($this, 'pll_sf_ajax_results_url'), 10, 2); //
+			add_filter('sf_ajax_form_url', array($this, 'pll_sf_form_url'), 10, 3); //
 		}
 
 		//add_filter('fes_save_field_after_save_frontend', array($this, 'sf_edd_fes_field_save_frontend'), 11, 3); //
@@ -84,8 +85,6 @@ class Search_Filter_Third_Party
 		add_filter('search_filter_post_cache_data_query_args', array($this, 'sf_woocommerce_cache_data_query_args'), 11, 2); //
 		add_filter('search_filter_post_cache_update', array($this, 'sf_woocommerce_cache_update'), 11, 3); //
 
-
-
 		// -- polylang
 		add_filter('sf_edit_query_args', array($this, 'sf_poly_query_args'), 11, 2); //
 		add_filter('pll_get_post_types', array($this, 'pll_sf_add_translations'), 10, 2);
@@ -94,7 +93,7 @@ class Search_Filter_Third_Party
 		add_filter('sf_archive_slug_rewrite', array($this, 'pll_sf_archive_slug_rewrite'), 10, 3); //
 		add_filter('sf_rewrite_query_args', array($this, 'pll_sf_rewrite_args'), 10, 3); //
 		//add_filter('sf_pre_get_posts_admin_cache', array($this, 'sf_pre_get_posts_admin_cache'), 10, 3); //
-		
+
 		$this->init();
 	}
 
@@ -281,8 +280,9 @@ class Search_Filter_Third_Party
 
 				//if managing stock is false, then we are managing stock at the variation level, so unset it from the parent
 				if(($product->managing_stock()==false)&&(isset($insert_data['_sfm__stock_status']))) {
-
-					unset($insert_data['_sfm__stock_status']);
+					// disable, keep on the parent, in case the user doesn't include variations, and so we can mathc stock status
+					// if such a filter has been created v2.4.7
+					//unset($insert_data['_sfm__stock_status']);
 				}
 			}
 
@@ -488,9 +488,13 @@ class Search_Filter_Third_Party
 			}
 		}
 
-		array_push($wanted_meta_keys, "_stock_status");
+		//array_push($wanted_meta_keys, "_stock_status");
+		$remove_keys = array('_stock_status');
+
+		$wanted_meta_keys = array_diff( $wanted_meta_keys, $remove_keys) ;
 
 		foreach($wanted_meta_keys as $wanted_meta_key){
+
 			$post_meta_values = get_post_meta($variation_id, $wanted_meta_key);
 
 			if(!empty($post_meta_values)) {
@@ -498,6 +502,10 @@ class Search_Filter_Third_Party
 				$index_data['_sfm_'.$wanted_meta_key]['values'] = $post_meta_values;
 				$index_data['_sfm_'.$wanted_meta_key]['type'] = 'string';
 			}
+		}
+
+		if(isset($index_data['_sfm__stock_status'])){
+
 		}
 
 		return $index_data;
@@ -605,7 +613,7 @@ class Search_Filter_Third_Party
 			$index_variation = false;
 		}
 
-		//important
+		// skip this variation
 		if($index_variation===false){
 			return;
 		}
@@ -614,16 +622,10 @@ class Search_Filter_Third_Party
 
 			//need to remove existing records for this variation (already done in `sf_woo_post_cache_get_delete_variation_data`)
 
-
 			//loop through the variations
 			$single_variation = new WC_Product_Variation($variation_id);
 			$variation_price = $single_variation->get_price();
 			$variation_attributes = $single_variation->get_variation_attributes();
-
-
-			//$variation_id = $product_variation['variation_id'];
-			//$variation_price = $product_variation['display_price'];
-			//$variation_attributes = $product_variation['attributes'];
 
 			//start by adding post meta / can be an empty array
 			//$variation_values = array();
@@ -690,6 +692,24 @@ class Search_Filter_Third_Party
 				}
 			}
 
+
+			//figure out which meta keys to index of the variations
+			global $search_filter_post_cache;
+			$cache_data = $search_filter_post_cache->get_cache_data();
+			$meta_keys = array();
+			if(isset($cache_data['meta_keys'])){
+				if(is_array($cache_data['meta_keys'])){
+					$meta_keys = $cache_data['meta_keys'];
+
+					foreach($meta_keys as &$meta_key){
+						$meta_key = "_sfm_".$meta_key;
+					}
+				}
+			}
+
+			//merge meta keys in the post cache with the existing passed through
+			$this->wc_variable_meta_keys = array_unique( array_merge( $this->wc_variable_meta_keys, $meta_keys ) );
+
 			//now we add the other post meta, like _width, _height
 			$post_meta = get_post_meta($variation_id);
 
@@ -724,7 +744,7 @@ class Search_Filter_Third_Party
 			$variation_values['_sfm__price']['values'] = array($variation_price);
 			$variation_values['_sfm__price']['type'] = 'string';
 
-			//we're managing stock status at product level, not variation, so forget about it for variations
+			//we're managing stock status at product level, not variation, so forget about it for variations (ie, just copy the parent value)
 			if($product->managing_stock()==true) {
 				if(isset($variation_values['_sfm__stock_status'])){
 					unset($variation_values['_sfm__stock_status']);
@@ -735,6 +755,13 @@ class Search_Filter_Third_Party
 				$variation_values['_sfm__stock_status']['type'] = 'string';
 
 			}
+			/*else{
+				//to enable the ability to have an instock / outofstock filter, we need to unset all "outofstock" on variaations
+				// because they cause a count increase for the "outofstock" option, which we do not want
+				if(isset($variation_values['_sfm__stock_status'])){
+					unset($variation_values['_sfm__stock_status']);
+				}
+			}*/
 
 			//combine parent taxonomies with variation attributes
 			$variation_insert_data = array_merge($term_values, $variation_values);
@@ -751,7 +778,9 @@ class Search_Filter_Third_Party
 	}
 	public function sf_woocommerce_update_post_cache( $post ) {
 
+
 		if (!$this->is_woo_enabled()) {
+
 			return;
 		}
 		global $search_filter_session;
@@ -769,6 +798,10 @@ class Search_Filter_Third_Party
 				$this->sf_woo_post_cache_add_simple_product_data($post);
 			}*/
 		}
+		else{
+
+		}
+
 	}
 
 	public function get_cache_post_types(){
@@ -891,7 +924,7 @@ class Search_Filter_Third_Party
 				array_push($cache_data['meta_keys'], "_stock_status");
 			}
 		}
-		
+
 		/*if ((in_array("product", $cache_data['post_types'])) && (in_array("product_variation", $cache_data['post_types']))) {
 
 			$variation_position = array_search("product_variation", $cache_data['post_types'], true);
@@ -906,17 +939,12 @@ class Search_Filter_Third_Party
 			//if (!empty($meta_keys)) {
 			//	$cache_data['meta_keys'] = array_unique(array_merge($cache_data['meta_keys'], $meta_keys));
 			//}
-
-
-			//var_dump($cache_data);
-
-
-
 		}*/
 
-		/* TODO!!!!!! POTENTIAL PROBLEM, THIS DATA IS ONLY CALCULATED WHEN A SERACH FORM IS SAVED,
-		IT SHOULD ALSO BE RECALCULATED WHEN THE CACHE RESTARTS BUILDING,
-		MAY BE NOT, DEPENDS MAYBE ONLY NEED FOR DEBUG
+		/* TODO
+			POTENTIAL PROBLEM, THIS DATA IS ONLY CALCULATED WHEN A SEARCH FORM IS SAVED,
+			IT SHOULD ALSO BE RECALCULATED WHEN THE CACHE RESTARTS BUILDING,
+			MAY BE NOT, DEPENDS MAYBE ONLY NEED FOR DEBUG
 		*/
 
 		return $cache_data;
@@ -933,7 +961,6 @@ class Search_Filter_Third_Party
 			return $query_args;
 		}
 
-
 		if ((in_array("product", $query_args['post_type'])) && (in_array("product_variation", $query_args['post_type']))) {
 
 			$variation_position = array_search("product_variation", $query_args['post_type'], true);
@@ -945,7 +972,6 @@ class Search_Filter_Third_Party
 		}
 
 		return $query_args;
-
 	}
 
 	public function sf_woocommerce_is_woo_variations_query($sfid)
@@ -957,7 +983,11 @@ class Search_Filter_Third_Party
 		global $searchandfilter;
 		$sf_inst = $searchandfilter->get($sfid);
 
-		$post_types = array_keys($sf_inst->settings("post_types"));
+		$post_types_arr = $sf_inst->settings("post_types");
+		$post_types = array();
+		if(is_array($post_types_arr)){
+			$post_types = array_keys($post_types_arr);
+		}
 
 		if ((in_array("product", $post_types)) && (in_array("product_variation", $post_types))) {
 			//then we need to store the vairation data in the DB, variations (even when taxonomies) are actually stored as post meta on the variation itself, so add these to the meta list
@@ -977,7 +1007,11 @@ class Search_Filter_Third_Party
 		global $searchandfilter;
 		$sf_inst = $searchandfilter->get($sfid);
 
-		$post_types = array_keys($sf_inst->settings("post_types"));
+		$post_types_arr = $sf_inst->settings("post_types");
+		$post_types = array();
+		if(is_array($post_types_arr)){
+			$post_types = array_keys($post_types_arr);
+		}
 
 		if (in_array("product", $post_types)) {
 			//then we need to store the vairation data in the DB, variations (even when taxonomies) are actually stored as post meta on the variation itself, so add these to the meta list
@@ -1298,13 +1332,13 @@ class Search_Filter_Third_Party
 				$taxonomy = $term->taxonomy;
 
 				//exclude current tax archive as a filter when checking "is_filtered"
-				if($sf_current_query->is_filtered(array('_sft_'.$taxonomy))){
+				if(($sf_current_query->is_filtered(array('_sft_'.$taxonomy))) || (!empty($sf_current_query->get_search_term())) ){
 					add_filter('woocommerce_is_filtered', array($this, 'sf_woocommerce_is_filtered'));
 				}
 			}
 			else{
 				$sf_current_query  = $sf_inst->current_query();
-				if($sf_current_query->is_filtered()){
+				if(($sf_current_query->is_filtered())||(!empty($sf_current_query->get_search_term()))){
 					add_filter('woocommerce_is_filtered', array($this, 'sf_woocommerce_is_filtered'));
 				}
 			}
@@ -1399,7 +1433,12 @@ class Search_Filter_Third_Party
 				}
 
 				//check to see if hte language we are searching, is being handles by polylang
-				$post_types = (array_keys($sf_inst->settings("post_types")));
+				$post_types_arr = $sf_inst->settings("post_types");
+				$post_types = array();
+				if(is_array($post_types_arr)){
+					$post_types = array_keys($post_types_arr);
+				}
+
 				$polylang_post_types = array_keys($this->polylang_post_types);
 
 				$intersect = array_intersect($post_types, $polylang_post_types);
@@ -1524,7 +1563,7 @@ class Search_Filter_Third_Party
 
 		return $ajax_url;
 	}
-	public function pll_sf_archive_results_url($results_url,  $sfid, $page_slug) {
+	public function pll_sf_archive_results_url($results_url,  $sfid, $page_slug = '') {
 
 
 		if((function_exists('pll_home_url'))&&(function_exists('pll_current_language')))
@@ -1548,6 +1587,34 @@ class Search_Filter_Third_Party
 				$results_url .= "&sfid=".$sfid;
 			}
 		}
+
+		return $results_url;
+	}
+
+	public function pll_sf_form_url($results_url,  $sfid, $page_slug = '') {
+
+		if((function_exists('pll_home_url'))&&(function_exists('pll_current_language')))
+		{
+			$results_url = pll_home_url(pll_current_language());
+
+			if(get_option('permalink_structure'))
+			{
+				$results_url = trailingslashit($results_url);
+				$results_url = $this->add_url_args( $results_url, "sfid=$sfid");
+				$results_url = $this->add_url_args( $results_url, "sf_action=get_data");
+				$results_url = $this->add_url_args( $results_url, "sf_data=form");
+
+
+			}
+			else
+			{
+				$results_url = $this->add_url_args( $results_url, "sfid=$sfid");
+				$results_url = $this->add_url_args( $results_url, "sf_action=get_data");
+				$results_url = $this->add_url_args( $results_url, "sf_data=form");
+				//$results_url .= "&sfid=".$sfid;
+			}
+		}
+
 
 		return $results_url;
 	}

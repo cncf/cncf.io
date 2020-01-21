@@ -107,9 +107,20 @@ class Search_Filter_Post_Cache
 
         //$this->init_cache_options();
         //$this->setup_cached_search_forms();
+
+	    //was in search_filter_global, but needs to be available in admin
+	    add_action('search_filter_update_post_cache', array($this, 'update_cache_action'), 10);
     }
 
-    public function init_cache_options()
+	public function update_cache_action($postID)
+	{
+		$this->init_cache_options();
+		$this->setup_cached_search_forms();
+		$this->update_post_cache($postID);
+	}
+
+
+	public function init_cache_options()
     {
         //check to see if there is a S&F options in the caching table
 
@@ -1159,6 +1170,7 @@ class Search_Filter_Post_Cache
         	return;
         }
         //$this->post_updated($postID, $post, false);
+
 	    $this->schedule_post_updated($postID);
     }
 
@@ -1171,6 +1183,7 @@ class Search_Filter_Post_Cache
         $post = get_post($object_id);
 
         //$this->post_updated($post->ID, $post, false);
+
 	    $this->schedule_post_updated($post->ID);
     }
 
@@ -1202,7 +1215,6 @@ class Search_Filter_Post_Cache
 
 	    	//if the user uses our action to update the post, we don't want to do it twice
 		    //so pop the ID off hte array on the action `search_filter_update_post` (unless we use the action somewhere)
-
 		    $this->setup_cached_search_forms();
 
 		    $this->posts_updated = array_unique($this->posts_updated);
@@ -1344,9 +1356,11 @@ class Search_Filter_Post_Cache
 
 		//set up taxonomies
 		$tax_insert_data = $this->set_post_cache_taxonomy_terms($postID, $post);
+
 		if(has_filter('search_filter_post_cache_insert_data')) {
 			$tax_insert_data = apply_filters('search_filter_post_cache_insert_data', $tax_insert_data, $postID, 'taxonomy');
 		}
+
 		$tax_insert_sql = $this->insert_post_cache_taxonomy_terms($tax_insert_data, $postID, $post);
 
 		//setup meta
@@ -1396,7 +1410,6 @@ class Search_Filter_Post_Cache
 			'update_term_cache' => true
 		);
 		$args = array_replace_recursive($defaults, $args);
-
 
 		global $wpdb;
 		$this->init_cache_options();
@@ -1623,6 +1636,7 @@ class Search_Filter_Post_Cache
 
 		//Search_Filter_Helper::start_log("insert_all_term_results");
 		$this->insert_all_term_results($all_cache_term_ids);
+
 		//Search_Filter_Helper::finish_log("insert_all_term_results", true, true);
 
 		// post offset can be used for things like variations, where 1 product is actually multiple posts (variations)
@@ -1866,7 +1880,6 @@ class Search_Filter_Post_Cache
 		$post_type = $post->post_type;
 		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
 
-
         if(Search_Filter_Helper::has_wpml()&&(defined("ICL_LANGUAGE_CODE")))
         {
             $current_language = ICL_LANGUAGE_CODE;
@@ -1888,6 +1901,7 @@ class Search_Filter_Post_Cache
 
 			// get the terms related to post
 			$terms = get_the_terms( $postID, $taxonomy_slug );
+
 			$insert_arr["_sft_".$taxonomy_slug] = array();
 
 			if ( !empty( $terms ) ) {
@@ -1955,6 +1969,10 @@ class Search_Filter_Post_Cache
 		}
 
 		return $sql_where_parts;
+	}
+
+	public function get_cache_data(){
+		return $this->cache_data;
 	}
 
 	private function set_post_cache_meta_terms($postID, $post){

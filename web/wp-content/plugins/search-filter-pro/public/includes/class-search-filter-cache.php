@@ -153,8 +153,13 @@ class Search_Filter_Cache
         
 		if(!$searchandfilter->get($this->sfid)->settings("post_types")){
 			return;
+        }
+        
+        $post_types_arr = $searchandfilter->get($this->sfid)->settings("post_types");
+		$post_types = array();
+		if(is_array($post_types_arr)){
+			$post_types = array_keys($post_types_arr);
 		}
-	    $post_types = array_keys($searchandfilter->get($this->sfid)->settings("post_types"));
 
         if ((($display_results_as == "post_type_archive")||($display_results_as == "custom_woocommerce_store"))&&($enable_taxonomy_archives == 1))
         {
@@ -318,7 +323,8 @@ class Search_Filter_Cache
 
                     if (isset($_GET[$filter_name_get])) {
                         //get the value and parse it - might need to parse different for meta
-                        $filter_value = sanitize_text_field($_GET[$filter_name_get]);
+                        //$filter_value = sanitize_text_field($_GET[$filter_name_get]);
+                        $filter_value = $_GET[$filter_name_get];
                         $this->filters[$filter_name]['active_values'] = $this->parse_get_value($filter_value, $filter_name, $this->filters[$filter_name]['source']);
                         $this->filters[$filter_name]['is_active'] = true;
 
@@ -590,12 +596,17 @@ class Search_Filter_Cache
                 $operator = "AND";
                 $ochar = "+";
 
-                $active_terms = explode($ochar, esc_attr(urlencode($value)));
-                $active_terms = array_map('urldecode', ($active_terms));
-                $active_terms = array_map('utf8_uri_encode', ($active_terms)); //use wordpress' method for encoding so it will always match what is stored in teh actual terms table
+	            $value = str_replace(" ", "+", $value);
+	            //$active_terms = explode($ochar, esc_attr(urlencode($value)));
+                $active_terms = explode($ochar, esc_attr($value));
+
             }
 
-            $active_terms_count = count($active_terms);
+	        $active_terms = array_map('urldecode', ($active_terms));
+	        $active_terms = array_map('utf8_uri_encode', ($active_terms)); //use wordpress' method for encoding so it will always match what is stored in teh actual terms table
+
+
+	        $active_terms_count = count($active_terms);
 
             if ($format == "date") {//convert $active_terms
 
@@ -646,13 +657,9 @@ class Search_Filter_Cache
                 $replacechar = "- -";
                 $value = str_replace($replacechar, $ochar, $value);
             }
+
             $active_terms = explode($ochar, ($value));
-
-
-
-
         }
-
 
         return $active_terms;
     }
@@ -972,7 +979,6 @@ class Search_Filter_Cache
             }
 
             if ($filter['is_active'] == true) {
-
 
                 $field_terms = $filter["terms"];
                 $active_values = $filter["active_values"];

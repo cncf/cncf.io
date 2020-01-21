@@ -721,6 +721,7 @@
 							<option value="parent"<?php $this->set_selected($values['default_sort_by'], "parent"); ?>><?php _e("Parent ID", $this->plugin_slug); ?></option>
 							<option value="rand"<?php $this->set_selected($values['default_sort_by'], "rand"); ?>><?php _e("Random Order", $this->plugin_slug); ?></option>
 							<option value="comment_count"<?php $this->set_selected($values['default_sort_by'], "comment_count"); ?>><?php _e("Comment Count", $this->plugin_slug); ?></option>
+							<option value="relevance"<?php $this->set_selected($values['default_sort_by'], "relevance"); ?>><?php _e("Relevance", $this->plugin_slug); ?></option>
 							<option value="menu_order"<?php $this->set_selected($values['default_sort_by'], "menu_order"); ?>><?php _e("Menu Order", $this->plugin_slug); ?></option>
 							<option value="meta_value"<?php $this->set_selected($values['default_sort_by'], "meta_value"); ?>><?php _e("Meta Value", $this->plugin_slug); ?></option>
 						</select>
@@ -755,6 +756,9 @@
 						<select name='default_sort_type' data-field-template-id='default_sort_type'>
 							<option value="numeric"<?php $this->set_selected($values['default_sort_type'], "numeric"); ?>><?php _e("Numerical", $this->plugin_slug); ?></option>
 							<option value="alphabetic"<?php $this->set_selected($values['default_sort_type'], "alphabetic"); ?>><?php _e("Alphabetical", $this->plugin_slug); ?></option>
+                            <option value="date"<?php $this->set_selected($values['default_sort_type'], "date"); ?>><?php _e("Date", $this->plugin_slug); ?></option>
+                            <option value="datetime"<?php $this->set_selected($values['default_sort_type'], "datetime"); ?>><?php _e("Datetime", $this->plugin_slug); ?></option>
+                            <!--<option value="decimal"<?php $this->set_selected($values['default_sort_type'], "decimal"); ?>><?php _e("Decimal", $this->plugin_slug); ?></option>-->
 						</select>
 					</fieldset>
 				</td>
@@ -781,6 +785,7 @@
 							<option value="parent"<?php $this->set_selected($values['secondary_sort_by'], "parent"); ?>><?php _e("Parent ID", $this->plugin_slug); ?></option>
 							<option value="rand"<?php $this->set_selected($values['secondary_sort_by'], "rand"); ?>><?php _e("Random Order", $this->plugin_slug); ?></option>
 							<option value="comment_count"<?php $this->set_selected($values['secondary_sort_by'], "comment_count"); ?>><?php _e("Comment Count", $this->plugin_slug); ?></option>
+                            <option value="relevance"<?php $this->set_selected($values['secondary_sort_by'], "relevance"); ?>><?php _e("Relevance", $this->plugin_slug); ?></option>
 							<option value="menu_order"<?php $this->set_selected($values['secondary_sort_by'], "menu_order"); ?>><?php _e("Menu Order", $this->plugin_slug); ?></option>
 							<option value="meta_value"<?php $this->set_selected($values['secondary_sort_by'], "meta_value"); ?>><?php _e("Meta Value", $this->plugin_slug); ?></option>
 						</select>

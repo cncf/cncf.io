@@ -34,6 +34,7 @@
 					<option value="parent"<?php $this->set_selected($values['sort_by'], "parent"); ?>><?php _e("Parent ID", $this->plugin_slug); ?></option>
 					<option value="rand"<?php $this->set_selected($values['sort_by'], "rand"); ?>><?php _e("Random Order", $this->plugin_slug); ?></option>
 					<option value="comment_count"<?php $this->set_selected($values['sort_by'], "comment_count"); ?>><?php _e("Comment Count", $this->plugin_slug); ?></option>
+                    <option value="relevance"<?php $this->set_selected($values['sort_by'], "relevance"); ?>><?php _e("Relevance", $this->plugin_slug); ?></option>
 					<option value="menu_order"<?php $this->set_selected($values['sort_by'], "menu_order"); ?>><?php _e("Menu Order", $this->plugin_slug); ?></option>
 					<option value="meta_value"<?php $this->set_selected($values['sort_by'], "meta_value"); ?>><?php _e("Meta Value", $this->plugin_slug); ?></option>
 				</select>
@@ -92,9 +93,12 @@
 			<label for="{0}[{1}][sort_options][{2}][sort_type]">
 				<?php _e("Sort Type: ", $this->plugin_slug); ?> <br />
 				<select name='{0}[{1}][sort_options][{2}][sort_type]' data-field-template-id='{0}[{1}][sort_options][{2}][sort_type]'>
-					<option value="numeric"<?php $this->set_selected($values['sort_type'], "numeric"); ?>><?php _e("numeric", $this->plugin_slug); ?></option>
-					<option value="alphabetic"<?php $this->set_selected($values['sort_type'], "alphabetic"); ?>><?php _e("alphabetic", $this->plugin_slug); ?></option>
-				</select>
+					<option value="numeric"<?php $this->set_selected($values['sort_type'], "numeric"); ?>><?php _e("Numeric", $this->plugin_slug); ?></option>
+					<option value="alphabetic"<?php $this->set_selected($values['sort_type'], "alphabetic"); ?>><?php _e("Alphabetic", $this->plugin_slug); ?></option>
+                    <option value="date"<?php $this->set_selected($values['sort_type'], "date"); ?>><?php _e("Date", $this->plugin_slug); ?></option>
+                    <option value="datetime"<?php $this->set_selected($values['sort_type'], "datetime"); ?>><?php _e("Datetime", $this->plugin_slug); ?></option>
+
+                </select>
 			</label>
 		</p>
 		

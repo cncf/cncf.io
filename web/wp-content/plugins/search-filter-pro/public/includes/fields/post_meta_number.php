@@ -45,7 +45,11 @@ class Search_Filter_Field_Post_Meta_Number {
 		global $wpdb;
 		global $searchandfilter;
 		$searchform = $searchandfilter->get($this->sfid);
-		$post_types = array_keys($searchform->settings("post_types"));
+		$post_types_arr = $searchform->settings("post_types");
+		$post_types = array();
+		if(is_array($post_types_arr)){
+			$post_types = array_keys($post_types_arr);
+		}
 
 		if($args['range_min_detect']==1) {
 
@@ -95,6 +99,12 @@ class Search_Filter_Field_Post_Meta_Number {
 			else {
 				//then its a perfect division, so don't change
 			}
+
+		}
+
+		$is_default = false;
+		if(empty($defaults)){
+			$is_default = true;
 
 		}
 
@@ -183,6 +193,20 @@ class Search_Filter_Field_Post_Meta_Number {
 			if($args['number_display_input_as']=="fromtofields")
 			{
 				$input_args['options'] = $this->get_range_options($option_args);
+
+				//adjust max option based on the new range options generated (max can change because of the step value in the range)
+				$last_option_i = count($input_args['options']) - 1;
+				$max_option = $input_args['options'][$last_option_i]->value;
+
+				if($is_default===true){
+
+					//set the default to option, to max, when nothing has been selected
+					$input_args['default_max'] = $max_option;
+					$input_args['default_max_formatted'] = number_format( (float)$max_option, $decimal_places, $decimal_point, $thousand_seperator );
+				}
+				//adjust max option based on the new range options generated (max can change because of the step value in the range)
+				$input_args['range_max'] = $max_option;
+
 				$returnvar .= $this->create_input->range_select($input_args);
 			}
 			else if($args['number_display_input_as']=="singlefield")
@@ -209,6 +233,20 @@ class Search_Filter_Field_Post_Meta_Number {
 			if($args['number_display_input_as']=="fromtofields")
 			{
 				$input_args['options'] = $this->get_range_options($option_args);
+
+				//adjust max option based on the new range options generated (max can change because of the step value in the range)
+				$last_option_i = count($input_args['options']) - 1;
+				$max_option = $input_args['options'][$last_option_i]->value;
+
+				if($is_default===true){
+
+					//set the default to option, to max, when nothing has been selected
+					$input_args['default_max'] = $max_option;
+					$input_args['default_max_formatted'] = number_format( (float)$max_option, $decimal_places, $decimal_point, $thousand_seperator );
+				}
+				//adjust max option based on the new range options generated (max can change because of the step value in the range)
+				$input_args['range_max'] = $max_option;
+
 				$returnvar .= $this->create_input->range_radio($input_args);
 			}
 			else if($args['number_display_input_as']=="singlefield")

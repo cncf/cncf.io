@@ -141,7 +141,7 @@ class Search_Filter_Active_Query {
 				global $searchandfilter;
 				$author = $searchandfilter->get_queried_object();
 				
-				$this->field_values['authors'] = array($author->user_login);
+				$this->field_values['authors'] = array($author->user_nicename);
 			}
 
 		}
@@ -231,13 +231,15 @@ class Search_Filter_Active_Query {
 		if(isset($_GET['sort_order']))
 		{
 			$sort_orders = array();
-			$sort_orders = explode(",",esc_attr(($_GET['sort_order'])));
-			
+			$sort_orders = explode(",",esc_attr($_GET['sort_order']));
+
 			$this->query_array[SF_FPRE.'sort_order']['active_terms'] = array();
 			
 			foreach($sort_orders as $sort_order)
 			{
-				$active_terms = (array("value"=>urlencode($sort_order)));
+				$sort_order = str_replace(" ", "+", $sort_order);
+				//$active_terms = (array("value"=>urlencode($sort_order)));
+				$active_terms = (array("value"=>($sort_order)));
 				array_push($this->query_array[SF_FPRE.'sort_order']['active_terms'], $active_terms);
 			}			
 		}
@@ -456,7 +458,10 @@ class Search_Filter_Active_Query {
 
 
 		$active_terms = $field['active_terms'];
-		$no_active_terms = count($active_terms);
+		$no_active_terms = 0;
+		if(is_array($active_terms)){
+			$no_active_terms = count($active_terms);
+		}
 
 		$taxonomy_label = $field['name'];
 		$term_string = "";
