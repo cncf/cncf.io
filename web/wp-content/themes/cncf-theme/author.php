@@ -1,2 +1,2 @@
 <?php
-  get_template_part('index');
+get_template_part( 'index' );

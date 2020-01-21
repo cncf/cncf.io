@@ -202,13 +202,15 @@ function clean() {
 // }
 
 // PHP Code Sniffer.
-function testphpcs(done) {
+function phpcs(done) {
     return (
-        gulp.src(['src/**/*.php','!src/vendor/**/*.*','!src/node_modules/*'])
+        gulp.src(['./**/*.php','!node_modules/**/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
             .pipe(gulpphpcs({
-                bin: '../../../../vendor/bin/phpcbf',
+                bin: '../../../../vendor/bin/phpcs',
                 standard: 'WordPress',
-                warningSeverity: 0
+                warningSeverity: 0,
+                showSniffCode: true,
+                show_progress: true
             }))
             .pipe(gulpphpcs.reporter('log'))
     );
@@ -216,13 +218,14 @@ function testphpcs(done) {
 }
 
 // PHP Code Beautifier.
-function testphpcbf(done) {
+function phpcbf(done) {
     return (
-        gulp.src(['src/**/*.php','!src/vendor/**/*.*','!src/node_modules/*'])
+        gulp.src(['./**/*.php','!node_modules/**/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
             .pipe(gulpphpcbf({
                 bin: '../../../../vendor/bin/phpcbf',
                 standard: 'WordPress',
-                warningSeverity: 0
+                warningSeverity: 0,
+                show_progress: true
             }))
             .on("error",console.error.bind(console))
             .pipe(gulp.dest('./'))
@@ -279,5 +282,7 @@ function blocksJS() {
 
 exports.default = gulp.series(styles,globalJS,blocksJS,watch);
 exports.production = gulp.series(styles,globalJS,blocksJS);
-exports.test = gulp.series(testphpcs,testphpcbf);
+exports.phpcs = gulp.series(phpcs);
+exports.phpcbf = gulp.series(phpcbf);
+exports.standards = gulp.series(phpcbf,phpcs);
 exports.watch = gulp.series(watch);
