@@ -81,6 +81,7 @@ var sourcemaps = require("gulp-sourcemaps");
 var del = require("del");
 var touch = require("gulp-touch-cmd");
 var phpcs = require("gulp-phpcs");
+var phpcbf = require("gulp-phpcbf");
 
 var browserSync = require("browser-sync").create();
 
@@ -174,6 +175,20 @@ function styles() {
 function clean() {
     return del([styleDestination + "/*"]);
 }
+
+/**
+ * phpcbf - PHP Code Beautifier task
+ */
+function phpcbf() {
+    return gulp.src(PATHS.phpcs)
+        .pipe($.phpcbf({
+            bin: 'wpcs/vendor/bin/phpcbf',
+            standard: './codesniffer.ruleset.xml',
+            warningSeverity: 0
+        }))
+        .on('error',log)
+        .pipe(gulp.dest('.'));
+};
 
 /**
  * Global JS files

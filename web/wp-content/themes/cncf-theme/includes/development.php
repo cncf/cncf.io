@@ -7,8 +7,9 @@
  *
  * @return output
  */
-function r( $var ) {
-	echo '<pre>';
-	print_r( $var );
-	echo '</pre>';
+function r( $var )
+{
+    echo '<pre>';
+    print_r($var);
+    echo '</pre>';
 }
