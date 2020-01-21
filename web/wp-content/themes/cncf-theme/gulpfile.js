@@ -35,12 +35,6 @@ var globalJSWatchFiles = PROJECT_FOLDER + "/source/js/global/**/*.js";
 var projectPHPWatchFiles = PROJECT_FOLDER + "/**/**/*.php";
 var projectHTMLWatchFiles = PROJECT_FOLDER + "/**/**/*.html";
 
-var PHPTestfiles = [
-    PROJECT_FOLDER + "/**/*.php",
-    PROJECT_FOLDER + "!/vendor/**",
-    PROJECT_FOLDER + "!/node_modules/**"
-];
-
 const AUTOPREFIXER_BROWSERS = [
     "last 2 version",
     "> 1%",
@@ -80,8 +74,8 @@ var filter = require("gulp-filter");
 var sourcemaps = require("gulp-sourcemaps");
 var del = require("del");
 var touch = require("gulp-touch-cmd");
-var phpcs = require("gulp-phpcs");
-var phpcbf = require("gulp-phpcbf");
+var gulpphpcs = require("gulp-phpcs");
+var gulpphpcbf = require("gulp-phpcbf");
 
 var browserSync = require("browser-sync").create();
 
@@ -179,16 +173,62 @@ function clean() {
 /**
  * phpcbf - PHP Code Beautifier task
  */
-function phpcbf() {
-    return gulp.src(PATHS.phpcs)
-        .pipe($.phpcbf({
-            bin: 'wpcs/vendor/bin/phpcbf',
-            standard: './codesniffer.ruleset.xml',
-            warningSeverity: 0
-        }))
-        .on('error',log)
-        .pipe(gulp.dest('.'));
-};
+// function phpcbf() {
+//     return gulp
+//         .src(projectPHPWatchFiles)
+//         .pipe(phpcbf({
+//             bin: '../../../../vendor/bin/phpcs',
+//             standard: './codesniffer.ruleset.xml',
+//             warningSeverity: 0
+//         }))
+//         .on('error',log)
+//         .pipe(gulp.dest('.'));
+// };
+
+// PHP Code Beautifier.
+// function testphpcbf(done) {
+//     return (
+//         gulp.src(['src/**/*.php','!src/vendor/**/*.*','!src/node_modules/*'])
+//             .pipe(gulpphpcbf({
+//                 bin: '../../../../vendor/bin/phpcbf',
+//                 standard: './codesniffer.ruleset.xml',
+//                 warningSeverity: 0
+//             }))
+//             .on("error",console.error.bind(console))
+//             // .pipe(gulpphpcbf.reporter('log'))
+//             .pipe(gulp.dest('src'))
+//     );
+//     done();
+// }
+
+// PHP Code Sniffer.
+function testphpcs(done) {
+    return (
+        gulp.src(['src/**/*.php','!src/vendor/**/*.*','!src/node_modules/*'])
+            .pipe(gulpphpcs({
+                bin: '../../../../vendor/bin/phpcbf',
+                standard: 'WordPress',
+                warningSeverity: 0
+            }))
+            .pipe(gulpphpcs.reporter('log'))
+    );
+    done();
+}
+
+// PHP Code Beautifier.
+function testphpcbf(done) {
+    return (
+        gulp.src(['src/**/*.php','!src/vendor/**/*.*','!src/node_modules/*'])
+            .pipe(gulpphpcbf({
+                bin: '../../../../vendor/bin/phpcbf',
+                standard: 'WordPress',
+                warningSeverity: 0
+            }))
+            .on("error",console.error.bind(console))
+            .pipe(gulp.dest('./'))
+    );
+    done();
+}
 
 /**
  * Global JS files
@@ -239,4 +279,5 @@ function blocksJS() {
 
 exports.default = gulp.series(styles,globalJS,blocksJS,watch);
 exports.production = gulp.series(styles,globalJS,blocksJS);
+exports.test = gulp.series(testphpcs,testphpcbf);
 exports.watch = gulp.series(watch);
