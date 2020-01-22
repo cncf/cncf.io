@@ -1,0 +1,65 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+#editor {
+	.lf-col-3 {
+		float: left;
+		width: 33%;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.lf-columns-spacing {
+		height: 10px;
+		width: 100%;
+		display: block;
+		position: relative;
+		z-index: 999;
+		top: -8px;
+	}
+}
+
+#editor .lf-counter > div.editor-rich-text {
+	display: inline-block;
+	padding-top: 10px;
+}
+
+ .wp-block[data-type="lf/count-up"] {
+
+	.count-up-item {
+		flex-grow: 1;
+		max-width: 25%;
+		overflow-x: auto;
+	}
+
+	.lf-count-up {
+		margin: 10px auto;
+		justify-content: center;
+	}
+
+	.lf-count-up > div {
+		flex: auto;
+		margin: 0 10px;
+	}
+
+	.lf-counter {
+		line-height: normal;
+	}
+
+	.lf-column-1 .lf-count-up-columns-2, .lf-column-1 .lf-count-up-columns-3 {
+		display: none;
+	}
+
+	.lf-column-2 .lf-count-up-columns-3 {
+		display: none;
+	}
+
+	.lf-columns-1 > .lf-column {
+		flex: none;
+		width: 100%;
+	}
+}

@@ -1,0 +1,58 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.pink-blue-section {
+  background: -ms-linear-gradient(0deg, #e00a6b 0%, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E00A6B', endColorstr='#242960' ,GradientType=0)";
+  background: -webkit-gradient(linear, left top, right top, from(#e00a6b), color-stop(7.28%, #c80e6a), color-stop(24.1%, #971667), color-stop(40.76%, #6d1d64), color-stop(56.93%, #4d2262), color-stop(72.49%, #362661), color-stop(87.15%, #292860), to(#242960));
+  background: -webkit-linear-gradient(left, #e00a6b 0%, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
+  background: -o-linear-gradient(left, #e00a6b 0%, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
+  background: linear-gradient(90deg, #e00a6b 0%, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E00A6B',endColorstr='#242960' , GradientType=1);
+  color: white; }
+
+.facts-section {
+  text-align: center;
+  padding-bottom: 0; }
+  .facts-section p {
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+    padding: 0 100px; }
+  .facts-section .facts-list .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: space-evenly;
+        justify-content: space-evenly; }
+  .facts-section .facts-list .facts-item {
+    margin-bottom: 60px; }
+    .facts-section .facts-list .facts-item .icon-wrap {
+      height: 100px;
+      margin-bottom: 15px;
+      max-width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer; }
+      .facts-section .facts-list .facts-item .icon-wrap img {
+        max-height: 100%;
+        max-width: 150px;
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s; }
+    .facts-section .facts-list .facts-item .text-wrap h6 {
+      padding: 0 50px; }
+    .facts-section .facts-list .facts-item .text-wrap .number {
+      font-size: 3.4375rem;
+      color: #fff; }
+
+@media screen and (max-width: 991px) {
+  .facts-section .facts-list .facts-item .icon-wrap {
+    height: 80px; }
+    .facts-section .facts-list .facts-item .icon-wrap img {
+      max-width: 120px; }
+  .facts-section .facts-list .facts-item .text-wrap .number {
+    font-size: 3rem; }
+  .facts-section .facts-list .facts-item .text-wrap h6 {
+    padding: 0 15px; } }
