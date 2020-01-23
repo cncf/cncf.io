@@ -94,16 +94,21 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 	}
 
 	ob_start();
+	
+	//TODO: use the colors selected in the admin
+	$bg_first_color = '#ee5e90';
+	$bg_second_color = '#333ea8';
+	$text_color = '#ffffff';
 
 	?>
-	<section class="facts-section pink-blue-section">
+	<section class="count-up-block" style="--bg-first-color: <?php echo $bg_first_color; ?>; --bg-second-color: <?php echo $bg_second_color; ?>; --text-main-color: <?php echo $text_color; ?>;">
 		<div class="container">
 			<?php
 			if ( ! empty( $section_text ) ) :
 				echo apply_filters( 'the_content', $section_text ); // phpcs:ignore
 			endif;
 			?>
-			<div class="facts-list">
+			<div>
 				<div class="row">
 				<?php
 				for ( $i = 1; $i <= $columns; $i++ ) :
@@ -117,7 +122,7 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 					endif;
 					?>
 					<div class="<?php echo esc_attr( $column_class ); ?>">
-						<div class="facts-item">
+						<div>
 							<?php if ( ! empty( $image ) ) : ?>
 								<div class="icon-wrap">
 									<?php
@@ -139,7 +144,7 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 									printf( '<a target="_blank" href="%s">', esc_url( $link ) );
 								endif;
 								?>
-									<div class="number" data-to="<?php echo esc_html( $number ); ?>" data-speed="4000">
+									<div class="number number-item" data-to="<?php echo esc_html( $number ); ?>" data-speed="4000">
 										<?php echo esc_html( $number ); ?>
 									</div>
 								<?php
@@ -152,7 +157,7 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 									if ( ! empty( $link ) ) :
 										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
 									endif;
-										echo esc_html( $description );
+										echo $description;
 									if ( ! empty( $link ) ) :
 										echo '</a>';
 									endif;
