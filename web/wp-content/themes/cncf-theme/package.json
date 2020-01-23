@@ -5,7 +5,10 @@
   "main": "gulpfile.js",
    "scripts": {
     "start": "gulp",
-    "build": "gulp production"
+    "build": "gulp production",
+    "test": "gulp standards",
+    "phpcs": "gulp phpcs",
+    "phpcbf": "gulp phpcbf",
   },
   "eslintConfig": {
     "extends": [
