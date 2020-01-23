@@ -36,7 +36,6 @@
     "wpackagist-plugin/ultimate-member":"^2.1.2",
     "wpackagist-plugin/um-recaptcha":"^2.1.2",
     "wpackagist-plugin/shortpixel-image-optimiser":"^4.15.3",
-    "wpackagist-plugin/wp-file-manager":"5.6",
     "wpackagist-plugin/redirection":"^4.4.2"
   },
   "require-dev": {
