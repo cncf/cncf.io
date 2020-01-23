@@ -1,4 +1,15 @@
-<section class="basic-content full container">
+<?php
+/**
+ * Page content - the loop
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
+
+?>
+
+<section class="basic-content container">
 	<main>
 		<article>
 			<div class="content">
@@ -8,7 +19,7 @@
 						the_post();
 						?>
 						<?php the_content(); ?>
-					<?php endwhile ?>
+				<?php endwhile ?>
 				<?php endif; ?>
 			</div>
 		</article>

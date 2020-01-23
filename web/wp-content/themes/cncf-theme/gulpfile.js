@@ -209,8 +209,9 @@ function phpcs(done) {
                 bin: '../../../../vendor/bin/phpcs',
                 standard: 'WordPress',
                 warningSeverity: 0,
+                errorSeverity: 1,
                 showSniffCode: true,
-                show_progress: true
+                report: 'full' // summary
             }))
             .pipe(gulpphpcs.reporter('log'))
     );
@@ -224,8 +225,7 @@ function phpcbf(done) {
             .pipe(gulpphpcbf({
                 bin: '../../../../vendor/bin/phpcbf',
                 standard: 'WordPress',
-                warningSeverity: 0,
-                show_progress: true
+                warningSeverity: 0
             }))
             .on("error",console.error.bind(console))
             .pipe(gulp.dest('./'))

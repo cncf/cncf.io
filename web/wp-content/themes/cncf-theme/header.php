@@ -1,5 +1,18 @@
+<?php
+/**
+ * WordPress Header
+ *
+ * Generic Header file used on every page, use Blocks for page content
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
+
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name=viewport content="width=device-width, initial-scale=1">
@@ -14,7 +27,8 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="192x192"
+		href="/android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -23,4 +37,5 @@
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#9999ff">
 </head>
+
 <body <?php body_class(); ?>>

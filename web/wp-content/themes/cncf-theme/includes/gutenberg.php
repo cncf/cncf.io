@@ -1,5 +1,15 @@
 <?php
 /**
+ * Gutenberg Options
+ *
+ * Setup the Block Editor and options.
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
+
+/**
  * Remove Gutenberg CSS
  */
 add_action(
@@ -9,11 +19,12 @@ add_action(
 		wp_dequeue_style( 'wp-block-library-theme' );
 	}
 );
+
 /**
  * Add Gutenberg features
  */
 function gb_setup_theme_supported_features() {
-	// Adds default styles to custom blocks
+	// Adds default styles to custom blocks.
 	add_theme_support( 'wp-block-styles' );
 	// Supports wide images, galleries and videos.
 	add_theme_support( 'align-wide' );
@@ -26,9 +37,9 @@ add_action( 'after_setup_theme', 'gb_setup_theme_supported_features' );
  * Setup theme colour swatches
  */
 function gb_setup_theme_colors() {
-	// remove custom colour picker
+	// remove custom colour picker.
 	add_theme_support( 'disable-custom-colors' );
-	// add the custom colours
+	// add the custom colours.
 	add_theme_support(
 		'editor-color-palette',
 		array(
@@ -84,7 +95,7 @@ function gb_setup_theme_colors() {
 			),
 		)
 	);
-	// after adding here, add to colour options in SCSS file so the reference matches up
+	// after adding here, add to colour options in SCSS file so the reference matches up.
 }
 add_action( 'after_setup_theme', 'gb_setup_theme_colors' );
 
@@ -92,7 +103,7 @@ add_action( 'after_setup_theme', 'gb_setup_theme_colors' );
  * Setup Gutenberg fonts and sizes
  */
 function gb_setup_theme_fonts() {
-	// removes custom font sizes
+	// removes custom font sizes.
 	add_theme_support( 'disable-custom-font-sizes' );
 	add_theme_support(
 		'editor-font-sizes',
@@ -126,15 +137,17 @@ add_action( 'after_setup_theme', 'gb_setup_theme_fonts' );
  * Gutenberg Fonts and Styles in Admin
  */
 function fonts_enqueue_gutenberg() {
-	wp_register_style( 'gutenberg-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800&display=swap' );
+	wp_register_style( 'gutenberg-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800&display=swap' ); // phpcs:ignore
 	wp_enqueue_style( 'gutenberg-fonts' );
-	// if you need to setup admin specific css + add to gulp
+	// if you need to setup admin specific css + add to gulp.
+	// phpcs:disable
 	// if ( WP_DEBUG == true ) {
 	// ** use un minified for testing, minified for build */
 	// wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/build/css/admin.css' ), false, '1.0', 'all' );
 	// } else {
 	// wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/build/css/admin.min.css' ), false, '1.0', 'all' );
 	// }
+	// phpcs:enable
 }
 add_action( 'enqueue_block_editor_assets', 'fonts_enqueue_gutenberg' );
 
@@ -142,21 +155,21 @@ add_action( 'enqueue_block_editor_assets', 'fonts_enqueue_gutenberg' );
  * Register custom blocks script
  */
 function ttp_gutenberg_register_files() {
-	// script file
+	// script file.
 	if ( WP_DEBUG == true ) {
-		wp_register_script(
+		wp_register_script( // phpcs:ignore
 			'ttp-block-script',
 			get_stylesheet_directory_uri() . '/build/blocks.js',
 			array( 'wp-blocks', 'wp-edit-post' )
 		);
 	} else {
-		wp_register_script(
+		wp_register_script( // phpcs:ignore
 			'ttp-block-script',
 			get_stylesheet_directory_uri() . '/build/blocks.min.js',
 			array( 'wp-blocks', 'wp-edit-post' )
 		);
 	}
-	// register block editor script
+	// register block editor script.
 	register_block_type(
 		'ttp/ma-block-files',
 		array(
@@ -169,6 +182,8 @@ add_action( 'init', 'ttp_gutenberg_register_files' );
 
 /**
  * Allowed Blocks List (others not styled)
+ *
+ * @param array $allowed_blocks Blocks array.
  */
 function ttp_allowed_block_types( $allowed_blocks ) {
 	return array(
@@ -186,7 +201,7 @@ function ttp_allowed_block_types( $allowed_blocks ) {
 		'core/spacer',
 		'core/cover',
 		'core/media-text',
-	// 'acf/template-grid-row'
+	// 'acf/template-grid-row' // phpcs:ignore
 	);
 }
 add_filter( 'allowed_block_types', 'ttp_allowed_block_types' );

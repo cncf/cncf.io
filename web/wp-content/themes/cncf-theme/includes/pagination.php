@@ -1,24 +1,31 @@
-<?php
+<?php // @codingStandardsIgnoreFile
+/**
+ * Numeric Pagination
+ *
+ * Dealing with post pagination.
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
 
 /**
- * numeric_posts_nav - TODO: replace?
+ * Outputs numeric page navi
  *
- * @method numeric_posts_nav
- *
- * @param [query object] $custom_query [if not paginating for default WP_Query, pass in custom query object to paginate properly]
+ * @param [query object] $custom_query (if not paginating for default WP_Query, pass in custom query object to paginate properly).
  *
  * @return [null] [prints/echos the prev/next and numeric page links]
  */
 function numeric_posts_nav( $custom_query = null ) {
-	// set here to only work on some posts types
-	// if ( is_singular() ) {
-	// return;
-	// }
+	// set here to only work on some posts types.
+	// phpcs:disable
+	// if ( is_singular() ) { return; }
+	// phpcs:enable
 	global $wp_query;
-	if ( $custom_query !== null ) {
-		// store global $wp_query so that get_previous_posts_link() and get_next_posts_link() work properly
+	if ( null !== $custom_query ) {
+		// store global $wp_query so that get_previous_posts_link() and get_next_posts_link() work properly.
 		$default_query = $wp_query;
-		$wp_query      = $custom_query;
+		$wp_query      = $custom_query; // @codingStandardsIgnoreLine
 		$current_query = $custom_query;
 	} else {
 		$current_query = $wp_query;
@@ -45,17 +52,17 @@ function numeric_posts_nav( $custom_query = null ) {
 		$links[] = $paged + 2;
 		$links[] = $paged + 1;
 	}
-	if ( ( $paged === 3 ) || ( $paged === 6 ) ) {
+	if ( ( 3 === $paged ) || ( 6 === $paged ) ) {
 		$links[] = 2;
 	}
 	echo '<nav class="pagination"><ul>' . "\n";
-	/*  Previous Post Link */
+	// Previous Post Link.
 	if ( get_previous_posts_link() ) {
-		printf( '<li class="prev">%s</li>' . "\n", get_previous_posts_link( '<i class="fa fa-angle-left" aria-hidden="true"></i> Prev' ) );
+		esc_attr( printf( '<li class="prev">%s</li>' . "\n", get_previous_posts_link( '<i class="fa fa-angle-left" aria-hidden="true"></i> Prev' ) ) );
 	} else {
-		printf( '<li class="prev inactive">%s</li>' . "\n", '<span><i class="fa fa-angle-left" aria-hidden="true"></i> Prev</span>' );
+		esc_attr( printf( '<li class="prev inactive">%s</li>' . "\n", '<span><i class="fa fa-angle-left" aria-hidden="true"></i> Prev</span>' ) );
 	}
-	/*  Link to first 9 pages if current page is not one of the 'middle' links */
+	// Link to first 9 pages if current page is not one of the 'middle' links.
 	if ( $paged <= 9 ) {
 		$i = 1;
 		while ( ( ( $paged + $i ) <= 9 ) && ( ( $paged + $i ) <= $max ) ) {
@@ -63,7 +70,7 @@ function numeric_posts_nav( $custom_query = null ) {
 			++$i;
 		}
 	}
-	/*  Link to last 9 pages if current page is not one of the 'middle' links */
+	// Link to last 9 pages if current page is not one of the 'middle' links.
 	if ( ( $paged >= ( $max - 5 ) ) && ( ( $max - 5 ) >= 1 ) ) {
 		$i = $max - min( array( 8, $max - 1 ) );
 		while ( $i <= $max ) {
@@ -71,7 +78,7 @@ function numeric_posts_nav( $custom_query = null ) {
 			++$i;
 		}
 	}
-	/*  Link to first page, plus ellipses if necessary */
+	// Link to first page, plus ellipses if necessary.
 	if ( ! in_array( 1, $links ) ) {
 		$class = 1 === $paged ? ' class="active"' : '';
 		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
@@ -81,7 +88,7 @@ function numeric_posts_nav( $custom_query = null ) {
 			++$li_count;
 		}
 	}
-	/*  Link to current page, plus pages in either direction if necessary */
+	// Link to current page, plus pages in either direction if necessary.
 	sort( $links );
 	$links = array_unique( $links );
 	foreach ( $links as $link ) {
@@ -89,7 +96,7 @@ function numeric_posts_nav( $custom_query = null ) {
 		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
 		++$li_count;
 	}
-	/*  Link to last page, plus ellipses if necessary */
+	// Link to last page, plus ellipses if necessary.
 	if ( ! in_array( $max, $links ) ) {
 		if ( ! in_array( $max - 1, $links ) ) {
 			echo '<li><span>&#8230;</span></li>' . "\n";
@@ -99,15 +106,15 @@ function numeric_posts_nav( $custom_query = null ) {
 		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
 		++$li_count;
 	}
-	/*  Next Post Link */
+	// Next Post Link.
 	if ( get_next_posts_link() ) {
 		printf( '<li class="next">%s</li>' . "\n", get_next_posts_link( 'Next <i class="fa fa-angle-right" aria-hidden="true"></i>' ) );
 	} else {
 		printf( '<li class="next inactive">%s</li>' . "\n", '<span>Next <i class="fa fa-angle-right" aria-hidden="true"></i></span>' );
 	}
 	echo '</ul></nav>' . "\n";
-	// reset global $wp_query
-	if ( $custom_query !== null ) {
-		$wp_query = $default_query;
+	// Reset global $wp_query.
+	if ( null !== $custom_query ) {
+		$wp_query = $default_query; // @codingStandardsIgnoreLine
 	}
 }

@@ -1,4 +1,13 @@
 <?php
+/**
+ * Admin and Dashboard options
+ *
+ * Use to customise the WP Admin
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
 
 /**
  * Move menu elements in WP Admin
@@ -11,17 +20,29 @@ add_filter(
 );
 add_filter( 'menu_order', 'my_new_admin_menu_order' );
 
+/**
+ * New Admin Menu Order
+ *
+ * @param array $menu_order The menu order.
+ */
 function my_new_admin_menu_order( $menu_order ) {
 	$new_positions = array(
 		'upload.php'              => 8,
 		'edit.php?post_type=page' => 4,
 	);
+	/**
+	 * Sorting
+	 *
+	 * @param array $array The menu order.
+	 * @param array $a The menu order.
+	 * @param array $b The menu order.
+	 */
 	function move_element( &$array, $a, $b ) {
 		$out = array_splice( $array, $a, 1 );
 		array_splice( $array, $b, 0, $out );
 	}
 	foreach ( $new_positions as $value => $new_index ) {
-		if ( $current_index = array_search( $value, $menu_order ) ) {
+		if ( $current_index = array_search( $value, $menu_order ) ) { // phpcs:ignore
 			move_element( $menu_order, $current_index, $new_index );
 		}
 	}
@@ -68,6 +89,8 @@ function how_to_use_block() {
 
 /**
  * Add custom post types to Dashboard
+ *
+ * @param int $items Number.
  */
 function custom_glance_items( $items = array() ) {
 	$post_types = array( 'tyres', 'guides', 'case_studies', 'testimonials' );
@@ -84,8 +107,8 @@ function custom_glance_items( $items = array() ) {
 
 			$published = intval( $num_posts->publish );
 			$post_type = get_post_type_object( $type );
-
-			$text = _n( '%s ' . $post_type->labels->singular_name, '%s ' . $post_type->labels->name, $published, 'your_textdomain' );
+			/* translators: %2$s is replaced with the number of translations */
+			$text = _n( '%s ' . $post_type->labels->singular_name, '%s ' . $post_type->labels->name, $published, 'your_textdomain' ); // phpcs:ignore
 			$text = sprintf( $text, number_format_i18n( $published ) );
 
 			if ( current_user_can( $post_type->cap->edit_posts ) ) {
@@ -99,11 +122,9 @@ function custom_glance_items( $items = array() ) {
 }
 add_filter( 'dashboard_glance_items', 'custom_glance_items', 10, 1 );
 
-/*
-|-----------------------------------------------
-| Removes dashboard widgets
-|-----------------------------------------------
-*/
+/**
+ * Removes dashboard widgets
+ */
 function remove_dashboard_widgets() {
 	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
 	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
@@ -112,11 +133,10 @@ function remove_dashboard_widgets() {
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
 	remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
-	// remove_meta_box('dashboard_primary', 'dashboard', 'side');
-	// remove_meta_box('dashboard_secondary', 'dashboard', 'side');
-	// remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+	// remove_meta_box('dashboard_primary', 'dashboard', 'side'); // phpcs:ignore.
+	// remove_meta_box('dashboard_secondary', 'dashboard', 'side'); // phpcs:ignore.
+	// remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); // phpcs:ignore.
 }
-
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
 
 /**

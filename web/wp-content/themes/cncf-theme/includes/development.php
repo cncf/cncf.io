@@ -1,11 +1,18 @@
 <?php
+/**
+ * Development functions
+ *
+ * Add functions and utilities here to help with development.
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
 
 /**
  * Debug
  *
- * @param $variable
- *
- * @return output
+ * @param variable $var Add variable to print out.
  */
 function r( $var ) {
 	echo '<pre>';

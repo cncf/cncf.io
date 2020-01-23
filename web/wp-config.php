@@ -76,8 +76,9 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	 * Set debug modes
 	 */
 	define( 'WP_DEBUG', true );
-	define( 'WP_DEBUG_DISPLAY', true );
+	define( 'WP_DEBUG_DISPLAY', true ); // false to go to log.
 	define( 'SCRIPT_DEBUG', true );
+	define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
 	define( 'IS_LOCAL', getenv( 'IS_LOCAL' ) !== false ? true : false );
 
 	/**#@+
@@ -251,4 +252,3 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli' ) {
 // exit();
 // }
 // }
-

@@ -1,17 +1,23 @@
 <?php
 /**
- * WordPress THEME FUNCTIONS
+ * Theme Functions
  *
  * Try to keep this file as clean as possible
- */
-
-/**
- * Theme Support functions
  *
- * Used to enable specific features of WordPress and other toolS
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
  */
-if ( ! function_exists( 'the_theme_support_setup' ) ) :
 
+ /**
+  * Theme Support functions
+  *
+  * Used to enable specific features of WordPress and other tools
+  */
+if ( ! function_exists( 'the_theme_support_setup' ) ) :
+	/**
+	 * Theme Support functions
+	 */
 	function the_theme_support_setup() {
 
 		add_theme_support( 'title-tag' );
@@ -44,17 +50,22 @@ add_action( 'after_setup_theme', 'the_theme_support_setup' );
 /**
  * Image Thumbnail Sizes
  *
- * Used to create new thumbnail sizes
+ * Used to create new thumbnail sizes.
  */
-// add_image_size('icon', 50, 50, true);
-// add_image_size('new-size', 215, 215, true);
+add_action(
+	'after_setup_theme',
+	function () {
+		// add_image_size('icon', 50, 50, true); // phpcs:ignore.
+		// add_image_size('new-size', 215, 215, true); // phpcs:ignore.
+	}
+);
+
 
 /**
  * Theme function classes
  *
  * Any additional functionality should be added in the classes folder and linked up below.
  */
-
 global $enqueue;
 global $image;
 require 'classes/class-enqueue.php';
@@ -64,34 +75,37 @@ $enqueue = new Enqueue();
 /**
  * Includes (enable as appropriate)
  */
+// theme support.
+// require_once 'includes/theme-support.php'; // phpcs:ignore.
 
-// theme support
-// require_once 'includes/theme-support.php';
+// development.
+if ( WP_DEBUG === true ) {
+	require_once 'includes/development.php';
+}
 
-// development
-require_once 'includes/development.php';
-
-// gutenberg
+// gutenberg.
 require_once 'includes/gutenberg.php';
 
-// speed
+// speed.
 require_once 'includes/speed.php';
 
-// gravity forms
-// require_once('includes/gravity.php');
+// gravity forms.
+// require_once('includes/gravity.php'); // phpcs:ignore.
 
-// dashboard
-// require_once('includes/admin-dashboard.php');
+// dashboard.
+// require_once('includes/admin-dashboard.php'); // phpcs:ignore.
 
-// pagination
-// require_once('includes/pagination.php');
+// pagination.
+require_once 'includes/pagination.php';
 
-// excerpts
+// excerpts.
 require_once 'includes/excerpts.php';
 
 
 /**
  * Defer all JS except jquery.js
+ *
+ * @param string $url the URL.
  */
 function defer_parsing_of_js( $url ) {
 	if ( ! ( is_admin() ) ) {
