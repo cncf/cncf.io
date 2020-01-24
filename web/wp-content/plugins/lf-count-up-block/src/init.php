@@ -37,6 +37,14 @@ function lf_count_up_block_assets() { // phpcs:ignore
 		true // Enqueue the script in the footer.
 	);
 
+	wp_register_script(
+		'lf-count-up-block-front-js', // Handle.
+		plugins_url( '/src/block/front.js', dirname( __FILE__ ) ),
+		array(), // Dependencies, defined above.
+		filemtime( plugin_dir_path( __DIR__ ) . 'src/block/front.js' ),
+		true
+	);
+
 	wp_register_style(
 		'lf-count-up-block-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block editor CSS.
@@ -65,6 +73,7 @@ function lf_count_up_block_assets() { // phpcs:ignore
 	register_block_type(
 		'lf/count-up',
 		array(
+			'script'          => 'lf-count-up-block-front-js',
 			'style'           => 'lf-count-up-block-style-css',
 			'editor_script'   => 'lf-count-up-block-js',
 			'editor_style'    => 'lf-count-up-block-editor-css',
@@ -118,6 +127,10 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 					if ( ! $number ) :
 						continue;
 					endif;
+
+					$original_number = $number;
+					$number          = preg_replace( '/,|\./', '', $number );
+
 					?>
 					<div class="<?php echo esc_attr( $column_class ); ?>">
 						<div>
@@ -142,8 +155,12 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 									printf( '<a target="_blank" href="%s">', esc_url( $link ) );
 								endif;
 								?>
-									<div class="number number-item" data-to="<?php echo esc_html( $number ); ?>" data-speed="4000">
-										<?php echo esc_html( $number ); ?>
+									<div class="number number-item"
+										data-element="lf-number"
+										data-original="<?php echo esc_html( $original_number ); ?>"
+										data-to="<?php echo esc_html( $number ); ?>"
+										data-speed="4000">
+										0
 									</div>
 								<?php
 								if ( ! empty( $link ) ) :
@@ -155,7 +172,7 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 									if ( ! empty( $link ) ) :
 										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
 									endif;
-										echo $description;
+										echo esc_html( $description );
 									if ( ! empty( $link ) ) :
 										echo '</a>';
 									endif;
