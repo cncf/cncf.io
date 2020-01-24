@@ -96,6 +96,18 @@ registerBlockType( 'lf/count-up', {
 			type: 'string',
 			default: '',
 		},
+		color1: {
+			type: 'string',
+			default: '#ee5e90',
+		},
+		color2: {
+			type: 'string',
+			default: '#333ea8',
+		},
+		textColor: {
+			type: 'string',
+			default: '#ffffff',
+		},
 		columns: {
 			type: 'number',
 			default: 1,

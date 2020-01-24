@@ -34,6 +34,11 @@
 		flex-grow: 1;
 		max-width: 25%;
 		overflow-x: auto;
+
+		img {
+			min-height: 100px;
+			min-width: 100px;
+		}
 	}
 
 	.lf-count-up {

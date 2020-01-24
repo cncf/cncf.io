@@ -75,8 +75,11 @@ function lf_count_up_block_assets() { // phpcs:ignore
 
 function lf_count_up_callback( $attributes ) { // phpcs:ignore
 
-	$section_text = isset( $attributes['sectionText'] ) ? $attributes['sectionText'] : false;
-	$columns      = isset( $attributes['columns'] ) ? $attributes['columns'] : 1;
+	$section_text    = isset( $attributes['sectionText'] ) ? $attributes['sectionText'] : false;
+	$columns         = isset( $attributes['columns'] ) ? $attributes['columns'] : 1;
+	$bg_first_color  = isset( $attributes['color1'] ) ? $attributes['color1'] : '#ee5e90';
+	$bg_second_color = isset( $attributes['color2'] ) ? $attributes['color2'] : '#333ea8';
+	$text_color      = isset( $attributes['textColor'] ) ? $attributes['textColor'] : '#ffffff';
 
 	switch ( $columns ) {
 		case 1:
@@ -94,14 +97,9 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 	}
 
 	ob_start();
-	
-	//TODO: use the colors selected in the admin
-	$bg_first_color = '#ee5e90';
-	$bg_second_color = '#333ea8';
-	$text_color = '#ffffff';
 
 	?>
-	<section class="count-up-block" style="--bg-first-color: <?php echo $bg_first_color; ?>; --bg-second-color: <?php echo $bg_second_color; ?>; --text-main-color: <?php echo $text_color; ?>;">
+	<section class="count-up-block" style="--bg-first-color: <?php echo esc_attr( $bg_first_color ); ?>; --bg-second-color: <?php echo esc_attr( $bg_second_color ); ?>; --text-main-color: <?php echo esc_attr( $text_color ); ?>;">
 		<div class="container">
 			<?php
 			if ( ! empty( $section_text ) ) :

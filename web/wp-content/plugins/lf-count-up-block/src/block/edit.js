@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { InspectorControls, RichText, MediaUpload } = wp.blockEditor || wp.editor;
+const { InspectorControls, PanelColorSettings, RichText, MediaUpload } = wp.blockEditor || wp.editor;
 const { RangeControl, PanelBody, TextControl } = wp.components;
 
 class Edit extends Component {
@@ -67,12 +67,43 @@ class Edit extends Component {
 	render() {
 		const { currentEdit } = this.state;
 		const { attributes, setAttributes } = this.props;
-		const { columns, sectionText, isSelected } = attributes;
+		const { columns, sectionText, isSelected, color1, color2, textColor } = attributes;
 
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={ __( 'Settings' ) }>
+					<PanelColorSettings
+						title="Color Settings"
+						initialOpen={ true }
+						colorSettings={ [
+							{
+								value: color1,
+								onChange: colorValue =>
+									setAttributes( {
+										color1: colorValue,
+									} ),
+								label: 'Background Color 1',
+							},
+							{
+								value: color2,
+								onChange: colorValue =>
+									setAttributes( {
+										color2: colorValue,
+									} ),
+								label: 'Background Color 2',
+							},
+							{
+								value: textColor,
+								onChange: colorValue =>
+									setAttributes( {
+										textColor: colorValue,
+									} ),
+								label: 'Text Color',
+							},
+						] }
+					>
+					</PanelColorSettings>
+					<PanelBody title={ __( 'General Settings' ) }>
 						<RangeControl
 							label={ __( 'Columns' ) }
 							min={ 1 }
