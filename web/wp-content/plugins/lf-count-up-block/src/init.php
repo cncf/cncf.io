@@ -172,7 +172,7 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 									if ( ! empty( $link ) ) :
 										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
 									endif;
-										echo esc_html( $description );
+										echo $description;
 									if ( ! empty( $link ) ) :
 										echo '</a>';
 									endif;

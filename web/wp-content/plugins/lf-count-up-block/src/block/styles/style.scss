@@ -48,8 +48,9 @@
 	}
 
 	img {
-		max-width: 265px;
 		margin: 0 auto;
+		width: auto;
+		max-height: 100px;
 	}
 
 	@media(max-width: 1194px) {
