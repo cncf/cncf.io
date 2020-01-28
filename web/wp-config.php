@@ -12,19 +12,21 @@ $rootPath = realpath( __DIR__ . '/..' );
 /**
  * Include the Composer autoload
  */
-require_once( $rootPath . '/vendor/autoload.php' );
+require_once $rootPath . '/vendor/autoload.php';
 
 /*
  * Fetch .env
  */
 if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( $rootPath . '/.env' ) ) {
-	$dotenv = Dotenv\Dotenv::create($rootPath);
+	$dotenv = Dotenv\Dotenv::create( $rootPath );
 	$dotenv->load();
-	$dotenv->required( array(
-		'DB_NAME',
-		'DB_USER',
-		'DB_HOST',
-	) )->notEmpty();
+	$dotenv->required(
+		array(
+			'DB_NAME',
+			'DB_USER',
+			'DB_HOST',
+		)
+	)->notEmpty();
 }
 
 /**
@@ -46,7 +48,7 @@ define( 'WP_POST_REVISIONS', 10 );
 /*
  * If NOT on Pantheon
  */
-if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
+if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	/**
 	 * Define site and home URLs
 	 */
@@ -73,7 +75,10 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
 	/**
 	 * Set debug modes
 	 */
-	define( 'WP_DEBUG', getenv( 'WP_DEBUG' ) === 'true' ? true : false );
+	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_DISPLAY', true ); // false to go to log.
+	define( 'SCRIPT_DEBUG', true );
+	define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
 	define( 'IS_LOCAL', getenv( 'IS_LOCAL' ) !== false ? true : false );
 
 	/**#@+
@@ -99,7 +104,7 @@ endif;
 /*
  * If on Pantheon
  */
-if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
+if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 
 	// ** MySQL settings - included in the Pantheon Environment ** //
 	/** The name of the database for WordPress */
@@ -142,7 +147,7 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
 	define( 'NONCE_SALT', $_ENV['NONCE_SALT'] );
 	/**#@-*/
 
-	/** A couple extra tweaks to help things run well on Pantheon. **/
+	/** A couple extra tweaks to help things run well on Pantheon. */
 	if ( isset( $_SERVER['HTTP_HOST'] ) ) {
 		// HTTP is still the default scheme for now.
 		$scheme = 'http';
@@ -159,7 +164,7 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ):
 	// Don't show deprecations; useful under PHP 5.5
 	error_reporting( E_ALL ^ E_DEPRECATED );
 	// Force the use of a safe temp directory when in a container
-	if ( defined( 'PANTHEON_BINDING' ) ):
+	if ( defined( 'PANTHEON_BINDING' ) ) :
 		define( 'WP_TEMP_DIR', sprintf( '/srv/bindings/%s/tmp', PANTHEON_BINDING ) );
 	endif;
 
@@ -174,7 +179,7 @@ endif;
 * Define wp-content directory outside of WordPress core directory
 */
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
+define( 'WP_CONTENT_URL', getenv( 'WP_HOME' ) . '/wp-content' );
 
 /**
  * WordPress Database Table prefix.
@@ -191,7 +196,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 }
 /** Sets up WordPress vars and included files. */
-require_once( ABSPATH . 'wp-settings.php' );
+require_once ABSPATH . 'wp-settings.php';
 
 if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli' ) {
 	// Redirect to https://$primary_domain in the Live environment.
@@ -211,8 +216,8 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli' ) {
 	}
 
 	// If you're not using HSTS in the pantheon.yml file, uncomment this next block.
-	if (!isset($_SERVER['HTTP_USER_AGENT_HTTPS']) || $_SERVER['HTTP_USER_AGENT_HTTPS'] != 'ON') {
-	  $requires_redirect = true;
+	if ( ! isset( $_SERVER['HTTP_USER_AGENT_HTTPS'] ) || $_SERVER['HTTP_USER_AGENT_HTTPS'] != 'ON' ) {
+		$requires_redirect = true;
 	}
 
 	if ( true === $requires_redirect ) {
@@ -229,21 +234,21 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli' ) {
 
 
 // Special LFEvents Redirects for the /events/ subdirectory.
-if ( 0 === strpos( $_SERVER['REQUEST_URI'], '/events/' ) ) {
-	if ( ( php_sapi_name() != "cli" ) ) {
-		header( 'HTTP/1.0 301 Moved Permanently' );
+// commented out for CNCF
+// if ( 0 === strpos( $_SERVER['REQUEST_URI'], '/events/' ) ) {
+// if ( ( php_sapi_name() != 'cli' ) ) {
+// header( 'HTTP/1.0 301 Moved Permanently' );
 
-		if ( 'lfeventsci' === $_ENV['PANTHEON_SITE_NAME'] ) {
-			header( 'Location: https://events19.linuxfoundation.org' . $_SERVER['REQUEST_URI'] );
-		} else {
-			header( 'Location: https://events19.lfasiallc.com' . $_SERVER['REQUEST_URI'] );
-		}
+// if ( 'lfeventsci' === $_ENV['PANTHEON_SITE_NAME'] ) {
+// header( 'Location: https://events19.linuxfoundation.org' . $_SERVER['REQUEST_URI'] );
+// } else {
+// header( 'Location: https://events19.lfasiallc.com' . $_SERVER['REQUEST_URI'] );
+// }
 
-		if ( extension_loaded( 'newrelic' ) ) {
-			newrelic_name_transaction( 'redirect' );
-		}
+// if ( extension_loaded( 'newrelic' ) ) {
+// newrelic_name_transaction( 'redirect' );
+// }
 
-		exit();
-	}
-}
-
+// exit();
+// }
+// }

@@ -1,0 +1,25 @@
+.basic-content {
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: flex-start;
+	min-height: 400px;
+
+	article {
+		padding: 2rem;
+		background: white;
+		width: 100%;
+		background-position: center;
+		background-size: cover;
+
+		@media (max-width: 480px) {
+			padding: 1rem;
+		}
+
+		img {
+			max-width: 100%;
+			margin: auto;
+			display: block;
+			height: auto;
+		}
+	}
+}

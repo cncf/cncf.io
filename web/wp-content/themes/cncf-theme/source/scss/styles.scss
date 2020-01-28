@@ -1,0 +1,14 @@
+@import "core/variables";
+@import "core/normalize";
+@import "core/global";
+@import "core/typography";
+@import "core/forms";
+// @import 'core/gutenberg';
+
+@import "blocks/header";
+@import "blocks/nav";
+// @import "blocks/hero";
+@import "blocks/basic-content";
+@import "blocks/comments";
+
+@import "blocks/footer";
