@@ -3,16 +3,17 @@
  *
  * Use this for styling editor blocks
  *
- * @since  1.0.0
+ * @package WordPress
+ * @since 1.0.0
  */
 
- // Hides tags
+// Hides tags.
 wp.data.dispatch( `core / edit - post` ).removeEditorPanel( `taxonomy - panel - post_tag` );
 
-// Hides duscussion
+// Hides dsscussion/comments.
 wp.data.dispatch( `core / edit - post` ).removeEditorPanel( `discussion - panel` );
 
-// Max width styling
+// Max width styling.
 wp.blocks.registerBlockStyle(
 	`core / paragraph`,
 	{
@@ -20,7 +21,8 @@ wp.blocks.registerBlockStyle(
 		label: `Max Width 800px`,
 	}
 );
-// Max width styling
+
+// Max width styling.
 wp.blocks.registerBlockStyle(
 	`core / paragraph`,
 	{
@@ -28,7 +30,8 @@ wp.blocks.registerBlockStyle(
 		label: `Max Width 900px`,
 	}
 );
-// Max width styling
+
+// Max width styling.
 wp.blocks.registerBlockStyle(
 	`core / heading`,
 	{
@@ -36,7 +39,8 @@ wp.blocks.registerBlockStyle(
 		label: `Max Width 800px`,
 	}
 );
-// Max width styling
+
+// Max width styling.
 wp.blocks.registerBlockStyle(
 	`core / heading`,
 	{
@@ -44,7 +48,8 @@ wp.blocks.registerBlockStyle(
 		label: `Max Width 900px`,
 	}
 );
-// Make heading text uppercase
+
+// Make heading text uppercase.
 wp.blocks.registerBlockStyle(
 	`core / heading`,
 	{
@@ -52,7 +57,8 @@ wp.blocks.registerBlockStyle(
 		label: `Uppercase Small Text`,
 	}
 );
-// Apply blue gradient background to group
+
+// Apply blue gradient background to group.
 wp.blocks.registerBlockStyle(
 	`core / group`,
 	{
@@ -60,7 +66,8 @@ wp.blocks.registerBlockStyle(
 		label: `Blue Gradient Background`,
 	}
 );
-// Apply light blue gradient background to group
+
+// Apply light blue gradient background to group.
 wp.blocks.registerBlockStyle(
 	`core / group`,
 	{
@@ -68,7 +75,8 @@ wp.blocks.registerBlockStyle(
 		label: `Light Blue Gradient Background`,
 	}
 );
-// Make seperator 50px
+
+// Make seperator 50px.
 wp.blocks.registerBlockStyle(
 	`core / separator`,
 	{
@@ -76,7 +84,8 @@ wp.blocks.registerBlockStyle(
 		label: `50px width`,
 	}
 );
-      // Make columns centered
+
+// Make columns centered.
 wp.blocks.registerBlockStyle(
 	`core / columns`,
 	{

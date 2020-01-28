@@ -3,7 +3,8 @@
  *
  * Smoothyl scroll user to top of page
  *
- * @since  1.0.0
+ * @package WordPress
+ * @since 1.0.0
  */
 
 jQuery(

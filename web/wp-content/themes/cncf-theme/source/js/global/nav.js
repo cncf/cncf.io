@@ -3,7 +3,8 @@
  *
  * Basic mobile navigation
  *
- * @since  1.0.0
+ * @package WordPress
+ * @since 1.0.0
  */
 
 jQuery(

@@ -35,6 +35,8 @@ var globalJSWatchFiles = PROJECT_FOLDER + "/source/js/global/**/*.js";
 var projectPHPWatchFiles = PROJECT_FOLDER + "/**/**/*.php";
 var projectHTMLWatchFiles = PROJECT_FOLDER + "/**/**/*.html";
 
+const csSource 	= [ '**/*.php', '**/*.js', 'page-templates/**/*.php', '!library/**/*', '!wpcs/**/*','!node_modules/**/*', '!vendor/**/*', '!assets/bower_components/**/*', '!**/*-min.css', '!assets/js/vendor/*', '!assets/css/*', '!**/*-min.js', '!assets/js/production.js', '!gulpfile.js' ];
+
 const AUTOPREFIXER_BROWSERS = [
     "last 2 version",
     "> 1%",
@@ -48,6 +50,8 @@ const AUTOPREFIXER_BROWSERS = [
     "android >= 4",
     "bb >= 10"
 ];
+
+
 
 /**
  * Load Plugins.
@@ -64,7 +68,6 @@ var mmq = require("gulp-merge-media-queries");
 
 /** JS plugins */
 var concat = require("gulp-concat");
-var uglify = require("gulp-uglify");
 var terser = require("gulp-terser");
 var jslint = require("gulp-eslint");
 
@@ -77,10 +80,9 @@ var del = require("del");
 var touch = require("gulp-touch-cmd");
 var gulpphpcs = require("gulp-phpcs");
 var gulpphpcbf = require("gulp-phpcbf");
+var notify = require("gulp-notify");
 
 var browserSync = require("browser-sync").create();
-
-
 
 function reload(done) {
     browserSync.reload();
@@ -176,16 +178,17 @@ function clean() {
 // PHP Code Sniffer.
 function phpcs(done) {
     return (
-        gulp.src(['./**/*.php','!node_modules/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
-            .pipe(gulpphpcs({
+      gulp.src(csSource)
+      .pipe(gulpphpcs({
                 bin: '../../../../vendor/bin/phpcs',
                 standard: 'WordPress',
                 warningSeverity: 0,
                 errorSeverity: 1,
                 showSniffCode: true,
-                report: 'summary' // summary
+                report: 'full' // summary or full
             }))
             .pipe(gulpphpcs.reporter('log'))
+            .pipe( notify( { message: 'phpcs task complete', onLast: true } ) )
     );
     done();
 }
@@ -193,14 +196,14 @@ function phpcs(done) {
 // PHP Code Beautifier.
 function phpcbf(done) {
     return (
-      gulp.src(['./**/*.php','!node_modules/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
+      gulp.src(csSource)
             .pipe(gulpphpcbf({
                 bin: '../../../../vendor/bin/phpcbf',
-                standard: 'WordPress',
-                warningSeverity: 0
+                standard: 'WordPress'
             }))
             .on("error",console.error.bind(console))
             .pipe(gulp.dest('./'))
+            .pipe( notify( { message: 'phpcbf complete', onLast: true } ) )
     );
     done();
 }
