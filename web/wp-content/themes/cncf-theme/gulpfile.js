@@ -7,7 +7,7 @@
 // Project Name - Lowercase, no spaces, used below in urls (use name of theme folder)
 // var project = "cncf-theme";
 
-// Local project URL. From MAMP or whatever local server you use.
+// Local project URL. From MAMP or Lando - whatever local server you use.
 var projectURL = "https://cncfci.lndo.site";
 
 // const PROJECT_FOLDER = "./web/wp-content/themes/" + project;
@@ -66,6 +66,7 @@ var mmq = require("gulp-merge-media-queries");
 var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var terser = require("gulp-terser");
+var jslint = require("gulp-eslint");
 
 /** Utility plugins */
 var rename = require("gulp-rename");
@@ -78,6 +79,8 @@ var gulpphpcs = require("gulp-phpcs");
 var gulpphpcbf = require("gulp-phpcbf");
 
 var browserSync = require("browser-sync").create();
+
+
 
 function reload(done) {
     browserSync.reload();
@@ -170,48 +173,17 @@ function clean() {
     return del([styleDestination + "/*"]);
 }
 
-/**
- * phpcbf - PHP Code Beautifier task
- */
-// function phpcbf() {
-//     return gulp
-//         .src(projectPHPWatchFiles)
-//         .pipe(phpcbf({
-//             bin: '../../../../vendor/bin/phpcs',
-//             standard: './codesniffer.ruleset.xml',
-//             warningSeverity: 0
-//         }))
-//         .on('error',log)
-//         .pipe(gulp.dest('.'));
-// };
-
-// PHP Code Beautifier.
-// function testphpcbf(done) {
-//     return (
-//         gulp.src(['src/**/*.php','!src/vendor/**/*.*','!src/node_modules/*'])
-//             .pipe(gulpphpcbf({
-//                 bin: '../../../../vendor/bin/phpcbf',
-//                 standard: './codesniffer.ruleset.xml',
-//                 warningSeverity: 0
-//             }))
-//             .on("error",console.error.bind(console))
-//             // .pipe(gulpphpcbf.reporter('log'))
-//             .pipe(gulp.dest('src'))
-//     );
-//     done();
-// }
-
 // PHP Code Sniffer.
 function phpcs(done) {
     return (
-        gulp.src(['./**/*.php','!node_modules/**/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
+        gulp.src(['./**/*.php','!node_modules/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
             .pipe(gulpphpcs({
                 bin: '../../../../vendor/bin/phpcs',
                 standard: 'WordPress',
                 warningSeverity: 0,
                 errorSeverity: 1,
                 showSniffCode: true,
-                report: 'full' // summary
+                report: 'summary' // summary
             }))
             .pipe(gulpphpcs.reporter('log'))
     );
@@ -221,7 +193,7 @@ function phpcs(done) {
 // PHP Code Beautifier.
 function phpcbf(done) {
     return (
-        gulp.src(['./**/*.php','!node_modules/**/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
+      gulp.src(['./**/*.php','!node_modules/*','!vendor/**/*','!third-party/*','!jquery/*','!gulpfile*'])
             .pipe(gulpphpcbf({
                 bin: '../../../../vendor/bin/phpcbf',
                 standard: 'WordPress',
@@ -241,7 +213,6 @@ function globalJS() {
         .src(jsGlobalSRC)
         .pipe(concat(jsGlobalFile + ".js"))
         .pipe(lineec())
-        .pipe(uglify()) // added
         .pipe(gulp.dest(jsGlobalDestination))
         .pipe(
             rename({
@@ -250,6 +221,7 @@ function globalJS() {
             })
         )
         .pipe(terser())
+        .pipe(jslint())
         .pipe(lineec())
         .pipe(gulp.dest(jsGlobalDestination))
         .pipe(touch());
@@ -264,8 +236,6 @@ function blocksJS() {
             .src(jsBlocksSRC)
             .pipe(concat(jsBlocksFile + ".js"))
             .pipe(lineec())
-
-            // .pipe(uglify()) // added
             .pipe(gulp.dest(jsBlocksDestination))
             .pipe(
                 rename({
@@ -274,6 +244,7 @@ function blocksJS() {
                 })
             )
             .pipe(terser())
+            .pipe(jslint())
             .pipe(lineec())
             .pipe(gulp.dest(jsBlocksDestination))
             .pipe(touch())
@@ -281,7 +252,7 @@ function blocksJS() {
 }
 
 exports.default = gulp.series(styles,globalJS,blocksJS,watch);
-exports.production = gulp.series(styles,globalJS,blocksJS);
+exports.build = gulp.series(styles,globalJS,blocksJS,phpcbf,phpcs);
 exports.phpcs = gulp.series(phpcs);
 exports.phpcbf = gulp.series(phpcbf);
 exports.standards = gulp.series(phpcbf,phpcs);
