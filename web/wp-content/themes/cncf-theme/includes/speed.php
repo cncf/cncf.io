@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
 function disable_embed() {
 	wp_dequeue_script( 'wp-embed' );
 }
-add_action( 'wp_footer', 'disable_embed' );
+// add_action( 'wp_footer', 'disable_embed' ); // turned off as included in CNCF-MU.
 
 /**
  *

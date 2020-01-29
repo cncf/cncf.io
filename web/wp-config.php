@@ -106,6 +106,11 @@ endif;
  */
 if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 
+	// added this as not working above.
+	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_DISPLAY', false ); // false to go to log.
+	define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
+
 	// ** MySQL settings - included in the Pantheon Environment ** //
 	/** The name of the database for WordPress */
 	define( 'DB_NAME', $_ENV['DB_NAME'] );

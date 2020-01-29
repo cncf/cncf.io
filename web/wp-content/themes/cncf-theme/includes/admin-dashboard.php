@@ -27,8 +27,8 @@ add_filter( 'menu_order', 'my_new_admin_menu_order' );
  */
 function my_new_admin_menu_order( $menu_order ) {
 	$new_positions = array(
-		'upload.php'              => 8,
-		'edit.php?post_type=page' => 4,
+		'upload.php' => 8,
+		// 'edit.php?post_type=page' => 4,
 	);
 	/**
 	 * Sorting
@@ -62,30 +62,13 @@ add_action( 'wp_dashboard_setup', 'add_dashboard_widget_info' );
  */
 function website_details() {
 	echo "<ul>
-<li><strong>Developed By:</strong> </li>
-<li><strong>Website:</strong> <a href='https://google.com' target='_blank'>https://www.thetwopercent.co.uk</a>
+	<li><a href='#' target='_blank'>Link to editing guide will be here</a></li>
+<li><strong>Developed By:</strong> <a href='mailto:cjyabraham@gmail.com'>Chris Abraham</a>, <a href='mailto:jim@thetwopercent.co.uk'>James Hunt</a></li>
+<li><strong>Development Repo:</strong> <a href='https://github.com/cncf/cncf.io' target='_blank'>Github</a>
 </li>
-<li><strong>Contact:</strong> <a href='mailto:jim@thetwopercent.co.uk'>jim@thetwopercent.co.uk</a></li>
 </ul>";
 }
 
-/**
- * Add theme usage box into WordPress Dashboard
- */
-function add_dashboard_widget_info_again() {
-	wp_add_dashboard_widget( 'dashboard_widget_2', 'How to Use', 'how_to_use_block' );
-}
-add_action( 'wp_dashboard_setup', 'add_dashboard_widget_info_again' );
-
-/**
- * Add content to new dashboard widget
- */
-function how_to_use_block() {
-	echo '<h2>Editing Content</h2>
-<ul>
-<li>Editing instructions here</li>
-</ul>';
-}
 
 /**
  * Add custom post types to Dashboard
@@ -93,7 +76,7 @@ function how_to_use_block() {
  * @param int $items Number.
  */
 function custom_glance_items( $items = array() ) {
-	$post_types = array( 'tyres', 'guides', 'case_studies', 'testimonials' );
+	$post_types = array( 'cncf_webinar', 'cncf_event', 'cncf_case_study', 'cncf_case_study_ch', 'cncf_project', 'cncf_person' );
 
 	foreach ( $post_types as $type ) {
 
@@ -123,7 +106,7 @@ function custom_glance_items( $items = array() ) {
 add_filter( 'dashboard_glance_items', 'custom_glance_items', 10, 1 );
 
 /**
- * Removes dashboard widgets
+ * Removes dashboard widgets.
  */
 function remove_dashboard_widgets() {
 	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
@@ -132,15 +115,12 @@ function remove_dashboard_widgets() {
 	remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
-	// remove_meta_box('dashboard_primary', 'dashboard', 'side'); // phpcs:ignore.
-	// remove_meta_box('dashboard_secondary', 'dashboard', 'side'); // phpcs:ignore.
-	// remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); // phpcs:ignore.
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
 }
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
 
 /**
- * Remove pages from sidebar
+ * Remove pages from sidebar.
  */
 function custom_menu_page_removing() {
 	remove_menu_page( 'edit-comments.php' );
