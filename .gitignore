@@ -14,11 +14,13 @@ web/*
 !web/wp-config.php
 !web/wp-content/
 web/wp-content/*
+
 !web/wp-content/mu-plugins/
 web/wp-content/mu-plugins/*
-!web/wp-content/mu-plugins/custom
+!web/wp-content/mu-plugins/cncf-mu/*
 !web/wp-content/mu-plugins/cncf-mu.php
 !web/wp-content/mu-plugins/.gitkeep
+
 !web/wp-content/plugins/
 web/wp-content/plugins/*
 !web/wp-content/plugins/custom/
