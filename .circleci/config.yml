@@ -22,7 +22,7 @@ defaults: &defaults
     TZ: "/usr/share/zoneinfo/America/Los_Angeles"
 
     # The variables below usually do not need to be modified.
-    
+
     #======================================================================================================================================
     # Circle CI 2.0 does not yet expand environment variables so they have to be manually EXPORTed
     # Once environment variables can be expanded the variables below can be uncommented and the EXPORTs in set-up-globals.sh can be removed
@@ -31,7 +31,7 @@ defaults: &defaults
     # See: https://discuss.circleci.com/t/circle-2-0-global-environment-variables/8681
     #======================================================================================================================================
     # See set-up-globals.sh for more environment variables
-    
+
     NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
     ADMIN_USERNAME: admin
     # BUILD_TOOLS_VERSION: 2.0.0-beta6
@@ -91,7 +91,7 @@ jobs:
             - run:
                 name: check for WordPress coding standards
                 command: composer -n code-sniff
-            
+
             # - run:
             #     name: run unit tests
             #     command: composer -n unit-test
@@ -109,10 +109,10 @@ jobs:
 
             - run:
                 name: compile css/js
-                command: 'cd $HOME/example_wordpress_composer/web/wp-content/themes/lfevents/; npm install; npm run build'
+                command: 'cd $HOME/example_wordpress_composer/web/wp-content/themes/cncf-theme/; npm install; npm run build'
 
             - persist_to_workspace:
-                root: web/wp-content/themes/lfevents
+                root: web/wp-content/themes/cncf-theme
                 paths:
                     - dist
 
@@ -128,11 +128,11 @@ jobs:
                     - terminus-install
 
             - attach_workspace:
-                at: /tmp                    
+                at: /tmp
 
             - run:
                 name: copy dist
-                command: cp -r /tmp/dist $HOME/example_wordpress_composer/web/wp-content/themes/lfevents/
+                command: cp -r /tmp/dist $HOME/example_wordpress_composer/web/wp-content/themes/cncf-theme/
 
             - run:
                 name: dependencies
@@ -162,7 +162,7 @@ jobs:
             - run:
                 name: copy vendor
                 command: cp -r /tmp/vendor .
-            
+
             - run:
                 name: dependencies
                 command: ./.circleci/set-up-globals.sh
@@ -185,10 +185,10 @@ jobs:
 
             - run:
                 name: run Wraith tests
-                command: ./.circleci/wraith-test.sh $TERMINUS_SITE 
+                command: ./.circleci/wraith-test.sh $TERMINUS_SITE
 
             - store_artifacts:
-                path: ./wraith/shots     
+                path: ./wraith/shots
 
 workflows:
   version: 2
@@ -214,4 +214,4 @@ workflows:
       - wraith_test_cncfci:
             requires:
                 - build_and_deploy_cncfci
-                # - behat_test_cncfci               
+                # - behat_test_cncfci
