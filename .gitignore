@@ -124,3 +124,5 @@ Thumbs.db
 web/wp-content/plugins/text-on-image-block/node_modules
 !web/wp-content/plugins/tab-container-block
 web/wp-content/plugins/tab-container-block/node_modules
+!web/wp-content/plugins/lf-latest-jobs
+web/wp-content/plugins/lf-latest-jobs/node_modules
