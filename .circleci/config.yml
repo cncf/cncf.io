@@ -131,8 +131,8 @@ jobs:
                 at: /tmp
 
             - run:
-                name: copy dist
-                command: cp -r /tmp/dist $HOME/example_wordpress_composer/web/wp-content/themes/cncf-theme/
+                name: copy build
+                command: cp -r /tmp/build $HOME/example_wordpress_composer/web/wp-content/themes/cncf-theme/
 
             - run:
                 name: dependencies
