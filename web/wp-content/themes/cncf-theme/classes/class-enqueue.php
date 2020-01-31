@@ -57,10 +57,14 @@ class Enqueue {
 	 */
 	public function scripts() {
 
-		// Jquery to footer.
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, null, true ); // phpcs:ignore
-		wp_enqueue_script( 'jquery' );
+		if ( ! is_admin() ) {
+			wp_deregister_script( 'jquery' );
+
+			// load WP copy of jQuery in the footer.
+			wp_register_script('jquery', includes_url('/js/jquery/jquery.js'), false, '1.3.2', true); // phpcs:ignore
+
+			wp_enqueue_script( 'jquery' );
+		}
 
 		if ( WP_DEBUG === true ) {
 			// Use un-minified version.

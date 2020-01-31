@@ -11,25 +11,6 @@
 
 ?>
 
-<h1>
-	<?php
-	// get the options.
-
-	$test = $_ENV['PANTHEON_ENVIRONMENT'];
-	echo $test;
-
-	$options = get_option( 'cncf-mu' );
-	if ( $options[ social_twitter ] ) {
-		echo $options[ social_twitter ];
-	}
-
-	if ( $options[ hello_bar_content ] ) {
-		echo $options[ hello_bar_content ];
-	}
-
-
-	?>
-</h1>
 <section class="hero">
 	<div class="container wrap">
 		<?php
@@ -40,7 +21,7 @@
 		if ( function_exists( 'is_tag' ) && is_tag() || is_category() || is_tax() ) :
 			?>
 		<h1 class="blog-title"><?php single_cat_title(); ?></h1>
-		<?php
+			<?php
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			?>
 		<?php elseif ( is_author() ) : ?>
@@ -50,7 +31,7 @@
 				rel="bookmark"
 				title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 		</h1>
-		<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+			<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 		<?php elseif ( is_search() ) : ?>
 		<h2 class="page-title"><span>Search results for: </span>
 			<?php echo esc_attr( get_search_query() ); ?></h2>
@@ -62,7 +43,7 @@
 		<h2 class="blog-title"><?php single_post_title(); ?></h2>
 		<?php else : ?>
 		<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-		<?php
+			<?php
 endif;
 		?>
 	</div>

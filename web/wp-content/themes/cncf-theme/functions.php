@@ -98,25 +98,21 @@ require_once 'includes/pagination.php';
 // excerpts.
 require_once 'includes/excerpts.php';
 
-
-/**
- * Defer all JS except jquery.js
- *
- * @param string $url the URL.
- */
-function defer_parsing_of_js( $url ) {
-	if ( ! ( is_admin() ) ) {
-
+/* Will only run on front end of site */
+if ( ! is_admin() ) {
+	/**
+	 * Make all JS defer onload apart from files specified.
+	 *
+	 * @param string $url the URL.
+	 */
+	function defer_parsing_of_js( $url ) {
 		if ( false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
-
 		if ( strpos( $url, 'jquery.js' ) ) {
 			return $url;
 		}
-
 		return str_replace( ' src', ' defer src', $url );
 	}
+	add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
 }
-// add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
-
