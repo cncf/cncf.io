@@ -114,7 +114,7 @@ jobs:
             - persist_to_workspace:
                 root: web/wp-content/themes/cncf-theme
                 paths:
-                    - dist
+                    - build
 
 
     build_and_deploy_cncfci:
