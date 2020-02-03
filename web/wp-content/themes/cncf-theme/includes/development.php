@@ -19,3 +19,14 @@ function r( $var ) {
 	print_r( $var );
 	echo '</pre>';
 }
+
+/**
+ * Change navigation bar colour for version in debug/local
+ */
+function change_adminbar_colors() {
+	$change_adminbar_colors = '<style type="text/css">
+        #wpadminbar { background-color:#12881D; }
+    </style>';
+	echo $change_adminbar_colors; // phpcs:ignore
+}
+add_action( 'admin_head', 'change_adminbar_colors' );

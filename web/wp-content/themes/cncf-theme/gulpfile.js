@@ -255,7 +255,7 @@ function blocksJS() {
 }
 
 exports.default = gulp.series(styles,globalJS,blocksJS,watch);
-exports.build = gulp.series(styles,globalJS,blocksJS,phpcbf,phpcs);
+exports.build = gulp.series(styles,globalJS,blocksJS);
 exports.phpcs = gulp.series(phpcs);
 exports.phpcbf = gulp.series(phpcbf);
 exports.standards = gulp.series(phpcbf,phpcs);

@@ -60,7 +60,6 @@ add_action(
 	}
 );
 
-
 /**
  * Theme function classes
  *
@@ -75,10 +74,8 @@ $enqueue = new Enqueue();
 /**
  * Includes (enable as appropriate)
  */
-// theme support.
-// require_once 'includes/theme-support.php'; // phpcs:ignore.
 
-// development.
+ // development.
 if ( WP_DEBUG === true ) {
 	require_once 'includes/development.php';
 }
@@ -93,7 +90,7 @@ require_once 'includes/speed.php';
 // require_once('includes/gravity.php'); // phpcs:ignore.
 
 // dashboard.
-// require_once('includes/admin-dashboard.php'); // phpcs:ignore.
+require_once 'includes/admin-dashboard.php';
 
 // pagination.
 require_once 'includes/pagination.php';
@@ -101,24 +98,21 @@ require_once 'includes/pagination.php';
 // excerpts.
 require_once 'includes/excerpts.php';
 
-
-/**
- * Defer all JS except jquery.js
- *
- * @param string $url the URL.
- */
-function defer_parsing_of_js( $url ) {
-	if ( ! ( is_admin() ) ) {
-
+/* Will only run on front end of site */
+if ( ! is_admin() ) {
+	/**
+	 * Make all JS defer onload apart from files specified.
+	 *
+	 * @param string $url the URL.
+	 */
+	function defer_parsing_of_js( $url ) {
 		if ( false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
-
 		if ( strpos( $url, 'jquery.js' ) ) {
 			return $url;
 		}
-
 		return str_replace( ' src', ' defer src', $url );
 	}
+	add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
 }
-add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );

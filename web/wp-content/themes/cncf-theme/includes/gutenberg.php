@@ -10,17 +10,6 @@
  */
 
 /**
- * Remove Gutenberg CSS
- */
-add_action(
-	'wp_enqueue_scripts',
-	function () {
-		wp_dequeue_style( 'wp-block-library' );
-		wp_dequeue_style( 'wp-block-library-theme' );
-	}
-);
-
-/**
  * Add Gutenberg features
  */
 function gb_setup_theme_supported_features() {
@@ -109,22 +98,22 @@ function gb_setup_theme_fonts() {
 		'editor-font-sizes',
 		array(
 			array(
-				'name' => __( 'Small', 'resumecompanion' ),
+				'name' => __( 'Small' ),
 				'size' => 12,
 				'slug' => 'small',
 			),
 			array(
-				'name' => __( 'Normal', 'resumecompanion' ),
+				'name' => __( 'Normal' ),
 				'size' => 18,
 				'slug' => 'normal',
 			),
 			array(
-				'name' => __( 'Large', 'resumecompanion' ),
+				'name' => __( 'Large' ),
 				'size' => 36,
 				'slug' => 'large',
 			),
 			array(
-				'name' => __( 'Huge', 'resumecompanion' ),
+				'name' => __( 'Huge' ),
 				'size' => 50,
 				'slug' => 'huge',
 			),
@@ -132,24 +121,6 @@ function gb_setup_theme_fonts() {
 	);
 }
 add_action( 'after_setup_theme', 'gb_setup_theme_fonts' );
-
-/**
- * Gutenberg Fonts and Styles in Admin
- */
-function fonts_enqueue_gutenberg() {
-	wp_register_style( 'gutenberg-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800&display=swap' ); // phpcs:ignore
-	wp_enqueue_style( 'gutenberg-fonts' );
-	// if you need to setup admin specific css + add to gulp.
-	// phpcs:disable
-	// if ( WP_DEBUG == true ) {
-	// ** use un minified for testing, minified for build */
-	// wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/build/css/admin.css' ), false, '1.0', 'all' );
-	// } else {
-	// wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/build/css/admin.min.css' ), false, '1.0', 'all' );
-	// }
-	// phpcs:enable
-}
-add_action( 'enqueue_block_editor_assets', 'fonts_enqueue_gutenberg' );
 
 /**
  * Register custom blocks script

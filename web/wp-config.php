@@ -1,4 +1,12 @@
 <?php
+/**
+ * WP Config
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
+
 /*
  * Don't show deprecations
  */
@@ -7,18 +15,18 @@ error_reporting( E_ALL ^ E_DEPRECATED );
 /**
  * Set root path
  */
-$rootPath = realpath( __DIR__ . '/..' );
+$root_path = realpath( __DIR__ . '/..' );
 
 /**
  * Include the Composer autoload
  */
-require_once $rootPath . '/vendor/autoload.php';
+require_once $root_path . '/vendor/autoload.php';
 
 /*
  * Fetch .env
  */
-if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( $rootPath . '/.env' ) ) {
-	$dotenv = Dotenv\Dotenv::create( $rootPath );
+if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( $root_path . '/.env' ) ) {
+	$dotenv = Dotenv\Dotenv::create( $root_path );
 	$dotenv->load();
 	$dotenv->required(
 		array(
@@ -29,24 +37,8 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( $rootPath . '/.env
 	)->notEmpty();
 }
 
-/**
- * Disallow on server file edits
- */
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISALLOW_FILE_MODS', true );
-
-/**
- * Force SSL
- */
-define( 'FORCE_SSL_ADMIN', true );
-
-/**
- * Limit post revisions
- */
-define( 'WP_POST_REVISIONS', 10 );
-
 /*
- * If NOT on Pantheon
+ * If NOT on Pantheon / Lando (which is?)
  */
 if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	/**
@@ -57,10 +49,14 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	// If we have detected that the end use is HTTPS, make sure we pass that
 	// through here, so <img> tags and the like don't generate mixed-mode
 	// content warnings.
-	if ( isset( $_SERVER['HTTP_USER_AGENT_HTTPS'] ) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON' ) {
+	if ( isset( $_SERVER['HTTP_USER_AGENT_HTTPS'] ) && 'ON' == $_SERVER['HTTP_USER_AGENT_HTTPS'] ) {
 		$scheme = 'https';
 	}
-	$site_url = getenv( 'WP_HOME' ) !== false ? getenv( 'WP_HOME' ) : $scheme . '://' . $_SERVER['HTTP_HOST'] . '/';
+
+	if ( isset( $_SERVER['HTTP_HOST'] ) ) {
+		$site_url = getenv( 'WP_HOME' ) !== false ? getenv( 'WP_HOME' ) : $scheme . '://' . wc_clean( wp_unslash( $_SERVER['HTTP_HOST'] ) ) . '/';
+	}
+
 	define( 'WP_HOME', $site_url );
 	define( 'WP_SITEURL', $site_url . 'wp/' );
 
@@ -72,13 +68,6 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	define( 'DB_PASSWORD', getenv( 'DB_PASSWORD' ) !== false ? getenv( 'DB_PASSWORD' ) : '' );
 	define( 'DB_HOST', getenv( 'DB_HOST' ) );
 
-	/**
-	 * Set debug modes
-	 */
-	define( 'WP_DEBUG', true );
-	define( 'WP_DEBUG_DISPLAY', true ); // false to go to log.
-	define( 'SCRIPT_DEBUG', true );
-	define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
 	define( 'IS_LOCAL', getenv( 'IS_LOCAL' ) !== false ? true : false );
 
 	/**#@+
@@ -161,25 +150,49 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 		define( 'WP_SITEURL', $scheme . '://' . $_SERVER['HTTP_HOST'] . '/wp' );
 
 	}
-	// Don't show deprecations; useful under PHP 5.5
+	// Don't show deprecations; useful under PHP 5.5.
 	error_reporting( E_ALL ^ E_DEPRECATED );
-	// Force the use of a safe temp directory when in a container
+	// Force the use of a safe temp directory when in a container.
 	if ( defined( 'PANTHEON_BINDING' ) ) :
 		define( 'WP_TEMP_DIR', sprintf( '/srv/bindings/%s/tmp', PANTHEON_BINDING ) );
 	endif;
 
-	// FS writes aren't permitted in test or live, so we should let WordPress know to disable relevant UI
+	// FS writes aren't permitted in test or live, so we should let WordPress know to disable relevant UI.
 	if ( in_array( $_ENV['PANTHEON_ENVIRONMENT'], array( 'test', 'live' ) ) && ! defined( 'DISALLOW_FILE_MODS' ) ) :
 		define( 'DISALLOW_FILE_MODS', true );
+	endif;
+
+	// if environment is Lando run in debug.
+	if ( 'lando' === $_ENV['PANTHEON_ENVIRONMENT'] ) :
+		define( 'WP_DEBUG', true );
+		define( 'WP_DEBUG_DISPLAY', true ); // false to go to log.
+		define( 'SCRIPT_DEBUG', true );
+		define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
 	endif;
 
 endif;
 
 /*
-* Define wp-content directory outside of WordPress core directory
+* Define wp-content directory outside of WordPress core directory.
 */
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', getenv( 'WP_HOME' ) . '/wp-content' );
+
+/**
+ * Disallow on server file edits
+ */
+define( 'DISALLOW_FILE_EDIT', true );
+define( 'DISALLOW_FILE_MODS', true );
+
+/**
+ * Force SSL
+ */
+define( 'FORCE_SSL_ADMIN', true );
+
+/**
+ * Limit post revisions
+ */
+define( 'WP_POST_REVISIONS', 10 );
 
 /**
  * WordPress Database Table prefix.
@@ -188,8 +201,6 @@ define( 'WP_CONTENT_URL', getenv( 'WP_HOME' ) . '/wp-content' );
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix = getenv( 'DB_PREFIX' ) !== false ? getenv( 'DB_PREFIX' ) : 'wp_';
-
-/* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -231,24 +242,3 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli' ) {
 		exit();
 	}
 }
-
-
-// Special LFEvents Redirects for the /events/ subdirectory.
-// commented out for CNCF
-// if ( 0 === strpos( $_SERVER['REQUEST_URI'], '/events/' ) ) {
-// if ( ( php_sapi_name() != 'cli' ) ) {
-// header( 'HTTP/1.0 301 Moved Permanently' );
-
-// if ( 'lfeventsci' === $_ENV['PANTHEON_SITE_NAME'] ) {
-// header( 'Location: https://events19.linuxfoundation.org' . $_SERVER['REQUEST_URI'] );
-// } else {
-// header( 'Location: https://events19.lfasiallc.com' . $_SERVER['REQUEST_URI'] );
-// }
-
-// if ( extension_loaded( 'newrelic' ) ) {
-// newrelic_name_transaction( 'redirect' );
-// }
-
-// exit();
-// }
-// }
