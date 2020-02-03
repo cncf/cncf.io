@@ -27,7 +27,7 @@ add_filter( 'menu_order', 'my_new_admin_menu_order' );
  */
 function my_new_admin_menu_order( $menu_order ) {
 	$new_positions = array(
-		'upload.php' => 8,
+		'upload.php' => 11,
 		// 'edit.php?post_type=page' => 4,
 	);
 	/**
