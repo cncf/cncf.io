@@ -61,9 +61,10 @@ $(function() {
 			var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
 			var set_to_post_id = 7974; // Set this
 
-			jQuery('#upload_image_button').on('click', function( event ){
+			jQuery('.upload_image_button').on('click', function( event ){
 
 				event.preventDefault();
+				var button_data_id = $(this).attr('data-id');
 
 				// If the media frame already exists, reopen it.
 				if ( file_frame ) {
@@ -88,12 +89,13 @@ $(function() {
 
 				// When an image is selected, run a callback.
 				file_frame.on( 'select', function() {
+
 					// We set multiple to false so only get one image from the uploader
 					var attachment = file_frame.state().get('selection').first().toJSON();
-					// console.log(attachment);
+
 					// Do something with attachment.id and/or attachment.url here
-					$( '#image-preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
-					$( '#cncf-mu-header_image_id' ).val( attachment.id );
+					$( 'img[data-id=' + button_data_id + ']' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
+					$( '#' + button_data_id ).val( attachment.id );
 
 					// Restore the main post ID
 					wp.media.model.settings.post.id = wp_media_post_id;
@@ -103,13 +105,15 @@ $(function() {
 					file_frame.open();
 			});
 
-			jQuery('#clear_upload_image_button').on('click', function( event ){
+			jQuery('.clear_upload_image_button').on('click', function( event ){
 
 				event.preventDefault();
 
-				$( '#image-preview' ).attr( 'src', '' ).css( 'width', 'auto' );
+				var button_data_id = $(this).attr('data-id');
 
-				$( '#cncf-mu-header_image_id' ).val( '' );
+				$( 'img[data-id=' + button_data_id + ']' ).attr( 'src', '' ).css( 'width', 'auto' );
+
+				$( '#' + button_data_id ).val( '' );
 
 			});
 
