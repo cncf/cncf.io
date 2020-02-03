@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 		<?php
 		// Grab all options.
 		$options = get_option( $this->plugin_name );
-
+		r( $options );
 		$social_email = ( isset( $options['social_email'] ) && ! empty( $options['social_email'] ) ) ? esc_attr( $options['social_email'] ) : '';
 
 		$social_facebook = ( isset( $options['social_facebook'] ) && ! empty( $options['social_facebook'] ) ) ? esc_attr( $options['social_facebook'] ) : '';
@@ -50,6 +50,8 @@ if ( ! defined( 'WPINC' ) ) {
 		$hello_bar_content = ( isset( $options['hello_bar_content'] ) && ! empty( $options['hello_bar_content'] ) ) ? $options['hello_bar_content'] : '';
 
 		$hello_bar_bg = ( isset( $options['hello_bar_bg'] ) && ! empty( $options['hello_bar_bg'] ) ) ? esc_attr( $options['hello_bar_bg'] ) : '';
+
+		$header_image_id = ( isset( $options['header_image_id'] ) && ! empty( $options['header_image_id'] ) ) ? esc_attr( $options['header_image_id'] ) : '';
 
 		settings_fields( $this->plugin_name );
 
@@ -232,7 +234,39 @@ if ( ! defined( 'WPINC' ) ) {
 
 		<h2 id="header">Header</h2>
 
+		<table class="form-table" role="presentation">
+			<tbody>
+				<tr>
+					<th scope="row"><label for="header_image_id">Header Logo
+							Image</label>
+					</th>
+					<td>
+						<div class='image-preview-wrapper'>
+							<img id='image-preview'
+								src='<?php echo esc_url( wp_get_attachment_url( $header_image_id ) ); ?>'
+								height='100'>
 
+						</div>
+
+						<input id="upload_image_button" type="button"
+							class="button" value="Upload logo" />
+
+						<input id="clear_upload_image_button" type="button"
+							class="button" value="Remove logo" />
+
+						<input type="hidden"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-header_image_id"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[header_image_id]"
+							value="<?php echo esc_url( $header_image_id ); ?>" />
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr />
+
+		<h2 id="footer">Footer</h2>
 
 		<hr />
 
