@@ -55,8 +55,14 @@ if ( ! defined( 'WPINC' ) ) {
 
 		do_settings_sections( $this->plugin_name );
 		?>
+		<hr />
 
-		<h2>Company Social Media & Links</h2>
+		<a href="#social">Social Media</a> | <a href="#hello">Hello Bar</a> | <a
+			href="#header">Header</a> | <a href="#footer">Footer</a>
+
+		<hr />
+
+		<h2 id="social">Company Social Media & Links</h2>
 		<table class="form-table" role="presentation">
 			<tbody>
 				<tr>
@@ -165,7 +171,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 		<hr />
 
-		<h2>Hello Bar</h2>
+		<h2 id="hello">Hello Bar</h2>
 		<table class="form-table" role="presentation">
 			<tbody>
 				<tr>
@@ -209,37 +215,26 @@ if ( ! defined( 'WPINC' ) ) {
 							Color</label>
 					</th>
 					<td>
-						<?php
-						wp_enqueue_style( 'wp-color-picker' );
-						wp_enqueue_script( 'wp-color-picker' );
-						?>
-						<script>
-						(function($) {
-							// Add Color Picker to all inputs that have 'color-field' class.
-							$(function() {
-								$('.color_field').wpColorPicker({
-									defaultColor: true,
-									palettes: ['#DE176C', '#444444',
-										'#000000', '#436ca9', '#416FD9',
-										'#252b5f', '#111111', '#48549C'
-									]
-								});
-							});
-						})(jQuery);
-						</script>
 
 						<div class="pagebox">
 							<input class="color_field" type="hidden"
 								name="<?php echo esc_html( $this->plugin_name ); ?>[hello_bar_bg]"
 								data-default-color="#DE176C"
 								value="<?php echo esc_attr( $hello_bar_bg ); ?>" />
-
 						</div>
 					</td>
 				</tr>
 
 			</tbody>
 		</table>
+
+		<hr />
+
+		<h2 id="header">Header</h2>
+
+
+
+		<hr />
 
 		<?php submit_button( __( 'Save all changes', 'textdomain' ), 'primary', 'submit', true ); ?>
 	</form>

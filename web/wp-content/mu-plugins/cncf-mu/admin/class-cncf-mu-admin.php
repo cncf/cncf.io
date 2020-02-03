@@ -57,19 +57,38 @@ class Cncf_Mu_Admin {
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @param string $hook_suffix part of WP.
 	 */
-	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cncf-mu-admin.css', array(), $this->version, 'all' );
+	public function enqueue_styles( $hook_suffix ) {
 
+			// only loads on CNCF MU top level page.
+		if ( 'toplevel_page_cncf-mu' == $hook_suffix ) {
+
+			// color picker.
+			wp_enqueue_style( 'wp-color-picker' );
+
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cncf-mu-admin.css', array(), $this->version, 'all' );
+		}
 	}
 
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @param string $hook_suffix part of WP.
 	 */
-	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cncf-mu-admin.js', array( 'jquery' ), $this->version, false );
+	public function enqueue_scripts( $hook_suffix ) {
+
+		// only loads on CNCF MU top level page.
+		if ( 'toplevel_page_cncf-mu' == $hook_suffix ) {
+
+			// color picker.
+			wp_enqueue_script( 'wp-color-picker' );
+			// media uploader.
+			wp_enqueue_media();
+			// custom scripts.
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cncf-mu-admin.js', array( 'jquery' ), $this->version, false );
+		}
 	}
 
 	/**
@@ -589,7 +608,7 @@ class Cncf_Mu_Admin {
 										'public'  => __( '公有 (Public)', 'my_plugin' ),
 										'hybrid'  => __( '混合 (Hybrid)', 'my_plugin' ),
 										'private' => __( '私有 (Private)', 'my_plugin' ),
-										'multi' => __( '多云 (Multi)', 'my_plugin' ),
+										'multi'   => __( '多云 (Multi)', 'my_plugin' ),
 									),
 								),
 							),
@@ -635,10 +654,10 @@ class Cncf_Mu_Admin {
 									'default_value' => array( 'sandbox' ), // Value/s from the 'options'.
 									'use_toggle'    => false, // Use toggle control instead of checkbox.
 									'options'       => array( // Required.
-										'sandbox' => __( 'Sandbox', 'my_plugin' ),
-										'incubating'   => __( 'Incubating', 'my_plugin' ),
-										'graduated'    => __( 'Graduated', 'my_plugin' ),
-										'archived'    => __( 'Archived', 'my_plugin' ),
+										'sandbox'    => __( 'Sandbox', 'my_plugin' ),
+										'incubating' => __( 'Incubating', 'my_plugin' ),
+										'graduated'  => __( 'Graduated', 'my_plugin' ),
+										'archived'   => __( 'Archived', 'my_plugin' ),
 									),
 								),
 								array(
@@ -956,7 +975,7 @@ class Cncf_Mu_Admin {
 	 * @since 1.1.0
 	 */
 	public function display_plugin_setup_page() {
-		include_once( 'partials/' . $this->plugin_name . '-admin-display.php' );
+		include_once 'partials/' . $this->plugin_name . '-admin-display.php';
 	}
 
 	/**
@@ -993,6 +1012,7 @@ class Cncf_Mu_Admin {
 
 		$options['hello_bar_bg'] = ( isset( $input['hello_bar_bg'] ) && ! empty( $input['hello_bar_bg'] ) ) ? esc_attr( $input['hello_bar_bg'] ) : '';
 
+		$options['header_image'] = ( isset( $input['header_image'] ) && ! empty( $input['header_image'] ) ) ? esc_attr( $input['header_image'] ) : '';
 		return $options;
 	}
 
