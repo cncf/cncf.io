@@ -177,7 +177,8 @@ if ( ! defined( 'WPINC' ) ) {
 							id="<?php echo esc_html( $this->plugin_name ); ?>-header_cta_text"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[header_cta_text]"
 							value="<?php echo esc_html( $header_cta_text ); ?>"
-							placeholder="Sign up" />
+							placeholder="Sign up"
+							maxlength="20" />
 					</td>
 
 					<th scope="row"><label for="header_cta_link">Header
