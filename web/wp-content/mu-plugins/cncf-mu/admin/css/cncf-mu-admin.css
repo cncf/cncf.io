@@ -6,3 +6,11 @@
 div.pmc-sidebar input::placeholder {
 	color: #999;
 }
+
+.regular-small-text {
+    width: 15em;
+}
+
+.thumbnail-margin-bottom {
+	margin-bottom: 20px;
+}

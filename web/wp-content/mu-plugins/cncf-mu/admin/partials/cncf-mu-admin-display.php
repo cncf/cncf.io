@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 		<?php
 		// Grab all options.
 		$options = get_option( $this->plugin_name );
-		r( $options );
+		// r( $options );
 		$social_email = ( isset( $options['social_email'] ) && ! empty( $options['social_email'] ) ) ? esc_attr( $options['social_email'] ) : '';
 
 		$social_facebook = ( isset( $options['social_facebook'] ) && ! empty( $options['social_facebook'] ) ) ? esc_attr( $options['social_facebook'] ) : '';
@@ -45,13 +45,21 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$social_youtube = ( isset( $options['social_youtube'] ) && ! empty( $options['social_youtube'] ) ) ? esc_attr( $options['social_youtube'] ) : '';
 
+		$social_wechat_id = ( isset( $options['social_wechat_id'] ) && ! empty( $options['social_wechat_id'] ) ) ? absint( $options['social_wechat_id'] ) : '';
+
 		$show_hello_bar = ( isset( $options['show_hello_bar'] ) && ! empty( $options['show_hello_bar'] ) ) ? 1 : 0;
 
 		$hello_bar_content = ( isset( $options['hello_bar_content'] ) && ! empty( $options['hello_bar_content'] ) ) ? $options['hello_bar_content'] : '';
 
 		$hello_bar_bg = ( isset( $options['hello_bar_bg'] ) && ! empty( $options['hello_bar_bg'] ) ) ? esc_attr( $options['hello_bar_bg'] ) : '';
 
-		$header_image_id = ( isset( $options['header_image_id'] ) && ! empty( $options['header_image_id'] ) ) ? esc_attr( $options['header_image_id'] ) : '';
+		$header_image_id = ( isset( $options['header_image_id'] ) && ! empty( $options['header_image_id'] ) ) ? absint( $options['header_image_id'] ) : '';
+
+		$header_cta_text = ( isset( $options['header_cta_text'] ) && ! empty( $options['header_cta_text'] ) ) ? esc_attr( $options['header_cta_text'] ) : '';
+
+		$header_cta_link = ( isset( $options['header_cta_link'] ) && ! empty( $options['header_cta_link'] ) ) ? absint( $options['header_cta_link'] ) : '';
+
+		$copyright_textarea = ( isset( $options['copyright_textarea'] ) && ! empty( $options['copyright_textarea'] ) ) ? $options['copyright_textarea'] : '';
 
 		settings_fields( $this->plugin_name );
 
@@ -165,8 +173,16 @@ if ( ! defined( 'WPINC' ) ) {
 							placeholder="https://www.youtube.com/c/handle" />
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><label for="header_image_id">WeChat</label>
+					</th>
+					<td>
+						<?php
+						// TODO: WeChat upload here.
+						?>
 
-				<?php // TODO: WeChat. ?>
+					</td>
+				</tr>
 
 			</tbody>
 		</table>
@@ -198,14 +214,14 @@ if ( ! defined( 'WPINC' ) ) {
 					</th>
 					<td>
 						<?php
-							$settings = array(
+							$hello_bar_settings = array(
 								'teeny'         => true, // extra options.
 								'media_buttons' => false, // media upload.
 								'textarea_rows' => 4,
 								'tabindex'      => 1,
 								'textarea_name' => 'cncf-mu[hello_bar_content]',
 							);
-							wp_editor( $hello_bar_content, 'hello_bar_content', $settings );
+							wp_editor( $hello_bar_content, 'hello_bar_content', $hello_bar_settings );
 							?>
 
 
@@ -240,33 +256,94 @@ if ( ! defined( 'WPINC' ) ) {
 					<th scope="row"><label for="header_image_id">Header Logo
 							Image</label>
 					</th>
-					<td>
+					<td colspan="3">
 						<div class='image-preview-wrapper'>
 							<img id='image-preview'
 								src='<?php echo esc_url( wp_get_attachment_url( $header_image_id ) ); ?>'
-								height='100'>
+								height='100' class="thumbnail-margin-bottom">
 
 						</div>
 
 						<input id="upload_image_button" type="button"
-							class="button" value="Upload logo" />
+							class="button" value="Choose image" />
 
 						<input id="clear_upload_image_button" type="button"
-							class="button" value="Remove logo" />
+							class="button" value="Remove image" />
 
 						<input type="hidden"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-header_image_id"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[header_image_id]"
-							value="<?php echo esc_url( $header_image_id ); ?>" />
+							value="<?php echo absint( $header_image_id ); ?>" />
 
 					</td>
 				</tr>
+
+				<tr>
+					<th scope="row"><label for="header_cta_text">Header
+							CTA Text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="header_cta_text regular-small-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-header_cta_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[header_cta_text]"
+							value="<?php echo esc_html( $header_cta_text ); ?>"
+							placeholder="Sign up" />
+					</td>
+
+					<th scope="row"><label for="header_cta_link">Header
+							CTA Link</label>
+					</th>
+					<td>
+						<?php
+
+
+						$dropdown_args = array(
+							'selected'          => absint( $header_cta_link ), // insert the post id here
+							'id'                => esc_html( $this->plugin_name ) . '-header_cta_link', // name
+							'name'              => esc_html( $this->plugin_name ) . '[header_cta_link]', // name
+							'class'             => 'regular-small-text',
+							'show_option_none'  => 'No Link (Remove Button)',
+							'option_none_value' => '',
+							'echo'              => true,
+						);
+
+						wp_dropdown_pages( $dropdown_args );
+
+						?>
+					</td>
+				</tr>
+
 			</tbody>
 		</table>
 
 		<hr />
 
 		<h2 id="footer">Footer</h2>
+
+		<table class="form-table" role="presentation">
+			<tbody>
+				<tr>
+					<th scope="row"><label for="copyright_textarea">Copyright
+							Textarea</label>
+					</th>
+					<td>
+						<?php
+							$copyright_textarea_settings = array(
+								'teeny'         => true, // extra options.
+								'media_buttons' => false, // media upload.
+								'textarea_rows' => 6,
+								'tabindex'      => 5,
+								'textarea_name' => 'cncf-mu[copyright_textarea]',
+							);
+							wp_editor( $copyright_textarea, 'copyright_textarea', $copyright_textarea_settings );
+							?>
+						<p class="description">Copyright © 2020 is inserted
+							automatically before this sentence begins.</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
 		<hr />
 

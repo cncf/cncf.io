@@ -59,7 +59,7 @@ $(function() {
 			// Uploading files
 			var file_frame;
 			var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
-			var set_to_post_id = 0; // Set this
+			var set_to_post_id = 7974; // Set this
 
 			jQuery('#upload_image_button').on('click', function( event ){
 
@@ -90,7 +90,7 @@ $(function() {
 				file_frame.on( 'select', function() {
 					// We set multiple to false so only get one image from the uploader
 					var attachment = file_frame.state().get('selection').first().toJSON();
-					console.log(attachment);
+					// console.log(attachment);
 					// Do something with attachment.id and/or attachment.url here
 					$( '#image-preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
 					$( '#cncf-mu-header_image_id' ).val( attachment.id );
