@@ -682,15 +682,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "4.15.3",
+            "version": "4.15.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/4.15.3"
+                "reference": "tags/4.15.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.15.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.15.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2084,6 +2084,7 @@
                 "extension",
                 "wordpress"
             ],
+            "abandoned": true,
             "time": "2019-06-24T19:27:08+00:00"
         },
         {
@@ -3789,16 +3790,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.3",
+            "version": "3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb"
+                "reference": "dceec07328401de6211037abbb18bda423677e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dceec07328401de6211037abbb18bda423677e26",
+                "reference": "dceec07328401de6211037abbb18bda423677e26",
                 "shasum": ""
             },
             "require": {
@@ -3836,11 +3837,11 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-12-04T04:46:47+00:00"
+            "time": "2020-01-30T22:20:29+00:00"
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
@@ -3955,7 +3956,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -4019,16 +4020,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "e9ee09d087e2c88eaf6e5fc0f5c574f64d100e4f"
+                "reference": "f512001679f37e6a042b51897ed24a2f05eba656"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/e9ee09d087e2c88eaf6e5fc0f5c574f64d100e4f",
-                "reference": "e9ee09d087e2c88eaf6e5fc0f5c574f64d100e4f",
+                "url": "https://api.github.com/repos/symfony/console/zipball/f512001679f37e6a042b51897ed24a2f05eba656",
+                "reference": "f512001679f37e6a042b51897ed24a2f05eba656",
                 "shasum": ""
             },
             "require": {
@@ -4091,7 +4092,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-10T21:54:01+00:00"
+            "time": "2020-01-25T12:44:29+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -4148,16 +4149,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "6faf589e1f6af78692aed3ab6b3c336c58d5d83c"
+                "reference": "ec60a7d12f5e8ab0f99456adce724717d9c1784a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/6faf589e1f6af78692aed3ab6b3c336c58d5d83c",
-                "reference": "6faf589e1f6af78692aed3ab6b3c336c58d5d83c",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/ec60a7d12f5e8ab0f99456adce724717d9c1784a",
+                "reference": "ec60a7d12f5e8ab0f99456adce724717d9c1784a",
                 "shasum": ""
             },
             "require": {
@@ -4217,11 +4218,11 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-21T07:39:36+00:00"
+            "time": "2020-01-31T09:49:27+00:00"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -4282,7 +4283,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -4410,7 +4411,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -4635,7 +4636,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -4768,7 +4769,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -5088,6 +5089,7 @@
                 "code",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-code",
             "time": "2019-12-10T19:21:15+00:00"
         },
         {
@@ -5142,6 +5144,7 @@
                 "events",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-eventmanager",
             "time": "2018-04-25T15:33:34+00:00"
         }
     ],
