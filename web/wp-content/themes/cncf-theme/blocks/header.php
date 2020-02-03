@@ -12,7 +12,7 @@
 get_header();
 
 $options = get_option( 'cncf-mu' );
-if ( $options[ show_hello_bar ] ) :
+if ( $options['show_hello_bar'] ) :
 	set_query_var( 'the_options', $options );
 	get_template_part( 'blocks/hello-bar' );
 endif;
@@ -21,11 +21,11 @@ endif;
 <header class="site-header">
 	<div class="container wrap">
 
-		<?php if ( $options[ header_image_id ] ) { ?>
+		<?php if ( $options['header_image_id'] ) { ?>
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
 				<?php // TODO: replace with SVG in-line from theme. ?>
-				<img src="<?php echo esc_url( wp_get_attachment_url( $options[ header_image_id ] ) ); ?>"
+				<img src="<?php echo esc_url( wp_get_attachment_url( $options['header_image_id'] ) ); ?>"
 					height="38" alt="<?php echo bloginfo( 'name' ); ?>">
 			</a>
 			<?php } ?>
@@ -61,10 +61,10 @@ endif;
 				);
 				?>
 
-				<?php if ( $options[ header_cta_text ] && $options[ header_cta_link ] ) : ?>
+				<?php if ( $options['header_cta_text'] && $options['header_cta_link'] ) : ?>
 				<div class="header-cta">
-					<a href="<?php echo esc_url( get_permalink( $options[ header_cta_link ] ) ); ?>"
-						class="button transparent"><?php echo esc_html( $options[ header_cta_text ] ); ?></a>
+					<a href="<?php echo esc_url( get_permalink( $options['header_cta_link'] ) ); ?>"
+						class="button transparent"><?php echo esc_html( $options['header_cta_text'] ); ?></a>
 				</div>
 				<?php endif; ?>
 				<div class="header-search">
