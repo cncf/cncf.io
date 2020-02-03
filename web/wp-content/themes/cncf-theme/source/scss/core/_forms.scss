@@ -4,77 +4,79 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button {
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
 }
-
 /* Reset `button` and button-style `input` default styles */
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button {
-	background: none;
-	border: 0;
-	color: inherit;
-	font: inherit;
-	line-height: normal;
-	overflow: visible;
-	padding: 0;
-	-webkit-appearance: button; /* for input */
-	-webkit-user-select: none; /* for button */
-	-moz-user-select: none;
-	-ms-user-select: none;
-}
+// input[type="submit"],
+// input[type="reset"],
+// input[type="button"] {
+//     background: none;
+//     border: 0;
+//     color: inherit;
+//     font: inherit;
+//     line-height: normal;
+//     overflow: visible;
+//     padding: 0;
+//     -webkit-appearance: button;
+//     /* for input */
+//     -webkit-user-select: none;
+//     /* for button */
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+// }
 
 .validation_message {
-	color: $red;
-	padding-top: 5px;
+    color: $red;
+    padding-top: 5px;
 }
 
 .validation_error {
-	border: 1px solid $red;
-	padding: 2em;
-	margin-bottom: 1em;
+    border: 1px solid $red;
+    padding: 2em;
+    margin-bottom: 1em;
 }
 
 .gform_confirmation_wrapper {
-	border: 1px solid green;
-	padding: 2em;
-	margin-bottom: 1em;
+    border: 1px solid green;
+    padding: 2em;
+    margin-bottom: 1em;
 }
 
 .gform_wrapper {
-	ul {
-		margin-left: 0;
-		padding-left: 0;
-		list-style-type: none;
-		-webkit-margin-before: 0em;
-		-webkit-margin-after: 0em;
-		-webkit-margin-start: 0px;
-		-webkit-margin-end: 0px;
-		-webkit-padding-start: 0px;
-	}
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+        list-style-type: none;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 0px;
+    }
 }
 
 .gform_validation_container {
-	display: none;
-	position: absolute;
-	left: -9000px;
+    display: none;
+    position: absolute;
+    left: -9000px;
 }
 
 .gfield textarea {
-	&.small {
-		height: 60px;
-	}
-	&.medium {
-		height: 120px;
-	}
+    &.small {
+        height: 60px;
+    }
+
+    &.medium {
+        height: 120px;
+    }
 }
 
 .ginput_container {
-	input,
-	textarea {
-		border: 1px solid $black;
-	}
+
+    input,
+    textarea {
+        border: 1px solid $black;
+    }
 }

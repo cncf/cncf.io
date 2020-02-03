@@ -1,46 +1,58 @@
 .site-header {
-  padding: 2rem 1rem;
-  background: white;
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .search {
-    form {
-      display: flex;
-    }
-
-    input {
-      padding: 0.25rem;
-      font-size: 15px;
-      font-weight: bold;
-      display: inline-block;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      margin-left: 0.2rem;
-      padding: 0.25rem;
-      font-size: 12px;
-      font-weight: bold;
-      background-color: #808285;
-      color: white;
-      display: inline-block;
-      border: 1px solid #808285;
-    }
-  }
-
-  @media (max-width: 580px) {
-    .search {
-      margin-top: 1rem;
-    }
+    background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
 
     .container {
-      flex-wrap: wrap;
-      justify-content: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-  }
+}
+
+.logo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    img {
+        width: 100%;
+        max-width: 180px;
+        height: 38px;
+    }
+}
+
+
+.header-cta {
+    display: none;
+
+    .active & {
+        display: block;
+    }
+
+    @media (max-width: 999px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 1000px) {
+        display: block;
+        margin-right: 30px;
+    }
+
+}
+
+.header-search {
+    display: none;
+
+    @media (min-width: 1000px) {
+        display: block;
+        margin-top: 2px;
+
+        a {
+            display: block;
+        }
+    }
+
+    .active & {
+        display: block;
+    }
 }

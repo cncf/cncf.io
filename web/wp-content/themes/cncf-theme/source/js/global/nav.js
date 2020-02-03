@@ -14,7 +14,7 @@ jQuery(
 				e.preventDefault();
 				$( 'body' ).toggleClass( 'menu-active' );
 				$( this ).toggleClass( 'active' );
-				$( '.menu-main-menu-container' ).toggleClass( 'active' );
+				$( '.menu-container-with-search' ).toggleClass( 'active' );
 			}
 		);
 	}
