@@ -30,3 +30,4 @@ function change_adminbar_colors() {
 	echo $change_adminbar_colors; // phpcs:ignore
 }
 add_action( 'admin_head', 'change_adminbar_colors' );
+add_action( 'wp_head', 'change_adminbar_colors' );
