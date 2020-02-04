@@ -58,11 +58,13 @@ class Image {
 			echo esc_url( $output );
 		} else {
 			$abs_path = get_stylesheet_directory() . '/images/' . $file;
-			ob_start();
-			include $abs_path;
-			$output = ob_get_contents();
-			ob_end_clean();
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			if ( file_exists( $abs_path ) ) {
+				ob_start();
+				include $abs_path;
+				$output = ob_get_contents();
+				ob_end_clean();
+				echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
 		}
 	}
 
