@@ -51,7 +51,11 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$social_github = ( isset( $options['social_github'] ) && ! empty( $options['social_github'] ) ) ? esc_attr( $options['social_github'] ) : '';
 
+		$social_instagram = ( isset( $options['social_instagram'] ) && ! empty( $options['social_instagram'] ) ) ? esc_attr( $options['social_instagram'] ) : '';
+
 		$social_linkedin = ( isset( $options['social_linkedin'] ) && ! empty( $options['social_linkedin'] ) ) ? esc_attr( $options['social_linkedin'] ) : '';
+
+		$social_meetup = ( isset( $options['social_meetup'] ) && ! empty( $options['social_meetup'] ) ) ? esc_attr( $options['social_meetup'] ) : '';
 
 		$social_rss = ( isset( $options['social_rss'] ) && ! empty( $options['social_rss'] ) ) ? esc_attr( $options['social_rss'] ) : '';
 
@@ -291,6 +295,19 @@ if ( ! defined( 'WPINC' ) ) {
 
 				<tr>
 					<th scope="row"><label
+							for="social_instagram">Instagram</label>
+					</th>
+					<td>
+						<input type="text" class="social_instagram regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-social_instagram"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[social_instagram]"
+							value="<?php echo esc_url( $social_instagram ); ?>"
+							placeholder="https://www.instagram.com/handle" />
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label
 							for="social_linkedin">LinkedIn</label>
 					</th>
 					<td>
@@ -299,6 +316,19 @@ if ( ! defined( 'WPINC' ) ) {
 							name="<?php echo esc_html( $this->plugin_name ); ?>[social_linkedin]"
 							value="<?php echo esc_url( $social_linkedin ); ?>"
 							placeholder="https://www.linkedin.com/company/handle" />
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label
+							for="social_meetup">Meetup</label>
+					</th>
+					<td>
+						<input type="text" class="social_meetup regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-social_meetup"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[social_meetup]"
+							value="<?php echo esc_url( $social_meetup ); ?>"
+							placeholder="https://www.meetup.com/pro/handle" />
 					</td>
 				</tr>
 
