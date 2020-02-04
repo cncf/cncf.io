@@ -168,6 +168,12 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 		define( 'WP_DEBUG_DISPLAY', true ); // false to go to log.
 		define( 'SCRIPT_DEBUG', true );
 		define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
+
+		// fixes small problem with LH-HSTS
+		if ( ! isset( $_SERVER['HTTP_HOST'] ) ) {
+			$_SERVER['HTTP_HOST'] = 'localhost';
+		}
+
 	endif;
 
 endif;
