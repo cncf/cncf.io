@@ -7,6 +7,9 @@ body {
     min-width: 320px;
     font-family: $font-primary;
     font-size: 0.875em; // 14px
+    // added to improve rendering, but could hamper performance
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     @media (min-width: 800px) {
         font-size: 1em; // 16px
@@ -22,7 +25,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -30,7 +33,7 @@ body {
     padding: 0em 12px;
 
     @media (min-width: 500px) {
-        padding: 0em 24px;
+        padding: 0em 25px;
     }
 }
 
@@ -124,7 +127,7 @@ ul {
         // float: left;
         display: inline;
         overflow: hidden;
-        border: 1px solid $red;
+        border: 1px solid $primary;
         margin-right: 5px;
     }
 
@@ -146,13 +149,13 @@ ul {
 
         &:hover,
         &:focus {
-            background-color: $red;
+            background-color: primary;
             color: $white;
         }
     }
 
     .active {
-        background-color: $red;
+        background-color: $primary;
 
         a {
             color: $white;

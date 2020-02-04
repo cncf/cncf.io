@@ -8,6 +8,7 @@ button {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
+
 /* Reset `button` and button-style `input` default styles */
 // input[type="submit"],
 // input[type="reset"],
@@ -28,18 +29,18 @@ button {
 // }
 
 .validation_message {
-    color: $red;
+    color: $error;
     padding-top: 5px;
 }
 
 .validation_error {
-    border: 1px solid $red;
+    border: 1px solid $error;
     padding: 2em;
     margin-bottom: 1em;
 }
 
 .gform_confirmation_wrapper {
-    border: 1px solid green;
+    border: 1px solid $success;
     padding: 2em;
     margin-bottom: 1em;
 }

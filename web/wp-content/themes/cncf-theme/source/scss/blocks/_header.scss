@@ -12,11 +12,26 @@
 .logo {
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 180px;
+
+    @media (min-width: 1200px) {
+        width: 220px;
+        margin-right: 20px;
+    }
+
+    a {
+        display: block;
+    }
 
     img {
         width: 100%;
-        max-width: 180px;
-        height: 38px;
+        height: auto;
+        transition: all 0.25s ease;
+
+        @media (min-width: 1200px) {
+            // height: 38px;
+            // transition: all 0.25s ease;
+        }
     }
 }
 

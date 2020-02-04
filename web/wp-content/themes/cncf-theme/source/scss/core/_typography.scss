@@ -7,97 +7,100 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
+    margin: 0;
 }
 
 h1 {
-	font-size: 3em;
+    font-size: 3em;
 }
 
 h2 {
-	font-size: 2.222em;
+    font-size: 2.222em;
 }
 
 h3 {
-	font-size: 1.556em;
+    font-size: 1.556em;
 }
 
 h4 {
-	font-size: 1.222em;
+    font-size: 1.222em;
 }
 
 h5 {
-	font-size: 1.15em;
+    font-size: 1.15em;
 }
 
 h6 {
-	font-size: 1em;
+    font-size: 1em;
 }
 
 p,
 li {
-	line-height: 1.5;
-	a {
-		color: $link-color;
-		@extend .trans;
-		text-decoration: underline;
-		&:hover {
-			color: $link-hover;
-		}
-	}
-	&:last-child {
-		margin: 0;
-	}
+    line-height: 1.5;
+
+    a {
+        color: $link-color;
+        @extend .trans;
+        text-decoration: underline;
+
+        &:hover {
+            color: $link-hover;
+        }
+    }
+
+    &:last-child {
+        margin: 0;
+    }
 }
 
 hr {
-	color: #666;
-	margin: 2rem 0;
+    color: #666;
+    margin: 2rem 0;
 }
 
 blockquote {
-	font-size: 1.75rem;
-	line-height: 1.25;
-	margin: 1rem 0;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 1rem 0;
 
-	&::before {
-		content: "\201C";
-	}
+    &::before {
+        content: "\201C";
+    }
 
-	&::after {
-		content: "\201D";
-	}
+    &::after {
+        content: "\201D";
+    }
 
-	p {
-		display: inline;
-		color: black;
-	}
+    p {
+        display: inline;
+        color: black;
+    }
 
-	@media (max-width: 480px) {
-		font-size: 1.25rem;
-	}
+    @media (max-width: 480px) {
+        font-size: 1.25rem;
+    }
 }
 
 code {
-	display: block;
-	font-size: 1rem;
-	line-height: 1.25;
-	margin: 1rem 0;
-	background-color: $grey-400;
-	padding: 1rem;
-	border-left: 0.5rem solid $red;
-	font-family: "Courier New";
-	white-space: pre-wrap;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin: 1rem 0;
+    background-color: $grey-400;
+    padding: 1rem;
+    border-left: 0.5rem solid $primary;
+    font-family: "Courier New";
+    white-space: pre-wrap;
 }
 
 strong,
 b {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 em,
 i {
-	font-style: oblique;
+    font-style: oblique;
 }
 
 /*
@@ -107,19 +110,19 @@ i {
 */
 
 .white {
-	color: $white;
+    color: $white;
 }
 
 .black {
-	color: $black;
+    color: $black;
 }
 
 .strong {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 .upper {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 /*
@@ -133,53 +136,57 @@ i {
 // }
 
 .entry-content {
-	// @media (min-width: 1240px) {
-	// 	font-size: 0.8em;
-	// }
+    // @media (min-width: 1240px) {
+    // 	font-size: 0.8em;
+    // }
 
-	p {
-		margin: 0;
-		margin-bottom: 1em;
-		line-height: 1.25;
+    p {
+        margin: 0;
+        margin-bottom: 1em;
+        line-height: 1.25;
 
-		&:last-child {
-			margin: 0;
-		}
-	}
-	ul {
-		list-style: disc;
-		margin-top: 0;
-		margin-right: 0;
-		margin-bottom: 1em;
-		margin-left: 2em;
-	}
-	ol {
-		list-style: decimal;
-		margin-top: 0;
-		margin-right: 0;
-		margin-bottom: 1em;
-		margin-left: 2em;
-	}
+        &:last-child {
+            margin: 0;
+        }
+    }
 
-	h2 {
-		margin: 0.5em 0;
-		&:first-of-type {
-			margin-top: 0;
-		}
-	}
+    ul {
+        list-style: disc;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+        margin-left: 2em;
+    }
 
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin: 0.5em 0;
-	}
+    ol {
+        list-style: decimal;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+        margin-left: 2em;
+    }
 
-	h4 {
-		font-weight: 400;
-		line-height: 1.4;
-		@media (min-width: 800px) {
-			line-height: 30px;
-		}
-	}
+    h2 {
+        margin: 0.5em 0;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0.5em 0;
+    }
+
+    h4 {
+        font-weight: 400;
+        line-height: 1.4;
+
+        @media (min-width: 800px) {
+            line-height: 30px;
+        }
+    }
 }

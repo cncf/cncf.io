@@ -13,7 +13,6 @@ get_header();
 
 $options = get_option( 'cncf-mu' );
 if ( $options['show_hello_bar'] ) :
-	set_query_var( 'the_options', $options );
 	get_template_part( 'blocks/hello-bar' );
 endif;
 ?>
