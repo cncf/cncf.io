@@ -23,6 +23,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+// if Ultimate member is not active, then return.
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
+if ( ! function_exists( 'is_plugin_active' ) || ! is_plugin_active( 'ultimate-member/ultimate-member.php' ) ) {
+	return;
+}
+8
 add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
 add_action( 'wp_print_scripts', 'um_remove_scripts_and_styles', 9 );
 add_action( 'wp_print_styles', 'um_remove_scripts_and_styles', 9 );
