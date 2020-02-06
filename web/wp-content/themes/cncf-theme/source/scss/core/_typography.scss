@@ -1,5 +1,4 @@
-// reset all margins
-// gets better positioning inline with design
+// theme typography file
 
 h1,
 h2,
@@ -8,30 +7,45 @@ h4,
 h5,
 h6 {
     margin: 0;
+    font-weight: 600;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.75em; // 36px
+    margin-top: .67em;
+    margin-bottom: .67em;
 }
 
-h2 {
-    font-size: 2.222em;
+h2,
+.h2 {
+    font-size: 2.75em; // 36px
+    margin-top: .83em;
+    margin-bottom: .83em;
 }
 
-h3 {
-    font-size: 1.556em;
+h3,
+.h3 {
+    font-size: 1.5em; // 24px
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 h4 {
-    font-size: 1.222em;
+    font-size: 1.250em; // 20px
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
 }
 
 h5 {
-    font-size: 1.15em;
+    font-size: 1.125em; // 18px
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
 }
 
 h6 {
     font-size: 1em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
 }
 
 p,
@@ -40,7 +54,7 @@ li {
 
     a {
         color: $link-color;
-        @extend .trans;
+        transition: all 0.25s ease-out;
         text-decoration: underline;
 
         &:hover {
@@ -53,46 +67,6 @@ li {
     }
 }
 
-hr {
-    color: #666;
-    margin: 2rem 0;
-}
-
-blockquote {
-    font-size: 1.75rem;
-    line-height: 1.25;
-    margin: 1rem 0;
-
-    &::before {
-        content: "\201C";
-    }
-
-    &::after {
-        content: "\201D";
-    }
-
-    p {
-        display: inline;
-        color: black;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 1.25rem;
-    }
-}
-
-code {
-    display: block;
-    font-size: 1rem;
-    line-height: 1.25;
-    margin: 1rem 0;
-    background-color: $grey-400;
-    padding: 1rem;
-    border-left: 0.5rem solid $primary;
-    font-family: "Courier New";
-    white-space: pre-wrap;
-}
-
 strong,
 b {
     font-weight: bold;
@@ -103,12 +77,6 @@ i {
     font-style: oblique;
 }
 
-/*
-|-----------------------------------------------
-| Quick tags
-|-----------------------------------------------
-*/
-
 .white {
     color: $white;
 }
@@ -117,76 +85,71 @@ i {
     color: $black;
 }
 
+.primary {
+    color: $primary-color;
+}
+
+.secondary {
+    color: $secondary-color;
+}
+
 .strong {
     font-weight: 700;
+}
+
+.strongest {
+    font-weight: 900;
 }
 
 .upper {
     text-transform: uppercase;
 }
 
-/*
-|-----------------------------------------------
-| Post Entry Content
-|-----------------------------------------------
-*/
+.extremely-large {
+    font-size: 8em;
 
-// article.entry-content * {
-// 	max-width: 660px;
-// }
-
-.entry-content {
-    // @media (min-width: 1240px) {
-    // 	font-size: 0.8em;
-    // }
-
-    p {
-        margin: 0;
-        margin-bottom: 1em;
-        line-height: 1.25;
-
-        &:last-child {
-            margin: 0;
-        }
-    }
-
-    ul {
-        list-style: disc;
-        margin-top: 0;
-        margin-right: 0;
-        margin-bottom: 1em;
-        margin-left: 2em;
-    }
-
-    ol {
-        list-style: decimal;
-        margin-top: 0;
-        margin-right: 0;
-        margin-bottom: 1em;
-        margin-left: 2em;
-    }
-
-    h2 {
-        margin: 0.5em 0;
-
-        &:first-of-type {
-            margin-top: 0;
-        }
-    }
-
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 0.5em 0;
-    }
-
-    h4 {
-        font-weight: 400;
-        line-height: 1.4;
-
-        @media (min-width: 800px) {
-            line-height: 30px;
-        }
+    @media (min-width: 768px) {
+        font-size: 10em;
+        line-height: 1;
     }
 }
+
+// hr {
+//     color: #666;
+//     margin: 2rem 0;
+// }
+
+// blockquote {
+//     font-size: 1.75rem;
+//     line-height: 1.25;
+//     margin: 1rem 0;
+
+//     &::before {
+//         content: "\201C";
+//     }
+
+//     &::after {
+//         content: "\201D";
+//     }
+
+//     p {
+//         display: inline;
+//         color: black;
+//     }
+
+//     @media (max-width: 480px) {
+//         font-size: 1.25rem;
+//     }
+// }
+
+// code {
+//     display: block;
+//     font-size: 1rem;
+//     line-height: 1.25;
+//     margin: 1rem 0;
+//     background-color: $grey-400;
+//     padding: 1rem;
+//     border-left: 0.5rem solid $primary-color;
+//     font-family: "Courier New";
+//     white-space: pre-wrap;
+// }

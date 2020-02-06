@@ -27,11 +27,6 @@
         width: 100%;
         height: auto;
         transition: all 0.25s ease;
-
-        @media (min-width: 1200px) {
-            // height: 38px;
-            // transition: all 0.25s ease;
-        }
     }
 }
 
@@ -50,13 +45,18 @@
 
     @media (min-width: 1000px) {
         display: block;
-        margin-right: 30px;
+        margin-right: 20px;
     }
 
 }
 
 .header-search {
     display: none;
+
+    svg {
+        fill: $white;
+        height: 15px;
+    }
 
     @media (min-width: 1000px) {
         display: block;

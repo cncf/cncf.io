@@ -1,14 +1,20 @@
 @import "core/variables";
 @import "core/normalize";
+@import "core/reset";
 @import "core/global";
 @import "core/typography";
 @import "core/forms";
-// @import 'core/gutenberg';
+@import "core/pagination";
 
-@import "blocks/header";
-@import "blocks/nav";
-@import "blocks/hello-bar";
-@import "blocks/basic-content";
-@import "blocks/comments";
+@import "components/header";
+@import "components/nav";
+@import "components/hello-bar";
+@import "components/404";
+@import "components/footer";
 
-@import "blocks/footer";
+@import 'blocks/colors';
+@import 'blocks/has-color-function';
+@import 'blocks/buttons';
+@import 'blocks/gradients';
+@import 'blocks/alignment';
+@import 'blocks/content-styling';

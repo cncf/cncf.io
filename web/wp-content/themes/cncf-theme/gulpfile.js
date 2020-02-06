@@ -17,7 +17,7 @@ const PROJECT_FOLDER = ".";
  * File and folder links
  *
  */
-var styleSRC = PROJECT_FOLDER + "/source/scss/styles.scss";
+var styleSRC = PROJECT_FOLDER + "/source/scss/*.scss";
 var styleDestination = PROJECT_FOLDER + "/build/";
 
 var jsGlobalSRC = PROJECT_FOLDER + "/source/js/global/*.js";
@@ -50,8 +50,6 @@ const AUTOPREFIXER_BROWSERS = [
     "android >= 4",
     "bb >= 10"
 ];
-
-
 
 /**
  * Load Plugins.

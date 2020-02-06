@@ -1,0 +1,48 @@
+.four-oh-four {
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 768px) {
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+    }
+
+    .search-form,
+    .search-form label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .search-form {
+        margin-top: 20px;
+
+        .search-text,
+        .search-field {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.content-404 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.image-404 {
+    max-height: 300px;
+
+    @media (min-width: 768px) {
+        max-height: inherit;
+    }
+
+    @media (min-width: 1200px) {
+        height: 540px;
+    }
+}

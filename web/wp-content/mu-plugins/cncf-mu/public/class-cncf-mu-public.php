@@ -92,7 +92,7 @@ class Cncf_Mu_Public {
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-		
+
 		ga('create', 'UA-831873-38', 'auto');
 		ga('send', 'pageview');
 		</script>
@@ -114,10 +114,6 @@ class Cncf_Mu_Public {
 	public function change_to_preconnect_resource_hints( $hints, $relation_type ) {
 
 		if ( 'preconnect' === $relation_type ) {
-			$hints[] = array(
-				'crossorigin' => '',
-				'href'        => '//code.jquery.com',
-			);
 			$hints[] = array(
 				'crossorigin' => '',
 				'href'        => '//www.google-analytics.com',

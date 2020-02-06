@@ -35,14 +35,6 @@ function wpdocs_dequeue_dashicon() {
 add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
 
 /**
- * Removes embed Junk
- */
-function disable_embed() {
-	wp_dequeue_script( 'wp-embed' );
-}
-// add_action( 'wp_footer', 'disable_embed' ); // turned off as included in CNCF-MU.
-
-/**
  *
  * Dequeue jQuery Migrate Script.
  *

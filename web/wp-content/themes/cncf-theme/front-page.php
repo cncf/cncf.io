@@ -9,12 +9,14 @@
  * @since 1.0.0
  */
 
-get_template_part( 'blocks/header' );
+get_template_part( 'components/header' );
 
-get_template_part( 'blocks/elements' );
+// get_template_part( 'components/elements' ); // phpcsignore.
 
-get_template_part( 'blocks/hero' );
+// get_template_part( 'components/hero' ); // phpcsignore.
 
-get_template_part( 'blocks/post-loop' );
+get_template_part( 'components/page-loop' );
 
-get_template_part( 'blocks/footer' );
+// get_template_part( 'components/post-loop' ); // phpcsignore.
+
+get_template_part( 'components/footer' );

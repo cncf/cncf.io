@@ -52,6 +52,7 @@
             background-color: black;
             justify-content: center;
             align-items: center;
+            z-index: 50;
         }
 
         &.active {
@@ -67,6 +68,7 @@
     .menu-main-menu-container {
         transition: left 0.25s ease;
         width: 100%;
+        margin-right: 10px;
     }
 
 
@@ -83,6 +85,7 @@
 
         li {
             padding-right: 1rem;
+            white-space: nowrap;
 
             @media (max-width: 999px) {
                 padding: 0.5rem 0;
@@ -91,7 +94,6 @@
 
         a {
             color: white;
-            // letter-spacing: 1px;
             font-weight: 250;
             text-decoration: none;
 

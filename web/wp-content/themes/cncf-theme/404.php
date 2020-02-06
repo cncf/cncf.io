@@ -9,10 +9,8 @@
  * @since 1.0.0
  */
 
-get_template_part( 'blocks/header' );
+get_template_part( 'components/header' );
 
-get_template_part( 'blocks/hero' );
+get_template_part( 'components/404' );
 
-get_template_part( 'blocks/404' );
-
-get_template_part( 'blocks/footer' );
+get_template_part( 'components/footer' );

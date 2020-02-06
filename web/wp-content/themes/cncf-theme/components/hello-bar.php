@@ -11,7 +11,7 @@
 
 $options = get_option( 'cncf-mu' );
 
-// set default
+// set default colour.
 $custom_bg_colour = '#de176c';
 
 if ( $options['hello_bar_bg'] ) {

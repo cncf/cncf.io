@@ -9,20 +9,22 @@
  * @since 1.0.0
  */
 
- /**
-  * Theme Support functions
-  *
-  * Used to enable specific features of WordPress and other tools
-  */
-
-	/**
-	 * Theme Support functions
-	 */
-function the_theme_support_setup() {
+/**
+ * Theme Support functions
+ *
+ * Used to enable specific features of WordPress and other tools.
+ */
+function cncf_theme_support_setup() {
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'menus' );
+
+	register_nav_menus(
+		array(
+			'main-menu' => esc_html__( 'Main Menu' ),
+		)
+	);
 
 	add_theme_support(
 		'html5',
@@ -35,30 +37,14 @@ function the_theme_support_setup() {
 		)
 	);
 
-	register_nav_menus(
-		array(
-			'main-menu' => esc_html__( 'Main Menu' ),
-		// 'secondary-menu' => esc_html__( 'Secondary Menu' ),
-		// 'footer-menu' => esc_html__( 'The Footer Menu' )
-		)
-	);
+	// include custom image sizes.
+	require_once 'includes/image-sizes.php';
+
+	// include gutenberg setup.
+	require_once 'includes/gutenberg-setup.php';
 
 }
-
-add_action( 'after_setup_theme', 'the_theme_support_setup' );
-
-/**
- * Image Thumbnail Sizes
- *
- * Used to create new thumbnail sizes.
- */
-add_action(
-	'after_setup_theme',
-	function () {
-		// add_image_size('icon', 50, 50, true); // phpcs:ignore.
-		// add_image_size('new-size', 215, 215, true); // phpcs:ignore.
-	}
-);
+add_action( 'after_setup_theme', 'cncf_theme_support_setup' );
 
 /**
  * Theme function classes
@@ -75,28 +61,25 @@ $enqueue = new Enqueue();
  * Includes (enable as appropriate)
  */
 
- // development.
+// development.
 if ( WP_DEBUG === true ) {
 	require_once 'includes/development.php';
 }
 
-// gutenberg.
-require_once 'includes/gutenberg.php';
+// gutenberg settings.
+require_once 'includes/gutenberg-options.php';
 
-// speed.
+// speed improvements.
 require_once 'includes/speed.php';
+
+// admin & dashboard customisation.
+require_once 'includes/admin-dashboard.php';
+
+// post excerpts.
+require_once 'includes/excerpts.php';
 
 // gravity forms.
 // require_once('includes/gravity.php'); // phpcs:ignore.
-
-// dashboard.
-require_once 'includes/admin-dashboard.php';
-
-// pagination.
-require_once 'includes/pagination.php';
-
-// excerpts.
-require_once 'includes/excerpts.php';
 
 /* Will only run on front end of site */
 if ( ! is_admin() ) {

@@ -13,8 +13,9 @@ get_header();
 
 $options = get_option( 'cncf-mu' );
 if ( $options['show_hello_bar'] ) :
-	get_template_part( 'blocks/hello-bar' );
+	get_template_part( 'components/hello-bar' );
 endif;
+$image = new Image();
 ?>
 
 <header class="site-header">
@@ -63,13 +64,12 @@ endif;
 				<?php if ( $options['header_cta_text'] && $options['header_cta_link'] ) : ?>
 				<div class="header-cta">
 					<a href="<?php echo esc_url( get_permalink( $options['header_cta_link'] ) ); ?>"
-						class="button transparent"><?php echo esc_html( $options['header_cta_text'] ); ?></a>
+						class="button stocky header"><?php echo esc_html( $options['header_cta_text'] ); ?></a>
 				</div>
 				<?php endif; ?>
 				<div class="header-search">
-					<a href="#"><img
-							src="https://via.placeholder.com/30x30/d9d9d9/000000"
-							alt=""></a>
+
+					<a href="#" class="button search transparent header"><?php $image->get_svg( 'search.svg' ); ?></a>
 				</div>
 			</div>
 		</nav>

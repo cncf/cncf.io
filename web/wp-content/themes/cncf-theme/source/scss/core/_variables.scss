@@ -5,13 +5,9 @@ $white: #ffffff;
 $black: #202020;
 $black-700: #000000;
 $black-900: #111111;
+
 $grey-400: #a7a7a6;
 $grey-700: #444444;
-
-$purple-200:#9eacdd;
-$purple-400: #48549C;
-$purple-700: #2C2960;
-$purple-800: #252b5f;
 
 $blue-100: #3CB3DD;
 $blue-400: #436ca9;
@@ -22,20 +18,24 @@ $blue-900: #060927;
 $pink-300: #E43B80;
 $pink-400: #DE176C;
 
+$purple-200:#9eacdd;
+$purple-400: #48549C;
+$purple-700: #2C2960;
+$purple-800: #252b5f;
+
 // variable setup.
 
-// main
-$primary: $pink-400;
-$secondary: $blue-400;
+// main.
+$primary-color: $pink-400;
+$secondary-color: $purple-700;
 
-// links
+// links.
 $link-color: $pink-400;
 $link-hover: $pink-300;
 
-// forms
+// forms.
 $error: #B80611;
 $success: green;
-
 
 // GRADIENTS TBC
 // Gradient - Blue to Pink - #2825f2 > #e50994

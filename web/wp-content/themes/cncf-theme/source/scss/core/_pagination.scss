@@ -1,0 +1,53 @@
+// pagination
+.pagination {
+    .nav-links {
+        display: flex;
+        background-color: $white;
+        white-space: nowrap;
+        padding: 1em 0em;
+        justify-content: center;
+
+        >* {
+            white-space: nowrap;
+            display: inline;
+            border: 1px solid $primary-color;
+        }
+
+        >*:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+
+    .ellipsis {
+        vertical-align: baseline;
+    }
+
+    .page-numbers {
+        margin: 0;
+        padding: 0;
+        line-height: 1em;
+        font-size: 1em;
+        font-weight: normal;
+        padding: 0.75em 0.25em;
+        min-width: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            background-color: $primary-color;
+            color: $white;
+        }
+    }
+
+    .current {
+        background-color: $primary-color;
+        color: $white;
+    }
+}

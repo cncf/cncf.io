@@ -119,10 +119,3 @@ function remove_dashboard_widgets() {
 }
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
 
-/**
- * Remove pages from sidebar.
- */
-function custom_menu_page_removing() {
-	remove_menu_page( 'edit-comments.php' );
-}
-add_action( 'admin_menu', 'custom_menu_page_removing' );
