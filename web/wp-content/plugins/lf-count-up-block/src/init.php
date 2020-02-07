@@ -98,12 +98,11 @@ function lf_count_up_block_assets() { // phpcs:ignore
 }
 
 function lf_count_up_callback( $attributes ) { // phpcs:ignore
-
 	$section_text    = isset( $attributes['sectionText'] ) ? $attributes['sectionText'] : false;
 	$columns         = isset( $attributes['columns'] ) ? $attributes['columns'] : 1;
-	$bg_first_color  = isset( $attributes['color1'] ) ? $attributes['color1'] : '#ee5e90';
-	$bg_second_color = isset( $attributes['color2'] ) ? $attributes['color2'] : '#333ea8';
-	$text_color      = isset( $attributes['textColor'] ) ? $attributes['textColor'] : '#ffffff';
+	$bg_first_color  = isset( $attributes['color1'] ) ? $attributes['color1'] : '';
+	$bg_second_color = isset( $attributes['color2'] ) ? $attributes['color2'] : '';
+	$text_color      = isset( $attributes['textColor'] ) ? $attributes['textColor'] : '#212326';
 
 	switch ( $columns ) {
 		case 1:
@@ -135,7 +134,7 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 				<?php
 				for ( $i = 1; $i <= $columns; $i++ ) :
 					$number      = isset( $attributes[ "countUpNumber{$i}" ] ) ? $attributes[ "countUpNumber{$i}" ] : false;
-					$image       = isset( $attributes[ "icon{$i}" ] ) ? $attributes[ "icon{$i}" ] : false;
+					$image_id    = isset( $attributes[ "iconId{$i}" ] ) ? $attributes[ "iconId{$i}" ] : false;
 					$description = isset( $attributes[ "descText{$i}" ] ) ? $attributes[ "descText{$i}" ] : false;
 					$link        = isset( $attributes[ "link{$i}" ] ) ? $attributes[ "link{$i}" ] : false;
 
@@ -149,15 +148,15 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 					?>
 					<div class="<?php echo esc_attr( $column_class ); ?>">
 						<div>
-							<?php if ( ! empty( $image ) ) : ?>
+							<?php if ( ! empty( $image_id ) ) : ?>
 								<div class="icon-wrap">
 									<?php
 									if ( ! empty( $link ) ) :
 										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
 									endif;
-									?>
-										<img src="<?php echo esc_url( $image ); ?>">
-									<?php
+
+									echo wp_get_attachment_image( $image_id, 'medium' );
+
 									if ( ! empty( $link ) ) :
 										echo '</a>';
 									endif;

@@ -48,6 +48,22 @@ registerBlockType( 'lf/count-up', {
 			type: 'string',
 			default: 'https://placehold.it/100',
 		},
+		iconId1: {
+			type: 'number',
+			default: 0,
+		},
+		iconId2: {
+			type: 'number',
+			default: 0,
+		},
+		iconId3: {
+			type: 'number',
+			default: 0,
+		},
+		iconId4: {
+			type: 'number',
+			default: 0,
+		},
 		countUpNumber1: {
 			type: 'string',
 			default: '',
@@ -98,15 +114,12 @@ registerBlockType( 'lf/count-up', {
 		},
 		color1: {
 			type: 'string',
-			default: '#ee5e90',
 		},
 		color2: {
 			type: 'string',
-			default: '#333ea8',
 		},
 		textColor: {
 			type: 'string',
-			default: '#ffffff',
 		},
 		columns: {
 			type: 'number',

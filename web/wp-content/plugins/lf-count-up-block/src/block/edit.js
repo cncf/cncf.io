@@ -22,7 +22,10 @@ class Edit extends Component {
 		};
 
 		const onSelectImage = ( value ) => {
-			setAttributes( { [ `icon${ index }` ]: handleBetterImageSize( value ) } );
+			setAttributes( {
+				[ `icon${ index }` ]: handleBetterImageSize( value ),
+				[ `iconId${ index }` ]: value.id,
+			} );
 		};
 
 		return (
