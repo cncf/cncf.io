@@ -97,98 +97,104 @@ class Cncf_Mu_Admin {
 	public function register_cpts() {
 
 		$opts = array(
-			'labels'       => array(
+			'labels'            => array(
 				'name'          => __( 'People' ),
 				'singular_name' => __( 'Person' ),
 				'all_items'     => __( 'All People' ),
 			),
-			'public'       => true,
-			'has_archive'  => true,
-			'show_in_rest' => true,
-			'hierarchical' => false,
-			'menu_icon'    => 'dashicons-buddicons-buddypress-logo',
-			'rewrite'      => array( 'slug' => 'person' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
+			'public'            => true,
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-buddicons-buddypress-logo',
+			'rewrite'           => array( 'slug' => 'person' ),
+			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
 		);
 		register_post_type( 'cncf_person', $opts );
 
 		$opts = array(
-			'labels'       => array(
+			'labels'            => array(
 				'name'          => __( 'Case Studies' ),
 				'singular_name' => __( 'Case Study' ),
 				'all_items'     => __( 'All Case Studies' ),
 			),
-			'public'       => true,
-			'has_archive'  => true,
-			'show_in_rest' => true,
-			'hierarchical' => false,
-			'menu_icon'    => 'dashicons-awards',
-			'rewrite'      => array( 'slug' => 'case-study' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+			'public'            => true,
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-awards',
+			'rewrite'           => array( 'slug' => 'case-study' ),
+			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_case_study', $opts );
 
 		$opts = array(
-			'labels'       => array(
-				'name'          => __( 'Case Studies - Chinese' ),
+			'labels'            => array(
+				'name'          => __( 'Case Studies CN' ),
 				'singular_name' => __( 'Case Study - Chinese' ),
 				'all_items'     => __( 'All Case Studies' ),
 			),
-			'public'       => true,
-			'has_archive'  => true,
-			'show_in_rest' => true,
-			'hierarchical' => false,
-			'menu_icon'    => 'dashicons-awards',
-			'rewrite'      => array( 'slug' => 'case-study-ch' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+			'public'            => true,
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-awards',
+			'rewrite'           => array( 'slug' => 'case-study-ch' ),
+			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_case_study_ch', $opts );
 
 		$opts = array(
-			'labels'       => array(
+			'labels'            => array(
 				'name'          => __( 'Webinars' ),
 				'singular_name' => __( 'Webinar' ),
 				'all_items'     => __( 'All Webinars' ),
 			),
-			'public'       => true,
-			'has_archive'  => true,
-			'show_in_rest' => true,
-			'hierarchical' => false,
-			'menu_icon'    => 'dashicons-video-alt3',
-			'rewrite'      => array( 'slug' => 'webinar' ),
-			'supports'     => array( 'title', 'editor', 'revisions', 'custom-fields' ),
+			'public'            => true,
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-video-alt3',
+			'rewrite'           => array( 'slug' => 'webinar' ),
+			'supports'          => array( 'title', 'editor', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_webinar', $opts );
 
 		$opts = array(
-			'labels'       => array(
+			'labels'            => array(
 				'name'          => __( 'Events' ),
 				'singular_name' => __( 'Event' ),
 				'all_items'     => __( 'All Events' ),
 			),
-			'public'       => true,
-			'has_archive'  => true,
-			'show_in_rest' => true,
-			'hierarchical' => false,
-			'menu_icon'    => 'dashicons-calendar',
-			'rewrite'      => array( 'slug' => 'events' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+			'public'            => true,
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-calendar',
+			'rewrite'           => array( 'slug' => 'events' ),
+			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_event', $opts );
 
 		$opts = array(
-			'labels'       => array(
+			'labels'            => array(
 				'name'          => __( 'Projects' ),
 				'singular_name' => __( 'Project' ),
 				'all_items'     => __( 'All Projects' ),
 			),
-			'public'       => true,
-			'has_archive'  => true,
-			'show_in_rest' => true,
-			'hierarchical' => false,
-			'menu_icon'    => 'dashicons-hammer',
-			'rewrite'      => array( 'slug' => 'projects' ),
-			'supports'     => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+			'public'            => true,
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-hammer',
+			'rewrite'           => array( 'slug' => 'projects' ),
+			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_project', $opts );
 
@@ -648,7 +654,7 @@ class Cncf_Mu_Admin {
 									'type'          => 'radio', // Required.
 									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
 									'data_key'      => 'project_stage', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Stage', 'my_plugin' ),
+									'label'         => __( 'Stage (Defunct option)', 'my_plugin' ),
 									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
 									'ui_border_top' => true, // Display CSS border-top in the editor control.
 									'default_value' => array( 'sandbox' ), // Value/s from the 'options'.
@@ -782,9 +788,10 @@ class Cncf_Mu_Admin {
 			'menu_name'         => __( 'Countries', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => true,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => true,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study' ), $args );
 
@@ -802,9 +809,10 @@ class Cncf_Mu_Admin {
 			'menu_name'         => __( 'Countries', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => true,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => true,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-country-ch', array( 'cncf_case_study_ch' ), $args );
 
@@ -820,9 +828,10 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Projects', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch' ), $args );
 
@@ -838,9 +847,10 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Companies', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-company', array( 'cncf_webinar' ), $args );
 
@@ -856,9 +866,10 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Topics', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-topic', array( 'cncf_webinar' ), $args );
 
@@ -874,9 +885,10 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Person Categories', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-person-category', array( 'cncf_person' ), $args );
 
@@ -892,9 +904,10 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Challenges', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-challenge', array( 'cncf_case_study' ), $args );
 
@@ -910,9 +923,10 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Challenges', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-challenge-ch', array( 'cncf_case_study_ch' ), $args );
 
@@ -928,9 +942,10 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Industries', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-industry', array( 'cncf_case_study' ), $args );
 
@@ -946,11 +961,35 @@ class Cncf_Mu_Admin {
 			'menu_name'     => __( 'Industries', 'textdomain' ),
 		);
 		$args   = array(
-			'labels'       => $labels,
-			'show_in_rest' => true,
-			'hierarchical' => false,
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
 		);
 		register_taxonomy( 'cncf-industry-ch', array( 'cncf_case_study_ch' ), $args );
+
+		/**
+		 * Project Stage Taxonomy for Projects.
+		 */
+		$labels = array(
+			'name'          => __( 'Project Stage', 'textdomain' ),
+			'singular_name' => __( 'Project Stage', 'textdomain' ),
+			'search_items'  => __( 'Project Stage', 'textdomain' ),
+			'all_items'     => __( 'All Project Stages', 'textdomain' ),
+			'edit_item'     => __( 'Edit Project Stage', 'textdomain' ),
+			'update_item'   => __( 'Update Project Stage', 'textdomain' ),
+			'add_new_item'  => __( 'Add New Project Stage', 'textdomain' ),
+			'new_item_name' => __( 'New Project Stage', 'textdomain' ),
+			'menu_name'     => __( 'Project Stage', 'textdomain' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+		);
+		register_taxonomy( 'cncf-project-stage', array( 'cncf_project' ), $args );
+
 	}
 
 	/**
