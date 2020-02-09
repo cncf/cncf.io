@@ -792,6 +792,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => true,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study' ), $args );
 
@@ -813,6 +814,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => true,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-country-ch', array( 'cncf_case_study_ch' ), $args );
 
@@ -832,6 +834,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch' ), $args );
 
@@ -851,6 +854,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-company', array( 'cncf_webinar' ), $args );
 
@@ -870,6 +874,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-topic', array( 'cncf_webinar' ), $args );
 
@@ -889,6 +894,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-person-category', array( 'cncf_person' ), $args );
 
@@ -908,6 +914,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-challenge', array( 'cncf_case_study' ), $args );
 
@@ -927,6 +934,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-challenge-ch', array( 'cncf_case_study_ch' ), $args );
 
@@ -946,6 +954,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-industry', array( 'cncf_case_study' ), $args );
 
@@ -965,6 +974,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-industry-ch', array( 'cncf_case_study_ch' ), $args );
 
@@ -985,6 +995,7 @@ class Cncf_Mu_Admin {
 		$args   = array(
 			'labels'            => $labels,
 			'show_in_rest'      => true,
+			'show_admin_column' => true,
 			'hierarchical'      => false,
 			'show_in_nav_menus' => false,
 		);
