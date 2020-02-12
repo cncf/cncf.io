@@ -1,0 +1,23 @@
+.hello-bar {
+    background: $primary-color;
+    color: $white;
+    width: 100%;
+    padding: 6px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-size: 1.1em;
+
+    a {
+        color: $white;
+        text-decoration: none;
+        border-bottom: 1px solid $white;
+        font-weight: 450;
+
+        &:hover {
+            color: $white;
+            border-bottom: 1px solid transparent;
+            transition: all 0.1s ease;
+        }
+    }
+}

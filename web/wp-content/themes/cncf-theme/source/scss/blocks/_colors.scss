@@ -1,0 +1,15 @@
+// define colors to use later in SASS functions
+
+$colors: ('pink-400': #DE176C,
+    'white': #FFFFFF,
+    'black': #000000,
+    'purple-700': #2C2960,
+);
+$color_hover: ('pink-400': #E43B80,
+    'white': #E43B80,
+    'black': #252b5f,
+    'purple-700': #48549C,
+);
+
+// take the first colour to be the default
+$default: nth(nth($colors, 1), 2);

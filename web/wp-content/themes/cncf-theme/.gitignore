@@ -1,0 +1,16 @@
+.DS_Store
+node_modules
+npm-debug.log
+config.yml
+*.sass-cache*
+*.log
+.idea/
+*.swp
+packaged/
+wpcs/
+vendor/
+dist
+build/
+debug.log
+*.sql
+.wpress

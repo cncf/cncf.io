@@ -1,0 +1,67 @@
+{
+    "name": "cncfci.lndo.site",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "scripts": {
+        "start": "gulp",
+        "build": "gulp build",
+        "standards": "gulp standards",
+        "phpcs": "gulp phpcs",
+        "phpcbf": "gulp phpcbf"
+    },
+    "eslintConfig": {
+        "extends": "plugin:@wordpress/eslint-plugin/recommended",
+        "root": true,
+        "env": {
+            "browser": true,
+            "node": true,
+            "es6": true,
+            "jquery": true
+        },
+        "globals": {
+            "jQuery": "readonly",
+            "wp": "readonly"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "James Hunt",
+    "license": "ISC",
+    "homepage": "",
+    "devDependencies": {
+        "@wordpress/eslint-plugin": "^3.3.0",
+        "browser-sync": "^2.26.7",
+        "del": "^5.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-wordpress": "^2.0.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-eslint": "^6.0.0",
+        "gulp-filter": "^6.0.0",
+        "gulp-ignore": "^3.0.0",
+        "gulp-jslint": "^1.0.10",
+        "gulp-line-ending-corrector": "^1.0.3",
+        "gulp-merge-media-queries": "^0.2.1",
+        "gulp-notify": "^3.2.0",
+        "gulp-phpcbf": "^0.1.2",
+        "gulp-phpcs": "^3.1.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-terser": "^1.2.0",
+        "gulp-touch-cmd": "0.0.1",
+        "gulp-uglify": "^3.0.2",
+        "gulp-uglifycss": "^1.1.0",
+        "stylelint": "^13.0.0",
+        "stylelint-config-recommended": "^3.0.0",
+        "stylelint-config-wordpress": "^16.0.0"
+    },
+    "dependencies": {
+        "natives": "^1.1.6",
+        "socket.io": "^2.3.0"
+    }
+}

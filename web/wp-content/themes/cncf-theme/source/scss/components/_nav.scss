@@ -1,0 +1,112 @@
+.site-navigation {
+    display: flex;
+
+    @media (min-width: 999px) {
+        align-items: center;
+        justify-content: flex-end;
+        width: 80%;
+        // align-content: flex-end;
+    }
+
+    .show-menu {
+        display: none;
+
+        @media (max-width: 999px) {
+            display: block;
+
+            svg {
+                color: white;
+                height: 30px;
+            }
+        }
+
+        .fa-times {
+            display: none;
+        }
+
+        &.active {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+
+            .fa-bars {
+                display: none;
+            }
+
+            .fa-times {
+                display: block;
+            }
+        }
+    }
+
+    .menu-container-with-search {
+        @media (max-width: 999px) {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+
+        &.active {
+            left: 0;
+        }
+
+        display: flex;
+        transition: left 0.25s ease;
+        width: 100%;
+        align-items: center;
+    }
+
+    .menu-main-menu-container {
+        transition: left 0.25s ease;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+
+
+    ul.navigation {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        @media (max-width: 999px) {
+            display: block;
+            text-align: center;
+        }
+
+        li {
+            padding-right: 1rem;
+            white-space: nowrap;
+
+            @media (max-width: 999px) {
+                padding: 0.5rem 0;
+            }
+        }
+
+        a {
+            color: white;
+            font-weight: 250;
+            text-decoration: none;
+
+            @extend .trans;
+
+            &:hover {
+                color: #e1e1e1;
+            }
+
+            @media (max-width: 999px) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+}

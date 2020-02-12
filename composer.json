@@ -36,7 +36,6 @@
     "wpackagist-plugin/ultimate-member":"^2.1.2",
     "wpackagist-plugin/um-recaptcha":"^2.1.2",
     "wpackagist-plugin/shortpixel-image-optimiser":"^4.15.3",
-    "wpackagist-plugin/wp-file-manager":"5.6",
     "wpackagist-plugin/redirection":"^4.4.2"
   },
   "require-dev": {
@@ -47,7 +46,9 @@
     "phpunit/phpunit": "^8.4.3",
     "roave/security-advisories": "dev-master",
     "squizlabs/php_codesniffer": "^3.4.0",
-    "wp-coding-standards/wpcs": "^2.2.0"
+    "wp-coding-standards/wpcs": "^2.2.0",
+    "wpackagist-plugin/query-monitor":"3.5.2",
+    "wpackagist-plugin/debug-bar":"1.0"
   },
   "config": {
     "vendor-dir": "vendor",

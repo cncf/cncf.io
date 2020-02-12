@@ -1,0 +1,34 @@
+// _reset.scss
+// Reset a few annoying design elements
+
+* {
+    box-sizing: border-box;
+}
+
+// reset UL properly now
+ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+// reset browser specific nonsense
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0em;
+    margin-inline-end: 0px;
+    // -webkit-margin-before: 0em;
+    // -webkit-margin-after: 0em;
+    // -webkit-margin-start: 0px;
+    // -webkit-margin-end: 0em;
+    // -webkit-padding-start: 0em;
+}
