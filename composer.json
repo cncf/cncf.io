@@ -28,7 +28,7 @@
     "wpackagist-plugin/safe-svg":"^1.9.3",
     "wpackagist-plugin/autodescription":"^4.0.1",
     "wpackagist-plugin/photonic":"^2.23",
-    "wpackagist-plugin/post-meta-controls":"1.2.0",
+    "wpackagist-plugin/post-meta-controls":"^1.2.0",
     "wpackagist-plugin/china-video-block":"^0.1.0",
     "wpackagist-plugin/gutenberg":"^7.0.0",
     "wpackagist-plugin/wp-nested-pages":"^3.0.11",
@@ -36,6 +36,7 @@
     "wpackagist-plugin/ultimate-member":"^2.1.2",
     "wpackagist-plugin/um-recaptcha":"^2.1.2",
     "wpackagist-plugin/shortpixel-image-optimiser":"^4.15.3",
+    "wpackagist-plugin/svg-autocrop":"^0.1.0",
     "wpackagist-plugin/redirection":"^4.4.2"
   },
   "require-dev": {
