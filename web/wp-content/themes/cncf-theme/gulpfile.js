@@ -35,7 +35,7 @@ var globalJSWatchFiles = PROJECT_FOLDER + "/source/js/global/**/*.js";
 var projectPHPWatchFiles = PROJECT_FOLDER + "/**/**/*.php";
 var projectHTMLWatchFiles = PROJECT_FOLDER + "/**/**/*.html";
 
-const csSource 	= [ '**/*.php', '**/*.js', 'page-templates/**/*.php', '!library/**/*', '!wpcs/**/*','!node_modules/**/*', '!vendor/**/*', '!assets/bower_components/**/*', '!**/*-min.css', '!assets/js/vendor/*', '!assets/css/*', '!**/*-min.js', '!assets/js/production.js', '!gulpfile.js' ];
+const csSource 	= [ '**/**/*.php', '**/**/*.js', '!library/**/*', '!wpcs/**/*','!node_modules/**/*', '!vendor/**/*', '!build/**/*','!build/*.js','!build/*.css', '!assets/bower_components/**/*', '!**/*-min.css', '!assets/js/vendor/*', '!assets/css/*', '!**/*-min.js', '!assets/js/production.js', '!gulpfile.js' ];
 
 const AUTOPREFIXER_BROWSERS = [
     "last 2 version",

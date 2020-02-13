@@ -12,6 +12,7 @@ $grey-700: #444444;
 $blue-100: #3CB3DD;
 $blue-400: #436ca9;
 $blue-600: #416FD9;
+// $blue-700: #242960;
 $blue-800: #0F1533;
 $blue-900: #060927;
 
@@ -21,7 +22,7 @@ $pink-400: #DE176C;
 $purple-200:#9eacdd;
 $purple-400: #48549C;
 $purple-700: #2C2960;
-$purple-800: #252b5f;
+$purple-800: #242b5e;
 
 // variable setup.
 
@@ -32,6 +33,8 @@ $secondary-color: $purple-700;
 // links.
 $link-color: $pink-400;
 $link-hover: $pink-300;
+$menu-link: $white;
+$menu-hover: #e1e1e1;
 
 // forms.
 $error: #B80611;

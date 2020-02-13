@@ -28,6 +28,16 @@ button {
 //     -ms-user-select: none;
 // }
 
+input {
+    height: 40px;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    padding: 0;
+}
+
 .validation_message {
     color: $error;
     padding-top: 5px;

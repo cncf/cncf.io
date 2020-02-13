@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-focus-outline">
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">

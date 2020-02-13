@@ -1,7 +1,15 @@
 .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+        0 3px 6px rgba(0, 0, 0, 0.23);
+
     background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
 
-    .container {
+    >.container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -9,10 +17,22 @@
     }
 }
 
+// Fix for WP Admin menu on desktop and mobile.
+.admin-bar .site-header {
+    top: 32px;
+
+    @media (max-width: 782px) {
+        top: 46px;
+    }
+}
+
+
+
 .logo {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 180px;
+    flex-shrink: 0;
 
     @media (min-width: 1200px) {
         width: 220px;
@@ -34,7 +54,7 @@
 .header-cta {
     display: none;
 
-    .active & {
+    .is-active & {
         display: block;
     }
 
@@ -51,14 +71,54 @@
 }
 
 .header-search {
-    display: none;
-
     svg {
         fill: $white;
         height: 15px;
     }
 
-    @media (min-width: 1000px) {
+    .is-active & {
+        display: block;
+    }
+}
+
+
+@media (max-width: 999px) {
+    .header-search {
+        width: 100%;
+    }
+
+    button.header.search-button {
+        display: none;
+    }
+
+    .search-bar {
+        width: 100%;
+
+        .wrap {
+            padding: 0
+        }
+    }
+
+    .search-form {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        input[type="search"] {
+            margin-right: 2%;
+            flex-grow: 1;
+        }
+
+        .search-input {
+            min-width: 0;
+        }
+
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .header-search {
         display: block;
         margin-top: 2px;
 
@@ -67,7 +127,28 @@
         }
     }
 
-    .active & {
-        display: block;
+    .search-bar {
+        opacity: 0;
+        position: absolute;
+        top: -999em;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        background-color: $purple-800;
+        box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
+        transition: opacity .15s linear, top 0s .15s ease-in;
+
+        &.is-active {
+            top: 100%;
+            opacity: 1;
+            transition: opacity .15s linear, top 0s .15s ease-in;
+        }
+    }
+
+    .search-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 }

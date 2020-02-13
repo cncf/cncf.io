@@ -1,112 +1,361 @@
-.site-navigation {
-    display: flex;
-
-    @media (min-width: 999px) {
-        align-items: center;
-        justify-content: flex-end;
-        width: 80%;
-        // align-content: flex-end;
-    }
-
-    .show-menu {
-        display: none;
-
-        @media (max-width: 999px) {
-            display: block;
-
-            svg {
-                color: white;
-                height: 30px;
-            }
-        }
-
-        .fa-times {
-            display: none;
-        }
-
-        &.active {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 100;
-
-            .fa-bars {
-                display: none;
-            }
-
-            .fa-times {
-                display: block;
-            }
-        }
+@media (max-width: 999px) {
+    .hamburger {
+        display: inline-block;
+        z-index: 10;
     }
 
     .menu-container-with-search {
-        @media (max-width: 999px) {
-            position: fixed;
-            display: flex;
-            flex-direction: column;
-            left: -100%;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            justify-content: center;
-            align-items: center;
-            z-index: 50;
-        }
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        padding: 75px 30px 25px 30px;
+        background-color: $purple-800;
+        z-index: 5;
+        overflow-y: scroll;
 
-        &.active {
+        // activate the menu
+        &.is-active {
             left: 0;
         }
+    }
 
+    .site-navigation {
+        display: flex;
+        align-items: center;
+
+        >* {
+            width: 100%;
+
+            @media (min-width: 600px) {
+                margin-left: auto;
+                margin-right: auto;
+                width: 500px;
+                max-width: 500px;
+
+            }
+        }
+    }
+
+    .main-navigation {
+        margin-bottom: 20px;
+
+        a {
+            display: block;
+            color: $white;
+            text-decoration: none;
+            font-weight: 600;
+            padding-top: 0.75em;
+            padding-bottom: 0.75em;
+
+            @media (min-width: 375px) {
+                font-size: 1.25em;
+                padding-top: 1em;
+                padding-bottom: 1em;
+            }
+
+        }
+
+        >li {
+            padding: 0px 15px;
+        }
+
+        >li>a {
+            border-bottom: 1px solid $purple-400;
+        }
+    }
+
+    .header-cta {
+        flex-shrink: 0;
+        width: 100%;
+        flex-basis: 100%;
+
+        .button.stocky.header {
+            display: flex;
+            width: 100%;
+
+        }
+    }
+
+    .menu-item-has-children {
+        position: relative;
+
+        .sub-menu {
+            display: none;
+            background-color: lighten($purple-800, 10%);
+
+            a {
+                padding-left: 10px;
+            }
+
+            .sub-menu {
+                background-color: lighten($purple-800, 20%);
+
+                a {
+                    padding-left: 25px;
+                }
+            }
+        }
+
+        >a {
+            padding-right: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            // Arrow after link
+            &::after {
+                display: block;
+                content: "";
+                width: 12px;
+                height: 12px;
+                border-bottom: 1px solid $white;
+                border-right: 1px solid $white;
+                transform: rotate(45deg) translateY(-50%);
+                transition: all 0.3s ease-out;
+            }
+
+            // change arrow colour
+            &:hover::after {
+                border-bottom: 1px solid $link-hover;
+                border-right: 1px solid $link-hover;
+            }
+
+            // rotate when sub menu is open
+            &.is-open::after {
+                transform: rotate(-135deg);
+                transform-origin: 70% 30%;
+                transition-duration: 0.2s;
+                margin-top: 12px;
+            }
+        }
+    }
+
+    .menu-is-active {
+
+        // hide hello bar when mobile menu is open
+        .hello-bar {
+            height: 0
+        }
+    }
+
+    .site-navigation {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/**
+* Desktop Navigation
+*/
+@media (min-width: 1000px) {
+    .hamburger {
+        display: none;
+    }
+
+    .site-navigation {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: flex-end;
+        max-width: 100%;
+    }
+
+    .menu-container-with-search {
         display: flex;
         transition: left 0.25s ease;
         width: 100%;
         align-items: center;
     }
 
-    .menu-main-menu-container {
-        transition: left 0.25s ease;
-        width: 100%;
-        margin-right: 10px;
-    }
-
-
-
-    ul.navigation {
+    // ul holding the li nav menu items
+    .main-navigation {
         display: flex;
         justify-content: space-evenly;
         width: 100%;
 
-        @media (max-width: 999px) {
+        // all links in menu
+        a {
+            color: $menu-link;
+            font-weight: 350;
+            text-decoration: none;
+            transition: all 0.25s ease-out;
+            padding-top: 0.75em;
+            padding-bottom: 0.75em;
+            padding-left: 1em;
             display: block;
-            text-align: center;
+
+            &:hover {
+                color: $link-hover;
+            }
+        }
+
+        // main menu spaces
+        >li {
+
+            // just links in main menu
+            >a {
+                padding-bottom: 30px;
+                padding-top: 30px;
+                white-space: nowrap;
+            }
         }
 
         li {
-            padding-right: 1rem;
-            white-space: nowrap;
+            position: relative;
 
-            @media (max-width: 999px) {
-                padding: 0.5rem 0;
+            &.menu-item-has-children {
+
+                // activate menu flyout on hover
+                &:hover>ul,
+                &:focus>ul,
+                &.focus>ul {
+                    left: -1em;
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition: opacity 0.15s linear, transform 0.15s linear;
+                    overflow: visible;
+                }
+
+                >a {
+                    padding-right: 1.5em;
+
+                    &::after {
+                        // Arrow after link
+                        position: absolute;
+                        display: block;
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        margin-top: -2px;
+                        top: 50%;
+                        left: calc(100% - 1em - 0px);
+                        border-bottom: 1px solid $white;
+                        border-right: 1px solid $white;
+                        transform: rotate(45deg) translateY(-50%);
+                        transition: all 0.3s ease-out;
+                        transform-origin: 50% 0;
+                    }
+
+                    &:hover::after {
+                        // change arrow colour
+                        border-bottom: 1px solid $link-hover;
+                        border-right: 1px solid $link-hover;
+                    }
+                }
             }
         }
 
-        a {
-            color: white;
-            font-weight: 250;
-            text-decoration: none;
+    }
 
-            @extend .trans;
+    // sub menus
+    .sub-menu {
+        z-index: 5;
+        background: $purple-700;
+        color: $white;
+        opacity: 0;
+        position: absolute;
+        left: -9999em;
+        top: 100%;
+        overflow: hidden;
+        width: 15em;
+        box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+        transform: translateY(0.6em);
 
-            &:hover {
-                color: #e1e1e1;
+        li {
+            padding: 0px 15px;
+            width: 100%;
+
+            // add border to a so it doesn't touch edges
+            a {
+                font-size: 0.875em;
+                transition: 0s 0s;
+                border-bottom: 1px solid $purple-400;
             }
 
-            @media (max-width: 999px) {
-                font-size: 1.2rem;
+            // Remove border from last link
+            &:last-child>a {
+                border-bottom: 1px solid transparent;
             }
+
+            &.menu-item-has-children>a::after {
+                // Sub Arrow.
+                margin-top: -1px;
+                left: calc(100% - 2em - 0px);
+                transform: rotate(-45deg) translateY(-50%);
+            }
+
+            &.menu-item-has-children {
+
+                // remove transistions from sub sub
+                >ul {
+                    transition: 0;
+                    transform: 0;
+                }
+
+                // sub sub menu
+                &:hover>ul,
+                &:focus>ul,
+                &.focus>ul {
+                    box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.3);
+                    left: calc(100% + 0em);
+                    top: 0;
+                    background-color: darken($purple-700, 8%);
+                    overflow: visible;
+                    transition: 0;
+                    transform: 0;
+
+                    // fixes icons
+                    a {
+                        display: flex;
+                    }
+                }
+            }
+
+            // put projects in to multiple columns
+            &.cncf-projects-incubating,
+            &.cncf-projects-sandbox,
+            &.cncf-projects-graduated {
+
+                >ul {
+                    width: 380px;
+                    column-width: 140px;
+                    column-count: 2;
+                    column-gap: 0px;
+                    column-fill: auto;
+
+                    li {
+                        display: inline-block;
+                        width: 100%
+                    }
+                }
+            }
+
         }
     }
 
+    // added class if menu goes over right edge
+    li.menu-item-has-children.is-edge {
+
+        &:hover>ul,
+        &:focus>ul,
+        &.focus>ul {
+            left: initial;
+            right: 100%;
+        }
+    }
+
+    // added class if menu goes over bottom edge
+    li.menu-item-has-children.is-bottom {
+
+        &:hover>ul,
+        &:focus>ul,
+        &.focus>ul {
+            top: initial;
+            bottom: 0;
+        }
+    }
 }
