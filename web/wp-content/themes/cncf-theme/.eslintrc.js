@@ -12,5 +12,8 @@ module.exports = {
   globals: {
     "jQuery": "readonly",
     "wp": "readonly"
+},
+rules: {
+  'prefer-const': 'off', //es6
 }
 }
