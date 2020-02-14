@@ -14,10 +14,10 @@ let tick = false;
 /**
  * Show back to top
  *
- * @param {integer} scrollPos Y position of scroll
+ * @param {integer} scrollPos Y position of scroll.
  */
 function showBackToTop( scrollPos ) {
-	// declare the back to top element
+	// declare the back to top element.
 	const b = document.querySelector( '.back-to-top' );
 
 	// if element isn't present return.
@@ -32,13 +32,19 @@ function showBackToTop( scrollPos ) {
 	}
 }
 
-window.addEventListener( 'scroll', function() {
-	lastScrollPosition = window.scrollY;
-	if ( ! tick ) {
-		setTimeout( function() {
-			showBackToTop( lastScrollPosition );
-			tick = false;
-		}, 200 );
+window.addEventListener(
+	'scroll',
+	function() {
+		lastScrollPosition = window.scrollY;
+		if ( ! tick ) {
+			setTimeout(
+				function() {
+					showBackToTop( lastScrollPosition );
+					tick = false;
+				},
+				200
+			);
+		}
+		tick = true;
 	}
-	tick = true;
-} );
+);
