@@ -33,7 +33,9 @@ endif;
 		</div>
 
 		<button class="hamburger hamburger--spin" type="button"
-			aria-label="Menu" aria-controls="navigation">
+			aria-label="Menu" aria-controls="site-navigation"
+			aria-haspopup="true"
+			>
 			<span class="hamburger-box">
 				<span class="hamburger-inner"></span>
 			</span>
@@ -72,6 +74,7 @@ endif;
 							<form class="search-form" method="get"
 								action="<?php echo esc_url( home_url() ); ?>"
 								role="search">
+								<label for="search-bar" class="screen-reader-text">Search CNCF</label>
 								<input class="search-input" type="search"
 									name="s" id="search-bar"
 									placeholder="Search for...">
