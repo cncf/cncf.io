@@ -3,9 +3,9 @@
 
 .site-header .site-navigation .main-navigation {
 
-    a[href^="http://"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
-    a[href^="https://"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
-    a[href^="//"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]) {
+    a[href^="http://"]:not([href^="http://www.cncf"]):not([href^="http://cncf"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
+    a[href^="https://"]:not([href^="https://www.cncf"]):not([href^="https://cncf"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]),
+    a[href^="//"]:not([href^="//www.cncf"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
         display: flex;
         align-items: center;
 
