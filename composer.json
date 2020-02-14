@@ -37,7 +37,8 @@
     "wpackagist-plugin/um-recaptcha":"^2.1.2",
     "wpackagist-plugin/shortpixel-image-optimiser":"^4.15.3",
     "wpackagist-plugin/svg-autocrop":"^0.1.0",
-    "wpackagist-plugin/redirection":"^4.4.2"
+    "wpackagist-plugin/redirection":"^4.4.2",
+    "wpackagist-plugin/duplicate-post":"^3.2.4"
   },
   "require-dev": {
     "behat/mink-goutte-driver": "^1.2.1",
