@@ -1,0 +1,24 @@
+// _back-to-top.scss
+
+.back-to-top {
+    position: fixed;
+    width: 50px;
+    right: 20px;
+    top: -9999em;
+    z-index: 10;
+    background-color: rgba($primary-color, 0.5);
+    padding: 8px 10px 8px 10px;
+    opacity: 0;
+    transition: opacity 1s linear, top 0s 1.5s;
+
+    a {
+        fill: $white;
+        color: $white;
+    }
+
+    &.is-active {
+        top: calc(100% - 70px);
+        opacity: 1;
+        transition: opacity 0.5s linear;
+    }
+}
