@@ -83,14 +83,14 @@ add_action( 'init', 'lf_latest_jobs_block_assets' );
 function lf_latest_jobs_callback( $attributes ) {
 	$quantity = isset( $attributes['quantity'] ) ? intval( $attributes['quantity'] ) : 4;
 	$items    = lf_latest_jobs_get_external( $quantity );
-$classes = isset($attributes['className']) ? $attributes['className'] : "";
+	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	if ( empty( $items ) ) {
 		return;
 	}
 	ob_start();
 
 	?>
-<div class="jobs-box <?php echo esc_html($classes); ?>">
+<div class="jobs-box <?php echo esc_html( $classes ); ?>">
 	<!-- <h3 class="sub-head">
 		<svg viewBox="0 -31 512 512">
 			<path
@@ -150,7 +150,7 @@ $classes = isset($attributes['className']) ? $attributes['className'] : "";
 					</a>
 				</div>
 			</li>
-			<?php
+				<?php
 				endforeach;
 			?>
 		</ul>
@@ -158,7 +158,7 @@ $classes = isset($attributes['className']) ? $attributes['className'] : "";
 			title="CNCF Job Board">CNCF Job Board</a> -->
 	</div>
 </div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 
