@@ -1,0 +1,23 @@
+{
+	"parserOptions": {
+	  "sourceType": "module",
+	  "ecmaVersion": 9
+	},
+	"extends": [
+	  "eslint:recommended",
+	  "plugin:@wordpress/eslint-plugin/recommended",
+	  "plugin:prettier/recommended"
+	],
+	"rules": {
+	  "no-var": 1,
+	  "no-console": 0,
+	  "react/jsx-curly-spacing": 0,
+	  "react/jsx-indent": 0,
+	  "react/jsx-indent-props": 0
+	},
+	"env": {
+	  "browser": true,
+	  "es6": true,
+	  "node": true
+	}
+  }
