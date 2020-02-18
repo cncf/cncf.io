@@ -666,7 +666,7 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.6.2",
+            "version": "4.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
@@ -674,7 +674,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1578293412"
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1581750837"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -702,15 +702,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "4.16.0",
+            "version": "4.16.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/4.16.0"
+                "reference": "tags/4.16.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.16.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.16.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
