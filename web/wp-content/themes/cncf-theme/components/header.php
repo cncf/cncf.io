@@ -69,6 +69,7 @@ endif;
 						<?php $image->get_svg( 'search.svg' ); ?>
 
 					</button>
+
 					<div class="search-bar">
 						<div class="container wrap search-wrapper">
 							<form class="search-form" method="get"
@@ -79,11 +80,17 @@ endif;
 									name="s" id="search-bar"
 									placeholder="Search for...">
 								<label>
-									<input class="button transparent outline"
+									<input class="button transparent outline stocky"
 										type="submit" value="Search" />
 								</label>
 							</form>
+							<button
+						class="button search transparent header search-button search-close"
+						type="button" aria-label="Close"">
+						<?php $image->get_svg( 'close.svg' ); ?>
+					</button>
 						</div>
+
 					</div>
 				</div>
 			</nav>

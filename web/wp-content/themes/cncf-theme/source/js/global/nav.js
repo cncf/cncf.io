@@ -29,7 +29,7 @@ jQuery(
 		// Mobile toggle to open menus on touch.
 		$( 'li.menu-item-has-children a' ).click(
 			function( e ) {
-				if ( $( window ).width() > 1000 ) {
+				if ( $( window ).width() < 1000 ) {
 					e.preventDefault();
 					$( this ).toggleClass( 'is-open' );
 					$( this ).parent().children( '.sub-menu:first' ).slideToggle( 500 );
