@@ -23,39 +23,42 @@ const blockIcon = (
 	</svg>
 );
 
-registerBlockType( 'lf/latest-jobs', {
-	title: __( 'Latest Jobs' ),
-	description: __( 'Block showing the latest jobs from https://jobs.cncf.io' ),
-	icon: {
-		src: blockIcon,
-	},
-	category: 'common',
-	keywords: [
-		__( 'latest jobs' ),
-		__( 'jobs' ),
-		__( 'cncf' ),
-		__( 'linux' ),
-		__( 'lf' ),
-	],
-	styles: [
-		{
-			name: 'vertical',
-			label: __( 'Vertical' ),
-			isDefault: true,
+registerBlockType(
+	'lf/latest-jobs',
+	{
+		title: __( 'Latest Jobs' ),
+		description: __( 'Block showing the latest jobs from https://jobs.cncf.io' ),
+		icon: {
+			src: blockIcon,
 		},
-		{
-			name: 'horizontal',
-			label: __( 'Horizontal' ),
+		category: 'common',
+		keywords: [
+			__( 'latest jobs' ),
+			__( 'jobs' ),
+			__( 'cncf' ),
+			__( 'linux' ),
+			__( 'lf' ),
+		],
+		styles: [
+			{
+				name: 'vertical',
+				label: __( 'Vertical' ),
+				isDefault: true,
+			},
+			{
+				name: 'horizontal',
+				label: __( 'Horizontal' ),
+			},
+		],
+		example: {},
+		attributes: {
+			quantity: {
+				type: 'number',
+				default: 4,
+			},
 		},
-	],
-	example: {},
-	attributes: {
-		quantity: {
-			type: 'number',
-			default: 4,
-		},
-	},
-	html: false,
-	edit: Edit,
-	save: () => null,
-} );
+		html: false,
+		edit: Edit,
+		save: () => null,
+	}
+);
