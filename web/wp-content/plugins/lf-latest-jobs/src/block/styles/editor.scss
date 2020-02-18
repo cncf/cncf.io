@@ -6,6 +6,7 @@
  */
 
 .wp-block-lf-latest-jobs {
+
     &.is-style-horizontal {
 
         ul.jobs-list {
@@ -16,13 +17,15 @@
             li {
                 flex: 0 0 260px;
 
+                @media (max-width: 1200px) {
+                    flex: 0 0 32%;
+                }
+
                 .block-editor-block-styles__item-preview & {
                     flex: 0 0 45%;
                 }
             }
         }
-
-
     }
 
     &.is-style-vertical {
