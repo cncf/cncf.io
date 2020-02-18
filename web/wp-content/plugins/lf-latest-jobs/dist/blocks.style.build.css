@@ -1,1 +1,119 @@
-.jobs-box{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif}.jobs-box .sub-head{font-size:23px;color:#47529e;text-align:left;text-transform:uppercase;display:-ms-flexbox;display:flex;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:center;align-items:center;padding:0 15px}.jobs-box .sub-head svg{width:27px;height:27px;margin:0 10px 0 0;fill:#3cb3dd}.jobs-box p a,.jobs-box li a{font-weight:500;font-size:20px;color:#262961 !important;line-height:1.2;display:block;margin:0 auto 12px;text-decoration:none}.jobs-box .btn.pink-btn{margin:0 auto 15px;background-color:#e00a6b;color:#fff;padding:10px;text-decoration:none;display:inline-block}.jobs-box .grey-box-content{padding:0;text-align:center}.jobs-box .grey-box-content ul{margin:0;text-align:left}.jobs-box .grey-box-content ul li{padding:15px;margin:0;display:-ms-flexbox;display:flex}.jobs-box .grey-box-content ul li:before{display:none}.jobs-box .grey-box-content ul li .job-location,.jobs-box .grey-box-content ul li .job-company{font-weight:700;color:#9b9d9e;font-size:14px;margin:8px auto;display:-ms-flexbox;display:flex}.jobs-box .grey-box-content ul li .job-location svg,.jobs-box .grey-box-content ul li .job-company svg{margin:0 5px 0 0;fill:#9b9d9e}.jobs-box .grey-box-content ul li .job-company svg{width:12px;height:14px}.jobs-box .grey-box-content ul li .job-location svg{width:8px;height:14px}.jobs-box .grey-box-content ul li .job-date{color:#db266a;font-size:12px;display:block;line-height:1;margin:10px auto 0}.jobs-box .grey-box-content ul li .job-image{min-width:80px;max-width:80px;margin:0}.jobs-box .grey-box-content ul li .job-content{margin:0 0 0 15px}.jobs-box .grey-box-content ul li .job-content p{line-height:1.1}@media (max-width: 767px){.jobs-box p a,.jobs-box li a{font-size:16px}}.entry-content .jobs-box p,.entry-content .jobs-box ol,.entry-content .jobs-box ul,.entry-content .jobs-box dl,.entry-content .jobs-box dt{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.jobs-box .sub-head {
+  font-size: 23px;
+  color: #47529e;
+  text-align: left;
+  text-transform: uppercase;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 15px; }
+  .jobs-box .sub-head svg {
+    width: 27px;
+    height: 27px;
+    margin: 0 10px 0 0;
+    fill: #3cb3dd; }
+
+.jobs-box p a,
+.jobs-box li a {
+  font-weight: 500;
+  font-size: 20px;
+  color: #262961 !important;
+  line-height: 1.2;
+  display: block;
+  margin: 0 auto 12px;
+  text-decoration: none; }
+  .jobs-box p a:hover,
+  .jobs-box li a:hover {
+    color: #181a3c; }
+
+.jobs-box .btn.pink-btn {
+  margin: 0 auto 15px;
+  background-color: #e00a6b;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block; }
+
+.jobs-box .grey-box-content {
+  padding: 0;
+  text-align: center; }
+  .jobs-box .grey-box-content ul {
+    margin: 0;
+    text-align: left; }
+    .jobs-box .grey-box-content ul li {
+      padding: 15px;
+      margin: 0;
+      display: -ms-flexbox;
+      display: flex; }
+      .jobs-box .grey-box-content ul li:before {
+        display: none; }
+      .jobs-box .grey-box-content ul li .job-location,
+      .jobs-box .grey-box-content ul li .job-company {
+        font-weight: 700;
+        color: #9b9d9e;
+        font-size: 14px;
+        margin: 8px auto;
+        display: -ms-flexbox;
+        display: flex; }
+        .jobs-box .grey-box-content ul li .job-location svg,
+        .jobs-box .grey-box-content ul li .job-company svg {
+          margin: 0 5px 0 0;
+          fill: #9b9d9e; }
+      .jobs-box .grey-box-content ul li .job-company svg {
+        width: 12px;
+        height: 14px; }
+      .jobs-box .grey-box-content ul li .job-location svg {
+        width: 8px;
+        height: 14px; }
+      .jobs-box .grey-box-content ul li .job-date {
+        color: #db266a;
+        font-size: 12px;
+        display: block;
+        line-height: 1;
+        margin: 10px auto 0; }
+      .jobs-box .grey-box-content ul li .job-image {
+        min-width: 80px;
+        max-width: 80px;
+        margin: 0; }
+      .jobs-box .grey-box-content ul li .job-content {
+        margin: 0 0 0 15px; }
+        .jobs-box .grey-box-content ul li .job-content p {
+          line-height: 1.1; }
+
+@media (max-width: 767px) {
+  .jobs-box p a,
+  .jobs-box li a {
+    font-size: 16px; } }
+
+.jobs-box.is-style-horizontal .jobs-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .jobs-box.is-style-horizontal .jobs-list li {
+    -ms-flex: 1 0 350px;
+        flex: 1 0 350px; }
+
+.jobs-box.is-style-vertical .jobs-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.entry-content .jobs-box p,
+.entry-content .jobs-box ol,
+.entry-content .jobs-box ul,
+.entry-content .jobs-box dl,
+.entry-content .jobs-box dt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }

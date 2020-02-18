@@ -7,7 +7,9 @@
     "build": "cgb-scripts build",
     "eject": "cgb-scripts eject"
   },
-  "dependencies": {
-    "cgb-scripts": "1.22.0"
+  "dependencies": {},
+  "devDependencies": {
+    "cgb-scripts": "^1.22.0",
+    "node-sass": "^4.13.1"
   }
 }

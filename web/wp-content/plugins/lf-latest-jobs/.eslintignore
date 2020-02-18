@@ -8,3 +8,4 @@ cypress
 node_modules
 vendor
 front.js
+/node_modules

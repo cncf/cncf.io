@@ -15,21 +15,43 @@ const blockIcon = (
 
 registerBlockType( 'lf/latest-jobs', {
 	title: __( 'Latest Jobs' ),
+	description: __( 'Block showing the latest jobs from https://jobs.cncf.io' ),
 	icon: {
 		src: blockIcon,
 	},
 	category: 'common',
 	keywords: [
-		__( 'Latest Jobs' ),
-		__( 'Jobs' ),
-		__( 'Linux' ),
+		__( 'latest jobs' ),
+		__( 'jobs' ),
+		__( 'cncf' ),
+		__( 'linux' ),
+		__( 'lf' ),
 	],
+	styles: [
+		{
+			name: 'vertical',
+			label: __( 'Vertical' ),
+			isDefault: true
+		},
+		{
+			name: 'horizontal',
+			label: __( 'Horizontal' )
+		},
+	],
+	example: {},
 	attributes: {
 		quantity: {
 			type: 'number',
 			default: 4,
 		},
 	},
+	html: false,
 	edit: Edit,
 	save: () => null,
 } );
+
+
+// wp.blocks.registerBlockStyle( 'lf/latest-jobs', {
+//     name: 'horizontal',
+//     label: 'Horizontal'
+// } );
