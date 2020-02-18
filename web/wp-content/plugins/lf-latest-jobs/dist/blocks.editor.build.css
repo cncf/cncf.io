@@ -14,21 +14,21 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-	  flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: wrap;
-	  flex-wrap: wrap; }
+      flex-wrap: wrap; }
   .wp-block-lf-latest-jobs.is-style-horizontal ul.jobs-list li {
-	-ms-flex: 0 0 260px;
-		flex: 0 0 260px; }
-	.block-editor-block-styles__item-preview .wp-block-lf-latest-jobs.is-style-horizontal ul.jobs-list li {
-	  -ms-flex: 0 0 45%;
-		  flex: 0 0 45%; }
+    -ms-flex: 0 0 260px;
+        flex: 0 0 260px; }
+    .block-editor-block-styles__item-preview .wp-block-lf-latest-jobs.is-style-horizontal ul.jobs-list li {
+      -ms-flex: 0 0 45%;
+          flex: 0 0 45%; }
 
 .wp-block-lf-latest-jobs.is-style-vertical ul.jobs-list {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-	  flex-direction: column; }
+      flex-direction: column; }
 
 .wp-block[data-type="lf/latest-jobs"] .description {
   text-align: center;
@@ -50,7 +50,7 @@
   text-decoration: none; }
   .wp-block[data-type="lf/latest-jobs"] p a:hover,
   .wp-block[data-type="lf/latest-jobs"] li a:hover {
-	color: #181a3c; }
+    color: #181a3c; }
 
 .wp-block[data-type="lf/latest-jobs"] li {
   padding: 15px;
@@ -58,41 +58,41 @@
   display: -ms-flexbox;
   display: flex; }
   .wp-block[data-type="lf/latest-jobs"] li:before {
-	display: none; }
+    display: none; }
   .wp-block[data-type="lf/latest-jobs"] li .job-location,
   .wp-block[data-type="lf/latest-jobs"] li .job-company {
-	font-weight: 700;
-	color: #9b9d9e;
-	font-size: 14px;
-	margin: 8px auto;
-	display: -ms-flexbox;
-	display: flex; }
-	.wp-block[data-type="lf/latest-jobs"] li .job-location svg,
-	.wp-block[data-type="lf/latest-jobs"] li .job-company svg {
-	  margin: 0 5px 0 0;
-	  fill: #9b9d9e; }
+    font-weight: 700;
+    color: #9b9d9e;
+    font-size: 14px;
+    margin: 8px auto;
+    display: -ms-flexbox;
+    display: flex; }
+    .wp-block[data-type="lf/latest-jobs"] li .job-location svg,
+    .wp-block[data-type="lf/latest-jobs"] li .job-company svg {
+      margin: 0 5px 0 0;
+      fill: #9b9d9e; }
   .wp-block[data-type="lf/latest-jobs"] li .job-company svg {
-	width: 12px;
-	height: 14px; }
+    width: 12px;
+    height: 14px; }
   .wp-block[data-type="lf/latest-jobs"] li .job-location svg {
-	width: 8px;
-	height: 14px; }
+    width: 8px;
+    height: 14px; }
   .wp-block[data-type="lf/latest-jobs"] li .job-date {
-	color: #db266a;
-	font-size: 12px;
-	display: block;
-	line-height: 1;
-	margin: 10px auto 0; }
+    color: #db266a;
+    font-size: 12px;
+    display: block;
+    line-height: 1;
+    margin: 10px auto 0; }
   .wp-block[data-type="lf/latest-jobs"] li .job-title {
-	font-size: 20px; }
+    font-size: 20px; }
   .wp-block[data-type="lf/latest-jobs"] li .job-image {
-	max-height: 65px; }
+    max-height: 65px; }
   .wp-block[data-type="lf/latest-jobs"] li .job-content {
-	margin: 0 0 0 15px; }
-	.wp-block[data-type="lf/latest-jobs"] li .job-content p {
-	  line-height: 1.1; }
+    margin: 0 0 0 15px; }
+    .wp-block[data-type="lf/latest-jobs"] li .job-content p {
+      line-height: 1.1; }
 
 @media (max-width: 767px) {
   .wp-block[data-type="lf/latest-jobs"] p a,
   .wp-block[data-type="lf/latest-jobs"] li a {
-	font-size: 16px; } }
+    font-size: 16px; } }

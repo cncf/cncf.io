@@ -1,5 +1,8 @@
 /**
- * File description
+ * Register block JS
+ *
+ * @package WordPress
+ * @since 1.0.0
  *
  * @tags
  * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter

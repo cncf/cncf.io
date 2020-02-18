@@ -1,5 +1,8 @@
 /**
- * File description
+ * Edit screen code
+ *
+ * @package WordPress
+ * @since 1.0.0
  *
  * @tags
  * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
