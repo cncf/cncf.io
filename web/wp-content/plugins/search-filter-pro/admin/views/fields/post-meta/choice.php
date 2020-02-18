@@ -105,8 +105,8 @@
 						</select>
 						
 						<select name='{0}[{1}][choice_order_option_type]' class="sf_choice_order_option_type" id="{0}[{1}][choice_order_option_type]">
+                            <option value="numeric"<?php $this->set_selected($values['choice_order_option_type'], "numeric"); ?>><?php _e("Numerical", $this->plugin_slug); ?></option>
 							<option value="alphabetic"<?php $this->set_selected($values['choice_order_option_type'], "alphabetic"); ?>><?php _e("Alphabetical", $this->plugin_slug); ?></option>
-							<option value="numeric"<?php $this->set_selected($values['choice_order_option_type'], "numeric"); ?>><?php _e("Numerical", $this->plugin_slug); ?></option>
 						</select>
 					
 				</p>

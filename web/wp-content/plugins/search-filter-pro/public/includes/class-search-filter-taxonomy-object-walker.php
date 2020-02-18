@@ -202,8 +202,10 @@ class Search_Filter_Taxonomy_Object_Walker extends Walker_Category {
         $taxonomy_name = $term->taxonomy;
 
         $term_slug = $term->slug;
+
 	    //is_taxonomy_hierarchical
         $term_link = get_term_link($term, $taxonomy_name);
+
         //$term_template_link = str_replace($taxonomy_name, "[taxonomy]", $term_link);
         $term_template_link = $term_link;
 
@@ -222,12 +224,14 @@ class Search_Filter_Taxonomy_Object_Walker extends Walker_Category {
             //$term_template_link = str_replace($term_name, "[$term_index]", $term_template_link);
             //$term_template_link = preg_replace('/'.preg_quote($term_name).'/', "[$term_index]", $term_template_link, 1);
 	        $term_template_link = $this->str_lreplace($term_name, "[$term_index]", $term_template_link);
+
             //$term_index++;
         }
 
-        $term_template_link = str_replace($term_slug, "[term]", $term_template_link);
+        //$term_template_link = str_replace($term_slug, "[term]", $term_template_link); // redundant, we don't user `[term]`
 
 	    if ($home_url_removed ===  true){
+
 		    $term_template_link = home_url().$term_template_link;
 	    }
 

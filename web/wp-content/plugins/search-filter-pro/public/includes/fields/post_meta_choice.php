@@ -205,7 +205,7 @@ class Search_Filter_Field_Post_Meta_Choice {
 			"
 			SELECT field_value
 			FROM $this->term_results_table_name
-			WHERE field_name = '$name' AND field_value != ''
+			WHERE BINARY field_name = '$name' AND field_value != ''
 			ORDER BY $order_by
 			"
 		);
@@ -307,7 +307,12 @@ class Search_Filter_Field_Post_Meta_Choice {
 		global $wpdb;
 		global $searchandfilter;
 		$searchform = $searchandfilter->get($this->sfid);
-		$post_types = array_keys($searchform->settings("post_types"));
+
+		$post_types_arr = $searchform->settings("post_types");
+		$post_types = array();
+		if(is_array($post_types_arr)){
+			$post_types = array_keys($post_types_arr);
+		}
 
 		$args = array(
 			'post_type' => $post_types,

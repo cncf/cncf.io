@@ -668,10 +668,15 @@ class Search_Filter_Display_Shortcode {
 
                         $lang_code = "";
 
-                        if(Search_Filter_Helper::has_wpml())
-                        {
+                        if(Search_Filter_Helper::has_wpml()){
+
                             $lang_code = ICL_LANGUAGE_CODE;
                         }
+                        else{
+	                        //$lang_code = strtolower(substr( get_bloginfo ( 'language' ), 0, 2 ));
+                        }
+
+
 
                         //$form_attr .= ' data-lang-code="'.$lang_code.'"';
                         //$form_attr.=' data-ajax="'.(int)$use_ajax.'"';

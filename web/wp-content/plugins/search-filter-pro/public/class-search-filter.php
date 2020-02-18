@@ -104,10 +104,17 @@ class Search_Filter {
 
 		if($query->query_vars['search_filter_id']!=0)
 		{
+			global $query_count_test;
+			$query_count_test++;
+
+			//remove_action( 'pre_get_posts', array($this, 'custom_query_init'), 10000 );
 			global $searchandfilter;
 			$searchandfilter->get($query->query_vars['search_filter_id'])->query->setup_custom_query($query);
+			//add_action( 'pre_get_posts', array($this, 'custom_query_init'), 10000 );
+
+
 		}
-		
+
 		return;
 	}
 	
@@ -470,7 +477,7 @@ class Search_Filter {
 			}
 			global $paged;
 			$paged = $sfpaged;
-			
+			//set_query_var("paged", $paged);
 			
 			
 			$template_file_name = $searchandfilter->get($sfid)->get_template_name();

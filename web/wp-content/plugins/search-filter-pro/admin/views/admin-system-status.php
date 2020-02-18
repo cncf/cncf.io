@@ -599,9 +599,6 @@ else if ( $current_tab == "search-forms")
 				}
 				
 				echo implode(", " , $filters);
-			
-			//$filters = array_unique($filters);
-			//var_dump($filters);
 			?>
 			</td>
 		</tr>

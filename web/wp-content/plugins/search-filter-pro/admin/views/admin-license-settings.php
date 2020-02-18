@@ -26,9 +26,72 @@
 					</th>
 					<td>
 						<input id="search_filter_license_key" name="search_filter_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
-						<label class="description" for="search_filter_license_key"><?php _e('Enter your license key'); ?></label>
+                        <input type="submit" class="button" value="Save Changes" style="display:inline-block;">
+
 					</td>
 				</tr>
+				<?php if( $status !== false ) { ?>
+                <tr valign="top">
+                    <th scope="row" valign="top">
+						<?php _e('License Status'); ?>
+                    </th>
+                    <td>
+                        <?php
+					        if($status === "invalid") {
+
+                                echo '<span style="color:red;">';//<?php _e('Invalid: ');
+						        if ( $error === "expired" ){
+							        echo ucwords($error);
+                                }
+                                else{
+						            echo "Invalid License Key";
+                                }
+						        echo '</span>';
+					        }
+					        else {
+						        ?><span style="color:green;"><?php _e('Active'); ?></span><?php
+					        }
+                        ?>
+
+                    </td>
+                </tr>
+				<?php }
+                    else {
+                        ?>
+                        <tr valign="top">
+                            <th scope="row" valign="top">
+                                <?php _e('License Status'); ?>
+                            </th>
+                            <td>
+                                <em>License Inactive</em>
+                            </td>
+                        </tr>
+	                    <?php
+                    }
+                ?>
+				<?php if( $expires !== false && $expires !== '' ) { ?>
+                    <?php
+                        if(( $error !== false && $error === 'expired' )||($error === false)) {
+                    ?>
+                    <tr valign="top">
+                        <th scope="row" valign="top">
+							<?php _e('License Valid Until'); ?>
+                        </th>
+                        <td>
+                            <?php
+                                $time = time();
+                                $expires_time = strtotime($expires);
+                                //$color = "red";
+                                if($time <= $expires_time){
+                                    //$color = "green";
+                                }
+                                echo '<span>'.date('jS F Y', strtotime($expires)).'</span>';
+
+                            ?>
+                        </td>
+                    </tr>
+				    <?php } ?>
+				<?php } ?>
 				<?php if( false !== $license ) { ?>
 					<tr valign="top">	
 						<th scope="row" valign="top">
@@ -36,7 +99,6 @@
 						</th>
 						<td>
 							<?php if( $status !== false && $status == 'valid' ) { ?>
-								<span style="color:green;"><?php _e('active'); ?></span>
 								<?php wp_nonce_field( 'search_filter_nonce', 'search_filter_nonce' ); ?>
 								<input type="submit" class="button-secondary" name="edd_license_deactivate" value="<?php _e('Deactivate License'); ?>"/>
 							<?php } else {
@@ -48,7 +110,6 @@
 				<?php } ?>
 			</tbody>
 		</table>	
-		<?php submit_button(); ?>
-	
+
 	</form>
 </div>

@@ -1078,8 +1078,9 @@ class Search_Filter_Posts_Admin {
 				);
 				global $wpdb;
 				$data   =   array();
+
 				$wpdb->query("
-					SELECT DISTINCT `meta_key`
+					SELECT DISTINCT(BINARY `meta_key`) as meta_key_binary, `meta_key`
 					FROM $wpdb->postmeta ORDER BY `meta_key` ASC
 				");
 				
@@ -1089,6 +1090,7 @@ class Search_Filter_Posts_Admin {
 				};
 				
 				$this->post_meta_keys = $data;
+
 			}
 		}
 		

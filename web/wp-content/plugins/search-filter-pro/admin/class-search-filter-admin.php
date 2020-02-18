@@ -518,6 +518,10 @@ class Search_Filter_Admin {
 
 		$license 	= get_option( 'search_filter_license_key' );
 		$status 	= get_option( 'search_filter_license_status' );
+		$expires 	= get_option( 'search_filter_license_expires' );
+		$error 	    = get_option( 'search_filter_license_error' );
+
+
 
 		include_once( 'views/admin-license-settings.php' );
 	}
@@ -568,6 +572,8 @@ class Search_Filter_Admin {
 		$old = get_option( 'search_filter_license_key' );
 		if( $old && $old != $new ) {
 			delete_option( 'search_filter_license_status' ); // new license has been entered, so must reactivate
+			delete_option( 'search_filter_license_expires' );
+			delete_option( 'search_filter_license_error' );
 		}
 		return $new;
 	}
@@ -598,7 +604,6 @@ class Search_Filter_Admin {
 			// Call the custom API.
 			$response = wp_remote_get( add_query_arg( $api_params, SEARCH_FILTER_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
 
-
 			// make sure the response came back okay
 			if ( is_wp_error( $response ) )
 				return false;
@@ -609,6 +614,15 @@ class Search_Filter_Admin {
 			// $license_data->license will be either "valid" or "invalid"
 
 			update_option( 'search_filter_license_status', $license_data->license );
+			update_option( 'search_filter_license_expires', $license_data->expires );
+
+			if($license_data->license==="invalid"){
+				update_option( 'search_filter_license_error', $license_data->error );
+            }
+            else{
+	            delete_option( 'search_filter_license_error', '' );
+            }
+
 
 		}
 	}
@@ -653,6 +667,8 @@ class Search_Filter_Admin {
 			// $license_data->license will be either "deactivated" or "failed"
 			if( $license_data->license == 'deactivated' )
 				delete_option( 'search_filter_license_status' );
+				delete_option( 'search_filter_license_error' );
+				delete_option( 'search_filter_license_expires' );
 
 		}
 	}
@@ -770,8 +786,9 @@ class Search_Filter_Admin {
 		$wpdb->query("
 			SELECT `meta_key`, `meta_value`
 			FROM $wpdb->postmeta
-			WHERE `meta_key` = '$meta_key'
+			WHERE BINARY `meta_key` = '$meta_key'
 		");
+
 		foreach($wpdb->last_result as $k => $v)
 		{
 			$data[] = $v->meta_value;
@@ -795,7 +812,6 @@ class Search_Filter_Admin {
 						}
 						else
 						{
-							//echo $serial_val;
 							if(is_array($serial_val))
 							{
 								foreach($serial_val as $arr_val)

@@ -34,7 +34,7 @@ class Search_Filter_Global
 		add_action('search_filter_do_query', array($this, 'query_posts'), 10); //legacy
 		add_action('search_filter_query_posts', array($this, 'query_posts'), 10);
 		add_action('search_filter_setup_pagination', array($this, 'setup_pagination'), 10);
-		add_action('search_filter_update_post_cache', array($this, 'update_cache'), 10);
+		//add_action('search_filter_update_post_cache', array($this, 'update_cache'), 10);
 
 		add_action('search_filter_pagination_init', array($this, 'set_pagination_init'), 10);
 		add_action('wp', array($this, 'set_queried_object'), 10);
@@ -145,12 +145,12 @@ class Search_Filter_Global
 		return $this->get($sfid)->is_valid_form();
 	}
 
-	public function update_cache($postID)
+	/* public function update_cache($postID)
 	{
 		$this->post_cache->init_cache_options();
 		$this->post_cache->setup_cached_search_forms();
 		$this->post_cache->update_post_cache($postID);
-	}
+	} */
 
 
 	public function set_pagination_init()

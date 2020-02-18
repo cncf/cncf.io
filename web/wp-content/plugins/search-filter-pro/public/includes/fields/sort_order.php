@@ -161,8 +161,19 @@ class Search_Filter_Field_Sort_Order extends Search_Filter_Field_Base {
 							{
 								$sort_type = "+alpha";
 							}
+							else if($sort_option['sort_type']=="date")
+							{
+								$sort_type = "+date";
+							}
+							else if($sort_option['sort_type']=="datetime")
+							{
+								$sort_type = "+datetime";
+							}
+							/*else if($sort_option['sort_type']=="decimal")
+							{
+								$sort_type = "+decimal";
+							}*/
 						}
-						
 					}
 				}
 				if(isset($sort_option['sort_label']))
