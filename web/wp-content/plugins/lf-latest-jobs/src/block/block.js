@@ -1,4 +1,11 @@
-//  Import CSS.
+/**
+ * File description
+ *
+ * @tags
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
+ */
+
 import './styles/editor.scss';
 import './styles/style.scss';
 
@@ -31,11 +38,11 @@ registerBlockType( 'lf/latest-jobs', {
 		{
 			name: 'vertical',
 			label: __( 'Vertical' ),
-			isDefault: true
+			isDefault: true,
 		},
 		{
 			name: 'horizontal',
-			label: __( 'Horizontal' )
+			label: __( 'Horizontal' ),
 		},
 	],
 	example: {},
@@ -49,9 +56,3 @@ registerBlockType( 'lf/latest-jobs', {
 	edit: Edit,
 	save: () => null,
 } );
-
-
-// wp.blocks.registerBlockStyle( 'lf/latest-jobs', {
-//     name: 'horizontal',
-//     label: 'Horizontal'
-// } );

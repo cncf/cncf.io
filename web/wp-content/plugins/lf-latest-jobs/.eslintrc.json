@@ -29,7 +29,8 @@
 	"plugins": ["react", "jsx-a11y", "jest"],
 	"settings": {
 		"react": {
-			"pragma": "wp"
+			"pragma": "wp",
+			"version": "99999.9999"
 		}
 	},
 	"rules": {

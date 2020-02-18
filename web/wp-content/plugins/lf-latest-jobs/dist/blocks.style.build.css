@@ -110,10 +110,3 @@
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column; }
-
-.entry-content .jobs-box p,
-.entry-content .jobs-box ol,
-.entry-content .jobs-box ul,
-.entry-content .jobs-box dl,
-.entry-content .jobs-box dt {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
