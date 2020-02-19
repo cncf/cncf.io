@@ -184,9 +184,10 @@ function cncf_projects_menu_filter( $items, $menu, $args ) {
 }
 add_filter( 'wp_get_nav_menu_items', 'cncf_projects_menu_filter', 10, 3 );
 
-
-// The WP REST API is cached heavily by Pantheon so we need to explicitly exclude certain calls from the cache.
-// From https://pantheon.io/docs/mu-plugin#wp-rest-api-code-classlanguage-textwp-jsoncode-endpoints-cache.
+/**
+ * The WP REST API is cached heavily by Pantheon so we need to explicitly exclude certain calls from the cache.
+ * From https://pantheon.io/docs/mu-plugin#wp-rest-api-code-classlanguage-textwp-jsoncode-endpoints-cache.
+ */
 $regex_json_path_patterns = array(
 	'#^/wp-json/post-meta-controls/v1/?#',
 );

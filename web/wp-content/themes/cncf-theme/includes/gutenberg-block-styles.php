@@ -9,28 +9,29 @@
  * @since 1.0.0
  */
 
-register_block_style(
-	'core/heading',
-	array(
-		'name'         => 'uppercase-heading',
-		'label'        => 'Uppercase',
-		'inline_style' => '.is-style-uppercase-heading { text-transform: uppercase; }',
-	)
-);
-
-register_block_style(
-	'core/paragraph',
-	array(
-		'name'  => 'blue-paragraph',
-		'label' => 'Blue Paragraph',
-	)
-);
-
-register_block_style(
-	'core/quote',
-	array(
-		'name'         => 'blue-quote',
-		'label'        => __( 'Blue Quote' ),
-		'inline_style' => '.wp-block-quote.is-style-blue-quote { color: blue; }',
-	)
-);
+/**
+ * Block Template basic setup
+ */
+function slug_post_type_template() {
+	$page_type_object           = get_post_type_object( 'page' );
+	$page_type_object->template = array(
+		array(
+			'core/heading',
+			array(
+				'level'   => '1',
+				'content' => 'Title of page',
+				'className' => 'is-style-max-900',
+			),
+		),
+		array( 'core/paragraph' ),
+		array(
+			'core/heading',
+			array(
+				'level'   => '2',
+				'content' => 'Sub header',
+			),
+		),
+		array( 'core/paragraph' ),
+	);
+};
+add_action( 'init', 'slug_post_type_template' );

@@ -7,6 +7,7 @@
  * @since 1.0.0
  */
 
+// TODO: Decide how to implement so does not interfere with clicks.
 const menuAccessibility = () => {
 	// declare site navigation.
 	const container = document.querySelector( '.site-navigation' );

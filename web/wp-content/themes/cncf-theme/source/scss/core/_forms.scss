@@ -38,6 +38,10 @@ input[type="button"] {
     padding: 0;
 }
 
+input[type="search"] {
+    padding-left: 1em;
+}
+
 .validation_message {
     color: $error;
     padding-top: 5px;

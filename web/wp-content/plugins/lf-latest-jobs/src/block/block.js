@@ -1,4 +1,17 @@
-//  Import CSS.
+/**
+ * Register block JS
+ *
+ * @package WordPress
+ * @since 1.0.0
+ *
+ * @tags
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
+ * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
+ */
+
 import './styles/editor.scss';
 import './styles/style.scss';
 
@@ -13,23 +26,42 @@ const blockIcon = (
 	</svg>
 );
 
-registerBlockType( 'lf/latest-jobs', {
-	title: __( 'Latest Jobs' ),
-	icon: {
-		src: blockIcon,
-	},
-	category: 'common',
-	keywords: [
-		__( 'Latest Jobs' ),
-		__( 'Jobs' ),
-		__( 'Linux' ),
-	],
-	attributes: {
-		quantity: {
-			type: 'number',
-			default: 4,
+registerBlockType(
+	'lf/latest-jobs',
+	{
+		title: __( 'Latest Jobs' ),
+		description: __( 'Block showing the latest jobs from https://jobs.cncf.io' ),
+		icon: {
+			src: blockIcon,
 		},
-	},
-	edit: Edit,
-	save: () => null,
-} );
+		category: 'common',
+		keywords: [
+			__( 'latest jobs' ),
+			__( 'jobs' ),
+			__( 'cncf' ),
+			__( 'linux' ),
+			__( 'lf' ),
+		],
+		styles: [
+			{
+				name: 'vertical',
+				label: __( 'Vertical' ),
+				isDefault: true,
+			},
+			{
+				name: 'horizontal',
+				label: __( 'Horizontal' ),
+			},
+		],
+		example: {},
+		attributes: {
+			quantity: {
+				type: 'number',
+				default: 4,
+			},
+		},
+		html: false,
+		edit: Edit,
+		save: () => null,
+	}
+);

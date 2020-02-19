@@ -7,7 +7,10 @@
     "build": "cgb-scripts build",
     "eject": "cgb-scripts eject"
   },
-  "dependencies": {
-    "cgb-scripts": "1.22.0"
+  "dependencies": {},
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^4.0.0",
+    "cgb-scripts": "^1.23.0",
+    "node-sass": "^4.13.1"
   }
 }

@@ -5,10 +5,139 @@
  * which makes it higher in priority.
  */
 
- .wp-block[data-type="lf/latest-jobs"] {
-	.description {
-		text-align: center;
-		font-size: 14px;
-		font-weight: bold;
-	}
+.wp-block-lf-latest-jobs {
+
+    &.is-style-horizontal {
+
+        ul.jobs-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            li {
+                flex: 0 0 260px;
+
+                @media (max-width: 1200px) {
+                    flex: 0 0 32%;
+                }
+
+                .block-editor-block-styles__item-preview & {
+                    flex: 0 0 45%;
+                }
+            }
+        }
+    }
+
+    &.is-style-vertical {
+
+        ul.jobs-list {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.wp-block[data-type="lf/latest-jobs"] {
+
+    .description {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    ul.jobs-list {
+        padding: 0;
+        margin-left: 0;
+    }
+
+    p,
+    li {
+        a {
+            font-weight: 500;
+            font-size: 20px;
+            color: #262961 !important;
+            line-height: 1.2;
+            display: block;
+            margin: 0 auto 12px;
+            text-decoration: none;
+
+            &:hover {
+                color: darken(#262961, 10%);
+            }
+        }
+    }
+
+    li {
+        padding: 15px;
+        margin: 0;
+        display: flex;
+
+        &:before {
+            display: none;
+        }
+
+        .job-location,
+        .job-company {
+            font-weight: 700;
+            color: #9b9d9e;
+            font-size: 14px;
+            margin: 8px auto;
+            display: flex;
+
+            svg {
+                margin: 0 5px 0 0;
+                fill: #9b9d9e;
+            }
+        }
+
+        .job-company {
+            svg {
+                width: 12px;
+                height: 14px;
+            }
+        }
+
+        .job-location {
+            svg {
+                width: 8px;
+                height: 14px;
+            }
+        }
+
+        .job-date {
+            color: #db266a;
+            font-size: 12px;
+            display: block;
+            line-height: 1;
+            margin: 10px auto 0;
+        }
+
+        .job-title {
+            font-size: 20px;
+        }
+
+        .job-image {
+            max-height: 65px;
+        }
+
+        .job-content {
+            margin: 0 0 0 15px;
+
+            p {
+                line-height: 1.1;
+            }
+        }
+
+    }
+
+    @media(max-width: 767px) {
+
+        p,
+        li {
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+
 }

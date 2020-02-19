@@ -26,12 +26,23 @@ jQuery(
 			}
 		);
 
+		// Desktop stop empty parents jumping to top of screen on click.
+		$( '.main-navigation > li.menu-item-has-children a' ).click(
+			function( e ) {
+				if ( $( window ).width() > 1000 ) {
+					e.preventDefault();
+				}
+			}
+		);
+
 		// Mobile toggle to open menus on touch.
 		$( 'li.menu-item-has-children a' ).click(
 			function( e ) {
-				e.preventDefault();
-				$( this ).toggleClass( 'is-open' );
-				$( this ).parent().children( '.sub-menu:first' ).slideToggle( 500 );
+				if ( $( window ).width() < 1000 ) {
+					e.preventDefault();
+					$( this ).toggleClass( 'is-open' );
+					$( this ).parent().children( '.sub-menu:first' ).slideToggle( 500 );
+				}
 			}
 		);
 	}
@@ -46,21 +57,21 @@ jQuery( document ).ready(
 				'mouseenter mouseleave',
 				function() {
 					if ( $( 'ul', this ).length ) {
-						 const elm = $( 'ul:first', this );
-						 const off = elm.offset();
-						 const position = $( this ).position();
+						const elm = $( 'ul:first', this );
+						const off = elm.offset();
+						const position = $( this ).position();
 
-						 // width.
-						 const l = off.left;
-						 const w = elm.width();
-						 const docW = $( '.site-header' ).width();
-						 const outsideWidth = ( l + w <= docW );
+						// width.
+						const l = off.left;
+						const w = elm.width();
+						const docW = $( '.site-header' ).width();
+						const outsideWidth = ( l + w <= docW );
 
-						 // height.
-						 const t = position.top;
-						 const h = elm.height();
-						 const docH = window.innerHeight;
-						 const outsideHeight = ( t + h + 100 <= docH );
+						// height.
+						const t = position.top;
+						const h = elm.height();
+						const docH = window.innerHeight;
+						const outsideHeight = ( t + h + 100 <= docH );
 
 						if ( ! outsideWidth ) {
 							$( this ).addClass( 'is-edge' );

@@ -128,22 +128,32 @@
         }
     }
 
+    .search-form {
+        display: flex;
+    }
+
     .search-bar {
         opacity: 0;
         position: absolute;
-        top: -999em;
+        top: 100%;
         z-index: 1;
-        left: 0;
+        left: -999em;
         right: 0;
         background-color: $purple-800;
         box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         transition: opacity .15s linear, top 0s .15s ease-in;
 
         &.is-active {
-            top: 100%;
+            left: 0;
             opacity: 1;
-            transition: opacity .15s linear, top 0s .15s ease-in;
+            transition: opacity .15s linear, left 0s .15s ease-in;
         }
+    }
+
+    .search-input {
+        text-align: right;
+        margin-right: 20px;
+
     }
 
     .search-wrapper {
