@@ -50,7 +50,7 @@ class Edit extends Component {
 						isSelected={ isSelected && currentEdit === `countUp${ index }` }
 						unstableOnFocus={ () => this.setState( { currentEdit: `countUp${ index }` } ) }
 						style={ { fontSize: '35px' } }
-						placeholder={ __( 'Number...' ) }
+						placeholder={ __( '000' ) }
 						className="lf-counter-number"
 					/>
 				</div>
@@ -60,7 +60,7 @@ class Edit extends Component {
 					onChange={ ( value ) => setAttributes( { [ `descText${ index }` ]: value } ) }
 					isSelected={ isSelected && currentEdit === `desc${ index }` }
 					unstableOnFocus={ () => this.setState( { currentEdit: `desc${ index }` } ) }
-					placeholder={ __( 'Enter description text…' ) }
+					placeholder={ __( 'Description' ) }
 					className="lf-count-up-desc"
 				/>
 			</div>
@@ -68,9 +68,10 @@ class Edit extends Component {
 	}
 
 	render() {
-		const { currentEdit } = this.state;
 		const { attributes, setAttributes } = this.props;
-		const { columns, sectionText, isSelected, color1, color2, textColor } = attributes;
+		const { columns, textColor } = attributes;
+		// const { currentEdit } = this.state;
+		// const { columns, sectionText, isSelected, color1, color2, textColor } = attributes;
 
 		return (
 			<Fragment>
@@ -79,22 +80,6 @@ class Edit extends Component {
 						title="Color Settings"
 						initialOpen={ true }
 						colorSettings={ [
-							{
-								value: color1,
-								onChange: colorValue =>
-									setAttributes( {
-										color1: colorValue,
-									} ),
-								label: 'Background Color 1',
-							},
-							{
-								value: color2,
-								onChange: colorValue =>
-									setAttributes( {
-										color2: colorValue,
-									} ),
-								label: 'Background Color 2',
-							},
 							{
 								value: textColor,
 								onChange: colorValue =>
@@ -108,7 +93,7 @@ class Edit extends Component {
 					</PanelColorSettings>
 					<PanelBody title={ __( 'General Settings' ) }>
 						<RangeControl
-							label={ __( 'Columns' ) }
+							label={ __( 'Number of countup items' ) }
 							min={ 1 }
 							max={ 4 }
 							value={ columns }
@@ -124,17 +109,6 @@ class Edit extends Component {
 						} ) }
 					</PanelBody>
 				</InspectorControls>
-				<div className="section-text">
-					<RichText
-						tagName="div"
-						value={ sectionText }
-						onChange={ ( value ) => setAttributes( { sectionText: value } ) }
-						isSelected={ isSelected && currentEdit === 'sectionText' }
-						unstableOnFocus={ () => this.setState( { currentEdit: 'sectionText' } ) }
-						placeholder={ __( 'Enter section text...' ) }
-						className="lf-section-text"
-					/>
-				</div>
 				<div className="lf-count-up" style={ { display: 'flex' } }>
 					{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map( index => {
 						return this.getItem( index );
