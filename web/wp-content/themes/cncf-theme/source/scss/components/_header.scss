@@ -138,7 +138,7 @@
         top: 100%;
         z-index: 1;
         left: -999em;
-        right: 0;
+
         background-color: $purple-800;
         box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         transition: opacity .15s linear, top 0s .15s ease-in;
@@ -146,6 +146,7 @@
         &.is-active {
             left: 0;
             opacity: 1;
+            right: 0;
             transition: opacity .15s linear, left 0s .15s ease-in;
         }
     }

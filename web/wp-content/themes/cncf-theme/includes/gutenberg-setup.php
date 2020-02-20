@@ -24,11 +24,11 @@ add_theme_support( 'disable-custom-colors' );
 // add preset custom colors.
 require_once 'gutenberg-preset-colors.php';
 
-// Disable custom gradient creation.
-add_theme_support( '__experimental-disable-custom-gradients', false );
-
 // Add preset gradients.
 require_once 'gutenberg-preset-gradients.php';
+
+// Disable custom gradient creation.
+add_theme_support( 'disable-custom-gradients' );
 
 // Disable custom font sizes.
 add_theme_support( 'disable-custom-font-sizes' );

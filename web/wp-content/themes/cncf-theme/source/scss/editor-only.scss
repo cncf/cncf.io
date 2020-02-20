@@ -11,14 +11,15 @@
 @import "core/variables";
 @import "core/normalize";
 @import "core/reset";
-// @import "blocks/content-styling";
+// @import "blocks/content-styling"; // maybe dont need this file.
 
-// import the typography over the top of editor styles defaults.
+// import typography and styles over the top of editor styles defaults.
 #editor {
+
     .editor-styles-wrapper {
         @import "core/typography";
-        // import block-styles here too?
-        // or individual ones?
+        @import "blocks/gradients";
+        @import "blocks/paragraph-headers";
     }
 }
 
@@ -39,6 +40,25 @@
 .editor-styles-wrapper {
     font-family: $font-primary !important;
 }
+
+// make blocks wider to fit the screen
+.wp-block {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1150px;
+}
+
+// stop ridiculous dropcap in paragraph preview.
+.block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    margin: inherit;
+    text-transform: inherit;
+    font-style: inherit;
+}
+
 
 // 	.editor-styles-wrapper p {
 // 	margin-top: 28px;
@@ -84,11 +104,3 @@
 //     color: $white;
 //     padding: 20px;
 // }
-
-
-// make blocks wider to fit the screen
-.wp-block {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1150px;
-}

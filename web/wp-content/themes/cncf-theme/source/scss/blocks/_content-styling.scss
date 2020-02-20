@@ -1,10 +1,11 @@
-// not sure we need this now as typography rules all
+// Content Styling class is applied to the page inner content.
+// Use this file to make typography improvements but only for inner content.
 
 .content-styling {
 
-    // h2 {
-    //     margin-top: 100px;
-    // }
+    p {
+        margin-bottom: 1.5em;
+    }
 
 }
 

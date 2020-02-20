@@ -1,0 +1,43 @@
+.has-normal-font-size {
+    font-size: 1em;
+}
+
+// if the text has colour then apply a different link colour
+// assuming text colour change is because of background
+p.has-text-color a {
+    color: $blue-800;
+
+    &:hover {
+        color: $purple-800;
+
+    }
+}
+
+.is-style-max-width-800 {
+    max-width: 800px;
+}
+
+.is-style-max-width-900 {
+    max-width: 900px;
+}
+
+.is-style-center-width-700 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+.is-style-center-width-800 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.is-style-center-width-900 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    text-align: center;
+}

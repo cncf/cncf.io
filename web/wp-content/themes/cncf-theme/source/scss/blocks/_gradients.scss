@@ -4,3 +4,18 @@
     background-image: linear-gradient(135deg, rgba(0, 208, 100, 1) 0%, rgba(6, 147, 200, 1) 100%);
     background-color: transparent;
 }
+
+.is-style-pink-purple-gradient {
+    background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
+    color: $white;
+
+    a {
+        color: $blue-100;
+
+
+        &:hover {
+            color: $blue-400;
+
+        }
+    }
+}
