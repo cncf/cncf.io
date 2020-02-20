@@ -32,7 +32,7 @@ register_block_style(
 	array(
 		'name'  => 'center-width-900',
 		'label' => 'Max-Width 900px & Centered',
-	),
+	)
 );
 
 register_block_style(
@@ -48,7 +48,7 @@ register_block_style(
 	array(
 		'name'  => 'max-width-900',
 		'label' => 'Max-Width 900px',
-	),
+	)
 );
 
 // PARAGRAPH.
@@ -66,7 +66,7 @@ register_block_style(
 	array(
 		'name'  => 'center-width-900',
 		'label' => 'Max-Width 900px & Centered',
-	),
+	)
 );
 
 register_block_style(
@@ -82,7 +82,7 @@ register_block_style(
 	array(
 		'name'  => 'max-width-900',
 		'label' => 'Max-Width 900px',
-	),
+	)
 );
 
  // GROUP.
@@ -91,7 +91,7 @@ register_block_style(
 	array(
 		'name'  => 'pink-purple-gradient',
 		'label' => 'Pink to Purple Gradient',
-	),
+	)
 );
 
  // COLUMNS.
@@ -100,7 +100,7 @@ register_block_style(
 	array(
 		'name'  => 'column-white-background',
 		'label' => 'Columns with White Background',
-	),
+	)
 );
 
 
@@ -110,7 +110,7 @@ register_block_style(
 	array(
 		'name'  => 'front-page-hero',
 		'label' => 'Front Page Hero Image',
-	),
+	)
 );
 
 /**
