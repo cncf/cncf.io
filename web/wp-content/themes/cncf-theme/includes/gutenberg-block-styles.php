@@ -105,7 +105,7 @@ register_block_style(
 
 
  // IMAGES.
- register_block_style(
+register_block_style(
 	'core/image',
 	array(
 		'name'  => 'front-page-hero',
