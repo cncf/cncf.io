@@ -27,14 +27,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function lf_count_up_block_assets() { // phpcs:ignore
-	// Register block editor script for backend.
+function lf_count_up_block_assets() {
 	wp_register_script(
-		'lf-count-up-block-js', // Handle.
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
-		true // Enqueue the script in the footer.
+		'lf-count-up-block-js',
+		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+		true
 	);
 
 	wp_register_script(
@@ -62,18 +61,17 @@ function lf_count_up_block_assets() { // phpcs:ignore
 	);
 
 	wp_register_style(
-		'lf-count-up-block-style-css', // Handle.
-		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array(), // Dependency to include the CSS after it.
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
+		'lf-count-up-block-style-css',
+		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
+		array(),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
 	);
 
-	// Register block editor styles for backend.
 	wp_register_style(
-		'lf-count-up-block-editor-css', // Handle.
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+		'lf-count-up-block-editor-css',
+		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
+		array( 'wp-edit-blocks' ),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
 	);
 
 	/**
@@ -97,115 +95,85 @@ function lf_count_up_block_assets() { // phpcs:ignore
 	);
 }
 
-function lf_count_up_callback( $attributes ) { // phpcs:ignore
-	$section_text    = isset( $attributes['sectionText'] ) ? $attributes['sectionText'] : false;
-	$columns         = isset( $attributes['columns'] ) ? $attributes['columns'] : 1;
-	$bg_first_color  = isset( $attributes['color1'] ) ? $attributes['color1'] : '';
-	$bg_second_color = isset( $attributes['color2'] ) ? $attributes['color2'] : '';
-	$text_color      = isset( $attributes['textColor'] ) ? $attributes['textColor'] : '#212326';
-
-	switch ( $columns ) {
-		case 1:
-			$column_class = 'col-sm-12';
-			break;
-		case 2:
-			$column_class = 'col-xs-12 col-sm-6';
-			break;
-		case 3:
-			$column_class = 'col-xs-12 col-sm-6 col-md-4';
-			break;
-		case 4:
-			$column_class = 'col-xxs-12 col-xs-6 col-sm-6 col-md-3';
-			break;
-	}
-
+/**
+ * Render the block calbback
+ *
+ * @param array $attributes Block attributes.
+ *
+ * @return object Output.
+ */
+function lf_count_up_callback( $attributes ) {
+	$columns    = isset( $attributes['columns'] ) ? $attributes['columns'] : 1;
+	$text_color = isset( $attributes['textColor'] ) ? $attributes['textColor'] : '#000000';
 	ob_start();
 
 	?>
-	<section data-element="count-up-block" class="count-up-block" style="--bg-first-color: <?php echo esc_attr( $bg_first_color ); ?>; --bg-second-color: <?php echo esc_attr( $bg_second_color ); ?>; --text-main-color: <?php echo esc_attr( $text_color ); ?>;">
-		<div class="container">
+<section data-element="count-up-block" class="count-up-block"
+	style="--text-main-color: <?php echo esc_attr( $text_color ); ?>;">
+	<div class="count-up-wrapper">
+		<?php
+		for ( $i = 1; $i <= $columns; $i++ ) :
+			$number      = isset( $attributes[ "countUpNumber{$i}" ] ) ? $attributes[ "countUpNumber{$i}" ] : false;
+			$image_id    = isset( $attributes[ "iconId{$i}" ] ) ? $attributes[ "iconId{$i}" ] : false;
+			$description = isset( $attributes[ "descText{$i}" ] ) ? $attributes[ "descText{$i}" ] : false;
+			$link        = isset( $attributes[ "link{$i}" ] ) ? $attributes[ "link{$i}" ] : false;
+
+			if ( ! $number ) :
+				continue;
+			endif;
+
+			$original_number = $number;
+			$number          = preg_replace( '/,|\./', '', $number );
+
+			?>
+		<div class="count-up-column">
 			<?php
-			if ( ! empty( $section_text ) ) :
-				echo apply_filters( 'the_content', $section_text ); // phpcs:ignore
+			if ( ! empty( $link ) ) :
+				printf( '<a target="_blank" href="%s">', esc_url( $link ) );
 			endif;
 			?>
-			<div>
-				<div class="row">
+
+			<?php if ( ! empty( $image_id ) ) { ?>
+			<div class="icon-wrap">
 				<?php
-				for ( $i = 1; $i <= $columns; $i++ ) :
-					$number      = isset( $attributes[ "countUpNumber{$i}" ] ) ? $attributes[ "countUpNumber{$i}" ] : false;
-					$image_id    = isset( $attributes[ "iconId{$i}" ] ) ? $attributes[ "iconId{$i}" ] : false;
-					$description = isset( $attributes[ "descText{$i}" ] ) ? $attributes[ "descText{$i}" ] : false;
-					$link        = isset( $attributes[ "link{$i}" ] ) ? $attributes[ "link{$i}" ] : false;
-
-					if ( ! $number ) :
-						continue;
-					endif;
-
-					$original_number = $number;
-					$number          = preg_replace( '/,|\./', '', $number );
-
-					?>
-					<div class="<?php echo esc_attr( $column_class ); ?>">
-						<div>
-							<?php if ( ! empty( $image_id ) ) : ?>
-								<div class="icon-wrap">
-									<?php
-									if ( ! empty( $link ) ) :
-										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
-									endif;
-
-									echo wp_get_attachment_image( $image_id, 'medium' );
-
-									if ( ! empty( $link ) ) :
-										echo '</a>';
-									endif;
-									?>
-								</div>
-							<?php endif; ?>
-							<div class="text-wrap" data-mh="facts-text-wrap">
-								<?php
-								if ( ! empty( $link ) ) :
-									printf( '<a target="_blank" href="%s">', esc_url( $link ) );
-								endif;
-								?>
-									<div class="number number-item"
-										data-element="lf-number"
-										data-original="<?php echo esc_html( $original_number ); ?>"
-										data-to="<?php echo esc_html( $number ); ?>"
-										data-speed="4000">
-										0
-									</div>
-								<?php
-								if ( ! empty( $link ) ) :
-									echo '</a>';
-								endif;
-								?>
-								<h6>
-									<?php
-									if ( ! empty( $link ) ) :
-										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
-									endif;
-										echo $description; // phpcs:ignore
-									if ( ! empty( $link ) ) :
-										echo '</a>';
-									endif;
-									?>
-								</h6>
-							</div>
-						</div>
-					</div>
-				<?php endfor; ?>
-				</div>
+				echo wp_get_attachment_image( $image_id, 'medium' );
+				?>
 			</div>
+			<?php } ?>
+			<div class="text-wrap" data-mh="facts-text-wrap">
+				<div class="number number-item" data-element="lf-number"
+					data-original="<?php echo esc_html( $original_number ); ?>"
+					data-to="<?php echo esc_html( $number ); ?>"
+					data-speed="4000">
+					0
+				</div>
+				<?php
+				if ( ! empty( $description ) ) {
+					?>
+				<span
+					class="count-up-description"><?php echo esc_html( $description ); ?></span>
+					<?php
+				}
+				?>
+			</div>
+			<?php
+			if ( ! empty( $link ) ) :
+				echo '</a>';
+endif;
+			?>
 		</div>
-	</section>
+		<?php endfor; ?>
+	</div>
+</section>
 	<?php
-
 	return ob_get_clean();
 }
 
-function lf_count_up_add_frontend_assets() { // phpcs:ignore
+/**
+ * Add frontend assets if block is present.
+ */
+function lf_count_up_add_frontend_assets() {
+
 	$present_blocks = lf_get_present_blocks();
 
 	foreach ( $present_blocks as $block ) {
@@ -217,7 +185,14 @@ function lf_count_up_add_frontend_assets() { // phpcs:ignore
 }
 
 if ( ! function_exists( 'lf_checkout_inner_blocks' ) ) {
-	function lf_checkout_inner_blocks( $block ) { // phpcs:ignore
+
+	/**
+	 * Dealing with inner blocks
+	 *
+	 * @param array $block Block properties.
+	 * @return array $current_blocks Blocks to show.
+	 */
+	function lf_checkout_inner_blocks( $block ) {
 		static $current_blocks = array();
 
 		$current = $block;
@@ -240,7 +215,12 @@ if ( ! function_exists( 'lf_checkout_inner_blocks' ) ) {
 }
 
 if ( ! function_exists( 'lf_get_present_blocks' ) ) {
-	function lf_get_present_blocks() { // phpcs:ignore
+	/**
+	 * Utility function to get present blocks on page.
+	 *
+	 * @return array $present_blocks Blocks in page.
+	 */
+	function lf_get_present_blocks() {
 		$present_blocks = array();
 		$posts_array    = get_post();
 

@@ -22,10 +22,14 @@ registerBlockType( 'lf/count-up', {
 	},
 	category: 'common',
 	className: 'lf-count-up',
+	description: __( 'Block displaying a counting up animation for a custom number' ),
 	keywords: [
-		__( 'Count Up' ),
-		__( 'Linux' ),
-		__( 'Linux Count Up' ),
+		__( 'countup' ),
+		__( 'count' ),
+		__( 'counting' ),
+		__( 'numbers' ),
+		__( 'linux' ),
+		__( 'lf' ),
 	],
 	attributes: {
 		sectionText: {
@@ -112,12 +116,12 @@ registerBlockType( 'lf/count-up', {
 			type: 'string',
 			default: '',
 		},
-		color1: {
-			type: 'string',
-		},
-		color2: {
-			type: 'string',
-		},
+		// color1: {
+		// 	type: 'string',
+		// },
+		// color2: {
+		// 	type: 'string',
+		// },
 		textColor: {
 			type: 'string',
 		},
