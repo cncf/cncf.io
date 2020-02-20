@@ -10,6 +10,15 @@
 
 // experimental to try and align all content inside groups and cover.
 .wp-block-cover-image .wp-block-cover__inner-container,
-.wp-block-cover .wp-block-cover__inner-container {
-    max-width: 1100px;
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-group .wp-block-group__inner-container {
+    max-width: 1100px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.wp-block-group {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

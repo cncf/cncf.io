@@ -22,7 +22,7 @@ add_theme_support(
 		array(
 			'name'  => __( 'Black' ),
 			'slug'  => 'black',
-			'color' => '#000000',
+			'color' => '#202020',
 		),
 		array(
 			'name'  => __( 'Pink' ),
@@ -33,6 +33,11 @@ add_theme_support(
 			'name'  => __( 'Purple' ),
 			'slug'  => 'purple-700',
 			'color' => '#2C2960',
+		),
+		array(
+			'name'  => __( 'Blue' ),
+			'slug'  => 'blue-100',
+			'color' => '#F0F5F7',
 		),
 	)
 );

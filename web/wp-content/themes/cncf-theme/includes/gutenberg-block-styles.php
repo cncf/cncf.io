@@ -86,11 +86,30 @@ register_block_style(
 );
 
  // GROUP.
- register_block_style(
+register_block_style(
 	'core/group',
 	array(
 		'name'  => 'pink-purple-gradient',
 		'label' => 'Pink to Purple Gradient',
+	),
+);
+
+ // COLUMNS.
+register_block_style(
+	'core/columns',
+	array(
+		'name'  => 'column-white-background',
+		'label' => 'Columns with White Background',
+	),
+);
+
+
+ // IMAGES.
+ register_block_style(
+	'core/image',
+	array(
+		'name'  => 'front-page-hero',
+		'label' => 'Front Page Hero Image',
 	),
 );
 

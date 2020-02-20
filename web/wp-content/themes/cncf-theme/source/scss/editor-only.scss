@@ -19,6 +19,8 @@
     .editor-styles-wrapper {
         @import "core/typography";
         @import "blocks/gradients";
+        @import "blocks/colors";
+        @import "blocks/buttons";
         @import "blocks/paragraph-headers";
     }
 }

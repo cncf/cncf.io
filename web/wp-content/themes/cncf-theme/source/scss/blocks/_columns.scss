@@ -1,0 +1,30 @@
+// columns
+
+.is-style-column-white-background {
+    .wp-block-column {
+        background-color: $white;
+    }
+}
+
+// .wp-block-column {
+
+//     @media (min-width: 600px) {
+//         flex-basis: 100%;
+//     }
+
+
+
+//     @media (min-width: 782px) {
+
+//         flex-grow: 0;
+//         flex-basis: 50%;
+//         flex-shrink: 0;
+//     }
+
+//     @media (min-width: 1200px) {
+
+//         flex-grow: 0;
+//         flex-basis: 24%;
+//         flex-shrink: 0;
+//     }
+// }

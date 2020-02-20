@@ -1,36 +1,45 @@
 // Button styling
 .wp-block-button__link {
     border-radius: 0;
+
     &:hover {
         text-decoration: none;
     }
+
     .is-style-full &,
     &.full {
         display: block;
         width: 100%;
     }
+
     &:not(.has-text-color) {
         color: white;
+
         &:hover {
             color: white;
         }
     }
+
     &:not(.has-background) {
         background-color: $default;
+
         &:hover,
         &:focus {
-            background-color: darken($default, 20%);
+            background-color: lighten($default, 5%);
         }
     }
+
     @each $name,
     $color in $colors {
+
         &.has-#{$name}-color:hover,
         &.has-#{$name}-color:focus {
             color: $color;
         }
+
         &.has-#{$name}-background-color:hover,
         &.has-#{$name}-background-color:focus {
-            background-color: darken($color, 20%);
+            background-color: lighten($color, 5%);
         }
     }
 }
