@@ -27,14 +27,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function lf_count_up_block_assets() { // phpcs:ignore
-	// Register block editor script for backend.
+function lf_count_up_block_assets() {
 	wp_register_script(
-		'lf-count-up-block-js', // Handle.
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
-		true // Enqueue the script in the footer.
+		'lf-count-up-block-js',
+		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+		true
 	);
 
 	wp_register_script(
@@ -62,18 +61,18 @@ function lf_count_up_block_assets() { // phpcs:ignore
 	);
 
 	wp_register_style(
-		'lf-count-up-block-style-css', // Handle.
-		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array(), // Dependency to include the CSS after it.
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
+		'lf-count-up-block-style-css',
+		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
+		array(),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
 	);
 
 	// Register block editor styles for backend.
 	wp_register_style(
-		'lf-count-up-block-editor-css', // Handle.
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+		'lf-count-up-block-editor-css',
+		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
+		array( 'wp-edit-blocks' ),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
 	);
 
 	/**
@@ -96,7 +95,15 @@ function lf_count_up_block_assets() { // phpcs:ignore
 		)
 	);
 }
+add_action( 'init', 'lf_count_up_block_assets' );
 
+/**
+ * Render the block callback
+ *
+ * @param array $attributes Block attributes.
+ *
+ * @return object Output.
+ */
 function lf_count_up_callback( $attributes ) { // phpcs:ignore
 	$section_text    = isset( $attributes['sectionText'] ) ? $attributes['sectionText'] : false;
 	$columns         = isset( $attributes['columns'] ) ? $attributes['columns'] : 1;
@@ -122,15 +129,16 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 	ob_start();
 
 	?>
-	<section data-element="count-up-block" class="count-up-block" style="--bg-first-color: <?php echo esc_attr( $bg_first_color ); ?>; --bg-second-color: <?php echo esc_attr( $bg_second_color ); ?>; --text-main-color: <?php echo esc_attr( $text_color ); ?>;">
-		<div class="container">
-			<?php
-			if ( ! empty( $section_text ) ) :
-				echo apply_filters( 'the_content', $section_text ); // phpcs:ignore
-			endif;
-			?>
-			<div>
-				<div class="row">
+<section data-element="count-up-block" class="count-up-block"
+	style="--bg-first-color: <?php echo esc_attr( $bg_first_color ); ?>; --bg-second-color: <?php echo esc_attr( $bg_second_color ); ?>; --text-main-color: <?php echo esc_attr( $text_color ); ?>;">
+	<div class="container">
+		<?php
+		if ( ! empty( $section_text ) ) :
+			echo wp_kses_post( apply_filters( 'the_content', $section_text ) );
+endif;
+		?>
+		<div>
+			<div class="row">
 				<?php
 				for ( $i = 1; $i <= $columns; $i++ ) :
 					$number      = isset( $attributes[ "countUpNumber{$i}" ] ) ? $attributes[ "countUpNumber{$i}" ] : false;
@@ -140,72 +148,74 @@ function lf_count_up_callback( $attributes ) { // phpcs:ignore
 
 					if ( ! $number ) :
 						continue;
-					endif;
+				endif;
 
 					$original_number = $number;
 					$number          = preg_replace( '/,|\./', '', $number );
 
 					?>
-					<div class="<?php echo esc_attr( $column_class ); ?>">
-						<div>
-							<?php if ( ! empty( $image_id ) ) : ?>
-								<div class="icon-wrap">
-									<?php
-									if ( ! empty( $link ) ) :
-										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
-									endif;
+				<div class="<?php echo esc_attr( $column_class ); ?>">
+					<div>
+						<?php if ( ! empty( $image_id ) ) : ?>
+						<div class="icon-wrap">
+							<?php
+							if ( ! empty( $link ) ) :
+								printf( '<a target="_blank" href="%s">', esc_url( $link ) );
+endif;
 
-									echo wp_get_attachment_image( $image_id, 'medium' );
+							echo wp_get_attachment_image( $image_id, 'medium' );
 
-									if ( ! empty( $link ) ) :
-										echo '</a>';
-									endif;
-									?>
-								</div>
-							<?php endif; ?>
-							<div class="text-wrap" data-mh="facts-text-wrap">
+							if ( ! empty( $link ) ) :
+								echo '</a>';
+endif;
+							?>
+						</div>
+						<?php endif; ?>
+						<div class="text-wrap" data-mh="facts-text-wrap">
+							<?php
+							if ( ! empty( $link ) ) :
+								printf( '<a target="_blank" href="%s">', esc_url( $link ) );
+				endif;
+							?>
+							<div class="number number-item"
+								data-element="lf-number"
+								data-original="<?php echo esc_html( $original_number ); ?>"
+								data-to="<?php echo esc_html( $number ); ?>"
+								data-speed="4000">
+								0
+							</div>
+							<?php
+							if ( ! empty( $link ) ) :
+								echo '</a>';
+				endif;
+							?>
+							<h6>
 								<?php
 								if ( ! empty( $link ) ) :
 									printf( '<a target="_blank" href="%s">', esc_url( $link ) );
-								endif;
-								?>
-									<div class="number number-item"
-										data-element="lf-number"
-										data-original="<?php echo esc_html( $original_number ); ?>"
-										data-to="<?php echo esc_html( $number ); ?>"
-										data-speed="4000">
-										0
-									</div>
-								<?php
+				endif;
+								echo wp_kses_data( $description );
 								if ( ! empty( $link ) ) :
 									echo '</a>';
-								endif;
+				endif;
 								?>
-								<h6>
-									<?php
-									if ( ! empty( $link ) ) :
-										printf( '<a target="_blank" href="%s">', esc_url( $link ) );
-									endif;
-										echo $description; // phpcs:ignore
-									if ( ! empty( $link ) ) :
-										echo '</a>';
-									endif;
-									?>
-								</h6>
-							</div>
+							</h6>
 						</div>
 					</div>
-				<?php endfor; ?>
 				</div>
+				<?php endfor; ?>
 			</div>
 		</div>
-	</section>
-	<?php
-
-	return ob_get_clean();
+	</div>
+</section>
+<?php
+return ob_get_clean();
 }
 
-function lf_count_up_add_frontend_assets() { // phpcs:ignore
+/**
+ * Enqueue JS on frontend if block is present.
+ */
+function lf_count_up_add_frontend_assets() {
 	$present_blocks = lf_get_present_blocks();
 
 	foreach ( $present_blocks as $block ) {
@@ -215,9 +225,17 @@ function lf_count_up_add_frontend_assets() { // phpcs:ignore
 		}
 	}
 }
+add_action( 'wp_enqueue_scripts', 'lf_count_up_add_frontend_assets' );
 
 if ( ! function_exists( 'lf_checkout_inner_blocks' ) ) {
-	function lf_checkout_inner_blocks( $block ) { // phpcs:ignore
+	/**
+	 * Inner blocks
+	 *
+	 * @param string $block Block name.
+	 *
+	 * @return string $current_blocks Array of blocks.
+	 */
+function lf_checkout_inner_blocks( $block ) { // phpcs:ignore
 		static $current_blocks = array();
 
 		$current = $block;
@@ -240,7 +258,12 @@ if ( ! function_exists( 'lf_checkout_inner_blocks' ) ) {
 }
 
 if ( ! function_exists( 'lf_get_present_blocks' ) ) {
-	function lf_get_present_blocks() { // phpcs:ignore
+	/**
+	 * Get present inner blocks.
+	 *
+	 * @return string $present_blocks Array of present blocks.
+	 */
+	function lf_get_present_blocks() {
 		$present_blocks = array();
 		$posts_array    = get_post();
 
@@ -253,6 +276,3 @@ if ( ! function_exists( 'lf_get_present_blocks' ) ) {
 		return $present_blocks;
 	}
 }
-
-add_action( 'init', 'lf_count_up_block_assets' );
-add_action( 'wp_enqueue_scripts', 'lf_count_up_add_frontend_assets' );

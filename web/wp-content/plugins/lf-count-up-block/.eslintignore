@@ -7,5 +7,5 @@ coverage
 cypress
 node_modules
 vendor
-src/block/front/index.js
-src/block/front/*.min.js
+front.js
+/node_modules
