@@ -27,7 +27,7 @@ jQuery(
 		);
 
 		// Desktop stop empty parents jumping to top of screen on click.
-		$( '.main-navigation > li.menu-item-has-children a' ).click(
+		$( '.main-navigation > li.menu-item-has-children > a' ).click(
 			function( e ) {
 				if ( $( window ).width() > 1000 ) {
 					e.preventDefault();
