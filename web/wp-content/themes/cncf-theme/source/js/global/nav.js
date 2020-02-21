@@ -36,7 +36,7 @@ jQuery(
 		);
 
 		// Mobile toggle to open menus on touch.
-		$( 'li.menu-item-has-children a' ).click(
+		$( 'li.menu-item-has-children > a' ).click(
 			function( e ) {
 				if ( $( window ).width() < 1000 ) {
 					e.preventDefault();
