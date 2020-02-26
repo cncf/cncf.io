@@ -119,3 +119,48 @@ function remove_dashboard_widgets() {
 }
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
 
+/**
+ * Add custom column headers to Webinars
+ *
+ * @param array $columns Admin columns.
+ */
+function set_custom_edit_cncf_webinar_columns( $columns ) {
+	$date = $columns['date'];
+	unset( $columns['date'] );
+
+	$columns['cncf_webinar_date']             = 'Webinar Date';
+	$columns['cncf_webinar_registration_url'] = 'Reg URL';
+	$columns['cncf_webinar_recording_url']    = 'Rec URL';
+
+	$columns['date'] = $date;
+
+	return $columns;
+}
+add_filter( 'manage_cncf_webinar_posts_columns', 'set_custom_edit_cncf_webinar_columns' );
+
+/**
+ * Add custom column data to Webinars
+ *
+ * @param array $column Admin columns.
+ * @param int   $post_id Post ID.
+ */
+function custom_cncf_webinar_column( $column, $post_id ) {
+	switch ( $column ) {
+
+		// gets the date of webinar.
+		case 'cncf_webinar_date':
+			echo esc_html( date( 'j F Y', strtotime( get_post_meta( $post_id, 'cncf_webinar_date', true ) ) ) );
+			break;
+
+		// displays if registration URL has been added and it is a URL.
+		case 'cncf_webinar_registration_url':
+			echo filter_var( get_post_meta( $post_id, 'cncf_webinar_registration_url', true ), FILTER_VALIDATE_URL ) ? 'Yes' : 'No';
+			break;
+
+		// displays if recording URL has been added.
+		case 'cncf_webinar_recording_url':
+			echo filter_var( get_post_meta( $post_id, 'cncf_webinar_recording_url', true ), FILTER_VALIDATE_URL ) ? 'Yes' : 'No';
+			break;
+	}
+}
+add_action( 'manage_cncf_webinar_posts_custom_column', 'custom_cncf_webinar_column', 10, 2 );
