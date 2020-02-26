@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) {
 ?>
 
 <div class="wrap">
-	<h2><?php esc_attr_e( 'Global Site Options', 'textdomain' ); ?></h2>
+	<h2><?php esc_attr_e( 'Global Site Options', 'cncf-mu' ); ?></h2>
 
 	<form method="post" name="<?php echo esc_html( $this->plugin_name ); ?>"
 		action="options.php">
@@ -402,6 +402,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 		<hr />
 
-		<?php submit_button( __( 'Save all changes', 'textdomain' ), 'primary', 'submit', true ); ?>
+		<?php submit_button( __( 'Save all changes', 'cncf-mu' ), 'primary', 'submit', true ); ?>
 	</form>
 </div>
