@@ -651,22 +651,6 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://www.envoyproxy.io/',
 								),
 								array(
-									'type'          => 'radio', // Required.
-									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'      => 'project_stage', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Stage (Defunct option)', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => array( 'sandbox' ), // Value/s from the 'options'.
-									'use_toggle'    => false, // Use toggle control instead of checkbox.
-									'options'       => array( // Required.
-										'sandbox'    => __( 'Sandbox', 'my_plugin' ),
-										'incubating' => __( 'Incubating', 'my_plugin' ),
-										'graduated'  => __( 'Graduated', 'my_plugin' ),
-										'archived'   => __( 'Archived', 'my_plugin' ),
-									),
-								),
-								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
 									'data_key'      => 'github', // Required if 'data_type' is 'meta'.
@@ -770,7 +754,7 @@ class Cncf_Mu_Admin {
 	}
 
 	/**
-	 Registers the taxonomies.
+	 * Registers the taxonomies.
 	 */
 	public function register_taxonomies() {
 
