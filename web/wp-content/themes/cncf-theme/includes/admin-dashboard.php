@@ -149,7 +149,7 @@ function custom_cncf_webinar_column( $column, $post_id ) {
 
 		// gets the date of webinar.
 		case 'cncf_webinar_date':
-			echo esc_html( date( 'j F Y', strtotime( get_post_meta( $post_id, 'cncf_webinar_date', true ) ) ) );
+			echo esc_html( gmdate( 'j F Y', strtotime( get_post_meta( $post_id, 'cncf_webinar_date', true ) ) ) );
 			break;
 
 		// displays if registration URL has been added and it is a URL.
