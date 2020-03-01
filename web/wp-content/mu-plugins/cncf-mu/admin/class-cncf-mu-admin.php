@@ -286,21 +286,6 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://www.cloudfoundry.org/event/summit/',
 								),
 								array(
-									'type'          => 'radio',
-									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'      => 'hosts', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Hosts', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => array( 'cncf-organized' ), // Value/s from the 'options'.
-									'use_toggle'    => false, // Use toggle control instead of checkbox.
-									'options'       => array(
-										'cncf-organized' => __( 'CNCF-organized', 'my_plugin' ),
-										'lf-organized'   => __( 'LF-organized', 'my_plugin' ),
-										'third-party'    => __( 'Third party', 'my_plugin' ),
-									),
-								),
-								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'city', // Required if 'data_type' is 'meta'.
@@ -759,9 +744,9 @@ class Cncf_Mu_Admin {
 	public function register_taxonomies() {
 
 		$labels = array(
-			'name'              => __( 'Countries', 'cncf-mu' ),
+			'name'              => __( 'Country', 'cncf-mu' ),
 			'singular_name'     => __( 'Country', 'cncf-mu' ),
-			'search_items'      => __( 'Countries', 'cncf-mu' ),
+			'search_items'      => __( 'Search Countries', 'cncf-mu' ),
 			'all_items'         => __( 'All Countries', 'cncf-mu' ),
 			'parent_item'       => __( 'Parent Continent', 'cncf-mu' ),
 			'parent_item_colon' => __( 'Parent Continent:', 'cncf-mu' ),
@@ -781,9 +766,9 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Countries', 'cncf-mu' ),
+			'name'              => __( 'Country', 'cncf-mu' ),
 			'singular_name'     => __( 'Country', 'cncf-mu' ),
-			'search_items'      => __( 'Countries', 'cncf-mu' ),
+			'search_items'      => __( 'Search Countries', 'cncf-mu' ),
 			'all_items'         => __( 'All Countries', 'cncf-mu' ),
 			'parent_item'       => __( 'Parent Continent', 'cncf-mu' ),
 			'parent_item_colon' => __( 'Parent Continent:', 'cncf-mu' ),
@@ -805,7 +790,7 @@ class Cncf_Mu_Admin {
 		$labels = array(
 			'name'          => __( 'Projects', 'cncf-mu' ),
 			'singular_name' => __( 'Project', 'cncf-mu' ),
-			'search_items'  => __( 'Projects', 'cncf-mu' ),
+			'search_items'  => __( 'Search Projects', 'cncf-mu' ),
 			'all_items'     => __( 'All Projects', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Project', 'cncf-mu' ),
 			'update_item'   => __( 'Update Project', 'cncf-mu' ),
@@ -824,8 +809,8 @@ class Cncf_Mu_Admin {
 
 		$labels = array(
 			'name'          => __( 'Category', 'cncf-mu' ),
-			'singular_name' => __( 'Categories', 'cncf-mu' ),
-			'search_items'  => __( 'Categories', 'cncf-mu' ),
+			'singular_name' => __( 'Category', 'cncf-mu' ),
+			'search_items'  => __( 'Search Categories', 'cncf-mu' ),
 			'all_items'     => __( 'All Categories', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Category', 'cncf-mu' ),
 			'update_item'   => __( 'Update Category', 'cncf-mu' ),
@@ -843,9 +828,9 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-webinar-category', array( 'cncf_webinar' ), $args );
 
 		$labels = array(
-			'name'          => __( 'Companies', 'cncf-mu' ),
+			'name'          => __( 'Company', 'cncf-mu' ),
 			'singular_name' => __( 'Company', 'cncf-mu' ),
-			'search_items'  => __( 'Companies', 'cncf-mu' ),
+			'search_items'  => __( 'Search Companies', 'cncf-mu' ),
 			'all_items'     => __( 'All Companies', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Company', 'cncf-mu' ),
 			'update_item'   => __( 'Update Company', 'cncf-mu' ),
@@ -865,7 +850,7 @@ class Cncf_Mu_Admin {
 		$labels = array(
 			'name'          => __( 'Topics', 'cncf-mu' ),
 			'singular_name' => __( 'Topic', 'cncf-mu' ),
-			'search_items'  => __( 'Topics', 'cncf-mu' ),
+			'search_items'  => __( 'Search Topics', 'cncf-mu' ),
 			'all_items'     => __( 'All Topics', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Topic', 'cncf-mu' ),
 			'update_item'   => __( 'Update Topic', 'cncf-mu' ),
@@ -883,15 +868,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-topic', array( 'cncf_webinar' ), $args );
 
 		$labels = array(
-			'name'          => __( 'Person Categories', 'cncf-mu' ),
+			'name'          => __( 'Category', 'cncf-mu' ),
 			'singular_name' => __( 'Category', 'cncf-mu' ),
-			'search_items'  => __( 'Categories', 'cncf-mu' ),
+			'search_items'  => __( 'Search Categories', 'cncf-mu' ),
 			'all_items'     => __( 'All Categories', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Category', 'cncf-mu' ),
 			'update_item'   => __( 'Update Category', 'cncf-mu' ),
 			'add_new_item'  => __( 'Add New Category', 'cncf-mu' ),
 			'new_item_name' => __( 'New Category Name', 'cncf-mu' ),
-			'menu_name'     => __( 'Person Categories', 'cncf-mu' ),
+			'menu_name'     => __( 'People Categories', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -905,7 +890,7 @@ class Cncf_Mu_Admin {
 		$labels = array(
 			'name'          => __( 'Challenges', 'cncf-mu' ),
 			'singular_name' => __( 'Challenge', 'cncf-mu' ),
-			'search_items'  => __( 'Challenges', 'cncf-mu' ),
+			'search_items'  => __( 'Search Challenges', 'cncf-mu' ),
 			'all_items'     => __( 'All Challenges', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Challenge', 'cncf-mu' ),
 			'update_item'   => __( 'Update Challenge', 'cncf-mu' ),
@@ -925,7 +910,7 @@ class Cncf_Mu_Admin {
 		$labels = array(
 			'name'          => __( 'Challenges', 'cncf-mu' ),
 			'singular_name' => __( 'Challenge', 'cncf-mu' ),
-			'search_items'  => __( 'Challenges', 'cncf-mu' ),
+			'search_items'  => __( 'Search Challenges', 'cncf-mu' ),
 			'all_items'     => __( 'All Challenges', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Challenge', 'cncf-mu' ),
 			'update_item'   => __( 'Update Challenge', 'cncf-mu' ),
@@ -945,7 +930,7 @@ class Cncf_Mu_Admin {
 		$labels = array(
 			'name'          => __( 'Industries', 'cncf-mu' ),
 			'singular_name' => __( 'Industry', 'cncf-mu' ),
-			'search_items'  => __( 'Industries', 'cncf-mu' ),
+			'search_items'  => __( 'Search Industries', 'cncf-mu' ),
 			'all_items'     => __( 'All Industries', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Industry', 'cncf-mu' ),
 			'update_item'   => __( 'Update Industry', 'cncf-mu' ),
@@ -965,7 +950,7 @@ class Cncf_Mu_Admin {
 		$labels = array(
 			'name'          => __( 'Industries', 'cncf-mu' ),
 			'singular_name' => __( 'Industry', 'cncf-mu' ),
-			'search_items'  => __( 'Industries', 'cncf-mu' ),
+			'search_items'  => __( 'Search Industries', 'cncf-mu' ),
 			'all_items'     => __( 'All Industries', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Industry', 'cncf-mu' ),
 			'update_item'   => __( 'Update Industry', 'cncf-mu' ),
@@ -988,13 +973,13 @@ class Cncf_Mu_Admin {
 		$labels = array(
 			'name'          => __( 'Project Stage', 'cncf-mu' ),
 			'singular_name' => __( 'Project Stage', 'cncf-mu' ),
-			'search_items'  => __( 'Project Stage', 'cncf-mu' ),
+			'search_items'  => __( 'Search Project Stages', 'cncf-mu' ),
 			'all_items'     => __( 'All Project Stages', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Project Stage', 'cncf-mu' ),
 			'update_item'   => __( 'Update Project Stage', 'cncf-mu' ),
 			'add_new_item'  => __( 'Add New Project Stage', 'cncf-mu' ),
 			'new_item_name' => __( 'New Project Stage', 'cncf-mu' ),
-			'menu_name'     => __( 'Project Stage', 'cncf-mu' ),
+			'menu_name'     => __( 'Project Stages', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -1005,6 +990,25 @@ class Cncf_Mu_Admin {
 		);
 		register_taxonomy( 'cncf-project-stage', array( 'cncf_project' ), $args );
 
+		$labels = array(
+			'name'          => __( 'Host', 'cncf-mu' ),
+			'singular_name' => __( 'Host', 'cncf-mu' ),
+			'search_items'  => __( 'Search Hosts', 'cncf-mu' ),
+			'all_items'     => __( 'All Hosts', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Host', 'cncf-mu' ),
+			'update_item'   => __( 'Update Host', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Host', 'cncf-mu' ),
+			'new_item_name' => __( 'New Host', 'cncf-mu' ),
+			'menu_name'     => __( 'Hosts', 'cncf-mu' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-event-host', array( 'cncf_event' ), $args );
 	}
 
 	/**
