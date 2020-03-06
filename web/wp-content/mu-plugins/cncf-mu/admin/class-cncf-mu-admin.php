@@ -1009,6 +1009,26 @@ class Cncf_Mu_Admin {
 			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-event-host', array( 'cncf_event' ), $args );
+
+		$labels = array(
+			'name'          => __( 'Language', 'cncf-mu' ),
+			'singular_name' => __( 'Language', 'cncf-mu' ),
+			'search_items'  => __( 'Search Languages', 'cncf-mu' ),
+			'all_items'     => __( 'All Languages', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Language', 'cncf-mu' ),
+			'update_item'   => __( 'Update Language', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Language', 'cncf-mu' ),
+			'new_item_name' => __( 'New Language', 'cncf-mu' ),
+			'menu_name'     => __( 'Languages', 'cncf-mu' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-webinar-language', array( 'cncf_webinar' ), $args );
 	}
 
 	/**
