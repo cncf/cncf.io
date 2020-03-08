@@ -927,11 +927,25 @@ if ( class_exists( 'GFForms' ) ) {
 			$this->die_forbidden();
 		}
 
+		/**
+		 * Deletes a REST API key from an AJAX request.
+		 *
+		 * @since Unknown
+		 */
 		public function ajax_delete_key() {
+
+			// Verify nonce.
+			check_ajax_referer( 'gf_revoke_key' );
+
+			// Verify capabilities.
+			if ( ! GFCommon::current_user_can_any( $this->_capabilities_settings_page ) ) {
+				die();
+			}
 
 			$key_id = rgpost( 'key' );
 			$this->delete_api_key( $key_id );
 			die( 0 );
+
 		}
 
 		public static function get_api_keys() {
