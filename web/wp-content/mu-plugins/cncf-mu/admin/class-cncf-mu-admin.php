@@ -1187,18 +1187,17 @@ class Cncf_Mu_Admin {
 				)
 			);
 		}
+		$affiliations = get_user_meta( $user_id, 'sb_certifications', false )[0];
+		$expertise = get_user_meta( $user_id, 'expertise', false )[0];
+		$languages = get_user_meta( $user_id, 'languages', false )[0];
+		$projects = get_user_meta( $user_id, 'project', false )[0];
+		$country = get_user_meta( $user_id, 'country', false )[0];
 
-		$affiliations = json_decode( get_user_meta( $user_id, 'sb_certifications', true ) );
-		$expertise = json_decode( get_user_meta( $user_id, 'expertise', true ) );
-		$languages = json_decode( get_user_meta( $user_id, 'languages', true ) );
-		$projects = json_decode( get_user_meta( $user_id, 'project', true ) );
-		$country = json_decode( get_user_meta( $user_id, 'country', true ) );
-
-		wp_set_object_terms( $speaker_id, array(), 'cncf-speaker-affiliation' );
-		wp_set_object_terms( $speaker_id, array(), 'cncf-speaker-expertise' );
-		wp_set_object_terms( $speaker_id, array(), 'cncf-language' );
-		wp_set_object_terms( $speaker_id, array(), 'cncf-project' );
-		wp_set_object_terms( $speaker_id, array(), 'cncf-country' );
+		wp_set_object_terms( $speaker_id, $affiliations, 'cncf-speaker-affiliation' );
+		wp_set_object_terms( $speaker_id, $expertise, 'cncf-speaker-expertise' );
+		wp_set_object_terms( $speaker_id, $languages, 'cncf-language' );
+		wp_set_object_terms( $speaker_id, $projects, 'cncf-project' );
+		wp_set_object_terms( $speaker_id, $country, 'cncf-country' );
 
 		wp_reset_postdata();
 	}
