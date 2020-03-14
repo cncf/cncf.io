@@ -1167,6 +1167,16 @@ class Cncf_Mu_Admin {
 		if ( ! $user_id ) {
 			return;
 		}
+
+		$um_member_directory_data = get_user_meta( $user_id, 'um_member_directory_data', false )[0];
+		$photo = get_user_meta( $user_id, 'profile_photo', true );
+		if ( ! 'approved' === $um_member_directory_data['account_status'] || ! $photo ) {
+			// speaker must be approved and have a photo.
+			$eligible_for_search = false;
+		} else {
+			$eligible_for_search = true;
+		}
+
 		$query = new WP_Query(
 			array(
 				'name' => $user_id,
@@ -1177,16 +1187,24 @@ class Cncf_Mu_Admin {
 		if ( $query->have_posts() ) {
 			$query->the_post();
 			$speaker_id = $post->ID;
+
+			if ( ! $eligible_for_search ) {
+				wp_delete_post( $speaker_id, true );
+				return;
+			}
 		} else {
-			// insert new speaker.
+			if ( ! $eligible_for_search ) {
+				return;
+			}
 			$speaker_id = wp_insert_post(
 				array(
-					'post_title' => $user_id,
-					'post_type' => 'cncf_speaker',
+					'post_title'  => $user_id,
+					'post_type'   => 'cncf_speaker',
 					'post_status' => 'publish',
 				)
 			);
 		}
+
 		$affiliations = get_user_meta( $user_id, 'sb_certifications', false )[0];
 		$expertise = get_user_meta( $user_id, 'expertise', false )[0];
 		$languages = get_user_meta( $user_id, 'languages', false )[0];
@@ -1200,5 +1218,35 @@ class Cncf_Mu_Admin {
 		wp_set_object_terms( $speaker_id, $country, 'cncf-country' );
 
 		wp_reset_postdata();
+	}
+
+	/**
+	 * Syncs all the cncf_speaker data with the Users of role "Speaker" metadata.
+	 * This function is triggered when you manually delete any post.
+	 *
+	 * @param int $post_id ID of post that is trashed.
+	 */
+	public function sync_speakers( $post_id ) {
+		if ( 'cncf_speaker' != get_post_type( $post_id ) ) {
+			// only sync speakers when its a speaker that got deleted.
+			return;
+		}
+
+		$allposts = get_posts(
+			array(
+				'post_type'   => 'cncf_speaker',
+				'numberposts' => -1,
+			),
+		);
+		foreach ( $allposts as $eachpost ) {
+			wp_delete_post( $eachpost->ID, true );
+		}
+
+		$args = array( 'role' => 'um_speaker' );
+		$wp_user_query = new WP_User_Query( $args );
+		$users = $wp_user_query->get_results();
+		foreach ( $users as $user ) {
+			$this->sync_speaker( $user->ID );
+		}
 	}
 }

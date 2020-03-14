@@ -167,6 +167,9 @@ class Cncf_Mu {
 		// Add Settings link to the plugin.
 		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_name . '.php' );
 
+		// Special hook to run sync of Speakers CPTs.
+		$this->loader->add_action( 'trashed_post', $plugin_admin, 'sync_speakers' );
+
 	}
 
 	/**
