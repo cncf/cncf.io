@@ -198,6 +198,23 @@ class Cncf_Mu_Admin {
 		);
 		register_post_type( 'cncf_project', $opts );
 
+		$opts = array(
+			'labels'            => array(
+				'name'          => __( 'Speakers' ),
+				'singular_name' => __( 'Speaker' ),
+				'all_items'     => __( 'All Speakers' ),
+			),
+			'public'            => true, // this should be set to false eventually.
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-groups',
+			'rewrite'           => array( 'slug' => 'speakers' ),
+			'supports'          => array( 'title', 'custom-fields' ),
+		);
+		register_post_type( 'cncf_speaker', $opts );
+
 	}
 
 
@@ -763,7 +780,7 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_admin_column' => true,
 		);
-		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study' ), $args );
+		register_taxonomy( 'cncf-country', array( 'cncf_event', 'cncf_case_study', 'cncf_speaker' ), $args );
 
 		$labels = array(
 			'name'              => __( 'Country', 'cncf-mu' ),
@@ -805,7 +822,7 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_admin_column' => true,
 		);
-		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch' ), $args );
+		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch', 'cncf_speaker' ), $args );
 
 		$labels = array(
 			'name'          => __( 'Category', 'cncf-mu' ),
@@ -1028,7 +1045,24 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_admin_column' => true,
 		);
-		register_taxonomy( 'cncf-webinar-language', array( 'cncf_webinar' ), $args );
+		register_taxonomy( 'cncf-language', array( 'cncf_webinar', 'cncf_speaker' ), $args );
+
+		$args   = array(
+			'labels'            => array( 'name' => __( 'Affiliations', 'cncf-mu' ) ),
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-speaker-affiliation', array( 'cncf_speaker' ), $args );
+		$args   = array(
+			'labels'            => array( 'name' => __( 'Expertise', 'cncf-mu' ) ),
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-speaker-expertise', array( 'cncf_speaker' ), $args );
 	}
 
 	/**
@@ -1120,5 +1154,52 @@ class Cncf_Mu_Admin {
 				'sanitize_callback' => array( $this, 'validate' ),
 			)
 		);
+	}
+
+	/**
+	 * Sync User of role "Speaker" to the cncf_speaker CPT.
+	 *
+	 * @param int $user_id ID of user.
+	 */
+	private function sync_speaker( $user_id ) {
+		global $post;
+
+		if ( ! $user_id ) {
+			return;
+		}
+		$query = new WP_Query(
+			array(
+				'name' => $user_id,
+				'post_type' => 'cncf_speaker',
+			)
+		);
+
+		if ( $query->have_posts() ) {
+			$query->the_post();
+			$speaker_id = $post->ID;
+		} else {
+			// insert new speaker.
+			$speaker_id = wp_insert_post(
+				array(
+					'post_title' => $user_id,
+					'post_type' => 'cncf_speaker',
+					'post_status' => 'publish',
+				)
+			);
+		}
+
+		$affiliations = json_decode( get_user_meta( $user_id, 'sb_certifications', true ) );
+		$expertise = json_decode( get_user_meta( $user_id, 'expertise', true ) );
+		$languages = json_decode( get_user_meta( $user_id, 'languages', true ) );
+		$projects = json_decode( get_user_meta( $user_id, 'project', true ) );
+		$country = json_decode( get_user_meta( $user_id, 'country', true ) );
+
+		wp_set_object_terms( $speaker_id, array(), 'cncf-speaker-affiliation' );
+		wp_set_object_terms( $speaker_id, array(), 'cncf-speaker-expertise' );
+		wp_set_object_terms( $speaker_id, array(), 'cncf-language' );
+		wp_set_object_terms( $speaker_id, array(), 'cncf-project' );
+		wp_set_object_terms( $speaker_id, array(), 'cncf-country' );
+
+		wp_reset_postdata();
 	}
 }
