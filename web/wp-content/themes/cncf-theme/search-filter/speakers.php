@@ -21,6 +21,12 @@
  * http://codex.wordpress.org/Template_Tags
  */
 
+/**
+ * Returns "active" when a certification is active for a speaker.
+ *
+ * @param string $value Certification.
+ * @param array  $certifications Array of certifications.
+ */
 function cncf_handle_um_active_class( $value, $certifications ) {
 	if ( empty( $certifications ) || empty( $value ) ) {
 		return '';
@@ -69,10 +75,11 @@ if ( $query->have_posts() ) {
 			</a>
 			</div>
 			<?php
-			if ( UM()->roles()->um_current_user_can( 'edit', um_user( 'ID' ) ) ) { ?>
+			if ( UM()->roles()->um_current_user_can( 'edit', um_user( 'ID' ) ) ) {
+				?>
 				<div class="um-members-edit-btn">
 					<a href="<?php echo esc_url( um_edit_profile_url() ); ?>" class="um-edit-profile-btn um-button um-alt">
-						<?php _e( 'Edit profile','ultimate-member' ) ?>
+						<?php esc_html_e( 'Edit profile', 'ultimate-member' ); ?>
 					</a>
 				</div>
 			<?php } ?>
