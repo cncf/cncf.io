@@ -167,6 +167,14 @@ class Cncf_Mu {
 		// Add Settings link to the plugin.
 		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_name . '.php' );
 
+		// Special Easter-egg hook to run full sync of Speakers CPTs.  You just have to trash a Speaker CPT.
+		$this->loader->add_action( 'trashed_post', $plugin_admin, 'sync_speakers' );
+
+		// Hooks to keep the cncf_speaker CPT in sync with Users of role "Speaker".
+		$this->loader->add_action( 'um_after_user_status_is_changed_hook', $plugin_admin, 'speaker_updated' ); // Action after user status changed.
+		$this->loader->add_action( 'delete_user', $plugin_admin, 'speaker_deleted' ); // Fires immediately before a user is deleted from the database.
+		$this->loader->add_action( 'profile_update', $plugin_admin, 'speaker_updated' ); // Fires immediately after an existing user is updated.
+
 	}
 
 	/**
