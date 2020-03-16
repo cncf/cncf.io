@@ -21,19 +21,6 @@
  * http://codex.wordpress.org/Template_Tags
  */
 
-/**
- * Returns "active" when a certification is active for a speaker.
- *
- * @param string $value Certification.
- * @param array  $certifications Array of certifications.
- */
-function cncf_handle_um_active_class( $value, $certifications ) {
-	if ( empty( $certifications ) || empty( $value ) ) {
-		return '';
-	}
-	return in_array( $value, $certifications ) ? 'active' : '';
-}
-
 if ( $query->have_posts() ) {
 	?>
 
@@ -65,7 +52,7 @@ if ( $query->have_posts() ) {
 
 		?>
 		<div>
-			<h2><a href="<?php echo esc_url( um_user_profile_url( $user->ID ) ); ?>"><?php echo esc_html( um_user( 'display_name' ) ); ?></a></h2>
+			<h3><a href="<?php echo esc_url( um_user_profile_url( $user->ID ) ); ?>"><?php echo esc_html( um_user( 'display_name' ) ); ?></a></h3>
 
 			<?php
 			$corner = UM()->options()->get( 'profile_photocorner' );
@@ -77,50 +64,20 @@ if ( $query->have_posts() ) {
 			<?php echo get_avatar( um_user( 'ID' ), $default_size ); ?>
 			</a>
 			</div>
-			<?php
-			if ( UM()->roles()->um_current_user_can( 'edit', um_user( 'ID' ) ) ) {
-				?>
-				<div class="um-members-edit-btn">
-					<a href="<?php echo esc_url( um_edit_profile_url() ); ?>" class="um-edit-profile-btn um-button um-alt">
-						<?php esc_html_e( 'Edit profile', 'ultimate-member' ); ?>
-					</a>
-				</div>
-			<?php } ?>
 			<span class="um-member-meta-location"><?php echo esc_html( um_user( 'country' ) ); ?></span>
 
-
 			<div class="um-member-badges">
-				<?php if ( 'Domestic' === um_user( 'cncf_travel_range' ) ) : ?>
-				<div class="travel-national active">
-					<div class="badge-tooltip">Willing to travel domestically</div>
-					<span class="icon"></span>
-				</div>
-				<?php endif; ?>
-
-				<?php if ( 'International' === um_user( 'cncf_travel_range' ) ) : ?>
-				<div class="travel-international active">
-					<div class="badge-tooltip">Willing to travel internationally</div>
-					<span class="icon"></span>
-				</div>
-				<?php endif; ?>
-
-				<div class="administrator <?php echo esc_attr( cncf_handle_um_active_class( 'CKA', um_user( 'sb_certifications' ) ) ); ?>">
-					<div class="badge-tooltip">Certified Kubernetes Administrator</div>
-					<span class="icon"></span>
-				</div>
-				<div class="application-dev <?php echo esc_attr( cncf_handle_um_active_class( 'CKAD', um_user( 'sb_certifications' ) ) ); ?>">
-					<div class="badge-tooltip">Certified Kubernetes Application Developer</div>
-					<span class="icon"></span>
-				</div>
-				<div class="ambassador <?php echo esc_attr( cncf_handle_um_active_class( 'Ambassador', um_user( 'sb_certifications' ) ) ); ?>">
-					<div class="badge-tooltip">CNCF Ambassador</div>
-					<span class="icon"></span>
-				</div>
+				<?php
+				// This section needs markup and styling.
+				if ( um_user( 'cncf_travel_range' ) ) {
+					var_dump( um_user( 'cncf_travel_range' ) );
+				}
+				if ( um_user( 'sb_certifications' ) ) {
+					var_dump( um_user( 'sb_certifications' ) );
+				}
+				?>
 			</div>
-
-
 		</div>
-		<hr />
 		<?php
 		um_reset_user_clean();
 	}
