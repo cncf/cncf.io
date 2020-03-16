@@ -1221,13 +1221,15 @@ class Cncf_Mu_Admin {
 
 	/**
 	 * Syncs all the cncf_speaker data with the Users of role "Speaker" metadata.
-	 * This function is triggered when you manually delete any post.
+	 * This function is triggered when you update the "Speakers" page.
 	 *
-	 * @param int $post_id ID of post that is trashed.
+	 * @param int    $post_id ID of post that is trashed.
+	 * @param object $post_after Post object following the update.
+	 * @param object $post_before Post object before the update.
 	 */
-	public function sync_speakers( $post_id ) {
-		if ( 'cncf_speaker' != get_post_type( $post_id ) ) {
-			// only sync speakers when its a speaker that got deleted.
+	public function sync_speakers( $post_id, $post_after = null, $post_before = null ) {
+		$post = get_post( $post_id );
+		if ( 'page' !== $post->post_type || 'speakers' !== $post->post_name ) {
 			return;
 		}
 
