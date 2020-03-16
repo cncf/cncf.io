@@ -204,7 +204,7 @@ class Cncf_Mu_Admin {
 				'singular_name' => __( 'Speaker' ),
 				'all_items'     => __( 'All Speakers' ),
 			),
-			'public'            => true, // this should be set to false eventually.
+			'public'            => false,
 			'has_archive'       => false,
 			'show_in_nav_menus' => false,
 			'show_in_rest'      => true,
@@ -1170,7 +1170,7 @@ class Cncf_Mu_Admin {
 
 		$um_member_directory_data = get_user_meta( $user_id, 'um_member_directory_data', false )[0];
 		$photo = get_user_meta( $user_id, 'profile_photo', true );
-		if ( ! 'approved' === $um_member_directory_data['account_status'] || ! $photo ) {
+		if ( 'approved' !== $um_member_directory_data['account_status'] || ! $photo ) {
 			// speaker must be approved and have a photo.
 			$eligible_for_search = false;
 		} else {
@@ -1187,7 +1187,6 @@ class Cncf_Mu_Admin {
 		if ( $query->have_posts() ) {
 			$query->the_post();
 			$speaker_id = $post->ID;
-
 			if ( ! $eligible_for_search ) {
 				wp_delete_post( $speaker_id, true );
 				return;
@@ -1247,6 +1246,42 @@ class Cncf_Mu_Admin {
 		$users = $wp_user_query->get_results();
 		foreach ( $users as $user ) {
 			$this->sync_speaker( $user->ID );
+		}
+	}
+
+	/**
+	 * Function is triggered by any action that updates a cncf_speaker
+	 *
+	 * @param int   $user_id User ID.
+	 * @param array $args Args.
+	 * @param array $userinfo User Info.
+	 */
+	public function speaker_updated( $user_id, $args = null, $userinfo = null ) {
+		$user = get_userdata( $user_id );
+		$user_roles = $user->roles;
+
+		if ( in_array( 'um_speaker', $user_roles, true ) ) {
+			$this->sync_speaker( $user_id );
+		}
+	}
+
+	/**
+	 * Function is triggered by a delete user action
+	 *
+	 * @param int $user_id User ID.
+	 */
+	public function speaker_deleted( $user_id ) {
+		global $post;
+		$query = new WP_Query(
+			array(
+				'name' => $user_id,
+				'post_type' => 'cncf_speaker',
+			)
+		);
+
+		if ( $query->have_posts() ) {
+			$query->the_post();
+			wp_delete_post( $post->ID, true );
 		}
 	}
 }

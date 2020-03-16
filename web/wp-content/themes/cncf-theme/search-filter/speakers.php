@@ -58,6 +58,9 @@ if ( $query->have_posts() ) {
 		global $post;
 		$query->the_post();
 		$user = get_userdata( $post->post_name );
+		if ( ! $user ) {
+			continue;
+		}
 		$um_user = um_fetch_user( $user->ID );
 
 		?>
