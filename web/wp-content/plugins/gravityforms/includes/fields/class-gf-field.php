@@ -250,10 +250,11 @@ class GF_Field extends stdClass implements ArrayAccess {
 	 * @return string
 	 */
 	public function get_field_content( $value, $force_frontend_label, $form ) {
+		$form_id = (int) rgar( $form, 'id' );
 
 		$field_label = $this->get_field_label( $force_frontend_label, $value );
 
-		$validation_message_id = 'validation_message_' . $form['id'] . '_' . $this->id;
+		$validation_message_id = 'validation_message_' . $form_id . '_' . $this->id;
 		$validation_message = ( $this->failed_validation && ! empty( $this->validation_message ) ) ? sprintf( "<div id='%s' class='gfield_description validation_message' aria-live='polite'>%s</div>", $validation_message_id, $this->validation_message ) : '';
 
 		$is_form_editor  = $this->is_form_editor();
@@ -970,7 +971,7 @@ class GF_Field extends stdClass implements ArrayAccess {
 	 * @return string
 	 */
 	public function get_first_input_id( $form ) {
-		$form_id = $form['id'];
+		$form_id = (int) rgar( $form, 'id' );
 
 		$is_entry_detail = $this->is_entry_detail();
 		$is_form_editor  = $this->is_form_editor();

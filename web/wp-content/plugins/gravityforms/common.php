@@ -286,6 +286,50 @@ class GFCommon {
 		return dirname( __FILE__ );
 	}
 
+	/**
+	 * Returns an array of files/directories which match the supplied pattern.
+	 *
+	 * @since 2.4.15
+	 *
+	 * @param string $pattern   The pattern to be appended to the base path when performing the search.
+	 * @param string $base_path The base path. Defaults to the plugin's root folder.
+	 *
+	 * @return array|false
+	 */
+	public static function glob( $pattern, $base_path = '' ) {
+		if ( empty( $base_path ) ) {
+			$base_path = self::get_base_path();
+		}
+
+		// Escape any brackets in the base path.
+		$base_path = str_replace( array( '[', ']' ), array( '\[', '\]' ), $base_path );
+		$base_path = str_replace( array( '\[', '\]' ), array( '[[]', '[]]' ), $base_path );
+
+		return glob( $base_path . $pattern );
+	}
+
+	/**
+	 * Requires and returns an array of files which match the supplied pattern.
+	 *
+	 * @since 2.4.15
+	 *
+	 * @param string $pattern   The pattern to be appended to the base path when performing the search.
+	 * @param string $base_path The base path. Defaults to the plugin's root folder.
+	 *
+	 * @return array|false
+	 */
+	public static function glob_require_once( $pattern, $base_path = '' ) {
+		$files = self::glob( $pattern, $base_path );
+
+		if ( is_array( $files ) ) {
+			foreach ( $files as $file ) {
+				require_once $file;
+			}
+		}
+
+		return $files;
+	}
+
 	public static function get_email_fields( $form ) {
 		$fields = array();
 		foreach ( $form['fields'] as $field ) {
@@ -1143,14 +1187,8 @@ class GFCommon {
 			$text = str_replace( '{ip}', $url_encode ? urlencode( $ip ) : $ip, $text );
 
 			//user agent
-			$user_agent = RGForms::get( 'HTTP_USER_AGENT', $_SERVER );
-			if ( $esc_html ) {
-				$user_agent = esc_html( $user_agent );
-			}
-			if ( $url_encode ) {
-				$user_agent = urlencode( $user_agent );
-			}
-			$text = str_replace( '{user_agent}', $user_agent, $text );
+			$user_agent = isset( $entry['user_agent'] ) ? $entry['user_agent'] : sanitize_text_field( rgar( $_SERVER, 'HTTP_USER_AGENT' ) );
+			$text       = str_replace( '{user_agent}', self::format_variable_value( $user_agent, $url_encode, $esc_html, $format, $nl2br ), $text );
 
 			//referrer
 			$referer = RGForms::get( 'HTTP_REFERER', $_SERVER );
@@ -1271,6 +1309,7 @@ class GFCommon {
 
 			switch ( $field->type ) {
 				case 'captcha' :
+				case 'password' :
 					break;
 
 				case 'section' :
@@ -1301,9 +1340,6 @@ class GFCommon {
 
 					$field_data .= $field_value;
 
-					break;
-				case 'password' :
-					//ignore password fields
 					break;
 
 				default :
@@ -1740,7 +1776,7 @@ class GFCommon {
 
 		$email_to = rgar( $notification, 'to' );
 		//do routing logic if "to" field doesn't have a value (to support legacy notifications that will run routing prior to this method)
-		if ( empty( $email_to ) && rgar( $notification, 'toType' ) == 'routing' ) {
+		if ( empty( $email_to ) && rgar( $notification, 'toType' ) == 'routing' && ! empty( $notification['routing'] ) ) {
 			$email_to = array();
 			foreach ( $notification['routing'] as $routing ) {
 				if ( rgempty( 'email', $routing ) ) {
@@ -1991,16 +2027,28 @@ class GFCommon {
 			$from = get_bloginfo( 'admin_email' );
 		}
 
+		// Array containing email details.
+		$email = compact( 'from', 'to', 'bcc', 'reply_to', 'subject', 'message', 'from_name', 'message_format', 'attachments', 'cc' );
+
 		$error = false;
 		if ( ! GFCommon::is_valid_email_list( $to ) ) {
+
+			$error_info = esc_html__( 'Cannot send email because the TO address is invalid.', 'gravityforms' );
+			GFFormsModel::add_notification_note( $entry_id, false, $notification, $error_info, $email );
 
 			$error = new WP_Error( 'invalid_to', 'Cannot send email because the TO address is invalid.' );
 
 		} elseif ( empty( $subject ) && empty( $message ) ) {
 
+			$error_info = esc_html__( 'Cannot send email because there is no SUBJECT and no MESSAGE.', 'gravityforms' );
+			GFFormsModel::add_notification_note( $entry_id, false, $notification, $error_info, $email );
+
 			$error = new WP_Error( 'missing_subject_and_message', 'Cannot send email because there is no SUBJECT and no MESSAGE.' );
 
 		} elseif ( ! GFCommon::is_valid_email( $from ) ) {
+
+			$error_info = esc_html__( 'Cannot send email because the FROM address is invalid.', 'gravityforms' );
+			GFFormsModel::add_notification_note( $entry_id, false, $notification, $error_info, $email );
 
 			$error = new WP_Error( 'invalid_from', 'Cannot send email because the FROM address is invalid.' );
 		}
@@ -2041,7 +2089,7 @@ class GFCommon {
 			 * @param array  $entry   The Entry object
 			 *
 			 */
-			do_action( 'gform_send_email_failed', $error, compact( 'from', 'to', 'bcc', 'reply_to', 'subject', 'message', 'from_name', 'message_format', 'attachments', 'cc' ), $entry );
+			do_action( 'gform_send_email_failed', $error, $email, $entry );
 
 			return;
 		}
@@ -2097,6 +2145,10 @@ class GFCommon {
 		extract( apply_filters( 'gform_pre_send_email', compact( 'to', 'subject', 'message', 'headers', 'attachments', 'abort_email' ), $message_format, $notification, $entry ) );
 
 		$is_success = false;
+
+		// Determine when to add entry id information to the logging message.
+		$entry_info = $entry_id ? ' for entry #' . $entry_id : '';
+
 		if ( ! $abort_email ) {
 
 			GFCommon::log_debug( __METHOD__ . '(): Sending email via wp_mail().' );
@@ -2115,23 +2167,29 @@ class GFCommon {
 
 			$result = is_wp_error( $is_success ) ? $is_success->get_error_message() : $is_success;
 
+			// Get $phpmailer->ErrorInfo value if available.
+			$error_info = is_object( $phpmailer ) ? $phpmailer->ErrorInfo : '';
+
+			// Add note with sending result ?
+			GFFormsModel::add_notification_note( $entry_id, $result, $notification, $error_info, $email );
+
 			GFCommon::log_debug( __METHOD__ . "(): Result from wp_mail(): {$result}" );
 
 			if ( ! is_wp_error( $is_success ) && $is_success ) {
-				GFCommon::log_debug( __METHOD__ . "(): WordPress successfully passed the notification email (#{$notification['id']} - {$notification['name']}) for entry #{$entry_id} to the sending server." );
+				GFCommon::log_debug( sprintf( '%s(): WordPress successfully passed the notification email (#%s - %s)%s to the sending server.', __METHOD__, $notification['id'], $notification['name'], $entry_info ) );
 			} else {
-				GFCommon::log_error( __METHOD__ . "(): WordPress was unable to send the notification email (#{$notification['id']} - {$notification['name']}) for entry #{$entry_id}." );
+				GFCommon::log_error( sprintf( '%s(): WordPress was unable to send the notification email (#%s - %s)%s to the sending server.', __METHOD__, $notification['id'], $notification['name'], $entry_info ) );
 			}
 
 			if ( has_filter( 'phpmailer_init' ) ) {
 				GFCommon::log_debug( __METHOD__ . '(): The WordPress phpmailer_init hook has been detected, usually used by SMTP plugins. It can alter the email setup/content or sending server, and impact the notification deliverability.' );
 			}
 
-			if ( ! empty( $phpmailer->ErrorInfo ) ) {
-				GFCommon::log_debug( __METHOD__ . '(): PHPMailer class returned an error message: ' . print_r( $phpmailer->ErrorInfo, 1 ) );
+			if ( ! empty( $error_info ) ) {
+				GFCommon::log_debug( __METHOD__ . '(): PHPMailer class returned an error message: ' . $error_info );
 			}
 		} else {
-			GFCommon::log_debug( __METHOD__ . "(): Aborting notification (#{$notification['id']} - {$notification['name']}) for entry #{$entry_id}. The gform_pre_send_email hook was used to set the abort_email parameter to true." );
+			GFCommon::log_debug( sprintf( '%s(): Aborting notification (#%s - %s)%s. The gform_pre_send_email hook was used to set the abort_email parameter to true.', __METHOD__, $notification['id'], $notification['name'], $entry_info ) );
 		}
 
 		self::add_emails_sent();
@@ -2637,7 +2695,7 @@ Content-Type: text/html;
 			$version_info['timestamp'] = time();
 
 			// Caching response.
-			update_option( 'gform_version_info', $version_info ); //caching version info
+			update_option( 'gform_version_info', $version_info, false ); //caching version info
 		}
 
 		return $version_info;
@@ -3090,17 +3148,22 @@ Content-Type: text/html;
 	}
 
 	public static function get_select_choices( $field, $value = '', $support_placeholders = true ) {
-		$choices = '';
+		$choices     = '';
+		$placeholder = '';
 
-		if ( rgget('view') == 'entry' && empty( $value ) && rgblank( $field->placeholder ) ) {
+		if ( $support_placeholders && ! rgblank( $field->placeholder ) ) {
+			$placeholder = self::replace_variables_prepopulate( $field->placeholder );
+		}
+
+		if ( rgget( 'view' ) == 'entry' && empty( $value ) && rgblank( $placeholder ) ) {
 			$choices .= "<option value=''></option>";
 		}
 
 		if ( is_array( $field->choices ) ) {
 
-			if ( $support_placeholders && ! rgblank( $field->placeholder ) ) {
+			if ( ! rgblank( $placeholder ) ) {
 				$selected = empty( $value ) ? "selected='selected'" : '';
-				$choices .= sprintf( "<option value='' %s class='gf_placeholder'>%s</option>", $selected, esc_html( $field->placeholder ) );
+				$choices .= sprintf( "<option value='' %s class='gf_placeholder'>%s</option>", $selected, esc_html( $placeholder) );
 			}
 
 			foreach ( $field->choices as $choice ) {
@@ -3393,6 +3456,10 @@ Content-Type: text/html;
 
 				if ( ! empty( $post_link ) ) {
 					return $post_link;
+				}
+
+				if ( $form === null ) {
+					$form = array( 'id' => 0 );
 				}
 
 				if ( ! isset( $lead ) ) {
@@ -3850,6 +3917,62 @@ Content-Type: text/html;
 		return do_shortcode( $content );
 	}
 
+	/**
+	 * Determines if the supplied entry is spam.
+	 *
+	 * @since 2.4.17
+	 *
+	 * @param array $entry The entry currently being processed.
+	 * @param array $form  The form currently being processed.
+	 *
+	 * @return bool
+	 */
+	public static function is_spam_entry( $entry, $form ) {
+		$form_id   = absint( $form['id'] );
+		$use_cache = class_exists( 'GFFormDisplay' );
+
+		if ( $use_cache ) {
+			$is_spam = rgars( GFFormDisplay::$submission, $form_id . '/is_spam' );
+
+			if ( is_bool( $is_spam ) ) {
+				return $is_spam;
+			}
+		}
+
+		$is_spam = false;
+
+		if ( self::akismet_enabled( $form_id ) ) {
+			$is_spam = self::is_akismet_spam( $form, $entry );
+			self::log_debug( __METHOD__ . '(): Result from Akismet: ' . json_encode( $is_spam ) );
+		}
+
+		if ( has_filter( 'gform_entry_is_spam' ) || has_filter( "gform_entry_is_spam_{$form_id}" ) ) {
+
+			/**
+			 * Allows submissions to be flagged as spam by custom methods.
+			 *
+			 * @since 1.8.17
+			 * @since 2.4.17 Moved from GFFormDisplay::handle_submission().
+			 *
+			 * @param bool  $is_spam Indicates if the submission has been flagged as spam.
+			 * @param array $form    The form currently being processed.
+			 * @param array $entry   The entry currently being processed.
+			 */
+			$is_spam = gf_apply_filters( array( 'gform_entry_is_spam', $form_id ), $is_spam, $form, $entry );
+			self::log_debug( __METHOD__ . '(): Result from gform_entry_is_spam filter: ' . json_encode( $is_spam ) );
+
+		}
+
+		$log_is_spam = $is_spam ? 'Yes' : 'No';
+		self::log_debug( __METHOD__ . "(): Is submission considered spam? {$log_is_spam}." );
+
+		if ( $use_cache ) {
+			GFFormDisplay::$submission[ $form_id ]['is_spam'] = $is_spam;
+		}
+
+		return $is_spam;
+	}
+
 	public static function spam_enabled( $form_id ) {
 		$spam_enabled = self::akismet_enabled( $form_id ) || has_filter( 'gform_entry_is_spam' ) || has_filter( "gform_entry_is_spam_{$form_id}" );
 
@@ -3857,7 +3980,7 @@ Content-Type: text/html;
 	}
 
 	public static function has_akismet() {
-		$akismet_exists = function_exists( 'akismet_http_post' ) || function_exists( 'Akismet::http_post' );
+		$akismet_exists = function_exists( 'akismet_http_post' ) || method_exists( 'Akismet', 'http_post' );
 
 		return $akismet_exists;
 	}
@@ -4178,7 +4301,7 @@ Content-Type: text/html;
 		for ( $i = strlen( $number ) - 1; $i >= 0; $i -- ) {
 
 			//Multiply current digit by multiplier (1 or 2)
-			$num = $number{$i} * $multiplier;
+			$num = $number[ $i ] * $multiplier;
 
 			// If the result is in greater than 9, add 1 to the checksum total
 			if ( $num >= 10 ) {
@@ -4472,7 +4595,7 @@ Content-Type: text/html;
 					'merge_tag' => '',
 					'condition' => '',
 					'value'     => '',
-				), $attributes
+				), $attributes, 'gravityforms_conditional'
 			)
 		);
 
@@ -4603,6 +4726,7 @@ Content-Type: text/html;
 		$gf_vars['contains']                = esc_html__( 'contains', 'gravityforms' );
 		$gf_vars['startsWith']              = esc_html__( 'starts with', 'gravityforms' );
 		$gf_vars['endsWith']                = esc_html__( 'ends with', 'gravityforms' );
+		$gf_vars['emptyChoice']             = wp_strip_all_tags( __( 'Empty (no choices selected)', 'gravityforms' ) );
 
 		$gf_vars['thisConfirmation']                 = esc_html__( 'Use this confirmation if', 'gravityforms' );
 		$gf_vars['thisNotification']                 = esc_html__( 'Send this notification if', 'gravityforms' );
@@ -6033,7 +6157,11 @@ Content-Type: text/html;
 	 * @return bool
 	 */
 	public static function email_domain_matches( $email_address, $domain = '' ) {
+
+		GFCommon::log_debug( __METHOD__ . '(): Email address: ' . $email_address );
+
 		if ( ! is_email( $email_address ) ) {
+			GFCommon::log_debug( __METHOD__ . '(): Email address failed is_email() validation.' );
 			return false;
 		}
 
@@ -6041,7 +6169,12 @@ Content-Type: text/html;
 			$domain = parse_url( get_bloginfo( 'url' ), PHP_URL_HOST );
 		}
 
-		$domain_matches = ( strpos( $email_address, $domain ) !== false ) ? true : false;
+		GFCommon::log_debug( __METHOD__ . '(): Domain or URL: ' . $domain );
+
+		$email_domain = explode( '@', $email_address );
+
+		$domain_matches = ( strpos( $domain, array_pop( $email_domain ) ) !== false ) ? true : false;
+		GFCommon::log_debug( __METHOD__ . '(): Domain matches? '. var_export( $domain_matches, true ) );
 
 		return $domain_matches;
   }

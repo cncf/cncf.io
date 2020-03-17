@@ -109,7 +109,7 @@ $__gf_tooltips = array(
 	'form_field_recaptcha_language'               => '<h6>' . __( 'reCAPTCHA Language', 'gravityforms' ) . '</h6>' . __( 'Select the language you would like to use for the reCAPTCHA display from the available options.', 'gravityforms' ),
 	'form_field_css_class'                        => '<h6>' . __( 'CSS Class Name', 'gravityforms' ) . '</h6>' . __( 'Enter the CSS class name you would like to use in order to override the default styles for this field.', 'gravityforms' ),
 	'form_field_visibility'                       => GFCommon::get_visibility_tooltip(),
-	'form_field_choices'                          => '<h6>' . __( 'Field Choices', 'gravityforms' ) . '</h6>' . __( 'Add Choices to this field. You can mark each choice as checked by default by using the radio/checkbox fields on the left.', 'gravityforms' ),
+	'form_field_choices'                          => '<h6>' . __( 'Field Choices', 'gravityforms' ) . '</h6>' . __( 'Define the choices for this field. If the field type supports it you will also be able to select the default choice(s) using a radio or checkbox located to the left of the choice.', 'gravityforms' ),
 	'form_field_choice_values'                    => '<h6>' . __( 'Enable Choice Values', 'gravityforms' ) . '</h6>' . __( 'Check this option to specify a value for each choice. Choice values are not displayed to the user viewing the form, but are accessible to administrators when viewing the entry.', 'gravityforms' ),
 	'form_field_conditional_logic'                => '<h6>' . __( 'Conditional Logic', 'gravityforms' ) . '</h6>' . __( 'Create rules to dynamically display or hide this field based on values from another field.', 'gravityforms' ),
 	                                                 /* Translators: %s: Link to Chosen jQuery framework. */
@@ -175,7 +175,7 @@ $__gf_tooltips = array(
 	'personal_data_field_settings'                => '<h6>' . __( 'Field Settings', 'gravityforms' ) . '</h6>' . __( 'Select the fields which will be included when exporting or erasing personal data.', 'gravityforms' ),
 	'personal_data_prevent_ip'                    => '<h6>' . __( 'IP Address', 'gravityforms' ) . '</h6>' . __( 'Check this box if you would like to prevent the IP address from being stored during form submission.', 'gravityforms' ),
 	'personal_data_retention_policy'              => '<h6>' . __( 'Retention Policy', 'gravityforms' ) . '</h6>' . __( 'Use these settings to keep entries only as long as they are needed. Trash or delete entries automatically older than the specified number of days. The minimum number of days allowed is one. This is to ensure that all entry processing is complete before deleting/trashing. The number of days setting is a minimum, not an exact period of time. The trashing/deleting occurs during the daily cron task so some entries may appear to remain up to a day longer than expected.', 'gravityforms' ),
-    
+    'form_field_password_visibility_enable'       => '<h6>' . __( 'Password Visibility Toggle', 'gravityforms' ) . '</h6>' . __( 'Check this box to add a toggle allowing the user to see the password they are entering in.', 'gravityforms' ),
 );
 
 /**

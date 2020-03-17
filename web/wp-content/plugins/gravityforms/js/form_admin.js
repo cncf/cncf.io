@@ -336,8 +336,17 @@ function GetRuleValues(objectType, ruleIndex, selectedFieldId, selectedValue, in
         }
     }
     else if(field && field.choices && jQuery.inArray(operator, ["is", "isnot"]) > -1){
-        var ruleChoices = field.placeholder ? [{
-            text: field.placeholder,
+        var emptyChoice,
+            ruleChoices;
+
+        if (GetInputType(field) === 'multiselect') {
+            emptyChoice = gf_vars.emptyChoice;
+        } else if (field.placeholder) {
+            emptyChoice = field.placeholder;
+        }
+
+        ruleChoices = emptyChoice ? [{
+            text: emptyChoice,
             value: ''
         }].concat(field.choices) : field.choices;
         str = GetRuleValuesDropDown(ruleChoices, objectType, ruleIndex, selectedValue, inputName);
@@ -1430,7 +1439,7 @@ var gfMergeTagsObj = function( form, element ) {
 
 				var tag = tags[i];
 
-				var tagHTML = jQuery( '<a class="" data-value="' + tag.tag + '">' + tag.label + '</a>' );
+				var tagHTML = jQuery( '<a class="" data-value="' + escapeAttr( tag.tag ) + '">' + escapeHtml( tag.label ) + '</a>' );
 				tagHTML.on( 'click.gravityforms', self.bindMergeTagListClick );
 
 				optionsHTML.push( jQuery( '<li></li>' ).html( tagHTML ) );
@@ -1578,10 +1587,12 @@ var gfMergeTagsObj = function( form, element ) {
 
 	};
 
-	// If element is defined, initialze.
+	// If element is defined, initialize.
 	if ( self.elem ) {
 		self.init();
 	}
+
+
 
 };
 
@@ -1653,3 +1664,54 @@ function isSet( $var ) {
     return typeof $var != 'undefined';
 }
 
+/**
+ * The entity mappings used by the escaping helper functions.
+ *
+ * Also used in form_editor.js
+ *
+ * @since 2.4.13
+ *
+ * @type {object}
+ */
+var entityMap = {
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	'"': '&quot;',
+	'\'': '&#39;',
+	'/': '&#x2F;',
+	'`': '&#x60;',
+	'=': '&#x3D;'
+};
+
+/**
+ * Escapes the given string string ready to be output as the value of an HTML attribute.
+ *
+ * Also used in form_editor.js
+ *
+ * @since 2.4.13
+ *
+ * @param {string} string The string to escape.
+ * @returns {string}
+ */
+function escapeAttr( string ) {
+	return String( string ).replace( /["']/g, function ( s ) {
+		return entityMap[s];
+	} );
+}
+
+/**
+ * Escapes the given string string ready to be output to the page as HTML.
+ *
+ * Also used in form_editor.js
+ *
+ * @since 2.4.13
+ *
+ * @param {string} string The string to escape.
+ * @returns {string}
+ */
+function escapeHtml( string ) {
+	return String( string ).replace( /[&<>"'`=\/]/g, function ( s ) {
+		return entityMap[s];
+	} );
+}

@@ -42,8 +42,12 @@ class GFAPI {
 			return false;
 		}
 
+		$form_info = GFFormsModel::get_form( $form_id, true );
+		if ( ! $form_info ) {
+			return false;
+		}
+
 		// Loading form columns into meta.
-		$form_info            = GFFormsModel::get_form( $form_id, true );
 		$form['is_active']    = $form_info->is_active;
 		$form['date_created'] = $form_info->date_created;
 		$form['is_trash']     = $form_info->is_trash;
@@ -327,7 +331,7 @@ class GFAPI {
 			$value = sprintf( "'%s'", $value );
 		}
 		$in_str_arr = array_fill( 0, count( $form_ids ), '%d' );
-		$in_str     = join( $in_str_arr, ',' );
+		$in_str     = join( ',', $in_str_arr );
 		$result     = $wpdb->query(
 			$wpdb->prepare(
 				"
@@ -451,20 +455,10 @@ class GFAPI {
 		// Add default confirmation if form has no confirmations.
 		if ( ! isset( $form_meta['confirmations'] ) || empty( $form_meta['confirmations'] ) ) {
 
-			// Generate confirmation ID.
-			$confirmation_id = uniqid();
+			$confirmation = GFFormsModel::get_default_confirmation();
 
 			// Add default confirmation to form.
-			$form_meta['confirmations'][ $confirmation_id ] = array(
-				'id'          => $confirmation_id,
-				'name'        => __( 'Default Confirmation', 'gravityforms' ),
-				'isDefault'   => true,
-				'type'        => 'message',
-				'message'     => __( 'Thanks for contacting us! We will get in touch with you shortly.', 'gravityforms' ),
-				'url'         => '',
-				'pageId'      => '',
-				'queryString' => '',
-			);
+			$form_meta['confirmations'] = array( $confirmation['id'] => $confirmation );
 
 		}
 
@@ -885,10 +879,8 @@ class GFAPI {
 		}
 		$source_url = $entry['source_url'];
 
-		if ( ! isset( $entry['user_agent'] ) ) {
-			$entry['user_agent'] = 'API';
-		}
-		$user_agent = $entry['user_agent'];
+		$entry['user_agent'] = isset( $entry['user_agent'] ) ? sanitize_text_field( $entry['user_agent'] ) : 'API';
+		$user_agent          = $entry['user_agent'];
 
 		if ( empty( $entry['currency'] ) ) {
 			$entry['currency'] = GFCommon::get_currency();
@@ -996,8 +988,7 @@ class GFAPI {
 
 		foreach ( $form['fields'] as $field ) {
 			/* @var GF_Field $field */
-			$type = GFFormsModel::get_input_type( $field );
-			if ( in_array( $type, array( 'html', 'page', 'section' ) ) ) {
+			if ( $field->displayOnly ) {
 				continue;
 			}
 
@@ -1218,7 +1209,7 @@ class GFAPI {
 		$request_ip     = rgars( $form, 'personalData/preventIP' ) ? '' : GFFormsModel::get_ip();
 		$ip             = isset( $entry['ip'] ) ? $entry['ip'] : $request_ip;
 		$source_url     = isset( $entry['source_url'] ) ? $entry['source_url'] : esc_url_raw( GFFormsModel::get_current_page_url() );
-		$user_agent     = isset( $entry['user_agent'] ) ? $entry['user_agent'] : 'API';
+		$user_agent     = isset( $entry['user_agent'] ) ? sanitize_text_field( $entry['user_agent'] ) : 'API';
 		$currency       = isset( $entry['currency'] ) ? $entry['currency'] : GFCommon::get_currency();
 		$payment_status = isset( $entry['payment_status'] ) ? sprintf( "'%s'", esc_sql( $entry['payment_status'] ) ) : 'NULL';
 		$payment_date   = strtotime( rgar( $entry, 'payment_date' ) ) ? sprintf( "'%s'", gmdate( 'Y-m-d H:i:s', strtotime( "{$entry['payment_date']}" ) ) ) : 'NULL';
@@ -1259,7 +1250,7 @@ class GFAPI {
 
 		foreach ( $form['fields'] as $field ) {
 			/* @var GF_Field $field */
-			if ( in_array( $field->type, array( 'html', 'page', 'section' ) ) ) {
+			if ( $field->displayOnly ) {
 				continue;
 			}
 			self::queue_batch_field_operation( $form, $entry, $field );
@@ -1630,7 +1621,7 @@ class GFAPI {
 				$feed_ids = array( $feed_ids );
 			}
 			$in_str_arr  = array_fill( 0, count( $feed_ids ), '%d' );
-			$in_str      = join( $in_str_arr, ',' );
+			$in_str      = join( ',', $in_str_arr );
 			$where_arr[] = $wpdb->prepare( "id IN ($in_str)", $feed_ids );
 		}
 

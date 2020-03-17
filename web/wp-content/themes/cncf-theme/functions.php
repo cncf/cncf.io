@@ -209,3 +209,26 @@ foreach ( $regex_json_path_patterns as $regex_json_path_pattern ) {
 		break;
 	}
 }
+
+/**
+ * Callback for projects dropdown on the Speakers Bureau edit form.
+ */
+function um_projects_callback() {
+	$terms = get_terms(
+		array(
+			'taxonomy' => 'cncf-project',
+			'orderby' => 'name',
+			'order' => 'ASC',
+			'hide_empty' => false,
+		)
+	);
+
+	$list = array();
+
+	foreach ( $terms as $term ) {
+		$list[ $term->name ] = $term->name;
+	}
+
+	return $list;
+
+}

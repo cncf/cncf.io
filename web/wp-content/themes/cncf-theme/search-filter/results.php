@@ -25,6 +25,9 @@ if ( $query->have_posts() ) {
 		case 'cncf_case_study_ch':
 			get_template_part( 'search-filter/casestudies' );
 			break;
+		case 'cncf_speaker':
+			get_template_part( 'search-filter/speakers' );
+			break;
 	}
 } else {
 	echo 'No Results Found';

@@ -1,0 +1,728 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CustomerImportExport\n"
+"POT-Creation-Date: 2016-10-18 17:22+0530\n"
+"PO-Revision-Date: 2016-10-18 17:22+0530\n"
+"Last-Translator: \n"
+"Language-Team: HikeForce <info@hikeforce.com>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.10\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: customer-import-export.php:71
+msgid "Import Export Users/Customers"
+msgstr "Import & Export des Utilisateurs"
+
+#: customer-import-export.php:72
+msgid "Support"
+msgstr "Aide"
+
+#: customer-import-export.php:89
+msgid "Successfully uploaded via FTP."
+msgstr "Téléchargé avec succès via FTP."
+
+#: customer-import-export.php:92
+msgid "Error while uploading via FTP."
+msgstr "Erreur lors du téléchargement via FTP."
+
+#: customer-import-export.php:141
+msgid "Import <strong>users/customers</strong> to your site via a csv file."
+msgstr ""
+"Importer des <strong>utilisateurs/clients</strong> à votre site via un "
+"fichier csv."
+
+#: customer-import-export.php:142
+msgid ""
+"Cron Import <strong>users and customers</strong> to your store via a csv "
+"file."
+msgstr ""
+"Cron importation <strong>utilisateurs et clients</strong> de votre boutique "
+"via un fichier csv."
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:32
+msgid ""
+"User/Customer CSV Import Export requires the function "
+"<code>mb_detect_encoding</code> to import and export CSV files. Please ask "
+"your hosting provider to enable this function."
+msgstr ""
+"Suite Importation CSV nécessite la fonction <code>mb_detect_encoding</code> "
+"pour importer et exporter des fichiers CSV. Veuillez demander à votre "
+"fournisseur d'hébergement d'activer cette fonction."
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:40
+msgid "User Import Export"
+msgstr "Importer Exporter"
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:41
+msgid "Customer Import Export"
+msgstr "Client Import Export"
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:93
+msgid "Download as CSV"
+msgstr "Télécharger CSV"
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:158
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Vos droits sont insuffisants pour accéder à cette page."
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:161
+msgid "You have taken too long, please go back and try again."
+msgstr ""
+"Vous avez pris trop de temps, s'il vous plaît revenir en arrière et essayez "
+"à nouveau."
+
+#: includes/class-wf-customerimpexpcsv-ajax-handler.php:36
+#, php-format
+msgid "Failed resize: %s is an invalid image ID."
+msgstr "Redimensionnement échoué : %s est une image ID invalide."
+
+#: includes/class-wf-customerimpexpcsv-ajax-handler.php:39
+msgid "Your user account doesn't have permission to resize images"
+msgstr ""
+"Votre compte utilisateur n'a pas la permission de redimensionner les images"
+
+#: includes/class-wf-customerimpexpcsv-ajax-handler.php:44
+#, php-format
+msgid "The originally uploaded image file cannot be found at %s"
+msgstr ""
+"Le fichier image originellement téléchargé ne peut pas être trouvé à %s"
+
+#: includes/class-wf-customerimpexpcsv-ajax-handler.php:53
+msgid "Unknown failure reason."
+msgstr "Raison de l'échec inconnu"
+
+#: includes/class-wf-customerimpexpcsv-ajax-handler.php:58
+#, php-format
+msgid "&quot;%1$s&quot; (ID %2$s) was successfully resized in %3$s seconds."
+msgstr ""
+"&quot;%1$s&quot; (ID %2$s) a été redimensionné avec succès en %3$s secondes."
+
+#: includes/class-wf-customerimpexpcsv-ajax-handler.php:65
+#, php-format
+msgid ""
+"&quot;%1$s&quot; (ID %2$s) failed to resize. The error message was: %3$s"
+msgstr ""
+"&quot;%1$s&quot; (ID %2$s) n'a pas réussi à redimensionner. Le message "
+"d'erreur était: %3$s"
+
+#: includes/class-wf-customerimpexpcsv-cron.php:25
+#: includes/class-wf-customerimpexpcsv-import-cron.php:29
+#, php-format
+msgid "Every %d minutes"
+msgstr "Toutes les %d minutes"
+
+#: includes/class-wf-customerimpexpcsv-import-cron.php:87
+msgid "Failed processing import. Reason:"
+msgstr "Importation de traitement a échoué. Motif :"
+
+#: includes/class-wf-customerimpexpcsv-import-cron.php:96
+msgid "Fetching file failed. Reason:"
+msgstr "Extraction de fichier a échoué. Motif :"
+
+#: includes/importer/class-wf-csv-parser.php:202
+#, php-format
+msgid "> Row %s - skipped due to record offset."
+msgstr "> Ligne %s - ignoré en raison du décalage record."
+
+#: includes/importer/class-wf-csv-parser.php:208
+#, php-format
+msgid "> Row %s - skipped: cannot insert user without email."
+msgstr ">%s Row - sautée: ne peut pas insérer utilisateur sans email."
+
+#: includes/importer/class-wf-csv-parser.php:213
+#, php-format
+msgid "> Row %s - skipped: Email is not valid."
+msgstr "> %s - sauté de ligne : Email n’est pas valide."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:108
+msgid "Error with handle_upload!"
+msgstr "Erreur avec handle_upload!"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:133
+msgid "Row"
+msgstr "Rangée"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:134
+msgid "User ID"
+msgstr "ID de l'utilisateur"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:135
+msgid "User Status"
+msgstr "Statut de l'utilisateur"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:136
+msgid "Status Msg"
+msgstr "Statut Msg"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:208
+msgid "AJAX Error"
+msgstr "Erreur AJAX"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:301
+msgid "Error finding uploaded file!"
+msgstr "Erreur fichier téléchargé introuvable !"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:368
+msgid "Step 1..."
+msgstr "Étape 1"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:373
+msgid "Step 2..."
+msgstr "Étape 2"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:377
+msgid "Finalizing..."
+msgstr "Finalisation"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:380
+msgid "Finished. Import complete."
+msgstr "Fini. Importation complète."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:450
+msgid ""
+"Columns are pre-selected using the Mapping file: \"<b style=\"color:gray\">"
+msgstr ""
+"Les colonnes sont présélectionnés en utilisant le fichier de mappage : »<b "
+"style=\"color:gray\"></b>"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:469
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:596
+msgid "Processing users."
+msgstr "Traitement des utilisateurs."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:487
+msgid "Finished processing Users."
+msgstr "Terminé de traiter les utilisateurs."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:509
+msgid "Parsing products CSV."
+msgstr "L'analyse des produits CSV."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:516
+msgid "Finished parsing products CSV."
+msgstr "Analyse du produit CSV terminée."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:558
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:573
+msgid "Sorry, there has been an error."
+msgstr "Désolé il y a eu une erreur."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:600
+msgid "Cannot insert user without email"
+msgstr "Impossible d’insérer l’utilisateur sans email"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:604
+msgid "skipped: Email is not valid."
+msgstr "ignoré : Email n’est pas valide."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:627
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:666
+#, php-format
+msgid "> &#8220;%s&#8221;"
+msgstr "> &#8220; %s &#8221;"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:639
+#, php-format
+msgid "> Error inserting %s: %s"
+msgstr "> Erreur insertion %s: %s"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:646
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:647
+msgid "An error occurred with the customer information provided."
+msgstr "Une erreur s’est produite avec les informations client fournies."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:669
+#, php-format
+msgid "> Finished importing user %s"
+msgstr "> Terminé l’importation utilisateur %s"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:670
+msgid "Finished processing users."
+msgstr "Terminé de traiter les utilisateurs."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:766
+msgid "User could not be created without Email."
+msgstr "L’utilisateur n’a pas pu être créé sans Email."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:831
+msgid "User could not be found with given Email."
+msgstr "L’utilisateur est introuvable avec compte tenu de l’Email."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:921
+msgid "Import"
+msgstr "Importer"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:921
+msgid "Merge Users"
+msgstr "Fusionner les Utilisateurs Finaux"
+
+#: includes/importer/views/html-wf-import-greeting.php:32
+msgid ""
+"You can import users/customers (in CSV format) in to the shop using any of "
+"below methods."
+msgstr ""
+"Vous pouvez importer des utilisateurs / clients (au format CSV) dans la "
+"boutique en utilisant l'une des méthodes suivantes."
+
+#: includes/importer/views/html-wf-import-greeting.php:38
+msgid ""
+"Before you can upload your import file, you will need to fix the following "
+"error:"
+msgstr ""
+"Avant de pouvoir transférer votre fichier d&rsquo;importation, vous devez "
+"corriger les erreurs suivantes&nbsp;:"
+
+#: includes/importer/views/html-wf-import-greeting.php:54
+msgid "Method 1: Select a file from your computer"
+msgstr "Méthode 1 : Sélectionnez un fichier dans votre ordinateur"
+
+#: includes/importer/views/html-wf-import-greeting.php:66
+#, php-format
+msgid "Maximum size: %s"
+msgstr "Taille maximum&nbsp;: %s"
+
+#: includes/importer/views/html-wf-import-greeting.php:82
+#: includes/views/settings/html-wf-settings-customers.php:177
+msgid "Select a mapping file."
+msgstr "Sélectionnez un fichier de mappage."
+
+#: includes/importer/views/html-wf-import-greeting.php:112
+msgid "Method 2: Provide FTP Details:"
+msgstr "Méthode 2 : Fournir des détails FTP :"
+
+#: includes/importer/views/html-wf-import-greeting.php:124
+msgid "Enable FTP import/export"
+msgstr "Activez le FTP import/export"
+
+#: includes/importer/views/html-wf-import-greeting.php:140
+#: includes/views/settings/html-wf-settings-customers.php:56
+msgid "FTP Server Host/IP"
+msgstr "Serveur FTP hôte/IP"
+
+#: includes/importer/views/html-wf-import-greeting.php:146
+#: includes/views/settings/html-wf-settings-customers.php:59
+msgid "XXX.XXX.XXX.XXX"
+msgstr "XXX.XXX.XXX.XXX"
+
+#: includes/importer/views/html-wf-import-greeting.php:156
+#: includes/views/settings/html-wf-settings-customers.php:64
+msgid "FTP User Name"
+msgstr "FTP Nom d'utilisateur"
+
+#: includes/importer/views/html-wf-import-greeting.php:172
+#: includes/views/settings/html-wf-settings-customers.php:72
+msgid "FTP Password"
+msgstr "Mot de passe FTP"
+
+#: includes/importer/views/html-wf-import-greeting.php:188
+msgid "FTP Server Path"
+msgstr "Serveur FTP"
+
+#: includes/importer/views/html-wf-import-greeting.php:206
+#: includes/views/settings/html-wf-settings-customers.php:80
+msgid "Use FTPS"
+msgstr "Utilisation FTPS"
+
+#: includes/importer/views/html-wf-import-greeting.php:221
+#: includes/views/export/html-wf-export-customers.php:64
+msgid "Delimiter"
+msgstr "Разделитель"
+
+#: includes/importer/views/html-wf-import-greeting.php:226
+msgid "Send Mail to New Users"
+msgstr "Envoyer des messages aux nouveaux utilisateurs"
+
+#: includes/importer/views/html-wf-import-options.php:7
+msgid "Map Fields"
+msgstr "Mapper les champs"
+
+#: includes/importer/views/html-wf-import-options.php:9
+msgid "Mapping file name:"
+msgstr "Nom de fichier de mappage :"
+
+#: includes/importer/views/html-wf-import-options.php:13
+msgid "Here you can map your imported columns to user data fields."
+msgstr ""
+"Ici vous pouvez faire correspondre vos colonnes importées aux champs de "
+"données du produit."
+
+#: includes/importer/views/html-wf-import-options.php:17
+msgid "Map to"
+msgstr "Mapper vers"
+
+#: includes/importer/views/html-wf-import-options.php:18
+msgid "Column Header"
+msgstr "En-tête de colonne"
+
+#: includes/importer/views/html-wf-import-options.php:19
+msgid "Evaluation Field"
+msgstr "Domaine de l’évaluation"
+
+#: includes/importer/views/html-wf-import-options.php:21
+msgid ""
+"Assign desired value to user_email:</br>=test@test.com</br></br>Convert date "
+"to Woocommerce format by providing your valid PHP date format :</br>@ d/m/yy "
+"H:i:s</br>Append a value By HikeFoce to name:</br>&By HikeFoce</br>Prepend a "
+"value HikeFoce to name:</br>&HikeFoce [VAL]."
+msgstr ""
+"Affecter la valeur désirée à user_email :<br>=Test@test.com</"
+"br><br>Convertir date en format Woocommerce en fournissant votre format de "
+"date PHP valide :</br>@ d/m/AA ├á<br>Ajouter une valeur de HikeFoce au nom "
+"de :</br>& Par HikeFoce<br>Ajouter une valeur HikeFoce pour nom :</br>& "
+"HikeFoce [VAL]."
+
+#: includes/importer/views/html-wf-import-options.php:61
+msgid "Do not import"
+msgstr "Ne pas importer"
+
+#: includes/views/export/html-wf-export-customers.php:2
+msgid "Export Users in CSV Format:"
+msgstr "Exporter des utilisateurs au Format CSV :"
+
+#: includes/views/export/html-wf-export-customers.php:3
+msgid ""
+"Export and download your Users in CSV format. This file can be used to "
+"import users back into your Website."
+msgstr ""
+"Exporter et télécharger vos utilisateurs au format CSV. Ce fichier peut être "
+"utilisé pour importer les utilisateurs dans votre site Web."
+
+#: includes/views/export/html-wf-export-customers.php:9
+msgid "User Roles"
+msgstr "Ruoli utente"
+
+#: includes/views/export/html-wf-export-customers.php:12
+msgid "All Roles"
+msgstr "Tous les rôles"
+
+#: includes/views/export/html-wf-export-customers.php:21
+msgid "Users with these roles will be exported."
+msgstr "Utilisateurs avec ces rôles seront exportés."
+
+#: includes/views/export/html-wf-export-customers.php:26
+msgid "Offset"
+msgstr "Décalage"
+
+#: includes/views/export/html-wf-export-customers.php:29
+msgid "0"
+msgstr "0"
+
+#: includes/views/export/html-wf-export-customers.php:30
+msgid "The number of users to skip before returning."
+msgstr "Le nombre d’utilisateurs à ignorer avant son retour."
+
+#: includes/views/export/html-wf-export-customers.php:35
+msgid "Limit"
+msgstr "Limite"
+
+#: includes/views/export/html-wf-export-customers.php:38
+msgid "Unlimited"
+msgstr "\"Unlimited\""
+
+#: includes/views/export/html-wf-export-customers.php:39
+msgid "The number of users to return."
+msgstr "Le nombre d’utilisateurs de retourner."
+
+#: includes/views/export/html-wf-export-customers.php:44
+msgid "Start Date"
+msgstr "Description"
+
+#: includes/views/export/html-wf-export-customers.php:49
+msgid "Pick a start user registration date to limit the results."
+msgstr ""
+"Choisir une date d’enregistrement de démarrage utilisateur pour limiter les "
+"résultats."
+
+#: includes/views/export/html-wf-export-customers.php:54
+msgid "End Date"
+msgstr "Date de fin"
+
+#: includes/views/export/html-wf-export-customers.php:59
+msgid "Pick an end user registration date to limit the results."
+msgstr ""
+"Choisissez un utilisateur final date de l’enregistrement pour limiter les "
+"résultats."
+
+#: includes/views/export/html-wf-export-customers.php:67
+msgid ","
+msgstr ","
+
+#: includes/views/export/html-wf-export-customers.php:68
+msgid "Column seperator for exported file"
+msgstr "Séparateur de colonne pour le fichier exporté"
+
+#: includes/views/export/html-wf-export-customers.php:77
+msgid "Columns"
+msgstr "Colonnes"
+
+#: includes/views/export/html-wf-export-customers.php:81
+msgid "Column"
+msgstr "Colonne"
+
+#: includes/views/export/html-wf-export-customers.php:84
+msgid "Column Name"
+msgstr "Nom de la colonne"
+
+#: includes/views/export/html-wf-export-customers.php:111
+msgid "Export Users"
+msgstr "﻿Exporter les utilisateurs"
+
+#: includes/views/html-wf-admin-screen.php:4
+msgid "User/Customer Import / Export"
+msgstr "Utilisateur/client Import / Export"
+
+#: includes/views/html-wf-admin-screen.php:5
+msgid "Settings"
+msgstr "Paramètres"
+
+#: includes/views/html-wf-getting-started.php:3
+msgid ""
+"<strong>User/Customer CSV Import Export</strong> &#8211; Before getting "
+"started prepare your CSV files"
+msgstr ""
+"<strong>Utilisateur/client CSV Import Export</strong> – avant de commencer "
+"préparer vos fichiers CSV"
+
+#: includes/views/html-wf-getting-started.php:5
+msgid "Documentation"
+msgstr "Documentation"
+
+#: includes/views/html-wf-getting-started.php:6
+msgid "Sample User CSV"
+msgstr "Exemple CSV"
+
+#: includes/views/import/html-wf-import-customers.php:2
+msgid "Import Users in CSV Format:"
+msgstr "Importation d’utilisateurs au Format CSV :"
+
+#: includes/views/import/html-wf-import-customers.php:3
+msgid ""
+"Import Users in CSV format from different sources (  from your computer OR "
+"from another server via FTP )"
+msgstr ""
+"Importation d’utilisateurs au format CSV provenant de différentes sources "
+"(depuis votre ordinateur OU d’un autre serveur par FTP)"
+
+#: includes/views/import/html-wf-import-customers.php:9
+msgid "Import Users"
+msgstr "Importer des utilisateurs"
+
+#: includes/views/import/html-wf-import-customers.php:11
+msgid "Update User if exists"
+msgstr "Mise à jour de l’utilisateur si il existe"
+
+#: includes/views/settings/html-wf-settings-customers.php:25
+#, php-format
+msgid "The next export is scheduled on <code>%s</code>"
+msgstr "Le prochain export est prévue pour <code>%s</code>"
+
+#: includes/views/settings/html-wf-settings-customers.php:27
+msgid "There is no export scheduled."
+msgstr "Il n’y a aucune exportation à la demande."
+
+#: includes/views/settings/html-wf-settings-customers.php:30
+#, php-format
+msgid "The next import is scheduled on <code>%s</code>"
+msgstr "L’importation suivante est prévue le<code>%s</code>"
+
+#: includes/views/settings/html-wf-settings-customers.php:32
+msgid "There is no import scheduled."
+msgstr "Il n’y a pas d’importance à la demande."
+
+#: includes/views/settings/html-wf-settings-customers.php:42
+msgid "FTP Settings for Export"
+msgstr "Paramètres FTP pour l’exportation"
+
+#: includes/views/settings/html-wf-settings-customers.php:47
+msgid "Enable FTP"
+msgstr "Activez le FTP"
+
+#: includes/views/settings/html-wf-settings-customers.php:93
+msgid "Automatically Export Users"
+msgstr "Exporter automatiquement les utilisateurs"
+
+#: includes/views/settings/html-wf-settings-customers.php:97
+#: includes/views/settings/html-wf-settings-customers.php:134
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: includes/views/settings/html-wf-settings-customers.php:98
+#: includes/views/settings/html-wf-settings-customers.php:135
+msgid "Enabled"
+msgstr "Activé"
+
+#: includes/views/settings/html-wf-settings-customers.php:105
+msgid "Export Start Time"
+msgstr "Eksportavimo starto laikas"
+
+#: includes/views/settings/html-wf-settings-customers.php:109
+#: includes/views/settings/html-wf-settings-customers.php:146
+#, php-format
+msgid "Local time is <code>%s</code>."
+msgstr "Vietinis laikas yra <code>%s</code>."
+
+#: includes/views/settings/html-wf-settings-customers.php:111
+#: includes/views/settings/html-wf-settings-customers.php:148
+msgid "<code>Enter like 6:18pm or 12:27am</code>"
+msgstr "<code>Enter like 6:18pm or 12:27am</code>"
+
+#: includes/views/settings/html-wf-settings-customers.php:116
+msgid "Export Interval [ Minutes ]"
+msgstr "Intervalle d’exportation [Minutes]"
+
+#: includes/views/settings/html-wf-settings-customers.php:130
+msgid "Automatically Import Users"
+msgstr "Importer automatiquement des utilisateurs"
+
+#: includes/views/settings/html-wf-settings-customers.php:142
+msgid "Import Start Time"
+msgstr "Heure de début d’importation"
+
+#: includes/views/settings/html-wf-settings-customers.php:153
+msgid "Import Interval [ Minutes ]"
+msgstr "Intervalle d’importation [Minutes]"
+
+#: includes/views/settings/html-wf-settings-customers.php:164
+msgid "Update User if exist"
+msgstr "Mise à jour de l’utilisateur si il existe"
+
+#: includes/views/settings/html-wf-settings-customers.php:201
+msgid "Save Settings"
+msgstr "Enregistrer les paramètres"
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:373
+#, php-format
+msgid ""
+"The license key for %s has expired. You can reactivate or purchase a license "
+"key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"La clé de produit pour %s est expirée. Vous pouvez réactiver votre licence à "
+"partir de votre compte : <a href=\"%s\" target=\"_blank\">dashboard</a>."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:384
+#, php-format
+msgid ""
+"The subscription for %s is on-hold. You can reactivate the subscription from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s est en attente. Vous pouvez réactiver l'abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:395
+#, php-format
+msgid ""
+"The subscription for %s has been cancelled. You can renew the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>. A new "
+"license key will be emailed to you after your order has been completed."
+msgstr ""
+"L'abonnement pour %s a été annulé. Vous pouvez renouveler l'abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte. Une nouvelle clé de licence vous sera envoyée par courriel dès que "
+"votre commande sera complétée."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:406
+#, php-format
+msgid ""
+"The subscription for %s has expired. You can reactivate the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s a expiré. Vous pouvez réactiver l'abonnement depuis le "
+"<a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre compte."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:417
+#, php-format
+msgid ""
+"The subscription for %s has been suspended. You can reactivate the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+"L'abonnement pour %s a été suspendu. Vous pouvez réactiver l'abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:428
+#, php-format
+msgid ""
+"The subscription for %s is still pending. You can check on the status of the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+"L'abonnement pour %s est toujours en traitement. Vous pouvez vérifier le "
+"statut de l'abonnement depuis le <a href=\"%s\" target=\"_blank\">tableau de "
+"bord</a> de votre compte."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:439
+#, php-format
+msgid ""
+"The subscription for %s has been placed in the trash and will be deleted "
+"soon. You can purchase a new subscription from your account <a href=\"%s\" "
+"target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s a été placé dans la corbeille et sera bientôt supprimé. "
+"Vous pouvez acheter un nouvel abonnement depuis le <a href=\"%s\" target="
+"\"_blank\">tableau de bord</a> de votre compte."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:450
+#, php-format
+msgid ""
+"A subscription for %s could not be found. You can purchase a subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s ne peut être trouvé. Vous pouvez acheter un abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:461
+#, php-format
+msgid ""
+"A license key for %s could not be found. Maybe you forgot to enter a license "
+"key when setting up %s, or the key was deactivated in your account. You can "
+"reactivate license key at your plugin <a href=\"%s\" target=\"_blank"
+"\">settings page</a>."
+msgstr ""
+"La clé de licence pour %s ne peut être trouvée. Peut être avez-vous oublié "
+"de la saisir dans la page Réglages lors de l'installation de %s, ou bien la "
+"clé a été désactivée dans votre compte. Vous pouvez réactiver ou acquérir "
+"une clé de licence depuis le <a href=\"%s\" target=\"_blank\">tableau de "
+"bord</a> de votre compte client."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:472
+#, php-format
+msgid ""
+"Download permission for %s has been revoked possibly due to a license key or "
+"subscription expiring. You can reactivate or purchase a license key from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"La permission de téléchargement pour %s a été révoquée, certainement à cause "
+"de l'expiration de la clé de licence ou de l'abonnement. Vous pouvez "
+"réactiver ou acheter une clé de licence depuis le <a href=\"%s\" target="
+"\"_blank\">tableau de bord</a> de votre compte."
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:483
+#, php-format
+msgid ""
+"%s has not been activated. Go to the plugin <a href=\"%s\" target=\"_blank"
+"\">settings page</a> and enter the license key and license email to activate "
+"%s."
+msgstr ""
+
+#: includes/wf_api_manager/class-wc-am-plugin-update.php:494
+#, php-format
+msgid ""
+"You changed the subscription for %s, so you will need to enter your new API "
+"License Key in the settings page. The License Key should have arrived in "
+"your email inbox, if not you can get it by logging into your account <a href="
+"\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"Vous avez changé l'abonnement pour %s, aussi devez vous saisir votre "
+"nouvelle clé de licence API dans la page Réglages. La clé de licence doit "
+"être arrivée dans vos courriers entrants, autrement vous pouvez l'obtenir en "
+"vous identifiant dans le <a href=\"%s\" target=\"_blank\">tableau de bord</"
+"a> de votre compte."
