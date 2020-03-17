@@ -132,3 +132,5 @@ web/wp-content/plugins/tab-container-block/node_modules
 web/wp-content/plugins/lf-count-up-block/node_modules
 !web/wp-content/plugins/lf-latest-jobs
 web/wp-content/plugins/lf-latest-jobs/node_modules
+!web/wp-content/plugins/lf-cncf-blocks
+web/wp-content/plugins/lf-cncf-blocks/node_modules
