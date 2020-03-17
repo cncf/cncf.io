@@ -10,6 +10,16 @@
         display: block;
         color: var(--text-main-color);
 
+        &:visited {
+            text-decoration: none;
+            color: var(--text-main-color);
+        }
+
+        &:hover {
+            color: color-mod(var(--text-main-color) tint(10%));
+            text-decoration: none;
+        }
+
         @media (min-width: 768px) {
             &:hover {
                 .icon-wrap img {

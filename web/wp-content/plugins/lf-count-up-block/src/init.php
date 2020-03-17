@@ -28,6 +28,21 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 function lf_count_up_block_assets() {
+
+	wp_register_style(
+		'lf-count-up-block-style-css',
+		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
+		is_admin() ? array( 'wp-editor' ) : null,
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
+	);
+
+	wp_register_style(
+		'lf-count-up-block-editor-css',
+		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
+		array( 'wp-edit-blocks' ),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
+	);
+
 	wp_register_script(
 		'lf-count-up-block-js',
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
@@ -58,20 +73,6 @@ function lf_count_up_block_assets() {
 		array( 'lf-count-up-block-countup-js', 'lf-count-up-block-waypoints-js' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'src/block/front/index.js' ),
 		true
-	);
-
-	wp_register_style(
-		'lf-count-up-block-style-css',
-		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
-		array(),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
-	);
-
-	wp_register_style(
-		'lf-count-up-block-editor-css',
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
 	);
 
 	/**
