@@ -1,15 +1,26 @@
 // define colors to use later in SASS functions
 
-$colors: ('pink-400': #DE176C,
-    'white': #FFFFFF,
-    'black': #000000,
+$colors: ( // name : value for that name.
+    'pink-400': #DE176C,
+    'white': $white,
+    'black': $black,
     'purple-700': #2C2960,
     'blue-100': #F0F5F7,
 );
-$color_hover: ('pink-400': #E43B80,
-    'white': #E43B80,
+$color_hover: ( // name : value for that name.
+    'pink-400': #E43B80,
+    'white': $blue-100,
     'black': #252b5f,
     'purple-700': #48549C,
+    'blue-100': #3CB3DD,
+);
+
+$text_color: ( // name : value for that name.
+    'pink-400': $white,
+    'white': $black,
+    'black': $white,
+    'purple-700': $white,
+    'blue-100': $purple-700,
 );
 
 // take the first colour to be the default

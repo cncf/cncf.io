@@ -15,7 +15,7 @@ register_block_style(
 	array(
 		'name'      => 'center-width-700',
 		'label'     => 'Max-Width 700px & Centered',
-		'isdefault' => true,
+		'is_default' => true,
 	)
 );
 
@@ -57,7 +57,7 @@ register_block_style(
 	array(
 		'name'      => 'center-width-800',
 		'label'     => 'Max-Width 800px & Centered',
-		'isdefault' => true,
+		'is_default' => true,
 	)
 );
 
@@ -100,6 +100,30 @@ register_block_style(
 	array(
 		'name'  => 'column-white-background',
 		'label' => 'Columns with White Background',
+	)
+);
+
+register_block_style(
+	'core/columns',
+	array(
+		'name'  => 'responsive-two-columns',
+		'label' => 'Responsive 2 Columns',
+	)
+);
+
+register_block_style(
+	'core/columns',
+	array(
+		'name'  => 'responsive-three-columns',
+		'label' => 'Responsive 3 Columns',
+	)
+);
+
+register_block_style(
+	'core/columns',
+	array(
+		'name'  => 'fiftyfive-fortyfive-two-columns',
+		'label' => '55/45 Responsive 2 Columns',
 	)
 );
 

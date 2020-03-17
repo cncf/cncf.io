@@ -33,8 +33,8 @@ endif;
 		</div>
 
 		<button class="hamburger hamburger--spin" type="button"
-			aria-label="Menu" aria-controls="site-navigation"
-			aria-haspopup="true"
+		aria-controls="site-navigation"
+		aria-haspopup="true"
 			>
 			<span class="hamburger-box">
 				<span class="hamburger-inner"></span>
@@ -42,7 +42,9 @@ endif;
 		</button>
 
 		<div class="menu-container-with-search" role="navigation"
-			aria-label="Main Navigation">
+			aria-label="Main Navigation"
+			aria-labelledby="hamburger"
+			>
 			<nav class="site-navigation">
 				<?php
 				wp_nav_menu(
@@ -64,7 +66,7 @@ endif;
 
 				<div class="header-search">
 					<button
-						class="button search transparent header search-button"
+						class="button search-open transparent header search-button"
 						type="button" aria-label="Search">
 						<?php $image->get_svg( 'search.svg' ); ?>
 
@@ -80,7 +82,7 @@ endif;
 									name="s" id="search-bar"
 									placeholder="Search for...">
 								<label>
-									<input class="button transparent outline stocky"
+									<input class="button transparent  stocky search-submit"
 										type="submit" value="Search" />
 								</label>
 							</form>

@@ -15,9 +15,9 @@ add_theme_support(
 	'editor-gradient-presets',
 	array(
 		array(
-			'name'     => __( 'James Blue to Blue' ),
-			'slug'     => 'blue-to-blue',
-			'gradient' => 'linear-gradient(135deg,rgba(0,100,100,1) 0%,rgba(200,200,200,1) 100%)',
+			'name'     => __( 'Pink to Purple' ),
+			'slug'     => 'pink-to-purple',
+			'gradient' => 'linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%)',
 		),
 	)
 );

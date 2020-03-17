@@ -10,6 +10,7 @@
  */
 
 get_template_part( 'components/header' );
+get_template_part( 'components/wip-blocks' );
 
 // get_template_part( 'components/elements' ); // phpcsignore.
 

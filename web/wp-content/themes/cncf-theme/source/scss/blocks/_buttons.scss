@@ -29,6 +29,7 @@
         }
     }
 
+    // setup all possible combinations using color.scss variables.
     @each $name,
     $color in $colors {
 
@@ -39,7 +40,13 @@
 
         &.has-#{$name}-background-color:hover,
         &.has-#{$name}-background-color:focus {
-            background-color: lighten($color, 5%);
+            // background-color: lighten($color, 5%);
+            background-color: map_get($color_hover, $name);
+        }
+
+        &.has-#{$name}-background-color:not(.has-text-color) {
+            color: map_get($text_color, $name);
+
         }
     }
 }

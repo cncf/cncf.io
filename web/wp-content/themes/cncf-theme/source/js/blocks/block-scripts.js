@@ -6,6 +6,13 @@
  *
  * @package WordPress
  * @since 1.0.0
+`*
+ * @tags
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
+ * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
 
 wp.domReady(
