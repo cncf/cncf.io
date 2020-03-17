@@ -51,7 +51,7 @@ if ( $query->have_posts() ) {
 		$um_user = um_fetch_user( $user->ID );
 
 		?>
-		<div>
+		<div class="speaker">
 			<h3><a href="<?php echo esc_url( um_user_profile_url( $user->ID ) ); ?>"><?php echo esc_html( um_user( 'display_name' ) ); ?></a></h3>
 
 			<?php
