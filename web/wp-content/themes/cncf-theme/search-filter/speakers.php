@@ -25,21 +25,6 @@ if ( $query->have_posts() ) {
 	?>
 
 	Found <?php echo esc_html( $query->found_posts ); ?> Speakers<br />
-	Page <?php echo esc_html( $query->query['paged'] ); ?> of <?php echo esc_html( $query->max_num_pages ); ?><br />
-
-	<div class="pagination">
-
-		<div class="nav-previous"><?php next_posts_link( 'Older posts', $query->max_num_pages ); ?></div>
-		<div class="nav-next"><?php previous_posts_link( 'Newer posts' ); ?></div>
-		<?php
-		/* example code for using the wp_pagenavi plugin */
-		if ( function_exists( 'wp_pagenavi' ) ) {
-			echo '<br />';
-			wp_pagenavi( array( 'query' => $query ) );
-		}
-		?>
-	</div>
-
 	<?php
 	while ( $query->have_posts() ) {
 		global $post;
@@ -83,23 +68,6 @@ if ( $query->have_posts() ) {
 	}
 
 	um_reset_user();
-	?>
-
-	Page <?php echo esc_html( $query->query['paged'] ); ?> of <?php echo esc_html( $query->max_num_pages ); ?><br />
-
-	<div class="pagination">
-
-		<div class="nav-previous"><?php next_posts_link( 'Older posts', $query->max_num_pages ); ?></div>
-		<div class="nav-next"><?php previous_posts_link( 'Newer posts' ); ?></div>
-		<?php
-		/* example code for using the wp_pagenavi plugin */
-		if ( function_exists( 'wp_pagenavi' ) ) {
-			echo '<br />';
-			wp_pagenavi( array( 'query' => $query ) );
-		}
-		?>
-	</div>
-	<?php
 } else {
 	echo 'No Results Found';
 }
