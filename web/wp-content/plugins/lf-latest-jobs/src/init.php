@@ -28,18 +28,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 function lf_latest_jobs_block_assets() {
-	wp_register_script(
-		'lf-latest-jobs-block',
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
-		true
-	);
+
 
 	wp_register_style(
 		'lf-latest-jobs-block-style',
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
-		array(),
+		is_admin() ? array( 'wp-editor' ) : null,
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
 	);
 
@@ -48,6 +42,14 @@ function lf_latest_jobs_block_assets() {
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
 		array( 'wp-edit-blocks' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
+	);
+
+	wp_register_script(
+		'lf-latest-jobs-block',
+		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+		true
 	);
 
 	/**
@@ -83,80 +85,65 @@ add_action( 'init', 'lf_latest_jobs_block_assets' );
 function lf_latest_jobs_callback( $attributes ) {
 	$quantity = isset( $attributes['quantity'] ) ? intval( $attributes['quantity'] ) : 4;
 	$items    = lf_latest_jobs_get_external( $quantity );
-	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
+	$classes  = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	if ( empty( $items ) ) {
 		return;
 	}
 	ob_start();
 
 	?>
-<div class="jobs-box <?php echo esc_html( $classes ); ?>">
-	<!-- <h3 class="sub-head">
-		<svg viewBox="0 -31 512 512">
-			<path
-				d="M497.094 60.004c-.031 0-.063-.004-.094-.004H361V45c0-24.813-20.188-45-45-45H196c-24.813 0-45 20.188-45 45v15H15C6.648 60 0 66.844 0 75v330c0 24.813 20.188 45 45 45h422c24.813 0 45-20.188 45-45V75.258c-.574-9.852-6.633-15.2-14.906-15.254zM181 45c0-8.27 6.73-15 15-15h120c8.27 0 15 6.73 15 15v15H181zm295.188 45l-46.583 139.742A14.975 14.975 0 01415.38 240H331v-15c0-8.285-6.715-15-15-15H196c-8.285 0-15 6.715-15 15v15H96.621a14.975 14.975 0 01-14.226-10.258L35.813 90zM301 240v30h-90v-30zm181 165c0 8.27-6.73 15-15 15H45c-8.27 0-15-6.73-15-15V167.434l23.934 71.796A44.935 44.935 0 0096.62 270H181v15c0 8.285 6.715 15 15 15h120c8.285 0 15-6.715 15-15v-15h84.379a44.935 44.935 0 0042.687-30.77L482 167.434zm0 0" />
-		</svg>
-		Latest Jobs
-	</h3> -->
-	<div class="grey-box-content">
-		<ul class="jobs-list">
-			<?php
-			foreach ( $items as $item ) :
-				if ( isset( $item->link ) ) {
-					$link = $item->link;
-				}
-				if ( isset( $item->enclosure ) ) :
-					$image = $item->enclosure->{ '@attributes' }->url;
-					$image = preg_replace( '/^http:/i', 'https:', $image );
-					else :
-						$image = plugin_dir_url( __FILE__ ) . 'block/images/jobs-fallback.png';
-					endif;
+<div class="wp-block-lf-latest-jobs <?php echo esc_html( $classes ); ?>">
 
-					$title        = $item->title;
-					$location     = lf_latest_jobs_extract_text( $title, 'location' );
-					$company      = lf_latest_jobs_extract_text( $title );
-					$company_trim = mb_strimwidth( $company, 0, 38, '...' );
-					$title        = explode( 'at ', $title );
-					$title        = $title[0];
-					?>
-			<li>
-				<a href="<?php echo esc_url( $link ); ?>" target="_blank"
-					class="job-image"
-					title="<?php echo esc_html( $title ) . 'at ' . esc_html( $company ); ?>">
-					<img src="<?php echo esc_url( $image ); ?>"
-						alt="<?php echo esc_attr( $title ); ?>" />
-				</a>
-				<div class="job-content">
-					<a href="<?php echo esc_url( $link ); ?>" target="_blank"
-						class="job-title"
-						title="<?php echo esc_html( $title ) . 'at ' . esc_html( $company ); ?>">
-						<?php echo esc_html( $title ); ?>
-						<p>
-							<span class="job-company">
-								<svg viewBox="0 0 448 512">
-									<path
-										d="M436 480h-20V24c0-13.255-10.745-24-24-24H56C42.745 0 32 10.745 32 24v456H12c-6.627 0-12 5.373-12 12v20h448v-20c0-6.627-5.373-12-12-12zM128 76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76zm0 96c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40zm52 148h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12zm76 160h-64v-84c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v84zm64-172c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40z" />
-								</svg>
-								<?php echo esc_html( $company_trim ); ?>
-							</span>
-							<span class="job-location">
-								<svg viewBox="0 0 384 512">
-									<path
-										d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
-								</svg>
-								<?php echo esc_html( $location ); ?>
-							</span>
-						</p>
-					</a>
-				</div>
-			</li>
-				<?php
-				endforeach;
-			?>
-		</ul>
-		<!-- <a href="https://jobs.cncf.io/" class="btn pink-btn" target="_blank"
-			title="CNCF Job Board">CNCF Job Board</a> -->
-	</div>
+	<ul class="jobs-list">
+		<?php
+		foreach ( $items as $item ) :
+			if ( isset( $item->link ) ) {
+				$link = $item->link;
+			}
+			if ( isset( $item->enclosure ) ) :
+				$image = $item->enclosure->{ '@attributes' }->url;
+				$image = preg_replace( '/^http:/i', 'https:', $image );
+				else :
+					$image = plugin_dir_url( __FILE__ ) . 'block/images/jobs-fallback.png';
+				endif;
+
+				$title        = $item->title;
+				$location     = lf_latest_jobs_extract_text( $title, 'location' );
+				$company      = lf_latest_jobs_extract_text( $title );
+				$company_trim = mb_strimwidth( $company, 0, 38, '...' );
+				$title        = explode( 'at ', $title );
+				$title        = mb_strimwidth( $title[0], 0, 50, '...' );
+				?>
+		<li>
+			<a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer"
+				class="job-image"
+				title="<?php echo esc_html( $title ) . 'at ' . esc_html( $company ); ?>">
+				<img src="<?php echo esc_url( $image ); ?>"
+					alt="<?php echo esc_attr( $title ); ?>" />
+			</a>
+
+			<div class="job-content">
+				<a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer"
+					title="<?php echo esc_html( $title ) . 'at ' . esc_html( $company ); ?>"><?php echo esc_html( $title ); ?></a>
+
+				<span class="job-company">
+					<svg viewBox="0 0 448 512">
+						<path
+							d="M436 480h-20V24c0-13.255-10.745-24-24-24H56C42.745 0 32 10.745 32 24v456H12c-6.627 0-12 5.373-12 12v20h448v-20c0-6.627-5.373-12-12-12zM128 76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76zm0 96c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40zm52 148h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12zm76 160h-64v-84c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v84zm64-172c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40z" />
+					</svg>
+					<?php echo esc_html( $company_trim ); ?>
+				</span>
+				<span class="job-location">
+					<svg viewBox="0 0 384 512">
+						<path
+							d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
+					</svg>
+					<?php echo esc_html( $location ); ?>
+				</span>
+			</div>
+		</li>
+		<?php endforeach; ?>
+	</ul>
 </div>
 	<?php
 	return ob_get_clean();
