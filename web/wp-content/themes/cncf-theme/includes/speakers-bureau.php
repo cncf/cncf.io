@@ -51,4 +51,4 @@ function pre_submission_handler( $form ) {
 		$_POST['input_13'] = $user_info->user_email;
 	}
 }
-add_action( 'gform_pre_submission_2', 'pre_submission_handler' );
+add_action( 'gform_pre_submission_1', 'pre_submission_handler' );
