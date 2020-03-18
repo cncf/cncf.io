@@ -1,8 +1,20 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php
+/**
+ * Profile template which will override the default Ultimate Member one.
+ *
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 
 <div class="um <?php echo esc_attr( $this->get_class( $mode ) ); ?> um-<?php echo esc_attr( $form_id ); ?> um-role-<?php echo esc_attr( um_user( 'role' ) ); ?> ">
 
-	<div class="um-form" data-mode="<?php echo esc_attr( $mode ) ?>">
+	<div class="um-form" data-mode="<?php echo esc_attr( $mode ); ?>">
 
 		<?php
 		/**
@@ -26,9 +38,11 @@
 		 */
 		do_action( 'um_profile_before_header', $args );
 
-		if ( um_is_on_edit_profile() ) { ?>
+		if ( um_is_on_edit_profile() ) {
+			?>
 			<form method="post" action="">
-		<?php }
+			<?php
+		}
 
 		/**
 		 * UM hook
@@ -93,7 +107,8 @@
 		 * }
 		 * ?>
 		 */
-		$classes = apply_filters( 'um_profile_navbar_classes', '' ); ?>
+		$classes = apply_filters( 'um_profile_navbar_classes', '' );
+		?>
 
 		<div class="um-profile-navbar <?php echo esc_attr( $classes ); ?>">
 			<?php
@@ -116,7 +131,8 @@
 			 * }
 			 * ?>
 			 */
-			do_action( 'um_profile_navbar', $args ); ?>
+			do_action( 'um_profile_navbar', $args );
+			?>
 			<div class="um-clear"></div>
 		</div>
 
@@ -146,7 +162,8 @@
 
 			$nav = 'main';
 			$subnav = UM()->profile()->active_subnav();
-			$subnav = ! empty( $subnav ) ? $subnav : 'default'; ?>
+			$subnav = ! empty( $subnav ) ? $subnav : 'default';
+			?>
 
 			<div class="um-profile-body <?php echo esc_attr( $nav . ' ' . $nav . '-' . $subnav ); ?>">
 
@@ -170,7 +187,7 @@
 				 * }
 				 * ?>
 				 */
-				do_action("um_profile_content_{$nav}", $args);
+				do_action( "um_profile_content_{$nav}", $args );
 
 				/**
 				 * UM hook
@@ -191,7 +208,8 @@
 				 * }
 				 * ?>
 				 */
-				do_action( "um_profile_content_{$nav}_{$subnav}", $args ); ?>
+				do_action( "um_profile_content_{$nav}_{$subnav}", $args );
+				?>
 
 				<div class="clear"></div>
 			</div>
@@ -200,21 +218,23 @@
 
 			</form>
 
-			<?php }
+				<?php
+			}
 		} else {
 			$menu_enabled = UM()->options()->get( 'profile_menu' );
-			$tabs = UM()->profile()->tabs_active();
+			$tabs = UM()->profile()->tabs_active(); //phpcs:ignore
 
 			$nav = UM()->profile()->active_tab();
 			$subnav = UM()->profile()->active_subnav();
 			$subnav = ! empty( $subnav ) ? $subnav : 'default';
 
-			if ( $menu_enabled || ! empty( $tabs[ $nav ]['hidden'] ) ) { ?>
+			if ( $menu_enabled || ! empty( $tabs[ $nav ]['hidden'] ) ) {
+				?>
 
 				<div class="um-profile-body <?php echo esc_attr( $nav . ' ' . $nav . '-' . $subnav ); ?>">
 
 					<?php
-					// Custom hook to display tabbed content
+					// Custom hook to display tabbed content.
 					/**
 					 * UM hook
 					 *
@@ -234,7 +254,7 @@
 					 * }
 					 * ?>
 					 */
-					do_action("um_profile_content_{$nav}", $args);
+					do_action( "um_profile_content_{$nav}", $args );
 
 					/**
 					 * UM hook
@@ -255,14 +275,17 @@
 					 * }
 					 * ?>
 					 */
-					do_action( "um_profile_content_{$nav}_{$subnav}", $args ); ?>
+					do_action( "um_profile_content_{$nav}_{$subnav}", $args );
+					?>
 
 					<div class="clear"></div>
 				</div>
 
-			<?php }
+				<?php
+			}
 		}
 
-		do_action( 'um_profile_footer', $args ); ?>
+		do_action( 'um_profile_footer', $args );
+		?>
 	</div>
 </div>
