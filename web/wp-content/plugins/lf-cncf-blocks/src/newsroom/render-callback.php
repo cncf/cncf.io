@@ -92,3 +92,38 @@ endwhile;
 	$block_content = ob_get_clean();
 	return $block_content;
 }
+
+/**
+ * Register REST field for post featured image.
+ */
+function lf_newsroom_block_register_rest_fields() {
+	// Add Featued image.
+	register_rest_field(
+		'post',
+		'featured_image_src',
+		array(
+			'get_callback'    => 'lf_newsroom_block_get_image_src_landscape',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+add_action( 'rest_api_init', 'lf_newsroom_block_register_rest_fields' );
+
+/**
+ * Get post featured image URL for REST.
+ *
+ * @param array  $object Block attributes.
+ * @param string $field_name Name of field.
+ * @param string $request Request.
+ * @return object $feat_img_array Output.
+ */
+function lf_newsroom_block_get_image_src_landscape( $object, $field_name, $request ) {
+
+	$feat_img_array = wp_get_attachment_image_src(
+		$object['featured_media'],
+		'full',
+		false
+	);
+	return $feat_img_array[0];
+}

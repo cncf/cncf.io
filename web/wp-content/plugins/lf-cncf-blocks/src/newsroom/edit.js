@@ -12,7 +12,6 @@
  * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
 
-import get from 'lodash/get';
 import head from 'lodash/head';
 import mapValues from 'lodash/mapValues';
 import pickBy from 'lodash/pickBy';
@@ -45,7 +44,7 @@ class Newsroom extends Component {
 
 		// get the list of categories to select.
 		const menuOptions = [
-			{ value: 0, label: __( 'All' ) },
+			{ value: ' ', label: __( 'All' ) },
 			...categories.map( x => ( { value: x.id, label: x.name } ) ),
 		];
 
@@ -101,15 +100,17 @@ class Newsroom extends Component {
 			posts,
 		} = this.props;
 		const data = posts.map( p => ( { ...p, meta: mapValues( p.meta, head ) } ) ).slice( 0, numberposts );
-		// featured image not working in loop below.
-		const thumbnail = get( posts.find( p => !! p.featured_media_url ), 'featured_media_url' );
 
 		return (
 			<div className={ `${ className }__body` }>
 				{ data.map(
 					 post => (
 						<div key={ post.id } className={ `${ className }__post` }>
-							{ /* { image here}, based on toggle state */ }
+							{ this.props.attributes.showImages &&
+							<figure className={ `${ className }__preview` }>
+								<img className={ `${ className }__image` } src={ post.featured_image_src } alt="" />
+							</figure>
+						}
 							<p
 								className={ `${ className }__name` }
 								dangerouslySetInnerHTML={ { __html: post.title.rendered } }

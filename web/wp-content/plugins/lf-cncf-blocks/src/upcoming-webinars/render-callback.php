@@ -73,7 +73,6 @@ function lf_upcoming_webinars_render_callback( $attributes ) {
 
 	// if no upcoming webinars.
 	if ( ! $query->have_posts() ) {
-		echo 'Sorry, there are no upcoming webinars.';
 		return;
 	}
 	?>
