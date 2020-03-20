@@ -85,7 +85,7 @@ if ( ! class_exists( 'Fuerza_Import_Countries' ) ) {
 			foreach ( $countries as $item ) {
 				$is_continent = $this->is_continent( $item[7] );
 				$name         = $is_continent ? $item[1] : $item[7];
-				$slug         = strtolower( $is_continent ? $item[3] : $item[4] );
+				$slug         = strtolower( $is_continent ? $item[1] : $item[4] );
 
 				if ( term_exists( $slug, 'cncf-country' ) ) {
 					continue;
@@ -95,11 +95,10 @@ if ( ! class_exists( 'Fuerza_Import_Countries' ) ) {
 
 				if ( ! $is_continent ) {
 					$continent_name = $item[1];
-					$continent_slug = strtolower( $item[3] );
-					$term_exists    = term_exists( $continent_slug, 'cncf-country' );
+					$term_exists    = term_exists( $continent_name, 'cncf-country' );
 
 					if ( ! $term_exists ) {
-						$continent_term = wp_insert_term( $continent_name, 'cncf-country', array( 'slug' => $continent_slug ) );
+						$continent_term = wp_insert_term( $continent_name, 'cncf-country', array( 'slug' => $continent_name ) );
 					} else {
 						$continent_term = $term_exists;
 					}
