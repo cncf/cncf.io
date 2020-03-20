@@ -60,6 +60,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$social_twitter     = ( isset( $options['social_twitter'] ) && ! empty( $options['social_twitter'] ) ) ? esc_attr( $options['social_twitter'] ) : '';
 
+		$social_twitter_handle     = ( isset( $options['social_twitter_handle'] ) && ! empty( $options['social_twitter_handle'] ) ) ? esc_html( $options['social_twitter_handle'] ) : '';
+
 		$social_youtube     = ( isset( $options['social_youtube'] ) && ! empty( $options['social_youtube'] ) ) ? esc_attr( $options['social_youtube'] ) : '';
 
 		$social_wechat_id   = ( isset( $options['social_wechat_id'] ) && ! empty( $options['social_wechat_id'] ) ) ? absint( $options['social_wechat_id'] ) : '';
@@ -320,6 +322,17 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
+					<th scope="row"><label for="social_twitter_handle">Twitter Handle (used for social sharing)</label>
+					</th>
+					<td>
+						<input type="text" class="social_twitter_handle regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-social_twitter_handle"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[social_twitter_handle]"
+							value="<?php echo esc_html( $social_twitter_handle ); ?>"
+							placeholder="@handle" />
+					</td>
+				</tr>
+				<tr>
 					<th scope="row"><label for="social_youtube">YouTube</label>
 					</th>
 					<td>
@@ -384,7 +397,7 @@ if ( ! defined( 'WPINC' ) ) {
 							id="<?php echo esc_html( $this->plugin_name ); ?>-generic_thumb_id"
 							data-id="<?php echo esc_html( $this->plugin_name ); ?>-generic_thumb_id"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[generic_thumb_id]"
-							value="<?php echo absint( $header_image_id ); ?>" />
+							value="<?php echo absint( $generic_thumb_id ); ?>" />
 					</td>
 				</tr>
 			</tbody>
