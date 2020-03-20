@@ -35,8 +35,10 @@
 		<?php elseif ( is_search() ) : ?>
 		<h2 class="page-title"><span>Search results for: </span>
 			<?php echo esc_attr( get_search_query() ); ?></h2>
-		<?php elseif ( ! ( is_404() ) && ( is_single() ) || ( is_page() ) ) : ?>
+		<?php elseif ( ! ( is_404() ) && ( is_page() ) ) : ?>
 		<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+		<?php elseif ( ! ( is_404() ) && ( is_single() ) ) : ?>
+		<h1 class="post-title" itemprop="headline"><?php the_title(); ?></h1>
 		<?php elseif ( is_404() ) : ?>
 		<h2><?php esc_html__( 'That\'s a 404', 'cncf-theme' ); ?></h2>
 		<?php elseif ( is_home() ) : ?>

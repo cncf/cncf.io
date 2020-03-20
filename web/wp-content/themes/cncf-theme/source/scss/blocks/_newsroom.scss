@@ -1,0 +1,35 @@
+.wp-block-lf-newsroom {
+
+    .nr-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.2;
+    }
+
+    .nr-date {
+        margin-bottom: 20px;
+    }
+}
+
+.nr-post-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.nr-image-wrapper {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.nr-newsroom-image {
+    object-fit: cover;
+    width: 100%;
+    max-height: 200px;
+    height: 100%;
+    border: 1px solid $purple-700;
+
+    &:hover {
+        opacity: 0.75;
+    }
+
+}

@@ -46,7 +46,7 @@ $image   = new Image();
 	<?php endif; ?>
 
 	<?php if ( $options['social_email'] ) : ?>
-	<li class="social_email"><a target="_blank" title="<?php echo 'Contact' . esc_html( get_bloginfo( 'name' ) ); ?>"
+	<li class="social_email"><a target="_blank" title="<?php echo 'Contact ' . esc_html( get_bloginfo( 'name' ) ); ?>"
 			href="<?php echo esc_url( $options['social_email'] ); ?>"><?php $image->get_svg( 'social/email.svg' ); ?></a></li>
 	<?php endif; ?>
 

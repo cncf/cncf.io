@@ -1,0 +1,65 @@
+.post-title {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 500;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+    color: $purple-700;
+
+    @media (max-width: 767px) {
+        font-size: 1.9em;
+    }
+}
+
+.post-single-meta {
+    color: $purple-700;
+}
+
+.post-single-hero-image {
+    max-width: 100%;
+    width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 1px solid $grey-400;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post-single {
+    text-align: center;
+}
+
+.post-entry-content {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.post-single-hr {
+    background-color: $blue-100;
+    height: 1px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.post-pagination {
+    display: flex;
+    flex-direction: column;
+
+    >* {
+        margin-bottom: 20px;
+    }
+
+    .previous {
+        text-align: left;
+    }
+
+    .next {
+        text-align: right;
+    }
+}

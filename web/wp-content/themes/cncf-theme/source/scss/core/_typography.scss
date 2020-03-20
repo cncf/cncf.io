@@ -18,6 +18,10 @@ h1 {
     font-size: 2.75em; // 36px
     margin-top: .67em;
     margin-bottom: .67em;
+
+    @media (max-width: 767px) {
+        font-size: 1.85em;
+    }
 }
 
 h2,
@@ -26,6 +30,10 @@ h2,
     font-size: 2.75em; // 36px
     margin-top: .83em;
     margin-bottom: .83em;
+
+    @media (max-width: 767px) {
+        font-size: 1.85em;
+    }
 }
 
 h3,
@@ -34,6 +42,10 @@ h3,
     font-size: 1.5em; // 24px
     margin-top: 1em;
     margin-bottom: 1em;
+
+    @media (max-width: 767px) {
+        font-size: 1.3em;
+    }
 }
 
 h4,
@@ -42,6 +54,10 @@ h4,
     font-size: 1.250em; // 20px
     margin-top: 1.33em;
     margin-bottom: 1.33em;
+
+    @media (max-width: 767px) {
+        font-size: 1.1em;
+    }
 }
 
 h5,
