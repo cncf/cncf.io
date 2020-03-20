@@ -1214,6 +1214,20 @@ class Cncf_Mu_Admin {
 		$projects = get_user_meta( $user_id, 'project', false )[0];
 		$country = get_user_meta( $user_id, 'country', false )[0];
 
+		$country = str_replace( 'Korea, Republic of', 'South Korea', $country );
+		$country = str_replace( "Korea, Democratic People's Republic of", 'North Korea', $country );
+		$country = str_replace( 'Bolivia, Plurinational State of', 'Bolivia', $country );
+		$country = str_replace( 'Congo', 'Congo, Republic of the', $country );
+		$country = str_replace( 'Iran, Islamic Republic of', 'Iran', $country );
+		$country = str_replace( 'Palestine', 'Palestinian Territory, Occupied', $country );
+		$country = str_replace( 'Pitcairn', 'Pitcairn Islands', $country );
+		$country = str_replace( 'Saint Martin (French part)', 'Saint Martin', $country );
+		$country = str_replace( 'Taiwan, Province of China', 'Taiwan', $country );
+		$country = str_replace( 'Virgin Islands, U.S.', 'United States Virgin Islands', $country );
+		$country = str_replace( 'Virgin Islands, British', 'British Virgin Islands', $country );
+		$country = str_replace( 'Venezuela, Bolivarian Republic of', 'Venezuela', $country );
+		$country = str_replace( 'Viet Nam', 'Vietnam', $country );
+
 		wp_set_object_terms( $speaker_id, $affiliations, 'cncf-speaker-affiliation' );
 		wp_set_object_terms( $speaker_id, $expertise, 'cncf-speaker-expertise' );
 		wp_set_object_terms( $speaker_id, $languages, 'cncf-language' );

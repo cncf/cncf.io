@@ -1,0 +1,253 @@
+Continent_Name,Continent_Name_edited,Continent_Code,Continent_Code_edited,Two_Letter_Country_Code,Three_Letter_Country_Code,Country_Number,Country_Name_edited,Country_Name,Prefix
+Africa,Africa,AF,AF,DZ,DZA,12,Algeria,Algeria,People's Democratic Republic of
+Asia,Asia Pacific,AS,AS,AF,AFG,4,Afghanistan,Afghanistan,Islamic Republic of
+Europe,Europe,EU,EU,AX,ALA,248,Åland Islands,Åland Islands,
+Europe,Europe,EU,EU,AL,ALB,8,Albania,Albania,Republic of
+Oceania,Asia Pacific,OC,AS,AS,ASM,16,American Samoa,American Samoa,
+Europe,Europe,EU,EU,AD,AND,20,Andorra,Andorra,Principality of
+Africa,Africa,AF,AF,AO,AGO,24,Angola,Angola,Republic of
+North America,North America,NA,NA,AI,AIA,660,Anguilla,Anguilla,
+Antarctica,Antarctica,AN,AN,AQ,ATA,10,Antarctica,Antarctica (the territory South of 60 deg S),
+North America,North America,NA,NA,AG,ATG,28,Antigua and Barbuda,Antigua and Barbuda,
+South America,South America,SA,SA,AR,ARG,32,Argentina,Argentina,Argentine Republic
+Asia,Asia Pacific,AS,AS,AM,ARM,51,Armenia,Armenia,Republic of
+North America,North America,NA,NA,AW,ABW,533,Aruba,Aruba,
+Oceania,Asia Pacific,OC,AS,AU,AUS,36,Australia,Australia,Commonwealth of
+Europe,Europe,EU,EU,AT,AUT,40,Austria,Austria,Republic of
+Asia,Asia Pacific,AS,AS,AZ,AZE,31,Azerbaijan,Azerbaijan,Republic of
+North America,North America,NA,NA,BS,BHS,44,Bahamas,Bahamas,Commonwealth of the
+Asia,Asia Pacific,AS,AS,BH,BHR,48,Bahrain,Bahrain,Kingdom of
+Asia,Asia Pacific,AS,AS,BD,BGD,50,Bangladesh,Bangladesh,People's Republic of
+North America,North America,NA,NA,BB,BRB,52,Barbados,Barbados,
+Europe,Europe,EU,EU,BY,BLR,112,Belarus,Belarus,Republic of
+Europe,Europe,EU,EU,BE,BEL,56,Belgium,Belgium,Kingdom of
+North America,North America,NA,NA,BZ,BLZ,84,Belize,Belize,
+Africa,Africa,AF,AF,BJ,BEN,204,Benin,Benin,Republic of
+North America,North America,NA,NA,BM,BMU,60,Bermuda,Bermuda,
+Asia,Asia Pacific,AS,AS,BT,BTN,64,Bhutan,Bhutan,Kingdom of
+South America,South America,SA,SA,BO,BOL,68,Bolivia,Bolivia,Republic of
+North America,North America,NA,NA,BQ,BES,535,Bonaire,Bonaire,Sint Eustatius and Saba
+Europe,Europe,EU,EU,BA,BIH,70,Bosnia and Herzegovina,Bosnia and Herzegovina,
+Africa,Africa,AF,AF,BW,BWA,72,Botswana,Botswana,Republic of
+Antarctica,Antarctica,AN,AN,BV,BVT,74,Bouvet Island,Bouvet Island (Bouvetoya),
+South America,South America,SA,SA,BR,BRA,76,Brazil,Brazil,Federative Republic of
+Asia,Asia Pacific,AS,AS,IO,IOT,86,British Indian Ocean Territory,British Indian Ocean Territory (Chagos Archipelago),
+North America,North America,NA,NA,VG,VGB,92,British Virgin Islands,British Virgin Islands,
+Asia,Asia Pacific,AS,AS,BN,BRN,96,Brunei Darussalam,Brunei Darussalam,
+Europe,Europe,EU,EU,BG,BGR,100,Bulgaria,Bulgaria,Republic of
+Africa,Africa,AF,AF,BF,BFA,854,Burkina Faso,Burkina Faso,
+Africa,Africa,AF,AF,BI,BDI,108,Burundi,Burundi,Republic of
+Asia,Asia Pacific,AS,AS,KH,KHM,116,Cambodia,Cambodia,Kingdom of
+Africa,Africa,AF,AF,CM,CMR,120,Cameroon,Cameroon,Republic of
+North America,North America,NA,NA,CA,CAN,124,Canada,Canada,
+Africa,Africa,AF,AF,CV,CPV,132,Cape Verde,Cape Verde,Republic of
+North America,North America,NA,NA,KY,CYM,136,Cayman Islands,Cayman Islands,
+Africa,Africa,AF,AF,CF,CAF,140,Central African Republic,Central African Republic,
+Africa,Africa,AF,AF,TD,TCD,148,Chad,Chad,Republic of
+South America,South America,SA,SA,CL,CHL,152,Chile,Chile,Republic of
+Asia,Asia Pacific,AS,AS,CN,CHN,156,China,China,People's Republic of
+Asia,Asia Pacific,AS,AS,CX,CXR,162,Christmas Island,Christmas Island,
+Asia,Asia Pacific,AS,AS,CC,CCK,166,Cocos (Keeling) Islands,Cocos (Keeling) Islands,
+South America,South America,SA,SA,CO,COL,170,Colombia,Colombia,Republic of
+Africa,Africa,AF,AF,KM,COM,174,Comoros,Comoros,Union of the
+Africa,Africa,AF,AF,CG,COG,178,"Congo, Republic of the",Congo,Republic of the
+Africa,Africa,AF,AF,CD,COD,180,"Congo, Democratic Republic of the",Congo,Democratic Republic of the
+Oceania,Asia Pacific,OC,AS,CK,COK,184,Cook Islands,Cook Islands,
+North America,North America,NA,NA,CR,CRI,188,Costa Rica,Costa Rica,Republic of
+Africa,Africa,AF,AF,CI,CIV,384,Cote d'Ivoire,Cote d'Ivoire,Republic of
+Europe,Europe,EU,EU,HR,HRV,191,Croatia,Croatia,Republic of
+North America,North America,NA,NA,CU,CUB,192,Cuba,Cuba,Republic of
+North America,North America,NA,NA,CW,CUW,531,Curaçao,Curaçao,
+Europe,Europe,EU,EU,CY,CYP,196,Cyprus,Cyprus,Republic of
+Europe,Europe,EU,EU,CZ,CZE,203,Czech Republic,Czech Republic,
+Europe,Europe,EU,EU,DK,DNK,208,Denmark,Denmark,Kingdom of
+Africa,Africa,AF,AF,DJ,DJI,262,Djibouti,Djibouti,Republic of
+North America,North America,NA,NA,DM,DMA,212,Dominica,Dominica,Commonwealth of
+North America,North America,NA,NA,DO,DOM,214,Dominican Republic,Dominican Republic,
+South America,South America,SA,SA,EC,ECU,218,Ecuador,Ecuador,Republic of
+Africa,Africa,AF,AF,EG,EGY,818,Egypt,Egypt,Arab Republic of
+North America,North America,NA,NA,SV,SLV,222,El Salvador,El Salvador,Republic of
+Africa,Africa,AF,AF,GQ,GNQ,226,Equatorial Guinea,Equatorial Guinea,Republic of
+Africa,Africa,AF,AF,ER,ERI,232,Eritrea,Eritrea,State of
+Europe,Europe,EU,EU,EE,EST,233,Estonia,Estonia,Republic of
+Africa,Africa,AF,AF,ET,ETH,231,Ethiopia,Ethiopia,Federal Democratic Republic of
+South America,South America,SA,SA,FK,FLK,238,Falkland Islands (Malvinas),Falkland Islands (Malvinas),
+Europe,Europe,EU,EU,FO,FRO,234,Faroe Islands,Faroe Islands,
+Oceania,Asia Pacific,OC,AS,FJ,FJI,242,Fiji,Fiji,Republic of the Fiji Islands
+Europe,Europe,EU,EU,FI,FIN,246,Finland,Finland,Republic of
+Europe,Europe,EU,EU,FR,FRA,250,France,France,French Republic
+South America,South America,SA,SA,GF,GUF,254,French Guiana,French Guiana,
+Oceania,Asia Pacific,OC,AS,PF,PYF,258,French Polynesia,French Polynesia,
+Antarctica,Antarctica,AN,AN,TF,ATF,260,French Southern Territories,French Southern Territories,
+Africa,Africa,AF,AF,GA,GAB,266,Gabon,Gabon,Gabonese Republic
+Africa,Africa,AF,AF,GM,GMB,270,Gambia,Gambia,Republic of the
+Asia,Asia Pacific,AS,AS,GE,GEO,268,Georgia,Georgia,
+Europe,Europe,EU,EU,GE,GEO,268,Georgia,Georgia,
+Europe,Europe,EU,EU,DE,DEU,276,Germany,Germany,Federal Republic of
+Africa,Africa,AF,AF,GH,GHA,288,Ghana,Ghana,Republic of
+Europe,Europe,EU,EU,GI,GIB,292,Gibraltar,Gibraltar,
+Europe,Europe,EU,EU,GR,GRC,300,Greece,Greece,Hellenic Republic
+North America,North America,NA,NA,GL,GRL,304,Greenland,Greenland,
+North America,North America,NA,NA,GD,GRD,308,Grenada,Grenada,
+North America,North America,NA,NA,GP,GLP,312,Guadeloupe,Guadeloupe,
+Oceania,Asia Pacific,OC,AS,GU,GUM,316,Guam,Guam,
+North America,North America,NA,NA,GT,GTM,320,Guatemala,Guatemala,Republic of
+Europe,Europe,EU,EU,GG,GGY,831,Guernsey,Guernsey,Bailiwick of
+Africa,Africa,AF,AF,GN,GIN,324,Guinea,Guinea,Republic of
+Africa,Africa,AF,AF,GW,GNB,624,Guinea-Bissau,Guinea-Bissau,Republic of
+South America,South America,SA,SA,GY,GUY,328,Guyana,Guyana,Co-operative Republic of
+North America,North America,NA,NA,HT,HTI,332,Haiti,Haiti,Republic of
+Antarctica,Antarctica,AN,AN,HM,HMD,334,Heard Island and McDonald Islands,Heard Island and McDonald Islands,
+Europe,Europe,EU,EU,VA,VAT,336,Holy See (Vatican City State),Holy See (Vatican City State),
+North America,North America,NA,NA,HN,HND,340,Honduras,Honduras,Republic of
+Asia,Asia Pacific,AS,AS,HK,HKG,344,Hong Kong,Hong Kong,Special Administrative Region of China
+Europe,Europe,EU,EU,HU,HUN,348,Hungary,Hungary,Republic of
+Europe,Europe,EU,EU,IS,ISL,352,Iceland,Iceland,Republic of
+Asia,Asia Pacific,AS,AS,IN,IND,356,India,India,Republic of
+Asia,Asia Pacific,AS,AS,ID,IDN,360,Indonesia,Indonesia,Republic of
+Asia,Asia Pacific,AS,AS,IR,IRN,364,Iran,Iran,Islamic Republic of
+Asia,Asia Pacific,AS,AS,IQ,IRQ,368,Iraq,Iraq,Republic of
+Europe,Europe,EU,EU,IE,IRL,372,Ireland,Ireland,
+Europe,Europe,EU,EU,IM,IMN,833,Isle of Man,Isle of Man,
+Asia,Asia Pacific,AS,AS,IL,ISR,376,Israel,Israel,State of
+Europe,Europe,EU,EU,IT,ITA,380,Italy,Italy,Italian Republic
+North America,North America,NA,NA,JM,JAM,388,Jamaica,Jamaica,
+Asia,Asia Pacific,AS,AS,JP,JPN,392,Japan,Japan,
+Europe,Europe,EU,EU,JE,JEY,832,Jersey,Jersey,Bailiwick of
+Asia,Asia Pacific,AS,AS,JO,JOR,400,Jordan,Jordan,Hashemite Kingdom of
+Asia,Asia Pacific,AS,AS,KZ,KAZ,398,Kazakhstan,Kazakhstan,Republic of
+Africa,Africa,AF,AF,KE,KEN,404,Kenya,Kenya,Republic of
+Oceania,Asia Pacific,OC,AS,KI,KIR,296,Kiribati,Kiribati,Republic of
+Asia,Asia Pacific,AS,AS,KP,PRK,408,North Korea,Korea,Democratic People's Republic of
+Asia,Asia Pacific,AS,AS,KR,KOR,410,South Korea,Korea,Republic of
+Asia,Asia Pacific,AS,AS,KW,KWT,414,Kuwait,Kuwait,State of
+Asia,Asia Pacific,AS,AS,KG,KGZ,417,Kyrgyzstan,Kyrgyz Republic,
+Asia,Asia Pacific,AS,AS,LA,LAO,418,Lao People's Democratic Republic,Lao People's Democratic Republic,
+Europe,Europe,EU,EU,LV,LVA,428,Latvia,Latvia,Republic of
+Asia,Asia Pacific,AS,AS,LB,LBN,422,Lebanon,Lebanon,Lebanese Republic
+Africa,Africa,AF,AF,LS,LSO,426,Lesotho,Lesotho,Kingdom of
+Africa,Africa,AF,AF,LR,LBR,430,Liberia,Liberia,Republic of
+Africa,Africa,AF,AF,LY,LBY,434,Libyan Arab Jamahiriya,Libyan Arab Jamahiriya,
+Europe,Europe,EU,EU,LI,LIE,438,Liechtenstein,Liechtenstein,Principality of
+Europe,Europe,EU,EU,LT,LTU,440,Lithuania,Lithuania,Republic of
+Europe,Europe,EU,EU,LU,LUX,442,Luxembourg,Luxembourg,Grand Duchy of
+Asia,Asia Pacific,AS,AS,MO,MAC,446,Macao,Macao,Special Administrative Region of China
+Europe,Europe,EU,EU,MK,MKD,807,"Macedonia, The Former Yugoslav Republic of",Macedonia,The Former Yugoslav Republic of
+Africa,Africa,AF,AF,MG,MDG,450,Madagascar,Madagascar,Republic of
+Africa,Africa,AF,AF,MW,MWI,454,Malawi,Malawi,Republic of
+Asia,Asia Pacific,AS,AS,MY,MYS,458,Malaysia,Malaysia,
+Asia,Asia Pacific,AS,AS,MV,MDV,462,Maldives,Maldives,Republic of
+Africa,Africa,AF,AF,ML,MLI,466,Mali,Mali,Republic of
+Europe,Europe,EU,EU,MT,MLT,470,Malta,Malta,Republic of
+Oceania,Asia Pacific,OC,AS,MH,MHL,584,Marshall Islands,Marshall Islands,Republic of the
+North America,North America,NA,NA,MQ,MTQ,474,Martinique,Martinique,
+Africa,Africa,AF,AF,MR,MRT,478,Mauritania,Mauritania,Islamic Republic of
+Africa,Africa,AF,AF,MU,MUS,480,Mauritius,Mauritius,Republic of
+Africa,Africa,AF,AF,YT,MYT,175,Mayotte,Mayotte,
+North America,North America,NA,NA,MX,MEX,484,Mexico,Mexico,United Mexican States
+Oceania,Asia Pacific,OC,AS,FM,FSM,583,"Micronesia, Federated States of",Micronesia,Federated States of
+Europe,Europe,EU,EU,MD,MDA,498,"Moldova, Republic of",Moldova,Republic of
+Europe,Europe,EU,EU,MC,MCO,492,Monaco,Monaco,Principality of
+Asia,Asia Pacific,AS,AS,MN,MNG,496,Mongolia,Mongolia,
+Europe,Europe,EU,EU,ME,MNE,499,Montenegro,Montenegro,Republic of
+North America,North America,NA,NA,MS,MSR,500,Montserrat,Montserrat,
+Africa,Africa,AF,AF,MA,MAR,504,Morocco,Morocco,Kingdom of
+Africa,Africa,AF,AF,MZ,MOZ,508,Mozambique,Mozambique,Republic of
+Asia,Asia Pacific,AS,AS,MM,MMR,104,Myanmar,Myanmar,Union of
+Africa,Africa,AF,AF,NA,NAM,516,Namibia,Namibia,Republic of
+Oceania,Asia Pacific,OC,AS,NR,NRU,520,Nauru,Nauru,Republic of
+Asia,Asia Pacific,AS,AS,NP,NPL,524,Nepal,Nepal,State of
+Europe,Europe,EU,EU,NL,NLD,528,Netherlands,Netherlands,Kingdom of the
+North America,North America,NA,NA,AN,ANT,530,Netherlands Antilles,Netherlands Antilles,
+Oceania,Asia Pacific,OC,AS,NC,NCL,540,New Caledonia,New Caledonia,
+Oceania,Asia Pacific,OC,AS,NZ,NZL,554,New Zealand,New Zealand,
+North America,North America,NA,NA,NI,NIC,558,Nicaragua,Nicaragua,Republic of
+Africa,Africa,AF,AF,NE,NER,562,Niger,Niger,Republic of
+Africa,Africa,AF,AF,NG,NGA,566,Nigeria,Nigeria,Federal Republic of
+Oceania,Asia Pacific,OC,AS,NU,NIU,570,Niue,Niue,
+Oceania,Asia Pacific,OC,AS,NF,NFK,574,Norfolk Island,Norfolk Island,
+Oceania,Asia Pacific,OC,AS,MP,MNP,580,Northern Mariana Islands,Northern Mariana Islands,Commonwealth of the
+Europe,Europe,EU,EU,NO,NOR,578,Norway,Norway,Kingdom of
+Asia,Asia Pacific,AS,AS,OM,OMN,512,Oman,Oman,Sultanate of
+Asia,Asia Pacific,AS,AS,PK,PAK,586,Pakistan,Pakistan,Islamic Republic of
+Oceania,Asia Pacific,OC,AS,PW,PLW,585,Palau,Palau,Republic of
+Asia,Asia Pacific,AS,AS,PS,PSE,275,"Palestinian Territory, Occupied",Palestinian Territory,Occupied
+North America,North America,NA,NA,PA,PAN,591,Panama,Panama,Republic of
+Oceania,Asia Pacific,OC,AS,PG,PNG,598,Papua New Guinea,Papua New Guinea,Independent State of
+South America,South America,SA,SA,PY,PRY,600,Paraguay,Paraguay,Republic of
+South America,South America,SA,SA,PE,PER,604,Peru,Peru,Republic of
+Asia,Asia Pacific,AS,AS,PH,PHL,608,Philippines,Philippines,Republic of the
+Oceania,Asia Pacific,OC,AS,PN,PCN,612,Pitcairn Islands,Pitcairn Islands,
+Europe,Europe,EU,EU,PL,POL,616,Poland,Poland,Republic of
+Europe,Europe,EU,EU,PT,PRT,620,Portugal,Portugal,Portuguese Republic
+North America,North America,NA,NA,PR,PRI,630,Puerto Rico,Puerto Rico,Commonwealth of
+Asia,Asia Pacific,AS,AS,QA,QAT,634,Qatar,Qatar,State of
+Africa,Africa,AF,AF,RE,REU,638,Reunion,Reunion,
+Europe,Europe,EU,EU,RO,ROU,642,Romania,Romania,
+Europe,Europe,EU,EU,RU,RUS,643,Russian Federation,Russian Federation,
+Africa,Africa,AF,AF,RW,RWA,646,Rwanda,Rwanda,Republic of
+North America,North America,NA,NA,BL,BLM,652,Saint Barthelemy,Saint Barthelemy,
+Africa,Africa,AF,AF,SH,SHN,654,Saint Helena,Saint Helena,
+North America,North America,NA,NA,KN,KNA,659,Saint Kitts and Nevis,Saint Kitts and Nevis,Federation of
+North America,North America,NA,NA,LC,LCA,662,Saint Lucia,Saint Lucia,
+North America,North America,NA,NA,MF,MAF,663,Saint Martin,Saint Martin,
+North America,North America,NA,NA,PM,SPM,666,Saint Pierre and Miquelon,Saint Pierre and Miquelon,
+North America,North America,NA,NA,VC,VCT,670,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,
+Oceania,Asia Pacific,OC,AS,WS,WSM,882,Samoa,Samoa,Independent State of
+Europe,Europe,EU,EU,SM,SMR,674,San Marino,San Marino,Republic of
+Africa,Africa,AF,AF,ST,STP,678,Sao Tome and Principe,Sao Tome and Principe,Democratic Republic of
+Asia,Asia Pacific,AS,AS,SA,SAU,682,Saudi Arabia,Saudi Arabia,Kingdom of
+Africa,Africa,AF,AF,SN,SEN,686,Senegal,Senegal,Republic of
+Europe,Europe,EU,EU,RS,SRB,688,Serbia,Serbia,Republic of
+Africa,Africa,AF,AF,SC,SYC,690,Seychelles,Seychelles,Republic of
+Africa,Africa,AF,AF,SL,SLE,694,Sierra Leone,Sierra Leone,Republic of
+Asia,Asia Pacific,AS,AS,SG,SGP,702,Singapore,Singapore,Republic of
+North America,North America,NA,NA,SX,SXM,534,Sint Maarten (Netherlands),Sint Maarten (Netherlands),
+Europe,Europe,EU,EU,SK,SVK,703,Slovakia,Slovakia (Slovak Republic),
+Europe,Europe,EU,EU,SI,SVN,705,Slovenia,Slovenia,Republic of
+Oceania,Asia Pacific,OC,AS,SB,SLB,90,Solomon Islands,Solomon Islands,
+Africa,Africa,AF,AF,SO,SOM,706,Somalia,Somalia,Somali Republic
+Africa,Africa,AF,AF,ZA,ZAF,710,South Africa,South Africa,Republic of
+Antarctica,Antarctica,AN,AN,GS,SGS,239,South Georgia and the South Sandwich Islands,South Georgia and the South Sandwich Islands,
+Africa,Africa,AF,AF,SS,SSD,728,South Sudan,South Sudan,
+Europe,Europe,EU,EU,ES,ESP,724,Spain,Spain,Kingdom of
+Asia,Asia Pacific,AS,AS,LK,LKA,144,Sri Lanka,Sri Lanka,Democratic Socialist Republic of
+Africa,Africa,AF,AF,SD,SDN,736,Sudan,Sudan,Republic of
+South America,South America,SA,SA,SR,SUR,740,Suriname,Suriname,Republic of
+Europe,Europe,EU,EU,SJ,SJM,744,Svalbard & Jan Mayen Islands,Svalbard & Jan Mayen Islands,
+Africa,Africa,AF,AF,SZ,SWZ,748,Swaziland,Swaziland,Kingdom of
+Europe,Europe,EU,EU,SE,SWE,752,Sweden,Sweden,Kingdom of
+Europe,Europe,EU,EU,CH,CHE,756,Switzerland,Switzerland,Swiss Confederation
+Asia,Asia Pacific,AS,AS,SY,SYR,760,Syrian Arab Republic,Syrian Arab Republic,
+Asia,Asia Pacific,AS,AS,TW,TWN,158,Taiwan,Taiwan,
+Asia,Asia Pacific,AS,AS,TJ,TJK,762,Tajikistan,Tajikistan,Republic of
+Africa,Africa,AF,AF,TZ,TZA,834,"Tanzania, United Republic of",Tanzania,United Republic of
+Asia,Asia Pacific,AS,AS,TH,THA,764,Thailand,Thailand,Kingdom of
+Asia,Asia Pacific,AS,AS,TL,TLS,626,Timor-Leste,Timor-Leste,Democratic Republic of
+Africa,Africa,AF,AF,TG,TGO,768,Togo,Togo,Togolese Republic
+Oceania,Asia Pacific,OC,AS,TK,TKL,772,Tokelau,Tokelau,
+Oceania,Asia Pacific,OC,AS,TO,TON,776,Tonga,Tonga,Kingdom of
+North America,North America,NA,NA,TT,TTO,780,Trinidad and Tobago,Trinidad and Tobago,Republic of
+Africa,Africa,AF,AF,TN,TUN,788,Tunisia,Tunisia,Tunisian Republic
+Europe,Europe,EU,EU,TR,TUR,792,Turkey,Turkey,Republic of
+Asia,Asia Pacific,AS,AS,TM,TKM,795,Turkmenistan,Turkmenistan,
+North America,North America,NA,NA,TC,TCA,796,Turks and Caicos Islands,Turks and Caicos Islands,
+Oceania,Asia Pacific,OC,AS,TV,TUV,798,Tuvalu,Tuvalu,
+Africa,Africa,AF,AF,UG,UGA,800,Uganda,Uganda,Republic of
+Europe,Europe,EU,EU,UA,UKR,804,Ukraine,Ukraine,
+Asia,Asia Pacific,AS,AS,AE,ARE,784,United Arab Emirates,United Arab Emirates,
+Europe,Europe,EU,EU,GB,GBR,826,United Kingdom,United Kingdom of Great Britain & Northern Ireland,
+North America,North America,NA,NA,US,USA,840,United States,United States of America,
+North America,North America,NA,NA,UM,UMI,581,United States Minor Outlying Islands,United States Minor Outlying Islands,
+Oceania,Asia Pacific,OC,AS,UM,UMI,581,United States Minor Outlying Islands,United States Minor Outlying Islands,
+North America,North America,NA,NA,VI,VIR,850,United States Virgin Islands,United States Virgin Islands,
+South America,South America,SA,SA,UY,URY,858,Uruguay,Uruguay,Eastern Republic of
+Asia,Asia Pacific,AS,AS,UZ,UZB,860,Uzbekistan,Uzbekistan,Republic of
+Oceania,Asia Pacific,OC,AS,VU,VUT,548,Vanuatu,Vanuatu,Republic of
+South America,South America,SA,SA,VE,VEN,862,Venezuela,Venezuela,Bolivarian Republic of
+Asia,Asia Pacific,AS,AS,VN,VNM,704,Vietnam,Vietnam,Socialist Republic of
+Oceania,Asia Pacific,OC,AS,WF,WLF,876,Wallis and Futuna,Wallis and Futuna,
+Africa,Africa,AF,AF,EH,ESH,732,Western Sahara,Western Sahara,
+Asia,Asia Pacific,AS,AS,YE,YEM,887,Yemen,Yemen,
+Africa,Africa,AF,AF,ZM,ZMB,894,Zambia,Zambia,Republic of
+Africa,Africa,AF,AF,ZW,ZWE,716,Zimbabwe,Zimbabwe,Republic of

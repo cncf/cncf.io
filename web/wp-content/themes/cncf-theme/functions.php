@@ -81,6 +81,9 @@ require_once 'includes/excerpts.php';
 // speakers bureau.
 require_once 'includes/speakers-bureau.php';
 
+// countries import.
+require_once 'includes/class-fuerza-import-countries.php';
+
 // gravity forms.
 // require_once('includes/gravity.php'); // phpcs:ignore.
 
