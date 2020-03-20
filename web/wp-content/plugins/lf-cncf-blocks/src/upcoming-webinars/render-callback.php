@@ -1,74 +1,82 @@
 <?php
+/**
+ * Render Callback
+ *
+ * @package WordPress
+ * @subpackage cncf-blocks
+ * @since 1.0.0
+ */
 
-	/**
-	 * Display webinar time
-	 *
-	 * @param object $date Date object.
-	 * @param object $time Time.
-	 */
-	function fuerza_display_webinar_time( $date, $time ) {
-		// TODO: Come back to fix this function and the way time displays.
-		if ( empty( $time ) || ! ( $date instanceof DateTime ) ) {
-			return;
-		}
-
-		$suffix      = trim( substr( $time, -3 ) );
-		$time        = $time . ' (UTC';
-		$is_daylight = $date->format( 'I' ) == 1;
-		$hours       = ! $is_daylight ? '8' : '7';
-		$hours       = 'PDT' == $suffix ? 7 : $hours;
-		$signal      = 'CST' == $suffix ? '+' : '-';
-		$time       .= "{$signal}{$hours})";
-
-		return $time;
+ /**
+  * Display webinar time
+  *
+  * @param object $date Date object.
+  * @param object $time Time.
+  */
+function fuerza_display_webinar_time( $date, $time ) {
+	// TODO: Come back to fix this function and the way time displays.
+	if ( empty( $time ) || ! ( $date instanceof DateTime ) ) {
+		return;
 	}
+
+	$suffix      = trim( substr( $time, -3 ) );
+	$time        = $time . ' (UTC';
+	$is_daylight = $date->format( 'I' ) == 1;
+	$hours       = ! $is_daylight ? '8' : '7';
+	$hours       = 'PDT' == $suffix ? 7 : $hours;
+	$signal      = 'CST' == $suffix ? '+' : '-';
+	$time       .= "{$signal}{$hours})";
+
+	return $time;
+}
 
 
 /**
-	 * Render the block
-	 *
-	 * @param array $attributes Block attributes.
-	 * @return object block_content Output.
-	 */
-	function lf_upcoming_webinars_render_callback( $attributes ) {
+ * Render the block
+ *
+ * @param array $attributes Block attributes.
+ * @return object block_content Output.
+ */
+function lf_upcoming_webinars_render_callback( $attributes ) {
 
-		// get the quantity to display, if not default.
-		$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 4;
+	// get the quantity to display, if not default.
+	$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 4;
 
-		// get the classes set from the block if any.
-		$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
+	// get the classes set from the block if any.
+	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
-		// setup the arguments.
-		$args  = [
-			'posts_per_page'     => $quantity,
-			'ignore_custom_sort' => true,
-			'post_type'          => array( 'cncf_webinar' ),
-			'post_status'        => array( 'publish' ),
-			'meta_key'           => 'cncf_webinar_date',
-			'order'              => 'ASC',
-			'orderby'            => 'meta_value',
-			'meta_query'         => array(
-				array(
-					'key'     => 'cncf_webinar_date',
-					'value'   => date_i18n( 'Y-m-d' ),
-					'compare' => '>=',
-				),
-				array(
-					'key'     => 'cncf_webinar_recording',
-					'value'   => '',
-					'compare' => 'NOT EXISTS',
-				),
+	// setup the arguments.
+	$args  = array(
+		'posts_per_page'     => $quantity,
+		'ignore_custom_sort' => true,
+		'post_type'          => array( 'cncf_webinar' ),
+		'post_status'        => array( 'publish' ),
+		'meta_key'           => 'cncf_webinar_date',
+		'order'              => 'ASC',
+		'orderby'            => 'meta_value',
+		'no_found_rows'      => true,
+		'meta_query'         => array(
+			array(
+				'key'     => 'cncf_webinar_date',
+				'value'   => date_i18n( 'Y-m-d' ),
+				'compare' => '>=',
 			),
-		];
-		$query = new WP_Query( $args );
-		ob_start();
+			array(
+				'key'     => 'cncf_webinar_recording',
+				'value'   => '',
+				'compare' => 'NOT EXISTS',
+			),
+		),
+	);
+	$query = new WP_Query( $args );
+	ob_start();
 
-		// if no upcoming webinars.
-		if ( ! $query->have_posts() ) {
-			echo 'Sorry, there are no upcoming webinars.';
-			return;
-		}
-		?>
+	// if no upcoming webinars.
+	if ( ! $query->have_posts() ) {
+		echo 'Sorry, there are no upcoming webinars.';
+		return;
+	}
+	?>
 
 <section
 	class="wp-block-lf-upcoming-webinars <?php echo esc_html( $classes ); ?>">
@@ -118,4 +126,4 @@
 		<?php
 		$block_content = ob_get_clean();
 		return $block_content;
-	}
+}

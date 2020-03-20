@@ -12,7 +12,7 @@
  * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
 
-//  Import CSS.
+// Import CSS.
 import './editor.scss';
 import './style.scss';
 
@@ -33,38 +33,30 @@ const { registerBlockType } = wp.blocks;
  * @param  {Object}   settings Block settings.
  * @return {?WPBlock}          The block, if it has been successfully registered; otherwise `undefined`.
  */
-registerBlockType( 'lf/upcoming-events', {
-	title: __( 'LF | Upcoming Events' ),
-	description: __( 'Block showing upcoming events that CNCF will be at.' ),
-	icon: 'calendar',
-	category: 'cncf',
-	keywords: [
-		__( 'events' ),
-		__( 'exhibitions' ),
-		__( 'shows' ),
-		__( 'cncf' ),
-	],
-	// styles: [
-	// 	{
-	// 		name: 'vertical',
-	// 		label: __( 'Vertical' ),
-	// 		isDefault: true,
-	// 	},
-	// 	{
-	// 		name: 'horizontal',
-	// 		label: __( 'Horizontal' ),
-	// 	},
-	// ],
-	example: {},
-	attributes: {
-		numberposts: {
-			type: 'integer',
-			default: 4,
+registerBlockType(
+	 'lf/upcoming-events',
+	{
+		title: __( 'LF | Upcoming Events' ),
+		description: __( 'Block showing upcoming events that CNCF will be at.' ),
+		icon: 'calendar',
+		category: 'cncf',
+		keywords: [
+			__( 'events' ),
+			__( 'exhibitions' ),
+			__( 'shows' ),
+			__( 'cncf' ),
+		],
+		example: {},
+		attributes: {
+			numberposts: {
+				type: 'integer',
+				default: 4,
+			},
 		},
-	},
-	html: false,
-	edit: Edit, // end edit
-	save() {
-		return null;
-	},
-} );
+		html: false,
+		edit: Edit,
+		save() {
+			return null;
+		},
+	}
+);

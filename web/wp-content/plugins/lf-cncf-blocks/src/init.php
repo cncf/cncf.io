@@ -63,6 +63,7 @@ function lf_cncf_blocks_editor_assets() {
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
 	);
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
+	// phpcs:disable
 	wp_localize_script(
 		'lf_cncf_blocks_script',
 		'cgbGlobal', // Array containing dynamic data for a JS Global.
@@ -72,6 +73,8 @@ function lf_cncf_blocks_editor_assets() {
 		   // Add more data here that you want to access from `cgbGlobal` object.
 		]
 	);
+	// phpcs:enable
+
 }
 add_action( 'enqueue_block_editor_assets', 'lf_cncf_blocks_editor_assets' );
 
@@ -81,6 +84,8 @@ add_action( 'enqueue_block_editor_assets', 'lf_cncf_blocks_editor_assets' );
  * @since 1.0.0
  */
 function lf_cncf_blocks_register_dynamic_blocks() {
+
+	// Upcoming Webinars Block.
 	require_once 'upcoming-webinars/render-callback.php';
 	register_block_type(
 		'lf/upcoming-webinars',
@@ -93,6 +98,8 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 			'render_callback' => 'lf_upcoming_webinars_render_callback',
 		)
 	);
+
+	// Upcoming Events Block.
 	require_once 'upcoming-events/render-callback.php';
 	register_block_type(
 		'lf/upcoming-events',
@@ -105,11 +112,37 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 			'render_callback' => 'lf_upcoming_events_render_callback',
 		)
 	);
+
+	// Newsroom Block.
+	require_once 'newsroom/render-callback.php';
+	register_block_type(
+		'lf/newsroom',
+		array(
+			'attributes'      => array(
+				'className'  => array(
+					'type' => 'string',
+				),
+				'showImages' => array(
+					'type' => 'boolean',
+				),
+				'order'      => array(
+					'type' => 'string',
+				),
+				'category'   => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_newsroom_render_callback',
+		)
+	);
+
 }
 add_action( 'init', 'lf_cncf_blocks_register_dynamic_blocks' );
 
 /**
  * Add custom block category
+ *
+ * This makes a new category selection in the Block Editor called CNCF.
  *
  * @param array $categories List of categories.
  */

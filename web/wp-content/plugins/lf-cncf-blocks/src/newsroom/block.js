@@ -34,33 +34,35 @@ const { registerBlockType } = wp.blocks;
  * @return {?WPBlock}          The block, if it has been successfully registered; otherwise `undefined`.
  */
 registerBlockType(
-	 'lf/upcoming-webinars',
+	 'lf/newsroom',
 	{
-		title: __( 'LF | Upcoming Webinars' ),
-		description: __( 'Block showing upcoming webinars' ),
-		icon: 'video-alt3',
+		title: __( 'LF | Newsroom' ),
+		description: __( 'Display posts from the CNCF Newsroom' ),
+		icon: 'excerpt-view',
 		category: 'cncf',
 		keywords: [
-			__( 'webinars' ),
-			__( 'upcoming' ),
+			__( 'news' ),
+			__( 'newsroom' ),
+			__( 'announcements' ),
+			__( 'blog' ),
 			__( 'cncf' ),
-		],
-		styles: [
-			{
-				name: 'vertical',
-				label: __( 'Vertical' ),
-				isDefault: true,
-			},
-			{
-				name: 'horizontal',
-				label: __( 'Horizontal' ),
-			},
 		],
 		example: {},
 		attributes: {
 			numberposts: {
 				type: 'integer',
 				default: 4,
+			},
+			showImages: {
+				type: 'boolean',
+				default: true,
+			},
+			order: {
+				type: 'string',
+				default: 'desc',
+			},
+			category: {
+				type: 'string',
 			},
 		},
 		html: false,
