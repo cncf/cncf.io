@@ -825,15 +825,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch', 'cncf_speaker' ), $args );
 
 		$labels = array(
-			'name'          => __( 'Category', 'cncf-mu' ),
-			'singular_name' => __( 'Category', 'cncf-mu' ),
-			'search_items'  => __( 'Search Categories', 'cncf-mu' ),
-			'all_items'     => __( 'All Categories', 'cncf-mu' ),
-			'edit_item'     => __( 'Edit Category', 'cncf-mu' ),
-			'update_item'   => __( 'Update Category', 'cncf-mu' ),
-			'add_new_item'  => __( 'Add New Category', 'cncf-mu' ),
-			'new_item_name' => __( 'New Category Name', 'cncf-mu' ),
-			'menu_name'     => __( 'Categories', 'cncf-mu' ),
+			'name'          => __( 'Author Category', 'cncf-mu' ),
+			'singular_name' => __( 'Author Category', 'cncf-mu' ),
+			'search_items'  => __( 'Search Author Categories', 'cncf-mu' ),
+			'all_items'     => __( 'All Author Categories', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Author Category', 'cncf-mu' ),
+			'update_item'   => __( 'Update Author Category', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Author Category', 'cncf-mu' ),
+			'new_item_name' => __( 'New Author Category Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Author Categories', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -842,7 +842,7 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_admin_column' => true,
 		);
-		register_taxonomy( 'cncf-webinar-category', array( 'cncf_webinar' ), $args );
+		register_taxonomy( 'cncf-webinar-category', array( 'cncf_webinar', 'post' ), $args );
 
 		$labels = array(
 			'name'          => __( 'Company', 'cncf-mu' ),
