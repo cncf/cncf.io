@@ -1,0 +1,524 @@
+.mo_saml_help_title {
+	font-size:17px;
+	width:100%;
+	color:#1B79AE;
+	cursor:pointer;
+	font-weight: bold;
+}
+.mo_saml_help_desc {
+	font-size:13px;
+	border-left:solid 2px rgba(128, 128, 128, 0.65);
+	margin-top:10px;
+	padding-left:10px;
+}
+.mo_saml_help {
+	border-top: solid 1px grey;
+	width: 95%;
+}
+.mo_saml_help_cell {
+	padding: 20px;
+	border-bottom: solid 1px grey;
+}
+.mo_saml_support_layout{
+       width: 93%;
+       background-color:#FFFFFF;
+       border:1px solid #CCCCCC;
+       padding-left:20px;
+}
+.mo_saml_table_layout {
+	background-color:#FFFFFF;
+	border:1px solid #CCCCCC;
+	padding:0px 10px 10px 10px;
+	margin-bottom: 10px;
+}
+.mo_saml_table_layout td {
+
+}
+.mo_saml_table_layout input['type=text'] {
+	width: 80%;
+}
+.mo_saml_table_layout td strong {
+	margin-left: 10px;
+}
+.panel_toggle {
+	cursor: pointer;
+}
+.panel_toggle:hover {
+	text-decoration: underline;
+}
+.mo_saml_table_textbox {
+	width:80%;
+}
+.mo_saml_settings_table {
+	width: 100%;
+}
+.mo_saml_settings_table tr td:first-child {
+	width: 30%;
+}
+.mo_saml_heading_margin {
+	margin-left: 0px;
+}
+.error_wid_login {
+    background-color: #FFEBE8;
+    border: 1px dashed #FF0000;
+    color: #FF0000;
+    float: left;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: 500;
+    padding: 6px;
+	margin-left: 200px;
+    width: 80%;
+	clear:both !important;
+}
+
+.login_wid li{
+	margin:5px;
+}
+
+.login_wid{
+		list-style-type:none;
+		border: 1px dashed #999999;
+		width:98%;
+		float:left;
+		padding:5%;
+
+	}
+.login_wid li{
+	width:48%;
+	float:left;
+	margin:2px;
+}
+.openid_social_login{
+	padding:5px 0px 0px 0px;
+	clear:both;
+	width:100% !important;
+}
+
+.login_wid li input{
+	width:85%;
+	float:left;
+	margin:2px;
+}
+.mo_saml_local_pricing_free_tab{
+	background-color: rgba(34, 153, 221, 0.82)!important;
+}
+.mo_saml_local_pricing_paid_tab{
+	background-color: #1a71a4 !important;
+}
+.mo_saml_local_pricing_text{
+	font-size: 14px !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+
+}
+.mo_saml_local_pricing_sub_header{
+	margin: 2px !important;
+	color: #fff !important;
+}
+.mo_saml_local_pricing_header{
+	color: #fff !important;
+	margin: 4px !important;
+}
+.mo_saml_local_pricing_table{
+	text-align:center;
+	font-size: 15px !important;
+	background-color:#FFFFFF;
+}
+
+.mo_saml_local_thumbnail{
+	width: 250px;
+    padding: 4px;
+    margin-bottom: 10px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.mo-fa-icon>tr>td>i.fa{
+	color:#5b8a0f;
+
+}
+
+.mo_align-center>tr>td{
+	text-align:center !important;
+}
+
+.mo_table-bordered, .mo_table-bordered>tbody>tr>td{
+	border: 1px solid #ddd;
+}
+
+.mo_table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.mo_table-bordered>thead>tr>th{
+	vertical-align:top !important;
+}
+
+.mo_plan-desc{
+	font-size:14px !important;
+}
+ /* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+	size: letter;
+ /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+
+    background-color:grey;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+	font-size: 12px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+	font-size: small;
+    /* Fade in tooltip */
+    opacity: 50;
+    transition: opacity 0.3s;
+}
+/*SAML Request and Response pages*/
+.mo-display-logs{
+	color: #3c763d;
+	background-color: #dff0d8;
+	padding:2%;
+	margin-bottom:20px;
+	text-align:center;
+	border:1px solid #AEDB9A;
+	font-size:18pt;
+}
+.mo-display-block {
+	color: #050505;
+	width: -moz-available;
+	min-height: 300px !important;
+	overflow: auto;
+	display: inline-block;
+	background-color: #f6f6f6;
+	padding: 2%;
+	margin-bottom: 20px;
+	text-align: left;
+	border: 1px solid #AEDB9A;
+	font-size: 12pt;
+}
+.mo_divider{
+	width:5px;
+	height:auto;
+	display:inline-block;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+	position: relative;
+	margin: auto;
+}
+
+/* Next & previous buttons */
+.mo_prev, .mo_next {
+	cursor: pointer;
+	position: absolute;
+	top: 33%;
+	width: 4%;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	background-color: rgba(0,0,0,0.55);
+	align-items: center;
+	height: 102px;
+	justify-content: center;
+	display: flex;
+	z-index: 2;
+
+}
+
+/* Position the "next button" to the right */
+.mo_next {
+	margin-right: 2%;
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.mo_prev:hover, .mo_next:hover {
+	background-color: rgba(0,0,0,0.8);
+
+}
+
+
+
+/* Number text (1/3 etc) */
+
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #0085ba;
+}
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 2.0s;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: .65}
+	to {opacity: 1}
+}
+
+@keyframes fade {
+	from {opacity: .65}
+	to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.prev, .next,.text {font-size: 11px}
+}
+
+/* The switch - the box around the slider */
+.switch {
+position: relative;
+display: inline-block;
+width: 40px;
+height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #cdcdcd;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 20px;
+width: 20px;
+left: 2px;
+bottom: 2px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #0085ba;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #0085ba;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(16px);
+-ms-transform: translateX(16px);
+transform: translateX(16px);
+}
+
+input:disabled + .slider{
+    background-color: #ebebeb;
+    cursor: default;
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 24px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+@-webkit-keyframes arrow-jump-next {
+    0%   { opacity: 1;}
+    100% { opacity: 1;
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -0-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+
+}
+@-webkit-keyframes arrow-jump-prev {
+    0%   { opacity: 1;}
+    100% { opacity: 1;
+        -webkit-transform: translateX(-10px);
+        -moz-transform: translateX(-10px);
+        -0-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+}
+#mo_next_pointer {
+    font-size: 30px;
+    -webkit-animation: arrow-jump-next 1s infinite; /* Safari 4+ */
+    -moz-animation:    arrow-jump-next 1s infinite; /* Fx 5+ */
+    -o-animation:      arrow-jump-next 1s infinite; /* Opera 12+ */
+    animation:         arrow-jump-next 1s infinite; /* IE 10+, Fx 29+ */
+}
+#mo_prev_pointer {
+    font-size: 30px;
+    -webkit-animation: arrow-jump-prev 1s infinite; /* Safari 4+ */
+    -moz-animation:    arrow-jump-prev 1s infinite; /* Fx 5+ */
+    -o-animation:      arrow-jump-prev 1s infinite; /* Opera 12+ */
+    animation:         arrow-jump-prev 1s infinite; /* IE 10+, Fx 29+ */
+}
+
+#mo_next_pointer:hover,#mo_prev_pointer:hover{
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+    color: #0085ba;
+}
+#mo_prev_pointer:hover{
+    color: #0085ba;
+}
+
+
+.container {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.progress-tracker-table {
+	background-color:#FFFFFF;
+	border:1px solid #CCCCCC;
+	padding:2%;
+}
+
+
+
+.mo_card:hover td{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.mo_copy{
+	border: 1px solid #CCCCCC;
+	padding:8px;
+	background-color:#FBFBFB;
+	cursor: pointer;
+}
+
+.mo_copy:active{
+	background-color:#CCCCCC;
+}
+
+
+ /* Tooltip container */
+ .copytooltip {
+    position: relative;
+    display: inline-block;
+    size: letter;
+ /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.copytooltip .copytooltiptext {
+    visibility: hidden;
+    width: 120px;
+
+    background-color:grey;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 12px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: small;
+    /* Fade in tooltip */
+    opacity: 50;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.copytooltip .copytooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.copytooltip:hover .copytooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

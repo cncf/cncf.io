@@ -1,0 +1,765 @@
+<?php
+
+foreach (glob(plugin_dir_path(__FILE__).'views'.DIRECTORY_SEPARATOR.'*.php') as $filename)
+{
+	include_once $filename;
+}
+include 'Import-export.php';
+
+function mo_register_saml_sso() {
+	$request_uri = remove_query_arg('action');
+	$_SERVER['REQUEST_URI'] = $request_uri;
+	if( isset( $_GET[ 'tab' ] ) ) {
+		$active_tab = $_GET[ 'tab' ];
+	} else if(mo_saml_is_customer_registered_saml() && mo_saml_is_customer_license_key_verified() && mo_saml_is_sp_configured()) {
+		$active_tab = 'redirection_sso_tab';
+	} else if(mo_saml_is_customer_registered_saml() && mo_saml_is_customer_license_key_verified()) {
+		$active_tab = 'sp_metadata';
+	} else {
+		$active_tab = 'login';
+	}
+		if(!mo_saml_is_extension_installed('curl')) {
+			echo '
+			<p><font color="#FF0000">(Warning: <a href="http://php.net/manual/en/curl.installation.php" target="_blank">PHP cURL extension</a> is not installed or disabled)</font></p>';
+		}
+
+		if(!mo_saml_is_extension_installed('openssl')) {
+			echo '
+			<p><font color="#FF0000">(Warning: <a href="http://php.net/manual/en/openssl.installation.php" target="_blank">PHP openssl extension</a> is not installed or disabled)</font></p>';
+		}
+
+echo ' <div class="wrap">
+<h1>
+
+	miniOrange SSO using SAML 2.0&nbsp
+	<a id="license_upgrade" class="add-new-h2 add-new-hover" style="background-color: orange !important; border-color: orange; font-size: 16px; color: #000;" href="' . add_query_arg( array( 'tab' => 'licensing' ), htmlentities( $_SERVER['REQUEST_URI'] ) ) . '">Premium Plans</a>
+	<a class="add-new-h2" href="https://faq.miniorange.com/kb/saml-single-sign-on/" target="_blank">FAQs</a>
+	<a class="add-new-h2" href="https://forum.miniorange.com/" target="_blank">Ask questions on our forum</a>
+	<?php } ?>
+
+</h1>
+
+</div>';
+
+echo '
+<div id="mo_saml_settings">
+	<div class="miniorange_container">
+	
+	';
+	if(mo_saml_lk_multi_host())
+		echo '<div class="notice notice-error is-dismissible"><p><b>Warning :</b> You are using same license key on multiple sites. Please <a href="'. add_query_arg( array('tab' => 'licensing'), $_SERVER['REQUEST_URI'] ).'">buy more license keys</a> or your plugin will be disabled soon.</p></div>';
+	echo '<table style="width:100%;">
+		<tr>
+			<h2 class="nav-tab-wrapper">';
+
+
+	            if(!mo_saml_is_customer_registered_saml()  ||  !mo_saml_is_customer_license_key_verified()) {
+					echo '<a class="nav-tab '.($active_tab == 'login' ? 'nav-tab-active' : '') .'" href="'.add_query_arg( array('tab' => 'login'), $_SERVER['REQUEST_URI'] ).'">Account Setup</a>';
+				}
+
+	echo '<a class="nav-tab ' . ( $active_tab == 'sp_metadata' ? 'nav-tab-active' : '' ) . '" href="' . add_query_arg( array( 'tab' => 'sp_metadata' ), $_SERVER['REQUEST_URI'] ) . '">Service Provider Metadata</a>';
+
+	echo '<a class="nav-tab ' . ( $active_tab == 'save' ? 'nav-tab-active' : '' ) . '" href="' . add_query_arg( array( 'tab' => 'save' ), $_SERVER['REQUEST_URI'] ) . '">Service Provider Setup</a>';
+
+	echo '<a class="nav-tab ' . ( $active_tab == 'attribute_role' ? 'nav-tab-active' : '' ) . '" href="' . add_query_arg( array( 'tab' => 'attribute_role' ), $_SERVER['REQUEST_URI'] ) . '">Attribute/Role Mapping</a>';
+
+	if ( mo_saml_is_customer_registered_saml() && mo_saml_is_customer_license_key_verified() ) {
+		echo '<a class="nav-tab ' . ( $active_tab == 'redirection_sso_tab' ? 'nav-tab-active' : '' ) . '" href="' . add_query_arg( array( 'tab' => 'redirection_sso_tab' ), $_SERVER['REQUEST_URI'] ) . '">Redirection & SSO Links</a>';
+		echo '<a class="nav-tab '.($active_tab == 'account_info' ? 'nav-tab-active' : '') .'" href="'.add_query_arg( array('tab' => 'account_info'), $_SERVER['REQUEST_URI'] ).'">Account Setup</a>';
+	}
+
+				echo '
+			</h2>';
+			if($active_tab !== 'attribute_role'){
+				echo '<td style="vertical-align:top;width:65%;" >';
+			} else {
+				echo '<td style="vertical-align:top;width:60%;">';
+			}
+
+<<<<<<< working copy
+				if($active_tab == 'save' ) {
+=======
+				if($active_tab == 'save') {
+>>>>>>> destination
+					mo_saml_apps_config_saml();
+				} else if($active_tab == 'attribute_role') {
+					mo_saml_save_optional_config();
+				} else if($active_tab == 'help') {
+					mo_saml_show_faqs();
+<<<<<<< working copy
+				} else if($active_tab == 'sp_metadata'|| ($active_tab=='login' && mo_saml_is_customer_license_key_verified())){
+=======
+				} else if($active_tab == 'sp_metadata'  || ($active_tab=='login' && mo_saml_is_customer_license_key_verified())){
+>>>>>>> destination
+					mo_saml_configuration_steps();
+				} else if($active_tab == 'redirection_sso_tab'){
+					mo_saml_general_login_page();
+				}else if($active_tab == 'licensing'){
+					mo_saml_show_pricing_page();
+					echo '<style>#support-form{ display:none;}</style>';
+				}else if($active_tab == 'account_info' && mo_saml_is_customer_registered_saml() && mo_saml_is_customer_license_key_verified()){
+					mo_saml_display_account_information();
+				}else {
+					if (get_option ( 'mo_saml_verify_customer' ) == 'true') {
+						mo_saml_show_verify_password_page_saml();
+					} else if (trim ( get_option ( 'mo_saml_admin_email' ) ) != '' && trim ( get_option ( 'mo_saml_admin_api_key' ) ) == '' && get_option ( 'mo_saml_new_registration' ) != 'true') {
+						mo_saml_show_verify_password_page_saml();
+					}else if(get_option('mo_saml_registration_status') == 'MO_OTP_DELIVERED_SUCCESS_EMAIL' || get_option('mo_saml_registration_status') == 'MO_OTP_DELIVERED_SUCCESS_PHONE' || get_option('mo_saml_registration_status') == 'MO_OTP_VALIDATION_FAILURE_EMAIL' || get_option('mo_saml_registration_status') == 'MO_OTP_VALIDATION_FAILURE_PHONE' || get_option('mo_saml_registration_status') == 'MO_OTP_DELIVERED_FAILURE' ){
+						mo_saml_show_otp_verification();
+					}	else if (! mo_saml_is_customer_registered_saml()) {
+						mo_saml_show_verify_password_page_saml();
+					} else if ( mo_saml_is_customer_registered_saml() && (!mo_saml_is_customer_license_key_verified())) {
+						mo_saml_show_verify_license_page();
+					} else {
+						mo_saml_general_login_page();
+					}
+				}
+
+			echo '</td>
+			<td style="vertical-align:top;padding-left:1%;" id="support-form">';
+			if($active_tab !== 'attribute_role' || !get_option('mo_saml_test_config_attrs')){
+				miniorange_support_saml();
+				if(mo_saml_is_customer_registered_saml() && mo_saml_is_customer_license_key_verified())
+				    miniorange_keep_configuration_saml();
+			} else {
+				mo_saml_display_attrs_list();
+			}
+			echo '</td>
+		</tr>
+	</table>
+	</div>
+
+
+		<form name="f" method="post" action="" id="mo_saml_check_license">
+			<input type="hidden" name="option" value="mo_saml_check_license"/>
+		</form>
+		<form style="display:none;" id="loginform" action="'.mo_options_plugin_constants::HOSTNAME.'/moas/login"
+		target="_blank" method="post">
+		<input type="email" name="username" value="'.get_option('mo_saml_admin_email').'" />
+		<input type="text" name="redirectUrl" value="'.get_option('mo_saml_host_name').'/moas/viewlicensekeys" />
+		<input type="text" name="requestOrigin" value="wp_saml_sso_basic_plan"  />
+		</form>
+		<script>
+			jQuery("a[href=\"#activatelicense\"]").click(function(){
+				jQuery("#mo_saml_check_license").submit();
+			});
+		</script>';
+
+}
+
+function mo_saml_is_extension_installed($extension_name) {
+	if  (in_array  ($extension_name, get_loaded_extensions())) {
+		return 1;
+	} else
+		return 0;
+}
+
+function mo_saml_display_account_information(){
+
+	echo '<div style="background-color:#FFFFFF; border:1px solid #CCCCCC; padding:0px 0px 0px 10px;">
+	<h3>Your Profile</h3>
+<p>Thanks for upgrading to <b>Standard</b> plugin.</p>
+	<table border="1" style="background-color:#FFFFFF; border:1px solid #CCCCCC; border-collapse: collapse; padding:0px 0px 0px 10px; margin:2px; width:85%">
+		<tr>
+			<td style="width:45%; padding: 10px;">miniOrange Account Email</td>
+			<td style="width:55%; padding: 10px;">'. get_option('mo_saml_admin_email'). '</td>
+		</tr>
+		<tr>
+			<td style="width:45%; padding: 10px;">Customer ID</td>
+			<td style="width:55%; padding: 10px;">'. get_option('mo_saml_admin_customer_key'). '</td>
+		</tr>
+
+	</table>
+	<div style="display:block;text-align:center;margin:2%; margin-left: -10%">
+	<input type="button" name="mo_saml_remove_account" id="mo_saml_remove_account" value="Remove Account" class="button button-primary button-large" />
+	</div>
+</div>
+<form name="f" method="post" action="" id="mo_saml_remove_account_form">
+<input type="hidden" name="option" value="mo_saml_remove_account"/>
+</form>
+<script>
+jQuery("#mo_saml_remove_account").click(function(){
+	jQuery("#mo_saml_remove_account_form").submit();
+});
+</script>';
+}
+
+function mo_saml_show_new_registration_page_saml() {
+	update_option ( 'mo_saml_new_registration', 'true' );
+
+		echo '<form name="f" method="post" action="">
+			<input type="hidden" name="option" value="mo_saml_register_customer" />
+			<div class="mo_saml_table_layout" style="padding-bottom:72px;">
+					<h3>Register with miniOrange</h3>
+					<p><a href="#" id="help_register_link">[ Why should I register? ]</a></p>
+					<div hidden id="help_register_desc" class="mo_saml_help_desc">
+						You should register so that in case you need help, we can help you with step by step instructions. We support all known IdPs - <b>ADFS, Okta, Salesforce, Shibboleth, SimpleSAMLphp, OpenAM, Centrify, Ping, RSA, IBM, Oracle, OneLogin, Bitium, JBoss Keycloak etc</b>.
+					</div>
+					</p>
+					<table class="mo_saml_settings_table">
+						<tr>
+							<td><b><font color="#FF0000">*</font>Email:</b></td>
+							<td><input class="mo_saml_table_textbox" type="email" name="email"
+								required placeholder="person@example.com"
+								value="'. get_option('mo_saml_admin_email').'" /></td>
+						</tr>
+
+						<tr>
+							<td><b>Phone number:</b></td>
+							<td><input class="mo_saml_table_textbox" type="tel" id="phone_contact" style="width:80%;"
+								pattern="[\+]\d{11,14}|[\+]\d{1,4}([\s]{0,1})(\d{0}|\d{9,10})" class="mo_saml_table_textbox" name="phone"
+								title="Phone with country code eg. +1xxxxxxxxxx"
+								placeholder="Phone with country code eg. +1xxxxxxxxxx"
+								value="'.get_option('mo_saml_admin_phone').'" /></td>
+						</tr>
+							<tr>
+								<td></td>
+								<td>We will call only if you need support.</td>
+							</tr>
+						<tr>
+							<td><b><font color="#FF0000">*</font>Password:</b></td>
+							<td><input class="mo_saml_table_textbox" required type="password"
+								name="password" placeholder="Choose your password (Min. length 6)"
+								minlength="6" pattern="^[(\w)*(!@#.$%^&*-_)*]+$"
+								title="Minimum 6 characters should be present. Maximum 15 characters should be present. Only following symbols (!@#.$%^&*-_) should be present"
+								/></td>
+						</tr>
+						<tr>
+							<td><b><font color="#FF0000">*</font>Confirm Password:</b></td>
+							<td><input class="mo_saml_table_textbox" required type="password"
+								name="confirmPassword" placeholder="Confirm your password" 
+								minlength="6" pattern="^[(\w)*(!@#.$%^&*-_)*]+$"
+								title="Minimum 6 characters should be present. Maximum 15 characters should be present. Only following symbols (!@#.$%^&*-_) should be present"
+								/></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><input type="submit" name="submit" value="Register"
+								class="button button-primary button-large" /></td>
+						</tr>
+					</table>
+			</div>
+		</form>';
+
+}
+
+
+function sanitize_element() {
+		$code = file_get_contents(plugins_url( 'resources/en_li.mo', __FILE__ ));
+		$tokenkey = get_option('mo_saml_customer_token');
+		$code = AESEncryption::decrypt_data($code,$tokenkey);
+		if(empty($code))
+			return "";
+
+		$apikey = get_option('mo_saml_admin_api_key');
+		$code = AESEncryption::decrypt_data($code,$apikey);
+
+		$xml=simplexml_load_string($code);
+		return strval($xml->expirationTime);
+	}
+
+function mo_saml_show_verify_password_page_saml() {
+
+	echo '<form name="f" method="post" action="">
+			<input type="hidden" name="option" value="mo_saml_verify_customer" />
+			<div class="mo_saml_table_layout">
+				<div id="toggle1" class="panel_toggle">
+					<h3>Login with miniOrange</h3>
+				</div>
+				<div id="panel1">
+					<!--<p><b>It seems you already have an account with miniOrange. Please enter your miniOrange email and password.<br/>-->
+					<b><a href="https://auth.miniorange.com/moas/idp/resetpassword" target="_blank">Click here if you forgot your password?</a></b></p>
+					<br/>
+					<table class="mo_saml_settings_table">
+						<tr>
+							<td><b><font color="#FF0000">*</font>Email:</b></td>
+							<td><input class="mo_saml_table_textbox" type="email" name="email"
+								required placeholder="person@example.com"
+								value="'. get_option('mo_saml_admin_email').'" size="60%"/></td>
+						</tr>
+						<tr>
+						<td><b><font color="#FF0000">*</font>Password:</b></td>
+						<td><input class="mo_saml_table_textbox" required type="password"
+							name="password" placeholder="Enter your password" size="60%"
+							minlength="6" pattern="^[(\w)*(!@#.$%^&*-_)*]+$"
+							title="Minimum 6 characters should be present. Maximum 15 characters should be present. Only following symbols (!@#.$%^&*-_) should be present"
+							/></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>
+							<input type="submit" name="submit" value="Login"
+								class="button button-primary button-large" />
+
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>';
+}
+
+function mo_saml_show_verify_license_page() {
+
+	echo '<div class="mo_saml_table_layout" style="padding-bottom:50px;!important">';
+
+				 if(signElement()){
+
+					 if(!site_check()){
+						echo '<table style="width:100%"><tr><td><h3>Confirm your license<hr></h3>
+						If you have taken 5 days free trial of premium plugin just click the below button to confirm your plan.<br><br>
+						<input type="button" name="submit" id="mo_saml_free_trial_link" value="Activate 5 Days Free Trial" class="button button-primary button-large" /></td>
+						</tr>
+						<tr><td style="text-align:center">OR<br><br></td></tr>
+						<tr>
+						<td>If you have upgraded to <b>Do It Yourself or Premium Plan</b>, click the below button to confirm your license plan.<br><br><a href="#checklicense"><input type="button" name="submit" id="" value="Confirm Your License Plan" class="button button-primary button-large" /></a>
+						</td></tr></table><br><br>';
+
+					 }
+				 }
+
+				if(!signElement() || site_check()){
+					echo '<h3>Verify License  [ <span style="font-size:13px;font-style:normal;"><a style="cursor:pointer;" onclick="getlicensekeysform()" >Click here to view your license key</a></span> ]</h3><hr>';
+
+
+						echo '<form name="f" method="post" action="">
+						<input type="hidden" name="option" value="mo_saml_verify_license" />
+
+							<p><b><font color="#FF0000">*</font>Enter your license key to activate the plugin:</b>
+							<input class="mo_saml_table_textbox" required type="text" style="margin-left:40px;width:300px;"
+								name="saml_licence_key" placeholder="Enter your license key to activate the plugin" ';
+							echo '/>
+							</p>
+							<p><b><font color="#FF0000">*</font>Please check this to confirm that you have read it: </b>&nbsp;&nbsp;<input required type="checkbox" name="license_conditions" ';
+							echo '/></p>
+							</p>
+
+							<ol>
+							<li>License key you have entered here is associated with this site instance. In future, if you are re-installing the plugin or your site for any reason. You should deactivate and then delete the plugin from wordpress console and should not manually delete the plugin folder. So that you can resuse the same license key.</li><br>
+							<li><b>This is not a developer\'s license.</b> Making any kind of change to the plugin\'s code will delete all your configuration and make the plugin unusable.</li>
+							<br>
+								<input type="submit" name="submit" value="Activate License" class="button button-primary button-large" ';
+
+								 echo '/>
+								<input type="button" class="button button-primary button-large" value="Back" onclick="document.forms[\'mo_saml_back_license\'].submit();"/>
+					</form>';
+
+				 }
+			echo '</div>
+
+		<form name="f" method="post" action="" id="mo_saml_free_trial_form">
+			<input type="hidden" name="option" value="mo_saml_free_trial"/>
+		</form>
+		<form name="f" method="post" action="" id="mo_saml_check_license">
+			<input type="hidden" name="option" value="mo_saml_check_license"/>
+		</form>
+		<form name="f" method="post" action="" id="mo_saml_back_license">
+			<input type="hidden" name="option" value="mo_saml_remove_account"/>
+		</form>
+		<script>
+			jQuery("#mo_saml_free_trial_link").click(function(){
+				jQuery("#mo_saml_free_trial_form").submit();
+			});
+			jQuery("a[href=\"#checklicense\"]").click(function(){
+				jQuery("#mo_saml_check_license").submit();
+			});
+		</script>';
+}
+
+
+function mo_saml_show_otp_verification(){
+		echo '<form name="f" method="post" id="otp_form" action="">
+			<input type="hidden" name="option" value="mo_saml_validate_otp" />
+			<div class="mo_saml_table_layout">
+				<table class="mo_saml_settings_table" style="padding-bottom:72px;">
+					<h3>Verify Your Email</h3>
+					<tr>
+						<td><b><font color="#FF0000">*</font>Enter OTP:</b></td>
+						<td colspan="2"><input class="mo_saml_table_textbox" autofocus="true" type="text" name="otp_token" required placeholder="Enter OTP" style="width:61%;" pattern="{6,8}"/>
+						 &nbsp;&nbsp;<a style="cursor:pointer;" onclick="document.getElementById(\'resend_otp_form\').submit();">Resend OTP</a></td>
+					</tr>
+					<tr><td colspan="3"></td></tr>
+					<tr>
+
+						<td>&nbsp;</td>
+						<td style="width:17%">
+						<input type="submit" name="submit" value="Validate OTP" class="button button-primary button-large" /></td>
+
+		</form>
+		<form name="f" method="post">
+						<td style="width:18%">
+							<input type="hidden" name="option" value="mo_saml_go_back"/>
+							<input type="submit" name="submit"  value="Back" class="button button-primary button-large" />
+						</td>
+		</form>
+		<form name="f" id="resend_otp_form" method="post" action="">
+						<td>';
+		 if(get_option('mo_saml_registration_status') == 'MO_OTP_DELIVERED_SUCCESS_EMAIL' || get_option('mo_saml_registration_status') == 'MO_OTP_VALIDATION_FAILURE_EMAIL') {
+				echo '<input type="hidden" name="option" value="mo_saml_resend_otp_email"/>';
+		} else {
+			echo '<input type="hidden" name="option" value="mo_saml_resend_otp_phone"/>';
+		}
+		echo '</td>
+
+		</form>
+		</tr>
+			</table>';
+		 if(get_option('mo_saml_registration_status') == 'MO_OTP_DELIVERED_SUCCESS_EMAIL' || get_option('mo_saml_registration_status') == 'MO_OTP_VALIDATION_FAILURE_EMAIL') {
+			echo '<hr>
+
+				<h3>I did not recieve any email with OTP . What should I do ?</h3>
+				<form id="mo_saml_register_with_phone_form" method="post" action="">
+					<input type="hidden" name="option" value="mo_saml_register_with_phone_option" />
+					 If you cannot see the email from miniOrange in your mails, please check your <b>SPAM</b> folder. If you don\'t see an email even in the SPAM folder, verify your identity with our alternate method.
+					 <br><br>
+						<b>Enter your valid phone number here and verify your identity using one time passcode sent to your phone.</b><br><br>
+						<input class="mo_saml_table_textbox" type="tel" id="phone_contact" style="width:40%;"
+								pattern="[\+]\d{11,14}|[\+]\d{1,4}([\s]{0,1})(\d{0}|\d{9,10})" class="mo_saml_table_textbox" name="phone"
+								title="Phone with country code eg. +1xxxxxxxxxx" required
+								placeholder="Phone with country code eg. +1xxxxxxxxxx"
+								value="'. get_option('mo_saml_admin_phone').'" />
+						<br /><br /><input type="submit" value="Send OTP" class="button button-primary button-large" />
+
+				</form>';
+		 }
+	echo '</div>';
+
+}
+
+
+function postResponse() {
+	$code = file_get_contents(plugins_url( 'resources/en_li.mo', __FILE__ ));
+	$tokenkey = get_option('mo_saml_customer_token');
+	$code = AESEncryption::decrypt_data($code,$tokenkey);
+	if(empty($code))
+		return "";
+
+	$apikey = get_option('mo_saml_admin_api_key');
+	$code = AESEncryption::decrypt_data($code,$apikey);
+
+	$xml=simplexml_load_string($code);
+	return strval($xml->code);
+}
+
+function decryptSamlElement() {
+
+		$code = file_get_contents(plugins_url( 'resources/en_li.mo', __FILE__ ));
+
+		$tokenkey = get_option('mo_saml_customer_token');
+		$code = AESEncryption::decrypt_data($code,$tokenkey);
+		if(empty($code))
+			return true;
+
+		$apikey = get_option('mo_saml_admin_api_key');
+		$code = AESEncryption::decrypt_data($code,$apikey);
+
+		$xml=simplexml_load_string($code);
+		$signature = $xml->signature;
+		$publickey = $xml->token;
+
+		$publickey = AESEncryption::decrypt_data($publickey,$tokenkey);
+		$parts = str_split($publickey, $split_length = 64);
+		$publickey = "-----BEGIN PUBLIC KEY-----\n";
+		foreach($parts as $part)
+			$publickey .= $part."\n";
+		$publickey .= "-----END PUBLIC KEY-----";
+
+		$pubkeyid = openssl_get_publickey($publickey);
+		$data = $xml->expirationTime;
+
+		$signature = base64_decode($signature);
+		$ok = openssl_verify($data, $signature, $pubkeyid, OPENSSL_ALGO_SHA1);
+		if ($ok == 1) {
+			$expiry = $xml->expirationTime;
+			$expirytime = strtotime($expiry);
+			$currenttime = time();
+			if($currenttime > $expirytime)
+				return true;
+			else{
+				$customer = new Customersaml();
+				$diff = $expirytime - $currenttime;
+				$diffdays = $diff / ( 60*60*24 );
+				$diffdays = intval ($diffdays);
+				if($diffdays<1 && !get_option("mo_saml_alert_sent_for_one")){
+					$customer->mo_saml_send_alert_email(1);
+					update_option("mo_saml_alert_sent_for_one",true);
+				} else if($diffdays<2 && !get_option("mo_saml_alert_sent_for_two")){
+					$customer->mo_saml_send_alert_email(2);
+					update_option("mo_saml_alert_sent_for_two",true);
+				}
+				return false;
+			}
+		}
+		return true;
+	}
+
+
+function mo_saml_lk_multi_host(){
+	$vl_check_s = get_option('vl_check_s');
+	$key = get_option('mo_saml_customer_token');
+	if($vl_check_s){
+		$vl_check_s = AESEncryption::decrypt_data($vl_check_s,$key);
+		if($vl_check_s=="false")
+			return true;
+	}
+	return false;
+}
+function mo_saml_get_saml_request_url() {
+
+
+        $url = home_url() . '/?option=getsamlrequest';
+
+
+    return $url;
+}
+
+function mo_saml_get_saml_response_url() {
+
+        $url = home_url() . '/?option=getsamlresponse';
+
+
+    return $url;
+}
+function check_plugin_state(){
+	echo '<tr>';
+	if(!mo_saml_is_customer_registered_saml()) {
+				echo '<td colspan="2">
+<div style="display:block;margin-top:10px;color:red;background-color:rgba(251, 232, 0, 0.15);padding:5px;border:solid 1px rgba(255, 0, 9, 0.36);">Please <a href="'. add_query_arg( array('tab' => 'login'), $_SERVER['REQUEST_URI'] ) .'">Register or Login with miniOrange</a> to configure the miniOrange SAML Plugin.</div></td>';
+			}else if(!mo_saml_is_customer_license_key_verified() ) {
+				echo '<td colspan="2"><div style="display:block;margin-top:10px;color:red;background-color:rgba(251, 232, 0, 0.15);padding:5px;border:solid 1px rgba(255, 0, 9, 0.36);">';
+				if(signElement() &&  !site_check()){
+					echo '<a href="'. add_query_arg( array('tab' => 'login'), $_SERVER['REQUEST_URI'] ). '">Click here</a> to activate your 5 days FREE Trial for the plugin.';
+				} else {
+					echo 'Please enter your<a href="'. add_query_arg( array('tab' => 'login'), $_SERVER['REQUEST_URI'] ) .'"> license key</a> to activate the plugin.';
+				}
+				echo '</div></td>';
+			}
+		echo '</tr>';
+
+}
+
+
+function signElement() {
+	if(file_exists(plugin_dir_path(__FILE__) . 'resources/en_li.mo'))
+		return true;
+	return false;
+}
+
+
+function site_check(){
+	$status = false;
+	$key = get_option('mo_saml_customer_token');
+	if(get_option("site_ck_l")){
+		if(AESEncryption::decrypt_data(get_option('site_ck_l'),$key)=="true")
+			$status = true;
+	}
+	if($status && !mo_saml_lk_multi_host()){
+		$vl_check_t = get_option('vl_check_t');
+		if($vl_check_t){
+			$vl_check_t = intval($vl_check_t);
+			if(time()-$vl_check_t<3600*24*3)
+				return $status;
+		}
+		$code = get_option('sml_lk');
+		if($code){
+			$code  = AESEncryption::decrypt_data($code,$key);
+			$customer = new Customersaml();
+			$content = json_decode($customer->mo_saml_vl($code,true),true);
+			if(strcasecmp($content['status'], 'SUCCESS') == 0){delete_option('vl_check_s');}else{update_option('vl_check_s',AESEncryption::encrypt_data("false",$key));}
+		}
+		update_option('vl_check_t',time());
+	}
+	return $status;
+}
+
+
+add_action( 'mo_saml_flush_cache', 'mo_saml_flush_cache', 10, 3 );
+
+
+function mo_saml_flush_cache() {
+	if(mo_saml_is_customer_registered_saml() && get_option('sml_lk')){
+		$customer = new Customersaml();
+		$customer->mo_saml_update_status();
+	}
+}
+
+function mo_saml_get_test_url(){
+
+		return home_url(). '/?option=testidpconfig';
+
+}
+
+function mo_saml_get_attribute_mapping_url(){
+
+    return add_query_arg( array('tab' => 'attribute_role'), $_SERVER['REQUEST_URI'] );
+}
+
+function mo_saml_is_customer_registered_saml($html_element=false) {
+			$email 			= get_option('mo_saml_admin_email');
+			$customerKey 	= get_option('mo_saml_admin_customer_key');
+			if( ! $email || ! $customerKey || ! is_numeric( trim( $customerKey ) ) ) {
+				return $html_element?'disabled':0;
+			}
+			return $html_element?'':1;
+}
+
+
+function mo_saml_is_customer_license_key_verified($html_element=false) {
+
+	$key = get_option('mo_saml_customer_token');
+	$isTrialActive = AESEncryption::decrypt_data(get_option('t_site_status'),$key);
+	$licenseKey = get_option('sml_lk');
+	$email 		= get_option('mo_saml_admin_email');
+	$customerKey = get_option('mo_saml_admin_customer_key');
+	if( ($isTrialActive!="true" && !$licenseKey) || ! $email || ! $customerKey || ! is_numeric( trim( $customerKey ) ) ){
+        return $html_element?'disabled':0;
+	}return $html_element?'':1;
+}
+
+function mo_saml_is_sp_configured($html_element=false) {
+	$saml_login_url = get_option('saml_login_url');
+	$saml_x509_certificate=get_option('saml_x509_certificate');
+	if( !empty($saml_login_url) && !empty($saml_x509_certificate)) {
+		return $html_element?'':1;
+	}
+	return $html_element?'disabled title="Disabled. Configure your Service Provider"':0;
+}
+function Multisite_enabled(){
+	if( is_multisite()){
+		return "<b><font color='green'> enabled </font></b>";
+	}
+	return "<b><font color='red'> disabled </font></b>";
+}
+
+function miniorange_generate_metadata($download = false){
+
+		$sp_base_url = get_option('mo_saml_sp_base_url');
+		if(empty($sp_base_url)) {
+			$sp_base_url = home_url();
+		}
+		if (substr($sp_base_url, - 1) == '/') {
+				$sp_base_url = substr($sp_base_url, 0, - 1);
+		}
+		$sp_entity_id = get_option('mo_saml_sp_entity_id');
+		if(empty($sp_entity_id)) {
+			$sp_entity_id = $sp_base_url.'/wp-content/plugins/miniorange-saml-20-single-sign-on/';
+		}
+
+		$entity_id = $sp_entity_id;
+		$acs_url = $sp_base_url . '/';
+		$certificate = file_get_contents( plugin_dir_path(__FILE__) . 'resources' . DIRECTORY_SEPARATOR . 'sp-certificate.crt' );
+		$certificate = SAMLSPUtilities::desanitize_certificate($certificate);
+
+		header('Content-Type: text/xml');
+		if($download)
+			header('Content-Disposition: attachment; filename="mo-saml-sp-metadata.xml"');
+		echo '<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" validUntil="2020-10-28T23:59:59Z" cacheDuration="PT1446808792S" entityID="' . $entity_id . '">
+  <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>' . $certificate . '</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>' . $certificate . '</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+	<md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+	<md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+	<md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="' . $acs_url . '" index="1"/>
+  </md:SPSSODescriptor>
+  <md:Organization>
+    <md:OrganizationName xml:lang="en-US">miniOrange</md:OrganizationName>
+    <md:OrganizationDisplayName xml:lang="en-US">miniOrange</md:OrganizationDisplayName>
+    <md:OrganizationURL xml:lang="en-US">http://miniorange.com</md:OrganizationURL>
+  </md:Organization>
+  <md:ContactPerson contactType="technical">
+    <md:GivenName>miniOrange</md:GivenName>
+    <md:EmailAddress>info@miniorange.com</md:EmailAddress>
+  </md:ContactPerson>
+  <md:ContactPerson contactType="support">
+    <md:GivenName>miniOrange</md:GivenName>
+    <md:EmailAddress>info@miniorange.com</md:EmailAddress>
+  </md:ContactPerson>
+</md:EntityDescriptor>';
+		exit;
+
+}
+
+function mo_saml_display_attrs_list(){
+	$idp_attrs = get_option('mo_saml_test_config_attrs');
+	if(!empty($idp_attrs)){
+		echo '<div class="mo_saml_support_layout" style="padding-bottom:20px;">
+		<h3>Attributes received from the Identity Provider:</h3>
+				<div>
+					<table style="border-collapse:collapse;border-spacing:0;table-layout: fixed; width: 95%;background-color:#ffffff;">
+					<tr style="text-align:center;"><td style="font-weight:bold;border:1px solid #949090;padding:2%; width:65%;">ATTRIBUTE NAME</td><td style="font-weight:bold;padding:2%;border:1px solid #949090; word-wrap:break-word; width:35%;">ATTRIBUTE VALUE</td></tr>';
+
+							foreach($idp_attrs as $attr_name => $values){
+								echo '<tr style="text-align:center;"><td style="font-weight:bold;border:1px solid #949090;padding:2%; word-wrap:break-word;">' . $attr_name . '</td>';
+								echo '<td style="padding:2%;border:1px solid #949090; word-wrap:break-word;">';
+								foreach($values as $index => $value){
+									echo $value;
+									if(next($values))
+										echo ' | ';
+								}
+								echo '</td>
+								</tr>';
+							}
+							echo '
+						</table></div>
+		</div>';
+	}
+}
+
+function mo_saml_download_logs($error_msg,$cause_msg) {
+
+    echo '<div style="font-family:Calibri;padding:0 3%;">';
+    echo '<hr class="header"/>';
+    echo '          <p style="font-size: larger       ">Please try the solution given above.If the problem persists,download the plugin configuration by clicking on Export Plugin Configuration and mail us at <a href="mailto:info@miniorange.com">info@miniorange.com</a>.</p>
+                    <p>We will get back to you soon!<p>
+                    </div>
+                    <div style="margin:3%;display:block;text-align:center;">
+                    <div style="margin:3%;display:block;text-align:center;">
+                    <form method="get" action="" name="mo_export" id="mo_export">
+				<input type="hidden" name="option" value="export_configuration" />
+				<input type="submit" class="miniorange-button" value="Export Plugin Configuration">
+				<input class="miniorange-button" type="button" value="Close" onclick="self.close()"></form>
+               ';
+    echo '&nbsp;&nbsp;';
+
+    $samlResponse = $_POST['SAMLResponse'];
+    update_option('MO_SAML_RESPONSE',$samlResponse);
+    $error_array  = array("Error"=>$error_msg,"Cause"=>$cause_msg);
+    update_option('MO_SAML_TEST',$error_array);
+    update_option('MO_SAML_TEST_STATUS',0);
+    ?>
+    <style>
+    .miniorange-button {
+    padding:1%;
+    background: #0091CD none repeat scroll 0% 0%;
+    cursor: pointer;font-size:15px;
+    border-width: 1px;border-style: solid;
+    border-radius: 3px;white-space: nowrap;
+    box-sizing: border-box;border-color: #0073AA;
+    box-shadow: 0px 1px 0px rgba(120, 200, 230, 0.6) inset;color: #FFF;
+    margin: 22px;
+    }
+</style>
+    <?php
+
+    exit();
+
+
+}
+
+
+
+?>

@@ -122,6 +122,7 @@ Thumbs.db
 !web/wp-content/plugins/search-filter-pro
 !web/wp-content/plugins/wp-all-import-pro
 !web/wp-content/plugins/customer-import-export-for-woocommerce
+!web/wp-content/plugins/miniorange-saml-20-single-sign-on
 
 # Allowing custom plugins
 !web/wp-content/plugins/text-on-image-block

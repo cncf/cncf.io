@@ -1,0 +1,6 @@
+Options All -Indexes
+
+<Files ~ "\.(crt|cer|key|pem)$">
+    Order allow,deny
+    Deny from all
+</Files>
