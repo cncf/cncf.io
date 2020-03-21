@@ -125,7 +125,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'menu_icon'         => 'dashicons-awards',
-			'rewrite'           => array( 'slug' => 'case-study' ),
+			'rewrite'           => array( 'slug' => 'case-studies' ),
 			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_case_study', $opts );
@@ -142,7 +142,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'menu_icon'         => 'dashicons-awards',
-			'rewrite'           => array( 'slug' => 'case-study-ch' ),
+			'rewrite'           => array( 'slug' => 'case-studies-ch' ),
 			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_case_study_ch', $opts );
@@ -159,7 +159,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'menu_icon'         => 'dashicons-video-alt3',
-			'rewrite'           => array( 'slug' => 'webinar' ),
+			'rewrite'           => array( 'slug' => 'webinars' ),
 			'supports'          => array( 'title', 'editor', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_webinar', $opts );
