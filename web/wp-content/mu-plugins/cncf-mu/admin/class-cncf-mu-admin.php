@@ -523,37 +523,6 @@ class Cncf_Mu_Admin {
 									'default_value' => '',
 									'placeholder'   => 'Kubernetes',
 								),
-								array(
-									'type'          => 'radio',
-									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'      => 'product_type', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Product Type', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => 'installer', // Value/s from the 'options'.
-									'use_toggle'    => false, // Use toggle control instead of checkbox.
-									'options'       => array(
-										'installer'    => __( 'Installer', 'my_plugin' ),
-										'distribution' => __( 'Distribution', 'my_plugin' ),
-										'hosted'       => __( 'Hosted', 'my_plugin' ),
-									),
-								),
-								array(
-									'type'          => 'radio',
-									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'      => 'cloud_type', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Cloud Type', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => 'public', // Value/s from the 'options'.
-									'use_toggle'    => false, // Use toggle control instead of checkbox.
-									'options'       => array(
-										'public'  => __( 'Public', 'my_plugin' ),
-										'hybrid'  => __( 'Hybrid', 'my_plugin' ),
-										'private' => __( 'Private', 'my_plugin' ),
-										'multi'   => __( 'Multi', 'my_plugin' ),
-									),
-								),
 							),
 						),
 					),
@@ -587,37 +556,6 @@ class Cncf_Mu_Admin {
 									'ui_border_top' => true, // Display CSS border-top in the editor control.
 									'default_value' => '',
 									'placeholder'   => 'Kubernetes',
-								),
-								array(
-									'type'          => 'radio',
-									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'      => 'product_type', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Product Type', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => 'installer', // Value/s from the 'options'.
-									'use_toggle'    => false, // Use toggle control instead of checkbox.
-									'options'       => array( // Required.
-										'installer'    => __( '安装程序 (Installer)', 'my_plugin' ),
-										'distribution' => __( '发行版 (Distribution)', 'my_plugin' ),
-										'hosted'       => __( '托管 (Hosted)', 'my_plugin' ),
-									),
-								),
-								array(
-									'type'          => 'radio', // Required.
-									'data_type'     => 'meta', // Available: 'meta', 'localstorage', 'none'.
-									'data_key'      => 'cloud_type', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'         => __( 'Cloud Type', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
-									'default_value' => 'public', // Value/s from the 'options'.
-									'use_toggle'    => false, // Use toggle control instead of checkbox.
-									'options'       => array( // Required.
-										'public'  => __( '公有 (Public)', 'my_plugin' ),
-										'hybrid'  => __( '混合 (Hybrid)', 'my_plugin' ),
-										'private' => __( '私有 (Private)', 'my_plugin' ),
-										'multi'   => __( '多云 (Multi)', 'my_plugin' ),
-									),
 								),
 							),
 						),
@@ -803,6 +741,86 @@ class Cncf_Mu_Admin {
 			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-country-ch', array( 'cncf_case_study_ch' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Product Type', 'cncf-mu' ),
+			'singular_name'     => __( 'Product Type', 'cncf-mu' ),
+			'search_items'      => __( 'Search Product Types', 'cncf-mu' ),
+			'all_items'         => __( 'All Product Types', 'cncf-mu' ),
+			'edit_item'         => __( 'Edit Product Type', 'cncf-mu' ),
+			'update_item'       => __( 'Update Product Type', 'cncf-mu' ),
+			'add_new_item'      => __( 'Add New Product Type', 'cncf-mu' ),
+			'new_item_name'     => __( 'New Product Type Name', 'cncf-mu' ),
+			'menu_name'         => __( 'Product Types', 'cncf-mu' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-product-type', array( 'cncf_case_study' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Product Type', 'cncf-mu' ),
+			'singular_name'     => __( 'Product Type', 'cncf-mu' ),
+			'search_items'      => __( 'Search Product Types', 'cncf-mu' ),
+			'all_items'         => __( 'All Product Types', 'cncf-mu' ),
+			'edit_item'         => __( 'Edit Product Type', 'cncf-mu' ),
+			'update_item'       => __( 'Update Product Type', 'cncf-mu' ),
+			'add_new_item'      => __( 'Add New Product Type', 'cncf-mu' ),
+			'new_item_name'     => __( 'New Product Type Name', 'cncf-mu' ),
+			'menu_name'         => __( 'Product Types', 'cncf-mu' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-product-type-ch', array( 'cncf_case_study_ch' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Cloud Type', 'cncf-mu' ),
+			'singular_name'     => __( 'Cloud Type', 'cncf-mu' ),
+			'search_items'      => __( 'Search Cloud Types', 'cncf-mu' ),
+			'all_items'         => __( 'All Cloud Types', 'cncf-mu' ),
+			'edit_item'         => __( 'Edit Cloud Type', 'cncf-mu' ),
+			'update_item'       => __( 'Update Cloud Type', 'cncf-mu' ),
+			'add_new_item'      => __( 'Add New Cloud Type', 'cncf-mu' ),
+			'new_item_name'     => __( 'New Cloud Type Name', 'cncf-mu' ),
+			'menu_name'         => __( 'Cloud Types', 'cncf-mu' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-cloud-type', array( 'cncf_case_study' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Cloud Type', 'cncf-mu' ),
+			'singular_name'     => __( 'Cloud Type', 'cncf-mu' ),
+			'search_items'      => __( 'Search Cloud Types', 'cncf-mu' ),
+			'all_items'         => __( 'All Cloud Types', 'cncf-mu' ),
+			'edit_item'         => __( 'Edit Cloud Type', 'cncf-mu' ),
+			'update_item'       => __( 'Update Cloud Type', 'cncf-mu' ),
+			'add_new_item'      => __( 'Add New Cloud Type', 'cncf-mu' ),
+			'new_item_name'     => __( 'New Cloud Type Name', 'cncf-mu' ),
+			'menu_name'         => __( 'Cloud Types', 'cncf-mu' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-cloud-type-ch', array( 'cncf_case_study_ch' ), $args );
 
 		$labels = array(
 			'name'          => __( 'Projects', 'cncf-mu' ),
