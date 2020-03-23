@@ -210,7 +210,7 @@ class Cncf_Mu_Admin {
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
 			'menu_icon'         => 'dashicons-groups',
-			'rewrite'           => array( 'slug' => 'speakers' ),
+			'rewrite'           => array( 'slug' => 'speakers-mirror' ),
 			'supports'          => array( 'title', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_speaker', $opts );
