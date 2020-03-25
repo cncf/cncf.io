@@ -1191,9 +1191,10 @@ class Cncf_Mu_Admin {
 		}
 
 		$um_member_directory_data = get_user_meta( $user_id, 'um_member_directory_data', false )[0];
+		$um_hide_in_members = get_user_meta( $user_id, 'hide_in_members', true );
 		$photo = get_user_meta( $user_id, 'profile_photo', true );
-		if ( 'approved' !== $um_member_directory_data['account_status'] || ! $photo ) {
-			// speaker must be approved and have a photo.
+		if ( 'approved' !== $um_member_directory_data['account_status'] || ! $photo || $um_hide_in_members ) {
+			// speaker must be approved, have a photo, and not have hidden their profile.
 			$eligible_for_search = false;
 		} else {
 			$eligible_for_search = true;
