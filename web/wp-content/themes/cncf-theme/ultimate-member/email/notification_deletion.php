@@ -1,3 +1,4 @@
+<?php //phpcs:ignorefile // this template comes from the ultimate member plugin and we would need to change its filename in order for it to comply with code sniffs.?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 
