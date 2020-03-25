@@ -22,10 +22,12 @@
  */
 
 if ( $query->have_posts() ) {
-	?>
+	if ( 'cncf_case_study_ch' === $query->query['post_type'] ) {
+		echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
+	} else {
+		echo 'Found ' . esc_html( $query->found_posts ) . ' Case Studies';
+	}
 
-	Found <?php echo esc_html( $query->found_posts ); ?> Case Studies<br />
-	<?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
 		?>
