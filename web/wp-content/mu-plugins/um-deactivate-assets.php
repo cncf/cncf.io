@@ -61,7 +61,7 @@ function um_remove_scripts_and_styles() {
 		'/password-reset/',
 		'/register/',
 		'/user/',
-		'/speakers/',
+		// '/speakers/', // Since this is a search/filter screen we don't need the UM assets.
 		'/speakers/login',
 		'/speakers/register',
 	);
