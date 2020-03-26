@@ -110,6 +110,12 @@ class Speakers_Contact {
 		}
 
 		wp_enqueue_script(
+			'select2',
+			get_stylesheet_directory_uri() . '/js/vendor/select2.min.js',
+			array( 'jquery' )
+		);
+
+		wp_enqueue_script(
 			'select2-position-fixer',
 			get_stylesheet_directory_uri() . '/js/vendor/select2-position-fixer.js',
 			array( 'jquery', 'select2' ),
