@@ -112,7 +112,8 @@ class Speakers_Contact {
 		wp_enqueue_script(
 			'select2',
 			get_stylesheet_directory_uri() . '/js/vendor/select2.min.js',
-			array( 'jquery' )
+			array( 'jquery' ),
+			true
 		);
 
 		wp_enqueue_script(
