@@ -93,6 +93,9 @@ require_once 'classes/class-speakers-contact.php';
 // speakers bureau export.
 require_once 'classes/class-speakers-export.php';
 
+// Fuerza utils.
+require_once 'classes/class-fuerza-utils.php';
+
 // gravity forms.
 // require_once('includes/gravity.php'); // phpcs:ignore.
 
