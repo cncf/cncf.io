@@ -22,12 +22,19 @@
  */
 
 if ( $query->have_posts() ) {
+	global $post;
 	?>
 
 	Found <?php echo esc_html( $query->found_posts ); ?> Speakers<br />
 	<?php
+	if ( 50 >= $query->found_posts ) {
+		$user = wp_get_current_user();
+		if ( ( in_array( 'member', (array) $user->roles ) || in_array( 'administrator', (array) $user->roles ) ) && isset( $_SERVER['QUERY_STRING'] ) ) {
+			echo '<a href="' . esc_url( get_bloginfo( 'url' ) ) . '/speakers/email-matching-speakers?' . esc_attr( sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) ) . '" class="email-matching-button">Email Matching Speakers</a>';
+		}
+	}
+
 	while ( $query->have_posts() ) {
-		global $post;
 		$query->the_post();
 		$user = get_userdata( $post->post_name );
 		if ( ! $user ) {
