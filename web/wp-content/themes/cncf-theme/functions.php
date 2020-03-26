@@ -82,10 +82,16 @@ require_once 'includes/excerpts.php';
 require_once 'includes/speakers-bureau.php';
 
 // countries import.
-require_once 'includes/class-fuerza-import-countries.php';
+require_once 'classes/class-fuerza-import-countries.php';
 
 // remove category base.
 require_once 'includes/category-base.php';
+
+// speakers bureau bulk email form.
+require_once 'classes/class-speakers-contact.php';
+
+// speakers bureau export.
+require_once 'classes/class-speakers-export.php';
 
 // gravity forms.
 // require_once('includes/gravity.php'); // phpcs:ignore.
