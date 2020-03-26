@@ -76,34 +76,30 @@ class Speakers_Export {
 	 */
 	public function get_speakers() {
 		global $wpdb;
+		$sql = "SELECT um.user_id as `user_id`, um.meta_value as `status`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'first_name' AND user_id = um.user_id) as `first_name`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'last_name' AND user_id = um.user_id) as `last_name`,
+            u.user_email as `email`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'profile_photo' AND user_id = um.user_id) as `profile_photo`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'cncf_expertise' AND user_id = um.user_id) as `expertises`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'languages' AND user_id = um.user_id) as `languages`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'country' AND user_id = um.user_id) as `country`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_certifications' AND user_id = um.user_id) as `certifications`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'twitter' AND user_id = um.user_id) as `twitter`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_website' AND user_id = um.user_id) as `website`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'linkedin' AND user_id = um.user_id) as `linkedin`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_github' AND user_id = um.user_id) as `github`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_bio' AND user_id = um.user_id) as `bio`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'job-category' AND user_id = um.user_id) as `job_category`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'job-title' AND user_id = um.user_id) as `job_title`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'cncf_travel_range' AND user_id = um.user_id) as `travel_range`
+        	FROM {$wpdb->usermeta} as um
+            INNER JOIN {$wpdb->users} as u
+            ON u.ID = um.user_id
+        	WHERE um.meta_key = 'account_status' AND um.meta_value = 'approved'
+        	AND um.user_id IN(SELECT user_id FROM wp_usermeta WHERE meta_key = 'wp_capabilities' AND meta_value LIKE '%s:10:\"um_speaker\"%')";
 
-		return $wpdb->get_results(
-			$wpdb->prepare(
-				"SELECT um.user_id as `user_id`, um.meta_value as `status`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'first_name' AND user_id = um.user_id) as `first_name`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'last_name' AND user_id = um.user_id) as `last_name`,
-				u.user_email as `email`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'profile_photo' AND user_id = um.user_id) as `profile_photo`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'cncf_expertise' AND user_id = um.user_id) as `expertises`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'languages' AND user_id = um.user_id) as `languages`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'country' AND user_id = um.user_id) as `country`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_certifications' AND user_id = um.user_id) as `certifications`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'twiiter' AND user_id = um.user_id) as `twitter`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'facebook' AND user_id = um.user_id) as `facebook`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'linkedin' AND user_id = um.user_id) as `linkedin`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_github' AND user_id = um.user_id) as `github`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_bio' AND user_id = um.user_id) as `bio`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'job-category' AND user_id = um.user_id) as `job_category`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'job-title' AND user_id = um.user_id) as `job_title`,
-				(SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'cncf_travel_range' AND user_id = um.user_id) as `travel_range`
-				FROM {$wpdb->usermeta} as um
-					INNER JOIN {$wpdb->users} as u
-					ON u.ID = um.user_id
-				WHERE um.meta_key = 'account_status' AND um.meta_value = 'approved'
-				AND um.user_id IN(SELECT user_id FROM wp_usermeta WHERE meta_key = 'wp_capabilities' AND meta_value LIKE %s)",
-				'\'%s:10:"um_speaker"%\''
-			)
-		);
+		return $wpdb->get_results( $sql ); //phpcs:ignore
 	}
 
 	/**
@@ -126,7 +122,7 @@ class Speakers_Export {
 			'Job Title',
 			'Travel Range',
 			'Twitter',
-			'Facebook',
+			'Website',
 			'Linkedin',
 			'Github',
 		);
@@ -151,7 +147,7 @@ class Speakers_Export {
 				$speaker->job_title,
 				$speaker->travel_range,
 				$speaker->twitter,
-				$speaker->facebook,
+				$speaker->website,
 				$speaker->linkedin,
 				$speaker->github,
 			);
