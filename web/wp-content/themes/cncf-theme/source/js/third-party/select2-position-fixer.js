@@ -1,3 +1,4 @@
+// phpcs:ignorefile
 (function($) {
 
     var Defaults = $.fn.select2.amd.require('select2/defaults');
