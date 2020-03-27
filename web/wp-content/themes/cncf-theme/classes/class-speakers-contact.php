@@ -111,23 +111,25 @@ class Speakers_Contact {
 
 		wp_enqueue_script(
 			'select2',
-			get_stylesheet_directory_uri() . '/js/vendor/select2.min.js',
+			get_stylesheet_directory_uri() . '/source/js/third-party/select2.min.js',
 			array( 'jquery' ),
+			filemtime( get_template_directory() . '/source/js/third-party/select2.min.js' ),
 			true
 		);
 
 		wp_enqueue_script(
 			'select2-position-fixer',
-			get_stylesheet_directory_uri() . '/js/vendor/select2-position-fixer.js',
+			get_stylesheet_directory_uri() . '/source/js/third-party/select2-position-fixer.js',
 			array( 'jquery', 'select2' ),
+			filemtime( get_template_directory() . '/source/js/third-party/select2-position-fixer.js' ),
 			true
 		);
 
 		wp_enqueue_script(
 			'speakers-contact-js',
-			get_stylesheet_directory_uri() . '/js/speakers-contact.js',
+			get_stylesheet_directory_uri() . '/source/js/third-party/speakers-contact.js',
 			array( 'jquery', 'select2', 'select2-position-fixer' ),
-			true,
+			filemtime( get_template_directory() . '/source/js/third-party/speakers-contact.js' ),
 			true
 		);
 	}
@@ -282,7 +284,7 @@ class Speakers_Contact {
 	public function fetch_speakers_ids() {
 		$params          = $this->get_base_params( array( 'fields' => 'ID' ) );
 		$current_filters = array();
-		$search_filters  = Speakers::get_filter_keys();
+		// $search_filters  = Speakers::get_filter_keys();
 
 		foreach ( $search_filters as $filter_name ) {
 			$value = 'project' === $filter_name ? Fuerza_Utils::get( '_project' ) : Fuerza_Utils::get( $filter_name );
@@ -296,7 +298,7 @@ class Speakers_Contact {
 		$items       = array();
 
 		if ( $has_filters ) {
-			$query_args  = Speakers::build_query_args( $current_filters, $params );
+			// $query_args  = Speakers::build_query_args( $current_filters, $params );
 			$users_query = new \WP_User_Query( $query_args );
 			$items = $users_query->get_results();
 		}
@@ -329,7 +331,7 @@ class Speakers_Contact {
 			'orderby'    => 'meta_value',
 			'paged'      => 1,
 			'role__in'   => array( 'um_speaker' ),
-			'meta_query' => Speakers::get_avatar_query_args(),
+			// 'meta_query' => Speakers::get_avatar_query_args(),
 		);
 
 		$default_args['meta_query'][] = array(
