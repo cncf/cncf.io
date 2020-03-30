@@ -860,7 +860,7 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_admin_column' => true,
 		);
-		register_taxonomy( 'cncf-webinar-category', array( 'cncf_webinar', 'post' ), $args );
+		register_taxonomy( 'cncf-author-category', array( 'cncf_webinar', 'post' ), $args );
 
 		$labels = array(
 			'name'          => __( 'Company', 'cncf-mu' ),

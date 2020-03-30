@@ -28,20 +28,19 @@ if ( $query->have_posts() ) {
 	<?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
+		$webinar_date = new DateTime( get_post_meta( $post->ID, 'cncf_webinar_date', true ) );
+		$speakers = get_post_meta( $post->ID, 'cncf_webinar_speakers', true );
+		$recording_url = get_post_meta( $post->ID, 'cncf_webinar_recording_url', true );
+		$author_category = get_the_terms( $post->ID, 'cncf-author-category' );
+		$author_category = join( ', ', wp_list_pluck( $author_category, 'name' ) );
 		?>
 		<div class="result-item">
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<div><?php echo esc_html( $webinar_date->format( 'F j, Y' ) );?></div>
+			<div><?php echo esc_html( $speakers ) . ' <span>' . esc_html( $author_category ) . '</span>'; ?></div>
 			<p><br /><?php the_excerpt(); ?></p>
-			<?php
-			if ( has_post_thumbnail() ) {
-				echo '<p>';
-				the_post_thumbnail( 'small' );
-				echo '</p>';
-			}
-			?>
-			<p><?php the_category(); ?></p>
-			<p><?php the_tags(); ?></p>
-			<p><small><?php the_date(); ?></small></p>
+
+
 		</div>
 		<hr />
 		<?php
