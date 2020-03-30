@@ -28,20 +28,26 @@ if ( $query->have_posts() ) {
 	<?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
+		$start_date = new DateTime( get_post_meta( $post->ID, 'cncf_event_date_start', true ) );
+		$end_date = new DateTime( get_post_meta( $post->ID, 'cncf_event_date_end', true ) );
+		$external_url = get_post_meta( $post->ID, 'cncf_event_external_url', true );
+
+		$city = get_post_meta( $post->ID, 'cncf_event_city', true );
+		$country = get_the_terms( $post->ID, 'cncf-country' );
+		$country = join( ', ', wp_list_pluck( $country, 'name' ) );
+		if ( $country ) {
+			$location = $city . ', ' . $country;
+		} else {
+			$location = $city;
+		}
+
 		?>
 		<div class="result-item">
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<div><?php echo esc_html( $start_date->format( 'F j, Y' ) ) . ' to ' . esc_html( $end_date->format( 'F j, Y' ) ); ?></div>
+			<div><?php echo esc_html( $location ); ?></div>
+			<div><?php echo esc_html( $external_url ); ?></div>
 			<p><br /><?php the_excerpt(); ?></p>
-			<?php
-			if ( has_post_thumbnail() ) {
-				echo '<p>';
-				the_post_thumbnail( 'small' );
-				echo '</p>';
-			}
-			?>
-			<p><?php the_category(); ?></p>
-			<p><?php the_tags(); ?></p>
-			<p><small><?php the_date(); ?></small></p>
 		</div>
 		<hr />
 		<?php
