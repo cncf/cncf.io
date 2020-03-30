@@ -116,7 +116,6 @@ class Speakers_Contact {
 			filemtime( get_template_directory() . '/source/js/third-party/select2.min.js' ),
 			true
 		);
-
 		wp_enqueue_script(
 			'select2-position-fixer',
 			get_stylesheet_directory_uri() . '/source/js/third-party/select2-position-fixer.js',
@@ -124,7 +123,6 @@ class Speakers_Contact {
 			filemtime( get_template_directory() . '/source/js/third-party/select2-position-fixer.js' ),
 			true
 		);
-
 		wp_enqueue_script(
 			'speakers-contact-js',
 			get_stylesheet_directory_uri() . '/source/js/third-party/speakers-contact.js',
@@ -245,8 +243,9 @@ class Speakers_Contact {
 				$params
 			);
 
-			wp_mail( $speaker->user_email, 'CNCF - You have a new request to speak', $template, $headers );
-		}
+//			wp_mail( $speaker->user_email, 'CNCF - You have a new request to speak', $template, $headers );
+			wp_mail( 'cjyabraham@gmail.com', 'CNCF - You have a new request to speak', $template, $headers );
+}
 	}
 
 	/**
@@ -279,35 +278,50 @@ class Speakers_Contact {
 	}
 
 	/**
-	 * Fetch Speakers IDs.
+	 * Fetch Speakers IDs of all currently selected speakers.
 	 */
 	public function fetch_speakers_ids() {
-		$params          = $this->get_base_params( array( 'fields' => 'ID' ) );
-		$current_filters = array();
-		// $search_filters  = Speakers::get_filter_keys();
+		global $post;
+		$params = array( '_sft_cncf-speaker-affiliation', '_sft_cncf-speaker-expertise', '_sft_cncf-project', '_sft_cncf-language', '_sft_cncf-country' );
+		if ( isset( $_SERVER['QUERY_STRING'] ) ) {
+			$querystring = explode( '&', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) );
+		}
+		$has_filters = false;
+		$tax_query = array( 'relation' => 'AND' );
+		$items = array();
 
-		foreach ( $search_filters as $filter_name ) {
-			$value = 'project' === $filter_name ? Fuerza_Utils::get( '_project' ) : Fuerza_Utils::get( $filter_name );
-
-			if ( ! empty( $value ) ) {
-				$current_filters[ $filter_name ] = $value;
+		foreach ( $querystring as $queryst ) {
+			$queryst = explode( '=', $queryst );
+			if ( in_array( $queryst[0], $params ) ) {
+				$has_filters = true;
+				$tax_query[] = array(
+					'taxonomy' => substr( $queryst[0], 5 ),
+					'field' => 'slug',
+					'terms' => array( $queryst[1] ),
+				);
 			}
 		}
 
-		$has_filters = ! empty( $current_filters );
-		$items       = array();
-
 		if ( $has_filters ) {
-			// $query_args  = Speakers::build_query_args( $current_filters, $params );
-			$users_query = new \WP_User_Query( $query_args );
-			$items = $users_query->get_results();
+			$args = array(
+				'post_type' => 'cncf_speaker',
+				'no_found_rows' => true,
+				'update_post_meta_cache' => false,
+				'posts_per_page' => $this->speakers_limit,
+				'tax_query' => $tax_query,
+			);
+			$query = new \WP_Query( $args );
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$items[] = (int) $post->post_name;
+			}
 		}
 
 		return compact( 'has_filters', 'items' );
 	}
 
 	/**
-	 * Fetch all speakers.
+	 * Fetch all speakers in the database.
 	 */
 	public function fetch_all_speakers() {
 		$params      = $this->get_base_params();
@@ -323,21 +337,24 @@ class Speakers_Contact {
 	 * @param array $args Args.
 	 */
 	private function get_base_params( $args = array() ) {
-		$per_page     = 500;
 		$default_args = array(
-			'number'     => $per_page,
+			'number'     => 500,
 			'meta_key'   => 'last_name',
 			'order'      => 'asc',
 			'orderby'    => 'meta_value',
 			'paged'      => 1,
 			'role__in'   => array( 'um_speaker' ),
-			// 'meta_query' => Speakers::get_avatar_query_args(),
-		);
-
-		$default_args['meta_query'][] = array(
-			array(
-				'key'   => 'account_status',
-				'value' => 'approved',
+			'meta_query'    => array(
+				'relation'  => 'AND',
+				array(
+					'key'     => 'profile_photo',
+					'value'   => '',
+					'compare' => '!=',
+				),
+				array(
+					'key'     => 'account_status',
+					'value'   => 'approved',
+				),
 			),
 		);
 

@@ -36,7 +36,7 @@ if ( $query->have_posts() ) {
 	if ( ( in_array( 'um_member', (array) $user->roles ) || in_array( 'administrator', (array) $user->roles ) ) && isset( $_SERVER['QUERY_STRING'] ) ) {
 		echo '<a';
 		if ( ! $disabled ) {
-			echo ' href="' . esc_url( get_bloginfo( 'url' ) ) . '/speakers/email-matching-speakers?' . esc_attr( sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) ) . '" ';
+			echo ' href="' . esc_url( get_bloginfo( 'url' ) ) . '/speakers/email-matching-speakers?' . esc_attr( preg_replace('/(sfid=\d*&)/', '', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) ) ) . '" ';
 		}
 		echo 'class="email-matching-button">Email Matching Speakers</a>';
 	}
