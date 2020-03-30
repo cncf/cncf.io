@@ -219,7 +219,7 @@ class Speakers_Contact {
 				return str_replace( '"', '', $item );
 			},
 			$speakers,
-		);
+		); //phpcs:ignore
 
 		$params = compact( 'name', 'email', 'start_date', 'end_date', 'subject', 'message', 'language', 'travel_funding', 'attendees_number' );
 
