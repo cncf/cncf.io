@@ -219,7 +219,7 @@ class Speakers_Contact {
 				return str_replace( '"', '', $item );
 			},
 			$speakers,
-		); //phpcs:ignore
+		);
 
 		$params = compact( 'name', 'email', 'start_date', 'end_date', 'subject', 'message', 'language', 'travel_funding', 'attendees_number' );
 
@@ -243,8 +243,8 @@ class Speakers_Contact {
 				$params
 			);
 
-			// wp_mail( $speaker->user_email, 'CNCF - You have a new request to speak', $template, $headers ); //phpcs:ignore.
-			wp_mail( 'cjyabraham@gmail.com', 'CNCF - You have a new request to speak', $template, $headers );
+			wp_mail( $speaker->user_email, 'CNCF - You have a new request to speak', $template, $headers ); // use this for live.
+			// wp_mail( 'cjyabraham@gmail.com', 'CNCF - You have a new request to speak', $template, $headers ); // use this for testing.
 		}
 	}
 
