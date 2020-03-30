@@ -23,27 +23,34 @@
 
 if ( $query->have_posts() ) {
 	if ( 'cncf_case_study_ch' === $query->query['post_type'] ) {
-		echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
+		$ch = true;
 	} else {
-		echo 'Found ' . esc_html( $query->found_posts ) . ' Case Studies';
+		$ch = false;
 	}
 
 	while ( $query->have_posts() ) {
 		$query->the_post();
+		if ( $ch ) {
+			$cs_type = get_post_meta( $post->ID, 'cncf_case_study_ch_type', true );
+			$read_case_study = '阅读';
+			if ( $cs_type ) {
+				$read_case_study .= $cs_type;
+			}
+			$read_case_study .= '案例研究';
+			echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
+		} else {
+			$cs_type = get_post_meta( $post->ID, 'cncf_case_study_type', true );
+			$read_case_study = 'read the ';
+			if ( $cs_type ) {
+				$read_case_study .= $cs_type . ' ';
+			}
+			$read_case_study .= 'case study';
+			echo 'Found ' . esc_html( $query->found_posts ) . ' Case Studies';
+		}
 		?>
 		<div class="result-item">
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<p><br /><?php the_excerpt(); ?></p>
-			<?php
-			if ( has_post_thumbnail() ) {
-				echo '<p>';
-				the_post_thumbnail( 'small' );
-				echo '</p>';
-			}
-			?>
-			<p><?php the_category(); ?></p>
-			<p><?php the_tags(); ?></p>
-			<p><small><?php the_date(); ?></small></p>
+			<a class="read" href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		</div>
 		<hr />
 		<?php
