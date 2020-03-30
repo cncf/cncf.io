@@ -243,9 +243,9 @@ class Speakers_Contact {
 				$params
 			);
 
-//			wp_mail( $speaker->user_email, 'CNCF - You have a new request to speak', $template, $headers );
+			// wp_mail( $speaker->user_email, 'CNCF - You have a new request to speak', $template, $headers ); //phpcs:ignore.
 			wp_mail( 'cjyabraham@gmail.com', 'CNCF - You have a new request to speak', $template, $headers );
-}
+		}
 	}
 
 	/**
