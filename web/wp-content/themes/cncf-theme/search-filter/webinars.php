@@ -36,7 +36,7 @@ if ( $query->have_posts() ) {
 		?>
 		<div class="result-item">
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<div><?php echo esc_html( $webinar_date->format( 'F j, Y' ) );?></div>
+			<div><?php echo esc_html( $webinar_date->format( 'F j, Y' ) ); ?></div>
 			<div><?php echo esc_html( $speakers ) . ' <span>' . esc_html( $author_category ) . '</span>'; ?></div>
 			<p><br /><?php the_excerpt(); ?></p>
 
