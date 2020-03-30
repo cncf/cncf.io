@@ -30,17 +30,26 @@ if ( $query->have_posts() ) {
 		$query->the_post();
 		$webinar_date = new DateTime( get_post_meta( $post->ID, 'cncf_webinar_date', true ) );
 		$speakers = get_post_meta( $post->ID, 'cncf_webinar_speakers', true );
-		$recording_url = get_post_meta( $post->ID, 'cncf_webinar_recording_url', true );
 		$author_category = get_the_terms( $post->ID, 'cncf-author-category' );
 		$author_category = join( ', ', wp_list_pluck( $author_category, 'name' ) );
+
+		$recording_url = get_post_meta( $post->ID, 'cncf_webinar_recording_url', true );
+		if ( false !== stripos( $recording_url, 'https://www.youtube.com/watch?v=' ) ) {
+			$video_id = substr( $recording_url, 32, 11 );
+		} elseif ( false !== stripos( $recording_url, 'https://youtu.be/' ) ) {
+			$video_id = substr( $recording_url, 17, 11 );
+		}
+
 		?>
 		<div class="result-item">
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<div><?php echo esc_html( $webinar_date->format( 'F j, Y' ) ); ?></div>
 			<div><?php echo esc_html( $speakers ) . ' <span>' . esc_html( $author_category ) . '</span>'; ?></div>
 			<p><br /><?php the_excerpt(); ?></p>
-
-
+			<figure>
+				<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg" alt="">
+				<a href="<?php the_permalink(); ?>" class="button-like">Watch Now</a>
+			</figure>
 		</div>
 		<hr />
 		<?php
