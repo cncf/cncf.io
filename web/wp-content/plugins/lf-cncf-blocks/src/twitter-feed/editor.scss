@@ -1,0 +1,21 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
+ *
+ */
+
+.wp-block-lf-twitter-feed {
+    display: flex;
+    flex-direction: column;
+}
+
+.tf-item {
+    min-height: 200px;
+    border: 1px solid $grey-400;
+    padding: 20px;
+    margin: 20px;
+    background-color: $white;
+}
