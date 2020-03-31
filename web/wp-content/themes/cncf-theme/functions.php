@@ -84,9 +84,6 @@ require_once 'includes/speakers-bureau.php';
 // countries import.
 require_once 'classes/class-fuerza-import-countries.php';
 
-// remove category base.
-require_once 'includes/category-base.php';
-
 // speakers bureau bulk email form.
 require_once 'classes/class-speakers-contact.php';
 
