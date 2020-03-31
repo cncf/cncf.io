@@ -24,12 +24,26 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function lf_cncf_blocks_frontend_assets() {
 	// Register block styles for both frontend + backend.
+
+	/*
+	// Exclude the enqueue - styles covered in theme.
 	wp_enqueue_style(
 		'lf_cncf_blocks_style',
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
 		is_admin() ? array( 'wp-editor' ) : null,
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
 	);
+	*/
+
+	if ( has_block( 'lf/twitter-feed' ) ) {
+		wp_enqueue_script(
+			'twitter-feed',
+			'//platform.twitter.com/widgets.js',
+			is_admin() ? array( 'wp-editor' ) : null,
+			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+			true
+		);
+	}
 }
 add_action( 'enqueue_block_assets', 'lf_cncf_blocks_frontend_assets' );
 
@@ -113,6 +127,20 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+	// Twitter Feed block.
+	require_once 'twitter-feed/render-callback.php';
+	register_block_type(
+		'lf/twitter-feed',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_twitter_feed_render_callback',
+		)
+	);
+
 	// Newsroom Block.
 	require_once 'newsroom/render-callback.php';
 	register_block_type(
@@ -123,7 +151,8 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 					'type' => 'string',
 				),
 				'showImages' => array(
-					'type' => 'boolean',
+					'type'    => 'boolean',
+					'default' => true,
 				),
 				'order'      => array(
 					'type' => 'string',

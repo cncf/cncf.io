@@ -4,7 +4,6 @@
  * @package WordPress
  * @since 1.0.0
  *
- * @tags
  * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
  * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
  * @phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact
@@ -96,26 +95,25 @@ class Newsroom extends Component {
 	renderList = () => {
 		const {
 			attributes: { numberposts },
-			className,
 			posts,
 		} = this.props;
 		const data = posts.map( p => ( { ...p, meta: mapValues( p.meta, head ) } ) ).slice( 0, numberposts );
 
 		return (
-			<div className={ `${ className }__body` }>
+			<div className="wp-block-lf-newsroom">
 				{ data.map(
 					 post => (
-						<div key={ post.id } className={ `${ className }__post` }>
-							{ this.props.attributes.showImages &&
-							<figure className={ `${ className }__preview` }>
-								<img className={ `${ className }__image` } src={ post.featured_image_src } alt="" />
-							</figure>
-						}
+						<div key={ post.id } className="nr-post-wrapper">
+							<div className="nr-image-wrapper">
+								{ this.props.attributes.showImages &&
+								<img className="nr-newsroom-image" src={ post.featured_image_src ? post.featured_image_src : 'https://via.placeholder.com/260x160/d9d9d9/000000' } alt="Post Thumbnail" />
+								}
+							</div>
 							<p
-								className={ `${ className }__name` }
+								className="nr-title"
 								dangerouslySetInnerHTML={ { __html: post.title.rendered } }
 							/>
-							<span className={ `${ className }__date` }>{ formatDate( post.date ) }</span>
+							<span className="nr-date">{ formatDate( post.date ) }</span>
 						</div>
 					)
 				)

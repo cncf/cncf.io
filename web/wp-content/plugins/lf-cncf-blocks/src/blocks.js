@@ -20,3 +20,6 @@ import './upcoming-events/block.js';
 
 // Newsroom Block.
 import './newsroom/block.js';
+
+// Twitter Feed Block.
+import './twitter-feed/block.js';

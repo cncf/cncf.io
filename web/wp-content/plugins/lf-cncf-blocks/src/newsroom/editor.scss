@@ -6,72 +6,41 @@
  *
  *
  */
-
-.wp-block-lf-upcoming-events {
-    display: flex;
-    flex-direction: column;
-}
-
-.ue-wrapper {
+.wp-block-lf-newsroom {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    background-color: $white;
+    padding: 10px;
 
-    grid-auto-rows: minmax(200px, auto);
+    @media (min-width: 950px) {
+        grid-template-columns: 1fr;
+        height: 100%;
+        row-gap: 0px;
+    }
 
+    .nr-title {
+        margin-top: 5px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-size: 0.875em;
+    }
+
+    .nr-date {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 0.875em;
+        font-weight: 500;
+        color: $grey-700;
+    }
 }
 
-.ue-event-box {
-    overflow: hidden;
+.nr-post-wrapper {
     position: relative;
-}
-
-.ue-overlay {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    z-index: 2;
-    opacity: 0.75;
-}
-
-.ue-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    top: 50%;
-    transform: translateY(-50%);
-    color: $white;
-    font-size: 1.25em;
-    font-weight: 600;
-    padding: 1em;
-    position: relative;
-    z-index: 2;
-}
-
-.ue-event-date {
-    margin-bottom: 10px;
-}
-
-.ue-event-city {
     margin-bottom: 20px;
+
+    @media (min-width: 950px) {
+        margin-bottom: 0;
+    }
 }
-
-.ue-logo {
-    // restricts image logo size.
-    height: 80px;
-}
-
-// // Fixes the preview.
-// .block-editor-block-styles__item-preview {
-//     .wp-block-lf-upcoming-events.is-style-horizontal {
-//         .uw-wrapper {
-//             grid-template-columns: 1fr 1fr;
-
-//             .uw-category.skew-box {
-//                 display: none;
-//             }
-//         }
-//     }
-// }

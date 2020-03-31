@@ -56,31 +56,32 @@ function lf_newsroom_render_callback( $attributes ) {
 	<?php
 	// setup options.
 	$options = get_option( 'cncf-mu' );
-
 	while ( $query->have_posts() ) :
 		$query->the_post();
 		?>
-	<div class="nr-post-wrapper">
-		<div class="nr-image-wrapper">
+	<div class="newsroom-post-wrapper">
+		<div class="newsroom-image-wrapper">
 			<a class="box-link" href="<?php the_permalink(); ?>"
 				title="<?php the_title(); ?>"></a>
-			<?php
-			if ( has_post_thumbnail() ) {
-				echo wp_get_attachment_image( get_post_thumbnail_id(), 'nr-newsroom-image', false, array( 'class' => 'nr-newsroom-image' ) );
-			} elseif ( $options['generic_thumb_id'] ) {
-				echo wp_get_attachment_image( $options['generic_thumb_id'], 'nr-newsroom-image', false, array( 'class' => 'nr-newsroom-image' ) );
-			} else {
-				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-				. '/images/thumbnail-default.svg" alt="CNCF" class="nr-newsroom-image"/>';
-			}
-			?>
+				<?php
+				if ( $show_images ) {
+					if ( has_post_thumbnail() ) {
+						echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
+					} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
+						echo wp_get_attachment_image( $options['generic_thumb_id'], 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
+					} else {
+						echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+						. '/images/thumbnail-default.svg" alt="CNCF" class="newsroom-image"/>';
+					}
+				}
+				?>
 		</div>
 
-		<p class="h4 nr-title"><a href="<?php the_permalink(); ?>"
+		<p class="newsroom-title"><a href="<?php the_permalink(); ?>"
 				title="<?php the_title(); ?>">
 				<?php the_title(); ?>
 			</a></p>
-		<span class="nr-date"> <?php echo get_the_date( 'j F Y' ); ?></span>
+		<span class="newsroom-date"> <?php echo get_the_date( 'j F Y' ); ?></span>
 	</div>
 		<?php
 endwhile;
@@ -122,7 +123,7 @@ function lf_newsroom_block_get_image_src_landscape( $object, $field_name, $reque
 
 	$feat_img_array = wp_get_attachment_image_src(
 		$object['featured_media'],
-		'full',
+		'newsroom-image',
 		false
 	);
 	return $feat_img_array[0];
