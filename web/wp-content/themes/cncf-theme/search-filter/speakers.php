@@ -23,19 +23,22 @@
 
 if ( $query->have_posts() ) {
 	global $post;
-	?>
-
-	Found <?php echo esc_html( $query->found_posts ); ?> Speakers<br />
-	<?php
-	if ( 50 < $query->found_posts ) {
-		$disabled = true;
+	$full_count = $wpdb->get_var( "select count(*) from wp_posts where wp_posts.post_type = 'cncf_speaker' and wp_posts.post_status = 'publish';" );
+	if ( $full_count == $query->found_posts ) {
+		echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' speakers</p>';
 	} else {
-		$disabled = false;
+		echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' speakers</p>';
+	}
+
+	if ( 50 < $query->found_posts ) {
+		$email_disabled = true;
+	} else {
+		$email_disabled = false;
 	}
 	$user = wp_get_current_user();
 	if ( ( in_array( 'um_member', (array) $user->roles ) || in_array( 'administrator', (array) $user->roles ) ) && isset( $_SERVER['QUERY_STRING'] ) ) {
 		echo '<a';
-		if ( ! $disabled ) {
+		if ( ! $email_disabled ) {
 			echo ' href="' . esc_url( get_bloginfo( 'url' ) ) . '/speakers/email-matching-speakers?' . esc_attr( preg_replace( '/(sfid=\d*&)/', '', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) ) ) . '" ';
 		}
 		echo 'class="email-matching-button">Email Matching Speakers</a>';

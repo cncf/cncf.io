@@ -22,10 +22,17 @@
  */
 
 if ( $query->have_posts() ) {
+	$full_count = $wpdb->get_var( "select count(*) from wp_posts where wp_posts.post_type = 'cncf_case_study' and wp_posts.post_status = 'publish'" );
 	if ( 'cncf_case_study_ch' === $query->query['post_type'] ) {
 		$ch = true;
+		echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
 	} else {
 		$ch = false;
+		if ( $full_count == $query->found_posts ) {
+			echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' case studies</p>';
+		} else {
+			echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' case studies</p>';
+		}
 	}
 
 	while ( $query->have_posts() ) {
@@ -37,7 +44,6 @@ if ( $query->have_posts() ) {
 				$read_case_study .= $cs_type;
 			}
 			$read_case_study .= '案例研究';
-			echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
 		} else {
 			$cs_type = get_post_meta( $post->ID, 'cncf_case_study_type', true );
 			$read_case_study = 'read the ';
@@ -45,7 +51,6 @@ if ( $query->have_posts() ) {
 				$read_case_study .= $cs_type . ' ';
 			}
 			$read_case_study .= 'case study';
-			echo 'Found ' . esc_html( $query->found_posts ) . ' Case Studies';
 		}
 		?>
 		<div class="result-item">

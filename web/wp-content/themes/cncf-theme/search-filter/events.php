@@ -22,10 +22,13 @@
  */
 
 if ( $query->have_posts() ) {
-	?>
+	$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_event' and wp_posts.post_status = 'publish' and meta_key='cncf_event_date_end' and meta_value >= CURDATE();" );
+	if ( $full_count == $query->found_posts ) {
+		echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' upcoming events</p>';
+	} else {
+		echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming events</p>';
+	}
 
-	Found <?php echo esc_html( $query->found_posts ); ?> Events<br />
-	<?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
 		$start_date = new DateTime( get_post_meta( $post->ID, 'cncf_event_date_start', true ) );
