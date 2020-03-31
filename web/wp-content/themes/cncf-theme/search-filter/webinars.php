@@ -54,7 +54,6 @@ if ( $query->have_posts() ) {
 				<a href="<?php the_permalink(); ?>" class="button-like">Watch Now</a>
 			</figure>
 		</div>
-		<hr />
 		<?php
 	}
 } else {

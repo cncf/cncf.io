@@ -57,7 +57,6 @@ if ( $query->have_posts() ) {
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<a class="read" href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		</div>
-		<hr />
 		<?php
 	}
 } else {

@@ -52,7 +52,6 @@ if ( $query->have_posts() ) {
 			<div><?php echo esc_html( $external_url ); ?></div>
 			<p><br /><?php the_excerpt(); ?></p>
 		</div>
-		<hr />
 		<?php
 	}
 } else {
