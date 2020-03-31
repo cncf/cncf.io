@@ -9,7 +9,7 @@
 
 ?>
 
-<main class="page-content content-styling">
+<main class="page-content">
 	<article class="container wrap">
 		<?php
 		if ( have_posts() ) :

@@ -1,7 +1,15 @@
-// Content Styling class is applied to the page inner content.
-// Use this file to make typography improvements but only for inner content.
+// Use entry-content class around the_content.
+// This lets us style lists and links suitable for content.
 
-.content-styling {
+.entry-content {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 2em;
+}
+
+.entry-content {
 
     p {
         margin-bottom: 1.5em;
@@ -9,18 +17,17 @@
 
     a {
         text-decoration: none;
-        color: $purple-700;
+        color: $pink-400;
         font-weight: 500;
         transition: all 0.25s ease-out;
 
         &:visited {
             text-decoration: none;
-            // color: $blue-900;
+            color: $blue-900;
         }
 
         &:hover {
-            // color: $purple-200;
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         &:focus {
@@ -35,6 +42,22 @@
         &:link {
             -webkit-tap-highlight-color: rgba($purple-700, 0.3);
         }
+    }
+
+    ul {
+        list-style: disc;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+        margin-left: 2em;
+    }
+
+    ol {
+        list-style: decimal;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+        margin-left: 2em;
     }
 
 }
@@ -64,21 +87,7 @@
 //     }
 // }
 
-// ul {
-//     list-style: disc;
-//     margin-top: 0;
-//     margin-right: 0;
-//     margin-bottom: 1em;
-//     margin-left: 2em;
-// }
 
-// ol {
-//     list-style: decimal;
-//     margin-top: 0;
-//     margin-right: 0;
-//     margin-bottom: 1em;
-//     margin-left: 2em;
-// }
 
 // h2 {
 //     margin: 0.5em 0;

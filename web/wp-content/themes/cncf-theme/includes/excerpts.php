@@ -15,9 +15,19 @@
  * @param int $length Number of words.
  */
 function custom_excerpt_length( $length ) {
-	 return 18;
+	 return 35;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+/**
+ * Sets custom excerpt ellipsis.
+ *
+ * @param string $more Ending.
+ */
+function custom_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
 
 /**
  * Shorten Excerpt for a post

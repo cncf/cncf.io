@@ -14,10 +14,6 @@
 <section class="hero">
 	<div class="container wrap">
 		<?php
-		/**
-		 * WordPress custom title script
-		 */
-
 		if ( function_exists( 'is_tag' ) && is_tag() || is_category() || is_tax() ) :
 			?>
 		<h1 class="blog-title"><?php single_cat_title(); ?></h1>

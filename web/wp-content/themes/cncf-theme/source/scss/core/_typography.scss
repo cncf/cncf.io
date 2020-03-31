@@ -78,15 +78,15 @@ p,
 li {
     line-height: 1.5;
 
-    a {
-        color: $link-color;
-        transition: all 0.25s ease-out;
-        text-decoration: none;
+    // a {
+ //     color: $link-color;
+ //     transition: all 0.25s ease-out;
+ //     text-decoration: none;
 
-        &:hover {
-            color: $link-hover;
-        }
-    }
+ //     &:hover {
+ //         color: $link-hover;
+ //     }
+ // }
 }
 
 strong,
@@ -133,6 +133,36 @@ i {
     @media (min-width: 768px) {
         font-size: 10em;
         line-height: 1;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $purple-700;
+    font-weight: 500;
+    transition: all 0.25s ease-out;
+
+    &:visited {
+        text-decoration: none;
+        // color: $blue-900;
+    }
+
+    &:hover {
+        color: $pink-400;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        text-decoration: underline;
+    }
+
+    &:active {
+        text-decoration: none;
+    }
+
+    /* mobile tap color */
+    &:link {
+        -webkit-tap-highlight-color: rgba($purple-700, 0.3);
     }
 }
 

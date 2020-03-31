@@ -120,6 +120,22 @@ register_block_style(
 );
 
 register_block_style(
+	'core/column',
+	array(
+		'name'  => 'column-drop-shadow',
+		'label' => 'Drop Shadow',
+	)
+);
+
+register_block_style(
+	'core/columns',
+	array(
+		'name'  => 'responsive-four-columns',
+		'label' => 'Responsive 4 Columns',
+	)
+);
+
+register_block_style(
 	'core/columns',
 	array(
 		'name'  => 'fiftyfive-fortyfive-two-columns',

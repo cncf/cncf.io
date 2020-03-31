@@ -1,35 +1,82 @@
 .wp-block-lf-newsroom {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    background-color: $white;
+    padding: 10px;
 
-    .nr-title {
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1.2;
-    }
-
-    .nr-date {
-        margin-bottom: 20px;
+    @media (min-width: 950px) {
+        grid-template-columns: 1fr;
+        height: 100%;
+        grid-auto-rows: 1fr;
+        row-gap: 0px;
     }
 }
 
-.nr-post-wrapper {
+.newsroom-post-wrapper {
     position: relative;
     margin-bottom: 20px;
+
+    @media (min-width: 950px) {
+        margin-bottom: 0;
+    }
 }
 
-.nr-image-wrapper {
+.newsroom-image-wrapper {
     max-width: 100%;
+    height: 200px;
     max-height: 200px;
-}
+    min-height: 200px;
 
-.nr-newsroom-image {
-    object-fit: cover;
-    width: 100%;
-    max-height: 200px;
-    height: 100%;
-    border: 1px solid $purple-700;
-
-    &:hover {
-        opacity: 0.75;
+    @media (min-width: 1200px) {
+        height: 150px;
+        max-height: 150px;
+        min-height: 150px;
     }
 
+    @media (min-width: 1400px) {
+        height: 175px;
+        max-height: 175px;
+        min-height: 175px;
+    }
+
+    border: 1px solid $blue-100;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+        &:hover {
+            .newsroom-image {
+                opacity: 0.75;
+            }
+
+            +.newsroom-title>a {
+                color: $pink-400;
+                transition: all 0.25s ease;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.newsroom-title {
+    margin-top: 5px;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.newsroom-date {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: $grey-700;
+}
+
+.newsroom-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100.1%;
 }

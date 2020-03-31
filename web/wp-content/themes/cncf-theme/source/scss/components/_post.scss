@@ -15,7 +15,23 @@
 }
 
 .post-single-meta {
-    color: $purple-700;
+    margin-bottom: 1em;
+}
+
+.post-single-author-category {
+    margin-bottom: 1em;
+}
+
+.post-single-category {
+    margin-top: 40px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+
+    a {
+        color: $pink-400;
+    }
 }
 
 .post-single-hero-image {
@@ -31,13 +47,6 @@
 
 .post-single {
     text-align: center;
-}
-
-.post-entry-content {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
 }
 
 .post-single-hr {

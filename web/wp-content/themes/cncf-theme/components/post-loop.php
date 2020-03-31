@@ -8,39 +8,52 @@
  */
 
 ?>
-<main class="post-content content-styling">
-	<article class="container wrap">
+<main class="post-archive">
+	<div class="container wrap post-archive-container">
 		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
-			<?php
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail();
-			}
-			?>
-		<h1><a
-				href="<?php the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a>
-		</h1>
+		if ( have_posts() ) :
+			// setup options.
+			$options = get_option( 'cncf-mu' );
+			// setup loop count.
+			$count       = 0;
 
-		<p class="meta">
-			Posted: <?php the_date(); ?>
-		</p>
-			<?php the_content(); ?>
-			<?php
-			$prev = get_adjacent_post( true, '', true );
-			$next = get_adjacent_post( true, '', false );
-			?>
-			<?php if ( $prev ) : ?>
-		<a href="<?php echo esc_html( get_permalink( $prev->ID ) ); ?>"
-			class="button smaller">Next Old Post</a>
-		<?php endif; ?>
-			<?php if ( $next ) : ?>
-		<a href="<?php echo esc_html( get_permalink( $next->ID ) ); ?>"
-			class="button smaller">Next New Post</a>
+			$archive_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+			while ( have_posts() ) :
+				the_post();
+				$count++;
+				$is_featured = ( 1 == $archive_page && 1 == $count ? ' featured' : '' );
+				?>
+		<div
+			class="post-archive-item <?php echo esc_html( $is_featured ); ?>">
+			<div class="post-archive-image-wrapper"><a href="<?php the_permalink(); ?>"
+					title="<?php the_title(); ?>">
+
 				<?php
-		endif;
+				if ( has_post_thumbnail() ) {
+					echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
+				} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
+					echo wp_get_attachment_image( $options['generic_thumb_id'], 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
+				} else {
+					echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+					. '/images/thumbnail-default.svg" alt="CNCF" class="newsroom-image"/>';
+				}
+				?>
+				</a>
+			</div>
+<div class="post-archive-text-wrapper">
+			<p class="newsroom-title"><a href="<?php the_permalink(); ?>"
+					title="<?php the_title(); ?>">
+					<?php the_title(); ?>
+				</a></p>
+			<span class="newsroom-date date-icon">
+				<?php echo get_the_date( 'j F Y' ); ?></span>
+			<p class="newsroom-excerpt"><?php the_excerpt(); ?></p>
+			</div>
+		</div>
+				<?php
 endwhile;
+endif;
 		?>
-	</article>
+	</div>
 </main>
