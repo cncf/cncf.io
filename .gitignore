@@ -20,6 +20,7 @@ web/wp-content/mu-plugins/*
 !web/wp-content/mu-plugins/cncf-mu/*
 !web/wp-content/mu-plugins/cncf-mu.php
 !web/wp-content/mu-plugins/um-deactivate-assets.php
+!web/wp-content/mu-plugins/wp-no-base-permalink.php
 !web/wp-content/mu-plugins/.gitkeep
 
 !web/wp-content/plugins/
