@@ -37,9 +37,8 @@ if ( $query->have_posts() ) {
 
 		$city = get_post_meta( $post->ID, 'cncf_event_city', true );
 		$country = get_the_terms( $post->ID, 'cncf-country' );
-		$country = join( ', ', wp_list_pluck( $country, 'name' ) );
 		if ( $country ) {
-			$location = $city . ', ' . $country;
+			$location = $city . ', ' . $country[0];
 		} else {
 			$location = $city;
 		}
