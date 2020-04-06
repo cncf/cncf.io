@@ -1,4 +1,4 @@
-.post-title {
+.newsroom-single-title {
     margin-top: 40px;
     text-align: center;
     font-weight: 500;
@@ -14,11 +14,11 @@
     }
 }
 
-.post-single-meta {
+.newsroom-single-meta {
     margin-bottom: 1em;
 }
 
-.post-single-author-category {
+.newsroom-single-author-category {
     margin-bottom: 1em;
     background-color: $purple-200;
     display: inline-block;
@@ -29,7 +29,7 @@
     padding: 4px 6px;
 }
 
-.post-single-category {
+.newsroom-single-category {
     margin-top: 40px;
     letter-spacing: 2px;
     font-weight: 600;
@@ -41,7 +41,7 @@
     }
 }
 
-.post-single-hero-image {
+.newsroom-single-hero-image {
     max-width: 100%;
     width: 760px;
     margin-left: auto;
@@ -52,18 +52,18 @@
     margin-bottom: 20px;
 }
 
-.post-single {
+.newsroom-single {
     text-align: center;
 }
 
-.post-single-hr {
+.newsroom-single-hr {
     background-color: $blue-100;
     height: 1px;
     border: none;
     margin-bottom: 20px;
 }
 
-.post-pagination {
+.newsroom-pagination {
     display: flex;
     flex-direction: column;
 

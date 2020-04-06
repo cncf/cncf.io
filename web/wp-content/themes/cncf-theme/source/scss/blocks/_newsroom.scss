@@ -30,6 +30,7 @@
 
     @media (min-width: 1200px) {
         height: 150px;
+        // TODO: Lose this?.
         max-height: 150px;
         min-height: 150px;
     }
@@ -67,12 +68,11 @@
 }
 
 .newsroom-date {
-    display: block;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
     font-size: 0.875em;
     font-weight: 500;
-    color: $grey-700;
+    color: $grey-500;
 }
 
 .newsroom-image {

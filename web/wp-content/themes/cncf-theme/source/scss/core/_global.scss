@@ -220,15 +220,12 @@ figure {
     align-items: center;
 
     &::before {
-        content: "  ";
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='22' viewBox='0 1 24 22'%3E%3Cpath fill='currentColor' d='M20 19h-4v-4h4v4zM14 9h-4v4h4V9zm6 0h-4v4h4V9zM8 15H4v4h4v-4zM24 1v22H0V1h24zm-2 6H2v14h20V7zm-8 8h-4v4h4v-4zM8 9H4v4h4V9z'/%3E%3C/svg%3E");
-        background-size: 30px;
-        height: 30px;
-        width: 30px;
+        content: " ";
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='22' viewBox='0 1 24 22'%3E%3Cpath fill='#87969c' d='M20 19h-4v-4h4v4zM14 9h-4v4h4V9zm6 0h-4v4h4V9zM8 15H4v4h4v-4zM24 1v22H0V1h24zm-2 6H2v14h20V7zm-8 8h-4v4h4v-4zM8 9H4v4h4V9z'/%3E%3C/svg%3E");
+        background-size: 0.875em;
+        height: 0.875em;
+        width: 0.875em;
         background-repeat: no-repeat;
-        margin-left: 5px;
-        margin: 20px;
-        color: red;
-        filter: invert(0);
+        margin-right: 5px;
     }
 }

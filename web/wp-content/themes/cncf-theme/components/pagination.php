@@ -22,8 +22,8 @@ $next_text = sprintf(
 
 $posts_pagination = get_the_posts_pagination(
 	array(
-		'mid_size'  => 0,
-		'end_size'  => 0,
+		'mid_size'  => 2,
+		'end_size'  => 2,
 		'prev_text' => $prev_text,
 		'next_text' => $next_text,
 	)

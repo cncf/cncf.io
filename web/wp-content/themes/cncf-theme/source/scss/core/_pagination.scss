@@ -1,5 +1,8 @@
-// pagination
+// pagination (1,2,3,4,5 etc)
 .pagination {
+    margin-top: 4em;
+    margin-bottom: 4em;
+
     .nav-links {
         display: flex;
         background-color: $white;
@@ -49,5 +52,11 @@
     .current {
         background-color: $primary-color;
         color: $white;
+    }
+
+    .next,
+    .prev {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

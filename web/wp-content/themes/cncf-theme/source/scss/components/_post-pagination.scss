@@ -1,0 +1,16 @@
+.post-pagination {
+
+    .previous,
+    .next {
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    .previous {
+        text-align: left;
+    }
+
+    .next {
+        text-align: right;
+    }
+}

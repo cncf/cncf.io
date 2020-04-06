@@ -15,12 +15,13 @@
 @import "components/hamburger";
 @import "components/hello-bar";
 @import "components/hero";
-@import "components/archive";
-@import "components/post";
+@import "components/newsroom-archive";
+@import "components/newsroom-single";
 @import "components/404";
 @import "components/footer";
 @import "components/social-share";
 @import "components/back-to-top";
+@import "components/post-pagination";
 
 @import 'blocks/colors';
 @import 'blocks/has-color-function';
@@ -29,6 +30,7 @@
 @import 'blocks/columns';
 @import 'blocks/image';
 @import 'blocks/gradients';
+@import 'blocks/guest-author';
 
 @import "blocks/paragraph-headers";
 @import "blocks/upcoming-webinars";

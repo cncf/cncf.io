@@ -7,9 +7,10 @@
  * @since 1.0.0
  */
 
+$image = new Image();
 ?>
-<main class="post-archive">
-	<div class="container wrap post-archive-container">
+<main class="newsroom-archive">
+	<div class="container wrap newsroom-archive-container">
 		<?php
 		if ( have_posts() ) :
 			// setup options.
@@ -25,8 +26,8 @@
 				$is_featured = ( 1 == $archive_page && 1 == $count ? ' featured' : '' );
 				?>
 		<div
-			class="post-archive-item <?php echo esc_html( $is_featured ); ?>">
-			<div class="post-archive-image-wrapper"><a href="<?php the_permalink(); ?>"
+			class="newsroom-archive-item <?php echo esc_html( $is_featured ); ?>">
+			<div class="newsroom-archive-image-wrapper"><a href="<?php the_permalink(); ?>"
 					title="<?php the_title(); ?>">
 
 				<?php
@@ -41,14 +42,14 @@
 				?>
 				</a>
 			</div>
-<div class="post-archive-text-wrapper">
-			<p class="newsroom-title"><a href="<?php the_permalink(); ?>"
+<div class="newsroom-archive-text-wrapper">
+			<p class="newsroom-archive-title"><a href="<?php the_permalink(); ?>"
 					title="<?php the_title(); ?>">
 					<?php the_title(); ?>
 				</a></p>
-			<span class="newsroom-date date-icon">
+			<span class="newsroom-archive-date date-icon">
 				<?php echo get_the_date( 'j F Y' ); ?></span>
-			<p class="newsroom-excerpt"><?php the_excerpt(); ?></p>
+			<p class="newsroom-archive-excerpt"><?php the_excerpt(); ?></p>
 			</div>
 		</div>
 				<?php
