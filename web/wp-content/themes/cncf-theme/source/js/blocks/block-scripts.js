@@ -23,5 +23,21 @@ wp.domReady(
 			'discussion-panel' );
 		// hides captions on gallery.
 		wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
+
+		// TODO: Possibly use this approach instead of styles.
+		wp.blocks.registerBlockVariation( 'core/columns', {
+			name: 'responsive-two-columns',
+			title: 'Responsive Two Columns',
+			isDefault: true,
+			innerBlocks: [
+				[ 'core/column', {
+					width: 33.33,
+					className: 'column-01' } ],
+				[ 'core/column', {
+					width: 66.66,
+					className: 'column-02' } ] ],
+			icon: 'smiley',
+			scope: [ 'block' ],
+		} );
 	}
 );
