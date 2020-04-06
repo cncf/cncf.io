@@ -225,3 +225,17 @@
   padding: 20px;
   margin: 20px;
   background-color: #ffffff; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
+ *
+ */

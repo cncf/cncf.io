@@ -81,7 +81,7 @@ function lf_newsroom_render_callback( $attributes ) {
 				title="<?php the_title(); ?>">
 				<?php the_title(); ?>
 			</a></p>
-		<span class="newsroom-date"> <?php echo get_the_date( 'j F Y' ); ?></span>
+		<span class="newsroom-date date-icon"> <?php echo get_the_date( 'j F Y' ); ?></span>
 	</div>
 		<?php
 endwhile;

@@ -23,3 +23,6 @@ import './newsroom/block.js';
 
 // Twitter Feed Block.
 import './twitter-feed/block.js';
+
+// Guest Author Block.
+import './guest-author/block.js';

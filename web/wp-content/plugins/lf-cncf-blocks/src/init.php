@@ -165,6 +165,23 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+		// Guest Author block.
+		require_once 'guest-author/render-callback.php';
+		register_block_type(
+			'lf/guest-author',
+			array(
+				'attributes'      => array(
+					'className' => array(
+						'type' => 'string',
+					),
+					'content' => array(
+						'type' => 'string',
+					),
+				),
+				'render_callback' => 'lf_guest_author_render_callback',
+			)
+		);
+
 }
 add_action( 'init', 'lf_cncf_blocks_register_dynamic_blocks' );
 
