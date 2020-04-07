@@ -17,7 +17,7 @@ get_template_part( 'components/header' );
 
 // get_template_part( 'components/hero' ); // phpcsignore.
 
-get_template_part( 'components/page-loop' );
+get_template_part( 'components/page-single' );
 
 // get_template_part( 'components/post-loop' ); // phpcsignore.
 

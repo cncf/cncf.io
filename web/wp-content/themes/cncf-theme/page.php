@@ -13,6 +13,6 @@ get_template_part( 'components/hero' );
 
 get_template_part( 'components/breadcrumb' );
 
-get_template_part( 'components/page-loop' );
+get_template_part( 'components/page-single' );
 
 get_template_part( 'components/footer' );

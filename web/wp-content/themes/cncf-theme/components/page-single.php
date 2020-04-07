@@ -10,7 +10,7 @@
 ?>
 
 <main class="page-content">
-	<article class="container wrap">
+	<article class="container wrap entry-content">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
