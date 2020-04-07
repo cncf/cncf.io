@@ -109,7 +109,7 @@ class Edit extends Component {
 						} ) }
 					</PanelBody>
 				</InspectorControls>
-				<div className="lf-count-up" style={ { display: 'flex' } }>
+				<div className="lf-count-up" style={ { display: 'flex', color: 'colorValue' } }>
 					{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map( index => {
 						return this.getItem( index );
 					} ) }

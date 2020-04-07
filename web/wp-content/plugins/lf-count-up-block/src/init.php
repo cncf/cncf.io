@@ -88,7 +88,7 @@ function lf_count_up_block_assets() {
 	register_block_type(
 		'lf/count-up',
 		array(
-			'style'           => 'lf-count-up-block-style-css',
+			// 'style'           => 'lf-count-up-block-style-css', // removed.
 			'editor_script'   => 'lf-count-up-block-js',
 			'editor_style'    => 'lf-count-up-block-editor-css',
 			'render_callback' => 'lf_count_up_callback',
@@ -97,7 +97,7 @@ function lf_count_up_block_assets() {
 }
 
 /**
- * Render the block calbback
+ * Render the block callback.
  *
  * @param array $attributes Block attributes.
  *
