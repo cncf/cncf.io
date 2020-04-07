@@ -16,9 +16,9 @@ $image = new Image();
 			// setup options.
 			$options = get_option( 'cncf-mu' );
 			// setup loop count.
-			$count       = 0;
+			$count = 0;
 
-			$archive_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			$archive_page = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 			while ( have_posts() ) :
 				the_post();

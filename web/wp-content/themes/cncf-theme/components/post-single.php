@@ -6,6 +6,7 @@
  * @subpackage cncf-theme
  * @since 1.0.0
  */
+
 ?>
 <section class="hero">
 	<div class="container wrap">
@@ -37,16 +38,16 @@ endif;
 			?>
 			<?php
 			// Get the Category Author terms associated if any.
-			$terms = get_the_terms( $post->ID, 'cncf-author-category' );
-			if ( $terms ) {
+			$category_author_terms = get_the_terms( $post->ID, 'cncf-author-category' );
+			if ( $category_author_terms ) {
 				// Only get the first item in the array.
-				$term            = array_shift( $terms );
-				$category_author = $term->name;
+				$category_author_term = array_shift( $category_author_terms );
+				$category_author      = $category_author_term->name;
 			}
 			if ( ! empty( $category_author ) ) :
 				?>
 		<p class="newsroom-single-author-category ">CNCF
-				<?php echo $category_author; ?> Blog Post</p>
+				<?php echo esc_html( $category_author ); ?> Blog Post</p>
 				<?php
 		endif;
 			?>
