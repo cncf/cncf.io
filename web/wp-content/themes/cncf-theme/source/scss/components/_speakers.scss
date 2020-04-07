@@ -36,22 +36,23 @@
     text-transform: uppercase;
     font-weight: 500;
     padding: 4px 6px 4px 6px;
+    // // adds skewed end.
+    // padding-right: 20px;
+    // clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 20px) 0);
+    // // centers
+    // margin-left: 20px;
 }
 
 .speaker-badges {
+    margin-top: 1em;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.875em;
 
-    .row {
-        display: flex;
-        align-items: center;
-
-        span {
-            margin-left: 10px;
-        }
+    .row:not(:last-of-type) {
+        margin-right: 0.2em;
     }
+
+    // font-size: 0.875em;
+
 }
 
 .margin-top {

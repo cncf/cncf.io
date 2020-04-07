@@ -1,19 +1,30 @@
 .searchandfilter {
     >ul {
         margin: 0; // reset
-        display: grid;
-        grid-gap: 0.5em;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+
+        >*:not(:last-of-type) {
+            flex: 160px 0 0;
+            flex-grow: 1;
+            margin-right: 0.5em;
+        }
+
+        >*:last-of-type {
+            width: 100px;
+        }
     }
 
     .chosen-container {
         width: 100% !important;
         max-width: 100%;
         display: inline-block;
+
+        a:hover {
+            text-decoration: none;
+        }
     }
-
 }
-
 
 .results-count {
     display: inline-block;
