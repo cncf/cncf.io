@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignoreFile
 /**
  * Plugin Name: WP No Base Permalink
  * Description: Removes category base or tag base (optional) from your category or tag permalinks and removes parents categories from your category permalinks (optional). Forked from https://wordpress.org/plugins/wp-no-base-permalink/ by Sergio ( kallookoo ).
@@ -59,7 +59,6 @@ class Plugin {
 			} else {
 				update_option( 'wp_no_base_permalink', $default );
 			}
-
 		}
 
 		self::$options = get_option( 'wp_no_base_permalink' );
@@ -78,7 +77,6 @@ class Plugin {
 			remove_action( 'delete_category', array( __CLASS__, 'flush_rewrite_rules' ), 999 );
 			remove_filter( 'category_rewrite_rules', array( __CLASS__, 'category_rewrite_rules' ) );
 		}
-
 
 		if ( isset( self::$options['disabled-tag-base'] ) ) {
 			add_action( 'created_post_tag', array( __CLASS__, 'flush_rewrite_rules' ), 999 );
@@ -117,7 +115,7 @@ class Plugin {
 	}
 
 	private static function _regex_categories( $include_parents = true ) {
-		$regex = array();
+		$regex      = array();
 		$categories = self::_get_terms( 'category', array( 'hide_empty' => false ) );
 
 		if ( ! is_wp_error( $categories ) ) {
@@ -150,9 +148,9 @@ class Plugin {
 
 		if ( ! is_wp_error( $categories ) ) {
 			foreach ( array_chunk( $categories, 100 ) as $regex ) {
-				$category_rewrite[$blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$'] = 'index.php?category_name=$matches[1]&feed=$matches[2]';
-				$category_rewrite[$blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/page/?([0-9]{1,})/?$'] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
-				$category_rewrite[$blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/?$'] = 'index.php?category_name=$matches[1]';
+				$category_rewrite[ $blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$' ] = 'index.php?category_name=$matches[1]&feed=$matches[2]';
+				$category_rewrite[ $blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/page/?([0-9]{1,})/?$' ]                  = 'index.php?category_name=$matches[1]&paged=$matches[2]';
+				$category_rewrite[ $blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/?$' ]                                    = 'index.php?category_name=$matches[1]';
 			}
 
 			if ( ! $include_parents ) {
@@ -169,27 +167,28 @@ class Plugin {
 
 				if ( count( $remove_parents_categories_regex ) ) {
 					foreach ( array_chunk( $remove_parents_categories_regex, 100 ) as $regex ) {
-						$category_rewrite[$blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/?$'] = 'index.php?category_redirect=$matches[2]';
+						$category_rewrite[ $blog_prefix . $category_base . '(' . implode( '|', $regex ) . ')/?$' ] = 'index.php?category_redirect=$matches[2]';
 					}
 				}
 			}
 
 			if ( isset( self::$options['disabled-category-base'] ) ) {
 				$old_category_base = array( 'category' );
-				if ( isset( self::$options['old-category-redirect'] ) && is_array( self::$options['old-category-redirect'] ) )
-					$old_category_base = array_merge( $old_category_base, self::$options['old-category-redirect']  );
+				if ( isset( self::$options['old-category-redirect'] ) && is_array( self::$options['old-category-redirect'] ) ) {
+					$old_category_base = array_merge( $old_category_base, self::$options['old-category-redirect'] );
+				}
 
-				if ( $category_base_option = get_option( 'category_base' ) )
+				if ( $category_base_option = get_option( 'category_base' ) ) {
 					$old_category_base = array_merge( $old_category_base, array( $category_base_option ) );
+				}
 
 				$old_category_base_regex = $blog_prefix;
-				$old_category_base = array_unique( array_map( 'trim', $old_category_base ) );
+				$old_category_base       = array_unique( array_map( 'trim', $old_category_base ) );
 				if ( count( $old_category_base ) ) {
 					$old_category_base_regex .= '(' . implode( '|', $old_category_base ) . ')';
-					$category_rewrite[$blog_prefix . $old_category_base_regex . '/(.+?)/?$'] = 'index.php?category_redirect=$matches[2]';
+					$category_rewrite[ $blog_prefix . $old_category_base_regex . '/(.+?)/?$' ] = 'index.php?category_redirect=$matches[2]';
 				}
 			}
-
 
 			return $category_rewrite;
 		}
@@ -209,21 +208,23 @@ class Plugin {
 			}
 
 			foreach ( array_chunk( $tags_regex, 100 ) as $regex ) {
-				$tag_rewrite[$blog_prefix . '(' . implode( '|', $regex ) . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$'] = 'index.php?tag=$matches[1]&feed=$matches[2]';
-				$tag_rewrite[$blog_prefix . '(' . implode( '|', $regex ) . ')/page/?([0-9]{1,})/?$'] = 'index.php?tag=$matches[1]&paged=$matches[2]';
-				$tag_rewrite[$blog_prefix . '(' . implode( '|', $regex ) . ')/?$'] = 'index.php?tag=$matches[1]';
+				$tag_rewrite[ $blog_prefix . '(' . implode( '|', $regex ) . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$' ] = 'index.php?tag=$matches[1]&feed=$matches[2]';
+				$tag_rewrite[ $blog_prefix . '(' . implode( '|', $regex ) . ')/page/?([0-9]{1,})/?$' ]                  = 'index.php?tag=$matches[1]&paged=$matches[2]';
+				$tag_rewrite[ $blog_prefix . '(' . implode( '|', $regex ) . ')/?$' ]                                    = 'index.php?tag=$matches[1]';
 			}
 
 			$old_tag_base = array( 'tag' );
-			if ( isset( self::$options['old-tag-redirect'] ) && is_array( self::$options['old-tag-redirect'] ) )
-				$old_tag_base = array_merge( $old_tag_base, self::$options['old-tag-redirect']  );
+			if ( isset( self::$options['old-tag-redirect'] ) && is_array( self::$options['old-tag-redirect'] ) ) {
+				$old_tag_base = array_merge( $old_tag_base, self::$options['old-tag-redirect'] );
+			}
 
-			if ( $tag_base_option = get_option( 'tag_base' ) )
+			if ( $tag_base_option = get_option( 'tag_base' ) ) {
 				$old_tag_base = array_merge( $old_tag_base, array( $tag_base_option ) );
+			}
 
 			$old_tag_base = array_unique( array_map( 'trim', $old_tag_base ) );
 
-			$tag_rewrite[$blog_prefix . '(' . implode( '|', $old_tag_base ) .')/(.+?)/?$'] = 'index.php?tag_redirect=$matches[2]';
+			$tag_rewrite[ $blog_prefix . '(' . implode( '|', $old_tag_base ) . ')/(.+?)/?$' ] = 'index.php?tag_redirect=$matches[2]';
 
 			return $tag_rewrite;
 		}
@@ -235,28 +236,32 @@ class Plugin {
 		if ( 'category' === $taxonomy ) {
 			if ( isset( self::$options['disabled-category-base'] ) ) {
 				$category_base = get_option( 'category_base', '' );
-				if ( '' === $category_base )
+				if ( '' === $category_base ) {
 					$category_base = 'category';
+				}
 
-				if ( '/' === substr( $category_base, 0, 1 ) )
+				if ( '/' === substr( $category_base, 0, 1 ) ) {
 					$category_base = substr( $category_base, 1 );
+				}
 
 				$link = preg_replace( '/' . preg_quote( $category_base . '/', '/' ) . '/i', '', $link, 1 );
 			}
 
 			if ( 0 != $term->parent && isset( self::$options['remove-parents-categories'] ) ) {
 				$parents = get_category_parents( $term->parent, false, '/', true );
-				if ( ! is_wp_error( $parents ) )
+				if ( ! is_wp_error( $parents ) ) {
 					$link = preg_replace( '/' . preg_quote( $parents, '/' ) . '/i', '', $link, 1 );
+				}
 			}
-
 		} elseif ( 'post_tag' === $taxonomy && isset( self::$options['disabled-tag-base'] ) ) {
 			$tag_base = get_option( 'tag_base', '' );
-			if ( '' === $tag_base )
+			if ( '' === $tag_base ) {
 				$tag_base = 'tag';
+			}
 
-			if ( '/' === substr( $tag_base, 0, 1 ) )
+			if ( '/' === substr( $tag_base, 0, 1 ) ) {
 				$tag_base = substr( $tag_base, 1 );
+			}
 
 			$link = preg_replace( '/' . preg_quote( $tag_base . '/', '/' ) . '/i', '', $link, 1 );
 		}
@@ -265,11 +270,13 @@ class Plugin {
 	}
 
 	public static function query_vars( $query_vars ) {
-		if ( isset( self::$options['disabled-category-base'] ) || isset( self::$options['remove-parents-categories'] ) )
+		if ( isset( self::$options['disabled-category-base'] ) || isset( self::$options['remove-parents-categories'] ) ) {
 			$query_vars[] = 'category_redirect';
+		}
 
-		if ( isset( self::$options['disabled-tag-base'] ) )
+		if ( isset( self::$options['disabled-tag-base'] ) ) {
 			$query_vars[] = 'tag_redirect';
+		}
 
 		return $query_vars;
 	}
@@ -292,45 +299,66 @@ class Plugin {
 
 	public static function admin_init() {
 		add_settings_section(
-			'wp_no_base_permalink-section', __( 'WP No Base Permalink',
-			'wp-no-base-permalink' ), '__return_false', 'permalink'
+			'wp_no_base_permalink-section',
+			__(
+				'WP No Base Permalink',
+				'wp-no-base-permalink'
+			),
+			'__return_false',
+			'permalink'
 		);
 
 		add_settings_field(
-			'disabled-category-base', __( 'Disabled Category Base', 'wp-no-base-permalink' ),
-			array( __CLASS__, 'disabled_category_base' ), 'permalink',
-			'wp_no_base_permalink-section', array( 'label_for' => 'disabled-category-base' )
+			'disabled-category-base',
+			__( 'Disabled Category Base', 'wp-no-base-permalink' ),
+			array( __CLASS__, 'disabled_category_base' ),
+			'permalink',
+			'wp_no_base_permalink-section',
+			array( 'label_for' => 'disabled-category-base' )
 		);
 
 		add_settings_field(
-			'old-category-redirect', __( 'Categories Base','wp-no-base-permalink' ),
-			array( __CLASS__, 'old_category_redirect' ), 'permalink',
-			'wp_no_base_permalink-section', array( 'label_for' => 'old-category-redirect' )
+			'old-category-redirect',
+			__( 'Categories Base', 'wp-no-base-permalink' ),
+			array( __CLASS__, 'old_category_redirect' ),
+			'permalink',
+			'wp_no_base_permalink-section',
+			array( 'label_for' => 'old-category-redirect' )
 		);
 
 		add_settings_field(
-			'remove-parents-categories', __( 'Remove Parents Categories', 'wp-no-base-permalink' ),
-			array( __CLASS__, 'remove_parents_categories' ), 'permalink',
-			'wp_no_base_permalink-section', array( 'label_for' => 'remove-parents-categories' )
+			'remove-parents-categories',
+			__( 'Remove Parents Categories', 'wp-no-base-permalink' ),
+			array( __CLASS__, 'remove_parents_categories' ),
+			'permalink',
+			'wp_no_base_permalink-section',
+			array( 'label_for' => 'remove-parents-categories' )
 		);
 
 		add_settings_field(
-			'disabled-tag-base', __( 'Disabled Tag Base','wp-no-base-permalink' ),
-			array( __CLASS__, 'disabled_tag_base' ), 'permalink',
-			'wp_no_base_permalink-section', array( 'label_for' => 'disabled-tag-base' )
+			'disabled-tag-base',
+			__( 'Disabled Tag Base', 'wp-no-base-permalink' ),
+			array( __CLASS__, 'disabled_tag_base' ),
+			'permalink',
+			'wp_no_base_permalink-section',
+			array( 'label_for' => 'disabled-tag-base' )
 		);
 
 		add_settings_field(
-			'old-tag-redirect', __( 'Tags Base','wp-no-base-permalink' ),
-			array( __CLASS__, 'old_tags_redirect' ), 'permalink',
-			'wp_no_base_permalink-section', array( 'label_for' => 'old-tag-redirect' )
+			'old-tag-redirect',
+			__( 'Tags Base', 'wp-no-base-permalink' ),
+			array( __CLASS__, 'old_tags_redirect' ),
+			'permalink',
+			'wp_no_base_permalink-section',
+			array( 'label_for' => 'old-tag-redirect' )
 		);
 
 		if ( isset( $_POST['wp-no-base-permalink'] ) ) {
 			check_admin_referer( 'update-permalink' );
 
-			if ( ! count( $_POST['wp-no-base-permalink'] ) )
+			if ( ! count( $_POST['wp-no-base-permalink'] ) ) {
 				return;
+			}
 
 			if ( $update = self::_update_options( $_POST['wp-no-base-permalink'] ) ) {
 				update_option( 'wp_no_base_permalink', $update );
@@ -378,7 +406,7 @@ class Plugin {
 	private static function _array_to_string( $element ) {
 		$string = '';
 		if ( isset( self::$options[ $element ] ) ) {
-			$string = implode( ', ', ( array ) self::$options[ $element ] );
+			$string = implode( ', ', (array) self::$options[ $element ] );
 		}
 
 		echo esc_attr( $string );
@@ -395,8 +423,9 @@ class Plugin {
 		);
 
 		foreach ( $defaults as $option ) {
-			if ( empty( $current[ $option ] ) )
+			if ( empty( $current[ $option ] ) ) {
 				continue;
+			}
 
 			switch ( $option ) {
 				case 'old-category-redirect':
@@ -404,20 +433,23 @@ class Plugin {
 					if ( $redirect = explode( ',', $current[ $option ] ) ) {
 						foreach ( $redirect as $k => &$r ) {
 							$r = trim( trim( $r ), '/' );
-							if ( '' === $r || ( 'old-category-redirect' === $option && 'category' === $r ) || ( 'old-tag-redirect' === $option && 'tag' === $r ) )
+							if ( '' === $r || ( 'old-category-redirect' === $option && 'category' === $r ) || ( 'old-tag-redirect' === $option && 'tag' === $r ) ) {
 								unset( $redirect[ $k ] );
+							}
 						}
 
-						if ( count( $redirect ) )
+						if ( count( $redirect ) ) {
 							$update[ $option ] = $redirect;
+						}
 					}
 					break;
 
 				case 'disabled-category-base':
 				case 'remove-parents-categories':
 				case 'disabled-tag-base':
-					if ( is_numeric( $current[ $option ] ) && '1' === $current[ $option ] )
+					if ( is_numeric( $current[ $option ] ) && '1' === $current[ $option ] ) {
 						$update[ $option ] = $current[ $option ];
+					}
 					break;
 			}
 		}
