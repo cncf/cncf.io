@@ -144,6 +144,19 @@ img {
         align-items: center;
         justify-content: center;
     }
+
+    &.smaller {
+        padding: 0.3rem 0.5rem;
+    }
+
+    &.secondary-color {
+        background-color: $secondary-color;
+
+        &:hover {
+            background-color: $secondary-color;
+            filter: hue-rotate(-30deg)
+        }
+    }
 }
 
 /*
@@ -228,4 +241,8 @@ figure {
         background-repeat: no-repeat;
         margin-right: 5px;
     }
+}
+
+.margin-reset {
+    margin: 0;
 }
