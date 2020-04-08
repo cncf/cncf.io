@@ -52,3 +52,71 @@ function pre_submission_handler( $form ) {
 	}
 }
 add_action( 'gform_pre_submission_1', 'pre_submission_handler' );
+
+
+/**
+ * Is user allowed to send bulk emails in Speakers Bureau.
+ */
+function is_sb_bulk_email_allowed_user() {
+	if ( ! is_user_logged_in() ) {
+		return false;
+	}
+
+	$allowed_roles = array( 'administrator', 'um_member' );
+	$user          = wp_get_current_user();
+	$is_allowed    = false;
+
+	foreach ( $user->roles as $role ) {
+		if ( in_array( $role, $allowed_roles ) ) {
+			$is_allowed = true;
+		}
+	}
+
+	return $is_allowed;
+}
+
+/**
+ * Is user a speaker.
+ */
+function is_sb_speaker() {
+	if ( ! is_user_logged_in() ) {
+		return false;
+	}
+
+	$user          = wp_get_current_user();
+	$is_speaker    = false;
+
+	foreach ( $user->roles as $role ) {
+		if ( 'um_speaker' === $role ) {
+			$is_speaker = true;
+		}
+	}
+
+	return $is_allowed;
+}
+
+/**
+ * SB subnav buttons shortcode.
+ */
+function shortcode_sb_subnav() {
+	if ( ! is_user_logged_in() ) {
+		?>
+		<a href="/speakers/register/">Sign Up as a Speaker</a>
+		<a href="/cncf-member-instructions/">Learn more about Bulk Speaker Messaging</a>
+		<a href="/speakers/login/">Login</a>
+		<?php
+	} elseif ( is_sb_speaker() ) {
+		?>
+		<a href="/speaker/">My Profile</a>
+		<a href="/account/">My Account</a>
+		<a href="/logout/">Logout</a>
+		<?php
+	} else {
+		?>
+		<a href="/cncf-member-instructions/">Learn more about Bulk Speaker Messaging</a>
+		<a href="/logout/">Logout</a>
+		<?php
+	}
+
+}
+add_shortcode( 'sb_subnav', 'shortcode_sb_subnav' );

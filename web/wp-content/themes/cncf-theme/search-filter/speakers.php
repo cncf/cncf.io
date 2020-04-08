@@ -19,29 +19,31 @@ if ( $query->have_posts() ) {
 
 	// if filter has found all speakers.
 	if ( $full_count == $query->found_posts ) {
-		echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' speakers. </p>';
+		echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' speakers </p>';
 	} else {
 		// else show partial number of speakers.
-		echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' speakers. </p>';
+		echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' speakers </p>';
 	}
 
-	// show or hide bulk email tool.
-	if ( 50 < $query->found_posts ) {
-		$email_disabled = true;
-	} else {
-		$email_disabled = false;
-	}
-
-	// get current user level.
-	$user = wp_get_current_user();
-	// if user is allowed role or admin and has filtered, then show button.
-	if ( ( in_array( 'um_member', (array) $user->roles ) || in_array( 'administrator', (array) $user->roles ) ) && isset( $_SERVER['QUERY_STRING'] ) ) {
-		echo '<a style="display:inline-block; padding-left: 2px;"';
-		if ( ! $email_disabled ) {
-			echo ' href="' . esc_url( get_bloginfo( 'url' ) ) . '/speakers/email-matching-speakers?' . esc_attr( preg_replace( '/(sfid=\d*&)/', '', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) ) ) . '" ';
+	echo ' | <a style="display:inline-block; padding-left: 2px;"';
+	$bulk_message_href = '';
+	if ( is_sb_bulk_email_allowed_user() ) {
+		if ( 50 >= $query->found_posts && isset( $_SERVER['QUERY_STRING'] ) ) {
+			$bulk_message_href = get_bloginfo( 'url' ) . '/speakers/email-matching-speakers?' . preg_replace( '/(sfid=\d*&)/', '', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) );
+			echo ' href="' . esc_attr( $bulk_message_href ) . '"';
 		}
-		echo 'class="email-matching-button">Email matching speakers</a>.';
+	} else {
+		$bulk_message_href = '/cncf-member-instructions/';
+		echo ' href="' . esc_attr( $bulk_message_href ) . '"';
 	}
+
+	echo ' class="email-matching-button';
+	if ( ! $bulk_message_href ) {
+		echo ' disabled';
+		// TODO: add hover text here: "Use the filters to reduce the number of matching speakers. Bulk messaging is limited to 50 speakers at a time.".
+	}
+	echo '">Bulk Message Speakers</a>';
+
 	?>
 <div class="speakers-wrapper">
 	<?php

@@ -60,7 +60,6 @@ class Speakers_Contact {
 		add_action( 'gform_after_submission', array( $this, 'after_form_submission' ), 10, 2 );
 		add_action( 'fz_send_email_to_speakers', array( $this, 'send_email_to_speakers' ), 10, 2 );
 		add_action( 'gform_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'wp_ajax_C6CCC525DF', array( $this, 'handle_ajax_is_allowed_role' ) );
 	}
 
 	/**
@@ -365,17 +364,7 @@ class Speakers_Contact {
 	 * Is user allowed.
 	 */
 	private function is_allowed_user() {
-		$allowed_roles = array( 'administrator', 'um_member' );
-		$user          = wp_get_current_user();
-		$is_allowed    = false;
-
-		foreach ( $user->roles as $role ) {
-			if ( in_array( $role, $allowed_roles ) ) {
-				$is_allowed = true;
-			}
-		}
-
-		return $is_allowed;
+		return is_sb_bulk_email_allowed_user();
 	}
 
 	/**
@@ -475,22 +464,6 @@ class Speakers_Contact {
 			</body>
 		</html>
 		<?php
-	}
-
-	/**
-	 * Handle ajax is allowed.
-	 */
-	public function handle_ajax_is_allowed_role() {
-		if ( ! Fuerza_Utils::is_request_ajax() ) {
-			wp_send_json_error( array( 'message' => 'Invalid request' ), 500 );
-		}
-
-		wp_send_json_success(
-			array(
-				'isAllowed' => $this->is_allowed_user(),
-				'info'      => md5( get_current_user_id() ),
-			)
-		);
 	}
 
 	/**
