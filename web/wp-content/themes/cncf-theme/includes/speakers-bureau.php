@@ -99,6 +99,8 @@ function is_sb_speaker() {
  * SB subnav buttons shortcode.
  */
 function shortcode_sb_subnav() {
+	ob_start();
+
 	if ( ! is_user_logged_in() ) {
 		?>
 		<a href="/speakers/register/">Sign Up as a Speaker</a>
@@ -118,5 +120,6 @@ function shortcode_sb_subnav() {
 		<?php
 	}
 
+	return ob_get_clean();
 }
 add_shortcode( 'speakers_bureau_subnav', 'shortcode_sb_subnav' );
