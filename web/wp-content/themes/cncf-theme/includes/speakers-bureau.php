@@ -119,4 +119,4 @@ function shortcode_sb_subnav() {
 	}
 
 }
-add_shortcode( 'sb_subnav', 'shortcode_sb_subnav' );
+add_shortcode( 'speakers_bureau_subnav', 'shortcode_sb_subnav' );
