@@ -8,6 +8,7 @@
 @import "core/pagination";
 @import "core/page-content";
 @import 'core/entry-content';
+@import 'core/video';
 
 @import "components/header";
 @import "components/link-icons";
@@ -24,6 +25,7 @@
 @import "components/post-pagination";
 @import "components/searchandfilter";
 @import "components/speakers";
+@import "components/webinars";
 
 // Block Parts and Core Styling.
 @import 'blocks/colors';

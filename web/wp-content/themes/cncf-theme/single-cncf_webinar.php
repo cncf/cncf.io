@@ -1,6 +1,6 @@
-<?php
+<?php // phpcs:ignoreFile WordPress.Files.FileName.NotHyphenatedLowercase.
 /**
- * Page content - the loop
+ * Single Webinar
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -9,8 +9,6 @@
 
 get_template_part( 'components/header' );
 
-get_template_part( 'components/hero' );
-
-get_template_part( 'components/page-single' );
+get_template_part( 'components/webinar-single' );
 
 get_template_part( 'components/footer' );
