@@ -83,11 +83,11 @@ function lf_upcoming_webinars_render_callback( $attributes ) {
 		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();
-			$recording    = get_post_meta( get_the_ID(), 'cncf_webinar_recording', true );
-			$registration = get_post_meta( get_the_ID(), 'cncf_webinar_registration', true );
-			$time         = get_post_meta( get_the_ID(), 'cncf_webinar_time', true );
-			$terms        = get_the_terms( get_the_ID(), 'cncf-author-category' );
-			$dt_date      = new DateTime(
+			$recording       = get_post_meta( get_the_ID(), 'cncf_webinar_recording', true );
+			$registration    = get_post_meta( get_the_ID(), 'cncf_webinar_registration', true );
+			$time            = get_post_meta( get_the_ID(), 'cncf_webinar_time', true );
+			$author_category = get_the_terms( get_the_ID(), 'cncf-author-category' );
+			$dt_date         = new DateTime(
 				get_post_meta( get_the_ID(), 'cncf_webinar_date', true ),
 				new DateTimeZone( 'America/Los_Angeles' )
 			);
@@ -99,13 +99,15 @@ function lf_upcoming_webinars_render_callback( $attributes ) {
 				<div class="uw-date-category-wrapper">
 					<span
 						class="uw-date skew-box"><?php echo esc_html( $dt_date->format( 'D j F Y' ) ); ?></span>
-					<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-						$category = $terms[0]->name;
+					<?php
+					if ( ! empty( $author_category ) && ! is_wp_error( $author_category ) ) {
+						$category = $author_category[0]->name;
 					} else {
-						$category = "";
-					} ?>
+						$category = '';
+					}
+					?>
 					<span class="uw-category skew-box">
-						CNCF <?php echo esc_html($category ); ?> Webinar
+						CNCF <?php echo esc_html( $category ); ?> Webinar
 					</span>
 
 				</div>
