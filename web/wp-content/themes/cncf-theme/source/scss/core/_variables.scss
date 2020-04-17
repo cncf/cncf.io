@@ -6,10 +6,11 @@ $black: #202020;
 $black-700: #000000;
 $black-900: #111111;
 
-$grey-200: #DDDDDD;
+$grey-200: #ABB2BF;
 $grey-400: #a7a7a6;
 $grey-500: #87969c;
 $grey-700: #444444;
+$grey-800: #333333;
 
 $blue-100: #F0F5F7;
 $blue-300: #3CB3DD;
@@ -63,3 +64,19 @@ BlinkMacSystemFont,
 "Droid Sans",
 "Helvetica Neue",
 sans-serif;
+
+$font-code: Hack,
+"Fira Code",
+Consolas,
+Menlo,
+Monaco,
+"Andale Mono",
+"Lucida Console",
+"Lucida Sans Typewriter",
+"DejaVu Sans Mono",
+"Bitstream Vera Sans Mono",
+"Liberation Mono",
+"Nimbus Mono L",
+"Courier New",
+Courier,
+monospace;

@@ -60,6 +60,32 @@
         margin-left: 2em;
     }
 
+    pre {
+        background-color: $grey-800;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow: auto;
+        border-radius: .3em;
+        border: 1px solid $black;
+        font-family: $font-code;
+
+        code {
+            overflow: auto;
+            line-height: 1.5;
+            color: $grey-200;
+        }
+
+        &.wp-block-preformatted {
+            color: $grey-200;
+        }
+    }
+
+    div[class*="highlighter-"] code,
+    .code-toolbar code {
+        display: block;
+        margin: 0 20px;
+        padding: 15px 16px 14px;
+    }
 }
 
 // .wp-block-gallery {
@@ -86,9 +112,6 @@
 //         margin: 0;
 //     }
 // }
-
-
-
 // h2 {
 //     margin: 0.5em 0;
 
@@ -103,7 +126,6 @@
 // h6 {
 //     margin: 0.5em 0;
 // }
-
 // h4 {
 //     font-weight: 400;
 //     line-height: 1.4;
