@@ -29,7 +29,7 @@ CNCF.io runs in a similar way to  LFEvents -[LFEvents Developer Instructions](ht
   * `From where should we get your app's codebase?` > `current working directory`
   * `What recipe do you want to use?` > `pantheon`
   * `Enter a Pantheon machine token` > `[enter the Pantheon token you got above]`
-  * `Which site?` > `cncf.io`
+  * `Which site?` > `cncfci`
 
 3. Run `lando start` and note the local site URL provided at the end of the process
 
