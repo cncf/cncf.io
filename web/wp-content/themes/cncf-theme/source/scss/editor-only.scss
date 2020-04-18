@@ -52,6 +52,14 @@
     max-width: 1150px;
 }
 
+.post-type-post {
+    .wp-block {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 700px;
+    }
+}
+
 // stop ridiculous dropcap in paragraph preview.
 .block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
     float: none;
