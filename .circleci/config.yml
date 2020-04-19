@@ -178,7 +178,7 @@ jobs:
 
     wraith_test_cncfci:
         docker:
-            - image: liquidweb/wraith
+            - image: lopezs/wraith
 
         steps:
             - checkout
