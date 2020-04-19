@@ -181,14 +181,18 @@ jobs:
             - image: liquidweb/wraith
 
         steps:
+            - run:
+                name: Avoid hosts unknown for github
+                command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+
             - checkout
 
-            # - run:
-            #     name: run Wraith tests
-            #     command: ./.circleci/wraith-test.sh $TERMINUS_SITE
+            - run:
+                name: run Wraith tests
+                command: ./.circleci/wraith-test.sh $TERMINUS_SITE
 
-            # - store_artifacts:
-            #     path: ./wraith/shots
+            - store_artifacts:
+                path: ./wraith/shots
 
 workflows:
   version: 2
