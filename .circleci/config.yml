@@ -183,12 +183,12 @@ jobs:
         steps:
             - checkout
 
-            - run:
-                name: run Wraith tests
-                command: ./.circleci/wraith-test.sh $TERMINUS_SITE
+            # - run:
+            #     name: run Wraith tests
+            #     command: ./.circleci/wraith-test.sh $TERMINUS_SITE
 
-            - store_artifacts:
-                path: ./wraith/shots
+            # - store_artifacts:
+            #     path: ./wraith/shots
 
 workflows:
   version: 2
