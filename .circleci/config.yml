@@ -179,7 +179,8 @@ jobs:
     wraith_test_cncfci:
         <<: *defaults
         docker:
-            - image: liquidweb/wraith
+            - image: circleci/node:9.9-stretch
+            # - image: liquidweb/wraith
 
         steps:
             # - run:
