@@ -177,7 +177,6 @@ jobs:
                 when: always
 
     wraith_test_cncfci:
-        <<: *defaults
         docker:
             - image: liquidweb/wraith
 
