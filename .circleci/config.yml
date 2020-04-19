@@ -177,13 +177,14 @@ jobs:
                 when: always
 
     wraith_test_cncfci:
+        <<: *defaults
         docker:
             - image: liquidweb/wraith
 
         steps:
-            - run:
-                name: Avoid hosts unknown for github
-                command: mkdir /.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > /.ssh/config
+            # - run:
+            #     name: Avoid hosts unknown for github
+            #     command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
 
             - checkout
 
