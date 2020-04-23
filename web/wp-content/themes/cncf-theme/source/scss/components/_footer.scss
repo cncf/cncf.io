@@ -3,9 +3,11 @@
     padding-bottom: 70px;
     background-color: $blue-900;
     color: $white;
+    margin-top: 4em;
 
     @media (min-width: 768px) {
         font-size: 0.875em;
+        margin-top: 8em;
     }
 
     .container {

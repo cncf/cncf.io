@@ -33,7 +33,7 @@
 		$all_categories = get_the_category();
 		if ( $all_categories ) :
 			?>
-		<p class="newsroom-single-category">
+		<p class="hero-post-parent-link">
 			<?php
 			// Only get the first item in the array.
 			$category = array_shift( $all_categories );
@@ -44,7 +44,7 @@
 			<?php
 endif;
 		?>
-		<h1 class="newsroom-single-title" itemprop="headline">
+		<h1 class="hero-post-title" itemprop="headline">
 			<?php the_title(); ?></h1>
 	</div>
 </section>

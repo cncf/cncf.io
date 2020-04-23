@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LF | CNCF Blocks
  * Plugin URI: https://www.cncf.io
- * Description: Various blocks used in the CNCF.io site.
+ * Description: Various blocks for use on the CNCF.io site.
  * Author: James Hunt
  * Author URI: https://www.cncf.io
  * Version: 1.0.0

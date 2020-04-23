@@ -7,30 +7,6 @@
  * @since 1.0.0
  */
 
- /**
-  * Display webinar time
-  *
-  * @param object $date Date object.
-  * @param object $time Time.
-  */
-function fuerza_display_webinar_time( $date, $time ) {
-	// TODO: Come back to fix this function and the way time displays.
-	if ( empty( $time ) || ! ( $date instanceof DateTime ) ) {
-		return;
-	}
-
-	$suffix      = trim( substr( $time, -3 ) );
-	$time        = $time . ' (UTC';
-	$is_daylight = $date->format( 'I' ) == 1;
-	$hours       = ! $is_daylight ? '8' : '7';
-	$hours       = 'PDT' == $suffix ? 7 : $hours;
-	$signal      = 'CST' == $suffix ? '+' : '-';
-	$time       .= "{$signal}{$hours})";
-
-	return $time;
-}
-
-
 /**
  * Render the block
  *
@@ -78,57 +54,20 @@ function lf_upcoming_webinars_render_callback( $attributes ) {
 	?>
 
 <section
-	class="wp-block-lf-upcoming-webinars <?php echo esc_html( $classes ); ?>">
-	<div class="uw-wrapper">
-		<?php
-		while ( $query->have_posts() ) :
-			$query->the_post();
-			$recording       = get_post_meta( get_the_ID(), 'cncf_webinar_recording', true );
-			$registration    = get_post_meta( get_the_ID(), 'cncf_webinar_registration', true );
-			$time            = get_post_meta( get_the_ID(), 'cncf_webinar_time', true );
-			$author_category = get_the_terms( get_the_ID(), 'cncf-author-category' );
-			$dt_date         = new DateTime(
-				get_post_meta( get_the_ID(), 'cncf_webinar_date', true ),
-				new DateTimeZone( 'America/Los_Angeles' )
-			);
-			?>
-		<article class="uw-box">
-			<a href="<?php the_permalink(); ?>" class="box-link"
-				title="<?php the_title(); ?> on <?php echo esc_html( $dt_date->format( 'D j F Y' ) ); ?>"></a>
-			<div class="uw-title-wrapper">
-				<div class="uw-date-category-wrapper">
-					<span
-						class="uw-date skew-box"><?php echo esc_html( $dt_date->format( 'D j F Y' ) ); ?></span>
-					<?php
-					if ( ! empty( $author_category ) && ! is_wp_error( $author_category ) ) {
-						$category = $author_category[0]->name;
-					} else {
-						$category = '';
-					}
-					?>
-					<span class="uw-category skew-box">
-						CNCF <?php echo esc_html( $category ); ?> Webinar
-					</span>
+class="wp-block-lf-upcoming-webinars <?php echo esc_html( $classes ); ?>">
+<div class="webinars-upcoming-wrapper">
+	<?php
+	while ( $query->have_posts() ) :
+		$query->the_post();
 
-				</div>
-				<h4 class="uw-title"><a href="<?php the_permalink(); ?>"
-						title="<?php esc_html( the_title() ); ?> on <?php echo esc_html( $dt_date->format( 'D j F Y' ) ); ?>"><?php esc_html( the_title() ); ?></a>
-				</h4>
+		get_template_part( 'components/upcoming-webinars-item' );
 
-				<?php if ( ! empty( $dt_date ) & ! empty( $time ) ) : ?>
-
-				<span class="uw-time">Join live from
-					<?php echo esc_html( fuerza_display_webinar_time( $dt_date, $time ) ); ?></span>
-				<?php endif; ?>
-			</div>
-		</article>
-			<?php
-		endwhile;
-		wp_reset_postdata();
-		?>
-	</div>
+endwhile;
+	wp_reset_postdata();
+	?>
+</div>
 </section>
 	<?php
-		$block_content = ob_get_clean();
-		return $block_content;
+	$block_content = ob_get_clean();
+	return $block_content;
 }

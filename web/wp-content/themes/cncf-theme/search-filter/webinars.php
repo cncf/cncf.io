@@ -8,22 +8,9 @@
  * @author    Ross Morsali
  * @link      https://searchandfilter.com
  * @copyright 2018 Search & Filter
- *
- * Note: these templates are not full page templates, rather
- * just an encaspulation of the your results loop which should
- * be inserted in to other pages by using a shortcode - think
- * of it as a template part
- *
- * This template is an absolute base example showing you what
- * you can do, for more customisation see the WordPress docs
- * and using template tags -
- *
- * http://codex.wordpress.org/Template_Tags
  */
 
-$image = new Image();
-
-if ( $query->have_posts() ) {
+if ( $query->have_posts() ) :
 
 	// get total list of webinars.
 	$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_recording_url' and meta_value <> '';" );
@@ -38,6 +25,15 @@ if ( $query->have_posts() ) {
 
 	?>
 
+<!-- Setup the SVG to use it in the loop  -->
+<svg style="display:none">
+	<symbol id="play" viewBox="-1 -1 90 90">
+		<path fill="#DE176C"
+			d="M41.5 83C64.42 83 83 64.42 83 41.5S64.42 0 41.5 0 0 18.58 0 41.5 18.58 83 41.5 83z" />
+		<path d="M62 41.5L29 58V25z" fill="#FFF" />
+	</symbol>
+</svg>
+
 <div class="webinars-wrapper">
 
 	<?php
@@ -47,88 +43,68 @@ if ( $query->have_posts() ) {
 		$query->the_post();
 
 		// get webinar date.
-		$webinar_date = new DateTime( get_post_meta( $post->ID, 'cncf_webinar_date', true ) );
+		$webinar_date = new DateTime( get_post_meta( get_the_ID(), 'cncf_webinar_date', true ) );
 
-		// get webinar speakers.
-		$speakers = get_post_meta( $post->ID, 'cncf_webinar_speakers', true );
-
-		// get recording URL.
-		$recording_url = get_post_meta( $post->ID, 'cncf_webinar_recording_url', true );
+		// get recording URL (for video thumb).
+		$recording_url = get_post_meta( get_the_ID(), 'cncf_webinar_recording_url', true );
 
 		// extract YouTube video ID.
-		if ( false !== stripos( $recording_url, 'https://www.youtube.com/watch?v=' ) ) {
-			$video_id = substr( $recording_url, 32, 11 );
-		} elseif ( false !== stripos( $recording_url, 'https://youtu.be/' ) ) {
-			$video_id = substr( $recording_url, 17, 11 );
-		}
+		$video_id = Cncf_Utils::get_youtube_id_from_url( $recording_url );
 
 		// get author category.
-		$author_category = get_the_terms( $post->ID, 'cncf-author-category' );
+		$author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
 
-		// get project.
-		$project = get_the_terms( $post->ID, 'cncf-project' );
-		$project = join( ', ', wp_list_pluck( $project, 'name' ) );
-
-		// get company.
-		$company = get_the_terms( $post->ID, 'cncf-company' );
-		$company = join( ', ', wp_list_pluck( $company, 'name' ) );
-
-		// get topic.
-		$topic = get_the_terms( $post->ID, 'cncf-topic' );
-		$topic = join( ', ', wp_list_pluck( $topic, 'name' ) );
+		// get companies (presented by).
+		$company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
 		?>
-
 
 	<div class="webinar-recorded-item">
 
+		<?php
+		if ( $video_id ) :
+			?>
 		<figure>
 			<a href="<?php the_permalink(); ?>">
 				<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
 					alt="<?php the_title(); ?>">
-				<img src="<?php $image->get_svg( 'play-button.svg', true ); ?>" alt="" class="video-overlay">
+				<svg class="video-overlay" width="50" height="50">
+					<use href="#play" /></svg>
 			</a>
 		</figure>
-
-		<?php
-		if ( ! empty( $author_category ) && ! is_wp_error( $author_category ) ) {
-			$category = $author_category[0]->name;
-		} else {
-			$category = '';
-		}
-		?>
-		<div>CNCF <?php echo esc_html( $category ); ?> Webinar</div>
-
-		<h3 class="webinar-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-		<?php
-		if ( ! empty( $company ) ) :
-			?>
-		<div>Presented by: <?php echo esc_html( $company ); ?></div>
 			<?php
-endif;
+		endif;
 		?>
-		<div>Recorded on:
-			<?php echo esc_html( $webinar_date->format( 'l j F Y' ) ); ?></div>
 
+		<div class="skew-box secondary">CNCF
+			<?php echo esc_html( $author_category ); ?> Webinar</div>
+
+		<h5 class="webinar-title"><a
+				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
 		<?php
-		/*
-		// UNUSUED on THIS PAGE.
-		// echo 'Recording_url: ' . $recording_url . '<br>';
-		// echo 'project: ' . $project . '<br>';
-		// echo 'topic: ' . $topic . '<br>';
-		// echo  esc_html( $speakers );
-		// the_excerpt();
-		*/
+		if ( $company ) :
+			?>
+		<div class="presented-by">Presented by:
+			<?php echo esc_html( $company ); ?></div>
+			<?php
+		endif;
 		?>
 
+		<?php
+		if ( $webinar_date ) :
+			?>
+		<div class="recorded live-icon">Recorded:
+			<?php echo esc_html( $webinar_date->format( 'j F Y' ) ); ?></div>
+			<?php
+		endif;
+		?>
 
 	</div>
 		<?php
-		endwhile;
+endwhile;
 	?>
 </div>
 	<?php
-} else {
+else :
 	echo 'No Results Found';
-}
+endif;
