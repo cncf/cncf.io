@@ -5,7 +5,7 @@
 <div style="clear: both;"> </div>
 </div>
 <div style="padding: 0 30px 30px 30px; border-bottom: 3px solid #eeeeee;">
-<div style="padding: 30px 0; font-size: 24px; text-align: center; line-height: 40px;">Thank you for signing up!<span style="display: block;">Your account has to be manually reviewed.</span></div>
+<div style="padding: 30px 0; font-size: 24px; text-align: center; line-height: 40px;">Thank you for signing up for the CNCF Speakers Bureau!</div>
 <div style="padding: 15px; background: #eee; border-radius: 3px; text-align: center;">Speakers Bureau requests are reviewed weekly. You will receive an email accepting or rejecting your application.</div>
 </div>
 <div style="color: #999; padding: 20px 30px;">
