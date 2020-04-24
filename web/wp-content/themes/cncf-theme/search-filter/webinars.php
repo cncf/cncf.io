@@ -11,16 +11,32 @@
  */
 
 if ( $query->have_posts() ) :
+	if ( '>=' !== $query->query['meta_query'][0]['compare'] ) {
+		// recorded webinars.
 
-	// get total list of webinars.
-	$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_recording_url' and meta_value <> '';" );
+		// get total list of webinars.
+		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_recording_url' and meta_value <> '';" );
 
-	// if filter matches all webinars.
-	if ( $full_count == $query->found_posts ) {
-		echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' recorded webinars.</p>';
+		// if filter matches all webinars.
+		if ( $full_count == $query->found_posts ) {
+			echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' recorded webinars.</p>';
+		} else {
+			// else show partial count.
+			echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars.</p>';
+		}
 	} else {
-		// else show partial count.
-		echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars.</p>';
+		// upcoming webinars.
+
+		// get total list of webinars.
+		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_date' and meta_value >= CURDATE();" );
+
+		// if filter matches all webinars.
+		if ( $full_count == $query->found_posts ) {
+			echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' upcoming webinars.</p>';
+		} else {
+			// else show partial count.
+			echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars.</p>';
+		}
 	}
 
 	?>
