@@ -9,33 +9,17 @@
 <div>
 <p><span style="font-weight: 400;">Next Steps:</span></p>
 <p><a href="https://www.cncf.io/speakers/login/"><span style="font-weight: 400;">Login</span></a><span style="font-weight: 400;"> to your account and finish filling out your profile. This includes adding a picture and telling us a little more about yourself. Your profile must be filled in within 30 days of your acceptance into the CNCF Speakers Bureau. </span></p>
-<p><span style="font-weight: 400;">When you get to your profile page, click on the gear in the top-right and then Edit Profile.</span></p>
+<p><span style="font-weight: 400;">When you get to your profile page, click on the settings gear in the top-right and then choose "Edit Profile".</span></p>
 <p><span style="font-weight: 400;">Required elements in your profile are:</span></p>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">A profile picture</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">A Profile Photo (a photo is necessary in order to be listed in the Speakers Bureau directory)</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Bio</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Expertise</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Job Category</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Job Title</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Country</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Languages Spoken</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">At least one</span>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Github</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Twitter</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">LinkedIn</span></li>
-</ul>
-</li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Travel Range</span></li>
-</ul>
-<p><span style="font-weight: 400;">Optional categories are:</span></p>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Tell us a little bit about yourself</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">CNCF Affiliations (CKA, CKAD, Ambassador)</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">CNCF projects you work with</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Company</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Website</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Gender</span></li>
 </ul>
 <p><span style="font-weight: 400;">Speaker profiles which do not contain the required information will be deactivated.</span></p>
 </div>
