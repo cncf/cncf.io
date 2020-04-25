@@ -15,7 +15,7 @@
 		const goTopButton = document.querySelector( '.back-to-top' );
 
 		// browser window scroll (in pixels) after which the "back to top" link is shown.
-		const offset = 100;
+		const offset = 1500;
 
 		// how long scroll takes.
 		const scrollDuration = 900;
