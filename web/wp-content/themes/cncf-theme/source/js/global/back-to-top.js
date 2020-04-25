@@ -1,50 +1,78 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-mixed-operators */
 /**
  * Back to top
+ *
+ * Adapted from vanillatop https://github.com/bernydole/vanillatop
  *
  * @package WordPress
  * @since 1.0.0
  */
 
-// Setup variable.
-let lastScrollPosition = 0;
+( function() {
+	document.addEventListener( 'DOMContentLoaded', function() {
+		// declare the back to top element.
+		const goTopButton = document.querySelector( '.back-to-top' );
 
-// Track whether call is currently in process.
-let tick = false;
+		// browser window scroll (in pixels) after which the "back to top" link is shown.
+		const offset = 100;
 
-/**
- * Show back to top
- *
- * @param {integer} scrollPos Y position of scroll.
- */
-function showBackToTop( scrollPos ) {
-	// declare the back to top element.
-	const b = document.querySelector( '.back-to-top' );
+		// how long scroll takes.
+		const scrollDuration = 900;
 
-	// if element isn't present return.
-	if ( ! b ) {
-		return;
-	}
+		// Setup variable to store scroll position.
+		let lastScrollPosition = 0;
 
-	if ( scrollPos > 1500 ) {
-		b.classList.add( 'is-active' );
-	} else {
-		b.classList.remove( 'is-active' );
-	}
-}
+		// Track whether call is currently in process.
+		let tick = false;
 
-window.addEventListener(
-	'scroll',
-	function() {
-		lastScrollPosition = window.scrollY;
-		if ( ! tick ) {
-			setTimeout(
-				function() {
-					showBackToTop( lastScrollPosition );
-					tick = false;
-				},
-				200
-			);
+		function scrollToTop( duration ) {
+			let start = window.pageYOffset,
+				startTime = Math.floor( Date.now() );
+
+			function scroll() {
+				Math.easeInOutQuad = function( t ) {
+					return t < 0.5 ? 2 * t * t : -1 + ( 4 - 2 * t ) * t;
+				};
+				let time = Math.min( 1, ( ( Math.floor( Date.now() ) - startTime ) / duration ) );
+				window.scroll( 0, Math.ceil( ( Math.easeInOutQuad( time ) * ( 0 - start ) ) + start ) );
+				if ( window.pageYOffset === 0 ) {
+					return;
+				}
+				requestAnimationFrame( scroll );
+			}
+			scroll();
 		}
-		tick = true;
-	}
-);
+
+		function scrollingDown( currentScrollPosition ) {
+			if ( currentScrollPosition > offset ) {
+				goTopButton.classList.add( 'is-active' );
+			} else {
+				goTopButton.classList.remove( 'is-active' );
+			}
+		}
+
+		// add event listener to element.
+		goTopButton.addEventListener( 'click', function() {
+			( ! window.requestAnimationFrame ) ? window.scrollTo( 0, 0 ) : scrollToTop( scrollDuration );
+		} );
+
+		// control scroll listening speed.
+		window.addEventListener(
+			'scroll',
+			function() {
+				lastScrollPosition = window.scrollY;
+				if ( ! tick ) {
+					setTimeout(
+						function() {
+							scrollingDown( lastScrollPosition );
+							tick = false;
+						},
+						800
+					);
+				}
+				tick = true;
+			}
+		);
+	} );
+}() );
