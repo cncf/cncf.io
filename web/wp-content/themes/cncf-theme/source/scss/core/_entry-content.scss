@@ -96,6 +96,16 @@
         margin: 0 20px;
         padding: 15px 16px 14px;
     }
+
+    .is-disabled {
+        color: $grey-400;
+        cursor: not-allowed;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 // .wp-block-gallery {

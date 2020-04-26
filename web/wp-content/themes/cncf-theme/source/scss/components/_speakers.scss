@@ -1,60 +1,69 @@
 .speakers-wrapper {
     display: grid;
-
-    @media (max-width: 599px) {
-        grid-gap: 1em;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    }
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
 
     @media (min-width: 600px) {
         grid-gap: 1.5em;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     }
-
-
 }
 
 .speaker {
-    background-color: $grey-200;
+    background-color: $blue-100;
     padding: 1em;
+
+    @media (min-width: 600px) {
+        padding: 1.5em;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.speaker-photo img {
-    border: 1px $grey-400 solid;
+.speaker-photo {
+    img {
+        width: 100%;
+        height: auto;
+        border: 1px solid $grey-200;
+
+        @media (min-width: 768px) {
+            min-width: 190px;
+        }
+    }
 }
 
-.speaker-title a {
-    text-transform: capitalize;
+.speaker-title {
+    margin-bottom: auto;
+    text-align: center;
+
+    a {
+        text-transform: capitalize;
+    }
 }
 
 .speaker-location {
-    background-color: $blue-100;
-    font-size: 0.875em;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 4px 6px 4px 6px;
-    // // adds skewed end.
-    // padding-right: 20px;
-    // clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 20px) 0);
-    // // centers
-    // margin-left: 20px;
+    color: $white;
 }
 
 .speaker-badges {
     margin-top: 1em;
     display: flex;
+    height: 30px;
 
-    .row:not(:last-of-type) {
-        margin-right: 0.2em;
+    .column:not(:last-of-type) {
+        margin-right: 0.5em;
+
     }
 
-    // font-size: 0.875em;
+    svg {
+        height: 1.5em;
+        width: auto;
+        opacity: 0.75;
 
-}
-
-.margin-top {
-    margin-top: 0.5em;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }

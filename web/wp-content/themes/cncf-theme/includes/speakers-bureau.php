@@ -92,7 +92,7 @@ function is_sb_speaker() {
 		}
 	}
 
-	return $is_allowed;
+	return $is_speaker;
 }
 
 /**

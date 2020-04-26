@@ -151,4 +151,21 @@ class Cncf_Utils {
 		return isset( $result ) ? $result : false;
 	}
 
+	/**
+	 * Helps to add pluralise words when unknown counts.
+	 *
+	 * Default is for s, i.e. speaker, speakers.
+	 *
+	 * @param integer $number Number value.
+	 * @param string  $singular String to show for singular words.
+	 * @param string  $plural String to show for singular words.
+	 */
+	public static function plural( $number, $singular = '', $plural = 's' ) {
+
+		if ( 1 == $number ) {
+			return $singular;
+		}
+		return $plural;
+	}
+
 }
