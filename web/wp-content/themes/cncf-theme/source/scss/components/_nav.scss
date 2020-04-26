@@ -213,9 +213,10 @@
                 &:focus>ul,
                 &.focus>ul {
                     left: -1em;
+                    top: 100%;
                     opacity: 1;
                     transform: translateY(0);
-                    transition: opacity 0.15s linear, transform 0.15s linear;
+                    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
                     overflow: visible;
                 }
 
@@ -258,7 +259,7 @@
         color: $white;
         opacity: 0;
         position: absolute;
-        left: -9999em;
+        left: -9999px;
         top: 100%;
         overflow: hidden;
         width: 15em;
