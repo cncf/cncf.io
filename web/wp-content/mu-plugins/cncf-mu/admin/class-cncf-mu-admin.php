@@ -351,6 +351,7 @@ class Cncf_Mu_Admin {
 									'data_type'     => 'meta',
 									'data_key'      => 'time', // Required if 'data_type' is 'meta'.
 									'label'         => __( 'Time' ),
+									'help'   => __( 'Example: 10:00 - 11:00 AM CST' ),
 									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
 									'ui_border_top' => true, // Display CSS border-top in the editor control.
 									'default_value' => '',
@@ -374,7 +375,7 @@ class Cncf_Mu_Admin {
 									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
 									'ui_border_top' => true, // Display CSS border-top in the editor control.
 									'default_value' => '',
-									'placeholder'   => 'Radu Matei, Software Engineer @ Microsoft',
+									'placeholder'   => 'Radu Matei, Software Engineer at Microsoft',
 								),
 								array(
 									'type'          => 'text',
@@ -743,15 +744,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-country-ch', array( 'cncf_case_study_ch' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Product Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Product Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Product Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Product Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Product Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Product Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Product Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Product Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Product Types', 'cncf-mu' ),
+			'name'          => __( 'Product Type', 'cncf-mu' ),
+			'singular_name' => __( 'Product Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Product Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Product Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Product Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Product Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Product Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Product Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Product Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -763,15 +764,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-product-type', array( 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Product Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Product Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Product Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Product Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Product Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Product Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Product Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Product Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Product Types', 'cncf-mu' ),
+			'name'          => __( 'Product Type', 'cncf-mu' ),
+			'singular_name' => __( 'Product Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Product Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Product Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Product Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Product Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Product Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Product Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Product Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -783,15 +784,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-product-type-ch', array( 'cncf_case_study_ch' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Cloud Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Cloud Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Cloud Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Cloud Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Cloud Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Cloud Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Cloud Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Cloud Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Cloud Types', 'cncf-mu' ),
+			'name'          => __( 'Cloud Type', 'cncf-mu' ),
+			'singular_name' => __( 'Cloud Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Cloud Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Cloud Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Cloud Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Cloud Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Cloud Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Cloud Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Cloud Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -803,15 +804,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-cloud-type', array( 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Cloud Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Cloud Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Cloud Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Cloud Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Cloud Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Cloud Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Cloud Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Cloud Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Cloud Types', 'cncf-mu' ),
+			'name'          => __( 'Cloud Type', 'cncf-mu' ),
+			'singular_name' => __( 'Cloud Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Cloud Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Cloud Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Cloud Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Cloud Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Cloud Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Cloud Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Cloud Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -1065,7 +1066,7 @@ class Cncf_Mu_Admin {
 		);
 		register_taxonomy( 'cncf-language', array( 'cncf_webinar', 'cncf_speaker' ), $args );
 
-		$args   = array(
+		$args = array(
 			'labels'            => array( 'name' => __( 'Affiliations', 'cncf-mu' ) ),
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
@@ -1073,7 +1074,7 @@ class Cncf_Mu_Admin {
 			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-speaker-affiliation', array( 'cncf_speaker' ), $args );
-		$args   = array(
+		$args = array(
 			'labels'            => array( 'name' => __( 'Expertise', 'cncf-mu' ) ),
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
@@ -1191,8 +1192,8 @@ class Cncf_Mu_Admin {
 		}
 
 		$um_member_directory_data = get_user_meta( $user_id, 'um_member_directory_data', false )[0];
-		$um_hide_in_members = get_user_meta( $user_id, 'hide_in_members', true );
-		$photo = get_user_meta( $user_id, 'profile_photo', true );
+		$um_hide_in_members       = get_user_meta( $user_id, 'hide_in_members', true );
+		$photo                    = get_user_meta( $user_id, 'profile_photo', true );
 		if ( 'approved' !== $um_member_directory_data['account_status'] || ! $photo || $um_hide_in_members ) {
 			// speaker must be approved, have a photo, and not have hidden their profile.
 			$eligible_for_search = false;
@@ -1202,7 +1203,7 @@ class Cncf_Mu_Admin {
 
 		$query = new WP_Query(
 			array(
-				'name' => $user_id,
+				'name'      => $user_id,
 				'post_type' => 'cncf_speaker',
 			)
 		);
@@ -1228,10 +1229,10 @@ class Cncf_Mu_Admin {
 		}
 
 		$affiliations = get_user_meta( $user_id, 'sb_certifications', false )[0];
-		$expertise = get_user_meta( $user_id, 'expertise', false )[0];
-		$languages = get_user_meta( $user_id, 'languages', false )[0];
-		$projects = get_user_meta( $user_id, 'project', false )[0];
-		$country = get_user_meta( $user_id, 'country', false )[0];
+		$expertise    = get_user_meta( $user_id, 'expertise', false )[0];
+		$languages    = get_user_meta( $user_id, 'languages', false )[0];
+		$projects     = get_user_meta( $user_id, 'project', false )[0];
+		$country      = get_user_meta( $user_id, 'country', false )[0];
 
 		$country = str_replace( 'Korea, Republic of', 'South Korea', $country );
 		$country = str_replace( "Korea, Democratic People's Republic of", 'North Korea', $country );
@@ -1280,9 +1281,9 @@ class Cncf_Mu_Admin {
 			wp_delete_post( $eachpost->ID, true );
 		}
 
-		$args = array( 'role' => 'um_speaker' );
+		$args          = array( 'role' => 'um_speaker' );
 		$wp_user_query = new WP_User_Query( $args );
-		$users = $wp_user_query->get_results();
+		$users         = $wp_user_query->get_results();
 		foreach ( $users as $user ) {
 			$this->sync_speaker( $user->ID );
 		}
@@ -1296,7 +1297,7 @@ class Cncf_Mu_Admin {
 	 * @param array $userinfo User Info.
 	 */
 	public function speaker_updated( $user_id, $args = null, $userinfo = null ) {
-		$user = get_userdata( $user_id );
+		$user       = get_userdata( $user_id );
 		$user_roles = $user->roles;
 
 		if ( in_array( 'um_speaker', $user_roles, true ) ) {
@@ -1313,7 +1314,7 @@ class Cncf_Mu_Admin {
 		global $post;
 		$query = new WP_Query(
 			array(
-				'name' => $user_id,
+				'name'      => $user_id,
 				'post_type' => 'cncf_speaker',
 			)
 		);
