@@ -42,8 +42,6 @@ endif;
 		</button>
 
 		<div class="menu-container-with-search" role="navigation"
-			aria-label="Main Navigation"
-			aria-labelledby="hamburger"
 			>
 			<nav class="site-navigation">
 				<?php
