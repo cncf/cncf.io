@@ -54,7 +54,7 @@ if ( $query->have_posts() ) {
 	<span class="is-disabled">Bulk messaging is limited to 50 speakers at a
 		time.</span>
 			<?php
-		}
+	}
 	}
 	?>
 </p>
@@ -93,10 +93,10 @@ if ( $query->have_posts() ) {
 				title="<?php echo esc_attr( $display_name ); ?>"><?php echo esc_html( $display_name ); ?></a>
 		</h5>
 
-<?php if (um_user( 'country' )) : ?>
+		<?php if ( um_user( 'country' ) ) : ?>
 		<span
 			class="speaker-location unskew-box secondary margin-top centered"><?php echo esc_html( um_user( 'country' ) ); ?></span>
-<?php endif; ?>
+		<?php endif; ?>
 
 		<div class="speaker-badges">
 			<?php
@@ -106,7 +106,7 @@ if ( $query->have_posts() ) {
 			<div class="column">
 
 			<span class="hint--top" aria-label="Willing to travel internationally">
-			<?php $image->get_svg( 'speakers/international.svg' ); ?>
+				<?php $image->get_svg( 'speakers/international.svg' ); ?>
 			</span>
 			</div>
 			<?php endif; ?>
@@ -119,7 +119,7 @@ if ( $query->have_posts() ) {
 			<div class="column">
 
 			<span class="hint--top" aria-label="CKA - Certified Kubernetes Administrator">
-			<?php $image->get_svg( 'speakers/cka-logo.svg' ); ?>
+						<?php $image->get_svg( 'speakers/cka-logo.svg' ); ?>
 			</span>
 
 			</div>
@@ -130,7 +130,7 @@ if ( $query->have_posts() ) {
 			<div class="column">
 
 			<span class="hint--top" aria-label="CKAD - Certified Kubernetes Application Developer">
-			<?php $image->get_svg( 'speakers/ckad-logo.svg' ); ?>
+						<?php $image->get_svg( 'speakers/ckad-logo.svg' ); ?>
 			</span>
 
 			</div>
@@ -141,7 +141,7 @@ if ( $query->have_posts() ) {
 			<div class="column">
 
 			<span class="hint--top" aria-label="CNCF Ambassador">
-			<?php $image->get_svg( 'speakers/ambassador.svg' ); ?>
+						<?php $image->get_svg( 'speakers/ambassador.svg' ); ?>
 			</span>
 
 			</div>
