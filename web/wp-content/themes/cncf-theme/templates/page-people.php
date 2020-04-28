@@ -20,7 +20,6 @@ get_template_part( 'components/hero' );
 			'posts_per_page'      => -1,
 			'order'               => 'ASC',
 			'orderby'             => 'title',
-			'ignore_sticky_posts' => true,
 		);
 
 		$persons_query = new WP_Query( $query_args );

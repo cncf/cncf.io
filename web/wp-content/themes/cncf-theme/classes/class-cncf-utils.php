@@ -168,4 +168,47 @@ class Cncf_Utils {
 		return $plural;
 	}
 
+	/**
+	 * Display Event Date.
+	 *
+	 * @param string $event_date_start Date string.
+	 * @param string $event_date_end Date string.
+	 */
+	public static function display_event_date( $event_date_start, $event_date_end ) {
+
+		if ( empty( $event_date_start ) ) {
+			// No start date so return TBC.
+			return 'TBC';
+		}
+
+		// turn in to date objects.
+		$event_date_start = new DateTime(
+			$event_date_start,
+			new DateTimeZone( 'America/Los_Angeles' )
+		);
+
+		$event_date_end = new DateTime(
+			$event_date_end,
+			new DateTimeZone( 'America/Los_Angeles' )
+		);
+
+		// If no end date, show start date in full.
+		if ( ! $event_date_end ) {
+			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
+		} elseif ( $event_date_start == $event_date_end ) {
+			// Start and end are same day.
+			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
+		} else {
+			// If start AND end month the same.
+			if ( $event_date_start->format( 'F' ) === $event_date_end->format( 'F' ) ) {
+				$date = esc_html( $event_date_start->format( 'F j' ) ) . '-' . esc_html( $event_date_end->format( 'j, Y' ) );
+			} else {
+				// Show both start and end month.
+				$date = esc_html( $event_date_start->format( 'F j' ) ) . ' - ' . esc_html( $event_date_end->format( 'F j, Y' ) );
+			}
+		}
+		return $date;
+	}
+
+
 }

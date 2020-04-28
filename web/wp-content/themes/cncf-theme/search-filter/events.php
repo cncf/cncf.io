@@ -2,57 +2,109 @@
 /**
  * Search & Filter Pro
  *
- * Sample Results Template
+ * Events
  *
- * @package   Search_Filter
- * @author    Ross Morsali
- * @link      https://searchandfilter.com
- * @copyright 2018 Search & Filter
- *
- * Note: these templates are not full page templates, rather
- * just an encaspulation of the your results loop which should
- * be inserted in to other pages by using a shortcode - think
- * of it as a template part
- *
- * This template is an absolute base example showing you what
- * you can do, for more customisation see the WordPress docs
- * and using template tags -
- *
- * http://codex.wordpress.org/Template_Tags
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
  */
 
-if ( $query->have_posts() ) {
-	$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_event' and wp_posts.post_status = 'publish' and meta_key='cncf_event_date_end' and meta_value >= CURDATE();" );
-	if ( $full_count == $query->found_posts ) {
-		echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' upcoming events</p>';
-	} else {
-		echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming events</p>';
-	}
+?>
 
-	while ( $query->have_posts() ) {
-		$query->the_post();
-		$start_date = new DateTime( get_post_meta( $post->ID, 'cncf_event_date_start', true ) );
-		$end_date = new DateTime( get_post_meta( $post->ID, 'cncf_event_date_end', true ) );
-		$external_url = get_post_meta( $post->ID, 'cncf_event_external_url', true );
-
-		$city = get_post_meta( $post->ID, 'cncf_event_city', true );
-		$country = get_the_terms( $post->ID, 'cncf-country' );
-		if ( $country ) {
-			$location = $city . ', ' . $country[0];
+<p class="results-count">
+	<?php
+	if ( $query->have_posts() ) :
+		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_event' and wp_posts.post_status = 'publish' and meta_key='cncf_event_date_end' and meta_value >= CURDATE();" );
+		if ( $full_count == $query->found_posts ) {
+			echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming events';
 		} else {
-			$location = $city;
+			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming events';
 		}
-
 		?>
-		<div class="result-item">
-			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<div><?php echo esc_html( $start_date->format( 'F j, Y' ) ) . ' to ' . esc_html( $end_date->format( 'F j, Y' ) ); ?></div>
-			<div><?php echo esc_html( $location ); ?></div>
-			<div><?php echo esc_html( $external_url ); ?></div>
-			<p><br /><?php the_excerpt(); ?></p>
-		</div>
+</p>
+<div class="ue-wrapper">
 		<?php
-	}
-} else {
+		while ( $query->have_posts() ) :
+			$query->the_post();
+
+			$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+
+			$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
+
+			// $external_url = get_post_meta( get_the_ID(), 'cncf_event_external_url', true );
+
+			$city = get_post_meta( get_the_ID(), 'cncf_event_city', true );
+
+			$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
+
+			if ( ! city && ! $country ) {
+				$location = 'TBC';
+			} elseif ( ! $country ) {
+				$location = $city;
+			} else {
+				$location = $city . ', ' . $country;
+			}
+
+			$logo = get_post_meta( get_the_ID(), 'cncf_event_logo', true );
+
+			$background = get_post_meta( get_the_ID(), 'cncf_event_background', true );
+
+			$color = get_post_meta( get_the_ID(), 'cncf_event_overlay_color', true );
+
+			$color ? $overlay_color = $color : $overlay_color = '#254AAB';
+
+			?>
+	<article class="event-box background-image-wrapper">
+
+		<div class="ue-overlay"
+			style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
+		</div>
+
+			<?php if ( $background ) : ?>
+		<figure class="background-image-figure">
+				<?php echo wp_get_attachment_image( $background, 'medium', false ); ?>
+		</figure>
+		<?php endif; ?>
+
+		<div class="ue-content-wrapper background-image-text-overlay">
+
+			<div class="ue-logo">
+			<?php if ( $logo ) : ?>
+				<a href="<?php the_permalink(); ?>"
+					title="<?php the_title(); ?>">
+				<?php
+						echo wp_get_attachment_image( $logo, 'medium', false );
+				?>
+						  </a>
+		<?php else : ?>
+						<h4 class="event-title"><a href="<?php the_permalink(); ?>"
+					title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+						<?php endif; ?>
+				</a>
+			</div>
+
+			<span class="ue-event-date">
+				<?php
+						echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+				?>
+			</span>
+			<span
+				class="ue-event-city"><?php echo esc_html( $location ); ?></span>
+			<a href="<?php the_permalink(); ?>"
+				class="button transparent outline ue-button">Learn More</a>
+		</div>
+	</article>
+
+			<?php
+			// r( $logo ); // ID.
+			// r( $background ); // ID.
+			// r( $overlay_color ); // rgba.
+			?>
+			<?php
+		endwhile;
+		?>
+</div>
+		<?php
+else :
 	echo 'No Results Found';
-}
+endif;

@@ -8,38 +8,11 @@
  */
 
 /**
- * Display Event Date
+ * Render the block
  *
- * @param date $event_date_start Date object.
- * @param date $event_date_end Date object.
+ * @param array $attributes Block attributes.
+ * @return object block_content Output.
  */
-function cncf_display_event_dates( $event_date_start, $event_date_end ) {
-	if ( empty( $event_date_start ) ) {
-		// No start date so return blank.
-		return;
-	}
-	// If no end date, show start date in full.
-	if ( ! $event_date_end ) {
-		$date = esc_html( $event_date_start->format( 'F j, Y' ) );
-	} else {
-		// If start AND end month the same.
-		if ( $event_date_start->format( 'F' ) === $event_date_end->format( 'F' ) ) {
-			$date = esc_html( $event_date_start->format( 'F j' ) ) . '-' . esc_html( $event_date_end->format( 'j, Y' ) );
-		} else {
-			// Show both start and end month.
-			$date = esc_html( $event_date_start->format( 'F j' ) ) . ' - ' . esc_html( $event_date_end->format( 'F j, Y' ) );
-		}
-	}
-	return $date;
-}
-
-
-	/**
-	 * Render the block
-	 *
-	 * @param array $attributes Block attributes.
-	 * @return object block_content Output.
-	 */
 function lf_upcoming_events_render_callback( $attributes ) {
 	// get the quantity to display, if not default.
 	$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 4;
@@ -80,19 +53,13 @@ function lf_upcoming_events_render_callback( $attributes ) {
 		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();
-			$event_date_start = new DateTime(
-				get_post_meta( get_the_ID(), 'cncf_event_date_start', true ),
-				new DateTimeZone( 'America/Los_Angeles' )
-			);
-			$event_date_end   = new DateTime(
-				get_post_meta( get_the_ID(), 'cncf_event_date_end', true ),
-				new DateTimeZone( 'America/Los_Angeles' )
-			);
+			$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+			$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
 			$external_url     = get_post_meta( get_the_ID(), 'cncf_event_external_url', true );
 			$event_hosts      = get_the_terms( get_the_ID(), 'cncf_event_hosts' );
 			$event_city       = get_post_meta( get_the_ID(), 'cncf_event_city', true );
 			?>
-		<article class="ue-event-box background-image-wrapper">
+		<article class="event-box background-image-wrapper">
 			<?php
 				// TODO: Pull in from Meta. Pull in real images.
 			?>
@@ -110,7 +77,7 @@ function lf_upcoming_events_render_callback( $attributes ) {
 				</div>
 				<span class="ue-event-date">
 					<?php
-						echo esc_html( cncf_display_event_dates( $event_date_start, $event_date_end ) );
+						echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 					?>
 				</span>
 				<span class="ue-event-city"><?php echo esc_html( $event_city ); ?></span>
