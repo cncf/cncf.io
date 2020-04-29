@@ -14,7 +14,8 @@ body {
         overflow: hidden;
     }
 
-
+    // fixes menu off bottom of screen.
+    overscroll-behavior: none;
 }
 
 .container {
@@ -259,6 +260,59 @@ figure {
 }
 
 
+.skew-box {
+    font-size: 0.750em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $white;
+    padding: 5px 6px;
+    background-color: $purple-400;
+    padding-right: 25px;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
+    // useful if inside flexbox.
+    align-self: start;
+
+    &:first-child {
+        margin-bottom: 0.5em;
+    }
+
+    &.secondary {
+        background-color: $blue-200;
+    }
+
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        transform: translateX(12px);
+    }
+}
+
+.unskew-box {
+    font-size: 0.750em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $white;
+    padding: 5px 6px;
+    background-color: $purple-400;
+    align-self: start;
+
+    &:first-child {
+        margin-bottom: 0.5em;
+    }
+
+    &.secondary {
+        background-color: $blue-200;
+    }
+
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+    }
+}
+
+
 .margin-reset {
     margin: 0;
 }
@@ -277,6 +331,11 @@ figure {
     margin-top: 1em;
 }
 
+.margin-top-small {
+    margin-top: 0.5em;
+}
+
+
 .margin-top-large {
     margin-top: 2em;
 }
@@ -287,4 +346,16 @@ figure {
 
 .margin-bottom {
     margin-bottom: 1em;
+}
+
+@media (min-width: 600px) {
+    .show-mobile-only {
+        display: none;
+    }
+}
+
+.show-desktop-only {
+    @media (max-width: 599px) {
+        display: none;
+    }
 }

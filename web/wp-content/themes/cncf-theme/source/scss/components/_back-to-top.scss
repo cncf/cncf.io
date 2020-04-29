@@ -11,9 +11,13 @@
     opacity: 0;
     transition: opacity 1s linear, top 0s 1.5s;
 
-    a {
+    svg {
+        width: 30px;
         fill: $white;
-        color: $white;
+		color: $white;
+		&:hover {
+			cursor: pointer;
+		}
     }
 
     &.is-active {

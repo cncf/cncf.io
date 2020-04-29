@@ -291,43 +291,73 @@ class Cncf_Mu_Admin {
 									'type'              => 'date_single',
 									'data_type'         => 'meta',
 									'unavailable_dates' => array(),
-									'data_key'          => 'date_start', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'             => __( 'Start Date', 'my_plugin' ),
-									'register_meta'     => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top'     => true, // Display CSS border-top in the editor control.
-									'default_value'     => '', // A string with a date that matches 'format'.
+									'data_key'          => 'date_start',
+									'label'             => __( 'Start Date' ),
+									'register_meta'     => true,
+									'ui_border_top'     => true,
+									'default_value'     => '',
 									'format'            => 'YYYY/MM/DD',
 								),
 								array(
 									'type'              => 'date_single',
 									'data_type'         => 'meta',
 									'unavailable_dates' => array(),
-									'data_key'          => 'date_end', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'             => __( 'End Date', 'my_plugin' ),
-									'register_meta'     => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top'     => false, // Display CSS border-top in the editor control.
-									'default_value'     => '', // A string with a date that matches 'format'.
+									'data_key'          => 'date_end',
+									'label'             => __( 'End Date' ),
+									'register_meta'     => true,
+									'ui_border_top'     => false,
+									'default_value'     => '',
 									'format'            => 'YYYY/MM/DD',
+									'help'          => __( 'Optional for single day events.' ),
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'external_url', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'external_url',
 									'label'         => __( 'URL to External Event Site' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.cloudfoundry.org/event/summit/',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'city', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'city',
 									'label'         => __( 'City' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'Hamilton',
+								),
+								array(
+									'type'          => 'image',
+									'data_type'     => 'meta',
+									'data_key'      => 'logo',
+									'id'            => 'event-logo', // keep this for CSS styling.
+									'label'         => __( 'Event Logo' ),
+									'help'          => __( 'Set a transparent logo for the event using an SVG or PNG file type.' ),
+									'register_meta' => true,
+								),
+								array(
+									'type'          => 'image',
+									'data_type'     => 'meta',
+									'data_key'      => 'background',
+									'label'         => __( 'Event Background' ),
+									'help'          => __( 'An image used for the background of the event tile. Recommended to use a square size at least 700px x 700px.' ),
+									'register_meta' => true,
+								),
+								array(
+									'type'          => 'color',
+									'data_type'     => 'meta',
+									'data_key'      => 'overlay_color',
+									'label'         => __( 'Color Overlay' ),
+									'help'          => __( 'Chose a color to overlay the background image' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
+									'alpha_control' => true,
+									'palette'       => $palette,
 								),
 							),
 						),
@@ -356,60 +386,61 @@ class Cncf_Mu_Admin {
 									'type'              => 'date_single',
 									'data_type'         => 'meta',
 									'unavailable_dates' => array(),
-									'data_key'          => 'date', // Required if 'data_type' is 'meta' or 'localstorage'.
-									'label'             => __( 'Date', 'my_plugin' ),
-									'register_meta'     => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top'     => true, // Display CSS border-top in the editor control.
-									'default_value'     => '', // A string with a date that matches 'format'.
+									'data_key'          => 'date',
+									'label'             => __( 'Date' ),
+									'register_meta'     => true,
+									'ui_border_top'     => true,
+									'default_value'     => '',
 									'format'            => 'YYYY/MM/DD',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'time', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'time',
 									'label'         => __( 'Time' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'help'          => __( 'Example: 10:00 - 11:00 AM CST' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => '10:00 - 11:00 AM CST',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'registration_url', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'registration_url',
 									'label'         => __( 'Registration URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://zoom.com.cn/webinar/register/WN_sMLQLH1JQbWa8CBUtzj0_A',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'speakers', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'speakers',
 									'label'         => __( 'Speakers' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
-									'placeholder'   => 'Radu Matei, Software Engineer @ Microsoft',
+									'placeholder'   => 'Radu Matei, Software Engineer at Microsoft',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'recording_url', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'recording_url',
 									'label'         => __( 'Recording URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.youtube.com/watch?v=95pkfWf8DgA',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'slides_url', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'slides_url',
 									'label'         => __( 'Slides URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.cncf.io/wp-content/uploads/2019/11/StackRox-Webinar-2019-11-12.pdf',
 								),
@@ -439,70 +470,70 @@ class Cncf_Mu_Admin {
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'company', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'company',
 									'label'         => __( 'Company and/or Title' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'DigitalOcean',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'linkedin', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'linkedin',
 									'label'         => __( 'LinkedIn URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.linkedin.com/in/gilbert-song-939ba737/',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'twitter', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'twitter',
 									'label'         => __( 'Twitter URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://twitter.com/Gilbert_Songs',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'github', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'github',
 									'label'         => __( 'GitHub URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://github.com/Gilbert88',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'wechat', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'wechat',
 									'label'         => __( 'WeChat URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://web.wechat.com/donaldliu1874',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'website', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'website',
 									'label'         => __( 'Website URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.weave.works/',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'youtube', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'youtube',
 									'label'         => __( 'YouTube URL' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.youtube.com/channel/UCJsK5Zbq0dyFZUBtMTHzxjQ',
 								),
@@ -532,11 +563,11 @@ class Cncf_Mu_Admin {
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'type', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'type',
 									'label'         => __( 'Case Study Type' ),
-									'help'          => __( 'This value will appear in the Case Study tile "READ THE ___ CASE STUDY"', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'help'          => __( 'This value will appear in the Case Study tile "READ THE ___ CASE STUDY"' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'Kubernetes',
 								),
@@ -566,11 +597,11 @@ class Cncf_Mu_Admin {
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'type', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'type',
 									'label'         => __( 'Case Study Type' ),
-									'help'          => __( 'This value will appear in the Case Study tile "阅读 ___ 案例研究"', 'my_plugin' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'help'          => __( 'This value will appear in the Case Study tile "阅读 ___ 案例研究"' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'Kubernetes',
 								),
@@ -600,100 +631,100 @@ class Cncf_Mu_Admin {
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'external_url', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'external_url',
 									'label'         => __( 'URL to Project Site' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.envoyproxy.io/',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'github', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'github',
 									'label'         => __( 'GitHub' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => true, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://github.com/coredns/coredns',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'blog', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'blog',
 									'label'         => __( 'Blog' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://blog.coredns.io/',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'logos', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'logos',
 									'label'         => __( 'Logos' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://github.com/cncf/artwork/blob/master/examples/graduated.md#coredns-logos',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'mail', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'mail',
 									'label'         => __( 'Mail' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://groups.google.com/forum/#!forum/coredns-discuss',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'slack', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'slack',
 									'label'         => __( 'Slack' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://cloud-native.slack.com/messages/coredns/',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'stack_overflow', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'stack_overflow',
 									'label'         => __( 'Stack Overflow' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://stackoverflow.com/questions/tagged/coredns',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'twitter', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'twitter',
 									'label'         => __( 'Twitter' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://twitter.com/corednsio',
 								),
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
-									'data_key'      => 'youtube', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'youtube',
 									'label'         => __( 'YouTube' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://www.youtube.com/channel/UCbWRJZxiaQ8twm6sh7UymoQ',
 								),
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'gitter', // Required if 'data_type' is 'meta'.
+									'data_key'      => 'gitter',
 									'label'         => __( 'Gitter' ),
-									'register_meta' => true, // This option is applicable only if 'data_type' is 'meta'.
-									'ui_border_top' => false, // Display CSS border-top in the editor control.
+									'register_meta' => true,
+									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://gitter.im/jaegertracing/Lobby',
 								),
@@ -760,15 +791,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-country-ch', array( 'cncf_case_study_ch' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Product Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Product Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Product Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Product Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Product Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Product Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Product Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Product Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Product Types', 'cncf-mu' ),
+			'name'          => __( 'Product Type', 'cncf-mu' ),
+			'singular_name' => __( 'Product Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Product Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Product Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Product Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Product Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Product Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Product Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Product Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -780,15 +811,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-product-type', array( 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Product Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Product Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Product Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Product Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Product Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Product Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Product Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Product Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Product Types', 'cncf-mu' ),
+			'name'          => __( 'Product Type', 'cncf-mu' ),
+			'singular_name' => __( 'Product Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Product Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Product Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Product Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Product Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Product Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Product Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Product Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -800,15 +831,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-product-type-ch', array( 'cncf_case_study_ch' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Cloud Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Cloud Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Cloud Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Cloud Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Cloud Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Cloud Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Cloud Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Cloud Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Cloud Types', 'cncf-mu' ),
+			'name'          => __( 'Cloud Type', 'cncf-mu' ),
+			'singular_name' => __( 'Cloud Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Cloud Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Cloud Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Cloud Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Cloud Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Cloud Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Cloud Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Cloud Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -820,15 +851,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-cloud-type', array( 'cncf_case_study' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Cloud Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Cloud Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Cloud Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Cloud Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Cloud Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Cloud Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Cloud Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Cloud Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Cloud Types', 'cncf-mu' ),
+			'name'          => __( 'Cloud Type', 'cncf-mu' ),
+			'singular_name' => __( 'Cloud Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Cloud Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Cloud Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Cloud Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Cloud Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Cloud Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Cloud Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Cloud Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -1082,7 +1113,7 @@ class Cncf_Mu_Admin {
 		);
 		register_taxonomy( 'cncf-language', array( 'cncf_webinar', 'cncf_speaker' ), $args );
 
-		$args   = array(
+		$args = array(
 			'labels'            => array( 'name' => __( 'Affiliations', 'cncf-mu' ) ),
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
@@ -1090,7 +1121,7 @@ class Cncf_Mu_Admin {
 			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-speaker-affiliation', array( 'cncf_speaker' ), $args );
-		$args   = array(
+		$args = array(
 			'labels'            => array( 'name' => __( 'Expertise', 'cncf-mu' ) ),
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
@@ -1228,8 +1259,8 @@ class Cncf_Mu_Admin {
 		}
 
 		$um_member_directory_data = get_user_meta( $user_id, 'um_member_directory_data', false )[0];
-		$um_hide_in_members = get_user_meta( $user_id, 'hide_in_members', true );
-		$photo = get_user_meta( $user_id, 'profile_photo', true );
+		$um_hide_in_members       = get_user_meta( $user_id, 'hide_in_members', true );
+		$photo                    = get_user_meta( $user_id, 'profile_photo', true );
 		if ( 'approved' !== $um_member_directory_data['account_status'] || ! $photo || $um_hide_in_members ) {
 			// speaker must be approved, have a photo, and not have hidden their profile.
 			$eligible_for_search = false;
@@ -1239,7 +1270,7 @@ class Cncf_Mu_Admin {
 
 		$query = new WP_Query(
 			array(
-				'name' => $user_id,
+				'name'      => $user_id,
 				'post_type' => 'cncf_speaker',
 			)
 		);
@@ -1265,10 +1296,10 @@ class Cncf_Mu_Admin {
 		}
 
 		$affiliations = get_user_meta( $user_id, 'sb_certifications', false )[0];
-		$expertise = get_user_meta( $user_id, 'expertise', false )[0];
-		$languages = get_user_meta( $user_id, 'languages', false )[0];
-		$projects = get_user_meta( $user_id, 'project', false )[0];
-		$country = get_user_meta( $user_id, 'country', false )[0];
+		$expertise    = get_user_meta( $user_id, 'expertise', false )[0];
+		$languages    = get_user_meta( $user_id, 'languages', false )[0];
+		$projects     = get_user_meta( $user_id, 'project', false )[0];
+		$country      = get_user_meta( $user_id, 'country', false )[0];
 
 		$country = str_replace( 'Korea, Republic of', 'South Korea', $country );
 		$country = str_replace( "Korea, Democratic People's Republic of", 'North Korea', $country );
@@ -1317,9 +1348,9 @@ class Cncf_Mu_Admin {
 			wp_delete_post( $eachpost->ID, true );
 		}
 
-		$args = array( 'role' => 'um_speaker' );
+		$args          = array( 'role' => 'um_speaker' );
 		$wp_user_query = new WP_User_Query( $args );
-		$users = $wp_user_query->get_results();
+		$users         = $wp_user_query->get_results();
 		foreach ( $users as $user ) {
 			$this->sync_speaker( $user->ID );
 		}
@@ -1333,7 +1364,7 @@ class Cncf_Mu_Admin {
 	 * @param array $userinfo User Info.
 	 */
 	public function speaker_updated( $user_id, $args = null, $userinfo = null ) {
-		$user = get_userdata( $user_id );
+		$user       = get_userdata( $user_id );
 		$user_roles = $user->roles;
 
 		if ( in_array( 'um_speaker', $user_roles, true ) ) {
@@ -1350,7 +1381,7 @@ class Cncf_Mu_Admin {
 		global $post;
 		$query = new WP_Query(
 			array(
-				'name' => $user_id,
+				'name'      => $user_id,
 				'post_type' => 'cncf_speaker',
 			)
 		);

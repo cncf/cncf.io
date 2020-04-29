@@ -58,6 +58,7 @@ class Enqueue {
 	public function scripts() {
 
 		if ( ! is_admin() ) {
+
 			wp_deregister_script( 'jquery' );
 
 			// load WP copy of jQuery in the footer.

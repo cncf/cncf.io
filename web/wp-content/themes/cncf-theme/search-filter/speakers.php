@@ -13,44 +13,54 @@
 if ( $query->have_posts() ) {
 	global $post;
 
+	$image = new Image();
+
 	// get total list of speakers.
-	$count_speakers = wp_count_posts( 'cncf_speaker' == $post_type );
+	$count_speakers = wp_count_posts( 'cncf_speaker' );
 	$full_count     = $count_speakers->publish;
-
-	// if filter has found all speakers.
-	if ( $full_count == $query->found_posts ) {
-		echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' speakers </p>';
-	} else {
-		// else show partial number of speakers.
-		echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' speakers </p>';
-	}
-
-	echo ' | <a style="display:inline-block; padding-left: 2px;"';
-	$bulk_message_href = '';
-	if ( is_sb_bulk_email_allowed_user() ) {
-		if ( 50 >= $query->found_posts && isset( $_SERVER['QUERY_STRING'] ) ) {
-			$bulk_message_href = get_bloginfo( 'url' ) . '/speakers/email-matching-speakers?' . preg_replace( '/(sfid=\d*&)/', '', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) );
-			echo ' href="' . esc_attr( $bulk_message_href ) . '"';
-		}
-	} else {
-		$bulk_message_href = '/cncf-member-instructions/';
-		echo ' href="' . esc_attr( $bulk_message_href ) . '"';
-	}
-
-	echo ' class="email-matching-button';
-	if ( ! $bulk_message_href ) {
-		echo ' disabled';
-		// TODO: add hover text here: "Use the filters to reduce the number of matching speakers. Bulk messaging is limited to 50 speakers at a time.".
-	}
-	echo '">Bulk Message Speakers</a>';
-
+	// get currently filtered number of speakers.
+	$filter_speakers_count = $query->found_posts;
 	?>
+
+<p class="results-count">
+	<span>
+		<?php
+		// if filter has found all speakers.
+		if ( $full_count == $query->found_posts ) {
+			echo esc_html( 'Found ' . esc_html( $query->found_posts ) . ' speaker' . Cncf_Utils::plural( $filter_speakers_count ) );
+		} else {
+			// else show partial number of speakers.
+			echo esc_html( 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' speakers' );
+		}
+		?>
+	</span><span class="show-desktop-only">&nbsp;&#124;&nbsp;</span><br
+		class="show-mobile-only" />
+
+	<?php
+	// check if users account is allowed to send bulk emails.
+	if ( ! is_sb_bulk_email_allowed_user() ) {
+		?>
+	<a href="/cncf-member-instructions/">Bulk message speakers</a>
+		<?php
+	} else {
+		// if the number of speakers found is less than 50.
+		if ( 50 >= $filter_speakers_count && isset( $_SERVER['QUERY_STRING'] ) ) {
+			$bulk_message_href = get_bloginfo( 'url' ) . '/speakers/email-matching-speakers?' . preg_replace( '/(sfid=\d*&)/', '', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) );
+			?>
+	<a href="<?php echo esc_url( $bulk_message_href ); ?>">Bulk message
+			<?php echo esc_html( $filter_speakers_count ); ?>
+		speaker<?php echo esc_html( Cncf_Utils::plural( $filter_speakers_count ) ); ?></a>
+	<?php } else { ?>
+	<span class="is-disabled">Bulk messaging is limited to 50 speakers at a
+		time.</span>
+			<?php
+	}
+	}
+	?>
+</p>
+
 <div class="speakers-wrapper">
 	<?php
-
-	// setup options from UM.
-	// Not sure where this comes from, not used? TODO.
-	$corner = UM()->options()->get( 'profile_photocorner' );
 
 	// get default picture size from UM.
 	$default_size = UM()->options()->get( 'profile_photosize' );
@@ -67,75 +77,81 @@ if ( $query->have_posts() ) {
 			continue;
 		}
 
-		// what use is this? TODO.
 		$um_user = um_fetch_user( $user->ID );
-
 		// makes the name capitalised.
 		$display_name = ucwords( strtolower( um_user( 'display_name' ) ) );
 		?>
-<div class="speaker">
-<div class="speaker-photo">
-<a href="<?php echo esc_url( um_user_profile_url() ); ?>"
-title="<?php echo esc_attr( $display_name ); ?>">
-		<?php echo get_avatar( um_user( 'ID' ), $default_size ); ?>
-</a>
-</div>
-<h4 class="speaker-title margin-reset margin-top"><a
-href="<?php echo esc_url( um_user_profile_url( $user->ID ) ); ?>"
-title="<?php echo esc_attr( $display_name ); ?>"><?php echo esc_html( $display_name ); ?></a>
-</h4>
+	<div class="speaker">
+		<div class="speaker-photo">
+			<a href="<?php echo esc_url( um_user_profile_url() ); ?>"
+				title="<?php echo esc_attr( $display_name ); ?>">
+				<?php echo get_avatar( um_user( 'ID' ), $default_size ); ?>
+			</a>
+		</div>
+		<h5 class="speaker-title margin-reset margin-top"><a
+				href="<?php echo esc_url( um_user_profile_url( $user->ID ) ); ?>"
+				title="<?php echo esc_attr( $display_name ); ?>"><?php echo esc_html( $display_name ); ?></a>
+		</h5>
 
-<span
-class="speaker-location margin-top"><?php echo esc_html( um_user( 'country' ) ); ?></span>
+		<?php if ( um_user( 'country' ) ) : ?>
+		<span
+			class="speaker-location unskew-box secondary margin-top centered"><?php echo esc_html( um_user( 'country' ) ); ?></span>
+		<?php endif; ?>
 
-<div class="speaker-badges">
-		<?php
-		$travel_range = um_user( 'cncf_travel_range' );
-		?>
+		<div class="speaker-badges">
+			<?php
+			$travel_range = um_user( 'cncf_travel_range' );
+			?>
+			<?php if ( 'International' == $travel_range ) : ?>
+			<div class="column">
 
-		<?php if ( 'International' == $travel_range ) : ?>
-<div class="row">
-<img src="https://via.placeholder.com/30x30/BAEE55/000000"
-alt="">
-<!-- <span>Will Travel</span> -->
-</div>
-<?php endif; ?>
-		<?php
-		$certifications = um_user( 'sb_certifications' );
-		if ( is_array( $certifications ) ) {
-			foreach ( $certifications as $certification ) {
-				if ( 'CKA' == $certification ) :
-					?>
-<div class="row">
-<img src="https://via.placeholder.com/30x30/EEDA55/000000"
-alt="">
-<!-- <span>CKA</span> -->
-</div>
-					<?php
-				endif;
-				if ( 'CKAD' == $certification ) :
-					?>
-<div class="row">
-<img src="https://via.placeholder.com/30x30/BADA00/000000"
-alt="">
-<!-- <span>CKAD</span> -->
-</div>
-					<?php
-				endif;
-				if ( 'Ambassador' == $certification ) :
-					?>
-<div class="row">
-<img src="https://via.placeholder.com/30x30/BDDA55/000000"
-alt="">
-<!-- <span>Ambassador</span> -->
-</div>
-					<?php
-				endif;
+			<span class="hint--top" aria-label="Willing to travel internationally">
+				<?php $image->get_svg( 'speakers/international.svg' ); ?>
+			</span>
+			</div>
+			<?php endif; ?>
+			<?php
+			$certifications = um_user( 'sb_certifications' );
+			if ( is_array( $certifications ) ) {
+				foreach ( $certifications as $certification ) {
+					if ( 'CKA' == $certification ) :
+						?>
+			<div class="column">
+
+			<span class="hint--top" aria-label="CKA - Certified Kubernetes Administrator">
+						<?php $image->get_svg( 'speakers/cka-logo.svg' ); ?>
+			</span>
+
+			</div>
+						<?php
+					endif;
+					if ( 'CKAD' == $certification ) :
+						?>
+			<div class="column">
+
+			<span class="hint--top" aria-label="CKAD - Certified Kubernetes Application Developer">
+						<?php $image->get_svg( 'speakers/ckad-logo.svg' ); ?>
+			</span>
+
+			</div>
+						<?php
+					endif;
+					if ( 'Ambassador' == $certification ) :
+						?>
+			<div class="column">
+
+			<span class="hint--top" aria-label="CNCF Ambassador">
+						<?php $image->get_svg( 'speakers/ambassador.svg' ); ?>
+			</span>
+
+			</div>
+						<?php
+					endif;
+				}
 			}
-		}
-		?>
-</div>
-</div>
+			?>
+		</div>
+	</div>
 		<?php
 		um_reset_user_clean();
 endwhile;

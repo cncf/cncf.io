@@ -12,8 +12,9 @@
 $image = new Image();
 ?>
 
-<div class="back-to-top">
-	<a href="#top" title="Go to top" name="Go to top">
+<div class="back-to-top vanillatop">
+	<span title="Go to top" name="Go to top of page"
+		aria-label="Go to top of page">
 		<?php $image->get_svg( 'chevron-up.svg' ); ?>
-	</a>
+	</span>
 </div>

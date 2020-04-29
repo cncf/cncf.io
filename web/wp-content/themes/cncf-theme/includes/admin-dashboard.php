@@ -164,3 +164,88 @@ function custom_cncf_webinar_column( $column, $post_id ) {
 	}
 }
 add_action( 'manage_cncf_webinar_posts_custom_column', 'custom_cncf_webinar_column', 10, 2 );
+
+/**
+ * Add custom column headers to Events
+ *
+ * @param array $columns Admin columns.
+ */
+function set_custom_edit_cncf_event_columns( $columns ) {
+	$date = $columns['date'];
+	unset( $columns['date'] );
+
+	$columns['cncf_event_date_start'] = 'Start Date';
+	$columns['cncf_event_logo']       = 'Logo';
+	$columns['cncf_event_background'] = 'BG';
+	$columns['date']                  = $date;
+
+	return $columns;
+}
+add_filter( 'manage_cncf_event_posts_columns', 'set_custom_edit_cncf_event_columns' );
+
+/**
+ * Add custom column data to Events
+ *
+ * @param array $column Admin columns.
+ * @param int   $post_id Post ID.
+ */
+function custom_cncf_event_column( $column, $post_id ) {
+	switch ( $column ) {
+
+		// gets the start date of event.
+		case 'cncf_event_date_start':
+			if ( get_post_meta( $post_id, 'cncf_event_date_start', true ) ) {
+				echo esc_html( gmdate( 'j F Y', strtotime( get_post_meta( $post_id, 'cncf_event_date_start', true ) ) ) );
+			} else {
+				echo 'TBC';
+			}
+			break;
+
+		// displays if logo is present.
+		case 'cncf_event_logo':
+			echo get_post_meta( $post_id, 'cncf_event_logo', true ) ? 'Yes' : 'No';
+			break;
+
+		// displays if background is present.
+		case 'cncf_event_background':
+			echo get_post_meta( $post_id, 'cncf_event_background', true ) ? 'Yes' : 'No';
+			break;
+	}
+}
+add_action( 'manage_cncf_event_posts_custom_column', 'custom_cncf_event_column', 10, 2 );
+
+/**
+ * Sorting events in date order
+ *
+ * @param array $query The query duh.
+ */
+function set_events_admin_order( $query ) {
+	// only apply on admin side.
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	// check not main query or any other CPT other than Events.
+	if ( ! $query->is_main_query() || 'cncf_event' != $query->get( 'post_type' ) ) {
+		return;
+	}
+
+	$meta_query = array(
+		'relation' => 'OR',
+		array(
+			'cncf_event_date_start' => array(
+				'key' => 'cncf_event_date_start',
+			),
+		),
+	);
+
+	$query->set( 'meta_query', $meta_query );
+	$query->set(
+		'orderby',
+		array(
+			'cncf_event_date_start' => 'DESC',
+		)
+	);
+	return $query;
+}
+add_filter( 'pre_get_posts', 'set_events_admin_order' );

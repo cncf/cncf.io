@@ -2,27 +2,29 @@
 /**
  * Search & Filter Pro
  *
- * Sample Results Template
+ * Webinars
  *
- * @package   Search_Filter
- * @author    Ross Morsali
- * @link      https://searchandfilter.com
- * @copyright 2018 Search & Filter
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
  */
 
 if ( $query->have_posts() ) :
 	if ( '>=' !== $query->query['meta_query'][0]['compare'] ) {
-		// recorded webinars.
 
+		// recorded webinars.
+		?>
+<p class="results-count">
+		<?php
 		// get total list of webinars.
 		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_recording_url' and meta_value <> '';" );
 
 		// if filter matches all webinars.
 		if ( $full_count == $query->found_posts ) {
-			echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' recorded webinars.</p>';
+			echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars.';
 		} else {
 			// else show partial count.
-			echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars.</p>';
+			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars.';
 		}
 	} else {
 		// upcoming webinars.
@@ -32,14 +34,15 @@ if ( $query->have_posts() ) :
 
 		// if filter matches all webinars.
 		if ( $full_count == $query->found_posts ) {
-			echo '<p class="results-count">Found ' . esc_html( $query->found_posts ) . ' upcoming webinars.</p>';
+			echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars.';
 		} else {
 			// else show partial count.
-			echo '<p class="results-count">Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars.</p>';
+			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars.';
 		}
 	}
 
 	?>
+</p>
 
 <!-- Setup the SVG to use it in the loop  -->
 <svg style="display:none">

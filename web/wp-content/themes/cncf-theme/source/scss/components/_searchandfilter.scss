@@ -13,6 +13,16 @@
         >*:last-of-type {
             width: 100px;
         }
+
+        @media (max-width: 599px) {
+            >li {
+                padding: 0.5em 0;
+
+                .sf-input-select {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .chosen-container {
@@ -27,8 +37,11 @@
 }
 
 .results-count {
-    display: inline-block;
     margin-bottom: 1em;
+
+    @media (max-width: 599px) {
+        margin-top: 1em;
+    }
 }
 
 .search-filter-reset {
