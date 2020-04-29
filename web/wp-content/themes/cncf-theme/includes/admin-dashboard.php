@@ -203,12 +203,12 @@ function custom_cncf_event_column( $column, $post_id ) {
 
 		// displays if logo is present.
 		case 'cncf_event_logo':
-			echo filter_var( get_post_meta( $post_id, 'cncf_event_logo', true ), FILTER_VALIDATE_URL ) ? 'Yes' : 'No';
+			echo get_post_meta( $post_id, 'cncf_event_logo', true ) ? 'Yes' : 'No';
 			break;
 
 		// displays if background is present.
 		case 'cncf_event_background':
-			echo filter_var( get_post_meta( $post_id, 'cncf_event_background', true ), FILTER_VALIDATE_URL ) ? 'Yes' : 'No';
+			echo get_post_meta( $post_id, 'cncf_event_background', true ) ? 'Yes' : 'No';
 			break;
 	}
 }
@@ -229,14 +229,17 @@ function set_events_admin_order( $query ) {
 	if ( ! $query->is_main_query() || 'cncf_event' != $query->get( 'post_type' ) ) {
 		return;
 	}
-	$query->set(
-		'meta_query',
+
+	$meta_query = array(
+		'relation' => 'OR',
 		array(
 			'cncf_event_date_start' => array(
 				'key' => 'cncf_event_date_start',
 			),
-		)
+		),
 	);
+
+	$query->set( 'meta_query', $meta_query );
 	$query->set(
 		'orderby',
 		array(

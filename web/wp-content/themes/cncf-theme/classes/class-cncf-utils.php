@@ -204,11 +204,10 @@ class Cncf_Utils {
 				$date = esc_html( $event_date_start->format( 'F j' ) ) . '-' . esc_html( $event_date_end->format( 'j, Y' ) );
 			} else {
 				// Show both start and end month.
-				$date = esc_html( $event_date_start->format( 'F j' ) ) . ' - ' . esc_html( $event_date_end->format( 'F j, Y' ) );
+				$date = esc_html( $event_date_start->format( 'M j' ) ) . ' - ' . esc_html( $event_date_end->format( 'M j, Y' ) );
 			}
 		}
 		return $date;
 	}
-
 
 }

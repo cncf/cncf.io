@@ -319,7 +319,7 @@ class Cncf_Mu_Admin {
 									'data_key'      => 'logo',
 									'id'            => 'event-logo', // keep this for CSS styling.
 									'label'         => __( 'Event Logo' ),
-									'help'          => __( 'Set a logo for the event. Transparent SVGs are best.' ),
+									'help'          => __( 'Set a transparent logo for the event using an SVG or PNG file type.' ),
 									'register_meta' => true,
 								),
 								array(
@@ -327,7 +327,7 @@ class Cncf_Mu_Admin {
 									'data_type'     => 'meta',
 									'data_key'      => 'background',
 									'label'         => __( 'Event Background' ),
-									'help'          => __( 'An image used for the background of the event tile. Recommended size 500px x 500px.' ),
+									'help'          => __( 'An image used for the background of the event tile. Recommended to use a square size at least 700px x 700px.' ),
 									'register_meta' => true,
 								),
 								array(
