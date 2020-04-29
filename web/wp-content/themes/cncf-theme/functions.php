@@ -227,3 +227,34 @@ foreach ( $regex_json_path_patterns as $regex_json_path_pattern ) {
 		break;
 	}
 }
+
+/**
+ * Updates image class names after post import in order to correct the IDs.
+ *
+ * @param int $import_id Import ID.
+ */
+function my_update_images_in_content( $import_id ) {
+	global $wpdb;
+	$imported_posts = $wpdb->get_results( $wpdb->prepare( 'SELECT `post_id` FROM `' . $wpdb->prefix . 'pmxi_posts` WHERE `import_id` = %d', $import_id ) );
+	foreach ( $imported_posts as $x_post ) {
+		$i_post = get_post( $x_post->post_id );
+		$doc = new DOMDocument();
+		@$doc->loadHTML( $i_post->post_content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+
+		$image_tags = $doc->getElementsByTagName( 'img' );
+
+		if ( $image_tags->length > 0 ) {
+
+			foreach ( $image_tags as $tag ) {
+				$img_guid = preg_replace( '/(-\d+x\d+)/', '', $tag->getAttribute( 'src' ) );
+				$result = $wpdb->get_row( $wpdb->prepare( 'SELECT `ID` FROM `' . $wpdb->prefix . 'posts` WHERE `guid` LIKE %s', '%' . $img_guid . '%' ) );
+				if ( $result ) {
+					$tag->setAttribute( 'class', 'wp-image-' . $result->ID );
+				}
+			}
+			$i_post->post_content = $doc->saveHTML();
+			wp_update_post( $i_post );
+		}
+	}
+}
+add_action( 'pmxi_after_xml_import', 'my_update_images_in_content', 10, 1 );
