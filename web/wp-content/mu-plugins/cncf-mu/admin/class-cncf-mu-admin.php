@@ -215,6 +215,23 @@ class Cncf_Mu_Admin {
 		);
 		register_post_type( 'cncf_speaker', $opts );
 
+		$opts = array(
+			'labels'            => array(
+				'name'          => __( 'Spotlight' ),
+				'singular_name' => __( 'Spotlight' ),
+				'all_items'     => __( 'All Spotlights' ),
+			),
+			'public'            => true,
+			'has_archive'       => false,
+			'show_in_nav_menus' => false,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'menu_icon'         => 'dashicons-universal-access-alt',
+			'rewrite'           => array( 'slug' => 'spotlights' ),
+			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+		);
+		register_post_type( 'cncf_spotlight', $opts );
+
 	}
 
 
@@ -1081,6 +1098,26 @@ class Cncf_Mu_Admin {
 			'show_admin_column' => true,
 		);
 		register_taxonomy( 'cncf-speaker-expertise', array( 'cncf_speaker' ), $args );
+
+		$labels = array(
+			'name'              => __( 'Type', 'cncf-mu' ),
+			'singular_name'     => __( 'Type', 'cncf-mu' ),
+			'search_items'      => __( 'Search Types', 'cncf-mu' ),
+			'all_items'         => __( 'All Types', 'cncf-mu' ),
+			'edit_item'         => __( 'Edit Type', 'cncf-mu' ),
+			'update_item'       => __( 'Update Type', 'cncf-mu' ),
+			'add_new_item'      => __( 'Add New Type', 'cncf-mu' ),
+			'new_item_name'     => __( 'New Type Name', 'cncf-mu' ),
+			'menu_name'         => __( 'Types', 'cncf-mu' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'show_in_rest'      => true,
+			'hierarchical'      => false,
+			'show_in_nav_menus' => false,
+			'show_admin_column' => true,
+		);
+		register_taxonomy( 'cncf-spotlight-type', array( 'cncf_spotlight' ), $args );
 	}
 
 	/**
