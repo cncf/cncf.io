@@ -1015,7 +1015,7 @@ class PMXI_Import_Record extends PMXI_Model_Record {
 					if ( ! empty($this->options['tax_logic'][$tx_name]) and ! empty($this->options['tax_assing'][$tx_name]) ){
 						switch ($this->options['tax_logic'][$tx_name]){
 							case 'single':
-								if ( ! empty($this->options['tax_single_xpath'][$tx_name]) ){
+								if ( isset($this->options['tax_single_xpath'][$tx_name]) && $this->options['tax_single_xpath'][$tx_name] !== "" ){
 									$txes = XmlImportParser::factory($xml, $cxpath, $this->options['tax_single_xpath'][$tx_name], $file)->parse($records); $tmp_files[] = $file;		
 									foreach ($txes as $i => $tx) {
 										$taxonomies[$tx_name][$i][] = wp_all_import_ctx_mapping(array(
@@ -2493,6 +2493,7 @@ class PMXI_Import_Record extends PMXI_Model_Record {
 					// [custom fields]					
 
 					$existing_meta_keys = array();
+					$existing_meta = array();
 
 					if (empty($articleData['ID']) or $this->options['update_all_data'] == 'yes' or ($this->options['update_all_data'] == 'no' and $this->options['is_update_custom_fields']) or ($this->options['update_all_data'] == 'no' and !empty($this->options['is_update_attributes']) and $post_type[$i] == "product" and class_exists('PMWI_Plugin'))) {
 
@@ -2516,10 +2517,10 @@ class PMXI_Import_Record extends PMXI_Model_Record {
                                 break;
                             }
 
-							/*$import_entry = ( $this->options['custom_type'] == 'import_users') ? 'user' : 'post';
-							$meta_table = _get_meta_table( $import_entry );*/
+                            $existing_meta = $existing_meta_keys;
+
 							// delete keys which are no longer correspond to import settings																														
-							foreach ($existing_meta_keys as $cur_meta_key => $cur_meta_val) { 
+							foreach ($existing_meta_keys as $cur_meta_key => $cur_meta_val) {
 								
 								// Do not delete post meta for features image 
 								if ( in_array($cur_meta_key, array('_thumbnail_id', '_product_image_gallery', '_wp_old_slug')) ) continue;
@@ -2574,7 +2575,6 @@ class PMXI_Import_Record extends PMXI_Model_Record {
                                             delete_post_meta($pid, $cur_meta_key);
                                             break;
                                     }
-									
 									$show_log and $logger and call_user_func($logger, sprintf(__('- Custom field %s has been deleted for `%s` attempted to `update all custom fields` setting ...', 'wp_all_import_plugin'), $cur_meta_key, $articleData['post_title']));
 								}
 								// Leave these fields alone, update all other Custom Fields
@@ -2653,7 +2653,6 @@ class PMXI_Import_Record extends PMXI_Model_Record {
 							);
 
 							$meta_fields = array();
-
                             // get existing keys after add-ons import completed
                             switch ($this->options['custom_type']){
 								case 'import_users':
@@ -2677,15 +2676,14 @@ class PMXI_Import_Record extends PMXI_Model_Record {
 
                                 $values = $m_keys['values'];
 
-                                if (!empty($articleData['ID'])){
+                                if (!empty($articleData['ID'])) {
 
-                                    if ($this->options['update_all_data'] != 'yes'){
+                                    if ($this->options['update_all_data'] != 'yes') {
 
                                         $field_to_update = false;
 
                                         if ($this->options['is_update_custom_fields'] and $this->options['update_custom_fields_logic'] == "only" and ! empty($this->options['custom_fields_list']) and is_array($this->options['custom_fields_list']) and in_array($m_key, $this->options['custom_fields_list']) ) $field_to_update = true;
                                         if ($this->options['is_update_custom_fields'] and $this->options['update_custom_fields_logic'] == "all_except" and ( empty($this->options['custom_fields_list']) or ! in_array($m_key, $this->options['custom_fields_list']) )) $field_to_update = true;
-
                                         if ( $this->options['update_custom_fields_logic'] == "full_update" ) $field_to_update = true;
 
                                         // apply addons filters
@@ -2695,13 +2693,12 @@ class PMXI_Import_Record extends PMXI_Model_Record {
                                             $logger and call_user_func($logger, sprintf(__('- Custom field `%s` is not set to be updated in import settings, skipping ...', 'wp_all_import_plugin'), $m_key));
                                             continue;
                                         }
-
                                     }
-
                                 }
 
                                 $logger and call_user_func($logger, __('- <b>ACTION</b>: pmxi_custom_field', 'wp_all_import_plugin'));
-                                $cf_value = apply_filters('pmxi_custom_field', (is_serialized($values[$i])) ? unserialize($values[$i]) : $values[$i], $pid, $m_key, $values[$i], $existing_meta_keys, $this->id);
+                                $cf_original_value = isset($existing_meta[$m_key][0]) ? $existing_meta[$m_key][0] : '';
+                                $cf_value = apply_filters('pmxi_custom_field', (is_serialized($values[$i])) ? unserialize($values[$i]) : $values[$i], $pid, $m_key, $cf_original_value, $existing_meta_keys, $this->id);
 
                                 $m_key = wp_unslash( $m_key );
                                 $cf_value = wp_unslash( $cf_value );
@@ -2840,6 +2837,26 @@ class PMXI_Import_Record extends PMXI_Model_Record {
                             $tag_images = array_unique(array_merge(array_filter($matches[1]), array_filter($matches[2]), array_filter($matches[3])));
                         }
 
+                        if (preg_match_all('%<img\s[^>]*srcset=(?(?=")"([^"]*)"|(?(?=\')\'([^\']*)\'|([^\s>]*)))%is', $articleData['post_content'], $matches, PREG_PATTERN_ORDER)) {
+                            $srcset_images = array_unique(array_merge(array_filter($matches[1]), array_filter($matches[2]), array_filter($matches[3])));
+                            if (!empty($srcset_images)) {
+                                foreach ($srcset_images as $srcset_image) {
+                                    $srcset = explode(",", $srcset_image);
+                                    $srcset = array_filter($srcset);
+                                    foreach($srcset as $srcset_img) {
+                                        $srcset_image_parts = explode(" ", $srcset_img);
+                                        foreach ($srcset_image_parts as $srcset_image_part) {
+                                            if ( !empty(filter_var($srcset_image_part, FILTER_VALIDATE_URL)) ) {
+                                                $tag_images[] = trim($srcset_image_part);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        $content_images_try_go_get_full_size = apply_filters('wp_all_import_content_images_get_full_size', true, $articleData, $this->id);
+
                         $images_sources = array(
                             'gallery' => $gallery_images,
                             'tag' => $tag_images
@@ -2861,14 +2878,16 @@ class PMXI_Import_Record extends PMXI_Model_Record {
                                     $image_alt = $image_data['alt'];
                                     $image_description = $image_data['description'];
                                 }
-                                // trying to get image full size
                                 $original_image_url = $image;
-                                $full_size = preg_replace('%-\d{2,4}x\d{2,4}%', '', $image);
-                                if ($full_size != $image){
-                                    // check if full size image exists
-                                    $full_size_headers = get_headers($full_size, true);
-                                    if (!empty($full_size_headers['Content-Type']) && strpos($full_size_headers['Content-Type'], 'image') !== false){
-                                        $image = $full_size;
+                                // Trying to get image full size.
+                                if ($content_images_try_go_get_full_size) {
+                                    $full_size = preg_replace('%-\d{2,4}x\d{2,4}%', '', $image);
+                                    if ($full_size != $image){
+                                        // check if full size image exists
+                                        $full_size_headers = get_headers($full_size, true);
+                                        if (!empty($full_size_headers['Content-Type']) && strpos($full_size_headers['Content-Type'], 'image') !== false){
+                                            $image = $full_size;
+                                        }
                                     }
                                 }
 
@@ -3746,7 +3765,7 @@ class PMXI_Import_Record extends PMXI_Model_Record {
 								if ( ! empty($txes[$i]) ):
 									foreach ($txes[$i] as $key => $single_tax) {
 										$is_created_term = false;
-										if (is_array($single_tax) and ! empty($single_tax['name'])){
+										if (is_array($single_tax) and isset($single_tax['name'])){
 											$parent_id = ( ! empty($single_tax['parent'])) ? pmxi_recursion_taxes($single_tax['parent'], $tx_name, $txes[$i], $key) : '';
 											$term = (empty($this->options['tax_is_full_search_' . $this->options['tax_logic'][$tx_name]][$tx_name])) ? is_exists_term($single_tax['name'], $tx_name, (int)$parent_id) : is_exists_term($single_tax['name'], $tx_name);
 											if ( empty($term) and !is_wp_error($term) ){

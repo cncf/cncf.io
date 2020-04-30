@@ -39,7 +39,7 @@ if ( ! empty($post_taxonomies)):
 															<div class="switcher-target-tax_logic_single_<?php echo $ctx->name;?> sub_input">
 																<input type="hidden" name="term_assing[<?php echo $ctx->name;?>]" value="0"/>
 																<input type="checkbox" name="term_assing[<?php echo $ctx->name;?>]" <?php echo (isset($post['term_assing'][$ctx->name])) ? (( ! empty($post['term_assing'][$ctx->name]) ) ? 'checked="checked"' : '') : 'checked="checked"'; ?> title="<?php _e('Assign post to the taxonomy.','wp_all_import_plugin');?>" value="1"/>
-																<input type="text" class="widefat single_xpath_field" name="tax_single_xpath[<?php echo $ctx->name; ?>]" value="<?php echo ( ! empty($post['tax_single_xpath'][$ctx->name])) ? esc_textarea($post['tax_single_xpath'][$ctx->name]) : ''; ?>" style="width:50%;"/>
+																<input type="text" class="widefat single_xpath_field" name="tax_single_xpath[<?php echo $ctx->name; ?>]" value="<?php echo ( isset($post['tax_single_xpath'][$ctx->name])) ? esc_textarea($post['tax_single_xpath'][$ctx->name]) : ''; ?>" style="width:50%;"/>
 																<div class="input tax_is_full_search_single" style="margin: 10px 0;">
 																	<input type="hidden" name="tax_is_full_search_single[<?php echo $ctx->name; ?>]" value="0"/>
 																	<input type="checkbox" id="tax_is_full_search_single_<?php echo $ctx->name; ?>" class="switcher" <?php if ( ! empty($post['tax_is_full_search_single'][$ctx->name]) ) echo "checked='checked'"; ?> name="tax_is_full_search_single[<?php echo $ctx->name; ?>]" value="1"/>
