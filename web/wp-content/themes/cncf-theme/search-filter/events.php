@@ -37,7 +37,7 @@
 
 			$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
 
-			if ( ! city && ! $country ) {
+			if ( ! $city && ! $country ) {
 				$location = 'TBC';
 			} elseif ( ! $country ) {
 				$location = $city;
