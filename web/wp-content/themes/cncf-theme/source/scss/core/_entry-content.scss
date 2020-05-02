@@ -77,7 +77,11 @@
         border-radius: .3em;
         border: 1px solid $black;
         font-family: $font-code;
-        color: $grey-200; // maybe remove
+        color: $grey-200;
+        // fix for old code blocks.
+        padding-left: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
 
         code {
             overflow: auto;
@@ -104,6 +108,39 @@
 
         &:hover {
             text-decoration: none;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875em;
+        margin-bottom: 1em;
+    }
+
+    tr:nth-of-type(odd) {
+        background: #FCFCFC;
+    }
+
+    th {
+        background: $grey-800;
+        color: white;
+        font-weight: bold;
+    }
+
+    td,
+    th {
+        padding: 0.75em;
+        border: 1px solid $grey-100;
+        vertical-align: top;
+    }
+
+    // fix for responsive tables without thead or data-labels.
+    @media only screen and (max-width: 768px) {
+        table {
+            overflow: hidden;
+            overflow-x: scroll;
+            display: block;
         }
     }
 }
