@@ -111,10 +111,10 @@ if ( $query->have_posts() ) {
 			</div>
 			<?php endif; ?>
 			<?php
-			$certifications = um_user( 'sb_certifications' );
-			if ( is_array( $certifications ) ) {
-				foreach ( $certifications as $certification ) {
-					if ( 'CKA' == $certification ) :
+			$affiliations = um_user( 'sb_certifications' );
+			if ( is_array( $affiliations ) ) {
+				foreach ( $affiliations as $affiliation ) {
+					if ( 'CKA' == $affiliation ) :
 						?>
 			<div class="column">
 
@@ -125,7 +125,7 @@ if ( $query->have_posts() ) {
 			</div>
 						<?php
 					endif;
-					if ( 'CKAD' == $certification ) :
+					if ( 'CKAD' == $affiliation ) :
 						?>
 			<div class="column">
 
@@ -136,7 +136,7 @@ if ( $query->have_posts() ) {
 			</div>
 						<?php
 					endif;
-					if ( 'Ambassador' == $certification ) :
+					if ( 'Ambassador' == $affiliation ) :
 						?>
 			<div class="column">
 

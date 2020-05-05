@@ -93,6 +93,9 @@ require_once 'classes/class-speakers-export.php';
 // people shortcode.
 require_once 'includes/people.php';
 
+// projects shortcode.
+require_once 'includes/projects.php';
+
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';
 

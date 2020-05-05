@@ -147,3 +147,38 @@ body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
         margin-right: auto;
     }
 }
+
+.affiliations-box {
+    margin-top: 2em;
+
+    label {
+        font-size: 1.25em;
+        font-weight: 500;
+        color: #444444;
+    }
+}
+
+.affiliations-box-badges {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+
+    .column {
+        display: flex;
+        margin-right: 1em;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    svg {
+        height: 3.5em;
+
+        @media (min-width: 768px) {
+            height: 5em;
+        }
+
+        width: auto;
+    }
+}
