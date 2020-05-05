@@ -33,25 +33,29 @@ function pmxi_pmxi_after_xml_import( $import_id, $import )
             delete_option('wp_all_import_posts_hierarchy_' . $import_id);
         }
 
-        // Update term count after import process is complete.
-        $taxonomies = get_object_taxonomies( $import->options['custom_type'] );
-        if (!empty($taxonomies)) {
-            foreach ( (array) $taxonomies as $taxonomy ) {
-                $term_ids = get_terms(
-                    array(
-                        'taxonomy'   => $taxonomy,
-                        'hide_empty' => false,
-                        'fields' => 'ids',
-                    )
-                );
-                if ( ! empty( $term_ids ) ) {
-                    wp_update_term_count_now( $term_ids, $taxonomy );
+        $recount_terms_after_import = TRUE;
+        $recount_terms_after_import = apply_filters('wp_all_import_recount_terms_after_import', $recount_terms_after_import, $import_id);
+        if ($recount_terms_after_import) {
+            // Update term count after import process is complete.
+            $taxonomies = get_object_taxonomies( $import->options['custom_type'] );
+            if (!empty($taxonomies)) {
+                foreach ( (array) $taxonomies as $taxonomy ) {
+                    $term_ids = get_terms(
+                        array(
+                            'taxonomy'   => $taxonomy,
+                            'hide_empty' => false,
+                            'fields' => 'tt_ids',
+                        )
+                    );
+                    if ( ! empty( $term_ids ) ) {
+                        wp_update_term_count_now( $term_ids, $taxonomy );
+                    }
                 }
             }
-        }
 
-		// Update post count only once after import process is completed.
-        wp_all_import_update_post_count();
+            // Update post count only once after import process is completed.
+            wp_all_import_update_post_count();
+        }
     }
 
     // Add removed action during import.

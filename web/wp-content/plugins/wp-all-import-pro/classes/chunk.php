@@ -324,7 +324,7 @@ class PMXI_Chunk {
       }
     }
 
-    return ( ! empty($xml) ) ? self::removeColonsFromRSS(preg_replace('%xmlns.*=\s*([\'"&quot;]).*\1%sU', '', $xml)) : false;
+    return ( ! empty($xml) ) ? self::removeColonsFromRSS(preg_replace('%xmlns\s*=\s*([\'"]).*\1%sU', '', $xml)) : false;
 
   }  
 

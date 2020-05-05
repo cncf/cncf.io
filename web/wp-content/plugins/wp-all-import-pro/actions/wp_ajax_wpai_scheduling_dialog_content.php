@@ -339,7 +339,7 @@ function pmxi_wp_ajax_wpai_scheduling_dialog_content()
 
                         // Validate times
                         var timeValid = true;
-                        var timeMessage = 'Please select at least a time for the export to run';
+                        var timeMessage = 'Please select at least a time for the import to run';
                         var timeInputs = $('.timepicker');
                         var timesHasValues = false;
 

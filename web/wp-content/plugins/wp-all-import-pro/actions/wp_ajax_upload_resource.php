@@ -42,11 +42,13 @@ function pmxi_wp_ajax_upload_resource() {
 
 		if ( ! empty($files) and is_array($files) ) {
 			$file_to_import = array_shift($files);
-		}				
+		}
+
+        $feed_type = apply_filters('wp_all_import_feed_type', '', wp_all_import_sanitize_url($post['file']));
 
 		$errors = new WP_Error;
 		$uploader = new PMXI_Upload(trim($file_to_import), $errors);			
-		$upload_result = $uploader->url('', $post['file'], $post['template']);
+		$upload_result = $uploader->url($feed_type, $post['file'], $post['template']);
 
 		if ( $upload_result instanceof WP_Error ) {
 			$errors = $upload_result;

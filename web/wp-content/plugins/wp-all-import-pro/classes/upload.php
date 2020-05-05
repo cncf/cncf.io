@@ -462,7 +462,7 @@ if ( ! class_exists('PMXI_Upload')){
 					}
 					else $this->errors->add('form-validation', $filePath->get_error_message());
 
-				} elseif (preg_match('%\W(json)$%i', trim($this->file))){
+				} elseif ('json' == $feed_type or preg_match('%\W(json)$%i', trim($this->file))){
 
 					$source = array(
 						'name' => basename(parse_url($this->file, PHP_URL_PATH)),
@@ -495,7 +495,7 @@ if ( ! class_exists('PMXI_Upload')){
 						}
 					}
 
-				} elseif (preg_match('%\W(sql)$%i', trim($this->file))){
+				} elseif ('sql' == $feed_type or preg_match('%\W(sql)$%i', trim($this->file))){
 
 					$source = array(
 						'name' => basename($this->file),
@@ -512,7 +512,7 @@ if ( ! class_exists('PMXI_Upload')){
 					$filePath = $sql->parse();				
 					wp_all_import_remove_source($localSQLPath, false);
 
-				} elseif (preg_match('%\W(xls|xlsx)$%i', strtok(trim($this->file), "?")) || preg_match('%\W(xls|xlsx)$%i', trim($this->file))) {
+				} elseif (preg_match('%\W(xls|xlsx)$%i', $feed_type) || preg_match('%\W(xls|xlsx)$%i', strtok(trim($this->file), "?")) || preg_match('%\W(xls|xlsx)$%i', trim($this->file))) {
 
 					$source = array(
 						'name' => basename($this->file),
@@ -755,8 +755,11 @@ if ( ! class_exists('PMXI_Upload')){
 			} elseif (preg_match('%\W(csv|txt|dat|psv|tsv)$%i', trim($this->file))) {
 				
 				if($this->uploadsPath === false){
-					 $this->errors->add('form-validation', __('WP All Import can\'t access your WordPress uploads folder.', 'wp_all_import_plugin'));
-				}		
+					$this->errors->add('form-validation', __('WP All Import can\'t access your WordPress uploads folder.', 'wp_all_import_plugin'));
+				}
+				if (!@file_exists($uploads . $this->file)) {
+				    $this->errors->add('form-validation', __('File doesn\'t exist.', 'wp_all_import_plugin'));
+                }
 				// copy file in temporary folder
 				// hide warning message
 				echo '<span style="display:none">';
