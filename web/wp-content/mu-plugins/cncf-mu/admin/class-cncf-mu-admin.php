@@ -107,6 +107,8 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
+			'exclude_from_search' => true, // to hide the singular pages on FE.
+			'publicly_queryable' => false, // to hide the singular pages on FE.
 			'menu_icon'         => 'dashicons-buddicons-buddypress-logo',
 			'rewrite'           => array( 'slug' => 'person' ),
 			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
