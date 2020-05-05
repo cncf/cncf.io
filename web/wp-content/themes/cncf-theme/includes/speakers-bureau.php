@@ -1,6 +1,6 @@
 <?php
 /**
- * Speakers Bureau Code
+ * Speakers Bureau changes
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -13,9 +13,9 @@
 function um_projects_callback() {
 	$terms = get_terms(
 		array(
-			'taxonomy' => 'cncf-project',
-			'orderby' => 'name',
-			'order' => 'ASC',
+			'taxonomy'   => 'cncf-project',
+			'orderby'    => 'name',
+			'order'      => 'ASC',
 			'hide_empty' => false,
 		)
 	);
@@ -83,8 +83,8 @@ function is_sb_speaker() {
 		return false;
 	}
 
-	$user          = wp_get_current_user();
-	$is_speaker    = false;
+	$user       = wp_get_current_user();
+	$is_speaker = false;
 
 	foreach ( $user->roles as $role ) {
 		if ( 'um_speaker' === $role ) {
@@ -99,27 +99,31 @@ function is_sb_speaker() {
  * SB subnav buttons shortcode.
  */
 function shortcode_sb_subnav() {
-	ob_start();
+	ob_start(); ?>
 
+	<div class="speakers-subnav">
+	<?php
 	if ( ! is_user_logged_in() ) {
 		?>
-		<a href="/speakers/register/">Sign Up as a Speaker</a>
-		<a href="/cncf-member-instructions/">Learn more about Bulk Speaker Messaging</a>
+		<a href="/speakers/register/">Sign Up as a Speaker</a>&nbsp;|&nbsp;
+		<a href="/cncf-member-instructions/">Learn more about Bulk Speaker Messaging</a>&nbsp;|&nbsp;
 		<a href="/speakers/login/">Login</a>
 		<?php
 	} elseif ( is_sb_speaker() ) {
 		?>
-		<a href="/speaker/">My Profile</a>
-		<a href="/account/">My Account</a>
+		<a href="/speaker/">My Profile</a>&nbsp;|&nbsp;
+		<a href="/account/">My Account</a>&nbsp;|&nbsp;
 		<a href="/logout/">Logout</a>
 		<?php
 	} else {
 		?>
-		<a href="/cncf-member-instructions/">Learn more about Bulk Speaker Messaging</a>
+		<a href="/cncf-member-instructions/">Learn more about Bulk Speaker Messaging</a>&nbsp;|&nbsp;
 		<a href="/logout/">Logout</a>
 		<?php
 	}
-
+	?>
+	</div>
+	<?php
 	return ob_get_clean();
 }
 add_shortcode( 'speakers_bureau_subnav', 'shortcode_sb_subnav' );

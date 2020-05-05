@@ -24,6 +24,9 @@
         @import "blocks/columns";
         @import "blocks/paragraph-headers";
         @import 'blocks/guest-author';
+        @import 'blocks/quote';
+        @import "blocks/case-study-highlights";
+        @import "blocks/case-study-overview";
     }
 }
 
@@ -52,7 +55,8 @@
     max-width: 1150px;
 }
 
-.post-type-post {
+.post-type-post,
+.post-type-cncf_case_study {
     .wp-block {
         margin-right: auto;
         margin-left: auto;

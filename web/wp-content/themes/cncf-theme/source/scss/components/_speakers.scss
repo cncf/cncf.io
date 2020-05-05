@@ -12,11 +12,6 @@
 .speaker {
     background-color: $blue-100;
     padding: 1em;
-
-    @media (min-width: 600px) {
-        padding: 1.5em;
-    }
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +24,7 @@
         border: 1px solid $grey-200;
 
         @media (min-width: 768px) {
-            min-width: 190px;
+            max-width: 150px;
         }
     }
 }
@@ -65,5 +60,90 @@
         &:hover {
             opacity: 1;
         }
+    }
+}
+
+
+// makes date icon inline.
+.ginput_container_date {
+    display: flex;
+}
+
+// resizes date icon.
+body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
+    width: 34px !important;
+    height: 32px !important;
+}
+
+// makes UM profile bigger/
+.um-profile-body {
+    max-width: 1000px;
+}
+
+// Hide contact form when editing profile
+.um-own-profile,
+.um-page-user,
+.um-page-login {
+
+    .gform_wrapper .gform_footer {
+        margin: 0;
+        padding: 0;
+    }
+
+    .um-profile.um-editing.um-role-um_speaker {
+        .um-col-121 {
+            float: left;
+            width: 100%;
+        }
+
+        .um-field-type_shortcode {
+            display: none;
+        }
+
+
+        .um-left,
+        .um-right {
+            float: none;
+            display: flex;
+        }
+
+        .um-col-alt {
+            display: flex;
+        }
+    }
+
+    .um-button {
+        @extend .button;
+        margin-right: 1em;
+        border-radius: 0 !important;
+        font-size: 1em !important;
+    }
+
+    .um-alt {
+        @extend .button;
+        @extend .secondary-color;
+        border-radius: 0 !important;
+        font-size: 1em !important;
+    }
+
+    .um-half {
+        width: initial;
+    }
+
+}
+
+.speakers-subnav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.um-profile-meta {
+    text-align: center;
+
+    .um-meta-text {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

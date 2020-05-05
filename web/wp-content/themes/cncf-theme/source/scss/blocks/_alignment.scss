@@ -8,6 +8,30 @@
     width: 100vw;
 }
 
+// align wide - limited to 900px.
+.alignwide {
+    max-width: 100vw;
+    margin-left: -12px;
+    margin-right: -12px;
+
+    @media (min-width: 500px) {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    @media (min-width: 950px) {
+        margin-left: -100px;
+        margin-right: -100px;
+        max-width: 900px;
+    }
+}
+
+
+// center blocks alignment option.
+.aligncenter {
+    text-align: center;
+}
+
 // experimental to try and align all content inside groups and cover.
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover__inner-container,

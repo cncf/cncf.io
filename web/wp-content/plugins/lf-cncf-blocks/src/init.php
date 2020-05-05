@@ -28,10 +28,10 @@ function lf_cncf_blocks_frontend_assets() {
 	/*
 	// Exclude the enqueue - styles covered in theme.
 	wp_enqueue_style(
-		'lf_cncf_blocks_style',
-		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
-		is_admin() ? array( 'wp-editor' ) : null,
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
+	'lf_cncf_blocks_style',
+	plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
+	is_admin() ? array( 'wp-editor' ) : null,
+	filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
 	);
 	*/
 
@@ -39,6 +39,16 @@ function lf_cncf_blocks_frontend_assets() {
 		wp_enqueue_script(
 			'twitter-feed',
 			'//platform.twitter.com/widgets.js',
+			is_admin() ? array( 'wp-editor' ) : null,
+			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+			true
+		);
+	}
+
+	if ( has_block( 'lf/landscape' ) ) {
+		wp_enqueue_script(
+			'landscape-resize',
+			'//landscape.cncf.io/iframeResizer.js',
 			is_admin() ? array( 'wp-editor' ) : null,
 			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 			true
@@ -79,12 +89,12 @@ function lf_cncf_blocks_editor_assets() {
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	// phpcs:disable
 	wp_localize_script(
-		'lf_cncf_blocks_script',
-		'cgbGlobal', // Array containing dynamic data for a JS Global.
+	'lf_cncf_blocks_script',
+	'cgbGlobal', // Array containing dynamic data for a JS Global.
 		[
-			'pluginDirPath' => plugin_dir_path( __DIR__ ),
-			'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
-		   // Add more data here that you want to access from `cgbGlobal` object.
+		'pluginDirPath' => plugin_dir_path( __DIR__ ),
+		'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
+		// Add more data here that you want to access from `cgbGlobal` object.
 		]
 	);
 	// phpcs:enable
@@ -165,22 +175,83 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
-		// Guest Author block.
-		require_once 'guest-author/render-callback.php';
-		register_block_type(
-			'lf/guest-author',
-			array(
-				'attributes'      => array(
-					'className' => array(
-						'type' => 'string',
-					),
-					'content' => array(
-						'type' => 'string',
-					),
+	// Guest Author block.
+	require_once 'guest-author/render-callback.php';
+	register_block_type(
+		'lf/guest-author',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
 				),
-				'render_callback' => 'lf_guest_author_render_callback',
-			)
-		);
+				'content'   => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_guest_author_render_callback',
+		)
+	);
+
+	// Case Study Highlights block.
+	require_once 'case-study-highlights/render-callback.php';
+	register_block_type(
+		'lf/case-study-highlights',
+		array(
+			'attributes'      => array(
+				'className'   => array(
+					'type' => 'string',
+				),
+				'highlight01' => array(
+					'type' => 'string',
+				),
+				'highlight02' => array(
+					'type' => 'string',
+				),
+				'highlight03' => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_case_study_highlights_render_callback',
+		)
+	);
+
+	// Case Study Overview block.
+	require_once 'case-study-overview/render-callback.php';
+	register_block_type(
+		'lf/case-study-overview',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_case_study_overview_render_callback',
+		)
+	);
+
+	// Landscape block.
+	register_block_type(
+		'lf/landscape',
+		array(
+			'attributes'      => array(
+				'className'  => array(
+					'type' => 'string',
+				),
+			),
+		),
+	);
+
+	// iFrame block.
+	register_block_type(
+		'lf/iframe',
+		array(
+			'attributes'      => array(
+				'className'  => array(
+					'type' => 'string',
+				),
+			),
+		),
+	);
 
 }
 add_action( 'init', 'lf_cncf_blocks_register_dynamic_blocks' );

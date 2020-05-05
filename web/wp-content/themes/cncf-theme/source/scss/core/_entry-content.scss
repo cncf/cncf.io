@@ -1,8 +1,10 @@
-// Use entry-content class around the_content.
+// Use entry-content class to encapsulate the_content.
 // This lets us style lists and links suitable for content.
 
 .single-post,
-.webinar-single {
+.webinar-single,
+.case-study-single,
+.event-single {
     .entry-content {
         max-width: 700px;
         margin-left: auto;
@@ -14,8 +16,6 @@
             max-width: initial;
         }
     }
-
-
 }
 
 .entry-content {
@@ -144,50 +144,3 @@
         }
     }
 }
-
-// .wp-block-gallery {
-//   margin: 0;
-//   li:last-child {
-//     margin: 8px;
-//   }
-// }
-
-// article.entry-content * {
-// 	max-width: 660px;
-// }
-
-// @media (min-width: 1240px) {
-// 	font-size: 0.8em;
-// }
-
-// p {
-//     margin: 0;
-//     margin-bottom: 1em;
-//     line-height: 1.25;
-
-//     &:last-child {
-//         margin: 0;
-//     }
-// }
-// h2 {
-//     margin: 0.5em 0;
-
-//     &:first-of-type {
-//         margin-top: 0;
-//     }
-// }
-
-// h3,
-// h4,
-// h5,
-// h6 {
-//     margin: 0.5em 0;
-// }
-// h4 {
-//     font-weight: 400;
-//     line-height: 1.4;
-
-//     @media (min-width: 800px) {
-//         line-height: 30px;
-//     }
-// }

@@ -238,6 +238,8 @@ class Cncf_Mu_Admin {
 	/**
 	 * Registers the extra sidebar for post types
 	 *
+	 * See https://melonpan.io/wordpress-plugins/post-meta-controls/ for docs.
+	 *
 	 * @param array $sidebars    Existing sidebars in Gutenberg.
 	 */
 	public function create_sidebar( $sidebars ) {
@@ -308,7 +310,7 @@ class Cncf_Mu_Admin {
 									'ui_border_top'     => false,
 									'default_value'     => '',
 									'format'            => 'YYYY/MM/DD',
-									'help'          => __( 'Optional for single day events.' ),
+									'help'              => __( 'Optional for single day events.' ),
 								),
 								array(
 									'type'          => 'text',
@@ -536,6 +538,16 @@ class Cncf_Mu_Admin {
 									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.youtube.com/channel/UCJsK5Zbq0dyFZUBtMTHzxjQ',
+								),
+								array(
+									'type'          => 'text',
+									'data_type'     => 'meta',
+									'data_key'      => 'is_priority',
+									'label'         => __( 'Priority Weighting' ),
+									'help'          => __( 'The higher the number, the higher their position in the organisatonal people layout.' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
 								),
 							),
 						),
@@ -1131,15 +1143,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-speaker-expertise', array( 'cncf_speaker' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Types', 'cncf-mu' ),
+			'name'          => __( 'Type', 'cncf-mu' ),
+			'singular_name' => __( 'Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,

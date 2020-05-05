@@ -6,7 +6,7 @@ body {
     color: $black;
     font-weight: 300;
 
-    // added to improve rendering, but could hamper performance
+    // added to improve rendering, but could hamper performance.
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -35,10 +35,6 @@ body {
 .box-shadow {
     box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
 }
-
-// .trans {
-//     transition: all 0.25s ease-out;
-// }
 
 img {
     margin: 0;
@@ -76,14 +72,6 @@ img {
         background-color: lighten($primary-color, 5%);
         color: $white;
     }
-
-    // &.larger {
-    //     padding: 0.75rem 1rem;
-    // }
-
-    // &.top {
-    //     margin-top: 1rem;
-    // }
 
     &.search-open {
         min-width: initial;
@@ -184,6 +172,8 @@ figure {
     object-fit: cover;
     position: absolute;
     z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 .background-image-text-overlay {
@@ -285,6 +275,10 @@ figure {
         margin-right: auto;
         display: inline-block;
         transform: translateX(12px);
+    }
+
+    &.smaller {
+        font-size: 0.675em;
     }
 }
 

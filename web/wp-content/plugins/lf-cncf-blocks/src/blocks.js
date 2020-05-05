@@ -26,3 +26,15 @@ import './twitter-feed/block.js';
 
 // Guest Author Block.
 import './guest-author/block.js';
+
+// Case Study Highlights Block.
+import './case-study-highlights/block.js';
+
+// Case Study Overview Block.
+import './case-study-overview/block.js';
+
+// Landscape Block.
+import './landscape/block.js';
+
+// iFrame Block.
+import './iframe/block.js';

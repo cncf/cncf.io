@@ -77,16 +77,6 @@ h6 {
 p,
 li {
     line-height: 1.5;
-
-    // a {
-    //     color: $link-color;
-    //     transition: all 0.25s ease-out;
-    //     text-decoration: none;
-
-    //     &:hover {
-    //         color: $link-hover;
-    //     }
-    // }
 }
 
 strong,
@@ -157,43 +147,3 @@ a {
         -webkit-tap-highlight-color: rgba($purple-700, 0.3);
     }
 }
-
-// hr {
-//     color: #666;
-//     margin: 2rem 0;
-// }
-
-// blockquote {
-//     font-size: 1.75rem;
-//     line-height: 1.25;
-//     margin: 1rem 0;
-
-//     &::before {
-//         content: "\201C";
-//     }
-
-//     &::after {
-//         content: "\201D";
-//     }
-
-//     p {
-//         display: inline;
-//         color: black;
-//     }
-
-//     @media (max-width: 480px) {
-//         font-size: 1.25rem;
-//     }
-// }
-
-// code {
-//     display: block;
-//     font-size: 1rem;
-//     line-height: 1.25;
-//     margin: 1rem 0;
-//     background-color: $grey-400;
-//     padding: 1rem;
-//     border-left: 0.5rem solid $primary-color;
-//     font-family: "Courier New";
-//     white-space: pre-wrap;
-// }

@@ -4,10 +4,9 @@
  *
  * Sample Results Template
  *
- * @package   Search_Filter
- * @author    Ross Morsali
- * @link      https://searchandfilter.com
- * @copyright 2018 Search & Filter
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
  */
 
 if ( $query->have_posts() ) {

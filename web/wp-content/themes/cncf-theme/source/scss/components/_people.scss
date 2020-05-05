@@ -1,8 +1,7 @@
-// Layout of Webinars from filter (NOT Upcoming)
 .people-wrapper {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
     margin-top: 1em;
     margin-bottom: 2em;
 
@@ -14,24 +13,52 @@
 .people-box {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     background-color: $blue-100;
-    padding: 20px;
+    padding: 1em;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    // Relative so whole box is a link.
-    position: relative;
+    align-items: center;
+    text-align: center;
 
     &:hover {
         background-color: darken($blue-100, 10%);
     }
 
-    >* {
+    .people-thumbnail {
+        margin-bottom: 0.5em;
+        width: 100px;
+        height: 100px;
+        border: 1px solid $grey-200;
+    }
+
+    .people-title {
+        margin: 0;
+        margin-bottom: 0.25em;
+    }
+
+    .people-company {
         margin: 0;
         margin-bottom: 0.5em;
     }
 
-    p {
-        font-size: 0.875em;
-        margin-bottom: 0;
+    .people-excerpt p {
+        font-size: 0.825em;
+        margin-bottom: 0.5em;
+        line-height: 1.1;
     }
+
+    svg {
+        height: 20px;
+        width: auto;
+        fill: $pink-400;
+        color: $pink-400;
+    }
+}
+
+.people-social {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.modal-trigger {
+    margin-top: auto;
 }

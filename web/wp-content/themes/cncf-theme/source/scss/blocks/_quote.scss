@@ -1,0 +1,56 @@
+.is-style-full-width-gradient {
+    background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
+    color: $white;
+    border-left: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    // alignment
+    position: relative;
+    right: 50%;
+    left: 50%;
+    margin-right: -50vw;
+    margin-left: -50vw;
+    width: 100vw;
+
+
+    p {
+        font-size: 1.25em;
+        font-weight: 400;
+
+        @media (min-width: 768px) {
+            font-size: 1.5em;
+        }
+
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    cite,
+    .wp-block-quote__citation {
+        color: $white;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 1em;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        font-style: normal;
+    }
+
+}
+
+.wp-block-quote.is-style-default {
+    border-left: 0.5em solid $pink-400;
+    padding-left: 1em;
+    font-size: 1.25em;
+    margin-top: 1em;
+
+    @media (min-width: 768px) {
+        font-size: 1.5em;
+    }
+
+}

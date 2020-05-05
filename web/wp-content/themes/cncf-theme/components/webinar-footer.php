@@ -13,7 +13,7 @@ $image = new Image();
 	<div class="wrap background-image-wrapper">
 
 	<figure class="background-image-figure">
-		<img src="<?php $image->get_image( 'get-involved.jpg' ) ?>" alt="">
+		<img src="<?php $image->get_image( 'get-involved.jpg' ); ?>" alt="Get involved">
 </figure>
 
 <div class="background-image-text-overlay webinar-footer-text-wrap">
@@ -23,7 +23,7 @@ $image = new Image();
 
 <h6>Interested in hosting a CNCF webinar?</h6>
 
-		<a href="mailto:webinars@cncf.io" class="button outline transparent">Let us know</a>
+		<a title="Host a CNCF webinar" href="mailto:webinars@cncf.io" class="button outline transparent">Let us know</a>
 
 </div>
 

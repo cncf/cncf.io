@@ -13,8 +13,8 @@
 register_block_style(
 	'core/heading',
 	array(
-		'name'      => 'center-width-700',
-		'label'     => 'Max-Width 700px & Centered',
+		'name'       => 'center-width-700',
+		'label'      => 'Max-Width 700px & Centered',
 		'is_default' => true,
 	)
 );
@@ -55,8 +55,8 @@ register_block_style(
 register_block_style(
 	'core/paragraph',
 	array(
-		'name'      => 'center-width-800',
-		'label'     => 'Max-Width 800px & Centered',
+		'name'       => 'center-width-800',
+		'label'      => 'Max-Width 800px & Centered',
 		'is_default' => true,
 	)
 );
@@ -153,6 +153,17 @@ register_block_style(
 	)
 );
 
+
+ // QUOTE.
+register_block_style(
+	'core/quote',
+	array(
+		'name'       => 'full-width-gradient',
+		'label'      => 'Full Width on Gradient',
+		'is_default' => true,
+	)
+);
+
 /**
  * Block Template basic setup
  */
@@ -179,3 +190,4 @@ function slug_post_type_template() {
 	 );
 };
 add_action( 'init', 'slug_post_type_template' );
+

@@ -21,8 +21,8 @@ $image   = new Image();
 	<?php endif; ?>
 
 	<?php if ( $options['social_wechat_id'] ) : ?>
-	<li class="social_wechat_id"><a target="_blank" rel="noopener noreferrer" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"
-			href="#"><?php $image->get_svg( 'social/wechat.svg' ); ?></a></li>
+	<li class="social_wechat_id"><button class="wechat-button-modal" data-micromodal-trigger="modal-wechat" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"><?php $image->get_svg( 'social/wechat.svg' ); ?></button></li>
+
 	<?php endif; ?>
 
 	<?php if ( $options['social_youtube'] ) : ?>
@@ -65,3 +65,26 @@ $image   = new Image();
 			href="<?php echo esc_url( $options['social_meetup'] ); ?>"><?php $image->get_svg( 'social/meetup.svg' ); ?></a></li>
 	<?php endif; ?>
 </ul>
+
+<?php
+// Include WeChat Modal only when WeChat Social is activated.
+if ( $options['social_wechat_id'] ) :
+	?>
+	<!-- Modal -->
+	<div class="modal micromodal-slide"
+		id="modal-wechat" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+			<div class="modal__container" role="dialog" aria-modal="true"
+				aria-labelledby="modal-wechat-title">
+				<header class="modal__header">
+					<button class="modal__close" aria-label="Close modal"
+						data-micromodal-close=""></button>
+				</header>
+				<div class="modal__content"
+					id="modal-wechat-content">
+					<img src="<?php echo esc_url( wp_get_attachment_url( $options['social_wechat_id'] ) ); ?>">
+				</div>
+			</div>
+		</div>
+	</div><!-- Modal end  -->
+	<?php endif; ?>

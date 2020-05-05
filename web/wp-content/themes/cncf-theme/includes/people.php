@@ -23,7 +23,7 @@ function add_people_shortcode( $atts ) {
 		'people'
 	);
 
-	$chosen_taxonomy = $atts[ 'tax' ];
+	$chosen_taxonomy = $atts['tax'];
 
 	if ( ! is_string( $chosen_taxonomy ) ) {
 		return;
@@ -34,7 +34,6 @@ function add_people_shortcode( $atts ) {
 		'post_type'      => 'cncf_person',
 		'post_status'    => array( 'publish' ),
 		'posts_per_page' => -1,
-		// 'order'          => 'ASC',
 		'tax_query'      => array(
 			array(
 				'taxonomy' => 'cncf-person-category',

@@ -1,5 +1,5 @@
 // upcoming events block
-
+// TODO FIX UP
 .wp-block-lf-upcoming-events {
     display: flex;
     flex-direction: column;
@@ -110,4 +110,25 @@
         color: $white;
 
     }
+}
+
+// Event Singular
+.event-single {
+    text-align: center;
+
+    .event-box {
+        height: 250px;
+
+        @media (min-width: 600px) {
+            height: 400px;
+        }
+
+        width: 500px;
+
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2em;
+    }
+
 }

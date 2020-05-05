@@ -1,6 +1,6 @@
 // Button styling
 .wp-block-button__link {
-    border-radius: 0;
+    border-radius: 0 !important;
 
     &:hover {
         text-decoration: none;

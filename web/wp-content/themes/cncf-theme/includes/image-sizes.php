@@ -2,7 +2,7 @@
 /**
  * Image sizes
  *
- * Used to create new image sizes used in the site.
+ * Used to create new image sizes used in the site. TRUE uses hard crop to size.
  *
  * @category Components
  * @package  WordPress
@@ -18,3 +18,4 @@
 add_image_size( 'newsroom-image-large', 1040, 640, true );
 add_image_size( 'newsroom-image', 520, 320, true );
 add_image_size( 'newsroom-image-small', 260, 160, true );
+add_image_size( 'people', 100, 100, true );

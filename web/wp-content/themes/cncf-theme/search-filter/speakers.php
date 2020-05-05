@@ -2,12 +2,11 @@
 /**
  * Search & Filter Pro
  *
- * Sample Results Template
+ * Speakers
  *
- * @package   Search_Filter
- * @author    Ross Morsali
- * @link      https://searchandfilter.com
- * @copyright 2018 Search & Filter
+ * @package WordPress
+ * @subpackage cncf-theme
+ * @since 1.0.0
  */
 
 if ( $query->have_posts() ) {
@@ -18,6 +17,7 @@ if ( $query->have_posts() ) {
 	// get total list of speakers.
 	$count_speakers = wp_count_posts( 'cncf_speaker' );
 	$full_count     = $count_speakers->publish;
+
 	// get currently filtered number of speakers.
 	$filter_speakers_count = $query->found_posts;
 	?>
@@ -88,7 +88,7 @@ if ( $query->have_posts() ) {
 				<?php echo get_avatar( um_user( 'ID' ), $default_size ); ?>
 			</a>
 		</div>
-		<h5 class="speaker-title margin-reset margin-top"><a
+		<h5 class="speaker-title margin-reset margin-top-small"><a
 				href="<?php echo esc_url( um_user_profile_url( $user->ID ) ); ?>"
 				title="<?php echo esc_attr( $display_name ); ?>"><?php echo esc_html( $display_name ); ?></a>
 		</h5>
