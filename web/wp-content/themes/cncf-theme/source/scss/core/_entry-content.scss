@@ -143,4 +143,12 @@
             display: block;
         }
     }
+
+    .button {
+
+        &:link,
+        &:visited {
+            color: $white;
+        }
+    }
 }

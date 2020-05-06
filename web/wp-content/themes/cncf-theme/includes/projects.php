@@ -57,6 +57,8 @@ function add_projects_shortcode( $atts ) {
 			// project stage.
 			$project_stage = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-project-stage', true );
 
+			$external_url = get_post_meta( get_the_ID(), 'cncf_project_external_url', true );
+
 			$project_category = get_post_meta( get_the_ID(), 'cncf_project_category', true );
 
 			$github = get_post_meta( get_the_ID(), 'cncf_project_github', true );
@@ -85,6 +87,10 @@ function add_projects_shortcode( $atts ) {
 	<div class="project-box">
 		<!-- thumbnail  -->
 			<?php
+			if ($external_url) : ?>
+				<a href="<?php echo esc_url($external_url); ?>" rel="noreferrer noopener">
+				<?php endif;
+
 			if ( has_post_thumbnail() ) {
 				echo wp_get_attachment_image( get_post_thumbnail_id(), 'project', false, array( 'class' => 'project-thumbnail' ) );
 			} else {
@@ -93,13 +99,25 @@ function add_projects_shortcode( $atts ) {
 			class="project-thumbnail">
 				<?php
 			}
-			?>
+			if ($external_url) : ?>
+				</a>
+			<?php endif; ?>
 
-		<h3 class="project-title"><?php the_title(); ?></h3>
+		<h3 class="project-title">
+
+		<?php if ($external_url) : ?>
+		<a href="<?php echo esc_url($external_url); ?>" rel="noreferrer noopener">
+		<?php endif;
+		the_title();
+		if ($external_url) : ?>
+			</a>
+		<?php endif; ?>
+
+		</h3>
 
 			<?php if ( $project_category ) : ?>
-		<h6 class="project-category">
-				<?php echo esc_html( $project_category ); ?></h6>
+		<span class="project-category">
+				<?php echo esc_html( $project_category ); ?></span>
 		<?php endif; ?>
 
 		<div class="project-icons">
