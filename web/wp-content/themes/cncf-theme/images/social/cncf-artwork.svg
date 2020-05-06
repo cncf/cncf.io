@@ -1,11 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
-
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewbox="0 0 512 512">
  <g>
-  <title>background</title>
-  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
- </g>
- <g>
-  <title>Layer 1</title>
   <rect id="svg_1" width="512" rx="15%" height="512"/>
   <g stroke="null" id="svg_2">
    <path stroke="null" id="svg_3" d="m112.19075,327.609558l-54.519749,0l0,127.057007l127.057011,0l0,-54.414276l-72.537262,0l0,-72.642731z" fill="#FFF"/>
