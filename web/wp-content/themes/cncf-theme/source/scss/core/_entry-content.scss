@@ -1,8 +1,10 @@
-// Use entry-content class around the_content.
+// Use entry-content class to encapsulate the_content.
 // This lets us style lists and links suitable for content.
 
 .single-post,
-.webinar-single {
+.webinar-single,
+.case-study-single,
+.event-single {
     .entry-content {
         max-width: 700px;
         margin-left: auto;
@@ -14,8 +16,6 @@
             max-width: initial;
         }
     }
-
-
 }
 
 .entry-content {
@@ -77,7 +77,11 @@
         border-radius: .3em;
         border: 1px solid $black;
         font-family: $font-code;
-        color: $grey-200; // maybe remove
+        color: $grey-200;
+        // fix for old code blocks.
+        padding-left: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
 
         code {
             overflow: auto;
@@ -106,51 +110,37 @@
             text-decoration: none;
         }
     }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875em;
+        margin-bottom: 1em;
+    }
+
+    tr:nth-of-type(odd) {
+        background: #FCFCFC;
+    }
+
+    th {
+        background: $grey-800;
+        color: white;
+        font-weight: bold;
+    }
+
+    td,
+    th {
+        padding: 0.75em;
+        border: 1px solid $grey-100;
+        vertical-align: top;
+    }
+
+    // fix for responsive tables without thead or data-labels.
+    @media only screen and (max-width: 768px) {
+        table {
+            overflow: hidden;
+            overflow-x: scroll;
+            display: block;
+        }
+    }
 }
-
-// .wp-block-gallery {
-//   margin: 0;
-//   li:last-child {
-//     margin: 8px;
-//   }
-// }
-
-// article.entry-content * {
-// 	max-width: 660px;
-// }
-
-// @media (min-width: 1240px) {
-// 	font-size: 0.8em;
-// }
-
-// p {
-//     margin: 0;
-//     margin-bottom: 1em;
-//     line-height: 1.25;
-
-//     &:last-child {
-//         margin: 0;
-//     }
-// }
-// h2 {
-//     margin: 0.5em 0;
-
-//     &:first-of-type {
-//         margin-top: 0;
-//     }
-// }
-
-// h3,
-// h4,
-// h5,
-// h6 {
-//     margin: 0.5em 0;
-// }
-// h4 {
-//     font-weight: 400;
-//     line-height: 1.4;
-
-//     @media (min-width: 800px) {
-//         line-height: 30px;
-//     }
-// }

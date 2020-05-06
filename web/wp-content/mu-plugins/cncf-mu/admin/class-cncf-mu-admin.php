@@ -107,6 +107,8 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
+			'exclude_from_search' => true, // to hide the singular pages on FE.
+			'publicly_queryable' => false, // to hide the singular pages on FE.
 			'menu_icon'         => 'dashicons-buddicons-buddypress-logo',
 			'rewrite'           => array( 'slug' => 'person' ),
 			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
@@ -192,6 +194,8 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
+			'exclude_from_search' => true, // to hide the singular pages on FE.
+			'publicly_queryable' => false, // to hide the singular pages on FE.
 			'menu_icon'         => 'dashicons-hammer',
 			'rewrite'           => array( 'slug' => 'projects' ),
 			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
@@ -237,6 +241,8 @@ class Cncf_Mu_Admin {
 
 	/**
 	 * Registers the extra sidebar for post types
+	 *
+	 * See https://melonpan.io/wordpress-plugins/post-meta-controls/ for docs.
 	 *
 	 * @param array $sidebars    Existing sidebars in Gutenberg.
 	 */
@@ -308,7 +314,7 @@ class Cncf_Mu_Admin {
 									'ui_border_top'     => false,
 									'default_value'     => '',
 									'format'            => 'YYYY/MM/DD',
-									'help'          => __( 'Optional for single day events.' ),
+									'help'              => __( 'Optional for single day events.' ),
 								),
 								array(
 									'type'          => 'text',
@@ -536,6 +542,16 @@ class Cncf_Mu_Admin {
 									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.youtube.com/channel/UCJsK5Zbq0dyFZUBtMTHzxjQ',
+								),
+								array(
+									'type'          => 'text',
+									'data_type'     => 'meta',
+									'data_key'      => 'is_priority',
+									'label'         => __( 'Priority Weighting' ),
+									'help'          => __( 'The higher the number, the higher their position in the organisatonal people layout.' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
 								),
 							),
 						),
@@ -1131,15 +1147,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-speaker-expertise', array( 'cncf_speaker' ), $args );
 
 		$labels = array(
-			'name'              => __( 'Type', 'cncf-mu' ),
-			'singular_name'     => __( 'Type', 'cncf-mu' ),
-			'search_items'      => __( 'Search Types', 'cncf-mu' ),
-			'all_items'         => __( 'All Types', 'cncf-mu' ),
-			'edit_item'         => __( 'Edit Type', 'cncf-mu' ),
-			'update_item'       => __( 'Update Type', 'cncf-mu' ),
-			'add_new_item'      => __( 'Add New Type', 'cncf-mu' ),
-			'new_item_name'     => __( 'New Type Name', 'cncf-mu' ),
-			'menu_name'         => __( 'Types', 'cncf-mu' ),
+			'name'          => __( 'Type', 'cncf-mu' ),
+			'singular_name' => __( 'Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Types', 'cncf-mu' ),
+			'edit_item'     => __( 'Edit Type', 'cncf-mu' ),
+			'update_item'   => __( 'Update Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Type', 'cncf-mu' ),
+			'new_item_name' => __( 'New Type Name', 'cncf-mu' ),
+			'menu_name'     => __( 'Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -1261,8 +1277,6 @@ class Cncf_Mu_Admin {
 		$um_member_directory_data = get_user_meta( $user_id, 'um_member_directory_data', false )[0];
 		$um_hide_in_members       = get_user_meta( $user_id, 'hide_in_members', true );
 		$photo                    = get_user_meta( $user_id, 'profile_photo', true );
-		$first_name               = get_user_meta( $user_id, 'first_name', true );
-		$last_name                = get_user_meta( $user_id, 'last_name', true );
 		if ( 'approved' !== $um_member_directory_data['account_status'] || ! $photo || $um_hide_in_members ) {
 			// speaker must be approved, have a photo, and not have hidden their profile.
 			$eligible_for_search = false;
@@ -1290,8 +1304,7 @@ class Cncf_Mu_Admin {
 			}
 			$speaker_id = wp_insert_post(
 				array(
-					'post_title' => $last_name . $first_name,
-					'post_name'  => $user_id,
+					'post_title'  => $user_id,
 					'post_type'   => 'cncf_speaker',
 					'post_status' => 'publish',
 				)

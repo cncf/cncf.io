@@ -3,3 +3,31 @@
         text-align: center;
     }
 }
+
+.hero-post-title {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 500;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+    color: $purple-700;
+
+    @media (max-width: 767px) {
+        font-size: 1.9em;
+    }
+}
+
+.hero-post-parent-link {
+    margin-top: 40px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+
+    a {
+        color: $pink-400;
+    }
+}

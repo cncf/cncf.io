@@ -31,13 +31,11 @@
 
 			$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
 
-			// $external_url = get_post_meta( get_the_ID(), 'cncf_event_external_url', true );
-
 			$city = get_post_meta( get_the_ID(), 'cncf_event_city', true );
 
 			$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
 
-			if ( ! city && ! $country ) {
+			if ( ! $city && ! $country ) {
 				$location = 'TBC';
 			} elseif ( ! $country ) {
 				$location = $city;
@@ -94,15 +92,7 @@
 				class="button transparent outline ue-button">Learn More</a>
 		</div>
 	</article>
-
-			<?php
-			// r( $logo ); // ID.
-			// r( $background ); // ID.
-			// r( $overlay_color ); // rgba.
-			?>
-			<?php
-		endwhile;
-		?>
+<?php endwhile; ?>
 </div>
 		<?php
 else :

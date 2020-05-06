@@ -9,42 +9,48 @@
  * @since 1.0.0
  */
 
-if ( $query->have_posts() ) :
-	if ( '>=' !== $query->query['meta_query'][0]['compare'] ) {
+if ( $query->have_posts() ) : ?>
 
+	<?php
+	// work out if dealing with recorded or upcoming.
+	if ( '>=' !== $query->query['meta_query'][0]['compare'] ) {
 		// recorded webinars.
-		?>
+		$is_recorded = true;
+	} else {
+		$is_recorded = false;
+	}
+	?>
+
 <p class="results-count">
 		<?php
-		// get total list of webinars.
-		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_recording_url' and meta_value <> '';" );
+		if ( $is_recorded ) {
+			// get total list of webinars.
+			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_recording_url' and meta_value <> '';" );
 
-		// if filter matches all webinars.
-		if ( $full_count == $query->found_posts ) {
-			echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars.';
+			// if filter matches all webinars.
+			if ( $full_count == $query->found_posts ) {
+				echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars.';
+			} else {
+				// else show partial count.
+				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars.';
+			}
 		} else {
-			// else show partial count.
-			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars.';
+			// get total list of webinars.
+			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_date' and meta_value >= CURDATE();" );
+
+			// if filter matches all webinars.
+			if ( $full_count == $query->found_posts ) {
+				echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars.';
+			} else {
+				// else show partial count.
+				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars.';
+			}
 		}
-	} else {
-		// upcoming webinars.
-
-		// get total list of webinars.
-		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_date' and meta_value >= CURDATE();" );
-
-		// if filter matches all webinars.
-		if ( $full_count == $query->found_posts ) {
-			echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars.';
-		} else {
-			// else show partial count.
-			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars.';
-		}
-	}
-
-	?>
+		?>
 </p>
 
-<!-- Setup the SVG to use it in the loop  -->
+	<?php if ( $is_recorded ) : ?>
+<!-- Setup the Play SVG to use it in the loop  -->
 <svg style="display:none">
 	<symbol id="play" viewBox="-1 -1 90 90">
 		<path fill="#DE176C"
@@ -52,13 +58,12 @@ if ( $query->have_posts() ) :
 		<path d="M62 41.5L29 58V25z" fill="#FFF" />
 	</symbol>
 </svg>
+	<?php endif; ?>
 
 <div class="webinars-wrapper">
 
 	<?php
-
 	while ( $query->have_posts() ) :
-
 		$query->the_post();
 
 		// get webinar date.
@@ -77,11 +82,11 @@ if ( $query->have_posts() ) :
 		$company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
 		?>
 
-	<div class="webinar-recorded-item">
 
-		<?php
-		if ( $video_id ) :
-			?>
+		<?php if ( $is_recorded ) : ?>
+	<div class="webinar-recorded-box">
+
+			<?php if ( $video_id ) : ?>
 		<figure>
 			<a href="<?php the_permalink(); ?>">
 				<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
@@ -90,9 +95,7 @@ if ( $query->have_posts() ) :
 					<use href="#play" /></svg>
 			</a>
 		</figure>
-			<?php
-		endif;
-		?>
+		<?php endif; ?>
 
 		<div class="skew-box secondary">CNCF
 			<?php echo esc_html( $author_category ); ?> Webinar</div>
@@ -100,26 +103,31 @@ if ( $query->have_posts() ) :
 		<h5 class="webinar-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
-		<?php
-		if ( $company ) :
-			?>
+			<?php
+			if ( $company ) :
+				?>
 		<div class="presented-by">Presented by:
-			<?php echo esc_html( $company ); ?></div>
-			<?php
-		endif;
-		?>
-
-		<?php
-		if ( $webinar_date ) :
+				<?php echo esc_html( $company ); ?></div>
+				<?php
+				endif;
 			?>
-		<div class="recorded live-icon">Recorded:
-			<?php echo esc_html( $webinar_date->format( 'j F Y' ) ); ?></div>
+
 			<?php
-		endif;
-		?>
+			if ( $webinar_date ) :
+				?>
+		<div class="recorded live-icon">Recorded:
+				<?php echo esc_html( $webinar_date->format( 'j F Y' ) ); ?></div>
+				<?php
+				endif;
+			?>
 
 	</div>
-		<?php
+			<?php
+		else :
+
+			get_template_part( 'components/upcoming-webinars-item' );
+
+endif;
 endwhile;
 	?>
 </div>

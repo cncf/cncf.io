@@ -64,7 +64,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * ?>
 		 */
 		do_action( 'um_profile_header_cover_area', $args );
-
 		/**
 		 * UM hook
 		 *
@@ -160,7 +159,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		if ( um_is_on_edit_profile() || UM()->user()->preview ) {
 
-			$nav = 'main';
+			$nav    = 'main';
 			$subnav = UM()->profile()->active_subnav();
 			$subnav = ! empty( $subnav ) ? $subnav : 'default';
 			?>
@@ -224,7 +223,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$menu_enabled = UM()->options()->get( 'profile_menu' );
 			$tabs = UM()->profile()->tabs_active(); //phpcs:ignore
 
-			$nav = UM()->profile()->active_tab();
+			$nav    = UM()->profile()->active_tab();
 			$subnav = UM()->profile()->active_subnav();
 			$subnav = ! empty( $subnav ) ? $subnav : 'default';
 

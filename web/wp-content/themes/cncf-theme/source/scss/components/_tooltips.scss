@@ -192,6 +192,7 @@ $hintSuccessColor: hsl(121, 32%, 40%) !default;
         line-height: $hintFontSize; // Vertical centering.
         // white-space: nowrap; // Prevent breaking to new line.
         text-align: center;
+        min-width: 100px;
 
         @media (min-width: 600px) {
             padding: $hintVerticalPadding $hintHorizontalPadding;

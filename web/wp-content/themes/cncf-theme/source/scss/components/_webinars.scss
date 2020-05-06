@@ -1,4 +1,4 @@
-// Layout of Webinars from filter (NOT Upcoming)
+// Layout of Recorded Webinars from Search Filter (NOT Upcoming)
 .webinars-wrapper {
     display: grid;
     grid-gap: 1em;
@@ -34,14 +34,10 @@
     }
 }
 
-// Upcoming Webinars Block
+// Upcoming Webinars Filter and Block
 .webinars-upcoming-wrapper {
     display: grid;
     grid-gap: 1em;
-
-    // @media (min-width: 1000px) {
-    //     grid-auto-rows: 1fr;
-    // }
 
     .is-style-horizontal & {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -54,10 +50,10 @@
 }
 
 .webinars-upcoming-box {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    background-color: $blue-100;
-    padding: 20px;
     display: flex;
+    padding: 1em;
+    background-color: $blue-100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     align-content: center;
     // Relative so whole box is a link.
     position: relative;
@@ -65,7 +61,7 @@
     &:hover {
         background-color: darken($blue-100, 10%);
 
-        // fake link overlay due to block.
+        // fake link overlay due to block link.
         .webinar-title>a {
             color: $pink-400;
             transition: all 0.25s ease;
@@ -82,10 +78,11 @@
 }
 
 // Recorded - Singular item
-.webinar-recorded-item {
+.webinar-recorded-box {
     display: flex;
     flex-direction: column;
     background-color: $blue-100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     padding: 1em;
 
     .webinar-title {
@@ -123,10 +120,8 @@
     opacity: 0.70;
 }
 
-
 .webinar-single {
     text-align: center;
-
 }
 
 .webinar-summary {
@@ -135,4 +130,25 @@
     padding: 2em;
     background-color: $blue-100;
     font-weight: 500;
+}
+
+// Footer
+.webinar-footer {
+    margin-top: 5em;
+
+    .container {}
+
+    .webinar-footer-text-wrap {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        color: $white;
+        padding-top: 4em;
+        padding-bottom: 4em;
+        line-height: 1.4;
+    }
+}
+
+.webinar-footer+.footer {
+    margin-top: 0;
 }

@@ -22,7 +22,8 @@ wp.domReady(
 			'core/edit-post' ).removeEditorPanel(
 			'discussion-panel' );
 		// hides captions on gallery.
-		wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
+    wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
+
 
 		// TODO: Possibly use this approach instead of styles.
 		wp.blocks.registerBlockVariation( 'core/columns', {

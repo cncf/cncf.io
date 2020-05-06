@@ -11,7 +11,7 @@
 
 $options = get_option( 'cncf-mu' );
 ?>
-	<?php get_template_part( 'components/back-to-top' ); ?>
+
 <footer class="footer">
 	<div class="container wrap">
 		<?php get_template_part( 'components/social-links' ); ?>
@@ -22,4 +22,5 @@ $options = get_option( 'cncf-mu' );
 		</div>
 	</div>
 </footer>
+<?php get_template_part( 'components/back-to-top' ); ?>
 <?php get_footer(); ?>
