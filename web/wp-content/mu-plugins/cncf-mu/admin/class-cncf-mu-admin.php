@@ -97,21 +97,21 @@ class Cncf_Mu_Admin {
 	public function register_cpts() {
 
 		$opts = array(
-			'labels'            => array(
+			'labels'              => array(
 				'name'          => __( 'People' ),
 				'singular_name' => __( 'Person' ),
 				'all_items'     => __( 'All People' ),
 			),
-			'public'            => true,
-			'has_archive'       => false,
-			'show_in_nav_menus' => false,
-			'show_in_rest'      => true,
-			'hierarchical'      => false,
+			'public'              => true,
+			'has_archive'         => false,
+			'show_in_nav_menus'   => false,
+			'show_in_rest'        => true,
+			'hierarchical'        => false,
 			'exclude_from_search' => true, // to hide the singular pages on FE.
-			'publicly_queryable' => false, // to hide the singular pages on FE.
-			'menu_icon'         => 'dashicons-buddicons-buddypress-logo',
-			'rewrite'           => array( 'slug' => 'person' ),
-			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
+			'publicly_queryable'  => false, // to hide the singular pages on FE.
+			'menu_icon'           => 'dashicons-buddicons-buddypress-logo',
+			'rewrite'             => array( 'slug' => 'person' ),
+			'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
 		);
 		register_post_type( 'cncf_person', $opts );
 
@@ -184,21 +184,21 @@ class Cncf_Mu_Admin {
 		register_post_type( 'cncf_event', $opts );
 
 		$opts = array(
-			'labels'            => array(
+			'labels'              => array(
 				'name'          => __( 'Projects' ),
 				'singular_name' => __( 'Project' ),
 				'all_items'     => __( 'All Projects' ),
 			),
-			'public'            => true,
-			'has_archive'       => false,
-			'show_in_nav_menus' => false,
-			'show_in_rest'      => true,
-			'hierarchical'      => false,
+			'public'              => true,
+			'has_archive'         => false,
+			'show_in_nav_menus'   => false,
+			'show_in_rest'        => true,
+			'hierarchical'        => false,
 			'exclude_from_search' => true, // to hide the singular pages on FE.
-			'publicly_queryable' => false, // to hide the singular pages on FE.
-			'menu_icon'         => 'dashicons-hammer',
-			'rewrite'           => array( 'slug' => 'projects' ),
-			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+			'publicly_queryable'  => false, // to hide the singular pages on FE.
+			'menu_icon'           => 'dashicons-hammer',
+			'rewrite'             => array( 'slug' => 'projects' ),
+			'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 		);
 		register_post_type( 'cncf_project', $opts );
 
@@ -645,17 +645,7 @@ class Cncf_Mu_Admin {
 							'initial_open' => true,
 							'settings'     => array(
 								array(
-									'type'          => 'text', // Required.
-									'data_type'     => 'meta',
-									'data_key'      => 'external_url',
-									'label'         => __( 'URL to Project Site' ),
-									'register_meta' => true,
-									'ui_border_top' => true,
-									'default_value' => '',
-									'placeholder'   => 'https://www.envoyproxy.io/',
-								),
-								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'category',
 									'label'         => __( 'Category' ),
@@ -665,7 +655,17 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'Orchestration',
 								),
 								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
+									'data_type'     => 'meta',
+									'data_key'      => 'external_url',
+									'label'         => __( 'URL to Project Site' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
+									'placeholder'   => 'https://www.envoyproxy.io/',
+								),
+								array(
+									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'github',
 									'label'         => __( 'GitHub' ),
@@ -675,17 +675,17 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://github.com/coredns/coredns',
 								),
 								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'blog',
-									'label'         => __( 'Blog' ),
+									'data_key'      => 'dev_stats',
+									'label'         => __( 'Dev Stats' ),
 									'register_meta' => true,
 									'ui_border_top' => false,
 									'default_value' => '',
-									'placeholder'   => 'https://blog.coredns.io/',
+									'placeholder'   => 'https://grpc.devstats.cncf.io',
 								),
 								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'logos',
 									'label'         => __( 'Logos' ),
@@ -695,27 +695,7 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://github.com/cncf/artwork/blob/master/examples/graduated.md#coredns-logos',
 								),
 								array(
-									'type'          => 'text', // Required.
-									'data_type'     => 'meta',
-									'data_key'      => 'mail',
-									'label'         => __( 'Mail' ),
-									'register_meta' => true,
-									'ui_border_top' => false,
-									'default_value' => '',
-									'placeholder'   => 'https://groups.google.com/forum/#!forum/coredns-discuss',
-								),
-								array(
-									'type'          => 'text', // Required.
-									'data_type'     => 'meta',
-									'data_key'      => 'slack',
-									'label'         => __( 'Slack' ),
-									'register_meta' => true,
-									'ui_border_top' => false,
-									'default_value' => '',
-									'placeholder'   => 'https://cloud-native.slack.com/messages/coredns/',
-								),
-								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'stack_overflow',
 									'label'         => __( 'Stack Overflow' ),
@@ -725,7 +705,7 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://stackoverflow.com/questions/tagged/coredns',
 								),
 								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'twitter',
 									'label'         => __( 'Twitter' ),
@@ -735,7 +715,37 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://twitter.com/corednsio',
 								),
 								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
+									'data_type'     => 'meta',
+									'data_key'      => 'blog',
+									'label'         => __( 'Blog' ),
+									'register_meta' => true,
+									'ui_border_top' => false,
+									'default_value' => '',
+									'placeholder'   => 'https://blog.coredns.io/',
+								),
+								array(
+									'type'          => 'text',
+									'data_type'     => 'meta',
+									'data_key'      => 'mail',
+									'label'         => __( 'Mail' ),
+									'register_meta' => true,
+									'ui_border_top' => false,
+									'default_value' => '',
+									'placeholder'   => 'https://groups.google.com/forum/#!forum/coredns-discuss',
+								),
+								array(
+									'type'          => 'text',
+									'data_type'     => 'meta',
+									'data_key'      => 'slack',
+									'label'         => __( 'Slack' ),
+									'register_meta' => true,
+									'ui_border_top' => false,
+									'default_value' => '',
+									'placeholder'   => 'https://cloud-native.slack.com/messages/coredns/',
+								),
+								array(
+									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'youtube',
 									'label'         => __( 'YouTube' ),
