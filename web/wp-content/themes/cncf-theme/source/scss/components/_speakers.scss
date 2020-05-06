@@ -24,7 +24,7 @@
         border: 1px solid $grey-200;
 
         @media (min-width: 768px) {
-            max-width: 150px;
+            max-width: 120px;
         }
     }
 }
@@ -44,6 +44,7 @@
 
 .speaker-badges {
     margin-top: 1em;
+    margin-bottom: 0.5em;
     display: flex;
     height: 30px;
 

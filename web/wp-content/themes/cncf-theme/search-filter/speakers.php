@@ -151,6 +151,9 @@ if ( $query->have_posts() ) {
 			}
 			?>
 		</div>
+
+		<a class="button stocky smaller" href="<?php echo esc_url( um_user_profile_url() ); ?>"
+				title="<?php echo esc_attr( $display_name ); ?>">View profile</a>
 	</div>
 		<?php
 		um_reset_user_clean();
