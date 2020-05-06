@@ -116,10 +116,9 @@ Thumbs.db
 ##########
 .sass-cache
 
-# Allowing Gravity Forms plugins #
-!web/wp-content/plugins/gravityforms
 
-# Allowing other premium plugins #
+# Allowing premium plugins
+!web/wp-content/plugins/gravityforms
 !web/wp-content/plugins/search-filter-pro
 !web/wp-content/plugins/wp-all-import-pro
 !web/wp-content/plugins/customer-import-export-for-woocommerce

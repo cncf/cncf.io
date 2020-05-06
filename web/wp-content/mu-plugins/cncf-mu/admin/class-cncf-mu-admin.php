@@ -657,6 +657,16 @@ class Cncf_Mu_Admin {
 								array(
 									'type'          => 'text', // Required.
 									'data_type'     => 'meta',
+									'data_key'      => 'category',
+									'label'         => __( 'Category' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
+									'placeholder'   => 'Orchestration',
+								),
+								array(
+									'type'          => 'text', // Required.
+									'data_type'     => 'meta',
 									'data_key'      => 'github',
 									'label'         => __( 'GitHub' ),
 									'register_meta' => true,
