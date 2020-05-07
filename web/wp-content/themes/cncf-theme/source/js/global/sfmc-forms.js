@@ -32,8 +32,8 @@ jQuery(
 					},
 					error: function (xhr, status, error) {
 						var errorMessage = xhr.status + ': ' + xhr.statusText;
-						$("#message").html("There was an error processing your submission.  Please try again or contact us directly at events@linuxfoundation.org.<br>(" + errorMessage + ")").removeClass("success").addClass("alert");
-						alert("There was an error processing your submission.  Please try again or contact us directly at events@linuxfoundation.org.");
+						$("#message").html("There was an error processing your submission.  Please try again or contact us directly at info@cncf.io.<br>(" + errorMessage + ")").removeClass("success").addClass("alert");
+						alert("There was an error processing your submission.  Please try again or contact us directly at info@cncf.io.");
 					}
 				}
 			);
