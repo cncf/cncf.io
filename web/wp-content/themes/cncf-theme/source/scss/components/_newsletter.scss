@@ -1,0 +1,47 @@
+.newsletter {
+    text-align: center;
+    background-color: $blue-700;
+    color: $white;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    margin-top: 4em;
+
+    @media (min-width: 768px) {
+        margin-top: 8em;
+    }
+
+    a {
+        color: $white;
+    }
+}
+
+.newsletter-form {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    >*:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+
+    @media (max-width: 699px) {
+        input {
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 700px) {
+        flex-direction: row;
+        justify-content: center;
+        max-width: initial;
+
+        >*:not(:last-child) {
+            margin-bottom: 0;
+            margin-right: 0.5em;
+        }
+    }
+}

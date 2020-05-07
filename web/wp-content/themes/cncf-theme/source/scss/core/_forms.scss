@@ -1,35 +1,7 @@
-// Button reset
-[role="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-
-/* Reset `button` and button-style `input` default styles */
-// input[type="submit"],
-// input[type="reset"],
-// input[type="button"] {
-//     background: none;
-//     border: 0;
-//     color: inherit;
-//     font: inherit;
-//     line-height: normal;
-//     overflow: visible;
-//     padding: 0;
-//     -webkit-appearance: button;
-//     /* for input */
-//     -webkit-user-select: none;
-//     /* for button */
-//     -moz-user-select: none;
-//     -ms-user-select: none;
-// }
-
 input {
     height: 40px;
+    padding: 0.25em;
+    width: 100%;
 }
 
 input[type="submit"],
@@ -96,6 +68,6 @@ input[type="search"] {
     }
 }
 
-.grecaptcha-badge { 
+.grecaptcha-badge {
     visibility: hidden;
 }

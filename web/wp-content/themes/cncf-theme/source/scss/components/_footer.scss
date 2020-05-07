@@ -1,22 +1,11 @@
 .footer {
-    padding-top: 50px;
-    padding-bottom: 70px;
+    padding-top: 3em;
+    padding-bottom: 5em;
     background-color: $blue-900;
     color: $white;
-    margin-top: 4em;
 
     @media (min-width: 768px) {
         font-size: 0.875em;
-        margin-top: 8em;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-
-        @media (min-width: 1000px) {
-            flex-direction: row-reverse;
-        }
     }
 
     a {
@@ -57,17 +46,27 @@
             }
         }
     }
+}
 
-    .copyright {
-        text-align: center;
+.copyright-social-wrapper {
+    display: flex;
+    flex-direction: column;
 
-        @media (min-width: 1000px) {
-            flex-basis: 60%;
-            text-align: left;
-        }
+    @media (min-width: 1000px) {
+        flex-direction: row-reverse;
     }
 }
 
+.copyright-text {
+    text-align: center;
+
+    @media (min-width: 1000px) {
+        flex-basis: 60%;
+        text-align: left;
+    }
+}
+
+// makes button plain like icon.
 .wechat-button-modal {
     border: none;
     background: none;
@@ -75,5 +74,4 @@
     padding: 0;
     cursor: pointer;
     display: block;
-
 }
