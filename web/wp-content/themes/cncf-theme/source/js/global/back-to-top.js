@@ -32,7 +32,7 @@
 
 			function scrollToTop( duration ) {
 				let start = window.pageYOffset,
-				startTime = Math.floor( Date.now() );
+					startTime = Math.floor( Date.now() );
 
 				function scroll() {
 					Math.easeInOutQuad = function( t ) {
