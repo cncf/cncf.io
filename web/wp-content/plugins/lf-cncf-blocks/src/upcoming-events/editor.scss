@@ -3,75 +3,23 @@
  *
  * CSS for just Backend enqueued after style.scss
  *
- *
- *
  */
 
-.wp-block-lf-upcoming-events {
-    display: flex;
-    flex-direction: column;
-}
-
-.ue-wrapper {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-    grid-auto-rows: minmax(200px, auto);
-
-}
-
-.ue-event-box {
-    overflow: hidden;
-    position: relative;
-}
-
-.ue-overlay {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    z-index: 2;
-    opacity: 0.75;
-}
-
-.ue-content-wrapper {
+.event-content-wrapper-editor {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    top: 50%;
-    transform: translateY(-50%);
     color: $white;
-    font-size: 1.25em;
     font-weight: 600;
-    padding: 1em;
-    position: relative;
-    z-index: 2;
+    padding: 2em 1em;
+    font-size: 1em;
+
+    @media (min-width: 768px) {
+        font-size: 1.25em;
+    }
 }
 
-.ue-event-date {
-    margin-bottom: 10px;
+#editor .editor-styles-wrapper h4.event-title {
+    margin-bottom: 1em;
 }
-
-.ue-event-city {
-    margin-bottom: 20px;
-}
-
-.ue-logo {
-    // restricts image logo size.
-    height: 80px;
-}
-
-// // Fixes the preview.
-// .block-editor-block-styles__item-preview {
-//     .wp-block-lf-upcoming-events.is-style-horizontal {
-//         .uw-wrapper {
-//             grid-template-columns: 1fr 1fr;
-
-//             .uw-category.skew-box {
-//                 display: none;
-//             }
-//         }
-//     }
-// }

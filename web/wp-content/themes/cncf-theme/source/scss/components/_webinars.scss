@@ -38,6 +38,7 @@
 .webinars-upcoming-wrapper {
     display: grid;
     grid-gap: 1em;
+    grid-auto-rows: 1fr;
 
     .is-style-horizontal & {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -136,8 +137,6 @@
 .webinar-footer {
     margin-top: 5em;
 
-    .container {}
-
     .webinar-footer-text-wrap {
         max-width: 700px;
         margin-left: auto;
@@ -149,6 +148,6 @@
     }
 }
 
-.webinar-footer+.footer {
+.webinar-footer+.newsletter {
     margin-top: 0;
 }

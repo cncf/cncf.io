@@ -42,23 +42,22 @@ class UpcomingEvents extends Component {
 			<Fragment>
 				{ inspectorControls }
 				<div className={ this.props.className }>
-					<div className="ue-wrapper">
+					<div className="events-wrapper">
 						{ elements.map(
 							( element, index ) => {
 								return (
-									<article className="ue-event-box" key={ index } style={ { backgroundColor: '#CFDFE5' } }>
-										<div className="ue-content-wrapper background-image-text-overlay">
-											<div className="ue-logo">
-												Logo
-											</div>
+									<article className="event-box" key={ index } style={ { backgroundColor: '#617EBF' } }>
+										<div className="event-content-wrapper-editor">
 
-											<span className="ue-event-date">
-												November XX, 2021
+											<h4 className="event-title">Event Name
+											</h4>
+
+											<span className="event-date">November XX, 2021
 											</span>
 
-											<span className="ue-event-city">San Francisco, United States</span>
+											<span className="event-city">San Francisco, United States</span>
 
-											<span className="button transparent outline ue-button">Learn More</span>
+											<span className="button transparent outline ">Learn More</span>
 										</div>
 									</article>
 								);

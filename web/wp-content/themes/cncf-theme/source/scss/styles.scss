@@ -32,6 +32,7 @@
 @import "components/case-studies";
 @import "components/newsletter";
 @import "components/cookie-banner";
+@import "components/events";
 
 // Block Parts and Core Styling.
 @import 'blocks/colors';
@@ -47,7 +48,6 @@
 
 // Blocks.
 @import "blocks/paragraph-headers";
-@import "blocks/upcoming-events";
 @import "blocks/newsroom";
 @import "blocks/twitter-feed";
 @import "blocks/countup-block";

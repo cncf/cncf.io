@@ -42,23 +42,16 @@ class UpcomingWebinars extends Component {
 			<Fragment>
 				{ inspectorControls }
 				<div className={ this.props.className }>
-					<div className="uw-wrapper">
+					<div className="webinars-upcoming-wrapper">
 						{ elements.map(
 							( element, index ) => {
 								return (
-									<article className="uw-box" key={ index }>
-										<div className="uw-title-wrapper">
-											<div className="uw-date-category-wrapper">
-												<span
-													className="uw-date skew-box">XX January 2021</span>
-												<span className="uw-category skew-box">
-													CNCF Project Webinar
-												</span>
-											</div>
-											<h4 className="uw-title">This is the Webinar title
-											</h4>
-											<span className="uw-time">Join live from
-												10:00 - 11:00 PT </span>
+									<article className="webinars-upcoming-box" key={ index }>
+										<div className="webinars-upcoming-text-wrapper">
+											<span className="skew-box secondary">CNCF Project Webinar</span>
+											<span className="skew-box">Tuesday 12th January 2021</span>
+											<h5 className="webinar-title">This is the Webinar title Lorem ipsum dolor sit amet consectetuer</h5>
+											<span className="presented-by">Presented by Google</span>
 										</div>
 									</article>
 								);
