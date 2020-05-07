@@ -1,0 +1,103 @@
+$banner-background: #596cd5;
+$banner-text: #FFFFFF;
+$banner-text-link: #FFFFFF;
+$banner-button: #3842c7;
+
+#cookie-banner {
+    max-width: 300px;
+    bottom: 1em;
+    right: 1em;
+    border-radius: 5px;
+    color: $banner-text;
+    background: $banner-background;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    margin: 0px;
+    visibility: hidden;
+    z-index: 1000000;
+
+    @media (max-width: 639px) {
+        max-width: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        text-align: center;
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    @media (min-width: 1800px) {
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+
+    a {
+        display: block;
+        font-size: 0.750em;
+        color: $banner-text;
+        text-decoration: underline;
+        margin-top: 8px;
+
+        &:focus {
+            outline: $banner-text 1px solid;
+        }
+
+        @media (max-width: 639px) {
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &::after {
+            content: "  ";
+            background-image: url("data:image/svg+xml,%3Csvg fill='%23fff' height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4h-13v18h20v-11h1v12h-22v-20h14zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8z'/%3E%3C/svg%3E");
+            background-size: 10px;
+            height: 10px;
+            width: 10px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+    }
+
+    button {
+        color: inherit;
+        background: $banner-button;
+        border: 0;
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+
+        &:hover {
+            background: darken($banner-button, 10);
+        }
+
+        &:focus {
+            outline-color: white;
+            border: 1px white dashed;
+        }
+
+        @media (max-width: 639px) {
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        svg {
+            margin-right: 6px;
+
+            @media (max-width: 639px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
