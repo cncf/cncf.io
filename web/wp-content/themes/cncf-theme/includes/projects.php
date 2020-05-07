@@ -54,9 +54,6 @@ function add_projects_shortcode( $atts ) {
 		while ( $project_query->have_posts() ) :
 			$project_query->the_post();
 
-			// project stage.
-			$project_stage = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-project-stage', true );
-
 			$external_url = get_post_meta( get_the_ID(), 'cncf_project_external_url', true );
 
 			$project_category = get_post_meta( get_the_ID(), 'cncf_project_category', true );
@@ -65,7 +62,7 @@ function add_projects_shortcode( $atts ) {
 
 			$stack_overflow = get_post_meta( get_the_ID(), 'cncf_project_stack_overflow', true );
 
-			$dev_stats = get_post_meta( get_the_ID(), 'cncf_project_dev_stats', true );
+			$devstats = get_post_meta( get_the_ID(), 'cncf_project_devstats', true );
 
 			$logos = get_post_meta( get_the_ID(), 'cncf_project_logos', true );
 
@@ -87,9 +84,11 @@ function add_projects_shortcode( $atts ) {
 	<div class="project-box">
 		<!-- thumbnail  -->
 			<?php
-			if ($external_url) : ?>
-				<a href="<?php echo esc_url($external_url); ?>" rel="noreferrer noopener">
-				<?php endif;
+			if ( $external_url ) :
+				?>
+				<a href="<?php echo esc_url( $external_url ); ?>" rel="noreferrer noopener">
+				<?php
+				endif;
 
 			if ( has_post_thumbnail() ) {
 				echo wp_get_attachment_image( get_post_thumbnail_id(), 'project', false, array( 'class' => 'project-thumbnail' ) );
@@ -99,19 +98,22 @@ function add_projects_shortcode( $atts ) {
 			class="project-thumbnail">
 				<?php
 			}
-			if ($external_url) : ?>
+			if ( $external_url ) :
+				?>
 				</a>
 			<?php endif; ?>
 
 		<h3 class="project-title">
 
-		<?php if ($external_url) : ?>
-		<a href="<?php echo esc_url($external_url); ?>" rel="noreferrer noopener">
-		<?php endif;
-		the_title();
-		if ($external_url) : ?>
+			<?php if ( $external_url ) : ?>
+		<a href="<?php echo esc_url( $external_url ); ?>" rel="noreferrer noopener">
+				<?php
+		endif;
+			the_title();
+			if ( $external_url ) :
+				?>
 			</a>
-		<?php endif; ?>
+			<?php endif; ?>
 
 		</h3>
 
@@ -128,9 +130,9 @@ function add_projects_shortcode( $atts ) {
 				rel="noreferrer noopener"><?php $image->get_svg( '/social/github.svg' ); ?></a>
 			<?php endif; ?>
 
-			<?php if ( $dev_stats ) : ?>
+			<?php if ( $devstats ) : ?>
 			<a title="<?php the_title(); ?> on DevStats"
-				href="<?php echo esc_html( $dev_stats ); ?>"
+				href="<?php echo esc_html( $devstats ); ?>"
 				rel="noreferrer noopener"><?php $image->get_svg( '/social/cncf-devstats.svg' ); ?></a>
 			<?php endif; ?>
 
