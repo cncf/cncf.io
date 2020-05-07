@@ -49,7 +49,8 @@ class LatestJobs extends Component {
 									<li key={ index }>
 										<img
 											className="job-image"
-											src="/wp-content/plugins/lf-latest-jobs/src/block/images/jobs-fallback.png"
+											// eslint-disable-next-line no-undef
+											src={ cgbGlobal.fallback }
 											alt="Job"
 										/>
 										<div className="job-content">

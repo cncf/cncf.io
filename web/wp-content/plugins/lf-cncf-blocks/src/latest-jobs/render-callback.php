@@ -1,88 +1,19 @@
 <?php
 /**
- * Blocks Initializer
+ * Render Callback
  *
- * Enqueue CSS/JS of all the blocks.
- *
- * @since   1.0.0
- * @package CGB
- */
-
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-/**
- * Enqueue Gutenberg block assets for both frontend + backend.
- *
- * Assets enqueued:
- * 1. blocks.style.build.css - Frontend + Backend.
- * 2. blocks.build.js - Backend.
- * 3. blocks.editor.build.css - Backend.
- *
- * @uses {wp-blocks} for block type registration & related functions.
- * @uses {wp-element} for WP Element abstraction — structure of blocks.
- * @uses {wp-i18n} to internationalize the block's text.
- * @uses {wp-editor} for WP editor styles.
+ * @package WordPress
+ * @subpackage cncf-blocks
  * @since 1.0.0
  */
-function lf_latest_jobs_block_assets() {
-
-
-	wp_register_style(
-		'lf-latest-jobs-block-style',
-		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
-		is_admin() ? array( 'wp-editor' ) : null,
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
-	);
-
-	wp_register_style(
-		'lf-latest-jobs-block-editor',
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
-	);
-
-	wp_register_script(
-		'lf-latest-jobs-block',
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
-		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
-		true
-	);
-
-	/**
-	 * Register Gutenberg block on server-side.
-	 *
-	 * Register the block on server-side to ensure that the block
-	 * scripts and styles for both frontend and backend are
-	 * enqueued when the editor loads.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type#enqueuing-block-scripts
-	 * @since 1.16.0
-	 */
-	register_block_type(
-		'lf/latest-jobs',
-		array(
-			'style'           => 'lf-latest-jobs-block-style',
-			'editor_script'   => 'lf-latest-jobs-block',
-			'editor_style'    => 'lf-latest-jobs-block-editor',
-			'render_callback' => 'lf_latest_jobs_callback',
-		)
-	);
-}
-add_action( 'init', 'lf_latest_jobs_block_assets' );
-
 
 /**
  * Render the block
  *
  * @param array $attributes Block attributes.
- *
- * @return object Output.
+ * @return object block_content Output.
  */
-function lf_latest_jobs_callback( $attributes ) {
+function lf_latest_jobs_render_callback( $attributes ) {
 	$quantity = isset( $attributes['quantity'] ) ? intval( $attributes['quantity'] ) : 4;
 	$items    = lf_latest_jobs_get_external( $quantity );
 	$classes  = isset( $attributes['className'] ) ? $attributes['className'] : '';
@@ -104,7 +35,7 @@ function lf_latest_jobs_callback( $attributes ) {
 				$image = $item->enclosure->{ '@attributes' }->url;
 				$image = preg_replace( '/^http:/i', 'https:', $image );
 				else :
-					$image = plugin_dir_url( __FILE__ ) . 'block/images/jobs-fallback.png';
+					$image = plugin_dir_url( __FILE__ ) . 'images/jobs-fallback.png';
 				endif;
 
 				$title        = $item->title;
@@ -146,8 +77,10 @@ function lf_latest_jobs_callback( $attributes ) {
 	</ul>
 </div>
 	<?php
-	return ob_get_clean();
+	$block_content = ob_get_clean();
+	return $block_content;
 }
+
 
 /**
  * Utility function to extract job title, company and location from string

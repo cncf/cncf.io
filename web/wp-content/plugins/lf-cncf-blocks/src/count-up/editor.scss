@@ -1,0 +1,79 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ *
+ */
+
+.lf-count-up {
+
+    .count-up-item {
+        flex-grow: 1;
+        max-width: 25%;
+        overflow-x: auto;
+
+        img {
+            min-height: 100px;
+            min-width: 100px;
+        }
+    }
+
+    .lf-count-up {
+        margin: 10px auto;
+        justify-content: center;
+    }
+
+    .lf-count-up>div {
+        flex: auto;
+        margin: 0 10px;
+    }
+
+    .lf-counter {
+        line-height: normal;
+    }
+
+    .lf-column-1 .lf-count-up-columns-2,
+    .lf-column-1 .lf-count-up-columns-3 {
+        display: none;
+    }
+
+    .lf-column-2 .lf-count-up-columns-3 {
+        display: none;
+    }
+
+    .lf-columns-1>.lf-column {
+        flex: none;
+        width: 100%;
+    }
+
+    button {
+        border: none;
+        background: none;
+        box-sizing: border-box;
+        padding: 0;
+        cursor: pointer;
+    }
+}
+
+#editor {
+    .lf-col-3 {
+        float: left;
+        width: 33%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .lf-columns-spacing {
+        height: 10px;
+        width: 100%;
+        display: block;
+        position: relative;
+        z-index: 999;
+        top: -8px;
+    }
+}
+
+#editor .lf-counter>div.editor-rich-text {
+    display: inline-block;
+    padding-top: 10px;
+}

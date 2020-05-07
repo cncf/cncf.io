@@ -1,6 +1,20 @@
-//  Import CSS.
-import './styles/editor.scss';
-import './styles/style.scss';
+/**
+ * Register block JS
+ *
+ * @package WordPress
+ * @since 1.0.0
+ *
+ * @tags
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
+ * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
+ */
+
+// Import CSS.
+import './editor.scss';
+import './style.scss';
 
 import Edit from './edit.js';
 import Save from './save.js';
@@ -20,15 +34,14 @@ registerBlockType( 'lf/count-up', {
 	icon: {
 		src: blockIcon,
 	},
-	category: 'common',
-	className: 'lf-count-up',
+	category: 'cncf',
 	description: __( 'Block displaying a counting up animation for a custom number' ),
 	keywords: [
 		__( 'countup' ),
 		__( 'count' ),
 		__( 'counting' ),
 		__( 'numbers' ),
-		__( 'linux' ),
+		__( 'cncf' ),
 		__( 'lf' ),
 	],
 	attributes: {
@@ -116,12 +129,6 @@ registerBlockType( 'lf/count-up', {
 			type: 'string',
 			default: '',
 		},
-		// color1: {
-		// 	type: 'string',
-		// },
-		// color2: {
-		// 	type: 'string',
-		// },
 		textColor: {
 			type: 'string',
 		},

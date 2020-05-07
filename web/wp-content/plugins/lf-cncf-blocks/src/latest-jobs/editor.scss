@@ -1,0 +1,20 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ *
+ *
+ *
+ */
+
+
+// Fix Preview
+.block-editor-block-styles__item-preview {
+    .wp-block-lf-latest-jobs.is-style-horizontal {
+        ul.jobs-list {
+            li {
+                flex: 0 0 45%;
+            }
+        }
+    }
+}

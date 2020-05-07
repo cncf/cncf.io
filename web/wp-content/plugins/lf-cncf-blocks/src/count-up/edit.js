@@ -1,3 +1,17 @@
+/**
+ * Edit screen code
+ *
+ * @package WordPress
+ * @since 1.0.0
+ *
+ * @tags
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
+ * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
+ */
+
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InspectorControls, PanelColorSettings, RichText, MediaUpload } = wp.blockEditor || wp.editor;
@@ -70,8 +84,6 @@ class Edit extends Component {
 	render() {
 		const { attributes, setAttributes } = this.props;
 		const { columns, textColor } = attributes;
-		// const { currentEdit } = this.state;
-		// const { columns, sectionText, isSelected, color1, color2, textColor } = attributes;
 
 		return (
 			<Fragment>

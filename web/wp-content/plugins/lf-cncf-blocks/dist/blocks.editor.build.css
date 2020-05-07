@@ -99,7 +99,7 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
  *
  *
  */
@@ -165,7 +165,7 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
  *
  *
  */
@@ -209,7 +209,7 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
  *
  *
  */
@@ -235,21 +235,7 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
  *
- *
- */
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-/**
- * #.# Editor Styles
- *
- * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
  *
  *
  */
@@ -263,7 +249,7 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
  *
  *
  */
@@ -277,7 +263,21 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
+ *
+ *
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ *
  *
  *
  */
@@ -306,7 +306,7 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-events.scss in theme.
+ *
  *
  *
  */
@@ -325,3 +325,91 @@
     -o-object-fit: cover;
        object-fit: cover;
     z-index: 9999; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ *
+ *
+ *
+ */
+.block-editor-block-styles__item-preview .wp-block-lf-latest-jobs.is-style-horizontal ul.jobs-list li {
+  -ms-flex: 0 0 45%;
+      flex: 0 0 45%; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ *
+ */
+.lf-count-up .count-up-item {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  max-width: 25%;
+  overflow-x: auto; }
+  .lf-count-up .count-up-item img {
+    min-height: 100px;
+    min-width: 100px; }
+
+.lf-count-up .lf-count-up {
+  margin: 10px auto;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.lf-count-up .lf-count-up > div {
+  -ms-flex: auto;
+      flex: auto;
+  margin: 0 10px; }
+
+.lf-count-up .lf-counter {
+  line-height: normal; }
+
+.lf-count-up .lf-column-1 .lf-count-up-columns-2,
+.lf-count-up .lf-column-1 .lf-count-up-columns-3 {
+  display: none; }
+
+.lf-count-up .lf-column-2 .lf-count-up-columns-3 {
+  display: none; }
+
+.lf-count-up .lf-columns-1 > .lf-column {
+  -ms-flex: none;
+      flex: none;
+  width: 100%; }
+
+.lf-count-up button {
+  border: none;
+  background: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  cursor: pointer; }
+
+#editor .lf-col-3 {
+  float: left;
+  width: 33%;
+  padding: 10px;
+  text-align: center; }
+
+#editor .lf-columns-spacing {
+  height: 10px;
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 999;
+  top: -8px; }
+
+#editor .lf-counter > div.editor-rich-text {
+  display: inline-block;
+  padding-top: 10px; }

@@ -38,3 +38,9 @@ import './landscape/block.js';
 
 // iFrame Block.
 import './iframe/block.js';
+
+// Latest Jobs Block.
+import './latest-jobs/block.js';
+
+// Count Up Block.
+import './count-up/block.js';

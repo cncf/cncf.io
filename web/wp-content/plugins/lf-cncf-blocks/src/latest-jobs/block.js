@@ -12,8 +12,9 @@
  * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
 
-import './styles/editor.scss';
-import './styles/style.scss';
+// Import CSS.
+import './editor.scss';
+import './style.scss';
 
 import Edit from './edit.js';
 
@@ -34,13 +35,12 @@ registerBlockType(
 		icon: {
 			src: blockIcon,
 		},
-		category: 'common',
+		category: 'cncf',
 		keywords: [
 			__( 'latest jobs' ),
 			__( 'jobs' ),
 			__( 'cncf' ),
-			__( 'linux' ),
-			__( 'lf' ),
+			__( 'vacancies' ),
 		],
 		styles: [
 			{

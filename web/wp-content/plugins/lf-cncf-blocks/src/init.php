@@ -54,6 +54,34 @@ function lf_cncf_blocks_frontend_assets() {
 			true
 		);
 	}
+
+	if ( has_block( 'lf/count-up' ) && ! is_admin() ) {
+
+		wp_enqueue_script(
+			'lf-count-up-waypoints-js',
+			plugins_url( '/src/count-up/scripts/waypoints.min.js', dirname( __FILE__ ) ),
+			is_admin() ? array( 'wp-editor' ) : null,
+			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'lf-count-up-countup-js',
+			plugins_url( '/src/count-up/scripts/countup.js', dirname( __FILE__ ) ),
+			is_admin() ? array( 'wp-editor' ) : null,
+			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+			true
+		);
+
+		wp_enqueue_script(
+			'lf-count-up-front-js',
+			plugins_url( '/src/count-up/scripts/index.js', dirname( __FILE__ ) ),
+			is_admin() ? array( 'wp-editor' ) : array( 'lf-count-up-countup-js', 'lf-count-up-waypoints-js' ),
+			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+			true
+		);
+	}
+
 }
 add_action( 'enqueue_block_assets', 'lf_cncf_blocks_frontend_assets' );
 
@@ -71,6 +99,7 @@ add_action( 'enqueue_block_assets', 'lf_cncf_blocks_frontend_assets' );
  * @since 1.0.0
  */
 function lf_cncf_blocks_editor_assets() {
+
 	// Register block editor script for backend.
 	wp_enqueue_script(
 		'lf_cncf_blocks_script',
@@ -79,6 +108,7 @@ function lf_cncf_blocks_editor_assets() {
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 		true
 	);
+
 	// Register block editor styles for backend.
 	wp_enqueue_style(
 		'lf_cncf_blocks_editor_style',
@@ -86,6 +116,7 @@ function lf_cncf_blocks_editor_assets() {
 		array( 'wp-edit-blocks' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
 	);
+
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	// phpcs:disable
 	wp_localize_script(
@@ -94,7 +125,7 @@ function lf_cncf_blocks_editor_assets() {
 		[
 		'pluginDirPath' => plugin_dir_path( __DIR__ ),
 		'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
-		// Add more data here that you want to access from `cgbGlobal` object.
+		'fallback' => plugins_url( '/latest-jobs/images/jobs-fallback.png', __FILE__ ),
 		]
 	);
 	// phpcs:enable
@@ -233,8 +264,8 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 	register_block_type(
 		'lf/landscape',
 		array(
-			'attributes'      => array(
-				'className'  => array(
+			'attributes' => array(
+				'className' => array(
 					'type' => 'string',
 				),
 			),
@@ -245,12 +276,43 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 	register_block_type(
 		'lf/iframe',
 		array(
-			'attributes'      => array(
-				'className'  => array(
+			'attributes' => array(
+				'className' => array(
 					'type' => 'string',
 				),
 			),
 		),
+	);
+
+	// Latest Jobs block.
+	require_once 'latest-jobs/render-callback.php';
+	register_block_type(
+		'lf/latest-jobs',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+				'quantity'  => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_latest_jobs_render_callback',
+		)
+	);
+
+	// Count Up block.
+	require_once 'count-up/render-callback.php';
+	register_block_type(
+		'lf/count-up',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_count_up_render_callback',
+		)
 	);
 
 }
