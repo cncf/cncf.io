@@ -12,37 +12,37 @@
 jQuery(
 	function( $ ) {
 		function onSubmit(token) {
-			var f = $("#sfmc-form");
-			var redirectUrl = f.data('redirect');
+			var f = $( "#sfmc-form" );
+			var redirectUrl = f.data( 'redirect' );
 			$.ajax(
 				{
-					url: f.attr("action"),
+					url: f.attr( "action" ),
 					type: 'POST',
 					data: f.serialize(),
 					beforeSend: function () {
-						$("#sfmc-form").toggle();
-						$("#message").html("Thank you for your submission.  Your request is being processed...").addClass("callout success");
+						$( "#sfmc-form" ).toggle();
+						$( "#message" ).html( "Thank you for your submission.  Your request is being processed..." ).addClass( "callout success" );
 					},
 					success: function (data) {
-						var msg = $(data).find("p").text();
-						$("#message").html(msg);
+						var msg = $( data ).find( "p" ).text();
+						$( "#message" ).html( msg );
 						if (redirectUrl) {
 							window.location.href = redirectUrl;
 						}
 					},
 					error: function (xhr, status, error) {
 						var errorMessage = xhr.status + ': ' + xhr.statusText;
-						$("#message").html("There was an error processing your submission.  Please try again or contact us directly at info@cncf.io.<br>(" + errorMessage + ")").removeClass("success").addClass("alert");
-						alert("There was an error processing your submission.  Please try again or contact us directly at info@cncf.io.");
+						$( "#message" ).html( "There was an error processing your submission.  Please try again or contact us directly at info@cncf.io.<br>(" + errorMessage + ")" ).removeClass( "success" ).addClass( "alert" );
+						alert( "There was an error processing your submission.  Please try again or contact us directly at info@cncf.io." );
 					}
 				}
 			);
 		}
 		window.onSubmit = onSubmit; // need to do this to export the onSubmit function from the module scope created by WebPack.
 
-		$(document).ready(
+		$( document ).ready(
 			function () {
-				var f = $("#sfmc-form")
+				var f = $( "#sfmc-form" )
 				f.on(
 					"click",
 					"#submitbtn",
@@ -57,4 +57,3 @@ jQuery(
 		);
 	}
 );
-	
