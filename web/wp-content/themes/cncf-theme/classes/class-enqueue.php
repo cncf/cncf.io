@@ -60,11 +60,11 @@ class Enqueue {
 		if ( ! is_admin() ) {
 
 			wp_deregister_script( 'jquery' );
-
 			// load WP copy of jQuery in the footer.
-			wp_register_script('jquery', includes_url('/js/jquery/jquery.js'), false, '1.3.2', true); // phpcs:ignore
-
+			wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, '1.3.2', true );
 			wp_enqueue_script( 'jquery' );
+
+			wp_enqueue_script( 'recaptcha', 'https://www.recaptcha.net/recaptcha/api.js', false, false, true ); // phpcs:ignore
 		}
 
 		if ( WP_DEBUG === true ) {
