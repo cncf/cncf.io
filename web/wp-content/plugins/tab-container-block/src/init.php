@@ -33,7 +33,7 @@ function tab_container_block_cgb_block_assets() { // phpcs:ignore
 		'tab_container_block-cgb-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
 		array( 'wp-editor' ), // Dependency to include the CSS after it.
-		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
 
 	// Register block editor script for backend.
@@ -41,7 +41,7 @@ function tab_container_block_cgb_block_assets() { // phpcs:ignore
 		'tab_container_block-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
-		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
 
@@ -50,7 +50,7 @@ function tab_container_block_cgb_block_assets() { // phpcs:ignore
 		'tab_container_block-cgb-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
@@ -75,9 +75,10 @@ function tab_container_block_cgb_block_assets() { // phpcs:ignore
 	 * @since 1.16.0
 	 */
 	register_block_type(
-		'cgb/block-tab-container-block', array(
+		'cgb/block-tab-container-block',
+		array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
-			//'style'         => 'tab_container_block-cgb-style-css',
+			// 'style'         => 'tab_container_block-cgb-style-css',
 			// Enqueue blocks.build.js in the editor only.
 			'editor_script' => 'tab_container_block-cgb-block-js',
 			// Enqueue blocks.editor.build.css in the editor only.
