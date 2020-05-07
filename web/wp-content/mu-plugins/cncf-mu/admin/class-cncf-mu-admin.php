@@ -677,16 +677,6 @@ class Cncf_Mu_Admin {
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
-									'data_key'      => 'dev_stats',
-									'label'         => __( 'Dev Stats' ),
-									'register_meta' => true,
-									'ui_border_top' => false,
-									'default_value' => '',
-									'placeholder'   => 'https://grpc.devstats.cncf.io',
-								),
-								array(
-									'type'          => 'text',
-									'data_type'     => 'meta',
 									'data_key'      => 'devstats',
 									'label'         => __( 'DevStats' ),
 									'register_meta' => true,
@@ -695,7 +685,7 @@ class Cncf_Mu_Admin {
 									'placeholder'   => 'https://k8s.devstats.cncf.io/',
 								),
 								array(
-									'type'          => 'text', // Required.
+									'type'          => 'text',
 									'data_type'     => 'meta',
 									'data_key'      => 'logos',
 									'label'         => __( 'Logos' ),
