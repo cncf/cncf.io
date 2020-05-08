@@ -2,104 +2,26 @@
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority. Majority of this is copied from upcoming-webinars.scss in theme.
- *
- * .wp-block-lf-upcoming-webinars {}
+ * which makes it higher in priority.
  *
  */
-
-$uw-breakpoint: 550px;
-
-.uw-wrapper {
-    display: grid;
-    grid-gap: 20px;
-
-    .is-style-horizontal & {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-}
-
-.uw-box {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    background-color: $blue-100;
-    padding: 20px;
-    display: flex;
-    align-content: center;
-
-    &:hover {
-        background-color: darken($blue-100, 10%);
-    }
-}
-
-.uw-title-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.uw-date-category-wrapper {
-    display: flex;
-    flex-direction: column;
-
-    @media (min-width: $uw-breakpoint) {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-    }
-}
-
-.skew-box {
-    font-size: 0.875em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: $white;
-    padding: 4px 6px 4px 6px;
-
-    &:first-child {
-        margin-bottom: 10px;
-
-        @media (min-width: $uw-breakpoint) {
-            margin-bottom: 0;
-        }
-    }
-}
-
-.uw-date {
-    background-color: $purple-200;
-
-    @media (min-width: $uw-breakpoint) {
-        // adds skewed end.
-        padding-right: 20px;
-        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 20px) 0);
-    }
-}
-
-.uw-category {
-    background-color: $blue-300;
-
-    @media (min-width: $uw-breakpoint) {
-        // adds skewed start.
-        padding-left: 20px;
-        clip-path: polygon(0 0, 20px 100%, 100% 100%, 100% 100%, 100% 0);
-    }
-
-}
-
-.uw-time {
-    margin-top: auto;
-    font-style: italic;
-}
 
 // Fixes the preview.
 .block-editor-block-styles__item-preview {
     .wp-block-lf-upcoming-webinars.is-style-horizontal {
-        .uw-wrapper {
+        .webinars-upcoming-wrapper {
             grid-template-columns: 1fr 1fr;
+        }
+    }
+}
 
-            .uw-category.skew-box {
-                display: none;
-            }
+.is-style-horizontal {
+    .webinars-upcoming-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        margin-bottom: 1em;
+
+        @media (min-width: 1024px) {
+            grid-gap: 1.5em;
         }
     }
 }

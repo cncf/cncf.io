@@ -22,7 +22,7 @@
 		}
 		?>
 </p>
-<div class="ue-wrapper">
+<div class="events-wrapper">
 		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();
@@ -54,7 +54,7 @@
 			?>
 	<article class="event-box background-image-wrapper">
 
-		<div class="ue-overlay"
+		<div class="event-overlay"
 			style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
 		</div>
 
@@ -64,9 +64,9 @@
 		</figure>
 		<?php endif; ?>
 
-		<div class="ue-content-wrapper background-image-text-overlay">
+		<div class="event-content-wrapper background-image-text-overlay">
 
-			<div class="ue-logo">
+			<div class="event-logo">
 			<?php if ( $logo ) : ?>
 				<a href="<?php the_permalink(); ?>"
 					title="<?php the_title(); ?>">
@@ -81,15 +81,15 @@
 				</a>
 			</div>
 
-			<span class="ue-event-date">
+			<span class="event-date">
 				<?php
 						echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 				?>
 			</span>
 			<span
-				class="ue-event-city"><?php echo esc_html( $location ); ?></span>
+				class="event-city"><?php echo esc_html( $location ); ?></span>
 			<a href="<?php the_permalink(); ?>"
-				class="button transparent outline ue-button">Learn More</a>
+				class="button transparent outline">Learn More</a>
 		</div>
 	</article>
 <?php endwhile; ?>

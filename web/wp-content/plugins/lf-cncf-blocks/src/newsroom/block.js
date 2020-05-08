@@ -65,6 +65,17 @@ registerBlockType(
 				type: 'string',
 			},
 		},
+		styles: [
+			{
+				name: 'vertical',
+				label: __( 'Vertical' ),
+				isDefault: true,
+			},
+			{
+				name: 'horizontal',
+				label: __( 'Horizontal' ),
+			},
+		],
 		html: false,
 		edit: Edit,
 		save() {

@@ -14,6 +14,7 @@
  * @return object block_content Output.
  */
 function lf_upcoming_events_render_callback( $attributes ) {
+
 	// get the quantity to display, if not default.
 	$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 4;
 	// get the classes set from the block if any.
@@ -49,50 +50,85 @@ function lf_upcoming_events_render_callback( $attributes ) {
 	?>
 <section
 	class="wp-block-lf-upcoming-events <?php echo esc_html( $classes ); ?>">
-	<div class="ue-wrapper">
+	<div class="events-wrapper">
 		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();
+
 			$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+
 			$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
-			$external_url     = get_post_meta( get_the_ID(), 'cncf_event_external_url', true );
-			$event_hosts      = get_the_terms( get_the_ID(), 'cncf_event_hosts' );
-			$event_city       = get_post_meta( get_the_ID(), 'cncf_event_city', true );
+
+			$city = get_post_meta( get_the_ID(), 'cncf_event_city', true );
+
+			$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
+
+			if ( ! $city && ! $country ) {
+				$location = 'TBC';
+			} elseif ( ! $country ) {
+				$location = $city;
+			} else {
+				$location = $city . ', ' . $country;
+			}
+
+			$logo = get_post_meta( get_the_ID(), 'cncf_event_logo', true );
+
+			$background = get_post_meta( get_the_ID(), 'cncf_event_background', true );
+
+			$color = get_post_meta( get_the_ID(), 'cncf_event_overlay_color', true );
+
+			$color ? $overlay_color = $color : $overlay_color = '#254AAB';
+
 			?>
+
 		<article class="event-box background-image-wrapper">
-			<?php
-				// TODO: Pull in from Meta. Pull in real images.
-			?>
-			<div class="ue-overlay" style="background-color: #254AAB"></div>
+
+			<div class="event-overlay"
+				style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
+			</div>
+
+			<?php if ( $background ) : ?>
 			<figure class="background-image-figure">
-				<img src="https://events.linuxfoundation.org/wp-content/uploads/44152343305_38fa81a9ed_3k.jpg"
-					alt="<?php the_title(); ?>">
+				<?php echo wp_get_attachment_image( $background, 'medium', false ); ?>
 			</figure>
-			<div class="ue-content-wrapper background-image-text-overlay">
-				<div class="ue-logo">
+			<?php endif; ?>
+
+			<div class="event-content-wrapper background-image-text-overlay">
+
+				<div class="event-logo">
+					<?php if ( $logo ) : ?>
 					<a href="<?php the_permalink(); ?>"
-						title="<?php the_title(); ?>"><img
-							src="https://events.linuxfoundation.org/wp-content/uploads/kccnc-eu-2020-white.svg"
-							alt="<?php the_title(); ?>"></a>
+						title="<?php the_title(); ?>">
+						<?php
+						echo wp_get_attachment_image( $logo, 'medium', false );
+						?>
+					</a>
+					<?php else : ?>
+					<h4 class="event-title"><a href="<?php the_permalink(); ?>"
+							title="<?php the_title(); ?>"><?php the_title(); ?></a>
+					</h4>
+					<?php endif; ?>
+					</a>
 				</div>
-				<span class="ue-event-date">
+
+				<span class="event-date">
 					<?php
-						echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+					echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 					?>
 				</span>
-				<span class="ue-event-city"><?php echo esc_html( $event_city ); ?></span>
-				<a href="<?php the_permalink(); ?> title="
-					<?php the_title(); ?>"
-					class="button transparent outline ue-button">Learn More</a>
+				<span
+					class="event-city"><?php echo esc_html( $location ); ?></span>
+				<a href="<?php the_permalink(); ?>"
+					class="button transparent outline">Learn More</a>
 			</div>
 		</article>
 			<?php
-		endwhile;
+endwhile;
 		wp_reset_postdata();
 		?>
 	</div>
 </section>
-		<?php
-		$block_content = ob_get_clean();
-		return $block_content;
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
 }

@@ -27,6 +27,9 @@
         @import 'blocks/quote';
         @import "blocks/case-study-highlights";
         @import "blocks/case-study-overview";
+        @import "blocks/latest-jobs";
+        @import "components/events";
+        @import "components/webinars";
     }
 }
 
@@ -78,6 +81,63 @@
 // allows for transparent images to be visible in Sidebar Metabox.
 #pmc-cncf_event-logo .pmc-image-container {
     background-color: $grey-200;
+}
+
+
+.skew-box {
+    font-size: 0.750em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $white;
+    padding: 5px 6px;
+    background-color: $purple-400;
+    padding-right: 25px;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
+    // useful if inside flexbox.
+    align-self: start;
+
+    &:first-child {
+        margin-bottom: 0.5em;
+    }
+
+    &.secondary {
+        background-color: $blue-200;
+    }
+
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        transform: translateX(12px);
+    }
+
+    &.smaller {
+        font-size: 0.675em;
+    }
+}
+
+.unskew-box {
+    font-size: 0.750em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $white;
+    padding: 5px 6px;
+    background-color: $purple-400;
+    align-self: start;
+
+    &:first-child {
+        margin-bottom: 0.5em;
+    }
+
+    &.secondary {
+        background-color: $blue-200;
+    }
+
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+    }
 }
 
 
