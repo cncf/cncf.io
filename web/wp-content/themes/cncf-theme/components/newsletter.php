@@ -10,10 +10,8 @@
 ?>
 <section class="newsletter">
 <div class="container wrap">
-	<h3>Subscribe to the CNCF newsletter</h3>
-	<p class="is-style-center-width-700">Signup to the CNCF mailing list to receive regular updates about
-		webinars, events & latest news from CNCF and The Linux Foundation. Free to join. Unsubscribe at any time.
-	</p>
+	<h4 class="is-style-center-width-900">Subscribe to the CNCF newsletter to receive regular updates about
+		webinars, events & latest news</h4>
 
 	<form id="sfmc-form" class="newsletter-form"
 		action="https://cloud.email.thelinuxfoundation.org/CNCF-Newsletter-Subscriber-Form">
