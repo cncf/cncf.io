@@ -30,10 +30,10 @@
 		<button type="submit" class="button stocky" id="sfmc-submit1">Subscribe</button>
 		<div id="recaptcha-form1" style="display:none;"></div>
 	</form>
+	<div id="sfmc-message1" class="form-message"></div>
 	<p class="smaller-text">By submitting this form, you acknowledge that your
 		information is subject to The Linux Foundation’s <a
 			href="https://www.linuxfoundation.org/privacy/"
 			rel="norefferer noopener" target="_blank">Privacy Policy</a>.</p>
-	<div id="sfmc-message1" class="form-message"></div>
 	</div>
 </section>

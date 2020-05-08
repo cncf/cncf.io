@@ -14,60 +14,60 @@ input[type="search"] {
     padding-left: 1em;
 }
 
-.validation_message {
-    color: $error;
-    padding-top: 5px;
-}
+// .validation_message {
+//     color: $error;
+//     padding-top: 5px;
+// }
 
-.validation_error {
-    border: 1px solid $error;
-    padding: 2em;
-    margin-bottom: 1em;
-}
+// .validation_error {
+//     border: 1px solid $error;
+//     padding: 2em;
+//     margin-bottom: 1em;
+// }
 
-.gform_confirmation_wrapper {
-    border: 1px solid $success;
-    padding: 2em;
-    margin-bottom: 1em;
-}
+// .gform_confirmation_wrapper {
+//     border: 1px solid $success;
+//     padding: 2em;
+//     margin-bottom: 1em;
+// }
 
-.gform_wrapper {
-    ul {
-        margin-left: 0;
-        padding-left: 0;
-        list-style-type: none;
-        -webkit-margin-before: 0em;
-        -webkit-margin-after: 0em;
-        -webkit-margin-start: 0px;
-        -webkit-margin-end: 0px;
-        -webkit-padding-start: 0px;
-    }
-}
+// .gform_wrapper {
+//     ul {
+//         margin-left: 0;
+//         padding-left: 0;
+//         list-style-type: none;
+//         -webkit-margin-before: 0em;
+//         -webkit-margin-after: 0em;
+//         -webkit-margin-start: 0px;
+//         -webkit-margin-end: 0px;
+//         -webkit-padding-start: 0px;
+//     }
+// }
 
-.gform_validation_container {
-    display: none;
-    position: absolute;
-    left: -9000px;
-}
+// .gform_validation_container {
+//     display: none;
+//     position: absolute;
+//     left: -9000px;
+// }
 
-.gfield textarea {
-    &.small {
-        height: 60px;
-    }
+// .gfield textarea {
+//     &.small {
+//         height: 60px;
+//     }
 
-    &.medium {
-        height: 120px;
-    }
-}
+//     &.medium {
+//         height: 120px;
+//     }
+// }
 
-.ginput_container {
+// .ginput_container {
 
-    input,
-    textarea {
-        border: 1px solid $black;
-    }
-}
+//     input,
+//     textarea {
+//         border: 1px solid $black;
+//     }
+// }
 
-.grecaptcha-badge {
-    visibility: hidden;
-}
+// .grecaptcha-badge {
+//     visibility: hidden;
+// }
