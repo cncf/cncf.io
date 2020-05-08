@@ -64,7 +64,7 @@ class Enqueue {
 			wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, '1.3.2', true );
 			wp_enqueue_script( 'jquery' );
 
-			wp_enqueue_script( 'recaptcha', 'https://www.recaptcha.net/recaptcha/api.js', false, false, true ); // phpcs:ignore
+			wp_enqueue_script( 'recaptcha', 'https://www.recaptcha.net/recaptcha/api.js?render=explicit', false, false, true ); // phpcs:ignore
 		}
 
 		if ( WP_DEBUG === true ) {

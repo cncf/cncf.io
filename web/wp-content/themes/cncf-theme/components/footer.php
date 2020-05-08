@@ -14,7 +14,7 @@ $options = get_option( 'cncf-mu' );
 
 <footer class="footer">
 	<div class="container wrap">
-		<form id="sfmc-form" action="https://cloud.email.thelinuxfoundation.org/CNCF-Newsletter-Subscriber-Form">
+		<form id="sfmc-form1" action="https://cloud.email.thelinuxfoundation.org/CNCF-Newsletter-Subscriber-Form">
 			<label for="FirstName" required="">
 				<input type="text" name="FirstName" placeholder="FIRST" required>
 			</label>
@@ -24,10 +24,10 @@ $options = get_option( 'cncf-mu' );
 			<label for="EmailAddress" required="">
 				<input type="email" name="EmailAddress" placeholder="EMAIL" required>
 			</label>
-			<button type="submit" id="submitbtn">SIGN UP</button>
-			<div data-callback="onSubmit" data-sitekey="6LdMldUUAAAAABG2vrZ1GT7Eo_TgI-UPlG14ocVH" class="g-recaptcha" data-size="invisible"></div>
+			<button type="submit" id="sfmc-submit1">SIGN UP</button>
+			<div id="recaptcha-form1" style="display:none;"></div>
 		</form>
-		<div id="message"></div>
+		<div id="sfmc-message1"></div>
 	</div>
 	<div class="container wrap">
 		<?php get_template_part( 'components/social-links' ); ?>
