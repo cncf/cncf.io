@@ -131,8 +131,8 @@ jQuery(
 					},
 					error( xhr, status, error ) {
 						let errorMessage = xhr.status + ': ' + xhr.statusText;
-						$( '#sfmc-message' + form ).html( 'There was an error processing your submission. Please try again or contact us directly at info@cncf.io.<br>(' + errorMessage + ')' ).addClass( 'error' );
-						alert( 'There was an error processing your submission. Please try again or contact us directly at info@cncf.io.' );
+						$( '#sfmc-message' + form ).html( 'There was an error processing your submission. Please try again or contact us directly at info@cncf.io<br>Error code: (' + errorMessage + ')' ).addClass( 'error' );
+						alert( 'There was an error processing your submission. Please try again or contact us directly at info@cncf.io' );
 					},
 				}
 			);

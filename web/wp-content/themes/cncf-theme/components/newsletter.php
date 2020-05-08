@@ -10,22 +10,22 @@
 ?>
 <section class="newsletter">
 <div class="container wrap">
-	<h4 class="is-style-center-width-900">Subscribe to the CNCF newsletter to receive regular updates about
-		webinars, events & latest news</h4>
+	<label for="FirstName"><h4 class="is-style-center-width-900">Subscribe to the CNCF newsletter to receive regular updates about
+		webinars, events & latest news</h4></label>
 
 	<form id="sfmc-form1" class="newsletter-form"
 		action="https://cloud.email.thelinuxfoundation.org/CNCF-Newsletter-Subscriber-Form">
 		<label for="FirstName" required>
-			<input type="text" name="FirstName" placeholder="Your First Name"
+			<input type="text" id="FirstName" name="FirstName" placeholder="Your First Name" autocomplete="given-name" spellcheck="false"
 				required>
 		</label>
 		<label for="LastName" required>
-			<input type="text" name="LastName" placeholder="Your Last Name"
+			<input type="text" name="LastName" placeholder="Your Last Name" autocomplete="family-name" spellcheck="false"
 				required>
 		</label>
 		<label for="EmailAddress" required>
 			<input type="email" name="EmailAddress"
-				placeholder="Your Email Address" required>
+				placeholder="Your Email Address" aria-describedby="email-hint" autocomplete="email" spellcheck="false" required>
 		</label>
 		<button type="submit" class="button stocky" id="sfmc-submit1">Subscribe</button>
 		<div id="recaptcha-form1" style="display:none;"></div>
@@ -34,6 +34,6 @@
 	<p class="smaller-text">By submitting this form, you acknowledge that your
 		information is subject to The Linux Foundation’s <a
 			href="https://www.linuxfoundation.org/privacy/"
-			rel="norefferer noopener" target="_blank">Privacy Policy</a>.</p>
+			rel="norefferer noopener" class="external" target="_blank">Privacy Policy</a>.</p>
 	</div>
 </section>

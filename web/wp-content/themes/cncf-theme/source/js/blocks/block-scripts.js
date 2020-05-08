@@ -17,15 +17,20 @@
 
 wp.domReady(
 	() => {
-	// Hides comments.
-		wp.data.dispatch(
-			'core/edit-post' ).removeEditorPanel(
-			'discussion-panel' );
-		// hides captions on gallery.
+    // Hides comments.
+    wp.data.dispatch( 'core/edit-post' ).removeEditorPanel( 'discussion-panel' );
+    // hides captions on gallery.
     wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
 
+    wp.blocks.registerBlockVariation(
+      'core/quote',
+      {
+        name: 'transparent-quote',
+        title: 'Transparent Quote',
+      },
+    );
 
-		// TODO: Possibly use this approach instead of styles.
+    // TODO: Possibly use this approach instead of styles.
 		wp.blocks.registerBlockVariation( 'core/columns', {
 			name: 'responsive-two-columns',
 			title: 'Responsive Two Columns',

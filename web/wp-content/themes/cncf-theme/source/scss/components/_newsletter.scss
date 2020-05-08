@@ -13,6 +13,22 @@
     a {
         color: $white;
     }
+
+    .form-message {
+
+        &.is-active {
+            border: 1px solid $white;
+        }
+
+        &.success {
+            border: 1px solid $success;
+        }
+
+        &.error {
+            border: 1px solid $error;
+        }
+    }
+
 }
 
 .newsletter-form {
@@ -43,26 +59,5 @@
             margin-bottom: 0;
             margin-right: 0.5em;
         }
-    }
-}
-
-.form-message {
-
-    &.is-active {
-        border: 1px solid white;
-        padding: 1em;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    &.success {
-        border: 1px solid green;
-    }
-
-    &.error {
-        border: 1px solid red;
     }
 }

@@ -15,7 +15,6 @@ register_block_style(
 	array(
 		'name'       => 'center-width-700',
 		'label'      => 'Max-Width 700px & Centered',
-		'is_default' => true,
 	)
 );
 
@@ -57,7 +56,6 @@ register_block_style(
 	array(
 		'name'       => 'center-width-800',
 		'label'      => 'Max-Width 800px & Centered',
-		'is_default' => true,
 	)
 );
 
@@ -160,7 +158,6 @@ register_block_style(
 	array(
 		'name'       => 'full-width-gradient',
 		'label'      => 'Full Width on Gradient',
-		'is_default' => true,
 	)
 );
 
