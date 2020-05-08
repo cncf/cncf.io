@@ -37,7 +37,7 @@
             align-self: center;
         }
 
-        &:hover:not(.copyright-text &) {
+        &:hover {
             &::after {
                 filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(2129%) hue-rotate(317deg) brightness(97%) contrast(84%);
             }

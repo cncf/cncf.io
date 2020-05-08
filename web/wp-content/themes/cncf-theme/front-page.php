@@ -11,14 +11,6 @@
 
 get_template_part( 'components/header' );
 
-// get_template_part( 'components/wip-blocks' ); / phpcsignore.
-
-// get_template_part( 'components/elements' ); // phpcsignore.
-
-// get_template_part( 'components/hero' ); // phpcsignore.
-
 get_template_part( 'components/page-single' );
-
-// get_template_part( 'components/post-loop' ); // phpcsignore.
 
 get_template_part( 'components/footer' );

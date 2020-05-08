@@ -64,7 +64,12 @@
         flex-basis: 60%;
         text-align: left;
     }
+
+    a:hover::after {
+        filter: none !important;
+    }
 }
+
 
 // makes button plain like icon.
 .wechat-button-modal {

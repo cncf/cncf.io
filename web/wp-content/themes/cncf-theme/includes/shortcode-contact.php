@@ -10,7 +10,7 @@
  /**
   * Add Contact Form shortcode.
   */
-function add_contact_shortcode( ) {
+function add_contact_shortcode() {
 
 	ob_start(); ?>
 
@@ -383,7 +383,7 @@ function add_contact_shortcode( ) {
 	</form>
 	<div id="sfmc-message2" class="form-message"></div>
 </div>
-<?php
+	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
 
