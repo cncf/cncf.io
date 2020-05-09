@@ -92,21 +92,10 @@ body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
     }
 
     .um-profile.um-editing.um-role-um_speaker {
-        .um-col-121 {
-            float: left;
-            width: 100%;
-        }
-
         .um-field-type_shortcode {
             display: none;
         }
 
-
-        .um-left,
-        .um-right {
-            float: none;
-            display: flex;
-        }
 
         .um-col-alt {
             display: flex;
