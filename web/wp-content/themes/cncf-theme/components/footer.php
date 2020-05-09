@@ -21,7 +21,7 @@ $options = get_option( 'cncf-mu' );
 
 			<div class="copyright-text">
 				<p>Copyright &copy; <?php echo esc_html( gmdate( 'Y' ) ); ?>
-					<?php echo wp_kses_data( $options['copyright_textarea'] ); ?>
+					<?php echo wp_kses_post( $options['copyright_textarea'] ); ?>
 				</p>
 			</div>
 

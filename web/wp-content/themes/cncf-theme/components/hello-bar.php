@@ -22,6 +22,6 @@ if ( $options['hello_bar_bg'] ) {
 <div class="hello-bar"
 	style="background-color: <?php echo esc_attr( $custom_bg_colour ); ?>">
 	<div class="container wrap">
-		<p><?php echo wp_kses_data( $options['hello_bar_content'] ); ?></p>
+		<p><?php echo wp_kses_post( $options['hello_bar_content'] ); ?></p>
 	</div>
 </div>
