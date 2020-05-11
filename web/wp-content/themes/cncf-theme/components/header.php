@@ -86,7 +86,7 @@ endif;
 							</form>
 							<button
 						class="button search transparent header search-button search-close"
-						type="button" aria-label="Close"">
+						type="button" aria-label="Close">
 						<?php $image->get_svg( 'close.svg' ); ?>
 					</button>
 						</div>

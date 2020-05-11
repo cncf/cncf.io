@@ -93,6 +93,8 @@ img {
     &.search-submit {
         box-sizing: border-box;
         border: 1px solid $white;
+        border-radius: 0;
+        -webkit-appearance: none;
 
         &:hover {
             border: 1px solid $pink-400;
