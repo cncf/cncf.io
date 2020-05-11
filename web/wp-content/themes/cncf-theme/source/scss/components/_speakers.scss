@@ -91,6 +91,7 @@ body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
         padding: 0;
     }
 
+    // Hides Contact Form when editing.
     .um-profile.um-editing.um-role-um_speaker {
         .um-field-type_shortcode {
             display: none;
@@ -102,18 +103,49 @@ body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
         }
     }
 
-    .um-button {
-        @extend .button;
+    .um-button,
+    .um-alt {
+        border: 0; // reset
+        padding: 0px; // reset
+        width: auto;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        padding: 0.7rem 1.1rem;
+        white-space: nowrap;
+        text-transform: uppercase;
+        background-color: $primary-color;
+        color: $white;
+        transition: all 0.25s ease-out;
         margin-right: 1em;
         border-radius: 0 !important;
         font-size: 1em !important;
+        min-width: 150px;
+
+        a {
+            color: $white;
+        }
+
+        &:active {
+            position: relative;
+            top: 1px;
+        }
+
+        &:hover {
+            background-color: lighten($primary-color, 5%);
+            color: $white;
+        }
+
     }
 
     .um-alt {
-        @extend .button;
-        @extend .secondary-color;
-        border-radius: 0 !important;
-        font-size: 1em !important;
+        background-color: $secondary-color;
+        margin-left: 2em;
+
+        &:hover {
+            background-color: lighten($secondary-color, 5%);
+        }
     }
 
     .um-half {

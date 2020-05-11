@@ -13,8 +13,8 @@
 register_block_style(
 	'core/heading',
 	array(
-		'name'       => 'center-width-700',
-		'label'      => 'Max-Width 700px & Centered',
+		'name'  => 'center-width-700',
+		'label' => 'Max-Width 700px & Centered',
 	)
 );
 
@@ -54,8 +54,8 @@ register_block_style(
 register_block_style(
 	'core/paragraph',
 	array(
-		'name'       => 'center-width-800',
-		'label'      => 'Max-Width 800px & Centered',
+		'name'  => 'center-width-800',
+		'label' => 'Max-Width 800px & Centered',
 	)
 );
 
@@ -156,17 +156,17 @@ register_block_style(
 register_block_style(
 	'core/quote',
 	array(
-		'name'       => 'full-width-gradient',
-		'label'      => 'Full Width on Gradient',
+		'name'  => 'full-width-gradient',
+		'label' => 'Full Width on Gradient',
 	)
 );
 
  // BUTTON.
- register_block_style(
+register_block_style(
 	'core/button',
 	array(
-		'name'       => 'extra-large-outline',
-		'label'      => 'Extra Large Outline',
+		'name'  => 'extra-large-outline',
+		'label' => 'Extra Large Outline',
 	)
 );
 
