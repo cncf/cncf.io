@@ -86,7 +86,7 @@ function add_projects_shortcode( $atts ) {
 			<?php
 			if ( $external_url ) :
 				?>
-				<a href="<?php echo esc_url( $external_url ); ?>" rel="noreferrer noopener">
+				<a href="<?php echo esc_url( $external_url ); ?>"  rel="noreferrer noopener" target="_blank">
 				<?php
 				endif;
 
@@ -106,7 +106,7 @@ function add_projects_shortcode( $atts ) {
 		<h3 class="project-title">
 
 			<?php if ( $external_url ) : ?>
-		<a href="<?php echo esc_url( $external_url ); ?>" rel="noreferrer noopener">
+		<a href="<?php echo esc_url( $external_url ); ?>"  rel="noreferrer noopener" target="_blank">
 				<?php
 		endif;
 			the_title();
@@ -127,61 +127,61 @@ function add_projects_shortcode( $atts ) {
 			<?php if ( $github ) : ?>
 			<a title="<?php the_title(); ?> on Github"
 				href="<?php echo esc_html( $github ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/github.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/github.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $devstats ) : ?>
 			<a title="<?php the_title(); ?> on DevStats"
 				href="<?php echo esc_html( $devstats ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/cncf-devstats.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/cncf-devstats.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $logos ) : ?>
 			<a title="<?php the_title(); ?> Logos"
 				href="<?php echo esc_html( $logos ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/cncf-artwork.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/cncf-artwork.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $stack_overflow ) : ?>
 			<a title="<?php the_title(); ?> on Stack Overflow"
 				href="<?php echo esc_html( $stack_overflow ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/stack-overflow.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/stack-overflow.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $twitter ) : ?>
 			<a title="<?php the_title(); ?> on Twitter"
 				href="<?php echo esc_html( $twitter ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/twitter.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/twitter.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $blog ) : ?>
 			<a title="<?php the_title(); ?> Blog"
 				href="<?php echo esc_html( $blog ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/blog.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/blog.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $mail ) : ?>
 			<a title="<?php the_title(); ?> Discussions"
 				href="<?php echo esc_html( $mail ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/email.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/email.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $slack ) : ?>
 			<a title="<?php the_title(); ?> Slack"
 				href="<?php echo esc_html( $slack ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/slack.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/slack.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $youtube ) : ?>
 			<a title="<?php the_title(); ?> on YouTube"
 				href="<?php echo esc_html( $youtube ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/youtube.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/youtube.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $gitter ) : ?>
 			<a title="<?php the_title(); ?> on Gitter"
 				href="<?php echo esc_html( $gitter ); ?>"
-				rel="noreferrer noopener"><?php $image->get_svg( '/social/gitter.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/gitter.svg' ); ?></a>
 			<?php endif; ?>
 
 		</div>
