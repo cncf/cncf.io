@@ -118,10 +118,10 @@
             }
 
             // change arrow colour
-            &:hover::after {
-                border-bottom: 1px solid $link-hover;
-                border-right: 1px solid $link-hover;
-            }
+            // &:hover::after {
+            //     border-bottom: 1px solid $link-hover;
+            //     border-right: 1px solid $link-hover;
+            // }
 
             // rotate when sub menu is open
             &.is-open::after {
