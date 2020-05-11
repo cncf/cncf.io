@@ -11,8 +11,6 @@
  * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
 
-import head from 'lodash/head';
-import mapValues from 'lodash/mapValues';
 import pickBy from 'lodash/pickBy';
 import isUndefined from 'lodash/isUndefined';
 
@@ -23,7 +21,6 @@ const { RangeControl, PanelBody, SelectControl, Placeholder, Spinner } = wp.comp
 const { withSelect } = wp.data;
 
 class Events extends Component {
-
 	renderControl = () => {
 		const { attributes, setAttributes, categories } = this.props;
 		const { category, numberposts } = attributes;
@@ -62,7 +59,23 @@ class Events extends Component {
 			attributes: { numberposts },
 			posts,
 		} = this.props;
-		const data = posts.map( p => ( { ...p, meta: mapValues( p.meta, head ) } ) ).slice( 0, numberposts );
+		// setup time now.
+		const now = new Date();
+
+		const data = posts
+		// filter out old events before today.
+			.filter( ( p ) => {
+				const eventDate = new Date( p.meta.cncf_event_date_start );
+				return eventDate >= now;
+			} )
+		// sort in date order.
+			.sort( ( a, b ) => {
+				a = new Date( a.meta.cncf_event_date_start );
+				b = new Date( b.meta.cncf_event_date_start );
+				return a < b ? -1 : a > b ? 1 : 0;
+			} )
+		// .map( p => ( { ...p } ) )
+			.slice( 0, numberposts );
 
 		return (
 			<div className="events-wrapper">
@@ -71,9 +84,8 @@ class Events extends Component {
 						<article className="event-box" key={ post.id } style={ { backgroundColor: '#617EBF' } }>
 							<div className="event-content-wrapper-editor">
 								<h4 className="event-title" dangerouslySetInnerHTML={ { __html: post.title.rendered } } />
-								{ console.log(post) }
-								<span className="event-date">November XX, 2021</span>
-								<span className="event-city">San Francisco, United States</span>
+								<span className="event-date">{ post.meta.cncf_event_date_start }</span>
+								<span className="event-city">{ post.meta.cncf_event_city }</span>
 								<span className="button transparent outline ">Learn More</span>
 							</div>
 						</article>

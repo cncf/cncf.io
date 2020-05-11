@@ -21,15 +21,15 @@ function lf_events_render_callback( $attributes ) {
 	// get the category to display.
 	$category_id = isset( $attributes['category'] ) ? $attributes['category'] : '';
 
-	if ($category_id) {
-$category_selected = get_term_by( 'id', $category_id, 'cncf-event-host');
+	if ( $category_id ) {
+		$category_selected = get_term_by( 'id', $category_id, 'cncf-event-host' );
 	} else {
-		$category_selected = "";
+		$category_selected = '';
 	}
 
 	// setup the arguments.
-	$args  = array(
-		'posts_per_page'      => $quantity,
+	$args = array(
+		'posts_per_page'     => $quantity,
 		'ignore_custom_sort' => true,
 		'post_type'          => array( 'cncf_event' ),
 		'post_status'        => array( 'publish' ),
@@ -47,21 +47,29 @@ $category_selected = get_term_by( 'id', $category_id, 'cncf-event-host');
 				'compare' => '>=',
 			),
 		),
-		'tax_query'           => array(
+	);
+
+	// if the host has been set, add the tax.
+	if ( $category_selected && isset( $category_selected ) ) {
+
+		$args['tax_query'] = array(
 			array(
 				'taxonomy' => 'cncf-event-host',
 				'field'    => 'slug',
 				'terms'    => $category_selected,
 			),
-		),
-	);
+		);
+	}
+
 	$query = new WP_Query( $args );
 	ob_start();
+
 	// if no posts.
 	if ( ! $query->have_posts() ) {
 		echo 'Sorry, there are no posts.';
 		return;
 	}
+
 	?>
 <section
 	class="wp-block-lf-events <?php echo esc_html( $classes ); ?>">
@@ -148,40 +156,3 @@ endwhile;
 	$block_content = ob_get_clean();
 	return $block_content;
 }
-
-/**
- * Register REST field for post featured image.
- */
-function lf_events_block_register_rest_fields() {
-	// Add Featued image.
-	register_rest_field(
-		'post',
-		'featured_image_src',
-		array(
-			'get_callback'    => 'lf_events_block_get_image_src_landscape',
-			'update_callback' => null,
-			'schema'          => null,
-		)
-	);
-}
-// add_action( 'rest_api_init', 'lf_events_block_register_rest_fields' );
-
-/**
- * Get post featured image URL for REST.
- *
- * @param array  $object Block attributes.
- * @param string $field_name Name of field.
- * @param string $request Request.
- * @return object $feat_img_array Output.
- */
-function lf_events_block_get_image_src_landscape( $object, $field_name, $request ) {
-
-	$feat_img_array = wp_get_attachment_image_src(
-		$object['featured_media'],
-		'newsroom-image',
-		false
-	);
-	return $feat_img_array[0];
-}
-
-// TODO: Get rid of this event stuff if not needeD?.
