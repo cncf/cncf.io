@@ -26,47 +26,49 @@ if ( ! defined( 'WPINC' ) ) {
 		action="options.php">
 		<?php
 		// Grab all options.
-		$options            = get_option( $this->plugin_name );
+		$options = get_option( $this->plugin_name );
 
-		$show_hello_bar     = ( isset( $options['show_hello_bar'] ) && ! empty( $options['show_hello_bar'] ) ) ? 1 : 0;
+		$show_hello_bar = ( isset( $options['show_hello_bar'] ) && ! empty( $options['show_hello_bar'] ) ) ? 1 : 0;
 
-		$hello_bar_content  = ( isset( $options['hello_bar_content'] ) && ! empty( $options['hello_bar_content'] ) ) ? $options['hello_bar_content'] : '';
+		$hello_bar_content = ( isset( $options['hello_bar_content'] ) && ! empty( $options['hello_bar_content'] ) ) ? $options['hello_bar_content'] : '';
 
-		$hello_bar_bg       = ( isset( $options['hello_bar_bg'] ) && ! empty( $options['hello_bar_bg'] ) ) ? esc_attr( $options['hello_bar_bg'] ) : '';
+		$hello_bar_bg = ( isset( $options['hello_bar_bg'] ) && ! empty( $options['hello_bar_bg'] ) ) ? esc_attr( $options['hello_bar_bg'] ) : '';
 
-		$header_image_id    = ( isset( $options['header_image_id'] ) && ! empty( $options['header_image_id'] ) ) ? absint( $options['header_image_id'] ) : '';
+		$header_image_id = ( isset( $options['header_image_id'] ) && ! empty( $options['header_image_id'] ) ) ? absint( $options['header_image_id'] ) : '';
 
-		$header_cta_text    = ( isset( $options['header_cta_text'] ) && ! empty( $options['header_cta_text'] ) ) ? esc_attr( $options['header_cta_text'] ) : '';
+		$header_cta_text = ( isset( $options['header_cta_text'] ) && ! empty( $options['header_cta_text'] ) ) ? esc_attr( $options['header_cta_text'] ) : '';
 
-		$header_cta_link    = ( isset( $options['header_cta_link'] ) && ! empty( $options['header_cta_link'] ) ) ? absint( $options['header_cta_link'] ) : '';
+		$header_cta_link = ( isset( $options['header_cta_link'] ) && ! empty( $options['header_cta_link'] ) ) ? absint( $options['header_cta_link'] ) : '';
 
 		$copyright_textarea = ( isset( $options['copyright_textarea'] ) && ! empty( $options['copyright_textarea'] ) ) ? $options['copyright_textarea'] : '';
 
-		$social_email       = ( isset( $options['social_email'] ) && ! empty( $options['social_email'] ) ) ? esc_attr( $options['social_email'] ) : '';
+		$social_email = ( isset( $options['social_email'] ) && ! empty( $options['social_email'] ) ) ? esc_attr( $options['social_email'] ) : '';
 
-		$social_facebook    = ( isset( $options['social_facebook'] ) && ! empty( $options['social_facebook'] ) ) ? esc_attr( $options['social_facebook'] ) : '';
+		$social_facebook = ( isset( $options['social_facebook'] ) && ! empty( $options['social_facebook'] ) ) ? esc_attr( $options['social_facebook'] ) : '';
 
-		$social_flickr      = ( isset( $options['social_flickr'] ) && ! empty( $options['social_flickr'] ) ) ? esc_attr( $options['social_flickr'] ) : '';
+		$social_flickr = ( isset( $options['social_flickr'] ) && ! empty( $options['social_flickr'] ) ) ? esc_attr( $options['social_flickr'] ) : '';
 
-		$social_github      = ( isset( $options['social_github'] ) && ! empty( $options['social_github'] ) ) ? esc_attr( $options['social_github'] ) : '';
+		$social_github = ( isset( $options['social_github'] ) && ! empty( $options['social_github'] ) ) ? esc_attr( $options['social_github'] ) : '';
 
-		$social_instagram   = ( isset( $options['social_instagram'] ) && ! empty( $options['social_instagram'] ) ) ? esc_attr( $options['social_instagram'] ) : '';
+		$social_instagram = ( isset( $options['social_instagram'] ) && ! empty( $options['social_instagram'] ) ) ? esc_attr( $options['social_instagram'] ) : '';
 
-		$social_linkedin    = ( isset( $options['social_linkedin'] ) && ! empty( $options['social_linkedin'] ) ) ? esc_attr( $options['social_linkedin'] ) : '';
+		$social_linkedin = ( isset( $options['social_linkedin'] ) && ! empty( $options['social_linkedin'] ) ) ? esc_attr( $options['social_linkedin'] ) : '';
 
-		$social_meetup      = ( isset( $options['social_meetup'] ) && ! empty( $options['social_meetup'] ) ) ? esc_attr( $options['social_meetup'] ) : '';
+		$social_meetup = ( isset( $options['social_meetup'] ) && ! empty( $options['social_meetup'] ) ) ? esc_attr( $options['social_meetup'] ) : '';
 
-		$social_rss         = ( isset( $options['social_rss'] ) && ! empty( $options['social_rss'] ) ) ? esc_attr( $options['social_rss'] ) : '';
+		$social_rss = ( isset( $options['social_rss'] ) && ! empty( $options['social_rss'] ) ) ? esc_attr( $options['social_rss'] ) : '';
 
-		$social_twitter     = ( isset( $options['social_twitter'] ) && ! empty( $options['social_twitter'] ) ) ? esc_attr( $options['social_twitter'] ) : '';
+		$social_twitter = ( isset( $options['social_twitter'] ) && ! empty( $options['social_twitter'] ) ) ? esc_attr( $options['social_twitter'] ) : '';
 
-		$social_twitter_handle     = ( isset( $options['social_twitter_handle'] ) && ! empty( $options['social_twitter_handle'] ) ) ? esc_html( $options['social_twitter_handle'] ) : '';
+		$social_twitter_handle = ( isset( $options['social_twitter_handle'] ) && ! empty( $options['social_twitter_handle'] ) ) ? esc_html( $options['social_twitter_handle'] ) : '';
 
-		$social_youtube     = ( isset( $options['social_youtube'] ) && ! empty( $options['social_youtube'] ) ) ? esc_attr( $options['social_youtube'] ) : '';
+		$social_youtube = ( isset( $options['social_youtube'] ) && ! empty( $options['social_youtube'] ) ) ? esc_attr( $options['social_youtube'] ) : '';
 
-		$social_wechat_id   = ( isset( $options['social_wechat_id'] ) && ! empty( $options['social_wechat_id'] ) ) ? absint( $options['social_wechat_id'] ) : '';
+		$social_wechat_id = ( isset( $options['social_wechat_id'] ) && ! empty( $options['social_wechat_id'] ) ) ? absint( $options['social_wechat_id'] ) : '';
 
-		$generic_thumb_id    = ( isset( $options['generic_thumb_id'] ) && ! empty( $options['generic_thumb_id'] ) ) ? absint( $options['generic_thumb_id'] ) : '';
+		$generic_thumb_id = ( isset( $options['generic_thumb_id'] ) && ! empty( $options['generic_thumb_id'] ) ) ? absint( $options['generic_thumb_id'] ) : '';
+
+		$generic_avatar_id = ( isset( $options['generic_avatar_id'] ) && ! empty( $options['generic_avatar_id'] ) ) ? absint( $options['generic_avatar_id'] ) : '';
 
 		settings_fields( $this->plugin_name );
 
@@ -398,6 +400,32 @@ if ( ! defined( 'WPINC' ) ) {
 							data-id="<?php echo esc_html( $this->plugin_name ); ?>-generic_thumb_id"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[generic_thumb_id]"
 							value="<?php echo absint( $generic_thumb_id ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="generic_avatar_id">Generic
+							Avatar (for People)</label>
+					</th>
+					<td colspan="3">
+						<div class='image-preview-wrapper'>
+							<img src='<?php echo esc_url( wp_get_attachment_url( $generic_avatar_id ) ); ?>'
+								height='100'
+								class="image-preview thumbnail-margin-bottom"
+								data-id="<?php echo esc_html( $this->plugin_name ); ?>-generic_avatar_id">
+						</div>
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-generic_avatar_id"
+							class="upload_image_button button"
+							value="Choose image" />
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-generic_avatar_id"
+							class="clear_upload_image_button button"
+							value="Remove image" />
+						<input type="hidden"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-generic_avatar_id"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-generic_avatar_id"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[generic_avatar_id]"
+							value="<?php echo absint( $generic_avatar_id ); ?>" />
 					</td>
 				</tr>
 			</tbody>
