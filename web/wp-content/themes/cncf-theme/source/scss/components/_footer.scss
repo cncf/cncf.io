@@ -4,10 +4,6 @@
     background-color: $blue-900;
     color: $white;
 
-    @media (min-width: 768px) {
-        font-size: 0.875em;
-    }
-
     a {
         color: $purple-200;
         text-decoration: none;
