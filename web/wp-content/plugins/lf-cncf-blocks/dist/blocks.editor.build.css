@@ -31,36 +31,6 @@
  *
  * CSS for just Backend enqueued after style.scss
  *
- */
-.event-content-wrapper-editor {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  text-align: center;
-  -ms-flex-align: center;
-      align-items: center;
-  color: #ffffff;
-  font-weight: 600;
-  padding: 2em 1em;
-  font-size: 1em; }
-  @media (min-width: 768px) {
-    .event-content-wrapper-editor {
-      font-size: 1.25em; } }
-
-#editor .editor-styles-wrapper h4.event-title {
-  margin-bottom: 1em; }
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-/**
- * #.# Editor Styles
- *
- * CSS for just Backend enqueued after style.scss
- *
  *
  *
  */

@@ -154,20 +154,6 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
-	// Upcoming Events Block.
-	require_once 'upcoming-events/render-callback.php';
-	register_block_type(
-		'lf/upcoming-events',
-		array(
-			'attributes'      => array(
-				'className' => array(
-					'type' => 'string',
-				),
-			),
-			'render_callback' => 'lf_upcoming_events_render_callback',
-		)
-	);
-
 	// Twitter Feed block.
 	require_once 'twitter-feed/render-callback.php';
 	register_block_type(
