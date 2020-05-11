@@ -11,6 +11,8 @@
  * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
 
+/* eslint-disable no-nested-ternary */
+
 import pickBy from 'lodash/pickBy';
 import isUndefined from 'lodash/isUndefined';
 
@@ -39,8 +41,7 @@ class Events extends Component {
 						value={ category }
 						options={ menuOptions }
 						onChange={ value =>
-							setAttributes( { category: '' !== value ? value : '' } )
-						  }
+							setAttributes( { category: '' !== value ? value : '' } ) }
 					/>
 					<RangeControl
 						label={ __( 'Number of Events' ) }
@@ -59,7 +60,7 @@ class Events extends Component {
 			attributes: { numberposts },
 			posts,
 		} = this.props;
-		// setup time now.
+		// setup time for now.
 		const now = new Date();
 
 		const data = posts
@@ -74,7 +75,6 @@ class Events extends Component {
 				b = new Date( b.meta.cncf_event_date_start );
 				return a < b ? -1 : a > b ? 1 : 0;
 			} )
-		// .map( p => ( { ...p } ) )
 			.slice( 0, numberposts );
 
 		return (
@@ -117,12 +117,12 @@ class Events extends Component {
 }
 
 export default withSelect(
-	 ( select, props ) => {
+	( select, props ) => {
 		const { getEntityRecords } = select( 'core' );
 		const { category, numberposts } = props.attributes;
 		const latestPostsQuery = pickBy(
 			{
-				categories: category,
+				'cncf-event-host': category,
 				per_page: numberposts,
 			},
 			( value ) => ! isUndefined( value )
