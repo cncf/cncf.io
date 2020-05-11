@@ -1,0 +1,187 @@
+<?php
+/**
+ * Render Callback
+ *
+ * @package WordPress
+ * @subpackage cncf-blocks
+ * @since 1.0.0
+ */
+
+/**
+ * Render the block
+ *
+ * @param array $attributes Block attributes.
+ * @return object block_content Output.
+ */
+function lf_events_render_callback( $attributes ) {
+	// get the quantity to display, if not default.
+	$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 4;
+	// get the classes set from the block if any.
+	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
+	// get the category to display.
+	$category_id = isset( $attributes['category'] ) ? $attributes['category'] : '';
+
+	if ($category_id) {
+$category_selected = get_term_by( 'id', $category_id, 'cncf-event-host');
+	} else {
+		$category_selected = "";
+	}
+
+	// setup the arguments.
+	$args  = array(
+		'posts_per_page'      => $quantity,
+		'ignore_custom_sort' => true,
+		'post_type'          => array( 'cncf_event' ),
+		'post_status'        => array( 'publish' ),
+		'ignore_custom_sort' => true,
+		'post_type'          => array( 'cncf_event' ),
+		'post_status'        => array( 'publish' ),
+		'meta_key'           => 'cncf_event_date_start',
+		'order'              => 'ASC',
+		'orderby'            => 'meta_value',
+		'no_found_rows'      => true,
+		'meta_query'         => array(
+			array(
+				'key'     => 'cncf_event_date_start',
+				'value'   => date_i18n( 'Y-m-d' ),
+				'compare' => '>=',
+			),
+		),
+		'tax_query'           => array(
+			array(
+				'taxonomy' => 'cncf-event-host',
+				'field'    => 'slug',
+				'terms'    => $category_selected,
+			),
+		),
+	);
+	$query = new WP_Query( $args );
+	ob_start();
+	// if no posts.
+	if ( ! $query->have_posts() ) {
+		echo 'Sorry, there are no posts.';
+		return;
+	}
+	?>
+<section
+	class="wp-block-lf-events <?php echo esc_html( $classes ); ?>">
+	<div class="events-wrapper">
+
+	<?php
+
+	while ( $query->have_posts() ) :
+		$query->the_post();
+		$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+
+		$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
+
+		$city = get_post_meta( get_the_ID(), 'cncf_event_city', true );
+
+		$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
+
+		if ( ! $city && ! $country ) {
+			$location = 'TBC';
+		} elseif ( ! $country ) {
+			$location = $city;
+		} else {
+			$location = $city . ', ' . $country;
+		}
+
+		$logo = get_post_meta( get_the_ID(), 'cncf_event_logo', true );
+
+		$background = get_post_meta( get_the_ID(), 'cncf_event_background', true );
+
+		$color = get_post_meta( get_the_ID(), 'cncf_event_overlay_color', true );
+
+		$color ? $overlay_color = $color : $overlay_color = '#254AAB';
+
+		?>
+
+	<article class="event-box background-image-wrapper">
+
+		<div class="event-overlay"
+			style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
+		</div>
+
+		<?php if ( $background ) : ?>
+		<figure class="background-image-figure">
+			<?php echo wp_get_attachment_image( $background, 'medium', false ); ?>
+		</figure>
+		<?php endif; ?>
+
+		<div class="event-content-wrapper background-image-text-overlay">
+
+			<div class="event-logo">
+				<?php if ( $logo ) : ?>
+				<a href="<?php the_permalink(); ?>"
+					title="<?php the_title(); ?>">
+					<?php
+					echo wp_get_attachment_image( $logo, 'medium', false );
+					?>
+				</a>
+				<?php else : ?>
+				<h4 class="event-title"><a href="<?php the_permalink(); ?>"
+						title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				</h4>
+				<?php endif; ?>
+				</a>
+			</div>
+
+			<span class="event-date">
+				<?php
+				echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+				?>
+			</span>
+			<span
+				class="event-city"><?php echo esc_html( $location ); ?></span>
+			<a href="<?php the_permalink(); ?>"
+				class="button transparent outline">Learn More</a>
+		</div>
+	</article>
+		<?php
+endwhile;
+	wp_reset_postdata();
+	?>
+</div>
+</section>
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+
+/**
+ * Register REST field for post featured image.
+ */
+function lf_events_block_register_rest_fields() {
+	// Add Featued image.
+	register_rest_field(
+		'post',
+		'featured_image_src',
+		array(
+			'get_callback'    => 'lf_events_block_get_image_src_landscape',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+// add_action( 'rest_api_init', 'lf_events_block_register_rest_fields' );
+
+/**
+ * Get post featured image URL for REST.
+ *
+ * @param array  $object Block attributes.
+ * @param string $field_name Name of field.
+ * @param string $request Request.
+ * @return object $feat_img_array Output.
+ */
+function lf_events_block_get_image_src_landscape( $object, $field_name, $request ) {
+
+	$feat_img_array = wp_get_attachment_image_src(
+		$object['featured_media'],
+		'newsroom-image',
+		false
+	);
+	return $feat_img_array[0];
+}
+
+// TODO: Get rid of this event stuff if not needeD?.

@@ -182,6 +182,23 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+	// Events Block.
+	require_once 'events/render-callback.php';
+	register_block_type(
+		'lf/events',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+				'category'  => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_events_render_callback',
+		)
+	);
+
 	// Newsroom Block.
 	require_once 'newsroom/render-callback.php';
 	register_block_type(

@@ -18,6 +18,9 @@ import './upcoming-webinars/block.js';
 // Upcoming Events Block.
 import './upcoming-events/block.js';
 
+// Upcoming Events Block.
+import './events/block.js';
+
 // Newsroom Block.
 import './newsroom/block.js';
 
