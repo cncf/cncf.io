@@ -142,7 +142,13 @@ input[type="search"] {
     }
 }
 
-// Gravity Forms?
+// Hides the Recaptcha badge.
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+
+// Gravity Forms Reset stuff?
 // .validation_message {
 //     color: $error;
 //     padding-top: 5px;
@@ -195,8 +201,4 @@ input[type="search"] {
 //     textarea {
 //         border: 1px solid $black;
 //     }
-// }
-
-// .grecaptcha-badge {
-//     visibility: hidden;
 // }
