@@ -63,11 +63,11 @@
         background-color: darken($blue-100, 10%);
 
         // fake link overlay due to block link.
-        .webinar-title>a {
-            color: $pink-400;
-            transition: all 0.25s ease;
-            text-decoration: underline;
-        }
+        // .webinar-title>a {
+        //     color: $pink-400;
+        //     transition: all 0.25s ease;
+        //     text-decoration: underline;
+        // }
     }
 }
 

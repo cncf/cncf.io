@@ -27,10 +27,6 @@ $date_and_time = Cncf_Utils::display_webinar_date_time( $date, $time );
 ?>
 <article class="webinars-upcoming-box">
 
-	<!-- Block link  -->
-	<a href="<?php the_permalink(); ?>" class="box-link"
-		title="<?php the_title(); ?> on <?php echo esc_html( $date_and_time ); ?>"></a>
-
 	<div class="webinars-upcoming-text-wrapper">
 
 		<!-- Category of Webinar  -->
