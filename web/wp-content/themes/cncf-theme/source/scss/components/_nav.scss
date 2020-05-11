@@ -75,7 +75,6 @@
         .button.stocky.header {
             display: flex;
             width: 100%;
-
         }
     }
 
@@ -262,7 +261,7 @@
         left: -9999px;
         top: 100%;
         overflow: hidden;
-        width: 15em;
+        width: 16em;
         box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
         transform: translateY(0.6em);
