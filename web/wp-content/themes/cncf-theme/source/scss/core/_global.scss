@@ -142,8 +142,9 @@ img {
         background-color: $secondary-color;
 
         &:hover {
-            background-color: $secondary-color;
-            filter: hue-rotate(-30deg)
+            // background-color: $secondary-color;
+            // filter: hue-rotate(-30deg);
+            background-color: lighten($secondary-color, 5%);
         }
     }
 }

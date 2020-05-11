@@ -161,6 +161,15 @@ register_block_style(
 	)
 );
 
+ // BUTTON.
+ register_block_style(
+	'core/button',
+	array(
+		'name'       => 'extra-large-outline',
+		'label'      => 'Extra Large Outline',
+	)
+);
+
 /**
  * Block Template basic setup
  */

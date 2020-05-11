@@ -3,7 +3,7 @@
     border-radius: 0 !important;
 
     &:hover {
-        text-decoration: none;
+        // text-decoration: none;
     }
 
     .is-style-full &,
@@ -17,7 +17,7 @@
 
         &:hover {
             color: white;
-            text-decoration: none;
+            // text-decoration: none;
         }
 
         &:visited {
@@ -38,6 +38,10 @@
     @each $name,
     $color in $colors {
 
+        &.has-#{$name}-color {
+            color: $color;
+        }
+
         &.has-#{$name}-color:hover,
         &.has-#{$name}-color:focus {
             color: $color;
@@ -45,13 +49,25 @@
 
         &.has-#{$name}-background-color:hover,
         &.has-#{$name}-background-color:focus {
-            // background-color: lighten($color, 5%);
             background-color: map_get($color_hover, $name);
         }
 
         &.has-#{$name}-background-color:not(.has-text-color) {
             color: map_get($text_color, $name);
+        }
+    }
+}
 
+.is-style-extra-large-outline {
+    .wp-block-button__link {
+        background-color: transparent;
+        border: 1px solid $white;
+        padding: 50px;
+        color: $white;
+
+        &:hover {
+            color: $white;
+            background-color: rgba($white, 0.2);
         }
     }
 }
