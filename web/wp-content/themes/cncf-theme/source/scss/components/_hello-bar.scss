@@ -1,4 +1,11 @@
 .hello-bar {
+
+    font-size: 0.825em;
+
+    @media (min-width: 420px) {
+        font-size: 1.1em;
+    }
+
     background: $primary-color;
     color: $white;
     width: 100%;
@@ -6,7 +13,7 @@
     text-align: center;
     font-weight: 400;
     letter-spacing: 0.2px;
-    font-size: 1.1em;
+
 
     a {
         color: $white;
