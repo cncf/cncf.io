@@ -203,13 +203,12 @@ class Speakers_Contact {
 		$name             = rgar( $entry, 5 );
 		$email            = rgar( $entry, 3 );
 		$speakers_ids     = rgar( $entry, 2 );
-		$subject          = rgar( $entry, 6 );
-		$message          = rgar( $entry, 7 );
-		$start_date       = rgar( $entry, 8 );
-		$end_date         = rgar( $entry, 9 );
-		$travel_funding   = rgar( $entry, 11 );
+		$event            = rgar( $entry, 16 );
 		$attendees_number = rgar( $entry, 12 );
-		$language         = rgar( $entry, 13 );
+		$start_date       = rgar( $entry, 8 );
+		$location         = rgar( $entry, 17 );
+		$travel_funding   = rgar( $entry, 11 );
+		$message          = rgar( $entry, 7 );
 
 		$speakers = trim( $speakers_ids, '][' );
 		$speakers = explode( ',', $speakers );
@@ -220,7 +219,7 @@ class Speakers_Contact {
 			$speakers,
 		); //phpcs:ignore
 
-		$params = compact( 'name', 'email', 'start_date', 'end_date', 'subject', 'message', 'language', 'travel_funding', 'attendees_number' );
+		$params = compact( 'name', 'email', 'event', 'location', 'start_date', 'message', 'travel_funding', 'attendees_number' );
 
 		$this->send_email_to_moderator( $speakers, $params );
 
@@ -392,15 +391,18 @@ class Speakers_Contact {
 						<div style="color:#484848;font-family:Arial;font-size:14px;line-height:150%;text-align:left">
 							<p><span style="font-weight:700">Name: </span><?php echo esc_html( $params['name'] ); ?></p>
 							<p><span style="font-weight:700">Email: </span><a style="text-decoration: underline;color:#484848;" href="mailto:<?php echo esc_attr( $params['email'] ); ?>"><?php echo esc_attr( $params['email'] ); ?></a></p>
-							<p><span style="font-weight:700">Subject: </span><?php echo esc_html( $params['subject'] ); ?></p>
-							<?php if ( ! empty( $params['start_date'] ) ) : ?>
-							<p><span style="font-weight:700">Event Start Date: </span><?php echo esc_html( $params['start_date'] ); ?></p>
+							<?php if ( ! empty( $params['event'] ) ) : ?>
+							<p><span style="font-weight:700">Event: </span><?php echo esc_html( $params['event'] ); ?></p>
 							<?php endif; ?>
-							<?php if ( ! empty( $params['end_date'] ) ) : ?>
-							<p><span style="font-weight:700">Event End Date: </span><?php echo esc_html( $params['end_date'] ); ?></p>
-							<?php endif; ?>
+							<?php if ( ! empty( $params['attendees_number'] ) ) : ?>
 							<p><span style="font-weight:700">Expected Number of Attendees: </span><?php echo esc_html( $params['attendees_number'] ); ?></p>
-							<p><span style="font-weight:700">Main Language at Event: </span><?php echo esc_html( $params['language'] ); ?></p>
+							<?php endif; ?>
+							<?php if ( ! empty( $params['start_date'] ) ) : ?>
+							<p><span style="font-weight:700">Date: </span><?php echo esc_html( $params['start_date'] ); ?></p>
+							<?php endif; ?>
+							<?php if ( ! empty( $params['location'] ) ) : ?>
+							<p><span style="font-weight:700">Location: </span><?php echo esc_html( $params['location'] ); ?></p>
+							<?php endif; ?>
 							<p><span style="font-weight:700">Travel Funding Will be Provided? </span><?php echo esc_html( $params['travel_funding'] ); ?></p>
 							<p><?php echo esc_html( $params['message'] ); ?></p>
 
