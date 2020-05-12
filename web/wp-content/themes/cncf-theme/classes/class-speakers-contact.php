@@ -241,8 +241,8 @@ class Speakers_Contact {
 				$params
 			);
 
-			wp_mail( $speaker->user_email, 'CNCF - You have a new request to speak', $template, $headers ); // use this for live.
-			// wp_mail( 'cjyabraham@gmail.com', 'CNCF - You have a new request to speak', $template, $headers ); // use this for testing.
+			wp_mail( $speaker->user_email, 'CNCF Speakers Bureau - You have a new request to speak', $template, $headers ); // use this for live.
+			// wp_mail( 'cjyabraham@gmail.com', 'CNCF Speakers Bureau - You have a new request to speak', $template, $headers ); // use this for testing.
 		}
 	}
 
@@ -272,7 +272,7 @@ class Speakers_Contact {
 			$params
 		);
 
-		wp_mail( $moderator_email, 'CNCF - You have a new request to speak', $template, $headers );
+		wp_mail( $moderator_email, 'CNCF Speakers Bureau - You have a new request to speak', $template, $headers );
 	}
 
 	/**
@@ -382,7 +382,7 @@ class Speakers_Contact {
 				<tr>
 					<td style="padding:20px 20px 0;">
 						<div style="color:#484848;font-family:Arial;font-size:14px;line-height:150%;text-align:left;">
-							<p>A CNCF Member has sent you a speaking request from the CNCF Speakers Bureau:</p>
+							<p>A CNCF Member has sent you a speaking request from the <a href="https://www.cncf.io/speakers/">CNCF Speakers Bureau</a>:</p>
 						</div>
 					</td>
 				</tr>
