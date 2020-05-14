@@ -139,6 +139,11 @@ body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
 
     }
 
+    .um-header {
+        padding: 0;
+        border-bottom: 0;
+    }
+
     .um-alt {
         background-color: $secondary-color;
         margin-left: 2em;
@@ -151,6 +156,11 @@ body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
     .um-half {
         width: initial;
     }
+
+    div.uimob960 .um-profile-photo a.um-profile-photo-img {
+        top: initial !important;
+    }
+
 
 }
 
