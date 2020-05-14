@@ -27,24 +27,24 @@ jQuery(
 		);
 
 		// Desktop stop empty parents jumping to top of screen on click.
-		$( '.main-navigation > li.menu-item-has-children > a' ).click(
-			function( e ) {
-				if ( $( window ).width() > 1000 ) {
+		if ( $( window ).width() >= 1000 && $( window ).height() >= 700 ) {
+			$( '.main-navigation > li.menu-item-has-children > a' ).click(
+				function( e ) {
 					e.preventDefault();
 				}
-			}
-		);
+			);
+		}
 
 		// Mobile toggle to open menus on touch.
-		$( 'li.menu-item-has-children > a' ).click(
-			function( e ) {
-				if ( $( window ).width() < 1000 ) {
+		if ( $( window ).width() < 1000 || $( window ).height() < 700 ) {
+			$( 'li.menu-item-has-children > a' ).click(
+				function( e ) {
 					e.preventDefault();
 					$( this ).toggleClass( 'is-open' );
 					$( this ).parent().children( '.sub-menu:first' ).slideToggle( 500 );
 				}
-			}
-		);
+			);
+		}
 	}
 );
 
@@ -52,7 +52,7 @@ jQuery(
 jQuery( document ).ready(
 	function( $ ) {
 		// TODO: Add resize function.
-		if ( $( window ).width() > 1000 ) {
+		if ( $( window ).width() >= 1000 && $( window ).height() >= 700 ) {
 			$( '.sub-menu li.menu-item-has-children' ).on(
 				'mouseenter mouseleave',
 				function() {
