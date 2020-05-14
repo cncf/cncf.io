@@ -144,11 +144,12 @@
         }
     }
 
-    .button {
+    // having this affects search filter.
+    // .button {
 
-        &:link,
-        &:visited {
-            color: $white;
-        }
-    }
+    //     &:link,
+    //     &:visited {
+    //         color: $white;
+    //     }
+    // }
 }

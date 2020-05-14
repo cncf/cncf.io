@@ -13,7 +13,7 @@
  */
 
 const { __ } = wp.i18n;
-const { RichText } = wp.blockEditor || wp.editor;
+const { InnerBlocks } = wp.blockEditor || wp.editor;
 const { Component } = wp.element;
 
 class CaseStudyOverview extends Component {
@@ -21,33 +21,51 @@ class CaseStudyOverview extends Component {
 		const { attributes, setAttributes } = this.props;
 		const { className } = attributes;
 
+		const overview_template = [
+			[ 'core/heading', { content: 'Challenge', level: 3 } ],
+			[ 'core/paragraph', { placeholder: 'Challenge paragraph' } ],
+			[ 'core/heading', { content: 'Solution', level: 3 } ],
+			[ 'core/paragraph', { placeholder: 'Solution paragraph' } ],
+			[ 'core/heading', { content: 'Impact', level: 3 } ],
+			[ 'core/paragraph', { placeholder: 'Impact paragraph' } ],
+		];
+
 		return (
-			<div className="case-study-overview alignwide">
-			<div className="container case-study-overview-wrapper">
+			<div className="alignwide">
+				<div className="case-study-overview">
+					<div className="case-study-intro-wrapper">
+						<InnerBlocks
+							template={ overview_template }
+						/>
+					</div>
+					<div className="case-study-overview-wrapper">
+						<div>
+							<p>Company</p>
+							<span className="skew-box secondary">Dynamic Data</span>
+						</div>
+						<div>
+							<p>Industry</p>
+							<span className="skew-box secondary">Dynamic Data</span>
+						</div>
+						<div>
+							<p>Location</p>
+							<span className="skew-box secondary">Dynamic Data</span>
+						</div>
+						<div>
+							<p>Cloud Type</p>
+							<span className="skew-box secondary">Dynamic Data</span>
+						</div>
 
-			<div>
-						<span className="skew-box smaller">Industry</span>
-						<p>Dynamic Data</p>
+						<div>
+							<p>Product Type</p>
+							<span className="skew-box secondary">Dynamic Data</span>
+						</div>
+						<div>
+							<p>Challenges</p>
+							<span className="skew-box secondary">Dynamic Data</span>
+						</div>
 					</div>
-					<div>
-						<span className="skew-box smaller">Location</span>
-						<p>Dynamic Data</p>
-					</div>
-					<div>
-						<span className="skew-box smaller">Cloud Type</span>
-						<p>Dynamic Data</p>
-					</div>
-
-					<div>
-						<span className="skew-box smaller">Product Type</span>
-						<p>Dynamic Data</p>
-					</div>
-					<div>
-						<span className="skew-box smaller">Challenges</span>
-						<p>Dynamic Data</p>
-					</div>
-
-			</div>
+				</div>
 			</div>
 		);
 	}

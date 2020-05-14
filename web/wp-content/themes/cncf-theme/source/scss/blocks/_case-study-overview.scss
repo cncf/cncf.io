@@ -1,30 +1,63 @@
+.wp-block-lf-case-study-overview {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
 .case-study-overview {
-    p {
-        font-size: 0.750em;
-        margin: 0;
-        margin-top: 1em;
-        font-weight: 400;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+
+    @media (min-width: 800px) {
+        flex-direction: row;
     }
 }
 
-.case-study-overview-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+.case-study-intro-wrapper {
+    flex-grow: 1;
+}
 
-    margin-top: 1em;
-    margin-bottom: 1em;
+.case-study-overview-wrapper {
     background-color: $blue-100;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    @media (min-width: 800px) {
+        flex-direction: column;
+        margin-left: 3em;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 230px;
+        padding-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    p {
+        margin-top: 0em;
+        margin-bottom: 1em;
+        font-weight: 500;
+    }
 
     >div {
         padding: 0.5em;
+    }
 
-        @media (min-width: 950px) {
-            padding: 1em;
-            border-right: 1px solid $purple-100;
+    >div:not(:last-child) {
+        margin-right: 1em;
 
-            &:last-child {
-                border-right: 0px;
-            }
+        @media (min-width: 800px) {
+            margin-right: 0;
         }
+    }
+
+    .skew-box {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
     }
 }

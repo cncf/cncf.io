@@ -13,7 +13,8 @@
  * @param array $attributes Block attributes.
  * @return object block_content Output.
  */
-function lf_case_study_overview_render_callback( $attributes ) {
+function lf_case_study_overview_render_callback( $attributes, $content ) {
+
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
@@ -24,16 +25,17 @@ function lf_case_study_overview_render_callback( $attributes ) {
 
 	if ( is_singular( 'cncf_case_study_ch' ) ) {
 		// get chinese content.
-		$industry = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-industry-ch' );
+		$industries = get_the_terms( get_the_ID(), 'cncf-industry-ch' );
 
 		$location = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country-ch' );
 
-		$cloud_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-cloud-type-ch' );
+		$cloud_types = get_the_terms( get_the_ID(), 'cncf-cloud-type-ch' );
 
 		$product_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-product-type-ch' );
 
-		$challenge = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-challenge-ch' );
+		$challenges = get_the_terms( get_the_ID(), 'cncf-challenge-ch' );
 
+		$company_text      = '公司';
 		$industry_text     = '行业';
 		$location_text     = '地点';
 		$cloud_type_text   = '云类型';
@@ -41,75 +43,104 @@ function lf_case_study_overview_render_callback( $attributes ) {
 		$challenge_text    = '挑战';
 
 	} else {
+
 		// get english content.
-		$industry = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-industry' );
+		$industries = get_the_terms( get_the_ID(), 'cncf-industry' );
 
 		$location = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country' );
 
-		$cloud_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-cloud-type' );
+		$cloud_types = get_the_terms( get_the_ID(), 'cncf-cloud-type' );
 
 		$product_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-product-type' );
 
-		$challenge = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-challenge' );
+		$challenges = get_the_terms( get_the_ID(), 'cncf-challenge' );
 
-		$industry_text     = 'Industry';
-		$location_text     = 'Location';
-		$cloud_type_text   = 'Cloud Type';
-		$product_type_text = 'Product Type';
-		$challenge_text    = 'Challenge';
+		$company_text      = 'Company';
+		$industry_text     = 'Industry:';
+		$location_text     = 'Location:';
+		$cloud_type_text   = 'Cloud Type:';
+		$product_type_text = 'Product Type:';
+		$challenge_text    = 'Challenges:';
 	}
 
 	ob_start();
 	?>
-<section class="wp-block-lf-case-study-overview <?php echo esc_html( $classes ); ?>">
+<section
+	class="wp-block-lf-case-study-overview alignwide <?php echo esc_html( $classes ); ?>">
 
-<div class="case-study-overview alignwide">
-				<div class="container case-study-overview-wrapper">
+	<div class="case-study-overview">
 
-				<?php if ( ! empty( $industry ) && ! is_wp_error( $industry ) ) : ?>
-					<div>
-						<span class="skew-box smaller"><?php echo esc_html( $industry_text ); ?></span>
-						<p><?php echo esc_html( $industry ); ?></p>
-					</div>
-					<?php
+		<div className="case-study-intro-wrapper">
+			<?php echo $content; ?>
+		</div>
+
+		<div class=" case-study-overview-wrapper">
+
+		<div>
+				<p><?php echo esc_html( $company_text ); ?></p>
+				<span
+					class="skew-box secondary"><?php the_title(); ?></span>
+			</div>
+
+			<?php
+			if ( ! empty( $challenges ) && ! is_wp_error( $challenges ) ) :
+				?>
+			<div>
+				<p><?php echo esc_html( $challenge_text ); ?></p>
+				<?php foreach ( $challenges as $challenge ) { ?>
+				<span
+					class="skew-box secondary"><?php echo esc_html( $challenge->name ); ?></span>
+				<?php } ?>
+			</div>
+				<?php
+			endif;
+
+			if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) :
+				?>
+			<div>
+				<p><?php echo esc_html( $industry_text ); ?></p>
+				<?php foreach ( $industries as $industry ) { ?>
+				<span
+					class="skew-box secondary"><?php echo esc_html( $industry->name ); ?></span>
+				<?php } ?>
+			</div>
+				<?php
 				endif;
 
-				if ( ! empty( $location ) && ! is_wp_error( $location ) ) :
-					?>
-					<div>
-						<span class="skew-box smaller"><?php echo esc_html( $location_text ); ?></span>
-						<p><?php echo esc_html( $location ); ?></p>
-					</div>
-					<?php
-					endif;
-
-				if ( ! empty( $cloud_type ) && ! is_wp_error( $cloud_type ) ) :
-					?>
-					<div>
-						<span class="skew-box smaller"><?php echo esc_html( $cloud_type_text ); ?></span>
-						<p><?php echo esc_html( $cloud_type ); ?></p>
-					</div>
-					<?php
-					endif;
-
-				if ( ! empty( $product_type ) && ! is_wp_error( $product_type ) ) :
-					?>
-					<div>
-						<span class="skew-box smaller"><?php echo esc_html( $product_type_text ); ?></span>
-						<p><?php echo esc_html( $product_type ); ?></p>
-					</div>
-					<?php
-					endif;
-
-				if ( ! empty( $challenge ) && ! is_wp_error( $challenge ) ) :
-					?>
-					<div>
-						<span class="skew-box smaller"><?php echo esc_html( $challenge_text ); ?></span>
-						<p><?php echo esc_html( $challenge ); ?></p>
-					</div>
-<?php endif; ?>
-				</div>
+			if ( ! empty( $location ) && ! is_wp_error( $location ) ) :
+				?>
+			<div>
+				<p><?php echo esc_html( $location_text ); ?></p>
+				<span
+					class="skew-box secondary"><?php echo esc_html( $location ); ?></span>
 			</div>
+				<?php
+					endif;
+
+			if ( ! empty( $cloud_types ) && ! is_wp_error( $cloud_types ) ) :
+				?>
+			<div>
+				<p><?php echo esc_html( $cloud_type_text ); ?></p>
+				<?php foreach ( $cloud_types as $cloud_type ) { ?>
+				<span
+					class="skew-box secondary"><?php echo esc_html( $cloud_type->name ); ?></span>
+				<?php } ?>
+			</div>
+				<?php
+					endif;
+
+			if ( ! empty( $product_type ) && ! is_wp_error( $product_type ) ) :
+				?>
+			<div>
+				<p><?php echo esc_html( $product_type_text ); ?></p>
+				<span
+					class="skew-box secondary"><?php echo esc_html( $product_type ); ?></span>
+			</div>
+				<?php
+					endif;
+			?>
+		</div>
+	</div>
 </section>
 	<?php
 	$block_content = ob_get_clean();

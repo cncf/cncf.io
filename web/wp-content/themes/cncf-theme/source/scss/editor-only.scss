@@ -51,6 +51,10 @@
     font-family: $font-primary !important;
 }
 
+#editor .editor-styles-wrapper a {
+    color: $pink-400;
+}
+
 // make blocks wider to fit the screen
 .wp-block {
     margin-right: auto;
@@ -58,14 +62,12 @@
     max-width: 1150px;
 }
 
-.post-type-post,
-.post-type-cncf_case_study {
-    .wp-block {
-        margin-right: auto;
-        margin-left: auto;
-        max-width: 700px;
-    }
+.post-type-post .wp-block {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1150px;
 }
+
 
 // stop ridiculous dropcap in paragraph preview.
 .block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
@@ -139,6 +141,41 @@
         display: inline-block;
     }
 }
+
+// Gutenberg style to break out of page container.
+.alignfull {
+    position: relative;
+    right: 50%;
+    left: 50%;
+    margin-right: -50vw;
+    margin-left: -50vw;
+    width: 100vw;
+}
+
+// block using alignwide include:
+// case study overview
+
+.alignwide {
+    width: 100%;
+
+    @media (min-width: 800px) {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+
+        >* {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+    }
+}
+
 
 
 // 	.editor-styles-wrapper p {

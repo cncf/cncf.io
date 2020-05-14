@@ -3,8 +3,9 @@
  *
  * CSS for just Backend enqueued after style.scss
  *
- *
- *
  */
 
-.wp-block-lf-case-study-overview {}
+// add padding so it is selectable.
+.case-study-overview {
+    padding: 1em;
+}
