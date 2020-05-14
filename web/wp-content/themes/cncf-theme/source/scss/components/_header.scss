@@ -137,6 +137,8 @@
 
     .search-form {
         display: flex;
+        width: 100%;
+        max-width: 50%;
     }
 
     .search-bar {
@@ -161,6 +163,24 @@
     .search-input {
         text-align: right;
         margin-right: 20px;
+
+        // padding: 10px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        font-size: 1.5em;
+        background: $purple-800;
+        color: $white;
+        border-bottom: 1px solid $white;
+
+        &::placeholder {
+            color: $white;
+        }
+
+        &:focus {
+            outline: 0;
+        }
 
     }
 
