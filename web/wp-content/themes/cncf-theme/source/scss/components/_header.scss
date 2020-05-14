@@ -59,12 +59,13 @@
         display: block;
     }
 
-    @media (max-width: 999px) {
+    @media (max-width: 999px),
+    (max-height: 699px) {
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width: 1000px) and (min-height: 700px) {
         display: block;
         margin-right: 20px;
     }
@@ -86,8 +87,8 @@
     }
 }
 
-
-@media (max-width: 999px) {
+@media (max-width: 999px),
+(max-height: 699px) {
     .header-search {
         width: 100%;
     }
@@ -123,7 +124,7 @@
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1000px) and (min-height: 700px) {
 
     .header-search {
         display: block;

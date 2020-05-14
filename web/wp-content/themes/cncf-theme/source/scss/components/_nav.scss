@@ -1,4 +1,6 @@
-@media (max-width: 999px) {
+@media (max-width: 999px),
+(min-width: 0px) and (max-height: 699px) {
+
     .hamburger {
         display: inline-block;
         z-index: 10;
@@ -149,7 +151,7 @@
 /**
 * Desktop Navigation
 */
-@media (min-width: 1000px) {
+@media (min-width: 1000px) and (min-height: 700px) {
     .hamburger {
         display: none;
     }
@@ -183,7 +185,8 @@
             transition: all 0.25s ease-out;
             padding-top: 0.75em;
             padding-bottom: 0.75em;
-            padding-left: 1em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
             display: block;
 
             &:hover {
@@ -261,7 +264,7 @@
         left: -9999px;
         top: 100%;
         overflow: hidden;
-        width: 16em;
+        width: 17em;
         box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
         transform: translateY(0.6em);
@@ -322,8 +325,8 @@
             &.cncf-projects-graduated {
 
                 >ul {
-                    width: 380px;
-                    column-width: 140px;
+                    width: 430px;
+                    column-width: 210px;
                     column-count: 2;
                     column-gap: 0px;
                     column-fill: auto;
@@ -357,6 +360,7 @@
         &.focus>ul {
             top: initial;
             bottom: 0;
+            transform: translateY(40%);
         }
     }
 }
