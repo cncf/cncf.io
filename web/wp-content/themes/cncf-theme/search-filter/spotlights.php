@@ -31,7 +31,7 @@
 			$spotlight_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-spotlight-type', true );
 
 			?>
-	<div class="webinar-recorded-box">
+	<div class="webinar-recorded-box box-shadow">
 		<div class="skew-box secondary">CNCF
 			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
 
@@ -41,7 +41,7 @@
 				<?php echo get_the_post_thumbnail(); ?>
 			</a>
 		</div>
-		
+
 		<h5 class="webinar-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 

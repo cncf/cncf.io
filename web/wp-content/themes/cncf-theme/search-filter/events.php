@@ -52,7 +52,7 @@
 			$color ? $overlay_color = $color : $overlay_color = '#254AAB';
 
 			?>
-	<article class="event-box background-image-wrapper">
+	<article class="event-box background-image-wrapper box-shadow">
 
 		<div class="event-overlay"
 			style="background-color: <?php echo esc_html( $overlay_color ); ?> ">

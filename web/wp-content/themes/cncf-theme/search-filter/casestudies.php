@@ -62,7 +62,7 @@ if ( $query->have_posts() ) :
 
 		}
 		?>
-	<div class="case-study-box background-image-wrapper">
+	<div class="case-study-box background-image-wrapper box-shadow">
 
 		<div class="case-study-overlay"></div>
 

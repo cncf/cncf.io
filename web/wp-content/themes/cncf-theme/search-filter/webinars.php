@@ -84,7 +84,7 @@ if ( $query->have_posts() ) : ?>
 
 
 		<?php if ( $is_recorded ) : ?>
-	<div class="webinar-recorded-box">
+	<div class="webinar-recorded-box box-shadow">
 
 			<?php if ( $video_id ) : ?>
 		<figure>

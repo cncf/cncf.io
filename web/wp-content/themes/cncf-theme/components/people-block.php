@@ -21,10 +21,22 @@ $category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-person-category', tr
 
 // setup image class.
 $image = new Image();
+
+$content = get_the_content();
+if ( strlen( $content ) > 20 ) {
+	$show_modal = true;
+} else {
+	$show_modal = false;
+}
 ?>
 
-<div class="people-box">
+<div class="people-box box-shadow">
 	<!-- thumbnail  -->
+	<?php if ( $show_modal ) : ?>
+	<button
+		data-micromodal-trigger="modal-<?php echo esc_html( $person_id ); ?>"
+		class="button-reset">
+	<?php endif; ?>
 	<?php
 	if ( has_post_thumbnail() ) {
 		echo wp_get_attachment_image( get_post_thumbnail_id(), 'people', false, array( 'class' => 'people-thumbnail' ) );
@@ -33,7 +45,9 @@ $image = new Image();
 		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people', false, array( 'class' => 'people-thumbnail' ) );
 	}
 	?>
-
+	<?php if ( $show_modal ) : ?>
+	</button>
+	<?php endif; ?>
 	<!-- Name  -->
 	<h5 class="people-title"><?php the_title(); ?></h5>
 
@@ -95,15 +109,12 @@ $image = new Image();
 		<?php endif; ?>
 
 	<?php
-	// View Profile Button.
-	$content = get_the_content();
-	if ( strlen( $content ) > 20 ) :
+	if ( $show_modal ) :
+		// View Profile Button.
 		?>
 	<button
 		data-micromodal-trigger="modal-<?php echo esc_html( $person_id ); ?>"
 		class="modal-trigger button stocky smaller">View profile</button>
-	<?php endif; ?>
-
 
 	<!-- Modal -->
 	<div class="modal micromodal-slide"
@@ -144,5 +155,6 @@ $image = new Image();
 			</div>
 		</div>
 	</div>
+	<?php endif; ?>
 
 </div><!-- end of people box  -->

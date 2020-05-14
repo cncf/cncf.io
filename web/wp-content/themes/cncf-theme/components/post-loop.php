@@ -27,7 +27,7 @@ $image = new Image();
 				?>
 		<div
 			class="newsroom-archive-item <?php echo esc_html( $is_featured ); ?>">
-			<div class="newsroom-archive-image-wrapper"><a href="<?php the_permalink(); ?>"
+			<div class="newsroom-archive-image-wrapper box-shadow"><a href="<?php the_permalink(); ?>"
 					title="<?php the_title(); ?>">
 
 				<?php

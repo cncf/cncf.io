@@ -11,17 +11,12 @@
 }
 
 .people-box {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     background-color: $blue-100;
     padding: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    &:hover {
-        background-color: darken($blue-100, 10%);
-    }
 
     .people-thumbnail {
         margin-bottom: 0.5em;
@@ -51,6 +46,10 @@
         width: auto;
         fill: $pink-400;
         color: $pink-400;
+    }
+
+    div:last-child {
+        margin-bottom: 0;
     }
 }
 

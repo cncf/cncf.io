@@ -25,7 +25,7 @@ $date = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
 $date_and_time = Cncf_Utils::display_webinar_date_time( $date, $time );
 
 ?>
-<article class="webinars-upcoming-box">
+<article class="webinars-upcoming-box box-shadow">
 
 	<div class="webinars-upcoming-text-wrapper">
 

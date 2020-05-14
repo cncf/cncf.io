@@ -105,7 +105,7 @@ function lf_events_render_callback( $attributes ) {
 
 		?>
 
-	<article class="event-box background-image-wrapper">
+	<article class="event-box background-image-wrapper box-shadow">
 
 		<div class="event-overlay"
 			style="background-color: <?php echo esc_html( $overlay_color ); ?> ">

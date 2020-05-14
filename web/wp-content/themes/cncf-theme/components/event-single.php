@@ -63,7 +63,7 @@ $color ? $overlay_color = $color : $overlay_color = '#254AAB';
 		<div class="skew-box centered"><?php echo esc_html( $event_host ); ?> Event</div>
 			<?php endif; ?>
 
-<div class="event-box background-image-wrapper">
+<div class="event-box background-image-wrapper box-shadow">
 
 <div class="event-overlay"
 	style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
