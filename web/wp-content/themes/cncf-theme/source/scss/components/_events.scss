@@ -51,16 +51,13 @@
     justify-content: center;
     margin-bottom: 1em;
 
+    // apply to the a not the img.
     a {
         display: flex;
-    }
-
-    img {
         height: auto;
         max-width: 100%;
         max-height: 100%;
     }
-
 
     .single-cncf_event & {
         height: 200px;
