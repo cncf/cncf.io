@@ -27,6 +27,9 @@ if ( $query->have_posts() ) {
 		case 'cncf_speaker':
 			get_template_part( 'search-filter/speakers' );
 			break;
+		case 'cncf_spotlight':
+			get_template_part( 'search-filter/spotlights' );
+			break;
 	}
 } else {
 	echo 'No Results Found';
