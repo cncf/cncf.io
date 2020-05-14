@@ -221,7 +221,7 @@ class Cncf_Mu_Admin {
 
 		$opts = array(
 			'labels'            => array(
-				'name'          => __( 'Spotlight' ),
+				'name'          => __( 'Spotlights' ),
 				'singular_name' => __( 'Spotlight' ),
 				'all_items'     => __( 'All Spotlights' ),
 			),
@@ -924,7 +924,7 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_admin_column' => true,
 		);
-		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch', 'cncf_speaker' ), $args );
+		register_taxonomy( 'cncf-project', array( 'cncf_webinar', 'cncf_case_study', 'cncf_case_study_ch', 'cncf_speaker', 'cncf_spotlight' ), $args );
 
 		$labels = array(
 			'name'          => __( 'Author Category', 'cncf-mu' ),
@@ -1167,15 +1167,15 @@ class Cncf_Mu_Admin {
 		register_taxonomy( 'cncf-speaker-expertise', array( 'cncf_speaker' ), $args );
 
 		$labels = array(
-			'name'          => __( 'Type', 'cncf-mu' ),
-			'singular_name' => __( 'Type', 'cncf-mu' ),
-			'search_items'  => __( 'Search Types', 'cncf-mu' ),
-			'all_items'     => __( 'All Types', 'cncf-mu' ),
+			'name'          => __( 'Spotlight Type', 'cncf-mu' ),
+			'singular_name' => __( 'Spotlight Type', 'cncf-mu' ),
+			'search_items'  => __( 'Search Spotlight Types', 'cncf-mu' ),
+			'all_items'     => __( 'All Spotlight Types', 'cncf-mu' ),
 			'edit_item'     => __( 'Edit Type', 'cncf-mu' ),
 			'update_item'   => __( 'Update Type', 'cncf-mu' ),
-			'add_new_item'  => __( 'Add New Type', 'cncf-mu' ),
+			'add_new_item'  => __( 'Add New Spotlight Type', 'cncf-mu' ),
 			'new_item_name' => __( 'New Type Name', 'cncf-mu' ),
-			'menu_name'     => __( 'Types', 'cncf-mu' ),
+			'menu_name'     => __( 'Spotlight Types', 'cncf-mu' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
