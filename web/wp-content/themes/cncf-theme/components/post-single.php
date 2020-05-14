@@ -52,12 +52,12 @@
 		if ( ! empty( $category_author ) ) :
 
 			?>
-	<p
-			class="newsroom-single-author-category ">CNCF
+	<div
+			class="skew-box secondary centered">CNCF
 			<?php
 			echo esc_html( $category_author );
 			?>
-			Blog Post</p>
+			Blog Post</div>
 			<?php
 endif;
 		?>

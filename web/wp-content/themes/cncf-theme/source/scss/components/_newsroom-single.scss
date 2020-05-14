@@ -1,16 +1,10 @@
-.newsroom-single-meta {
-    margin-bottom: 1em;
+.newsroom-single {
+    text-align: center;
 }
 
-.newsroom-single-author-category {
+.newsroom-single-meta {
+    margin-top: 1em;
     margin-bottom: 1em;
-    background-color: $purple-200;
-    display: inline-block;
-    font-size: 0.875em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: $white;
-    padding: 4px 6px;
 }
 
 .newsroom-single-hero-image {
@@ -24,9 +18,7 @@
     margin-bottom: 20px;
 }
 
-.newsroom-single {
-    text-align: center;
-}
+
 
 .newsroom-single-hr {
     background-color: $blue-100;
@@ -35,19 +27,3 @@
     margin-bottom: 20px;
 }
 
-.newsroom-pagination {
-    display: flex;
-    flex-direction: column;
-
-    >* {
-        margin-bottom: 20px;
-    }
-
-    .previous {
-        text-align: left;
-    }
-
-    .next {
-        text-align: right;
-    }
-}
