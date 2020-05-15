@@ -49,9 +49,9 @@ alt="<?php echo esc_html( $project->name ); ?>">
 		<?php
 	}
 	?>
-<div><h3><?php echo wp_kses_post( $highlight01 ); ?></h3></div>
-<div><h3><?php echo wp_kses_post( $highlight02 ); ?></h3></div>
-<div><h3><?php echo wp_kses_post( $highlight03 ); ?></h3></div>
+<div class="case-study-highlight-text"><?php echo wp_kses_post( $highlight01 ); ?></div>
+<div class="case-study-highlight-text"><?php echo wp_kses_post( $highlight02 ); ?></div>
+<div class="case-study-highlight-text"><?php echo wp_kses_post( $highlight03 ); ?></div>
 </div></div>
 
 </section>
