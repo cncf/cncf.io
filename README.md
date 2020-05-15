@@ -46,7 +46,7 @@ CNCF.io runs in a similar way to  LFEvents -[LFEvents Developer Instructions](ht
 
 7. Visit the local site URL saved from above.  To find it again run `lando info`.
 
-8. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you having to keep bypassing the privacy warning in your browser.  On MacOS Catalina, I also had to manually go into Keychain Access and set the *.lndo.site certificate to “Always Trust”. See [screenshot](/docs/ca-screenshot.png).
+8. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you having to keep bypassing the privacy warning in your browser.  On MacOS Catalina, I also had to manually go into Keychain Access and set the *.lndo.site certificate to “Always Trust”. See [screenshot](/ca-screenshot.png).
 
 ### Notes
 
