@@ -57,11 +57,11 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 		$challenges = get_the_terms( get_the_ID(), 'cncf-challenge' );
 
 		$company_text      = 'Company';
-		$industry_text     = 'Industry:';
-		$location_text     = 'Location:';
-		$cloud_type_text   = 'Cloud Type:';
-		$product_type_text = 'Product Type:';
-		$challenge_text    = 'Challenges:';
+		$industry_text     = 'Industry';
+		$location_text     = 'Location';
+		$cloud_type_text   = 'Cloud Type';
+		$product_type_text = 'Product Type';
+		$challenge_text    = 'Challenges';
 	}
 
 	ob_start();
