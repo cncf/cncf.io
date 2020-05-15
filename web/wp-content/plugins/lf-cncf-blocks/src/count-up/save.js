@@ -37,9 +37,11 @@ export default ( { attributes } ) => {
 				{ attributes.sectionText }
 			</div>
 			<div className="lf-count-up" style={ { display: 'flex' } }>
-				{ Array.from( { length: attributes.columns }, ( _, i ) => i + 1 ).map( index => {
+				{ Array.from( { length: attributes.columns }, ( _, i ) => i + 1 ).map(
+					 index => {
 					return getItemMarkup( attributes, index );
-				} ) }
+				}
+					) }
 			</div>
 		</Fragment>
 	);

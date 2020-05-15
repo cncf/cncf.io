@@ -36,10 +36,12 @@ class Edit extends Component {
 		};
 
 		const onSelectImage = ( value ) => {
-			setAttributes( {
+			setAttributes(
+				 {
 				[ `icon${ index }` ]: handleBetterImageSize( value ),
 				[ `iconId${ index }` ]: value.id,
-			} );
+			}
+				);
 		};
 
 		return (
@@ -95,9 +97,11 @@ class Edit extends Component {
 							{
 								value: textColor,
 								onChange: colorValue =>
-									setAttributes( {
+									setAttributes(
+										 {
 										textColor: colorValue,
-									} ),
+									}
+										),
 								label: 'Text Color',
 							},
 						] }
@@ -111,20 +115,24 @@ class Edit extends Component {
 							value={ columns }
 							onChange={ ( value ) => setAttributes( { columns: value } ) }
 						/>
-						{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map( index => {
+						{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map(
+							 index => {
 							return <TextControl
 								label={ `Link ${ index }` }
 								key={ `link${ index }` }
 								value={ attributes[ `link${ index }` ] }
 								onChange={ ( value ) => setAttributes( { [ `link${ index }` ]: value } ) }
 							/>;
-						} ) }
+						}
+							) }
 					</PanelBody>
 				</InspectorControls>
 				<div className="lf-count-up" style={ { display: 'flex', color: 'colorValue' } }>
-					{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map( index => {
+					{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map(
+						 index => {
 						return this.getItem( index );
-					} ) }
+					}
+						) }
 				</div>
 			</Fragment>
 		);

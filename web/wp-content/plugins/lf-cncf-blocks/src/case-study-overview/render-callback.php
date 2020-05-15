@@ -10,7 +10,8 @@
 /**
  * Render the block
  *
- * @param array $attributes Block attributes.
+ * @param array  $attributes Block attributes.
+ * @param string $content Block content.
  * @return object block_content Output.
  */
 function lf_case_study_overview_render_callback( $attributes, $content ) {
@@ -71,7 +72,7 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 	<div class="case-study-overview">
 
 		<div className="case-study-intro-wrapper">
-			<?php echo $content; ?>
+		<?php echo wp_kses_post( $content ); ?>
 		</div>
 
 		<div class=" case-study-overview-wrapper">

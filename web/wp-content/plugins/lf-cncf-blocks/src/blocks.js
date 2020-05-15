@@ -44,3 +44,6 @@ import './latest-jobs/block.js';
 
 // Count Up Block.
 import './count-up/block.js';
+
+// Hero Block.
+import './hero/block.js';

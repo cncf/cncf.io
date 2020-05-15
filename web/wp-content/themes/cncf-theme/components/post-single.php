@@ -14,7 +14,7 @@
 	$all_categories = get_the_category();
 	if ( $all_categories ) :
 		?>
-		<p class="hero-post-parent-link">
+		<p class="hero-parent-link">
 		<?php
 		// Only get the first item in the array.
 		$category = array_shift( $all_categories );

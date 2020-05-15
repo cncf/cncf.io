@@ -65,16 +65,20 @@ class Events extends Component {
 
 		const data = posts
 		// filter out old events before today.
-			.filter( ( p ) => {
+			.filter(
+				 ( p ) => {
 				const eventDate = new Date( p.meta.cncf_event_date_start );
 				return eventDate >= now;
-			} )
+			}
+				)
 		// sort in date order.
-			.sort( ( a, b ) => {
+			.sort(
+				 ( a, b ) => {
 				a = new Date( a.meta.cncf_event_date_start );
 				b = new Date( b.meta.cncf_event_date_start );
 				return a < b ? -1 : a > b ? 1 : 0;
-			} )
+			}
+				)
 			.slice( 0, numberposts );
 
 		return (

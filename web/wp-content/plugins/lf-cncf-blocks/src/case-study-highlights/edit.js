@@ -27,7 +27,7 @@ class CaseStudyHighlight extends Component {
 				<div className="container case-study-highlights-wrapper">
 			<div><h3>CNCF Projects Used</h3>
 			<div>
-			<img src="https://via.placeholder.com/50x50/d9d9d9/000000" />&nbsp;
+			<img src="https://via.placeholder.com/50x50/d9d9d9/000000" /> & nbsp;
 			<img src="https://via.placeholder.com/50x50/d9d9d9/000000" />
 			</div>
 			</div>

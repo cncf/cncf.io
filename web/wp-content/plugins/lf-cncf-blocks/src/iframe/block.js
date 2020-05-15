@@ -109,4 +109,5 @@ registerBlockType(
 				</Fragment>
 			);
 		},
-	} );
+	}
+	);

@@ -322,3 +322,17 @@
 #editor .lf-counter > div.editor-rich-text {
   display: inline-block;
   padding-top: 10px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ *
+ */
+.case-study-overview {
+  padding: 1em; }

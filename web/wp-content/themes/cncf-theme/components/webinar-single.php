@@ -54,7 +54,7 @@ if ( $dat_webinar > $dat_now ) {
 ?>
 <section class="hero">
 	<div class="container wrap">
-		<p class="hero-post-parent-link"><a href="/webinars/"
+		<p class="hero-parent-link"><a href="/webinars/"
 				title="Go to Webinars">Webinars</a></p>
 		<h1 class="hero-post-title" itemprop="headline">
 			<?php

@@ -318,6 +318,20 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+	// Hero block.
+	require_once 'hero/render-callback.php';
+	register_block_type(
+		'lf/hero',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_hero_render_callback',
+		)
+	);
+
 }
 add_action( 'init', 'lf_cncf_blocks_register_dynamic_blocks' );
 

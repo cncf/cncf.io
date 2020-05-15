@@ -12,6 +12,7 @@
  * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
 
+ /* eslint-disable no-undef */
 const { __ } = wp.i18n;
 const { InspectorControls } = wp.blockEditor || wp.editor;
 const { Component, Fragment } = wp.element;
@@ -49,7 +50,6 @@ class LatestJobs extends Component {
 									<li key={ index }>
 										<img
 											className="job-image"
-											// eslint-disable-next-line no-undef
 											src={ cgbGlobal.fallback }
 											alt="Job"
 										/>

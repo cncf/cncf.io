@@ -11,6 +11,7 @@
  * @phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
  * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
  */
+
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.editor;

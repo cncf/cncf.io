@@ -9,13 +9,6 @@
 
 ?>
 
-<section class="hero">
-	<div class="container wrap">
-		<p class="hero-post-parent-link"><a href="/case-studies/"
-				title="Go to Case Studies">Case Study</a></p>
-	</div>
-</section>
-
 <main class="case-study-single">
 	<article class="container wrap">
 		<?php

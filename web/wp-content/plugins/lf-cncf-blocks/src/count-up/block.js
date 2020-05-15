@@ -29,10 +29,12 @@ const blockIcon = (
 	</svg>
 );
 
-registerBlockType( 'lf/count-up', {
+registerBlockType(
+	 'lf/count-up',
+	{
 	title: __( 'Count Up' ),
 	icon: {
-		src: blockIcon,
+			src: blockIcon,
 	},
 	category: 'cncf',
 	description: __( 'Block displaying a counting up animation for a custom number' ),
@@ -45,98 +47,99 @@ registerBlockType( 'lf/count-up', {
 		__( 'lf' ),
 	],
 	attributes: {
-		sectionText: {
-			type: 'string',
-			default: '',
-		},
-		icon1: {
-			type: 'string',
-			default: 'https://placehold.it/100',
-		},
-		icon2: {
-			type: 'string',
-			default: 'https://placehold.it/100',
-		},
-		icon3: {
-			type: 'string',
-			default: 'https://placehold.it/100',
-		},
-		icon4: {
-			type: 'string',
-			default: 'https://placehold.it/100',
-		},
-		iconId1: {
-			type: 'number',
-			default: 0,
-		},
-		iconId2: {
-			type: 'number',
-			default: 0,
-		},
-		iconId3: {
-			type: 'number',
-			default: 0,
-		},
-		iconId4: {
-			type: 'number',
-			default: 0,
-		},
-		countUpNumber1: {
-			type: 'string',
-			default: '',
-		},
-		countUpNumber2: {
-			type: 'string',
-			default: '',
-		},
-		countUpNumber3: {
-			type: 'string',
-			default: '',
-		},
-		countUpNumber4: {
-			type: 'string',
-			default: '',
-		},
-		descText1: {
-			type: 'string',
-			default: '',
-		},
-		descText2: {
-			type: 'string',
-			default: '',
-		},
-		descText3: {
-			type: 'string',
-			default: '',
-		},
-		descText4: {
-			type: 'string',
-			default: '',
-		},
-		link1: {
-			type: 'string',
-			default: '',
-		},
-		link2: {
-			type: 'string',
-			default: '',
-		},
-		link3: {
-			type: 'string',
-			default: '',
-		},
-		link4: {
-			type: 'string',
-			default: '',
-		},
-		textColor: {
-			type: 'string',
-		},
-		columns: {
-			type: 'number',
-			default: 1,
-		},
-	},
-	edit: Edit,
-	save: Save,
-} );
+			sectionText: {
+				type: 'string',
+				default: '',
+			},
+			icon1: {
+							type: 'string',
+							default: 'https://placehold.it/100',
+				},
+				icon2: {
+										type: 'string',
+										default: 'https://placehold.it/100',
+						},
+						icon3: {
+											type: 'string',
+											default: 'https://placehold.it/100',
+							},
+							icon4: {
+													type: 'string',
+													default: 'https://placehold.it/100',
+								},
+								iconId1: {
+																type: 'number',
+																default: 0,
+										},
+										iconId2: {
+																		type: 'number',
+																		default: 0,
+												},
+												iconId3: {
+																			type: 'number',
+																			default: 0,
+													},
+													iconId4: {
+																					type: 'number',
+																					default: 0,
+														},
+														countUpNumber1: {
+																								type: 'string',
+																								default: '',
+																},
+																countUpNumber2: {
+																										type: 'string',
+																										default: '',
+																		},
+																		countUpNumber3: {
+																												type: 'string',
+																												default: '',
+																				},
+																				countUpNumber4: {
+																													type: 'string',
+																													default: '',
+																					},
+																					descText1: {
+																															type: 'string',
+																															default: '',
+																						},
+																						descText2: {
+																																		type: 'string',
+																																		default: '',
+																								},
+																								descText3: {
+																																				type: 'string',
+																																				default: '',
+																										},
+																										descText4: {
+																																						type: 'string',
+																																						default: '',
+																												},
+																												link1: {
+																																								type: 'string',
+																																								default: '',
+																														},
+																														link2: {
+																																									type: 'string',
+																																									default: '',
+																															},
+																															link3: {
+																																											type: 'string',
+																																											default: '',
+																																},
+																																link4: {
+																																														type: 'string',
+																																														default: '',
+																																		},
+																																		textColor: {
+																																																type: 'string',
+																																		},
+																																		columns: {
+																																																type: 'number',
+																																																default: 1,
+																																				},
+																																			},
+																																			edit: Edit,
+																																			save: Save,
+																																		}
+																																	);

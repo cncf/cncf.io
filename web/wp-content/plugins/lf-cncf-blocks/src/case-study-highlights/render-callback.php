@@ -23,10 +23,6 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 
 	$projects = get_the_terms( get_the_ID(), 'cncf-project' );
 
-	// if ( ! $content ) {
-	// return;
-	// }
-
 	ob_start();
 	?>
 <section class="wp-block-lf-case-study-highlights <?php echo esc_html( $classes ); ?>">
@@ -38,12 +34,12 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 <h3>CNCF Projects Used</h3>
 <div class="margin-top-small">
 		<?php
-		// TODO - Switch out to embedded SVG or link to projects?
+		// TODO - Switch out to embedded SVG or link to projects.
 		foreach ( $projects as $project ) {
 			?>
 <div class="project-icon">
-<img src="<?php echo get_stylesheet_directory_uri() . '/images/projects/' . $project->slug . '-icon-white.svg'; ?>"
-alt="<?php echo $project->name; ?>">
+<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-white.svg'; ?>"
+alt="<?php echo esc_html( $project->name ); ?>">
 </div>
 			<?php
 		}

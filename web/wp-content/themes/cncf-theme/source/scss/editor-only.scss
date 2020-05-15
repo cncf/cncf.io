@@ -30,6 +30,7 @@
         @import "blocks/latest-jobs";
         @import "components/events";
         @import "components/webinars";
+        @import "components/hero";
     }
 }
 
@@ -176,7 +177,32 @@
     }
 }
 
+.background-image-wrapper {
+    overflow: hidden;
+    position: relative;
+}
 
+figure {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.background-image-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.background-image-text-overlay {
+    position: relative;
+    z-index: 2;
+}
 
 // 	.editor-styles-wrapper p {
 // 	margin-top: 28px;

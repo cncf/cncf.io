@@ -1,9 +1,81 @@
 .hero {
+    margin-bottom: 2em;
+
+    &.background-image-wrapper {
+        display: flex;
+        min-height: 180px;
+        justify-content: center;
+        align-items: center;
+    }
+
     .container {
         text-align: center;
+        color: $white;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    .background-image-figure:after {
+        background-color: $purple-800;
+        // background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
+        background-size: cover;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: .80;
+        mix-blend-mode: normal;
+    }
+
+    // 	background: linear-gradient(90deg,#2825f2 0%,#dc096a 100%);
+    // opacity: 0.5;
+
+    .background-image-figure {
+        // background-color: $purple-800;
+        background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
+        background-color: red;
+    }
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+
+}
+
+
+
+// used in post, event, webinars, case study single
+.hero-parent-link {
+    margin: 0;
+    margin-bottom: 0.5em;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+
+    a {
+        color: $pink-400;
+    }
+
+    .hero.background-image-wrapper & {
+        a {
+            color: $white;
+
+            &:hover {
+                color: $pink-400;
+            }
+        }
     }
 }
 
+
+// used in post, event, webinars single
 .hero-post-title {
     margin-top: 40px;
     text-align: center;
@@ -17,17 +89,5 @@
 
     @media (max-width: 767px) {
         font-size: 1.9em;
-    }
-}
-
-.hero-post-parent-link {
-    margin-top: 40px;
-    letter-spacing: 2px;
-    font-weight: 600;
-    font-size: 0.9em;
-    text-transform: uppercase;
-
-    a {
-        color: $pink-400;
     }
 }
