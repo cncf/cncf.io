@@ -46,16 +46,17 @@
 			</a>
 		</div>
 
-		<div class="skew-box secondary">CNCF
+		<div class="skew-box secondary centered">CNCF
 			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
 
 		<h5 class="spotlight-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
-		<p><?php the_excerpt(); ?></p>
-
 		<div class="spotlight-date">
 			<?php echo get_the_date( 'F Y' ); ?></div>
+
+			<?php the_excerpt(); ?>
+
 	</div>
 	<?php endwhile; ?>
 </div>

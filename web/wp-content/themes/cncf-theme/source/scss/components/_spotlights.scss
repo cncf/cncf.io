@@ -12,14 +12,33 @@
 
 .spotlight-box {
     display: flex;
+    flex-direction: column;
     padding: 1em;
     background-color: $blue-100;
     align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .spotlight-thumbnail {
-	margin-bottom: 0.5em;
-	width: 100px;
-	height: 100px;
-	border: 1px solid $grey-200;
+    margin-bottom: 0.5em;
+    width: 150px;
+    height: 150px;
+    border: 1px solid $grey-200;
+
+    // remove border add padding if svg.
+    &[src$=".svg"] {
+        border: 0;
+        padding: 0.5em;
+    }
+}
+
+.spotlight-title {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.spotlight-date {
+    margin-bottom: 0.5em;
+    font-weight: 500;
 }
