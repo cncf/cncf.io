@@ -19,21 +19,21 @@
 }
 
 .case-study-overview-wrapper {
-    background-color: $blue-100;
+    // background-color: $blue-100;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
 
     @media (min-width: 800px) {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
         flex-direction: column;
         margin-left: 3em;
         flex-grow: 0;
         flex-shrink: 0;
         width: 230px;
-        padding-top: 1.5em;
+        padding-top: 1em;
         margin-bottom: 1em;
     }
 
@@ -41,22 +41,15 @@
         margin-top: 0em;
         margin-bottom: 1em;
         font-weight: 500;
+        text-transform: uppercase;
     }
 
     >div {
         padding: 0.5em;
     }
 
-    >div:not(:last-child) {
-        margin-right: 1em;
-
-        @media (min-width: 800px) {
-            margin-right: 0;
-        }
-    }
-
     .skew-box {
-        margin-right: 10px;
+        margin-right: 5px;
         margin-bottom: 10px;
         display: inline-block;
     }
