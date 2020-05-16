@@ -187,3 +187,14 @@ body.um-page-user,
     font-weight: 600;
     color: $black;
 }
+
+.um-postmessage {
+    border: 1px solid $success;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
