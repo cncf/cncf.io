@@ -15,7 +15,7 @@ function add_contact_shortcode() {
 	ob_start(); ?>
 
 
-<div class="contact-form">
+<div class="contact-form-block">
 
 	<form id="sfmc-form2" class="contact-form"
 		action="https://cloud.email.thelinuxfoundation.org/CNCF-Contact-Us-Submission">
