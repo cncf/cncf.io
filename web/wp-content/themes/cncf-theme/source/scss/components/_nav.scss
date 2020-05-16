@@ -118,12 +118,6 @@
                 transition: all 0.3s ease-out;
             }
 
-            // change arrow colour
-            // &:hover::after {
-            //     border-bottom: 1px solid $link-hover;
-            //     border-right: 1px solid $link-hover;
-            // }
-
             // rotate when sub menu is open
             &.is-open::after {
                 transform: rotate(-135deg);
@@ -210,7 +204,7 @@
 
             &.menu-item-has-children {
 
-                // activate menu flyout on hover
+                // activate menu flyout on hover.
                 &:hover>ul,
                 &:focus>ul,
                 &.focus>ul {
@@ -225,7 +219,6 @@
                 >a {
                     padding-right: 1.5em;
                     cursor: default;
-                    // color: $white;
 
                     &::after {
                         // Arrow after link
@@ -295,12 +288,6 @@
 
             &.menu-item-has-children {
 
-                // remove transistions from sub sub
-                >ul {
-                    transition: 0;
-                    transform: 0;
-                }
-
                 // sub sub menu
                 &:hover>ul,
                 &:focus>ul,
@@ -310,8 +297,6 @@
                     top: 0;
                     background-color: darken($purple-700, 8%);
                     overflow: visible;
-                    transition: 0;
-                    transform: 0;
 
                     // fixes icons
                     a {
@@ -351,9 +336,29 @@
             left: initial;
             right: 100%;
         }
+
     }
 
-    // added class if menu goes over bottom edge
+    // add class if element can be middle aligned.
+    li.menu-item-has-children.is-middle {
+
+        &:hover>ul,
+        &:focus>ul,
+        &.focus>ul {
+            top: initial;
+            bottom: 0;
+            transform: translateY(44%);
+        }
+
+        .sub-menu {
+            top: initial;
+            bottom: 0;
+            transform: translateY(46%);
+            transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+        }
+    }
+
+    // add class if element should be bottom aligned.
     li.menu-item-has-children.is-bottom {
 
         &:hover>ul,
@@ -361,7 +366,14 @@
         &.focus>ul {
             top: initial;
             bottom: 0;
-            transform: translateY(40%);
+            transform: translateY(0%);
+        }
+
+        .sub-menu {
+            top: initial;
+            bottom: 0;
+            transform: translateY(2%);
+            transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
         }
     }
 }

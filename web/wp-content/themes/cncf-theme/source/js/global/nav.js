@@ -80,9 +80,16 @@ jQuery( document ).ready(
 						}
 
 						if ( ! outsideHeight ) {
-							$( this ).addClass( 'is-bottom' );
+							if ( ( h / 2 + h ) >= docH ) {
+								// if submenu fits in middle of screen.
+								$( this ).addClass( 'is-middle' );
+							} else {
+								// will be in bottom half.
+								$( this ).addClass( 'is-bottom' );
+							}
 						} else {
 							$( this ).removeClass( 'is-bottom' );
+							$( this ).removeClass( 'is-middle' );
 						}
 					}
 				}
