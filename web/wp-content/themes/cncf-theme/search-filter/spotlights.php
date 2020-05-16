@@ -22,7 +22,7 @@
 		}
 		?>
 </p>
-<div class="webinars-wrapper">
+<div class="spotlights-wrapper">
 		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();
@@ -31,24 +31,33 @@
 			$spotlight_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-spotlight-type', true );
 
 			?>
-	<div class="webinar-recorded-box box-shadow">
-		<div class="skew-box secondary">CNCF
-			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
+	<div class="spotlight-box box-shadow">
 
-		<div class="speaker-photo">
-			<a href="<?php the_permalink(); ?>"
-				title="<?php the_title(); ?>">
-				<?php echo get_the_post_thumbnail(); ?>
+		<div class="spotlight-photo">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<?php
+				if ( has_post_thumbnail() ) {
+					echo wp_get_attachment_image( get_post_thumbnail_id(), 'thumbnail', false, array( 'class' => 'spotlight-thumbnail' ) );
+				} else {
+					$options = get_option( 'cncf-mu' );
+					echo wp_get_attachment_image( $options['generic_avatar_id'], 'thumbnail', false, array( 'class' => 'spotlight-thumbnail' ) );
+				}
+				?>
 			</a>
 		</div>
 
-		<h5 class="webinar-title"><a
+		<div class="skew-box secondary">CNCF
+			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
+
+		<h5 class="spotlight-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
+		<p><?php the_excerpt(); ?></p>
+
 		<div class="spotlight-date">
-				<?php echo get_the_date(); ?></div>
+			<?php echo get_the_date( 'F Y' ); ?></div>
 	</div>
-<?php endwhile; ?>
+	<?php endwhile; ?>
 </div>
 		<?php
 else :
