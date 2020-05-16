@@ -57,6 +57,11 @@
         height: auto;
         max-width: 100%;
         max-height: 100%;
+        color: $white;
+
+        &:visited {
+            color: $grey-100;
+        }
     }
 
     .single-cncf_event & {
@@ -80,10 +85,7 @@
         max-width: 90%;
     }
 
-    a {
-        color: $white;
 
-    }
 
     .single-cncf_event & {
         font-size: 2em;
