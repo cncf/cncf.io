@@ -105,9 +105,6 @@ require_once 'classes/class-fuerza-utils.php';
 // CNCF utils.
 require_once 'classes/class-cncf-utils.php';
 
-// gravity forms.
-// require_once('includes/gravity.php'); // phpcs:ignore.
-
 /* Will only run on front end of site */
 if ( ! is_admin() ) {
 	/**

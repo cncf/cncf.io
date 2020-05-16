@@ -21,7 +21,8 @@ input[type="search"] {
 }
 
 // make selectbox the same on all devices.
-.select-css {
+.select-css,
+.gfield_select {
     display: block;
     font-weight: 500;
     color: #444;
@@ -65,11 +66,42 @@ input[type="search"] {
     }
 }
 
-// the contact form.
-.contact-form {
+// control size, adds background to to contact and SB form.
+.contact-form-block,
+.um-page-user .gform_wrapper,
+.page .gform_wrapper {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+
+    background-color: $blue-100;
+    padding: 1em;
+
+    @media (min-width: 768px) {
+        padding: 2em;
+    }
+}
+
+// makes calendar date icon inline.
+.ginput_container_date {
+    display: flex;
+}
+
+// resizes date icon.
+body.um-page-user,
+.page {
+    .gform_wrapper img.ui-datepicker-trigger {
+        width: 34px !important;
+        height: 32px !important;
+    }
+}
+
+
+// the contact form.
+.contact-form {
+    // max-width: 700px;
+    // margin-left: auto;
+    // margin-right: auto;
     margin-top: 1em;
     margin-bottom: 1em;
 
@@ -148,7 +180,7 @@ input[type="search"] {
 }
 
 
-// Gravity Forms Reset stuff?
+// Gravity Forms
 // .validation_message {
 //     color: $error;
 //     padding-top: 5px;
@@ -160,24 +192,19 @@ input[type="search"] {
 //     margin-bottom: 1em;
 // }
 
-// .gform_confirmation_wrapper {
-//     border: 1px solid $success;
-//     padding: 2em;
-//     margin-bottom: 1em;
-// }
+.gform_confirmation_wrapper {
+    border: 1px solid $success;
+    padding: 2em;
+    margin-bottom: 1em;
+}
 
-// .gform_wrapper {
-//     ul {
-//         margin-left: 0;
-//         padding-left: 0;
-//         list-style-type: none;
-//         -webkit-margin-before: 0em;
-//         -webkit-margin-after: 0em;
-//         -webkit-margin-start: 0px;
-//         -webkit-margin-end: 0px;
-//         -webkit-padding-start: 0px;
-//     }
-// }
+.gform_confirmation_message {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: $black;
+}
+
+
 
 // .gform_validation_container {
 //     display: none;
