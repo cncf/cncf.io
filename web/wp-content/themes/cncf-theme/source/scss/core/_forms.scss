@@ -96,12 +96,8 @@ body.um-page-user,
     }
 }
 
-
 // the contact form.
 .contact-form {
-    // max-width: 700px;
-    // margin-left: auto;
-    // margin-right: auto;
     margin-top: 1em;
     margin-bottom: 1em;
 
@@ -179,19 +175,7 @@ body.um-page-user,
     visibility: hidden;
 }
 
-
-// Gravity Forms
-// .validation_message {
-//     color: $error;
-//     padding-top: 5px;
-// }
-
-// .validation_error {
-//     border: 1px solid $error;
-//     padding: 2em;
-//     margin-bottom: 1em;
-// }
-
+// Gravity Forms.
 .gform_confirmation_wrapper {
     border: 1px solid $success;
     padding: 2em;
@@ -203,29 +187,3 @@ body.um-page-user,
     font-weight: 600;
     color: $black;
 }
-
-
-
-// .gform_validation_container {
-//     display: none;
-//     position: absolute;
-//     left: -9000px;
-// }
-
-// .gfield textarea {
-//     &.small {
-//         height: 60px;
-//     }
-
-//     &.medium {
-//         height: 120px;
-//     }
-// }
-
-// .ginput_container {
-
-//     input,
-//     textarea {
-//         border: 1px solid $black;
-//     }
-// }

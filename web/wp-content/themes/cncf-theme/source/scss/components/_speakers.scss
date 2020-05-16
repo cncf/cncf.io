@@ -63,18 +63,6 @@
     }
 }
 
-
-// makes date icon inline.
-.ginput_container_date {
-    display: flex;
-}
-
-// resizes date icon.
-body.um-page-user .gform_wrapper img.ui-datepicker-trigger {
-    width: 34px !important;
-    height: 32px !important;
-}
-
 // makes UM profile bigger/
 .um-profile-body {
     max-width: 1000px;
