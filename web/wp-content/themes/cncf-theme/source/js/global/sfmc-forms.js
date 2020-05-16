@@ -112,6 +112,7 @@ jQuery(
 		);
 
 		function saveData( form ) {
+			var message = document.getElementById( "sfmc-message" + form );
 			$.ajax(
 				{
 					type: 'POST',
@@ -120,10 +121,12 @@ jQuery(
 					beforeSend() {
 						$( '#sfmc-form' + form ).toggle();
 						$( '#sfmc-message' + form ).html( 'Thank you for your submission. Your request is being processed...' ).addClass( 'is-active' );
+						message.scrollIntoView( { behavior: "smooth", block: 'center' } );
 					},
 					success( response ) {
 						let msg = $( response ).find( 'p' ).text();
 						$( '#sfmc-message' + form ).html( msg ).addClass( 'success' );
+						message.scrollIntoView( { behavior: "smooth", block: 'center' } );
 						switch ( form ) {
 							case '1' : grecaptcha.reset( widget_1 ); break;
 							case '2' : grecaptcha.reset( widget_2 ); break;
@@ -132,7 +135,7 @@ jQuery(
 					error( xhr, status, error ) {
 						let errorMessage = xhr.status + ': ' + xhr.statusText;
 						$( '#sfmc-message' + form ).html( 'There was an error processing your submission. Please try again or contact us directly at info@cncf.io<br>Error code: (' + errorMessage + ')' ).addClass( 'error' );
-						alert( 'There was an error processing your submission. Please try again or contact us directly at info@cncf.io' );
+						message.scrollIntoView( { behavior: "smooth", block: 'center' } );
 					},
 				}
 			);
