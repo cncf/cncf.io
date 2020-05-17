@@ -27,6 +27,8 @@
 		while ( $query->have_posts() ) :
 			$query->the_post();
 
+			$subtitle = get_post_meta( get_the_ID(), 'cncf_spotlight_subtitle', true );
+
 			// get spotlight type.
 			$spotlight_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-spotlight-type', true );
 
@@ -55,7 +57,7 @@
 		<div class="spotlight-date">
 			<?php echo get_the_date( 'F Y' ); ?></div>
 
-			<?php the_excerpt(); ?>
+			<?php echo esc_html( $subtitle ); ?>
 
 	</div>
 	<?php endwhile; ?>
