@@ -404,7 +404,6 @@ class Cncf_Mu_Admin {
 									'data_type'     => 'meta',
 									'data_key'      => 'time',
 									'label'         => __( 'Time' ),
-									'help'          => __( 'Example: 10:00 - 11:00 AM CST' ),
 									'register_meta' => true,
 									'ui_border_top' => true,
 									'default_value' => '',
