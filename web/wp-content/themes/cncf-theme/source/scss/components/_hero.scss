@@ -11,8 +11,6 @@
     .container {
         text-align: center;
         color: $white;
-        padding-top: 2em;
-        padding-bottom: 2em;
     }
 
     .background-image-figure:after {
@@ -45,6 +43,10 @@
         margin-bottom: 0;
     }
 
+    .no-background {
+        margin-top: 2em;
+    }
+
 
 }
 
@@ -58,9 +60,10 @@
     font-weight: 600;
     font-size: 0.9em;
     text-transform: uppercase;
+    text-decoration: none;
 
     a {
-        color: $primary-color;
+        color: $secondary-color;
     }
 
     .hero.background-image-wrapper & {
@@ -68,7 +71,7 @@
             color: $white;
 
             &:hover {
-                color: $primary-color;
+                color: $white;
             }
         }
     }

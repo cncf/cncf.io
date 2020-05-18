@@ -8,7 +8,7 @@
  */
 
 ?><section class="hero">
-	<div class="container wrap">
+	<div class="container wrap no-background">
 	<?php
 	// Category of the post.
 	$all_categories = get_the_category();

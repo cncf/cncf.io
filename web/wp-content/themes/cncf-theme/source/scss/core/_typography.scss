@@ -123,14 +123,14 @@ i {
 }
 
 a {
-    // text-decoration: none;
-   // color: $secondary-color;
-   // font-weight: 500;
-   // transition: all 0.25s ease-out;
+    text-decoration: none;
+    transition: all 0.25s ease-out;
+    // color: $secondary-color;
+    // font-weight: 500;
 
-   // &:visited {
-   //     text-decoration: none;
-   // }
+    // &:visited {
+    //     text-decoration: none;
+    // }
 
     &:hover {
         color: $primary-color;
