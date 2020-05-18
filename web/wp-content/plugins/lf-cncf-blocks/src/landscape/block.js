@@ -106,6 +106,7 @@ registerBlockType(
 						style={ iframeStyle }
 						frameBorder="0"
 						scrolling="no"
+						className="iframe-container"
 					></iframe>
 				</Fragment>
 			);
