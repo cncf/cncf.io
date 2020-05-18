@@ -84,8 +84,8 @@ img {
         &:hover {
             svg {
                 transition: all 0.25s ease-out;
-                color: $pink-400;
-                fill: $pink-400;
+                color: $primary-color;
+                fill: $primary-color;
             }
         }
     }
@@ -97,7 +97,7 @@ img {
         -webkit-appearance: none;
 
         &:hover {
-            border: 1px solid $pink-400;
+            border: 1px solid $primary-color;
         }
     }
 
@@ -113,8 +113,8 @@ img {
         fill: $white;
 
         &:hover {
-            color: $pink-400;
-            fill: $pink-400;
+            color: $primary-color;
+            fill: $primary-color;
         }
     }
 

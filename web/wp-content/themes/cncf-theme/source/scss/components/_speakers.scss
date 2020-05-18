@@ -10,7 +10,7 @@
 }
 
 .speaker {
-    background-color: $blue-100;
+    background-color: $tertiary-color;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -211,7 +211,7 @@
 
     i {
         font-size: 40px;
-        color: $pink-400;
+        color: $primary-color;
 
         &:hover {
             color: $pink-300;

@@ -8,7 +8,7 @@
     margin-right: auto;
 
     a {
-        color: $pink-400;
+        color: $primary-color;
     }
 }
 
@@ -78,7 +78,7 @@
         margin-left: 100px;
     }
 
-    border: 1px solid $blue-100;
+    border: 1px solid $tertiary-color;
     overflow: hidden;
     transition: all 0.25s ease;
     object-fit: cover;

@@ -11,7 +11,7 @@
 }
 
 .people-box {
-    background-color: $blue-100;
+    background-color: $tertiary-color;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -44,8 +44,8 @@
     svg {
         height: 20px;
         width: auto;
-        fill: $pink-400;
-        color: $pink-400;
+        fill: $primary-color;
+        color: $primary-color;
     }
 
     div:last-child {

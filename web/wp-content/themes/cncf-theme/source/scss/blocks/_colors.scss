@@ -9,7 +9,7 @@ $colors: ( // name : value for that name.
 );
 $color_hover: ( // name : value for that name.
     'pink-400': #E43B80,
-    'white': $blue-100,
+    'white': $tertiary-color,
     'black': #252b5f,
     'purple-700': #48549C,
     'blue-100': #3CB3DD,
@@ -20,7 +20,7 @@ $text_color: ( // name : value for that name.
     'white': $black,
     'black': $white,
     'purple-700': $white,
-    'blue-100': $purple-700,
+    'blue-100': $secondary-color,
 );
 
 // take the first colour to be the default

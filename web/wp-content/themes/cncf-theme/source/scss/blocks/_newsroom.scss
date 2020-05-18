@@ -60,7 +60,7 @@
         min-height: 175px;
     }
 
-    border: 1px solid $blue-100;
+    border: 1px solid $tertiary-color;
     overflow: hidden;
     transition: all 0.25s ease;
     object-fit: cover;
@@ -72,7 +72,7 @@
             }
 
             +.newsroom-title>a {
-                color: $pink-400;
+                color: $primary-color;
                 transition: all 0.25s ease;
                 text-decoration: underline;
             }

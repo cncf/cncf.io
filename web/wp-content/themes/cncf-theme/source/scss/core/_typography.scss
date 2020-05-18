@@ -124,7 +124,7 @@ i {
 
 a {
     text-decoration: none;
-    color: $purple-700;
+    color: $secondary-color;
     font-weight: 500;
     transition: all 0.25s ease-out;
 
@@ -134,7 +134,7 @@ a {
     }
 
     &:hover {
-        color: $pink-400;
+        color: $primary-color;
         text-decoration: underline;
     }
 
@@ -148,6 +148,6 @@ a {
 
     /* mobile tap color */
     &:link {
-        -webkit-tap-highlight-color: rgba($purple-700, 0.3);
+        -webkit-tap-highlight-color: rgba($secondary-color, 0.3);
     }
 }

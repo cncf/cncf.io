@@ -74,11 +74,11 @@ input[type="search"] {
     margin-left: auto;
     margin-right: auto;
 
-    background-color: $blue-100;
-    padding: 1em;
+    background-color: $tertiary-color;
+    padding: 2em 1em;
 
     @media (min-width: 768px) {
-        padding: 2em;
+        padding: 3em 2em;
     }
 }
 

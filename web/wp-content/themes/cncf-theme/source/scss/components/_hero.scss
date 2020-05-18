@@ -60,7 +60,7 @@
     text-transform: uppercase;
 
     a {
-        color: $pink-400;
+        color: $primary-color;
     }
 
     .hero.background-image-wrapper & {
@@ -68,7 +68,7 @@
             color: $white;
 
             &:hover {
-                color: $pink-400;
+                color: $primary-color;
             }
         }
     }
@@ -85,7 +85,7 @@
     margin-right: auto;
     line-height: 1.25;
     letter-spacing: -0.2px;
-    color: $purple-700;
+    color: $secondary-color;
 
     @media (max-width: 767px) {
         font-size: 1.9em;
