@@ -404,7 +404,6 @@ class Cncf_Mu_Admin {
 									'data_type'     => 'meta',
 									'data_key'      => 'time',
 									'label'         => __( 'Time' ),
-									'help'          => __( 'Example: 10:00 - 11:00 AM CST' ),
 									'register_meta' => true,
 									'ui_border_top' => true,
 									'default_value' => '',
@@ -763,6 +762,39 @@ class Cncf_Mu_Admin {
 									'ui_border_top' => false,
 									'default_value' => '',
 									'placeholder'   => 'https://gitter.im/jaegertracing/Lobby',
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+		$sidebars[] = $sidebar;
+
+		$sidebar    = array(
+			'id'              => 'cncf-sidebar-spotlight',
+			'id_prefix'       => 'cncf_',
+			'label'           => __( 'Spotlight Settings' ),
+			'post_type'       => 'cncf_spotlight',
+			'data_key_prefix' => 'cncf_spotlight_',
+			'icon_dashicon'   => 'admin-settings',
+			'tabs'            => array(
+				array(
+					'label'  => __( 'Tab label' ),
+					'panels' => array(
+						array(
+							'label'        => __( 'General' ),
+							'initial_open' => true,
+							'settings'     => array(
+								array(
+									'type'          => 'textarea',
+									'data_type'     => 'meta',
+									'data_key'      => 'subtitle',
+									'label'         => __( 'Subtitle' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
+									'placeholder'   => 'The incubating project recently completed a security audit with Jepsen',
 								),
 							),
 						),
