@@ -89,7 +89,7 @@
 			<span
 				class="event-city"><?php echo esc_html( $location ); ?></span>
 			<a href="<?php the_permalink(); ?>"
-				class="button transparent outline">Learn More</a>
+				class="button event">Learn More</a>
 		</div>
 	</article>
 <?php endwhile; ?>

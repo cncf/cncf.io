@@ -116,6 +116,10 @@ img {
             color: $primary-color;
             fill: $primary-color;
         }
+
+        a:visited {
+            color: $white;
+        }
     }
 
     &.outline {
@@ -125,6 +129,27 @@ img {
         &:hover {
             background-color: $white;
             color: $primary-color;
+        }
+
+    }
+
+    &.event {
+        background-color: transparent;
+        box-sizing: border-box;
+        border: 1px solid $white;
+        color: $white;
+
+        &:hover {
+            background-color: $white;
+            color: $primary-color;
+
+            a:visited {
+                color: $primary-color;
+            }
+        }
+
+        a:visited {
+            color: $white;
         }
     }
 
