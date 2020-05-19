@@ -31,6 +31,10 @@
     font-weight: 600;
     margin-bottom: 1em;
     display: block;
+
+    @media (min-width: 800px) {
+        padding-left: 0.5em;
+    }
 }
 
 ol.tab-container-nav {
@@ -40,15 +44,20 @@ ol.tab-container-nav {
         list-style-type: none;
         margin: 0;
         padding-right: 1em;
+
     }
 
     li {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+        padding-left: 0.5em;
         padding-right: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
 
         &.is-active {
             border-right: 5px solid $primary-color;
+            background-color: $tertiary-color;
         }
     }
 }
