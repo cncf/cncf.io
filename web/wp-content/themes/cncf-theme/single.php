@@ -9,7 +9,7 @@
 
 get_template_part( 'components/header' );
 
-// Single Post for Case Study.
+	// Single Post for Case Study.
 if ( is_singular( 'cncf_case_study' ) || is_singular( 'cncf_case_study_ch' ) ) :
 	get_template_part( 'components/case-study-single' );
 

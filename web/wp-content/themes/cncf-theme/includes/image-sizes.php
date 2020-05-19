@@ -15,7 +15,8 @@
 // add_image_size('icon', 50, 50, true); // phpcs:ignore.
 // add_image_size('new-size', 215, 215, true); // phpcs:ignore.
 
+add_image_size( 'people', 100, 100, true );
 add_image_size( 'newsroom-image-large', 1040, 640, true );
 add_image_size( 'newsroom-image', 520, 320, true );
 add_image_size( 'newsroom-image-small', 260, 160, true );
-add_image_size( 'people', 100, 100, true );
+add_image_size( 'newsroom-media-coverage', 260, 160, false );
