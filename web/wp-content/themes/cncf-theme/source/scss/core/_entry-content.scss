@@ -45,12 +45,12 @@
             text-decoration: underline;
         }
 
-        &:focus {
-            text-decoration: underline;
-        }
-
         &:active {
             text-decoration: none;
+        }
+
+        &:focus {
+            text-decoration: underline;
         }
 
         /* mobile tap color */

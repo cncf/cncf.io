@@ -144,12 +144,12 @@ img {
             color: $primary-color;
 
             a:visited {
-                color: $primary-color;
+                color: $primary-color !important;
             }
         }
 
         a:visited {
-            color: $white;
+            color: $primary-color !important;
         }
     }
 
