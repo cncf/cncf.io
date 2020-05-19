@@ -19,17 +19,19 @@
     }
 
     .form-message {
+        font-weight: 600;
 
         &.is-active {
-            border: 1px solid $white;
+            border: 2px solid $white;
         }
 
         &.success {
-            border: 1px solid $success;
+            border: 2px solid $success;
+
         }
 
         &.error {
-            border: 1px solid $error;
+            border: 2px solid $error;
         }
     }
 

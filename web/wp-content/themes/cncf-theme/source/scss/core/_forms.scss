@@ -165,11 +165,12 @@ body.um-page-user,
     }
 
     &.success {
-        border: 1px solid $success;
+        border: 2px solid $success;
+        font-weight: 600;
     }
 
     &.error {
-        border: 1px solid $error;
+        border: 2px solid $error;
     }
 }
 
@@ -180,9 +181,10 @@ body.um-page-user,
 
 // Gravity Forms.
 .gform_confirmation_wrapper {
-    border: 1px solid $success;
+    border: 2px solid $success;
     padding: 2em;
     margin-bottom: 1em;
+    font-weight: 600;
 }
 
 .gform_confirmation_message {
@@ -192,7 +194,7 @@ body.um-page-user,
 }
 
 .um-postmessage {
-    border: 1px solid $success;
+    border: 2px solid $success;
     padding: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -200,4 +202,5 @@ body.um-page-user,
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    font-weight: 600;
 }
