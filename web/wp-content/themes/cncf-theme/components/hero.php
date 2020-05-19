@@ -14,7 +14,7 @@
 <section class="hero background-image-wrapper">
 
 	<figure class="background-image-figure">
-		<img src="/wp-content/uploads/2020/02/welcome.jpg" alt="">
+		<img src="/wp-content/uploads/2020/02/welcome.jpg" height="400" width="100%" alt="">
 	</figure>
 
 	<div class="container wrap background-image-text-overlay">
