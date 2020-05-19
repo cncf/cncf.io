@@ -16,8 +16,8 @@
 function lf_count_up_render_callback( $attributes ) {
 	$columns    = isset( $attributes['columns'] ) ? $attributes['columns'] : 1;
 	$text_color = isset( $attributes['textColor'] ) ? $attributes['textColor'] : '#000000';
-	ob_start();
 
+	ob_start();
 	?>
 <section data-element="count-up-block" class="count-up-block"
 	style="--text-main-color: <?php echo esc_attr( $text_color ); ?>;">
@@ -28,10 +28,17 @@ function lf_count_up_render_callback( $attributes ) {
 			$image_id    = isset( $attributes[ "iconId{$i}" ] ) ? $attributes[ "iconId{$i}" ] : false;
 			$description = isset( $attributes[ "descText{$i}" ] ) ? $attributes[ "descText{$i}" ] : false;
 			$link        = isset( $attributes[ "link{$i}" ] ) ? $attributes[ "link{$i}" ] : false;
+			$target      = isset( $attributes[ "target{$i}" ] ) ? $attributes[ "target{$i}" ] : false;
 
 			if ( ! $number ) :
 				continue;
 			endif;
+
+			if ( $target ) {
+				$is_external = 'target="_blank" rel="noopener noreferrer"';
+			} else {
+				$is_external = '';
+			}
 
 			$original_number = $number;
 			$number          = preg_replace( '/,|\./', '', $number );
@@ -40,9 +47,9 @@ function lf_count_up_render_callback( $attributes ) {
 		<div class="count-up-column">
 			<?php
 			if ( ! empty( $link ) ) :
-				printf( '<a target="_blank" href="%s">', esc_url( $link ) );
-			endif;
-			?>
+				?>
+			<a <?php echo esc_html( $is_external ); ?> href="<?php echo esc_url( $link ); ?>">
+				<?php endif; ?>
 
 			<?php if ( ! empty( $image_id ) ) { ?>
 			<div class="icon-wrap">
@@ -69,7 +76,9 @@ function lf_count_up_render_callback( $attributes ) {
 			</div>
 			<?php
 			if ( ! empty( $link ) ) :
-				echo '</a>';
+				?>
+				</a>
+				<?php
 endif;
 			?>
 		</div>

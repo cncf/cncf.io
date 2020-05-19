@@ -15,7 +15,7 @@
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InspectorControls, PanelColorSettings, RichText, MediaUpload } = wp.blockEditor || wp.editor;
-const { RangeControl, PanelBody, TextControl } = wp.components;
+const { RangeControl, PanelBody, TextControl, ToggleControl } = wp.components;
 
 class Edit extends Component {
 	constructor() {
@@ -23,6 +23,14 @@ class Edit extends Component {
 
 		this.state = {
 			currentEdit: '',
+		};
+
+		this.toggleAttribute = this.toggleAttribute.bind( this );
+	}
+
+	toggleAttribute( attribute ) {
+		return ( newValue ) => {
+			this.props.setAttributes( { [ attribute ]: newValue } );
 		};
 	}
 
@@ -37,11 +45,11 @@ class Edit extends Component {
 
 		const onSelectImage = ( value ) => {
 			setAttributes(
-				 {
-				[ `icon${ index }` ]: handleBetterImageSize( value ),
-				[ `iconId${ index }` ]: value.id,
-			}
-				);
+				{
+					[ `icon${ index }` ]: handleBetterImageSize( value ),
+					[ `iconId${ index }` ]: value.id,
+				}
+			);
 		};
 
 		return (
@@ -98,10 +106,10 @@ class Edit extends Component {
 								value: textColor,
 								onChange: colorValue =>
 									setAttributes(
-										 {
-										textColor: colorValue,
-									}
-										),
+										{
+											textColor: colorValue,
+										}
+									),
 								label: 'Text Color',
 							},
 						] }
@@ -116,23 +124,32 @@ class Edit extends Component {
 							onChange={ ( value ) => setAttributes( { columns: value } ) }
 						/>
 						{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map(
-							 index => {
-							return <TextControl
-								label={ `Link ${ index }` }
-								key={ `link${ index }` }
-								value={ attributes[ `link${ index }` ] }
-								onChange={ ( value ) => setAttributes( { [ `link${ index }` ]: value } ) }
-							/>;
-						}
-							) }
+							index => {
+								return <Fragment key={ `no${ index }` }>
+									<TextControl
+										label={ `Link ${ index }` }
+										key={ `link${ index }` }
+										value={ attributes[ `link${ index }` ] }
+										onChange={ ( value ) => setAttributes( { [ `link${ index }` ]: value } ) }
+									/>
+									<ToggleControl
+										label={ `Open link ${ index } in new window`() }
+										key={ `target${ index }` }
+										help={ `target${ index }` ? 'Opens in new window' : 'Opens normally' }
+										checked={ attributes[ `target${ index }` ] }
+										onChange={ this.toggleAttribute( `target${ index }` ) }
+									/>
+								</Fragment>;
+							}
+						) }
 					</PanelBody>
 				</InspectorControls>
 				<div className="lf-count-up" style={ { display: 'flex', color: 'colorValue' } }>
 					{ Array.from( { length: columns }, ( _, i ) => i + 1 ).map(
-						 index => {
-						return this.getItem( index );
-					}
-						) }
+						index => {
+							return this.getItem( index );
+						}
+					) }
 				</div>
 			</Fragment>
 		);
