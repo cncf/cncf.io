@@ -1,0 +1,45 @@
+.sticky-container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+    }
+}
+
+.sticky-column {
+    min-width: 20%;
+    margin-right: 2em;
+
+    @media (min-width:600px) {}
+
+    margin-top: 1.5em;
+}
+
+.sticky-main-content {
+    max-width: 800px;
+}
+
+#tab-container-nav {
+    position: sticky;
+    top: 100px;
+
+    .admin-bar & {
+        top: 132px;
+
+        @media (max-width: 782px) {
+            top: 100px;
+        }
+    }
+
+}
+
+ul.tab-container-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li.is-active {
+        border-right: 5px solid $primary-color;
+    }
+}

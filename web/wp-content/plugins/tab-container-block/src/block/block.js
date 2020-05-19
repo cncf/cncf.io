@@ -14,8 +14,8 @@ const { registerBlockType } = wp.blocks;
 const { InnerBlocks, InspectorControls } = wp.blockEditor;
 const { TextControl, PanelBody, PanelRow } = wp.components;
 const TEMPLATE = [
-	[ 'core/heading', { placeholder: 'Section Title' } ],
-	[ 'core/paragraph', { placeholder: 'Enter content...' } ],
+	[ 'core/heading', { placeholder: 'Section Title', level: 3 } ],
+	[ 'core/paragraph', { placeholder: 'Section content...' } ],
 ];
 
 /**
@@ -30,10 +30,11 @@ registerBlockType( 'cgb/block-tab-container-block', {
 
 	title: __( 'Tab Container Block' ),
 	icon: 'index-card',
-	category: 'common',
+	category: 'cncf',
 	keywords: [
 		__( 'container' ),
 		__( 'tab' ),
+		__( 'sidebar' ),
 		__( 'cncf' ),
 	],
 	attributes: {
@@ -129,9 +130,8 @@ registerBlockType( 'cgb/block-tab-container-block', {
 	 */
 	save: ( props ) => {
 		const { attributes: { menuTitle, id } } = props;
-
 		return (
-			<div className={ props.className } data-menu-title={ menuTitle } data-menu-slug={ id } id={ id }data-magellan-target={ id } >
+			<div className="anchor-link" data-menu-title={ menuTitle } data-menu-slug={ id } id={ id } >
 				<InnerBlocks.Content />
 			</div>
 		);
