@@ -28,15 +28,14 @@ jQuery( document ).ready(
 
 			  let spaceForHeader;
 			if ( $( window ).width() < 800 ) {
-				 spaceForHeader = 100;
+				 spaceForHeader = 0;
 			} else {
-				spaceForHeader = 100;
+				spaceForHeader = 125;
 			}
 
 			let spaceForAdmin;
-			let AdminBar = document.getElementById( 'wpadminbar' );
-
-			if ( AdminBar ) {
+      var $wpAdminBar = $('#wpadminbar');
+      if ($wpAdminBar.length) {
 				spaceForAdmin = 32;
 			} else {
 				spaceForAdmin = 0;
@@ -45,9 +44,9 @@ jQuery( document ).ready(
 			// Bind click handler to menu items so we can get a fancy scroll animation.
 			menuItems.click(
 				function( e ) {
-					let href = $( this ).attr( 'href' );
+          let href = $( this ).attr( 'href' );
 					let offsetTop = href === '#' ? 0 : $( href ).offset()
-					.top - spaceForAdmin - spaceForHeader;
+          .top - spaceForHeader - spaceForAdmin;
 					$( 'html, body' )
 					.stop()
 					.animate(
@@ -65,11 +64,10 @@ jQuery( document ).ready(
 				function() {
 					let fromTop = $( this ).scrollTop();
 
-					// Get id of current scroll item.
+					// Get id of current scroll item, add 20 for padding.
 					let cur = scrollItems.map(
 						function() {
-							if ( $( this ).offset().top < fromTop +
-								  120 ) {
+							if ( $( this ).offset().top < fromTop + spaceForHeader + 20 ) {
 								 return this;
 							}
 						}

@@ -4,6 +4,7 @@
 
     @media (min-width: 800px) {
         flex-direction: row;
+        margin-bottom: 10em;
     }
 }
 
@@ -19,10 +20,10 @@
 .sticky-element {
     @media (min-width:800px) {
         position: sticky;
-        top: 100px;
+        top: 125px;
 
         .admin-bar & {
-            top: 132px;
+            top: calc(125px + 32px);
         }
     }
 }
@@ -66,8 +67,11 @@ ol.tab-container-nav {
     max-width: 800px;
 }
 
-@media (max-width: 799px) {
-    .wp-block-cgb-block-tab-container-block {
+
+.wp-block-cgb-block-tab-container-block {
+    @media (max-width: 799px) {
         border-top: 1px solid $grey-100;
     }
+
+    margin-bottom: 3em;
 }
