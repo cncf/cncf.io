@@ -26,8 +26,9 @@ function cncf_content_filter( $content ) {
 	?>
 <div class="sticky-container">
 	<div class="sticky-column">
-		<h6 class="show-mobile-only">Skip to page section</h6>
-		<ul id="tab-container-nav" class="tab-container-nav">
+	<div class="sticky-element">
+	<span class="sticky-nav-hint">Page Navigation</span>
+		<ol id="tab-container-nav" class="tab-container-nav">
 			<?php
 			// grab the data-menu-title and id from each tag to construct the menu.
 			foreach ( $matches[0] as $match ) :
@@ -38,7 +39,9 @@ function cncf_content_filter( $content ) {
 					href="#<?php echo esc_html( $id[1] ); ?>"><?php echo esc_html( $menu_title[1] ); ?></a>
 			</li>
 			<?php endforeach; ?>
-		</ul>
+		</ol>
+	</div>
+
 	</div>
 
 	<div class="sticky-main-content">

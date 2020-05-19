@@ -131,7 +131,7 @@ registerBlockType( 'cgb/block-tab-container-block', {
 	save: ( props ) => {
 		const { attributes: { menuTitle, id } } = props;
 		return (
-			<div className="anchor-link" data-menu-title={ menuTitle } data-menu-slug={ id } id={ id } >
+			<div data-menu-title={ menuTitle } data-menu-slug={ id } id={ id } >
 				<InnerBlocks.Content />
 			</div>
 		);
