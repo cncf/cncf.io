@@ -20,11 +20,11 @@
 				required>
 		</label>
 		<label for="LastName" required>
-			<input type="text" name="LastName" placeholder="Your Last Name" autocomplete="family-name" spellcheck="false"
+			<input type="text" id="LastName" name="LastName" placeholder="Your Last Name" autocomplete="family-name" spellcheck="false"
 				required>
 		</label>
 		<label for="EmailAddress" required>
-			<input type="email" name="EmailAddress"
+			<input type="email" id="EmailAddress" name="EmailAddress"
 				placeholder="Your Email Address" autocomplete="email" spellcheck="false" required>
 		</label>
 		<button type="submit" class="button stocky" id="sfmc-submit1">Subscribe</button>

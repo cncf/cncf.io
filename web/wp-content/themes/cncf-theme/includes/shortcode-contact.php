@@ -11,12 +11,8 @@
   * Add Contact Form shortcode.
   */
 function add_contact_shortcode() {
-
 	ob_start(); ?>
-
-
 <div class="contact-form-block">
-
 	<form id="sfmc-form2" class="contact-form"
 		action="https://cloud.email.thelinuxfoundation.org/CNCF-Contact-Us-Submission">
 		<div class="form-group form-even-columns">
@@ -25,35 +21,29 @@ function add_contact_shortcode() {
 				<input type="text" id="FirstName" name="FirstName"
 					autocomplete="given-name" spellcheck="false" required>
 			</div>
-
 			<div class="form-group-item">
 				<label for="LastName">Last Name <span>*</span></label>
 				<input type="text" id="LastName" name="LastName"
 					autocomplete="family-name" spellcheck="false" required>
 			</div>
 		</div>
-
 		<div class="form-group-item">
 			<label for="EmailAddress">Email <span>*</span></label>
-			<input type="email" id="EmailAddress" name="EmailAddress" autocomplete="email"
-				spellcheck="false" required>
+			<input type="email" id="EmailAddress" name="EmailAddress"
+				autocomplete="email" spellcheck="false" required>
 		</div>
-
 		<div class="form-group-item">
 			<label for="Phone">Phone</label>
 			<input type="text" id="Phone" name="Phone" autocomplete="tel">
 		</div>
-
 		<div class="form-group-item">
 			<label for="Company">Company <span>*</span></label>
 			<input type="text" id="Company" name="Company" required>
 		</div>
-
 		<div class="form-group-item">
 			<label for="Title">Job Title</label>
 			<input type="text" id="Title" name="Title">
 		</div>
-
 		<div class="form-group-item">
 			<label for="Country">Country <span>*</span></label>
 			<select id="country" name="country" class="form-control select-css"
@@ -358,21 +348,17 @@ function add_contact_shortcode() {
 				<option value="Zambia">Zambia</option>
 				<option value="Zimbabwe">Zimbabwe</option>
 			</select>
-
 		</div>
-
 		<div class="form-group-item">
 			<label for="Comments">Message <span>*</span></label>
 			<textarea id="Comments" name="Comments" rows="6"
 				placeholder="Type your message here" required></textarea>
 		</div>
-
 		<div class="form-group">
 			<input type="checkbox" name="OptIn" id="OptIn"><label
 				for="OptIn">Subscribe to get the latest project news and
 				updates in the CNCF Newsletter.</label>
 		</div>
-
 		<input type="hidden" id="txtUrl" name="txtUrl" value="" readonly="">
 		<script>
 		document.getElementById('txtUrl').value = window.location.href;
@@ -385,6 +371,5 @@ function add_contact_shortcode() {
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'contact-form', 'add_contact_shortcode' );
