@@ -29,10 +29,12 @@ jQuery( document ).ready(
 
 			// Keep menu inside viewport.
 			$( '.sub-menu li.menu-item-has-children' ).on(
-				'mouseenter mouseleave', edgeDetector );
+				'mouseenter mouseleave',
+				edgeDetector
+			);
 		}
 
-    // Makes Hamburger Menu active.
+		// Makes Hamburger Menu active.
 		function hamburgerMenu( e ) {
 			e.preventDefault();
 			$( 'body' ).toggleClass( 'menu-is-active' );
@@ -40,26 +42,26 @@ jQuery( document ).ready(
 			$( '.menu-container-with-search' ).toggleClass( 'is-active' );
 		}
 
-    // Slides down Mobile menu.
+		// Slides down Mobile menu.
 		function toggleMenu( e ) {
-      e.preventDefault();
+			e.preventDefault();
 			$( this ).toggleClass( 'is-open' );
 			$( this ).parent().children( '.sub-menu:first' ).slideToggle( 500 );
 		}
 
-    // Stops empty links being clicked.
+		// Stops empty links being clicked.
 		function preventClick( e ) {
 			e.preventDefault();
 		}
 
-    // Displays Search bar.
+		// Displays Search bar.
 		function toggleSearch( e ) {
 			e.preventDefault();
 			$( '.search-bar' ).toggleClass( 'is-active' );
 			$( '.search-input' ).focus();
 		}
 
-    // Detects if menu goes over bottom or right of screen.
+		// Detects if menu goes over bottom or right of screen.
 		function edgeDetector() {
 			if ( $( 'ul', this ).length ) {
 				const elm = $( 'ul:first', this );
@@ -101,28 +103,37 @@ jQuery( document ).ready(
 		}
 
 		// Resize watch throttler.
-		$( window ).bind( 'resize', function( ) {
-			window.resizeEvt;
-			$( window ).resize( function() {
-				clearTimeout( window.resizeEvt );
-				window.resizeEvt = setTimeout( function() {
+		$( window ).bind(
+			'resize',
+			function( ) {
+				window.resizeEvt;
+				$( window ).resize(
+					function() {
+						clearTimeout( window.resizeEvt );
+						window.resizeEvt = setTimeout(
+							function() {
+								if ( $( window ).width() < 1000 || $( window ).height() < 700 ) {
+									  // Mobile Menu (hidden on desktop).
+									  $( '.hamburger' ).on( 'click', hamburgerMenu );
 
-					if ( $( window ).width() < 1000 || $( window ).height() < 700 ) {
-						// Mobile Menu (hidden on desktop).
-						$( '.hamburger' ).on( 'click', hamburgerMenu );
+									  // Toggle open menus on touch.
+									  $( 'li.menu-item-has-children > a' ).on( 'click', toggleMenu );
+								} else {
+									// Stop empty parents creating hash.
+									$( 'li.menu-item-has-children > a' ).on( 'click', preventClick );
 
-						// Toggle open menus on touch.
-						$( 'li.menu-item-has-children > a' ).on( 'click', toggleMenu );
-					} else {
-						// Stop empty parents creating hash.
-						$( 'li.menu-item-has-children > a' ).on( 'click', preventClick );
-
-						// Keep menu inside viewport.
-						$( '.sub-menu li.menu-item-has-children' ).on(
-							'mouseenter mouseleave', edgeDetector );
+									// Keep menu inside viewport.
+									$( '.sub-menu li.menu-item-has-children' ).on(
+										'mouseenter mouseleave',
+										edgeDetector
+									);
+								}
+							},
+							250
+						);
 					}
-				}, 250 );
-			} );
-		} );
+				);
+			}
+		);
 	}
 );
