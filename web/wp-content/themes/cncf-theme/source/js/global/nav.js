@@ -80,11 +80,12 @@ jQuery( document ).ready(
 						}
 
 						if ( ! outsideHeight ) {
-							if ( ( h / 2 + h ) >= docH ) {
+							// compare half height again plus buffer.
+							if ( ( h / 2 + h + 100 ) >= docH ) {
 								// if submenu fits in middle of screen.
 								$( this ).addClass( 'is-middle' );
 							} else {
-								// will be in bottom half.
+								// will be bottom aligned.
 								$( this ).addClass( 'is-bottom' );
 							}
 						} else {
