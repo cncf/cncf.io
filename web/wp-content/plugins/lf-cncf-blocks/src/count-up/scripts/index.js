@@ -1,44 +1,45 @@
+/* eslint-disable no-var */
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 
-(function () {
-	document.addEventListener('DOMContentLoaded', function () {
-
-		function lfCountUpStart(block) {
-			if (!block) {
+( function() {
+	document.addEventListener( 'DOMContentLoaded', function() {
+		function lfCountUpStart( block ) {
+			if ( ! block ) {
 				return;
 			}
 
-			var numbers = block.querySelectorAll('[data-element="lf-number"]');
+			const numbers = block.querySelectorAll( '[data-element="lf-number"]' );
 
-			if (numbers.length === 0) {
+			if ( numbers.length === 0 ) {
 				return;
 			}
 
-			numbers.forEach(function (element) {
-				var countUp = new CountUp(element, element.dataset.to);
-				if (!countUp.error) {
+			numbers.forEach( function( element ) {
+				const countUp = new CountUp( element, element.dataset.to );
+				if ( ! countUp.error ) {
 					countUp.start();
 				} else {
-					console.error(countUp.error);
+					console.error( countUp.error );
 				}
-			});
+			} );
 		}
 
-		var countUpBlocks = document.querySelectorAll('[data-element=count-up-block]');
+		const countUpBlocks = document.querySelectorAll( '[data-element=count-up-block]' );
 
-		if (countUpBlocks.length === 0) {
+		if ( countUpBlocks.length === 0 ) {
 			return;
 		}
 
-		countUpBlocks.forEach(function (block) {
-			var waypoint = new Waypoint({
+		countUpBlocks.forEach( function( block ) {
+			var waypoint = new Waypoint( {
 				element: block,
-				handler: function () {
-					lfCountUpStart(block);
+				handler: function() {
+					lfCountUpStart( block );
 					waypoint.destroy();
 				},
-				offset: '50%'
-			})
-		});
-
-	});
-})();
+				offset: '75%',
+			} );
+		} );
+	} );
+}() );
