@@ -547,7 +547,7 @@ class Cncf_Mu_Admin {
 									'data_type'     => 'meta',
 									'data_key'      => 'is_priority',
 									'label'         => __( 'Priority Weighting' ),
-									'help'          => __( 'The higher the number, the higher their position in the organisatonal people layout.' ),
+									'help'          => __( 'The higher the number, the higher their position in the people layout.' ),
 									'register_meta' => true,
 									'ui_border_top' => true,
 									'default_value' => '',
