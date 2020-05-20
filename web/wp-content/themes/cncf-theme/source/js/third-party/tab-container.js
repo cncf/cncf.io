@@ -34,8 +34,8 @@ jQuery( document ).ready(
 			}
 
 			let spaceForAdmin;
-      var $wpAdminBar = $('#wpadminbar');
-      if ($wpAdminBar.length) {
+			var $wpAdminBar = $( '#wpadminbar' );
+			if ($wpAdminBar.length) {
 				spaceForAdmin = 32;
 			} else {
 				spaceForAdmin = 0;
@@ -44,9 +44,9 @@ jQuery( document ).ready(
 			// Bind click handler to menu items so we can get a fancy scroll animation.
 			menuItems.click(
 				function( e ) {
-          let href = $( this ).attr( 'href' );
+					let href = $( this ).attr( 'href' );
 					let offsetTop = href === '#' ? 0 : $( href ).offset()
-          .top - spaceForHeader - spaceForAdmin;
+					.top - spaceForHeader - spaceForAdmin;
 					$( 'html, body' )
 					.stop()
 					.animate(
