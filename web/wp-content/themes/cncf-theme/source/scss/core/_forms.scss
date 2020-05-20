@@ -69,6 +69,7 @@ input[type="search"] {
 // control size, adds background to to contact and SB form.
 .contact-form-block,
 .um-page-user .gform_wrapper,
+.um-register,
 .page .gform_wrapper {
     max-width: 700px;
     margin-left: auto;
@@ -77,6 +78,7 @@ input[type="search"] {
     padding: 2em 1em;
     color: #202020;
     font-size: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
     @media (min-width: 768px) {
         padding: 3em 2em;
