@@ -25,7 +25,7 @@
 		</label>
 		<label for="EmailAddress" required>
 			<input type="email" name="EmailAddress"
-				placeholder="Your Email Address" aria-describedby="email-hint" autocomplete="email" spellcheck="false" required>
+				placeholder="Your Email Address" autocomplete="email" spellcheck="false" required>
 		</label>
 		<button type="submit" class="button stocky" id="sfmc-submit1">Subscribe</button>
 		<div id="recaptcha-form1" style="display:none;"></div>

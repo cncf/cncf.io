@@ -35,8 +35,7 @@ function add_contact_shortcode() {
 
 		<div class="form-group-item">
 			<label for="EmailAddress">Email <span>*</span></label>
-			<input type="email" id="EmailAddress" name="EmailAddress"
-				aria-describedby="email-hint" autocomplete="email"
+			<input type="email" id="EmailAddress" name="EmailAddress" autocomplete="email"
 				spellcheck="false" required>
 		</div>
 
