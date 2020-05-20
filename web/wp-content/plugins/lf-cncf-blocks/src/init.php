@@ -332,6 +332,29 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+	// Image Hero block.
+	require_once 'image-hero/render-callback.php';
+	register_block_type(
+		'lf/image-hero',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+				'imgUrl'    => array(
+					'type' => 'string',
+				),
+				'imgId'     => array(
+					'type' => 'number',
+				),
+				'heroHeight'     => array(
+					'type' => 'number',
+				),
+			),
+			'render_callback' => 'lf_image_hero_render_callback',
+		)
+	);
+
 }
 add_action( 'init', 'lf_cncf_blocks_register_dynamic_blocks' );
 

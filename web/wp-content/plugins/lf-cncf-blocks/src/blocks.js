@@ -47,3 +47,6 @@ import './count-up/block.js';
 
 // Hero Block.
 import './hero/block.js';
+
+// Hero Block.
+import './image-hero/block.js';
