@@ -38,3 +38,12 @@ require_once 'gutenberg-preset-font-sizes.php';
 
 // include custom block styles.
 require_once 'gutenberg-block-styles.php';
+
+// Remove Block Editor basic theme styles.
+add_action(
+	'wp_print_styles',
+	function (): void {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'wp-block-library-theme' );
+	}
+);
