@@ -38,3 +38,6 @@ require_once 'gutenberg-preset-font-sizes.php';
 
 // include custom block styles.
 require_once 'gutenberg-block-styles.php';
+
+// basic theme file, not needed?.
+wp_dequeue_style( 'wp-block-library-theme' );
