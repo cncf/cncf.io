@@ -107,6 +107,9 @@ class Enqueue {
 
 		}
 
+		// Remove Block Editor basic theme styles.
+		wp_dequeue_style( 'wp-block-library-theme' );
+
 	}
 
 }
