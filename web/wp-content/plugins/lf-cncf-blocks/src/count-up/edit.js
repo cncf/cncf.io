@@ -133,7 +133,7 @@ class Edit extends Component {
 										onChange={ ( value ) => setAttributes( { [ `link${ index }` ]: value } ) }
 									/>
 									<ToggleControl
-										label={ `Open link ${ index } in new window`() }
+										label={ 'Open link in new window' }
 										key={ `target${ index }` }
 										help={ `target${ index }` ? 'Opens in new window' : 'Opens normally' }
 										checked={ attributes[ `target${ index }` ] }
@@ -155,5 +155,4 @@ class Edit extends Component {
 		);
 	}
 }
-
 export default Edit;
