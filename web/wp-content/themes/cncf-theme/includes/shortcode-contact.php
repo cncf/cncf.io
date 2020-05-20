@@ -21,20 +21,20 @@ function add_contact_shortcode() {
 		action="https://cloud.email.thelinuxfoundation.org/CNCF-Contact-Us-Submission">
 		<div class="form-group form-even-columns">
 			<div class="form-group-item">
-				<label for="FirstName">First Name *</label>
+				<label for="FirstName">First Name <span>*</span></label>
 				<input type="text" id="FirstName" name="FirstName"
 					autocomplete="given-name" spellcheck="false" required>
 			</div>
 
 			<div class="form-group-item">
-				<label for="LastName">Last Name *</label>
+				<label for="LastName">Last Name <span>*</span></label>
 				<input type="text" id="LastName" name="LastName"
 					autocomplete="family-name" spellcheck="false" required>
 			</div>
 		</div>
 
 		<div class="form-group-item">
-			<label for="EmailAddress">Email *</label>
+			<label for="EmailAddress">Email <span>*</span></label>
 			<input type="email" id="EmailAddress" name="EmailAddress"
 				aria-describedby="email-hint" autocomplete="email"
 				spellcheck="false" required>
@@ -46,7 +46,7 @@ function add_contact_shortcode() {
 		</div>
 
 		<div class="form-group-item">
-			<label for="Company">Company *</label>
+			<label for="Company">Company <span>*</span></label>
 			<input type="text" id="Company" name="Company" required>
 		</div>
 
@@ -56,7 +56,7 @@ function add_contact_shortcode() {
 		</div>
 
 		<div class="form-group-item">
-			<label for="Country">Country *</label>
+			<label for="Country">Country <span>*</span></label>
 			<select id="country" name="country" class="form-control select-css"
 				required>
 				<option value="">Please Select</option>

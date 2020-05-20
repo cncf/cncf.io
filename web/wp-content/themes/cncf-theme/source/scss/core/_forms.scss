@@ -118,6 +118,10 @@ body.um-page-user,
     label {
         display: block;
         margin-bottom: 0.25em;
+
+        span {
+            color: #790000;
+        }
     }
 
     input[type="text"],
@@ -193,6 +197,7 @@ body.um-page-user,
     color: $black;
 }
 
+// UM success message styling.
 .um-postmessage {
     border: 2px solid $success;
     padding: 1em;
@@ -203,4 +208,43 @@ body.um-page-user,
     margin-right: auto;
     text-align: center;
     font-weight: 600;
+}
+
+.gform_wrapper form {
+
+    // forces consistency of labels.
+    label.gfield_label {
+        display: block;
+        margin-bottom: .25em;
+        font-weight: 300;
+    }
+}
+
+
+body .gform_wrapper form .top_label {
+
+    // removes margin from top of inputs.
+    div.ginput_container {
+        margin-top: 0px;
+    }
+
+    // forces datepicker 100%.
+    input.medium.datepicker {
+        width: 100%;
+    }
+
+    // removes extra padding near submit.
+    .gform_footer {
+        padding: 0px 0 10px 0;
+        margin: 0px 0 0 0;
+    }
+}
+
+// overrides GF on UM pages for input color.
+.um .um-form .gform_wrapper input[type=text],
+.um .um-form input[type=search],
+.um .um-form input[type=tel],
+.um .um-form input[type=password],
+.um .um-form textarea {
+    color: $black;
 }
