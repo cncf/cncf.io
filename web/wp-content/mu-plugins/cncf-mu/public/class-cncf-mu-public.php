@@ -114,9 +114,15 @@ class Cncf_Mu_Public {
 	public function change_to_preconnect_resource_hints( $hints, $relation_type ) {
 
 		if ( 'preconnect' === $relation_type ) {
+			// Used for analytics inserted by insert_google_analytics().
 			$hints[] = array(
 				'crossorigin' => '',
 				'href'        => '//www.google-analytics.com',
+			);
+			// Used by ReCaptcha.
+			$hints[] = array(
+				'crossorigin' => '',
+				'href'        => '//www.gstatic.com',
 			);
 		}
 		if ( 'dns-prefetch' === $relation_type ) {
