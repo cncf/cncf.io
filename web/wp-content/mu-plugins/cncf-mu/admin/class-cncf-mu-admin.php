@@ -1331,6 +1331,8 @@ class Cncf_Mu_Admin {
 		$um_member_directory_data = get_user_meta( $user_id, 'um_member_directory_data', false )[0];
 		$um_hide_in_members       = get_user_meta( $user_id, 'hide_in_members', true );
 		$photo                    = get_user_meta( $user_id, 'profile_photo', true );
+		$first_name               = get_user_meta( $user_id, 'first_name', true );
+		$last_name                = get_user_meta( $user_id, 'last_name', true );
 		if ( 'approved' !== $um_member_directory_data['account_status'] || ! $photo || $um_hide_in_members ) {
 			// speaker must be approved, have a photo, and not have hidden their profile.
 			$eligible_for_search = false;
@@ -1358,7 +1360,8 @@ class Cncf_Mu_Admin {
 			}
 			$speaker_id = wp_insert_post(
 				array(
-					'post_title'  => $user_id,
+					'post_title' => $last_name . $first_name,
+					'post_name'  => $user_id,
 					'post_type'   => 'cncf_speaker',
 					'post_status' => 'publish',
 				)
