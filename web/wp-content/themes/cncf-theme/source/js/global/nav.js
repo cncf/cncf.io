@@ -5,6 +5,8 @@
  * @since 1.0.0
  */
 
+/* eslint-disable no-mixed-operators */
+
 jQuery( document ).ready(
 	function( $ ) {
 		// Mobile Menu (hidden on desktop).
@@ -42,10 +44,10 @@ jQuery( document ).ready(
 					e.preventDefault();
 				}
 			);
-    }
+		}
 
-    // Keep menu inside viewport.
-    	// TODO: Add resize function.
+		// Keep menu inside viewport.
+		// TODO: Add resize function.
 		if ( $( window ).width() >= 1000 && $( window ).height() >= 700 ) {
 			$( '.sub-menu li.menu-item-has-children' ).on(
 				'mouseenter mouseleave',
@@ -90,6 +92,5 @@ jQuery( document ).ready(
 				}
 			);
 		}
-
 	}
 );
