@@ -21,25 +21,29 @@ endif;
 
 <header class="site-header">
 	<div class="container wrap">
-
-		<?php if ( $options['header_image_id'] ) { ?>
+		<?php if ( $options['header_image_id'] ) : ?>
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
-				<?php // TODO: replace with SVG in-line from theme. ?>
-				<img src="<?php echo esc_url( wp_get_attachment_url( $options['header_image_id'] ) ); ?>"
-					height="38" alt="<?php echo bloginfo( 'name' ); ?>">
+				<?php
+				$logo = esc_url( wp_get_attachment_url( $options['header_image_id'] ) );
+				?>
+				<object style="pointer-events: none;"
+					data="<?php echo $logo; ?>" type="image/svg+xml">
+					<img src="<?php echo esc_url( wp_get_attachment_url( $options['header_image_id'] ) ); ?>"
+						height="38" alt="<?php echo bloginfo( 'name' ); ?>">
+				</object>
 			</a>
-			<?php } ?>
+			<?php endif; ?>
 		</div>
 
-		<button class="hamburger hamburger--spin" type="button" aria-label="Toggle Menu">
+		<button class="hamburger hamburger--spin" type="button"
+			aria-label="Toggle Menu">
 			<span class="hamburger-box">
 				<span class="hamburger-inner"></span>
 			</span>
 		</button>
 
-		<div class="menu-container-with-search" role="navigation"
-			>
+		<div class="menu-container-with-search" role="navigation">
 			<nav class="site-navigation">
 				<?php
 				wp_nav_menu(
@@ -72,20 +76,23 @@ endif;
 							<form class="search-form" method="get"
 								action="<?php echo esc_url( home_url() ); ?>"
 								role="search">
-								<label for="search-bar" class="screen-reader-text">Search CNCF</label>
+								<label for="search-bar"
+									class="screen-reader-text">Search
+									CNCF</label>
 								<input class="search-input" type="search"
 									name="s" id="search-bar"
 									placeholder="Search for...">
 								<label>
-									<input class="button transparent  stocky search-submit"
+									<input
+										class="button transparent  stocky search-submit"
 										type="submit" value="Search" />
 								</label>
 							</form>
 							<button
-						class="button search transparent header search-button search-close"
-						type="button" aria-label="Close">
-						<?php $image->get_svg( 'close.svg' ); ?>
-					</button>
+								class="button search transparent header search-button search-close"
+								type="button" aria-label="Close">
+								<?php $image->get_svg( 'close.svg' ); ?>
+							</button>
 						</div>
 
 					</div>
