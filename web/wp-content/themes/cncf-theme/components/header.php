@@ -32,10 +32,7 @@ endif;
 			<?php } ?>
 		</div>
 
-		<button class="hamburger hamburger--spin" type="button"
-		aria-controls="site-navigation"
-		aria-haspopup="true"
-			>
+		<button class="hamburger hamburger--spin" type="button">
 			<span class="hamburger-box">
 				<span class="hamburger-inner"></span>
 			</span>
