@@ -39,19 +39,17 @@ jQuery( document ).ready(
 			);
 		} else {
 			$( '.main-navigation > li.menu-item-has-children > a' ).click(
-				function(e) {
-          e.preventDefault();
-          $('.main-navigation > li.menu-item-has-children > a').removeClass('is-open');
-          $( this ).toggleClass( 'is-open' );
-
+				function( e ) {
+					e.preventDefault();
+					$( '.main-navigation > li.menu-item-has-children > a' ).removeClass( 'is-open' );
+					$( this ).toggleClass( 'is-open' );
 				}
-      );
+			);
 
 			$( '.main-navigation > li.menu-item-has-children > a' ).hover(
 				function() {
-          $('.main-navigation > li.menu-item-has-children > a').removeClass('is-open');
-          $( this ).toggleClass( 'is-open' );
-
+					$( '.main-navigation > li.menu-item-has-children > a' ).removeClass( 'is-open' );
+					$( this ).toggleClass( 'is-open' );
 				}
 			);
 		}
