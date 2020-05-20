@@ -205,20 +205,24 @@
             &.menu-item-has-children {
 
                 // activate menu flyout on hover.
-                &:hover>ul,
-                &:focus>ul,
-                &.focus>ul {
-                    left: -1em;
-                    top: 100%;
-                    opacity: 1;
-                    transform: translateY(0);
-                    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
-                    overflow: visible;
-                }
+                // &:hover>ul,
+                // &:focus>ul,
+                // &.focus>ul {
+                //     left: -1em;
+                //     top: 100%;
+                //     opacity: 1;
+                //     transform: translateY(0);
+                //     transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+                //     overflow: visible;
+                // }
 
                 >a {
                     padding-right: 1.5em;
                     cursor: default;
+
+                    &:hover {
+                        color: $white;
+                    }
 
                     &::after {
                         // Arrow after link
@@ -237,12 +241,34 @@
                         transform-origin: 50% 0;
                     }
 
-                    &:hover::after {
-                        // change arrow colour
-                        border-bottom: 1px solid $link-hover;
-                        border-right: 1px solid $link-hover;
+                    &.is-open {
+
+                        +.sub-menu {
+                            left: -1em;
+                            top: 100%;
+                            opacity: 1;
+                            transform: translateY(0);
+                            transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+                            overflow: visible;
+                        }
+
+                        &::after {
+                            // change arrow colour
+                            // border-bottom: 1px solid $link-hover;
+                            // border-right: 1px solid $link-hover;
+                            top: calc(50% + 2px);
+                        }
                     }
+
+                    // &:hover::after {
+                    //     // change arrow colour
+                    //     // border-bottom: 1px solid $link-hover;
+                    //     // border-right: 1px solid $link-hover;
+                    //     top: calc(50% + 2px);
+                    // }
                 }
+
+
             }
         }
 
@@ -282,16 +308,26 @@
             &.menu-item-has-children>a::after {
                 // Sub Arrow.
                 margin-top: -1px;
-                left: calc(100% - 2em - 0px);
+                left: calc(100% - 2em - 2px);
                 transform: rotate(-45deg) translateY(-50%);
             }
 
             &.menu-item-has-children {
 
+                &:hover {
+                    >a::after {
+                        left: calc(100% - 2em - 0px);
+                    }
+                }
+
                 // sub sub menu
                 &:hover>ul,
                 &:focus>ul,
                 &.focus>ul {
+
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
                     box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.3);
                     left: calc(100% + 0em);
                     top: 0;

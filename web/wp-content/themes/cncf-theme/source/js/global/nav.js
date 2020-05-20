@@ -5,7 +5,9 @@
  * @since 1.0.0
  */
 
-jQuery(
+/* eslint-disable no-mixed-operators */
+
+jQuery( document ).ready(
 	function( $ ) {
 		// Mobile Menu (hidden on desktop).
 		$( '.hamburger' ).click(
@@ -26,15 +28,6 @@ jQuery(
 			}
 		);
 
-		// Desktop stop empty parents jumping to top of screen on click.
-		if ( $( window ).width() >= 1000 && $( window ).height() >= 700 ) {
-			$( '.main-navigation > li.menu-item-has-children > a' ).click(
-				function( e ) {
-					e.preventDefault();
-				}
-			);
-		}
-
 		// Mobile toggle to open menus on touch.
 		if ( $( window ).width() < 1000 || $( window ).height() < 700 ) {
 			$( 'li.menu-item-has-children > a' ).click(
@@ -44,13 +37,26 @@ jQuery(
 					$( this ).parent().children( '.sub-menu:first' ).slideToggle( 500 );
 				}
 			);
-		}
-	}
-);
+		} else {
+			$( '.main-navigation > li.menu-item-has-children > a' ).click(
+				function(e) {
+          e.preventDefault();
+          $('.main-navigation > li.menu-item-has-children > a').removeClass('is-open');
+          $( this ).toggleClass( 'is-open' );
 
-// Keep menu inside viewport.
-jQuery( document ).ready(
-	function( $ ) {
+				}
+      );
+
+			$( '.main-navigation > li.menu-item-has-children > a' ).hover(
+				function() {
+          $('.main-navigation > li.menu-item-has-children > a').removeClass('is-open');
+          $( this ).toggleClass( 'is-open' );
+
+				}
+			);
+		}
+
+		// Keep menu inside viewport.
 		// TODO: Add resize function.
 		if ( $( window ).width() >= 1000 && $( window ).height() >= 700 ) {
 			$( '.sub-menu li.menu-item-has-children' ).on(
