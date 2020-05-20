@@ -25,7 +25,7 @@ $image = new Image();
 			while ( have_posts() ) :
 				the_post();
 				$count++;
-				$is_featured = ( 1 == $archive_page && 1 == $count && ! $in_the_news_category ? ' featured' : '' );
+				$is_featured = ( 1 == $archive_page && 1 == $count ? ' featured' : '' );
 
 				if ( $is_in_the_news_category ) :
 					?>
