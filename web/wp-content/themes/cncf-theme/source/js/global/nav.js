@@ -5,8 +5,6 @@
  * @since 1.0.0
  */
 
-/* eslint-disable no-mixed-operators */
-
 jQuery( document ).ready(
 	function( $ ) {
 		// Mobile Menu (hidden on desktop).
@@ -38,24 +36,16 @@ jQuery( document ).ready(
 				}
 			);
 		} else {
-			$( '.main-navigation > li.menu-item-has-children > a' ).click(
+			// Desktop stop empty parents jumping to top of screen on click.
+			$( '.main-navigation > li.menu-item-has-children a' ).click(
 				function( e ) {
 					e.preventDefault();
-					$( '.main-navigation > li.menu-item-has-children > a' ).removeClass( 'is-open' );
-					$( this ).toggleClass( 'is-open' );
 				}
 			);
+    }
 
-			$( '.main-navigation > li.menu-item-has-children > a' ).hover(
-				function() {
-					$( '.main-navigation > li.menu-item-has-children > a' ).removeClass( 'is-open' );
-					$( this ).toggleClass( 'is-open' );
-				}
-			);
-		}
-
-		// Keep menu inside viewport.
-		// TODO: Add resize function.
+    // Keep menu inside viewport.
+    	// TODO: Add resize function.
 		if ( $( window ).width() >= 1000 && $( window ).height() >= 700 ) {
 			$( '.sub-menu li.menu-item-has-children' ).on(
 				'mouseenter mouseleave',
@@ -100,5 +90,6 @@ jQuery( document ).ready(
 				}
 			);
 		}
+
 	}
 );
