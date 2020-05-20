@@ -363,7 +363,7 @@ function add_contact_shortcode() {
 		</div>
 
 		<div class="form-group-item">
-			<label for="Comments">Message</label>
+			<label for="Comments">Message <span>*</span></label>
 			<textarea id="Comments" name="Comments" rows="6"
 				placeholder="Type your message here" required></textarea>
 		</div>
