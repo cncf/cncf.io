@@ -110,7 +110,7 @@
             height: 200px;
         }
 
-        @media (min-width: 800px) {
+        a {
             display: flex;
             align-content: center;
             justify-content: center;
@@ -118,11 +118,16 @@
 
         img {
             align-self: center;
+            padding: 0.5em;
 
-            // some control of size.
+            &[src$=".svg"] {
+                padding: 1em;
+            }
+
+            // // some control of size.
             max-height: 200px;
-            max-width: 280px;
-            // for small logos.
+            // max-width: 280px;
+            // // for small logos.
             min-width: 200px;
         }
 
