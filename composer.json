@@ -23,7 +23,7 @@
     "vlucas/phpdotenv": "^3.1.0",
     "wpackagist-plugin/pantheon-advanced-page-cache": "^1.0.0",
     "wpackagist-plugin/wp-native-php-sessions": "^1.0.0",
-    "wpackagist-plugin/wp-mail-smtp":"^1.4.1",
+    "wpackagist-plugin/wp-mail-smtp":"^2.0.1",
     "wpackagist-plugin/lh-hsts":"^1.24",
     "wpackagist-plugin/safe-svg":"^1.9.3",
     "wpackagist-plugin/autodescription":"^4.0.1",
@@ -46,8 +46,8 @@
     "roave/security-advisories": "dev-master",
     "squizlabs/php_codesniffer": "^3.4.0",
     "wp-coding-standards/wpcs": "^2.2.0",
-    "wpackagist-plugin/query-monitor":"3.5.2",
-    "wpackagist-plugin/debug-bar":"1.0"
+    "wpackagist-plugin/query-monitor":"^3.5.2",
+    "wpackagist-plugin/debug-bar":"^1.0"
   },
   "config": {
     "vendor-dir": "vendor",
