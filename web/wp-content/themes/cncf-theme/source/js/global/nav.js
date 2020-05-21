@@ -10,7 +10,7 @@
 jQuery( document ).ready(
 	function( $ ) {
 		// Check for mobile.
-		let isMobile = ( $( window ).width() < 1000 || $( window ).height() < 700 );
+		let isMobile = ( ( $( window ).width() < 1000 ) || ( $( window ).height() < 700 ) );
 
 		if ( isMobile ) {
 			// Mobile Menu (hidden on desktop).
@@ -112,9 +112,11 @@ jQuery( document ).ready(
 						clearTimeout( window.resizeEvt );
 						window.resizeEvt = setTimeout(
 							function() {
-								if ( $( window ).width() < 1000 || $( window ).height() < 700 ) {
-									  // Mobile Menu (hidden on desktop).
-									  $( '.hamburger' ).on( 'click', hamburgerMenu );
+								// Check for mobile.
+								let isMobileResize = ( ( $( window ).width() < 1000 ) || ( $( window ).height() < 700 ) );
+								if ( isMobileResize ) {
+									// Mobile Menu (hidden on desktop).
+									$( '.hamburger' ).on( 'click', hamburgerMenu );
 
 									  // Toggle open menus on touch.
 									  $( 'li.menu-item-has-children > a' ).on( 'click', toggleMenu );
