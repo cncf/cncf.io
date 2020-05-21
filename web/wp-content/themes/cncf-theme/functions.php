@@ -236,10 +236,11 @@ foreach ( $regex_json_path_patterns as $regex_json_path_pattern ) {
 
 /**
  * Updates image class names after post import in order to correct the IDs.
+ * It also adds the external url of news posts as a meta value.
  *
  * @param int $import_id Import ID.
  */
-function my_update_images_in_content( $import_id ) {
+function post_import_processing( $import_id ) {
 	global $wpdb;
 	$imported_posts = $wpdb->get_results( $wpdb->prepare( 'SELECT `post_id` FROM `' . $wpdb->prefix . 'pmxi_posts` WHERE `import_id` = %d', $import_id ) );
 	foreach ( $imported_posts as $x_post ) {
@@ -261,6 +262,19 @@ function my_update_images_in_content( $import_id ) {
 			$i_post->post_content = $doc->saveHTML();
 			wp_update_post( $i_post );
 		}
+
+		$anchor_tags = $doc->getElementsByTagName( 'a' );
+
+		if ( $anchor_tags->length > 0 ) {
+			$last_tag = $anchor_tags->item( $anchor_tags->length - 1 );
+			if ( 'READ MORE' === strtoupper( $last_tag->nodeValue ) ) { //phpcs:ignore
+				$external_url = $last_tag->getAttribute( 'href' );
+				if ( $external_url ) {
+					update_post_meta( $x_post->post_id, 'cncf_post_external_url', $external_url );
+				}
+			}
+		}
 	}
 }
-add_action( 'pmxi_after_xml_import', 'my_update_images_in_content', 10, 1 );
+add_action( 'pmxi_after_xml_import', 'post_import_processing', 10, 1 );
+

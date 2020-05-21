@@ -804,6 +804,40 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
+		$sidebar    = array(
+			'id'              => 'cncf-sidebar-post',
+			'id_prefix'       => 'cncf_',
+			'label'           => __( 'Post Settings' ),
+			'post_type'       => 'post',
+			'data_key_prefix' => 'cncf_post_',
+			'icon_dashicon'   => 'admin-settings',
+			'tabs'            => array(
+				array(
+					'label'  => __( 'Tab label' ),
+					'panels' => array(
+						array(
+							'label'        => __( 'General' ),
+							'initial_open' => true,
+							'settings'     => array(
+								array(
+									'type'          => 'text',
+									'data_type'     => 'meta',
+									'data_key'      => 'external_url',
+									'label'         => __( 'External URL' ),
+									'help'          => __( 'This url is used to link to news items on 3rd-party sites.' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
+									'placeholder'   => 'https://devclass.com/2020/05/14/harbor-2-container-image-registry/',
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+		$sidebars[] = $sidebar;
+
 		// Return the $sidebars array with our sidebar now included.
 		return $sidebars;
 
