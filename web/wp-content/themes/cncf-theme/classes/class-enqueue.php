@@ -65,6 +65,7 @@ class Enqueue {
 			wp_enqueue_script( 'jquery' );
 
 			wp_enqueue_script( 'recaptcha', 'https://www.recaptcha.net/recaptcha/api.js?render=explicit', false, false, true ); // phpcs:ignore
+
 		}
 
 		if ( WP_DEBUG === true ) {

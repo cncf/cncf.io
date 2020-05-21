@@ -12,6 +12,7 @@
 if ( $query->have_posts() ) : ?>
 
 	<?php
+
 	// work out if dealing with recorded or upcoming.
 	if ( '>=' !== $query->query['meta_query'][0]['compare'] ) {
 		// recorded webinars.
