@@ -1,6 +1,16 @@
 // columns
 // this is more complex than needs to be as it has to override WordPress styles. Sigh.
 
+.wp-block-columns {
+    margin-bottom: 1em;
+    align-items: flex-end;
+
+    h3,
+    h6 {
+        margin-bottom: 0;
+    }
+}
+
 .is-style-column-white-background {
     .wp-block-column {
         background-color: $white;

@@ -17,7 +17,7 @@
 
     @media (min-width: 1050px) {
         max-width: 1000px;
-        padding-bottom: 47%;
+        padding-bottom: 51%;
     }
 }
 
@@ -29,4 +29,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+// override Gutenberg video padding.
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper::before {
+    padding-top: 0;
 }

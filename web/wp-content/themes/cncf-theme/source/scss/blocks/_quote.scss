@@ -1,52 +1,48 @@
-.is-style-full-width-gradient {
-    background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
-    color: $white;
-    border-left: 0;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    // alignment
-    position: relative;
-    right: 50%;
-    left: 50%;
-    margin-right: -50vw;
-    margin-left: -50vw;
-    width: 100vw;
+// .is-style-full-width-gradient {
+//     background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
+//     color: $white;
+//     border-left: 0;
+//     padding-top: 2em;
+//     padding-bottom: 2em;
+//     text-align: center;
+//     margin-top: 1em;
+//     margin-bottom: 1em;
+//     // alignment
+//     position: relative;
+//     right: 50%;
+//     left: 50%;
+//     margin-right: -50vw;
+//     margin-left: -50vw;
+//     width: 100vw;
 
 
-    p {
-        font-size: 1.25em;
-        font-weight: 400;
+//     p {
+//         font-size: 1.25em;
+//         font-weight: 400;
 
-        @media (min-width: 768px) {
-            font-size: 1.5em;
-        }
+//         @media (min-width: 768px) {
+//             font-size: 1.5em;
+//         }
 
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+//         max-width: 900px;
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
 
-    cite,
-    .wp-block-quote__citation {
-        color: $white;
-        font-weight: 300;
-        text-transform: uppercase;
-        font-size: 1em;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        font-style: normal;
-    }
+//     cite,
+//     .wp-block-quote__citation {
+//         color: $white;
+//         font-weight: 300;
+//         text-transform: uppercase;
+//         font-size: 1em;
+//         max-width: 900px;
+//         margin-left: auto;
+//         margin-right: auto;
+//         font-style: normal;
+//     }
+// }
 
-}
-
-.wp-block-quote {
-    padding-right: 1em;
-}
-
+.wp-block-quote,
 .wp-block-quote.is-style-default {
     border-left: 0.5em solid $primary-color;
     padding-left: 1em;
@@ -56,6 +52,61 @@
 
     @media (min-width: 768px) {
         font-size: 1.5em;
+    }
+}
+
+.is-style-full-width-gradient {
+
+    border-left: 0;
+    padding-left: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: $primary-color;
+
+    p {
+        margin-bottom: 1em !important;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 1.75em;
+    }
+
+    //     // alignment
+    //     position: relative;
+    //     right: 50%;
+    //     left: 50%;
+    //     margin-right: -50vw;
+    //     margin-left: -50vw;
+    //     width: 100vw;
+
+
+    //     p {
+    //         font-size: 1.25em;
+    //         font-weight: 400;
+
+    //         @media (min-width: 768px) {
+    //             font-size: 1.5em;
+    //         }
+
+    //         max-width: 900px;
+    //         margin-left: auto;
+    //         margin-right: auto;
+    //     }
+
+    cite,
+    .wp-block-quote__citation {
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 1rem;
+        max-width: 900px;
+        margin-left: 2em;
+        // margin-right: auto;
+        font-style: normal;
     }
 
 }

@@ -9,8 +9,8 @@
 
 ?>
 <section class="newsletter">
-<div class="container wrap">
-	<label for="FirstName"><h4 class="is-style-center-width-900">Subscribe to the CNCF newsletter to receive regular updates about
+<div class="container-full-width wrap">
+	<label for="FirstName"><h4 class="">Subscribe to the CNCF newsletter to receive regular updates about
 		webinars, events & latest news</h4></label>
 
 	<form id="sfmc-form1" class="newsletter-form"
@@ -37,6 +37,6 @@
 	<p class="smaller-text">By submitting this form, you acknowledge that your
 		information is subject to The Linux Foundation’s <a
 			href="https://www.linuxfoundation.org/privacy/"
-			rel="norefferer noopener" class="external" target="_blank">Privacy Policy</a>.</p>
+			rel="norefferer noopener" class="external is-footer" target="_blank">Privacy Policy</a>.</p>
 	</div>
 </section>

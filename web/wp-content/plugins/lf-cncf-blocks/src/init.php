@@ -297,7 +297,7 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 					'type' => 'string',
 				),
 				'quantity'  => array(
-					'type' => 'string',
+					'type' => 'number',
 				),
 			),
 			'render_callback' => 'lf_latest_jobs_render_callback',

@@ -20,6 +20,13 @@
             filter: invert(31%) sepia(94%) saturate(6410%) hue-rotate(323deg) brightness(89%) contrast(95%);
         }
     }
+
+    &.is-footer {
+        &::after {
+            // https://codepen.io/sosuke/pen/Pjoqqp
+            filter: invert(65%) sepia(46%) saturate(262%) hue-rotate(189deg) brightness(100%) contrast(82%);
+        }
+    }
 }
 
 // apply inside main nav and copyright only.

@@ -14,7 +14,8 @@
  * @return object block_content Output.
  */
 function lf_latest_jobs_render_callback( $attributes ) {
-	$quantity = isset( $attributes['quantity'] ) ? intval( $attributes['quantity'] ) : 4;
+
+	$quantity = isset( $attributes['quantity'] ) ? $attributes['quantity'] : 4;
 	$items    = lf_latest_jobs_get_external( $quantity );
 	$classes  = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	if ( empty( $items ) ) {
