@@ -14,7 +14,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .speaker-photo {
@@ -23,15 +23,15 @@
         height: auto;
         border: 1px solid $grey-200;
 
-        @media (min-width: 768px) {
-            max-width: 120px;
-        }
+        // @media (min-width: 768px) {
+   //     max-width: 120px;
+   // }
     }
 }
 
 .speaker-title {
     margin-bottom: auto;
-    text-align: center;
+    // text-align: center;
 
     a {
         text-transform: capitalize;
@@ -153,7 +153,7 @@
 
 .speakers-subnav {
     width: 100%;
-    text-align: center;
+    // text-align: center;
     margin-bottom: 2em;
 }
 

@@ -85,14 +85,14 @@
 
         .sub-menu {
             display: none;
-            background-color: lighten($purple-800, 10%);
+            background-color: $purple-500;
 
             a {
                 padding-left: 10px;
             }
 
             .sub-menu {
-                background-color: lighten($purple-800, 20%);
+                background-color: $purple-400;
 
                 a {
                     padding-left: 25px;
@@ -301,7 +301,7 @@
                     box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.3);
                     left: calc(100% + 0em);
                     top: 0;
-                    background-color: darken($secondary-color, 8%);
+                    background-color: $purple-500;
                     overflow: visible;
 
                     // fixes icons

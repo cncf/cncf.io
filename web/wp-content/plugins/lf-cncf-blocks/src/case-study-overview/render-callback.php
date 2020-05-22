@@ -67,7 +67,7 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 	ob_start();
 	?>
 <section
-	class="wp-block-lf-case-study-overview alignwide <?php echo esc_html( $classes ); ?>">
+	class="wp-block-lf-case-study-overview <?php echo esc_html( $classes ); ?>">
 
 	<div class="case-study-overview">
 

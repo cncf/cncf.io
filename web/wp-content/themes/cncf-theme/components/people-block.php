@@ -39,7 +39,7 @@ if ( strlen( $content ) > 20 ) {
 	<?php endif; ?>
 	<?php
 	if ( has_post_thumbnail() ) {
-		echo wp_get_attachment_image( get_post_thumbnail_id(), 'people', false, array( 'class' => 'people-thumbnail' ) );
+		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, array( 'class' => 'people-thumbnail' ) );
 	} else {
 		$options = get_option( 'cncf-mu' );
 		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people', false, array( 'class' => 'people-thumbnail' ) );

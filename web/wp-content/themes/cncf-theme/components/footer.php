@@ -15,7 +15,7 @@ $options = get_option( 'cncf-mu' );
 <?php get_template_part( 'components/newsletter' ); ?>
 
 <footer class="footer">
-	<div class="container wrap copyright-social-wrapper">
+	<div class="container-full-width wrap copyright-social-wrapper">
 
 			<?php get_template_part( 'components/social-links' ); ?>
 

@@ -6,35 +6,53 @@
     margin-right: -50vw;
     margin-left: -50vw;
     width: 100vw;
+
 }
 
 // block using alignwide include:
 // case study overview
 
+
+
 .alignwide {
-    width: 100%;
 
-    @media (min-width: 800px) {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+    @media (min-width: 1200px) {
+        margin-left: calc((100% - 1200px) / 2);
+        width: 1200px;
 
-        >* {
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1em;
-            padding-right: 1em;
+        &.wp-block-group {
+            .wp-block-group__inner-container {
+                max-width: 100%;
+            }
         }
     }
 
-    &.wp-block-embed {
-        margin-bottom: 0;
-    }
 }
+
+// .alignwide {
+//     width: 100%;
+
+//     @media (min-width: 800px) {
+//         width: calc(100vw - 200px);
+//         position: relative;
+//         left: 50%;
+//         right: 50%;
+//         margin-left: -50vw;
+//         margin-right: -50vw;
+
+//         >* {
+//             max-width: 1000px;
+//             margin-left: auto;
+//             margin-right: auto;
+//             padding-left: 1em;
+//             padding-right: 1em;
+//         }
+//     }
+
+//     &.wp-block-embed {
+//         margin-bottom: 0;
+//     }
+// }
 
 
 
@@ -58,19 +76,19 @@
 
 
 // center blocks alignment option.
-.aligncenter {
-    text-align: center;
-}
+// .aligncenter {
+//     text-align: center;
+// }
 
 // experimental to try and align all content inside groups and cover.
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-group .wp-block-group__inner-container {
-    max-width: 1150px !important;
+    max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .wp-block-group {

@@ -15,9 +15,9 @@
     flex-direction: column;
     padding: 1em;
     background-color: $tertiary-color;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    // align-content: center;
+    // justify-content: center;
+    align-items: flex-start;
 }
 
 .spotlight-thumbnail {

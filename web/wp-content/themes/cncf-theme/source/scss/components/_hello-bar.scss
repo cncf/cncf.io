@@ -2,11 +2,11 @@
 
     font-size: 0.825em;
 
-    @media (min-width: 420px) {
-        font-size: 1.1em;
-    }
+    // @media (min-width: 420px) {
+    //     font-size: 1.1em;
+    // }
 
-    background: $primary-color;
+    background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
     color: $white;
     width: 100%;
     padding: 6px;
@@ -19,7 +19,7 @@
         color: $white;
         text-decoration: none;
         border-bottom: 1px solid $white;
-        font-weight: 450;
+        font-weight: 400;
 
         &:hover {
             color: $white;

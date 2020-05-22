@@ -2,6 +2,11 @@ body {
     background-color: $white;
     font-family: $font-primary;
     font-size: 1em; // 16px
+
+    @media (min-width: 1200px) {
+        font-size: 1.125em; // 18px
+    }
+
     color: $black;
     font-weight: 300;
 
@@ -19,8 +24,16 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1050px;
     margin: auto;
+
+}
+
+.container-full-width {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+
 }
 
 .wrap {
@@ -102,7 +115,7 @@ img {
 
     &.stocky {
         letter-spacing: 2px;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 0.7em;
     }
 
@@ -304,10 +317,10 @@ figure {
     }
 
     &.centered {
-        margin-left: auto;
+        // margin-left: auto;
         margin-right: auto;
         display: inline-block;
-        transform: translateX(12px);
+        // transform: translateX(12px);
     }
 
     &.smaller {
@@ -333,7 +346,7 @@ figure {
     }
 
     &.centered {
-        margin-left: auto;
+        // margin-left: auto;
         margin-right: auto;
         display: inline-block;
     }

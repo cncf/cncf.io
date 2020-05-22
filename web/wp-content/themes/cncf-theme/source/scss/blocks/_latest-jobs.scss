@@ -65,13 +65,16 @@
 .wp-block-lf-latest-jobs {
     &.is-style-horizontal {
         .jobs-list {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            // display: flex;
+            // flex-direction: row;
+            // flex-wrap: wrap;
 
-            li {
-                flex: 1 0 350px;
-            }
+            // li {
+            //     flex: 1 0 350px;
+            // }
+            display: grid;
+            grid-gap: 1em;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
     }
 

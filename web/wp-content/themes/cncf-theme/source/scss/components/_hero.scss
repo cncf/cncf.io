@@ -9,8 +9,13 @@
     }
 
     .container {
-        text-align: center;
+        // text-align: center;
         color: $white;
+
+        .page-template-full-width & {
+            max-width: 1250px;
+
+        }
     }
 
     .background-image-figure:after {
@@ -81,11 +86,11 @@
 // used in post, event, webinars single
 .hero-post-title {
     margin-top: 40px;
-    text-align: center;
-    font-weight: 500;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+    // text-align: center;
+    font-weight: 600;
+    max-width: 800px;
+    // margin-left: auto;
+    // margin-right: auto;
     line-height: 1.25;
     letter-spacing: -0.2px;
     color: $secondary-color;

@@ -20,7 +20,7 @@ endif;
 ?>
 
 <header class="site-header">
-	<div class="container wrap">
+	<div class="container-full-width wrap">
 
 		<?php if ( $options['header_image_id'] ) { ?>
 		<div class="logo">
@@ -68,7 +68,7 @@ endif;
 					</button>
 
 					<div class="search-bar">
-						<div class="container wrap search-wrapper">
+						<div class="container-full-width wrap search-wrapper">
 							<form class="search-form" method="get"
 								action="<?php echo esc_url( home_url() ); ?>"
 								role="search">

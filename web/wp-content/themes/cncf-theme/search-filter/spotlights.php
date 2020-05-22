@@ -48,7 +48,7 @@
 			</a>
 		</div>
 
-		<div class="skew-box secondary centered">CNCF
+		<div class="skew-box secondary">CNCF
 			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
 
 		<h5 class="spotlight-title"><a
