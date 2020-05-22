@@ -271,9 +271,13 @@ function post_import_processing( $import_id ) {
 				$external_url = $last_tag->getAttribute( 'href' );
 				if ( $external_url ) {
 					update_post_meta( $x_post->post_id, 'cncf_post_external_url', $external_url );
+					$last_tag->parentNode->removeChild( $last_tag );//phpcs:ignore
+					$i_post->post_content = $doc->saveHTML();
+					wp_update_post( $i_post );
 				}
 			}
 		}
 	}
 }
 add_action( 'pmxi_after_xml_import', 'post_import_processing', 10, 1 );
+post_import_processing( 44 );
