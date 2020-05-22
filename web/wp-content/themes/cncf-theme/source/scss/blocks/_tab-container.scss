@@ -32,9 +32,10 @@
     font-weight: 600;
     margin-bottom: 1em;
     display: block;
+    border-left: 4px solid transparent;
 
     @media (min-width: 800px) {
-        padding-left: 0.5em;
+        padding-left: 1em;
     }
 }
 
@@ -51,13 +52,14 @@ ol.tab-container-nav {
     li {
         margin-top: 0.25em;
         margin-bottom: 0.25em;
-        padding-left: 0.5em;
+        padding-left: 1em;
         padding-right: 1em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
+        border-left: 4px solid transparent;
 
         &.is-active {
-            border-right: 5px solid $primary-color;
+            border-left: 4px solid $primary-color;
             background-color: $tertiary-color;
         }
     }
