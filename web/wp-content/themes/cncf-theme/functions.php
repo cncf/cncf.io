@@ -280,4 +280,3 @@ function post_import_processing( $import_id ) {
 	}
 }
 add_action( 'pmxi_after_xml_import', 'post_import_processing', 10, 1 );
-post_import_processing( 44 );
