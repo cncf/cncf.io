@@ -126,6 +126,14 @@ register_block_style(
 );
 
 register_block_style(
+	'core/column',
+	array(
+		'name'  => 'column-white-padded-shadow',
+		'label' => 'White, Padded, Shadow',
+	)
+);
+
+register_block_style(
 	'core/columns',
 	array(
 		'name'  => 'responsive-four-columns',
