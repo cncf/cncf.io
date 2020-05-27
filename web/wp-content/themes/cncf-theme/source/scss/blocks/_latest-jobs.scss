@@ -5,16 +5,11 @@
     // title.
     a {
         font-size: 1em;
-        color: $secondary-color;
         font-weight: 500;
         line-height: 1.2;
         display: block;
         margin: 0 auto 0.25em;
         text-decoration: none;
-
-        // &:hover {
-        //     color: $purple-800;
-        // }
     }
 
     .jobs-list {
@@ -59,6 +54,10 @@
         min-width: 80px;
         max-width: 80px;
         margin: 0;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 
 }

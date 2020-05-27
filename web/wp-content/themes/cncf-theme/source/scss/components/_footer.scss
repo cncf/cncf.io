@@ -5,7 +5,7 @@
     color: $white;
 
     a {
-        color: $purple-200;
+        color: $white;
         text-decoration: none;
         font-weight: 500;
     }
@@ -33,8 +33,8 @@
         svg {
             max-width: 100%;
             height: 35px;
-            fill: $purple-200;
-            color: $purple-200;
+            fill: $purple-700;
+            color: $purple-700;
 
             &:hover {
                 fill: $link-hover;

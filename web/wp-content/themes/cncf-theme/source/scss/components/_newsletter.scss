@@ -2,8 +2,8 @@
     // text-align: center;
     background-color: $blue-700;
     color: $white;
-    padding-top: 1em;
-    padding-bottom: 2em;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     margin-top: 4em;
 
     @media (min-width: 768px) {
@@ -16,6 +16,7 @@
 
     a {
         color: $white;
+        font-weight: 600;
 
         &:hover {
             text-decoration: none;

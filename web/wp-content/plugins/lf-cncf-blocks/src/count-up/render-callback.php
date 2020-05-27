@@ -59,7 +59,7 @@ function lf_count_up_render_callback( $attributes ) {
 			</div>
 			<?php } ?>
 			<div class="text-wrap" data-mh="facts-text-wrap">
-				<div class="number number-item" data-element="lf-number"
+				<div class="number number-item h2" data-element="lf-number"
 					data-original="<?php echo esc_html( $original_number ); ?>"
 					data-to="<?php echo esc_html( $number ); ?>"
 					data-speed="4000">

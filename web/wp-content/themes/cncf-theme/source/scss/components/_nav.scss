@@ -256,6 +256,7 @@
 
     // sub menus
     .sub-menu {
+        font-size: 0.875rem;
         z-index: 5;
         background: $secondary-color;
         color: $white;
@@ -264,7 +265,7 @@
         left: -9999px;
         top: 100%;
         overflow: hidden;
-        width: 17em;
+        width: 17rem;
         box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
         transform: translateY(0.6em);
@@ -275,7 +276,7 @@
 
             // add border to a so it doesn't touch edges
             a {
-                font-size: 0.875em;
+                // font-size: 0.875em;
                 transition: 0s 0s;
                 border-bottom: 1px solid $purple-400;
             }

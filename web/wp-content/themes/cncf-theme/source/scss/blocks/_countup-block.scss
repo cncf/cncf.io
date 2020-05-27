@@ -32,6 +32,8 @@
     }
 
     .icon-wrap {
+        margin-bottom: 1rem;
+
         img {
             margin: 0 auto;
             width: auto;
@@ -49,12 +51,6 @@
 
     .number-item {
         font-weight: 600;
-        font-size: 2.5em;
-
-        @media (min-width: 1200px) {
-            font-size: 3.2em;
-
-        }
     }
 
     .count-up-description {
