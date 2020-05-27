@@ -1,5 +1,5 @@
 .newsletter {
-    text-align: center;
+    // text-align: center;
     background-color: $blue-700;
     color: $white;
     padding-top: 1em;
@@ -62,7 +62,6 @@
 
     @media (min-width: 700px) {
         flex-direction: row;
-        justify-content: center;
         max-width: initial;
 
         >*:not(:last-child) {

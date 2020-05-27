@@ -9,7 +9,7 @@
 
 ?>
 <section class="newsletter">
-<div class="container-full-width wrap">
+<div class="container wrap">
 	<label for="FirstName"><h4 class="">Subscribe to the CNCF newsletter to receive regular updates about
 		webinars, events & latest news</h4></label>
 
