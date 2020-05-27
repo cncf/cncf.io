@@ -6,7 +6,7 @@
     right: 20px;
     top: -9999em;
     z-index: 10;
-    background-color: rgba($primary-color, 0.5);
+    background-color: rgba($secondary-color, 0.5);
     padding: 8px 10px 8px 10px;
     opacity: 0;
     transition: opacity 1s linear, top 0s 1.5s;
@@ -14,10 +14,11 @@
     svg {
         width: 30px;
         fill: $white;
-		color: $white;
-		&:hover {
-			cursor: pointer;
-		}
+        color: $white;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &.is-active {
