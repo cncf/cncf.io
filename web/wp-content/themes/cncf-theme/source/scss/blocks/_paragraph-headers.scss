@@ -13,6 +13,10 @@ p.has-text-color a {
     }
 }
 
+.is-style-max-width-700 {
+    max-width: 700px;
+}
+
 .is-style-max-width-800 {
     max-width: 800px;
 }
@@ -42,6 +46,8 @@ p.has-text-color a {
     text-align: center;
 }
 
-.entry-content{.is-style-no-max-width {
-    max-width: 100%;
-}}
+.entry-content {
+    .is-style-no-max-width {
+        max-width: 100%;
+    }
+}

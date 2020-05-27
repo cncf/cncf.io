@@ -135,15 +135,15 @@ function lf_events_render_callback( $attributes ) {
 				</a>
 			</div>
 
-			<span class="event-date">
+			<h5 class="event-date">
 				<?php
 				echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 				?>
-			</span>
-			<span
-				class="event-city"><?php echo esc_html( $location ); ?></span>
+			</h5>
+			<h5
+				class="event-city"><?php echo esc_html( $location ); ?></h5>
 			<a href="<?php the_permalink(); ?>"
-				class="button transparent outline">Learn More</a>
+				class="button on-image">Learn More</a>
 		</div>
 	</article>
 		<?php

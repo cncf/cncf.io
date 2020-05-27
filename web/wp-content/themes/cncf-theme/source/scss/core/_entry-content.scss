@@ -1,38 +1,9 @@
 // Use entry-content class to encapsulate the_content.
 // This lets us style lists and links suitable for content.
 
-.single-post,
-.webinar-single,
-.case-study-single,
-.event-single {
-    .entry-content {
-        max-width: 1050px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        margin-top: 2em;
-
-        &.no-max {
-            max-width: initial;
-        }
-    }
-}
-
-.case-study-single {
-    .entry-content {
-        margin-top: 0;
-    }
-}
-
 .entry-content {
 
-    .button.event:visited {
-        text-decoration: none;
-        color: $white;
-    }
-
     p:not([class*='is-style']):not(.hero-parent-link) {
-        margin-bottom: 1.5em;
         max-width: 700px;
     }
 
@@ -165,12 +136,28 @@
         }
     }
 
-    // having this affects search filter.
-    // .button {
-
-    //     &:link,
-    //     &:visited {
-    //         color: $white;
-    //     }
-    // }
 }
+
+
+// .single-post,
+// .webinar-single,
+// .case-study-single,
+// .event-single {
+//     .entry-content {
+//         max-width: 1050px;
+//         margin-left: auto;
+//         margin-right: auto;
+//         text-align: left;
+//         margin-top: 2em;
+
+//         &.no-max {
+//             max-width: initial;
+//         }
+//     }
+// }
+
+// .case-study-single {
+//     .entry-content {
+//         margin-top: 0;
+//     }
+// }

@@ -43,7 +43,7 @@ if ( $ch ) {
 }
 ?>
 
-<div class="case-study-box background-image-wrapper box-shadow">
+<div class="case-study-box background-image-wrapper">
 
 	<div class="case-study-overlay"></div>
 
@@ -55,9 +55,9 @@ if ( $ch ) {
 
 	<div class="case-study-content-wrapper background-image-text-overlay">
 
-		<h3 class="case-study-title"><a title="<?php the_title(); ?>"
+		<h5 class="case-study-title"><a title="<?php the_title(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		</h3>
+		</h5>
 
 		<div>
 			<?php
@@ -77,7 +77,7 @@ if ( $ch ) {
 						?>
 			<span
 				class="unskew-box secondary centered"><?php echo esc_html( $project->name ); ?></span>
-									<?php
+						<?php
 					}
 				}
 			}
@@ -87,7 +87,7 @@ if ( $ch ) {
 		<?php
 		if ( ! empty( $industry ) && ! is_wp_error( $industry ) ) :
 			?>
-		<div class="margin-y">
+		<div class="margin-top-small">
 			<?php
 			// limits to max 2 industry.
 			$industry = array_slice( $industry, 0, 2 );
@@ -103,8 +103,12 @@ if ( $ch ) {
 		</div>
 		<?php endif; ?>
 
+		<div class="margin-y-small">
+			<span
+				class="unskew-box secondary centered"><?php the_date(); ?></span>
+		</div>
 		<?php if ( $read_case_study ) { ?>
-		<a class="button stocky outline transparent"
+		<a class="button on-image"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		<?php } ?>
 

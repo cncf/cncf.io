@@ -58,11 +58,6 @@
     margin-bottom: 2em;
     line-height: 1.15;
     font-size: 0.875em;
-    text-align: left;
-}
-
-.profile__header {
-    text-align: center;
 }
 
 @keyframes mmfadeIn {
@@ -132,4 +127,11 @@
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
     will-change: transform;
+}
+
+.modal.is-open {
+    .people-profile-picture {
+        width: 200px;
+
+    }
 }

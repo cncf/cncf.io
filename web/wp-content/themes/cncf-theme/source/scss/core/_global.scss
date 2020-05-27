@@ -44,9 +44,9 @@ body {
     }
 }
 
-.box-shadow {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
+// .box-shadow {
+//     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+// }
 
 img {
     margin: 0;
@@ -145,11 +145,14 @@ img {
 
     }
 
-    &.event {
+    &.on-image {
         background-color: transparent;
         box-sizing: border-box;
         border: 1px solid $white;
         color: $white;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 0.7em;
 
         &:hover {
             background-color: $white;

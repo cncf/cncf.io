@@ -72,7 +72,7 @@ $image = new Image();
 			?>
 		<div class="archive-item <?php echo esc_html( $is_featured ); ?>">
 
-			<div class="archive-image-wrapper box-shadow"><a
+			<div class="archive-image-wrapper"><a
 					href="<?php the_permalink(); ?>"
 					title="<?php the_title(); ?>">
 

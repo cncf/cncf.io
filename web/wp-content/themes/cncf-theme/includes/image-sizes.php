@@ -20,3 +20,4 @@ add_image_size( 'newsroom-image-large', 1040, 640, true );
 add_image_size( 'newsroom-image', 520, 320, true );
 add_image_size( 'newsroom-image-small', 260, 160, true );
 add_image_size( 'newsroom-media-coverage', 260, 160, false );
+add_image_size( 'spotlight', 285, 150, false );

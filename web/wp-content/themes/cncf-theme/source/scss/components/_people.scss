@@ -20,26 +20,21 @@
 
     button.button-reset {
         width: 100%;
+        margin-bottom: 0.5em;
     }
 
-    img.people-thumbnail {
-        margin-bottom: 0.5em;
-        // width: 100px;
-        // height: 100px;
-
-        border: 1px solid $grey-200;
-        min-width: 100%;
+    .people-profile-picture {
         width: 100%;
-
+        height: 200px;
+        border: 1px solid $grey-200;
     }
 
     .people-title {
-        margin: 0;
         margin-bottom: 0.25em;
     }
 
     .people-company {
-        margin: 0;
+        font-weight: 400;
         margin-bottom: 0.5em;
     }
 
@@ -63,9 +58,20 @@
 
 .people-social {
     margin-top: 0.5em;
-    margin-bottom: 1em;
+
+    a {
+        display: inline-block;
+
+        svg {
+            vertical-align: bottom;
+        }
+    }
 }
 
-.modal-trigger {
+.people-social+.modal-trigger {
+    margin-top: 1em;
+}
+
+.social-modal-wrapper {
     margin-top: auto;
 }

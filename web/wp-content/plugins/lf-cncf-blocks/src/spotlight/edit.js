@@ -22,16 +22,16 @@ const { InspectorControls } = wp.blockEditor || wp.editor;
 const { RangeControl, PanelBody, Placeholder, Spinner } = wp.components;
 const { withSelect } = wp.data;
 
-class CaseStudies extends Component {
+class Spotlights extends Component {
 renderControl = () => {
 	const { attributes, setAttributes } = this.props;
 	const { numberposts } = attributes;
 
 	return (
-		<InspectorControls key="lf-case-studies-block-panel">
+		<InspectorControls key="lf-spotlights-block-panel">
 			<PanelBody title={ __( 'Settings' ) } initialOpen={ true }>
 				<RangeControl
-					label={ __( 'Number of Case Studies' ) }
+					label={ __( 'Number of Spotlights' ) }
 					min={ 1 }
 					max={ 12 }
 					value={ numberposts }
@@ -49,17 +49,16 @@ renderList = () => {
 	} = this.props;
 
 	const data = posts.slice( 0, numberposts );
-
 	return (
-		<div className="events-wrapper">
+		<div className="spotlights-wrapper">
 			{ data.map(
 				post => (
-					<article className="case-study-box" key={ post.id } style={ { backgroundColor: '#617ABB' } }>
-						<div className="event-content-wrapper-editor">
-							<h4 className="event-title" dangerouslySetInnerHTML={ { __html: post.title.rendered } } />
-							<span className="button transparent outline ">Read Case Study</span>
+					<div className="spotlight-box" key={ post.id }>
+						<div className="spotlight-photo">
+							<img className="spotlight" src="https://via.placeholder.com/285x150/d9d9d9/000000" alt="Spotlight Thumbnail" />
 						</div>
-					</article>
+						<h5 className="spotlight-title" dangerouslySetInnerHTML={ { __html: post.title.rendered } } />
+					</div>
 				)
 			)
 			}
@@ -98,7 +97,7 @@ export default withSelect(
 			( value ) => ! isUndefined( value )
 		);
 		return {
-			posts: getEntityRecords( 'postType', 'cncf_case_study', latestPostsQuery ),
+			posts: getEntityRecords( 'postType', 'cncf_spotlight', latestPostsQuery ),
 		};
 	}
-)( CaseStudies );
+)( Spotlights );

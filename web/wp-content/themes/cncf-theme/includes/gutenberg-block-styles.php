@@ -37,6 +37,14 @@ register_block_style(
 register_block_style(
 	'core/heading',
 	array(
+		'name'  => 'max-width-700',
+		'label' => 'Max-Width 700px',
+	)
+);
+
+register_block_style(
+	'core/heading',
+	array(
 		'name'  => 'max-width-800',
 		'label' => 'Max-Width 800px',
 	)
@@ -64,6 +72,14 @@ register_block_style(
 	array(
 		'name'  => 'center-width-900',
 		'label' => 'Max-Width 900px & Centered',
+	)
+);
+
+register_block_style(
+	'core/paragraph',
+	array(
+		'name'  => 'max-width-700',
+		'label' => 'Max-Width 700px',
 	)
 );
 
@@ -118,22 +134,6 @@ register_block_style(
 );
 
 register_block_style(
-	'core/column',
-	array(
-		'name'  => 'column-drop-shadow',
-		'label' => 'Drop Shadow',
-	)
-);
-
-register_block_style(
-	'core/column',
-	array(
-		'name'  => 'column-white-padded-shadow',
-		'label' => 'White, Padded, Shadow',
-	)
-);
-
-register_block_style(
 	'core/columns',
 	array(
 		'name'  => 'responsive-four-columns',
@@ -149,6 +149,22 @@ register_block_style(
 	)
 );
 
+// COLUMN.
+register_block_style(
+	'core/column',
+	array(
+		'name'  => 'column-drop-shadow',
+		'label' => 'Drop Shadow',
+	)
+);
+
+register_block_style(
+	'core/column',
+	array(
+		'name'  => 'column-white-padded-shadow',
+		'label' => 'White, Padded, Shadow',
+	)
+);
 
  // IMAGES.
 register_block_style(
@@ -158,7 +174,6 @@ register_block_style(
 		'label' => 'Front Page Hero Image',
 	)
 );
-
 
  // QUOTE.
 register_block_style(

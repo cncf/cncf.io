@@ -77,10 +77,10 @@ function lf_newsroom_render_callback( $attributes ) {
 				?>
 		</div>
 
-		<p class="newsroom-title"><a href="<?php the_permalink(); ?>"
+		<h5 class="newsroom-title"><a href="<?php the_permalink(); ?>"
 				title="<?php the_title(); ?>">
 				<?php the_title(); ?>
-			</a></p>
+			</a></h5>
 		<span class="newsroom-date date-icon"> <?php echo get_the_date( 'j F Y' ); ?></span>
 	</div>
 		<?php

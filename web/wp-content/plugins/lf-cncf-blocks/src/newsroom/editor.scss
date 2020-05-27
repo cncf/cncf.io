@@ -10,37 +10,28 @@
     display: grid;
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    background-color: $white;
-    padding: 10px;
 
     @media (min-width: 950px) {
         grid-template-columns: 1fr;
         height: 100%;
+        grid-auto-rows: 1fr;
         row-gap: 0px;
     }
 
-    .nr-title {
-        margin-top: 5px;
-        margin-bottom: 0;
-        line-height: 1.2;
-        font-size: 0.875em;
-    }
+    &.is-style-horizontal {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        margin-bottom: 1em;
 
-    .nr-date {
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 0.875em;
-        font-weight: 500;
-        color: $grey-700;
-    }
-}
+        @media (min-width: 1024px) {
+            grid-gap: 1.5em;
+        }
 
-.nr-post-wrapper {
-    position: relative;
-    margin-bottom: 20px;
+        .newsroom-date {
+            margin-top: auto;
+        }
 
-    @media (min-width: 950px) {
-        margin-bottom: 0;
+        .newsroom-title {
+            margin-bottom: 0.5em;
+        }
     }
 }

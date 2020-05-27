@@ -18,8 +18,8 @@ $image = new Image();
 		<img src="<?php $image->get_svg( '404-phippy.svg', true ); ?>" alt="Phippy says Sorry!" class="image-404">
 
 <div class="content-404">
-		<span class="extremely-large strong secondary">404</span>
-		<p class="upper h3 strong secondary">Page not found</p>
+		<span class="extremely-large secondary">404</span>
+		<p class="upper h3 secondary">Page not found</p>
 		<form role="search" method="get" class="search-form"
 			action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<div>

@@ -27,40 +27,10 @@
 		while ( $query->have_posts() ) :
 			$query->the_post();
 
-			$subtitle = get_post_meta( get_the_ID(), 'cncf_spotlight_subtitle', true );
+			get_template_part( 'components/spotlight-item' );
 
-			// get spotlight type.
-			$spotlight_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-spotlight-type', true );
-
-			?>
-	<div class="spotlight-box box-shadow">
-
-		<div class="spotlight-photo">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php
-				if ( has_post_thumbnail() ) {
-					echo wp_get_attachment_image( get_post_thumbnail_id(), 'thumbnail', false, array( 'class' => 'spotlight-thumbnail' ) );
-				} else {
-					$options = get_option( 'cncf-mu' );
-					echo wp_get_attachment_image( $options['generic_avatar_id'], 'thumbnail', false, array( 'class' => 'spotlight-thumbnail' ) );
-				}
-				?>
-			</a>
-		</div>
-
-		<div class="skew-box secondary">CNCF
-			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
-
-		<h5 class="spotlight-title"><a
-				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-
-		<div class="spotlight-date">
-			<?php echo get_the_date( 'F Y' ); ?></div>
-
-			<?php echo esc_html( $subtitle ); ?>
-
-	</div>
-	<?php endwhile; ?>
+	endwhile;
+		?>
 </div>
 		<?php
 else :

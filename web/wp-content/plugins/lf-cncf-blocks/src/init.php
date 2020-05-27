@@ -375,6 +375,23 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+		// Case Studies Block.
+		require_once 'spotlight/render-callback.php';
+		register_block_type(
+			'lf/spotlight',
+			array(
+				'attributes'      => array(
+					'className' => array(
+						'type' => 'string',
+					),
+					'numberposts'     => array(
+						'type' => 'number',
+					),
+				),
+				'render_callback' => 'lf_spotlight_render_callback',
+			)
+		);
+
 }
 add_action( 'init', 'lf_cncf_blocks_register_dynamic_blocks' );
 

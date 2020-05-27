@@ -2,7 +2,6 @@
     display: grid;
     grid-gap: 4em;
     grid-template-rows: 1fr;
-    // max-width: 1050px;
     margin-top: 4em;
     margin-left: auto;
     margin-right: auto;
@@ -13,8 +12,7 @@
 }
 
 .archive-date {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.5em;
     font-size: 0.875em;
     font-weight: 500;
     color: $grey-500;

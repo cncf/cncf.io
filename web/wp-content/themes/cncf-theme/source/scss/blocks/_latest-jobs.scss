@@ -20,25 +20,28 @@
 
         li {
             background-color: $white;
-            padding: 15px 15px 15px 20px;
+            padding: 1em 0.5em 1em 1em;
             margin: 0;
             display: flex;
             align-items: center;
         }
     }
 
+    .job-title {
+        margin-bottom: 0;
+    }
+
     .job-content {
-        margin-left: 1.5em;
+        margin-left: 1em;
         display: flex;
         flex-direction: column;
         text-align: left;
     }
 
-    .job-location,
-    .job-company {
+    .job-company,
+    .job-location {
         display: flex;
         align-items: center;
-        color: $black;
         font-size: 0.875em;
         margin-bottom: 0.25em;
 
@@ -48,6 +51,10 @@
             height: 14px;
             width: auto;
         }
+    }
+
+    .job-location {
+        color: $grey-500;
     }
 
     .job-image {
@@ -65,16 +72,13 @@
 .wp-block-lf-latest-jobs {
     &.is-style-horizontal {
         .jobs-list {
-            // display: flex;
-            // flex-direction: row;
-            // flex-wrap: wrap;
-
-            // li {
-            //     flex: 1 0 350px;
-            // }
             display: grid;
             grid-gap: 1em;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+            @media (min-width: 1024px) {
+                grid-gap: 1.5em;
+            }
         }
     }
 

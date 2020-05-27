@@ -100,7 +100,7 @@ class Newsroom extends Component {
 		const data = posts.map( p => ( { ...p, meta: mapValues( p.meta, head ) } ) ).slice( 0, numberposts );
 
 		return (
-			<div className="wp-block-lf-newsroom">
+			<Fragment>
 				{ data.map(
 					 post => (
 						<div key={ post.id } className="nr-post-wrapper">
@@ -118,7 +118,7 @@ class Newsroom extends Component {
 					)
 				)
 				}
-			</div>
+			</Fragment>
 		);
 	}
 
@@ -133,10 +133,8 @@ class Newsroom extends Component {
 			<Fragment>
 				{ this.renderControl() }
 				<div className={ className }>
-					<div className={ `${ className }__block` }>
 						{ this.renderList() }
 					</div>
-				</div>
 			</Fragment>
 		);
 	}

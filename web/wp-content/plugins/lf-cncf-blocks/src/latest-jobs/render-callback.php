@@ -55,8 +55,8 @@ function lf_latest_jobs_render_callback( $attributes ) {
 			</a>
 
 			<div class="job-content">
-				<a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer"
-					title="<?php echo esc_html( $title ) . 'at ' . esc_html( $company ); ?>"><?php echo esc_html( $title ); ?></a>
+				<h5 class="job-title"><a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer"
+					title="<?php echo esc_html( $title ) . 'at ' . esc_html( $company ); ?>"><?php echo esc_html( $title ); ?></a></h5>
 
 				<span class="job-company">
 					<svg viewBox="0 0 448 512">

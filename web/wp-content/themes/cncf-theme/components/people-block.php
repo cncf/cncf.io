@@ -30,26 +30,30 @@ if ( strlen( $content ) > 20 ) {
 }
 ?>
 
-<div class="people-box box-shadow">
+<div class="people-box">
 	<!-- thumbnail  -->
 	<?php if ( $show_modal ) : ?>
 	<button
 		data-micromodal-trigger="modal-<?php echo esc_html( $person_id ); ?>"
 		class="button-reset">
 	<?php endif; ?>
+	<div class="background-image-wrapper people-profile-picture">
+	<figure class="background-image-figure">
 	<?php
 	if ( has_post_thumbnail() ) {
-		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, array( 'class' => 'people-thumbnail' ) );
+		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, array( 'class' => '' ) );
 	} else {
 		$options = get_option( 'cncf-mu' );
-		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people', false, array( 'class' => 'people-thumbnail' ) );
+		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people', false, array( 'class' => '' ) );
 	}
 	?>
+	</figure>
+	</div>
 	<?php if ( $show_modal ) : ?>
 	</button>
 	<?php endif; ?>
 	<!-- Name  -->
-	<h5 class="people-title"><?php the_title(); ?></h5>
+	<h4 class="people-title"><?php the_title(); ?></h4>
 
 	<!-- Company  -->
 	<?php
@@ -62,6 +66,7 @@ if ( strlen( $content ) > 20 ) {
 		<?php the_excerpt(); ?>
 	</div>
 
+<div class="social-modal-wrapper">
 	<?php
 	// Social Icons.
 	if ( $linkedin || $twitter || $github || $wechat || $website || $youtube ) :
@@ -128,10 +133,18 @@ if ( strlen( $content ) > 20 ) {
 				</header>
 
 				<div class="profile__header">
+
 					<?php
-					if ( has_post_thumbnail() ) {
-						echo wp_get_attachment_image( get_post_thumbnail_id(), 'people', false, array( 'class' => 'people-thumbnail' ) );
-					}
+					if ( has_post_thumbnail() ) :
+						?>
+				<div class="background-image-wrapper people-profile-picture">
+	<figure class="background-image-figure">
+						<?php
+						echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, array( 'class' => 'people-thumbnail' ) );
+						?>
+</figure></div>
+						<?php
+					endif;
 					?>
 					<!-- Name  -->
 					<h3 class="modal__title margin-reset margin-top-small"
@@ -156,5 +169,5 @@ if ( strlen( $content ) > 20 ) {
 		</div>
 	</div>
 	<?php endif; ?>
-
+</div>
 </div><!-- end of people box  -->

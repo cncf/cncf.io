@@ -17,7 +17,7 @@ h6 {
 h1 {
     font-size: 2.75em; // 36px
     // margin-top: .67em;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     @media (max-width: 767px) {
         font-size: 1.85em;
@@ -29,7 +29,7 @@ h2,
 .has-header-2-font-size {
     font-size: 2.75em; // 36px
     // margin-top: .83em;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     @media (max-width: 767px) {
         font-size: 1.85em;
@@ -42,6 +42,7 @@ h3,
     font-size: 1.5em; // 24px
     // margin-top: 1em;
     // margin-bottom: 1em;
+    margin-bottom: 1rem;
 
     @media (max-width: 767px) {
         font-size: 1.3em;
@@ -54,6 +55,7 @@ h4,
     font-size: 1.250em; // 20px
     // margin-top: 1.33em;
     // margin-bottom: 1.33em;
+    margin-bottom: 1rem;
 
     @media (max-width: 767px) {
         font-size: 1.1em;
@@ -63,15 +65,17 @@ h4,
 h5,
 .h5,
 .has-header-5-font-size {
-    font-size: 1.125em; // 18px
+    font-size: 1em; // 18px
     // margin-top: 1.67em;
     // margin-bottom: 1.67em;
+    margin-bottom: 1rem;
 }
 
 h6 {
     font-size: 1em;
     // margin-top: 1em;
     // margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 p,
@@ -79,25 +83,17 @@ li {
     line-height: 1.5;
 }
 
+p {
+    margin-bottom: 1.5em;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
 strong,
 b {
-    font-weight: bold;
-}
-
-em,
-i {
-    font-style: oblique;
-}
-
-.white {
-    color: $white;
-}
-
-.black {
-    color: $black;
-}
-
-.strong {
     font-weight: 700;
 }
 
@@ -125,12 +121,6 @@ i {
 a {
     text-decoration: none;
     transition: all 0.25s ease-out;
-    // color: $secondary-color;
-    // font-weight: 500;
-
-    // &:visited {
-    //     text-decoration: none;
-    // }
 
     &:hover {
         color: $primary-color;
@@ -150,3 +140,16 @@ a {
         -webkit-tap-highlight-color: rgba($secondary-color, 0.3);
     }
 }
+
+// em,
+// i {
+//     font-style: oblique;
+// }
+
+// .white {
+//     color: $white;
+// }
+
+// .black {
+//     color: $black;
+// }

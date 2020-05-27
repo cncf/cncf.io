@@ -22,7 +22,10 @@ elseif ( is_singular( 'cncf_webinar' ) ) :
 elseif ( is_singular( 'cncf_event' ) ) :
 	get_template_part( 'components/event-single' );
 
-	// Default.
+
+	elseif ( is_singular( 'cncf_spotlight' ) ) :
+		get_template_part( 'components/spotlight-single' );
+		// Default.
 else :
 	get_template_part( 'components/post-single' );
 endif;

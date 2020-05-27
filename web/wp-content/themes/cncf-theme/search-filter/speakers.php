@@ -81,7 +81,7 @@ if ( $query->have_posts() ) {
 		// makes the name capitalised.
 		$display_name = ucwords( strtolower( um_user( 'display_name' ) ) );
 		?>
-	<div class="speaker box-shadow">
+	<div class="speaker">
 		<div class="speaker-photo">
 			<a href="<?php echo esc_url( um_user_profile_url() ); ?>"
 				title="<?php echo esc_attr( $display_name ); ?>">
