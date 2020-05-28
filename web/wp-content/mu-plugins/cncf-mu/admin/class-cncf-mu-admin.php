@@ -96,6 +96,45 @@ class Cncf_Mu_Admin {
 	 */
 	public function register_cpts() {
 
+		// Case Study Block Template setup.
+		$case_study_block_template = array(
+			array(
+				'core/heading',
+				array(
+					'level'     => '1',
+					'placeholder'   => 'Case study title to be shown as page header',
+					'className' => 'is-style-max-800',
+				),
+			),
+			array( 'lf/case-study-overview' ),
+			array( 'lf/case-study-highlights' ),
+			array( 'core-embed/youtube' ),
+			array(
+				'core/heading',
+				array(
+					'level'       => '3',
+					'placeholder' => 'Introductory paragraph to the case study',
+				),
+			),
+			array( 'core/paragraph' ),
+			array( 'core/paragraph' ),
+			array(
+				'core/gallery',
+				array(
+					'align' => 'wide',
+				),
+			),
+			array( 'core/paragraph' ),
+			array( 'core/paragraph' ),
+			array(
+				'core/quote',
+				array(
+					'placeholder'   => 'Nice quote from customer lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo',
+					'className' => 'is-style-case-study-quote',
+				),
+			),
+		);
+
 		$opts = array(
 			'labels'              => array(
 				'name'          => __( 'People' ),
@@ -126,6 +165,7 @@ class Cncf_Mu_Admin {
 			'show_in_nav_menus' => false,
 			'show_in_rest'      => true,
 			'hierarchical'      => false,
+			'template'          => $case_study_block_template,
 			'menu_icon'         => 'dashicons-awards',
 			'rewrite'           => array( 'slug' => 'case-studies' ),
 			'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
@@ -1394,8 +1434,8 @@ class Cncf_Mu_Admin {
 			}
 			$speaker_id = wp_insert_post(
 				array(
-					'post_title' => $last_name . $first_name,
-					'post_name'  => $user_id,
+					'post_title'  => $last_name . $first_name,
+					'post_name'   => $user_id,
 					'post_type'   => 'cncf_speaker',
 					'post_status' => 'publish',
 				)

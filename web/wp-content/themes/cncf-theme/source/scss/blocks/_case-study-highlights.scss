@@ -2,9 +2,10 @@
     text-align: center;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(120px, auto);
     margin-top: 2rem;
     margin-bottom: 2rem;
+    background-color: $blue-100;
 
     >div {
         display: grid;
@@ -12,17 +13,24 @@
         justify-content: center;
         padding: 0.5em;
         border-bottom: 0.25em solid $white;
+        align-content: space-around;
 
-        h3,
-        p {
-            margin: 0;
+        @media (max-width: 949px) {
+            h3 {
+                margin-bottom: 0;
+            }
+
+            p {
+                margin-top: 0;
+            }
+
         }
-
     }
+
 
     @media (min-width: 550px) and (max-width: 949px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: minmax(200px, auto);
+        grid-auto-rows: minmax(180px, auto);
 
         >div {
             border-bottom: 0px;
@@ -47,12 +55,23 @@
         max-width: 1000px;
 
         >div {
+            align-items: flex-start;
             border-bottom: 0;
             border-right: 1px solid $white;
-            padding: 0em 1em;
+            padding: 0em 0.75em;
 
             &:last-child {
                 border-right: 0px;
+            }
+
+            @media (min-width: 1200px) {
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                &:first-child {
+                    padding-left: 0;
+                }
             }
         }
 
@@ -60,13 +79,16 @@
 }
 
 .project-icon {
-    width: 20%;
+    width: 22%;
     margin: 0.5em;
     display: inline-block;
 }
 
 .case-study-highlight-text {
-    font-size: 1.5em;
-    font-weight: 400;
-    letter-spacing: 1px;
+
+
+    h3,
+    strong {
+        font-weight: 600;
+    }
 }

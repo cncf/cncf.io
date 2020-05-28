@@ -17,9 +17,12 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	// get content.
-	$highlight01 = isset( $attributes['highlight01'] ) ? $attributes['highlight01'] : '';
-	$highlight02 = isset( $attributes['highlight02'] ) ? $attributes['highlight02'] : '';
-	$highlight03 = isset( $attributes['highlight03'] ) ? $attributes['highlight03'] : '';
+	$heading_text01 = isset( $attributes['headingText01'] ) ? $attributes['headingText01'] : '';
+	$heading_text02 = isset( $attributes['headingText02'] ) ? $attributes['headingText02'] : '';
+	$heading_text03 = isset( $attributes['headingText03'] ) ? $attributes['headingText03'] : '';
+	$smaller_text01 = isset( $attributes['smallerText01'] ) ? $attributes['smallerText01'] : '';
+	$smaller_text02 = isset( $attributes['smallerText02'] ) ? $attributes['smallerText02'] : '';
+	$smaller_text03 = isset( $attributes['smallerText03'] ) ? $attributes['smallerText03'] : '';
 
 	$projects = get_the_terms( get_the_ID(), 'cncf-project' );
 
@@ -32,9 +35,8 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 	<?php if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) { ?>
 <div style="align-content: center">
 <h3>CNCF Projects Used</h3>
-<div class="margin-top-small">
+<div>
 		<?php
-		// TODO - Switch out to embedded SVG or link to projects.
 		foreach ( $projects as $project ) {
 			?>
 <div class="project-icon">
@@ -49,9 +51,36 @@ alt="<?php echo esc_html( $project->name ); ?>">
 		<?php
 	}
 	?>
-<div class="case-study-highlight-text"><?php echo wp_kses_post( $highlight01 ); ?></div>
-<div class="case-study-highlight-text"><?php echo wp_kses_post( $highlight02 ); ?></div>
-<div class="case-study-highlight-text"><?php echo wp_kses_post( $highlight03 ); ?></div>
+<div class="case-study-highlight-text">
+	<?php if ( $heading_text01 ) : ?>
+<h3><?php echo wp_kses_post( $heading_text01 ); ?></h3>
+		<?php
+	endif;
+	if ( $smaller_text01 ) :
+		?>
+<p><?php echo wp_kses_post( $smaller_text01 ); ?></p>
+	<?php endif; ?>
+	</div>
+<div class="case-study-highlight-text">
+	<?php if ( $heading_text02 ) : ?>
+<h3><?php echo wp_kses_post( $heading_text02 ); ?></h3>
+		<?php
+	endif;
+	if ( $smaller_text02 ) :
+		?>
+<p><?php echo wp_kses_post( $smaller_text02 ); ?></p>
+	<?php endif; ?>
+</div>
+<div class="case-study-highlight-text">
+	<?php if ( $heading_text03 ) : ?>
+<h3><?php echo wp_kses_post( $heading_text03 ); ?></h3>
+		<?php
+	endif;
+	if ( $smaller_text03 ) :
+		?>
+<p><?php echo wp_kses_post( $smaller_text03 ); ?></p>
+	<?php endif; ?>
+</div>
 </div></div>
 
 </section>

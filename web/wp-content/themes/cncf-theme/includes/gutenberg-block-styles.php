@@ -10,6 +10,40 @@
  */
 
  // HEADER.
+
+
+register_block_style(
+	'core/heading',
+	array(
+		'name'  => 'max-width-600',
+		'label' => 'Max-Width 600px',
+	)
+);
+
+register_block_style(
+	'core/heading',
+	array(
+		'name'  => 'max-width-700',
+		'label' => 'Max-Width 700px',
+	)
+);
+
+register_block_style(
+	'core/heading',
+	array(
+		'name'  => 'max-width-800',
+		'label' => 'Max-Width 800px',
+	)
+);
+
+register_block_style(
+	'core/heading',
+	array(
+		'name'  => 'max-width-900',
+		'label' => 'Max-Width 900px',
+	)
+);
+
 register_block_style(
 	'core/heading',
 	array(
@@ -34,8 +68,17 @@ register_block_style(
 	)
 );
 
+// PARAGRAPH.
 register_block_style(
-	'core/heading',
+	'core/paragraph',
+	array(
+		'name'  => 'max-width-600',
+		'label' => 'Max-Width 600px',
+	)
+);
+
+register_block_style(
+	'core/paragraph',
 	array(
 		'name'  => 'max-width-700',
 		'label' => 'Max-Width 700px',
@@ -43,7 +86,7 @@ register_block_style(
 );
 
 register_block_style(
-	'core/heading',
+	'core/paragraph',
 	array(
 		'name'  => 'max-width-800',
 		'label' => 'Max-Width 800px',
@@ -51,14 +94,13 @@ register_block_style(
 );
 
 register_block_style(
-	'core/heading',
+	'core/paragraph',
 	array(
 		'name'  => 'max-width-900',
 		'label' => 'Max-Width 900px',
 	)
 );
 
-// PARAGRAPH.
 register_block_style(
 	'core/paragraph',
 	array(
@@ -72,30 +114,6 @@ register_block_style(
 	array(
 		'name'  => 'center-width-900',
 		'label' => 'Max-Width 900px & Centered',
-	)
-);
-
-register_block_style(
-	'core/paragraph',
-	array(
-		'name'  => 'max-width-700',
-		'label' => 'Max-Width 700px',
-	)
-);
-
-register_block_style(
-	'core/paragraph',
-	array(
-		'name'  => 'max-width-800',
-		'label' => 'Max-Width 800px',
-	)
-);
-
-register_block_style(
-	'core/paragraph',
-	array(
-		'name'  => 'max-width-900',
-		'label' => 'Max-Width 900px',
 	)
 );
 
@@ -179,8 +197,8 @@ register_block_style(
 register_block_style(
 	'core/quote',
 	array(
-		'name'  => 'full-width-gradient',
-		'label' => 'Full Width on Gradient',
+		'name'  => 'case-study-quote',
+		'label' => 'Case Study Quote',
 	)
 );
 
@@ -219,38 +237,3 @@ function slug_post_type_template() {
 	 );
 };
 add_action( 'init', 'slug_post_type_template' );
-
-
-/**
- * Block Template Case Study
- */
-function case_study_block_template() {
-	$page_type_object           = get_post_type_object( 'cncf_case_study' );
-	$page_type_object->template = array(
-		array(
-			'core/heading',
-			array(
-				'level'     => '1',
-				'content'   => 'Case study title',
-				'className' => 'is-style-max-800',
-			),
-		),
-		array( 'lf/case-study-overview' ),
-		array( 'lf/case-study-highlights' ),
-		array( 'core/youtube' ),
-		array(
-			'core/heading',
-			array(
-				'level'   => '3',
-				// 'content' => 'Introduction Paragraph',
-				'placeholder' => 'Introduction Paragraph',
-			),
-		),
-		array( 'core/paragraph' ),
-		array( 'core/paragraph' ),
-		array( 'core/gallery' ),
-	);
-};
-add_action( 'init', 'case_study_block_template' );
-
-

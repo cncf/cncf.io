@@ -3,6 +3,7 @@
 
 .entry-content {
 
+    // annoying event box button fix.
     .button {
         &.on-image {
             background-color: transparent;
@@ -38,7 +39,9 @@
     h4,
     h5,
     h6 {
-        max-width: 850px;
+        &:not([class*='is-style']) {
+            max-width: 850px;
+        }
     }
 
     a {

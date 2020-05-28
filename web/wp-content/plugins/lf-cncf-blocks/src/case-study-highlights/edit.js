@@ -19,15 +19,15 @@ const { Component } = wp.element;
 class CaseStudyHighlight extends Component {
 	render() {
 		const { attributes, setAttributes } = this.props;
-		const { highlight01, highlight02, highlight03, className } = attributes;
+		const { headingText01, headingText02, headingText03, smallerText01, smallerText02, smallerText03, className } = attributes;
 
 		return (
 			<div
-				className="case-study-highlights alignwide is-style-blue-pink-gradient ">
+				className="case-study-highlights alignwide">
 				<div className="container case-study-highlights-wrapper">
 			<div><h3>CNCF Projects Used</h3>
 			<div>
-			<img src="https://via.placeholder.com/50x50/d9d9d9/000000" /> & nbsp;
+			<img src="https://via.placeholder.com/50x50/d9d9d9/000000" /> { " "}
 			<img src="https://via.placeholder.com/50x50/d9d9d9/000000" />
 			</div>
 			</div>
@@ -35,30 +35,54 @@ class CaseStudyHighlight extends Component {
 				<RichText
 					tagName="h3"
 					className={ className }
-					placeholder={ __( 'Example Text 1', 'cncf-blocks' ) }
+					placeholder={ __( 'Heading Text 1', 'cncf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
-					value={ highlight01 }
-					onChange={ value => setAttributes( { highlight01: value } ) }
+					value={ headingText01 }
+					onChange={ value => setAttributes( { headingText01: value } ) }
+				/>
+				<RichText
+					tagName="p"
+					className={ className }
+					placeholder={ __( 'Smaller Text 1', 'cncf-blocks' ) }
+					keepPlaceholderOnFocus={ false }
+					value={ smallerText01 }
+					onChange={ value => setAttributes( { smallerText01: value } ) }
 				/>
 			</div>
 			<div>
 				<RichText
 					tagName="h3"
 					className={ className }
-					placeholder={ __( 'Example Text 2', 'cncf-blocks' ) }
+					placeholder={ __( 'Heading Text 2', 'cncf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
-					value={ highlight02 }
-					onChange={ value => setAttributes( { highlight02: value } ) }
+					value={ headingText02 }
+					onChange={ value => setAttributes( { headingText02: value } ) }
+				/>
+				<RichText
+					tagName="p"
+					className={ className }
+					placeholder={ __( 'Smaller Text 2', 'cncf-blocks' ) }
+					keepPlaceholderOnFocus={ false }
+					value={ smallerText02 }
+					onChange={ value => setAttributes( { smallerText02: value } ) }
 				/>
 			</div>
 			<div>
 				<RichText
 					tagName="h3"
 					className={ className }
-					placeholder={ __( 'Example Text 3', 'cncf-blocks' ) }
+					placeholder={ __( 'Heading Text 3', 'cncf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
-					value={ highlight03 }
-					onChange={ value => setAttributes( { highlight03: value } ) }
+					value={ headingText03 }
+					onChange={ value => setAttributes( { headingText03: value } ) }
+				/>
+				<RichText
+					tagName="p"
+					className={ className }
+					placeholder={ __( 'Smaller Text 3', 'cncf-blocks' ) }
+					keepPlaceholderOnFocus={ false }
+					value={ smallerText03 }
+					onChange={ value => setAttributes( { smallerText03: value } ) }
 				/>
 			</div>
 			</div>
