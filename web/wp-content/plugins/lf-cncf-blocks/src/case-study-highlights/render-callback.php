@@ -38,7 +38,7 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 		foreach ( $projects as $project ) {
 			?>
 <div class="project-icon">
-<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-white.svg'; ?>"
+<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-black.svg'; ?>"
 alt="<?php echo esc_html( $project->name ); ?>">
 </div>
 			<?php

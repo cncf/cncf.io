@@ -220,3 +220,37 @@ function slug_post_type_template() {
 };
 add_action( 'init', 'slug_post_type_template' );
 
+
+/**
+ * Block Template Case Study
+ */
+function case_study_block_template() {
+	$page_type_object           = get_post_type_object( 'cncf_case_study' );
+	$page_type_object->template = array(
+		array(
+			'core/heading',
+			array(
+				'level'     => '1',
+				'content'   => 'Case study title',
+				'className' => 'is-style-max-800',
+			),
+		),
+		array( 'lf/case-study-overview' ),
+		array( 'lf/case-study-highlights' ),
+		array( 'core/youtube' ),
+		array(
+			'core/heading',
+			array(
+				'level'   => '3',
+				// 'content' => 'Introduction Paragraph',
+				'placeholder' => 'Introduction Paragraph',
+			),
+		),
+		array( 'core/paragraph' ),
+		array( 'core/paragraph' ),
+		array( 'core/gallery' ),
+	);
+};
+add_action( 'init', 'case_study_block_template' );
+
+
