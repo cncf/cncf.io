@@ -3,6 +3,31 @@
 
 .entry-content {
 
+    .button {
+        &.on-image {
+            background-color: transparent;
+            box-sizing: border-box;
+            border: 1px solid $white;
+            color: $white;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 0.7em;
+
+            &:hover {
+                background-color: $white;
+                color: $primary-color;
+
+                a:visited {
+                    color: $primary-color !important;
+                }
+            }
+
+            a:visited {
+                color: $primary-color !important;
+            }
+        }
+    }
+
     p:not([class*='is-style']):not(.hero-parent-link) {
         max-width: 700px;
     }
