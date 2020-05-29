@@ -1,3 +1,18 @@
+.case-study-highlights {
+    background-color: $blue-100;
+
+    h3,
+    strong {
+        font-weight: 600;
+    }
+
+    @media (min-width: 1200px) {
+        h3 {
+            font-size: 1.4rem;
+        }
+    }
+}
+
 .case-study-highlights-wrapper {
     text-align: center;
     display: grid;
@@ -82,13 +97,4 @@
     width: 22%;
     margin: 0.5em;
     display: inline-block;
-}
-
-.case-study-highlight-text {
-
-
-    h3,
-    strong {
-        font-weight: 600;
-    }
 }

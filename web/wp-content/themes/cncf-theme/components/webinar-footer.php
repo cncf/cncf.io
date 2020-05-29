@@ -19,9 +19,9 @@ $image = new Image();
 <div class="background-image-text-overlay webinar-footer-text-wrap">
 
 		<h2>Get involved</h2>
-		<h6>CNCF webinars are a great way to educate new and existing community members about trends and new technologies. We’re looking for project maintainers, CNCF members, and community experts to share their knowledge. Webinars are non-promotional and focus on education and thought-leadership within the cloud native space.</h6>
+		<h5>CNCF webinars are a great way to educate new and existing community members about trends and new technologies. We’re looking for project maintainers, CNCF members, and community experts to share their knowledge. Webinars are non-promotional and focus on education and thought-leadership within the cloud native space.</h5>
 
-<h6>Interested in hosting a CNCF webinar?</h6>
+<h5>Interested in hosting a CNCF webinar?</h5>
 
 		<a title="Host a CNCF webinar" href="mailto:webinars@cncf.io" class="button outline transparent">Let us know</a>
 

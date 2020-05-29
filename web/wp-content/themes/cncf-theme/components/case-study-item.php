@@ -10,7 +10,9 @@
  */
 
 // if CPT set chinese conditional true.
-if ( ! is_front_page() && 'cncf_case_study_ch' === $query->query['post_type'] ) {
+if ( ! is_front_page() || ! $query ) {
+	$ch = false;
+} elseif ( 'cncf_case_study_ch' === $query->query['post_type'] ) {
 	$ch = true;
 } else {
 	$ch = false;

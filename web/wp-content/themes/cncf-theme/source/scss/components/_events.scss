@@ -7,10 +7,18 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     grid-auto-rows: minmax(220px, auto);
 
+    .home & {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
     @media (min-width: 1000px) {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         grid-gap: 1.5em;
         height: 100%;
+
+        .home & {
+            grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+        }
     }
 }
 
@@ -33,11 +41,11 @@
     color: $white;
     font-weight: 600;
     padding: 1em;
-    font-size: 1em;
+    // font-size: 1em;
 
-    @media (min-width: 768px) {
-        font-size: 1.25em;
-    }
+    // @media (min-width: 768px) {
+    //     font-size: 1.25em;
+    // }
 }
 
 .event-logo {
@@ -50,6 +58,10 @@
     align-content: center;
     justify-content: center;
     margin-bottom: 1em;
+
+    .home & {
+        height: 75px;
+    }
 
     // apply to the a not the img.
     a {
@@ -78,14 +90,10 @@
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    // font-size: 1.25em;
 
     @media (min-width: 1024px) {
-        // font-size: 1.1em;
         max-width: 90%;
     }
-
-
 
     .single-cncf_event & {
         font-size: 2em;
@@ -103,7 +111,6 @@
 
 // Event Singular
 .event-single {
-    // text-align: center;
 
     .event-box {
         height: 250px;
@@ -113,10 +120,7 @@
         }
 
         width: 500px;
-
         max-width: 100%;
-        // margin-left: auto;
-        // margin-right: auto;
         margin-top: 2em;
     }
 }

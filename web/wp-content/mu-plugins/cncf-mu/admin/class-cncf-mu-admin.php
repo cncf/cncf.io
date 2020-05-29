@@ -114,6 +114,7 @@ class Cncf_Mu_Admin {
 				array(
 					'level'       => '3',
 					'placeholder' => 'Introductory paragraph to the case study',
+					'className' => 'is-style-max-800',
 				),
 			),
 			array( 'core/paragraph' ),

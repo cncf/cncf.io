@@ -30,7 +30,7 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 	?>
 <section class="wp-block-lf-case-study-highlights <?php echo esc_html( $classes ); ?>">
 
-<div class="case-study-highlights alignwide is-style-blue-pink-gradient ">
+<div class="case-study-highlights alignwide">
 <div class="container case-study-highlights-wrapper">
 	<?php if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) { ?>
 <div style="align-content: center">

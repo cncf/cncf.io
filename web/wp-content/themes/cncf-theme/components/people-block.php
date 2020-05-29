@@ -59,7 +59,7 @@ if ( strlen( $content ) > 20 ) {
 	<?php
 	if ( $company ) :
 		?>
-	<h6 class="people-company"><?php echo esc_html( $company ); ?></h6>
+	<h5 class="people-company"><?php echo esc_html( $company ); ?></h5>
 	<?php endif; ?>
 
 	<div class="people-excerpt">
@@ -155,8 +155,8 @@ if ( strlen( $content ) > 20 ) {
 					<?php
 					if ( $company ) :
 						?>
-					<h6 class="margin-reset margin-top-small">
-						<?php echo esc_html( $company ); ?></h6>
+					<h5 class="margin-reset margin-top-small">
+						<?php echo esc_html( $company ); ?></h5>
 					<?php endif; ?>
 
 				</div>
