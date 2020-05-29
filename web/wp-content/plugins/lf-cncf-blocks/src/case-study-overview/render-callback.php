@@ -42,6 +42,7 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 		$cloud_type_text   = '云类型';
 		$product_type_text = '产品类型';
 		$challenge_text    = '挑战';
+		$date_published    = '出版';
 
 	} else {
 
@@ -62,6 +63,7 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 		$cloud_type_text   = 'Cloud Type';
 		$product_type_text = 'Product Type';
 		$challenge_text    = 'Challenges';
+		$date_published    = 'Published';
 	}
 
 	ob_start();
@@ -140,6 +142,12 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 				<?php
 					endif;
 			?>
+			<div>
+				<p><?php echo esc_html( $date_published ); ?></p>
+				<span
+					class="skew-box secondary"><?php the_date(); ?></span>
+			</div>
+
 		</div>
 	</div>
 </section>
