@@ -25,12 +25,11 @@ $blue-900: #060927;
 $cncf-blue-400: #76c5d5;
 $cncf-blue-700: #426cab;
 
-
 $pink-300: #E43B80; // cta rollover
 $pink-400: #DE176C; // preferred CTA
 
-$purple-100:#c6cfeb;
 $purple-200:#9eacdd;
+$purple-300:#9491AD;
 $purple-400: #48549C;
 $purple-500: #333E82;
 $purple-700: #2C2960; // secondary
@@ -87,3 +86,8 @@ Monaco,
 "Courier New",
 Courier,
 monospace;
+
+// spacing.
+
+$sm-padding: 2rem;
+$lg-padding: 4rem;

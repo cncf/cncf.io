@@ -6,10 +6,13 @@
         min-height: 220px;
         justify-content: center;
         align-items: center;
+
+        @media (min-width: 1400px) {
+            min-height: 280px;
+        }
     }
 
     .container {
-        // text-align: center;
         color: $white;
 
         .page-template-full-width & {
@@ -20,7 +23,6 @@
 
     .background-image-figure:after {
         background-color: $purple-800;
-        // background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
         background-size: cover;
         content: "";
         display: block;
@@ -34,13 +36,9 @@
         mix-blend-mode: normal;
     }
 
-    // 	background: linear-gradient(90deg,#2825f2 0%,#dc096a 100%);
-    // opacity: 0.5;
-
     .background-image-figure {
-        // background-color: $purple-800;
-        background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
-        background-color: red;
+        // background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
+        // background-color: red;
     }
 
     h1 {
@@ -52,7 +50,9 @@
         margin-top: 2em;
     }
 
-
+    &.alignfull {
+        margin-bottom: 4em;
+    }
 }
 
 

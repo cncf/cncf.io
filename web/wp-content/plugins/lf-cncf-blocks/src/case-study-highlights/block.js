@@ -42,7 +42,7 @@ registerBlockType(
 		category: 'cncf',
 		keywords: [
 			__( 'case study' ),
-			__( 'case' ),
+			__( 'metrics' ),
 			__( 'highlights' ),
 			__( 'cncf' ),
 		],

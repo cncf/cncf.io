@@ -5,7 +5,7 @@
     color: $white;
 
     a {
-        color: $white;
+        color: $purple-300;
         text-decoration: none;
         font-weight: 500;
     }
@@ -20,7 +20,7 @@
         max-width: 400px;
 
         @media (min-width: 1000px) {
-            justify-content: end;
+            justify-content: center;
             max-width: initial;
             flex-basis: 40%;
             grid-gap: 15px;
@@ -54,12 +54,8 @@
 }
 
 .copyright-text {
-    text-align: center;
 
-    @media (min-width: 1000px) {
-        flex-basis: 60%;
-        text-align: left;
-    }
+    color: $purple-300;
 
     a:hover::after {
         filter: none !important;

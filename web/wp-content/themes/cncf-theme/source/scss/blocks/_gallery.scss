@@ -1,11 +1,20 @@
-ul.blocks-gallery-grid {
-    margin-left: 0;
+.wp-block-gallery {
+    .blocks-gallery-item {
+        margin-bottom: 0;
+    }
+
+    .blocks-gallery-grid {
+        margin-left: 0;
+        margin-top: $lg-padding;
+        margin-bottom: $lg-padding;
+    }
+
 }
 
-.wp-block-gallery,
 .blocks-gallery-grid {
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-
     justify-content: center;
+}
+
+p+.wp-block-gallery .blocks-gallery-grid {
+    margin-top: calc(#{$lg-padding} - 2rem);
 }

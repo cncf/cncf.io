@@ -21,17 +21,18 @@
 .case-study-overview-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: $sm-padding;
 
     @media (min-width: 800px) {
         padding-left: 1em;
         padding-right: 1em;
         padding-bottom: 1em;
         flex-direction: column;
-        margin-left: 3em;
         flex-grow: 0;
         flex-shrink: 0;
         width: 230px;
+        margin-left: 3em;
+        margin-bottom: 0;
     }
 
     p {
