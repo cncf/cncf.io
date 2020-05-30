@@ -107,7 +107,7 @@ if ( $ch ) {
 
 		<div class="margin-y-small">
 			<span
-				class="unskew-box secondary centered"><?php the_date(); ?></span>
+				class="unskew-box secondary centered"><?php echo get_the_date(); ?></span>
 		</div>
 		<?php if ( $read_case_study ) { ?>
 		<a class="button on-image"
