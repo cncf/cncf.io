@@ -9,6 +9,8 @@
  * @since 1.0.0
  */
 
+global $query;
+
 // if CPT set chinese conditional true.
 if ( ! is_front_page() || ! $query ) {
 	$ch = false;
