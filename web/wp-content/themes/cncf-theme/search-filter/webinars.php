@@ -117,7 +117,7 @@ if ( $query->have_posts() ) : ?>
 			if ( $webinar_date ) :
 				?>
 		<div class="recorded live-icon">Recorded:
-				<?php echo esc_html( $webinar_date->format( 'j F Y' ) ); ?></div>
+				<?php echo esc_html( $webinar_date->format( 'F j, Y' ) ); ?></div>
 				<?php
 				endif;
 			?>

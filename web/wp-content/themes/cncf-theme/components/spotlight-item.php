@@ -37,7 +37,7 @@ $spotlight_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-spotlight-type
 	href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
 	<span class="archive-date date-icon spotlight-date">
-<?php echo get_the_date( 'F Y' ); ?></span>
+<?php echo get_the_date( 'F j, Y' ); ?></span>
 
 <?php echo esc_html( $subtitle ); ?>
 

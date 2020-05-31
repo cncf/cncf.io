@@ -106,7 +106,7 @@ if ( $dat_webinar > $dat_now ) {
 				?>
 		<div class="recorded">
 			<p class="live-icon">Recorded:
-				<?php echo esc_html( $dat_webinar->format( 'l j F Y' ) ); ?>
+				<?php echo esc_html( $dat_webinar->format( 'l F j, Y' ) ); ?>
 			</p>
 		</div>
 		<?php endif; ?>

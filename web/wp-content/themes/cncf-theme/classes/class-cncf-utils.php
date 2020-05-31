@@ -131,7 +131,7 @@ class Cncf_Utils {
 		}
 
 		// format the webinar date.
-		$webinar_date = $dt_date->format( 'l j F Y' );
+		$webinar_date = $dt_date->format( 'l F j, Y' );
 
 		// setup the results.
 		if ( $formatted ) {
@@ -142,11 +142,11 @@ class Cncf_Utils {
 			}
 
 			// output in way suitable for DateTime.
-			$result = $date . ' ' . $padded_starting_time . ' ' . $timezone;
+			$result = $date . ', ' . $padded_starting_time . ' ' . $timezone;
 
 		} else {
 			// output in readable format.
-			$result = $webinar_date . ' ' . $starting_time . $period . ' ' . $timezone;
+			$result = $webinar_date . ', ' . $starting_time . $period . ' ' . $timezone;
 		}
 		return isset( $result ) ? $result : false;
 	}
