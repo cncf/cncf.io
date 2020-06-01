@@ -14,3 +14,7 @@ div.pmc-sidebar input::placeholder {
 .thumbnail-margin-bottom {
 	margin-bottom: 20px;
 }
+
+.image-preview-wrapper img {
+	max-height: 100px;
+}
