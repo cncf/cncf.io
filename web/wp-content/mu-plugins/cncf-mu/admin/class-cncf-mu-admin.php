@@ -479,6 +479,7 @@ class Cncf_Mu_Admin {
 									'ui_border_top' => true,
 									'default_value' => '',
 									'placeholder'   => 'https://www.youtube.com/watch?v=95pkfWf8DgA',
+									'help' => 'Leave blank if there is no recording',
 								),
 								array(
 									'type'          => 'text',
