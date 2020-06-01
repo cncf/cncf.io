@@ -77,26 +77,6 @@
             margin-bottom: 1em;
         }
     }
-
-    // label {
-    //     width: 100%;
-    // }
-
-
-    // @media (min-width: 700px) {
-    //     // flex-direction: row;
-    //     // max-width: initial;
-    //     // justify-content: center;
-
-    //     >*:not(:last-child) {
-    //         margin-bottom: 0;
-    //         margin-right: 0.5em;
-    //     }
-    // }
-
-
-
-
 }
 
 .newsletter-form {
@@ -105,23 +85,13 @@
     input[type="email"] {
         height: 40px;
         padding: 0.5em 0;
-
-        // @media (min-width: 900px) {
-        //     padding: 1.2em 0;
-        // }
-
         width: 100%;
-        height: 100%;
         border: none;
         background: transparent;
         color: $purple-300;
         border-bottom: 1px solid $purple-300;
         border-top: 1px solid transparent;
         transition: all 0.5s ease;
-
-        @media (min-width: 900px) {
-            width: 100%;
-        }
 
         &::placeholder {
             color: $purple-300;
