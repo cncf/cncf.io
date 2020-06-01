@@ -324,8 +324,12 @@
  * CSS for just Backend enqueued after style.scss
  *
  */
-.case-study-overview {
-  padding: 1em; }
+.hero .background-image-text-overlay {
+  text-align: left;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
 /**
  * #.# Common SCSS
  *

@@ -22,7 +22,7 @@ class Hero extends Component {
 		const { className } = attributes;
 
 		const heroTemplate = [
-			[ 'core/heading', { placeholder: 'Your custom page title', level: 1, className: 'is-style-center-width-800', textColor: 'white' } ],
+			[ 'core/heading', { placeholder: 'Your custom page title', level: 1, textColor: 'white' } ],
 		];
 
 		return (
@@ -30,7 +30,7 @@ class Hero extends Component {
 				<section className="hero background-image-wrapper">
 
 					<figure className="background-image-figure">
-						<img src="/wp-content/uploads/2020/02/welcome.jpg" alt="welcome" />
+						<img src="/wp-content/uploads/2020/05/welcome.jpg" alt="welcome" />
 					</figure>
 
 					<div className="container wrap background-image-text-overlay">
