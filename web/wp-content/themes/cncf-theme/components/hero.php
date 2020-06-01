@@ -9,12 +9,23 @@
  * @since 1.0.0
  */
 
+// setup options.
+$options = get_option( 'cncf-mu' );
 ?>
 
 <section class="hero background-image-wrapper">
 
 	<figure class="background-image-figure">
-		<img src="/wp-content/uploads/2020/05/welcome.jpg" height="400" width="100%" alt="Hero background">
+	<?php
+	if ( has_post_thumbnail() ) {
+		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, false );
+	} elseif ( isset( $options['generic_hero_id'] ) && $options['generic_hero_id'] ) {
+		echo wp_get_attachment_image( $options['generic_hero_id'], 'full', false, false );
+	} else {
+		echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+		. '/images/hero-default.jpg" alt="CNCF" height="400" width="100%"/>';
+	}
+	?>
 	</figure>
 
 	<div class="container wrap background-image-text-overlay">

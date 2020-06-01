@@ -23,7 +23,6 @@
 
     .background-image-figure:after {
         background-color: $purple-800;
-        background-size: cover;
         content: "";
         display: block;
         position: absolute;
@@ -32,7 +31,7 @@
         width: 100%;
         height: 100%;
         z-index: 2;
-        opacity: .70;
+        opacity: .85;
         mix-blend-mode: normal;
     }
 
@@ -85,11 +84,8 @@
 // used in post, event, webinars single
 .hero-post-title {
     margin-top: 40px;
-    // text-align: center;
     font-weight: 600;
     max-width: 800px;
-    // margin-left: auto;
-    // margin-right: auto;
     line-height: 1.25;
     letter-spacing: -0.2px;
     color: $secondary-color;

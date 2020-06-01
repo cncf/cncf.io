@@ -19,17 +19,23 @@ function lf_hero_render_callback( $attributes, $content ) {
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
+	// setup options.
+	$options = get_option( 'cncf-mu' );
+
 	ob_start();
 	?>
 <section
 class="hero background-image-wrapper alignfull <?php echo esc_html( $classes ); ?>">
 
 <figure class="background-image-figure">
-	<?php
+<?php
 	if ( has_post_thumbnail() ) {
-		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, array( 'class' => '' ) );
+		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, false );
+	} elseif ( isset( $options['generic_hero_id'] ) && $options['generic_hero_id'] ) {
+		echo wp_get_attachment_image( $options['generic_hero_id'], 'full', false, false );
 	} else {
-		echo '<img src="/wp-content/uploads/2020/05/welcome.jpg" height="400" width="100%" alt="Hero background">';
+		echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+		. '/images/hero-default.jpg" alt="CNCF" height="400" width="100%"/>';
 	}
 	?>
 </figure>
