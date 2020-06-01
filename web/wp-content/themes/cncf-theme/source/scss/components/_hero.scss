@@ -32,13 +32,12 @@
         width: 100%;
         height: 100%;
         z-index: 2;
-        opacity: .75;
+        opacity: .70;
         mix-blend-mode: normal;
     }
 
-    .background-image-figure {
-        // background: linear-gradient(90deg, #2825f2 0%, #dc096a 100%);
-        // background-color: red;
+    .background-image-figure img {
+        filter: grayscale(100%);
     }
 
     h1 {
