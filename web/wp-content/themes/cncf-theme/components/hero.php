@@ -17,7 +17,7 @@ $options = get_option( 'cncf-mu' );
 
 	<figure class="background-image-figure">
 	<?php
-	if ( has_post_thumbnail() ) {
+	if ( has_post_thumbnail() && ! is_archive() ) {
 		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, false );
 	} elseif ( isset( $options['generic_hero_id'] ) && $options['generic_hero_id'] ) {
 		echo wp_get_attachment_image( $options['generic_hero_id'], 'full', false, false );
