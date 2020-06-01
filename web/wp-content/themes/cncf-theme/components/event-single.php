@@ -57,53 +57,65 @@ $color ? $overlay_color = $color : $overlay_color = '#254AAB';
 			the_post();
 			?>
 
+
+			<?php if ( $event_start_date ) : ?>
+		<div class="skew-box centered">
+				<?php
+				echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+				?>
+		</div>
+		<?php endif; ?>
+
+
 			<?php
 			if ( $event_host ) :
 				?>
-		<div class="skew-box centered"><?php echo esc_html( $event_host ); ?> Event</div>
-			<?php endif; ?>
+		<div class="skew-box secondary centered">
+				<?php echo esc_html( $event_host ); ?> Event</div>
+		<?php endif; ?>
 
-<div class="event-box background-image-wrapper">
+		<div class="event-box background-image-wrapper">
 
-<div class="event-overlay"
-	style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
-</div>
+			<div class="event-overlay"
+				style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
+			</div>
 
 			<?php if ( $background ) : ?>
-<figure class="background-image-figure">
+			<figure class="background-image-figure">
 				<?php echo wp_get_attachment_image( $background, 'medium', false ); ?>
-</figure>
-<?php endif; ?>
+			</figure>
+			<?php endif; ?>
 
-<div class="event-content-wrapper background-image-text-overlay">
+			<div class="event-content-wrapper background-image-text-overlay">
 
-	<div class="event-logo">
-			<?php if ( $logo ) : ?>
-		<a href="<?php the_permalink(); ?>"
-			title="<?php the_title(); ?>">
-				<?php
-				echo wp_get_attachment_image( $logo, 'medium', false );
-				?>
-				  </a>
-<?php else : ?>
-				<h3 class="event-title"><a href="<?php the_permalink(); ?>"
-			title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-				<?php endif; ?>
-		</a>
-	</div>
+				<div class="event-logo">
+					<?php if ( $logo ) : ?>
+					<a href="<?php the_permalink(); ?>"
+						title="<?php the_title(); ?>">
+						<?php
+						echo wp_get_attachment_image( $logo, 'medium', false );
+						?>
+					</a>
+					<?php else : ?>
+					<h3 class="event-title"><a href="<?php the_permalink(); ?>"
+							title="<?php the_title(); ?>"><?php the_title(); ?></a>
+					</h3>
+					<?php endif; ?>
+					</a>
+				</div>
 
-	<span class="event-date">
-			<?php
-				echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
-			?>
-	</span>
-	<span
-		class="event-city"><?php echo esc_html( $location ); ?></span>
-</div>
-</div>
+				<h4 class="event-date">
+					<?php
+					echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+					?>
+				</h4>
+				<h3
+					class="event-city"><?php echo esc_html( $location ); ?></h3>
+			</div>
+		</div>
 
 
-			<div class="entry-content">
+		<div class="entry-content">
 
 			<?php the_content(); ?>
 
@@ -111,10 +123,13 @@ $color ? $overlay_color = $color : $overlay_color = '#254AAB';
 
 
 			<?php if ( $external_url ) : ?>
-		<a href="<?php echo esc_url( $external_url ); ?>" class="button">Event Information</a>
-<?php endif; ?>
+		<a href="<?php echo esc_url( $external_url ); ?>" class="button">Event
+			Information</a>
+		<?php endif; ?>
 
-<a href="mailto:meeting@cncf.io" class="button secondary-color margin-top-large">Arrange Meeting with CNCF</a>
+		<a href="mailto:meeting@cncf.io"
+			class="button secondary-color margin-top-large">Arrange Meeting with
+			CNCF</a>
 
 
 
