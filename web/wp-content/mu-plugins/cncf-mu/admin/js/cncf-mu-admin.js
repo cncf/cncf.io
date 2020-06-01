@@ -35,7 +35,7 @@
 				// Uploading files.
 				var file_frame;
 				var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id.
-				var set_to_post_id = 7974; // Set this.
+				var set_to_post_id = 0; // Set this to the post or to 0 for admin.
 
 				jQuery( '.upload_image_button' ).on(
 					'click',
