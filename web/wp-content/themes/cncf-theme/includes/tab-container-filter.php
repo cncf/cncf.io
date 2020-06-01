@@ -27,7 +27,7 @@ function cncf_content_filter( $content ) {
 <div class="sticky-container">
 	<div class="sticky-column">
 	<div class="sticky-element">
-	<span class="sticky-nav-hint">Page Navigation</span>
+	<span class="sticky-nav-hint">Table of contents</span>
 		<ol id="tab-container-nav" class="tab-container-nav">
 			<?php
 			// grab the data-menu-title and id from each tag to construct the menu.
