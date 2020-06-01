@@ -64,7 +64,7 @@ $image = new Image();
 				</a></p>
 				<span class="archive-date date-icon">
 					<?php echo get_the_date( 'F j, Y' ); ?></span>
-				<p class="archive-excerpt"><?php the_content(); ?></p>
+				<div class="archive-excerpt"><?php the_content(); ?></div>
 			</div>
 		</div>
 					<?php
@@ -96,7 +96,7 @@ $image = new Image();
 					</a></p>
 				<span class="archive-date date-icon">
 					<?php echo get_the_date( 'F j, Y' ); ?></span>
-				<p class="archive-excerpt"><?php the_excerpt(); ?></p>
+				<div class="archive-excerpt"><?php the_excerpt(); ?></div>
 			</div>
 		</div>
 				<?php
