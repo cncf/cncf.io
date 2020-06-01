@@ -864,6 +864,17 @@ class Cncf_Mu_Admin {
 								array(
 									'type'          => 'text',
 									'data_type'     => 'meta',
+									'data_key'      => 'guest_author',
+									'label'         => __( 'Guest Author' ),
+									'help'          => __( 'Enter a guest author name to override WordPress default Posted By' ),
+									'register_meta' => true,
+									'ui_border_top' => true,
+									'default_value' => '',
+									'placeholder'   => '',
+								),
+								array(
+									'type'          => 'text',
+									'data_type'     => 'meta',
 									'data_key'      => 'external_url',
 									'label'         => __( 'External URL' ),
 									'help'          => __( 'This url is used to link to news items on 3rd-party sites.' ),
