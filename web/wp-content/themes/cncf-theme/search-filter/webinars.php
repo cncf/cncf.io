@@ -67,6 +67,9 @@ if ( $query->have_posts() ) : ?>
 	while ( $query->have_posts() ) :
 		$query->the_post();
 
+		// setup options.
+		$options = get_option( 'cncf-mu' );
+
 		// get webinar date.
 		$webinar_date = new DateTime( get_post_meta( get_the_ID(), 'cncf_webinar_date', true ) );
 
@@ -87,16 +90,24 @@ if ( $query->have_posts() ) : ?>
 		<?php if ( $is_recorded ) : ?>
 	<div class="webinar-recorded-box box-shadow">
 
-			<?php if ( $video_id ) : ?>
 		<figure>
 			<a href="<?php the_permalink(); ?>">
+			<?php if ( $video_id ) { ?>
+
 				<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
 					alt="<?php the_title(); ?>">
 				<svg class="video-overlay" width="50" height="50">
 					<use href="#play" /></svg>
+				<?php
+			} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
+							echo wp_get_attachment_image( $options['generic_thumb_id'], 'full', false, array( 'class' => 'webinar-default' ) );
+			} else {
+				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+				. '/images/thumbnail-default.svg" alt="CNCF" class="webinar-default"/>';
+			}
+			?>
 			</a>
 		</figure>
-		<?php endif; ?>
 
 		<div class="skew-box secondary">CNCF
 			<?php echo esc_html( $author_category ); ?> Webinar</div>
