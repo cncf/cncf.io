@@ -29,7 +29,7 @@ function lf_hero_render_callback( $attributes, $content ) {
 		if ( has_post_thumbnail() ) {
 					echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, array( 'class' => '' ) );
 		} else {
-			echo '<img src="/wp-content/uploads/2020/02/welcome.jpg" alt="">';
+			echo '<img src="/wp-content/uploads/2020/05/welcome.jpg" height="400" width="100%" alt="Hero background">';
 		}
 		?>
 	</figure>
