@@ -22,6 +22,8 @@ $image = new Image();
 
 			$is_in_the_news_category = ( in_category( 'news' ) ) ? true : false;
 
+			$is_blog_category = ( in_category( 'blog' ) ) ? true : false;
+
 			while ( have_posts() ) :
 				the_post();
 				$count++;
@@ -45,23 +47,25 @@ $image = new Image();
 					href="<?php echo esc_url( $link_url ); ?>"
 					<?php echo esc_attr( $target_attr ); ?>
 					title="<?php the_title(); ?>">
-							<?php
-							if ( has_post_thumbnail() ) {
-								echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-media-coverage', false, array( 'class' => 'newsroom-media-coverage' ) );
+					<?php
+					if ( has_post_thumbnail() ) {
+						echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-media-coverage', false, array( 'class' => 'newsroom-media-coverage' ) );
 
-							} else {
-								echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-								. '/images/thumbnail-default.svg" alt="CNCF Media Coverage" class="newsroom-media-coverage"/>';
-							}
-							?>
+					} else {
+						echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+						. '/images/thumbnail-default.svg" alt="CNCF Media Coverage" class="newsroom-media-coverage"/>';
+					}
+					?>
 				</a>
 			</div>
 			<div class="archive-text-wrapper">
-				<p class="archive-title"><a class="<?php echo esc_html( $add_external_icon ); ?>" href="<?php echo esc_url( $link_url ); ?>"
-					<?php echo esc_attr( $target_attr ); ?>
-					title="<?php the_title(); ?>">
-					<?php the_title(); ?>
-				</a></p>
+				<p class="archive-title"><a
+						class="<?php echo esc_html( $add_external_icon ); ?>"
+						href="<?php echo esc_url( $link_url ); ?>"
+						<?php echo esc_attr( $target_attr ); ?>
+						title="<?php the_title(); ?>">
+						<?php the_title(); ?>
+					</a></p>
 				<span class="archive-date date-icon">
 					<?php echo get_the_date( 'F j, Y' ); ?></span>
 				<div class="archive-excerpt"><?php the_content(); ?></div>
@@ -69,6 +73,10 @@ $image = new Image();
 		</div>
 					<?php
 		else :
+
+			// Get the Category Author.
+			$category_author = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
+
 			?>
 		<div class="archive-item <?php echo esc_html( $is_featured ); ?>">
 
@@ -90,17 +98,29 @@ $image = new Image();
 				</a>
 			</div>
 			<div class="archive-text-wrapper">
+
+				<?php if ( $is_blog_category && $category_author ) : ?>
+				<div class="skew-box secondary centered margin-bottom">CNCF
+					<?php
+					echo esc_html( $category_author );
+					?>
+					Blog Post</div>
+					<?php
+		endif;
+				?>
+
 				<p class="archive-title"><a href="<?php the_permalink(); ?>"
 						title="<?php the_title(); ?>">
 						<?php the_title(); ?>
 					</a></p>
+
 				<span class="archive-date date-icon">
 					<?php echo get_the_date( 'F j, Y' ); ?></span>
 				<div class="archive-excerpt"><?php the_excerpt(); ?></div>
 			</div>
 		</div>
-				<?php
-				endif;
+			<?php
+		endif;
 		endwhile;
 endif;
 		?>

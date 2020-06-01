@@ -11,10 +11,6 @@
     }
 }
 
-.archive-title {
-    margin-bottom: 0.5em;
-}
-
 .archive-date {
     margin-bottom: 0.5em;
     font-size: 0.875em;
@@ -28,9 +24,7 @@
     flex-direction: column;
 
     .archive-title {
-        @media (max-width: 767px) {
-            margin-top: 1em;
-        }
+        margin-bottom: 0.5em;
 
         a {
             font-weight: 700;
@@ -71,6 +65,7 @@
     transition: all 0.25s ease;
     object-fit: cover;
     object-position: bottom;
+    margin-bottom: 1em;
 
     img {
         display: block;
