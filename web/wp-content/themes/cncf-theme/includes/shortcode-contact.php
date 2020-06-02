@@ -354,7 +354,7 @@ function add_contact_shortcode() {
 			<textarea id="Comments" name="Comments" rows="6"
 				placeholder="Type your message here" required></textarea>
 		</div>
-		<div class="form-group">
+		<div class="form-group checkbox-align">
 			<input type="checkbox" name="OptIn" id="OptIn"><label
 				for="OptIn">Subscribe to get the latest project news and
 				updates in the CNCF Newsletter.</label>
