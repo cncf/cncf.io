@@ -28,18 +28,18 @@ function cncf_content_filter( $content ) {
 	<div class="sticky-column">
 	<div class="sticky-element">
 	<span class="sticky-nav-hint">Table of contents</span>
-		<ol id="tab-container-nav" class="tab-container-nav">
+		<ul id="tab-container-nav" class="tab-container-nav no-style">
 			<?php
 			// grab the data-menu-title and id from each tag to construct the menu.
 			foreach ( $matches[0] as $match ) :
 				preg_match( '/data-menu-slug="([^"]*)"/i', $match, $id );
 				preg_match( '/data-menu-title="([^"]*)"/i', $match, $menu_title );
 				?>
-			<li><a
+			<li class="tab-container-nav-item"><a
 					href="#<?php echo esc_html( $id[1] ); ?>"><?php echo esc_html( $menu_title[1] ); ?></a>
 			</li>
 			<?php endforeach; ?>
-		</ol>
+		</ul>
 	</div>
 
 	</div>

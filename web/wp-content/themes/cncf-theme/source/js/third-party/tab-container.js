@@ -28,7 +28,7 @@ jQuery( document ).ready(
 
 			  let spaceForHeader;
 			if ( $( window ).width() < 800 ) {
-				 spaceForHeader = 0;
+				 spaceForHeader = 80;
 			} else {
 				spaceForHeader = 125;
 			}

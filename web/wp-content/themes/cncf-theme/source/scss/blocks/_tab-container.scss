@@ -1,19 +1,20 @@
 .sticky-container {
     display: flex;
     flex-direction: column;
+    margin-top: $sm-padding;
 
     @media (min-width: 800px) {
         flex-direction: row;
         margin-bottom: 10em;
+        margin-top: $lg-padding;
     }
 }
 
 .sticky-column {
     @media (min-width:800px) {
-        max-width: 300px;
-        min-width: 20%;
-        margin-right: 2em;
-        margin-top: 1.5em;
+        max-width: 375px;
+        min-width: 25%;
+        margin-right: $sm-padding;
     }
 }
 
@@ -39,7 +40,7 @@
     }
 }
 
-ol.tab-container-nav {
+ul.tab-container-nav {
     padding: 0;
 
     @media (min-width: 800px) {
@@ -49,19 +50,28 @@ ol.tab-container-nav {
 
     }
 
-    li {
-        margin-top: 0.25em;
-        margin-bottom: 0.25em;
+}
+
+.tab-container-nav-item {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+
+    @media (min-width: 800px) {
         padding-left: 1em;
+    }
+
+    border-left: 4px solid transparent;
+
+    &.is-active {
+        border-left: 4px solid $primary-color;
+        background-color: $tertiary-color;
+    }
+
+    a {
+        display: block;
         padding-right: 1em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
-        border-left: 4px solid transparent;
-
-        &.is-active {
-            border-left: 4px solid $primary-color;
-            background-color: $tertiary-color;
-        }
     }
 }
 
@@ -73,7 +83,8 @@ ol.tab-container-nav {
 .wp-block-cgb-block-tab-container-block {
     @media (max-width: 799px) {
         border-top: 1px solid $grey-100;
+        padding-top: 2rem;
     }
 
-    margin-bottom: 3em;
+    margin-bottom: $lg-padding;
 }
