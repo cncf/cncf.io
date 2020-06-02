@@ -1,6 +1,6 @@
 // .case-study-single {
-    //     text-align: center;
-    // }
+//     text-align: center;
+// }
 .case-studies-wrapper {
     display: grid;
     grid-gap: 1em;
@@ -15,7 +15,6 @@
 }
 
 .case-study-box {
-    $cs-overlay: $purple-800;
 
     &:nth-child(4n + 1) .case-study-overlay {
         background-color: $cs-overlay;

@@ -1,9 +1,4 @@
-.newsroom-single {
-    // text-align: center;
-}
-
 .newsroom-single-meta {
-    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -15,12 +10,12 @@
     display: block;
     border: 1px solid $grey-400;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: $sm-padding;
 }
 
 .newsroom-single-hr {
     background-color: $tertiary-color;
     height: 1px;
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: $sm-padding;
 }

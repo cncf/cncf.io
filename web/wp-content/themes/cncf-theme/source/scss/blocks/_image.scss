@@ -1,5 +1,23 @@
-// image
-// TODO: Confirm
-.is-style-front-page-hero {
-    // max-height: 300px;
+.wp-block-media-text__content {
+    margin-top: $sm-padding;
+    margin-bottom: $sm-padding;
+}
+
+@media (max-width: 599px) {
+    .wp-block-media-text.is-stacked-on-mobile:not(.has-media-on-the-right) {
+        .wp-block-media-text__media {
+            img {
+                max-height: 150px;
+                width: auto;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+        }
+
+        .wp-block-media-text__content {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
 }

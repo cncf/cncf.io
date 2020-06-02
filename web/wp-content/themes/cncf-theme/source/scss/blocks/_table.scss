@@ -1,0 +1,53 @@
+.is-style-pricing-table {
+
+    td,
+    th {
+        text-align: center;
+        border: solid 1px #ccc;
+        font-size: 22px;
+        padding: 6px;
+        word-wrap: break-word;
+    }
+
+    td {
+        color: red;
+        font-weight: bold;
+    }
+
+    .check {
+        color: limegreen;
+        font-size: 30px;
+    }
+
+    th:first-child,
+    td:first-child {
+        font-weight: bold;
+        color: black;
+    }
+
+    @media screen and (max-width: 768px) {
+
+        tr {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+
+        td,
+        th {
+            display: block;
+            width: 33.333333333333%;
+            font-size: 20px;
+        }
+
+        th:first-child,
+        td:first-child {
+            background: #efefef;
+            width: 100%;
+        }
+
+        th:first-child {
+            display: none;
+        }
+    }
+}

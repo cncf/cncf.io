@@ -10,8 +10,6 @@
  */
 
  // HEADER.
-
-
 register_block_style(
 	'core/heading',
 	array(
@@ -68,6 +66,14 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/heading',
+	array(
+		'name'  => 'no-margins',
+		'label' => 'No margins',
+	)
+);
+
 // PARAGRAPH.
 register_block_style(
 	'core/paragraph',
@@ -117,6 +123,14 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/paragraph',
+	array(
+		'name'  => 'no-margins',
+		'label' => 'No margins',
+	)
+);
+
  // GROUP.
 register_block_style(
 	'core/group',
@@ -135,61 +149,12 @@ register_block_style(
 	)
 );
 
-register_block_style(
-	'core/columns',
-	array(
-		'name'  => 'responsive-two-columns',
-		'label' => 'Responsive 2 Columns',
-	)
-);
-
-register_block_style(
-	'core/columns',
-	array(
-		'name'  => 'responsive-three-columns',
-		'label' => 'Responsive 3 Columns',
-	)
-);
-
-register_block_style(
-	'core/columns',
-	array(
-		'name'  => 'responsive-four-columns',
-		'label' => 'Responsive 4 Columns',
-	)
-);
-
-register_block_style(
-	'core/columns',
-	array(
-		'name'  => 'fiftyfive-fortyfive-two-columns',
-		'label' => '55/45 Responsive 2 Columns',
-	)
-);
-
 // COLUMN.
 register_block_style(
 	'core/column',
 	array(
-		'name'  => 'column-drop-shadow',
-		'label' => 'Drop Shadow',
-	)
-);
-
-register_block_style(
-	'core/column',
-	array(
-		'name'  => 'column-white-padded-shadow',
-		'label' => 'White, Padded, Shadow',
-	)
-);
-
- // IMAGES.
-register_block_style(
-	'core/image',
-	array(
-		'name'  => 'front-page-hero',
-		'label' => 'Front Page Hero Image',
+		'name'  => 'column-white-padded',
+		'label' => 'White and Padded',
 	)
 );
 
@@ -211,29 +176,3 @@ register_block_style(
 	)
 );
 
-/**
- * Block Template basic setup
- */
-function slug_post_type_template() {
-	 $page_type_object           = get_post_type_object( 'page' );
-	 $page_type_object->template = array(
-		 array(
-			 'core/heading',
-			 array(
-				 'level'     => '1',
-				 'content'   => 'Title of page',
-				 'className' => 'is-style-max-900',
-			 ),
-		 ),
-		 array( 'core/paragraph' ),
-		 array(
-			 'core/heading',
-			 array(
-				 'level'   => '2',
-				 'content' => 'Sub header',
-			 ),
-		 ),
-		 array( 'core/paragraph' ),
-	 );
-};
-add_action( 'init', 'slug_post_type_template' );

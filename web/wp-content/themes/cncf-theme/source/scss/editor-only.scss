@@ -21,7 +21,7 @@
         @import "blocks/gradients";
         @import "blocks/colors";
         @import "blocks/buttons";
-        @import "blocks/columns";
+
         @import "blocks/paragraph-headers";
         @import 'blocks/guest-author';
         @import 'blocks/quote';
@@ -31,6 +31,8 @@
         @import "components/events";
         @import "components/webinars";
         @import "components/hero";
+        @import "blocks/columns";
+        @import "blocks/lists";
     }
 }
 
@@ -81,6 +83,10 @@
 // allows for transparent images to be visible in Sidebar Metabox.
 #pmc-cncf_event-logo .pmc-image-container {
     background-color: $grey-200;
+}
+
+.wp-block-columns {
+    padding: 1em;
 }
 
 
@@ -248,4 +254,20 @@ figure {
 
 div.pmc-sidebar ::placeholder {
     color: #c4c4c4;
+}
+
+// Style the spacer block
+.block-library-spacer__resize-container {
+    border: 1px solid #F3F4F5;
+    color: #D8D8D8;
+    position: relative;
+
+    &:after {
+        content: 'SPACER BLOCK';
+        color: #D8D8D8;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

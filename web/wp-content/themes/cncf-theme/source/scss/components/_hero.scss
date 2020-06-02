@@ -1,5 +1,14 @@
 .hero {
-    margin-bottom: 2em;
+    margin-bottom: $sm-padding;
+
+    @media (min-width: 1200px) {
+        margin-bottom: $lg-padding;
+
+    }
+
+    .single-post & {
+        margin-bottom: 1em;
+    }
 
     &.background-image-wrapper {
         display: flex;
