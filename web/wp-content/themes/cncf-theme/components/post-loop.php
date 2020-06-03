@@ -115,7 +115,13 @@ $image = new Image();
 					</a></p>
 
 				<span class="archive-date date-icon">
-					<?php echo get_the_date( 'F j, Y' ); ?></span>
+					<?php echo get_the_date( 'F j, Y' ); ?>
+					<?php
+					echo esc_html( Cncf_Utils::display_author( get_the_ID() ) );
+					?>
+
+
+					</span>
 				<div class="archive-excerpt"><?php the_excerpt(); ?></div>
 			</div>
 		</div>

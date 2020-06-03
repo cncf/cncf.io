@@ -210,4 +210,30 @@ class Cncf_Utils {
 		return $date;
 	}
 
+	/**
+	 * Display Author if not CNCF.
+	 *
+	 * @param string $the_post_id Post ID.
+	 */
+	public static function display_author( $the_post_id ) {
+
+		// if no post id or not number, return.
+		if ( ! $the_post_id || ! is_integer( $the_post_id ) ) {
+			return;
+		}
+
+		$author_id = get_post_field( 'post_author', $the_post_id );
+		$author    = get_the_author_meta( 'display_name', $author_id );
+
+		// Basic match for CNCF admin user.
+		if ( 'CNCF' === $author ) {
+			return;
+		} else {
+			// Insert all the author!!.
+			$author = ' | By ' . $author;
+		}
+		return $author;
+
+	}
+
 }
