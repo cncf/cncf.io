@@ -176,3 +176,11 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/button',
+	array(
+		'name'  => 'extra-large-primary',
+		'label' => 'Extra Large Primary Colour',
+	)
+);
+

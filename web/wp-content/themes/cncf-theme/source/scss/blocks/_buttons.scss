@@ -72,9 +72,54 @@
     }
 }
 
+.is-style-extra-large-primary {
+    .wp-block-button__link {
+        background-color: $primary-color;
+        border: 1px solid $white;
+        padding: 1em;
+
+        @media (min-width: 1200px) {
+            padding: 2em;
+        }
+
+        color: $white;
+
+        &:hover {
+            color: $white;
+            background-color: rgba($primary-color, 0.8);
+        }
+    }
+}
+
+
 
 .wp-block-buttons {
     &.alignright {
         text-align: right;
     }
+}
+
+
+.wp-block-buttons.button-layout {
+    display: flex;
+    flex-wrap: wrap;
+
+    .is-style-extra-large-primary {
+        display: flex;
+        padding: 0.5em;
+        width: 100%;
+        margin: 0;
+        line-height: 1.5;
+
+        @media (min-width: 400px) {
+            width: 50%;
+        }
+
+        @media (min-width: 800px) {
+            width: 33%;
+        }
+
+
+    }
+
 }

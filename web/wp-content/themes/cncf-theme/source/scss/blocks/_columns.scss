@@ -286,4 +286,9 @@
         padding-bottom: $sm-padding;
     }
 
+    // make single column table 100%.
+    .jt-05.wp-block-column {
+        flex-basis: 100% !important;
+
+    }
 }

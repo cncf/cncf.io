@@ -2,7 +2,7 @@
 /**
  * Blocks Scripts-for applying JS to editor
  *
- * Use this for styling editor blocks
+ * Use this for styling editor blocks. Remember changing the names or styles below do not update blocks content or change existing class names attached to blocks.
  *
  * @package WordPress
  * @since 1.0.0
@@ -27,7 +27,6 @@ wp.domReady(
 			name: 'join-table',
 			title: 'Join Table (4 Cols)',
 			attributes: { className: 'is-style-join-table' },
-			className: 'is-style-join-table',
 			isDefault: false,
 			innerBlocks: [
 				[ 'core/column', {
@@ -52,7 +51,6 @@ wp.domReady(
 			name: 'join-table-one',
 			title: 'Join Table (1 Col)',
 			attributes: { className: 'is-style-join-table-one' },
-			className: 'is-style-join-table-one',
 			isDefault: false,
 			innerBlocks: [
 				[ 'core/column', {
@@ -68,21 +66,69 @@ wp.domReady(
 			name: 'no-style-list',
 			title: 'List (No Styles)',
 			attributes: { className: 'is-style-no-style-list' },
-			className: 'is-style-no-style-list',
 			isDefault: false,
 			icon: 'layout',
 			scope: [ 'inserter' ],
 		} );
 
-		// Unstyled list used on Join.
+		// Pricing Table 3 Columns.
 		wp.blocks.registerBlockVariation( 'core/table', {
-			name: 'pricing-table',
-			title: 'Pricing Table',
-			attributes: { className: 'is-style-pricing-table' },
-			className: 'is-style-pricing-table',
+			name: 'pricing-table-three',
+			title: 'Pricing Table (3 Columns)',
+			attributes: {
+				className: 'is-style-pricing-table-three',
+				hasFixedLayout: true,
+				body: [
+					{
+						cells: [
+							{
+								content: '1',
+								tag: 'td',
+							},
+							{
+								content: '2',
+								tag: 'td',
+							},
+							{
+								content: '3',
+								tag: 'td',
+							},
+						],
+					},
+				],
+
+			},
 			isDefault: false,
 			icon: 'editor-table',
-			scope: [ 'block' ],
+			scope: [ 'inserter' ],
+		} );
+
+		// Pricing Table 2 Columns.
+		wp.blocks.registerBlockVariation( 'core/table', {
+			name: 'pricing-table-two',
+			title: 'Pricing Table (2 Columns)',
+			attributes: {
+				className: 'is-style-pricing-table-two',
+				hasFixedLayout: true,
+				body: [
+					{
+						cells: [
+							{
+								content: '1',
+								tag: 'td',
+							},
+							{
+								content: '2',
+								tag: 'td',
+							},
+						],
+					},
+				],
+
+			},
+			isDefault: false,
+			icon: 'editor-table',
+			scope: [ 'inserter' ],
 		} );
 	}
 );

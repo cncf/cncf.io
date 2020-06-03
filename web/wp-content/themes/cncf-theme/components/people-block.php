@@ -63,7 +63,7 @@ if ( strlen( $content ) > 20 ) {
 	<?php endif; ?>
 
 	<!-- <div class="people-excerpt"> -->
-		<?php // the_excerpt(); ?>
+		<?php // the_excerpt(); // phpcs:ignore. ?>
 	<!-- </div> -->
 
 <div class="social-modal-wrapper">

@@ -149,8 +149,8 @@
 
     th {
         background: $grey-800;
-        color: white;
-        font-weight: bold;
+        color: $white;
+        font-weight: 600;
     }
 
     td,
@@ -162,7 +162,7 @@
 
     // fix for responsive tables without thead or data-labels.
     @media only screen and (max-width: 768px) {
-        table {
+        table:not([class*='has']) {
             overflow: hidden;
             overflow-x: scroll;
             display: block;
