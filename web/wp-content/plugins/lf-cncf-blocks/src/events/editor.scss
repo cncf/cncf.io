@@ -6,41 +6,19 @@
  *
  *
  */
-.wp-block-lf-newsroom {
+
+.events-wrapper {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    grid-auto-rows: 1fr;
     background-color: $white;
     padding: 10px;
-
-    @media (min-width: 950px) {
-        grid-template-columns: 1fr;
-        height: 100%;
-        row-gap: 0px;
-    }
-
-    .nr-title {
-        margin-top: 5px;
-        margin-bottom: 0;
-        line-height: 1.2;
-        font-size: 0.875em;
-    }
-
-    .nr-date {
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 0.875em;
-        font-weight: 500;
-        color: $grey-700;
-    }
 }
 
-.nr-post-wrapper {
-    position: relative;
-    margin-bottom: 20px;
-
-    @media (min-width: 950px) {
-        margin-bottom: 0;
-    }
+.event-content-wrapper-editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }

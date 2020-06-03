@@ -60,11 +60,13 @@ function lf_newsroom_render_callback( $attributes ) {
 		$query->the_post();
 		?>
 	<div class="newsroom-post-wrapper">
-		<div class="newsroom-image-wrapper">
+
+				<?php
+				if ( $show_images ) : ?>
+<div class="newsroom-image-wrapper">
 			<a class="box-link" href="<?php the_permalink(); ?>"
 				title="<?php the_title(); ?>"></a>
 				<?php
-				if ( $show_images ) {
 					if ( has_post_thumbnail() ) {
 						echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
 					} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
@@ -73,9 +75,12 @@ function lf_newsroom_render_callback( $attributes ) {
 						echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
 						. '/images/thumbnail-default.svg" alt="CNCF" class="newsroom-image"/>';
 					}
-				}
+					?>
+</div>
+					<?php
+				endif;
 				?>
-		</div>
+
 
 		<h5 class="newsroom-title"><a href="<?php the_permalink(); ?>"
 				title="<?php the_title(); ?>">
