@@ -62,9 +62,9 @@ if ( strlen( $content ) > 20 ) {
 	<h5 class="people-company"><?php echo esc_html( $company ); ?></h5>
 	<?php endif; ?>
 
-	<div class="people-excerpt">
-		<?php the_excerpt(); ?>
-	</div>
+	<!-- <div class="people-excerpt"> -->
+		<?php // the_excerpt(); ?>
+	<!-- </div> -->
 
 <div class="social-modal-wrapper">
 	<?php
