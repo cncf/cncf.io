@@ -84,14 +84,13 @@
     input[type="text"],
     input[type="email"] {
         height: 40px;
-        padding: 0.5em 0;
+        padding: 0.5em 0 calc(0.5em + 1px) 0;
         width: 100%;
         border: none;
         background: transparent;
-        color: $purple-300;
+        color: $white;
         border-bottom: 1px solid $purple-300;
-        border-top: 1px solid transparent;
-        transition: all 0.5s ease;
+        transition: all 0.25s ease;
 
         &::placeholder {
             color: $purple-300;
@@ -100,10 +99,10 @@
 
         &:focus {
             outline: 0;
-            border-top: 1px solid $primary-color;
             padding-left: 0.5em;
+            padding-bottom: calc(0.5em);
+            border-bottom: 2px solid $white;
         }
-
     }
 
 }
