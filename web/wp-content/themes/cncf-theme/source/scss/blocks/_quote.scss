@@ -1,22 +1,5 @@
 .wp-block-quote,
 .wp-block-quote.is-style-default {
-    border-left: 0.5em solid $secondary-color;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: 1.25em;
-    margin-top: 1em;
-    color: $secondary-color;
-
-    @media (min-width: 768px) {
-        font-size: 1.5em;
-
-        cite {
-            font-size: 1.2rem;
-        }
-    }
-}
-
-.is-style-case-study-quote {
 
     border-left: 0;
     padding-left: 0;
@@ -37,6 +20,13 @@
         margin-bottom: 0.5em;
     }
 
+    p:not([class*='is-style']):not(.hero-parent-link) {
+        .entry-content & {
+
+            max-width: 900px;
+        }
+    }
+
     cite,
     .wp-block-quote__citation {
         font-weight: 300;
@@ -46,10 +36,6 @@
         text-transform: uppercase;
         font-size: 1rem;
         max-width: 900px;
-
-        // @media (min-width: 800px) {
-        //     margin-left: 2em;
-        // }
+        color: $grey-500;
     }
-
 }
