@@ -258,7 +258,8 @@
     .sub-menu {
         font-size: 0.875rem;
         z-index: 5;
-        background: $secondary-color;
+        background: $purple-600;
+        // background: $secondary-color;
         color: $white;
         opacity: 0;
         position: absolute;
@@ -276,9 +277,8 @@
 
             // add border to a so it doesn't touch edges
             a {
-                // font-size: 0.875em;
                 transition: 0s 0s;
-                border-bottom: 1px solid $purple-400;
+                border-bottom: 1px solid $purple-950;
             }
 
             // Remove border from last link
