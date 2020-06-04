@@ -34,6 +34,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$hello_bar_bg = ( isset( $options['hello_bar_bg'] ) && ! empty( $options['hello_bar_bg'] ) ) ? esc_attr( $options['hello_bar_bg'] ) : '';
 
+		$hello_bar_text = ( isset( $options['hello_bar_text'] ) && ! empty( $options['hello_bar_text'] ) ) ? esc_attr( $options['hello_bar_text'] ) : '';
+
 		$header_image_id = ( isset( $options['header_image_id'] ) && ! empty( $options['header_image_id'] ) ) ? absint( $options['header_image_id'] ) : '';
 
 		$header_cta_text = ( isset( $options['header_cta_text'] ) && ! empty( $options['header_cta_text'] ) ) ? esc_attr( $options['header_cta_text'] ) : '';
@@ -104,7 +106,7 @@ if ( ! defined( 'WPINC' ) ) {
 					<th scope="row"><label for="hello_bar_content">Hello Bar
 							Content</label>
 					</th>
-					<td>
+					<td colspan="2">
 						<?php
 							$hello_bar_settings = array(
 								'teeny'         => true, // extra options.
@@ -118,6 +120,16 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
+					<th scope="row"><label for="hello_bar_text">Text and Link Color</label>
+					</th>
+					<td>
+						<div class="pagebox">
+							<input class="color_field" type="hidden"
+								name="<?php echo esc_html( $this->plugin_name ); ?>[hello_bar_text]"
+								data-default-color="#FFFFFF"
+								value="<?php echo esc_attr( $hello_bar_text ); ?>" />
+						</div>
+					</td>
 					<th scope="row"><label for="hello_bar_bg">Background
 							Color</label>
 					</th>
@@ -125,7 +137,7 @@ if ( ! defined( 'WPINC' ) ) {
 						<div class="pagebox">
 							<input class="color_field" type="hidden"
 								name="<?php echo esc_html( $this->plugin_name ); ?>[hello_bar_bg]"
-								data-default-color="#DE176C"
+								data-default-color="#416FD9"
 								value="<?php echo esc_attr( $hello_bar_bg ); ?>" />
 						</div>
 					</td>

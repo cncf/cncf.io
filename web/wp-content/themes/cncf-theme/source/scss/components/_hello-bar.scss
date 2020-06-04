@@ -1,30 +1,24 @@
 .hello-bar {
-
     font-size: 0.825em;
-
-    // @media (min-width: 420px) {
-    //     font-size: 1.1em;
-    // }
-
-    background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
+    background: $blue-600;
     color: $white;
     width: 100%;
-    padding: 6px;
+    padding: 0.4em;
     text-align: center;
     font-weight: 400;
     letter-spacing: 0.2px;
 
-
     a {
-        color: $white;
-        text-decoration: none;
-        border-bottom: 1px solid $white;
+        color: inherit;
         font-weight: 400;
+        text-decoration: underline;
+        text-underline-position: under;
 
         &:hover {
-            color: $white;
-            border-bottom: 1px solid transparent;
+            color: inherit;
             transition: all 0.1s ease;
+            text-decoration: unset;
+            text-underline-position: unset;
         }
     }
 }

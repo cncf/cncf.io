@@ -1,8 +1,6 @@
 /**
  * Custom JS code for CNCF MU
  *
- * Description. (use period)
- *
  * @link   https://www.cncf.io/
  * @file   This files defines the MyClass class.
  * @author James Hunt
@@ -21,7 +19,7 @@
 					defaultColor: true,
 					palettes: ['#DE176C', '#444444',
 					'#000000', '#436ca9', '#416FD9',
-					'#252b5f', '#111111', '#48549C'
+					'#252b5f', '#111111', '#FFFFFF'
 					]
 				}
 			);
