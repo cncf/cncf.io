@@ -72,13 +72,15 @@
 				} else {
 					?>
 		<p class="newsroom-single-meta">
-			By <?php echo get_the_author(); ?></p>
+<?php 		echo esc_html( Cncf_Utils::display_author( get_the_ID() ) ); ?>
+
+			</p>
 					<?php
 				}
 			endif;
 			?>
 
-		<div class="entry-content">
+		<div class="entry-content post-content">
 			<?php
 			the_content();
 			get_template_part( 'components/social-share' );
