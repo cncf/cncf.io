@@ -31,7 +31,7 @@
     }
 
     .background-image-figure:after {
-        background-color: $purple-800;
+        background-color: $purple-900;
         content: "";
         display: block;
         position: absolute;
@@ -40,8 +40,8 @@
         width: 100%;
         height: 100%;
         z-index: 2;
-        opacity: .85;
-        mix-blend-mode: normal;
+        opacity: 0.80;
+        mix-blend-mode: darken;
     }
 
     .background-image-figure img {
