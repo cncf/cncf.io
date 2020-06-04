@@ -169,7 +169,94 @@
         }
     }
 
+    // Applied to Single Blog Posts only.
+    &.post-content {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            font-weight: 600;
+            color: $secondary-color;
+
+            a {
+                text-decoration: none;
+            }
+
+            b,
+            strong {
+                font-weight: 600;
+                font-style: normal;
+            }
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+
+            @media (max-width: 767px) {
+                font-size: 1.75em;
+            }
+        }
+
+        h2,
+        .h2,
+        .has-header-2-font-size {
+            font-size: 2.2em;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+
+            @media (max-width: 767px) {
+                font-size: 1.75em;
+            }
+        }
+
+        h3,
+        .h3,
+        .has-header-3-font-size {
+            font-size: 1.5em;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+
+            @media (max-width: 767px) {
+                font-size: 1.3em;
+            }
+        }
+
+        h4,
+        .h4,
+        .has-header-4-font-size {
+            font-size: 1.250em;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+
+            @media (max-width: 767px) {
+                font-size: 1.1em;
+            }
+        }
+
+        h5,
+        .h5,
+        .has-header-5-font-size {
+            font-size: 1em;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h6 {
+            font-size: 0.9em;
+            margin-bottom: 1rem;
+        }
+
+    }
+
 }
+
+
 
 
 // .single-post,
