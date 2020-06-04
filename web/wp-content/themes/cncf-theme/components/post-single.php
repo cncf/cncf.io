@@ -72,7 +72,7 @@
 				} else {
 					?>
 		<p class="newsroom-single-meta">
-<?php 		echo esc_html( Cncf_Utils::display_author( get_the_ID() ) ); ?>
+					<?php echo esc_html( Cncf_Utils::display_author( get_the_ID() ) ); ?>
 
 			</p>
 					<?php
