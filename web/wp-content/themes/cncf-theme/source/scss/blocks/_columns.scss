@@ -17,6 +17,64 @@
     padding: 1em 2em;
 }
 
+.is-style-join-table {
+    color: $white;
+    align-items: initial;
+    margin-bottom: 0;
+
+    .wp-block-column {
+        margin-left: 0;
+        padding: 1.5em;
+        font-size: 0.9em;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+        }
+
+        &:nth-child(4n + 1) {
+            background-color: lighten($cs-overlay, 16%);
+        }
+
+        &:nth-child(4n + 2) {
+            background-color: lighten($cs-overlay, 8%);
+        }
+
+        &:nth-child(4n + 3) {
+            background-color: $cs-overlay;
+
+        }
+
+        &:nth-child(4n + 4) {
+            background-color: lighten($cs-overlay, 24%);
+        }
+    }
+
+}
+
+.is-style-join-table-one {
+    background-color: $blue-100;
+    padding: $sm-padding;
+
+    @media (max-width: 599px) {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .wp-block-columns {
+
+        padding-top: $sm-padding;
+        padding-bottom: $sm-padding;
+    }
+
+    // make single column table 100%.
+    .jt-05.wp-block-column {
+        flex-basis: 100% !important;
+
+    }
+}
+
+
 // .is-style-responsive-two-columns {
 //     @media (min-width: 782px) {
 //         flex-wrap: wrap;
@@ -235,60 +293,3 @@
 //     }
 
 // }
-
-.is-style-join-table {
-    color: $white;
-    align-items: initial;
-    margin-bottom: 0;
-
-    .wp-block-column {
-        margin-left: 0;
-        padding: 1.5em;
-        font-size: 0.9em;
-
-        a {
-            color: $white;
-            text-decoration: underline;
-        }
-
-        &:nth-child(4n + 1) {
-            background-color: lighten($cs-overlay, 16%);
-        }
-
-        &:nth-child(4n + 2) {
-            background-color: lighten($cs-overlay, 8%);
-        }
-
-        &:nth-child(4n + 3) {
-            background-color: $cs-overlay;
-
-        }
-
-        &:nth-child(4n + 4) {
-            background-color: lighten($cs-overlay, 24%);
-        }
-    }
-
-}
-
-.is-style-join-table-one {
-    background-color: $blue-100;
-    padding: $sm-padding;
-
-    @media (max-width: 599px) {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    .wp-block-columns {
-
-        padding-top: $sm-padding;
-        padding-bottom: $sm-padding;
-    }
-
-    // make single column table 100%.
-    .jt-05.wp-block-column {
-        flex-basis: 100% !important;
-
-    }
-}

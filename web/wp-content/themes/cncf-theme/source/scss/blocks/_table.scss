@@ -1,53 +1,80 @@
 .is-style-pricing-table-three {
-    max-width: 800px;
+    color: $white;
 
     td,
     th {
-        text-align: center;
-        border: solid 1px #ccc;
-        padding: 6px;
+        border: 0;
+        padding: 1em;
         word-wrap: break-word;
     }
 
     tr:first-child {
         td {
-            background: $blue-200;
+            background: $purple-800;
             font-weight: 600;
+            vertical-align: middle;
+            border-bottom: 1px solid $white;
+
         }
+    }
+
+    tr:not(:first-child) {
+        font-size: 1.25em;
+        font-weight: 400;
     }
 
     th:first-child,
     td:first-child {
         font-weight: 600;
-        text-align: left;
         padding-left: 0.5em;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 800px) {
+        max-width: 800px;
+
+        tr:nth-of-type(even) {
+            background-color: lighten($cs-overlay, 16%);
+
+        }
 
         tr:nth-of-type(odd) {
-            background: $blue-100;
+            background-color: lighten($cs-overlay, 8%);
         }
+
+        tr {
+            td:first-child {
+                border-right: 1px solid $white;
+            }
+
+            td:nth-child(2) {
+                border-right: 1px solid $white;
+            }
+        }
+
     }
 
-    @media screen and (max-width: 599px) {
+    @media (max-width: 799px) {
+        text-align: center;
 
         tr {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-evenly;
 
+
             &:first-child {
-
-                td:not(:first-child) {
-                    font-weight: 500;
-                    background-color: $blue-200;
-                }
-
                 td:first-child {
                     display: none;
                 }
             }
+        }
+
+        tr:nth-of-type(even) {
+            background-color: lighten($cs-overlay, 8%);
+        }
+
+        tr:nth-of-type(odd) {
+            background-color: lighten($cs-overlay, 8%);
         }
 
         td,
@@ -55,14 +82,13 @@
             display: block;
             width: 50%;
             padding: 0.5em;
-            text-align: center;
         }
 
         th:first-child,
         td:first-child {
-            background: $blue-100;
+
+            background-color: lighten($cs-overlay, 16%);
             width: 100%;
-            text-align: center;
         }
 
         th:first-child {
@@ -72,55 +98,82 @@
 }
 
 .is-style-pricing-table-two {
-    max-width: 800px;
+    color: $white;
 
     td,
     th {
-        text-align: center;
-        border: solid 1px #ccc;
-        padding: 6px;
+        border: 0;
+        padding: 1em;
         word-wrap: break-word;
     }
 
     tr:first-child {
         td {
-            background: $blue-200;
+            background: $purple-800;
             font-weight: 600;
+            vertical-align: middle;
+            border-bottom: 1px solid $white;
+
         }
+    }
+
+    tr:not(:first-child) {
+        font-size: 1.25em;
+        font-weight: 400;
     }
 
     th:first-child,
     td:first-child {
         font-weight: 600;
-        text-align: left;
         padding-left: 0.5em;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 800px) {
+        max-width: 800px;
+
+        tr:nth-of-type(even) {
+            background-color: lighten($cs-overlay, 16%);
+
+        }
 
         tr:nth-of-type(odd) {
-            background: $blue-100;
+            background-color: lighten($cs-overlay, 8%);
         }
+
+        tr {
+            td:first-child {
+                border-right: 1px solid $white;
+            }
+
+            td:nth-child(2) {
+                border-right: 1px solid $white;
+            }
+        }
+
     }
 
-    @media screen and (max-width: 599px) {
+    @media (max-width: 799px) {
+        text-align: center;
 
         tr {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-evenly;
 
+
             &:first-child {
-
-                td:not(:first-child) {
-                    font-weight: 500;
-                    background-color: $blue-200;
-                }
-
                 td:first-child {
                     display: none;
                 }
             }
+        }
+
+        tr:nth-of-type(even) {
+            background-color: lighten($cs-overlay, 8%);
+        }
+
+        tr:nth-of-type(odd) {
+            background-color: lighten($cs-overlay, 8%);
         }
 
         td,
@@ -128,14 +181,13 @@
             display: block;
             width: 100%;
             padding: 0.5em;
-            text-align: center;
         }
 
         th:first-child,
         td:first-child {
-            background: $blue-100;
+
+            background-color: lighten($cs-overlay, 16%);
             width: 100%;
-            text-align: center;
         }
 
         th:first-child {
