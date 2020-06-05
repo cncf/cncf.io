@@ -40,8 +40,8 @@
     object-fit: cover;
     position: absolute;
     z-index: 2;
-    opacity: .85;
-    mix-blend-mode: multiply;
+    opacity: 0.80;
+    mix-blend-mode: darken;
 }
 
 .case-study-content-wrapper {
