@@ -23,8 +23,16 @@
     display: flex;
     flex-direction: column;
 
+    .date-author-row {
+        margin-bottom: 1em;
+    }
+
     .archive-title {
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
+
+        @media (min-width: 768px) {
+            margin-bottom: 0.5em;
+        }
 
         a {
             font-weight: 700;

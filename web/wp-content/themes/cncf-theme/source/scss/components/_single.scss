@@ -1,21 +1,42 @@
-.newsroom-single-meta {
-    margin-bottom: 1em;
-}
-
-.newsroom-single-hero-image {
-    max-width: 100%;
-    width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border: 1px solid $grey-400;
-    padding: 20px;
-    margin-bottom: $sm-padding;
-}
-
-.newsroom-single-hr {
+.hr-light {
     background-color: $tertiary-color;
     height: 1px;
     border: none;
     margin-bottom: $sm-padding;
+}
+
+// used on single post.
+.date-author-responsive {
+    display: flex;
+    flex-direction: column;
+
+    .posted-date {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 1000px) {
+        flex-direction: row;
+
+        .posted-date {
+            margin-bottom: 0rem;
+        }
+
+        .author-name {
+
+            margin-left: 1em;
+
+        }
+    }
+}
+
+// used on archive.
+.date-author-row {
+    display: flex;
+    flex-direction: row;
+
+    .author-name {
+
+        margin-left: 1em;
+
+    }
 }

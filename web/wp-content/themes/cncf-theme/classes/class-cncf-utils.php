@@ -213,9 +213,10 @@ class Cncf_Utils {
 	/**
 	 * Display Author if not CNCF.
 	 *
-	 * @param string $the_post_id Post ID.
+	 * @param string  $the_post_id Post ID.
+	 * @param boolean $with_class Adds surround tag.
 	 */
-	public static function display_author( $the_post_id ) {
+	public static function display_author( $the_post_id, $with_class = false ) {
 
 		// if no post id or not number, return.
 		if ( ! $the_post_id || ! is_integer( $the_post_id ) ) {
@@ -228,10 +229,16 @@ class Cncf_Utils {
 		// Basic match for CNCF admin user.
 		if ( 'CNCF' === $author ) {
 			return;
-		} else {
-			// Insert all the author!!.
-			$author = ' | By ' . $author;
 		}
+
+		if ( $with_class ) {
+			// Insert with surrounding class icon.
+			$author = '<span class="author-name author-icon">By ' . $author . '</span>';
+		} else {
+			// Insert the author.
+			$author = 'By ' . $author;
+		}
+
 		return $author;
 
 	}

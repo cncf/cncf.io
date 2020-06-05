@@ -98,7 +98,6 @@ $image = new Image();
 				</a>
 			</div>
 			<div class="archive-text-wrapper">
-
 				<?php if ( $is_blog_category && $category_author ) : ?>
 				<div class="skew-box secondary centered margin-bottom">CNCF
 					<?php
@@ -114,14 +113,19 @@ $image = new Image();
 						<?php the_title(); ?>
 					</a></p>
 
-				<span class="archive-date date-icon">
-					<?php echo get_the_date( 'F j, Y' ); ?>
-					<?php
-					echo esc_html( Cncf_Utils::display_author( get_the_ID() ) );
-					?>
-
-
+				<p class="date-author-row"><span class="posted-date date-icon">
+						<?php
+						the_date();
+						?>
 					</span>
+					<?php
+					// Post author.
+					if ( in_category( 'blog' ) ) :
+							echo wp_kses_post( Cncf_Utils::display_author( get_the_ID(), true ) );
+		endif;
+					?>
+				</p>
+				</span>
 				<div class="archive-excerpt"><?php the_excerpt(); ?></div>
 			</div>
 		</div>
