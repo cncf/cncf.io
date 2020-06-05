@@ -54,10 +54,12 @@
 }
 
 .modal__content {
-    margin-top: 1em;
     margin-bottom: 2em;
-    line-height: 1.15;
     font-size: 0.875em;
+}
+
+.modal__title {
+    margin-top: 0;
 }
 
 @keyframes mmfadeIn {
@@ -134,4 +136,18 @@
         width: 200px;
 
     }
+}
+
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+
+        .modal__content {
+            margin-left: 2rem;
+        }
+    }
+
 }

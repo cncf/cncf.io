@@ -11,7 +11,6 @@
 @import "core/variables";
 @import "core/normalize";
 @import "core/reset";
-// @import "blocks/entry-content"; // maybe dont need this file TBC.
 
 // import typography and styles over the top of editor styles defaults.
 #editor {
@@ -19,20 +18,20 @@
     .editor-styles-wrapper {
         @import "core/typography";
         @import "blocks/gradients";
+        @import "blocks/columns";
         @import "blocks/colors";
         @import "blocks/buttons";
-
-        @import "blocks/paragraph-headers";
-        @import 'blocks/guest-author';
-        @import 'blocks/quote';
         @import "blocks/case-study-highlights";
         @import "blocks/case-study-overview";
         @import "blocks/latest-jobs";
+        @import "blocks/lists";
+        @import "blocks/newsroom"; // ?
+        @import "blocks/paragraph-headers";
+        @import 'blocks/quote';
+        @import 'blocks/table';
         @import "components/events";
         @import "components/webinars";
         @import "components/hero";
-        @import "blocks/columns";
-        @import "blocks/lists";
     }
 }
 
@@ -88,7 +87,6 @@
 .wp-block-columns {
     padding: 1em;
 }
-
 
 .skew-box {
     font-size: 0.750em;
@@ -158,7 +156,6 @@
 
 // block using alignwide include:
 // case study overview
-
 .alignwide:not(.wp-block-gallery) {
     width: 100%;
 
@@ -207,51 +204,7 @@ figure {
     z-index: 2;
 }
 
-// 	.editor-styles-wrapper p {
-// 	margin-top: 28px;
-// 	}
-
-// 	.editor-styles-wrapper ol,
-// 	.editor-styles-wrapper p,
-// 	.editor-styles-wrapper ul {
-// 	margin-bottom: 28px;
-// 	}
-
-// 	.editor-styles-wrapper ol,
-// 	.editor-styles-wrapper ul {
-// 	padding: inherit;
-// 	padding-left: 1.3em;
-// 	margin-left: 1.3em;
-// 	}
-
-// 	.editor-styles-wrapper ol li,
-// 	.editor-styles-wrapper ol ol,
-// 	.editor-styles-wrapper ol ul,
-// 	.editor-styles-wrapper ul li,
-// 	.editor-styles-wrapper ul ol,
-// 	.editor-styles-wrapper ul ul {
-// 	margin-bottom: 0;
-// 	}
-
-// 	.editor-styles-wrapper ul {
-// 	list-style-type: disc;
-// 	}
-
-// 	.editor-styles-wrapper ol {
-// 	list-style-type: decimal;
-// 	}
-
-// 	.editor-styles-wrapper ol ul,
-// 	.editor-styles-wrapper ul ul {
-// 	list-style-type: circle;
-// 	}
-
-// .is-style-blue-paragraph {
-//     background-color: $secondary-color;
-//     color: $white;
-//     padding: 20px;
-// }
-
+// make placeholder text easier to see in sidebar.
 div.pmc-sidebar ::placeholder {
     color: #c4c4c4;
 }

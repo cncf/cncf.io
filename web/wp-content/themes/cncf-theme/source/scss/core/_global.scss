@@ -44,10 +44,6 @@ body {
     }
 }
 
-// .box-shadow {
-//     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-// }
-
 img {
     margin: 0;
     max-width: 100%;
@@ -202,7 +198,6 @@ img {
     margin-right: auto;
 }
 
-
 /*
 |--------------------------------------------
 | Images in background
@@ -300,9 +295,8 @@ figure {
     }
 }
 
-
 .skew-box {
-    font-size: 0.750em;
+    font-size: 0.775em;
     text-transform: uppercase;
     font-weight: 500;
     color: $white;
@@ -313,19 +307,13 @@ figure {
     // useful if inside flexbox.
     align-self: start;
 
-    &:first-child {
-        margin-bottom: 0.5em;
-    }
-
     &.secondary {
-        background-color: $blue-200;
+        background-color: $blue-400;
     }
 
     &.centered {
-        // margin-left: auto;
         margin-right: auto;
         display: inline-block;
-        // transform: translateX(12px);
     }
 
     &.smaller {
@@ -334,17 +322,13 @@ figure {
 }
 
 .unskew-box {
-    font-size: 0.750em;
+    font-size: 0.775em;
     text-transform: uppercase;
     font-weight: 500;
     color: $white;
     padding: 5px 6px;
     background-color: $purple-400;
     align-self: start;
-
-    &:first-child {
-        margin-bottom: 0.5em;
-    }
 
     &.secondary {
         background-color: $blue-200;
@@ -392,6 +376,10 @@ figure {
 
 .margin-bottom-large {
     margin-bottom: 2em;
+}
+
+.margin-bottom-small {
+    margin-bottom: 0.5em;
 }
 
 .margin-bottom {

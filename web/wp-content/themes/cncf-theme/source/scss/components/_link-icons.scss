@@ -60,7 +60,8 @@
 }
 
 // Larger size for Hello Bar, no hover effect.
-.hello-bar {
+.hello-bar,
+.wp-block-buttons {
 
     a[href^="http://"]:not([href^="http://www.cncf"]):not([href^="http://cncf"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
     a[href^="https://"]:not([href^="https://www.cncf"]):not([href^="https://cncf"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]),
@@ -87,8 +88,9 @@
     }
 }
 
-// PDF icon to apply in main nav only.
-.site-header .site-navigation .main-navigation {
+// PDF icon
+.site-header .site-navigation .main-navigation,
+.wp-block-buttons {
 
     a[href^="http://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
     a[href^="https://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
@@ -111,6 +113,19 @@
         &:hover {
             &::after {
                 filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(2129%) hue-rotate(317deg) brightness(97%) contrast(84%);
+            }
+        }
+    }
+}
+
+// If PDF icon, prevent the filter.
+.wp-block-buttons {
+
+    a[href^="/"][href$=".pdf"],
+    a[href$=".pdf"] {
+        &:hover {
+            &::after {
+                filter: none;
             }
         }
     }

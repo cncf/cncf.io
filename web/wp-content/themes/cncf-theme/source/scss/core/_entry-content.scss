@@ -80,10 +80,16 @@
         margin-bottom: 1em;
         margin-left: 2em;
 
+        // used for tab container.
         &.no-style {
             list-style: none;
             margin-left: 0;
         }
+    }
+
+    ul:not(.jobs-list) {
+        // To limit the width, experimental.
+        max-width: 700px;
     }
 
     ol {

@@ -131,7 +131,7 @@ if ( strlen( $content ) > 20 ) {
 					<button class="modal__close" aria-label="Close modal"
 						data-micromodal-close=""></button>
 				</header>
-
+<div class="modal-content-wrapper">
 				<div class="profile__header">
 
 					<?php
@@ -146,8 +146,13 @@ if ( strlen( $content ) > 20 ) {
 						<?php
 					endif;
 					?>
-					<!-- Name  -->
-					<h3 class="modal__title margin-reset margin-top-small"
+				</div>
+
+				<div class="modal__content"
+					id="modal-<?php echo esc_html( $person_id ); ?>-content">
+
+						<!-- Name  -->
+						<h3 class="modal__title margin-reset margin-top-small"
 						id="modal-<?php echo esc_html( $person_id ); ?>-title">
 						<?php the_title(); ?></h3>
 
@@ -155,15 +160,13 @@ if ( strlen( $content ) > 20 ) {
 					<?php
 					if ( $company ) :
 						?>
-					<h5 class="margin-reset margin-top-small">
+					<h5 class="margin-top-small ">
 						<?php echo esc_html( $company ); ?></h5>
 					<?php endif; ?>
 
-				</div>
 
-				<div class="modal__content"
-					id="modal-<?php echo esc_html( $person_id ); ?>-content">
 					<?php the_content(); ?>
+				</div>
 				</div>
 			</div>
 		</div>

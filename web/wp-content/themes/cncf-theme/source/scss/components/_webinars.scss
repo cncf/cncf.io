@@ -22,6 +22,12 @@
     margin-top: 1em;
     font-size: 0.825em;
     font-weight: 500;
+
+    .webinar-single & {
+        font-size: 1em;
+        font-weight: 500;
+        margin-top: 1em;
+    }
 }
 
 .recorded {
@@ -29,6 +35,7 @@
     font-size: 0.825em;
 
     .webinar-single & {
+        font-size: 1em;
         font-weight: 500;
         margin-top: 1em;
     }

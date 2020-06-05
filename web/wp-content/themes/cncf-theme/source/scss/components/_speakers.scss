@@ -24,8 +24,8 @@
         border: 1px solid $grey-200;
 
         // @media (min-width: 768px) {
-   //     max-width: 120px;
-   // }
+        //     max-width: 120px;
+        // }
     }
 }
 
@@ -171,7 +171,7 @@
     margin-top: 2em;
 
     label {
-        font-size: 1.25em;
+        font-size: 1.125em;
         font-weight: 500;
         color: #444444;
     }
@@ -179,7 +179,6 @@
 
 .affiliations-box-badges {
     display: flex;
-    justify-content: center;
     padding: 1em 0;
 
     .column {
@@ -195,7 +194,7 @@
         height: 3.5em;
 
         @media (min-width: 768px) {
-            height: 5em;
+            height: 4em;
         }
 
         width: auto;
@@ -217,4 +216,73 @@
             color: $pink-300;
         }
     }
+}
+
+
+
+.um {
+    .um-header.no-cover {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 600px) {
+            flex-direction: row;
+
+            .um-profile-meta {
+                margin-left: 2rem;
+            }
+        }
+
+        .um-profile-photo {
+
+            margin: 0 !important;
+            text-align: left !important;
+        }
+    }
+
+
+}
+
+.um.um-profile {
+    .um-header.no-cover {
+        .um-profile-meta {
+            text-align: left !important;
+        }
+
+        .um-name {
+            font-size: 2.5em;
+        }
+
+        .um-name a {
+            color: $black;
+            font-weight: 600 !important;
+        }
+    }
+
+    .um-form {
+        .um-field-label {
+            border-bottom: none;
+            color: $black;
+
+            label {
+                font-size: initial !important;
+                line-height: initial !important;
+            }
+        }
+
+        .um-field.um-field-sb_bio {
+            margin-bottom: $sm-padding;
+
+            .um-field-label {
+                font-size: 1.125em
+            }
+        }
+
+        .um-field {
+            padding: 1.5em 0 0 0;
+            line-height: 1.5;
+        }
+    }
+
+
 }

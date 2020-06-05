@@ -1,28 +1,12 @@
 // gradient styles
 
-// GRADIENTS TBC
 // Gradient - Blue to Pink - #2825f2 > #e50994
 // Gradient - Pink to Purple - #db176b > 252a5f
 // Gradient - Blue - background: linear-gradient(90deg,#47529a 0%,#252b5f 100%);
 // Blue - .45s cubic-bezier(.25,1,.33,1),opacity .45s cubic-bezier(.25,1,.33,1);
+// background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
 
-// Pink to Purple Gradient - used for Groups block
-.is-style-pink-purple-gradient {
-    // background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);
-    // color: $white;
-
-    background-color: $blue-100;
-
-    p a {
-        color: $tertiary-color;
-
-        &:hover {
-            color: $grey-400;
-        }
-    }
-}
-
-// Used for Buttons, as an example, maybe remove TODO
+// Used for Buttons (currently only an example).
 // see gutenberg-preset-gradients.php
 .has-pink-to-purple-gradient-background {
     background: linear-gradient(90deg, #e00a6b 0, #c80e6a 7.28%, #971667 24.1%, #6d1d64 40.76%, #4d2262 56.93%, #362661 72.49%, #292860 87.15%, #242960 100%);

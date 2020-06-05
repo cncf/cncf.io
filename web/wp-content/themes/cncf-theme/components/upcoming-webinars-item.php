@@ -30,7 +30,7 @@ $date_and_time = Cncf_Utils::display_webinar_date_time( $date, $time );
 	<div class="webinars-upcoming-text-wrapper">
 
 		<!-- Category of Webinar  -->
-		<span class="skew-box secondary">CNCF
+		<span class="skew-box secondary margin-bottom-small">CNCF
 			<?php echo esc_html( $author_category ); ?> Webinar</span>
 
 		<!-- Date of webinar  -->

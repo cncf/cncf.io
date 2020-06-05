@@ -63,11 +63,12 @@
 
 	$related_query = new WP_Query( $related_args );
 	?>
+
 <div
 	class="wp-block-lf-upcoming-webinars is-style-horizontal entry-content center-align margin-bottom-large">
-
-	<h3 class="is-style-center-width-900">Related upcoming webinars</h3>
-
+<div class="container wrap">
+	<h3 class="margin-top-large">Related upcoming webinars</h3>
+	</div>
 	<div class="webinars-upcoming-wrapper container wrap">
 		<?php
 		while ( $related_query->have_posts() ) {

@@ -74,6 +74,14 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/heading',
+	array(
+		'name'  => 'divider-line',
+		'label' => 'Divider Line',
+	)
+);
+
 // PARAGRAPH.
 register_block_style(
 	'core/paragraph',
@@ -131,16 +139,7 @@ register_block_style(
 	)
 );
 
- // GROUP.
-register_block_style(
-	'core/group',
-	array(
-		'name'  => 'pink-purple-gradient',
-		'label' => 'Pink to Purple Gradient',
-	)
-);
-
- // COLUMNS.
+// COLUMNS.
 register_block_style(
 	'core/columns',
 	array(
@@ -158,29 +157,19 @@ register_block_style(
 	)
 );
 
- // QUOTE.
+// QUOTE.
 register_block_style(
 	'core/quote',
 	array(
-		'name'  => 'case-study-quote',
-		'label' => 'Case Study Quote',
-	)
-);
-
- // BUTTON.
-register_block_style(
-	'core/button',
-	array(
-		'name'  => 'extra-large-outline',
-		'label' => 'Extra Large Outline',
+		'name'  => 'max-width-700',
+		'label' => 'Max-Width 700px',
 	)
 );
 
 register_block_style(
-	'core/button',
+	'core/quote',
 	array(
-		'name'  => 'extra-large-primary',
-		'label' => 'Extra Large Primary Colour',
+		'name'  => 'max-width-800',
+		'label' => 'Max-Width 800px',
 	)
 );
-

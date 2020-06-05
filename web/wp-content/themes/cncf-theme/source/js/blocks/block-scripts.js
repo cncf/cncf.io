@@ -19,13 +19,22 @@ wp.domReady(
 		// Hides comments as the site doesn't use it.
 		wp.data.dispatch( 'core/edit-post' ).removeEditorPanel( 'discussion-panel' );
 
+		// Unregister unsupported unstyled Blocks.
+		wp.blocks.unregisterBlockType( 'core/nextpage' );
+		wp.blocks.unregisterBlockType( 'core/verse' );
+		wp.blocks.unregisterBlockType( 'core/pullquote' );
+		wp.blocks.unregisterBlockType( 'core/pullquote' );
+		wp.blocks.unregisterBlockType( 'core/social-link' );
+		wp.blocks.unregisterBlockType( 'core/tag-cloud' );
+
 		// Removed rounded image style.
 		wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
+		wp.blocks.unregisterBlockStyle( 'core/quote', 'large' );
 
 		// Used for Join page.
 		wp.blocks.registerBlockVariation( 'core/columns', {
 			name: 'join-table',
-			title: 'Join Table (4 Cols)',
+			title: 'Join Table (4 Columns)',
 			attributes: { className: 'is-style-join-table' },
 			isDefault: false,
 			innerBlocks: [
@@ -42,14 +51,14 @@ wp.domReady(
 					width: 25,
 					className: 'jt-04' } ],
 			],
-			icon: 'layout',
-			scope: [ 'block' ],
+			icon: 'text',
+			scope: [ 'inserter' ],
 		} );
 
 		// Used for Join page.
 		wp.blocks.registerBlockVariation( 'core/columns', {
 			name: 'join-table-one',
-			title: 'Join Table (1 Col)',
+			title: 'Join Table (1 Column)',
 			attributes: { className: 'is-style-join-table-one' },
 			isDefault: false,
 			innerBlocks: [
@@ -57,17 +66,38 @@ wp.domReady(
 					width: 100,
 					className: 'jt-05' } ],
 			],
-			icon: 'layout',
-			scope: [ 'block' ],
+			icon: 'text',
+			scope: [ 'inserter' ],
 		} );
 
-		// Unstyled list used on Join.
+		// Used for End User page.
+		wp.blocks.registerBlockVariation( 'core/columns', {
+			name: 'end-user-table',
+			title: 'End User Table (3 Columns)',
+			attributes: { className: 'is-style-end-user-table' },
+			isDefault: false,
+			innerBlocks: [
+				[ 'core/column', {
+					width: 33.3,
+					className: 'eu-01' } ],
+				[ 'core/column', {
+					width: 33.3,
+					className: 'eu-02' } ],
+				[ 'core/column', {
+					width: 33.3,
+					className: 'eu-03' } ],
+			],
+			icon: 'text',
+			scope: [ 'inserter' ],
+		} );
+
+		// Unstyled list used in columns.
 		wp.blocks.registerBlockVariation( 'core/list', {
 			name: 'no-style-list',
-			title: 'List (No Styles)',
+			title: 'List (No Padding)',
 			attributes: { className: 'is-style-no-style-list' },
 			isDefault: false,
-			icon: 'layout',
+			icon: 'list-view',
 			scope: [ 'inserter' ],
 		} );
 
@@ -76,21 +106,21 @@ wp.domReady(
 			name: 'pricing-table-three',
 			title: 'Pricing Table (3 Columns)',
 			attributes: {
-				className: 'is-style-pricing-table-three',
+				className: 'is-style-pricing-table',
 				hasFixedLayout: true,
 				body: [
 					{
 						cells: [
 							{
-								content: '1',
+								content: 'Cell 1',
 								tag: 'td',
 							},
 							{
-								content: '2',
+								content: 'Cell 2',
 								tag: 'td',
 							},
 							{
-								content: '3',
+								content: 'Cell 3',
 								tag: 'td',
 							},
 						],
@@ -108,26 +138,35 @@ wp.domReady(
 			name: 'pricing-table-two',
 			title: 'Pricing Table (2 Columns)',
 			attributes: {
-				className: 'is-style-pricing-table-two',
+				className: 'is-style-pricing-table',
 				hasFixedLayout: true,
 				body: [
 					{
 						cells: [
 							{
-								content: '1',
+								content: 'Cell 1',
 								tag: 'td',
 							},
 							{
-								content: '2',
+								content: 'Cell 2',
 								tag: 'td',
 							},
 						],
 					},
 				],
-
 			},
 			isDefault: false,
 			icon: 'editor-table',
+			scope: [ 'inserter' ],
+		} );
+
+		// Button - PDF
+		wp.blocks.registerBlockVariation( 'core/buttons', {
+			name: 'button-pdf',
+			title: 'Button (PDF Icon)',
+			attributes: { className: 'is-style-button-pdf' },
+			isDefault: false,
+			icon: 'media-document',
 			scope: [ 'inserter' ],
 		} );
 	}

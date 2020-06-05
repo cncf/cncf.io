@@ -30,15 +30,10 @@
 
 .newsroom-post-wrapper {
     position: relative;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     background-color: $white;
     padding: 1em;
-
-    @media (min-width: 950px) {
-        margin-bottom: 0;
-    }
 }
 
 .newsroom-image-wrapper {
@@ -49,9 +44,6 @@
 
     @media (min-width: 1200px) {
         height: 150px;
-        // TODO: Lose this?.
-        max-height: 150px;
-        min-height: 150px;
     }
 
     @media (min-width: 1400px) {

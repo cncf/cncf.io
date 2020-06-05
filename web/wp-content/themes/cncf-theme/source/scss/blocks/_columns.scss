@@ -42,7 +42,6 @@
 
         &:nth-child(4n + 3) {
             background-color: $cs-overlay;
-
         }
 
         &:nth-child(4n + 4) {
@@ -72,6 +71,48 @@
         flex-basis: 100% !important;
 
     }
+}
+
+.is-style-end-user-table {
+    color: $white;
+    align-items: initial;
+    margin-bottom: 0;
+
+    .wp-block-column {
+        margin-left: 0;
+        padding: 1.5em;
+        font-size: 0.9em;
+
+        .wp-block-image {
+            margin-bottom: 0;
+        }
+
+        img[src$=".svg"] {
+            width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+            object-position: 0;
+        }
+
+        a {
+            color: $white;
+            text-decoration: underline;
+        }
+
+        &:nth-child(3n + 1) {
+            background-color: $primary-color;
+        }
+
+        &:nth-child(3n + 2) {
+            background-color: $blue-500;
+        }
+
+        &:nth-child(3n + 3) {
+            background-color: $secondary-color;
+        }
+
+    }
+
 }
 
 

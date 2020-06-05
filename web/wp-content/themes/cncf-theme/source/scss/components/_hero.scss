@@ -6,8 +6,8 @@
 
     }
 
-    .single-post & {
-        margin-bottom: 1em;
+    .single & {
+        margin-bottom: 2em;
     }
 
     &.background-image-wrapper {
@@ -54,7 +54,12 @@
     }
 
     .no-background {
-        margin-top: 2em;
+        margin-top: $sm-padding;
+
+        @media (min-width: 1400px) {
+            margin-top: $lg-padding;
+            margin-bottom: $sm-padding;
+        }
     }
 
     &.alignfull {
