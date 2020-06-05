@@ -14,7 +14,8 @@
         margin-bottom: $lg-padding;
 
         .home & {
-            margin-bottom: 0;
+            margin-top: $sm-padding;
+            margin-bottom: $sm-padding;
         }
 
         .webinar-single & {
