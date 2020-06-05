@@ -113,19 +113,29 @@
             justify-content: center;
         }
 
+        // apply to all images (inc default).
         img {
             align-self: center;
-            padding: 0.5em;
-
-            &[src$=".svg"] {
-                padding: 1em;
-            }
-
             // some control of size.
             max-height: 200px;
             // for small logos.
             min-width: 200px;
+
+            // for non SVGs.
+            &.media-logo {
+                padding: 0.5em;
+            }
+
+            // for SVGs.
+            .media-logo {
+                &[src$=".svg"] {
+                    padding: 1em;
+                }
+            }
         }
+
+
+
 
 
     }

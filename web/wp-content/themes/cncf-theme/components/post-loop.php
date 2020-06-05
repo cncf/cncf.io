@@ -49,7 +49,7 @@ $image = new Image();
 					title="<?php the_title(); ?>">
 					<?php
 					if ( has_post_thumbnail() ) {
-						echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-media-coverage', false, array( 'class' => 'newsroom-media-coverage' ) );
+						echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-media-coverage', false, array( 'class' => 'newsroom-media-coverage media-logo' ) );
 
 					} else {
 						echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
