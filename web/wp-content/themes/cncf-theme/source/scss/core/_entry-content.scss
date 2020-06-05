@@ -87,10 +87,10 @@
         }
     }
 
-    ul:not(.jobs-list) {
-        // To limit the width, experimental.
-        max-width: 700px;
-    }
+    // ul:not(.jobs-list) {
+    //     // To limit the width, experimental.
+    //     max-width: 700px;
+    // }
 
     ol {
         list-style: decimal;
