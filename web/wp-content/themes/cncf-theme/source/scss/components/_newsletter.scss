@@ -105,4 +105,17 @@
         }
     }
 
+    // Control autocomplete styles.
+    input,
+    textarea,
+    select {
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+            -webkit-text-fill-color: $white;
+            // Stop the yellow autofill by 9999s.
+            transition: background-color 9999s ease-out 0s;
+        }
+    }
 }
