@@ -7,7 +7,14 @@
     }
 
     .single & {
-        margin-bottom: 2em;
+        margin-top: $sm-padding;
+        margin-bottom: $sm-padding;
+
+        @media (min-width: 1200px) {
+            margin-top: $lg-padding;
+
+        }
+
     }
 
     &.background-image-wrapper {
@@ -67,8 +74,6 @@
     }
 }
 
-
-
 // used in post, event, webinars, case study single
 .hero-parent-link {
     margin: 0;
@@ -94,17 +99,8 @@
     }
 }
 
-
 // used in post, event, webinars single
 .hero-post-title {
-    margin-top: 40px;
-    font-weight: 600;
-    max-width: 800px;
-    line-height: 1.25;
-    letter-spacing: -0.2px;
     color: $secondary-color;
-
-    @media (max-width: 767px) {
-        font-size: 1.9em;
-    }
+    max-width: 900px;
 }

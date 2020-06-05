@@ -33,7 +33,7 @@ if ( $query->have_posts() ) {
 			echo esc_html( 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' speakers' );
 		}
 		?>
-	</span><span class="show-desktop-only">&nbsp;&#124;&nbsp;</span><br
+	</span><span class="show-tablet-only">&nbsp;&#124;&nbsp;</span><br
 		class="show-mobile-only" />
 
 	<?php

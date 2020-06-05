@@ -28,7 +28,7 @@ $author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-catego
 			the_post();
 			?>
 
-<p class="newsroom-single-meta">Posted on
+<p>Posted on
 			<?php
 			the_date();
 			?>
