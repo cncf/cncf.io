@@ -89,7 +89,7 @@ if ( $dat_webinar > $dat_now ) {
 				<?php endif; ?>
 
 			<?php if ( 'past' == $period_status ) : ?>
-		<h5>This webinar has passed.</h5>
+		<h3 class="margin-top">This webinar has passed.</h3>
 					<?php endif; ?>
 
 				<?php

@@ -174,7 +174,7 @@ class Cncf_Utils {
 	 * @param string $event_date_start Date string.
 	 * @param string $event_date_end Date string.
 	 */
-	public static function display_event_date( $event_date_start, $event_date_end ) {
+	public static function display_event_date( $event_date_start, $event_date_end = '' ) {
 
 		if ( empty( $event_date_start ) ) {
 			// No start date so return TBC.
@@ -187,10 +187,12 @@ class Cncf_Utils {
 			new DateTimeZone( 'America/Los_Angeles' )
 		);
 
-		$event_date_end = new DateTime(
-			$event_date_end,
-			new DateTimeZone( 'America/Los_Angeles' )
-		);
+		if ( ! empty( $event_date_end ) ) {
+			$event_date_end = new DateTime(
+				$event_date_end,
+				new DateTimeZone( 'America/Los_Angeles' )
+			);
+		}
 
 		// If no end date, show start date in full.
 		if ( ! $event_date_end ) {

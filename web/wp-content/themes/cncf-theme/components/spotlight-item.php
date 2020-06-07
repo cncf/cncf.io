@@ -21,7 +21,7 @@ $spotlight_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-spotlight-type
 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 	<?php
 	if ( has_post_thumbnail() ) {
-		echo wp_get_attachment_image( get_post_thumbnail_id(), 'spotlight', false, array( 'class' => '' ) );
+		echo wp_get_attachment_image( get_post_thumbnail_id(), false, false, array( 'size' => '(min-width: 1100px) 288px, (min-width: 840px) 26.67vw, (min-width: 580px) calc(50vw - 65px), (min-width: 500px) calc(100vw - 82px), calc(100vw - 56px)' ) );
 	} else {
 		$options = get_option( 'cncf-mu' );
 		echo wp_get_attachment_image( $options['generic_avatar_id'], 'spotlight', false, array( 'class' => '' ) );

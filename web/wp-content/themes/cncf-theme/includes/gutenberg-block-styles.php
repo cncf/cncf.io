@@ -45,6 +45,14 @@ register_block_style(
 register_block_style(
 	'core/heading',
 	array(
+		'name'  => 'max-width-100',
+		'label' => 'Max-Width 100%',
+	)
+);
+
+register_block_style(
+	'core/heading',
+	array(
 		'name'  => 'center-width-700',
 		'label' => 'Max-Width 700px & Centered',
 	)
@@ -112,6 +120,14 @@ register_block_style(
 	array(
 		'name'  => 'max-width-900',
 		'label' => 'Max-Width 900px',
+	)
+);
+
+register_block_style(
+	'core/paragraph',
+	array(
+		'name'  => 'max-width-100',
+		'label' => 'Max-Width 100%',
 	)
 );
 

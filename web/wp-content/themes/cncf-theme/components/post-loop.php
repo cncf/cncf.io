@@ -125,7 +125,6 @@ $image = new Image();
 		endif;
 					?>
 				</p>
-				</span>
 				<div class="archive-excerpt"><?php the_excerpt(); ?></div>
 			</div>
 		</div>

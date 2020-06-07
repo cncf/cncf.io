@@ -1,6 +1,6 @@
 <?php
 /**
- * Default posts index
+ * Search
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -11,7 +11,7 @@ get_template_part( 'components/header' );
 
 get_template_part( 'components/hero' );
 
-get_template_part( 'components/post-loop' );
+get_template_part( 'components/search-loop' );
 
 get_template_part( 'components/pagination' );
 
