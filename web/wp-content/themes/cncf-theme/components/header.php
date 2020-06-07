@@ -25,7 +25,6 @@ endif;
 		<?php if ( $options['header_image_id'] ) { ?>
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
-				<?php // TODO: replace with SVG in-line from theme. ?>
 				<img src="<?php echo esc_url( wp_get_attachment_url( $options['header_image_id'] ) ); ?>"
 					height="38" alt="<?php echo bloginfo( 'name' ); ?>">
 			</a>

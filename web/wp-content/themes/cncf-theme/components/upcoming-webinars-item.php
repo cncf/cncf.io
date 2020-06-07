@@ -9,19 +9,15 @@
  * @since 1.0.0
  */
 
-// TODO: Remove some of these.
-$recording    = get_post_meta( get_the_ID(), 'cncf_webinar_recording', true );
-$registration = get_post_meta( get_the_ID(), 'cncf_webinar_registration', true );
-$time         = get_post_meta( get_the_ID(), 'cncf_webinar_time', true );
-
 // get author category.
 $author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
 
 // get companies (presented by).
 $company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
 
+// get webinar date and time.
 $date = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
-
+$time         = get_post_meta( get_the_ID(), 'cncf_webinar_time', true );
 $date_and_time = Cncf_Utils::display_webinar_date_time( $date, $time );
 
 ?>
