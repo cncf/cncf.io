@@ -13,7 +13,8 @@
 <?php
 if ( have_posts() ) :
 
-	if ('landscape' === get_search_query()) : ?>
+	if ( 'landscape' === get_search_query() ) :
+		?>
 <div class="archive-item" style="border: 1px solid black; padding: 2em;">
 <div class="archive-text-wrapper">
 
@@ -23,7 +24,7 @@ title="CNCF Landscape">View the CNCF Landscape</a></p>
 </div>
 </div>
 
-	<?php
+		<?php
 	endif;
 	while ( have_posts() ) :
 		the_post();
