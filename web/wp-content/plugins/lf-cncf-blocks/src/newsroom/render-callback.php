@@ -62,11 +62,12 @@ function lf_newsroom_render_callback( $attributes ) {
 	<div class="newsroom-post-wrapper">
 
 				<?php
-				if ( $show_images ) : ?>
+				if ( $show_images ) :
+					?>
 <div class="newsroom-image-wrapper">
 			<a class="box-link" href="<?php the_permalink(); ?>"
 				title="<?php the_title(); ?>"></a>
-				<?php
+					<?php
 					if ( has_post_thumbnail() ) {
 						echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
 					} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
@@ -81,11 +82,28 @@ function lf_newsroom_render_callback( $attributes ) {
 				endif;
 				?>
 
-
-		<h5 class="newsroom-title"><a href="<?php the_permalink(); ?>"
+		<?php
+		if ( in_category( 'news' ) && ( get_post_meta( get_the_ID(), 'cncf_post_external_url', true ) ) ) {
+			$link_url = get_post_meta( get_the_ID(), 'cncf_post_external_url', true );
+			?>
+			<h5 class="newsroom-title"><a class="external is-primary-color" target="_blank" rel="noopener" href="<?php echo esc_url( $link_url ); ?>"
+title="<?php the_title(); ?>">
+			<?php the_title(); ?>
+</a></h5>
+			<?php
+		} else {
+			?>
+			<h5 class="newsroom-title"><a href="<?php the_permalink(); ?>"
 				title="<?php the_title(); ?>">
 				<?php the_title(); ?>
 			</a></h5>
+			<?php
+		}
+		?>
+
+
+
+
 		<span class="newsroom-date date-icon"> <?php echo get_the_date( 'F j, Y' ); ?></span>
 	</div>
 		<?php
