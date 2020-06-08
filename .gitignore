@@ -15,16 +15,22 @@ web/*
 !web/wp-content/
 web/wp-content/*
 
+# ignore Pantheon MU plugin
+web/wp-content/mu-plugins/pantheon/
+web/wp-content/mu-plugins/pantheon.php
+
 !web/wp-content/mu-plugins/
-web/wp-content/mu-plugins/*
-!web/wp-content/mu-plugins/cncf-mu/*
-!web/wp-content/mu-plugins/cncf-mu.php
-!web/wp-content/mu-plugins/lf-cncf-blocks/*
-!web/wp-content/mu-plugins/lf-cncf-blocks.php
 web/wp-content/mu-plugins/lf-cncf-blocks/node_modules
-!web/wp-content/mu-plugins/um-deactivate-assets.php
-!web/wp-content/mu-plugins/wp-no-base-permalink.php
-!web/wp-content/mu-plugins/.gitkeep
+
+# # web/wp-content/mu-plugins/*
+# !web/wp-content/mu-plugins/cncf-mu/*
+# !web/wp-content/mu-plugins/cncf-mu.php
+# !web/wp-content/mu-plugins/um-deactivate-assets.php
+# !web/wp-content/mu-plugins/wp-no-base-permalink.php
+# !web/wp-content/mu-plugins/.gitkeep
+# !web/wp-content/mu-plugins/lf-cncf-blocks/*
+# !web/wp-content/mu-plugins/lf-cncf-blocks.php
+
 
 !web/wp-content/plugins/
 web/wp-content/plugins/*
