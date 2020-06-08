@@ -164,6 +164,14 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/columns',
+	array(
+		'name'  => 'equal-height-responsive',
+		'label' => 'Equal Height, Better Responsive',
+	)
+);
+
 // COLUMN.
 register_block_style(
 	'core/column',

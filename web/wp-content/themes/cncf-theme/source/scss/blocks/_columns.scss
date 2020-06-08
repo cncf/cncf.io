@@ -15,6 +15,14 @@
 .is-style-column-white-padded {
     background-color: $white;
     padding: 1em 2em;
+
+    @media (min-width: 1000px) {
+        padding: 2em;
+    }
+}
+
+.is-style-equal-height-responsive {
+    align-items: stretch;
 }
 
 .is-style-join-table {
