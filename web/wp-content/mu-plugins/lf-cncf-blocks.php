@@ -1,5 +1,7 @@
 <?php
 /**
+ * Core blocks for running the cncf.io site.
+ *
  * Plugin Name: LF | CNCF Blocks
  * Plugin URI: https://www.cncf.io
  * Description: Various blocks for use on the CNCF.io site.
@@ -12,12 +14,7 @@
  * @package cncf-blocks
  */
 
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
 /**
- * Block Initializer.
+ * Include the CNCF Blocks plugin
  */
-require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+require WPMU_PLUGIN_DIR . '/lf-cncf-blocks/plugin.php';

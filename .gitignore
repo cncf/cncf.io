@@ -19,6 +19,9 @@ web/wp-content/*
 web/wp-content/mu-plugins/*
 !web/wp-content/mu-plugins/cncf-mu/*
 !web/wp-content/mu-plugins/cncf-mu.php
+!web/wp-content/mu-plugins/lf-cncf-blocks/*
+!web/wp-content/mu-plugins/lf-cncf-blocks.php
+web/wp-content/mu-plugins/lf-cncf-blocks/node_modules
 !web/wp-content/mu-plugins/um-deactivate-assets.php
 !web/wp-content/mu-plugins/wp-no-base-permalink.php
 !web/wp-content/mu-plugins/.gitkeep
@@ -129,9 +132,5 @@ Thumbs.db
 web/wp-content/plugins/text-on-image-block/node_modules
 !web/wp-content/plugins/tab-container-block
 web/wp-content/plugins/tab-container-block/node_modules
-!web/wp-content/plugins/lf-count-up-block
-web/wp-content/plugins/lf-count-up-block/node_modules
-!web/wp-content/plugins/lf-latest-jobs
-web/wp-content/plugins/lf-latest-jobs/node_modules
 !web/wp-content/plugins/lf-cncf-blocks
 web/wp-content/plugins/lf-cncf-blocks/node_modules
