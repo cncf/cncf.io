@@ -1,49 +1,45 @@
 .four-oh-four {
     .container {
-        display: flex;
-        flex-direction: column;
+        padding-top: $sm-padding;
+        padding-bottom: $sm-padding;
 
         @media (min-width: 768px) {
+            display: flex;
             flex-direction: row-reverse;
             justify-content: space-around;
-            align-items: flex-start;
+
+            padding-top: $lg-padding;
+            padding-bottom: $lg-padding;
         }
     }
 
-    .search-form,
-    .search-form label {
+    .content-404 {
         display: flex;
         flex-direction: column;
-        align-items: center;
-
+        text-align: left;
+        align-items: flex-start;
     }
 
-    .search-form {
-        margin-top: 20px;
+    .image-404 {
+        max-height: 300px;
+        height: 500px;
 
-        .search-text,
-        .search-field {
-            margin-bottom: 10px;
+        @media (min-width: 768px) {
+            max-height: inherit;
+        }
+
+        @media (min-width: 1200px) {
+            height: 540px;
         }
     }
-}
 
-.content-404 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-}
+    .extremely-large {
+        font-size: 8em;
+        font-weight: 600;
 
-.image-404 {
-    max-height: 300px;
-    height: 500px;
-
-    @media (min-width: 768px) {
-        max-height: inherit;
-    }
-
-    @media (min-width: 1200px) {
-        height: 540px;
+        @media (min-width: 768px) {
+            font-size: 10em;
+            line-height: 1;
+        }
     }
 }

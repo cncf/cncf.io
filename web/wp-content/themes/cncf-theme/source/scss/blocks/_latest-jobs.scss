@@ -61,7 +61,7 @@
         min-width: 80px;
         max-width: 80px;
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1000px) {
             min-width: 120px;
             max-width: 120px;
 
@@ -90,7 +90,7 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            @media (min-width: 1024px) {
+            @media (min-width: 1000px) {
                 grid-gap: 1.5em;
             }
         }

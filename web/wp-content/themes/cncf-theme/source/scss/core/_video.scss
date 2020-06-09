@@ -9,7 +9,7 @@
     margin-top: $sm-padding;
     margin-bottom: $sm-padding;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1000px) {
         margin-top: $lg-padding;
         margin-bottom: $lg-padding;
 
@@ -24,7 +24,7 @@
         }
     }
 
-    @media (min-width: 740px) {
+    @media (min-width: 768px) {
         max-width: initial;
         margin-left: auto;
         margin-right: auto;

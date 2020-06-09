@@ -39,7 +39,11 @@ body {
 .wrap {
     padding: 0em 12px;
 
-    @media (min-width: 500px) {
+    @media (min-width: 375px) {
+        padding: 0em 20px;
+    }
+
+    @media (min-width: 550px) {
         padding: 0em 25px;
     }
 }
@@ -249,11 +253,6 @@ figure {
     z-index: 3;
 }
 
-.page-padding {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
 /* Assistive text */
 .assistive-text,
 .screen-reader-text {
@@ -340,7 +339,6 @@ figure {
     }
 }
 
-
 .margin-reset {
     margin: 0;
 }
@@ -367,7 +365,6 @@ figure {
 .margin-top-small {
     margin-top: 0.5em;
 }
-
 
 .margin-top-large {
     margin-top: 2em;

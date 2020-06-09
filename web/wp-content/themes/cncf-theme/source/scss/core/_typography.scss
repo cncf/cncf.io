@@ -89,26 +89,16 @@ b {
     font-weight: 600;
 }
 
-.strongest {
-    font-weight: 900;
-}
+// .strongest {
+//     font-weight: 900;
+// }
 
-.upper {
-    text-transform: uppercase;
-}
+// .upper {
+//     text-transform: uppercase;
+// }
+// .smaller-text {
 
-.smaller-text {
-    font-size: 0.725em;
-}
-
-.extremely-large {
-    font-size: 8em;
-
-    @media (min-width: 768px) {
-        font-size: 10em;
-        line-height: 1;
-    }
-}
+// }
 
 a {
     text-decoration: none;

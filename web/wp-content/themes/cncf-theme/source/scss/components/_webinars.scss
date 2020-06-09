@@ -6,7 +6,7 @@
     margin-top: 1em;
     margin-bottom: 2em;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1000px) {
         grid-gap: 1.5em;
     }
 }
@@ -51,7 +51,7 @@
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         margin-bottom: 1em;
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1000px) {
             grid-gap: 1.5em;
         }
     }

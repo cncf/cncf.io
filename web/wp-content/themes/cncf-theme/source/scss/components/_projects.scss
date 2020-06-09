@@ -9,7 +9,7 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1000px) {
         grid-gap: 1.5em;
     }
 }
