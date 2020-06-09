@@ -197,3 +197,45 @@ register_block_style(
 		'label' => 'Max-Width 800px',
 	)
 );
+
+// LIST
+register_block_style(
+	'core/list',
+	array(
+		'name'  => 'no-style-list',
+		'label' => 'No Margins',
+	)
+);
+
+// SPACERS
+register_block_style(
+	'core/spacer',
+	array(
+		'name'  => '100-responsive',
+		'label' => '100px Responsive',
+	)
+);
+
+register_block_style(
+	'core/spacer',
+	array(
+		'name'  => '80-responsive',
+		'label' => '80px Responsive',
+	)
+);
+
+register_block_style(
+	'core/spacer',
+	array(
+		'name'  => '60-responsive',
+		'label' => '60px Responsive',
+	)
+);
+
+register_block_style(
+	'core/spacer',
+	array(
+		'name'  => '40-responsive',
+		'label' => '40px Responsive',
+	)
+);

@@ -29,9 +29,11 @@
         @import "blocks/paragraph-headers";
         @import 'blocks/quote';
         @import 'blocks/table';
+        @import 'blocks/spacer';
         @import "components/events";
         @import "components/webinars";
         @import "components/hero";
+
     }
 }
 
@@ -207,20 +209,4 @@ figure {
 // make placeholder text easier to see in sidebar.
 div.pmc-sidebar ::placeholder {
     color: #c4c4c4;
-}
-
-// Style the spacer block
-.block-library-spacer__resize-container {
-    border: 1px solid #F3F4F5;
-    color: #D8D8D8;
-    position: relative;
-
-    &:after {
-        content: 'SPACER BLOCK';
-        color: #D8D8D8;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
 }

@@ -1,0 +1,50 @@
+// these have to be !important to override the inline CSS.
+
+.is-style-100-responsive {
+    height: 50px !important;
+
+    @media (min-width: 1000px) {
+        height: 100px !important;
+    }
+}
+
+.is-style-80-responsive {
+    height: 40px !important;
+
+    @media (min-width: 1000px) {
+        height: 80px !important;
+    }
+}
+
+.is-style-60-responsive {
+    height: 30px !important;
+
+    @media (min-width: 1000px) {
+        height: 60px !important;
+    }
+}
+
+.is-style-40-responsive {
+    height: 20px !important;
+
+    @media (min-width: 1000px) {
+        height: 40px !important;
+    }
+}
+
+
+// Style the spacer block (for Editor)
+.block-library-spacer__resize-container {
+    border: 1px solid #F3F4F5;
+    color: #D8D8D8;
+    position: relative;
+
+    &:after {
+        content: 'SPACER BLOCK';
+        color: #D8D8D8;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
