@@ -85,6 +85,14 @@ register_block_style(
 register_block_style(
 	'core/heading',
 	array(
+		'name'  => 'bottom-margin',
+		'label' => 'Add 1em Margin',
+	)
+);
+
+register_block_style(
+	'core/heading',
+	array(
 		'name'  => 'divider-line',
 		'label' => 'Divider Line',
 	)
@@ -154,6 +162,15 @@ register_block_style(
 		'label' => 'No margins',
 	)
 );
+
+register_block_style(
+	'core/paragraph',
+	array(
+		'name'  => 'bottom-margin',
+		'label' => 'Add 1em Margin',
+	)
+);
+
 
 // COLUMNS.
 register_block_style(
