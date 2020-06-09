@@ -184,13 +184,13 @@
         h4,
         h5,
         h6 {
-            margin: 0;
-            font-weight: 600;
+            // margin: 0;
+            // font-weight: 600;
             color: $secondary-color;
 
-            a {
-                text-decoration: none;
-            }
+            // a {
+            //     text-decoration: none;
+            // }
 
             b,
             strong {
@@ -204,21 +204,21 @@
             margin-top: 3rem;
             margin-bottom: 1rem;
 
-            @media (max-width: 767px) {
-                font-size: 1.75em;
-            }
+            // @media (max-width: 767px) {
+            //     font-size: 1.75em;
+            // }
         }
 
         h2,
         .h2,
         .has-header-2-font-size {
-            font-size: 2.2em;
+            // font-size: 2.2em;
             margin-top: 3rem;
             margin-bottom: 1rem;
 
-            @media (max-width: 767px) {
-                font-size: 1.75em;
-            }
+            // @media (max-width: 767px) {
+            //     font-size: 1.75em;
+            // }
         }
 
         h3,
@@ -228,9 +228,9 @@
             margin-top: 2rem;
             margin-bottom: 1rem;
 
-            @media (max-width: 767px) {
-                font-size: 1.3em;
-            }
+            // @media (max-width: 767px) {
+            //     font-size: 1.3em;
+            // }
         }
 
         h4,
@@ -238,11 +238,10 @@
         .has-header-4-font-size {
             font-size: 1.250em;
             margin-top: 2rem;
-            margin-bottom: 1rem;
 
-            @media (max-width: 767px) {
-                font-size: 1.1em;
-            }
+            // @media (max-width: 767px) {
+            //     font-size: 1.1em;
+            // }
         }
 
         h5,
@@ -250,40 +249,7 @@
         .has-header-5-font-size {
             font-size: 1em;
             margin-top: 2rem;
-            margin-bottom: 1rem;
         }
-
-        h6 {
-            font-size: 0.9em;
-            margin-bottom: 1rem;
-        }
-
     }
 
 }
-
-
-
-
-// .single-post,
-// .webinar-single,
-// .case-study-single,
-// .event-single {
-//     .entry-content {
-//         max-width: 1050px;
-//         margin-left: auto;
-//         margin-right: auto;
-//         text-align: left;
-//         margin-top: 2em;
-
-//         &.no-max {
-//             max-width: initial;
-//         }
-//     }
-// }
-
-// .case-study-single {
-//     .entry-content {
-//         margin-top: 0;
-//     }
-// }
