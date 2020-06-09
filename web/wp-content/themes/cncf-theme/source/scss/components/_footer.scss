@@ -1,8 +1,17 @@
 .footer {
-    padding-top: 3em;
-    padding-bottom: 5em;
-    background-color: $blue-900;
+    padding-top: 6em;
+    padding-bottom: 6em;
+    background-color: $purple-900;
     color: $white;
+    margin-top: 4em;
+
+    @media (min-width: 768px) {
+        margin-top: 6em;
+    }
+
+    .home & {
+        margin-top: 0;
+    }
 
     a {
         color: $purple-300;
@@ -11,24 +20,10 @@
     }
 
     .social-links {
+        margin-top: 2rem;
         display: grid;
-        grid-auto-flow: column;
-        grid-gap: 10px;
-        margin-bottom: 40px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 400px;
-
-        @media (min-width: 1000px) {
-            justify-content: center;
-            max-width: initial;
-            flex-basis: 40%;
-            grid-gap: 15px;
-        }
-
-        li {
-            text-align: center;
-        }
+        grid-gap: 1em;
+        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
 
         svg {
             max-width: 100%;
@@ -41,21 +36,18 @@
                 color: $primary-color;
             }
         }
-    }
-}
 
-.copyright-social-wrapper {
-    display: flex;
-    flex-direction: column;
-
-    @media (min-width: 1000px) {
-        flex-direction: row-reverse;
+        .button-reset {
+            margin-left: initial;
+            margin-right: initial;
+        }
     }
 }
 
 .copyright-text {
-
+    font-size: 0.775em;
     color: $purple-300;
+    margin-top: 4rem;
 
     a:hover::after {
         filter: none !important;

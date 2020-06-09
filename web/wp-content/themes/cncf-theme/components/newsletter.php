@@ -9,7 +9,6 @@
 
 ?>
 <section class="newsletter">
-<div class="container wrap">
 	<h3>Subscribe to the CNCF newsletter to receive regular updates about
 		webinars, events & latest news</h3>
 
@@ -38,5 +37,4 @@
 		information is subject to The Linux Foundation’s <a
 			href="https://www.linuxfoundation.org/privacy/"
 			rel="norefferer noopener" class="external is-footer" target="_blank">Privacy Policy</a>.</p>
-	</div>
 </section>

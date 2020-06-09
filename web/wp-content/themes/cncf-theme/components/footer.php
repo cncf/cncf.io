@@ -12,12 +12,10 @@
 $options = get_option( 'cncf-mu' );
 ?>
 
-<?php get_template_part( 'components/newsletter' ); ?>
-
 <footer class="footer">
-	<div class="container-full-width wrap">
+	<div class="container wrap">
 
-	<?php get_template_part( 'components/social-links' ); ?>
+	<?php get_template_part( 'components/newsletter' ); ?>
 
 	<div class="copyright-text">
 				<p>Copyright &copy; <?php echo esc_html( gmdate( 'Y' ) ); ?>
@@ -25,9 +23,7 @@ $options = get_option( 'cncf-mu' );
 				</p>
 			</div>
 
-
-
-
+	<?php get_template_part( 'components/social-links' ); ?>
 
 	</div>
 </footer>

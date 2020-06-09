@@ -1,21 +1,4 @@
 .newsletter {
-    text-align: center;
-    background-color: $blue-700;
-    color: $white;
-    padding-top: $sm-padding;
-    padding-bottom: $sm-padding;
-    margin-top: 4em;
-
-    @media (min-width: 768px) {
-        margin-top: 6em;
-        padding-top: $lg-padding;
-        padding-bottom: $lg-padding;
-    }
-
-    .home & {
-        margin-top: 0;
-    }
-
     a {
         color: $white;
         font-weight: 600;
@@ -28,8 +11,6 @@
     p,
     h3 {
         max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .form-message {
