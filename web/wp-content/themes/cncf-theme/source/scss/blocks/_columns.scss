@@ -3,7 +3,6 @@
 
 .wp-block-columns {
     margin-bottom: 1em;
-    align-items: baseline;
 }
 
 .is-style-column-white-background {
@@ -14,10 +13,10 @@
 
 .is-style-column-white-padded {
     background-color: $white;
-    padding: 1em 2em;
+    padding: 2em;
 
-    @media (min-width: 1000px) {
-        padding: 2em;
+    @media (max-width: 600px) {
+        margin-bottom: 2rem;
     }
 }
 
