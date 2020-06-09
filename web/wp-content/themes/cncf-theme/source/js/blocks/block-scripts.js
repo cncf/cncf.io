@@ -35,7 +35,8 @@ wp.domReady(
 		wp.blocks.registerBlockVariation( 'core/columns', {
 			name: 'join-table',
 			title: 'Join Table (4 Columns)',
-			attributes: { className: 'is-style-join-table' },
+			attributes: {
+				className: 'is-style-join-table' },
 			isDefault: false,
 			innerBlocks: [
 				[ 'core/column', {
@@ -59,7 +60,8 @@ wp.domReady(
 		wp.blocks.registerBlockVariation( 'core/columns', {
 			name: 'join-table-one',
 			title: 'Join Table (1 Column)',
-			attributes: { className: 'is-style-join-table-one' },
+			attributes: {
+				className: 'is-style-join-table-one' },
 			isDefault: false,
 			innerBlocks: [
 				[ 'core/column', {
@@ -74,7 +76,8 @@ wp.domReady(
 		wp.blocks.registerBlockVariation( 'core/columns', {
 			name: 'end-user-table',
 			title: 'End User Table (3 Columns)',
-			attributes: { className: 'is-style-end-user-table' },
+			attributes: {
+				className: 'is-style-end-user-table' },
 			isDefault: false,
 			innerBlocks: [
 				[ 'core/column', {
@@ -95,7 +98,8 @@ wp.domReady(
 		wp.blocks.registerBlockVariation( 'core/list', {
 			name: 'no-style-list',
 			title: 'List (No Padding)',
-			attributes: { className: 'is-style-no-style-list' },
+			attributes: {
+				className: 'is-style-no-style-list' },
 			isDefault: false,
 			icon: 'list-view',
 			scope: [ 'inserter' ],
@@ -164,9 +168,46 @@ wp.domReady(
 		wp.blocks.registerBlockVariation( 'core/buttons', {
 			name: 'button-pdf',
 			title: 'Button (PDF Icon)',
-			attributes: { className: 'is-style-button-pdf' },
+			attributes: {
+				className: 'is-style-button-pdf' },
 			isDefault: false,
 			icon: 'media-document',
+			scope: [ 'inserter' ],
+		} );
+
+		// Used for Join page.
+		wp.blocks.registerBlockVariation( 'core/columns', {
+			name: 'section-header',
+			title: 'Section Header (2 cols)',
+			attributes: {
+				className: 'is-style-section-header' },
+			isDefault: false,
+			innerBlocks: [
+				[ 'core/column', {
+					width: 50,
+					className: 'bh-01',
+				},
+				[
+					[ 'core/heading', {
+						level: 3,
+						placeholder: 'Section header text' },
+					],
+				],
+				],
+				[ 'core/column', {
+					width: 50,
+					className: 'bh-02',
+				},
+				[
+					[ 'core/heading', {
+						level: 6,
+						placeholder: 'View all...',
+					},
+					],
+				],
+				],
+			],
+			icon: 'text',
 			scope: [ 'inserter' ],
 		} );
 	}

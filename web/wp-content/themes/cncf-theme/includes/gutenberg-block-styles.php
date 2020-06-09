@@ -198,7 +198,7 @@ register_block_style(
 	)
 );
 
-// LIST
+// LIST.
 register_block_style(
 	'core/list',
 	array(
@@ -207,7 +207,7 @@ register_block_style(
 	)
 );
 
-// SPACERS
+// SPACERS.
 register_block_style(
 	'core/spacer',
 	array(

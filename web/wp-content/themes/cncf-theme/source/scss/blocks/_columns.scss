@@ -115,9 +115,26 @@
         &:nth-child(3n + 3) {
             background-color: $secondary-color;
         }
+    }
+}
 
+.is-style-section-header {
+    margin-bottom: 0.5em;
+    align-items: baseline;
+
+    h3,
+    h6,
+    p {
+        margin-bottom: 0.5rem;
     }
 
+    @media (min-width: 600px) {
+
+
+        .wp-block-column.bh-02 {
+            text-align: right;
+        }
+    }
 }
 
 
