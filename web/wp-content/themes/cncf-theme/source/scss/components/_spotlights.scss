@@ -13,7 +13,10 @@
     flex-direction: column;
     background-color: $tertiary-color;
     align-items: flex-start;
-    // padding: 1em;
+}
+
+.search-filter-results .spotlight-box {
+    padding: 1em;
 }
 
 .spotlight-thumbnail {
@@ -28,6 +31,11 @@
         padding: 0.5em;
     }
 }
+
+// .search-filter-results .spotlight-text-wrapper {
+//     padding-left: 1em;
+//     padding-right: 1em;
+// }
 
 .spotlight-title {
     margin-top: 0.5em;
