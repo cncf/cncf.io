@@ -37,14 +37,24 @@
 
     p {
         margin-top: 0em;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+
+        @media (min-width: 1000px) {
+            margin-bottom: 1rem;
+        }
+
         font-weight: 500;
         text-transform: uppercase;
     }
 
     >div {
-        padding-right: 0.5em;
-        padding-bottom: 0.5em;
+        padding-right: 1.5rem;
+
+        @media (min-width: 1000px) {
+            padding-right: 1rem;
+        }
+
+        padding-bottom: 0.5rem;
     }
 
     .skew-box {
