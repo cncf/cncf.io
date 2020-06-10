@@ -145,28 +145,28 @@ img {
 
     }
 
-    &.on-image {
-        background-color: transparent;
-        box-sizing: border-box;
-        border: 1px solid $white;
-        color: $white;
-        letter-spacing: 2px;
-        font-weight: 600;
-        font-size: 0.7em;
+    // &.on-image {
+    //     background-color: $primary-color;
+    //     box-sizing: border-box;
+    //     border: 1px solid $white;
+    //     color: $white;
+    //     letter-spacing: 2px;
+    //     font-weight: 600;
+    //     font-size: 0.7em;
 
-        &:hover {
-            background-color: $white;
-            color: $primary-color;
+    //     &:hover {
+    //         background-color: $white;
+    //         color: $primary-color;
 
-            a:visited {
-                color: $primary-color !important;
-            }
-        }
+    //         a:visited {
+    //             color: $primary-color !important;
+    //         }
+    //     }
 
-        a:visited {
-            color: $primary-color !important;
-        }
-    }
+    //     a:visited {
+    //         color: $primary-color !important;
+    //     }
+    // }
 
     &.header {
         height: 38px;
@@ -294,19 +294,25 @@ figure {
 }
 
 .skew-box {
-    font-size: 0.775em;
-    text-transform: uppercase;
+    // font-size: 0.775em;
+    font-size: 0.825em;
+    // text-transform: uppercase;
     font-weight: 500;
     color: $white;
     padding: 5px 6px;
-    background-color: $purple-400;
+    background-color: $purple-700;
     padding-right: 25px;
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
     // useful if inside flexbox.
     align-self: start;
 
     &.secondary {
-        background-color: $blue-400;
+        background-color: $grey-700;
+    }
+
+    &.tertiary {
+        color: $purple-700;
+        background-color: $white;
     }
 
     &.centered {
@@ -344,22 +350,22 @@ figure {
 }
 
 .margin-y-small {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .margin-y {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .margin-y-large {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .margin-top {
-    margin-top: 1em;
+    margin-top: 1rem;
 }
 
 .margin-top-small {
@@ -367,19 +373,19 @@ figure {
 }
 
 .margin-top-large {
-    margin-top: 2em;
+    margin-top: 2rem;
 }
 
 .margin-bottom-large {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .margin-bottom-small {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
 }
 
 .margin-bottom {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 @media (min-width: 600px) {

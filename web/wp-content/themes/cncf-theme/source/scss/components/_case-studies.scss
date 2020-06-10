@@ -18,15 +18,15 @@
     }
 
     &:nth-child(4n + 2) .case-study-overlay {
-        background-color: lighten($cs-overlay, 10%);
+        background-color: lighten($cs-overlay, 5%);
     }
 
     &:nth-child(4n + 3) .case-study-overlay {
-        background-color: lighten($cs-overlay, 20%);
+        background-color: lighten($cs-overlay, 10%);
     }
 
     &:nth-child(4n + 4) .case-study-overlay {
-        background-color: lighten($cs-overlay, 30%);
+        background-color: lighten($cs-overlay, 15%);
     }
 
     img {
@@ -41,7 +41,7 @@
     position: absolute;
     z-index: 2;
     opacity: 0.80;
-    mix-blend-mode: darken;
+    mix-blend-mode: normal;
 }
 
 .case-study-content-wrapper {
@@ -72,5 +72,9 @@
 }
 
 .case-study-title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+
+    .home & {
+        margin-bottom: auto;
+    }
 }

@@ -59,16 +59,20 @@ if ( $ch ) {
 
 	<div class="case-study-content-wrapper background-image-text-overlay">
 
-		<h5 class="case-study-title"><a title="<?php the_title(); ?>"
+		<h4 class="case-study-title"><a title="<?php the_title(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		</h5>
+		</h4>
+
+<?php if ( ! is_front_page() ) : ?>
+		<p class="margin-bottom-small"><?php echo get_the_date(); ?></p>
+<?php endif; ?>
 
 		<div>
 			<?php
 			if ( $case_study_type ) {
 				?>
 			<span
-				class="unskew-box secondary centered"><?php echo esc_html( $case_study_type ); ?></span>
+				class="skew-box tertiary centered margin-top"><?php echo esc_html( $case_study_type ); ?></span>
 				<?php
 			} else {
 				// if an array and no errors.
@@ -80,7 +84,7 @@ if ( $ch ) {
 					foreach ( $projects as $project ) {
 						?>
 			<span
-				class="unskew-box secondary centered"><?php echo esc_html( $project->name ); ?></span>
+				class="skew-box tertiary centered margin-top"><?php echo esc_html( $project->name ); ?></span>
 						<?php
 					}
 				}
@@ -91,7 +95,7 @@ if ( $ch ) {
 		<?php
 		if ( ! empty( $industry ) && ! is_wp_error( $industry ) ) :
 			?>
-		<div class="margin-top-small">
+		<div class="margin-top">
 			<?php
 			// limits to max 2 industry.
 			$industry = array_slice( $industry, 0, 2 );
@@ -100,17 +104,13 @@ if ( $ch ) {
 			foreach ( $industry as $each ) {
 				?>
 			<span
-				class="unskew-box centered "><?php echo esc_html( $each->name ); ?></span>
+				class="skew-box centered secondary"><?php echo esc_html( $each->name ); ?></span>
 				<?php
 			}
 			?>
 		</div>
 		<?php endif; ?>
 
-		<div class="margin-y-small">
-			<span
-				class="unskew-box secondary centered"><?php echo get_the_date(); ?></span>
-		</div>
 		<?php if ( $read_case_study ) { ?>
 		<a class="button on-image"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
