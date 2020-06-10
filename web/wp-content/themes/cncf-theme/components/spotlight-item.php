@@ -40,9 +40,11 @@ $spotlight_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-spotlight-type
 			<?php echo get_the_date( 'F j, Y' ); ?></span>
 
 		<?php
-		if ( $subtitle ) : ?>
+		if ( $subtitle ) :
+			?>
 		<p class="margin-bottom"><?php echo esc_html( $subtitle ); ?></p>
-		<?php endif;
+			<?php
+		endif;
 		?>
 
 	</div>

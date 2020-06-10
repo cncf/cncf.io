@@ -57,7 +57,7 @@
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 
     .home & {
         height: 75px;
@@ -80,7 +80,7 @@
         height: 200px;
         max-height: 200px;
         max-width: 100%;
-        margin-bottom: 2em;
+        margin-bottom: 2rem;
     }
 
 }
@@ -97,7 +97,7 @@
 
     .single-cncf_event & {
         font-size: 2em;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
     }
 }
 
@@ -106,7 +106,7 @@
 }
 
 .event-city {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 // Event Singular

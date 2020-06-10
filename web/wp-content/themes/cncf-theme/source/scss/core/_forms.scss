@@ -102,8 +102,8 @@ body.um-page-user,
 
 // the contact form.
 .contact-form {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     select,
     textarea {
@@ -133,7 +133,7 @@ body.um-page-user,
     }
 
     >div {
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
     }
 
     .form-group {
@@ -169,8 +169,8 @@ body.um-page-user,
     &.is-active {
         border: 2px solid $black;
         padding: 1em;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         max-width: 900px;
         margin-left: auto;
         margin-right: auto;
@@ -197,7 +197,7 @@ body.um-page-user,
 .gform_confirmation_wrapper {
     border: 2px solid $success;
     padding: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     font-weight: 600;
 }
 
@@ -211,8 +211,8 @@ body.um-page-user,
 .um-postmessage {
     border: 2px solid $success;
     padding: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;

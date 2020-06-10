@@ -12,7 +12,7 @@
 
     &.is-style-horizontal {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
 
         @media (min-width: 1000px) {
             grid-gap: 1.5em;
@@ -92,6 +92,6 @@
 
 .newsroom-guest-author {
     font-weight: 600;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     font-style: italic;
 }

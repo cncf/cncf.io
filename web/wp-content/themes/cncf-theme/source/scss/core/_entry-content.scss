@@ -56,10 +56,6 @@
             color: $pink-300;
         }
 
-        &:hover {
-            text-decoration: underline;
-        }
-
         &:active {
             text-decoration: none;
         }
@@ -78,7 +74,7 @@
         list-style: disc;
         margin-top: 0;
         margin-right: 0;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
         margin-left: 2em;
 
         // used for tab container.
@@ -92,7 +88,7 @@
         list-style: decimal;
         margin-top: 0;
         margin-right: 0;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
         margin-left: 2em;
     }
 
@@ -142,7 +138,7 @@
         width: 100%;
         border-collapse: collapse;
         font-size: 0.875em;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
     }
 
     tr:nth-of-type(odd) {

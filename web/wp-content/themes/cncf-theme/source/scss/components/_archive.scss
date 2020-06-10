@@ -24,7 +24,7 @@
     flex-direction: column;
 
     .date-author-row {
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
 
         @media (min-width: 768px) {
             margin-bottom: 0.5em;
@@ -32,7 +32,7 @@
     }
 
     .archive-title {
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
 
         @media (min-width: 768px) {
             margin-bottom: 0.5em;
@@ -77,7 +77,7 @@
     transition: all 0.25s ease;
     object-fit: cover;
     object-position: bottom;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 
     img {
         display: block;

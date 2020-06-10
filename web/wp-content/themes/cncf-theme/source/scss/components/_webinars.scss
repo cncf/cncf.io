@@ -3,8 +3,8 @@
     display: grid;
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 
     @media (min-width: 1000px) {
         grid-gap: 1.5em;
@@ -12,32 +12,32 @@
 }
 
 .webinar-title {
-    margin-top: 1em;
+    margin-top: 1rem;
     margin-bottom: 0;
     line-height: 1.4;
     margin-bottom: auto;
 }
 
 .presented-by {
-    margin-top: 1em;
+    margin-top: 1rem;
     font-size: 0.825em;
     font-weight: 500;
 
     .webinar-single & {
         font-size: 1em;
         font-weight: 500;
-        margin-top: 1em;
+        margin-top: 1rem;
     }
 }
 
 .recorded {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
     font-size: 0.825em;
 
     .webinar-single & {
         font-size: 1em;
         font-weight: 500;
-        margin-top: 1em;
+        margin-top: 1rem;
     }
 }
 
@@ -49,7 +49,7 @@
 
     .is-style-horizontal & {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
 
         @media (min-width: 1000px) {
             grid-gap: 1.5em;
@@ -91,7 +91,7 @@
         overflow: hidden;
         margin: 0;
         position: relative;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
         border: 1px solid $grey-200;
 
         &:hover {
