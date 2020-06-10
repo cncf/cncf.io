@@ -8,7 +8,7 @@
     margin-bottom: $sm-padding;
     font-weight: 500;
     color: $secondary-color;
-    font-size: 1.5em;
+    font-size: 1.3em;
 
     @media (min-width: 768px) {
         font-size: 1.75em;
@@ -22,7 +22,6 @@
 
     p:not([class*='is-style']):not(.hero-parent-link) {
         .entry-content & {
-
             max-width: 900px;
         }
     }
