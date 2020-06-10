@@ -113,14 +113,15 @@
 .event-single {
 
     .event-box {
-        height: 250px;
+        // height: 250px;
 
-        @media (min-width: 600px) {
-            height: 400px;
-        }
+        // @media (min-width: 600px) {
+        height: 400px;
+        // }
 
         width: 500px;
         max-width: 100%;
-        margin-top: 2em;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 }

@@ -123,7 +123,7 @@ $color ? $overlay_color = $color : $overlay_color = '#254AAB';
 
 
 			<?php if ( $external_url ) : ?>
-		<a href="<?php echo esc_url( $external_url ); ?>" class="button">Event
+		<a href="<?php echo esc_url( $external_url ); ?>" class="button margin-top-large">Event
 			Information</a>
 		<?php endif; ?>
 
