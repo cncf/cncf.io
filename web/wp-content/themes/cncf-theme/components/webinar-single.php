@@ -173,11 +173,10 @@ if ( $dat_webinar > $dat_now ) {
 
 				<p>Time: <?php echo esc_html( $webinar_time ); ?>. <a
 						href="<?php echo esc_url( $conversion_url ); ?>"
-						target="_blank">Convert to your local time</a>.</p>
+						target="_blank" class="external is-primary-color">Convert to your local time</a>.</p>
 
 				Attend: <a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener noreferrer"
-				title="Register for <?php the_title(); ?> Webinar">Register for this
-					webinar</a>.
+				title="Register for <?php the_title(); ?> Webinar"  class="external is-primary-color">Register for this webinar</a>.
 			</div>
 			<?php endif; ?>
 
