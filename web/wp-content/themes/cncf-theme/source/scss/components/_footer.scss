@@ -31,9 +31,20 @@
             fill: $purple-900;
             color: $purple-900;
 
+            .inner-color {
+                fill: $purple-300;
+                color: $purple-300;
+                stroke: $purple-300;
+            }
+
+            // instagram icon.
+            .stroke-only {
+                stroke: $purple-300;
+            }
+
             &:hover {
-                fill: $primary-color;
-                color: $primary-color;
+                fill: $purple-500;
+                color: $purple-500;
             }
         }
 
