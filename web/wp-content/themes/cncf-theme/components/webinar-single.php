@@ -144,15 +144,15 @@ if ( $dat_webinar > $dat_now ) {
 			<?php if ( 'upcoming' == $period_status ) : ?>
 
 			<div class="webinar-summary margin-y-large">
-				<h3 class="margin-reset margin-bottom">Webinar Summary</h3>
-				<p>Webinar: <?php the_title(); ?></p>
+				<h3>Webinar Summary</h3>
+				<p class="is-style-max-width-900"><strong>Webinar:</strong> <?php the_title(); ?></p>
 
 				<?php if ( $speakers ) : ?>
-				<p>Speakers: <?php echo esc_html( $speakers ); ?></p>
+				<p><strong>Speakers:</strong> <?php echo esc_html( $speakers ); ?></p>
 				<?php endif; ?>
 
 
-				<p>Date:
+				<p><strong>Date:</strong>
 					<?php echo esc_html( $dat_webinar->format( 'l jS F Y' ) ); ?>
 				</p>
 
@@ -171,13 +171,13 @@ if ( $dat_webinar > $dat_now ) {
 				$conversion_url = 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=' . $msg . '&iso=' . $iso . '&p1=' . $p1_value . '&ah=1';
 				?>
 
-				<p>Time: <?php echo esc_html( $webinar_time ); ?>. <a
+				<p><strong>Time:</strong> <?php echo esc_html( $webinar_time ); ?>. <a
 						href="<?php echo esc_url( $conversion_url ); ?>"
 						target="_blank">Convert to your local time</a>.</p>
 
-				Attend: <a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener noreferrer"
+				<p><strong>How to attend:</strong> <a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener noreferrer"
 				title="Register for <?php the_title(); ?> Webinar">Register for this
-					webinar</a>.
+					webinar</a>.</p>
 			</div>
 			<?php endif; ?>
 
