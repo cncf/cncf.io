@@ -184,7 +184,7 @@ wp.domReady(
 			isDefault: false,
 			innerBlocks: [
 				[ 'core/column', {
-					width: 50,
+					width: 70,
 					className: 'bh-01',
 				},
 				[
@@ -195,7 +195,7 @@ wp.domReady(
 				],
 				],
 				[ 'core/column', {
-					width: 50,
+					width: 30,
 					className: 'bh-02',
 				},
 				[
