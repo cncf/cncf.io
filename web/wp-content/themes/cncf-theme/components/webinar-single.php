@@ -164,6 +164,8 @@ if ( $dat_webinar > $dat_now ) {
 				// these timezones seem to be hardcoded.
 				if ( 'CST' == $dat_webinar->format( 'e' ) ) {
 					$p1_value = 33;
+				} elseif ( 'KST' == $dat_webinar->format( 'e' ) ) {
+					$p1_value = 235;
 				} else {
 					$p1_value = 137;
 				}
@@ -173,9 +175,9 @@ if ( $dat_webinar > $dat_now ) {
 
 				<p><strong>Time:</strong> <?php echo esc_html( $webinar_time ); ?>. <a
 						href="<?php echo esc_url( $conversion_url ); ?>"
-						target="_blank">Convert to your local time</a>.</p>
+						target="_blank" class="external is-primary-color">Convert to your local time</a>.</p>
 
-				<p><strong>How to attend:</strong> <a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener noreferrer"
+				<p><strong>How to attend:</strong> <a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener noreferrer" class="external is-primary-color"
 				title="Register for <?php the_title(); ?> Webinar">Register for this
 					webinar</a>.</p>
 			</div>
