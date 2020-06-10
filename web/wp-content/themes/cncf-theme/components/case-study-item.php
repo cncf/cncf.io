@@ -59,10 +59,12 @@ if ( $ch ) {
 
 	<div class="case-study-content-wrapper background-image-text-overlay">
 
-		<h4 class="case-study-title"><a title="<?php the_title(); ?>"
+<div class="case-study-title-wrapper">
+		<h3 class="case-study-title"><a title="<?php the_title(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		</h4>
-
+		</h3>
+</div>
+<div>
 <?php if ( ! is_front_page() ) : ?>
 		<p class="margin-bottom-small"><?php echo get_the_date(); ?></p>
 <?php endif; ?>
@@ -115,7 +117,7 @@ if ( $ch ) {
 		<a class="button on-image"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		<?php } ?>
-
+		</div>
 	</div>
 
 </div>
