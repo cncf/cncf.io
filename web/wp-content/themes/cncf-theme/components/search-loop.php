@@ -40,50 +40,34 @@ title="CNCF Landscape">View the CNCF Landscape</a></p>
 <div class="skew-box centered margin-bottom">
 		<?php
 		if ( in_category( 'blog' ) ) {
-			echo 'BLOG POST';
+			echo 'Blog Post';
 		} elseif ( in_category( 'news' ) ) {
-			echo 'MEDIA COVERAGE';
+			echo 'Media Coverage';
 		} elseif ( in_category( 'announcements' ) ) {
-			echo 'ANNOUNCEMENT';
+			echo 'Announcement';
 		} elseif ( 'cncf_webinar' == get_post_type() ) {
-			echo 'WEBINAR';
+			echo 'Webinar';
 		} elseif ( 'cncf_person' == get_post_type() ) {
-			echo 'PEOPLE';
+			echo 'People';
 		} elseif ( 'cncf_case_study' == get_post_type() ) {
-			echo 'CASE STUDY';
+			echo 'Case Study';
 		} elseif ( 'cncf_case_studych' == get_post_type() ) {
-			echo 'CASE STUDY';
+			echo 'Case Study';
 		} elseif ( 'cncf_event' == get_post_type() ) {
-			echo 'EVENT';
+			echo 'Event';
 		} elseif ( 'cncf_speaker' == get_post_type() ) {
-			echo 'SPEAKER';
+			echo 'Speaker';
 		} elseif ( 'cncf_spotlight' == get_post_type() ) {
-			echo 'SPOTLIGHT';
+			echo 'Spotlight';
 		} elseif ( 'page' == get_post_type() ) {
-			echo 'PAGE';
+			echo 'Page';
 		} else {
-			echo 'NOT SURE?';
+			echo 'Page';
 		}
 		?>
 </div>
 		<?php if ( $category_author ) : ?>
-<div class="skew-box secondary centered margin-bottom">CNCF
-			<?php
-			echo esc_html( $category_author );
-
-			if ( in_category( 'blog' ) ) {
-				echo ' BLOG POST';
-			} elseif ( in_category( 'news' ) ) {
-				echo ' MEDIA COVERAGE';
-			} elseif ( in_category( 'announcement' ) ) {
-				echo ' ANNOUNCEMENT';
-			} elseif ( 'cncf_webinar' == get_post_type() ) {
-				echo ' WEBINAR';
-			} else {
-				echo ' POST';
-			}
-			?>
-</div>
+<div class="skew-box secondary centered margin-bottom">CNCF Member Content</div>
 <?php endif; ?>
 
 		<?php
