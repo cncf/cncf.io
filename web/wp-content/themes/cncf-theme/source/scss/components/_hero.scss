@@ -6,7 +6,7 @@
 
     }
 
-    .single & {
+    .single:not(.single-cncf_case_study):not(.single-cncf_case_study_ch) & {
         margin-top: $sm-padding;
         margin-bottom: $sm-padding;
 
