@@ -164,6 +164,8 @@ if ( $dat_webinar > $dat_now ) {
 				// these timezones seem to be hardcoded.
 				if ( 'CST' == $dat_webinar->format( 'e' ) ) {
 					$p1_value = 33;
+				} elseif ( 'KST' == $dat_webinar->format( 'e' ) ) {
+					$p1_value = 235;
 				} else {
 					$p1_value = 137;
 				}
