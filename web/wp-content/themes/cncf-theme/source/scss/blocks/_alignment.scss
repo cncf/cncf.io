@@ -32,8 +32,19 @@
     max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    @media (min-width: 375px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (min-width: 550px) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
 }
 
 .wp-block-group {
