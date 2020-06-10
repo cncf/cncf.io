@@ -74,7 +74,7 @@ if ( $dat_webinar > $dat_now ) {
 			<?php
 			if ( 'upcoming' == $period_status && $date_and_time ) :
 				?>
-		<span class="skew-box centered"><?php echo esc_html( $date_and_time ); ?></span>
+		<span class="skew-box centered margin-bottom"><?php echo esc_html( $date_and_time ); ?></span>
 			<?php endif; ?>
 
 		<div class="skew-box secondary centered">CNCF
