@@ -98,6 +98,14 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/heading',
+	array(
+		'name'  => 'add-chevron-after',
+		'label' => 'Add Chevrons',
+	)
+);
+
 // PARAGRAPH.
 register_block_style(
 	'core/paragraph',
@@ -168,6 +176,14 @@ register_block_style(
 	array(
 		'name'  => 'bottom-margin',
 		'label' => 'Add 1em Margin',
+	)
+);
+
+register_block_style(
+	'core/paragraph',
+	array(
+		'name'  => 'add-chevron-after',
+		'label' => 'Add Chevrons',
 	)
 );
 
