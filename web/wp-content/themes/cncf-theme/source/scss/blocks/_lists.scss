@@ -1,10 +1,10 @@
 ul.is-style-no-style-list {
     list-style: none;
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
     li {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.5rem;
 
         &:before {
             content: "- "
