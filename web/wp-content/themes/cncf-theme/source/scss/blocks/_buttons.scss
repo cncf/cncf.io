@@ -26,6 +26,7 @@
         &:hover,
         &:focus {
             background-color: lighten($default, 5%);
+            text-decoration: none;
         }
     }
 

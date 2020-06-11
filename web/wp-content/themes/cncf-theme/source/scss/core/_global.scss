@@ -83,6 +83,7 @@ img {
     &:hover {
         background-color: lighten($primary-color, 5%);
         color: $white;
+        text-decoration: none;
     }
 
     &.search-open {
