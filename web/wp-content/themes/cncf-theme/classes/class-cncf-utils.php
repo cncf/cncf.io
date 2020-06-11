@@ -68,87 +68,34 @@ class Cncf_Utils {
 	}
 
 	/**
-	 * Display webinar date and time
+	 * Get DateTime object from webinar date and time
 	 *
 	 * @param object  $date Date object.
 	 * @param string  $time Time.
+	 * @param string  $time_period AM or PM.
+	 * @param string  $timezone TZ.
 	 * @param boolean $formatted Formatted for DateTime object.
 	 */
-	public static function display_webinar_date_time( $date, $time, $formatted = false ) {
-
+	public static function get_webinar_date_time( $date, $time, $time_period, $timezone, $formatted = false ) {
 		if ( ! $date ) {
-			return;
+			return false;
+		}
+
+		// time may not be provided for old webinars.
+		if ( ! $time ) {
+			$time = '10:00';
+			$time_period = 'AM';
+			$timezone = 'PST';
+		} else {
+			$time = substr( $time, 0, 2 ) . ':' . substr( $time, 2 );
 		}
 
 		$dt_date = new DateTime(
-			$date,
-			new DateTimeZone( 'America/Los_Angeles' )
+			$date . ' ' . $time . ' ' . $time_period,
+			new DateTimeZone( $timezone )
 		);
 
-		// time is sometimes deleted by editors? Fix.
-		if ( $time ) {
-
-			// explode the string in to array.
-			$time_elements = explode( ' ', $time );
-
-			// this may mean time has been entered incorrectly.
-			if ( count( $time_elements ) < 5 ) {
-				$time          = str_replace( '-', ' - ', $time );
-				$time_elements = explode( ' ', $time );
-			}
-
-			if ( ! is_array( $time_elements ) || empty( $time_elements ) ) {
-				return;
-			}
-
-			// Check an AM or PM period is set.
-			$period = strtoupper( trim( $time_elements[3] ) );
-			if ( ! in_array( $period, array( 'AM', 'PM' ) ) ) {
-				return;
-			}
-
-			// Format the start time and pad it out if needed.
-			$padded_starting_time = str_pad( trim( $time_elements[0] ), 5, '0', STR_PAD_LEFT );
-
-			// Check time is actually a valid time.
-			$format        = 'H:i';
-			$date_object   = DateTime::createFromFormat( $format, $padded_starting_time );
-			$starting_time = gmdate( 'G', strtotime( $padded_starting_time ) );
-
-			if ( ! $date_object && ! $date_object->format( $format ) == $starting_time ) {
-				return;
-			}
-
-			// get the timezone.
-			$timezone = trim( substr( $time, -3 ) );
-
-		} else {
-			// set some defaults just in case.
-			$starting_time        = '10';
-			$padded_starting_time = '10:00';
-			$timezone             = 'PST';
-			$period               = 'AM';
-		}
-
-		// format the webinar date.
-		$webinar_date = $dt_date->format( 'l F j, Y' );
-
-		// setup the results.
-		if ( $formatted ) {
-
-			// fix abbreviation timezone.
-			if ( 'PT' == $timezone ) {
-				$timezone = 'PST';
-			}
-
-			// output in way suitable for DateTime.
-			$result = $date . ', ' . $padded_starting_time . ' ' . $timezone;
-
-		} else {
-			// output in readable format.
-			$result = $webinar_date . ', ' . $starting_time . $period . ' ' . $timezone;
-		}
-		return isset( $result ) ? $result : false;
+		return isset( $dt_date ) ? $dt_date : false;
 	}
 
 	/**

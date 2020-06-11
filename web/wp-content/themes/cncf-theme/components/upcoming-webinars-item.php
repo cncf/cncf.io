@@ -16,10 +16,12 @@ $author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-catego
 $company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
 
 // get webinar date and time.
-$date = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
-$time         = get_post_meta( get_the_ID(), 'cncf_webinar_time', true );
-$date_and_time = Cncf_Utils::display_webinar_date_time( $date, $time );
-
+$webinar_date              = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
+$webinar_start_time        = get_post_meta( get_the_ID(), 'cncf_webinar_start_time', true );
+$webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_time_period', true );
+$webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
+$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone, true );
+$date_and_time             = str_replace( ':00', '', $dat_webinar_start->format('l F j, Y, g:iA e') );
 ?>
 <article class="webinars-upcoming-box">
 

@@ -11,13 +11,14 @@
 $dat_now = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
 
 // Get date and time of webinar for comparison.
-$webinar_date        = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
-$webinar_time        = get_post_meta( get_the_ID(), 'cncf_webinar_time', true );
-$formatted_date_time = Cncf_Utils::display_webinar_date_time( $webinar_date, $webinar_time, true );
-$dat_webinar         = new DateTime( $formatted_date_time );
-
-// Get date and time to display.
-$date_and_time = Cncf_Utils::display_webinar_date_time( $webinar_date, $webinar_time );
+$webinar_date              = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
+$webinar_start_time        = get_post_meta( get_the_ID(), 'cncf_webinar_start_time', true );
+$webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_time_period', true );
+$webinar_end_time          = get_post_meta( get_the_ID(), 'cncf_webinar_end_time', true );
+$webinar_end_time_period   = get_post_meta( get_the_ID(), 'cncf_webinar_end_time_period', true );
+$webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
+$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone, true );
+$dat_webinar_end           = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_end_time, $webinar_end_time_period, $webinar_timezone, true );
 
 // get recording URL.
 $recording_url = get_post_meta( get_the_ID(), 'cncf_webinar_recording_url', true );
@@ -43,9 +44,9 @@ $slides_url = get_post_meta( get_the_ID(), 'cncf_webinar_slides_url', true );
 $speakers = get_post_meta( get_the_ID(), 'cncf_webinar_speakers', true );
 
 // date period.
-if ( $dat_webinar > $dat_now ) {
+if ( $dat_webinar_start > $dat_now ) {
 	$period_status = 'upcoming';
-} elseif ( ( $dat_webinar < $dat_now ) && ( $recording_url ) ) {
+} elseif ( ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
 	$period_status = 'recorded';
 } else {
 	$period_status = 'past';
@@ -72,9 +73,9 @@ if ( $dat_webinar > $dat_now ) {
 			?>
 
 			<?php
-			if ( 'upcoming' == $period_status && $date_and_time ) :
+			if ( 'upcoming' == $period_status ) :
 				?>
-		<span class="skew-box centered margin-bottom"><?php echo esc_html( $date_and_time ); ?></span>
+		<span class="skew-box centered margin-bottom"><?php echo esc_html( str_replace( ':00', '', $dat_webinar_start->format('l F j, Y, g:iA e') ) ); ?></span>
 			<?php endif; ?>
 
 		<div class="skew-box secondary centered">CNCF
@@ -106,7 +107,7 @@ if ( $dat_webinar > $dat_now ) {
 				?>
 		<div class="recorded">
 			<p class="live-icon">Recorded:
-				<?php echo esc_html( $dat_webinar->format( 'l F j, Y' ) ); ?>
+				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
 			</p>
 		</div>
 		<?php endif; ?>
@@ -153,27 +154,14 @@ if ( $dat_webinar > $dat_now ) {
 
 
 				<p><strong>Date:</strong>
-					<?php echo esc_html( $dat_webinar->format( 'l jS F Y' ) ); ?>
+					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>
 				</p>
 
 				<?php
-				// encode the title of webinar.
-				$msg = urlencode( html_entity_decode( str_replace( array( '&laquo;', '&quot;', '&#8220;', '&#8221;', '&#039;' ), '', 'CNCF Webinar: ' . get_the_title() ), ENT_COMPAT, 'UTF-8' ) );
-				// setup the date, time and timezone.
-				$iso = $dat_webinar->format( 'Ymd' ) . 'T' . $dat_webinar->format( 'H' );
-				// these timezones seem to be hardcoded.
-				if ( 'CST' == $dat_webinar->format( 'e' ) ) {
-					$p1_value = 33;
-				} elseif ( 'KST' == $dat_webinar->format( 'e' ) ) {
-					$p1_value = 235;
-				} else {
-					$p1_value = 137;
-				}
-				// create the conversion URL.
-				$conversion_url = 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=' . $msg . '&iso=' . $iso . '&p1=' . $p1_value . '&ah=1';
+				$conversion_url = 'https://www.google.com/search?q=' . $dat_webinar_start->format( 'g:i+A+e' ) . '+is+what+here';
 				?>
 
-				<p><strong>Time:</strong> <?php echo esc_html( $webinar_time ); ?>. <a
+				<p><strong>Time:</strong> <?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A e' ) ); ?>. <a
 						href="<?php echo esc_url( $conversion_url ); ?>"
 						target="_blank" class="external is-primary-color">Convert to your local time</a>.</p>
 
