@@ -8,6 +8,10 @@
         width: 100%;
     }
 
+    &:hover {
+        text-decoration: none;
+    }
+
     &:not(.has-text-color) {
         color: white;
 
@@ -26,7 +30,6 @@
         &:hover,
         &:focus {
             background-color: lighten($default, 5%);
-            text-decoration: none;
         }
     }
 
