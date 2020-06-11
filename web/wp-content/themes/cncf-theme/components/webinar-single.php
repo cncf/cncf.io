@@ -75,7 +75,7 @@ if ( $dat_webinar_start > $dat_now ) {
 			<?php
 			if ( 'upcoming' == $period_status ) :
 				?>
-		<span class="skew-box centered margin-bottom"><?php echo esc_html( str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA e' ) ) ); ?></span>
+		<span class="skew-box centered margin-bottom"><?php echo esc_html( str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ) ); ?></span>
 			<?php endif; ?>
 
 		<div class="skew-box secondary centered">CNCF
@@ -158,10 +158,10 @@ if ( $dat_webinar_start > $dat_now ) {
 				</p>
 
 				<?php
-				$conversion_url = 'https://www.google.com/search?q=' . $dat_webinar_start->format( 'g:i+A+e' ) . '+is+what+here';
+				$conversion_url = 'https://www.google.com/search?q=' . $dat_webinar_start->format( 'g:i+A+T' ) . '+is+what+here';
 				?>
 
-				<p><strong>Time:</strong> <?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A e' ) ); ?>. <a
+				<p><strong>Time:</strong> <?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>. <a
 						href="<?php echo esc_url( $conversion_url ); ?>"
 						target="_blank" class="external is-primary-color">Convert to your local time</a>.</p>
 

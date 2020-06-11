@@ -21,7 +21,7 @@ $webinar_start_time        = get_post_meta( get_the_ID(), 'cncf_webinar_start_ti
 $webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_time_period', true );
 $webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
 $dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone, true );
-$date_and_time             = str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA e' ) );
+$date_and_time             = str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) );
 ?>
 <article class="webinars-upcoming-box">
 

@@ -92,7 +92,7 @@ class Cncf_Utils {
 
 		$dt_date = new DateTime(
 			$date . ' ' . $time . ' ' . $time_period,
-			new DateTimeZone( $timezone )
+			new DateTimeZone( str_replace( '-', '/', $timezone ) )
 		);
 
 		return isset( $dt_date ) ? $dt_date : false;

@@ -414,6 +414,13 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
+		$tzlist = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+		$tzs = array();
+		foreach ( $tzlist as $tz ) {
+			$slug = str_replace( '/', '-', $tz );
+			$tzs[ $slug ] = $tz;
+		}
+
 		$sidebar    = array(
 			'id'              => 'cncf-sidebar-webinar',
 			'id_prefix'       => 'cncf_',
@@ -535,14 +542,14 @@ class Cncf_Mu_Admin {
 									),
 								),
 								array(
-									'type'          => 'text',
+									'type'          => 'select',
 									'data_type'     => 'meta',
 									'data_key'      => 'timezone',
 									'label'         => __( 'Timezone' ),
 									'register_meta' => true,
 									'ui_border_top' => true,
-									'default_value' => '',
-									'placeholder'   => 'PST',
+									'default_value' => 'America/Los_Angeles',
+									'options'       => $tzs,
 								),
 								array(
 									'type'          => 'text',
