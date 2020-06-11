@@ -70,22 +70,21 @@ class Cncf_Utils {
 	/**
 	 * Get DateTime object from webinar date and time
 	 *
-	 * @param object  $date Date object.
-	 * @param string  $time Time.
-	 * @param string  $time_period AM or PM.
-	 * @param string  $timezone TZ.
-	 * @param boolean $formatted Formatted for DateTime object.
+	 * @param object $date Date object.
+	 * @param string $time Time.
+	 * @param string $time_period AM or PM.
+	 * @param string $timezone TZ.
 	 */
-	public static function get_webinar_date_time( $date, $time, $time_period, $timezone, $formatted = false ) {
+	public static function get_webinar_date_time( $date, $time, $time_period, $timezone ) {
 		if ( ! $date ) {
 			return false;
 		}
 
 		// time may not be provided for old webinars.
 		if ( ! $time ) {
-			$time = '10:00';
+			$time        = '10:00';
 			$time_period = 'AM';
-			$timezone = 'PST';
+			$timezone    = 'PST';
 		} else {
 			$time = substr( $time, 0, 2 ) . ':' . substr( $time, 2 );
 		}

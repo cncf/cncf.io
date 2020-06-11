@@ -48,8 +48,11 @@
     grid-auto-rows: 1fr;
 
     .is-style-horizontal & {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        margin-bottom: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+        @media (min-width: 800px) {
+            grid-template-columns: repeat(auto-fill, 1fr);
+        }
 
         @media (min-width: 1000px) {
             grid-gap: 1.5em;
