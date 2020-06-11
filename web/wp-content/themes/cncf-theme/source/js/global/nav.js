@@ -41,7 +41,7 @@ jQuery( document ).ready(
 			// Desktop - Stop empty menu parents jumping to top of screen on click.
 			$( '.main-navigation li.menu-item-has-children a' ).click(
 				function( e ) {
-					if ( $( this ).attr( 'href' ) == '#' ) {
+					if ( $( this ).attr( 'href' ) === '#' ) {
 						e.preventDefault();
 					}
 				}
