@@ -124,12 +124,12 @@ if ( strlen( $content ) > 20 ) {
 	<!-- Modal -->
 	<div class="modal micromodal-slide"
 		id="modal-<?php echo esc_html( $person_id ); ?>" aria-hidden="true">
-		<div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close="modal-<?php echo esc_html( $person_id ); ?>">
 			<div class="modal__container" role="dialog" aria-modal="true"
 				aria-labelledby="modal-<?php echo esc_html( $person_id ); ?>-title">
 				<header class="modal__header">
 					<button class="modal__close" aria-label="Close modal"
-						data-micromodal-close=""></button>
+						data-micromodal-close="modal-<?php echo esc_html( $person_id ); ?>"></button>
 				</header>
 <div class="modal-content-wrapper">
 				<div class="profile__header">

@@ -22,13 +22,11 @@
 .modal__container {
     background-color: $white;
     padding: 30px;
-
     max-width: 800px;
     max-height: 100vh;
     border-radius: 4px;
     overflow-y: auto;
     box-sizing: border-box;
-
     min-width: 100%;
 
     @media (min-width: 500px) {
@@ -49,8 +47,20 @@
     cursor: pointer;
 }
 
-.modal__header .modal__close:before {
-    content: "\2715";
+.modal__header .modal__close {
+    &:before {
+        content: "\2715";
+        color: $primary-color;
+    }
+
+    &:hover:before {
+        color: $link-hover;
+    }
+
+    &:active:before {
+        position: relative;
+        top: 1;
+    }
 }
 
 .modal__content {
@@ -133,14 +143,26 @@
 
 .modal.is-open {
     .people-profile-picture {
-        width: 200px;
+        @media (max-width: 599px) {
+            width: 300px;
+            height: 300px;
+            max-width: 100%;
+        }
 
+        width: 200px;
     }
 }
 
 .modal-content-wrapper {
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 599px) {
+
+        .modal__content {
+            margin-top: 1rem;
+        }
+    }
 
     @media (min-width: 600px) {
         flex-direction: row;
