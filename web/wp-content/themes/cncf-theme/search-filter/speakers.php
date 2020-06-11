@@ -95,7 +95,7 @@ if ( $query->have_posts() ) {
 
 		<?php if ( um_user( 'country' ) ) : ?>
 		<span
-			class="speaker-location unskew-box secondary margin-top centered"><?php echo esc_html( um_user( 'country' ) ); ?></span>
+			class="speaker-location skew-box secondary margin-top centered"><?php echo esc_html( um_user( 'country' ) ); ?></span>
 		<?php endif; ?>
 
 		<div class="speaker-badges">

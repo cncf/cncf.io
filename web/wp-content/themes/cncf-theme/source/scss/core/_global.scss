@@ -320,24 +320,6 @@ figure {
     }
 }
 
-.unskew-box {
-    font-size: 0.775em;
-    font-weight: 400;
-    color: $white;
-    padding: 5px 6px;
-    background-color: $purple-400;
-    align-self: start;
-
-    &.secondary {
-        background-color: $blue-200;
-    }
-
-    &.centered {
-        margin-right: auto;
-        display: inline-block;
-    }
-}
-
 /*
 |-----------------------------------------------
 | Padding & Margins
