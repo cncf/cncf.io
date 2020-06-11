@@ -17,8 +17,8 @@ $webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_ti
 $webinar_end_time          = get_post_meta( get_the_ID(), 'cncf_webinar_end_time', true );
 $webinar_end_time_period   = get_post_meta( get_the_ID(), 'cncf_webinar_end_time_period', true );
 $webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
-$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone, true );
-$dat_webinar_end           = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_end_time, $webinar_end_time_period, $webinar_timezone, true );
+$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
+$dat_webinar_end           = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_end_time, $webinar_end_time_period, $webinar_timezone );
 
 // get recording URL.
 $recording_url = get_post_meta( get_the_ID(), 'cncf_webinar_recording_url', true );
@@ -31,8 +31,6 @@ $author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-catego
 
 // get companies (presented by).
 $company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
-
-$topic = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-topic' );
 
 // get registration URL.
 $registration_url = get_post_meta( get_the_ID(), 'cncf_webinar_registration_url', true );
@@ -91,6 +89,10 @@ if ( $dat_webinar_start > $dat_now ) {
 
 			<?php if ( 'past' == $period_status ) : ?>
 		<h3 class="margin-top">This webinar has passed.</h3>
+
+			<p>Broadcast on
+				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ); ?>
+			</p>
 					<?php endif; ?>
 
 				<?php
