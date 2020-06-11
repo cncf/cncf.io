@@ -295,10 +295,8 @@ figure {
 }
 
 .skew-box {
-    // font-size: 0.775em;
-    font-size: 0.825em;
-    // text-transform: uppercase;
-    font-weight: 500;
+    font-size: 0.775em;
+    font-weight: 400;
     color: $white;
     padding: 5px 6px;
     background-color: $purple-700;
@@ -320,16 +318,11 @@ figure {
         margin-right: auto;
         display: inline-block;
     }
-
-    &.smaller {
-        font-size: 0.675em;
-    }
 }
 
 .unskew-box {
     font-size: 0.775em;
-    text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     color: $white;
     padding: 5px 6px;
     background-color: $purple-400;
@@ -340,11 +333,16 @@ figure {
     }
 
     &.centered {
-        // margin-left: auto;
         margin-right: auto;
         display: inline-block;
     }
 }
+
+/*
+|-----------------------------------------------
+| Padding & Margins
+|-----------------------------------------------
+*/
 
 .margin-reset {
     margin: 0;
