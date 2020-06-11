@@ -548,7 +548,7 @@ class Cncf_Mu_Admin {
 									'label'         => __( 'Timezone' ),
 									'register_meta' => true,
 									'ui_border_top' => true,
-									'default_value' => 'America/Los_Angeles',
+									'default_value' => 'America-Los_Angeles',
 									'options'       => $tzs,
 								),
 								array(
