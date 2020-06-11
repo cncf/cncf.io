@@ -147,8 +147,6 @@
     div.uimob960 .um-profile-photo a.um-profile-photo-img {
         top: initial !important;
     }
-
-
 }
 
 .speakers-subnav {
@@ -161,9 +159,13 @@
     text-align: center;
 
     .um-meta-text {
-        max-width: 700px;
+        max-width: 500px;
         margin-left: auto;
         margin-right: auto;
+        margin: 0;
+        line-height: 1.5;
+        font-size: initial;
+        margin-top: 1rem;
     }
 }
 
@@ -229,7 +231,7 @@
             flex-direction: row;
 
             .um-profile-meta {
-                margin-left: 2rem;
+                margin-left: 3rem;
             }
         }
 
@@ -244,6 +246,9 @@
 }
 
 .um.um-profile {
+    color: #666;
+    font-size: 1em;
+
     .um-header.no-cover {
         .um-profile-meta {
             text-align: left !important;
@@ -251,6 +256,7 @@
 
         .um-name {
             font-size: 2.5em;
+            line-height: 1.2;
         }
 
         .um-name a {
@@ -279,7 +285,7 @@
         }
 
         .um-field {
-            padding: 1.5em 0 0 0;
+            padding: 1rem 0 0 0;
             line-height: 1.5;
         }
     }

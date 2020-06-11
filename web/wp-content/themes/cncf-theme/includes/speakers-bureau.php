@@ -186,4 +186,4 @@ function add_cncf_fields_after_header_name() {
 		<?php
 	}
 }
-add_action( 'um_after_profile_header_name', 'add_cncf_fields_after_header_name' );
+add_action( 'um_after_header_meta', 'add_cncf_fields_after_header_name' );
