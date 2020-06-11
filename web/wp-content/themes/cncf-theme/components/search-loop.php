@@ -44,37 +44,54 @@
 			<div class="archive-text-wrapper">
 
 				<div class="skew-box centered margin-bottom">
-				<?php
-				if ( in_category( 'blog' ) ) {
-					echo 'Blog Post';
-				} elseif ( in_category( 'news' ) ) {
-					echo 'Media Coverage';
-				} elseif ( in_category( 'announcements' ) ) {
-					echo 'Announcement';
-				} elseif ( 'cncf_webinar' == get_post_type() ) {
-					echo 'Webinar';
-				} elseif ( 'cncf_person' == get_post_type() ) {
-					echo 'People';
-				} elseif ( 'cncf_case_study' == get_post_type() ) {
-					echo 'Case Study';
-				} elseif ( 'cncf_case_studych' == get_post_type() ) {
-					echo 'Case Study';
-				} elseif ( 'cncf_event' == get_post_type() ) {
-					echo 'Event';
-				} elseif ( 'cncf_speaker' == get_post_type() ) {
-					echo 'Speaker';
-				} elseif ( 'cncf_spotlight' == get_post_type() ) {
-					echo 'Spotlight';
-				} elseif ( 'page' == get_post_type() ) {
-					echo 'Page';
-				} else {
-					echo 'Page';
-				}
-				?>
+					<?php
+					if ( in_category( 'blog' ) ) {
+						echo 'Blog Post';
+					} elseif ( in_category( 'news' ) ) {
+						echo 'Media Coverage';
+					} elseif ( in_category( 'announcements' ) ) {
+						echo 'Announcement';
+					} elseif ( 'cncf_webinar' == get_post_type() ) {
+						echo 'Webinar';
+					} elseif ( 'cncf_person' == get_post_type() ) {
+						echo 'People';
+					} elseif ( 'cncf_case_study' == get_post_type() ) {
+						echo 'Case Study';
+					} elseif ( 'cncf_case_studych' == get_post_type() ) {
+						echo 'Case Study';
+					} elseif ( 'cncf_event' == get_post_type() ) {
+						echo 'Event';
+					} elseif ( 'cncf_speaker' == get_post_type() ) {
+						echo 'Speaker';
+					} elseif ( 'cncf_spotlight' == get_post_type() ) {
+						echo 'Spotlight';
+					} elseif ( 'page' == get_post_type() ) {
+						echo 'Page';
+					} else {
+						echo 'Page';
+					}
+					?>
 				</div>
+
+
 				<?php if ( $category_author ) : ?>
 				<div class="skew-box secondary centered margin-bottom">CNCF
-					Member Content</div>
+					<?php
+					echo esc_html( $category_author );
+
+					if ( in_category( 'blog' ) ) {
+						echo ' Blog Post';
+					} elseif ( in_category( 'news' ) ) {
+						echo ' Media Coverage';
+					} elseif ( in_category( 'announcement' ) ) {
+						echo ' Announcement';
+					} elseif ( 'cncf_webinar' == get_post_type() ) {
+						echo ' Webinar';
+					} else {
+						echo ' Post';
+					}
+					?>
+				</div>
 				<?php endif; ?>
 
 				<?php
@@ -100,53 +117,53 @@
 
 				<p class="date-author-row">
 
-				<?php
-				if ( 'cncf_webinar' == get_post_type() ) {
+					<?php
+					if ( 'cncf_webinar' == get_post_type() ) {
 
-					// Get date and time now.
-					$dat_now = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
+						// Get date and time now.
+						$dat_now = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
 
-					// Get date and time of webinar for comparison.
-					$webinar_date              = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
-					$webinar_start_time        = get_post_meta( get_the_ID(), 'cncf_webinar_start_time', true );
-					$webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_time_period', true );
-					$webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
-					$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
-					$date_and_time             = str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) );
+						// Get date and time of webinar for comparison.
+						$webinar_date              = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
+						$webinar_start_time        = get_post_meta( get_the_ID(), 'cncf_webinar_start_time', true );
+						$webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_time_period', true );
+						$webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
+						$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
+						$date_and_time             = str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) );
 
-					// get recording URL.
-					$recording_url = get_post_meta( get_the_ID(), 'cncf_webinar_recording_url', true );
+						// get recording URL.
+						$recording_url = get_post_meta( get_the_ID(), 'cncf_webinar_recording_url', true );
 
-					// date period.
-					if ( $dat_webinar_start > $dat_now ) {
-						?>
+						// date period.
+						if ( $dat_webinar_start > $dat_now ) {
+							?>
 
 					<span class="live-icon">Upcoming Webinar on
-						<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+							<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
 					</span>
-						<?php
-					} elseif ( ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
-						?>
+							<?php
+						} elseif ( ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
+							?>
 
 					<span class="live-icon">Recorded on
-						<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+							<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
 					</span>
 
-						<?php
-					} else {
-						?>
+							<?php
+						} else {
+							?>
 					<span class="posted-date date-icon">
 						Broadcast on
-						<?php
-						echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) );
-						?>
+							<?php
+							echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) );
+							?>
 					</span>
-						<?php
-					}
-				} elseif ( 'cncf_event' == get_post_type() ) {
+							<?php
+						}
+					} elseif ( 'cncf_event' == get_post_type() ) {
 
-					$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
-					?>
+						$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+						?>
 					<span class="posted-date date-icon">
 						Event date:
 						<?php
@@ -154,9 +171,9 @@
 						?>
 					</span>
 
-								<?php
-				} else {
-					?>
+						<?php
+					} else {
+						?>
 					<span class="posted-date date-icon">
 						Posted on
 						<?php
@@ -164,8 +181,8 @@
 						?>
 					</span>
 						<?php
-				}
-				?>
+					}
+					?>
 					<?php
 					// Post author.
 					if ( in_category( 'blog' ) ) :
