@@ -414,7 +414,7 @@ class Cncf_Mu_Admin {
 		);
 		$sidebars[] = $sidebar;
 
-		$tzlist = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+		$tzlist = DateTimeZone::listIdentifiers( DateTimeZone::ALL );
 		$tzs = array();
 		foreach ( $tzlist as $tz ) {
 			$slug = str_replace( '/', '-', $tz );
