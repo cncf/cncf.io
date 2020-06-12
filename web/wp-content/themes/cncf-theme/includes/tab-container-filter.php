@@ -13,8 +13,8 @@
  * @param string $content Content of the post.
  */
 function cncf_content_filter( $content ) {
-	// get all div tags of class "wp-block-cgb-block-tab-container-block".
-	$tag_regex = '/<[^>]*class="[^"]*\bwp-block-cgb-block-tab-container-block\b[^"]*"[^>]*>/i';
+	// get all div tags of class "wp-block-lf-tab-container-block".
+	$tag_regex = '/<[^>]*class="[^"]*\bwp-block-lf-tab-container-block\b[^"]*"[^>]*>/i';
 	preg_match_all( $tag_regex, $content, $matches );
 
 	if ( ! $matches[0] ) {
