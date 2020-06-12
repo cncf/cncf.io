@@ -51,6 +51,8 @@ const AUTOPREFIXER_BROWSERS = [
     "bb >= 10"
 ];
 
+const AUTOPREFIXER_GRID = true;
+
 /**
  * Load Plugins.
  *
@@ -131,7 +133,10 @@ function styles() {
                 loadMaps: true
             })
         )
-        .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe(autoprefixer({
+          browsers: AUTOPREFIXER_BROWSERS,
+          grid: AUTOPREFIXER_GRID,
+          }))
         .pipe(sourcemaps.write())
         .pipe(lineec())
         .pipe(gulp.dest(styleDestination))
