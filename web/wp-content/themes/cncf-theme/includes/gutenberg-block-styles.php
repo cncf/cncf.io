@@ -240,6 +240,22 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/list',
+	array(
+		'name'  => 'max-width-600',
+		'label' => 'Max-Width 600px',
+	)
+);
+
+register_block_style(
+	'core/list',
+	array(
+		'name'  => 'max-width-700',
+		'label' => 'Max-Width 700px',
+	)
+);
+
 // SPACERS.
 register_block_style(
 	'core/spacer',
