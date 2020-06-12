@@ -88,9 +88,9 @@ if ( $dat_webinar_start > $dat_now ) {
 				<?php endif; ?>
 
 			<?php if ( 'past' == $period_status ) : ?>
-		<h3 class="margin-top">This webinar has passed.</h3>
+		<h3 class="margin-y">This webinar has passed.</h3>
 
-			<p>Broadcast on
+			<p class="date-icon">Broadcast on
 				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ); ?>
 			</p>
 					<?php endif; ?>
