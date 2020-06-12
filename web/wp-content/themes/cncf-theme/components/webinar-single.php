@@ -159,17 +159,11 @@ if ( $dat_webinar_start > $dat_now ) {
 					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>
 				</p>
 
-				<?php
-				$conversion_url = 'https://www.google.com/search?q=' . $dat_webinar_start->format( 'g:i+A+T' ) . '+is+what+here';
-				?>
-
-				<p><strong>Time:</strong> <?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>. <a
-						href="<?php echo esc_url( $conversion_url ); ?>"
-						target="_blank" class="external is-primary-color">Convert to your local time</a>.</p>
+				<p><strong>Time:</strong> <?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?></p>
 
 				<p><strong>How to attend:</strong> <a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener noreferrer" class="external is-primary-color"
 				title="Register for <?php the_title(); ?> Webinar">Register for this
-					webinar</a>.</p>
+					webinar</a></p>
 			</div>
 			<?php endif; ?>
 
