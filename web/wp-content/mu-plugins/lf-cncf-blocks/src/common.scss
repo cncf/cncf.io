@@ -8,49 +8,67 @@
 // declare all colours.
 
 $white: #ffffff;
-
 $black: #202020;
-$black-700: #000000;
-$black-900: #111111;
 
+// primary - highlight colour
+$primary-300: #E43B80; // cta rollover
+$primary-400: #DE176C; // preferred CTA
+
+// secondary - bolder colour
+$secondary-300: #908bb1;
+$secondary-500: #4e4a6d;
+$secondary-600: #302b54;
+$secondary-700: #2C2960;
+$secondary-800: #242b5F;
+$secondary-900: #1C214A;
+
+// tertiary
+$tertiary-100: #F0F5F7;
+$tertiary-400: #436ca9;
+$tertiary-600: #416FD9;
+$tertiary-700: #0F1533;
+
+// greys.
+$grey-100: #E6E6E6;
+$grey-200: #ABB2BF;
 $grey-400: #a7a7a6;
-$grey-700: #444444;
-
-$blue-100: #F0F5F7;
-$blue-300: #3CB3DD;
-$blue-400: #436ca9;
-$blue-600: #416FD9;
-$blue-800: #0F1533;
-$blue-900: #060927;
-
-$pink-300: #E43B80;
-$pink-400: #DE176C;
-
-$purple-200:#9eacdd;
-$purple-400: #48549C;
-$purple-700: #2C2960;
-$purple-800: #242b5e;
-
-// variable setup.
+$grey-500: #87969c;
+$grey-700: #A7A4B6; // skew box grey.
+$grey-800: #333333;
 
 // main.
-$primary-color: $pink-400;
-$secondary-color: $purple-700;
+$primary-color: $primary-400;
+$secondary-color: $secondary-700;
+$tertiary-color: $tertiary-100;
 
 // links.
-$link-color: $pink-400;
-$link-hover: $pink-300;
+$link-color: $primary-400;
+$link-hover: $primary-300;
+
+// mobile menu.
+$menu-mobile-container: $secondary-900;
+$menu-mobile-submenu: $secondary-600;
+$menu-mobile-submenu-submenu: $secondary-500;
+$menu-mobile-divider: $secondary-900;
+
+// desktop menu.
+$menu-desktop-container: $secondary-900;
+$menu-desktop-submenu: $secondary-600;
+$menu-desktop-submenu-submenu: $secondary-500;
+$menu-desktop-divider: $secondary-900;
+
+// menu text/links.
 $menu-link: $white;
-$menu-hover: #e1e1e1;
-$link-color-alt: $blue-400;
-$link-hover-alt: $blue-300;
+$menu-hover: $grey-100;
+
+// elements
+$cs-overlay: $secondary-800;
 
 // forms.
 $error: #B80611;
 $success: green;
 
-// font-stack
-
+// font-stack.
 $font-primary: -apple-system,
 BlinkMacSystemFont,
 "Segoe UI",
@@ -62,3 +80,23 @@ BlinkMacSystemFont,
 "Droid Sans",
 "Helvetica Neue",
 sans-serif;
+
+$font-code: Hack,
+"Fira Code",
+Consolas,
+Menlo,
+Monaco,
+"Andale Mono",
+"Lucida Console",
+"Lucida Sans Typewriter",
+"DejaVu Sans Mono",
+"Bitstream Vera Sans Mono",
+"Liberation Mono",
+"Nimbus Mono L",
+"Courier New",
+Courier,
+monospace;
+
+// spacing.
+$sm-padding: 2rem;
+$lg-padding: 4rem;

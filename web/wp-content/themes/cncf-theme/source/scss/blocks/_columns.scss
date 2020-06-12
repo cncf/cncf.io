@@ -59,7 +59,7 @@
 }
 
 .is-style-join-table-one {
-    background-color: $blue-100;
+    background-color: $tertiary-100;
     padding: $sm-padding;
 
     @media (max-width: 599px) {
@@ -108,7 +108,7 @@
         }
 
         &:nth-child(3n + 2) {
-            background-color: $blue-500;
+            background-color: $tertiary-400;
         }
 
         &:nth-child(3n + 3) {

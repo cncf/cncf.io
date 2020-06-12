@@ -22,16 +22,11 @@
         width: 100%;
         height: auto;
         border: 1px solid $grey-200;
-
-        // @media (min-width: 768px) {
-        //     max-width: 120px;
-        // }
     }
 }
 
 .speaker-title {
     margin-bottom: auto;
-    // text-align: center;
 
     a {
         text-transform: capitalize;
@@ -215,7 +210,7 @@
         color: $primary-color;
 
         &:hover {
-            color: $pink-300;
+            color: $primary-300;
         }
     }
 }

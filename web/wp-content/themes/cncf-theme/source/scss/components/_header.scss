@@ -7,7 +7,7 @@
     z-index: 20;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
         0 3px 6px rgba(0, 0, 0, 0.23);
-    background-color: $purple-900;
+    background-color: $menu-desktop-container;
 
     >.container-full-width {
         display: flex;
@@ -146,7 +146,7 @@
         z-index: 1;
         left: -999em;
 
-        background-color: $purple-800;
+        background-color: $secondary-800;
         box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         transition: opacity .15s linear, top 0s .15s ease-in;
 
@@ -166,7 +166,7 @@
         height: 100%;
         border: none;
         font-size: 1.5em;
-        background: $purple-800;
+        background: $secondary-800;
         color: $white;
         border-bottom: 1px solid $white;
         padding-right: 0.5em;

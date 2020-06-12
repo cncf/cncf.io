@@ -299,7 +299,7 @@ figure {
     font-weight: 400;
     color: $white;
     padding: 5px 6px;
-    background-color: $purple-700;
+    background-color: $secondary-700;
     padding-right: 25px;
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
     // useful if inside flexbox.
@@ -310,7 +310,7 @@ figure {
     }
 
     &.tertiary {
-        color: $purple-700;
+        color: $secondary-700;
         background-color: $white;
     }
 

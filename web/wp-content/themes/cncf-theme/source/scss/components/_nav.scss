@@ -14,7 +14,7 @@
         width: 100%;
         height: 100%;
         padding: 75px 30px 25px 30px;
-        background-color: $purple-800;
+        background-color: $menu-mobile-container;
         z-index: 5;
         overflow-y: scroll;
 
@@ -46,16 +46,17 @@
 
         a {
             display: block;
-            color: $white;
+            color: $menu-link;
             text-decoration: none;
-            font-weight: 600;
-            padding-top: 0.75em;
-            padding-bottom: 0.75em;
+            font-weight: 500;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            font-size: 0.9em;
 
             @media (min-width: 375px) {
-                font-size: 1.25em;
-                padding-top: 1em;
-                padding-bottom: 1em;
+                font-size: 1.125em;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
             }
 
         }
@@ -65,7 +66,7 @@
         }
 
         >li>a {
-            border-bottom: 1px solid $purple-400;
+            border-bottom: 1px solid $menu-mobile-divider;
         }
     }
 
@@ -85,14 +86,14 @@
 
         .sub-menu {
             display: none;
-            background-color: $purple-500;
+            background-color: $menu-mobile-submenu;
 
             a {
                 padding-left: 10px;
             }
 
             .sub-menu {
-                background-color: $purple-400;
+                background-color: $menu-mobile-submenu-submenu;
 
                 a {
                     padding-left: 25px;
@@ -221,7 +222,7 @@
                     cursor: default;
 
                     &:hover {
-                        color: $grey-100;
+                        color: $menu-hover;
                     }
 
                     &::after {
@@ -234,8 +235,8 @@
                         margin-top: -2px;
                         top: 50%;
                         left: calc(100% - 1em - 0px);
-                        border-bottom: 1px solid $white;
-                        border-right: 1px solid $white;
+                        border-bottom: 1px solid $menu-link;
+                        border-right: 1px solid $menu-link;
                         transform: rotate(45deg) translateY(-50%);
                         transition: all 0.3s ease-out;
                         transform-origin: 50% 0;
@@ -243,8 +244,8 @@
 
                     &:hover::after {
                         // change arrow colour
-                        border-bottom: 1px solid $grey-100;
-                        border-right: 1px solid $grey-100;
+                        border-bottom: 1px solid $menu-hover;
+                        border-right: 1px solid $menu-hover;
                     }
                 }
 
@@ -258,8 +259,8 @@
     .sub-menu {
         font-size: 0.875rem;
         z-index: 5;
-        background: $purple-600;
-        color: $white;
+        background: $menu-desktop-submenu;
+        color: $menu-link;
         opacity: 0;
         position: absolute;
         left: -9999px;
@@ -277,7 +278,7 @@
             // add border to a so it doesn't touch edges
             a {
                 transition: 0s 0s;
-                border-bottom: 1px solid $purple-950;
+                border-bottom: 1px solid $menu-desktop-divider;
             }
 
             // Remove border from last link
@@ -301,7 +302,7 @@
                     box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.3);
                     left: calc(100% + 0em);
                     top: 0;
-                    background: $purple-600;
+                    background: $menu-desktop-submenu-submenu;
                     overflow: visible;
 
                     // fixes icons
