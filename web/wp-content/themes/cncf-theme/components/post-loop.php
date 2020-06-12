@@ -66,8 +66,8 @@ $image = new Image();
 						title="<?php the_title(); ?>">
 						<?php the_title(); ?>
 					</a></p>
-				<span class="archive-date date-icon">
-					<?php echo get_the_date( 'F j, Y' ); ?></span>
+					<p class="date-author-row"><span class="posted-date date-icon">
+					<?php echo get_the_date( 'F j, Y' ); ?></span></p>
 				<div class="archive-excerpt"><?php the_content(); ?></div>
 			</div>
 		</div>
