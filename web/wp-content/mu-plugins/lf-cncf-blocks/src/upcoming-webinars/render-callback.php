@@ -29,6 +29,7 @@ function lf_upcoming_webinars_render_callback( $attributes ) {
 		'post_status'        => array( 'publish' ),
 		'meta_key'           => 'cncf_webinar_date',
 		'order'              => 'ASC',
+		'meta_type'          => 'DATETIME',
 		'orderby'            => 'meta_value',
 		'no_found_rows'      => true,
 		'meta_query'         => array(
