@@ -1,6 +1,7 @@
 .archive-container {
     display: grid;
-    grid-gap: 4em;
+    grid-row-gap: 4rem;
+    grid-column-gap: 4rem;
     grid-template-rows: 1fr;
     margin-top: 4em;
     margin-left: auto;

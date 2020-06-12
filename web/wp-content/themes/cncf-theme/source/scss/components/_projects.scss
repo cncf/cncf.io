@@ -1,6 +1,6 @@
 .projects-wrapper {
     display: grid;
-    grid-gap: 1em;
+    grid-row-gap: 1rem; grid-column-gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     margin-top: 2em;
     margin-bottom: 2rem;
@@ -10,7 +10,7 @@
     }
 
     @media (min-width: 1000px) {
-        grid-gap: 1.5em;
+        grid-row-gap: 1.5rem; grid-column-gap: 1.5rem;
     }
 }
 

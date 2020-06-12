@@ -16,7 +16,10 @@
     .social-share-wrapper {
         display: grid;
         grid-auto-flow: column;
-        grid-gap: 10px;
+        grid-row-gap: 0.5rem;
+        grid-column-gap: 0.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
 
         li {
             text-align: center;

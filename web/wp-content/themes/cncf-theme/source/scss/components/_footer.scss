@@ -22,7 +22,7 @@
     .social-links {
         margin-top: 2rem;
         display: grid;
-        grid-gap: 1em;
+        grid-row-gap: 1rem; grid-column-gap: 1rem;
         grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
 
         svg {
