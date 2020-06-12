@@ -3,7 +3,6 @@
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-    /* autoprefixer grid: autoplace */
     @media (min-width: 950px) {
         grid-template-columns: 1fr;
         height: 100%;

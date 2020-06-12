@@ -319,11 +319,11 @@
             &.cncf-projects-graduated {
 
                 >ul {
-                    width: 430px;
-                    column-width: 210px;
+                    width: calc(14rem*2);
+                    // column-width: 210px;
                     column-count: 2;
                     column-gap: 0px;
-                    column-fill: auto;
+                    column-fill: balance;
 
                     li {
                         display: inline-block;
