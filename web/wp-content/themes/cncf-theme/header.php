@@ -37,6 +37,7 @@
 	<meta name="msapplication-config"
 		content="/wp-content/themes/cncf-theme/images/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
+	<meta http-equiv="X-UA-Compatible" content="IE=11">
 </head>
 
 <body <?php body_class(); ?>>

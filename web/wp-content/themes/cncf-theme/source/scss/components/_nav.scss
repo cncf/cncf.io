@@ -153,7 +153,8 @@
 
     .site-navigation {
         display: flex;
-        flex: 1;
+        // flex: 1;
+        flex: 1 0 0%;
         align-items: center;
         justify-content: flex-end;
         max-width: 100%;
