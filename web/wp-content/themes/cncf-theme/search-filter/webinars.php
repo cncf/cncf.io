@@ -30,10 +30,10 @@ if ( $query->have_posts() ) : ?>
 
 			// if filter matches all webinars.
 			if ( $full_count == $query->found_posts ) {
-				echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars.';
+				echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars';
 			} else {
 				// else show partial count.
-				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars.';
+				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars';
 			}
 		} else {
 			// get total list of webinars.
@@ -41,10 +41,10 @@ if ( $query->have_posts() ) : ?>
 
 			// if filter matches all webinars.
 			if ( $full_count == $query->found_posts ) {
-				echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars.';
+				echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars';
 			} else {
 				// else show partial count.
-				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars.';
+				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars';
 			}
 		}
 		?>
