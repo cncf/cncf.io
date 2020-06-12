@@ -50,7 +50,7 @@ registerBlockType(
 		attributes: {},
 		html: false,
 		edit: Edit,
-		save: ( props ) => {
+		save: () => {
 			return (
 				<InnerBlocks.Content />
 			);

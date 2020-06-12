@@ -34,7 +34,7 @@ const { registerBlockType } = wp.blocks;
  * @return {?WPBlock}          The block, if it has been successfully registered; otherwise `undefined`.
  */
 registerBlockType(
-	 'lf/events',
+	'lf/events',
 	{
 		title: __( 'LF | Events' ),
 		description: __( 'Block showing upcoming events.' ),

@@ -34,7 +34,7 @@ const { registerBlockType } = wp.blocks;
  * @return {?WPBlock}          The block, if it has been successfully registered; otherwise `undefined`.
  */
 registerBlockType(
-	 'lf/newsroom',
+	'lf/newsroom',
 	{
 		title: __( 'LF | Newsroom' ),
 		description: __( 'Display posts from the CNCF Newsroom' ),
