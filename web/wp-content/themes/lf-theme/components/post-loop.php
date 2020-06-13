@@ -115,7 +115,7 @@ $image = new Image();
 
 				<p class="date-author-row"><span class="posted-date date-icon">
 						<?php
-						the_date();
+						echo get_the_date();
 						?>
 					</span>
 					<?php
