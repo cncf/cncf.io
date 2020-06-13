@@ -8,8 +8,8 @@
  */
 
  // get author category.
-$author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
-?>
+ $spotlight_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', true );
+ ?>
 <section class="hero">
 	<div class="container wrap no-background">
 		<p class="hero-parent-link"><a href="/spotlights/"
@@ -35,7 +35,7 @@ $author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category',
 </p>
 
 <div class="skew-box secondary centered margin-bottom-large">CNCF
-			<?php echo esc_html( $author_category ); ?> Spotlight</div>
+			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
 			<div class="entry-content">
 			<?php the_content(); ?>
 		</div>
