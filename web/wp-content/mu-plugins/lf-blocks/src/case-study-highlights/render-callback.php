@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -24,7 +24,7 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 	$smaller_text02 = isset( $attributes['smallerText02'] ) ? $attributes['smallerText02'] : '';
 	$smaller_text03 = isset( $attributes['smallerText03'] ) ? $attributes['smallerText03'] : '';
 
-	$projects = get_the_terms( get_the_ID(), 'cncf-project' );
+	$projects = get_the_terms( get_the_ID(), 'lf-project' );
 
 	ob_start();
 	?>

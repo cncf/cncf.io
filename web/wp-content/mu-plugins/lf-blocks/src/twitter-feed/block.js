@@ -44,7 +44,7 @@ registerBlockType(
 			__( 'twitter' ),
 			__( 'feed' ),
 			__( 'social' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {},
 		attributes: {

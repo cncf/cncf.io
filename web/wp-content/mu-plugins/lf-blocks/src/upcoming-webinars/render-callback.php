@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -25,21 +25,21 @@ function lf_upcoming_webinars_render_callback( $attributes ) {
 	$args  = array(
 		'posts_per_page'     => $quantity,
 		'ignore_custom_sort' => true,
-		'post_type'          => array( 'cncf_webinar' ),
+		'post_type'          => array( 'lf_webinar' ),
 		'post_status'        => array( 'publish' ),
-		'meta_key'           => 'cncf_webinar_date',
+		'meta_key'           => 'lf_webinar_date',
 		'order'              => 'ASC',
 		'meta_type'          => 'DATETIME',
 		'orderby'            => 'meta_value',
 		'no_found_rows'      => true,
 		'meta_query'         => array(
 			array(
-				'key'     => 'cncf_webinar_date',
+				'key'     => 'lf_webinar_date',
 				'value'   => date_i18n( 'Y-m-d' ),
 				'compare' => '>=',
 			),
 			array(
-				'key'     => 'cncf_webinar_recording',
+				'key'     => 'lf_webinar_recording',
 				'value'   => '',
 				'compare' => 'NOT EXISTS',
 			),

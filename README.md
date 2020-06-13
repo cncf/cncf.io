@@ -40,7 +40,7 @@ CNCF.io runs in a similar way to  LFEvents -[LFEvents Developer Instructions](ht
   * `Pull files from?` >  `dev`
 
 6. You will need to compile the theme css/js before the site will render correctly:
-   1. Go to the theme directory: `cd web/wp-content/themes/cncf-theme`
+   1. Go to the theme directory: `cd web/wp-content/themes/lf-theme`
    2. Install the Node.js dependencies: `npm install`
    3. Compile the files: `npm run build`
 

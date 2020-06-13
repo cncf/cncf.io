@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -22,7 +22,7 @@ function lf_events_render_callback( $attributes ) {
 	$category_id = isset( $attributes['category'] ) ? $attributes['category'] : '';
 
 	if ( $category_id ) {
-		$category_selected = get_term_by( 'id', $category_id, 'cncf-event-host' );
+		$category_selected = get_term_by( 'id', $category_id, 'lf-event-host' );
 	} else {
 		$category_selected = '';
 	}
@@ -31,18 +31,18 @@ function lf_events_render_callback( $attributes ) {
 	$args = array(
 		'posts_per_page'     => $quantity,
 		'ignore_custom_sort' => true,
-		'post_type'          => array( 'cncf_event' ),
+		'post_type'          => array( 'lf_event' ),
 		'post_status'        => array( 'publish' ),
 		'ignore_custom_sort' => true,
-		'post_type'          => array( 'cncf_event' ),
+		'post_type'          => array( 'lf_event' ),
 		'post_status'        => array( 'publish' ),
-		'meta_key'           => 'cncf_event_date_start',
+		'meta_key'           => 'lf_event_date_start',
 		'order'              => 'ASC',
 		'orderby'            => 'meta_value',
 		'no_found_rows'      => true,
 		'meta_query'         => array(
 			array(
-				'key'     => 'cncf_event_date_start',
+				'key'     => 'lf_event_date_start',
 				'value'   => date_i18n( 'Y-m-d' ),
 				'compare' => '>=',
 			),
@@ -54,7 +54,7 @@ function lf_events_render_callback( $attributes ) {
 
 		$args['tax_query'] = array(
 			array(
-				'taxonomy' => 'cncf-event-host',
+				'taxonomy' => 'lf-event-host',
 				'field'    => 'slug',
 				'terms'    => $category_selected,
 			),
@@ -79,13 +79,13 @@ function lf_events_render_callback( $attributes ) {
 
 	while ( $query->have_posts() ) :
 		$query->the_post();
-		$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+		$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
 
-		$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
+		$event_end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
 
-		$city = get_post_meta( get_the_ID(), 'cncf_event_city', true );
+		$city = get_post_meta( get_the_ID(), 'lf_event_city', true );
 
-		$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
+		$country = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
 
 		if ( ! $city && ! $country ) {
 			$location = 'TBC';
@@ -95,11 +95,11 @@ function lf_events_render_callback( $attributes ) {
 			$location = $city . ', ' . $country;
 		}
 
-		$logo = get_post_meta( get_the_ID(), 'cncf_event_logo', true );
+		$logo = get_post_meta( get_the_ID(), 'lf_event_logo', true );
 
-		$background = get_post_meta( get_the_ID(), 'cncf_event_background', true );
+		$background = get_post_meta( get_the_ID(), 'lf_event_background', true );
 
-		$color = get_post_meta( get_the_ID(), 'cncf_event_overlay_color', true );
+		$color = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
 
 		$color ? $overlay_color = $color : $overlay_color = '#254AAB';
 
@@ -137,7 +137,7 @@ function lf_events_render_callback( $attributes ) {
 
 			<h6 class="event-date">
 				<?php
-				echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+				echo esc_html( Lf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 				?>
 			</h6>
 			<h5

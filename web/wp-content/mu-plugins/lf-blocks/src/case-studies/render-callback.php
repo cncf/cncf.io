@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -23,7 +23,7 @@ function lf_case_studies_render_callback( $attributes ) {
 	// setup the arguments.
 	$args = array(
 		'posts_per_page'     => $quantity,
-		'post_type'          => array( 'cncf_case_study' ),
+		'post_type'          => array( 'lf_case_study' ),
 		'post_status'        => array( 'publish' ),
 		'ignore_custom_sort' => true,
 		'order'              => 'DESC',

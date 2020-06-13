@@ -32,7 +32,7 @@ registerBlockType(
 		keywords: [
 			__( 'iframe' ),
 			__( 'embed' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		supports: {
 			align: [ 'center' ],

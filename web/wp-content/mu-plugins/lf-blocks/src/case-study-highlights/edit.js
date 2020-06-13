@@ -35,7 +35,7 @@ class CaseStudyHighlight extends Component {
 				<RichText
 					tagName="h3"
 					className={ className }
-					placeholder={ __( 'Heading Text 1', 'cncf-blocks' ) }
+					placeholder={ __( 'Heading Text 1', 'lf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
 					value={ headingText01 }
 					onChange={ value => setAttributes( { headingText01: value } ) }
@@ -43,7 +43,7 @@ class CaseStudyHighlight extends Component {
 				<RichText
 					tagName="p"
 					className={ className }
-					placeholder={ __( 'Smaller Text 1', 'cncf-blocks' ) }
+					placeholder={ __( 'Smaller Text 1', 'lf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
 					value={ smallerText01 }
 					onChange={ value => setAttributes( { smallerText01: value } ) }
@@ -53,7 +53,7 @@ class CaseStudyHighlight extends Component {
 				<RichText
 					tagName="h3"
 					className={ className }
-					placeholder={ __( 'Heading Text 2', 'cncf-blocks' ) }
+					placeholder={ __( 'Heading Text 2', 'lf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
 					value={ headingText02 }
 					onChange={ value => setAttributes( { headingText02: value } ) }
@@ -61,7 +61,7 @@ class CaseStudyHighlight extends Component {
 				<RichText
 					tagName="p"
 					className={ className }
-					placeholder={ __( 'Smaller Text 2', 'cncf-blocks' ) }
+					placeholder={ __( 'Smaller Text 2', 'lf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
 					value={ smallerText02 }
 					onChange={ value => setAttributes( { smallerText02: value } ) }
@@ -71,7 +71,7 @@ class CaseStudyHighlight extends Component {
 				<RichText
 					tagName="h3"
 					className={ className }
-					placeholder={ __( 'Heading Text 3', 'cncf-blocks' ) }
+					placeholder={ __( 'Heading Text 3', 'lf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
 					value={ headingText03 }
 					onChange={ value => setAttributes( { headingText03: value } ) }
@@ -79,7 +79,7 @@ class CaseStudyHighlight extends Component {
 				<RichText
 					tagName="p"
 					className={ className }
-					placeholder={ __( 'Smaller Text 3', 'cncf-blocks' ) }
+					placeholder={ __( 'Smaller Text 3', 'lf-blocks' ) }
 					keepPlaceholderOnFocus={ false }
 					value={ smallerText03 }
 					onChange={ value => setAttributes( { smallerText03: value } ) }

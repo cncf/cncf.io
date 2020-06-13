@@ -1,0 +1,387 @@
+@media (max-width: 999px),
+(min-width: 0px) and (max-height: 699px) {
+
+    .hamburger {
+        display: inline-block;
+        z-index: 10;
+    }
+
+    .menu-container-with-search {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        padding: 75px 30px 25px 30px;
+        background-color: $menu-mobile-container;
+        z-index: 5;
+        overflow-y: scroll;
+
+        // activate the menu
+        &.is-active {
+            left: 0;
+        }
+    }
+
+    .site-navigation {
+        display: flex;
+        align-items: center;
+
+        >* {
+            width: 100%;
+
+            @media (min-width: 600px) {
+                margin-left: auto;
+                margin-right: auto;
+                width: 500px;
+                max-width: 500px;
+
+            }
+        }
+    }
+
+    .main-navigation {
+        margin-bottom: 20px;
+
+        a {
+            display: block;
+            color: $menu-link;
+            text-decoration: none;
+            font-weight: 500;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            font-size: 0.9em;
+
+            @media (min-width: 375px) {
+                font-size: 1.125em;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+        }
+
+        >li {
+            padding: 0px 15px;
+        }
+
+        >li>a {
+            border-bottom: 1px solid $menu-mobile-divider;
+        }
+    }
+
+    .header-cta {
+        flex-shrink: 0;
+        width: 100%;
+        flex-basis: 100%;
+
+        .button.stocky.header {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    .menu-item-has-children {
+        position: relative;
+
+        .sub-menu {
+            display: none;
+            background-color: $menu-mobile-submenu;
+
+            a {
+                padding-left: 10px;
+            }
+
+            .sub-menu {
+                background-color: $menu-mobile-submenu-submenu;
+
+                a {
+                    padding-left: 25px;
+                }
+            }
+        }
+
+        >a {
+            padding-right: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            // Arrow after link
+            &::after {
+                display: block;
+                content: "";
+                width: 12px;
+                height: 12px;
+                border-bottom: 1px solid $white;
+                border-right: 1px solid $white;
+                transform: rotate(45deg) translateY(-50%);
+                transition: all 0.3s ease-out;
+            }
+
+            // rotate when sub menu is open
+            &.is-open::after {
+                transform: rotate(-135deg);
+                transform-origin: 70% 30%;
+                transition-duration: 0.2s;
+                margin-top: 12px;
+            }
+        }
+    }
+
+    .menu-is-active {
+
+        // hide hello bar when mobile menu is open
+        .hello-bar {
+            height: 0
+        }
+    }
+
+    .site-navigation {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/**
+* Desktop Navigation
+*/
+@media (min-width: 1000px) and (min-height: 700px) {
+    .hamburger {
+        display: none;
+    }
+
+    .site-navigation {
+        display: flex;
+        // flex: 1;
+        flex: 1 0 0%;
+        align-items: center;
+        justify-content: flex-end;
+        max-width: 100%;
+    }
+
+    .menu-container-with-search {
+        display: flex;
+        transition: left 0.25s ease;
+        width: 100%;
+        align-items: center;
+    }
+
+    // ul holding the li nav menu items
+    .main-navigation {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        // all links in menu
+        a {
+            color: $menu-link;
+            font-weight: 350;
+            text-decoration: none;
+            transition: all 0.25s ease-out;
+            padding-top: 0.75em;
+            padding-bottom: 0.75em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+            display: block;
+
+            &:hover {
+                color: $link-hover;
+            }
+        }
+
+        // main menu spaces
+        >li {
+
+            // just links in main menu
+            >a {
+                padding-bottom: 30px;
+                padding-top: 30px;
+                white-space: nowrap;
+            }
+        }
+
+        li {
+            position: relative;
+
+            &.menu-item-has-children {
+
+                // activate menu flyout on hover.
+                &:hover>ul,
+                &:focus>ul,
+                &.focus>ul {
+                    left: -1em;
+                    top: 100%;
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+                    overflow: visible;
+                }
+
+                >a {
+                    padding-right: 1.5em;
+                    cursor: default;
+
+                    &:hover {
+                        color: $menu-hover;
+                    }
+
+                    &::after {
+                        // Arrow after link
+                        position: absolute;
+                        display: block;
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        margin-top: -2px;
+                        top: 50%;
+                        left: calc(100% - 1em - 0px);
+                        border-bottom: 1px solid $menu-link;
+                        border-right: 1px solid $menu-link;
+                        transform: rotate(45deg) translateY(-50%);
+                        transition: all 0.3s ease-out;
+                        transform-origin: 50% 0;
+                    }
+
+                    &:hover::after {
+                        // change arrow colour
+                        border-bottom: 1px solid $menu-hover;
+                        border-right: 1px solid $menu-hover;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    // sub menus
+    .sub-menu {
+        font-size: 0.875rem;
+        z-index: 5;
+        background: $menu-desktop-submenu;
+        color: $menu-link;
+        opacity: 0;
+        position: absolute;
+        left: -9999px;
+        top: 100%;
+        overflow: hidden;
+        width: 17rem;
+        box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+        transform: translateY(0.6em);
+
+        li {
+            padding: 0px 15px;
+            width: 100%;
+
+            // add border to a so it doesn't touch edges
+            a {
+                transition: 0s 0s;
+                border-bottom: 1px solid $menu-desktop-divider;
+            }
+
+            // Remove border from last link
+            &:last-child>a {
+                border-bottom: 1px solid transparent;
+            }
+
+            &.menu-item-has-children>a::after {
+                // Sub Arrow.
+                margin-top: -1px;
+                left: calc(100% - 2em - 0px);
+                transform: rotate(-45deg) translateY(-50%);
+            }
+
+            &.menu-item-has-children {
+
+                // sub sub menu
+                &:hover>ul,
+                &:focus>ul,
+                &.focus>ul {
+                    box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.3);
+                    left: calc(100% + 0em);
+                    top: 0;
+                    background: $menu-desktop-submenu-submenu;
+                    overflow: visible;
+
+                    // fixes icons
+                    a {
+                        display: flex;
+                    }
+                }
+            }
+
+            // put projects in to multiple columns
+            &.lf-projects-incubating,
+            &.lf-projects-sandbox,
+            &.lf-projects-graduated {
+
+                >ul {
+                    width: calc(14rem*2);
+                    // column-width: 210px;
+                    column-count: 2;
+                    column-gap: 0px;
+                    column-fill: balance;
+
+                    li {
+                        display: inline-block;
+                        width: 100%
+                    }
+                }
+            }
+
+        }
+    }
+
+    // added class if menu goes over right edge
+    li.menu-item-has-children.is-edge {
+
+        &:hover>ul,
+        &:focus>ul,
+        &.focus>ul {
+            left: initial;
+            right: 100%;
+        }
+
+    }
+
+    // add class if element can be middle aligned.
+    li.menu-item-has-children.is-middle {
+
+        &:hover>ul,
+        &:focus>ul,
+        &.focus>ul {
+            top: initial;
+            bottom: 0;
+            transform: translateY(44%);
+        }
+
+        .sub-menu {
+            top: initial;
+            bottom: 0;
+            transform: translateY(46%);
+            transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+        }
+    }
+
+    // add class if element should be bottom aligned.
+    li.menu-item-has-children.is-bottom {
+
+        &:hover>ul,
+        &:focus>ul,
+        &.focus>ul {
+            top: initial;
+            bottom: 0;
+            transform: translateY(0%);
+        }
+
+        .sub-menu {
+            top: initial;
+            bottom: 0;
+            transform: translateY(2%);
+            transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+        }
+    }
+}

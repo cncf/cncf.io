@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -23,7 +23,7 @@ function lf_spotlight_render_callback( $attributes ) {
 	// setup the arguments.
 	$args = array(
 		'posts_per_page'     => $quantity,
-		'post_type'          => array( 'cncf_spotlight' ),
+		'post_type'          => array( 'lf_spotlight' ),
 		'post_status'        => array( 'publish' ),
 		'ignore_custom_sort' => true,
 		'order'              => 'DESC',

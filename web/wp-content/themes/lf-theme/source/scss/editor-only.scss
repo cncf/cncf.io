@@ -1,0 +1,184 @@
+/**
+ * Editor Styles
+ *
+ * Import, add or override any styles here for Editor
+ *
+ * @package WordPress
+ * @subpackage lf-theme
+ * @since 1.0.0
+ */
+
+@import "core/variables";
+@import "core/normalize";
+@import "core/reset";
+
+// import typography and styles over the top of editor styles defaults.
+#editor {
+
+    .editor-styles-wrapper {
+        @import "core/typography";
+        @import "blocks/gradients";
+        @import "blocks/columns";
+        @import "blocks/colors";
+        @import "blocks/buttons";
+        @import "blocks/case-study-highlights";
+        @import "blocks/case-study-overview";
+        @import "blocks/latest-jobs";
+        @import "blocks/lists";
+        @import "blocks/newsroom"; // ?
+        @import "blocks/paragraph-headers";
+        @import 'blocks/quote';
+        @import 'blocks/table';
+        @import 'blocks/spacer';
+        @import "components/events";
+        @import "components/webinars";
+        @import "components/hero";
+
+    }
+}
+
+// Fix the font in the editor.
+.editor-post-title__block .editor-post-title__input,
+.editor-writing-flow .wp-block textarea,
+.editor-writing-flow .wp-block .wp-block-freeform,
+.editor-rich-text p,
+.editor-post-title__input,
+.wp-block-quote__citation {
+    font-family: $font-primary;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+.editor-styles-wrapper {
+    font-family: $font-primary !important;
+}
+
+#editor .editor-styles-wrapper a {
+    color: $primary-color;
+}
+
+.wp-block-group {
+    padding: 1em;
+}
+
+// make blocks wider to fit the screen
+.wp-block {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1150px;
+}
+
+// stop ridiculous dropcap in paragraph preview.
+.block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    margin: inherit;
+    text-transform: inherit;
+    font-style: inherit;
+}
+
+// allows for transparent images to be visible in Sidebar Metabox.
+#pmc-lf_event-logo .pmc-image-container {
+    background-color: $grey-200;
+}
+
+.wp-block-columns {
+    padding: 1em;
+}
+
+.skew-box {
+    font-size: 0.775em;
+    font-weight: 400;
+    color: $white;
+    padding: 5px 6px;
+    background-color: $secondary-700;
+    padding-right: 25px;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
+    // useful if inside flexbox.
+    align-self: start;
+
+    &.secondary {
+        background-color: $grey-700;
+    }
+
+    &.tertiary {
+        color: $secondary-700;
+        background-color: $white;
+    }
+
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        transform: translateX(12px);
+    }
+}
+
+// Gutenberg style to break out of page container.
+.alignfull {
+    position: relative;
+    right: 50%;
+    left: 50%;
+    margin-right: -50vw;
+    margin-left: -50vw;
+    width: 100vw;
+}
+
+// block using alignwide include:
+// case study overview
+.alignwide:not(.wp-block-gallery) {
+    width: 100%;
+
+    @media (min-width: 800px) {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+
+        >* {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+    }
+}
+
+.background-image-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+figure {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.background-image-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.background-image-text-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+// make placeholder text easier to see in sidebar.
+div.pmc-sidebar ::placeholder {
+    color: #c4c4c4;
+}

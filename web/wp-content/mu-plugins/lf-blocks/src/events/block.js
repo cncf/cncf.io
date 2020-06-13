@@ -44,7 +44,7 @@ registerBlockType(
 			__( 'events' ),
 			__( 'exhibitions' ),
 			__( 'shows' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {},
 		attributes: {

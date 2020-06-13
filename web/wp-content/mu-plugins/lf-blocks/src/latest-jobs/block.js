@@ -39,7 +39,7 @@ registerBlockType(
 		keywords: [
 			__( 'latest jobs' ),
 			__( 'jobs' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 			__( 'vacancies' ),
 		],
 		styles: [

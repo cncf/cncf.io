@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -20,7 +20,7 @@ function lf_hero_render_callback( $attributes, $content ) {
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
 	// setup options.
-	$options = get_option( 'cncf-mu' );
+	$options = get_option( 'lf-mu' );
 
 	ob_start();
 	?>
@@ -44,16 +44,16 @@ class="hero background-image-wrapper alignfull <?php echo esc_html( $classes ); 
 <div>
 <p class="hero-parent-link">
 	<?php
-	if ( is_singular( 'cncf_case_study' ) ) :
+	if ( is_singular( 'lf_case_study' ) ) :
 		?>
 <a href="/case-studies/" title="Go to Case Studies">Case
 Study</a>
 		<?php
-elseif ( is_singular( 'cncf_case_study_ch' ) ) :
+elseif ( is_singular( 'lf_case_study_ch' ) ) :
 	?>
 <a href="/case-studies-cn/" title="最终用户案例研究">最终用户案例研究</a>
 	<?php
-elseif ( is_singular( 'cncf_webinar' ) ) :
+elseif ( is_singular( 'lf_webinar' ) ) :
 	?>
 <a href="/webinars/" title="Go to Webinars">Webinar</a>
 

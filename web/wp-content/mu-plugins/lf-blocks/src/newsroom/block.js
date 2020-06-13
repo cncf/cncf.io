@@ -37,7 +37,7 @@ registerBlockType(
 	'lf/newsroom',
 	{
 		title: __( 'LF | Newsroom' ),
-		description: __( 'Display posts from the CNCF Newsroom' ),
+		description: __( 'Display posts from the LF Newsroom' ),
 		icon: 'excerpt-view',
 		category: 'lf',
 		keywords: [
@@ -45,7 +45,7 @@ registerBlockType(
 			__( 'newsroom' ),
 			__( 'announcements' ),
 			__( 'blog' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {},
 		attributes: {

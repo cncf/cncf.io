@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -20,21 +20,21 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
 	// not on a case study page.
-	if ( ! is_singular( array( 'cncf_case_study', 'cncf_case_study_ch' ) ) ) {
+	if ( ! is_singular( array( 'lf_case_study', 'lf_case_study_ch' ) ) ) {
 		return;
 	}
 
-	if ( is_singular( 'cncf_case_study_ch' ) ) {
+	if ( is_singular( 'lf_case_study_ch' ) ) {
 		// get chinese content.
-		$industries = get_the_terms( get_the_ID(), 'cncf-industry-ch' );
+		$industries = get_the_terms( get_the_ID(), 'lf-industry-ch' );
 
-		$location = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country-ch' );
+		$location = Lf_Utils::get_term_names( get_the_ID(), 'lf-country-ch' );
 
-		$cloud_types = get_the_terms( get_the_ID(), 'cncf-cloud-type-ch' );
+		$cloud_types = get_the_terms( get_the_ID(), 'lf-cloud-type-ch' );
 
-		$product_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-product-type-ch' );
+		$product_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-product-type-ch' );
 
-		$challenges = get_the_terms( get_the_ID(), 'cncf-challenge-ch' );
+		$challenges = get_the_terms( get_the_ID(), 'lf-challenge-ch' );
 
 		$company_text      = '公司';
 		$industry_text     = '行业';
@@ -47,15 +47,15 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 	} else {
 
 		// get english content.
-		$industries = get_the_terms( get_the_ID(), 'cncf-industry' );
+		$industries = get_the_terms( get_the_ID(), 'lf-industry' );
 
-		$location = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country' );
+		$location = Lf_Utils::get_term_names( get_the_ID(), 'lf-country' );
 
-		$cloud_types = get_the_terms( get_the_ID(), 'cncf-cloud-type' );
+		$cloud_types = get_the_terms( get_the_ID(), 'lf-cloud-type' );
 
-		$product_type = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-product-type' );
+		$product_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-product-type' );
 
-		$challenges = get_the_terms( get_the_ID(), 'cncf-challenge' );
+		$challenges = get_the_terms( get_the_ID(), 'lf-challenge' );
 
 		$company_text      = 'Company';
 		$industry_text     = 'Industry';
