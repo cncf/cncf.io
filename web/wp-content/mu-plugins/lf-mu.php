@@ -4,10 +4,10 @@
  *
  * @link              https://cncf.io/
  * @since             1.0.0
- * @package           cncfmu
+ * @package           lfmu
  *
  * @wordpress-plugin
- * Plugin Name:       CNCF MU
+ * Plugin Name:       LF MU
  * Plugin URI:        https://github.com/cncf/cncf.io
  * Description:       Core functionality for running the cncf.io site.
  * Version:           1.1.0
@@ -15,10 +15,10 @@
  * Author URI:        https://www.cncf.io
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       cncf-mu
+ * Text Domain:       lf-mu
  */
 
 /**
- * Include the CNCF plugin
+ * Include the LF plugin
  */
-require WPMU_PLUGIN_DIR . '/cncf-mu/cncf-mu.php';
+require WPMU_PLUGIN_DIR . '/lf-mu/lf-mu.php';

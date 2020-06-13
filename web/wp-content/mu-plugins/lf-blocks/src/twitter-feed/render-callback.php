@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 

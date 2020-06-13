@@ -5,7 +5,7 @@
  * Singular case studyr item.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -14,20 +14,20 @@ global $query;
 // if CPT set chinese conditional true.
 if ( ! is_front_page() || ! $query ) {
 	$ch = false;
-} elseif ( 'cncf_case_study_ch' === $query->query['post_type'] ) {
+} elseif ( 'lf_case_study_ch' === $query->query['post_type'] ) {
 	$ch = true;
 } else {
 	$ch = false;
 }
 
 // setup projects for both lang.
-$projects = get_the_terms( get_the_ID(), 'cncf-project' );
+$projects = get_the_terms( get_the_ID(), 'lf-project' );
 
 if ( $ch ) {
 	// get industry type override.
-	$case_study_type = get_post_meta( get_the_ID(), 'cncf_case_study_ch_type', true );
+	$case_study_type = get_post_meta( get_the_ID(), 'lf_case_study_ch_type', true );
 
-	$industry = get_the_terms( get_the_ID(), 'cncf-industry-ch' );
+	$industry = get_the_terms( get_the_ID(), 'lf-industry-ch' );
 
 	$read_case_study = '阅读';
 	if ( $case_study_type ) {
@@ -38,9 +38,9 @@ if ( $ch ) {
 } else {
 
 	// get industry type override.
-	$case_study_type = get_post_meta( get_the_ID(), 'cncf_case_study_type', true );
+	$case_study_type = get_post_meta( get_the_ID(), 'lf_case_study_type', true );
 
-	$industry = get_the_terms( get_the_ID(), 'cncf-industry' );
+	$industry = get_the_terms( get_the_ID(), 'lf-industry' );
 
 	$read_case_study = 'Read Case Study';
 

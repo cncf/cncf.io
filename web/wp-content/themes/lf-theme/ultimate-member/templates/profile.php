@@ -3,7 +3,7 @@
  * Profile template which will override the default Ultimate Member one.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

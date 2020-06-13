@@ -3,7 +3,7 @@
  * Projects Shortcode
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -30,12 +30,12 @@ function add_projects_shortcode( $atts ) {
 	}
 
 	$query_args = array(
-		'post_type'      => 'cncf_project',
+		'post_type'      => 'lf_project',
 		'post_status'    => array( 'publish' ),
 		'posts_per_page' => -1,
 		'tax_query'      => array(
 			array(
-				'taxonomy' => 'cncf-project-stage',
+				'taxonomy' => 'lf-project-stage',
 				'field'    => 'slug',
 				'terms'    => $chosen_taxonomy,
 			),
@@ -54,29 +54,29 @@ function add_projects_shortcode( $atts ) {
 		while ( $project_query->have_posts() ) :
 			$project_query->the_post();
 
-			$external_url = get_post_meta( get_the_ID(), 'cncf_project_external_url', true );
+			$external_url = get_post_meta( get_the_ID(), 'lf_project_external_url', true );
 
-			$project_category = get_post_meta( get_the_ID(), 'cncf_project_category', true );
+			$project_category = get_post_meta( get_the_ID(), 'lf_project_category', true );
 
-			$github = get_post_meta( get_the_ID(), 'cncf_project_github', true );
+			$github = get_post_meta( get_the_ID(), 'lf_project_github', true );
 
-			$stack_overflow = get_post_meta( get_the_ID(), 'cncf_project_stack_overflow', true );
+			$stack_overflow = get_post_meta( get_the_ID(), 'lf_project_stack_overflow', true );
 
-			$devstats = get_post_meta( get_the_ID(), 'cncf_project_devstats', true );
+			$devstats = get_post_meta( get_the_ID(), 'lf_project_devstats', true );
 
-			$logos = get_post_meta( get_the_ID(), 'cncf_project_logos', true );
+			$logos = get_post_meta( get_the_ID(), 'lf_project_logos', true );
 
-			$mail = get_post_meta( get_the_ID(), 'cncf_project_mail', true );
+			$mail = get_post_meta( get_the_ID(), 'lf_project_mail', true );
 
-			$blog = get_post_meta( get_the_ID(), 'cncf_project_blog', true );
+			$blog = get_post_meta( get_the_ID(), 'lf_project_blog', true );
 
-			$twitter = get_post_meta( get_the_ID(), 'cncf_project_twitter', true );
+			$twitter = get_post_meta( get_the_ID(), 'lf_project_twitter', true );
 
-			$slack = get_post_meta( get_the_ID(), 'cncf_project_slack', true );
+			$slack = get_post_meta( get_the_ID(), 'lf_project_slack', true );
 
-			$youtube = get_post_meta( get_the_ID(), 'cncf_project_youtube', true );
+			$youtube = get_post_meta( get_the_ID(), 'lf_project_youtube', true );
 
-			$gitter = get_post_meta( get_the_ID(), 'cncf_project_gitter', true );
+			$gitter = get_post_meta( get_the_ID(), 'lf_project_gitter', true );
 
 			$image = new Image();
 
@@ -133,13 +133,13 @@ function add_projects_shortcode( $atts ) {
 			<?php if ( $devstats ) : ?>
 			<a title="<?php the_title(); ?> on DevStats"
 				href="<?php echo esc_html( $devstats ); ?>"
-				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/cncf-devstats.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/lf-devstats.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $logos ) : ?>
 			<a title="<?php the_title(); ?> Logos"
 				href="<?php echo esc_html( $logos ); ?>"
-				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/cncf-artwork.svg' ); ?></a>
+				 rel="noreferrer noopener" target="_blank"><?php $image->get_svg( '/social/lf-artwork.svg' ); ?></a>
 			<?php endif; ?>
 
 			<?php if ( $stack_overflow ) : ?>

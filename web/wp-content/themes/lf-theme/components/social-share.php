@@ -5,7 +5,7 @@
  * A lightweight share sheet for sharing pages on social media.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -32,7 +32,7 @@ if ( $featured_image ) {
 /**
  * Gets Twitter handle.
  */
-$options = get_option( 'cncf-mu' );
+$options = get_option( 'lf-mu' );
 $options && $options['social_twitter_handle'] ? $twitter = $options['social_twitter_handle'] : $twitter = '';
 
 /**

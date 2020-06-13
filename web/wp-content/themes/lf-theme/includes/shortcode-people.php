@@ -3,7 +3,7 @@
  * People Shortcode
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -28,15 +28,15 @@ function add_people_shortcode( $atts ) {
 	if ( ! is_string( $chosen_taxonomy ) ) {
 		return;
 	}
-	$meta_key = 'cncf_person_is_priority';
+	$meta_key = 'lf_person_is_priority';
 
 	$query_args = array(
-		'post_type'      => 'cncf_person',
+		'post_type'      => 'lf_person',
 		'post_status'    => array( 'publish' ),
 		'posts_per_page' => -1,
 		'tax_query'      => array(
 			array(
-				'taxonomy' => 'cncf-person-category',
+				'taxonomy' => 'lf-person-category',
 				'field'    => 'slug',
 				'terms'    => $chosen_taxonomy,
 			),

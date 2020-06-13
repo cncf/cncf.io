@@ -3,7 +3,7 @@
  * Tab Container Filter
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -12,7 +12,7 @@
  *
  * @param string $content Content of the post.
  */
-function cncf_content_filter( $content ) {
+function lf_content_filter( $content ) {
 	// get all div tags of class "wp-block-lf-tab-container-block".
 	$tag_regex = '/<[^>]*class="[^"]*\bwp-block-lf-tab-container-block\b[^"]*"[^>]*>/i';
 	preg_match_all( $tag_regex, $content, $matches );
@@ -52,4 +52,4 @@ function cncf_content_filter( $content ) {
 	$tab_container = ob_get_clean();
 	return $tab_container;
 }
-add_filter( 'the_content', 'cncf_content_filter' );
+add_filter( 'the_content', 'lf_content_filter' );

@@ -8,8 +8,8 @@
  * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    Cncf_Mu
- * @subpackage Cncf_Mu/includes
+ * @package    Lf_Mu
+ * @subpackage Lf_Mu/includes
  */
 
 /**
@@ -22,11 +22,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Cncf_Mu
- * @subpackage Cncf_Mu/includes
+ * @package    Lf_Mu
+ * @subpackage Lf_Mu/includes
  * @author     Chris Abraham <cjyabraham@gmail.com>
  */
-class Cncf_Mu {
+class Lf_Mu {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -34,7 +34,7 @@ class Cncf_Mu {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Cncf_Mu_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Lf_Mu_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -66,12 +66,12 @@ class Cncf_Mu {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'CNCF_MU_VERSION' ) ) {
-			$this->version = CNCF_MU_VERSION;
+		if ( defined( 'LF_MU_VERSION' ) ) {
+			$this->version = LF_MU_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'cncf-mu';
+		$this->plugin_name = 'lf-mu';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -85,10 +85,10 @@ class Cncf_Mu {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Cncf_Mu_Loader. Orchestrates the hooks of the plugin.
-	 * - Cncf_Mu_I18n. Defines internationalization functionality.
-	 * - Cncf_Mu_Admin. Defines all hooks for the admin area.
-	 * - Cncf_Mu_Public. Defines all hooks for the public side of the site.
+	 * - Lf_Mu_Loader. Orchestrates the hooks of the plugin.
+	 * - Lf_Mu_I18n. Defines internationalization functionality.
+	 * - Lf_Mu_Admin. Defines all hooks for the admin area.
+	 * - Lf_Mu_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -102,33 +102,33 @@ class Cncf_Mu {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cncf-mu-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lf-mu-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cncf-mu-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lf-mu-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-cncf-mu-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-lf-mu-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-cncf-mu-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-lf-mu-public.php';
 
-		$this->loader = new Cncf_Mu_Loader();
+		$this->loader = new Lf_Mu_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Cncf_Mu_I18n class in order to set the domain and to register the hook
+	 * Uses the Lf_Mu_I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -136,7 +136,7 @@ class Cncf_Mu {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Cncf_Mu_I18n();
+		$plugin_i18n = new Lf_Mu_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -151,7 +151,7 @@ class Cncf_Mu {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Cncf_Mu_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Lf_Mu_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -170,7 +170,7 @@ class Cncf_Mu {
 		// Special Easter-egg hook to run full sync of Speakers CPTs.  You just have to update the "Speakers" page.
 		$this->loader->add_action( 'post_updated', $plugin_admin, 'sync_speakers' );
 
-		// Hooks to keep the cncf_speaker CPT in sync with Users of role "Speaker".
+		// Hooks to keep the lf_speaker CPT in sync with Users of role "Speaker".
 		$this->loader->add_action( 'um_after_user_status_is_changed_hook', $plugin_admin, 'speaker_updated' ); // Action after user status changed.
 		$this->loader->add_action( 'delete_user', $plugin_admin, 'speaker_deleted' ); // Fires immediately before a user is deleted from the database.
 		$this->loader->add_action( 'profile_update', $plugin_admin, 'speaker_updated' ); // Fires immediately after an existing user is updated.
@@ -187,7 +187,7 @@ class Cncf_Mu {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Cncf_Mu_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Lf_Mu_Public( $this->get_plugin_name(), $this->get_version() );
 
 		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -222,7 +222,7 @@ class Cncf_Mu {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Cncf_Mu_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Lf_Mu_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

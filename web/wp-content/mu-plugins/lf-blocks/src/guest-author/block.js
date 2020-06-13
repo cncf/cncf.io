@@ -44,7 +44,7 @@ registerBlockType(
 			__( 'guest' ),
 			__( 'guest post' ),
 			__( 'author' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {
 			attributes: {

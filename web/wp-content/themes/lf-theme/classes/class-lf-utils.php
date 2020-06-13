@@ -5,7 +5,7 @@
  * Small helpers to improve code and readibility.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -16,7 +16,7 @@
    *
    * @since 1.0.0
    */
-class Cncf_Utils {
+class Lf_Utils {
 
 	/**
 	 * Get YouTube ID from URL.

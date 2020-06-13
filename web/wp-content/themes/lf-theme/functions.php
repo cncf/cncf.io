@@ -5,7 +5,7 @@
  * Try to keep this file as clean as possible
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -14,7 +14,7 @@
  *
  * Used to enable specific features of WordPress and other tools.
  */
-function cncf_theme_support_setup() {
+function lf_theme_support_setup() {
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
@@ -44,7 +44,7 @@ function cncf_theme_support_setup() {
 	require_once 'includes/gutenberg-setup.php';
 
 }
-add_action( 'after_setup_theme', 'cncf_theme_support_setup' );
+add_action( 'after_setup_theme', 'lf_theme_support_setup' );
 
 /**
  * Theme function classes
@@ -102,8 +102,8 @@ require_once 'includes/shortcode-contact.php';
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';
 
-// CNCF utils.
-require_once 'classes/class-cncf-utils.php';
+// LF utils.
+require_once 'classes/class-lf-utils.php';
 
 /* Will only run on front end of site */
 if ( ! is_admin() ) {
@@ -131,7 +131,7 @@ if ( ! is_admin() ) {
  * @param array $menu The menu.
  * @param array $args The arguments.
  */
-function cncf_projects_menu_filter( $items, $menu, $args ) {
+function lf_projects_menu_filter( $items, $menu, $args ) {
 
 	if ( is_admin() ) {
 		return $items;
@@ -145,9 +145,9 @@ function cncf_projects_menu_filter( $items, $menu, $args ) {
 
 	// Declare taxonomy terms & matching CSS class of menu items.
 	$stage_taxonomies = array(
-		'graduated'  => 'cncf-projects-graduated',
-		'incubating' => 'cncf-projects-incubating',
-		'sandbox'    => 'cncf-projects-sandbox',
+		'graduated'  => 'lf-projects-graduated',
+		'incubating' => 'lf-projects-incubating',
+		'sandbox'    => 'lf-projects-sandbox',
 	);
 
 	// Loop through each taxonomy from the array.
@@ -162,7 +162,7 @@ function cncf_projects_menu_filter( $items, $menu, $args ) {
 		}
 		if ( $parent_item_id > 0 ) {
 			$args = array(
-				'post_type'           => array( 'cncf_project' ),
+				'post_type'           => array( 'lf_project' ),
 				'post_status'         => array( 'publish' ),
 				'posts_per_page'      => '-1',
 				'ignore_sticky_posts' => false,
@@ -170,7 +170,7 @@ function cncf_projects_menu_filter( $items, $menu, $args ) {
 				'orderby'             => 'title',
 				'tax_query'           => array(
 					array(
-						'taxonomy' => 'cncf-project-stage',
+						'taxonomy' => 'lf-project-stage',
 						'field'    => 'slug',
 						'terms'    => $stage_term,
 					),
@@ -181,7 +181,7 @@ function cncf_projects_menu_filter( $items, $menu, $args ) {
 			foreach ( get_posts( $args ) as $post ) {
 
 				$post->menu_item_parent = $parent_item_id;
-				$post->post_type        = 'cncf_project';
+				$post->post_type        = 'lf_project';
 				$post->type             = 'project';
 				$post->object           = 'link';
 				$post->status           = 'publish';
@@ -194,8 +194,8 @@ function cncf_projects_menu_filter( $items, $menu, $args ) {
 				$post->attr_title       = 'Visit ' . $post->post_title;
 
 				// If an external link is present use it.
-				if ( metadata_exists( 'post', $post->ID, 'cncf_project_external_url' ) ) {
-					$post->url = get_post_meta( $post->ID, 'cncf_project_external_url', true );
+				if ( metadata_exists( 'post', $post->ID, 'lf_project_external_url' ) ) {
+					$post->url = get_post_meta( $post->ID, 'lf_project_external_url', true );
 				} else {
 					$post->url = get_permalink( $post->ID );
 				}
@@ -206,7 +206,7 @@ function cncf_projects_menu_filter( $items, $menu, $args ) {
 	}
 	return array_merge( $items, $child_items );
 }
-add_filter( 'wp_get_nav_menu_items', 'cncf_projects_menu_filter', 10, 3 );
+add_filter( 'wp_get_nav_menu_items', 'lf_projects_menu_filter', 10, 3 );
 
 /**
  * The WP REST API is cached heavily by Pantheon so we need to explicitly exclude certain calls from the cache.
@@ -270,7 +270,7 @@ function post_import_processing( $import_id ) {
 			if ( 'READ MORE' === strtoupper( $last_tag->nodeValue ) ) { //phpcs:ignore
 				$external_url = $last_tag->getAttribute( 'href' );
 				if ( $external_url ) {
-					update_post_meta( $x_post->post_id, 'cncf_post_external_url', $external_url );
+					update_post_meta( $x_post->post_id, 'lf_post_external_url', $external_url );
 					$last_tag->parentNode->removeChild( $last_tag );//phpcs:ignore
 					$i_post->post_content = $doc->saveHTML();
 					wp_update_post( $i_post );

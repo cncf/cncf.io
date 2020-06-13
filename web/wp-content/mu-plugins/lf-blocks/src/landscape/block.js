@@ -39,7 +39,7 @@ registerBlockType(
 			__( 'landscape' ),
 			__( 'projects' ),
 			__( 'iframe' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {},
 		attributes: {

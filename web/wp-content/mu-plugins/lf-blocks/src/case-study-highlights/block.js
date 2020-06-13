@@ -44,7 +44,7 @@ registerBlockType(
 			__( 'case study' ),
 			__( 'metrics' ),
 			__( 'highlights' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {
 			attributes: {

@@ -3,7 +3,7 @@
  * Post content - the loop
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -14,7 +14,7 @@ $image = new Image();
 		<?php
 		if ( have_posts() ) :
 			// setup options.
-			$options = get_option( 'cncf-mu' );
+			$options = get_option( 'lf-mu' );
 			// setup loop count.
 			$count = 0;
 
@@ -30,7 +30,7 @@ $image = new Image();
 				$is_featured = ( 1 == $archive_page && 1 == $count ? ' featured' : '' );
 
 				if ( $is_in_the_news_category ) :
-					$link_url = get_post_meta( get_the_ID(), 'cncf_post_external_url', true );
+					$link_url = get_post_meta( get_the_ID(), 'lf_post_external_url', true );
 
 					$target_attr = 'rel="noopener" target="_blank"';
 
@@ -75,7 +75,7 @@ $image = new Image();
 		else :
 
 			// Get the Category Author.
-			$category_author = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
+			$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 
 			?>
 		<div class="archive-item <?php echo esc_html( $is_featured ); ?>">
@@ -121,7 +121,7 @@ $image = new Image();
 					<?php
 					// Post author.
 					if ( in_category( 'blog' ) ) :
-							echo wp_kses_post( Cncf_Utils::display_author( get_the_ID(), true ) );
+							echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
 		endif;
 					?>
 				</p>

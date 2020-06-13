@@ -5,7 +5,7 @@
  * Speakers
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -15,7 +15,7 @@ if ( $query->have_posts() ) {
 	$image = new Image();
 
 	// get total list of speakers.
-	$count_speakers = wp_count_posts( 'cncf_speaker' );
+	$count_speakers = wp_count_posts( 'lf_speaker' );
 	$full_count     = $count_speakers->publish;
 
 	// get currently filtered number of speakers.
@@ -27,7 +27,7 @@ if ( $query->have_posts() ) {
 		<?php
 		// if filter has found all speakers.
 		if ( $full_count == $query->found_posts ) {
-			echo esc_html( 'Found ' . esc_html( $query->found_posts ) . ' speaker' . Cncf_Utils::plural( $filter_speakers_count ) );
+			echo esc_html( 'Found ' . esc_html( $query->found_posts ) . ' speaker' . Lf_Utils::plural( $filter_speakers_count ) );
 		} else {
 			// else show partial number of speakers.
 			echo esc_html( 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' speakers' );
@@ -40,7 +40,7 @@ if ( $query->have_posts() ) {
 	// check if users account is allowed to send bulk emails.
 	if ( ! is_sb_bulk_email_allowed_user() ) {
 		?>
-	<a href="/cncf-member-instructions/">Bulk message speakers</a>
+	<a href="/lf-member-instructions/">Bulk message speakers</a>
 		<?php
 	} else {
 		// if the number of speakers found is less than 50.
@@ -49,7 +49,7 @@ if ( $query->have_posts() ) {
 			?>
 	<a href="<?php echo esc_url( $bulk_message_href ); ?>">Bulk message
 			<?php echo esc_html( $filter_speakers_count ); ?>
-		speaker<?php echo esc_html( Cncf_Utils::plural( $filter_speakers_count ) ); ?></a>
+		speaker<?php echo esc_html( Lf_Utils::plural( $filter_speakers_count ) ); ?></a>
 	<?php } else { ?>
 	<span class="is-disabled">Bulk messaging is limited to 50 speakers at a
 		time.</span>
@@ -100,7 +100,7 @@ if ( $query->have_posts() ) {
 
 		<div class="speaker-badges">
 			<?php
-			$travel_range = um_user( 'cncf_travel_range' );
+			$travel_range = um_user( 'lf_travel_range' );
 			?>
 			<?php if ( 'International' == $travel_range ) : ?>
 			<div class="column">

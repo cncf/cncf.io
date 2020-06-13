@@ -38,7 +38,7 @@ if ( ! class_exists( 'Fuerza_Import_Countries' ) ) {
 		private function update_terms( $countries ) {
 			$terms = get_terms(
 				array(
-					'taxonomy'   => 'cncf-country',
+					'taxonomy'   => 'lf-country',
 					'hide_empty' => false
 				)
 			);
@@ -60,7 +60,7 @@ if ( ! class_exists( 'Fuerza_Import_Countries' ) ) {
 
 				wp_update_term(
 					$term->term_id,
-					'cncf-country',
+					'lf-country',
 					array(
 						'name' => $item['name'],
 						'slug' => strtolower( $item['code'] ),
@@ -87,7 +87,7 @@ if ( ! class_exists( 'Fuerza_Import_Countries' ) ) {
 				$name         = $is_continent ? $item[1] : $item[7];
 				$slug         = strtolower( $is_continent ? $item[1] : $item[4] );
 
-				if ( term_exists( $slug, 'cncf-country' ) ) {
+				if ( term_exists( $slug, 'lf-country' ) ) {
 					continue;
 				}
 
@@ -95,10 +95,10 @@ if ( ! class_exists( 'Fuerza_Import_Countries' ) ) {
 
 				if ( ! $is_continent ) {
 					$continent_name = $item[1];
-					$term_exists    = term_exists( $continent_name, 'cncf-country' );
+					$term_exists    = term_exists( $continent_name, 'lf-country' );
 
 					if ( ! $term_exists ) {
-						$continent_term = wp_insert_term( $continent_name, 'cncf-country', array( 'slug' => $continent_name ) );
+						$continent_term = wp_insert_term( $continent_name, 'lf-country', array( 'slug' => $continent_name ) );
 					} else {
 						$continent_term = $term_exists;
 					}
@@ -108,7 +108,7 @@ if ( ! class_exists( 'Fuerza_Import_Countries' ) ) {
 					}
 				}
 
-				$response = wp_insert_term( $name, 'cncf-country', $args );
+				$response = wp_insert_term( $name, 'lf-country', $args );
 
 				if ( ! is_wp_error( $response ) ) {
 					$count++;

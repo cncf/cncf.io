@@ -81,7 +81,7 @@ class Speakers_Export {
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'last_name' AND user_id = um.user_id) as `last_name`,
             u.user_email as `email`,
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'profile_photo' AND user_id = um.user_id) as `profile_photo`,
-            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'cncf_expertise' AND user_id = um.user_id) as `expertises`,
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'lf_expertise' AND user_id = um.user_id) as `expertises`,
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'languages' AND user_id = um.user_id) as `languages`,
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'country' AND user_id = um.user_id) as `country`,
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_certifications' AND user_id = um.user_id) as `certifications`,
@@ -92,7 +92,7 @@ class Speakers_Export {
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'sb_bio' AND user_id = um.user_id) as `bio`,
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'job-category' AND user_id = um.user_id) as `job_category`,
             (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'job-title' AND user_id = um.user_id) as `job_title`,
-            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'cncf_travel_range' AND user_id = um.user_id) as `travel_range`
+            (SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'lf_travel_range' AND user_id = um.user_id) as `travel_range`
         	FROM {$wpdb->usermeta} as um
             INNER JOIN {$wpdb->users} as u
             ON u.ID = um.user_id

@@ -22,13 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function lf_cncf_blocks_frontend_assets() {
+function lf_blocks_frontend_assets() {
 	// Register block styles for both frontend + backend.
 
 	/*
 	// Exclude the enqueue - styles covered in theme.
 	wp_enqueue_style(
-	'lf_cncf_blocks_style',
+	'lf_blocks_style',
 	plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
 	is_admin() ? array( 'wp-editor' ) : null,
 	filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' )
@@ -83,7 +83,7 @@ function lf_cncf_blocks_frontend_assets() {
 	}
 
 }
-add_action( 'enqueue_block_assets', 'lf_cncf_blocks_frontend_assets' );
+add_action( 'enqueue_block_assets', 'lf_blocks_frontend_assets' );
 
 /**
  * Enqueue Gutenberg block assets for backend.
@@ -98,11 +98,11 @@ add_action( 'enqueue_block_assets', 'lf_cncf_blocks_frontend_assets' );
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function lf_cncf_blocks_editor_assets() {
+function lf_blocks_editor_assets() {
 
 	// Register block editor script for backend.
 	wp_enqueue_script(
-		'lf_cncf_blocks_script',
+		'lf_blocks_script',
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
@@ -111,7 +111,7 @@ function lf_cncf_blocks_editor_assets() {
 
 	// Register block editor styles for backend.
 	wp_enqueue_style(
-		'lf_cncf_blocks_editor_style',
+		'lf_blocks_editor_style',
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
 		array( 'wp-edit-blocks' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
@@ -120,7 +120,7 @@ function lf_cncf_blocks_editor_assets() {
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	// phpcs:disable
 	wp_localize_script(
-	'lf_cncf_blocks_script',
+	'lf_blocks_script',
 	'cgbGlobal', // Array containing dynamic data for a JS Global.
 		[
 		'pluginDirPath' => plugin_dir_path( __DIR__ ),
@@ -131,14 +131,14 @@ function lf_cncf_blocks_editor_assets() {
 	// phpcs:enable
 
 }
-add_action( 'enqueue_block_editor_assets', 'lf_cncf_blocks_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'lf_blocks_editor_assets' );
 
 /**
  * Register Dynamic Blocks
  *
  * @since 1.0.0
  */
-function lf_cncf_blocks_register_dynamic_blocks() {
+function lf_blocks_register_dynamic_blocks() {
 
 	// Upcoming Webinars Block.
 	require_once 'upcoming-webinars/render-callback.php';
@@ -411,12 +411,12 @@ function lf_cncf_blocks_register_dynamic_blocks() {
 	);
 
 }
-add_action( 'init', 'lf_cncf_blocks_register_dynamic_blocks' );
+add_action( 'init', 'lf_blocks_register_dynamic_blocks' );
 
 /**
  * Add custom block category
  *
- * This makes a new category selection in the Block Editor called CNCF.
+ * This makes a new category selection in the Block Editor called LF.
  *
  * @param array $categories List of categories.
  */

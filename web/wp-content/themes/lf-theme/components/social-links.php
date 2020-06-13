@@ -5,11 +5,11 @@
  * Pulls in from Global and dipslay inline SVGs with outbound links.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
-$options = get_option( 'cncf-mu' );
+$options = get_option( 'lf-mu' );
 $image   = new Image();
 ?>
 

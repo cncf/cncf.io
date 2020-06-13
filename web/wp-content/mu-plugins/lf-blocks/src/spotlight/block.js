@@ -44,7 +44,7 @@ registerBlockType(
 		keywords: [
 			__( 'community' ),
 			__( 'spotlight' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {},
 		attributes: {

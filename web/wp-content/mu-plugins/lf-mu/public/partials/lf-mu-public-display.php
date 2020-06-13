@@ -7,8 +7,8 @@
  * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    Cncf_Mu
- * @subpackage Cncf_Mu/public/partials
+ * @package    Lf_Mu
+ * @subpackage Lf_Mu/public/partials
  */
 
 ?>

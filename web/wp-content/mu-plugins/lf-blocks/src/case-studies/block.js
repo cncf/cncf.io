@@ -44,7 +44,7 @@ registerBlockType(
 		keywords: [
 			__( 'case study' ),
 			__( 'case studies' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		example: {},
 		attributes: {

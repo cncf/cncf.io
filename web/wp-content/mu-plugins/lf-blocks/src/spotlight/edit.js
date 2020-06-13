@@ -97,7 +97,7 @@ export default withSelect(
 			( value ) => ! isUndefined( value )
 		);
 		return {
-			posts: getEntityRecords( 'postType', 'cncf_spotlight', latestPostsQuery ),
+			posts: getEntityRecords( 'postType', 'lf_spotlight', latestPostsQuery ),
 		};
 	}
 )( Spotlights );

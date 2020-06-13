@@ -3,12 +3,12 @@
  * Spotlight content - the loop
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
  // get author category.
-$author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
+$author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 ?>
 <section class="hero">
 	<div class="container wrap no-background">

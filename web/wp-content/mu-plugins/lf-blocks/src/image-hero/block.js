@@ -33,7 +33,7 @@ registerBlockType(
 		__( 'image' ),
 		__( 'hero' ),
 		__( 'large' ),
-		__( 'cncf' ),
+		__( 'lf' ),
 	],
 	example: {},
 	attributes: {

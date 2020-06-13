@@ -5,12 +5,12 @@
  * Displays hero of a page or post - typically the title
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 // setup options.
-$options = get_option( 'cncf-mu' );
+$options = get_option( 'lf-mu' );
 ?>
 
 <section class="hero background-image-wrapper">
@@ -55,7 +55,7 @@ $options = get_option( 'cncf-mu' );
 			<h1 class="post-title" itemprop="headline"><?php the_title(); ?>
 			</h1>
 			<?php elseif ( is_404() ) : ?>
-			<h2><?php esc_html__( 'That\'s a 404', 'cncf-theme' ); ?></h2>
+			<h2><?php esc_html__( 'That\'s a 404', 'lf-theme' ); ?></h2>
 			<?php elseif ( is_home() ) : ?>
 			<h2 class="blog-title"><?php single_post_title(); ?></h2>
 			<?php else : ?>

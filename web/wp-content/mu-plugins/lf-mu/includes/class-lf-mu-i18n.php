@@ -8,8 +8,8 @@
  * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    Cncf_Mu
- * @subpackage Cncf_Mu/includes
+ * @package    Lf_Mu
+ * @subpackage Lf_Mu/includes
  */
 
 /**
@@ -19,11 +19,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Cncf_Mu
- * @subpackage Cncf_Mu/includes
+ * @package    Lf_Mu
+ * @subpackage Lf_Mu/includes
  * @author     Chris Abraham <cjyabraham@gmail.com>
  */
-class Cncf_Mu_I18n {
+class Lf_Mu_I18n {
 
 
 	/**
@@ -34,7 +34,7 @@ class Cncf_Mu_I18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'cncf-mu',
+			'lf-mu',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

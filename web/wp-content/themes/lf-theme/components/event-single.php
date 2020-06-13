@@ -3,23 +3,23 @@
  * Events content - the loop
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 // event host.
-$event_host = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-event-host', true );
+$event_host = Lf_Utils::get_term_names( get_the_ID(), 'lf-event-host', true );
 
 // external URL.
-$external_url = get_post_meta( get_the_ID(), 'cncf_event_external_url', true );
+$external_url = get_post_meta( get_the_ID(), 'lf_event_external_url', true );
 
-$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
 
-$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
+$event_end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
 
-$city = get_post_meta( get_the_ID(), 'cncf_event_city', true );
+$city = get_post_meta( get_the_ID(), 'lf_event_city', true );
 
-$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
+$country = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
 
 if ( ! $city && ! $country ) {
 	$location = 'TBC';
@@ -29,11 +29,11 @@ if ( ! $city && ! $country ) {
 	$location = $city . ', ' . $country;
 }
 
-$logo = get_post_meta( get_the_ID(), 'cncf_event_logo', true );
+$logo = get_post_meta( get_the_ID(), 'lf_event_logo', true );
 
-$background = get_post_meta( get_the_ID(), 'cncf_event_background', true );
+$background = get_post_meta( get_the_ID(), 'lf_event_background', true );
 
-$color = get_post_meta( get_the_ID(), 'cncf_event_overlay_color', true );
+$color = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
 
 $color ? $overlay_color = $color : $overlay_color = '#254AAB';
 
@@ -61,7 +61,7 @@ $color ? $overlay_color = $color : $overlay_color = '#254AAB';
 			<?php if ( $event_start_date ) : ?>
 		<div class="skew-box centered">
 				<?php
-				echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+				echo esc_html( Lf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 				?>
 		</div>
 		<?php endif; ?>
@@ -106,7 +106,7 @@ $color ? $overlay_color = $color : $overlay_color = '#254AAB';
 
 				<h4 class="event-date">
 					<?php
-					echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+					echo esc_html( Lf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 					?>
 				</h4>
 				<h3

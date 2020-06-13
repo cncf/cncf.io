@@ -27,7 +27,7 @@ class GuestAuthor extends Component {
 				<RichText
 					tagName="span"
 					className={ className }
-					placeholder={ __( 'Dan Kohn', 'cncf-blocks' ) }
+					placeholder={ __( 'Dan Kohn', 'lf-blocks' ) }
 					keepPlaceholderOnFocus={ true }
 					value={ content }
 					onChange={ value => setAttributes( { content: value } ) }

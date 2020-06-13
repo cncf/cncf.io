@@ -4,7 +4,7 @@
  * Import, add or override any styles here for Editor
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -82,7 +82,7 @@
 }
 
 // allows for transparent images to be visible in Sidebar Metabox.
-#pmc-cncf_event-logo .pmc-image-container {
+#pmc-lf_event-logo .pmc-image-container {
     background-color: $grey-200;
 }
 

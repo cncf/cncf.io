@@ -3,7 +3,7 @@
  * Contact Shortcode
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -14,7 +14,7 @@ function add_contact_shortcode() {
 	ob_start(); ?>
 <div class="contact-form-block">
 	<form id="sfmc-form2" class="contact-form"
-		action="https://cloud.email.thelinuxfoundation.org/CNCF-Contact-Us-Submission">
+		action="https://cloud.email.thelinuxfoundation.org/LF-Contact-Us-Submission">
 		<div class="form-group form-even-columns">
 			<div class="form-group-item">
 				<label for="FirstName">First Name <span>*</span></label>

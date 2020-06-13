@@ -5,7 +5,7 @@
  * Webinars
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -26,7 +26,7 @@ if ( $query->have_posts() ) : ?>
 		<?php
 		if ( $is_recorded ) {
 			// get total list of webinars.
-			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_recording_url' and meta_value <> '';" );
+			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_recording_url' and meta_value <> '';" );
 
 			// if filter matches all webinars.
 			if ( $full_count == $query->found_posts ) {
@@ -37,7 +37,7 @@ if ( $query->have_posts() ) : ?>
 			}
 		} else {
 			// get total list of webinars.
-			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_webinar' and wp_posts.post_status = 'publish' and meta_key='cncf_webinar_date' and meta_value >= CURDATE();" );
+			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_date' and meta_value >= CURDATE();" );
 
 			// if filter matches all webinars.
 			if ( $full_count == $query->found_posts ) {
@@ -68,22 +68,22 @@ if ( $query->have_posts() ) : ?>
 		$query->the_post();
 
 		// setup options.
-		$options = get_option( 'cncf-mu' );
+		$options = get_option( 'lf-mu' );
 
 		// get webinar date.
-		$webinar_date = new DateTime( get_post_meta( get_the_ID(), 'cncf_webinar_date', true ) );
+		$webinar_date = new DateTime( get_post_meta( get_the_ID(), 'lf_webinar_date', true ) );
 
 		// get recording URL (for video thumb).
-		$recording_url = get_post_meta( get_the_ID(), 'cncf_webinar_recording_url', true );
+		$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
 
 		// extract YouTube video ID.
-		$video_id = Cncf_Utils::get_youtube_id_from_url( $recording_url );
+		$video_id = Lf_Utils::get_youtube_id_from_url( $recording_url );
 
 		// get author category.
-		$author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
+		$author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 
 		// get companies (presented by).
-		$company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
+		$company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 		?>
 
 

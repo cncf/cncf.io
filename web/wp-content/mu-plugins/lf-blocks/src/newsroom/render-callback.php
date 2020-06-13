@@ -3,7 +3,7 @@
  * Render Callback
  *
  * @package WordPress
- * @subpackage cncf-blocks
+ * @subpackage lf-blocks
  * @since 1.0.0
  */
 
@@ -55,7 +55,7 @@ function lf_newsroom_render_callback( $attributes ) {
 
 	<?php
 	// setup options.
-	$options = get_option( 'cncf-mu' );
+	$options = get_option( 'lf-mu' );
 	while ( $query->have_posts() ) :
 		$query->the_post();
 		?>
@@ -83,8 +83,8 @@ function lf_newsroom_render_callback( $attributes ) {
 				?>
 
 		<?php
-		if ( in_category( 'news' ) && ( get_post_meta( get_the_ID(), 'cncf_post_external_url', true ) ) ) {
-			$link_url = get_post_meta( get_the_ID(), 'cncf_post_external_url', true );
+		if ( in_category( 'news' ) && ( get_post_meta( get_the_ID(), 'lf_post_external_url', true ) ) ) {
+			$link_url = get_post_meta( get_the_ID(), 'lf_post_external_url', true );
 			?>
 			<h5 class="newsroom-title"><a class="external is-primary-color" target="_blank" rel="noopener" href="<?php echo esc_url( $link_url ); ?>"
 title="<?php the_title(); ?>">

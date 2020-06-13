@@ -11,10 +11,10 @@
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
- * @package cncf-blocks
+ * @package lf-blocks
  */
 
 /**
- * Include the CNCF Blocks plugin
+ * Include the LF Blocks plugin
  */
 require WPMU_PLUGIN_DIR . '/lf-blocks/plugin.php';

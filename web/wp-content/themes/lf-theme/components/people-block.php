@@ -3,21 +3,21 @@
  * People Block
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 // setup values.
 $person_id = get_the_ID();
-$company   = get_post_meta( get_the_ID(), 'cncf_person_company', true );
-$linkedin  = get_post_meta( get_the_ID(), 'cncf_person_linkedin', true );
-$twitter   = get_post_meta( get_the_ID(), 'cncf_person_twitter', true );
-$github    = get_post_meta( get_the_ID(), 'cncf_person_github', true );
-$wechat    = get_post_meta( get_the_ID(), 'cncf_person_wechat', true );
-$website   = get_post_meta( get_the_ID(), 'cncf_person_website', true );
-$youtube   = get_post_meta( get_the_ID(), 'cncf_person_youtube', true );
+$company   = get_post_meta( get_the_ID(), 'lf_person_company', true );
+$linkedin  = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
+$twitter   = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
+$github    = get_post_meta( get_the_ID(), 'lf_person_github', true );
+$wechat    = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
+$website   = get_post_meta( get_the_ID(), 'lf_person_website', true );
+$youtube   = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
 
-$category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-person-category', true );
+$category = Lf_Utils::get_term_names( get_the_ID(), 'lf-person-category', true );
 
 // setup image class.
 $image = new Image();
@@ -43,7 +43,7 @@ if ( strlen( $content ) > 20 ) {
 	if ( has_post_thumbnail() ) {
 		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, array( 'class' => '' ) );
 	} else {
-		$options = get_option( 'cncf-mu' );
+		$options = get_option( 'lf-mu' );
 		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people', false, array( 'class' => '' ) );
 	}
 	?>

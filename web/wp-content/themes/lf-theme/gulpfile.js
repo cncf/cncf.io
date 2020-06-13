@@ -5,7 +5,7 @@
  */
 
 // Project Name - Lowercase, no spaces, used below in urls (use name of theme folder)
-// var project = "cncf-theme";
+// var project = "lf-theme";
 
 // Local project URL. From MAMP or Lando - whatever local server you use.
 var projectURL = "https://cncfci.lndo.site";

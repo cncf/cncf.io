@@ -5,7 +5,7 @@
  * Shown when a page is not found.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

@@ -7,7 +7,7 @@
  * After adding here, make sure your CSS for frontend and backend matches the rules that are generated.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

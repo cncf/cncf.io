@@ -5,29 +5,29 @@
  * Sample Results Template
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 if ( $query->have_posts() ) {
 	set_query_var( 'query', $query );
 	switch ( $query->query['post_type'] ) {
-		case 'cncf_webinar':
+		case 'lf_webinar':
 			get_template_part( 'search-filter/webinars' );
 			break;
-		case 'cncf_event':
+		case 'lf_event':
 			get_template_part( 'search-filter/events' );
 			break;
-		case 'cncf_case_study':
+		case 'lf_case_study':
 			get_template_part( 'search-filter/casestudies' );
 			break;
-		case 'cncf_case_study_ch':
+		case 'lf_case_study_ch':
 			get_template_part( 'search-filter/casestudies' );
 			break;
-		case 'cncf_speaker':
+		case 'lf_speaker':
 			get_template_part( 'search-filter/speakers' );
 			break;
-		case 'cncf_spotlight':
+		case 'lf_spotlight':
 			get_template_part( 'search-filter/spotlights' );
 			break;
 	}

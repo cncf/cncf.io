@@ -5,18 +5,18 @@
  * Displaying a numeric nav.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 $prev_text = sprintf(
 	'%s <span class="nav-prev-text">%s</span>',
 	'<span aria-hidden="true">&larr;</span>',
-	__( 'Prev', 'cncf-theme' )
+	__( 'Prev', 'lf-theme' )
 );
 $next_text = sprintf(
 	'<span class="nav-next-text">%s</span> %s',
-	__( 'Next', 'cncf-theme' ),
+	__( 'Next', 'lf-theme' ),
 	'<span aria-hidden="true">&rarr;</span>'
 );
 

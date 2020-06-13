@@ -5,20 +5,20 @@
  * Case Studies
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 if ( $query->have_posts() ) :
 	// get total list of case studies.
-	$count_case_study = wp_count_posts( 'cncf_case_study' );
+	$count_case_study = wp_count_posts( 'lf_case_study' );
 	$full_count       = $count_case_study->publish;
 	?>
 
 <p class="results-count">
 	<?php
 	// if CPT set chinese conditional true.
-	if ( 'cncf_case_study_ch' === $query->query['post_type'] ) {
+	if ( 'lf_case_study_ch' === $query->query['post_type'] ) {
 		$ch = true;
 		echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
 	} else {

@@ -98,7 +98,7 @@ export default withSelect(
 			( value ) => ! isUndefined( value )
 		);
 		return {
-			posts: getEntityRecords( 'postType', 'cncf_case_study', latestPostsQuery ),
+			posts: getEntityRecords( 'postType', 'lf_case_study', latestPostsQuery ),
 		};
 	}
 )( CaseStudies );

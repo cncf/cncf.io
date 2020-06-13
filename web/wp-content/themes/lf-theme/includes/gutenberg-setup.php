@@ -5,7 +5,7 @@
  * Setup Block Editor and options as part of after_setup_theme
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

@@ -3,7 +3,7 @@
  * Webinar content - the loop
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -11,35 +11,35 @@
 $dat_now = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
 
 // Get date and time of webinar for comparison.
-$webinar_date              = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
-$webinar_start_time        = get_post_meta( get_the_ID(), 'cncf_webinar_start_time', true );
-$webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_time_period', true );
-$webinar_end_time          = get_post_meta( get_the_ID(), 'cncf_webinar_end_time', true );
-$webinar_end_time_period   = get_post_meta( get_the_ID(), 'cncf_webinar_end_time_period', true );
-$webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
-$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
-$dat_webinar_end           = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_end_time, $webinar_end_time_period, $webinar_timezone );
+$webinar_date              = get_post_meta( get_the_ID(), 'lf_webinar_date', true );
+$webinar_start_time        = get_post_meta( get_the_ID(), 'lf_webinar_start_time', true );
+$webinar_start_time_period = get_post_meta( get_the_ID(), 'lf_webinar_start_time_period', true );
+$webinar_end_time          = get_post_meta( get_the_ID(), 'lf_webinar_end_time', true );
+$webinar_end_time_period   = get_post_meta( get_the_ID(), 'lf_webinar_end_time_period', true );
+$webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone', true );
+$dat_webinar_start         = Lf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
+$dat_webinar_end           = Lf_Utils::get_webinar_date_time( $webinar_date, $webinar_end_time, $webinar_end_time_period, $webinar_timezone );
 
 // get recording URL.
-$recording_url = get_post_meta( get_the_ID(), 'cncf_webinar_recording_url', true );
+$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
 
 // extract YouTube video ID.
-$video_id = Cncf_Utils::get_youtube_id_from_url( $recording_url );
+$video_id = Lf_Utils::get_youtube_id_from_url( $recording_url );
 
 // get author category.
-$author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
+$author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 
 // get companies (presented by).
-$company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
+$company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 
 // get registration URL.
-$registration_url = get_post_meta( get_the_ID(), 'cncf_webinar_registration_url', true );
+$registration_url = get_post_meta( get_the_ID(), 'lf_webinar_registration_url', true );
 
 // get slides URL.
-$slides_url = get_post_meta( get_the_ID(), 'cncf_webinar_slides_url', true );
+$slides_url = get_post_meta( get_the_ID(), 'lf_webinar_slides_url', true );
 
 // get webinar speakers.
-$speakers = get_post_meta( get_the_ID(), 'cncf_webinar_speakers', true );
+$speakers = get_post_meta( get_the_ID(), 'lf_webinar_speakers', true );
 
 // date period.
 if ( $dat_webinar_start > $dat_now ) {

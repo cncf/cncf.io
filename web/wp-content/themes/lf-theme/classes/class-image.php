@@ -7,7 +7,7 @@
  * then - $image->get_base64( 'logo.png' )
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

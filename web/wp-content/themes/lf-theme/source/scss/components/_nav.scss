@@ -314,9 +314,9 @@
             }
 
             // put projects in to multiple columns
-            &.cncf-projects-incubating,
-            &.cncf-projects-sandbox,
-            &.cncf-projects-graduated {
+            &.lf-projects-incubating,
+            &.lf-projects-sandbox,
+            &.lf-projects-graduated {
 
                 >ul {
                     width: calc(14rem*2);

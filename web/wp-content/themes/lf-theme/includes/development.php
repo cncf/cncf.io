@@ -5,7 +5,7 @@
  * Add functions and utilities here to help with development.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

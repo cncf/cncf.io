@@ -5,22 +5,22 @@
  * Singular upcoming webinar item.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 // get author category.
-$author_category = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
+$author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 
 // get companies (presented by).
-$company = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-company' );
+$company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 
 // get webinar date and time.
-$webinar_date              = get_post_meta( get_the_ID(), 'cncf_webinar_date', true );
-$webinar_start_time        = get_post_meta( get_the_ID(), 'cncf_webinar_start_time', true );
-$webinar_start_time_period = get_post_meta( get_the_ID(), 'cncf_webinar_start_time_period', true );
-$webinar_timezone          = get_post_meta( get_the_ID(), 'cncf_webinar_timezone', true );
-$dat_webinar_start         = Cncf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone, true );
+$webinar_date              = get_post_meta( get_the_ID(), 'lf_webinar_date', true );
+$webinar_start_time        = get_post_meta( get_the_ID(), 'lf_webinar_start_time', true );
+$webinar_start_time_period = get_post_meta( get_the_ID(), 'lf_webinar_start_time_period', true );
+$webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone', true );
+$dat_webinar_start         = Lf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone, true );
 $date_and_time             = str_replace( ':00', '', $dat_webinar_start->format( 'l F j, g:iA T' ) );
 ?>
 <article class="webinars-upcoming-box">

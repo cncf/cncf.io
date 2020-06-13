@@ -43,7 +43,7 @@ registerBlockType(
 		keywords: [
 			__( 'webinars' ),
 			__( 'upcoming' ),
-			__( 'cncf' ),
+			__( 'lf' ),
 		],
 		styles: [
 			{

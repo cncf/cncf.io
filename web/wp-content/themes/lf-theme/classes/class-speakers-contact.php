@@ -280,7 +280,7 @@ class Speakers_Contact {
 	 */
 	public function fetch_speakers_ids() {
 		global $post;
-		$params = array( '_sft_cncf-speaker-affiliation', '_sft_cncf-speaker-expertise', '_sft_cncf-project', '_sft_cncf-language', '_sft_cncf-country' );
+		$params = array( '_sft_lf-speaker-affiliation', '_sft_lf-speaker-expertise', '_sft_lf-project', '_sft_lf-language', '_sft_lf-country' );
 		if ( isset( $_SERVER['QUERY_STRING'] ) ) {
 			$querystring = explode( '&', sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) );
 		}
@@ -302,7 +302,7 @@ class Speakers_Contact {
 
 		if ( $has_filters ) {
 			$args = array(
-				'post_type' => 'cncf_speaker',
+				'post_type' => 'lf_speaker',
 				'no_found_rows' => true,
 				'update_post_meta_cache' => false,
 				'posts_per_page' => $this->speakers_limit,
@@ -444,7 +444,7 @@ class Speakers_Contact {
 				<table width="100%" border="0" cellpadding="0" cellspacing="0">
 					<thead>
 						<tr>
-							<td bgcolor="#252960" height="100" style="text-align: center"><img width="200" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/images/cncf-white-logo.png'; ?>" alt=""></td>
+							<td bgcolor="#252960" height="100" style="text-align: center"><img width="200" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/images/lf-white-logo.png'; ?>" alt=""></td>
 						</tr>
 					</thead>
 		<?php

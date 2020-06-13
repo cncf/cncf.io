@@ -5,11 +5,11 @@
  * Use in templates to call the footer - it also calls WordPress footer.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
-$options = get_option( 'cncf-mu' );
+$options = get_option( 'lf-mu' );
 ?>
 
 <footer class="footer">

@@ -5,7 +5,7 @@
  * Might need to revisit this page again - quite old.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

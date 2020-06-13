@@ -5,11 +5,11 @@
  * CTA message at top of the website.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
-$options = get_option( 'cncf-mu' );
+$options = get_option( 'lf-mu' );
 
 // set default colours.
 $custom_text_colour = '#FFFFFF';

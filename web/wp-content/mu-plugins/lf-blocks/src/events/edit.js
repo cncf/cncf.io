@@ -67,15 +67,15 @@ class Events extends Component {
 		// filter out old events before today.
 			.filter(
 				 ( p ) => {
-				const eventDate = new Date( p.meta.cncf_event_date_start );
+				const eventDate = new Date( p.meta.lf_event_date_start );
 				return eventDate >= now;
 			}
 				)
 		// sort in date order.
 			.sort(
 				 ( a, b ) => {
-				a = new Date( a.meta.cncf_event_date_start );
-				b = new Date( b.meta.cncf_event_date_start );
+				a = new Date( a.meta.lf_event_date_start );
+				b = new Date( b.meta.lf_event_date_start );
 				return a < b ? -1 : a > b ? 1 : 0;
 			}
 				)
@@ -88,8 +88,8 @@ class Events extends Component {
 						<article className="event-box" key={ post.id } style={ { backgroundColor: '#617EBF' } }>
 							<div className="event-content-wrapper-editor">
 								<h4 className="event-title" dangerouslySetInnerHTML={ { __html: post.title.rendered } } />
-								<span className="event-date">{ post.meta.cncf_event_date_start }</span>
-								<span className="event-city">{ post.meta.cncf_event_city }</span>
+								<span className="event-date">{ post.meta.lf_event_date_start }</span>
+								<span className="event-city">{ post.meta.lf_event_city }</span>
 								<span className="button transparent outline ">Learn More</span>
 							</div>
 						</article>
@@ -127,14 +127,14 @@ export default withSelect(
 		console.log( numberposts );
 		const latestPostsQuery = pickBy(
 			{
-				'cncf-event-host': category,
+				'lf-event-host': category,
 				per_page: numberposts,
 			},
 			( value ) => ! isUndefined( value )
 		);
 		return {
-			posts: getEntityRecords( 'postType', 'cncf_event', latestPostsQuery ),
-			categories: getEntityRecords( 'taxonomy', 'cncf-event-host' ) || [],
+			posts: getEntityRecords( 'postType', 'lf_event', latestPostsQuery ),
+			categories: getEntityRecords( 'taxonomy', 'lf-event-host' ) || [],
 		};
 	}
 )( Events );

@@ -3,7 +3,7 @@
  * Post content - the loop
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -40,10 +40,10 @@ endif;
 
 			<?php
 			// Get the Category Author.
-			$category_author = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-author-category', true );
+			$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 
 			// Get the guest author meta.
-			$guest_author = get_post_meta( get_the_ID(), 'cncf_post_guest_author', true );
+			$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 
 			if ( $category_author ) :
 				?>
@@ -71,7 +71,7 @@ endif;
 			</span>
 					<?php
 				} else {
-					echo wp_kses_post( Cncf_Utils::display_author( get_the_ID(), true ) );
+					echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
 				}
 				?>
 			</span>

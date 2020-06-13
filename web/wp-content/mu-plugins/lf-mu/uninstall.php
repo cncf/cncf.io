@@ -21,7 +21,7 @@
  * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    Cncf_Mu
+ * @package    Lf_Mu
  */
 
 // If uninstall not called from WordPress, then exit.

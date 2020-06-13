@@ -3,7 +3,7 @@
  * Speakers Bureau changes
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -13,7 +13,7 @@
 function um_projects_callback() {
 	$terms = get_terms(
 		array(
-			'taxonomy'   => 'cncf-project',
+			'taxonomy'   => 'lf-project',
 			'orderby'    => 'name',
 			'order'      => 'ASC',
 			'hide_empty' => false,
@@ -106,7 +106,7 @@ function shortcode_sb_subnav() {
 	if ( ! is_user_logged_in() ) {
 		?>
 	<a href="/speakers/register/">Sign Up as a Speaker</a>&nbsp;|&nbsp;
-	<a href="/cncf-member-instructions/">Learn more about Bulk Speaker
+	<a href="/lf-member-instructions/">Learn more about Bulk Speaker
 		Messaging</a>&nbsp;|&nbsp;
 	<a href="/speakers/login/">Login</a>
 		<?php
@@ -118,7 +118,7 @@ function shortcode_sb_subnav() {
 		<?php
 	} else {
 		?>
-	<a href="/cncf-member-instructions/">Learn more about Bulk Speaker
+	<a href="/lf-member-instructions/">Learn more about Bulk Speaker
 		Messaging</a>&nbsp;|&nbsp;
 	<a href="/logout/">Logout</a>
 		<?php
@@ -133,7 +133,7 @@ add_shortcode( 'speakers_bureau_subnav', 'shortcode_sb_subnav' );
 /**
  * Adds CNCF affiliation in to SB Profile FE.
  */
-function add_cncf_fields_after_header_name() {
+function add_lf_fields_after_header_name() {
 
 	// Only show in Viewing.
 	if ( UM()->fields()->viewing == false ) {
@@ -186,4 +186,4 @@ function add_cncf_fields_after_header_name() {
 		<?php
 	}
 }
-add_action( 'um_after_header_meta', 'add_cncf_fields_after_header_name' );
+add_action( 'um_after_header_meta', 'add_lf_fields_after_header_name' );

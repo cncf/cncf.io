@@ -5,7 +5,7 @@
  * Template for the front page (home).
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

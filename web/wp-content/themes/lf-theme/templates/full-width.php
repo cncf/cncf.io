@@ -1,10 +1,10 @@
 <?php
 /**
  * Template Name: Full-width page layout
- * Template Post Type: post, page, cncf_event
+ * Template Post Type: post, page, lf_event
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 

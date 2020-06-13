@@ -5,14 +5,14 @@
  * Header section - can contain the navigation.
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
 get_header();
 
 $image   = new Image();
-$options = get_option( 'cncf-mu' );
+$options = get_option( 'lf-mu' );
 
 if ( $options['show_hello_bar'] ) :
 	get_template_part( 'components/hello-bar' );

@@ -5,7 +5,7 @@
  * Events
  *
  * @package WordPress
- * @subpackage cncf-theme
+ * @subpackage lf-theme
  * @since 1.0.0
  */
 
@@ -14,7 +14,7 @@
 <p class="results-count">
 	<?php
 	if ( $query->have_posts() ) :
-		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'cncf_event' and wp_posts.post_status = 'publish' and meta_key='cncf_event_date_end' and meta_value >= CURDATE();" );
+		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_event' and wp_posts.post_status = 'publish' and meta_key='lf_event_date_end' and meta_value >= CURDATE();" );
 		if ( $full_count == $query->found_posts ) {
 			echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming events';
 		} else {
@@ -27,13 +27,13 @@
 		while ( $query->have_posts() ) :
 			$query->the_post();
 
-			$event_start_date = get_post_meta( get_the_ID(), 'cncf_event_date_start', true );
+			$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
 
-			$event_end_date = get_post_meta( get_the_ID(), 'cncf_event_date_end', true );
+			$event_end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
 
-			$city = get_post_meta( get_the_ID(), 'cncf_event_city', true );
+			$city = get_post_meta( get_the_ID(), 'lf_event_city', true );
 
-			$country = Cncf_Utils::get_term_names( get_the_ID(), 'cncf-country', true );
+			$country = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
 
 			if ( ! $city && ! $country ) {
 				$location = 'TBC';
@@ -43,11 +43,11 @@
 				$location = $city . ', ' . $country;
 			}
 
-			$logo = get_post_meta( get_the_ID(), 'cncf_event_logo', true );
+			$logo = get_post_meta( get_the_ID(), 'lf_event_logo', true );
 
-			$background = get_post_meta( get_the_ID(), 'cncf_event_background', true );
+			$background = get_post_meta( get_the_ID(), 'lf_event_background', true );
 
-			$color = get_post_meta( get_the_ID(), 'cncf_event_overlay_color', true );
+			$color = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
 
 			$color ? $overlay_color = $color : $overlay_color = '#254AAB';
 
@@ -83,7 +83,7 @@
 
 			<h6 class="event-date">
 				<?php
-						echo esc_html( Cncf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+						echo esc_html( Lf_Utils::display_event_date( $event_start_date, $event_end_date ) );
 				?>
 			</h6>
 			<h5

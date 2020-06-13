@@ -5,8 +5,8 @@
  * @link       https://www.cncf.io/
  * @since      1.0.0
  *
- * @package    Cncf_Mu
- * @subpackage Cncf_Mu/includes
+ * @package    Lf_Mu
+ * @subpackage Lf_Mu/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Cncf_Mu
- * @subpackage Cncf_Mu/includes
+ * @package    Lf_Mu
+ * @subpackage Lf_Mu/includes
  * @author     Chris Abraham <cjyabraham@gmail.com>
  */
-class Cncf_Mu_Loader {
+class Lf_Mu_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
