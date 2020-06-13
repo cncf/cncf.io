@@ -9,7 +9,7 @@
 
  // get author category.
  $spotlight_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', true );
- ?>
+?>
 <section class="hero">
 	<div class="container wrap no-background">
 		<p class="hero-parent-link"><a href="/spotlights/"
