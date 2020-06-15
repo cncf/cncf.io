@@ -18,6 +18,10 @@ input[type="button"] {
 
 input[type="search"] {
     padding-left: 1em;
+
+    .no-search-results & {
+        height: 40px;
+    }
 }
 
 // make selectbox the same on all devices.
