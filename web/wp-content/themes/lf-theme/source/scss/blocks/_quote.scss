@@ -38,3 +38,14 @@
         color: $grey-500;
     }
 }
+
+
+.is-style-smaller-quote {
+    font-size: 1.1em;
+
+    @media (min-width: 768px) {
+        font-size: 1.4em;
+        margin-top: $sm-padding;
+        margin-bottom: $sm-padding;
+    }
+}

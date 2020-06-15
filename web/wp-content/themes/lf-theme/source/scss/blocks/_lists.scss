@@ -1,14 +1,50 @@
-ul.is-style-no-style-list {
-    list-style: none;
-    margin: 0;
-    margin-bottom: 1.5rem; // experimental
-    // margin-bottom: 0.5rem;
+// default is 100% so does not affect non list layouts.
+// gutenberg offers UL and OL.
+// controlled with width styles.
+// also dash version and minimal dash version.
 
-    li {
-        margin-bottom: 0.5rem;
+ul,
+ol {
+    &.is-style-minimal-dash {
+        list-style: none;
+        margin: 0;
+        margin-bottom: 1.5rem;
+        max-width: 700px;
 
-        &:before {
-            content: "- "
+        li {
+            margin-bottom: 0.5rem;
+
+            &:before {
+                content: "- "
+            }
+        }
+
+        ol,
+        ul {
+            list-style: none;
+            margin-bottom: 0;
+        }
+    }
+
+    &.is-style-dash {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 2rem;
+        max-width: 700px;
+
+        li {
+
+            &:before {
+                display: inline-block;
+                content: "-";
+                text-indent: -1rem;
+            }
+        }
+
+        ol,
+        ul {
+            list-style: none;
+            margin-bottom: 0;
         }
     }
 }

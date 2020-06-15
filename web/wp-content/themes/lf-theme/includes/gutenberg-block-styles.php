@@ -218,6 +218,14 @@ register_block_style(
 register_block_style(
 	'core/quote',
 	array(
+		'name'  => 'smaller-quote',
+		'label' => 'Smaller Quote',
+	)
+);
+
+register_block_style(
+	'core/quote',
+	array(
 		'name'  => 'max-width-700',
 		'label' => 'Max-Width 700px',
 	)
@@ -235,14 +243,6 @@ register_block_style(
 register_block_style(
 	'core/list',
 	array(
-		'name'  => 'no-style-list',
-		'label' => 'No Margins',
-	)
-);
-
-register_block_style(
-	'core/list',
-	array(
 		'name'  => 'max-width-600',
 		'label' => 'Max-Width 600px',
 	)
@@ -256,20 +256,36 @@ register_block_style(
 	)
 );
 
-// SPACERS.
 register_block_style(
-	'core/spacer',
+	'core/list',
 	array(
-		'name'  => '100-responsive',
-		'label' => '100px Responsive',
+		'name'  => 'max-width-800',
+		'label' => 'Max-Width 800px',
 	)
 );
 
 register_block_style(
+	'core/list',
+	array(
+		'name'  => 'dash',
+		'label' => 'Dash',
+	)
+);
+
+register_block_style(
+	'core/list',
+	array(
+		'name'  => 'minimal-dash',
+		'label' => 'Dash (Minimal)',
+	)
+);
+
+// SPACERS.
+register_block_style(
 	'core/spacer',
 	array(
-		'name'  => '80-responsive',
-		'label' => '80px Responsive',
+		'name'  => '40-responsive',
+		'label' => '40px Responsive',
 	)
 );
 
@@ -284,7 +300,15 @@ register_block_style(
 register_block_style(
 	'core/spacer',
 	array(
-		'name'  => '40-responsive',
-		'label' => '40px Responsive',
+		'name'  => '80-responsive',
+		'label' => '80px Responsive',
+	)
+);
+
+register_block_style(
+	'core/spacer',
+	array(
+		'name'  => '100-responsive',
+		'label' => '100px Responsive',
 	)
 );

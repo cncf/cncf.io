@@ -30,8 +30,12 @@
         }
     }
 
-    p:not([class*='is-style']):not(.hero-parent-link) {
-        max-width: 700px;
+    p {
+
+        &:not([class*='is-style']):not(.hero-parent-link),
+        &.is-style-default {
+            max-width: 700px;
+        }
     }
 
     h1,
@@ -40,7 +44,9 @@
     h4,
     h5,
     h6 {
-        &:not([class*='is-style']) {
+
+        &:not([class*='is-style']),
+        &.is-style-default {
             max-width: 900px;
         }
     }
@@ -73,7 +79,7 @@
         list-style: disc;
         margin-top: 0;
         margin-right: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         margin-left: 2em;
 
         // used for tab container.
@@ -81,13 +87,23 @@
             list-style: none;
             margin-left: 0;
         }
+
+        // second level
+        ul {
+            margin-bottom: 0;
+
+            // third level
+            ul {
+                margin-bottom: 0;
+            }
+        }
     }
 
     ol {
         list-style: decimal;
         margin-top: 0;
         margin-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         margin-left: 2em;
     }
 
