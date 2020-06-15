@@ -27,9 +27,11 @@ $date_and_time             = str_replace( ':00', '', $dat_webinar_start->format(
 
 	<div class="webinars-upcoming-text-wrapper">
 
+		<?php if ( $author_category ) : ?>
 		<!-- Category of Webinar  -->
 		<span class="skew-box secondary margin-bottom-small">CNCF
 			<?php echo esc_html( $author_category ); ?> Webinar</span>
+		<?php endif; ?>
 
 		<!-- Date of webinar  -->
 		<?php if ( $date_and_time ) : ?>

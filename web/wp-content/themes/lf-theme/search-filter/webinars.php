@@ -23,31 +23,31 @@ if ( $query->have_posts() ) : ?>
 	?>
 
 <p class="results-count">
-		<?php
-		if ( $is_recorded ) {
-			// get total list of webinars.
-			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_recording_url' and meta_value <> '';" );
+	<?php
+	if ( $is_recorded ) {
+		// get total list of webinars.
+		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_recording_url' and meta_value <> '';" );
 
-			// if filter matches all webinars.
-			if ( $full_count == $query->found_posts ) {
-				echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars';
-			} else {
-				// else show partial count.
-				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars';
-			}
+		// if filter matches all webinars.
+		if ( $full_count == $query->found_posts ) {
+			echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars';
 		} else {
-			// get total list of webinars.
-			$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_date' and meta_value >= CURDATE();" );
-
-			// if filter matches all webinars.
-			if ( $full_count == $query->found_posts ) {
-				echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars';
-			} else {
-				// else show partial count.
-				echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars';
-			}
+			// else show partial count.
+			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars';
 		}
-		?>
+	} else {
+		// get total list of webinars.
+		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_date' and meta_value >= CURDATE();" );
+
+		// if filter matches all webinars.
+		if ( $full_count == $query->found_posts ) {
+			echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars';
+		} else {
+			// else show partial count.
+			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars';
+		}
+	}
+	?>
 </p>
 
 	<?php if ( $is_recorded ) : ?>
@@ -92,25 +92,28 @@ if ( $query->have_posts() ) : ?>
 
 		<figure>
 			<a href="<?php the_permalink(); ?>">
-			<?php if ( $video_id ) { ?>
+				<?php if ( $video_id ) { ?>
 
 				<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
 					alt="<?php the_title(); ?>">
 				<svg class="video-overlay" width="50" height="50">
 					<use href="#play" /></svg>
-				<?php
-			} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
+					<?php
+				} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
 							echo wp_get_attachment_image( $options['generic_thumb_id'], 'full', false, array( 'class' => 'webinar-default' ) );
-			} else {
-				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-				. '/images/thumbnail-default.svg" alt="CNCF" class="webinar-default"/>';
-			}
-			?>
+				} else {
+					echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+					. '/images/thumbnail-default.svg" alt="CNCF" class="webinar-default"/>';
+				}
+				?>
 			</a>
 		</figure>
 
+			<?php if ( $author_category ) : ?>
 		<div class="skew-box secondary">CNCF
-			<?php echo esc_html( $author_category ); ?> Webinar</div>
+				<?php echo esc_html( $author_category ); ?> Webinar
+		</div>
+		<?php endif; ?>
 
 		<h5 class="webinar-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
