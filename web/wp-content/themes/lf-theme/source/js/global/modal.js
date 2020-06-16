@@ -11,13 +11,4 @@
 
 MicroModal.init({
   disableScroll: true,
-  onClose: modal => console.info(`${modal.id} is hidden`),
 });
-
-onClick (event) {
-  console.log(event.target)
-  if (event.target.hasAttribute('data-micromodal-close') || event.target.closest('button[data-micromodal-close]')) {
-    this.closeModal()
-    event.preventDefault()
-  }
-}
