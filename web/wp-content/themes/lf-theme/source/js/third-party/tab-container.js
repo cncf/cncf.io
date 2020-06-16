@@ -15,27 +15,27 @@ jQuery( document ).ready(
 		let topMenu = $( '.tab-container-nav' );
 
 		if ( topMenu.length > 0 ) {
-			  let lastId;
-			  let menuItems = topMenu.find( 'a' );
+			let lastId;
+			let menuItems = topMenu.find( 'a' );
 			let scrollItems = menuItems.map(
 				function() {
 					let item = $( $( this ).attr( 'href' ) );
 					if ( item.length ) {
-							  return item;
+						return item;
 					}
 				}
 			);
 
-			  let spaceForHeader;
+			let spaceForHeader;
 			if ( $( window ).width() < 800 ) {
-				 spaceForHeader = 80;
+				spaceForHeader = 80;
 			} else {
 				spaceForHeader = 125;
 			}
 
 			let spaceForAdmin;
 			var $wpAdminBar = $( '#wpadminbar' );
-			if ($wpAdminBar.length) {
+			if ( $wpAdminBar.length ) {
 				spaceForAdmin = 32;
 			} else {
 				spaceForAdmin = 0;
@@ -46,20 +46,20 @@ jQuery( document ).ready(
 				function( e ) {
 					let href = $( this ).attr( 'href' );
 					let offsetTop = href === '#' ? 0 : $( href ).offset()
-					.top - spaceForHeader - spaceForAdmin;
+						.top - spaceForHeader - spaceForAdmin;
 					$( 'html, body' )
-					.stop()
-					.animate(
-						{
-							scrollTop: offsetTop,
-						},
-						300
-					);
+						.stop()
+						.animate(
+							{
+								scrollTop: offsetTop,
+							},
+							300
+						);
 					e.preventDefault();
 				}
 			);
 
-			  // Bind to scroll.
+			// Bind to scroll.
 			$( window ).scroll(
 				function() {
 					let fromTop = $( this ).scrollTop();
@@ -67,8 +67,8 @@ jQuery( document ).ready(
 					// Get id of current scroll item, add 20 for padding.
 					let cur = scrollItems.map(
 						function() {
-							if ( $( this ).offset().top < fromTop + spaceForHeader + 20 ) {
-								 return this;
+							if ( $( this ).offset().top < fromTop + spaceForHeader + spaceForAdmin + 20 ) {
+								return this;
 							}
 						}
 					);
@@ -78,25 +78,25 @@ jQuery( document ).ready(
 					let id = cur && cur.length ? cur[ 0 ].id : '';
 
 					if ( lastId !== id ) {
-								 lastId = id;
-								 // Set/remove active class.
-								 menuItems
-								.parent()
-								.removeClass( 'is-active' )
-								.end()
-								.filter( "[href='#" + id + "']" )
-								.parent()
-								.addClass( 'is-active' );
+						lastId = id;
+						// Set/remove active class.
+						menuItems
+							.parent()
+							.removeClass( 'is-active' )
+							.end()
+							.filter( "[href='#" + id + "']" )
+							.parent()
+							.addClass( 'is-active' );
 						if ( id ) {
 							if ( history.pushState ) {
-									window.history.replaceState(
-										null,
-										null,
-										'#' + id
-									);
+								window.history.replaceState(
+									null,
+									null,
+									'#' + id
+								);
 							} else {
-								  // IE9, IE8, etc.
-								  window.location.hash = '#!' + id;
+								// IE9, IE8, etc.
+								window.location.hash = '#!' + id;
 							}
 						} else {
 							removeHash();
@@ -106,8 +106,8 @@ jQuery( document ).ready(
 			);
 
 			function removeHash() {
-				 let scrollV, scrollH,
-					 loc = window.location;
+				let scrollV, scrollH,
+					loc = window.location;
 				if ( 'pushState' in history ) {
 					history.pushState( '', document.title, loc.pathname + loc.search );
 				} else {
