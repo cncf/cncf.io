@@ -52,4 +52,4 @@ function lf_content_filter( $content ) {
 	$tab_container = ob_get_clean();
 	return $tab_container;
 }
-add_filter( 'the_content', 'lf_content_filter' );
+add_filter( 'the_content', 'lf_content_filter', 5 );
