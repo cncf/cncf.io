@@ -21,4 +21,4 @@
 /**
  * Include the LF plugin
  */
-require WPMU_PLUGIN_DIR . '/lf-mu/lf-mu.php';
+require WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-mu/lf-mu.php';

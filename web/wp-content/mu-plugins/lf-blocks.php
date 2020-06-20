@@ -17,4 +17,4 @@
 /**
  * Include the LF Blocks plugin
  */
-require WPMU_PLUGIN_DIR . '/lf-blocks/plugin.php';
+require WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/plugin.php';

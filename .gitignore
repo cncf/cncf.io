@@ -20,7 +20,7 @@ web/wp-content/mu-plugins/pantheon/
 web/wp-content/mu-plugins/pantheon.php
 
 !web/wp-content/mu-plugins/
-web/wp-content/mu-plugins/lf-blocks/node_modules
+web/wp-content/mu-plugins/wp-mu-plugins/
 
 !web/wp-content/plugins/
 web/wp-content/plugins/*
