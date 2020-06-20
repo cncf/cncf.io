@@ -1,0 +1,3 @@
+[submodule "web/wp-content/mu-plugins/lf-mu-plugins"]
+	path = web/wp-content/mu-plugins/lf-mu-plugins
+	url = https://github.com/cncf/wp-mu-plugins.git
