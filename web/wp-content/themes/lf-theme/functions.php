@@ -69,9 +69,6 @@ if ( WP_DEBUG === true ) {
 // gutenberg settings.
 require_once 'includes/gutenberg-options.php';
 
-// speed improvements.
-require_once 'includes/speed.php';
-
 // admin & dashboard customisation.
 require_once 'includes/admin-dashboard.php';
 
