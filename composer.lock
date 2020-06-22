@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "9e9ada5c0aeef326ae6c615510e8f780f9c44135"
+                "reference": "678d984835e2d9c25b6b6898557b546c4df46447"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/9e9ada5c0aeef326ae6c615510e8f780f9c44135",
-                "reference": "9e9ada5c0aeef326ae6c615510e8f780f9c44135",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/678d984835e2d9c25b6b6898557b546c4df46447",
+                "reference": "678d984835e2d9c25b6b6898557b546c4df46447",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-06-22T02:10:38+00:00"
+            "time": "2020-06-22T02:33:02+00:00"
         },
         {
             "name": "composer/installers",
