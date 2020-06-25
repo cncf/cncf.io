@@ -5,7 +5,7 @@
 // if the text has colour then apply a different link colour
 // assuming text colour change is because of background
 p.has-text-color a {
-    color: $tertiary-700;
+    color: $tertiary-600;
 
     &:hover {
         color: $secondary-800;

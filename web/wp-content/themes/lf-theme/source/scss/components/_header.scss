@@ -146,7 +146,7 @@
         z-index: 1;
         left: -999em;
 
-        background-color: $secondary-800;
+        background-color: $menu-desktop-search;
         box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         transition: opacity .15s linear, top 0s .15s ease-in;
 
@@ -166,14 +166,14 @@
         height: 100%;
         border: none;
         font-size: 1.5em;
-        background: $secondary-800;
-        color: $white;
-        border-bottom: 1px solid $white;
+        background: $menu-desktop-search;
+        color: $menu-link;
+        border-bottom: 1px solid $menu-link;
         padding-right: 0.5em;
         padding-bottom: 0.2em;
 
         &::placeholder {
-            color: $white;
+            color: $menu-link;
         }
 
         &:focus {

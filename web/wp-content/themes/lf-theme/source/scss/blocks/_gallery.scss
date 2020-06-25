@@ -1,12 +1,12 @@
 .wp-block-gallery {
     .blocks-gallery-item {
-        margin-bottom: 0;
+        margin-bottom: 1rem;
     }
 
-    .blocks-gallery-grid {
+    ul.blocks-gallery-grid {
         margin-left: 0;
         margin-top: $lg-padding;
-        margin-bottom: $lg-padding;
+        margin-bottom: calc(4rem - 1rem);
     }
 
 }

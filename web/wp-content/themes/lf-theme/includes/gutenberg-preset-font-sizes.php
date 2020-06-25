@@ -41,12 +41,12 @@ add_theme_support(
 			'slug' => 'header-4',
 		),
 		array(
-			'name' => __( 'H3' ),
+			'name' => __( 'H3 Size' ),
 			'size' => 24,
 			'slug' => 'header-3',
 		),
 		array(
-			'name' => __( 'H2' ),
+			'name' => __( 'H2 Size' ),
 			'size' => 36,
 			'slug' => 'header-2',
 		),

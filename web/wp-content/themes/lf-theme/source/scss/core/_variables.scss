@@ -49,13 +49,15 @@ $menu-desktop-container: $secondary-900;
 $menu-desktop-submenu: $secondary-600;
 $menu-desktop-submenu-submenu: $secondary-500;
 $menu-desktop-divider: $secondary-900;
+$menu-desktop-search: $secondary-800;
 
 // menu text/links.
 $menu-link: $white;
 $menu-hover: $grey-100;
 
-// elements
+// highlight elements (pricing table, case study overlay)
 $cs-overlay: $secondary-800;
+$hero-overlay: $secondary-900;
 
 // forms.
 $error: #B80611;

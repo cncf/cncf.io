@@ -31,13 +31,12 @@
 .date-author-row {
     display: flex;
     flex-direction: row;
+    align-items: baseline;
 
     .author-name {
         margin-left: 1em;
-
     }
 }
-
 
 .author-icon {
     display: flex;
@@ -47,7 +46,6 @@
         align-items: center;
         line-height: initial;
     }
-
 
     @media (min-width: 1000px) {
         align-items: center;
@@ -61,6 +59,5 @@
         width: 0.875em;
         background-repeat: no-repeat;
         margin-right: 5px;
-
     }
 }

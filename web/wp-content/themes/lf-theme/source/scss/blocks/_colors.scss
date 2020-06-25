@@ -1,13 +1,13 @@
 // define colors to use later in SASS functions
 
-$colors: ( // name : value for that name.
+$colors: ( // name variable : color to be used.
     'pink-400': #DE176C,
     'white': $white,
     'black': $black,
     'purple-700': #2C2960,
     'blue-100': #F0F5F7,
 );
-$color_hover: ( // name : value for that name.
+$color_hover: ( // name variable : color to be used.
     'pink-400': #E43B80,
     'white': $tertiary-color,
     'black': #252b5f,
@@ -15,7 +15,7 @@ $color_hover: ( // name : value for that name.
     'blue-100': #3CB3DD,
 );
 
-$text_color: ( // name : value for that name.
+$text_color: ( // name variable : color to be used.
     'pink-400': $white,
     'white': $black,
     'black': $white,

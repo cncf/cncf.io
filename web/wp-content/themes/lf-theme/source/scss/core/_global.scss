@@ -152,29 +152,6 @@ img[src$=".svg"] {
 
     }
 
-    // &.on-image {
-    //     background-color: $primary-color;
-    //     box-sizing: border-box;
-    //     border: 1px solid $white;
-    //     color: $white;
-    //     letter-spacing: 2px;
-    //     font-weight: 600;
-    //     font-size: 0.7em;
-
-    //     &:hover {
-    //         background-color: $white;
-    //         color: $primary-color;
-
-    //         a:visited {
-    //             color: $primary-color !important;
-    //         }
-    //     }
-
-    //     a:visited {
-    //         color: $primary-color !important;
-    //     }
-    // }
-
     &.header {
         height: 38px;
         padding: 0;
@@ -303,8 +280,8 @@ figure {
 .skew-box {
     font-size: 0.775em;
     font-weight: 400;
-    color: $white;
     padding: 5px 6px;
+    color: $white;
     background-color: $secondary-700;
     padding-right: 25px;
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
