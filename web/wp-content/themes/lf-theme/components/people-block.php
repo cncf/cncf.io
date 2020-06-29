@@ -72,42 +72,42 @@ if ( strlen( $content ) > 20 ) {
 			if ( $linkedin ) :
 				?>
 			<a href="<?php echo esc_url( $linkedin ); ?>"
-				rel="noreferrer noopener"
+				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/linkedin.svg' ); ?></a>
 				<?php
 		endif;
 			if ( $twitter ) :
 				?>
 			<a href="<?php echo esc_url( $twitter ); ?>" target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/twitter.svg' ); ?></a>
 				<?php
 		endif;
 			if ( $github ) :
 				?>
 			<a href="<?php echo esc_url( $github ); ?>" target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/github.svg' ); ?></a>
 				<?php
 		endif;
 			if ( $wechat ) :
 				?>
 			<a href="<?php echo esc_url( $wechat ); ?>" target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/wechat.svg' ); ?></a>
 				<?php
 		endif;
 			if ( $website ) :
 				?>
 			<a href="<?php echo esc_url( $website ); ?>" target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/website.svg' ); ?></a>
 				<?php
 		endif;
 			if ( $youtube ) :
 				?>
 			<a href="<?php echo esc_url( $youtube ); ?>" target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/youtube.svg' ); ?></a>
 				<?php
 		endif;

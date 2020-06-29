@@ -3,15 +3,13 @@
 // use for random external links where needed.
 .external {
     &::after {
-        content: "  ";
+        content: '';
         background-image: url("data:image/svg+xml,%3Csvg fill='currentColor' height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4h-13v18h20v-11h1v12h-22v-20h14zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8z'/%3E%3C/svg%3E");
-        background-size: 0.8em;
-        height: 0.8em;
-        width: 0.8em;
+        background-size: contain;
         background-repeat: no-repeat;
-        display: inline-block;
-        margin-left: 4px;
-        margin-top: 5px;
+        background-position: center center;
+        margin-left: 0.3em;
+        padding-right: 0.75em;
     }
 
     &.is-primary-color {
