@@ -217,10 +217,8 @@ require_once ABSPATH . 'wp-settings.php';
 
 if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli' ) {
 	// Redirect to https://$primary_domain in the Live environment.
-	if ( 'live' === $_ENV['PANTHEON_ENVIRONMENT'] && 'lfeventsci' === $_ENV['PANTHEON_SITE_NAME'] ) {
-		$primary_domain = 'events.linuxfoundation.org';
-	} elseif ( 'live' === $_ENV['PANTHEON_ENVIRONMENT'] && 'lfasiallcci' === $_ENV['PANTHEON_SITE_NAME'] && $_SERVER['HTTP_HOST'] != 'events.linuxfoundation.cn' ) {
-		$primary_domain = 'www.lfasiallc.com';
+	if ( 'live' === $_ENV['PANTHEON_ENVIRONMENT'] ) {
+		$primary_domain = 'www.cncf.io';
 	} else {
 		// Redirect to HTTPS on every Pantheon environment.
 		$primary_domain = $_SERVER['HTTP_HOST']; //phpcs:ignore
