@@ -38,7 +38,6 @@
         "cssnano": "^4.1.10",
         "del": "^5.1.0",
         "eslint": "^6.8.0",
-        "eslint-config-wordpress": "^2.0.0",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
         "gulp-concat": "^2.6.1",
@@ -58,12 +57,11 @@
         "gulp-terser": "^1.2.0",
         "gulp-touch-cmd": "0.0.1",
         "gulp-uglify": "^3.0.2",
-        "stylelint": "^13.0.0",
+        "stylelint": "^12.0.1",
         "stylelint-config-recommended": "^3.0.0",
-        "stylelint-config-wordpress": "^16.0.0"
-    },
-    "dependencies": {
-        "natives": "^1.1.6",
+        "stylelint-config-wordpress": "^16.0.0",
+        "prettier": "^2.0.5",
         "socket.io": "^2.3.0"
-    }
+    },
+    "dependencies": {}
 }
