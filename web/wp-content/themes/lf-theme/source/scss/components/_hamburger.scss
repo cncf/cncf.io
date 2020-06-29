@@ -4,18 +4,6 @@
  *
  */
 
-// Setup variables for the hamburger
-$hamburger-active-layer-color: $primary-color;
-$hamburger-layer-color: $white;
-$hamburger-padding-x: 0px;
-$hamburger-padding-y: 0px;
-$hamburger-layer-width: 32px;
-$hamburger-layer-height: 4px;
-$hamburger-layer-spacing: 4px;
-$hamburger-layer-border-radius: 1px;
-$hamburger-hover-opacity: 0.7;
-$hamburger-active-hover-opacity: 0.7;
-
 // Output the hamburger CSS
 .hamburger {
     padding: $hamburger-padding-y $hamburger-padding-x;

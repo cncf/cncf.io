@@ -66,7 +66,7 @@ if ( WP_DEBUG === true ) {
 	require_once 'includes/development.php';
 }
 
-// gutenberg settings.
+// gutenberg options.
 require_once 'includes/gutenberg-options.php';
 
 // post excerpts.

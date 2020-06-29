@@ -18,12 +18,13 @@ $options = get_option( 'lf-mu' );
 	<figure class="background-image-figure">
 	<?php
 	if ( has_post_thumbnail() && ! is_archive() ) {
-		echo wp_get_attachment_image( get_post_thumbnail_id(), 'full', false, false );
+		Lf_Utils::display_picture( get_post_thumbnail_id(), 'hero' );
+
 	} elseif ( isset( $options['generic_hero_id'] ) && $options['generic_hero_id'] ) {
-		echo wp_get_attachment_image( $options['generic_hero_id'], 'full', false, false );
+		Lf_Utils::display_picture( $options['generic_hero_id'], 'hero' );
 	} else {
 		echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-		. '/images/hero-default.jpg" alt="CNCF" height="400" width="100%"/>';
+		. '/images/hero-default.jpg" alt="CNCF" height="280" width="100%"/>';
 	}
 	?>
 	</figure>
@@ -55,7 +56,8 @@ $options = get_option( 'lf-mu' );
 			<h1 class="post-title" itemprop="headline"><?php the_title(); ?>
 			</h1>
 			<?php elseif ( is_404() ) : ?>
-			<h2><?php esc_html__( 'That\'s a 404', 'lf-theme' ); ?></h2>
+				<h2 class="post-title" itemprop="headline">Sorry that page wasn't
+				found</h2>
 			<?php elseif ( is_home() ) : ?>
 			<h2 class="blog-title"><?php single_post_title(); ?></h2>
 			<?php else : ?>

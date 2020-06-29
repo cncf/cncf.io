@@ -103,7 +103,7 @@ if ( $dat_webinar_start > $dat_now ) {
 			if ( 'upcoming' == $period_status && $registration_url ) :
 				?>
 		<p><a target="_blank" href="<?php echo esc_url( $registration_url ); ?>"
-				rel="noopener noreferrer" class="button margin-top-large"
+				rel="noopener" class="button margin-top-large"
 				title="Register for <?php the_title(); ?> Webinar">Register
 				Now</a></p>
 		<?php endif; ?>
@@ -171,7 +171,7 @@ if ( $dat_webinar_start > $dat_now ) {
 
 				<p><strong>How to attend:</strong> <a target="_blank"
 						href="<?php echo esc_url( $registration_url ); ?>"
-						rel="noopener noreferrer"
+						rel="noopener"
 						class="external is-primary-color"
 						title="Register for <?php the_title(); ?> Webinar">Register
 						for this

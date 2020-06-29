@@ -7,17 +7,13 @@
     .button {
         &.on-image {
             background-color: $primary-color;
-            box-sizing: border-box;
             color: $white;
-            letter-spacing: 2px;
-            font-weight: 600;
-            font-size: 0.7em;
             margin-top: 1rem;
 
             &:hover {
                 text-decoration: none;
-                background-color: $white;
                 color: $primary-color;
+                background-color: $white;
 
                 a:visited {
                     color: $primary-color !important;
@@ -51,14 +47,13 @@
         }
     }
 
-    a {
+    a:not(.wp-block-button__link) {
         color: $primary-color;
         font-weight: 500;
         transition: all 0.25s ease-out;
 
         &:visited {
             text-decoration: none;
-            color: $primary-300;
         }
 
         &:active {

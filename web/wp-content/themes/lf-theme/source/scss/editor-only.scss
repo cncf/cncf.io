@@ -182,3 +182,8 @@ figure {
 div.pmc-sidebar ::placeholder {
     color: #c4c4c4;
 }
+
+img[src$=".svg"] {
+    width: 100%;
+    height: auto;
+}

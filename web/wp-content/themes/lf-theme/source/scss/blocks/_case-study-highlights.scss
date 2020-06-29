@@ -29,15 +29,11 @@
     background-color: $tertiary-100;
 
     >div {
-        // display: grid;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // align-content: center;
-        // text-align: center;
         padding: 0.5em;
         border-bottom: 0.25em solid $white;
-        // align-content: space-around;
 
         @media (max-width: 949px) {
             h3 {

@@ -25,7 +25,7 @@ add_theme_support( 'disable-custom-colors' );
 require_once 'gutenberg-preset-colors.php';
 
 // Add preset gradients.
-require_once 'gutenberg-preset-gradients.php';
+// require_once 'gutenberg-preset-gradients.php';
 
 // Disable custom gradient creation.
 add_theme_support( 'disable-custom-gradients' );

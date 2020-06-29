@@ -226,6 +226,14 @@ register_block_style(
 register_block_style(
 	'core/quote',
 	array(
+		'name'  => 'paragraph-quote',
+		'label' => 'Paragraph Quote',
+	)
+);
+
+register_block_style(
+	'core/quote',
+	array(
 		'name'  => 'max-width-700',
 		'label' => 'Max-Width 700px',
 	)

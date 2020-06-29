@@ -191,4 +191,172 @@ class Lf_Utils {
 
 	}
 
+	/**
+	 * Custom responsive images.
+	 *
+	 * When WordPress generates the srcset attribute, it will only include images that match the same aspect ratio of the src image.
+	 *
+	 * @param int    $image_id image ID.
+	 * @param string $image_size thumbnail name.
+	 * @param string $max_width width with unit.
+	 * @param string $class_name class to apply to img tag.
+	 */
+	public static function display_responsive_images( $image_id, $image_size, $max_width, $class_name = '' ) {
+
+		// if no image id or not number, return.
+		if ( ! $image_id || ! is_integer( $image_id ) ) {
+			return;
+		}
+
+		// Get the default src image size.
+		$image_src = wp_get_attachment_image_url( $image_id, $image_size );
+
+		// Get the srcset with various image sizes.
+		$image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
+
+		if ( $class_name ) {
+			$class_name = rtrim( esc_html( $class_name ) );
+		}
+
+		if ( ! $image_srcset ) {
+
+			$img           = '<img class="' . $class_name . '"  src="' . $image_src . '">';
+			$img_meta      = wp_get_attachment_metadata( $image_id );
+			$attachment_id = $image_id;
+			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
+
+		} else {
+
+			$html = '<img class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '">';
+
+		}
+
+		echo wp_kses(
+			$html,
+			array(
+				'img' => array(
+					'src'    => true,
+					'srcset' => true,
+					'sizes'  => true,
+					'class'  => true,
+					'id'     => true,
+					'width'  => true,
+					'height' => true,
+					'alt'    => true,
+					'align'  => true,
+					'style'  => true,
+				),
+			)
+		);
+
+		return $html;
+	}
+
+	/**
+	 * Get image alt text.
+	 *
+	 * @param int $image_id image ID.
+	 */
+	public static function get_img_alt( $image_id ) {
+
+		if ( ! wp_attachment_is_image( $image_id ) ) {
+			return false;
+		}
+		$img_alt_text = trim( strip_tags( get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ) );
+
+		return $img_alt_text;
+	}
+
+	/**
+	 * Get src of each image.
+	 *
+	 * @param int   $image_id image ID.
+	 * @param array $sizes_array Array of sizes.
+	 */
+	public static function get_picture_srcsets( $image_id, $sizes_array ) {
+
+		if ( ! wp_attachment_is_image( $image_id ) ) {
+			return false;
+		}
+		$arr = array();
+		foreach ( $sizes_array as $size => $type ) {
+			$image_src = wp_get_attachment_image_src( $image_id, $type );
+
+			$arr[] = '<source srcset="' . $image_src[0] . '" media="(min-width: ' . $size . 'px)">';
+
+		}
+		return implode( array_reverse( $arr ) );
+	}
+
+	/**
+	 * Generate Picture element.
+	 *
+	 * @param int    $image_id image ID.
+	 * @param array  $sizes_array array of image sizes.
+	 * @param string $class_name Class to apply.
+	 */
+	public static function display_picture( $image_id, $sizes_array = 'default', $class_name = '' ) {
+
+		// if no image id or not number, return.
+		if ( ! $image_id || ! is_integer( $image_id ) || ! wp_attachment_is_image( $image_id ) ) {
+			return;
+		}
+
+		if ( 'hero' === $sizes_array ) {
+			$mappings = array(
+				'0'    => 'hero-320',
+				'375'  => 'hero-375',
+				'414'  => 'hero-414',
+				'600'  => 'hero-600',
+				'768'  => 'hero-768',
+				'1024' => 'hero-1024',
+				'1200' => 'hero-1200',
+				'1440' => 'hero-1440',
+				'1920' => 'hero-1920',
+				'2560' => 'hero-2560',
+			);
+		} else {
+			// default WordPress sizes.
+			$mappings = array(
+				'0'    => 'thumbnail',
+				'300'  => 'medium',
+				'768'  => 'medium_large',
+				'1024' => 'large',
+				'1400' => 'full',
+			);
+		}
+
+		$img = wp_get_attachment_image_src( $image_id, $mappings[0] );
+		if ( $class_name ) {
+			$class_name = rtrim( esc_html( $class_name ) );
+		}
+		$html = '<picture>' . self::get_picture_srcsets( $image_id, $mappings ) . '
+		<img src="' . $img[0] . '" class="' . $class_name . '" alt="' . self::get_img_alt( $image_id ) . '">
+		</picture>';
+
+		$allowed_elements = array(
+			'src'    => true,
+			'srcset' => true,
+			'sizes'  => true,
+			'class'  => true,
+			'id'     => true,
+			'width'  => true,
+			'height' => true,
+			'alt'    => true,
+			'align'  => true,
+			'style'  => true,
+		);
+
+		echo wp_kses(
+			$html,
+			array(
+				'source'  => $allowed_elements,
+				'picture' => $allowed_elements,
+				'img'     => $allowed_elements,
+			)
+		);
+
+		return $html;
+	}
+
 }

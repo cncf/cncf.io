@@ -86,15 +86,23 @@ $image = new Image();
 
 					<?php
 
-					if ( has_post_thumbnail() ) {
-							echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
-					} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
-								echo wp_get_attachment_image( $options['generic_thumb_id'], 'newsroom-image', false, array( 'class' => 'newsroom-image' ) );
-					} else {
-						echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-						. '/images/thumbnail-default.svg" alt="CNCF" class="newsroom-image"/>';
-					}
-					?>
+if ( has_post_thumbnail() && $is_featured ) {
+	// display large featured image.
+	Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-600', '600px', 'newsroom-image' );
+
+} elseif ( has_post_thumbnail() ) {
+	// display smaller news image.
+	Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-300', '300px', 'newsroom-image' );
+
+} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
+	// show generic.
+	Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-260', '260px', 'newsroom-image' );
+
+} else {
+	echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+	. '/images/thumbnail-default.svg" alt="CNCF" class="newsroom-image"/>';
+}
+?>
 				</a>
 			</div>
 			<div class="archive-text-wrapper">

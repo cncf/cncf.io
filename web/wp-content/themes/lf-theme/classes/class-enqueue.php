@@ -72,16 +72,8 @@ class Enqueue {
 			// Use un-minified versions.
 			wp_enqueue_script( 'global-scripts', get_template_directory_uri() . '/build/global.js', array( 'jquery' ), filemtime( get_template_directory() . '/build/global.js' ), true );
 
-			// wp_enqueue_script( 'vendor-scripts', get_template_directory_uri() . '/build/vendors.js', array( 'jquery' ), filemtime( get_template_directory() . '/build/vendors.js' ), true ); // phpcs:ignore.
-
-			// wp_enqueue_script('tiny-slider', get_template_directory_uri() . '/source/third-party/tiny-slider.js', array(), filemtime( get_template_directory() . '/build/tiny-slider.js' ), true); // phpcs:ignore.
-
 		} else {
 			wp_enqueue_script( 'global-scripts', get_template_directory_uri() . '/build/global.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/build/global.min.js' ), true );
-
-			// wp_enqueue_script( 'vendor-scripts', get_template_directory_uri() . '/build/vendors.min.js', array( 'jquery' ), '', true ); // phpcs:ignore.
-
-			// wp_enqueue_script('tiny-slider', get_template_directory_uri() . '/source/third-party/tiny-slider.js', array(), '', true); // phpcs:ignore.
 		}
 
 	}

@@ -13,6 +13,9 @@ var projectURL = "https://cncfci.lndo.site";
 // const PROJECT_FOLDER = "./web/wp-content/themes/" + project;
 const PROJECT_FOLDER = ".";
 
+// Add files and directories here for Code Sniffs to ignore.
+const csSource 	= [ '**/**/*.php', '**/**/*.js', '!library/**/*', '!wpcs/**/*','!node_modules/**/*', '!vendor/**/*', '!build/**/*','!assets/bower_components/**/*', '!**/*-min.css', '!assets/js/vendor/*', '!assets/css/*', '!**/*-min.js', '!assets/js/production.js', '!gulpfile.js', '!source/js/third-party/*', '!plugins/*', '!uploads/*',  ];
+
 /**
  * File and folder links
  *
@@ -35,24 +38,6 @@ var globalJSWatchFiles = PROJECT_FOLDER + "/source/js/global/**/*.js";
 var projectPHPWatchFiles = PROJECT_FOLDER + "/**/**/*.php";
 var projectHTMLWatchFiles = PROJECT_FOLDER + "/**/**/*.html";
 
-const csSource 	= [ '**/**/*.php', '**/**/*.js', '!library/**/*', '!wpcs/**/*','!node_modules/**/*', '!vendor/**/*', '!build/**/*','!build/*.js','!build/*.css', '!assets/bower_components/**/*', '!**/*-min.css', '!assets/js/vendor/*', '!assets/css/*', '!**/*-min.js', '!assets/js/production.js', '!gulpfile.js' ];
-
-const AUTOPREFIXER_BROWSERS = [
-    "last 2 version",
-    "> 1%",
-    "ie >= 11",
-    "ie_mob >= 10",
-    "ff >= 30",
-    "chrome >= 34",
-    "safari >= 7",
-    "opera >= 23",
-    "ios >= 7",
-    "android >= 4",
-    "bb >= 10"
-];
-
-const AUTOPREFIXER_GRID = true;
-
 /**
  * Load Plugins.
  *
@@ -62,9 +47,10 @@ var gulp = require("gulp");
 
 /** CSS plugins */
 var sass = require("gulp-sass");
-var minifycss = require("gulp-uglifycss");
-var autoprefixer = require("gulp-autoprefixer");
 var mmq = require("gulp-merge-media-queries");
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
 
 /** JS plugins */
 var concat = require("gulp-concat");
@@ -96,7 +82,6 @@ function watch() {
     gulp.watch(projectPHPWatchFiles,reload);
     gulp.watch(projectHTMLWatchFiles).on("change",reload);
     gulp.watch(styleWatchFiles,gulp.series([styles]));
-
     gulp.watch(thirdpartyJSWatchFiles,gulp.series([reload]));
     gulp.watch(blocksJSWatchFiles,gulp.series([blocksJS,reload]));
     gulp.watch(globalJSWatchFiles,gulp.series([globalJS,reload]));
@@ -133,10 +118,9 @@ function styles() {
                 loadMaps: true
             })
         )
-        .pipe(autoprefixer({
-          browsers: AUTOPREFIXER_BROWSERS,
-          grid: AUTOPREFIXER_GRID,
-          }))
+        .pipe(postcss([
+          autoprefixer({ supports: true, cascade: true, grid: false })
+        ]))
         .pipe(sourcemaps.write())
         .pipe(lineec())
         .pipe(gulp.dest(styleDestination))
@@ -159,23 +143,15 @@ function styles() {
                 precision: 10
             })
         )
-        .pipe(
-            minifycss({
-                maxLineLen: 10
-            })
-        )
+        .pipe(postcss([
+          autoprefixer({ supports: true, cascade: true, grid: false }),
+          cssnano
+        ]))
         .pipe(lineec())
         .pipe(gulp.dest(styleDestination))
         .pipe(filter("**/*.css"))
         .pipe(browserSync.stream())
         .pipe(touch());
-}
-
-/**
- * Clean build folder to help with cache
- */
-function clean() {
-    return del([styleDestination + "/*"]);
 }
 
 // PHP Code Sniffer.

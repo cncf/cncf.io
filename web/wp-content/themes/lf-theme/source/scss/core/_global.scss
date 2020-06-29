@@ -61,21 +61,30 @@ img[src$=".svg"] {
 }
 
 .button {
+    // copied from Gutenberg.
     border: 0; // reset
     padding: 0px; // reset
-    width: auto;
-    min-width: 100px;
+    box-shadow: none;
     cursor: pointer;
-    text-decoration: none;
     display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    padding: 12px 24px;
     text-align: center;
-    padding: 0.7rem 1.1rem;
+    text-decoration: none;
+    overflow-wrap: break-word;
+
+    // added.
+    width: auto;
     white-space: nowrap;
     text-transform: uppercase;
-    background-color: $primary-color;
+    font-family: $font-primary;
+    font-weight: 500;
+
+    // defaults
+    background-color: $link-color;
     color: $white;
     transition: all 0.25s ease-out;
-    font-size: 1rem;
 
     a {
         color: $white;
@@ -87,8 +96,8 @@ img[src$=".svg"] {
     }
 
     &:hover {
-        background-color: lighten($primary-color, 5%);
         color: $white;
+        background-color: $link-hover;
         text-decoration: none;
     }
 
@@ -110,8 +119,9 @@ img[src$=".svg"] {
     }
 
     &.search-submit {
-        box-sizing: border-box;
         border: 1px solid $white;
+        min-width: 120px;
+        // iOS overrides.
         border-radius: 0;
         -webkit-appearance: none;
 
@@ -120,11 +130,11 @@ img[src$=".svg"] {
         }
     }
 
-    &.stocky {
-        letter-spacing: 2px;
-        font-weight: 700;
-        font-size: 0.7rem;
-    }
+    // &.stocky {
+    //     letter-spacing: 2px;
+    //     font-weight: 700;
+    //     font-size: 0.7rem;
+    // }
 
     &.transparent {
         background-color: transparent;
@@ -203,14 +213,16 @@ figure {
     margin-inline-end: 0;
 }
 
-.background-image-figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
+.background-image-figure {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
 }
 
 .background-image-text-overlay {
@@ -249,7 +261,7 @@ figure {
 
 .date-icon {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 
     &::before {
         content: ' ';
@@ -280,8 +292,8 @@ figure {
 .skew-box {
     font-size: 0.775em;
     font-weight: 400;
-    padding: 5px 6px;
     color: $white;
+    padding: 5px 6px;
     background-color: $secondary-700;
     padding-right: 25px;
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
@@ -292,6 +304,7 @@ figure {
         background-color: $grey-700;
     }
 
+    // Case Study box only.
     &.tertiary {
         color: $secondary-700;
         background-color: $white;

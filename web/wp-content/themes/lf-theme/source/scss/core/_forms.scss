@@ -11,16 +11,16 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
     height: 40px;
-    padding: 0.25em;
-    width: 100%;
-    max-width: 25%;
+    // padding: 0.25em;
+    // width: 100%;
+    // max-width: 25%;
 }
 
 input[type="search"] {
     padding-left: 1em;
 
     .no-search-results & {
-        height: 40px;
+        height: 38px;
     }
 }
 

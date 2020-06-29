@@ -2,25 +2,25 @@
 
 $colors: ( // name variable : color to be used.
     'pink-400': #DE176C,
-    'white': $white,
-    'black': $black,
     'purple-700': #2C2960,
     'blue-100': #F0F5F7,
+    'white': $white,
+    'black': $black,
 );
 $color_hover: ( // name variable : color to be used.
     'pink-400': #E43B80,
-    'white': $tertiary-color,
-    'black': #252b5f,
     'purple-700': #48549C,
     'blue-100': #3CB3DD,
+    'white': $tertiary-color,
+    'black': #252b5f,
 );
 
 $text_color: ( // name variable : color to be used.
     'pink-400': $white,
-    'white': $black,
-    'black': $white,
     'purple-700': $white,
     'blue-100': $secondary-color,
+    'white': $black,
+    'black': $white,
 );
 
 // take the first colour to be the default

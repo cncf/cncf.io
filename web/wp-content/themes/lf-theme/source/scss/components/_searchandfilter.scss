@@ -31,14 +31,13 @@
     }
 
     select.sf-input-select {
-        // display: none;
-        //
         min-width: 150px;
-
     }
 
-    .sf-input-select {
-        visibility: hidden;
+    @media (min-width: 1000px) {
+        .sf-input-select {
+            visibility: hidden;
+        }
     }
 
     .chosen-container {
