@@ -23,7 +23,6 @@ wp.domReady(
 		wp.blocks.unregisterBlockType( 'core/nextpage' );
 		wp.blocks.unregisterBlockType( 'core/verse' );
 		wp.blocks.unregisterBlockType( 'core/pullquote' );
-		wp.blocks.unregisterBlockType( 'core/pullquote' );
 		wp.blocks.unregisterBlockType( 'core/social-link' );
 		wp.blocks.unregisterBlockType( 'core/tag-cloud' );
 
