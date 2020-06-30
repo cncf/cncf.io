@@ -34,6 +34,5 @@ $image = new Image();
 				class="button outline transparent">Let us know</a>
 
 		</div>
-
 	</div>
 </section>

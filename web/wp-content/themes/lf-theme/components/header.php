@@ -47,13 +47,16 @@ endif;
 				<?php if ( $options['header_cta_text'] && $options['header_cta_link'] ) : ?>
 				<div class="header-cta">
 					<a href="<?php echo esc_url( get_permalink( $options['header_cta_link'] ) ); ?>"
-						class="button stocky header"><?php echo esc_html( $options['header_cta_text'] ); ?></a>
+						class="button header-align"><?php echo esc_html( $options['header_cta_text'] ); ?></a>
 				</div>
 				<?php endif; ?>
 
 				<div class="header-search">
 					<button
-						class="button search-open transparent header search-button"
+						class="button
+						search-toggle
+						search-button
+						header-align"
 						type="button" aria-label="Search">
 						<?php $image->get_svg( 'search.svg' ); ?>
 
@@ -69,12 +72,17 @@ endif;
 									name="s" id="search-bar"
 									placeholder="Search for...">
 								<label>
-									<input class="button transparent  stocky search-submit"
+									<input class="button transparent
+									header-align
+									search-submit"
 										type="submit" value="Search" />
 								</label>
 							</form>
 							<button
-						class="button search transparent header search-button search-close"
+						class="button
+						search-toggle
+						search-button
+						header-align"
 						type="button" aria-label="Close">
 						<?php $image->get_svg( 'close.svg' ); ?>
 					</button>

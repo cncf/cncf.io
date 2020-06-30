@@ -61,15 +61,21 @@
 
 .search-filter-reset {
     @extend .button;
-    @extend .stocky;
     @extend .outline;
-    @extend .secondary;
     @extend .smaller;
+    @extend .secondary;
     background-color: transparent;
-    border-color: $grey-400;
-    color: $grey-400;
+    height: 28px;
+
+    &:link,
+    &:visited,
+    &:active {
+        color: $grey-400;
+        border-color: $grey-400;
+    }
 
     &:hover {
+        color: $primary-color;
         border-color: $primary-color;
     }
 

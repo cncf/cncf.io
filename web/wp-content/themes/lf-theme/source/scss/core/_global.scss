@@ -69,7 +69,7 @@ img[src$=".svg"] {
     display: inline-block;
     font-size: 14px;
     margin: 0;
-    padding: 12px 24px;
+    padding: 11px 24px 12px 24px;
     text-align: center;
     text-decoration: none;
     overflow-wrap: break-word;
@@ -86,13 +86,10 @@ img[src$=".svg"] {
     color: $white;
     transition: all 0.25s ease-out;
 
-    a {
+    &:link,
+    &:visited {
         color: $white;
-    }
-
-    &:active {
-        position: relative;
-        top: 1px;
+        text-decoration: none;
     }
 
     &:hover {
@@ -101,12 +98,31 @@ img[src$=".svg"] {
         text-decoration: none;
     }
 
-    &.search-open {
-        min-width: initial;
+    &:active {
+        position: relative;
+        top: 1px;
     }
 
-    &.search-close {
+    &.header-align {
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &.search-toggle {
         min-width: initial;
+        background-color: transparent;
+        color: $white;
+        fill: $white;
+        height: 38px;
+        padding: 0;
         margin-left: 20px;
 
         &:hover {
@@ -116,25 +132,25 @@ img[src$=".svg"] {
                 fill: $primary-color;
             }
         }
+
+        &:visited {
+            color: $white;
+        }
+
     }
 
     &.search-submit {
         border: 1px solid $white;
-        min-width: 120px;
+        width: 95px;
         // iOS overrides.
         border-radius: 0;
         -webkit-appearance: none;
+        height: 40px;
 
         &:hover {
             border: 1px solid $primary-color;
         }
     }
-
-    // &.stocky {
-    //     letter-spacing: 2px;
-    //     font-weight: 700;
-    //     font-size: 0.7rem;
-    // }
 
     &.transparent {
         background-color: transparent;
@@ -162,16 +178,10 @@ img[src$=".svg"] {
 
     }
 
-    &.header {
-        height: 38px;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
+    // used for people.
     &.smaller {
         padding: 0.3rem 0.5rem;
+        font-size: 0.750em;
     }
 
     &.secondary-color {
