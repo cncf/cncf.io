@@ -10,8 +10,8 @@
  */
 
  /**
- * Block Template - Page
- */
+  * Block Template - Page
+  */
 function lf_page_block_template() {
 
 	$page_type_object = get_post_type_object( 'page' );

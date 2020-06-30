@@ -65,55 +65,55 @@ if ( strlen( $content ) > 20 ) {
 <div class="social-modal-wrapper">
 	<?php
 		// Social Icons.
-		if ( $linkedin || $twitter || $github || $wechat || $website || $youtube ) :
-			?>
+	if ( $linkedin || $twitter || $github || $wechat || $website || $youtube ) :
+		?>
 		<div class="people-social">
-			<?php
-			if ( $linkedin ) :
-				?>
+		<?php
+		if ( $linkedin ) :
+			?>
 			<a href="<?php echo esc_url( $linkedin ); ?>"
 				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/linkedin.svg' ); ?></a>
 				<?php
 		endif;
-			if ( $twitter ) :
-				?>
+		if ( $twitter ) :
+			?>
 			<a href="<?php echo esc_url( $twitter ); ?>" target="_blank"
 				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/twitter.svg' ); ?></a>
 				<?php
 		endif;
-			if ( $github ) :
-				?>
+		if ( $github ) :
+			?>
 			<a href="<?php echo esc_url( $github ); ?>" target="_blank"
 				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/github.svg' ); ?></a>
 				<?php
 		endif;
-			if ( $wechat ) :
-				?>
+		if ( $wechat ) :
+			?>
 			<a href="<?php echo esc_url( $wechat ); ?>" target="_blank"
 				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/wechat.svg' ); ?></a>
 				<?php
 		endif;
-			if ( $website ) :
-				?>
+		if ( $website ) :
+			?>
 			<a href="<?php echo esc_url( $website ); ?>" target="_blank"
 				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/website.svg' ); ?></a>
 				<?php
 		endif;
-			if ( $youtube ) :
-				?>
+		if ( $youtube ) :
+			?>
 			<a href="<?php echo esc_url( $youtube ); ?>" target="_blank"
 				rel="noopener"
 				target="_blank"><?php $image->get_svg( 'social/youtube.svg' ); ?></a>
 				<?php
 		endif;
-			?>
+		?>
 		</div>
-			<?php endif; ?>
+		<?php endif; ?>
 		<?php
 		if ( $show_modal ) :
 			// View Profile Button.
