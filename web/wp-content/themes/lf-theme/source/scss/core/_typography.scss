@@ -89,25 +89,33 @@ b {
     font-weight: 600;
 }
 
-a {
-    text-decoration: none;
+a:not(.wp-block-button__link) {
+    color: $primary-color;
+    font-weight: 500;
     transition: all 0.25s ease-out;
 
-    &:hover {
-        color: $primary-color;
-        text-decoration: underline;
+    &:link {
+        text-decoration: none;
     }
 
-    &:focus {
-        text-decoration: underline;
+    &:visited {
+        text-decoration: none;
     }
 
     &:active {
         text-decoration: none;
     }
 
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
     /* mobile tap color */
     &:link {
-        -webkit-tap-highlight-color: rgba($primary-color, 0.3);
+        -webkit-tap-highlight-color: rgba($secondary-color, 0.3);
     }
 }
