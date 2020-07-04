@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "e4203180417d3f12d35e3e139e30fe429e624880"
+                "reference": "f93e3c218d516c56074ae67f22901ebb31bd5f8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/e4203180417d3f12d35e3e139e30fe429e624880",
-                "reference": "e4203180417d3f12d35e3e139e30fe429e624880",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/f93e3c218d516c56074ae67f22901ebb31bd5f8e",
+                "reference": "f93e3c218d516c56074ae67f22901ebb31bd5f8e",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-07-03T07:45:37+00:00"
+            "time": "2020-07-04T03:07:23+00:00"
         },
         {
             "name": "composer/installers",
@@ -1993,12 +1993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9ec84501a85a3b0c7b260042ae81a8efb2f234ce"
+                "reference": "57353ec1a34527a2dbbd3c0fb9418ffc008c6f60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9ec84501a85a3b0c7b260042ae81a8efb2f234ce",
-                "reference": "9ec84501a85a3b0c7b260042ae81a8efb2f234ce",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/57353ec1a34527a2dbbd3c0fb9418ffc008c6f60",
+                "reference": "57353ec1a34527a2dbbd3c0fb9418ffc008c6f60",
                 "shasum": ""
             },
             "conflict": {
@@ -2092,6 +2092,7 @@
                 "magento/product-community-edition": ">=2,<2.2.10|>=2.3,<2.3.2-p.2",
                 "monolog/monolog": ">=1.8,<1.12",
                 "namshi/jose": "<2.2",
+                "nystudio107/craft-seomatic": "<3.3",
                 "nzo/url-encryptor-bundle": ">=4,<4.3.2|>=5,<5.0.1",
                 "october/october": ">=1.0.319,<1.0.467",
                 "onelogin/php-saml": "<2.10.4",
@@ -2260,7 +2261,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-07-02T17:01:23+00:00"
+            "time": "2020-07-03T16:50:03+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
