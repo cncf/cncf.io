@@ -18,7 +18,7 @@ if ( $query->have_posts() ) :
 <p class="results-count">
 	<?php
 	// if CPT set chinese conditional true.
-	if ( 'lf_case_study_ch' === $query->query['post_type'] ) {
+	if ( 'lf_case_study_cn' === $query->query['post_type'] ) {
 		$ch = true;
 		echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
 	} else {
