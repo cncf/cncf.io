@@ -1,14 +1,10 @@
 .case-study-highlights {
     background-color: $tertiary-100;
 
-    h3,
-    strong {
-        font-weight: 600;
-    }
-
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
         h3 {
             font-size: 1.4rem;
+            margin-bottom: 0.5rem;
         }
     }
 }
@@ -18,6 +14,7 @@
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-auto-rows: minmax(120px, auto);
+    background-color: $tertiary-100;
     margin-top: 2rem;
     margin-bottom: 2rem;
 
@@ -26,25 +23,12 @@
         margin-bottom: 4rem;
     }
 
-    background-color: $tertiary-100;
-
     >div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 0.5em;
         border-bottom: 0.25em solid $white;
-
-        @media (max-width: 949px) {
-            h3 {
-                margin-bottom: 0;
-            }
-
-            p {
-                margin-top: 0;
-            }
-
-        }
     }
 
 
@@ -75,10 +59,10 @@
         max-width: 1000px;
 
         >div {
-            // align-items: flex-start;
             border-bottom: 0;
             border-right: 1px solid $white;
             padding: 0em 0.75em;
+            align-self: flex-start;
 
             &:last-child {
                 border-right: 0px;
@@ -86,10 +70,60 @@
 
         }
 
+        &.double-row {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 220px);
+
+            .projects-column {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 1;
+
+                h3 {
+                    margin-bottom: 1rem;
+                    max-width: initial;
+                }
+            }
+
+            .cs-project-icons {
+                display: flex;
+                width: initial;
+                align-items: center;
+                border-bottom: 1px solid $white;
+                padding-bottom: 1rem;
+            }
+
+            .cs-project-icon {
+                width: 10%;
+                margin: 1rem;
+            }
+        }
+
     }
 }
 
-.project-icon {
+.case-study-highlight-text {
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+
+        strong {
+            font-weight: 300;
+        }
+    }
+}
+
+.projects-column {
+    align-content: center;
+}
+
+.cs-project-icon {
     width: 22%;
     margin: 0.5em;
     display: inline-block;
