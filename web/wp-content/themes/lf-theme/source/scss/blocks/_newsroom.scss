@@ -39,6 +39,19 @@
     flex-direction: column;
     background-color: $white;
     padding: 1em;
+
+    &.sticky:after {
+        content: "FEATURED";
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+        background-color: #d9dbdb;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 0.5em;
+    }
+
 }
 
 .newsroom-image-wrapper {

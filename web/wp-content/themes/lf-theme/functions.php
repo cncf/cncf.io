@@ -110,7 +110,7 @@ if ( ! is_admin() ) {
 		if ( false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
-		if ( strpos( $url, 'jquery.js' ) ) {
+		if ( strpos( $url, 'jquery' ) ) {
 			return $url;
 		}
 		return str_replace( ' src', ' defer src', $url );

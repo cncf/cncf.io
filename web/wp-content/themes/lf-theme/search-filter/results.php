@@ -21,7 +21,7 @@ if ( $query->have_posts() ) {
 		case 'lf_case_study':
 			get_template_part( 'search-filter/casestudies' );
 			break;
-		case 'lf_case_study_ch':
+		case 'lf_case_study_cn':
 			get_template_part( 'search-filter/casestudies' );
 			break;
 		case 'lf_speaker':
