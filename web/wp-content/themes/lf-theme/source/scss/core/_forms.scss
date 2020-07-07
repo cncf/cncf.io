@@ -5,6 +5,9 @@ input[type="email"] {
     height: 40px;
     padding: 0.25em;
     width: 100%;
+    // iOS overrides.
+    border-radius: 0;
+    -webkit-appearance: none;
 }
 
 input[type="submit"],
