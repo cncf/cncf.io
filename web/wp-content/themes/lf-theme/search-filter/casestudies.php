@@ -19,10 +19,10 @@ if ( $query->have_posts() ) :
 	<?php
 	// if CPT set chinese conditional true.
 	if ( 'lf_case_study_cn' === $query->query['post_type'] ) {
-		$ch = true;
+		$cn = true;
 		echo '发现' . esc_html( $query->found_posts ) . '个案例研究';
 	} else {
-		$ch = false;
+		$cn = false;
 		if ( $full_count == $query->found_posts ) {
 			echo 'Found ' . esc_html( $query->found_posts ) . ' case studies';
 		} else {

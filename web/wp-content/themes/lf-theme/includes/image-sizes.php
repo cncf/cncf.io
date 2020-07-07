@@ -12,9 +12,6 @@
  * @since    1.0.0
  */
 
-// add_image_size('icon', 50, 50, true); // phpcs:ignore.
-// add_image_size('new-size', 215, 215, true); // phpcs:ignore.
-
 // Press images, no hard crop.
 add_image_size( 'newsroom-media-coverage', 260, 160, false );
 
@@ -29,7 +26,7 @@ add_image_size( 'spotlight', 320, 170, false );
 add_image_size( 'case-study', 320, 260, true );
 
 // Hero image.
-add_image_size( 'hero-2560', 2880, 520, true );
+add_image_size( 'hero-2880', 2880, 520, true );
 add_image_size( 'hero-1920', 1920, 260, true );
 add_image_size( 'hero-1440', 1440, 260, true );
 add_image_size( 'hero-1200', 1200, 220, true );

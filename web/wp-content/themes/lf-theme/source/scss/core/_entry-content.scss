@@ -47,6 +47,28 @@
         }
     }
 
+	// a:not(.wp-block-button__link) {
+    //     color: $primary-color;
+    //     font-weight: 500;
+    //     transition: all 0.25s ease-out;
+
+    //     &:visited {
+    //         text-decoration: none;
+    //     }
+
+    //     &:active {
+    //         text-decoration: none;
+    //     }
+
+    //     &:focus {
+    //         text-decoration: none;
+    //     }
+
+    //     /* mobile tap color */
+    //     &:link {
+    //         -webkit-tap-highlight-color: rgba($secondary-color, 0.3);
+    //     }
+    // }
     ul {
         list-style: disc;
         margin-top: 0;

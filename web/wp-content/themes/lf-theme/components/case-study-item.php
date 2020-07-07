@@ -13,17 +13,17 @@ global $query;
 
 // if CPT set chinese conditional true.
 if ( ! is_front_page() || ! $query ) {
-	$ch = false;
+	$cn = false;
 } elseif ( 'lf_case_study_cn' === $query->query['post_type'] ) {
-	$ch = true;
+	$cn = true;
 } else {
-	$ch = false;
+	$cn = false;
 }
 
 // setup projects for both lang.
 $projects = get_the_terms( get_the_ID(), 'lf-project' );
 
-if ( $ch ) {
+if ( $cn ) {
 	// get industry type override.
 	$case_study_type = get_post_meta( get_the_ID(), 'lf_case_study_cn_type', true );
 
