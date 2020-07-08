@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "395cf6d326b1d564a1b0287703b38d9cb42945d1"
+                "reference": "522f6dd6c17e9c297736a6cdd4e038eef4b95d4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/395cf6d326b1d564a1b0287703b38d9cb42945d1",
-                "reference": "395cf6d326b1d564a1b0287703b38d9cb42945d1",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/522f6dd6c17e9c297736a6cdd4e038eef4b95d4b",
+                "reference": "522f6dd6c17e9c297736a6cdd4e038eef4b95d4b",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-07-06T23:39:34+00:00"
+            "time": "2020-07-07T22:29:06+00:00"
         },
         {
             "name": "composer/installers",
@@ -617,15 +617,15 @@
         },
         {
             "name": "wpackagist-plugin/duplicate-post",
-            "version": "3.2.4",
+            "version": "3.2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/duplicate-post/",
-                "reference": "tags/3.2.4"
+                "reference": "tags/3.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/duplicate-post.3.2.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/duplicate-post.3.2.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
