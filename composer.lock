@@ -563,15 +563,15 @@
         },
         {
             "name": "wpackagist-plugin/china-video-block",
-            "version": "0.2.3",
+            "version": "0.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/china-video-block/",
-                "reference": "tags/0.2.3"
+                "reference": "tags/0.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/china-video-block.0.2.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/china-video-block.0.2.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
