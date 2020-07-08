@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c5e8d0d46fe16eb1740e0417e031a45",
+    "content-hash": "e27003742ee4048c912ef89fe386d547",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -614,24 +614,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-twitter-feeds/"
-        },
-        {
-            "name": "wpackagist-plugin/duplicate-post",
-            "version": "3.2.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/duplicate-post/",
-                "reference": "tags/3.2.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/duplicate-post.3.2.5.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/duplicate-post/"
         },
         {
             "name": "wpackagist-plugin/flying-pages",
