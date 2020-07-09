@@ -75,9 +75,6 @@ require_once 'includes/excerpts.php';
 // speakers bureau.
 require_once 'includes/speakers-bureau.php';
 
-// countries import.
-require_once 'classes/class-fuerza-import-countries.php';
-
 // speakers bureau bulk email form.
 require_once 'classes/class-speakers-contact.php';
 
