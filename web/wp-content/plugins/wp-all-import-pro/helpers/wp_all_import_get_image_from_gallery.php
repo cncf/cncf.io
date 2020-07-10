@@ -18,15 +18,17 @@ function wp_all_import_get_image_from_gallery($image_name, $targetDir = FALSE, $
 
     // Prepare scaled image file name.
     $scaled_name = $image_name;
+    $rotated_name = $image_name;
     $ext = pmxi_getExtension($image_name);
     if ($ext) {
         $scaled_name = str_replace('.' . $ext, '-scaled.' . $ext, $image_name);
+        $rotated_name = str_replace('.' . $ext, '-rotated.' . $ext, $image_name);
     }
 
     $attch = '';
 
     // search attachment by attached file
-    $attachment_metas = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . $wpdb->postmeta . " WHERE meta_key = %s AND (meta_value = %s OR meta_value = %s OR meta_value LIKE %s ESCAPE '$' OR meta_value LIKE %s ESCAPE '$');", '_wp_attached_file', $image_name, $scaled_name, "%/" . str_replace('_', '$_', $image_name), "%/" . str_replace('_', '$_', $scaled_name)));
+    $attachment_metas = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . $wpdb->postmeta . " WHERE meta_key = %s AND (meta_value = %s OR meta_value = %s OR meta_value = %s OR meta_value LIKE %s ESCAPE '$' OR meta_value LIKE %s ESCAPE '$' OR meta_value LIKE %s ESCAPE '$');", '_wp_attached_file', $image_name, $scaled_name, $rotated_name, "%/" . str_replace('_', '$_', $image_name), "%/" . str_replace('_', '$_', $scaled_name), "%/" . str_replace('_', '$_', $rotated_name)));
 
     if (!empty($attachment_metas)) {
         foreach ($attachment_metas as $attachment_meta) {
@@ -39,7 +41,7 @@ function wp_all_import_get_image_from_gallery($image_name, $targetDir = FALSE, $
     }
 
     if (empty($attch)) {
-        $attachment_metas = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . $wpdb->postmeta . " WHERE meta_key = %s AND (meta_value = %s OR meta_value = %s OR meta_value LIKE %s ESCAPE '$' OR meta_value LIKE %s ESCAPE '$');", '_wp_attached_file', sanitize_file_name($image_name), sanitize_file_name($scaled_name), "%/" . str_replace('_', '$_', sanitize_file_name($image_name)), "%/" . str_replace('_', '$_', sanitize_file_name($scaled_name))));
+        $attachment_metas = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . $wpdb->postmeta . " WHERE meta_key = %s AND (meta_value = %s OR meta_value = %s OR meta_value = %s OR meta_value LIKE %s ESCAPE '$' OR meta_value LIKE %s ESCAPE '$' OR meta_value LIKE %s ESCAPE '$');", '_wp_attached_file', sanitize_file_name($image_name), sanitize_file_name($scaled_name), sanitize_file_name($rotated_name), "%/" . str_replace('_', '$_', sanitize_file_name($image_name)), "%/" . str_replace('_', '$_', sanitize_file_name($scaled_name)), "%/" . str_replace('_', '$_', sanitize_file_name($rotated_name))));
 
         if (!empty($attachment_metas)) {
             foreach ($attachment_metas as $attachment_meta) {
@@ -73,9 +75,6 @@ function wp_all_import_get_image_from_gallery($image_name, $targetDir = FALSE, $
                     $logger and call_user_func($logger, sprintf(__('- Found existing image with ID `%s` by post_title equals to `%s`...', 'wp_all_import_plugin'), $attch->ID, $img_title));
                 }
             }
-        }
-        if (empty($attch)) {
-            @unlink($targetDir . DIRECTORY_SEPARATOR . $original_image_name);
         }
     }
 

@@ -471,7 +471,7 @@
         }
 
         // Don't process scheduling
-        if (!schedulingEnable) {
+        if (!hasActiveLicense) {
             if(saveOnly) {
                 $('#save_only_field').prop('disabled', false);
             }

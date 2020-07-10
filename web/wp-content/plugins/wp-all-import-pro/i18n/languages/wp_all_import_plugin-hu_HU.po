@@ -151,18 +151,18 @@ msgstr "<p class=\"wpallimport-bundle-notice\">A\n"
 
 #: actions/wp_ajax_get_bundle_post_type.php:79
 #: actions/wp_ajax_upload_resource.php:147 controllers/admin/settings.php:616
-msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">Purchase the WooCommerce Add-On</a>."
-msgstr "<p class=\"wpallimport-bundle-notice\">Az import köteg használata megköveteli, hogy a WooCommerce Add-On Pro verziót.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">A WooCommerce Add-On vásárlása</a>. "
+msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">Purchase the WooCommerce Add-On</a>."
+msgstr "<p class=\"wpallimport-bundle-notice\">Az import köteg használata megköveteli, hogy a WooCommerce Add-On Pro verziót.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">A WooCommerce Add-On vásárlása</a>. "
 
 #: actions/wp_ajax_get_bundle_post_type.php:84
 #: actions/wp_ajax_upload_resource.php:152 controllers/admin/settings.php:621
-msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On, but you have the free version installed.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the WooCommerce Add-On</a>."
-msgstr "<p class=\"wpallimport-bundle-notice\">Az import köteg használata megköveteli, de van az ingyenes verzióban telepítve.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">A WooCommerce Add-On vásárlása</a>. "
+msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On, but you have the free version installed.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the WooCommerce Add-On</a>."
+msgstr "<p class=\"wpallimport-bundle-notice\">Az import köteg használata megköveteli, de van az ingyenes verzióban telepítve.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">A WooCommerce Add-On vásárlása</a>. "
 
 #: actions/wp_ajax_get_bundle_post_type.php:94
 #: actions/wp_ajax_upload_resource.php:162 controllers/admin/settings.php:631
-msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the User Add-On.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1921&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the User Add-On</a>."
-msgstr "<p class=\"wpallimport-bundle-notice\">Az import köteg használata megköveteli, a Import Add-On felhasználó használatát.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1921&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">A felhasználó Import Add-On megvásárlása</a>. "
+msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the User Add-On.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707221&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the User Add-On</a>."
+msgstr "<p class=\"wpallimport-bundle-notice\">Az import köteg használata megköveteli, a Import Add-On felhasználó használatát.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707221&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">A felhasználó Import Add-On megvásárlása</a>. "
 
 #: actions/wp_ajax_nested_xpath.php:51
 msgid "XPath is required"

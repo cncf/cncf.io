@@ -10,5 +10,8 @@ function pmxi_delete_post($post_id) {
             $image = new PMXI_Image_Record();
             $image->getBy( 'attachment_id', $post_id )->isEmpty() or $image->delete();
         }
+        // Delete entries from the hash table when posts are deleted.
+        $hashRecord = new PMXI_Hash_Record();
+        $hashRecord->getBy(['post_id' => $post_id, 'post_type' => 'post'])->isEmpty() or $hashRecord->delete();
     }
 }

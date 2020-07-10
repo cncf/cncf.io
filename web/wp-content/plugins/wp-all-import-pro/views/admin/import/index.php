@@ -189,7 +189,10 @@
                                         'acf-field-group',
                                         'custom_css',
                                         'customize_changeset',
-                                        'oembed_cache'
+                                        'oembed_cache',
+                                        'wp_block',
+                                        'user_request',
+                                        'scheduled-action'
                                     );
 									
 									$custom_types = get_post_types(array('_builtin' => true), 'objects') + get_post_types(array('_builtin' => false, 'show_ui' => true), 'objects'); 
@@ -197,7 +200,7 @@
 										if (in_array($key, $hiddenPosts)) unset($custom_types[$key]);
                                     }                                    
                                     
-                                    $custom_types = apply_filters( 'pmxi_custom_types', $custom_types, 'custom_types' );
+                                    //$custom_types = apply_filters( 'pmxi_custom_types', $custom_types );
 
 									$sorted_cpt = array();
 									foreach ($custom_types as $key => $cpt){
@@ -214,12 +217,10 @@
 											$sorted_cpt['import_users'] = new stdClass();
 											$sorted_cpt['import_users']->labels = new stdClass();
 											$sorted_cpt['import_users']->labels->name = __('Users','wp_all_export_plugin');
-											
-											if ( class_exists('WooCommerce') ) {
-//												$sorted_cpt['shop_customer'] = new stdClass();
-//												$sorted_cpt['shop_customer']->labels = new stdClass();
-//												$sorted_cpt['shop_customer']->labels->name = __('WooCommerce Customers','wp_all_export_plugin');
-											}
+
+                                            $sorted_cpt['comments'] = new stdClass();
+                                            $sorted_cpt['comments']->labels = new stdClass();
+                                            $sorted_cpt['comments']->labels->name = __('Comments','wp_all_export_plugin');
 
 											break;
 										}
@@ -241,7 +242,7 @@
 									foreach ($hidden_post_types as $key => $ct) {
 										if (in_array($key, $hiddenPosts)) unset($hidden_post_types[$key]);
 									}
-                                    $hidden_post_types = apply_filters( 'pmxi_custom_types', $hidden_post_types, 'hidden_post_types' );                                    
+                                    //$hidden_post_types = apply_filters( 'pmxi_custom_types', $hidden_post_types, 'hidden_post_types' );
 
 								?>	
 								<div class="wpallimport-choose-import-direction">
@@ -267,10 +268,10 @@
 
 
                                     <?php
-                                    $known_imgs     = array( 'post', 'page', 'product', 'import_users', 'shop_order', 'shop_coupon', 'shop_customer', 'users', 'comments', 'taxonomies' );
+                                    $known_imgs     = array( 'post', 'page', 'product', 'import_users', 'shop_order', 'shop_coupon', 'shop_customer', 'users', 'comments', 'taxonomies', 'reviews' );
                                     $all_posts      = array_merge( $sorted_cpt, $hidden_post_types );
-                                    $all_posts      = apply_filters( 'pmxi_custom_types', $all_posts, 'all_types' );
-                                    $ordered_posts  = array( 0 => 'post', 1 => 'page', 2 => 'taxonomies', 3 => 'import_users', 4 => 'shop_order', 5 => 'shop_coupon', 6 => 'product', 7 => 'shop_customer' );
+                                    $all_posts      = apply_filters( 'pmxi_custom_types', $all_posts );
+                                    $ordered_posts  = array( 'post', 'page', 'taxonomies', 'comments', 'import_users', 'shop_order', 'shop_coupon', 'product', 'reviews', 'shop_customer');
 
                                     foreach ( $all_posts as $key => $post_obj ) {
                                         if ( ! in_array( $key, $ordered_posts ) ) {
@@ -343,7 +344,7 @@
 										<select id="taxonomy_to_import">
 											<option value=""><?php _e('Select Taxonomy', 'wp_all_export_plugin'); ?></option>
 											<?php $options = wp_all_import_get_taxonomies(); ?>
-                                            <?php $options = apply_filters( 'pmxi_custom_types', $options, 'taxonomies' ); ?>
+                                            <?php //$options = apply_filters( 'pmxi_custom_types', $options, 'taxonomies' ); ?>
 											<?php foreach ($options as $slug => $name):?>
 												<option value="<?php echo $slug;?>" <?php if ($post['taxonomy_type'] == $slug):?>selected="selected"<?php endif;?>><?php echo $name;?></option>
 											<?php endforeach;?>
@@ -362,13 +363,13 @@
 									<?php if ( ! class_exists('PMUI_Plugin') ): ?>
 									<div class="wpallimport-upgrade-notice" rel="import_users">
 										<p><?php _e('The User Add-On is Required to Import Users', 'wp_all_import_plugin'); ?></p>
-										<a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1921&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the User Add-On', 'wp_all_import_plugin');?></a>
+										<a href="https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707221&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the User Add-On', 'wp_all_import_plugin');?></a>
 									</div>
 									<?php endif; ?>
 									<?php if ( class_exists('WooCommerce') && ! class_exists('PMWI_Plugin') ): ?>
 									<div class="wpallimport-upgrade-notice" rel="product">
 										<p><?php _e('The WooCommerce Add-On is Required to Import Products', 'wp_all_import_plugin'); ?></p>
-										<a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the WooCommerce Add-On Pro', 'wp_all_import_plugin');?></a>
+										<a href="https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the WooCommerce Add-On Pro', 'wp_all_import_plugin');?></a>
 									</div>
 									<?php endif; ?>
 									<?php if ( class_exists('WooCommerce') &&  ( ! class_exists('PMWI_Plugin') || class_exists('PMWI_Plugin') && PMWI_EDITION == 'free') ): ?>
@@ -378,7 +379,7 @@
 											<?php else: ?>
 												<p><?php _e('The WooCommerce Add-On Pro is Required to Import Orders', 'wp_all_import_plugin'); ?></p>
 											<?php endif; ?>
-											<a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the WooCommerce Add-On Pro', 'wp_all_import_plugin');?></a>
+											<a href="https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the WooCommerce Add-On Pro', 'wp_all_import_plugin');?></a>
 										</div>
 										<div class="wpallimport-upgrade-notice" rel="shop_coupon">
 											<?php if (class_exists('PMWI_Plugin') && PMWI_EDITION == 'free'): ?>
@@ -386,7 +387,7 @@
 											<?php else: ?>
 												<p><?php _e('The WooCommerce Add-On Pro is Required to Import Coupons', 'wp_all_import_plugin'); ?></p>
 											<?php endif; ?>
-											<a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the WooCommerce Add-On Pro', 'wp_all_import_plugin');?></a>
+											<a href="https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the WooCommerce Add-On Pro', 'wp_all_import_plugin');?></a>
 										</div>
 									<?php endif; ?>
 
@@ -394,7 +395,7 @@
 									<?php if ( class_exists('WooCommerce') && ! class_exists('PMUI_Plugin') ): ?>
 										<div class="wpallimport-upgrade-notice" rel="shop_customer">
 											<p><?php _e('The User Add-On is Required to Import Customers', 'wp_all_import_plugin'); ?></p>
-											<a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1921&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the User Add-On', 'wp_all_import_plugin');?></a>
+											<a href="https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707221&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link"><?php _e('Purchase the User Add-On', 'wp_all_import_plugin');?></a>
 										</div>
 									<?php endif; ?>
 

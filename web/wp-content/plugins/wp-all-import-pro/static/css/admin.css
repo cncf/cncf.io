@@ -443,15 +443,13 @@
 .wpallimport-plugin .add-new-key{ 
 	background: url("../img/ui_4.0/add.png") no-repeat 0px 5px;
 	font-size: 12px;
-	width:100px;
-	height:25px;
+	width: 115px;
+	height: 25px;
 	padding-left: 20px;
-	color:#21759B;
-	/*font-family: "Open Sans",​sans-serif;*/
+	color: #21759B;
 	padding-top: 2px;
 	text-decoration: underline;
 	display: block;
-	/*margin: 0 auto;	*/
 }
 
 .wpallimport-plugin .remove-ico{
@@ -658,6 +656,12 @@
 	-moz-border-radius: 14px;
 	-khtml-border-radius: 14px;
 	-webkit-border-radius: 14px;	
+}
+.wpallimport-plugin .rad30{
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-khtml-border-radius: 30px;
+	-webkit-border-radius: 30px;
 }
 .wpallimport-plugin .pl17{ padding-left: 17px; }	
 .wpallimport-plugin .no-margin{ margin: 0px; }
@@ -937,6 +941,25 @@
 	padding-bottom: 15px;
 }
 
+.wpallimport-plugin .wpallimport-content-section.wpallimport-complete-statistics {
+	text-align: left;
+	padding: 20px;
+}
+
+.wpallimport-plugin .wpallimport-content-section.wpallimport-complete-statistics p {
+	font-size: 21px !important;
+	color: #777;
+	background: url("../img/s-check.png") no-repeat;
+	background-size: 30px;
+	padding-left: 50px;
+}
+.wpallimport-plugin .wpallimport-skipped-notice{
+	display: none;
+}
+
+.wpallimport-skipped-notice a { 
+	margin-left: 0px !important;
+}
 
 .wpallimport-plugin table.form-table {
 	clear: none;
@@ -1482,6 +1505,18 @@
 .wpallimport-plugin #custom_type_selector .dd-selected .dashicon-import_users:before{
 	font-family: "dashicons";
 	content: "\f110";
+	color: #555;
+}
+.wpallimport-plugin #custom_type_selector .dd-option .dashicon-comments:before,
+.wpallimport-plugin #custom_type_selector .dd-selected .dashicon-comments:before{
+	font-family: "dashicons";
+	content: "\f101";
+	color: #555;
+}
+.wpallimport-plugin #custom_type_selector .dd-option .dashicon-reviews:before,
+.wpallimport-plugin #custom_type_selector .dd-selected .dashicon-reviews:before{
+	font-family: "dashicons";
+	content: "\f155";
 	color: #555;
 }
 .wpallimport-plugin #custom_type_selector .dd-option .dashicon-taxonomies:before,
@@ -2421,15 +2456,35 @@
 	border-radius: 0px;
 	border: 0px;
 }
-.wpallimport-plugin .wpallimport-not-empty{
-	/*display: block;
-	padding: 5px;*/
+.wpallimport-plugin .comments-import-fields {
+	width: 100%;
 }
-/*--------------------------------------------------------------------------
-*
-*	Step 4 - Import Options
-*	
-*-------------------------------------------------------------------------*/
+
+.wpallimport-plugin .comments-import-fields input[type="text"],
+.wpallimport-plugin .comments-import-fields select {
+	height: 40px;
+}
+.wpallimport-plugin .comments-import-fields select {
+	font-size: 15px !important;
+}
+.wpallimport-plugin .comments-import-fields textarea {
+	font-size: 14px !important;
+	padding: 6px !important;
+}
+.wpallimport-plugin .comments-import-fields .datepicker {
+	width: 300px;
+}
+.wpallimport-plugin .comments-import-fields .input {
+	margin-bottom: 10px;
+}
+.wpallimport-plugin .comments-import-fields .input .input {
+	margin-bottom: 0px;
+}
+	/*--------------------------------------------------------------------------
+    *
+    *	Step 4 - Import Options
+    *
+    *-------------------------------------------------------------------------*/
 
 .wpallimport-plugin .options .tag{
 	margin-top: 0px;		
@@ -2622,7 +2677,7 @@
 .wpallimport-plugin #processbar{	
 	text-align: center;
 	visibility: hidden;
-	height: 30px;
+	height: 70px;
 	margin-top: 18px;
 	margin-bottom: 20px;		
 	background: #fff;
@@ -2631,24 +2686,37 @@
 }
 	.wpallimport-plugin #processbar div{
 		background: #76d771;
-		height: 30px;
+		height: 70px;
 		width: 0%;
 		position: absolute;		
 		top:0;
 	}
+.wpallimport-plugin .progress_processed {
+	margin-bottom: 20px;
+	text-align: right;
+}
+.wpallimport-plugin .progress_details {
+	text-align: right;
+}
+.wpallimport-plugin .progress_details .progress_details_item {
+	margin-left: 10px;
+}
 .wpallimport-plugin #import_progress{
 	color: #000000;
 	font-size: 21px;
 	/*font-weight: bold;*/
 	display: block;
 	width: 100%;
+	height: 70px;
 	text-align: center;
 	opacity: 1;
 	position: relative;
 	padding-top: 10px;
 }
-	.wpallimport-plugin #import_progress #center_progress{
-		color:#46ba69;
+	.wpallimport-plugin #center_progress{
+		position: relative;
+		top: 25px;
+		color: #326C3B;
 		font-size: 60px;
 	}
 .wpallimport-plugin #right_progress{ 
@@ -2656,7 +2724,7 @@
 	right: 0;
 	color:#777;
 }
-	.wpallimport-plugin #right_progress span{
+	.wpallimport-plugin #right_progress span span {
 		color:#000;
 	}
 .wpallimport-plugin #left_progress{ 

@@ -1,12 +1,19 @@
 <?php if ( ! $this->isWizard  or ! empty(PMXI_Plugin::$session->deligate) and PMXI_Plugin::$session->deligate == 'wpallexport' or $this->isWizard and "new" != $post['wizard_type']): ?>
 <?php
-	$custom_type = get_taxonomy($post['taxonomy_type']);
-	if (empty($custom_type)){
-		$custom_type = new stdClass();
-		$custom_type->labels = new stdClass();
-		$custom_type->labels->name = __('Taxonomy Terms', 'wp_all_import_plugin');
-		$custom_type->labels->singular_name = __('Taxonomy Term', 'wp_all_import_plugin');
-	}
+switch ($post_type) {
+    case 'comments':
+        $custom_type = new stdClass();
+        $custom_type->labels = new stdClass();
+        $custom_type->labels->name = __('Comments', 'wp_all_import_plugin');
+        $custom_type->labels->singular_name = __('Comment', 'wp_all_import_plugin');
+        break;
+    case 'reviews':
+        $custom_type = new stdClass();
+        $custom_type->labels = new stdClass();
+        $custom_type->labels->name = __('Reviews', 'wp_all_import_plugin');
+        $custom_type->labels->singular_name = __('Review', 'wp_all_import_plugin');
+        break;
+}
 ?>
 <h4><?php _e('When WP All Import finds new or changed data...', 'wp_all_import_plugin'); ?></h4>
 <?php else: ?>
@@ -75,65 +82,105 @@
 			<div class="input">
 				<h4 class="wpallimport-trigger-options wpallimport-select-all" rel="<?php _e("Unselect All", "wp_all_import_plugin"); ?>"><?php _e("Select All", "wp_all_import_plugin"); ?></h4>
 			</div>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_post_id" value="0" />
+                <input type="checkbox" id="is_update_comment_post_id" name="is_update_comment_post_id" value="1" <?php echo $post['is_update_comment_post_id'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_post_id"><?php _e('Parent Post', 'wp_all_import_plugin') ?></label>
+            </div>
+            <?php if ($post_type == 'reviews'): ?>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_rating" value="0" />
+                <input type="checkbox" id="is_update_comment_rating" name="is_update_comment_rating" value="1" <?php echo $post['is_update_comment_rating'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_rating"><?php printf(__('%s Rating', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
+            </div>
+            <?php endif; ?>
 			<div class="input">
-				<input type="hidden" name="is_update_title" value="0" />
-				<input type="checkbox" id="is_update_title" name="is_update_title" value="1" <?php echo $post['is_update_title'] ? 'checked="checked"': '' ?> />
-				<label for="is_update_title"><?php _e('Name', 'wp_all_import_plugin') ?></label>
+				<input type="hidden" name="is_update_comment_author" value="0" />
+				<input type="checkbox" id="is_update_comment_author" name="is_update_comment_author" value="1" <?php echo $post['is_update_comment_author'] ? 'checked="checked"': '' ?> />
+				<label for="is_update_comment_author"><?php printf(__('%s Author', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
 			</div>
 			<div class="input">
-				<input type="hidden" name="is_update_slug" value="0" />
-				<input type="checkbox" id="is_update_slug" name="is_update_slug" value="1" <?php echo $post['is_update_slug'] ? 'checked="checked"': '' ?> />
-				<label for="is_update_slug"><?php _e('Slug', 'wp_all_import_plugin') ?></label>
+				<input type="hidden" name="is_update_comment_author_email" value="0" />
+				<input type="checkbox" id="is_update_comment_author_email" name="is_update_comment_author_email" value="1" <?php echo $post['is_update_comment_author_email'] ? 'checked="checked"': '' ?> />
+				<label for="is_update_comment_author_email"><?php printf(__('%s Author Email', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
 			</div>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_author_url" value="0" />
+                <input type="checkbox" id="is_update_comment_author_url" name="is_update_comment_author_url" value="1" <?php echo $post['is_update_comment_author_url'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_author_url"><?php printf(__('%s URL', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
+            </div>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_author_IP" value="0" />
+                <input type="checkbox" id="is_update_comment_author_IP" name="is_update_comment_author_IP" value="1" <?php echo $post['is_update_comment_author_IP'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_author_IP"><?php printf(__('%s IP', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
+            </div>
+            <div class="input">
+                <input type="hidden" name="is_update_dates" value="0" />
+                <input type="checkbox" id="is_update_dates" name="is_update_dates" value="1" <?php echo $post['is_update_dates'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_dates"><?php _e('Date', 'wp_all_import_plugin') ?></label>
+            </div>
 			<div class="input">
 				<input type="hidden" name="is_update_content" value="0" />
 				<input type="checkbox" id="is_update_content" name="is_update_content" value="1" <?php echo $post['is_update_content'] ? 'checked="checked"': '' ?> />
-				<label for="is_update_content"><?php _e('Description', 'wp_all_import_plugin') ?></label>
+				<label for="is_update_content"><?php _e('Content', 'wp_all_import_plugin') ?></label>
 			</div>
-<!--			<div class="input">-->
-<!--				<input type="hidden" name="is_update_menu_order" value="0" />-->
-<!--				<input type="checkbox" id="is_update_menu_order" name="is_update_menu_order" value="1" --><?php //echo $post['is_update_menu_order'] ? 'checked="checked"': '' ?><!-- />-->
-<!--				<label for="is_update_menu_order">--><?php //_e('Order', 'wp_all_import_plugin') ?><!--</label>-->
-<!--			</div>-->
+            <div class="input">
+                <input type="hidden" name="is_update_comment_karma" value="0" />
+                <input type="checkbox" id="is_update_comment_karma" name="is_update_comment_karma" value="1" <?php echo $post['is_update_comment_karma'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_karma"><?php _e('Karma', 'wp_all_import_plugin') ?></label>
+            </div>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_approved" value="0" />
+                <input type="checkbox" id="is_update_comment_approved" name="is_update_comment_approved" value="1" <?php echo $post['is_update_comment_approved'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_approved"><?php _e('Approved', 'wp_all_import_plugin') ?></label>
+            </div>
+            <?php if ($post_type == 'reviews'): ?>
+                <div class="input">
+                    <input type="hidden" name="is_update_comment_verified" value="0" />
+                    <input type="checkbox" id="is_update_comment_verified" name="is_update_comment_verified" value="1" <?php echo $post['is_update_comment_verified'] ? 'checked="checked"': '' ?> />
+                    <label for="is_update_comment_verified"><?php _e('Verified', 'wp_all_import_plugin'); ?></label>
+                </div>
+            <?php endif; ?>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_agent" value="0" />
+                <input type="checkbox" id="is_update_comment_agent" name="is_update_comment_agent" value="1" <?php echo $post['is_update_comment_agent'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_agent"><?php _e('Agent', 'wp_all_import_plugin') ?></label>
+            </div>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_type" value="0" />
+                <input type="checkbox" id="is_update_comment_type" name="is_update_comment_type" value="1" <?php echo $post['is_update_comment_type'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_type"><?php _e('Type', 'wp_all_import_plugin') ?></label>
+            </div>
 			<div class="input">
 				<input type="hidden" name="is_update_parent" value="0" />
 				<input type="checkbox" id="is_update_parent" name="is_update_parent" value="1" <?php echo $post['is_update_parent'] ? 'checked="checked"': '' ?> />
-				<label for="is_update_parent"><?php _e('Parent term', 'wp_all_import_plugin') ?></label>
+				<label for="is_update_parent"><?php printf(__('Parent %s', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
 			</div>
+            <div class="input">
+                <input type="hidden" name="is_update_comment_user_id" value="0" />
+                <input type="checkbox" id="is_update_comment_user_id" name="is_update_comment_user_id" value="1" <?php echo $post['is_update_comment_user_id'] ? 'checked="checked"': '' ?> />
+                <label for="is_update_comment_user_id"><?php _e('Author User ID', 'wp_all_import_plugin') ?></label>
+            </div>
 			
-			<?php 
-
+			<?php
 				// add-ons re-import options
 				do_action('pmxi_reimport', $post_type, $post);
-
 			?>						
 
-			<div class="input">
-				<input type="hidden" name="is_update_images" value="0" />
-				<input type="checkbox" id="is_update_images" name="is_update_images" value="1" <?php echo $post['is_update_images'] ? 'checked="checked"': '' ?> class="switcher" />
-				<label for="is_update_images"><?php _e('Images', 'wp_all_import_plugin') ?></label>
-				<!--a href="#help" class="wpallimport-help" title="<?php _e('This will keep the featured image if it exists, so you could modify the post image manually, and then do a reimport, and it would not overwrite the manually modified post image.', 'wp_all_import_plugin') ?>">?</a-->
-				<div class="switcher-target-is_update_images" style="padding-left:17px;">
-					<div class="input" style="margin-bottom:3px;">								
-						<input type="radio" id="update_images_logic_full_update" name="update_images_logic" value="full_update" <?php echo ( "full_update" == $post['update_images_logic'] ) ? 'checked="checked"': '' ?> />
-						<label for="update_images_logic_full_update"><?php _e('Update all images', 'wp_all_import_plugin') ?></label>						
-					</div>
-				</div>
-			</div>			
 			<div class="input">			
 				<input type="hidden" name="custom_fields_list" value="0" />			
 				<input type="hidden" name="is_update_custom_fields" value="0" />
 				<input type="checkbox" id="is_update_custom_fields" name="is_update_custom_fields" value="1" <?php echo $post['is_update_custom_fields'] ? 'checked="checked"': '' ?>  class="switcher"/>
-				<label for="is_update_custom_fields"><?php _e('Term Meta', 'wp_all_import_plugin') ?></label>
-				<!--a href="#help" class="wpallimport-help" title="<?php _e('If Keep Term Meta box is checked, it will keep all Term Meta, and add any new Term Meta specified in Term Meta section, as long as they do not overwrite existing fields. If \'Only keep this Term Meta\' is specified, it will only keep the specified fields.', 'wp_all_import_plugin') ?>">?</a-->
+				<label for="is_update_custom_fields"><?php printf(__('%s Meta', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
+				<!--a href="#help" class="wpallimport-help" title="<?php _e('If Keep Comment Meta box is checked, it will keep all Comment Meta, and add any new Comment Meta specified in Comment Meta section, as long as they do not overwrite existing fields. If \'Only keep this Comment Meta\' is specified, it will only keep the specified fields.', 'wp_all_import_plugin') ?>">?</a-->
 				<div class="switcher-target-is_update_custom_fields" style="padding-left:17px;">
 					<div class="input">
 						<input type="radio" id="update_custom_fields_logic_full_update" name="update_custom_fields_logic" value="full_update" <?php echo ( "full_update" == $post['update_custom_fields_logic'] ) ? 'checked="checked"': '' ?> class="switcher"/>
-						<label for="update_custom_fields_logic_full_update"><?php _e('Update all Term Meta', 'wp_all_import_plugin') ?></label>
+						<label for="update_custom_fields_logic_full_update"><?php printf(__('Update all %s Meta', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
 					</div>					
 					<div class="input">
 						<input type="radio" id="update_custom_fields_logic_only" name="update_custom_fields_logic" value="only" <?php echo ( "only" == $post['update_custom_fields_logic'] ) ? 'checked="checked"': '' ?> class="switcher"/>
-						<label for="update_custom_fields_logic_only"><?php _e('Update only these Term Meta, leave the rest alone', 'wp_all_import_plugin') ?></label>
+						<label for="update_custom_fields_logic_only"><?php printf(__('Update only these % Meta, leave the rest alone', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
 						<div class="switcher-target-update_custom_fields_logic_only pmxi_choosen" style="padding-left:17px;">								
 							<span class="hidden choosen_values"><?php if (!empty($existing_meta_keys)) echo esc_html(implode(',', $existing_meta_keys));?></span>
 							<input class="choosen_input" value="<?php if (!empty($post['custom_fields_list']) and "only" == $post['update_custom_fields_logic']) echo esc_html(implode(',', $post['custom_fields_list'])); ?>" type="hidden" name="custom_fields_only_list"/>										
@@ -141,7 +188,7 @@
 					</div>
 					<div class="input">
 						<input type="radio" id="update_custom_fields_logic_all_except" name="update_custom_fields_logic" value="all_except" <?php echo ( "all_except" == $post['update_custom_fields_logic'] ) ? 'checked="checked"': '' ?> class="switcher"/>
-						<label for="update_custom_fields_logic_all_except"><?php _e('Leave these fields alone, update all other Term Meta', 'wp_all_import_plugin') ?></label>
+						<label for="update_custom_fields_logic_all_except"><?php printf(__('Leave these fields alone, update all other %s Meta', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></label>
 						<div class="switcher-target-update_custom_fields_logic_all_except pmxi_choosen" style="padding-left:17px;">						
 							<span class="hidden choosen_values"><?php if (!empty($existing_meta_keys)) echo esc_html(implode(',', $existing_meta_keys));?></span>
 							<input class="choosen_input" value="<?php if (!empty($post['custom_fields_list']) and "all_except" == $post['update_custom_fields_logic']) echo esc_html(implode(',', $post['custom_fields_list'])); ?>" type="hidden" name="custom_fields_except_list"/>																				

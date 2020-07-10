@@ -1743,7 +1743,7 @@ class PclZip
       $v_memory_limit = $v_memory_limit*1024;
     }
 
-    $p_options[PCLZIP_OPT_TEMP_FILE_THRESHOLD] = floor($v_memory_limit*PCLZIP_TEMPORARY_FILE_RATIO);
+    $p_options[PCLZIP_OPT_TEMP_FILE_THRESHOLD] = is_numeric($v_memory_limit) ? floor($v_memory_limit*PCLZIP_TEMPORARY_FILE_RATIO) : 0;
 
     // ----- Sanity check : No threshold if value lower than 1M
     if ($p_options[PCLZIP_OPT_TEMP_FILE_THRESHOLD] < 1048576) {

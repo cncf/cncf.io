@@ -33,6 +33,15 @@ function pmxi_wp_ajax_auto_detect_cf(){
         case 'taxonomies':
             $fields = $input->post('fields', array());
             break;
+        case 'reviews':
+        case 'comments':
+            $results = $wpdb->get_results($wpdb->prepare("SELECT DISTINCT meta_key FROM ". $table_prefix ."comments, ". $table_prefix ."commentmeta WHERE ". $table_prefix ."comments.comment_ID = ". $table_prefix ."commentmeta.comment_id", $post_type), ARRAY_A);
+            if (!empty($results) && !is_wp_error($results)){
+                foreach ($results as $key => $value) {
+                    $fields[] = $value['meta_key'];
+                }
+            }
+            break;
         default:
             $results = $wpdb->get_results($wpdb->prepare("SELECT DISTINCT meta_key FROM ". $table_prefix ."posts, ". $table_prefix ."postmeta WHERE post_type = %s AND ". $table_prefix ."posts.ID = ". $table_prefix ."postmeta.post_id", $post_type), ARRAY_A);
             if (!empty($results) && !is_wp_error($results)){
@@ -62,6 +71,14 @@ function pmxi_wp_ajax_auto_detect_cf(){
                         SELECT DISTINCT termmeta.meta_value
                         FROM ".$wpdb->termmeta." as termmeta
                         WHERE termmeta.meta_key='".$field."'
+                    ", ARRAY_A);
+                    break;
+                case 'reviews':
+                case 'comments':
+                    $values = $wpdb->get_results("
+                        SELECT DISTINCT commentmeta.meta_value
+                        FROM ".$wpdb->commentmeta." as commentmeta
+                        WHERE commentmeta.meta_key='".$field."'
                     ", ARRAY_A);
                     break;
                 default:
@@ -100,6 +117,11 @@ function pmxi_wp_ajax_auto_detect_cf(){
                 $custom_type = new stdClass();
                 $custom_type->labels = new stdClass();
                 $custom_type->labels->singular_name = __('Taxonomy Term', 'wp_all_import_plugin');
+                break;
+            case 'comments':
+                $custom_type = new stdClass();
+                $custom_type->labels = new stdClass();
+                $custom_type->labels->singular_name = __('Comment', 'wp_all_import_plugin');
                 break;
             default:
                 $custom_type = get_post_type_object( $post_type );

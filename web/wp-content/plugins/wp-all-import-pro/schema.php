@@ -100,10 +100,17 @@ CREATE TABLE {$table_prefix}images (
 CREATE TABLE {$table_prefix}history (
 	id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	import_id BIGINT(20) UNSIGNED NOT NULL,
-	type ENUM('manual','processing','trigger','continue','') NOT NULL DEFAULT '',	
+	type ENUM('manual','processing','trigger','continue', 'cli', '') NOT NULL DEFAULT '',	
 	time_run TEXT,	
 	date DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',		
 	summary TEXT,
 	PRIMARY KEY  (id)
+) $charset_collate;
+CREATE TABLE {$table_prefix}hash (
+	hash BINARY(16) NOT NULL,
+	post_id BIGINT(20) UNSIGNED NOT NULL,
+	import_id SMALLINT(5) UNSIGNED NOT NULL,
+	post_type VARCHAR(32) NOT NULL DEFAULT '',
+	PRIMARY KEY  (hash)
 ) $charset_collate;
 SCHEMA;

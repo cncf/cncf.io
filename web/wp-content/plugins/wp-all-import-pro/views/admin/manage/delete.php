@@ -10,6 +10,16 @@ if (!empty($item->options['custom_type'])){
 			$custom_type->label = empty($tx->labels->name) ? __('Taxonomy Terms', 'wp_all_import_plugin') : $tx->labels->name;
 			$custom_type->singular_label = empty($tx->labels->singular_name) ? __('Taxonomy Term', 'wp_all_import_plugin') : $tx->labels->singular_name;
 			break;
+        case 'comments':
+            $custom_type = new stdClass();
+            $custom_type->label = __('Comments', 'wp_all_import_plugin');
+            $custom_type->singular_label = __('Comment', 'wp_all_import_plugin');
+            break;
+        case 'reviews':
+            $custom_type = new stdClass();
+            $custom_type->label = __('WooCommerce Reviews', 'wp_all_import_plugin');
+            $custom_type->singular_label = __('Review', 'wp_all_import_plugin');
+            break;
 		default:
 			$custom_type = get_post_type_object( $item->options['custom_type'] );
 			if ( ! empty($custom_type) ) {

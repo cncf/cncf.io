@@ -22,7 +22,7 @@ class SchedulingController
     {
         $this->scheduledImportService = new Import();
         $this->logger = function($m) {
-            printf("<div class='progress-msg'>[%s] $m</div>\n", date("H:i:s"));
+            print("<div class='progress-msg'>[". date("H:i:s") ."] $m</div>\n");
         };
     }
 
