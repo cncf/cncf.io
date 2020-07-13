@@ -8,6 +8,7 @@
         margin: 0; // reset
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
 
         >*:not(:last-of-type) {
             flex: 120px 0 0%;
@@ -61,9 +62,8 @@
 
 .search-filter-reset {
     @extend .button;
-    @extend .outline;
     @extend .smaller;
-    @extend .secondary;
+    @extend .outline;
     background-color: transparent;
     height: 28px;
 
