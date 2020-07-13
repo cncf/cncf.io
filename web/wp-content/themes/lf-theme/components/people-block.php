@@ -16,7 +16,6 @@ $github    = get_post_meta( get_the_ID(), 'lf_person_github', true );
 $wechat    = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
 $website   = get_post_meta( get_the_ID(), 'lf_person_website', true );
 $youtube   = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
-$category = Lf_Utils::get_term_names( get_the_ID(), 'lf-person-category', true );
 
 // setup image class.
 $image = new Image();
@@ -40,10 +39,10 @@ if ( strlen( $content ) > 20 ) {
 	<figure class="background-image-figure">
 	<?php
 	if ( has_post_thumbnail() ) {
-		Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'full', '300px' );
+		Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'people-250', '250px' );
 	} else {
 		$options = get_option( 'lf-mu' );
-		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people', false, array( 'class' => '' ) );
+		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people-250', false, false );
 	}
 	?>
 	</figure>
