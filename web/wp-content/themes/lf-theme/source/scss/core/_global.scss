@@ -180,8 +180,12 @@ img[src$=".svg"] {
 
     // used for people.
     &.smaller {
-        padding: 0.3rem 0.5rem;
+        // padding: 0.3rem 0.5rem;
+        padding: 5px 12px 6px 12px;
         font-size: 0.750em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &.secondary-color {
