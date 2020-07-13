@@ -11,12 +11,12 @@
 @import "core/variables";
 @import "core/normalize";
 @import "core/reset";
+@import "core/typography";
+@import "blocks/paragraph-headers";
 
 // import typography and styles over the top of editor styles defaults.
 #editor {
-
     .editor-styles-wrapper {
-        @import "core/typography";
         @import "blocks/gradients";
         @import "blocks/columns";
         @import "blocks/colors";
@@ -25,8 +25,7 @@
         @import "blocks/case-study-overview";
         @import "blocks/latest-jobs";
         @import "blocks/lists";
-        @import "blocks/newsroom"; // ?
-        @import "blocks/paragraph-headers";
+        @import "blocks/newsroom";
         @import 'blocks/quote';
         @import 'blocks/table';
         @import 'blocks/spacer';
@@ -34,6 +33,22 @@
         @import "components/webinars";
         @import "components/hero";
 
+        // to stop the included editor gutenberg styles.
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: unset;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-top: unset;
+            margin-bottom: unset;
+
+        }
     }
 }
 
@@ -100,6 +115,7 @@
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
     // useful if inside flexbox.
     align-self: start;
+    margin-bottom: 0.5rem;
 
     &.secondary {
         background-color: $grey-700;
