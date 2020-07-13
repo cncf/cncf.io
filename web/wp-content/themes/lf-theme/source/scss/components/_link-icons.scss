@@ -1,5 +1,3 @@
-// link-icons.scss
-
 // use for random external links where needed.
 .external {
     &::after {
@@ -32,9 +30,8 @@
 .site-header .site-navigation .main-navigation,
 .copyright-text {
 
-    a[href^="http://"]:not([href^="http://www.cncf"]):not([href^="http://cncf"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
-    a[href^="https://"]:not([href^="https://www.cncf"]):not([href^="https://cncf"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]),
-    a[href^="//"]:not([href^="//www.cncf"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
+    a[href^="https://"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]):not([href^="https://cncfci"]),
+    a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]):not([href^="https://cncfci"]) {
 
         &::after {
             content: "  ";
@@ -61,9 +58,8 @@
 .hello-bar,
 .wp-block-buttons {
 
-    a[href^="http://"]:not([href^="http://www.cncf"]):not([href^="http://cncf"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
-    a[href^="https://"]:not([href^="https://www.cncf"]):not([href^="https://cncf"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]),
-    a[href^="//"]:not([href^="//www.cncf"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
+    a[href^="https://"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]):not([href^="https://cncfci"]),
+    a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]):not([href^="https://cncfci"]) {
 
         &::after {
             content: "  ";
@@ -90,8 +86,7 @@
 .site-header .site-navigation .main-navigation,
 .wp-block-buttons {
 
-    a[href^="http://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
-    a[href^="https://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
+    a[href^="https://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]):not([href^="https://cncfci"]),
     a[href^="/"][href$=".pdf"],
     a[href$=".pdf"] {
         display: flex;
