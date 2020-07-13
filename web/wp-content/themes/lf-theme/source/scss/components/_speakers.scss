@@ -1,10 +1,12 @@
 .speakers-wrapper {
     display: grid;
-    grid-row-gap: 1rem; grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
 
     @media (min-width: 600px) {
-        grid-row-gap: 1.5rem; grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
+        grid-column-gap: 1.5rem;
         grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     }
 }
@@ -250,8 +252,7 @@
         }
 
         .um-name {
-            font-size: 2.5em;
-            line-height: 1.2;
+            display: none;
         }
 
         .um-name a {
