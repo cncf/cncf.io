@@ -123,12 +123,8 @@ Thumbs.db
 !web/wp-content/plugins/miniorange-saml-20-single-sign-on
 
 # Allowing custom plugins
-!web/wp-content/plugins/text-on-image-block
-web/wp-content/plugins/text-on-image-block/node_modules
 !web/wp-content/plugins/tab-container-block
 web/wp-content/plugins/tab-container-block/node_modules
-!web/wp-content/plugins/lf-blocks
-web/wp-content/plugins/lf-blocks/node_modules
 
 # Ignore local VS code settings
 web/wp-content/themes/lf-theme/.vscode
