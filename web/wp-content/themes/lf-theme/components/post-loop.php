@@ -58,7 +58,7 @@
 
 			while ( have_posts() ) {
 				the_post();
-				if ( get_the_ID() === $sticky_post_id ) {
+				if ( isset( $sticky_post_id ) && get_the_ID() === $sticky_post_id ) {
 					// skip re-showing the sticky post.
 					continue;
 				}
