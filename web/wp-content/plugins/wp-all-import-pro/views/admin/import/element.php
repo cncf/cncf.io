@@ -21,6 +21,12 @@
 			$custom_type->labels->singular_name = empty($tx->labels->singular_name) ? __('Taxonomy Term', 'wp_all_import_plugin') : $tx->labels->singular_name;
 			$custom_type->labels->name = empty($tx->labels->name) ? __('Taxonomy Terms', 'wp_all_import_plugin') : $tx->labels->name;
 			break;
+        case 'comments':
+            $custom_type = new stdClass();
+            $custom_type->labels = new stdClass();
+            $custom_type->labels->singular_name = __('Comments', 'wp_all_import_plugin');
+            $custom_type->labels->name = __('Comment', 'wp_all_import_plugin');
+            break;
 		default:
 			$custom_type = get_post_type_object( PMXI_Plugin::$session->custom_type );
 			break;

@@ -144,18 +144,18 @@ msgstr "<p class =\"wpallimport-bundle-notice\">O pacote de importação que voc
 
 #: actions/wp_ajax_get_bundle_post_type.php:79
 #: actions/wp_ajax_upload_resource.php:147 controllers/admin/settings.php:616
-msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">Purchase the WooCommerce Add-On</a>."
-msgstr "<p class =\"wpallimport-bundle-notice\">O pacote de importação que você está usando requer a versão Pro do WooCommerce Add-on.</p> <a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">Comprar WooCommerce Add-On Pro</a>."
+msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">Purchase the WooCommerce Add-On</a>."
+msgstr "<p class =\"wpallimport-bundle-notice\">O pacote de importação que você está usando requer a versão Pro do WooCommerce Add-on.</p> <a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" class=\"upgrade_link\" target=\"_blank\">Comprar WooCommerce Add-On Pro</a>."
 
 #: actions/wp_ajax_get_bundle_post_type.php:84
 #: actions/wp_ajax_upload_resource.php:152 controllers/admin/settings.php:621
-msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On, but you have the free version installed.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the WooCommerce Add-On</a>."
-msgstr "<p class=\"wpallimport-bundle-notice\">O pacote de importação que você está usando requer a versão Pro do WooCommerce Add-On, mas você tem a versão gratuita instalada.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Comprar WooCommerce Add-On Pro</a>."
+msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the Pro version of the WooCommerce Add-On, but you have the free version installed.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the WooCommerce Add-On</a>."
+msgstr "<p class=\"wpallimport-bundle-notice\">O pacote de importação que você está usando requer a versão Pro do WooCommerce Add-On, mas você tem a versão gratuita instalada.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707227&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Comprar WooCommerce Add-On Pro</a>."
 
 #: actions/wp_ajax_get_bundle_post_type.php:94
 #: actions/wp_ajax_upload_resource.php:162 controllers/admin/settings.php:631
-msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the User Add-On.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1921&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the User Add-On</a>."
-msgstr "<p class=\"wpallimport-bundle-notice\">O pacote de importação que você está usando requer o User Add-On.</p><a href=\"http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1921&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Comprar User Add-On</a>."
+msgid "<p class=\"wpallimport-bundle-notice\">The import bundle you are using requires the User Add-On.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707221&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Purchase the User Add-On</a>."
+msgstr "<p class=\"wpallimport-bundle-notice\">O pacote de importação que você está usando requer o User Add-On.</p><a href=\"https://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=2707221&edd_options%5Bprice_id%5D=1\" target=\"_blank\" class=\"upgrade_link\">Comprar User Add-On</a>."
 
 #: actions/wp_ajax_nested_xpath.php:51
 msgid "XPath is required"

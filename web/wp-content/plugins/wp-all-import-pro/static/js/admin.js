@@ -788,8 +788,8 @@
 					$('.xml-element[title*="/'+$(this).val().replace('{','').replace('}','')+'"]').addClass('selected');
 				}
 			});
-			
-			$('#title, #content, .widefat, input[name^=custom_name], textarea[name^=custom_value], input[name^=featured_image], input[name^=unique_key]').bind('focus', insertxpath );
+
+			$('input, textarea').not('#__drag').bind('focus', insertxpath );
 			
 			$(document).mousemove(function () {
 				if (parseInt($drag.css('opacity')) != 0) {
@@ -2202,28 +2202,20 @@
 	});	
 
 	if ($('#wp_all_import_code').length){
-		var editor = CodeMirror.fromTextArea(document.getElementById("wp_all_import_code"), {
-	        lineNumbers: true,
-	        matchBrackets: true,
-	        mode: "application/x-httpd-php",
-	        indentUnit: 4,
-	        indentWithTabs: true,
-	        lineWrapping: true
-	    });
-	    editor.setCursor(1);	 
+		var editor = wp.codeEditor.initialize($('#wp_all_import_code'), wpai_cm_settings);
+	    editor.codemirror.setCursor(1);
 	    $('.CodeMirror').resizable({
 		  resize: function() {
 		    editor.setSize("100%", $(this).height());
 		  }
 		});
-		var currentImportFunctions = editor.getValue();
-		editor.on('change',function(cMirror){
+		var currentImportFunctions = editor.codemirror.getValue();
+		editor.codemirror.on('change',function(cMirror){
 			if ( currentImportFunctions != cMirror.getValue()){
 				window.onbeforeunload = function () {
 					return 'WARNING:\nFunctions are not saved, leaving the page will reset changes in Function editor.';
 				};
-			}
-			else{
+			} else {
 				window.onbeforeunload = false;
 			}
 		});
@@ -2232,7 +2224,7 @@
     $('.wp_all_import_save_functions').click(function(){
     	var request = {
 			action: 'save_import_functions',	
-			data: editor.getValue(),				
+			data: editor.codemirror.getValue(),
 			security: wp_all_import_security				
 	    };    
 	    $('.wp_all_import_functions_preloader').show();
@@ -2243,22 +2235,16 @@
 			data: request,
 			success: function(response) {						
 				$('.wp_all_import_functions_preloader').hide();
-				
-				if (response.result)
-				{
+				if (response.result) {
 					window.onbeforeunload = false;
 					$('.wp_all_import_saving_status').css({'color':'green'});
 					setTimeout(function() {
 						$('.wp_all_import_saving_status').html('').fadeOut();
 					}, 3000);
-				}
-				else
-				{
+				} else {
 					$('.wp_all_import_saving_status').css({'color':'red'});
 				}
-
 				$('.wp_all_import_saving_status').html(response.msg).show();
-									
 			},
 			error: function( jqXHR, textStatus ) {						
 				$('.wp_all_import_functions_preloader').hide();
@@ -2285,17 +2271,12 @@
 				url: ajaxurl,
 				data: request,
 				success: function(response) {
-
 					iteration++;
-
 					$ths.parents('form:first').find('.wp_all_import_deletion_log').html('<p>' + response.msg + '</p>');
-
 					if (response.result){
 						$('.wp_all_import_functions_preloader').hide();
 						window.location.href = response.redirect;
-					}
-					else
-					{
+					} else {
 						deleteImport();
 					}
 				},
@@ -2321,7 +2302,7 @@
 		if ($parent.hasClass('closed')){
 			$parent.removeClass('closed');
 			$parent.find('.wpallimport-collapsed-content:first').slideDown(400, function(){
-				if ($('#wp_all_import_code').length) editor.setCursor(1);
+				if ($('#wp_all_import_code').length) editor.codemirror.setCursor(1);
 			});
 		}
 		else{

@@ -70,21 +70,17 @@ class PMXI_Admin_Manage extends PMXI_Controller_Admin {
 	/**
 	* delete all posts, media, files, and whatever value was in the 'Unique ID' field
 	*/
-	public function delete_and_edit()
-	{
+	public function delete_and_edit() {
 		$get = $this->input->get(array(
 			'id' => '',			
 		));
-		if ( ! empty($get['id']) )
-		{
+		if ( ! empty($get['id']) ) {
 			$import = new PMXI_Import_Record();
 			$import->getById($get['id']);
-			if ( ! $import->isEmpty() )
-			{
+			if ( ! $import->isEmpty() ) {
 				$import->deletePosts(false);
 				$options = $import->options;
-				if ( empty($import->options['custom_type']) || $import->options['custom_type'] != 'shop_order')
-				{					
+				if ( empty($import->options['custom_type']) || $import->options['custom_type'] != 'shop_order') {
 					$options['unique_key'] = '';					
 				}						
 				$import->set(array(
@@ -97,15 +93,38 @@ class PMXI_Admin_Manage extends PMXI_Controller_Admin {
 				))->save();	
 			}
 		}
-		if ( ! empty($import->options['custom_type']) && $import->options['custom_type'] == 'shop_order')
-		{
+		if ( ! empty($import->options['custom_type']) && $import->options['custom_type'] == 'shop_order') {
 			wp_redirect(add_query_arg(array('id' => $import->id, 'action' => 'edit'), $this->baseUrl)); die();
-		}
-		else
-		{
+		} else {
 			wp_redirect(add_query_arg(array('id' => $import->id, 'action' => 'options'), $this->baseUrl)); die();
 		}		
 	}
+
+    /**
+     * Disable `Skip posts if their data in your file has not changed` option.
+     */
+    public function disable_skip_posts() {
+        $get = $this->input->get(array(
+            'id' => '',
+        ));
+        if ( ! empty($get['id']) ) {
+            $import = new PMXI_Import_Record();
+            $import->getById($get['id']);
+            if ( ! $import->isEmpty() ) {
+                $options = $import->options;
+                $options['is_selective_hashing'] = 0;
+                $import->set(array(
+                    'options'  => $options,
+                    'imported' => 0,
+                    'created'  => 0,
+                    'updated'  => 0,
+                    'skipped'  => 0,
+                    'deleted'  => 0
+                ))->save();
+            }
+            wp_redirect(add_query_arg(array('id' => $import->id, 'action' => 'update'), $this->baseUrl)); die();
+        }
+    }
 	
 	/**
 	 * Edit Template

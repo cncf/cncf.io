@@ -35,15 +35,12 @@ class Scheduling
      * @param \Wpai\Scheduling\Interval\ScheduleTime $scheduleTime
      * @param $schedulingEnabled
      */
-    public function schedule($elementId, ScheduleTime $scheduleTime, $schedulingEnabled)
+    private function schedule($elementId, ScheduleTime $scheduleTime, $schedulingEnabled)
     {
         $elementId = intval($elementId);
 
-        if ($schedulingEnabled == 1) {
-            $this->enableSchedule($elementId, $scheduleTime);
-        } else {
-            $this->disableSchedule($elementId);
-        }
+        $this->enableSchedule($elementId, $scheduleTime);
+
     }
 
     /**
@@ -98,14 +95,15 @@ class Scheduling
      * @param $id
      * @return bool
      */
-    public function deleteScheduleIfExists($id) {
+    public function deleteScheduleIfExists($id)
+    {
 
-        if(!$this->checkLicense()) {
+        if (!$this->checkLicense()) {
             return true;
         }
 
         $schedule = $this->getSchedule($id);
-        if($schedule) {
+        if ($schedule) {
             $this->deleteSchedule($schedule->id);
         }
 
@@ -118,9 +116,10 @@ class Scheduling
     public function handleScheduling($id, $post)
     {
         $schedulingEnabled = $post['scheduling_enable'];
-   
+
         if ($schedulingEnabled == 1) {
 
+            $this->userEnableSchedule($id);
 
             if ($post['scheduling_run_on'] == 'weekly') {
                 $monthly = false;
@@ -138,6 +137,8 @@ class Scheduling
                 new \Wpai\Scheduling\Interval\ScheduleTime($timesArray, $monthly, $post['scheduling_timezone']),
                 $schedulingEnabled
             );
+        } else {
+            $this->userDisableSchedule($id);
         }
     }
 
@@ -204,6 +205,26 @@ class Scheduling
         $this->schedulingApi->updateSchedule($scheduleId, $scheduleTime);
     }
 
+    public function userDisableSchedule($elementId)
+    {
+        $this->schedulingApi->disableSchedule($elementId);
+        $remoteSchedule = $this->getSchedule($elementId);
+
+        if ($remoteSchedule) {
+            $this->schedulingApi->disableSchedule($remoteSchedule->id);
+        }
+    }
+
+    public function userEnableSchedule($elementId)
+    {
+        $this->schedulingApi->enableSchedule($elementId);
+        $remoteSchedule = $this->getSchedule($elementId);
+
+        if ($remoteSchedule) {
+            $this->schedulingApi->enableSchedule($remoteSchedule->id);
+        }
+    }
+
     /**
      * @param $elementId
      */
@@ -236,8 +257,8 @@ class Scheduling
                     $hour = $hour + 12;
                 }
 
-                if($hour == 12) {
-                    if(strpos($time, 'am') !== false) {
+                if ($hour == 12) {
+                    if (strpos($time, 'am') !== false) {
                         $hour = 0;
                     }
                 }
@@ -255,7 +276,7 @@ class Scheduling
 
     /**
      * TODO: Uglier but simpler method, if this gets in the way, extract to a class
-     * 
+     *
      * @return Scheduling
      */
     public static function create()

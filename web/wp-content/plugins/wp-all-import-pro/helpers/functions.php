@@ -213,3 +213,22 @@
         }
     }
 
+    if ( ! function_exists('wp_all_import_generate_functions_hash') ) {
+        function wp_all_import_generate_functions_hash() {
+            $uploads = wp_upload_dir();
+            $functions_hash = false;
+            $functions_file = $uploads['basedir'] . DIRECTORY_SEPARATOR . WP_ALL_IMPORT_UPLOADS_BASE_DIRECTORY . DIRECTORY_SEPARATOR . 'functions.php';
+            if (@file_exists($functions_file)) {
+                $functions_hash = hash_file('md5', $functions_file);
+                // Check functions file from current theme.
+                $theme_functions_file = get_template_directory() . '/functions.php';
+                if (@file_exists($theme_functions_file)) {
+                    $functions_hash .= hash_file('md5', $theme_functions_file);
+                }
+            }
+            return $functions_hash;
+        }
+    }
+
+
+

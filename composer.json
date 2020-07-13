@@ -31,7 +31,6 @@
     "wpackagist-plugin/lh-hsts":"^1.24",
     "wpackagist-plugin/safe-svg":"^1.9.3",
     "wpackagist-plugin/autodescription":"^4.0.1",
-    "wpackagist-plugin/photonic":"^2.23",
     "wpackagist-plugin/post-meta-controls":"^1.2.0",
     "wpackagist-plugin/china-video-block":"^0.2.0",
     "wpackagist-plugin/flying-pages":"^2.0.8",
@@ -40,7 +39,6 @@
     "wpackagist-plugin/shortpixel-image-optimiser":"^4.15.3",
     "wpackagist-plugin/svg-autocrop":"^0.1.0",
     "wpackagist-plugin/redirection":"^4.4.2",
-    "wpackagist-plugin/duplicate-post":"^3.2.4",
     "wpackagist-plugin/code-syntax-block":"^1.3.0",
     "wpackagist-plugin/custom-twitter-feeds":"^1.5.1",
     "cncf/wp-mu-plugins":"dev-master"

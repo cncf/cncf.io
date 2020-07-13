@@ -58,6 +58,12 @@
 			case 'taxonomies':
 				$custom_type = get_taxonomy($post['taxonomy_type']);
 				break;
+            case 'comments':
+                $custom_type = new stdClass();
+                $custom_type->labels = new stdClass();
+                $custom_type->labels->singular_name = __('Comments', 'wp_all_import_plugin');
+                $custom_type->labels->name = __('Comment', 'wp_all_import_plugin');
+                break;
 			default:
 				$custom_type = get_post_type_object( $post['custom_type'] );
 				break;
@@ -242,22 +248,22 @@
 									<?php if ( $post['is_update_content']): ?>
 									<li> <?php _e('content', 'wp_all_import_plugin'); ?></li>
 									<?php endif; ?>
-									<?php if ( $post['is_update_excerpt'] && 'taxonomies' != $post['custom_type']): ?>
+									<?php if ( $post['is_update_excerpt'] && 'taxonomies' != $post['custom_type'] && 'comments' != $post['custom_type']): ?>
 									<li> <?php _e('excerpt', 'wp_all_import_plugin'); ?></li>
 									<?php endif; ?>
 									<?php if ( $post['is_update_dates'] && 'taxonomies' != $post['custom_type']): ?>
 									<li> <?php _e('dates', 'wp_all_import_plugin'); ?></li>
 									<?php endif; ?>
-									<?php if ( $post['is_update_menu_order'] && 'taxonomies' != $post['custom_type']): ?>
+									<?php if ( $post['is_update_menu_order'] && 'taxonomies' != $post['custom_type'] && 'comments' != $post['custom_type']): ?>
 									<li> <?php _e('menu order', 'wp_all_import_plugin'); ?></li>
 									<?php endif; ?>
 									<?php if ( $post['is_update_parent']): ?>
 									<li> <?php _e('parent post', 'wp_all_import_plugin'); ?></li>
 									<?php endif; ?>
-									<?php if ( $post['is_update_post_type'] && 'taxonomies' != $post['custom_type']): ?>
+									<?php if ( $post['is_update_post_type'] && 'taxonomies' != $post['custom_type'] && 'comments' != $post['custom_type']): ?>
 									<li> <?php _e('post type', 'wp_all_import_plugin'); ?></li>
 									<?php endif; ?>
-									<?php if ( $post['is_update_attachments'] && 'taxonomies' != $post['custom_type']): ?>
+									<?php if ( $post['is_update_attachments'] && 'taxonomies' != $post['custom_type'] && 'comments' != $post['custom_type']): ?>
 									<li> <?php _e('attachments', 'wp_all_import_plugin'); ?></li>
 									<?php endif; ?>
 									<?php if ( ! empty($post['is_update_acf'])): ?>
@@ -308,7 +314,7 @@
 										} ?>
 										</li>						
 									<?php endif; ?>
-									<?php if ( ! empty($post['is_update_categories']) && 'taxonomies' != $post['custom_type']): ?>
+									<?php if ( ! empty($post['is_update_categories']) && 'taxonomies' != $post['custom_type'] && 'comments' != $post['custom_type']): ?>
 										<li>
 										<?php 
 										switch($post['update_categories_logic']){

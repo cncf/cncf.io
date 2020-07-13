@@ -3,9 +3,7 @@
  * Delete attachments linked to a specified post
  * @param int $parent_id Parent id of post to delete attachments for
  */
-function wp_delete_attachments($parent_id, $unlink = true, $type = 'images') {	
-
-	if ( $type == 'images' and has_post_thumbnail($parent_id) ) delete_post_thumbnail($parent_id);
+function wp_delete_attachments($parent_id, $unlink = true, $type = 'images') {
 
 	$ids = array();
 

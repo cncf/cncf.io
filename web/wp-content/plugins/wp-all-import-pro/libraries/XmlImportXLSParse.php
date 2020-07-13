@@ -43,7 +43,7 @@ class PMXI_XLSParser{
                                                           ->setEnclosure('"')
                                                           ->setLineEnding("\r\n")
                                                           ->setSheetIndex(0)
-                                                          ->save($this->csv_path);	
+                                                          ->save($this->csv_path);
 
         include_once(PMXI_Plugin::ROOT_DIR . '/libraries/XmlImportCsvParse.php');
 

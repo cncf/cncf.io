@@ -1,32 +1,16 @@
 <?php
 switch ($post_type){
-	case 'taxonomies':
-		$custom_type = new stdClass();
-		$custom_type->labels = new stdClass();
-		$custom_type->labels->name = __('Taxonomy Terms', 'wp_all_import_plugin');
-		$custom_type->labels->singular_name = __('Taxonomy Term', 'wp_all_import_plugin');
-		break;
     case 'comments':
         $custom_type = new stdClass();
         $custom_type->labels = new stdClass();
         $custom_type->labels->name = __('Comments', 'wp_all_import_plugin');
         $custom_type->labels->singular_name = __('Comment', 'wp_all_import_plugin');
+        break;
     case 'reviews':
         $custom_type = new stdClass();
         $custom_type->labels = new stdClass();
         $custom_type->labels->name = __('WooCommerce Reviews', 'wp_all_import_plugin');
         $custom_type->labels->singular_name = __('Review', 'wp_all_import_plugin');
-    case 'import_users':
-        $custom_type = new stdClass();
-        $custom_type->labels = new stdClass();
-        $custom_type->labels->name = __('Users', 'wp_all_import_plugin');
-        $custom_type->labels->singular_name = __('User', 'wp_all_import_plugin');
-        break;
-    case 'shop_customer':
-        $custom_type = new stdClass();
-        $custom_type->labels = new stdClass();
-        $custom_type->labels->name = __('WooCommerce Customers', 'wp_all_import_plugin');
-        $custom_type->labels->singular_name = __('WooCommerce Customer', 'wp_all_import_plugin');
         break;
 	default:
 		$custom_type = get_post_type_object( $post_type );
@@ -36,7 +20,7 @@ switch ($post_type){
 <div class="wpallimport-collapsed closed wpallimport-section wpallimport-custom-fields">
 	<div class="wpallimport-content-section">
 		<div class="wpallimport-collapsed-header">
-			<h3><?php _e('Custom Fields','wp_all_import_plugin');?></h3>	
+			<h3><?php printf(__('%s Meta','wp_all_import_plugin'), $custom_type->labels->singular_name);?></h3>
 		</div>
 		<div class="wpallimport-collapsed-content" style="padding: 0;">
 			<div class="wpallimport-collapsed-content-inner">
@@ -46,10 +30,10 @@ switch ($post_type){
 				<?php if (empty($post['custom_name'])): ?>
 				<div class="input cf_welcome">
 					<?php if ( ! empty($meta_keys) ):?>
-						<h1 style="font-size:23px; color:#40acad;"><?php printf(__('Your website is using Custom Fields to store data for %s.', 'wp_all_import_plugin'), $custom_type->labels->name); ?></h1>
+						<h1 style="font-size:23px; color:#40acad;"><?php printf(__('Your website is using %s Meta to store data for %s.', 'wp_all_import_plugin'), $custom_type->labels->singular_name, $custom_type->labels->name); ?></h1>
 						<a class="autodetect_cf auto_detect_cf" href="javascript:void(0);" rel="auto_detect_cf"><?php _e('See Detected Fields', 'wp_all_import_plugin'); ?></a>
 					<?php else: ?>
-						<h1 style="font-size:23px; color:#40acad;"><?php printf(__('No Custom Fields are present in your database for %s.', 'wp_all_import_plugin'), $custom_type->labels->name); ?></h1>
+						<h1 style="font-size:23px; color:#40acad;"><?php printf(__('No %s Meta are present in your database for %s.', 'wp_all_import_plugin'), $custom_type->labels->singular_name, $custom_type->labels->name); ?></h1>
 						<p class="wpallimport-note"><?php printf(__('Manually create a %s, and fill out each field you want to import data to. WP All Import will then display these fields as available for import below.', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></p>
 					<?php endif;?>
 					<a href="javascript:void(0);" class="wpallimport-dismiss-cf-welcome"><?php _e('Hide Notice', 'wp_all_import_plugin'); ?></a>				
@@ -175,7 +159,7 @@ switch ($post_type){
 																	</tr>
 																	<tr>
 																		<td colspan="3">
-																			<a href="javascript:void(0);" title="<?php _e('Add Custom Field', 'wp_all_import_plugin')?>" class="action add-new-key add-new-entry"><?php _e('Add Another', 'wp_all_import_plugin') ?></a>
+																			<a href="javascript:void(0);" title="<?php _e('Add Meta', 'wp_all_import_plugin')?>" class="action add-new-key add-new-entry"><?php _e('Add Another', 'wp_all_import_plugin') ?></a>
 																		</td>
 																	</tr>
 																	<tr>
@@ -555,7 +539,7 @@ switch ($post_type){
 										</td>
 									</tr>
 									<tr>
-										<td colspan="2"><a href="javascript:void(0);" title="<?php _e('Add Custom Field', 'wp_all_import_plugin')?>" class="action add-new-custom add-new-entry"><?php _e('Add Custom Field', 'wp_all_import_plugin') ?></a></td>
+										<td colspan="2"><a href="javascript:void(0);" title="<?php printf(__('Add %s Meta', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?>" class="action add-new-custom add-new-entry"><?php printf(__('Add %s Meta', 'wp_all_import_plugin'), $custom_type->labels->singular_name); ?></a></td>
 									</tr>
 								</tbody>
 							</table>
