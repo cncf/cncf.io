@@ -21,3 +21,11 @@
         }
     }
 }
+
+.wp-block-image.is-resized {
+    width: 100%;
+
+    img[src$=".svg"] {
+        width: initial;
+    }
+}
