@@ -73,16 +73,23 @@
         }
     }
 
-    &.sticky:after {
-        content: "FEATURED";
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 10;
-        background-color: #d9dbdb;
-        font-weight: 600;
-        font-size: 14px;
-        padding: 0.5em;
+    &.sticky {
+        .archive-image-wrapper:after {
+
+            content: "FEATURED";
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            color: $white;
+            background-color: $primary-400;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 0.5em;
+            // skew
+            padding-right: 25px;
+            clip-path: polygon(0px 100%, calc(100% - 22px) 100%, 100% 0px, 0px 0px);
+        }
     }
 }
 
@@ -94,6 +101,7 @@
     object-fit: cover;
     object-position: bottom;
     margin-bottom: 1rem;
+    position: relative;
 
     img {
         display: block;
