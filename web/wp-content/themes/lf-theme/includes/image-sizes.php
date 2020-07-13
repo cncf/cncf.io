@@ -36,3 +36,9 @@ add_image_size( 'hero-600', 600, 220, true );
 add_image_size( 'hero-414', 414, 220, true );
 add_image_size( 'hero-375', 375, 220, true );
 add_image_size( 'hero-320', 320, 220, true );
+
+// people.
+add_image_size( 'people-200', 194, 198, true );
+add_image_size( 'people-300', 291, 297, true );
+add_image_size( 'people-250', 250, 250, true );
+add_image_size( 'people-480', 480, 480, true );
