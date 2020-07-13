@@ -10,7 +10,7 @@
 jQuery(
 	function( $ ) {
 		$(
-			'iframe[src*="youtube.com"], iframe[src*="vimeo.com"], iframe[data-src*="youtube.com"], iframe[data-src*="vimeo.com"]'
+			'iframe[src*="youtube.com"], iframe[src*="vimeo.com"], iframe[data-src*="youtube.com"], iframe[data-src*="vimeo.com"], iframe[src*="qq.com"]'
 		).each(
 			function() {
 				$( this ).wrap( '<div class="video-wrapper"></div>' );
