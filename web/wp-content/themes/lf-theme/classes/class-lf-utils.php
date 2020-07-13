@@ -245,6 +245,7 @@ class Lf_Utils {
 					'alt'    => true,
 					'align'  => true,
 					'style'  => true,
+					'media'  => true,
 				),
 			)
 		);
@@ -313,7 +314,7 @@ class Lf_Utils {
 				'1200' => 'hero-1200',
 				'1440' => 'hero-1440',
 				'1920' => 'hero-1920',
-				'2560' => 'hero-2560',
+				'2880' => 'hero-2880',
 			);
 		} else {
 			// default WordPress sizes.
@@ -345,6 +346,7 @@ class Lf_Utils {
 			'alt'    => true,
 			'align'  => true,
 			'style'  => true,
+			'media'  => true,
 		);
 
 		echo wp_kses(
