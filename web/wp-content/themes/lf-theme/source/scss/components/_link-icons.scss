@@ -125,7 +125,7 @@
     a[href$=".pdf"] {
         &:hover {
             &::after {
-                filter: none;
+                filter: none !important;
             }
         }
     }
