@@ -17,7 +17,7 @@ if ( have_posts() ) :
 <section class="hero">
 	<div class="container wrap no-background">
 		<p class="hero-parent-link"><a href="/speakers/"
-				title="Go to Speakers Bureau">Speakers Bureau</a></p>
+				title="Go to Speakers Bureau">Speaker</a></p>
 		<h1 class="hero-post-title" itemprop="headline">
 			<?php
 			the_title();
