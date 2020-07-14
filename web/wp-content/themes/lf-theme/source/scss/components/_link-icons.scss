@@ -30,8 +30,9 @@
 .site-header .site-navigation .main-navigation,
 .copyright-text {
 
+    a[href^="http://"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
     a[href^="https://"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]):not([href^="https://cncfci"]),
-    a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]):not([href^="https://cncfci"]) {
+    a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf.io"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
 
         &::after {
             content: "  ";
@@ -58,8 +59,9 @@
 .hello-bar,
 .wp-block-buttons {
 
+    a[href^="http://"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
     a[href^="https://"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]):not([href^="https://cncfci"]),
-    a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]):not([href^="https://cncfci"]) {
+    a[href^="//"]:not([href^="//www.cncf"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
 
         &::after {
             content: "  ";
@@ -86,7 +88,8 @@
 .site-header .site-navigation .main-navigation,
 .wp-block-buttons {
 
-    a[href^="https://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]):not([href^="https://cncfci"]),
+    a[href^="http://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
+    a[href^="https://"][href$=".pdf"]:not([href*="cncf"]):not([href*="localhost"]):not([href*="pantheon"]),
     a[href^="/"][href$=".pdf"],
     a[href$=".pdf"] {
         display: flex;
