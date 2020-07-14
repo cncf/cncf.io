@@ -8,6 +8,8 @@ input[type="email"] {
     // iOS overrides.
     border-radius: 0;
     -webkit-appearance: none;
+    // makes border lighter.
+    border: 1px solid #ddd;
 }
 
 input[type="submit"],
@@ -254,11 +256,51 @@ body .gform_wrapper form .top_label {
     }
 }
 
+// .ginput_container {
+
+//     input[type="text"],
+//     input[type="email"] {
+
+//     }
+// }
+
 // overrides GF on UM pages for input color.
-.um .um-form .gform_wrapper input[type=text],
-.um .um-form input[type=search],
-.um .um-form input[type=tel],
-.um .um-form input[type=password],
-.um .um-form textarea {
+.um .um-form .gform_wrapper input[type='text'],
+.um .um-form input[type='search'],
+.um .um-form input[type='tel'],
+.um .um-form input[type='password'],
+.um .um-form .ginput_container_textarea textarea {
     color: $black;
+    border: 2px solid transparent !important;
+
+    &:focus {
+        outline: initial !important;
+        outline-color: initial !important;
+        outline-style: none !important;
+        outline-width: initial !important;
+        outline-offset: -2px;
+        -webkit-focus-ring-color: auto 1px;
+        -webkit-writing-mode: horizontal-tb !important;
+        border: 2px solid rgb(0, 95, 204) !important;
+        border-style: solid;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 641px) {
+    .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='image']):not([type='file']) {
+        line-height: initial;
+        min-height: inital;
+    }
+}
+
+@media (min-width: 641px) {
+
+    .gform_wrapper .gform_footer input.button,
+    .gform_wrapper .gform_page_footer input.button,
+    .gform_wrapper .gform_footer input[type=submit],
+    .gform_wrapper .gform_page_footer input[type=submit] {
+        font-size: 15px !important;
+        border-radius: 0;
+    }
 }
