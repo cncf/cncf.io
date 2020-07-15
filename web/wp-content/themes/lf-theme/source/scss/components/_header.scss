@@ -1,12 +1,17 @@
 .site-header {
     position: sticky;
+
+    @media (min-width: 515px) and (max-height: 700px) {
+        position: static;
+    }
+
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 20;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-        0 3px 6px rgba(0, 0, 0, 0.23);
+    0 3px 6px rgba(0, 0, 0, 0.23);
     background-color: $menu-desktop-container;
     display: flex;
     align-content: center;
@@ -62,8 +67,7 @@
 
 }
 
-@media (max-width: 999px),
-(min-width: 0px) and (max-height: 699px) {
+@media (max-width: 999px) {
 
     .site-header {
         height: 76px;
@@ -247,7 +251,7 @@
 /**
 * Desktop Navigation
 */
-@media (min-width: 1000px) and (min-height: 700px) {
+@media (min-width: 1000px) {
     .hamburger {
         display: none;
     }
