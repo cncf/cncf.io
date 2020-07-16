@@ -69,9 +69,47 @@ p.has-text-color a {
     margin-bottom: 1rem;
 }
 
-.is-style-divider-line {
-    border-bottom: 1px solid black;
+.is-style-small-bottom-margin {
+    margin-bottom: 0.5rem;
+}
 
+.is-style-divider-line {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px 10px 0px;
+
+    @media (max-width: 499px) {
+        padding-right: 0;
+    }
+
+    background: transparent;
+    max-width: 80%;
+
+    &:before {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $grey-700;
+        bottom: -2px;
+    }
+
+    @media (min-width: 375px) {
+        &:after {
+            content: " ";
+            position: absolute;
+            display: block;
+            width: 2.5px;
+            height: 90%;
+            right: -1px;
+            bottom: -2px;
+            z-index: -1;
+            background: $grey-700;
+            transform-origin: bottom left;
+            transform: skew(-40deg, 0deg) scaleY(0.7);
+        }
+    }
 }
 
 .is-style-add-chevron-after {
