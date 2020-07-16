@@ -13,7 +13,7 @@
 		webinars, events & latest news</h3>
 
 	<form id="sfmc-form1" class="newsletter-form"
-		action="https://cloud.email.thelinuxfoundation.org/LF-Newsletter-Subscriber-Form">
+		action="https://cloud.email.thelinuxfoundation.org/CNCF-Newsletter-Subscriber-Form">
 		<label for="FirstName" required>
 		<span class="screen-reader-text">First Name</span>
 			<input type="text" id="FirstName" name="FirstName" placeholder="First Name" autocomplete="given-name" spellcheck="false"
