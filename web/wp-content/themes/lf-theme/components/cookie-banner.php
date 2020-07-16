@@ -18,7 +18,7 @@ $cookies_link        = 'https://www.linuxfoundation.org/cookies/';
 ?>
 
 <div id="cookie-banner"><?php echo esc_html( $cookies_text ); ?>
-	<?php echo sprintf( '<a target="_blank" class="external is-footer" rel="noopener"  href="%s">%s</a>', esc_html( $cookies_link ), esc_html( $cookies_link_text ) ); ?>
+	<?php echo sprintf( '<a target="_blank" class="external is-white" rel="noopener"  href="%s">%s</a>', esc_html( $cookies_link ), esc_html( $cookies_link_text ) ); ?>
 	<button
 		id="cookie-banner-button" tabindex="0" role="button">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

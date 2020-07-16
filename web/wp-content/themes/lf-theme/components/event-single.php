@@ -61,7 +61,7 @@ if ( ! $city && ! $country ) {
 			<?php the_content(); ?>
 		</div>
 			<?php if ( $external_url ) : ?>
-		<a href="<?php echo esc_url( $external_url ); ?>" class="button margin-top-large">Full Event
+		<a href="<?php echo esc_url( $external_url ); ?>" class="button margin-top-large external is-white" target="_blank" rel="noopener">Full Event
 			Information</a>
 		<?php endif; ?>
 		<a href="mailto:meeting@cncf.io"

@@ -2,19 +2,15 @@
 /**
  * Case Study Item
  *
- * Singular case studyr item.
+ * Singular case study item.
  *
  * @package WordPress
  * @subpackage lf-theme
  * @since 1.0.0
  */
 
-global $query;
-
-// if CPT set chinese conditional true.
-if ( ! is_front_page() || ! $query ) {
-	$cn = false;
-} elseif ( 'lf_case_study_cn' === $query->query['post_type'] ) {
+// if cn CPT set chinese conditional true.
+if ( isset( $query ) && ( 'lf_case_study_cn' === $query->query['post_type'] ) ) {
 	$cn = true;
 } else {
 	$cn = false;
@@ -113,10 +109,10 @@ if ( $cn ) {
 		</div>
 		<?php endif; ?>
 
-		<?php if ( $read_case_study ) { ?>
+		<?php if ( $read_case_study ) : ?>
 		<a class="button on-image"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
-		<?php } ?>
+		<?php endif; ?>
 		</div>
 	</div>
 

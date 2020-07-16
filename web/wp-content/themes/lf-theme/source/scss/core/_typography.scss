@@ -111,7 +111,9 @@ a:not(.wp-block-button__link) {
     }
 
     &:hover {
-        text-decoration: underline;
+        @media (hover: hover) {
+            text-decoration: underline;
+        }
     }
 
     /* mobile tap color */
