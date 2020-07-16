@@ -40,7 +40,7 @@ if ( $query->have_posts() ) {
 	// check if users account is allowed to send bulk emails.
 	if ( ! is_sb_bulk_email_allowed_user() ) {
 		?>
-	<a href="/lf-member-instructions/">Bulk message speakers</a>
+	<a href="/cncf-member-instructions/">Bulk message speakers</a>
 		<?php
 	} else {
 		// if the number of speakers found is less than 50.

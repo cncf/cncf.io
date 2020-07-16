@@ -106,7 +106,7 @@ function shortcode_sb_subnav() {
 	if ( ! is_user_logged_in() ) {
 		?>
 	<a href="/speakers/register/">Sign Up as a Speaker</a>&nbsp;|&nbsp;
-	<a href="/lf-member-instructions/">Learn more about Bulk Speaker
+	<a href="/cncf-member-instructions/">Learn more about Bulk Speaker
 		Messaging</a>&nbsp;|&nbsp;
 	<a href="/speakers/login/">Login</a>
 		<?php
@@ -118,7 +118,7 @@ function shortcode_sb_subnav() {
 		<?php
 	} else {
 		?>
-	<a href="/lf-member-instructions/">Learn more about Bulk Speaker
+	<a href="/cncf-member-instructions/">Learn more about Bulk Speaker
 		Messaging</a>&nbsp;|&nbsp;
 	<a href="/logout/">Logout</a>
 		<?php
