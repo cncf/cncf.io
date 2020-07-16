@@ -20,23 +20,18 @@ if ( isset( $query ) && ( 'lf_case_study_cn' === $query->query['post_type'] ) ) 
 $projects = get_the_terms( get_the_ID(), 'lf-project' );
 
 if ( $cn ) {
-	// get industry type override.
-	$case_study_type = get_post_meta( get_the_ID(), 'lf_case_study_cn_type', true );
 
-	$industry = get_the_terms( get_the_ID(), 'lf-industry-cn' );
+	// get project overrides.
+	$case_study_type            = get_post_meta( get_the_ID(), 'lf_case_study_cn_type', true );
+	$case_study_type_additional = get_post_meta( get_the_ID(), 'lf_case_study_cn_type_additional', true );
 
-	$read_case_study = '阅读';
-	if ( $case_study_type ) {
-		$read_case_study .= $case_study_type;
-	}
-	$read_case_study .= '案例研究';
+	$read_case_study = '阅读 案例研究';
 
 } else {
 
-	// get industry type override.
-	$case_study_type = get_post_meta( get_the_ID(), 'lf_case_study_type', true );
-
-	$industry = get_the_terms( get_the_ID(), 'lf-industry' );
+	// get project overrides.
+	$case_study_type            = get_post_meta( get_the_ID(), 'lf_case_study_type', true );
+	$case_study_type_additional = get_post_meta( get_the_ID(), 'lf_case_study_type_additional', true );
 
 	$read_case_study = 'Read Case Study';
 
@@ -55,23 +50,31 @@ if ( $cn ) {
 
 	<div class="case-study-content-wrapper background-image-text-overlay">
 
-<div class="case-study-title-wrapper">
-		<h3 class="case-study-title"><a title="<?php the_title(); ?>"
+
+<h3 class="case-study-title margin-bottom"><a title="<?php the_title(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h3>
-</div>
-<div>
+
 <?php if ( ! is_front_page() ) : ?>
-		<p class="margin-bottom-small"><?php echo get_the_date(); ?></p>
+		<p class="case-study-date margin-bottom"><?php echo get_the_date(); ?></p>
 <?php endif; ?>
 
-		<div>
+		<div class="case-study-project-type margin-bottom-small">
 			<?php
-			if ( $case_study_type ) {
-				?>
+			if ( $case_study_type || $case_study_type_additional ) {
+
+				if ( $case_study_type ) {
+					?>
 			<span
-				class="skew-box tertiary centered margin-top"><?php echo esc_html( $case_study_type ); ?></span>
-				<?php
+				class="skew-box tertiary centered"><?php echo esc_html( $case_study_type ); ?></span>
+					<?php
+				}
+				if ( $case_study_type_additional ) {
+					?>
+				<span
+					class="skew-box tertiary centered"><?php echo esc_html( $case_study_type_additional ); ?></span>
+					<?php
+				}
 			} else {
 				// if an array and no errors.
 				if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) {
@@ -82,7 +85,7 @@ if ( $cn ) {
 					foreach ( $projects as $project ) {
 						?>
 			<span
-				class="skew-box tertiary centered margin-top"><?php echo esc_html( $project->name ); ?></span>
+				class="skew-box tertiary centered"><?php echo esc_html( $project->name ); ?></span>
 						<?php
 					}
 				}
@@ -90,30 +93,9 @@ if ( $cn ) {
 			?>
 		</div>
 
-		<?php
-		if ( ! empty( $industry ) && ! is_wp_error( $industry ) ) :
-			?>
-		<div class="margin-top">
-			<?php
-			// limits to max 2 industry.
-			$industry = array_slice( $industry, 0, 2 );
-
-			// output for each.
-			foreach ( $industry as $each ) {
-				?>
-			<span
-				class="skew-box centered secondary"><?php echo esc_html( $each->name ); ?></span>
-				<?php
-			}
-			?>
-		</div>
-		<?php endif; ?>
-
 		<?php if ( $read_case_study ) : ?>
 		<a class="button on-image"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		<?php endif; ?>
-		</div>
 	</div>
-
 </div>

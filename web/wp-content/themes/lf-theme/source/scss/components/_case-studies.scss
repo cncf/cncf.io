@@ -22,6 +22,11 @@
 }
 
 .case-study-box {
+    @media (max-width: 767px) {
+        min-height: 220px;
+    }
+
+    min-height: 280px;
 
     &:nth-child(5n + 1) .case-study-overlay {
         background-color: $cs-overlay;
@@ -90,5 +95,9 @@
 
 .case-study-title {
     align-self: center;
-    margin-bottom: 0;
+}
+
+.case-study-date {
+    font-size: 0.9em;
+    font-weight: 300;
 }
