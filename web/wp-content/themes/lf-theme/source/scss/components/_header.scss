@@ -455,13 +455,14 @@
     }
 
     // added class if menu goes over right edge
-    li.menu-item-has-children.is-edge {
+    li.menu-item-has-children.is-off-right-edge {
 
         &:hover>ul,
         &:focus>ul,
         &.focus>ul {
             left: initial;
             right: 100%;
+            box-shadow: -5px 6px 9px 0px rgba(0, 0, 0, 0.3);
         }
 
     }
