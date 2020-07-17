@@ -192,7 +192,7 @@ class Speakers_Contact {
 	/**
 	 * After Form Submission
 	 *
-	 * @param obejct $entry Entry.
+	 * @param object $entry Entry.
 	 * @param object $form Form.
 	 */
 	public function after_form_submission( $entry, $form ) {
