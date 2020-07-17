@@ -46,12 +46,24 @@ jQuery( document ).ready(
 		);
 	}
 
+	// add is-current class to control arrow state.
+	$( '.main-navigation > li.menu-item-has-children' ).hover(
+        function () {
+					$(this).removeClass('is-current');
+					$(this).addClass('is-current');
+			}, function() {
+				$(this).removeClass('is-current');
+			}
+	);
+
 	 // Keep menu inside viewport.
 	$( '.sub-menu li.menu-item-has-children' ).on(
 		'mouseenter mouseleave',
 		function () {
 			if ($( 'ul', this ).length) {
 				const ul = $( 'ul:first', this ); // pick first ul after el.
+
+				// testing for menu off-screen at right.
 				const r = this.getBoundingClientRect().right; // menu from the edge of screen.
 				const w = ul.width(); // menu element size.
 				const docW = $( '.site-header' ).width(); // size of header / screen.
@@ -65,7 +77,7 @@ jQuery( document ).ready(
 					$( this ).removeClass( 'is-off-right-edge' );
 				}
 
-				// height.
+				// testing for menu off-screen at bottom.
 				const position = $( this ).position();
 				const t = position.top;
 				const h = ul.height();

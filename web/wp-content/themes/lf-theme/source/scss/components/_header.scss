@@ -367,6 +367,16 @@
                         border-bottom: 1px solid $menu-hover;
                         border-right: 1px solid $menu-hover;
                     }
+
+
+                }
+
+                &.is-current {
+                    >a::after {
+                        transform: rotate(225deg) translateY(-50%);
+                        margin-top: 3px;
+                        transition-duration: 0.2s;
+                    }
                 }
 
 
