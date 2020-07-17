@@ -114,7 +114,8 @@
         display: flex;
         align-items: center;
         margin: auto;
-        max-width: calc(100% - (2*32px));
+        // 100% - 2xButton Width - Extra Padding.
+        max-width: calc(100% - (2*32px) - 0.5em);
 
         >* {
             width: 100%;
@@ -122,7 +123,7 @@
             @media (min-width: 600px) {
                 margin-left: auto;
                 margin-right: auto;
-                width: 500px;
+                width: 100%;
                 max-width: 500px;
 
             }
