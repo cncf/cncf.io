@@ -12,6 +12,7 @@
 
     &.is-primary-color {
         &::after {
+			// pink
             // https://codepen.io/sosuke/pen/Pjoqqp
             filter: invert(31%) sepia(94%) saturate(6410%) hue-rotate(323deg) brightness(89%) contrast(95%);
         }

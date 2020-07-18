@@ -44,13 +44,15 @@ if ( $cn ) {
 
 	<?php if ( get_post_thumbnail_id() ) : ?>
 	<figure class="background-image-figure">
-		<?php echo wp_get_attachment_image( get_post_thumbnail_id(), false, false, array( 'sizes' => '(min-width: 1200px) 315px, (min-width: 940px) calc(12.92vw + 165px), (min-width: 640px) calc(50vw - 33px), (min-width: 500px) calc(100vw - 50px), 97.78vw' ) ); ?>
+		<?php
+		LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'case-study-640', '600px' );
+		?>
 	</figure>
 	<?php endif; ?>
 
 	<div class="case-study-content-wrapper background-image-text-overlay">
 
-
+<div>
 <h3 class="case-study-title margin-bottom"><a title="<?php the_title(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h3>
@@ -97,5 +99,7 @@ if ( $cn ) {
 		<a class="button on-image"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		<?php endif; ?>
+		</div>
+
 	</div>
 </div>

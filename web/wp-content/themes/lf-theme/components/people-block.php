@@ -39,10 +39,10 @@ if ( strlen( $content ) > 20 ) {
 	<figure class="background-image-figure">
 	<?php
 	if ( has_post_thumbnail() ) {
-		Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'people-250', '250px' );
+		LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'people-250', '400px' );
 	} else {
 		$options = get_option( 'lf-mu' );
-		echo wp_get_attachment_image( $options['generic_avatar_id'], 'people-250', false, false );
+		LF_Utils::display_responsive_images( $options['generic_avatar_id'], 'people-250', '400px' );
 	}
 	?>
 	</figure>
@@ -134,10 +134,10 @@ if ( strlen( $content ) > 20 ) {
 						<figure class="background-image-figure">
 						<?php
 						if ( has_post_thumbnail() ) {
-							Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'full', '300px' );
+							LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'people-250', '400px' );
 						} else {
 							$options = get_option( 'lf-mu' );
-							echo wp_get_attachment_image( $options['generic_avatar_id'], 'people', false, array( 'class' => '' ) );
+							LF_Utils::display_responsive_images( $options['generic_avatar_id'], 'people-250', '400px' );
 						}
 						?>
 						</figure>

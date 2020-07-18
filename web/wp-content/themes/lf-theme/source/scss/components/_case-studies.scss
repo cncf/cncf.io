@@ -64,11 +64,7 @@
 }
 
 .case-study-content-wrapper {
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    align-items: center;
-    height: 100%;
     top: 50%;
     transform: translateY(-50%);
     color: $white;
@@ -87,10 +83,6 @@
 .case-study-title-wrapper {
     display: flex;
     height: 100%;
-
-    .home & {
-        margin-bottom: auto;
-    }
 }
 
 .case-study-title {

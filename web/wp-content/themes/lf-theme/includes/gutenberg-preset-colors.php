@@ -4,7 +4,7 @@
  *
  * Specify custom color swatches.
  *
- * After adding here, make sure your CSS for frontend and backend matches the rules that are generated.
+ * After adding here, make sure your CSS for frontend and backend matches the rules that are generated. This should also match what is in _colors.scss.
  *
  * @package WordPress
  * @subpackage lf-theme

@@ -60,7 +60,9 @@
 
 			<?php if ( $background ) : ?>
 		<figure class="background-image-figure">
-				<?php echo wp_get_attachment_image( $background, 'medium', false ); ?>
+				<?php
+				LF_Utils::display_responsive_images( $background, 'event-270', '270px' );
+				?>
 		</figure>
 		<?php endif; ?>
 

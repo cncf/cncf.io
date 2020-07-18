@@ -21,10 +21,10 @@ $spotlight_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', t
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php
 			if ( has_post_thumbnail() ) {
-				echo wp_get_attachment_image( get_post_thumbnail_id(), 'spotlight', false, false );
+				LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'spotlight-515', '515px' );
 			} else {
 				$options = get_option( 'lf-mu' );
-				echo wp_get_attachment_image( $options['generic_thumb_id'], 'spotlight', false, false );
+				LF_Utils::display_responsive_images( $options['generic_thumb_id'], 'spotlight-515', '515px' );
 			}
 			?>
 		</a>

@@ -51,7 +51,6 @@
 .spotlight-photo {
     width: 100%;
 
-
     @media (min-width: 768px) {
         &:hover {
             img {
@@ -63,8 +62,8 @@
     img {
         width: 100%;
 
-        @media (min-width: 1000px) {
-            max-height: 170px;
-        }
+        // @media (min-width: 1000px) {
+        //     max-height: 170px;
+        // }
     }
 }
