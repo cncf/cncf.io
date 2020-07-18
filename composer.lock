@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "36ba81abe4b83e4effcde8e86a31cda8168e9a5f"
+                "reference": "b6f561f549d72916a75b40187cea6c16048fd7d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/36ba81abe4b83e4effcde8e86a31cda8168e9a5f",
-                "reference": "36ba81abe4b83e4effcde8e86a31cda8168e9a5f",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/b6f561f549d72916a75b40187cea6c16048fd7d2",
+                "reference": "b6f561f549d72916a75b40187cea6c16048fd7d2",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-07-18T00:57:15+00:00"
+            "time": "2020-07-18T23:15:13+00:00"
         },
         {
             "name": "composer/installers",
@@ -641,15 +641,15 @@
         },
         {
             "name": "wpackagist-plugin/flying-pages",
-            "version": "2.4.1",
+            "version": "2.4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/flying-pages/",
-                "reference": "tags/2.4.1"
+                "reference": "tags/2.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/flying-pages.2.4.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/flying-pages.2.4.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
