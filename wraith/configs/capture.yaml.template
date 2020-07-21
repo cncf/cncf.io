@@ -59,7 +59,7 @@ threshold: 5
 
 # (optional) Specify the template (and generated thumbnail sizes) for the gallery output.
 gallery:
-  template: 'basic_template' # Examples: 'basic_template' (default), 'slideshow_template'
+  template: 'slideshow_template' # Examples: 'basic_template' (default), 'slideshow_template'
   thumb_width:  200
   thumb_height: 200
 
