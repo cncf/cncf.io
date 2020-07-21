@@ -37,6 +37,22 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( $root_path . '/.en
 	)->notEmpty();
 }
 
+/**
+ * Disallow on server file edits
+ */
+define( 'DISALLOW_FILE_EDIT', true );
+define( 'DISALLOW_FILE_MODS', true );
+
+/**
+ * Force SSL
+ */
+define( 'FORCE_SSL_ADMIN', true );
+
+/**
+ * Limit post revisions
+ */
+define( 'WP_POST_REVISIONS', 10 );
+
 /*
  * If NOT on Pantheon / Lando (which is?)
  */
@@ -184,22 +200,6 @@ endif;
 */
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
-
-/**
- * Disallow on server file edits
- */
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISALLOW_FILE_MODS', true );
-
-/**
- * Force SSL
- */
-define( 'FORCE_SSL_ADMIN', true );
-
-/**
- * Limit post revisions
- */
-define( 'WP_POST_REVISIONS', 10 );
 
 /**
  * WordPress Database Table prefix.
