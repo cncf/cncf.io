@@ -211,7 +211,7 @@ workflows:
     #         requires:
     #             - build
     #             - build_and_deploy_cncfci
-      - wraith_test_cncfci:
-            requires:
-                - build_and_deploy_cncfci
-                # - behat_test_cncfci
+    #   - wraith_test_cncfci:
+    #         requires:
+    #             - build_and_deploy_cncfci
+    #             # - behat_test_cncfci

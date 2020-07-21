@@ -18,12 +18,26 @@ browser: "phantomjs"
 # (required) The paths to capture. All paths should exist for both of the domains specified above.
 paths:
   home:     /
-  staff: /about/staff/
-  projects: /join/projects/
-  host: /join/host-your-project/
-  faq: /join/faq/
-  webinars: /community/webinars/
-  blog: /blog/
+  about:    /about/members/
+  join:  /about/join/
+  contact:  /about/contact/
+  projects:  /projects/
+  case-studies:  /projects/case-studies/
+  case-study: /case-studies/adform_prometheus/
+  software-comformance:  /certification/software-conformance/
+  training:  /certification/training/
+  CKA:  /certification/cka/
+  oversight-committee: /people/technical-oversight-committee/
+  ambassadors: /people/ambassadors/
+  kubecon-events: /community/kubecon-cloudnativecon-events/
+  speakers-bureau: /speakers/
+  speakers-bureau-profile: /speaker/prydonius/
+  phippy: /phippy/
+  search: /?s=cloud
+  events-we-at: /events/
+  webinars: /webinars/
+  webinar: /webinars/using-cloud-native-tech-to-solve-app-security-challenges-k8s/
+
 
 # (required) Screen widths (and optional height) to resize the browser to before taking the screenshot.
 screen_widths:
