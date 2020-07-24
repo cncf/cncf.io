@@ -8,7 +8,7 @@
  */
 
 ?>
-<section class="newsletter">
+<section class="newsletter" id="newsletter">
 	<h3>Subscribe to the CNCF newsletter to receive regular updates about
 		webinars, events & latest news</h3>
 
