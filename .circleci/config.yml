@@ -176,14 +176,11 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      # Install dev dependencies
       - build
       - build_css_js
-      # Build and deploy
       - build_and_deploy_cncfci:
             requires:
                 - build_css_js
-      # Code sniff
       - code_sniff_unit_test:
             requires:
                 - build
