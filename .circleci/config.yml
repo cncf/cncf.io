@@ -37,7 +37,9 @@ defaults: &defaults
     # BUILD_TOOLS_VERSION: 2.0.0-beta6
     TERM: dumb
 
-version: 2
+version: 2.1
+orbs:
+  slack: circleci/slack@3.4.2
 jobs:
     # @todo: common initialization, maybe
     build:
@@ -70,6 +72,9 @@ jobs:
                 paths:
                     - vendor
 
+            - slack/status:
+                fail_only: true
+
     code_sniff_unit_test:
         <<: *defaults
         # override the default image with drupaldocker/php as this job
@@ -92,9 +97,8 @@ jobs:
                 name: check for WordPress coding standards
                 command: composer -n code-sniff
 
-            # - run:
-            #     name: run unit tests
-            #     command: composer -n unit-test
+            - slack/status:
+                fail_only: true
 
     build_css_js:
         <<: *defaults
@@ -115,6 +119,9 @@ jobs:
                 root: web/wp-content/themes/lf-theme
                 paths:
                     - build
+
+            - slack/status:
+                fail_only: true
 
 
     build_and_deploy_cncfci:
@@ -146,35 +153,7 @@ jobs:
                 name: deploy to Pantheon
                 command: ./.circleci/deploy-to-pantheon.sh $TERMINUS_SITE
 
-    behat_test_cncfci:
-        <<: *defaults
-        steps:
-            - checkout
-
-            - attach_workspace:
-                # Must be absolute path or relative path from working_directory
-                at: /tmp
-
-            - restore_cache:
-                keys:
-                    - terminus-install
-
-            - run:
-                name: copy vendor
-                command: cp -r /tmp/vendor .
-
-            - run:
-                name: dependencies
-                command: ./.circleci/set-up-globals.sh
-
-            - run:
-                name: run Behat tests
-                command: ./.circleci/behat-test.sh
-
-            - run:
-                name: run Behat cleanup
-                command: ./.circleci/behat-test-cleanup.sh
-                when: always
+            - slack/status
 
     wraith_test_cncfci:
         docker:
@@ -190,8 +169,11 @@ jobs:
             - store_artifacts:
                 path: ./wraith/shots
 
+            - slack/status:
+                fail_only: true
+
+
 workflows:
-  version: 2
   build_and_test:
     jobs:
       # Install dev dependencies
@@ -205,12 +187,6 @@ workflows:
       - code_sniff_unit_test:
             requires:
                 - build
-      # Run Behat tests after deploy so they can be done on Pantheon
-    # commenting out behat tests until we need them.
-    #   - behat_test_cncfci:
-    #         requires:
-    #             - build
-    #             - build_and_deploy_cncfci
     #   - wraith_test_cncfci:
     #         requires:
     #             - build_and_deploy_cncfci
