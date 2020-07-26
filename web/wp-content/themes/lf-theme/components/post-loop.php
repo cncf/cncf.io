@@ -82,6 +82,7 @@
  * @param boolean $is_blog_category In the blog cat.
  */
 function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_category, $is_blog_category ) {
+	$options = get_option( 'lf-mu' );
 
 	if ( $is_in_the_news_category ) :
 		$link_url = get_post_meta( get_the_ID(), 'lf_post_external_url', true );
