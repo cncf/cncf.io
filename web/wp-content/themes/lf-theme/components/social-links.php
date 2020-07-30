@@ -64,6 +64,16 @@ $image   = new Image();
 	<li class="social_meetup"><a target="_blank" rel="noopener" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on Meetup'; ?>"
 			href="<?php echo esc_url( $options['social_meetup'] ); ?>"><?php $image->get_svg( 'social/meetup.svg' ); ?></a></li>
 	<?php endif; ?>
+	
+	<?php if ( $options['social_slack'] ) : ?>
+	<li class="social_slack"><a target="_blank" rel="noopener" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' Slack'; ?>"
+			href="<?php echo esc_url( $options['social_slack'] ); ?>"><?php $image->get_svg( 'social/slack.svg' ); ?></a></li>
+	<?php endif; ?>
+
+	<?php if ( $options['social_rss'] ) : ?>
+	<li class="social_rss"><a target="_blank" rel="noopener" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' RSS feed'; ?>"
+			href="<?php echo esc_url( $options['social_rss'] ); ?>"><?php $image->get_svg( 'social/rss.svg' ); ?></a></li>
+	<?php endif; ?>
 </ul>
 
 <?php
