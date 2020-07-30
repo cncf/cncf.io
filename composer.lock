@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "791da7bcc8f5c654640543f3ad90b696",
+    "content-hash": "a93396868b4f4ad80634f7902f37c373",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -642,6 +642,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/flying-pages/"
+        },
+        {
+            "name": "wpackagist-plugin/flying-scripts",
+            "version": "1.1.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/flying-scripts/",
+                "reference": "tags/1.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/flying-scripts.1.1.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/flying-scripts/"
         },
         {
             "name": "wpackagist-plugin/lh-hsts",
