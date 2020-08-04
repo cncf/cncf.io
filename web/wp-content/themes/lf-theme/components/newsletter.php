@@ -29,6 +29,13 @@
 			<input type="email" id="EmailAddress" name="EmailAddress"
 				placeholder="Email Address" autocomplete="email" spellcheck="false" required>
 		</label>
+		<label for="Language" required>
+		<span class="screen-reader-text">Language</span>
+			<select id="Language" name="Language" class="form-control select-css" required>
+				<option value="English">English</option>
+				<option value="Chinese">Chinese</option>
+			</select>
+		</label>
 		<button type="submit" class="button" id="sfmc-submit1">Subscribe</button>
 		<div id="recaptcha-form1" style="display:none;"></div>
 	</form>
