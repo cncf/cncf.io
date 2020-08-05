@@ -31,6 +31,12 @@ else
 	fi
 fi
 echo 'export TERMINUS_ENV=${TERMINUS_ENV:-$DEFAULT_ENV}' >> $BASH_ENV
+
+# Store github info
+echo 'export COMMIT_MESSAGE=$(git log --format="%s" -n 1 $CIRCLE_SHA1)' >> $BASH_ENV
+echo 'export COMMIT_AUTHOR=$(git log --format="%an" -n 1 $CIRCLE_SHA1)' >> $BASH_ENV
+echo 'export COMMIT_HASH=$(git log --format="%h" -n 1 $CIRCLE_SHA1)' >> $BASH_ENV
+
 source $BASH_ENV
 
 #===========================================
