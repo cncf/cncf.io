@@ -33,7 +33,7 @@
 		<span class="screen-reader-text">Language</span>
 			<select id="Language" name="Language" class="form-control select-css" required>
 				<option value="English">English</option>
-				<option value="Chinese">Chinese</option>
+				<option value="Chinese">中文</option>
 			</select>
 		</label>
 		<button type="submit" class="button" id="sfmc-submit1">Subscribe</button>
