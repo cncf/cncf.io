@@ -40,6 +40,9 @@ else
     terminus build:env:push -n "$TERMINUS_S.$TERMINUS_ENV" --yes
 fi
 
+# Clear cache
+terminus env:clear-cache "$TERMINUS_S.$TERMINUS_ENV"
+
 set +ex
 echo 'terminus secrets:set'
 terminus secrets:set -n "$TERMINUS_S.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty

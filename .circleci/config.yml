@@ -40,6 +40,7 @@ defaults: &defaults
 version: 2.1
 orbs:
   slack: circleci/slack@3.4.2
+
 jobs:
     # @todo: common initialization, maybe
     build:
@@ -100,6 +101,7 @@ jobs:
             - slack/status:
                 fail_only: true
 
+                
     build_css_js:
         <<: *defaults
         docker:
@@ -124,7 +126,7 @@ jobs:
                 fail_only: true
 
 
-    build_and_deploy_cncfci:
+    build_and_deploy_cncf:
         <<: *defaults
         steps:
             - checkout
@@ -157,22 +159,15 @@ jobs:
                 success_message: "$COMMIT_AUTHOR's *$CIRCLE_JOB* job has succeeded \n- $COMMIT_HASH: $COMMIT_MESSAGE"
                 failure_message: "$COMMIT_AUTHOR's *$CIRCLE_JOB* job has failed \n- $COMMIT_HASH: $COMMIT_MESSAGE"
 
-    wraith_test_cncfci:
-        docker:
-            - image: lopezs/wraith
 
+    run_percy_tests:
+        <<: *defaults
         steps:
             - checkout
 
             - run:
-                name: run Wraith tests
-                command: ./.circleci/wraith-test.sh $TERMINUS_SITE
-
-            - store_artifacts:
-                path: ./wraith/shots
-
-            - slack/status:
-                fail_only: true
+                name: Percy tests
+                command: ./.circleci/percy-tests.sh $TERMINUS_SITE
 
 
 workflows:
@@ -180,13 +175,12 @@ workflows:
     jobs:
       - build
       - build_css_js
-      - build_and_deploy_cncfci:
+      - build_and_deploy_cncf:
             requires:
                 - build_css_js
       - code_sniff_unit_test:
             requires:
                 - build
-    #   - wraith_test_cncfci:
+    #   - run_percy_tests:
     #         requires:
-    #             - build_and_deploy_cncfci
-    #             # - behat_test_cncfci
+    #             - build_and_deploy_cncf

@@ -24,9 +24,9 @@ fi
 echo 'export TERMINUS_ENV=${TERMINUS_ENV:-$DEFAULT_ENV}' >> $BASH_ENV
 source $BASH_ENV
 
-if [[ (${CIRCLE_BRANCH} != "master") || (${CIRCLE_BRANCH} == "master" && -n ${CIRCLE_PULL_REQUEST+x}) ]];
+if [[ (${CIRCLE_BRANCH} != "master" && -z ${CIRCLE_PULL_REQUEST+x}) || (${CIRCLE_BRANCH} == "master" && -n ${CIRCLE_PULL_REQUEST+x}) ]];
 then
-    echo -e "CircleCI will only run Wraith tests on Pantheon if on the master branch.\n"
+    echo -e "CircleCI will only run tests if on the master branch or creating a pull request.\n"
     exit 0;
 fi
 
@@ -37,27 +37,11 @@ then
   exit 1
 fi
 
-echo "::::::::::::::::::::::::::::::::::::::::::::::::"
-echo "Wraith test site: $TERMINUS_S.$TERMINUS_ENV"
-echo "::::::::::::::::::::::::::::::::::::::::::::::::"
-echo
-
 # Exit immediately on errors
 set -ex
 
-# install fonts
-apt-get install fonts-arphic-bkai00mp  fonts-arphic-bsmi00lp  fonts-arphic-gbsn00lp fonts-arphic-gkai00mp
+# Install Percy
+npm install -D @percy/script
 
-# Run the Wraith tests
-cd wraith
-cp configs/capture.yaml.template configs/capture.yaml 
-cat >>configs/capture.yaml <<EOL
-# (required) The domains to take screenshots of.
-domains:
-  current:  "http://test-$TERMINUS_S.pantheonsite.io"
-  new:      "https://$TERMINUS_ENV-$TERMINUS_S.pantheonsite.io"  
-EOL
-wraith capture capture
-
-# Change back into previous directory
-cd -
+# Run the tests
+npx percy exec -- node ./percy/percy.js https://$TERMINUS_ENV-$TERMINUS_S.pantheonsite.io/
