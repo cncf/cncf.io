@@ -64,86 +64,9 @@ To activate development mode, using Browsersync and watch files, run `npm start`
 
 -----
 
-## Wordhat Tests
+## Percy Tests
 
-The CircleCI job can run [Wordhat](https://wordhat.info/) tests after each commit.  They interact with the site through a chrome headless browser.  The tests are stored in tests/behat/. Here's a [quick intro](https://wordhat.info/getting-started/behat-intro.html) on how to write tests.
-
-Create a behat-local.yml like this:
-
-
-```
-cp tests/behat/behat-pantheon.yml behat-local.yml
-```
-
-
-Edit behat-local.yml to have the bottom half of the file like this. You'll need to fill in your own admin password and update the `base_url` and `site_url` params:
-
-
-```
- extensions:
-   Behat\MinkExtension:
-     base_url: https://lfeventsci.lndo.site
-     browser_name: chrome
-     sessions:
-       default:
-         chrome:
-           api_url: "http://localhost:9222"
-           validate_certificate: false
-
-   PaulGibbs\WordpressBehatExtension:
-     users:
-       -
-         roles:
-           - administrator
-         username: admin
-         password: xxx
-     default_driver: wpcli
-     site_url: https://lfeventsci.lndo.site/wp
-     path: web/wp
-
-
-   DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
-```
-
-
-You need to have chrome running in headless mode in order for the tests to run.  I accomplished that on macos like this:
-
-
-```
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-chrome --headless --remote-debugging-port=9222 https://www.chromestatus.com&
-```
-
-
-Then to run the tests:
-
-
-```
-vendor/bin/behat --config=behat-local.yml
-```
-
------
-
-## Wraith Tests
-
-[Wraith](https://github.com/BBC-News/wraith) performs visual regression tests by comparing two versions of the site.  It is a great way to spot unintended render issues across the site.
-
-Install wraith system-wide using [the instructions here](http://bbc-news.github.io/wraith/index.html).
-
-Then setup your own config file:
-
-
-```
-cd wraith
-cp configs/capture-local.yaml.template configs/capture.yaml
-```
-
-
-Edit configs/capture.yaml to update the new domain to point to your local instance.
-
-Run wraith: `wraith capture configs/capture.yaml`
-
-View the diff gallery: `open shots/gallery.html`
+[Percy](https://percy.io/) performs visual regression tests on each push to the repo.  It is a great way to spot unintended render issues across the site.  If a particular build diverges from the baseline snapshots, the changes need to be fixed or "Approved" to be incorporated into a new baseline.
 
 -----
 
@@ -151,11 +74,7 @@ View the diff gallery: `open shots/gallery.html`
 
 The CircleCI process will sniff the code to make sure it complies with WordPress coding standards.  All Linux Foundation code should comply with [these guidelines](https://docs.google.com/document/d/1TYqCwG874i6PdJDf5UX9gnCZaarvf121G1GdNH7Vl5k/edit#heading=h.dz20heii56uf).
 
-phpcs and the [WordPress Coding Standards for PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) come as part of the repo and are installed in the vendor directory by composer.
-
-phpcbf and phpcs can be run on the command line from the theme folder-label `npm test`, otherwise run `gulp phpcs` or `gulp phpcbf` to run them seperately.
-
-If you wish to customise the commands or run directly, use:
+phpcs and the [WordPress Coding Standards for PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) come as part of the repo and are installed in the vendor directory by composer.phpcs can be run on the command line like this:
 ```
 ./vendor/bin/phpcs --standard=WordPress ./web/wp-content
 ```
@@ -166,7 +85,7 @@ For convenience on local instances, use this command to ignore particular files 
 
 It's even more convenient to [install into your text editor](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards#using-phpcs-and-wpcs-from-within-your-ide).
 
-Since the lfeventsci repo includes phpcs via composer, it will use that version of the binary even though you may have phpcs installed system-wide.  So in the root of the repo you'll need to run the following so that it can find the WordPress standards from within your code editor:
+Since the cncfci repo includes phpcs via composer, it will use that version of the binary even though you may have phpcs installed system-wide.  So in the root of the repo you'll need to run the following so that it can find the WordPress standards from within your code editor:
 
 ```
 ./vendor/bin/phpcs --config-set installed_paths ~/Sites/cncf.io/vendor/wp-coding-standards/wpcs
