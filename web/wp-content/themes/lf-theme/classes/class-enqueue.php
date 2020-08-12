@@ -60,7 +60,7 @@ class Enqueue {
 		if ( ! is_admin() ) {
 
 			wp_deregister_script( 'jquery' );
-			// load WP copy of jQuery in the footer.
+			// Load updated version of jquery.
 			wp_register_script( 'jquery', get_template_directory_uri() . '/source/js/third-party/jquery-3.5.1.min.js', false, '3.5.1', true );
 			wp_enqueue_script( 'jquery' );
 

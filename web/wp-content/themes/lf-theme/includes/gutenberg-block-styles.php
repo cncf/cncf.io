@@ -328,3 +328,12 @@ register_block_style(
 		'label' => '100px Responsive',
 	)
 );
+
+// GALLERY.
+register_block_style(
+	'core/gallery',
+	array(
+		'name'  => 'no-margins',
+		'label' => 'No top/bottom margin',
+	)
+);

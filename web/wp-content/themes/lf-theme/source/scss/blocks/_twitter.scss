@@ -13,3 +13,10 @@
 .twitter-item {
     overflow-y: scroll;
 }
+
+// Embedded single tweets
+@media (min-width: 800px) {
+    .wp-block-embed-twitter {
+        min-height: 280px;
+    }
+}

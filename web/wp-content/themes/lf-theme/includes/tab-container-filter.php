@@ -25,9 +25,11 @@ function lf_content_filter( $content ) {
 	ob_start();
 	?>
 <div class="sticky-container">
-	<div class="sticky-column">
-	<div class="sticky-element">
+	<div class="sticky-column" data-sticky-container>
+	<div class="sticky-element" data-sticky data-sticky-class="is-sticky">
 	<span class="sticky-nav-hint">Table of contents</span>
+		  <div class="sticky-nav-scroller">
+
 		<ul id="tab-container-nav" class="tab-container-nav no-style">
 			<?php
 			// grab the data-menu-title and id from each tag to construct the menu.
@@ -40,8 +42,8 @@ function lf_content_filter( $content ) {
 			</li>
 			<?php endforeach; ?>
 		</ul>
+</div>
 	</div>
-
 	</div>
 
 	<div class="sticky-main-content">

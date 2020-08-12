@@ -136,8 +136,6 @@ if ( $dat_webinar_start > $dat_now ) {
 				Slides</a></p>
 		<?php endif; ?>
 
-
-
 		<div class="entry-content">
 
 			<?php if ( $speakers ) : ?>
@@ -146,7 +144,6 @@ if ( $dat_webinar_start > $dat_now ) {
 			<?php endif; ?>
 
 			<?php the_content(); ?>
-
 
 			<?php if ( 'upcoming' == $period_status ) : ?>
 
@@ -169,13 +166,17 @@ if ( $dat_webinar_start > $dat_now ) {
 					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
 				</p>
 
-				<p><strong>How to attend:</strong> <a target="_blank"
-						href="<?php echo esc_url( $registration_url ); ?>"
-						rel="noopener"
-						class="external is-primary-color"
-						title="Register for <?php the_title(); ?> Webinar">Register
-						for this
-						webinar</a></p>
+				<p><strong>How to attend:</strong>
+				<?php if ( $registration_url ) : ?>
+					<a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener" class="external is-primary-color is-inline"
+				title="Register for <?php the_title(); ?> Webinar">Register for this
+					webinar</a>
+					<?php
+						else :
+							?>
+						Registration link coming soon
+						<?php endif; ?>
+				</p>
 			</div>
 			<?php endif; ?>
 

@@ -12,46 +12,24 @@
     }
 }
 
-.archive-date {
-    margin-bottom: 0.5em;
-    font-size: 0.875em;
-    font-weight: 500;
-    color: $grey-500;
-}
-
 .archive-item {
     position: relative;
     display: flex;
     flex-direction: column;
 
+    // Search.
     &.highlighted {
         border: 1px solid black;
         padding: 2em;
     }
 
-    .date-author-row {
-        margin-bottom: 1rem;
-
-        @media (min-width: 768px) {
-            margin-bottom: 0.5em;
-        }
-    }
-
-    .archive-title {
-        margin-bottom: 1rem;
-
-        @media (min-width: 768px) {
-            margin-bottom: 0.5em;
-        }
-
-        a {
-            font-weight: 700;
-        }
-    }
-
     @media (min-width: 768px) {
         flex-direction: row;
         align-items: center;
+
+        &.in-news-item {
+            align-items: flex-start;
+        }
 
         &.featured {
             flex-direction: row;
@@ -62,11 +40,10 @@
                 min-width: 300px;
                 flex-grow: 1;
                 flex-shrink: 1;
-                height: 320px;
             }
 
             .archive-text-wrapper {
-                flex-basis: 250px;
+                flex-basis: 300px;
                 flex-grow: 1;
                 flex-shrink: 0;
             }
@@ -78,47 +55,114 @@
 
             content: "FEATURED";
             position: absolute;
-            left: 0;
-            top: 0;
+
             z-index: 10;
             color: $white;
             background-color: $primary-400;
             font-weight: 600;
             font-size: 14px;
             padding: 0.5em;
-            // skew
-            padding-right: 25px;
-            clip-path: polygon(0px 100%, calc(100% - 22px) 100%, 100% 0px, 0px 0px);
+            top: 0;
+
+            // align top right small screens.
+            @media (max-width: 767px) {
+                right: 0;
+                // skew
+                padding-left: 25px;
+                clip-path: polygon(0px 0px, 22px 100%, 100% 100%, 100% 0px, 0px 0px);
+            }
+
+            // align top left on larger screens.
+            @media (min-width: 768px) {
+                left: 0;
+                // skew
+                padding-right: 25px;
+                clip-path: polygon(0px 100%, calc(100% - 22px) 100%, 100% 0px, 0px 0px);
+            }
         }
     }
 }
 
+.archive-title {
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+
+    a {
+        font-weight: 700;
+    }
+}
+
 .archive-image-wrapper {
-    max-width: 100%;
     border: 1px solid $tertiary-color;
-    overflow: hidden;
     transition: all 0.25s ease;
-    object-fit: cover;
-    object-position: bottom;
-    margin-bottom: 1rem;
     position: relative;
 
-    img {
-        display: block;
+    @media (max-width: 767px) {
+        margin-bottom: 1rem;
     }
 
     @media (min-width: 768px) {
-        flex-basis: 250px;
+        flex-basis: 275px;
         flex-grow: 0;
         flex-shrink: 0;
+        margin-right: 2.5rem;
         height: auto;
-        height: 180px;
-        margin-right: 3em;
 
         &:hover {
             .newsroom-image {
                 opacity: 0.75;
             }
+        }
+    }
+
+    @media (min-width: 1000px) {
+        flex-basis: 325px;
+    }
+
+    a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // padding for image wrapper.
+    &::before {
+        content: "";
+        width: 1px;
+        margin-left: -1px;
+        float: left;
+        height: 0;
+        padding-top: 630px / 1200px * 100%;
+    }
+
+    &::after {
+        // clear float.
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    // stops 1px padding.
+    img {
+        display: block;
+    }
+
+    .archive-image {
+        object-fit: cover;
+        width: 100%;
+        height: 100.1%;
+    }
+
+    // aligns the SVG default image.
+    img[src$=".svg"] {
+        &.archive-default-svg {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            width: 80%;
+            height: 90%;
+            padding: 1rem 0;
         }
     }
 }
@@ -131,41 +175,25 @@
     }
 }
 
+// In the News only.
 .in-news-item {
+
     .archive-image-wrapper {
-        display: flex;
-        align-content: center;
-        justify-content: center;
 
-        @media (max-width: 799px) {
-            height: 200px;
+        @media (max-width: 767px) {
+            height: 150px;
         }
 
-        a {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-        }
-
-        // apply to all images (inc default).
         img {
-            align-self: center;
-            // some control of size.
-            max-height: 200px;
-            // for small logos.
-            min-width: 200px;
+            width: 80%;
+            height: 90%;
+            object-fit: contain;
 
-            // for non SVGs.
-            &.media-logo {
-                padding: 0.5em;
-            }
-
-            // for SVGs.
-            .media-logo {
-                &[src$=".svg"] {
-                    padding: 1em;
-                }
+            @media (min-width: 768px) {
+                height: 180px;
+                padding: 1rem 0;
             }
         }
+
     }
 }

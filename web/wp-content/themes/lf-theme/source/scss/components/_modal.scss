@@ -56,10 +56,26 @@ dialog {
 
 }
 
+@media (max-width: 767px) {
+    .lf-modal-close__wrapper {
+        position: sticky;
+        top: -2rem;
+        width: 100%;
+        z-index: 99;
+        background-color: $white;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
 .lf-modal-close {
-    position: absolute;
-    top: 22px;
-    right: 26px;
+    @media (min-width: 768px) {
+        position: absolute;
+        top: 22px;
+        right: 26px;
+    }
+
+
     background: $white;
     width: 50px;
     height: 50px;
@@ -138,14 +154,10 @@ dialog {
         width: 200px;
     }
 
+    p:last-child {
+        margin-bottom: 2rem;
+    }
 
-}
-
-.lf-modal__wrapper,
-.lf-modal__content,
-#js-modal-content,
-.modal-content-wrapper {
-    height: 100%;
 }
 
 .modal-content-wrapper {
@@ -169,7 +181,7 @@ dialog {
             padding-bottom: 1rem;
 
             p:last-child {
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
         }
     }

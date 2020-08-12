@@ -174,10 +174,10 @@ wp.domReady(
 			scope: [ 'inserter' ],
 		} );
 
-		// Used for Join page.
+		// Used for Section Headers on home.
 		wp.blocks.registerBlockVariation( 'core/columns', {
 			name: 'section-header',
-			title: 'Section Header (2 cols)',
+			title: 'Section Header',
 			attributes: {
 				className: 'is-style-section-header' },
 			isDefault: false,
@@ -195,6 +195,42 @@ wp.domReady(
 				],
 				[ 'core/column', {
 					width: 30,
+					className: 'bh-02',
+				},
+				[
+					[ 'core/heading', {
+						level: 6,
+						placeholder: 'View all...',
+					},
+					],
+				],
+				],
+			],
+			icon: 'text',
+			scope: [ 'inserter' ],
+    } );
+
+    // Used for Section Headers on home (when in column).
+		wp.blocks.registerBlockVariation( 'core/columns', {
+			name: 'section-header-column',
+			title: 'Section Header (for column layout)',
+			attributes: {
+				className: 'is-style-section-header-column' },
+			isDefault: false,
+			innerBlocks: [
+				[ 'core/column', {
+					width: 60,
+					className: 'bh-01',
+				},
+				[
+					[ 'core/heading', {
+						level: 3,
+						placeholder: 'Section header text' },
+					],
+				],
+				],
+				[ 'core/column', {
+					width: 40,
 					className: 'bh-02',
 				},
 				[

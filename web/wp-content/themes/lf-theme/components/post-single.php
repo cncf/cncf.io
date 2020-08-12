@@ -55,7 +55,7 @@ endif;
 				<?php
 		endif;
 			?>
-		<p class="date-author-responsive"><span
+			<p class="date-author-row"><span
 				class="posted-date date-icon">Posted on
 				<?php
 				the_date();

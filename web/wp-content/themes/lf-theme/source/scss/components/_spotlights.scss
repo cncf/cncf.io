@@ -41,6 +41,10 @@
 
 .spotlight-date {
     margin-top: auto;
+    margin-bottom: 0.5em;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: $grey-500;
 }
 
 .wp-block-lf-spotlights .spotlight-box {
@@ -61,9 +65,5 @@
 
     img {
         width: 100%;
-
-        // @media (min-width: 1000px) {
-        //     max-height: 170px;
-        // }
     }
 }

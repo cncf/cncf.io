@@ -70,7 +70,7 @@ endif;
 								<label for="search-bar" class="screen-reader-text">Search CNCF</label>
 								<input class="search-input" type="search"
 									name="s" id="search-bar"
-									placeholder="Search for...">
+									placeholder="Search for..." required>
 								<label>
 									<input class="button transparent
 									header-align

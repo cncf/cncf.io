@@ -161,7 +161,7 @@ function add_projects_shortcode( $atts ) {
 			<?php endif; ?>
 
 			<?php if ( $mail ) : ?>
-			<a title="<?php the_title(); ?> Discussions"
+			<a title="<?php the_title(); ?> Contact"
 				href="<?php echo esc_html( $mail ); ?>"
 				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/email.svg' ); ?></a>
 			<?php endif; ?>

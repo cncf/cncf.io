@@ -174,8 +174,8 @@ class Lf_Utils {
 		$author_id = get_post_field( 'post_author', $the_post_id );
 		$author    = get_the_author_meta( 'display_name', $author_id );
 
-		// Basic match for CNCF admin user.
-		if ( 'CNCF' === $author ) {
+		// Basic match for admin user.
+		if ( 'CNCF' === $author || 'admin' === $author ) {
 			return;
 		}
 

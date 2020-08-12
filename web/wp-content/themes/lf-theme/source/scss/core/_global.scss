@@ -1,4 +1,5 @@
 body {
+    height: auto;
     background-color: $white;
     font-family: $font-primary;
     font-size: 1em; // 16px
@@ -20,6 +21,11 @@ body {
 
     // fixes menu off bottom of screen.
     overscroll-behavior: none;
+}
+
+// applied on pages, need this because of .alignwide blocks.
+.page-content {
+    overflow-x: hidden;
 }
 
 .container {
@@ -265,7 +271,8 @@ figure {
 
 /* Assistive text */
 .assistive-text,
-.screen-reader-text {
+.screen-reader-text,
+.sr-text {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
     overflow: hidden;

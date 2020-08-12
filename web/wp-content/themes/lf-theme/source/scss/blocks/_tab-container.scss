@@ -12,21 +12,62 @@
 
 .sticky-column {
     @media (min-width:800px) {
-        max-width: 375px;
-        min-width: 25%;
+        max-width: 200px;
+        min-width: 200px;
+        width: 200px;
+        margin-right: $sm-padding;
+    }
+
+    @media (min-width:900px) {
+        max-width: 250px;
+        min-width: 250px;
+        width: 250px;
+        margin-right: $sm-padding;
+    }
+
+    @media (min-width:1000px) {
+        max-width: 300px;
+        min-width: 300px;
+        width: 300px;
         margin-right: $sm-padding;
     }
 }
 
 .sticky-element {
-    @media (min-width:800px) {
-        position: sticky;
-        top: 125px;
+    max-width: 100%;
 
-        .admin-bar & {
-            top: calc(125px + 32px);
-        }
+    @media (min-width:800px) {
+        width: 200px;
     }
+
+    @media (min-width:900px) {
+        width: 250px;
+    }
+
+    @media (min-width:1000px) {
+        width: 300px;
+    }
+}
+
+.sticky-nav-scroller {
+    @media (max-height: 615px) and (min-width: 800px) {
+        height: calc(100vh - 50px - 50px);
+    }
+
+    @media (min-height: 616px) and (min-width: 800px) {
+        height: calc(100vh - 180px);
+    }
+
+    @media (min-width: 800px) {
+        overflow-y: scroll;
+        // adding shadows on overflow.
+        background: linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), #fff 70%) 0 100%, radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+        background-attachment: local, local, scroll, scroll;
+    }
+
 }
 
 .sticky-nav-hint {
@@ -42,14 +83,13 @@
 
 ul.tab-container-nav {
     padding: 0;
+    max-width: 100%;
 
     @media (min-width: 800px) {
         list-style-type: none;
         margin: 0;
         padding-right: 1em;
-
     }
-
 }
 
 .tab-container-nav-item {
@@ -79,12 +119,11 @@ ul.tab-container-nav {
     max-width: 800px;
 }
 
-
 .wp-block-lf-tab-container-block {
+    margin-bottom: $lg-padding;
+
     @media (max-width: 799px) {
         border-top: 1px solid $grey-100;
         padding-top: 2rem;
     }
-
-    margin-bottom: $lg-padding;
 }

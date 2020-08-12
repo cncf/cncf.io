@@ -13,13 +13,15 @@
  */
 
 // Media images, no hard crop.
-add_image_size( 'newsroom-media-coverage', 260, 160, false );
+add_image_size( 'newsroom-media-coverage', 325, 200, false );
 
 // Newsroom, mobile, featured, retina.
-add_image_size( 'newsroom-260', 260, 180, true );
-add_image_size( 'newsroom-300', 300, 200, true );
-add_image_size( 'newsroom-600', 600, 320, true );
-add_image_size( 'newsroom-1200', 1200, 640, true );
+add_image_size( 'newsroom-260', 261, 137, true );
+add_image_size( 'newsroom-325', 325, 171, true );
+add_image_size( 'newsroom-540', 540, 285, true );
+add_image_size( 'newsroom-600', 600, 315, true );
+add_image_size( 'newsroom-1200', 1200, 630, true );
+add_image_size( 'newsroom-post-width', 700, 9999, false );
 
 // spotlight.
 add_image_size( 'spotlight-320', 320, 170, false );
@@ -54,7 +56,25 @@ add_image_size( 'tonih-470', 470, 590, false );
 add_image_size( 'tonih-680', 680, 500, false );
 add_image_size( 'tonih-800', 800, 500, false );
 add_image_size( 'tonih-1020', 1020, 700, false );
+add_image_size( 'tonih-1020', 2040, 1400, false );
 
 // people.
 add_image_size( 'people-250', 250, 250, true );
 add_image_size( 'people-500', 500, 500, true );
+
+/**
+ * Add custom image sizes to media select.
+ *
+ * @param array $sizes Current image sizes.
+ */
+function lf_custom_image_editor_sizes( $sizes ) {
+	$sizes = array_merge(
+		$sizes,
+		array(
+			'newsroom-post-width' => __( 'Blog Width' ),
+			'hero-768' => __( 'Widescreen Strip' ),
+		)
+	);
+	return $sizes;
+}
+add_filter( 'image_size_names_choose', 'lf_custom_image_editor_sizes' );

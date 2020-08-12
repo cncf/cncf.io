@@ -11,24 +11,24 @@
 @import "core/variables";
 @import "core/normalize";
 @import "core/reset";
-@import "core/typography";
-@import "blocks/paragraph-headers";
 
 // import typography and styles over the top of editor styles defaults.
 #editor {
     .editor-styles-wrapper {
+		@import "core/typography";
         @import "blocks/gradients";
         @import "blocks/columns";
         @import "blocks/colors";
         @import "blocks/buttons";
+        @import "blocks/gallery";
         @import "blocks/case-study-highlights";
         @import "blocks/case-study-overview";
         @import "blocks/latest-jobs";
         @import "blocks/lists";
-        @import "blocks/newsroom";
+		@import "blocks/newsroom";
+		@import "blocks/paragraph-headers";
         @import 'blocks/quote';
-        @import 'blocks/table';
-        @import 'blocks/spacer';
+        @import 'blocks/table';@import 'blocks/spacer';
         @import "components/events";
         @import "components/webinars";
         @import "components/hero";

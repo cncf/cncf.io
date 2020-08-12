@@ -106,4 +106,15 @@
 
 .privacy-agreement {
     font-size: 0.725em;
+
+    .external {
+        display: initial;
+        padding-right: 0px;
+
+        &::after {
+            margin-left: 5px;
+            margin-right: 0px;
+        }
+    }
+
 }
