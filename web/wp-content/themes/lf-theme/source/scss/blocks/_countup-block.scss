@@ -16,8 +16,8 @@
         }
 
         &:hover {
-            color: color-mod(var(--text-main-color) tint(10%));
             text-decoration: none;
+            color: color-mod(var(--text-main-color) tint(10%));
         }
 
         @media (min-width: 768px) {
