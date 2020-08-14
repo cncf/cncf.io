@@ -31,7 +31,8 @@
 		</label>
 		<label for="Language" required>
 		<span class="screen-reader-text">Language</span>
-			<select id="Language" name="Language" class="form-control select-css" required>
+			<select id="Language" name="Language" class="form-control select-css newsletter-select" required onchange="this.dataset.selected = this.value;">
+			<option value="" disabled>Language</option>
 				<option value="English">English</option>
 				<option value="Chinese">中文</option>
 			</select>

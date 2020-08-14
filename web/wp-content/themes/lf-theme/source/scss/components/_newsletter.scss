@@ -51,7 +51,7 @@
     }
 
     @media (min-width: 1000px) {
-        grid-template-columns: 2fr 2fr 3fr 1fr;
+        grid-template-columns: 1.5fr 1.5fr 2fr 1fr;
         grid-row-gap: 1.5rem;
         grid-column-gap: 1.5rem;
     }
@@ -117,4 +117,27 @@
         }
     }
 
+}
+
+// Overrides for Language select in Newsletter
+.newsletter-select.select-css {
+    border: 1px solid transparent;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .00);
+    background: transparent;
+    color: $secondary-300;
+    font-weight: 400;
+    border-bottom: 1px solid $secondary-300;
+    transition: all 0.25s ease;
+    padding: 0.5em 0 calc(0.5em + 1px) 0;
+
+    &:focus {
+        padding-left: 0.5em;
+        border-bottom: 2px solid $white;
+    }
+
+}
+
+// To change color of Selected.
+.newsletter-select[data-selected] {
+    color: $white;
 }
