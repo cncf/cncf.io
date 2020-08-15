@@ -7,6 +7,12 @@
  * @link      https://searchandfilter.com
  * @copyright 2018 Search & Filter
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 
 	<!--<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>-->
@@ -658,7 +664,7 @@ else if ( $current_tab == "search-forms")
 					}
 					else if($display_results_as=="custom_edd_store")
 					{
-						$results_label = __("EDD Downloads Page", $this->plugin_slug);
+						$results_label = __("EDD Downloads Shortcode", $this->plugin_slug);
 					}
 
 					echo $results_label;

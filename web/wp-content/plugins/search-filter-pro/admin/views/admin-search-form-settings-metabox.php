@@ -7,7 +7,12 @@
  * @link      https://searchandfilter.com
  * @copyright 2018 Search & Filter
  */
- 
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 
 <div id="settings-defaults" class="widgets-search-filter-draggables ui-search-filter-sortable setup" data-allow-expand="0">
@@ -234,20 +239,31 @@
 
             'base'          => 'shortcode'
         );
-        $display_results_methods['custom_woocommerce_store'] = array(
-            'label'         => __('WooCommerce Shop'),
+
+        if(Search_Filter_Helper::has_woocommerce()) {
+	        $display_results_methods['custom_woocommerce_store'] = array(
+		        'label'       => __( 'WooCommerce - Shop' ),
+		        'description' =>
+			        '<p>' . __( "Let WooCommerce handle the display of results and direct all searches to the shop page.", $this->plugin_slug ) . '</p>' .
+			        '<p><a href="https://searchandfilter.com/documentation/3rd-party/woocommerce/" target="_blank">' . __( "View the WooCommerce setup instructions", $this->plugin_slug ) . '</a></p>',
+		        'base'        => 'custom_woocommerce_store'
+	        );
+        }
+        /*$display_results_methods['custom_woocommerce_products_shortcode'] = array(
+            'label'         => __('WooCommerce - Products Shortcode'),
             'description'   =>
-                '<p>'.__("Let WooCommerce handle the display of results and direct all searches to the shop page.", $this->plugin_slug ).'</p>'.
+                '<p>'.__("Use a WooCommerce Products Shortcode to display results - <code>[products]</code>", $this->plugin_slug ).'</p>'.
+                '<p>'.__("Search & Filter will override any query settings you may have passed to the shortcode.", $this->plugin_slug ).'</p>'.
 				'<p><a href="https://searchandfilter.com/documentation/3rd-party/woocommerce/" target="_blank">'.__("View the WooCommerce setup instructions", $this->plugin_slug ).'</a></p>',
             'base'          => 'custom_woocommerce_store'
-        );
+        );*/
         $display_results_methods['custom_edd_store'] = array(
-            'label'         => __('EDD Downloads Page'),
+            'label'         => __('EDD - Downloads Page'),
             'description'   =>
                 '<p>'.__("Let Easy Digital Downloads handle the display of results - simply supply the full URL of a page containing your downloads shortcode.", $this->plugin_slug ).'</p>'.
                 '<p><a href="https://searchandfilter.com/documentation/3rd-party/easy-digital-downloads/" target="_blank">'.__("View the Easy Digital Downloads setup instructions", $this->plugin_slug ).'</a></p>',
 
-            'base'          => 'custom_edd_store'
+            'base'          => 'shortcode'
         );
         $display_results_methods['custom'] = array(
             'label'         => __('Custom'),
@@ -473,7 +489,7 @@
 					</td>
 				</tr>
 				
-				<tr class="tpl_archive_rows tpl_use_ajax_rows tpl_custom_rows tpl_post_type_archive_rows tpl_woocommerce_rows">
+				<tr class="tpl_archive_rows tpl_use_ajax_rows tpl_custom_rows tpl_post_type_archive_rows tpl_woocommerce_rows template_ajax_container">
 					<td>
 						<label for="ajax_target">
 							<?php _e("Ajax Container:", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("The ID or class of the container which your results are loaded in to", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
@@ -510,7 +526,7 @@
 					</td>
 				</tr>
 				
-				<tr class="tpl_use_ajax_rows tpl_pagination_normal_rows">
+				<tr class="tpl_use_ajax_rows tpl_pagination_normal_rows template_pagination_selector">
 					<td>
 						<label for="ajax_links_selector">
 							<?php _e("Pagination selector:", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("to enable Ajax on your pagination links you must put the CSS selector here", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />

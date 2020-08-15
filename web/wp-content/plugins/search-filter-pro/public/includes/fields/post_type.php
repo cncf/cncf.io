@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Field_Post_Type extends Search_Filter_Field_Base {
 	
 	public function get($field_data)

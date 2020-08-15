@@ -1,4 +1,9 @@
-				
+<?php
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 				<p class="item-container sf_date_input">
 					<label for="{0}[{1}][date_input_type]"><?php _e("Input type: ", $this->plugin_slug); ?><br />
 						<select name="{0}[{1}][date_input_type]" class="" id="{0}[{1}][date_input_type]">

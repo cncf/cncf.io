@@ -1,4 +1,9 @@
-
+<?php
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 			
 				<p class="item-container sf_number_input_type">
 					<label for="{0}[{1}][number_input_type]"><?php _e("Input type: ", $this->plugin_slug); ?><br />

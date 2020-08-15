@@ -10,6 +10,11 @@
  * @subpackage
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Deactivator {
 
 	/**

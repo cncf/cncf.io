@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Field_Post_Meta_Choice {
 	
 	public function __construct($plugin_slug, $sfid) {
@@ -16,9 +21,7 @@ class Search_Filter_Field_Post_Meta_Choice {
 		$this->sfid = $sfid;
 		$this->create_input = new Search_Filter_Generate_Input($this->plugin_slug, $sfid);
 		
-		global $wpdb;
-		$this->cache_table_name = $wpdb->prefix . 'search_filter_cache';
-		$this->term_results_table_name = $wpdb->prefix . 'search_filter_term_results';
+		$this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
 	}
 	
 	public function get($field_name, $args, $fields_defaults)
@@ -200,6 +203,8 @@ class Search_Filter_Field_Post_Meta_Choice {
 		{
 			$order_by =  "field_value $order_dir";
 		}
+
+		$this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
 		
 		$field_options = $wpdb->get_results( 
 			"
@@ -277,7 +282,8 @@ class Search_Filter_Field_Post_Meta_Choice {
 	private function find_post_id_with_field($field_name)
 	{
 		global $wpdb;
-		
+
+		$this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
 		$field_options = $wpdb->get_results( $wpdb->prepare(
 			"
 			SELECT field_value, result_ids

@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Shared { 
 
 	private $plugin_slug = "search-filter";
@@ -97,7 +102,6 @@ class Search_Filter_Shared {
                     $use_rewrite = true;
                     if(isset($settings['display_results_as']))
                     {
-                        //if(($settings['display_results_as']=="post_type_archive")||($settings['display_results_as']=="shortcode")||($settings['display_results_as']=="custom_woocommerce_store")||($settings['display_results_as']=="custom_edd_store"))
                         if($settings['display_results_as']!="archive")
                         {
                             $use_rewrite = false;

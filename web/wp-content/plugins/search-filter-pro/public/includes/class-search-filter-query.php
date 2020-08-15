@@ -7,7 +7,12 @@
  * @link      https://searchandfilter.com
  * @copyright 2018 Search & Filter
  */
- 
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // https://codex.wordpress.org/Creating_Tables_with_Plugins
 
 
@@ -72,11 +77,7 @@ class Search_Filter_Query {
 						
 			if(isset($this->form_settings['display_results_as']))
 			{
-				if($this->form_settings['display_results_as']=="custom_edd_store")
-				{
-					add_action( 'edd_downloads_query', array( $this, 'setup_edd_query' ), 200 );
-				}
-				else if($this->form_settings['display_results_as']=="archive")
+				if($this->form_settings['display_results_as']=="archive")
 				{
 					add_action( 'pre_get_posts', array( $this, 'setup_archive_query' ), 200 );
 				}			
@@ -795,8 +796,6 @@ class Search_Filter_Query {
 
 		$built_in_sort_types = array('decimal', 'date', 'datetime');
 
-
-
 		if(isset($_GET['sort_order']))
 		{
 			$search_all = false;
@@ -1355,10 +1354,6 @@ class Search_Filter_Query {
                     }
 				}
 			}
-		}
-		else if($display_results_as=="custom_edd_store")
-		{
-			$results_url = $searchform->settings('results_url');
 		}
 		else if($display_results_as=="custom")
 		{

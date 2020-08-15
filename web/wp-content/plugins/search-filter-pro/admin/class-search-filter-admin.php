@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
 define( 'SEARCH_FILTER_STORE_URL', 'https://searchandfilter.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
 
@@ -77,13 +82,10 @@ class Search_Filter_Admin {
 	private function __construct() {
 
 		$this->plugin_slug = "search-filter";
+
 		global $search_filter_shared;
         $shared = $search_filter_shared; //this sets up shared (between frontend and admin) attributes (like post types & taxonomies)
 
-		global $wpdb;
-		$this->cache_table_name = $wpdb->prefix . 'search_filter_cache';
-		$this->term_results_table_name = $wpdb->prefix . 'search_filter_term_results';
-		
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
@@ -226,7 +228,7 @@ class Search_Filter_Admin {
 							$fields_arr[] = $field['type'];
 						}
 
-						$fields_text = implode($fields_arr, ", ");
+						$fields_text = implode(", ", $fields_arr);
 						echo $fields_text;
 					}
 
@@ -678,6 +680,10 @@ class Search_Filter_Admin {
 	}
 
 	public function display_plugin_system_status_page() {
+
+		$this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+		$this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
 		include_once( 'views/admin-system-status.php' );
 	}
 
@@ -1072,11 +1078,14 @@ class Search_Filter_Admin {
 
 	public function db_install() {
 		global $wpdb;
-		//global $jal_db_version;
 
 		$table_name = $wpdb->prefix . 'search_filter_cache';
 
-		$charset_collate = $wpdb->get_charset_collate();
+		$charset_collate = '';
+
+		if ( $wpdb->has_cap( 'collation' ) ) {
+			$charset_collate = $wpdb->get_charset_collate();
+		}
 
 		$sql = "CREATE TABLE $table_name (
 			id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -1088,20 +1097,16 @@ class Search_Filter_Admin {
 			field_parent_num bigint(20) NULL,
 			term_parent_id bigint(20) NULL,
 			PRIMARY KEY  (id),
-            KEY field_name_index (field_name),
-            KEY field_value_index (field_value),
-            KEY field_value_num_index (field_value_num)
+            KEY sf_c_field_name_index (field_name(32)),
+            KEY sf_c_field_value_index (field_value(32)),
+            KEY sf_c_field_value_num_index (field_value_num)
 		) $charset_collate;";
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
 
-		//add_option( 'jal_db_version', $jal_db_version );
-
-
 		$table_name = $wpdb->prefix . 'search_filter_term_results';
 
-		$charset_collate = $wpdb->get_charset_collate();
 
 		$sql = "CREATE TABLE $table_name (
 			id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -1110,9 +1115,9 @@ class Search_Filter_Admin {
 			field_value_num bigint(20) NULL,
 			result_ids mediumtext NOT NULL,
 			PRIMARY KEY  (id),
-            KEY field_name_index (field_name),
-            KEY field_value_index (field_value),
-            KEY field_value_num_index (field_value)
+            KEY sf_tr_field_name_index (field_name(32)),
+            KEY sf_tr_field_value_index (field_value(32)),
+            KEY sf_tr_field_value_num_index (field_value_num)
 
 		) $charset_collate;";
 
@@ -1122,16 +1127,22 @@ class Search_Filter_Admin {
 	/*
 	 * Function creates post duplicate as a draft and redirects then to the edit post screen
 	 */
-	function action_duplicate_post_as_draft(){
+	public function action_duplicate_post_as_draft(){
 		global $wpdb;
 		if (! ( isset( $_GET['post']) || isset( $_POST['post'])  || ( isset($_REQUEST['action']) && 'sf_duplicate_form' == $_REQUEST['action'] ) ) ) {
-			wp_die('No post to duplicate has been supplied!');
+			wp_die('Source post not provided.');
 		}
+
+		/*
+		 * Nonce verification
+		 */
+		if ( !isset( $_GET['duplicate_nonce'] ) || !wp_verify_nonce( $_GET['duplicate_nonce'], basename( __FILE__ ) ) )
+			return;
 
 		/*
 		 * get the original post id
 		 */
-		$post_id = (isset($_GET['post']) ? $_GET['post'] : $_POST['post']);
+		$post_id = (isset($_GET['post']) ? absint( $_GET['post'] ) : absint ( $_POST['post']) );
 		/*
 		 * and all the original post data then
 		 */
@@ -1175,7 +1186,7 @@ class Search_Filter_Admin {
 			$new_post_id = wp_insert_post( $args );
 
 			/*
-			 * get all current post terms ad set them to the new post draft
+			 * get all current post terms and set them to the new post draft
 			 */
 			$taxonomies = get_object_taxonomies($post->post_type); // returns array of taxonomy names for post type, ex array("category", "post_tag");
 			foreach ($taxonomies as $taxonomy) {
@@ -1191,6 +1202,7 @@ class Search_Filter_Admin {
 				$sql_query = "INSERT INTO $wpdb->postmeta (post_id, meta_key, meta_value) ";
 				foreach ($post_meta_infos as $meta_info) {
 					$meta_key = $meta_info->meta_key;
+					if( $meta_key == '_wp_old_slug' ) continue;
 					$meta_value = addslashes($meta_info->meta_value);
 					$sql_query_sel[]= "SELECT $new_post_id, '$meta_key', '$meta_value'";
 				}
@@ -1198,13 +1210,9 @@ class Search_Filter_Admin {
 				$wpdb->query($sql_query);
 			}
 
-
-			/*
-			 * finally, redirect to the edit post screen for the new draft
-			 */
-			//wp_redirect( admin_url( 'post.php?action=edit&post=' . $new_post_id ) );
 			wp_redirect( admin_url( 'edit.php?post_type=' . $post->post_type ) );
 			exit;
+
 		} else {
 			wp_die('Post creation failed, could not find original post: ' . $post_id);
 		}
@@ -1219,7 +1227,7 @@ class Search_Filter_Admin {
 		{
 			if (current_user_can('edit_posts')) {
 
-				$actions['duplicate'] = '<a href="admin.php?action=sf_duplicate_form&amp;post=' . $post->ID . '" title="Duplicate this item" rel="permalink">Duplicate</a>';
+				$actions['duplicate'] = '<a href="' . wp_nonce_url('admin.php?action=sf_duplicate_form&post=' . $post->ID, basename(__FILE__), 'duplicate_nonce' ) . '" title="Duplicate Search Form" rel="permalink">Duplicate</a>';
 
 			}
 			unset($actions['inline hide-if-no-js']);

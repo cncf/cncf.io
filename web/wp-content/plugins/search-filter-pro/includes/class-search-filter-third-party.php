@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Third_Party
 {
 	private $plugin_slug = '';
@@ -33,7 +38,9 @@ class Search_Filter_Third_Party
 	function __construct()
 	{
 		global $wpdb;
-		$this->cache_table_name = $wpdb->prefix . 'search_filter_cache';
+
+		$this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+
 
 		// if(!is_admin()) {
 		if( (!is_admin()) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
@@ -65,6 +72,12 @@ class Search_Filter_Third_Party
 			add_filter('sf_archive_results_url', array($this, 'pll_sf_archive_results_url'), 10, 3); //
 			add_filter('sf_ajax_results_url', array($this, 'pll_sf_ajax_results_url'), 10, 2); //
 			add_filter('sf_ajax_form_url', array($this, 'pll_sf_form_url'), 10, 3); //
+
+			if(class_exists('Easy_Digital_Downloads')){
+				add_filter('shortcode_atts_downloads', array($this, 'edd_filter_downloads_shortcode'), 1000, 3);
+				add_filter('do_shortcode_tag', array($this, 'edd_filter_downloads_shortcode_output'), 1000, 3);
+				add_filter( 'search_filter_form_attributes', array($this, 'edd_search_filter_form_attributes'), 10, 2 );
+			}
 		}
 
 		//add_filter('fes_save_field_after_save_frontend', array($this, 'sf_edd_fes_field_save_frontend'), 11, 3); //
@@ -89,10 +102,11 @@ class Search_Filter_Third_Party
 		add_filter('sf_edit_query_args', array($this, 'sf_poly_query_args'), 11, 2); //
 		add_filter('pll_get_post_types', array($this, 'pll_sf_add_translations'), 10, 2);
 		add_filter('pll_get_post_types', array($this, 'pll_sf_get_translations'), 100000, 2); //try to set this as late as possible
-		add_filter('sf_edit_cache_query_args', array($this, 'poly_lang_sf_edit_cache_query_args'), 10, 2); //
+		add_filter('sf_edit_cache_query_args', array($this, 'poly_lang_sf_edit_cache_query_args'), 10, 2);
+		add_filter('sf_edit_search_forms_query_args', array($this, 'poly_lang_sf_edit_cache_query_args'), 10, 2); //set the language when fetching our built in search forms (suppress filters no longer works)
 		add_filter('sf_archive_slug_rewrite', array($this, 'pll_sf_archive_slug_rewrite'), 10, 3); //
 		add_filter('sf_rewrite_query_args', array($this, 'pll_sf_rewrite_args'), 10, 3); //
-		//add_filter('sf_pre_get_posts_admin_cache', array($this, 'sf_pre_get_posts_admin_cache'), 10, 3); //
+		add_filter('sf_pre_get_posts_admin_cache', array($this, 'sf_pre_get_posts_admin_cache'), 10, 3); //
 
 		$this->init();
 	}
@@ -100,6 +114,64 @@ class Search_Filter_Third_Party
 	public function init()
 	{
 
+	}
+
+	/* EDD integration */
+	public function edd_filter_downloads_shortcode($out, $pairs, $atts)
+	{
+
+		if(!isset($atts['search_filter_id'])){
+			return $out;
+		}
+
+		$search_filter_id = intval($atts['search_filter_id']);
+		do_shortcode("[searchandfilter id='$search_filter_id' action='filter_next_query']");
+		//do_action("search_filter_setup_pagination", $search_filter_id);
+		global $searchandfilter;
+		$sf_inst = $searchandfilter->get($search_filter_id);
+		$sf_inst->query->prep_query();
+
+		return $out;
+	}
+
+	public function edd_filter_downloads_shortcode_output($output, $tag, $atts)
+	{
+
+		if(!isset($atts['search_filter_id'])){
+			return $output;
+		}
+
+		if( $tag !== 'downloads' ){
+			return $output;
+		}
+
+		global $searchandfilter;
+		$search_filter_id = intval($atts['search_filter_id']);
+
+		$sf_inst = $searchandfilter->get($search_filter_id);
+
+		//make sure this search form is tyring to use EDD
+		if($sf_inst->settings("display_results_as")=="custom_edd_store"){
+
+			//wrap both pagination + results in 1 container for ajax
+			$output = '<div class="search-filter-results search-filter-results-'.$search_filter_id.'">'.$output.'</div>';
+		}
+
+		return $output;
+	}
+	public function edd_search_filter_form_attributes($attributes, $sfid){
+
+		if(isset($attributes['data-display-result-method']))
+		{
+			if($attributes['data-display-result-method']=="custom_edd_store")
+			{
+				$attributes['data-ajax-target'] = '.search-filter-results-'.$sfid;
+				$attributes['data-ajax-links-selector'] = '.edd_pagination a';
+			}
+
+		}
+
+		return $attributes;
 	}
 
 	/* WooCommerce integration */
@@ -148,7 +220,8 @@ class Search_Filter_Third_Party
 			}
 
 			global $wpdb;
-			$term_results_table_name = $wpdb->prefix . 'search_filter_term_results';
+
+			$term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
 
 			$field_terms_results = $wpdb->get_results(
 				"
@@ -555,6 +628,7 @@ class Search_Filter_Third_Party
 		//so loop through any IDs, collect all the field name & values
 		//delete them all, then send the field name and values to the term updater
 		//do_action("search_filter_delete_post_cache", $variation_id);
+		$this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
 
 		$results = $wpdb->get_results($wpdb->prepare(
 			"
@@ -1443,7 +1517,7 @@ class Search_Filter_Third_Party
 
 				$intersect = array_intersect($post_types, $polylang_post_types);
 				if (count($intersect) > 0) {
-					$query_args['lang'] = implode( $terms_arr, "," );
+					$query_args['lang'] = implode( "," , $terms_arr  );
 				}
 				//otherwise, don't set the lang of course, because the posts certainly won't have a lang attribute (yet)
 				//there will be problems however, if a user is searching multiple post types, some of which are handles by polylang
@@ -1458,30 +1532,34 @@ class Search_Filter_Third_Party
 
 	public function poly_lang_sf_edit_cache_query_args($query_args,  $sfid) {
 
-		global $polylang;
-
 		if(Search_Filter_Helper::has_polylang())
 		{
-			$langs = array();
-
+			/*$langs = array();
+			global $polylang;
 			foreach ($polylang->model->get_languages_list() as $term)
 			{
 				array_push($langs, $term->slug);
 			}
 
-			$query_args["lang"] = $langs;
+			//$query_args["lang"] = $langs;
+			//$query_args["lang"] = implode(",", $langs);
+			*/
+			//this sets a query for all languages (seems to changes quite often, the above was the old method of include all languages)
+			$query_args["lang"] = '';
 		}
 
 		return $query_args;
 	}
-	/*
+
 	public function sf_pre_get_posts_admin_cache($query,  $sfid) {
 
-		$query->set("lang", "all");
+		if(Search_Filter_Helper::has_polylang()) {
+			$query->set( "lang", "all" );
+		}
 
 		return $query;
 	}
-	*/
+
 
 	function add_url_args($url, $str)
 	{
@@ -1528,7 +1606,9 @@ class Search_Filter_Third_Party
 
 			//these are the display results methods that use the current url for ajax
 			// we want to do it this way, to allow other display methods (like VC / ajax integration) to carry on working
-			$retain_results_methods = array("archive", "post_type_archive", "custom", "custom_woocommerce_store", "custom_edd_store");
+			$retain_results_methods = array("archive", "post_type_archive", "custom", "custom_woocommerce_store", "custom_edd_store", "bb_posts_module", "divi_post_module", "divi_shop_module", "elementor_posts_element");
+			// todo - need to add extensions via external plugin
+
 
 			if(in_array($sf_inst->settings("display_results_as"), $retain_results_methods)){
 				//so don't modify the ajax url, it will have the lang in there
@@ -1584,7 +1664,14 @@ class Search_Filter_Third_Party
 			}
 			else
 			{
-				$results_url .= "&sfid=".$sfid;
+				if (strpos($results_url, '?') !== false) {
+					$param = "&";
+				}
+				else{
+					$param = "?";
+				}
+				$results_url .= $param."sfid=".$sfid;
+
 			}
 		}
 

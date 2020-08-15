@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Display_Shortcode {
 
     public function __construct($plugin_slug)
@@ -307,9 +312,7 @@ class Search_Filter_Display_Shortcode {
         ), $atts));
 
         $returnvar = "";
-        /*Search_Filter_Helper::start_log("----- Start display_shortcode $base_form_id");
-        Search_Filter_Helper::finish_log("----- Start display_shortcode $base_form_id");
-        Search_Filter_Helper::start_log("----- Finish display_shortcode");*/
+
         //make sure its set
         if(($id!=="")||($slug!==""))
         {
@@ -346,8 +349,18 @@ class Search_Filter_Display_Shortcode {
 
             $this->set_defaults($base_form_id);
 
+
             if($action=="prep_query")
             {
+	            //old, used for EDD, same as "filter_next_query"
+	            do_action("search_filter_filter_next_query", $base_form_id);
+	            if(!isset($skip)){
+		            $skip = 0;
+	            }
+	            $skip = intval($skip);
+
+	            //$searchform->query()->prep_query();
+	            $searchform->query()->filter_next_query($skip);
                 return $returnvar;
             }
             else if($action=="do_archive_query")
@@ -364,14 +377,16 @@ class Search_Filter_Display_Shortcode {
             }
             else if($action=="filter_next_query")
             {
+	            do_action("search_filter_filter_next_query", $base_form_id);
 
             	if(!isset($skip)){
             		$skip = 0;
 	            }
 	            $skip = intval($skip);
-	            
+
                 //$searchform->query()->prep_query();
                 $searchform->query()->filter_next_query($skip);
+
                 return $returnvar;
             }
             else if($show=="form")
@@ -443,8 +458,7 @@ class Search_Filter_Display_Shortcode {
                         //prep the query so we can get the counts for the items in the search form
                         $searchform->query()->prep_query(true);
                         //}
-
-
+						
                         if($display_results_as=="shortcode")
                         {//if we're using a shortcode, grab the selector automatically from the id
                             $ajax_target = "#search-filter-results-".$base_form_id;
@@ -546,10 +560,6 @@ class Search_Filter_Display_Shortcode {
                         {//use the results_url defined by the user
                             $ajax_url = home_url("?sfid=".$base_form_id."&sf_action=get_data");
                         }
-                        else if($display_results_as=="custom_edd_store")
-                        {//use the results_url defined by the user
-
-                        }
                         else if(($display_results_as=="custom_woocommerce_store")&&(Search_Filter_Helper::wc_get_page_id())) {
                             //find woocommerce shop page
 
@@ -633,11 +643,6 @@ class Search_Filter_Display_Shortcode {
                             $form_attributes['data-ajax-form-url'] = $ajax_form_url;
                         }
 
-
-
-                        //$form_attr .= ' data-display-result-method="'.esc_attr($display_results_as).'"';
-                        //$form_attr .= ' data-use-history-api="'.(int)$use_history_api.'"';
-                        //$form_attr .= ' data-template-loaded="'.(int)$this->is_template_loaded.'"';
                         $form_attributes['data-display-result-method'] = $display_results_as;
                         $form_attributes['data-use-history-api'] = (int)$use_history_api;
                         $form_attributes['data-template-loaded'] = (int)$this->is_template_loaded;
@@ -650,7 +655,7 @@ class Search_Filter_Display_Shortcode {
                             if(isset($settings['post_types'])) {
                                 $post_types = array_keys($settings['post_types']);
                                 if (isset($post_types[0])) {
-                                	
+
 	                                $single = true;
 	                                if($display_results_as == "custom_woocommerce_store"){
 		                                $single = false;
@@ -832,6 +837,7 @@ class Search_Filter_Display_Shortcode {
 
                         $returnvar .= "</ul>";
                         $returnvar .= "</form>";
+
 
 
                     }

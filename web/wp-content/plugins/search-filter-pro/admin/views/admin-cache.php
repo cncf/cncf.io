@@ -1,10 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: DrMorse
- * Date: 07/10/2016
- * Time: 14:03
- */
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 ?>
 <div class="wrap">

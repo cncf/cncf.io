@@ -10,6 +10,10 @@
  * @subpackage
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class Search_Filter_Activator {
 
@@ -58,14 +62,17 @@ class Search_Filter_Activator {
 			$this->db_install();
 		}
 	}
-	
+
 	function db_install() {
 		global $wpdb;
-		//global $jal_db_version;
 
 		$table_name = $wpdb->prefix . 'search_filter_cache';
-		
-		$charset_collate = $wpdb->get_charset_collate();
+
+		$charset_collate = '';
+
+		if ( $wpdb->has_cap( 'collation' ) ) {
+			$charset_collate = $wpdb->get_charset_collate();
+		}
 
 		$sql = "CREATE TABLE $table_name (
 			id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -77,20 +84,16 @@ class Search_Filter_Activator {
 			field_parent_num bigint(20) NULL,
 			term_parent_id bigint(20) NULL,
 			PRIMARY KEY  (id),
-            KEY field_name_index (field_name),
-            KEY field_value_index (field_value),
-            KEY field_value_num_index (field_value_num)
+            KEY sf_c_field_name_index (field_name(32)),
+            KEY sf_c_field_value_index (field_value(32)),
+            KEY sf_c_field_value_num_index (field_value_num)
 		) $charset_collate;";
-		
+
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
 
-		//add_option( 'jal_db_version', $jal_db_version );
-		
-		
 		$table_name = $wpdb->prefix . 'search_filter_term_results';
-		
-		$charset_collate = $wpdb->get_charset_collate();
+
 
 		$sql = "CREATE TABLE $table_name (
 			id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -99,13 +102,13 @@ class Search_Filter_Activator {
 			field_value_num bigint(20) NULL,
 			result_ids mediumtext NOT NULL,
 			PRIMARY KEY  (id),
-            KEY field_name_index (field_name),
-            KEY field_value_index (field_value),
-            KEY field_value_num_index (field_value)
-			
+            KEY sf_tr_field_name_index (field_name(32)),
+            KEY sf_tr_field_value_index (field_value(32)),
+            KEY sf_tr_field_value_num_index (field_value_num)
+
 		) $charset_collate;";
-		
-		
+
+
 		dbDelta( $sql );
 	}
 }

@@ -4,7 +4,7 @@ Donate link:
 Tags: posts, custom posts, products, category, filter, taxonomy, post meta, custom fields, search, wordpress, post type, post date, author
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 
 Search and Filtering for posts, products and custom posts. Allow your users to Search & Filter by taxonomies, custom fields and more.
 
@@ -57,6 +57,23 @@ Great for searching in your online shop, tested with: WooCommerce and WP eCommer
 
 == Changelog ==
 
+= 2.5.1 =
+* NOTICE - if you are using Search & Filter with Easy Digital Downloads please read the new integration notes first
+* Fix - a PolyLang issue when permalinks were disabled and the default language is not in the URL params
+* Fix - an issue with range min / max being detected, when using certain post stati
+* Fix - an issue with a loop not using `wp_reset_postdata` after
+* Fix - change another loop so that it improves compatibility with plugins + themes
+* Fix - respect `infinite-scroll-end` when it is found on the first page of results
+* Fix - some compatibility issues with php7.4 using the `implode` function
+* Fix - our tables were not being created on some server setups - modified dbdelta sql
+* Fix - admin - an issue where pagination selector was showing when it shouldn't be
+* Fix - an issue with setting wpdb prefix at too early, causing an issue in some multisites
+* Fix - an issue with custom post stati not being picked up properly on cache rebuild
+* Fix - an issue with Polylang working with our page builder extensions
+* New - action - `search_filter_filter_next_query` - runs when the shortcode is run
+* Improvement - integration with EDD - simply add `search_filter_id` to you downloads shortcode to get up and running
+* Security - fix a potential security issue + add some hardening measures
+
 = 2.5.0 =
 * Fix - issues with number range fields not setting the "max" value by default
 * Fix - some errors were being thrown when checking if a term exists
@@ -79,8 +96,8 @@ Great for searching in your online shop, tested with: WooCommerce and WP eCommer
 * Fix - issues detecting post meta for WC variations
 * Fix - added date and datetime meta type options for ordering by meta values
 * Fix - re-fix mobile Safari back button issue
+* Fix - an issue where multiple meta keys with the same name (but different cases) were not being correctly detected
 * New - added "Relevance" to default order by and sort fields
-* New - an issue where multiple meta keys with the same name (but different cases) were not being correctly detected
 * Improvement - updates to license page
 
 = 2.4.6 =

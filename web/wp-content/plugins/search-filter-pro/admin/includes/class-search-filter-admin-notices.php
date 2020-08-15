@@ -8,10 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
-/**
- * @package Search_Filter_Admin_Notices
- * @author  Your Name <email@example.com>
- */
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Admin_Notices {
 	
 	private $plugin_slug = '';

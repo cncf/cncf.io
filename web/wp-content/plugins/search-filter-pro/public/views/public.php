@@ -11,6 +11,12 @@
  * @link      http://example.com
  * @copyright 2014 Your Name or Company Name
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	die;
+}
+
 ?>
 
 <!-- This file is used to markup the public facing aspect of the plugin. -->

@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Cache
 {
 
@@ -16,7 +21,7 @@ class Search_Filter_Cache
     public $all_unfiltered_post_ids = array();
     public $unfiltered_post_ids = array();
     public $filtered_post_ids_excl = array();
-    public $table_name = "";
+    public $cache_table_name = "";
     public $WP_FILTER = null;
 
     public $cache_term_results = array(); //
@@ -57,8 +62,8 @@ class Search_Filter_Cache
 
             $this->sfid = $sfid;
 
-            $this->table_name = $wpdb->prefix . 'search_filter_cache';
-            $this->term_results_table_name = $wpdb->prefix . 'search_filter_term_results';
+	        $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+	        $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
 
             $this->form_fields = $fields;
             $this->form_settings = $settings;
@@ -719,6 +724,8 @@ class Search_Filter_Cache
 
         $already_init = false;
 
+	    $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
         if(empty($this->field_terms_results)) {
 
             /*$cache_key = 'cached_field_terms_results_'.$this->sfid;
@@ -1148,13 +1155,15 @@ class Search_Filter_Cache
 
         }
 
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+
         if($filter_value!="")
         {
             $field_terms_results = $wpdb->get_results( $wpdb->prepare(
 
                 "
 				SELECT post_id, post_parent_id
-				FROM $this->table_name
+				FROM $this->cache_table_name
 				WHERE field_name = '%s' 
 					AND cast(field_value AS UNSIGNED) $compare_operator %d
 				",
@@ -1238,7 +1247,11 @@ class Search_Filter_Cache
             }
         }
 
-        //post meta start/end must be within user selection
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+	    $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
+
+	    //post meta start/end must be within user selection
         if($filter['compare_mode']=="userrange")
         {
             if($start_field_name == $end_field_name) {
@@ -1246,7 +1259,7 @@ class Search_Filter_Cache
 
                     "
                     SELECT post_id, post_parent_id, field_value FROM
-                    $this->table_name WHERE
+                    $this->cache_table_name WHERE
                     field_name = '%s' AND 
                     cast(field_value AS $cast_type) >= cast(%s AS $cast_type) AND
                     cast(field_value AS $cast_type) <= cast(%s AS $cast_type)
@@ -1261,8 +1274,8 @@ class Search_Filter_Cache
                     "
                         SELECT post_id, post_parent_id, field_value_min, field_value_max FROM
                         (SELECT min_table.post_id as post_id, min_table.post_parent_id as post_parent_id, min_table.field_value as field_value_min, max_table.field_value as field_value_max
-                        FROM (SELECT post_id, post_parent_id, field_value FROM $this->table_name WHERE field_name = '%s') AS min_table
-                        LEFT JOIN (SELECT post_id, field_value FROM $this->table_name WHERE field_name = '%s') AS max_table
+                        FROM (SELECT post_id, post_parent_id, field_value FROM $this->cache_table_name WHERE field_name = '%s') AS min_table
+                        LEFT JOIN (SELECT post_id, field_value FROM $this->cache_table_name WHERE field_name = '%s') AS max_table
                         ON min_table.post_id = max_table.post_id) as range_table
                         WHERE
                         cast(field_value_min AS $cast_type) >= cast(%s as $cast_type) AND
@@ -1279,8 +1292,8 @@ class Search_Filter_Cache
                 "
 				SELECT post_id, post_parent_id, field_value_min, field_value_max FROM
 					(SELECT min_table.post_id as post_id, min_table.post_parent_id as post_parent_id, min_table.field_value as field_value_min, max_table.field_value as field_value_max 
-					FROM (SELECT post_id, post_parent_id, field_value FROM $this->table_name WHERE field_name = '%s') AS min_table
-					LEFT JOIN (SELECT post_id, field_value FROM $this->table_name WHERE field_name = '%s') AS max_table 
+					FROM (SELECT post_id, post_parent_id, field_value FROM $this->cache_table_name WHERE field_name = '%s') AS min_table
+					LEFT JOIN (SELECT post_id, field_value FROM $this->cache_table_name WHERE field_name = '%s') AS max_table 
 					ON min_table.post_id = max_table.post_id) as range_table
 				WHERE 
 				cast(field_value_min AS $cast_type) <= cast(%s as $cast_type) AND
@@ -1295,8 +1308,8 @@ class Search_Filter_Cache
                 "
 				SELECT post_id, post_parent_id, field_value_min, field_value_max FROM
 					(SELECT min_table.post_id as post_id, min_table.post_parent_id as post_parent_id, min_table.field_value as field_value_min, max_table.field_value as field_value_max 
-					FROM (SELECT post_id, post_parent_id, field_value FROM $this->table_name WHERE field_name = '%s') AS min_table
-					LEFT JOIN (SELECT post_id, field_value FROM $this->table_name WHERE field_name = '%s') AS max_table 
+					FROM (SELECT post_id, post_parent_id, field_value FROM $this->cache_table_name WHERE field_name = '%s') AS min_table
+					LEFT JOIN (SELECT post_id, field_value FROM $this->cache_table_name WHERE field_name = '%s') AS max_table 
 					ON min_table.post_id = max_table.post_id) as range_table
 				WHERE 
 				(
@@ -1375,9 +1388,11 @@ class Search_Filter_Cache
             }
             else
             {
-                $cache_search_sql = "
+	            $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+
+	            $cache_search_sql = "
                 SELECT DISTINCT post_id 
-                FROM $this->table_name
+                FROM $this->cache_table_name
                 ";
 
                 $cache_search_result = $wpdb->get_results($cache_search_sql);
@@ -2114,11 +2129,13 @@ class Search_Filter_Cache
             $field_col_select = "field_value_num as field_value";
         }
 
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+
         $field_terms_result = $wpdb->get_results( $wpdb->prepare(
 
             "
 			SELECT DISTINCT $field_col_select
-			FROM $this->table_name
+			FROM $this->cache_table_name
 			WHERE field_name = '%s'
 			",
             $field_name

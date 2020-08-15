@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Field_Post_Meta_Number {
 
 	private $use_transients = false;
@@ -16,10 +21,7 @@ class Search_Filter_Field_Post_Meta_Number {
 		$this->plugin_slug = $plugin_slug;
 		$this->sfid = $sfid;
 		$this->create_input = new Search_Filter_Generate_Input($this->plugin_slug, $sfid);
-		
-		global $wpdb;
-		$this->cache_table_name = $wpdb->prefix . 'search_filter_cache';
-		$this->term_results_table_name = $wpdb->prefix . 'search_filter_term_results';
+
 	}
 
 	public function round_tdp($number, $decimal_places){
@@ -46,25 +48,32 @@ class Search_Filter_Field_Post_Meta_Number {
 		global $searchandfilter;
 		$searchform = $searchandfilter->get($this->sfid);
 		$post_types_arr = $searchform->settings("post_types");
+		$post_status_arr = $searchform->settings("post_status");
+
 		$post_types = array();
 		if(is_array($post_types_arr)){
 			$post_types = array_keys($post_types_arr);
 		}
+		if(is_array($post_status_arr)){
+			$post_stati = array_keys($post_status_arr);
+		}
 
 		if($args['range_min_detect']==1) {
 
-			$min_range_auto = $this->get_range_min_auto($post_types, $args);
+			$min_range_auto = $this->get_range_min_auto($post_types, $post_stati, $args);
 			if($min_range_auto) {
 				$args['range_min'] = $min_range_auto;
 			}
+
 		}
 
 		if($args['range_max_detect']==1) {
 
-			$max_range_auto = $this->get_range_max_auto($post_types, $args);
+			$max_range_auto = $this->get_range_max_auto($post_types, $post_stati, $args);
 			if ( $max_range_auto ) {
 				$args['range_max'] = $max_range_auto;
 			}
+
 		}
 
 		//now format min / max according to decimal places
@@ -277,21 +286,21 @@ class Search_Filter_Field_Post_Meta_Number {
 		return $returnvar;
 	}
 
-	public function get_range_min_auto($post_types, $args) {
+	public function get_range_min_auto($post_types, $post_stati, $args) {
 
 		$min_field_name = '_sfm_'.$args['number_start_meta_key'];
 		$range_min_trans = false;
 		$cache_key = '';
 
 		if ($this->use_transients == 1) {
-
 			$cache_key = 'field_range_min_' . $this->sfid.'_'.$min_field_name;
 			$range_min_trans = Search_Filter_Wp_Cache::get_transient( $cache_key );
 		}
 
 		if(false === $range_min_trans) {
+
 			//lookup min
-			$min_query = new WP_Query( array( 'post_type' => $post_types, 'post_status' => 'publish', 'orderby' => 'meta_value_num', 'order' => 'ASC', 'meta_key' => $args['number_start_meta_key'], 'posts_per_page' => 1, 'suppress_filters' => true,
+			$min_query = new WP_Query( array( 'post_type' => $post_types, 'post_status' => $post_stati, 'orderby' => 'meta_value_num', 'order' => 'ASC', 'meta_key' => $args['number_start_meta_key'], 'posts_per_page' => 1, 'suppress_filters' => true,
 				'meta_query'=> array(
 					'key'     => $args['number_start_meta_key'],
 					'value'   => '',
@@ -308,7 +317,8 @@ class Search_Filter_Field_Post_Meta_Number {
 			}
 		}
 		else{
-			//echo "using transient min, bypass<br />\n";
+
+
 		}
 
 
@@ -320,9 +330,9 @@ class Search_Filter_Field_Post_Meta_Number {
 
 
 		return $range_min_trans;
-
 	}
-	public function get_range_max_auto($post_types, $args) {
+
+	public function get_range_max_auto($post_types, $post_stati, $args) {
 
 
 		$min_field_name = '_sfm_'.$args['number_start_meta_key'];
@@ -347,7 +357,7 @@ class Search_Filter_Field_Post_Meta_Number {
 			}
 
 			//lookup max
-			$max_query = new WP_Query( array( 'post_type' => $post_types, 'post_status' => 'publish',
+			$max_query = new WP_Query( array( 'post_type' => $post_types, 'post_status' => $post_stati,
 			                                  'orderby' => 'meta_value_num', 'order' => 'DESC', 'meta_key' => $max_meta_key, 'posts_per_page' => 1) );
 			$max_posts = $max_query->get_posts();
 			if( (count($max_posts)==1) && (isset($max_posts[0])) ){
@@ -359,7 +369,7 @@ class Search_Filter_Field_Post_Meta_Number {
 			}
 		}
 		else{
-			//echo "using transient max, bypass<br />\n";
+
 		}
 
 		if( ($this->use_transients == 1) && ( false !== $range_max_trans) ) {

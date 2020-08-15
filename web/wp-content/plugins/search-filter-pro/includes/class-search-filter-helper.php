@@ -1,14 +1,9 @@
 <?php
 
-/**
- * Fired during plugin activation
- *
- * @link       https://searchandfilter.com
- * @since      1.0.0
- *
- * @package   
- * @subpackage 
- */
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class Search_Filter_Helper {
 
@@ -160,7 +155,17 @@ class Search_Filter_Helper {
 				
 		return false;
 	}
-	
+	public static function has_woocommerce()
+	{
+
+		if ( class_exists( 'woocommerce' ) ) {
+			return true;
+		}
+		else {
+			return false;
+		}
+
+	}
 	public static function wc_get_page_id($page_name = '')
 	{
 		if(function_exists('wc_get_page_id')) {
@@ -263,6 +268,7 @@ class Search_Filter_Helper {
 
         return $settings;
     }
+
 	public static function get_fields_meta($sfid)
     {
         $fields = get_post_meta( $sfid , '_search-filter-fields' , true );
@@ -300,5 +306,11 @@ class Search_Filter_Helper {
 
 
 		return $option;
+	}
+
+	public static function get_table_name($table_name = '') {
+
+		global $wpdb;
+		return $wpdb->prefix . $table_name;
 	}
 }

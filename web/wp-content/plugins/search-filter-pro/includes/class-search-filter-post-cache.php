@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Post_Cache
 {
 
@@ -29,8 +34,9 @@ class Search_Filter_Post_Cache
     {
         //$this->write_log("`** Search_Filter_Post_Cache` construct **");
         global $wpdb;
-        $this->cache_table_name = $wpdb->prefix . 'search_filter_cache';
-        $this->term_results_table_name = $wpdb->prefix . 'search_filter_term_results';
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+	    $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
         $this->table_name_options = $wpdb->prefix . 'options';
         $this->option_name = "search-filter-cache";
         $this->process_exec_time = 60 * 3;
@@ -76,7 +82,7 @@ class Search_Filter_Post_Cache
 
         /* save post / re indexing hooks */
         add_action('save_post', array($this, 'post_updated_action'), 800, 3); //priority of 80 so it runs after the regular S&F form save
-        add_action('shutdown', array($this, 'wp_shutdown'), 800); //priority of 80 so it runs after the regular S&F form save
+        add_action('shutdown', array($this, 'wp_shutdown'), 800);
 
         //add_filter('attachment_fields_to_edit', array($this, 'attachment_updated'), 80, 2);
         add_filter('add_attachment', array($this, 'attachment_added'), 20, 1);
@@ -340,13 +346,16 @@ class Search_Filter_Post_Cache
                 /* speed improvements */
                 'no_found_rows' => true,
                 'update_post_meta_cache' => false,
-                'update_post_term_cache' => false
-
             );
 
             if (in_array('attachment', $this->cache_data['post_types'])) {
                 array_push($query_args['post_status'], "inherit");
             }
+
+	        if ( isset( $this->cache_data['post_stati'] ) ) {
+
+		        $query_args['post_status'] = array_unique( array_merge( $query_args['post_status'], $this->cache_data['post_stati'] ) );
+	        }
 
 
             if (has_filter('sf_edit_cache_query_args')) {
@@ -405,7 +414,7 @@ class Search_Filter_Post_Cache
             $error_time = $this->cache_options['last_update'] + $cycle_error_amount;
 
             if ($current_time >= $error_time) {//there was an error - so try to resume
-                //$this->write_log("~~ looks like an error `". $this->cache_options['process_id']);
+
                 $this->cache_options['last_update'] = time();
                 $this->cache_options['error_count']++;
                 $this->cache_options['locked'] = false;
@@ -828,6 +837,9 @@ class Search_Filter_Post_Cache
     {
         global $wpdb;
 
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+	    $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
         $wpdb->query('TRUNCATE TABLE `' . $this->cache_table_name . '`');
         $wpdb->query('TRUNCATE TABLE `' . $this->term_results_table_name . '`');
     }
@@ -854,8 +866,11 @@ class Search_Filter_Post_Cache
         $this->cache_options['locked'] = true;
         $this->update_cache_options($this->cache_options);
 
+
         if ($this->cache_options['status'] == "termcache") {
             //empty terms first
+	        $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
             global $wpdb;
             $wpdb->query('TRUNCATE TABLE `' . $this->term_results_table_name . '`');
             $this->get_all_filters();
@@ -933,6 +948,8 @@ class Search_Filter_Post_Cache
             'result_ids' => implode(",", $result_ids)
         );
 
+        $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
         $wpdb->insert(
             $this->term_results_table_name,
             $insert_data
@@ -953,6 +970,8 @@ class Search_Filter_Post_Cache
         if ($filter['source'] == "taxonomy") {
             $value_col = "field_value_num";
         }
+
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
 
         $field_terms_results = $wpdb->get_results($wpdb->prepare(
             "
@@ -987,6 +1006,8 @@ class Search_Filter_Post_Cache
             $field_col_select = "field_value_num as field_value";
         }
 
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
+
         $field_terms_result = $wpdb->get_results($wpdb->prepare(
             "
 			SELECT DISTINCT $field_col_select
@@ -1001,7 +1022,25 @@ class Search_Filter_Post_Cache
 
     public function setup_cached_search_forms()
     {
-        $search_form_query = new WP_Query('post_type=search-filter-widget&post_status=publish,draft&posts_per_page=-1&suppress_filters=1');
+
+	    $query_args = array(
+		    'post_type' => 'search-filter-widget',
+		    'posts_per_page' => -1,
+		    'paged' => 1,
+		    'post_status' => array("publish"),
+		    'suppress_filters' => true,
+
+		    /* speed improvements */
+		    'no_found_rows' => true,
+		    'update_post_meta_cache' => false,
+		    'lang' => ''
+	    );
+
+	    if (has_filter('sf_edit_search_forms_query_args')) {
+		    $query_args = apply_filters('sf_edit_search_forms_query_args', $query_args, $this->sfid);
+	    }
+
+        $search_form_query = new WP_Query($query_args);
         $search_forms = $search_form_query->get_posts();
 
         $this->cached_search_form_settings = array();
@@ -1032,6 +1071,7 @@ class Search_Filter_Post_Cache
     public function calc_cache_data($search_form_settings, $search_form_fields)
     {
         $incl_post_types = array();
+	    $incl_post_stati = array();
         $incl_meta_keys = array();
         $it = 0;
 
@@ -1042,6 +1082,7 @@ class Search_Filter_Post_Cache
                 if (isset($settings['post_types'])) {
                     // post types
                     $incl_post_types = array_merge(array_keys($settings['post_types']), $incl_post_types);
+	                $incl_post_stati = array_merge(array_keys($settings['post_status']), $incl_post_stati);
 
                     if (isset($search_form_fields[$it])) {
                         if (($search_form_fields[$it])) {
@@ -1078,6 +1119,7 @@ class Search_Filter_Post_Cache
 
         $this->cache_data['post_types'] = array_unique($incl_post_types);
         $this->cache_data['meta_keys'] = array_unique($incl_meta_keys);
+        $this->cache_data['post_stati'] = array_unique($incl_post_stati);
 
 
         if(has_filter("search_filter_post_cache_data"))
@@ -1280,7 +1322,31 @@ class Search_Filter_Post_Cache
 
 		$this->setup_cached_search_forms();
 
+
 		$new_cache_data = $this->cache_data;
+
+
+
+		// add proper support for post status, and prevent restarts for exising users
+		// by removing the built in post status we always include and init the arrays on both old
+		// and new data
+
+		//first, setup post_stati on old and new, so it doesn't trigger a restart automatically
+		if ( ! isset( $this->cache_options['caching_data']['post_stati'] ) ) {
+
+			$this->cache_options['caching_data']['post_stati'] = array();
+		}
+
+		if ( ! isset( $new_cache_data['post_stati'] ) ) {
+
+			$new_cache_data['post_stati'] = array();
+		}
+
+		//now if they exist, remove the built in post status (that we force include) before do allow a compare
+		$built_in_post_stati =array("publish", "pending", "draft", "future", "private");
+
+		$this->cache_options['caching_data']['post_stati'] = array_values( array_diff($this->cache_options['caching_data']['post_stati'], $built_in_post_stati) );
+		$new_cache_data['post_stati'] = array_values( array_diff($new_cache_data['post_stati'], $built_in_post_stati) );
 
 
 		$current_cache_data = $this->cache_options['caching_data'];
@@ -1298,6 +1364,8 @@ class Search_Filter_Post_Cache
 						if(!in_array($cache_key, $current_cache_data[$key]))
 						{
 							$restart_flag = true;
+						}
+						else{
 						}
 					}
 				}
@@ -1326,6 +1394,7 @@ class Search_Filter_Post_Cache
 		}
 		else
 		{//just trigger a rebuild of the terms - this should be done anytime someone changes a field which has terms (tag, cat, tax, meta)
+
 			//need to improve to be "smarter"
 
 			/*if($this->cache_options['status']!="inprogress")
@@ -1434,6 +1503,7 @@ class Search_Filter_Post_Cache
 
 		$fields_previous = array();
 
+		$this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
 		//Search_Filter_Helper::start_log("post_terms");
 		$post_terms = $wpdb->get_results($wpdb->prepare(
 			"
@@ -1657,6 +1727,8 @@ class Search_Filter_Post_Cache
     {
         global $wpdb;
 
+	    $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
         if(count($delete_rows) > 0) {
 
             //delete all rows in one query
@@ -1687,6 +1759,8 @@ class Search_Filter_Post_Cache
 
         $sql_where_parts = array();
 
+	    $this->term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
+
         if(count($filter_term_ids) > 0) {
             foreach ($filter_term_ids as $filter_name => $filter_term_ids) {
 
@@ -1709,6 +1783,8 @@ class Search_Filter_Post_Cache
 	private function get_all_cache_term_ids($cache_terms)
     {
         global $wpdb;
+
+	    $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
 
         $field_term_ids = array();
 
@@ -1779,6 +1855,8 @@ class Search_Filter_Post_Cache
 	private function post_delete_cache($postID, $update_term_cache = false){
 
 		global $wpdb;
+
+		$this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
 
 		if($update_term_cache) {
 			$results = $wpdb->get_results( $wpdb->prepare(
@@ -1863,6 +1941,7 @@ class Search_Filter_Post_Cache
 
         if(!empty($fields_sql)) {
 
+	        $this->cache_table_name = Search_Filter_Helper::get_table_name('search_filter_cache');
             $sql_where_in = implode(", ", $fields_sql);
             $sql = 'INSERT INTO `' . $this->cache_table_name . '` (`post_id`, `post_parent_id`, `field_name`, `field_value_num`, `field_value`, `term_parent_id`) VALUES ' . $sql_where_in;
             $insert_result = $wpdb->get_results($sql);
@@ -1963,7 +2042,6 @@ class Search_Filter_Post_Cache
 				}
 
 				$sql_part = $wpdb->prepare("('%d', '%d', '%s', '%d', '%s', '%d')", $postID, $parent_id, $field_name, $term_id, '', $term_parent_id);
-				//$sql = 'INSERT INTO `' . $this->cache_table_name . '` (`post_id`, `post_parent_id`, `field_name`, `field_value_num`, `field_value`, `term_parent_id`) VALUES ' . $sql_where_in;
 				array_push($sql_where_parts, $sql_part);
 			}
 		}
@@ -2072,7 +2150,6 @@ class Search_Filter_Post_Cache
 
 
 				$sql_part = $wpdb->prepare("('%d', '%d', '%s', '%d', '%s', '%d')", $postID, $parent_id, $field_name, $term_value_num, $term_value_str, 0);
-				//$sql = 'INSERT INTO `' . $this->cache_table_name . '` (`post_id`, `post_parent_id`, `field_name`, `field_value_num`, `field_value`, `term_parent_id`) VALUES ' . $sql_where_in;
 				array_push($sql_where_parts, $sql_part);
 			}
 		}
@@ -2102,7 +2179,6 @@ class Search_Filter_Post_Cache
 			foreach($field_terms as $term_value) {
 
 				$sql_part = $wpdb->prepare("('%d', '%d', '%s', '%d', '%s', '%d')", $postID, $parent_id, $field_name, 0, $term_value, 0);
-				//$sql = 'INSERT INTO `' . $this->cache_table_name . '` (`post_id`, `post_parent_id`, `field_name`, `field_value_num`, `field_value`, `term_parent_id`) VALUES ' . $sql_where_in;
 				array_push($sql_where_parts, $sql_part);
 			}
 		}

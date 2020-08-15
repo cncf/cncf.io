@@ -8,6 +8,11 @@
  * @copyright 2018 Search & Filter
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Posts_Admin {
 	
 	private $post_meta_keys = array();
@@ -1079,15 +1084,29 @@ class Search_Filter_Posts_Admin {
 				global $wpdb;
 				$data   =   array();
 
-				$wpdb->query("
-					SELECT DISTINCT(BINARY `meta_key`) as meta_key_binary, `meta_key`
-					FROM $wpdb->postmeta ORDER BY `meta_key` ASC
-				");
-				
+				$case_sensitive = true;
+				if(defined("SEARCH_FILTER_CASE_SENSITIVE_META_KEYS")){
+				    if( SEARCH_FILTER_CASE_SENSITIVE_META_KEYS === false ){
+					    $case_sensitive = false;
+                    }
+                }
+                if($case_sensitive){
+	                $wpdb->query("
+                        SELECT DISTINCT(BINARY `meta_key`) as meta_key_binary, `meta_key`
+                        FROM $wpdb->postmeta ORDER BY `meta_key` ASC
+                    ");
+                }
+                else{
+	                $wpdb->query("
+                        SELECT DISTINCT(`meta_key`) 
+                        FROM $wpdb->postmeta ORDER BY `meta_key` ASC
+                    ");
+                }
+
 				foreach($wpdb->last_result as $k => $v){
 					//$data[$v->meta_key] =   $v->meta_value;
 					$data[] = $v->meta_key;
-				};
+				}
 				
 				$this->post_meta_keys = $data;
 

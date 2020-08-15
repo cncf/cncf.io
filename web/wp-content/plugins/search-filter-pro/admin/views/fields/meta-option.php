@@ -1,17 +1,8 @@
 <?php
-/**
- * Represents the view for the administration settings dashboard.
- *
- * This includes the header, options, and other information that should provide
- * The User Interface to the end user.
- *
- * @package   Plugin_Name
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2014 Your Name or Company Name
- */
-
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <li class='meta-option-item<?php echo $class; ?>'>
 	<fieldset>

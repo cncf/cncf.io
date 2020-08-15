@@ -1,11 +1,10 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: DrMorse
- * Date: 22/10/2016
- * Time: 17:56
- */
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Search_Filter_Wp_Cache
 {
     public static $wp_tax_terms = array();

@@ -7,6 +7,13 @@
  * @link      https://searchandfilter.com
  * @copyright 2018 Search & Filter
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+
 global $searchandfilter;
 
 class Search_Filter {
@@ -209,7 +216,6 @@ class Search_Filter {
 								else if(($post_type=="post")&&(is_home()))
 								{//this then works on the blog page (is_home) set in `settings -> reading -> "a static page" -> posts page
 									$searchandfilter->set_active_sfid($search_form_id);
-									
 									$searchandfilter->get($search_form_id)->query->hook_setup_archive_query();
 									return;
 								}
@@ -463,7 +469,7 @@ class Search_Filter {
 			return $original_template;
 		}
 		
-		if(($searchandfilter->get($sfid)->settings("display_results_as")=="custom_woocommerce_store")||($searchandfilter->get($sfid)->settings("display_results_as")=="custom_edd_store")||($searchandfilter->get($sfid)->settings("display_results_as")=="post_type_archive"))
+		if(($searchandfilter->get($sfid)->settings("display_results_as")=="custom_woocommerce_store")||($searchandfilter->get($sfid)->settings("display_results_as")=="post_type_archive"))
 		{
 			return $original_template;
 		}

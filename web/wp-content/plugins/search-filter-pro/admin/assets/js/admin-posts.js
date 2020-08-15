@@ -1938,6 +1938,8 @@
 			/* display results - shortcode/archive */
 			var $results_toggle = $(".setup .display_results_as");
 			var $template_table = $('.setup .sf_tab_content_template .template_options_table');
+			var $template_ajax_table = $('.setup .sf_tab_content_template .template_ajax_table');
+			var $template_pagination_table = $('.setup .sf_tab_content_template .template_pagination_table');
 			var $template_sect = $('.setup .sf_tab_content_template .template_options_sect');
 			var $display_result_txt_cont = $('.setup .sf_tab_content_template .display_result_txt_cont');
 			var $tpl_archive_rows = $('.setup .sf_tab_content_template .tpl_archive_rows');
@@ -1971,7 +1973,7 @@
 
 				var $self = $this;
 				var val = $self.find('option[value="'+$self.val()+'"]').attr("data-sf-base");
-
+				var real_display_method = $active_results_display.val();
                 var $labels = $self.parent().parent().parent().find("label");
 				$labels.removeClass("active");
 				$self.parent().addClass("active");
@@ -1980,12 +1982,18 @@
 				$display_result_txt_cont.find("#display_result_"+$active_results_display.val()+"_txt").show();
                 //$template_table.removeClass("tpl_custom_woocommerce_rows");
                 $tpl_woo_tax_label.hide();
+
+
 				if(val=="shortcode")
 				{
 					$template_table.removeClass("template_archive_options");
 					$template_table.removeClass("template_post_type_archive_options");
 					$template_table.removeClass("template_custom_woocommerce_options");
 					$template_table.addClass("template_shortcode_options");
+
+                   // $template_ajax_table.removeClass("template_hide_ajax_selectors");
+                   // $template_pagination_table.removeClass("template_hide_ajax_selectors");
+
 					$tpl_custom_rows.hide();
 
                     if($self.val()=="shortcode") {
@@ -2008,6 +2016,10 @@
 					$template_table.removeClass("template_post_type_archive_options");
 					$template_table.removeClass("template_custom_woocommerce_options");
 					$template_table.addClass("template_archive_options");
+
+                    //$template_ajax_table.removeClass("template_hide_ajax_selectors");
+                    //$template_pagination_table.removeClass("template_hide_ajax_selectors");
+
 					$tpl_custom_rows.hide();
 					$selectors_results_div.hide();
 					$selectors_edd_div.hide();
@@ -2024,6 +2036,11 @@
 					$template_table.removeClass("template_custom_woocommerce_options");
                     $template_table.removeClass("template_archive_options");
 					$template_table.addClass("template_post_type_archive_options");
+
+
+                    //$template_ajax_table.removeClass("template_hide_ajax_selectors");
+                    //$template_pagination_table.removeClass("template_hide_ajax_selectors");
+
 					$tpl_custom_rows.hide();
 					$selectors_results_div.hide();
 					$selectors_edd_div.hide();
@@ -2045,8 +2062,13 @@
 				{
 					$template_table.removeClass("template_archive_options");
                     $template_table.removeClass("template_post_type_archive_options");
-                    $template_table.removeClass("template_custom_woocommerce_options");
+                    $template_table.removeClass("template_custom_woocommerce_options");;
 					$template_table.addClass("template_shortcode_options");
+
+
+                    //$template_ajax_table.removeClass("template_hide_ajax_selectors");
+                    //$template_pagination_table.removeClass("template_hide_ajax_selectors");
+
 					$selectors_results_div.hide();
 					$template_sect.show();
 					$selectors_edd_div.hide();
@@ -2061,6 +2083,10 @@
                     $template_table.removeClass("template_post_type_archive_options");
                     $template_table.removeClass("template_custom_woocommerce_options");
 					$template_table.addClass("template_archive_options");
+
+                    //$template_ajax_table.addClass("template_hide_ajax_selectors");
+                    //$template_pagination_table.addClass("template_hide_ajax_selectors");
+
 					$tpl_custom_rows.hide();
 					$selectors_results_div.hide();
 					$selectors_edd_div.hide();
@@ -2068,29 +2094,7 @@
 					$tpl_archive_rows.show();
 					$tpl_post_type_archive_rows.hide();
 
-					if(val=="custom_woocommerce_store")
-					{
-						/*$template_sect.show();
-						$template_table.removeClass("template_archive_options");
-						$template_table.addClass("template_post_type_archive_options");*/
-						/*$tpl_woocommerce_rows.show();
-						$template_sect.show();
-						$template_table.removeClass("template_archive_options");
-						$template_table.addClass("tpl_custom_woocommerce_rows");*/
-
-						/*$template_table.removeClass("template_shortcode_options");
-						$template_table.removeClass("template_archive_options");
-						$template_table.addClass("template_post_type_archive_options");
-						$template_table.addClass("tpl_custom_woocommerce_rows");
-						$tpl_custom_rows.hide();
-						$selectors_results_div.hide();
-						$selectors_edd_div.hide();
-						$template_sect.show();
-						$tpl_archive_rows.hide();
-						$tpl_woocommerce_rows.hide();
-						$tpl_post_type_archive_rows.show();*/
-					}
-					else if(val=="custom_edd_store")
+					if(val=="custom_edd_store")
 					{
 						$template_table.removeClass("template_archive_options");
 						$template_table.addClass("template_shortcode_options");
@@ -2100,6 +2104,25 @@
 						$template_sect.show();
 					}
 				}
+
+				var built_in_display_methods = ['archive', 'post_type_archive', 'shotrcode', 'custom_woocommerce_store', 'custom_edd_store', 'custom' ];
+
+
+
+                if(built_in_display_methods.indexOf(real_display_method) == -1)
+                {//then its another display method, a third party integration, which means we set ajax selectors
+					console.log("hide selectors");
+                    $template_ajax_table.addClass("template_hide_ajax_selectors");
+                    $template_pagination_table.addClass("template_hide_ajax_selectors");
+                }
+                else{
+                    console.log("show selectors");
+                    $template_ajax_table.removeClass("template_hide_ajax_selectors");
+                    $template_pagination_table.removeClass("template_hide_ajax_selectors");
+
+                }
+
+
 				
 			}
 			

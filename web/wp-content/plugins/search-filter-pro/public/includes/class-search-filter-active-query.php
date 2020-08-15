@@ -7,7 +7,11 @@
  * @link      https://searchandfilter.com
  * @copyright 2018 Search & Filter
  */
- 		
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 //class to grab the current query performed with the search, such as taxonomies highlighted, number ranges and post meta selections
 
 class Search_Filter_Active_Query {
@@ -30,9 +34,7 @@ class Search_Filter_Active_Query {
 			$this->form_fields = $fields;
 			$this->form_settings = $settings;
 		}
-		
-		$this->cache_table_name = $wpdb->prefix . 'search_filter_cache';
-		$this->term_results_table_name = $wpdb->prefix . 'search_filter_term_results';
+
 	}
 
 	public function get_field_values($field_name)
@@ -763,11 +765,13 @@ class Search_Filter_Active_Query {
 	private function find_post_id_with_field($field_name)
 	{
 		global $wpdb;
+
+		$term_results_table_name = Search_Filter_Helper::get_table_name('search_filter_term_results');
 		
 		$field_options = $wpdb->get_results( 
 			"
 			SELECT field_value, result_ids
-			FROM $this->term_results_table_name
+			FROM $term_results_table_name
 			WHERE field_name = '$field_name' LIMIT 0,1
 			"
 		);

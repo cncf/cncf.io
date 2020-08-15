@@ -7,6 +7,12 @@
  * @link      https://searchandfilter.com
  * @copyright 2018 Search & Filter
  */
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 
 		<div id="available-fields" class="widgets-search-filter-draggables ui-search-filter-sortable" data-allow-expand="0">
