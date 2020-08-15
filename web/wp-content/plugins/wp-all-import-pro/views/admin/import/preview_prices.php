@@ -15,8 +15,8 @@
 
 		<h3><?php _e('Preview Prices', 'wp_all_import_plugin'); ?></h3>	
 		
-		<p><?php _e('Regular Price', 'wp_all_import_plugin'); ?>: <?php echo $product_regular_price; ?></p>
-		<p><?php _e('Sale Price', 'wp_all_import_plugin'); ?>: <?php echo $product_sale_price; ?></p>
+		<p><?php _e('Regular Price', 'wp_all_import_plugin'); ?>: <?php echo empty($product_regular_price) ? '' : $product_regular_price; ?></p>
+		<p><?php _e('Sale Price', 'wp_all_import_plugin'); ?>: <?php echo empty($product_sale_price) ? '' : $product_sale_price; ?></p>
 
 	</div>
 

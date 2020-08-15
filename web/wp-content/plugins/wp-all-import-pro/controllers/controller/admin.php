@@ -121,7 +121,7 @@ abstract class PMXI_Controller_Admin extends PMXI_Controller {
 
 	public function add_admin_scripts() {
         $cm_settings['codeEditor'] = wp_enqueue_code_editor(['type' => 'php']);
-        wp_localize_script('jquery', 'wpai_cm_settings', $cm_settings);
+        wp_localize_script('pmxi-admin-script', 'wpai_cm_settings', $cm_settings);
     }
 	
 	/**

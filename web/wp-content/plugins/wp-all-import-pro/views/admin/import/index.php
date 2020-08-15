@@ -198,9 +198,9 @@
 									$custom_types = get_post_types(array('_builtin' => true), 'objects') + get_post_types(array('_builtin' => false, 'show_ui' => true), 'objects'); 
 									foreach ($custom_types as $key => $ct) {
 										if (in_array($key, $hiddenPosts)) unset($custom_types[$key]);
-                                    }                                    
-                                    
-                                    //$custom_types = apply_filters( 'pmxi_custom_types', $custom_types );
+                                    }
+
+                                    $custom_types = apply_filters( 'pmxi_custom_types', $custom_types, 'custom_types' );
 
 									$sorted_cpt = array();
 									foreach ($custom_types as $key => $cpt){
@@ -242,7 +242,7 @@
 									foreach ($hidden_post_types as $key => $ct) {
 										if (in_array($key, $hiddenPosts)) unset($hidden_post_types[$key]);
 									}
-                                    //$hidden_post_types = apply_filters( 'pmxi_custom_types', $hidden_post_types, 'hidden_post_types' );
+                                    $hidden_post_types = apply_filters( 'pmxi_custom_types', $hidden_post_types, 'hidden_post_types' );
 
 								?>	
 								<div class="wpallimport-choose-import-direction">
@@ -252,10 +252,10 @@
 									</div>
 									<div class="wpallimport-extra-text-right">
 										<div class="wpallimport-new-records"><?php _e('for each record in my data file.', 'wp_all_import_plugin'); ?>
-											<a class="wpallimport-help" href="#help" style="position: relative; top: -2px;" original-title="The New Items option is commonly used to import new posts or products to your site without touching the existing records.<br/><br/>If the import is later run again with modified data, WP All Import will only update/remove posts created by this import.">?</a>
+											<a class="wpallimport-help" href="#help" style="position: relative; top: -2px;" title="The New Items option is commonly used to import new posts or products to your site without touching the existing records.<br/><br/>If the import is later run again with modified data, WP All Import will only update/remove posts created by this import.">?</a>
 										</div>
 										<div class="wpallimport-existing-records"><?php _e('and update some or all of their data.', 'wp_all_import_plugin'); ?>
-											<a class="wpallimport-help" href="#help" style="position: relative; top: -2px;" original-title="The Existing Items option is commonly used to update existing products with new stock quantities while leaving all their other data alone, update properties on your site with new pricing, etc. <br/><br/> In Step 4, you will map the records in your file to the existing items on your site and specify which data points will be updated and which will be left alone.">?</a>								
+											<a class="wpallimport-help" href="#help" style="position: relative; top: -2px;" title="The Existing Items option is commonly used to update existing products with new stock quantities while leaving all their other data alone, update properties on your site with new pricing, etc. <br/><br/> In Step 4, you will map the records in your file to the existing items on your site and specify which data points will be updated and which will be left alone.">?</a>
 										</div>
 									</div>									
                                     <select name="custom_type_selector" id="custom_type_selector" class="wpallimport-post-types">
@@ -270,7 +270,7 @@
                                     <?php
                                     $known_imgs     = array( 'post', 'page', 'product', 'import_users', 'shop_order', 'shop_coupon', 'shop_customer', 'users', 'comments', 'taxonomies', 'reviews' );
                                     $all_posts      = array_merge( $sorted_cpt, $hidden_post_types );
-                                    $all_posts      = apply_filters( 'pmxi_custom_types', $all_posts );
+                                    $all_posts      = apply_filters( 'pmxi_custom_types', $all_posts, 'all_types' );
                                     $ordered_posts  = array( 'post', 'page', 'taxonomies', 'comments', 'import_users', 'shop_order', 'shop_coupon', 'product', 'reviews', 'shop_customer');
 
                                     foreach ( $all_posts as $key => $post_obj ) {

@@ -633,6 +633,9 @@ if ( ! class_exists('PMXI_Upload')){
 
 			$uploads = $wp_uploads['basedir'] . DIRECTORY_SEPARATOR . PMXI_Plugin::FILES_DIRECTORY . DIRECTORY_SEPARATOR;
 
+			$from = $uploads . basename($this->file);
+			$to = $this->uploadsPath  . DIRECTORY_SEPARATOR . basename($this->file);
+
 			if (empty($this->file)) {
 				$this->errors->add('form-validation', __('Please specify a file to import.', 'wp_all_import_plugin'));
 			} elseif (preg_match('%\W(zip)$%i', trim($this->file))) {				
@@ -642,10 +645,10 @@ if ( ! class_exists('PMXI_Upload')){
 				}																
 				
 				echo '<span style="display:none">';
-				copy( $uploads . $this->file, $this->uploadsPath  . '/' . basename($this->file));
+				copy( $from, $to);
 				echo '</span>';		
 
-				$zipfilePath = $this->uploadsPath . '/' . basename($this->file);
+				$zipfilePath = $to;
 				
 				if (!class_exists('PclZip')) include_once(PMXI_Plugin::ROOT_DIR.'/libraries/pclzip.lib.php');
 
@@ -732,20 +735,20 @@ if ( ! class_exists('PMXI_Upload')){
 				if($this->uploadsPath === false){
 					$this->errors->add('form-validation', __('WP All Import can\'t access your WordPress uploads folder.', 'wp_all_import_plugin'));
 				}
-				if (!@file_exists($uploads . $this->file)) {
+				if (!@file_exists($from)) {
 				    $this->errors->add('form-validation', __('File doesn\'t exist.', 'wp_all_import_plugin'));
                 }
 				// copy file in temporary folder
 				// hide warning message
 				echo '<span style="display:none">';
-				copy( $uploads . $this->file, $this->uploadsPath  . '/' . basename($this->file));
+				copy( $from, $to);
 				echo '</span>';												
 				
-				$filePath = $this->uploadsPath . '/' . basename($this->file);
+				$filePath = $to;
 				$source = array(
 					'name' => basename($this->file),
 					'type' => 'file',
-					'path' => $uploads . $this->file,
+					'path' => $from,
 				); 				
 				
 				// Detect if file is very large							
@@ -765,14 +768,14 @@ if ( ! class_exists('PMXI_Upload')){
 				// copy file in temporary folder
 				// hide warning message
 				echo '<span style="display:none">';
-				copy( $uploads . $this->file, $this->uploadsPath  . '/' . basename($this->file));
+				copy( $from, $to);
 				echo '</span>';												
 				
-				$filePath = $this->uploadsPath . '/' . basename($this->file);
+				$filePath = $to;
 				$source = array(
 					'name' => basename($this->file),
 					'type' => 'file',
-					'path' => $uploads . $this->file,
+					'path' => $from,
 				);
 
 				$json_str = file_get_contents($filePath);
@@ -805,14 +808,14 @@ if ( ! class_exists('PMXI_Upload')){
 				// copy file in temporary folder
 				// hide warning message
 				echo '<span style="display:none">';
-				copy( $uploads . $this->file, $this->uploadsPath  . '/' . basename($this->file));
+				copy( $from, $to);
 				echo '</span>';	
 
-				$localSQLPath = $this->uploadsPath . '/' . basename($this->file);
+				$localSQLPath = $to;
 				$source = array(
 					'name' => basename($this->file),
 					'type' => 'file',
-					'path' => $uploads . $this->file,
+					'path' => $from,
 				);				
 
 				include_once( PMXI_Plugin::ROOT_DIR . '/libraries/XmlImportSQLParse.php' );	
@@ -829,14 +832,14 @@ if ( ! class_exists('PMXI_Upload')){
 				// copy file in temporary folder
 				// hide warning message
 				echo '<span style="display:none">';
-				copy( $uploads . $this->file, $this->uploadsPath  . '/' . basename($this->file));
+				copy( $from, $to);
 				echo '</span>';	
 
-				$localXLSPath = $this->uploadsPath . '/' . basename($this->file);
+				$localXLSPath = $to;
 				$source = array(
 					'name' => basename($this->file),
 					'type' => 'file',
-					'path' => $uploads . $this->file,
+					'path' => $from,
 				);				
 
 				include_once( PMXI_Plugin::ROOT_DIR . '/libraries/XmlImportXLSParse.php' );	
@@ -853,16 +856,16 @@ if ( ! class_exists('PMXI_Upload')){
 				// copy file in temporary folder
 				// hide warning message
 				echo '<span style="display:none">';
-				copy( $uploads . $this->file, $this->uploadsPath  . '/' . basename($this->file));
+				copy( $from, $to);
 				echo '</span>';						
 
 				$source = array(
 					'name' => basename($this->file),
 					'type' => 'file',
-					'path' => $uploads . $this->file,
+					'path' => $from,
 				);
 
-				$filePath = $this->uploadsPath . '/' . basename($this->file);
+				$filePath = $to;
 
 				if ( preg_match('%\W(gz)$%i', basename($this->file))){
 					$fileInfo = wp_all_import_get_gz($filePath, 0, $this->uploadsPath);

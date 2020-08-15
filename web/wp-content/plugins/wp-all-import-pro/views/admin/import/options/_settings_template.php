@@ -84,7 +84,7 @@
 									foreach ($custom_types as $key => $ct) {
 										if (in_array($key, $hiddenPosts)) unset($custom_types[$key]);
 									}
-									//$custom_types = apply_filters( 'pmxi_custom_types', $custom_types, 'custom_types' );
+									$custom_types = apply_filters( 'pmxi_custom_types', $custom_types, 'custom_types' );
 
 									$sorted_cpt = array();
 									foreach ($custom_types as $key => $cpt){
@@ -126,7 +126,7 @@
 									foreach ($hidden_post_types as $key => $ct) {
 										if (in_array($key, $hiddenPosts)) unset($hidden_post_types[$key]);
 									}
-									//$hidden_post_types = apply_filters( 'pmxi_custom_types', $hidden_post_types );
+									$hidden_post_types = apply_filters( 'pmxi_custom_types', $hidden_post_types, 'hidden_post_types' );
 
 								?>	
 								<div class="wpallimport-change-custom-type">
@@ -142,7 +142,7 @@
                                     <?php
                                     $known_imgs     = array( 'post', 'page', 'product', 'import_users', 'shop_order', 'shop_coupon', 'shop_customer', 'users', 'comments', 'taxonomies', 'reviews' );
                                     $all_posts      = array_merge( $sorted_cpt, $hidden_post_types );
-                                    $all_posts      = apply_filters( 'pmxi_custom_types', $all_posts );
+                                    $all_posts      = apply_filters( 'pmxi_custom_types', $all_posts, 'all_types' );
                                     $ordered_posts  = array( 'post', 'page', 'taxonomies', 'comments', 'import_users', 'shop_order', 'shop_coupon', 'product', 'reviews', 'shop_customer' );
 
                                     foreach ( $all_posts as $key => $post_obj ) {

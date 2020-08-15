@@ -195,7 +195,7 @@
 	<ul>
 		<li><?php _e('WP All Import will automatically ignore elements with blank image URLs/filenames.', 'wp_all_import_plugin'); ?></li>
 		<li><?php _e('WP All Import must download the images to your server. You can\'t have images in a Gallery that are referenced by external URL. That\'s just how WordPress works.', 'wp_all_import_plugin'); ?></li>
-		<li><?php printf(__('Importing a variable number of images can be done using a <a href="%s" target="_blank">FOREACH LOOP</a>', 'wp_all_import_plugin'), 'http://www.wpallimport.com/documentation/step-3/template-syntax/'); ?></li>
+		<li><?php printf(__('Importing a variable number of images can be done using a <a href="%s" target="_blank">FOREACH LOOP</a>', 'wp_all_import_plugin'), 'https://www.wpallimport.com/documentation/developers/custom-code/foreach-loops/'); ?></li>
 		<li><?php printf(__('For more information check out our <a href="%s" target="_blank">comprehensive documentation</a>', 'wp_all_import_plugin'), 'http://www.wpallimport.com/documentation/'); ?></li>
 	</ul>
 </div>

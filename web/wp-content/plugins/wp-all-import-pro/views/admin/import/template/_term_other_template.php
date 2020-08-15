@@ -18,7 +18,7 @@ if (empty($custom_type)){
 					<?php if ($custom_type->hierarchical): ?>
 					<tr>
 						<td>
-							<h4><?php _e('Parent Term', 'wp_all_import_plugin'); ?> <a class="wpallimport-help" href="#help" style="position:relative; top:-1px;" original-title="If your taxonomies have parent/child relationships, use this field to set the parent for the imported taxonomy term. Terms can be matched by slug, name, or ID.">?</a></h4>
+							<h4><?php _e('Parent Term', 'wp_all_import_plugin'); ?> <a class="wpallimport-help" href="#help" style="position:relative; top:-1px;" title="If your taxonomies have parent/child relationships, use this field to set the parent for the imported taxonomy term. Terms can be matched by slug, name, or ID.">?</a></h4>
 							<div>
 								<input type="text" name="taxonomy_parent" style="width:100%;" value="<?php echo esc_attr($post['taxonomy_parent']); ?>" placeholder="<?php echo __('Parent term', 'wp_all_import_plugin'); ?>"/>
 							</div>
