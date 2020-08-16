@@ -61,7 +61,8 @@
 			<?php if ( $background ) : ?>
 		<figure class="background-image-figure">
 				<?php
-				LF_Utils::display_responsive_images( $background, 'event-270', '270px' );
+				LF_Utils::display_responsive_images( $background, 'event-415', '415px' );
+
 				?>
 		</figure>
 		<?php endif; ?>

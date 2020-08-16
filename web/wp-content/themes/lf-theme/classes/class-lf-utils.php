@@ -204,7 +204,11 @@ class Lf_Utils {
 	public static function display_responsive_images( $image_id, $image_size, $max_width, $class_name = '' ) {
 
 		// if no image id or not number, return.
-		if ( ! $image_id || ! is_integer( $image_id ) ) {
+		if ( ! $image_id ) {
+			return;
+		}
+
+		if ( ! is_numeric( $image_id ) ) {
 			return;
 		}
 
@@ -226,7 +230,6 @@ class Lf_Utils {
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
 
 		} else {
-
 			$html = '<img loading="lazy" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '">';
 
 		}

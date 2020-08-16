@@ -33,7 +33,9 @@ add_image_size( 'case-study-320', 320, 260, true );
 add_image_size( 'case-study-640', 640, 520, true );
 
 // event.
-add_image_size( 'event-270', 270, 250, true );
+add_image_size( 'event-317', 317, 272, true );
+add_image_size( 'event-415', 415, 356, true );
+add_image_size( 'event-634', 634, 544, true );
 
 // Hero image (Posts and Pages).
 add_image_size( 'hero-2880', 2880, 520, true );
