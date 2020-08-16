@@ -27,6 +27,9 @@ require_once 'gutenberg-preset-colors.php';
 // Disable custom gradient creation.
 add_theme_support( 'disable-custom-gradients' );
 
+// Disable core block patterns.
+remove_theme_support( 'core-block-patterns' );
+
 // Disable custom font sizes.
 add_theme_support( 'disable-custom-font-sizes' );
 
