@@ -143,7 +143,7 @@ function add_lf_fields_after_header_name() {
 	$affiliations = um_user( 'sb_certifications' );
 	$image        = new Image();
 
-	if ( is_array( $affiliations ) ) {
+	if ( is_array( $affiliations ) && count( $affiliations ) > 0 ) {
 		?>
 <div class="affiliations-box">
 	<label>CNCF Affiliations</label>
