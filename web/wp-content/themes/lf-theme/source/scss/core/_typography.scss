@@ -121,3 +121,7 @@ a:not(.wp-block-button__link) {
         -webkit-tap-highlight-color: rgba($secondary-color, 0.3);
     }
 }
+
+.no-decoration {
+    text-decoration: none;
+}
