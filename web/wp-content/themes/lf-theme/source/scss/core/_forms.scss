@@ -129,7 +129,6 @@ body.um-page-user,
     }
 
     label {
-        // display: block;
         margin-bottom: 0.25em;
 
         span {
@@ -164,10 +163,6 @@ body.um-page-user,
         >* {
             flex-grow: 1;
         }
-    }
-
-    input[type="checkbox"] {
-        margin-right: 0.5rem;
     }
 }
 
@@ -258,14 +253,6 @@ body .gform_wrapper form .top_label {
     }
 }
 
-// .ginput_container {
-
-//     input[type="text"],
-//     input[type="email"] {
-
-//     }
-// }
-
 // overrides GF on UM pages for input color.
 .um .um-form .gform_wrapper input[type='text'],
 .um .um-form input[type='search'],
@@ -330,19 +317,21 @@ body .gform_wrapper form .top_label {
         background: $white;
         content: "";
         display: block;
-        margin: 0 .5em 0 0;
+        margin: 0 0.5rem 0 0;
         padding: 0;
         vertical-align: middle;
-        width: 1em;
-        height: 1em;
+        width: 1.25rem;
+        height: 1.25rem;
         transform: translate3d(0, 0, 0);
         -webkit-backface-visibility: hidden;
+
 
         &::after {
             content: "";
             display: block;
             transform: scale(0);
-            transition: transform .2s;
+            transition: transform 0.2s;
+            -webkit-transform-style: preserve-3d;
         }
     }
 
@@ -372,12 +361,13 @@ body .gform_wrapper form .top_label {
 
     input+span {
         border-radius: 2px;
+        border: 1px solid $black;
 
         &::after {
             background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+') no-repeat center;
             background-size: contain;
-            width: 1em;
-            height: 1em;
+            width: 1.2rem;
+            height: 1.2rem;
         }
     }
 }
