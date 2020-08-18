@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "b59290549d85d77763811945ba1f01501b8698a1"
+                "reference": "fc42c6e7fbde48e78cd713dbfa33b24efe3c7f0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/b59290549d85d77763811945ba1f01501b8698a1",
-                "reference": "b59290549d85d77763811945ba1f01501b8698a1",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/fc42c6e7fbde48e78cd713dbfa33b24efe3c7f0d",
+                "reference": "fc42c6e7fbde48e78cd713dbfa33b24efe3c7f0d",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-08-17T07:58:21+00:00"
+            "time": "2020-08-18T18:40:58+00:00"
         },
         {
             "name": "composer/installers",
@@ -565,6 +565,16 @@
                 "env",
                 "environment"
             ],
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-14T19:04:52+00:00"
         },
         {
@@ -767,15 +777,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "4.19.3",
+            "version": "4.20.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/4.19.3"
+                "reference": "tags/4.20.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.19.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.20.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -881,12 +891,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "fa90d820db8d594157f65ef88d23b23e97575eaa"
+                "reference": "b7e8c8916bca1758da0105979774ea6cb49072f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fa90d820db8d594157f65ef88d23b23e97575eaa",
-                "reference": "fa90d820db8d594157f65ef88d23b23e97575eaa",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b7e8c8916bca1758da0105979774ea6cb49072f7",
+                "reference": "b7e8c8916bca1758da0105979774ea6cb49072f7",
                 "shasum": ""
             },
             "conflict": {
@@ -1055,7 +1065,7 @@
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
                 "sylius/grid": ">=1,<1.1.19|>=1.2,<1.2.18|>=1.3,<1.3.13|>=1.4,<1.4.5|>=1.5,<1.5.1",
                 "sylius/grid-bundle": ">=1,<1.1.19|>=1.2,<1.2.18|>=1.3,<1.3.13|>=1.4,<1.4.5|>=1.5,<1.5.1",
-                "sylius/resource-bundle": "<1.3.13|>=1.4,<1.4.6|>=1.5,<1.5.1|>=1.6,<1.6.3",
+                "sylius/resource-bundle": "<1.3.14|>=1.4,<1.4.7|>=1.5,<1.5.2|>=1.6,<1.6.4",
                 "sylius/sylius": "<1.3.16|>=1.4,<1.4.12|>=1.5,<1.5.9|>=1.6,<1.6.5",
                 "symbiote/silverstripe-multivaluefield": ">=3,<3.0.99",
                 "symbiote/silverstripe-versionedfiles": "<=2.0.3",
@@ -1168,7 +1178,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-16T05:16:28+00:00"
+            "time": "2020-08-18T07:47:20+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
