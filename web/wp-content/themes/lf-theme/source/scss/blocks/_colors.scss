@@ -4,6 +4,7 @@ $colors: ( // name variable : color to be used.
     'pink-400': #DE176C,
     'purple-700': #2C2960,
     'blue-100': #F0F5F7,
+    'tertiary-400': $tertiary-400,
     'white': $white,
     'black': $black,
 );
@@ -11,6 +12,7 @@ $color_hover: ( // name variable : color to be used.
     'pink-400': #E43B80,
     'purple-700': #48549C,
     'blue-100': #3CB3DD,
+    'tertiary-400': $tertiary-600,
     'white': $tertiary-color,
     'black': #252b5f,
 );
@@ -19,6 +21,7 @@ $text_color: ( // name variable : color to be used.
     'pink-400': $white,
     'purple-700': $white,
     'blue-100': $secondary-color,
+    'tertiary-400': $white,
     'white': $black,
     'black': $white,
 );
