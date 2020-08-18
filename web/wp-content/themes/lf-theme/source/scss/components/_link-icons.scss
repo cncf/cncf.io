@@ -1,30 +1,39 @@
 // use for random external links where needed.
 .external {
-	padding-right: 15px;
-	display: inline-block;
+    padding-right: 15px;
+    display: inline-block;
 
-	    &::after {
+    &::after {
         content: '';
         background-image: url("data:image/svg+xml,%3Csvg fill='currentColor' height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4h-13v18h20v-11h1v12h-22v-20h14zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8z'/%3E%3C/svg%3E");
-         background-size: 0.8em;
+        background-size: 0.8em;
         height: 0.8em;
         width: 0.8em;
         background-repeat: no-repeat;
         background-position: right;
+        align-self: center;
         display: inline-flex;
         white-space: nowrap;
-        align-self: center;
+    }
+
+    &::after:not(.button) {
         margin-right: -20px;
     }
 
-        // fix for some lines wrapping prematurely.
-		&.is-inline {
-			display: inline;
-		}
-
-		&.is-primary-color {
+    &.button {
         &::after {
-			// pink
+            margin-left: 5px;
+        }
+    }
+
+    // fix for some lines wrapping prematurely.
+    &.is-inline {
+        display: inline;
+    }
+
+    &.is-primary-color {
+        &::after {
+            // pink
             // https://codepen.io/sosuke/pen/Pjoqqp
             filter: invert(31%) sepia(94%) saturate(6410%) hue-rotate(323deg) brightness(89%) contrast(95%);
         }
