@@ -35,7 +35,7 @@ if ( ! $city && ! $country ) {
 			the_title();
 			?>
 		</h1>
-		<p class="h3 hero-post-title">Location: <?php echo esc_html( $location ); ?></p>
+		<p class="h3 event-location">Location: <?php echo esc_html( $location ); ?></p>
 	</div>
 </section>
 <main class="event-single">
