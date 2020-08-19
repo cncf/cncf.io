@@ -148,9 +148,19 @@
     .um-alt {
         background-color: $secondary-color;
         margin-left: 2em;
+        color: $black;
 
         &:hover {
             background-color: lighten($secondary-color, 5%);
+            color: $black;
+        }
+
+        &.um-button {
+            color: $black;
+
+            &:hover {
+                color: $black;
+            }
         }
     }
 
