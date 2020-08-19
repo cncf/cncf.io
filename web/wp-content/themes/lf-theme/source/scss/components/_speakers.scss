@@ -68,11 +68,22 @@
 // Hide contact form when editing profile
 .um-own-profile,
 .um-page-user,
-.um-page-login {
+.um-page-account,
+.um-page-login,
+.um-page-password-reset {
 
     .gform_wrapper .gform_footer {
         margin: 0;
         padding: 0;
+
+        input.button {
+            margin-top: 1rem;
+        }
+
+    }
+
+    .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='image']):not([type='file']) {
+        line-height: 100% !important;
     }
 
     // Hides Contact Form when editing.
@@ -87,40 +98,46 @@
         }
     }
 
-    .um-button,
-    .um-alt {
-        border: 0; // reset
-        padding: 0px; // reset
-        width: auto;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-        padding: 0.7rem 1.1rem;
-        white-space: nowrap;
-        text-transform: uppercase;
-        background-color: $primary-color;
-        color: $white;
-        transition: all 0.25s ease-out;
-        margin-right: 1em;
-        border-radius: 0 !important;
-        font-size: 14px !important;
-        min-width: 150px;
+    .um-form {
 
-        a {
+        .um-button,
+        .um-alt,
+        .um_account_submit_privacy,
+        input[type=submit].um-button {
+            border: 0; // reset
+            padding: 0px; // reset
+            width: auto;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            padding: 0.7rem 1.1rem;
+            white-space: nowrap;
+            text-transform: uppercase !important;
+            background-color: $primary-color;
             color: $white;
-        }
+            transition: all 0.25s ease-out;
+            margin-right: 1em;
+            border-radius: 0 !important;
+            font-size: 14px !important;
+            min-width: 150px;
+            box-shadow: none;
 
-        &:active {
-            position: relative;
-            top: 1px;
-        }
+            a {
+                color: $white;
+            }
 
-        &:hover {
-            background-color: lighten($primary-color, 5%);
-            color: $white;
-        }
+            &:active {
+                position: relative;
+                top: 1px;
+            }
 
+            &:hover {
+                background-color: lighten($primary-color, 5%);
+                color: $white;
+            }
+
+        }
     }
 
     .um-header {
@@ -163,6 +180,12 @@
         line-height: 1.5;
         font-size: initial;
         margin-top: 1rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .um.um-profile .um-header .um-meta-text {
+        padding: 0px !important;
     }
 }
 
@@ -215,9 +238,29 @@
             color: $primary-300;
         }
     }
+
+    .um-icon-arrow-up-b,
+    .um-icon-arrow-right-b {
+        color: #e5e5e5;
+
+        &:hover {
+            color: #e5e5e5;
+        }
+    }
+
+    .um-dropdown-arr {
+        height: 40px;
+    }
+
+
 }
 
-
+@media (min-width: 1200px) {
+    .um-page-user .um .um-dropdown {
+        transform: translateX(calc(-50% + 17px));
+        top: 50px !important;
+    }
+}
 
 .um {
     .um-header.no-cover {
@@ -285,6 +328,22 @@
             line-height: 1.5;
         }
     }
+}
 
+.um-page-login .um-field-area {
+    margin-bottom: 1rem;
+}
 
+.um-page-loggedin.um-own-profile .um.um-profile .um-header.no-cover .um-profile-meta {
+    width: 100%;
+}
+
+.um-page-account .um-request-button,
+#um_account_submit_delete {
+    background-color: $error;
+    color: $white;
+}
+
+.um-page-password-reset .um-um_password_id.um {
+    max-width: 600px;
 }
