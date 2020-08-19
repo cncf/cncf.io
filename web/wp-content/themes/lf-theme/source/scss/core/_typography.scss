@@ -89,37 +89,26 @@ b {
     font-weight: 600;
 }
 
-a:not(.wp-block-button__link) {
+a:link,
+a:visited,
+a:active,
+a:focus {
     color: $primary-color;
     font-weight: 500;
     transition: all 0.25s ease-out;
+    text-decoration: none;
+}
 
-    &:link {
-        text-decoration: none;
-    }
+a:hover {
+    color: $primary-color;
+    font-weight: 500;
+    transition: all 0.25s ease-out;
+    text-decoration: underline;
+}
 
-    &:visited {
-        text-decoration: none;
-    }
-
-    &:active {
-        text-decoration: none;
-    }
-
-    &:focus {
-        text-decoration: none;
-    }
-
-    &:hover {
-        @media (hover: hover) {
-            text-decoration: underline;
-        }
-    }
-
-    /* mobile tap color */
-    &:link {
-        -webkit-tap-highlight-color: rgba($secondary-color, 0.3);
-    }
+// mobile tap color.
+a:link {
+    -webkit-tap-highlight-color: rgba($secondary-color, 0.3);
 }
 
 .no-decoration {
