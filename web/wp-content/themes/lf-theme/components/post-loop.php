@@ -151,7 +151,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 
 		} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
 			// show generic.
-			Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-260', '260px', 'archive-default-svg' );
+			Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-540', '540px', 'archive-default-svg' );
 
 		} else {
 			echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
