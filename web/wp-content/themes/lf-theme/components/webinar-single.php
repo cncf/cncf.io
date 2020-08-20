@@ -93,10 +93,11 @@ if ( $dat_webinar_start > $dat_now ) {
 
 			<?php if ( 'past' == $period_status ) : ?>
 		<h3 class="margin-y">This webinar has passed.</h3>
-
+				<?php if ( $dat_webinar_start ) { ?>
 		<p class="date-icon">Broadcast on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ); ?>
+					<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ); ?>
 		</p>
+				<?php } ?>
 		<?php endif; ?>
 
 			<?php
