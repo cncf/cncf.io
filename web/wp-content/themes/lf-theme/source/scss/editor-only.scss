@@ -49,8 +49,6 @@
     }
 }
 
-
-
 #editor {
     .editor-styles-wrapper {
 
@@ -111,19 +109,6 @@
     padding: 1em;
 }
 
-// // Fix WP 5.5 centering text
-// .block-editor-block-list__layout .wp-block {
-//     margin-top: unset;
-//     margin-bottom: unset;
-// }
-
-// // make blocks wider to fit the screen
-// .wp-block {
-//     margin-right: auto;
-//     margin-left: auto;
-//     max-width: 1150px;
-// }
-
 // stop ridiculous dropcap in paragraph preview.
 .block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
     float: none;
@@ -134,8 +119,6 @@
     text-transform: inherit;
     font-style: inherit;
 }
-
-
 
 .skew-box {
     font-size: 0.775em;

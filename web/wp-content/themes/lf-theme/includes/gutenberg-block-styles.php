@@ -213,14 +213,6 @@ register_block_style(
 	)
 );
 
-register_block_style(
-	'core/columns',
-	array(
-		'name'  => 'no-flex-on-mobile',
-		'label' => 'No flex on mobile',
-	)
-);
-
 // COLUMN.
 register_block_style(
 	'core/column',

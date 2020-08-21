@@ -162,7 +162,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 </div>
 <div class="archive-text-wrapper">
 		<?php if ( $is_blog_category && $category_author ) : ?>
-	<div class="skew-box secondary centered margin-bottom">CNCF
+	<div class="skew-box secondary centered margin-bottom-small">CNCF
 			<?php
 			echo esc_html( $category_author );
 			?>
