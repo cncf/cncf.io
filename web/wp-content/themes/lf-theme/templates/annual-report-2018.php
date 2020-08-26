@@ -10,7 +10,7 @@
 
 get_template_part( 'components/header' );
 
-wp_enqueue_style( '2018', get_template_directory_uri() . '/build/annual-report-2018.min.css', array(), filemtime( get_template_directory() . '/images/annual-report-2018.min.css' ), 'all' );
+wp_enqueue_style( '2018', get_template_directory_uri() . '/build/annual-report-2018.min.css', array(), filemtime( get_template_directory() . '/build/annual-report-2018.min.css' ), 'all' );
 
 if ( have_posts() ) :
 	while ( have_posts() ) :
