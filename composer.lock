@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "1f64afdf409c29ec428eb8a377875cc57f3acfca"
+                "reference": "a12159fa6eaa0a76ce9907eac62014225ec4182d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/1f64afdf409c29ec428eb8a377875cc57f3acfca",
-                "reference": "1f64afdf409c29ec428eb8a377875cc57f3acfca",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/a12159fa6eaa0a76ce9907eac62014225ec4182d",
+                "reference": "a12159fa6eaa0a76ce9907eac62014225ec4182d",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-08-23T23:10:05+00:00"
+            "time": "2020-08-26T07:46:03+00:00"
         },
         {
             "name": "composer/installers",
@@ -564,16 +564,6 @@
                 "dotenv",
                 "env",
                 "environment"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/GrahamCampbell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-07-14T19:04:52+00:00"
         },
