@@ -127,7 +127,7 @@ function styles() {
         .pipe(filter("**/*.css"))
         .pipe(
             mmq({
-                log: true
+                log: false
             })
         )
         .pipe(browserSync.stream())
