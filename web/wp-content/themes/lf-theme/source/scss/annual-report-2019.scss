@@ -15,7 +15,7 @@ p.has-text-color a {
 }
 
 :root .has-midnight-gradient-background {
-    background: linear-gradient(135deg, #020381, #2874fc)
+    background: linear-gradient(135deg, #020381, #2874fc);
 }
 
 .has-medium-font-size {
@@ -93,12 +93,12 @@ p.has-text-color a {
     }
 }
 
-.col,
-.row {
+#fakebody .col,
+#fakebody .row {
     position: relative
 }
 
-.container {
+#fakebody .container {
     margin: 0 auto;
     position: relative;
     max-width: 1180px;
@@ -107,25 +107,29 @@ p.has-text-color a {
     width: 100%;
 }
 
-.col:after,
-.group:after,
-.row:after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden
-}
+#fakebody {
 
-.row,
-div.clear {
-    padding-bottom: 24px
-}
+    .col:after,
+    .group:after,
+    .row:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden
+    }
 
-.col {
-    display: block;
-    float: left;
-    width: 100%
+
+    .row,
+    div.clear {
+        padding-bottom: 24px
+    }
+
+    .col {
+        display: block;
+        float: left;
+        width: 100%
+    }
 }
 
 .col.col_last,
