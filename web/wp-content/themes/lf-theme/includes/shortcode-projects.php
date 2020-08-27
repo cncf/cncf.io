@@ -86,7 +86,7 @@ function add_projects_shortcode( $atts ) {
 			<?php
 			if ( $external_url ) :
 				?>
-				<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank">
+				<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank" title="<?php the_title(); ?>">
 				<?php
 				endif;
 
