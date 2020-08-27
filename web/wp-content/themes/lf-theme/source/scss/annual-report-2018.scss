@@ -1296,166 +1296,170 @@ h2 {
     color: #202020;
 }
 
-.banner-section {
+.hero-banner-section {
     position: relative;
-    max-height: 1000px;
-    padding: 0;
-    background-color: #770B4A;
-    background-size: cover;
-    height: 400px;
+    width: 100%;
+    height: 500px;
+    background-color: #770C4A;
 
-    @media (min-width: 768px) {
-        min-height: 800px;
-        height: calc(100vh - 125px);
+    @media (min-width: 1000px) {
+        height: 800px;
     }
+}
+
+.hero-image-container {
+    background-size: cover;
+    background-position: top right;
+    height: calc(100% - 50px);
+}
+
+.cloud-native-logo-strip {
+    width: 100%;
+    height: 50px;
+    background: #636ee8;
 
     .container {
-        z-index: 3;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
+        justify-content: flex-end;
         align-items: center;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        max-width: 100%;
     }
 
-}
-
-
-.banner-section:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: rgba(0, 0, 0, .5);
-    z-index: 2;
-}
-
-.banner-section .left-wrp {
-    width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.banner-section .left-wrp span {
-    font-size: 25px;
-    color: #b51c6b;
-    line-height: 1;
-    margin-left: auto;
-    padding-right: 35px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    text-transform: uppercase;
-
-    @media (min-width: 542px) {
-
-        font-size: 40px;
-    }
-
-    @media (min-width: 768px) {
-
-        font-size: 66px;
-    }
-
-    @media (min-width: 1000px) {
-
-        font-size: 76px;
-    }
-
-    @media (min-width: 1200px) {
-
-        font-size: 96px;
-    }
-
-    strong {
-        border-bottom: 10px solid;
-        padding-bottom: 10px
-    }
-
-}
-
-.banner-section .right-wrp {
-    width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-
-    @media (min-width: 542px) {
-        margin-top: auto;
-    }
-
-    span {
-        color: #fff;
-        text-transform: uppercase;
-        line-height: 0.8;
-        font-size: 100px;
-        font-weight: 500;
-
-        @media (min-width: 542px) {
-            font-size: 200px;
-            font-weight: 400;
-            vertical-align: text-bottom;
-        }
+    img {
+        width: 120px;
+        display: block;
+        padding-right: 20px;
 
         @media (min-width: 768px) {
-            font-size: 375px;
-            letter-spacing: -10px;
-        }
-
-        @media (min-width: 1000px) {
-            padding-left: 20px;
-            font-size: 410px;
+            width: 160px;
         }
     }
 }
 
-.banner-section .cloud-native-logo {
-    position: absolute;
-    background: #636ee8;
-    bottom: 0;
-    left: 0;
+.hero-shade {
     width: 100%;
-    height: 60px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
 
-    z-index: 1;
-    padding: 0 25px;
-
-    @media (min-width: 1000px) {
-        padding: 0 85px;
+    .shade {
+        position: absolute;
+        width: 50%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 3;
     }
 }
 
-.banner-section .cloud-native-logo img {
-    width: 160px
+.hero-intro-text {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+
+    .report-text {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+
+        .report-text-wrapper {
+            position: absolute;
+            z-index: 6;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        span {
+            color: #b51c6b;
+            text-transform: uppercase;
+            font-size: 25px;
+            line-height: 1.1;
+            display: table;
+            border-bottom: 5px solid;
+
+            @media (min-width: 414px) {
+                font-size: 35px;
+            }
+
+            @media (min-width: 542px) {
+
+                font-size: 40px;
+            }
+
+            @media (min-width: 768px) {
+
+                font-size: 66px;
+                border-bottom: 10px solid;
+            }
+
+            @media (min-width: 1000px) {
+
+                font-size: 76px;
+            }
+        }
+
+        .strong {
+            font-weight: 700;
+        }
+
+
+    }
+
+    .eighteen {
+        position: absolute;
+        z-index: 6;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            color: $white;
+            font-size: 120px;
+            font-weight: 500;
+            display: block;
+
+            @media (min-width: 414px) {
+                font-size: 180px;
+                letter-spacing: -10px;
+            }
+
+            @media (min-width: 542px) {
+                font-size: 200px;
+                font-weight: 400;
+                vertical-align: text-bottom;
+            }
+
+            @media (min-width: 768px) {
+                font-size: 375px;
+                letter-spacing: -10px;
+            }
+
+            @media (min-width: 1000px) {
+                padding-left: 20px;
+                font-size: 410px;
+            }
+        }
+    }
 }
+
+// old
 
 section {
     background-size: cover;
@@ -1589,18 +1593,18 @@ section img {
 //     margin-left: 5%
 // }
 
-a {
-    color: #fff;
-    text-decoration: underline
-}
+// a {
+//     color: #fff;
+//     text-decoration: underline
+// }
 
-.wp-block-button__link {
-    text-decoration: none;
-}
+// .wp-block-button__link {
+//     text-decoration: none;
+// }
 
-p {
-    color: #fff
-}
+// p {
+//     color: #fff
+// }
 
 .cols {
     -webkit-column-count: 2;
@@ -2842,7 +2846,7 @@ h2.bg-title.sub-title {
     min-height: 160px;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    /* min-width: 430px */
+    padding: 10px;
 }
 
 .community-engagement .big-data.bigger {
@@ -2865,7 +2869,7 @@ h2.bg-title.sub-title {
 }
 
 .community-engagement .big-data span {
-    width: 80%;
+    width: 90%;
     text-align: left;
 
     @media (min-width: 542px) {
@@ -2874,7 +2878,6 @@ h2.bg-title.sub-title {
 }
 
 .community-engagement .big-data span.small {
-    /* font-size: 14px; */
     width: 100%
 }
 
@@ -4174,7 +4177,6 @@ html .container-wrap {
 
     .single .blog-title #single-meta ul li:not(.meta-share-count)>a {
         opacity: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
     }
 
     .widthcol5>li,
@@ -4182,13 +4184,6 @@ html .container-wrap {
         width: 100%
     }
 
-    .banner-section .right-wrp {
-        width: 45%
-    }
-
-    .banner-section:before {
-        width: 55%
-    }
 
     .projects-updates-and-releases figure {
         width: 100%
@@ -4747,13 +4742,7 @@ html .container-wrap {
 
 @media (max-width:540px) {
 
-    .banner-section .cloud-native-logo img {
-        width: 130px
-    }
 
-    .banner-section:before {
-        width: 65%
-    }
 
     .welcome_section .welcome_container {
         padding: 55px 30px
@@ -4769,29 +4758,6 @@ html .container-wrap {
         margin: 15px
     }
 
-    .banner-section .left-wrp {
-        padding: 0 35px
-    }
-
-    .banner-section .right-wrp {
-        width: 35%;
-        padding: 10px;
-
-        @media (min-width: 1000px) {
-            padding: 0 35px;
-        }
-
-    }
-
-    .banner-section .container {
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between
-    }
-
-    .banner-section:before {
-        width: 60%
-    }
 }
 
 @media (max-width:580px) {
@@ -4836,13 +4802,6 @@ html .container-wrap {
         width: 100%
     }
 
-    .banner-section .cloud-native-logo {
-        padding: 0 35px
-    }
-
-    .banner-section .cloud-native-logo img {
-        width: 165px
-    }
 }
 
 
