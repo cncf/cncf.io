@@ -24,6 +24,18 @@
     align-items: stretch;
 }
 
+.is-style-equal-height-responsive-mobile-mini {
+    align-items: stretch;
+
+    @media (max-width: 599px) {
+        .wp-block-column {
+            flex-basis: 50% !important;
+        }
+    }
+
+}
+
+
 .is-style-join-table {
     color: $white;
     align-items: initial;

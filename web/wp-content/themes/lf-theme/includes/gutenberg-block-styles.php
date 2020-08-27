@@ -213,6 +213,14 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/columns',
+	array(
+		'name'  => 'equal-height-responsive-mobile-mini',
+		'label' => 'Equal Height, Better Responsive, Mini Mobile Columns',
+	)
+);
+
 // COLUMN.
 register_block_style(
 	'core/column',
