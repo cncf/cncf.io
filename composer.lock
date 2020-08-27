@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de9ecc1d464d123a8b1dbd00beb71559",
+    "content-hash": "0650732922cc9e61c798cc8028c60884",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -160,6 +160,37 @@
                 "zikula"
             ],
             "time": "2020-04-07T06:57:05+00:00"
+        },
+        {
+            "name": "humanmade/publication-checklist",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/publication-checklist.git",
+                "reference": "29482bb6cca7893bda2bc6480a323c2920238e03"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/publication-checklist/zipball/29482bb6cca7893bda2bc6480a323c2920238e03",
+                "reference": "29482bb6cca7893bda2bc6480a323c2920238e03",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "Run checks and enforce conditions before posts are published.",
+            "time": "2020-08-11T10:02:20+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -321,16 +352,6 @@
                 "php",
                 "type"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/GrahamCampbell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-07-20T17:29:33+00:00"
         },
         {
@@ -487,20 +508,6 @@
                 "ctype",
                 "polyfill",
                 "portable"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-07-14T12:35:20+00:00"
         },
@@ -1159,16 +1166,6 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "funding": [
-                {
-                    "url": "https://github.com/Ocramius",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/roave/security-advisories",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-08-19T19:01:52+00:00"
         },
         {
@@ -1319,6 +1316,5 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.2"
-    },
-    "plugin-api-version": "1.1.0"
+    }
 }
