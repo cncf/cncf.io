@@ -32,7 +32,7 @@ function add_projects_shortcode( $atts ) {
 	$query_args = array(
 		'post_type'      => 'lf_project',
 		'post_status'    => array( 'publish' ),
-		'posts_per_page' => -1,
+		'posts_per_page' => 100,
 		'tax_query'      => array(
 			array(
 				'taxonomy' => 'lf-project-stage',
@@ -40,8 +40,7 @@ function add_projects_shortcode( $atts ) {
 				'terms'    => $chosen_taxonomy,
 			),
 		),
-		'orderby'        => 'meta_value',
-		'meta_key'       => 'lf_project_date_accepted',
+		'orderby'        => 'title',
 		'order'          => 'ASC',
 	);
 
