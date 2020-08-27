@@ -215,7 +215,7 @@ figure {
 }
 
 // make placeholder text easier to see in sidebar.
-div.pmc-sidebar ::placeholder {
+body.wp-admin div.pmc-sidebar ::placeholder {
     color: #c4c4c4;
 }
 
