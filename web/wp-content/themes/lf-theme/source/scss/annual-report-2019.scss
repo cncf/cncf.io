@@ -3841,14 +3841,6 @@ body .widget ul.nectar_widget[class*=nectar_blog_posts_]>li .post-date {
     background-color: rgba(0, 0, 0, .35)
 }
 
-.widget .nectar_widget[class*=nectar_blog_posts_] svg {
-    -ms-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    backface-visibility: hidden;
-    display: block
-}
-
 .widget ul.nectar_widget[class*=nectar_blog_posts_][data-style=featured-image-left]>li:not(.has-img) a:before,
 .widget ul.nectar_widget[class*=nectar_blog_posts_][data-style=featured-image-left]>li:not(.has-img):after {
     overflow: hidden;
@@ -4673,12 +4665,6 @@ html:not(.js) .nectar-google-map {
     padding: 18px
 }
 
-.post-area.featured_img_left .video-play-button svg {
-    height: 14px;
-    width: 14px;
-    margin-right: -2px
-}
-
 .post-area.featured_img_left h3 a,
 .post-area.featured_img_left h3 a:hover {
     color: inherit !important
@@ -5477,10 +5463,6 @@ body:not(.woocommerce-cart) .main-content table {
     img {
         border: 0;
         vertical-align: middle
-    }
-
-    svg:not(:root) {
-        overflow: hidden
     }
 
     button {
