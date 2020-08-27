@@ -40,13 +40,14 @@ function add_projects_shortcode( $atts ) {
 				'terms'    => $chosen_taxonomy,
 			),
 		),
-		'orderby'        => 'title',
+		'orderby'        => 'meta_value',
+		'meta_key'       => 'lf_project_date_accepted',
 		'order'          => 'ASC',
 	);
 
 	$project_query = new WP_Query( $query_args );
+	ob_start();
 	if ( $project_query->have_posts() ) {
-		ob_start();
 		?>
 
 <div class="projects-wrapper">
