@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "69688c79d77d5ac56afbe8ed1b5381e2d33cc4ff"
+                "reference": "ad00e311fa7d7bc8e495bafc1b08cfb48fb5147b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/69688c79d77d5ac56afbe8ed1b5381e2d33cc4ff",
-                "reference": "69688c79d77d5ac56afbe8ed1b5381e2d33cc4ff",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/ad00e311fa7d7bc8e495bafc1b08cfb48fb5147b",
+                "reference": "ad00e311fa7d7bc8e495bafc1b08cfb48fb5147b",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-08-26T12:08:06+00:00"
+            "time": "2020-08-27T01:54:53+00:00"
         },
         {
             "name": "composer/installers",
@@ -767,15 +767,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "4.20.1",
+            "version": "4.20.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/4.20.1"
+                "reference": "tags/4.20.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.20.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.20.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
