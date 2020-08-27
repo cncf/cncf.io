@@ -36,6 +36,10 @@
 .project-title {
     margin: 0;
     margin-top: 0.5em;
+
+    a {
+        color: $black;
+    }
 }
 
 .project-category {
@@ -71,12 +75,16 @@
     svg {
         height: 20px;
         width: auto;
-        fill: $primary-color;
-        color: $primary-color;
+        fill: $secondary-300;
+        color: $secondary-300;
+        // fill: $primary-color;
+        // color: $primary-color;
 
         &:hover {
-            fill: $primary-300;
-            color: $primary-300;
+            fill: $primary-color;
+            color: $primary-color;
+            // fill: $primary-300;
+            // color: $primary-300;
         }
     }
 }
