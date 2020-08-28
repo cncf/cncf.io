@@ -100,7 +100,7 @@ if ( $query->have_posts() ) : ?>
 					<use href="#play" /></svg>
 					<?php
 				} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
-					echo wp_get_attachment_image( $options['generic_thumb_id'], 'medium', false, array( 'class' => 'webinar-default' ) );
+					echo wp_get_attachment_image( $options['generic_thumb_id'], 'full', false, array( 'class' => 'webinar-default' ) );
 				} else {
 					echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
 					. '/images/thumbnail-default.svg" alt="CNCF" class="webinar-default"/>';

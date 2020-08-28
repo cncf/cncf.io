@@ -114,6 +114,10 @@
 
     img.webinar-default {
         display: block;
+        width: 100%;
+        height: 101.1%;
+        min-height: 157px;
+        object-fit: cover;
     }
 }
 
