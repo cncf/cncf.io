@@ -495,12 +495,6 @@ a.badge:hover {
     margin-top: 0
 }
 
-.media,
-.media-body {
-    overflow: hidden;
-    zoom: 1
-}
-
 .media-body {
     width: 10000px
 }
@@ -5115,4 +5109,14 @@ html .container-wrap {
         margin-bottom: 1.5rem;
 
     }
+}
+
+.annual-report-2018 p {
+    color: #FFF;
+}
+
+.conference-additional p,
+.software-conformance-container p,
+.project-container p {
+    color: #202020;
 }

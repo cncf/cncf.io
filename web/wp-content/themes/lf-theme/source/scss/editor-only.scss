@@ -46,6 +46,7 @@
         @import "blocks/case-study-overview";
         @import "blocks/latest-jobs";
         @import 'blocks/stats';
+        @import "blocks/media-text";
     }
 }
 
@@ -162,25 +163,25 @@
 // block using alignwide include:
 // case study overview
 // .alignwide:not(.wp-block-gallery) {
-    //     width: 100%;
+//     width: 100%;
 
-    //     @media (min-width: 800px) {
-    //         width: 100vw;
-    //         position: relative;
-    //         left: 50%;
-    //         right: 50%;
-    //         margin-left: -50vw;
-    //         margin-right: -50vw;
+//     @media (min-width: 800px) {
+//         width: 100vw;
+//         position: relative;
+//         left: 50%;
+//         right: 50%;
+//         margin-left: -50vw;
+//         margin-right: -50vw;
 
-    //         >* {
-    //             max-width: 1000px;
-    //             margin-left: auto;
-    //             margin-right: auto;
-    //             padding-left: 4em;
-    //             padding-right: 4em;
-    //         }
-    //     }
-    // }
+//         >* {
+//             max-width: 1000px;
+//             margin-left: auto;
+//             margin-right: auto;
+//             padding-left: 4em;
+//             padding-right: 4em;
+//         }
+//     }
+// }
 
 .background-image-wrapper {
     overflow: hidden;
