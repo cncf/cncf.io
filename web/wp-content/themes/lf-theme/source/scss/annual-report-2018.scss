@@ -2697,14 +2697,9 @@ h2.bg-title.sub-title {
 .wrp-chart .chart {
     border: 2px solid #dedede;
     padding: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    width: 66%;
-    -ms-flex-wrap: wrap;
+    width: 100%;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center
 }
 
@@ -5117,6 +5112,10 @@ html .container-wrap {
 
 .conference-additional p,
 .software-conformance-container p,
-.project-container p {
+.project-container p,
+.community-container p,
+.ecosystem-container p,
+.conformance-projects-container p,
+.looking-forward-container p {
     color: #202020;
 }
