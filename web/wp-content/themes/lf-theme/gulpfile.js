@@ -72,7 +72,7 @@ var browserSync = require("browser-sync").create();
 
 function reload(done) {
     browserSync.reload();
-    done();
+    done(err);
 }
 
 /**
