@@ -353,3 +353,12 @@ register_block_style(
 		'label' => 'No top/bottom margin',
 	)
 );
+
+// Media Text.
+register_block_style(
+	'core/media-text',
+	array(
+		'name'  => 'no-side-padding',
+		'label' => 'No Side Padding',
+	)
+);
