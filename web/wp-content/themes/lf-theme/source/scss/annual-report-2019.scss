@@ -98,8 +98,8 @@ p.has-text-color a {
     position: relative
 }
 
-#fakebody .container {
-    margin: 0 auto;
+.container.main-content {
+    margin: 2rem auto 0;
     position: relative;
     max-width: 1180px;
     padding-right: 15px;
@@ -107,7 +107,7 @@ p.has-text-color a {
     width: 100%;
 }
 
-#fakebody {
+.main-content {
 
     .col:after,
     .group:after,
@@ -125,11 +125,11 @@ p.has-text-color a {
         padding-bottom: 24px
     }
 
-    .col {
-        display: block;
-        float: left;
-        width: 100%
-    }
+    // .col {
+    //     display: block;
+    //     float: left;
+    //     width: 100%
+    // }
 }
 
 .col.col_last,
@@ -1644,18 +1644,17 @@ em {
 }
 
 .container-wrap {
-    background-color: #f8f8f8;
+    background-color: #FFF;
     position: relative;
     z-index: 10;
 }
-
 
 body[data-bg-header=true] .container-wrap {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
-#fakebody {
+.main-content {
     h1 {
         margin: .67em 0;
         font-size: 54px;
@@ -2170,17 +2169,17 @@ body #header-outer-bg-only {
     height: auto
 }
 
-.row .col img:not([srcset]) {
-    width: auto
-}
+// .row .col img:not([srcset]) {
+//     width: auto
+// }
 
-body[data-hhun="1"] #header-outer:not(.parallax-contained) {
-    position: absolute
-}
+// body[data-hhun="1"] #header-outer:not(.parallax-contained) {
+//     position: absolute
+// }
 
-body[data-hhun="1"] #header-outer.transparent.at-top {
-    transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease
-}
+// body[data-hhun="1"] #header-outer.transparent.at-top {
+//     transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease
+// }
 
 .project-additional {
     margin-left: 0 !important;
@@ -2997,35 +2996,35 @@ body .wpb_text_column h3:last-child {
     overflow: hidden
 }
 
-.img-with-aniamtion-wrap[data-border-radius="3px"] .img-with-animation,
-.wpb_column[data-border-radius="3px"],
-.wpb_column[data-border-radius="3px"]:before {
-    border-radius: 3px
-}
+// .img-with-aniamtion-wrap[data-border-radius="3px"] .img-with-animation,
+// .wpb_column[data-border-radius="3px"],
+// .wpb_column[data-border-radius="3px"]:before {
+//     border-radius: 3px
+// }
 
-.img-with-aniamtion-wrap[data-border-radius="5px"] .img-with-animation,
-.wpb_column[data-border-radius="5px"],
-.wpb_column[data-border-radius="5px"]:before {
-    border-radius: 5px
-}
+// .img-with-aniamtion-wrap[data-border-radius="5px"] .img-with-animation,
+// .wpb_column[data-border-radius="5px"],
+// .wpb_column[data-border-radius="5px"]:before {
+//     border-radius: 5px
+// }
 
-.img-with-aniamtion-wrap[data-border-radius="10px"] .img-with-animation,
-.wpb_column[data-border-radius="10px"],
-.wpb_column[data-border-radius="10px"]:before {
-    border-radius: 10px
-}
+// .img-with-aniamtion-wrap[data-border-radius="10px"] .img-with-animation,
+// .wpb_column[data-border-radius="10px"],
+// .wpb_column[data-border-radius="10px"]:before {
+//     border-radius: 10px
+// }
 
-.img-with-aniamtion-wrap[data-border-radius="15px"] .img-with-animation,
-.wpb_column[data-border-radius="15px"],
-.wpb_column[data-border-radius="15px"]:before {
-    border-radius: 15px
-}
+// .img-with-aniamtion-wrap[data-border-radius="15px"] .img-with-animation,
+// .wpb_column[data-border-radius="15px"],
+// .wpb_column[data-border-radius="15px"]:before {
+//     border-radius: 15px
+// }
 
-.img-with-aniamtion-wrap[data-border-radius="20px"] .img-with-animation,
-.wpb_column[data-border-radius="20px"],
-.wpb_column[data-border-radius="20px"]:before {
-    border-radius: 20px
-}
+// .img-with-aniamtion-wrap[data-border-radius="20px"] .img-with-animation,
+// .wpb_column[data-border-radius="20px"],
+// .wpb_column[data-border-radius="20px"]:before {
+//     border-radius: 20px
+// }
 
 .wpb_column[data-border-width*=px][data-border-radius*=px]:before {
     border-radius: 0
@@ -5313,7 +5312,7 @@ body:not(.woocommerce-cart) .main-content table {
     border-top: 1px solid #ececec
 }
 
-#fakebody {
+.main-content {
 
     h1,
     h2 {
@@ -8989,7 +8988,7 @@ div#at4-share {
 
 @media only screen and (max-width:600px) {
 
-    #fakebody {
+    .main-content {
 
         h1,
         h2,
@@ -9084,6 +9083,10 @@ div#at4-share {
 
         h4 {
             line-height: 1.8;
+
+            @media (max-width: 500px) {
+                font-size: 0.9em !important;
+            }
         }
 
         >div {
@@ -9116,4 +9119,8 @@ div#at4-share {
 
 .footer .newsletter {
     padding: 0;
+}
+
+.container.main-content {
+    margin-top: 2rem;
 }
