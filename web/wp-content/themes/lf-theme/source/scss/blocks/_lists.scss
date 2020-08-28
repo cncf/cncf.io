@@ -47,4 +47,13 @@ ol {
             margin-bottom: 0;
         }
     }
+
+    &.is-style-spaced-items {
+        max-width: 700px;
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+    }
 }

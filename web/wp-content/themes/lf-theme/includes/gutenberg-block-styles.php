@@ -304,6 +304,14 @@ register_block_style(
 	)
 );
 
+register_block_style(
+	'core/list',
+	array(
+		'name'  => 'spaced-items',
+		'label' => 'Spaced items',
+	)
+);
+
 // SPACERS.
 register_block_style(
 	'core/spacer',
