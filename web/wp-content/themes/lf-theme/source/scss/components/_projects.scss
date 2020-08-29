@@ -71,16 +71,12 @@
     svg {
         height: 20px;
         width: auto;
-        fill: $secondary-300;
-        color: $secondary-300;
-        // fill: $primary-color;
-        // color: $primary-color;
+        fill: $secondary-900;
+        color: $secondary-900;
 
         &:hover {
             fill: $primary-color;
             color: $primary-color;
-            // fill: $primary-300;
-            // color: $primary-300;
         }
     }
 }
