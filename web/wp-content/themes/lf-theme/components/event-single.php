@@ -21,6 +21,8 @@ if ( ! $city && ! $country ) {
 	$location = 'TBC';
 } elseif ( ! $country ) {
 	$location = $city;
+} elseif ( ! $city ) {
+	$location = $country;
 } else {
 	$location = $city . ', ' . $country;
 }
