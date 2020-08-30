@@ -4,6 +4,8 @@ $banner-text-link: #FFFFFF;
 $banner-button: #3842c7;
 
 #cookie-banner {
+    font-size: 0.9em;
+    line-height: 1.5;
     max-width: 300px;
     bottom: 1em;
     right: 1em;
@@ -18,7 +20,7 @@ $banner-button: #3842c7;
     visibility: hidden;
     z-index: 1000000;
 
-    @media (max-width: 599px) {
+    @media (max-width: 639px) {
         max-width: 100%;
         bottom: 0;
         right: 0;
