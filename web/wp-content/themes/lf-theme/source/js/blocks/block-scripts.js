@@ -17,7 +17,9 @@
 wp.domReady(
 	() => {
 		// Hides comments as the site doesn't use it.
-		wp.data.dispatch( 'core/edit-post' ).removeEditorPanel( 'discussion-panel' );
+    wp.data.dispatch( 'core/edit-post' ).removeEditorPanel( 'discussion-panel' );
+    // Hides tags as the site doesn't use them.
+		wp.data.dispatch( 'core/edit-post').removeEditorPanel( 'taxonomy-panel-post_tag' );
 
 		// Unregister unsupported unstyled Blocks.
 		wp.blocks.unregisterBlockType( 'core/nextpage' );
