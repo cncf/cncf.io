@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84fb60bf511df0b34310b4294628066e",
+    "content-hash": "60eccd7cf1888520e85d39173f1bcb0e",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -744,15 +744,15 @@
         },
         {
             "name": "wpackagist-plugin/post-meta-controls",
-            "version": "1.3.2",
+            "version": "1.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/post-meta-controls/",
-                "reference": "tags/1.3.2"
+                "reference": "tags/1.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-meta-controls.1.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/post-meta-controls.1.3.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
