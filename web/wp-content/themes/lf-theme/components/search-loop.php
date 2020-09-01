@@ -132,7 +132,6 @@
 							$webinar_start_time_period = get_post_meta( get_the_ID(), 'lf_webinar_start_time_period', true );
 							$webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone', true );
 							$dat_webinar_start         = Lf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
-							$date_and_time             = str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) );
 
 							// get recording URL.
 							$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
@@ -145,7 +144,7 @@
 							<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
 					</span>
 							<?php
-						} elseif ( ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
+						} elseif ( ( $dat_webinar_start ) && ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
 							?>
 
 					<span class="live-icon">Recorded on
@@ -153,7 +152,7 @@
 					</span>
 
 							<?php
-						} else {
+						} elseif ( $dat_webinar_start ) {
 							?>
 					<span class="posted-date date-icon">
 						Broadcast on
