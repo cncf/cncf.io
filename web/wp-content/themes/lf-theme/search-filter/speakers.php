@@ -78,8 +78,7 @@ if ( $query->have_posts() ) {
 		}
 
 		$um_user = um_fetch_user( $user->ID );
-		// makes the name capitalised.
-		$display_name = ucwords( strtolower( um_user( 'display_name' ) ) );
+		$display_name = um_user( 'display_name' );
 		?>
 	<div class="speaker">
 		<div class="speaker-photo">
