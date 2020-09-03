@@ -11,7 +11,7 @@ PercyScript.run(async (page, percySnapshot) => {
   await page.waitFor(delay);
   await percySnapshot('projects');
 
-  await page.goto(rooturl + 'join/faq/');
+  await page.goto(rooturl + 'about/faq/');
   await page.waitFor(delay);
   await percySnapshot('faq');
 
@@ -27,11 +27,24 @@ PercyScript.run(async (page, percySnapshot) => {
   await page.waitFor(delay);
   await percySnapshot('news');
 
-  await page.goto(rooturl + 'about/staff/');
+  await page.goto(rooturl + 'people/staff/');
   await page.waitFor(delay);
   await percySnapshot('staff');
 
   await page.goto(rooturl + 'about/contact/');
   await page.waitFor(delay);
   await percySnapshot('contact');
+
+  await page.goto(rooturl + 'speakers/');
+  await page.waitFor(delay);
+  await percySnapshot('speakers bureau');
+
+  await page.goto(rooturl + 'case-studies/');
+  await page.waitFor(delay);
+  await percySnapshot('case studies');
+
+  await page.goto(rooturl + 'webinars/');
+  await page.waitFor(delay);
+  await percySnapshot('webinars');
+
 });
