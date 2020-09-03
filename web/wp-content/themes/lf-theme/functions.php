@@ -127,7 +127,7 @@ function lf_projects_menu_filter( $items, $menu, $args ) {
 	if ( is_admin() ) {
 		return $items;
 	}
-	// Setup empty array to add all items too later.
+	// Setup empty array to add all items to later.
 	$child_items = array();
 	// required, to make sure it doesn't push out other menu items.
 	$menu_order = count( $items );
@@ -143,6 +143,7 @@ function lf_projects_menu_filter( $items, $menu, $args ) {
 
 	// Loop through each taxonomy from the array.
 	foreach ( $stage_taxonomies as $stage_term => $stage_class ) {
+		$parent_item_id = 0;
 		foreach ( $items as $item ) {
 
 			// Check to see if CSS class is in the menu.
