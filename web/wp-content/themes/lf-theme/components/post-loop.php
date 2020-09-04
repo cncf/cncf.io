@@ -19,9 +19,9 @@
 
 			$archive_page = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-			$is_in_the_news_category = ( in_category( 'news' ) ) ? true : false;
-
-			$is_blog_category = ( in_category( 'blog' ) ) ? true : false;
+			$is_in_the_news_category = ( is_category( 'news' ) ) ? true : false;
+			$is_announcements_category = ( is_category( 'announcements' ) ) ? true : false;
+			$is_blog_category = ( is_category( 'blog' ) ) ? true : false;
 
 			$featured_post = null;
 			$sticky = get_option( 'sticky_posts' );
@@ -63,7 +63,7 @@
 					continue;
 				}
 				$count++;
-				$is_featured = ( 1 == $archive_page && 1 == $count ? ' featured' : '' );
+				$is_featured = ( 1 == $archive_page && 1 == $count && ( $is_blog_category || $is_announcements_category ) ? ' featured' : '' );
 				lf_post_loop_show_post( $is_featured, '', $is_in_the_news_category, $is_blog_category );
 
 			}
