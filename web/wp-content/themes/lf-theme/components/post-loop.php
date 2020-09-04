@@ -161,12 +161,17 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 	</a>
 </div>
 <div class="archive-text-wrapper">
-		<?php if ( $is_blog_category && $category_author ) : ?>
+		<?php if ( $category_author ) : ?>
 	<div class="skew-box secondary centered margin-bottom-small">CNCF
 			<?php
 			echo esc_html( $category_author );
+			if ( 'lf_webinar' === get_post_type() ) {
+				echo ' Webinar';
+			} else {
+				echo ' Blog Post';
+			}
 			?>
-		Blog Post</div>
+		</div>
 			<?php
 		endif;
 		?>
