@@ -181,23 +181,30 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 			<?php the_title(); ?>
 		</a></p>
 
-	<p class="date-author-row"><span class="posted-date date-icon">
-			<?php
-			echo get_the_date();
-			?>
-		</span>
+	<p class="date-author-row">
 		<?php
-		// Post author.
-		if ( in_category( 'blog' ) ) :
+		if ( 'lf_webinar' == get_post_type() ) {
+			Lf_Utils::get_webinar_author_row();
+		} else {
+			?>
+			<span class="posted-date date-icon">
+				<?php
+				echo get_the_date();
+				?>
+			</span>
+			<?php
+			// Post author.
+			if ( in_category( 'blog' ) ) :
 
-			// Get the guest author meta.
-			$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
+				// Get the guest author meta.
+				$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 
-			// don't display guest author field on archive as it's too long.
-			if ( ! $guest_author ) {
-				echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
-			}
-		endif;
+				// don't display guest author field on archive as it's too long.
+				if ( ! $guest_author ) {
+					echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
+				}
+			endif;
+		}
 		?>
 	</p>
 	<div class="archive-excerpt"><?php the_excerpt(); ?></div>

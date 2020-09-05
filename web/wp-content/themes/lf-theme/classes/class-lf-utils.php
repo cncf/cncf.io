@@ -9,13 +9,13 @@
  * @since 1.0.0
  */
 
-  /**
-   * Utility Class
-   *
-   * Small helper utilities.
-   *
-   * @since 1.0.0
-   */
+/**
+ * Utility Class
+ *
+ * Small helper utilities.
+ *
+ * @since 1.0.0
+ */
 class Lf_Utils {
 
 	/**
@@ -363,6 +363,45 @@ class Lf_Utils {
 		);
 
 		return $html;
+	}
+
+	/**
+	 * Get author row for webinar in loop.
+	 */
+	public static function get_webinar_author_row() {
+		// Get date and time now.
+		$dat_now = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
+
+		// Get date and time of webinar for comparison.
+		$webinar_date              = get_post_meta( get_the_ID(), 'lf_webinar_date', true );
+		$webinar_start_time        = get_post_meta( get_the_ID(), 'lf_webinar_start_time', true );
+		$webinar_start_time_period = get_post_meta( get_the_ID(), 'lf_webinar_start_time_period', true );
+		$webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone', true );
+		$dat_webinar_start         = self::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
+
+		// get recording URL.
+		$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
+
+		// date period.
+		if ( $dat_webinar_start > $dat_now ) {
+			?>
+			<span class="date-icon">Upcoming Webinar on
+				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+			</span>
+			<?php
+		} elseif ( ( $dat_webinar_start ) && ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
+			?>
+			<span class="live-icon">Recorded on
+				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+			</span>
+			<?php
+		} elseif ( $dat_webinar_start ) {
+			?>
+			<span class="posted-date date-icon">Broadcast on
+				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+			</span>
+			<?php
+		}
 	}
 
 }
