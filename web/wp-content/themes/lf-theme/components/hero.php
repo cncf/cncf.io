@@ -36,11 +36,11 @@ $options = get_option( 'lf-mu' );
 				if ( is_tax( 'lf-author-category' ) ) {
 					?>
 					<h1 class="blog-title">Author category: <?php single_cat_title(); ?></h1>
-					<?php					
+					<?php
 				} else {
 					?>
 					<h1 class="blog-title"><?php single_cat_title(); ?></h1>
-					<?php	
+					<?php
 				}
 				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
