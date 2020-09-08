@@ -92,9 +92,14 @@ if ( $query->have_posts() ) {
 				title="<?php echo esc_attr( $display_name ); ?>"><?php echo esc_html( $display_name ); ?></a>
 		</h5>
 
-		<?php if ( um_user( 'country' ) ) : ?>
-		<span
-			class="speaker-location skew-box secondary margin-top centered"><?php echo esc_html( um_user( 'country' ) ); ?></span>
+		<?php
+		if ( um_user( 'country' ) ) :
+			$country_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-country', true );
+			$country_link = '/speakers/?_sft_lf-country=' . $country_slug;
+			?>
+		<a
+			class="speaker-location skew-box secondary margin-top centered" href="<?php echo esc_url( $country_link ); ?>"><?php echo esc_html( um_user( 'country' ) ); ?>
+		</a>
 		<?php endif; ?>
 
 		<div class="speaker-badges">
