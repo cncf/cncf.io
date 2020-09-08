@@ -28,16 +28,17 @@
 			the_post();
 			?>
 
-		<p>Posted on
-			<?php
-			the_date();
-			?>
-		</p>
-
-			<?php if ( $spotlight_type ) : ?>
+		<?php if ( $spotlight_type ) : ?>
 		<div class="skew-box secondary centered margin-bottom-large">CNCF
 				<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
 		<?php endif; ?>
+
+		<p><span class="posted-date date-icon">Posted on
+			<?php
+			the_date();
+			?>
+		</span></p>
+
 
 		<div class="entry-content">
 			<?php the_content(); ?>
