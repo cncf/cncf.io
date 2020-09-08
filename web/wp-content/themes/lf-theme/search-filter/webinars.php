@@ -81,6 +81,7 @@ if ( $query->have_posts() ) : ?>
 
 		// get author category.
 		$author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+		$author_category_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 		// get companies (presented by).
 		$company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
@@ -109,9 +110,12 @@ if ( $query->have_posts() ) : ?>
 			</a>
 		</figure>
 
-			<?php if ( $author_category ) : ?>
-		<div class="skew-box secondary">CNCF
-				<?php echo esc_html( $author_category ); ?> Webinar</div>
+			<?php
+			if ( $author_category ) :
+				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
+				?>
+		<a class="skew-box secondary" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
+				<?php echo esc_html( $author_category ); ?> Webinar</a>
 		<?php endif; ?>
 
 		<h5 class="webinar-title"><a

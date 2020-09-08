@@ -47,9 +47,9 @@ endif;
 			$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 
 			if ( $category_author ) :
-				$category_link = '/lf-author-category/' . $category_author_slug . '/';
+				$category_author_link = '/lf-author-category/' . $category_author_slug . '/';
 				?>
-				<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $category_link ); ?>">CNCF
+				<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $category_author_link ); ?>">CNCF
 				<?php
 				echo esc_html( $category_author );
 				?>
