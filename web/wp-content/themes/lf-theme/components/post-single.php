@@ -46,12 +46,13 @@ endif;
 			$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 
 			if ( $category_author ) :
+				$category_link = '/lf-author-category/' . strtolower( $category_author ) . '/';
 				?>
-		<div class="skew-box secondary centered margin-bottom-large">CNCF
+				<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $category_link ); ?>">CNCF
 				<?php
 				echo esc_html( $category_author );
 				?>
-			Blog Post</div>
+				Blog Post</a>
 				<?php
 		endif;
 			?>
