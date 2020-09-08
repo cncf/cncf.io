@@ -41,12 +41,13 @@ endif;
 			<?php
 			// Get the Category Author.
 			$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+			$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 			// Get the guest author meta.
 			$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 
 			if ( $category_author ) :
-				$category_link = '/lf-author-category/' . strtolower( $category_author ) . '/';
+				$category_link = '/lf-author-category/' . $category_author_slug . '/';
 				?>
 				<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $category_link ); ?>">CNCF
 				<?php

@@ -131,6 +131,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 
 		// Get the Category Author.
 		$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+		$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 		?>
 <div class="archive-item<?php echo esc_html( $is_featured . $is_sticky ); ?>">
@@ -163,7 +164,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 <div class="archive-text-wrapper">
 		<?php
 		if ( $category_author ) :
-			$category_link = '/lf-author-category/' . strtolower( $category_author ) . '/';
+			$category_link = '/lf-author-category/' . $category_author_slug . '/';
 			?>
 		<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $category_link ); ?>">CNCF
 			<?php
