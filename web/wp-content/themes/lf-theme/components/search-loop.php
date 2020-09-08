@@ -40,6 +40,7 @@
 
 			// Get the Category Author.
 			$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+			$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 			?>
 		<div class="archive-item">
@@ -77,8 +78,11 @@
 				</div>
 
 
-				<?php if ( $category_author ) : ?>
-				<div class="skew-box secondary centered margin-bottom">CNCF
+				<?php
+				if ( $category_author ) :
+					$category_link = '/lf-author-category/' . $category_author_slug . '/';
+					?>
+				<a class="skew-box secondary centered margin-bottom" href="<?php echo esc_url( $category_link ); ?>">CNCF
 					<?php
 					echo esc_html( $category_author );
 
@@ -94,7 +98,7 @@
 						echo ' Post';
 					}
 					?>
-				</div>
+				</a>
 				<?php endif; ?>
 
 					<?php
