@@ -64,17 +64,22 @@ if ( $cn ) {
 		<div class="case-study-project-type margin-bottom-small">
 			<?php
 			if ( $case_study_type || $case_study_type_additional ) {
+				if ( $cn ) {
+					$projects_link = '/case-studies-cn?_sft_lf-project=' . strtolower( $case_study_type );
+					$projects_link_additional = '/case-studies-cn?_sft_lf-project=' . strtolower( $case_study_type_additional );
+				} else {
+					$projects_link = '/case-studies?_sft_lf-project=' . strtolower( $case_study_type );
+					$projects_link_additional = '/case-studies?_sft_lf-project=' . strtolower( $case_study_type_additional );
+				}
 
 				if ( $case_study_type ) {
 					?>
-			<span
-				class="skew-box tertiary centered"><?php echo esc_html( $case_study_type ); ?></span>
+				<a class="skew-box tertiary centered" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type ); ?></a>
 					<?php
 				}
 				if ( $case_study_type_additional ) {
 					?>
-				<span
-					class="skew-box tertiary centered"><?php echo esc_html( $case_study_type_additional ); ?></span>
+				<a class="skew-box tertiary centered" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type_additional ); ?></a>
 					<?php
 				}
 			} else {
@@ -85,9 +90,14 @@ if ( $cn ) {
 
 					// output for each.
 					foreach ( $projects as $project ) {
+						if ( $cn ) {
+							$projects_link = '/case-studies-cn?_sft_lf-project=' . $project->slug;
+						} else {
+							$projects_link = '/case-studies?_sft_lf-project=' . $project->slug;
+						}
+
 						?>
-			<span
-				class="skew-box tertiary centered"><?php echo esc_html( $project->name ); ?></span>
+			<a class="skew-box tertiary centered" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $project->name ); ?></a>
 						<?php
 					}
 				}

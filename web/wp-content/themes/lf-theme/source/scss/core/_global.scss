@@ -301,6 +301,13 @@ a.skew-box.secondary {
     font-weight: 400;
 }
 
+a.skew-box.tertiary {
+    color: $secondary-700;
+    background-color: $white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
 .skew-box {
     font-size: 0.775em;
     font-weight: 400;
