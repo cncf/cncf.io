@@ -13,6 +13,8 @@ $subtitle = get_post_meta( get_the_ID(), 'lf_spotlight_subtitle', true );
 
 // get spotlight type.
 $spotlight_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', true );
+$spotlight_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-spotlight-type', true );
+$spotlight_type_link = '/spotlights/?_sft_lf-spotlight-type=' . $spotlight_type_slug;
 
 ?>
 <div class="spotlight-box">
@@ -30,8 +32,8 @@ $spotlight_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', t
 		</a>
 	</div>
 	<div class="spotlight-text-wrapper">
-		<div class="skew-box secondary margin-top-small centered">CNCF
-			<?php echo esc_html( $spotlight_type ); ?> Spotlight</div>
+		<a class="skew-box secondary margin-top-small centered" title="See more <?php echo esc_attr( $spotlight_type ); ?> spotlights" href="<?php echo esc_url( $spotlight_type_link ); ?>">CNCF
+			<?php echo esc_html( $spotlight_type ); ?> Spotlight</a>
 
 		<h5 class="spotlight-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>

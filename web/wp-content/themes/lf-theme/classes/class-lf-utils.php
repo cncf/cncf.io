@@ -68,6 +68,35 @@ class Lf_Utils {
 	}
 
 	/**
+	 * Get Terms and Extract Slugs.
+	 *
+	 * @param integer $post_id Post ID.
+	 * @param string  $taxonomy Taxonomy name.
+	 * @param boolean $first_only To show only first result.
+	 */
+	public static function get_term_slugs( $post_id, $taxonomy, $first_only = false ) {
+
+		if ( ! is_integer( $post_id ) || ! is_string( $taxonomy ) ) {
+			return false;
+		}
+
+		$terms = get_the_terms( $post_id, $taxonomy );
+
+		if ( empty( $terms ) || is_wp_error( $terms ) ) {
+			return false;
+		}
+
+		if ( $first_only ) {
+			$term   = array_shift( $terms );
+			$result = $term->slug;
+		} else {
+			$result = join( ', ', wp_list_pluck( $terms, 'slug' ) );
+		}
+
+		return isset( $result ) ? $result : false;
+	}
+
+	/**
 	 * Get DateTime object from webinar date and time
 	 *
 	 * @param object $date Date object.

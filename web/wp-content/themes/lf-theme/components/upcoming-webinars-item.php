@@ -11,6 +11,7 @@
 
 // get author category.
 $author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+$author_category_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 // get companies (presented by).
 $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
@@ -27,10 +28,13 @@ $date_and_time             = str_replace( ':00', '', $dat_webinar_start->format(
 
 	<div class="webinars-upcoming-text-wrapper">
 
-		<?php if ( $author_category ) : ?>
+		<?php
+		if ( $author_category ) :
+			$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
+			?>
 		<!-- Category of Webinar  -->
-		<span class="skew-box secondary margin-bottom-small">CNCF
-			<?php echo esc_html( $author_category ); ?> Webinar</span>
+		<a class="skew-box secondary margin-bottom-small" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
+			<?php echo esc_html( $author_category ); ?> Webinar</a>
 		<?php endif; ?>
 
 		<!-- Date of webinar  -->

@@ -41,17 +41,19 @@ endif;
 			<?php
 			// Get the Category Author.
 			$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+			$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 			// Get the guest author meta.
 			$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 
 			if ( $category_author ) :
+				$category_author_link = '/lf-author-category/' . $category_author_slug . '/';
 				?>
-		<div class="skew-box secondary centered margin-bottom-large">CNCF
+				<a class="skew-box secondary centered margin-bottom-small" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_author_link ); ?>">CNCF
 				<?php
 				echo esc_html( $category_author );
 				?>
-			Blog Post</div>
+				Blog Post</a>
 				<?php
 		endif;
 			?>
