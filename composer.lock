@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "ee021cae05a55c1226d18000ec4947864333ca01"
+                "reference": "b8c669b55aa7ee22b1c5d1b1d63a3f0dab52d77d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/ee021cae05a55c1226d18000ec4947864333ca01",
-                "reference": "ee021cae05a55c1226d18000ec4947864333ca01",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/b8c669b55aa7ee22b1c5d1b1d63a3f0dab52d77d",
+                "reference": "b8c669b55aa7ee22b1c5d1b1d63a3f0dab52d77d",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-09-02T02:57:59+00:00"
+            "time": "2020-09-10T07:26:19+00:00"
         },
         {
             "name": "composer/installers",
@@ -163,16 +163,16 @@
         },
         {
             "name": "humanmade/publication-checklist",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/publication-checklist.git",
-                "reference": "29482bb6cca7893bda2bc6480a323c2920238e03"
+                "reference": "f82cb5933595502a0b7a004a758778d6b510c409"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/publication-checklist/zipball/29482bb6cca7893bda2bc6480a323c2920238e03",
-                "reference": "29482bb6cca7893bda2bc6480a323c2920238e03",
+                "url": "https://api.github.com/repos/humanmade/publication-checklist/zipball/f82cb5933595502a0b7a004a758778d6b510c409",
+                "reference": "f82cb5933595502a0b7a004a758778d6b510c409",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 }
             ],
             "description": "Run checks and enforce conditions before posts are published.",
-            "time": "2020-08-11T10:02:20+00:00"
+            "time": "2020-09-08T16:13:47+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -834,15 +834,15 @@
         },
         {
             "name": "wpackagist-plugin/ultimate-member",
-            "version": "2.1.8",
+            "version": "2.1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ultimate-member/",
-                "reference": "tags/2.1.8"
+                "reference": "tags/2.1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ultimate-member.2.1.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/ultimate-member.2.1.9.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
