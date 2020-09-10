@@ -114,7 +114,7 @@ if ( $query->have_posts() ) : ?>
 			if ( $author_category ) :
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
-		<a class="skew-box secondary" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
+		<a class="skew-box secondary" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
 				<?php echo esc_html( $author_category ); ?> Webinar</a>
 		<?php endif; ?>
 

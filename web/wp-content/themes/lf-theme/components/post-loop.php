@@ -166,7 +166,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 		if ( $category_author ) :
 			$category_link = '/lf-author-category/' . $category_author_slug . '/';
 			?>
-		<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $category_link ); ?>">CNCF
+		<a class="skew-box secondary centered margin-bottom-small" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_link ); ?>">CNCF
 			<?php
 			echo esc_html( $category_author );
 			if ( 'lf_webinar' === get_post_type() ) {

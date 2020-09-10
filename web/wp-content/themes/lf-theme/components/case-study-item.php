@@ -74,12 +74,12 @@ if ( $cn ) {
 
 				if ( $case_study_type ) {
 					?>
-				<a class="skew-box tertiary centered" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type ); ?></a>
+				<a class="skew-box tertiary centered" title="See all <?php echo esc_attr( $case_study_type ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type ); ?></a>
 					<?php
 				}
 				if ( $case_study_type_additional ) {
 					?>
-				<a class="skew-box tertiary centered" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type_additional ); ?></a>
+				<a class="skew-box tertiary centered" title="See all <?php echo esc_attr( $case_study_type_additional ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type_additional ); ?></a>
 					<?php
 				}
 			} else {
@@ -97,7 +97,7 @@ if ( $cn ) {
 						}
 
 						?>
-			<a class="skew-box tertiary centered" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $project->name ); ?></a>
+			<a class="skew-box tertiary centered" title="See all <?php echo esc_attr( $project->name ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $project->name ); ?></a>
 						<?php
 					}
 				}

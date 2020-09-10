@@ -98,7 +98,7 @@ if ( $query->have_posts() ) {
 			$country_link = '/speakers/?_sft_lf-country=' . $country_slug;
 			?>
 		<a
-			class="speaker-location skew-box secondary margin-top centered" href="<?php echo esc_url( $country_link ); ?>"><?php echo esc_html( um_user( 'country' ) ); ?>
+			class="speaker-location skew-box secondary margin-top centered" title="See more speakers from <?php echo um_user( 'country' ); ?>" href="<?php echo esc_url( $country_link ); ?>"><?php echo esc_html( um_user( 'country' ) ); ?>
 		</a>
 		<?php endif; ?>
 

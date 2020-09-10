@@ -82,7 +82,7 @@ if ( $dat_webinar_start > $dat_now ) {
 			if ( $author_category ) :
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
-		<a class="skew-box secondary centered" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
+		<a class="skew-box secondary centered" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
 				<?php echo esc_html( $author_category ); ?> Webinar
 			</a>
 		<?php endif; ?>

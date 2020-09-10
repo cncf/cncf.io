@@ -32,7 +32,7 @@ $spotlight_type_link = '/spotlights/?_sft_lf-spotlight-type=' . $spotlight_type_
 		</a>
 	</div>
 	<div class="spotlight-text-wrapper">
-		<a class="skew-box secondary margin-top-small centered" href="<?php echo esc_url( $spotlight_type_link ); ?>">CNCF
+		<a class="skew-box secondary margin-top-small centered" title="See more <?php echo esc_attr( $spotlight_type ); ?> spotlights" href="<?php echo esc_url( $spotlight_type_link ); ?>">CNCF
 			<?php echo esc_html( $spotlight_type ); ?> Spotlight</a>
 
 		<h5 class="spotlight-title"><a

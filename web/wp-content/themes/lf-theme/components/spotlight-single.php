@@ -34,7 +34,7 @@ $spotlight_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-spotlight-typ
 			if ( $spotlight_type ) :
 				$spotlight_type_link = '/spotlights/?_sft_lf-spotlight-type=' . $spotlight_type_slug;
 				?>
-		<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $spotlight_type_link ); ?>">CNCF
+		<a class="skew-box secondary centered margin-bottom-small" title="See more <?php echo esc_attr( $spotlight_type ); ?> spotlights" href="<?php echo esc_url( $spotlight_type_link ); ?>">CNCF
 				<?php echo esc_html( $spotlight_type ); ?> Spotlight</a>
 		<?php endif; ?>
 

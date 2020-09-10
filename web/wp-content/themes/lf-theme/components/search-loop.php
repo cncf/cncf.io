@@ -82,7 +82,7 @@
 				if ( $category_author ) :
 					$category_link = '/lf-author-category/' . $category_author_slug . '/';
 					?>
-				<a class="skew-box secondary centered margin-bottom" href="<?php echo esc_url( $category_link ); ?>">CNCF
+				<a class="skew-box secondary centered margin-bottom" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_link ); ?>">CNCF
 					<?php
 					echo esc_html( $category_author );
 

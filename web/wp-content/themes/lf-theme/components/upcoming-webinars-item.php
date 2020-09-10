@@ -33,7 +33,7 @@ $date_and_time             = str_replace( ':00', '', $dat_webinar_start->format(
 			$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 			?>
 		<!-- Category of Webinar  -->
-		<a class="skew-box secondary margin-bottom-small" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
+		<a class="skew-box secondary margin-bottom-small" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
 			<?php echo esc_html( $author_category ); ?> Webinar</a>
 		<?php endif; ?>
 

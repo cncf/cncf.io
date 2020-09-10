@@ -58,7 +58,7 @@ if ( ! $city && ! $country ) {
 			if ( $event_host ) :
 				$event_host_link = '/events/?_sft_lf-event-host=' . $event_host_slug;
 				?>
-		<a class="skew-box secondary centered" href="<?php echo esc_url( $event_host_link ); ?>">
+		<a class="skew-box secondary centered" title="See other <?php echo esc_attr( $event_host ); ?> events" href="<?php echo esc_url( $event_host_link ); ?>">
 				<?php echo esc_html( $event_host ); ?> Event</a>
 		<?php endif; ?>
 		<div class="entry-content">

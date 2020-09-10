@@ -49,7 +49,7 @@ endif;
 			if ( $category_author ) :
 				$category_author_link = '/lf-author-category/' . $category_author_slug . '/';
 				?>
-				<a class="skew-box secondary centered margin-bottom-small" href="<?php echo esc_url( $category_author_link ); ?>">CNCF
+				<a class="skew-box secondary centered margin-bottom-small" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_author_link ); ?>">CNCF
 				<?php
 				echo esc_html( $category_author );
 				?>
