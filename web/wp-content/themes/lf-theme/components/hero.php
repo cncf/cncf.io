@@ -35,7 +35,7 @@ $options = get_option( 'lf-mu' );
 			if ( function_exists( 'is_tag' ) && is_tag() || is_category() || is_tax() ) :
 				if ( is_tax( 'lf-author-category' ) ) {
 					?>
-					<h1 class="blog-title">Content from a CNCF <?php single_cat_title(); ?></h1>
+					<h1 class="blog-title">Author category: <?php single_cat_title(); ?></h1>
 					<?php
 				} else {
 					?>
