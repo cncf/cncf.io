@@ -42,40 +42,64 @@
 			$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 			$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
+			if ( in_category( 'blog' ) ) {
+				$content_type_singular = 'Blog Post';
+				$content_type_plural = 'Blog Posts';
+				$content_type_url = '/blog/';
+			} elseif ( in_category( 'news' ) ) {
+				$content_type_singular = 'Media Coverage';
+				$content_type_plural = 'Media Coverage';
+				$content_type_url = '/news/';
+			} elseif ( in_category( 'announcements' ) ) {
+				$content_type_singular = 'Announcement';
+				$content_type_plural = 'Announcements';
+				$content_type_url = '/announcements/';
+			} elseif ( 'lf_webinar' == get_post_type() ) {
+				$content_type_singular = 'Webinar';
+				$content_type_plural = 'Webinars';
+				$content_type_url = '/webinars/';
+			} elseif ( 'lf_person' == get_post_type() ) {
+				$content_type_singular = 'People';
+				$content_type_plural = 'People';
+				$content_type_url = '/people/staff/';
+			} elseif ( 'lf_case_study' == get_post_type() ) {
+				$content_type_singular = 'Case Study';
+				$content_type_plural = 'Case Studies';
+				$content_type_url = '/case-studies/';
+			} elseif ( 'lf_case_study_cn' == get_post_type() ) {
+				$content_type_singular = 'Case Study';
+				$content_type_plural = 'Case Studies';
+				$content_type_url = '/case-studies-cn/';
+			} elseif ( 'lf_event' == get_post_type() ) {
+				$content_type_singular = 'Event';
+				$content_type_plural = 'Events';
+				$content_type_url = '/events/';
+			} elseif ( 'lf_speaker' == get_post_type() ) {
+				$content_type_singular = 'Speaker';
+				$content_type_plural = 'Speakers';
+				$content_type_url = '/speakers/';
+			} elseif ( 'lf_spotlight' == get_post_type() ) {
+				$content_type_singular = 'Spotlight';
+				$content_type_plural = 'Spotlights';
+				$content_type_url = '/spotlights/';
+			} elseif ( 'page' == get_post_type() ) {
+				$content_type_singular = 'Page';
+				$content_type_plural = 'Pages';
+				$content_type_url = '/';
+			} else {
+				$content_type_singular = 'Page';
+				$content_type_plural = 'Pages';
+				$content_type_url = '/';
+			}
+
 			?>
 		<div class="archive-item">
 
 			<div class="archive-text-wrapper">
 
-				<div class="skew-box centered margin-bottom">
-					<?php
-					if ( in_category( 'blog' ) ) {
-							echo 'Blog Post';
-					} elseif ( in_category( 'news' ) ) {
-								echo 'Media Coverage';
-					} elseif ( in_category( 'announcements' ) ) {
-						echo 'Announcement';
-					} elseif ( 'lf_webinar' == get_post_type() ) {
-						echo 'Webinar';
-					} elseif ( 'lf_person' == get_post_type() ) {
-						echo 'People';
-					} elseif ( 'lf_case_study' == get_post_type() ) {
-						echo 'Case Study';
-					} elseif ( 'lf_case_studych' == get_post_type() ) {
-						echo 'Case Study';
-					} elseif ( 'lf_event' == get_post_type() ) {
-						echo 'Event';
-					} elseif ( 'lf_speaker' == get_post_type() ) {
-						echo 'Speaker';
-					} elseif ( 'lf_spotlight' == get_post_type() ) {
-						echo 'Spotlight';
-					} elseif ( 'page' == get_post_type() ) {
-						echo 'Page';
-					} else {
-						echo 'Page';
-					}
-					?>
-				</div>
+				<a class="skew-box centered margin-bottom" title="See all <?php echo esc_attr( $content_type_plural ); ?>" href="<?php echo esc_attr( $content_type_url ); ?>">
+					<?php echo esc_html( $content_type_singular ); ?>
+				</a>
 
 
 				<?php
