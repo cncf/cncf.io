@@ -36,7 +36,7 @@ if ( strpos( $posts_pagination, 'prev page-numbers' ) === false ) {
 
 // If no next page link, append a placeholder with `visibility: hidden` to take its place.
 if ( strpos( $posts_pagination, 'next page-numbers' ) === false ) {
-	$posts_pagination = str_replace( '</div>', '<span class="next page-numbers placeholder" aria-hidden="true">' . $next_text . '</span></div>', $posts_pagination );
+	$posts_pagination = str_replace( '</div>', '<span class="next page-numbers assistive-text" aria-hidden="true">' . $next_text . '</span></div>', $posts_pagination );
 }
 
 if ( $posts_pagination ) :

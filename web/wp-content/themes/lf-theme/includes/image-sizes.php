@@ -51,6 +51,7 @@ add_image_size( 'hero-320', 320, 220, true );
 
 // Image Hero Block.
 add_image_size( 'ihero-1400', 1400, 400, true );
+add_image_size( 'ihero-2048', 2048, 585, true );
 
 // people.
 add_image_size( 'people-250', 250, 250, true );

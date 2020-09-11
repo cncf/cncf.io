@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52fe1a1c04a6306e234a0deafbed2f7d",
+    "content-hash": "a60d4418436ddcc776a43d929b798978",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "bf0934abfe22a1d06caa4f79021c246c3e38b775"
+                "reference": "4a537c4dd9fc46abf066b8a515847bb6eab33c61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/bf0934abfe22a1d06caa4f79021c246c3e38b775",
-                "reference": "bf0934abfe22a1d06caa4f79021c246c3e38b775",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/4a537c4dd9fc46abf066b8a515847bb6eab33c61",
+                "reference": "4a537c4dd9fc46abf066b8a515847bb6eab33c61",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-09-10T13:59:07+00:00"
+            "time": "2020-09-10T23:12:41+00:00"
         },
         {
             "name": "composer/installers",
@@ -352,16 +352,6 @@
                 "php",
                 "type"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/GrahamCampbell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-07-20T17:29:33+00:00"
         },
         {
@@ -518,20 +508,6 @@
                 "ctype",
                 "polyfill",
                 "portable"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-07-14T12:35:20+00:00"
         },
@@ -903,6 +879,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-native-php-sessions/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-youtube-lyte",
+            "version": "1.7.13",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-youtube-lyte/",
+                "reference": "tags/1.7.13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-youtube-lyte.1.7.13.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-youtube-lyte/"
         }
     ],
     "packages-dev": [
@@ -1192,16 +1186,6 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "funding": [
-                {
-                    "url": "https://github.com/Ocramius",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/roave/security-advisories",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-09-02T19:02:24+00:00"
         },
         {

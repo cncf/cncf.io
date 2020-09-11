@@ -587,27 +587,6 @@ div.row .col.section-title {
     justify-content: space-between
 }
 
-.past-date {
-    color: #476069;
-    /* font-size: 14px; */
-    padding: 0 0 0 13px;
-    position: relative
-}
-
-.past-date:before {
-    content: '';
-    background: url('/wp-content/themes/lf-theme/images/annual-reports/2018/icon-calendar.svg');
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 9px;
-    height: 9px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%)
-}
-
 .home-sub-head {
     font-size: 23px;
     color: #47529e;
