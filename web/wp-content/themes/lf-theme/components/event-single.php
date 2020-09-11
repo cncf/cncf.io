@@ -9,6 +9,7 @@
 
 // event host.
 $event_host = Lf_Utils::get_term_names( get_the_ID(), 'lf-event-host', true );
+$event_host_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-event-host', true );
 
 // external URL.
 $external_url     = get_post_meta( get_the_ID(), 'lf_event_external_url', true );
@@ -55,9 +56,10 @@ if ( ! $city && ! $country ) {
 		<?php endif; ?>
 			<?php
 			if ( $event_host ) :
+				$event_host_link = '/events/?_sft_lf-event-host=' . $event_host_slug;
 				?>
-		<div class="skew-box secondary centered">
-				<?php echo esc_html( $event_host ); ?> Event</div>
+		<a class="skew-box secondary centered" title="See other <?php echo esc_attr( $event_host ); ?> events" href="<?php echo esc_url( $event_host_link ); ?>">
+				<?php echo esc_html( $event_host ); ?> Event</a>
 		<?php endif; ?>
 		<div class="entry-content">
 			<?php the_content(); ?>

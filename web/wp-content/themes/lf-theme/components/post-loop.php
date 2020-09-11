@@ -131,6 +131,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 
 		// Get the Category Author.
 		$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+		$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 		?>
 <div class="archive-item<?php echo esc_html( $is_featured . $is_sticky ); ?>">
@@ -161,8 +162,11 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 	</a>
 </div>
 <div class="archive-text-wrapper">
-		<?php if ( $category_author ) : ?>
-	<div class="skew-box secondary centered margin-bottom-small">CNCF
+		<?php
+		if ( $category_author ) :
+			$category_link = '/lf-author-category/' . $category_author_slug . '/';
+			?>
+		<a class="skew-box secondary centered margin-bottom-small" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_link ); ?>">CNCF
 			<?php
 			echo esc_html( $category_author );
 			if ( 'lf_webinar' === get_post_type() ) {
@@ -171,7 +175,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 				echo ' Blog Post';
 			}
 			?>
-		</div>
+		</a>
 			<?php
 		endif;
 		?>

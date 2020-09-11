@@ -28,6 +28,7 @@ $video_id = Lf_Utils::get_youtube_id_from_url( $recording_url );
 
 // get author category.
 $author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+$author_category_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
 // get companies (presented by).
 $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
@@ -77,10 +78,13 @@ if ( $dat_webinar_start > $dat_now ) {
 			class="skew-box centered margin-bottom"><?php echo esc_html( str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ) ); ?></span>
 		<?php endif; ?>
 
-			<?php if ( $author_category ) : ?>
-		<div class="skew-box secondary centered">CNCF
+			<?php
+			if ( $author_category ) :
+				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
+				?>
+		<a class="skew-box secondary centered" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
 				<?php echo esc_html( $author_category ); ?> Webinar
-		</div>
+			</a>
 		<?php endif; ?>
 
 			<?php
