@@ -174,12 +174,14 @@
     }
 }
 
-.archive-excerpt {
-    font-size: 0.85em;
-}
+@media (min-width: 768px) {
+    .archive-excerpt {
+        font-size: 0.85em;
+    }
 
-.featured .archive-excerpt {
-    font-size: initial;
+    .featured .archive-excerpt {
+        font-size: initial;
+    }
 }
 
 // In the News only.
