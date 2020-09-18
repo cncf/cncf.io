@@ -45,7 +45,7 @@ jQuery( document ).ready(
 				} else {
 					$( '.search-bar' ).show();
 					$( '.search-bar' ).addClass( 'is-active' );
-					$( '.search-input' ).focus();
+					$( '.search-input' ).focus().val( $( 'input' ).val() );
 				}
 			},
 		);

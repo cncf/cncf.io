@@ -68,9 +68,7 @@ endif;
 								action="<?php echo esc_url( home_url() ); ?>"
 								role="search">
 								<label for="search-bar" class="screen-reader-text">Search CNCF</label>
-								<input class="search-input" type="search"
-									name="s" id="search-bar"
-									placeholder="Search for..." required>
+								<input class="search-input" type="search" name="s" id="search-bar" value="<?php echo get_search_query(); ?>" placeholder="Search for..." title="Search for" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
 								<label>
 									<input class="button transparent
 									header-align

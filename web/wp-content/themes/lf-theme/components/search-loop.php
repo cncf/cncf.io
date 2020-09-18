@@ -200,7 +200,7 @@ else :
 		<form role="search" method="get" class="no-search-results"
 			action="<?php echo esc_url( home_url() ); ?>">
 			<label><span class="search-text screen-reader-text">Search the
-					site</span><br />
+					site</span>
 				<input type="search" class="search-field margin-y"
 					placeholder="Enter search term"
 					value="<?php echo get_search_query(); ?>" name="s"
