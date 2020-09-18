@@ -133,15 +133,13 @@
 						target="_blank" rel="noopener"
 						href="<?php echo esc_url( $link_url ); ?>"
 						title="<?php the_title(); ?>">
-						<?php the_title(); ?>
-					</a></p>
+						<?php the_title(); ?></a></p>
 						<?php
 					} else {
 						?>
 				<p class="archive-title"><a href="<?php the_permalink(); ?>"
 						title="<?php the_title(); ?>">
-						<?php the_title(); ?>
-					</a></p>
+						<?php the_title(); ?></a></p>
 						<?php
 					}
 					?>
