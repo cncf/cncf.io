@@ -59,4 +59,12 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    @media (max-width: 500px) {
+
+        .page-numbers:not(.current):not(.next):not(.prev),
+        .page-numbers.dots {
+            display: none;
+        }
+    }
 }

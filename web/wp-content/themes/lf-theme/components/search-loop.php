@@ -133,15 +133,13 @@
 						target="_blank" rel="noopener"
 						href="<?php echo esc_url( $link_url ); ?>"
 						title="<?php the_title(); ?>">
-						<?php the_title(); ?>
-					</a></p>
+						<?php the_title(); ?></a></p>
 						<?php
 					} else {
 						?>
 				<p class="archive-title"><a href="<?php the_permalink(); ?>"
 						title="<?php the_title(); ?>">
-						<?php the_title(); ?>
-					</a></p>
+						<?php the_title(); ?></a></p>
 						<?php
 					}
 					?>
@@ -200,7 +198,7 @@ else :
 		<form role="search" method="get" class="no-search-results"
 			action="<?php echo esc_url( home_url() ); ?>">
 			<label><span class="search-text screen-reader-text">Search the
-					site</span><br />
+					site</span>
 				<input type="search" class="search-field margin-y"
 					placeholder="Enter search term"
 					value="<?php echo get_search_query(); ?>" name="s"

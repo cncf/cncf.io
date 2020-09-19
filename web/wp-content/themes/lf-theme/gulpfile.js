@@ -70,9 +70,12 @@ var notify = require("gulp-notify");
 
 var browserSync = require("browser-sync").create();
 
+/**
+ * BrowserSync Reload.
+ */
 function reload(done) {
-    browserSync.reload();
-    done(err);
+  browserSync.reload();
+  done();
 }
 
 /**

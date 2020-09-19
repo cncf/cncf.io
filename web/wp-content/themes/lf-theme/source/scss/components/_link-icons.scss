@@ -1,55 +1,15 @@
-// use for random external links where needed.
-.external {
-    padding-right: 15px;
-    display: inline-block;
-
-    &::after {
-        content: '';
-        background-image: url("data:image/svg+xml,%3Csvg fill='currentColor' height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4h-13v18h20v-11h1v12h-22v-20h14zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8z'/%3E%3C/svg%3E");
-        background-size: 0.8em;
-        height: 0.8em;
-        width: 0.8em;
-        background-repeat: no-repeat;
-        background-position: right;
-        align-self: center;
-        display: inline-flex;
-        white-space: nowrap;
-    }
-
-    &::after:not(.button) {
-        margin-right: -20px;
-    }
-
-    &.button {
-        &::after {
-            margin-left: 5px;
-        }
-    }
-
-    // fix for some lines wrapping prematurely.
-    &.is-inline {
-        display: inline;
-    }
-
-    &.is-primary-color {
-        &::after {
-            // pink
-            // https://codepen.io/sosuke/pen/Pjoqqp
-            filter: invert(31%) sepia(94%) saturate(6410%) hue-rotate(323deg) brightness(89%) contrast(95%);
-        }
-    }
-
-    &.is-white {
-        &::after {
-            // white
-            // https://codepen.io/sosuke/pen/Pjoqqp
-            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(52deg) brightness(103%) contrast(104%);
-        }
-    }
+// generic external icon.
+@mixin externalIcon {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23FFF' d='M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z'/%3E%3C/svg%3E");
+    margin-left: 0.2em; // connects to word.
+    padding-left: 0.8em;
+    background-size: 0.7em 0.8em;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-// apply inside main nav.
-// white icon.
+// apply external icon inside main nav - white icon (default)
 .site-navigation .main-navigation {
 
     a[href^="http://"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
@@ -57,22 +17,13 @@
     a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf.io"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
 
         &::after {
-            content: "  ";
-            background-image: url("data:image/svg+xml,%3Csvg fill='%23FFFFFF' height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4h-13v18h20v-11h1v12h-22v-20h14zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8z'/%3E%3C/svg%3E");
-            background-size: 10px;
-            height: 10px;
-            width: 10px;
-            background-repeat: no-repeat;
-            margin-left: 5px;
-            display: inline-flex;
-            white-space: nowrap;
-            align-self: center;
+            @include externalIcon;
         }
 
         @media (hover: hover) and (min-width:1000px) {
             &:hover {
                 &::after {
-                    // pink.
+                    // primary color - pink.
                     // https://codepen.io/sosuke/pen/Pjoqqp
                     filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(2129%) hue-rotate(317deg) brightness(97%) contrast(84%);
                 }
@@ -81,8 +32,7 @@
     }
 }
 
-// apply inside copyright only.
-// off-white with no hover.
+// apply inside copyright footer text only - off-white with no hover.
 .copyright-text {
 
     a[href^="http://"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
@@ -90,23 +40,21 @@
     a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf.io"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
 
         &::after {
-            content: "  ";
-            background-image: url("data:image/svg+xml,%3Csvg fill='%23a2a2b6' height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4h-13v18h20v-11h1v12h-22v-20h14zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8z'/%3E%3C/svg%3E");
-            background-size: 10px;
-            height: 10px;
-            width: 10px;
-            background-repeat: no-repeat;
-            margin-left: 5px;
-            display: inline-flex;
-            white-space: nowrap;
-            align-self: center;
+            @include externalIcon;
+            filter: brightness(0) saturate(100%) invert(62%) sepia(15%) saturate(566%) hue-rotate(208deg) brightness(89%) contrast(90%);
+        }
+
+        @media (hover: hover) and (min-width:1000px) {
+            &:hover {
+                &::after {
+                    filter: brightness(0) saturate(100%) invert(62%) sepia(15%) saturate(566%) hue-rotate(208deg) brightness(89%) contrast(90%);
+                }
+            }
         }
     }
-
 }
 
-// Larger size for Hello Bar, no hover effect.
-// White with no rollover.
+// Larger size for Hello Bar and Block Buttons - white with no rollover.
 .hello-bar,
 .wp-block-buttons {
 
@@ -115,22 +63,10 @@
     a[href^="//"]:not([href^="//www.cncf"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
 
         &::after {
-            content: "  ";
-            background-image: url("data:image/svg+xml,%3Csvg fill='%23fff' height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4h-13v18h20v-11h1v12h-22v-20h14zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8z'/%3E%3C/svg%3E");
-            background-size: 0.95em;
-            height: 0.95em;
-            width: 0.95em;
-            background-repeat: no-repeat;
-            margin-left: 5px;
-            display: inline-flex;
-            white-space: nowrap;
-            align-self: center;
-        }
-
-        &:hover {
-            &::after {
-                filter: none;
-            }
+            @include externalIcon;
+            padding-left: 0.9em;
+            background-size: 0.9em 0.9em;
+            margin-left: 0.275em; // connects to word.
         }
     }
 }
@@ -157,7 +93,7 @@
             margin-left: 5px;
         }
 
-        @media (hover: hover) {
+        @media (hover: hover) and (min-width:1000px) {
             &:hover {
                 &::after {
                     filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(2129%) hue-rotate(317deg) brightness(97%) contrast(84%);
@@ -176,6 +112,28 @@
             &::after {
                 filter: none !important;
             }
+        }
+    }
+}
+
+// use for random external links where needed.
+.external {
+    &::after {
+        @include externalIcon;
+        background-size: 0.8em 1em;
+    }
+
+    &.is-primary-color {
+        &::after {
+            // pink
+            // https://codepen.io/sosuke/pen/Pjoqqp
+            filter: invert(31%) sepia(94%) saturate(6410%) hue-rotate(323deg) brightness(89%) contrast(95%);
+        }
+    }
+
+    &.cookie-link {
+        &::after {
+            background-size: 0.9em 0.9em;
         }
     }
 }

@@ -106,8 +106,8 @@ if ( $dat_webinar_start > $dat_now ) {
 			<?php
 			if ( 'upcoming' == $period_status && $registration_url ) :
 				?>
-		<p><a target="_blank" href="<?php echo esc_url( $registration_url ); ?>"
-				rel="noopener" class="button margin-top-large"
+		<p class="wp-block-buttons"><a target="_blank" href="<?php echo esc_url( $registration_url ); ?>"
+				rel="noopener" class="button margin-top-large "
 				title="Register for <?php the_title(); ?> Webinar">Register
 				Now</a></p>
 		<?php endif; ?>
