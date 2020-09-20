@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "4a00148db9f7afc73028cd249136b0fce1c9d09e"
+                "reference": "04d408939a374013e683f722f53298e2dba4d617"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/4a00148db9f7afc73028cd249136b0fce1c9d09e",
-                "reference": "4a00148db9f7afc73028cd249136b0fce1c9d09e",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/04d408939a374013e683f722f53298e2dba4d617",
+                "reference": "04d408939a374013e683f722f53298e2dba4d617",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-09-17T22:57:30+00:00"
+            "time": "2020-09-20T05:47:53+00:00"
         },
         {
             "name": "composer/installers",
@@ -321,6 +321,16 @@
                 "php",
                 "type"
             ],
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-20T17:29:33+00:00"
         },
         {
@@ -477,6 +487,20 @@
                 "ctype",
                 "polyfill",
                 "portable"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-07-14T12:35:20+00:00"
         },

@@ -200,8 +200,11 @@ class Lf_Utils {
 			return;
 		}
 
-		$author_id = get_post_field( 'post_author', $the_post_id );
-		$author    = get_the_author_meta( 'display_name', $author_id );
+		$author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
+		if ( ! $author ) {
+			$author_id = get_post_field( 'post_author', $the_post_id );
+			$author    = get_the_author_meta( 'display_name', $author_id );
+		}
 
 		// Basic match for admin user.
 		if ( 'CNCF' === $author || 'admin' === $author ) {

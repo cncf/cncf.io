@@ -198,14 +198,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 			<?php
 			// Post author.
 			if ( in_category( 'blog' ) ) :
-
-				// Get the guest author meta.
-				$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
-
-				// don't display guest author field on archive as it's too long.
-				if ( ! $guest_author ) {
-					echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
-				}
+				echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
 			endif;
 		}
 		?>

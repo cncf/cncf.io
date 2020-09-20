@@ -175,7 +175,7 @@
 					<?php
 					// Post author.
 					if ( in_category( 'blog' ) ) {
-							echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
+						echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
 					}
 					?>
 				</p>
