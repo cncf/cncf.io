@@ -44,8 +44,11 @@ jQuery( document ).ready(
 					$( window ).blur();
 				} else {
 					$( '.search-bar' ).show();
-					$( '.search-bar' ).addClass( 'is-active' );
-					$( '.search-input' ).focus().val( $( 'input' ).val() );
+          $( '.search-bar' ).addClass( 'is-active' );
+          // put the cursor in the input field.
+          document.getElementById("search-bar").focus();
+          // de-select text and move cursor to the end.
+          document.getElementById("search-bar").setSelectionRange(99, 99);
 				}
 			},
 		);

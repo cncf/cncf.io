@@ -69,22 +69,22 @@ endif;
 									class="screen-reader-text">Search
 									CNCF</label>
 								<input class="search-input" type="search"
-									name="s" id="search-bar"
-									value="<?php echo get_search_query(); ?>"
-									placeholder="Search for..."
+									id="search-bar"
+									value="<?php echo esc_attr( get_search_query() ); ?>"
+									name="s" placeholder="Search for..."
 									title="Search for" autocomplete="off"
 									autocorrect="off" autocapitalize="off"
-									spellcheck="false" required>
+									spellcheck="false"
+									maxlength="98"
+									required>
 								<label>
 									<input class="button transparent
 									header-align
 									search-submit" type="submit" value="Search" />
 								</label>
 							</form>
-							<button class="button
-						search-toggle
-						search-button
-						header-align" type="button" aria-label="Close">
+
+							<button class="button search-toggle search-button header-align" type="button" aria-label="Close">
 								<?php $image->get_svg( 'close.svg' ); ?>
 							</button>
 						</div>
