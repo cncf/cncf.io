@@ -14,6 +14,7 @@
             white-space: nowrap;
             display: inline;
             border: 1px solid $primary-color;
+
         }
 
         >*:not(:last-child) {
@@ -39,25 +40,31 @@
     }
 
     a {
-        color: $primary-color;
         text-decoration: none;
+        background-color: $primary-color;
+        color: $white;
 
         &:hover,
         &:focus {
-            background-color: $primary-color;
-            color: $white;
+            background-color: $link-hover;
         }
     }
 
     .current {
-        background-color: $primary-color;
-        color: $white;
+        border-color: $primary-color;
+        background-color: $white;
+        color: $primary-color;
     }
 
     .next,
     .prev {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .dots {
+        border-color: transparent;
+        color: $primary-color;
     }
 
     @media (max-width: 500px) {
