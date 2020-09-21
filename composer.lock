@@ -785,7 +785,7 @@
         },
         {
             "name": "wpackagist-plugin/svg-autocrop",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/svg-autocrop/",
@@ -793,7 +793,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-autocrop.zip?timestamp=1581574408"
+                "url": "https://downloads.wordpress.org/plugin/svg-autocrop.zip?timestamp=1600657410"
             },
             "require": {
                 "composer/installers": "~1.0"
