@@ -3,13 +3,20 @@
 .back-to-top {
     position: fixed;
     width: 50px;
+    bottom: 20px;
     right: 20px;
-    top: -9999em;
     z-index: 10;
     background-color: rgba($secondary-color, 0.5);
     padding: 8px 10px 8px 10px;
     opacity: 0;
-    transition: opacity 1s linear, top 0s 1.5s;
+    visibility: hidden;
+    transition: visibility 0s 2s, opacity 1s linear;
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 1s linear;
+    }
 
     svg {
         width: 30px;
@@ -19,12 +26,5 @@
         &:hover {
             cursor: pointer;
         }
-    }
-
-    &.is-active {
-        bottom: 70px;
-        top: auto;
-        opacity: 1;
-        transition: opacity 0.5s linear;
     }
 }
