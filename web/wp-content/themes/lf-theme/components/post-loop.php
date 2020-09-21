@@ -111,7 +111,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 			. '/images/thumbnail-default.svg" alt="CNCF Media Coverage" />';
 		}
 		?>
-	</a>
+		</a>
 </div>
 <div class="archive-text-wrapper">
 	<p class="archive-title"><a
@@ -119,8 +119,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 			href="<?php echo esc_url( $link_url ); ?>"
 			<?php echo esc_attr( $target_attr ); ?>
 			title="<?php the_title(); ?>">
-			<?php the_title(); ?>
-		</a></p>
+			<?php the_title(); ?></a></p>
 		<p class="date-author-row"><span class="posted-date date-icon">
 		<?php echo get_the_date( 'F j, Y' ); ?></span></p>
 	<div class="archive-excerpt"><?php the_content(); ?></div>
@@ -199,14 +198,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 			<?php
 			// Post author.
 			if ( in_category( 'blog' ) ) :
-
-				// Get the guest author meta.
-				$guest_author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
-
-				// don't display guest author field on archive as it's too long.
-				if ( ! $guest_author ) {
-					echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
-				}
+				echo wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
 			endif;
 		}
 		?>

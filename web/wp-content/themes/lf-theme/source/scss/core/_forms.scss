@@ -26,6 +26,14 @@ input[type="search"] {
     }
 }
 
+.no-search-results {
+    .button {
+        font-size: 100%;
+        line-height: 18px;
+        height: 39.9px;
+    }
+}
+
 // make selectbox the same on all devices.
 .select-css,
 .gfield_select {
