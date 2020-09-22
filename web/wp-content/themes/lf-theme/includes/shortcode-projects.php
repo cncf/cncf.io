@@ -56,7 +56,7 @@ function add_projects_shortcode( $atts ) {
 
 			$external_url = get_post_meta( get_the_ID(), 'lf_project_external_url', true );
 
-			$date_accepted = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? ' (accepted to CNCF on ' . gmdate( 'm/d/Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) . ')' : '';
+			$date_accepted = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? ' (accepted to CNCF on ' . gmdate( 'n/j/Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) . ')' : '';
 
 			$project_category = get_post_meta( get_the_ID(), 'lf_project_category', true );
 
