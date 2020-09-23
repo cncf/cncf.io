@@ -28,8 +28,8 @@ endif;
 				<img src="<?php echo esc_url( wp_get_attachment_url( $options['header_image_id'] ) ); ?>"
 					height="38" alt="<?php echo bloginfo( 'name' ); ?>">
 			</a>
-			<?php } ?>
 		</div>
+		<?php } ?>
 
 		<div class="menu-container-with-search" role="navigation">
 			<nav class="site-navigation">
@@ -52,12 +52,10 @@ endif;
 				<?php endif; ?>
 
 				<div class="header-search">
-					<button
-						class="button
+					<button class="button
 						search-toggle
 						search-button
-						header-align"
-						type="button" aria-label="Search">
+						header-align" type="button" aria-label="Search">
 						<?php $image->get_svg( 'search.svg' ); ?>
 
 					</button>
@@ -67,23 +65,28 @@ endif;
 							<form class="search-form" method="get"
 								action="<?php echo esc_url( home_url() ); ?>"
 								role="search">
-								<label for="search-bar" class="screen-reader-text">Search CNCF</label>
-								<input class="search-input" type="search" name="s" id="search-bar" value="<?php echo get_search_query(); ?>" placeholder="Search for..." title="Search for" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+								<label for="search-bar"
+									class="screen-reader-text">Search
+									CNCF</label>
+								<input class="search-input" type="search"
+									id="search-bar"
+									value="<?php echo esc_attr( get_search_query() ); ?>"
+									name="s" placeholder="Search for..."
+									title="Search for" autocomplete="off"
+									autocorrect="off" autocapitalize="off"
+									spellcheck="false"
+									maxlength="98"
+									required>
 								<label>
 									<input class="button transparent
 									header-align
-									search-submit"
-										type="submit" value="Search" />
+									search-submit" type="submit" value="Search" />
 								</label>
 							</form>
-							<button
-						class="button
-						search-toggle
-						search-button
-						header-align"
-						type="button" aria-label="Close">
-						<?php $image->get_svg( 'close.svg' ); ?>
-					</button>
+
+							<button class="button search-toggle search-button header-align" type="button" aria-label="Close">
+								<?php $image->get_svg( 'close.svg' ); ?>
+							</button>
 						</div>
 
 					</div>
@@ -91,7 +94,8 @@ endif;
 			</nav>
 		</div>
 
-		<button class="hamburger hamburger--spin" type="button" aria-label="Toggle Menu">
+		<button class="hamburger hamburger--spin" type="button"
+			aria-label="Toggle Menu">
 			<span class="hamburger-box">
 				<span class="hamburger-inner"></span>
 			</span>

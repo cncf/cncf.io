@@ -56,6 +56,8 @@ function add_projects_shortcode( $atts ) {
 
 			$external_url = get_post_meta( get_the_ID(), 'lf_project_external_url', true );
 
+			$date_accepted = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? ' (accepted to CNCF on ' . gmdate( 'n/j/Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) . ')' : '';
+
 			$project_category = get_post_meta( get_the_ID(), 'lf_project_category', true );
 
 			$github = get_post_meta( get_the_ID(), 'lf_project_github', true );
@@ -86,7 +88,7 @@ function add_projects_shortcode( $atts ) {
 			<?php
 			if ( $external_url ) :
 				?>
-				<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank" title="<?php the_title(); ?>">
+				<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank" title="<?php echo esc_html( the_title() . $date_accepted ); ?>">
 				<?php
 				endif;
 
@@ -106,7 +108,7 @@ function add_projects_shortcode( $atts ) {
 		<h3 class="project-title">
 
 			<?php if ( $external_url ) : ?>
-		<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank">
+		<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank" title="Visit <?php the_title(); ?>">
 				<?php
 		endif;
 			the_title();
