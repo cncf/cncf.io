@@ -225,3 +225,8 @@ img[src$=".svg"] {
     width: 100%;
     height: auto;
 }
+
+/* hides the hide pre-publish checklist option */
+.editor-post-publish-panel__footer {
+    display: none;
+}
