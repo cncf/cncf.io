@@ -74,7 +74,7 @@ if ( $cn ) {
 
 				if ( $case_study_type ) {
 					?>
-				<a class="skew-box tertiary centered" title="See all <?php echo esc_attr( $case_study_type ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type ); ?></a>
+			<a class="skew-box tertiary centered" title="See all <?php echo esc_attr( $case_study_type ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type ); ?></a>
 					<?php
 				}
 				if ( $case_study_type_additional ) {

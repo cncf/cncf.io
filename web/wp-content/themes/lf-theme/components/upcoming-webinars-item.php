@@ -28,7 +28,7 @@ $date_and_time             = str_replace( ':00', '', $dat_webinar_start->format(
 
 	<div class="webinars-upcoming-text-wrapper">
 
-		<?php
+	<?php
 		if ( $author_category ) :
 			$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 			?>

@@ -6,7 +6,6 @@
  * @package  WordPress
  * @author   Fuerza
  * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link     https://cncf.io
  * @since    1.0.0
  */
 

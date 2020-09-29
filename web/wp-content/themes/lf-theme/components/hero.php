@@ -31,7 +31,7 @@ $options = get_option( 'lf-mu' );
 
 	<div class="container wrap background-image-text-overlay">
 		<div>
-			<?php
+		<?php
 			if ( function_exists( 'is_tag' ) && is_tag() || is_category() || is_tax() ) :
 				if ( is_tax( 'lf-author-category' ) ) {
 					?>

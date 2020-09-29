@@ -52,12 +52,13 @@ endif;
 				<?php endif; ?>
 
 				<div class="header-search">
-					<button class="button
+					<button
+						class="button
 						search-toggle
 						search-button
-						header-align" type="button" aria-label="Search">
+						header-align"
+						type="button" aria-label="Search">
 						<?php $image->get_svg( 'search.svg' ); ?>
-
 					</button>
 
 					<div class="search-bar">
@@ -80,11 +81,16 @@ endif;
 								<label>
 									<input class="button transparent
 									header-align
-									search-submit" type="submit" value="Search" />
+									search-submit"
+										type="submit" value="Search" />
 								</label>
 							</form>
-
-							<button class="button search-toggle search-button header-align" type="button" aria-label="Close">
+							<button
+							class="button
+							search-toggle
+							search-button
+							header-align"
+							type="button" aria-label="Close">
 								<?php $image->get_svg( 'close.svg' ); ?>
 							</button>
 						</div>

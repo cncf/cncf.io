@@ -37,12 +37,15 @@
 				<option value="Chinese">中文</option>
 			</select>
 		</label>
-		<button type="submit" class="button" id="sfmc-submit1">Subscribe</button>
+		<button type="submit" class="button"
+		id="sfmc-submit1">Subscribe</button>
 		<div id="recaptcha-form1" style="display:none;"></div>
 	</form>
 	<div id="sfmc-message1" class="form-message"></div>
-	<p class="privacy-agreement">By submitting this form, you acknowledge that your
+	<p class="privacy-agreement">By submitting this form, you acknowledge that
+	your
 		information is subject to The Linux Foundation’s <a
 			href="https://www.linuxfoundation.org/privacy/"
-			rel="noopener" class="external" target="_blank">Privacy Policy</a>.</p>
+			rel="noopener" class="external"
+			target="_blank">Privacy Policy</a>.</p>
 </section>

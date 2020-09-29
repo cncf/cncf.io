@@ -78,7 +78,7 @@ if ( $dat_webinar_start > $dat_now ) {
 			class="skew-box centered margin-bottom"><?php echo esc_html( str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ) ); ?></span>
 		<?php endif; ?>
 
-			<?php
+		<?php
 			if ( $author_category ) :
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
@@ -125,7 +125,7 @@ if ( $dat_webinar_start > $dat_now ) {
 
 			<?php if ( $video_id ) : ?>
 		<iframe
-			src="https://www.youtube.com/embed/<?php echo esc_html( $video_id ); ?>"
+			src="https://www.youtube-nocookie.com/embed/<?php echo esc_html( $video_id ); ?>"
 			frameborder="0"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen></iframe>

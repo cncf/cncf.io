@@ -110,8 +110,7 @@ if ( $query->have_posts() ) : ?>
 			</a>
 		</figure>
 
-			<?php
-			if ( $author_category ) :
+		<?php if ( $author_category ) :
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
 		<a class="skew-box secondary" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
@@ -151,5 +150,5 @@ endwhile;
 </div>
 	<?php
 else :
-	echo 'No Results Found';
+	echo 'New webinars coming soon. <a href="#newsletter">Sign up for our newsletter to stay informed</a>.';
 endif;

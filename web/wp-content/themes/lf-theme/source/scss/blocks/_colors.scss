@@ -1,5 +1,7 @@
 // define colors to use later in SASS functions
+// This should match color in gutenberg-preset-colors
 
+// The button color is this.
 $colors: ( // name variable : color to be used.
     'pink-400': #DE176C,
     'purple-700': #2C2960,
@@ -8,6 +10,8 @@ $colors: ( // name variable : color to be used.
     'white': $white,
     'black': $black,
 );
+
+// When hovered it is this.
 $color_hover: ( // name variable : color to be used.
     'pink-400': #E43B80,
     'purple-700': #48549C,
@@ -17,6 +21,7 @@ $color_hover: ( // name variable : color to be used.
     'black': #252b5f,
 );
 
+// Text color is this.
 $text_color: ( // name variable : color to be used.
     'pink-400': $white,
     'purple-700': $white,
@@ -26,5 +31,5 @@ $text_color: ( // name variable : color to be used.
     'black': $white,
 );
 
-// take the first colour to be the default
+// Take the first colour to be the default.
 $default: nth(nth($colors, 1), 2);
