@@ -70,7 +70,7 @@ if ( $event_start_date ) {
 				?>
 		</div>
 		<?php endif; ?>
-		<?php
+			<?php
 			if ( $event_host ) :
 				$event_host_link = '/events/?_sft_lf-event-host=' . $event_host_slug;
 				?>

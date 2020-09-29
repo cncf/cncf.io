@@ -43,7 +43,7 @@ jQuery( document ).ready(
 					// removes focus / keyboard on iOS.
 					$( window ).blur();
 				} else {
-          $( '.search-bar' ).show();
+					$( '.search-bar' ).show();
 					$( '.search-bar' ).addClass( 'is-active' );
 					// put the cursor in the input field.
 					document.getElementById( "search-bar" ).focus();

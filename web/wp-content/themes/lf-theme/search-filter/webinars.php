@@ -110,12 +110,13 @@ if ( $query->have_posts() ) : ?>
 			</a>
 		</figure>
 
-		<?php if ( $author_category ) :
+			<?php
+			if ( $author_category ) :
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
 		<a class="skew-box secondary" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
 				<?php echo esc_html( $author_category ); ?> Webinar</a>
-		<?php endif; ?>
+			<?php endif; ?>
 
 		<h5 class="webinar-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>

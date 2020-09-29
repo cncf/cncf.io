@@ -78,7 +78,7 @@ if ( $dat_webinar_start > $dat_now ) {
 			class="skew-box centered margin-bottom"><?php echo esc_html( str_replace( ':00', '', $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ) ); ?></span>
 		<?php endif; ?>
 
-		<?php
+			<?php
 			if ( $author_category ) :
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
