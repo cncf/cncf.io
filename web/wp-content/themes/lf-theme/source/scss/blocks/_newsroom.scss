@@ -59,12 +59,13 @@
     }
 }
 
+// differs between CNCF and LFPH.
 .newsroom-image-wrapper {
     border: 1px solid $tertiary-color;
-    max-width: 100%;
     transition: all 0.25s ease;
-    overflow: hidden;
     position: relative;
+    max-width: 100%;
+    overflow: hidden;
     object-fit: cover;
 
     // padding for image wrapper.
@@ -115,11 +116,4 @@
     font-size: 0.875em;
     font-weight: 400;
     color: $grey-500;
-}
-
-// maybe not needed?
-.newsroom-guest-author {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-style: italic;
 }

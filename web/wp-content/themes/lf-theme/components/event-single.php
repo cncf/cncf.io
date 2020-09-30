@@ -28,7 +28,6 @@ if ( ! $city && ! $country ) {
 	$location = $city . ', ' . $country;
 }
 
-
 // Get date and time now.
 $now           = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
 $date_now      = $now->format( 'Y-m-d' );
@@ -93,6 +92,6 @@ if ( $event_start_date ) {
 		<a href="mailto:meeting@cncf.io"
 			class="button secondary-color margin-top-large">Arrange Meeting with
 			CNCF</a>
-			<?php endwhile; ?>
+		<?php endwhile; ?>
 	</article>
 </main>

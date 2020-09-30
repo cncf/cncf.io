@@ -76,9 +76,9 @@
 .wp-block-buttons {
 
     a[href^="http://"][href$=".pdf"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
-    a[href^="https://"][href$=".pdf"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
-    a[href^="/"][href$=".pdf"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
-    a[href$=".pdf"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]) {
+    a[href^="https://"][href$=".pdf"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]),
+    a[href^="//"][href$=".pdf"]:not([href^="//www.cncf.io"]):not([href^="//cncf.io"]):not([href^="//localhost"]):not([href^="//dev-cncf"]),
+    a[href$=".pdf"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]) {
         display: flex;
         align-items: center;
 

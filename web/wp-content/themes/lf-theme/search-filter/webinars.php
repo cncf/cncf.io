@@ -116,7 +116,7 @@ if ( $query->have_posts() ) : ?>
 				?>
 		<a class="skew-box secondary" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
 				<?php echo esc_html( $author_category ); ?> Webinar</a>
-		<?php endif; ?>
+			<?php endif; ?>
 
 		<h5 class="webinar-title"><a
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
@@ -151,5 +151,5 @@ endwhile;
 </div>
 	<?php
 else :
-	echo 'No Results Found';
+	echo 'New webinars coming soon. <a href="#newsletter">Sign up for our newsletter to stay informed</a>.';
 endif;

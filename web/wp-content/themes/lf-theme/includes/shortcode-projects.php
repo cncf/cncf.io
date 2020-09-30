@@ -93,7 +93,7 @@ function add_projects_shortcode( $atts ) {
 				endif;
 
 			if ( has_post_thumbnail() ) {
-				echo wp_get_attachment_image( get_post_thumbnail_id(), '', false, array( 'class' => 'project-thumbnail' ) );
+				echo wp_get_attachment_image( get_post_thumbnail_id(), false, false, array( 'class' => 'project-thumbnail' ) );
 			} else {
 				?>
 		<img src="https://via.placeholder.com/100x100/d9d9d9/000000" alt=""

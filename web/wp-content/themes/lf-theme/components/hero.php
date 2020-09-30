@@ -31,19 +31,19 @@ $options = get_option( 'lf-mu' );
 
 	<div class="container wrap background-image-text-overlay">
 		<div>
-			<?php
-			if ( function_exists( 'is_tag' ) && is_tag() || is_category() || is_tax() ) :
-				if ( is_tax( 'lf-author-category' ) ) {
-					?>
+		<?php
+		if ( function_exists( 'is_tag' ) && is_tag() || is_category() || is_tax() ) :
+			if ( is_tax( 'lf-author-category' ) ) {
+				?>
 					<h1 class="blog-title">Author category: <?php single_cat_title(); ?></h1>
 					<?php
-				} else {
-					?>
+			} else {
+				?>
 					<h1 class="blog-title"><?php single_cat_title(); ?></h1>
 					<?php
-				}
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
+			}
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			?>
 			<?php elseif ( is_author() ) : ?>
 				<h1 class="blog-title">All posts by <?php the_author(); ?></h1>
 			<?php elseif ( is_archive() ) : ?>
