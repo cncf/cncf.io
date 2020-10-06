@@ -85,7 +85,7 @@ if ( $options['social_wechat_id'] ) :
 			<div class="modal-content-wrapper">
 				<div class="modal__content"
 					id="modal-wechat-content">
-					<img src="<?php echo esc_url( wp_get_attachment_url( $options['social_wechat_id'] ) ); ?>">
+					<img loading="lazy" src="<?php echo esc_url( wp_get_attachment_url( $options['social_wechat_id'] ) ); ?>">
 				</div>
 			</div>
 		</div>
