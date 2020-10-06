@@ -27,6 +27,7 @@ add_image_size( 'newsroom-post-width', 700, 9999, false );
 add_image_size( 'spotlight-320', 320, 170, false );
 add_image_size( 'spotlight-515', 515, 270, false );
 add_image_size( 'spotlight-640', 640, 340, false );
+add_image_size( 'spotlight-1280', 1280, 680, false );
 
 // case study.
 add_image_size( 'case-study-320', 320, 260, true );

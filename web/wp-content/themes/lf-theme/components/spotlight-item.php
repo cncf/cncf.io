@@ -23,10 +23,10 @@ $spotlight_type_link = '/spotlights/?_sft_lf-spotlight-type=' . $spotlight_type_
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php
 			if ( has_post_thumbnail() ) {
-				LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'spotlight-515', '515px' );
+				LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'spotlight-640', '320px' );
 			} else {
 				$options = get_option( 'lf-mu' );
-				LF_Utils::display_responsive_images( $options['generic_thumb_id'], 'spotlight-515', '515px' );
+				LF_Utils::display_responsive_images( $options['generic_thumb_id'], 'spotlight-640', '320px' );
 			}
 			?>
 		</a>
