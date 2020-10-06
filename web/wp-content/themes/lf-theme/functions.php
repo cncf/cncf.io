@@ -229,7 +229,7 @@ foreach ( $regex_json_path_patterns as $regex_json_path_pattern ) {
 /**
  * Remove tags support from posts
  */
-function myprefix_unregister_tags() {
+function lf_theme_unregister_tags() {
 	unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 }
-add_action( 'init', 'myprefix_unregister_tags' );
+add_action( 'init', 'lf_theme_unregister_tags' );
