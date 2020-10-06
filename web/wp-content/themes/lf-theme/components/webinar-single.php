@@ -113,7 +113,7 @@ if ( $dat_webinar_start > $dat_now ) {
 		<?php endif; ?>
 
 			<?php
-			if ( 'recorded' == $period_status ) :
+			if ( 'recorded' == $period_status && $dat_webinar_start ) :
 				?>
 		<div class="recorded">
 			<p class="live-icon">Recorded:
