@@ -202,8 +202,14 @@ class Lf_Utils {
 
 		$author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 		if ( ! $author ) {
+			$authors_to_ignore = array( 3049, 3047, 2910, 3051 ); // Authors we don't want to show a byline for.
 			$author_id = get_post_field( 'post_author', $the_post_id );
-			$author    = get_the_author_meta( 'display_name', $author_id );
+
+			if ( in_array( $author_id, $authors_to_ignore ) ) {
+				return;
+			}
+
+			$author = get_the_author_meta( 'display_name', $author_id );
 		}
 
 		// Basic match for admin user.
