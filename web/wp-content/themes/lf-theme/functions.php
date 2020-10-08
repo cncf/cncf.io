@@ -233,3 +233,24 @@ function lf_theme_unregister_tags() {
 	unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 }
 add_action( 'init', 'lf_theme_unregister_tags' );
+
+/**
+ * Remove English words from Chinese case studies filters
+ *
+ * @param array $input_object Input Object.
+ * @param int   $sfid ID of form.
+ */
+function filter_english( $input_object, $sfid ) {
+
+	// if not the Chinese Case studies filters, then skip.
+	if ( 8158 != $sfid ) {
+		return $input_object;
+	}
+
+	foreach ( $input_object['options'] as $option ) {
+		$option->label = preg_replace( '/(.+)(\(\D+\))(.+)/', '$1$3', $option->label );
+	}
+
+	return $input_object;
+}
+add_filter( 'sf_input_object_pre', 'filter_english', 10, 2 );
