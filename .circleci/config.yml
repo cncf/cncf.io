@@ -50,6 +50,10 @@ jobs:
         # in the quay.io/pantheon-public/build-tools-ci image
         docker:
             - image: drupaldocker/php:7.2-cli
+              auth:
+                username: $DOCKERHUB_USERNAME
+                password: $DOCKERHUB_PASSWORD
+
         steps:
             - checkout
 
@@ -83,6 +87,10 @@ jobs:
         # in the quay.io/pantheon-public/build-tools-ci image
         docker:
             - image: drupaldocker/php:7.2-cli
+              auth:
+                username: $DOCKERHUB_USERNAME
+                password: $DOCKERHUB_PASSWORD
+
         steps:
             - checkout
 
@@ -106,6 +114,10 @@ jobs:
         <<: *defaults
         docker:
             - image: circleci/node:9.9-stretch
+              auth:
+                username: $DOCKERHUB_USERNAME
+                password: $DOCKERHUB_PASSWORD
+
         steps:
             - checkout
 
