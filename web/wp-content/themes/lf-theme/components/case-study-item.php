@@ -52,7 +52,6 @@ if ( $cn ) {
 
 	<div class="case-study-content-wrapper background-image-text-overlay">
 
-<div>
 <h3 class="case-study-title margin-bottom"><a title="<?php the_title(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h3>
@@ -109,7 +108,6 @@ if ( $cn ) {
 		<a class="button on-image"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		<?php endif; ?>
-		</div>
 
 	</div>
 </div>
