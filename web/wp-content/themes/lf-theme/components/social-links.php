@@ -46,7 +46,7 @@ $image   = new Image();
 	<?php endif; ?>
 
 	<?php if ( $options['social_email'] ) : ?>
-	<li class="social_email"><a target="_blank" title="<?php echo 'Contact ' . esc_html( get_bloginfo( 'name' ) ); ?>"
+	<li class="social_email"><a title="<?php echo 'Contact ' . esc_html( get_bloginfo( 'name' ) ); ?>"
 			href="<?php echo esc_url( $options['social_email'] ); ?>"><?php $image->get_svg( 'social/email.svg' ); ?></a></li>
 	<?php endif; ?>
 
@@ -68,6 +68,11 @@ $image   = new Image();
 	<?php if ( $options['social_slack'] ) : ?>
 	<li class="social_slack"><a target="_blank" rel="noopener" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' Slack'; ?>"
 			href="<?php echo esc_url( $options['social_slack'] ); ?>"><?php $image->get_svg( 'social/slack.svg' ); ?></a></li>
+	<?php endif; ?>
+
+	<?php if ( $options['social_twitch'] ) : ?>
+	<li class="social_twitch"><a target="_blank" rel="noopener" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on Twitch'; ?>"
+			href="<?php echo esc_url( $options['social_twitch'] ); ?>"><?php $image->get_svg( 'social/twitch.svg' ); ?></a></li>
 	<?php endif; ?>
 
 	<?php if ( $options['social_rss'] ) : ?>
