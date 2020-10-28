@@ -163,11 +163,16 @@ if ( $dat_webinar_start > $dat_now ) {
 
 
 				<p><strong>Date:</strong>
-					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>
+					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>,
+					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
 				</p>
 
-				<p><strong>Time:</strong>
-					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
+				<p><strong>Local Date:</strong>
+					<span class="webinar-local-date-time"></span>
+					<script>
+					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ) ?> * 1000;
+					var webinar_ts_end = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ) ?> * 1000;
+					</script>
 				</p>
 
 				<p><strong>How to attend:</strong>
