@@ -170,8 +170,8 @@ if ( $dat_webinar_start > $dat_now ) {
 				<p><strong>Local Date:</strong>
 					<span class="webinar-local-date-time"></span>
 					<script>
-					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ) ?> * 1000;
-					var webinar_ts_end = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ) ?> * 1000;
+					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ); ?> * 1000;
+					var webinar_ts_end = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ); ?> * 1000;
 					</script>
 				</p>
 
