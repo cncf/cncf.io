@@ -42,6 +42,16 @@ $slides_url = get_post_meta( get_the_ID(), 'lf_webinar_slides_url', true );
 // get webinar speakers.
 $speakers = get_post_meta( get_the_ID(), 'lf_webinar_speakers', true );
 
+// enqueue calendar library.
+wp_enqueue_script(
+	'ouical-min-js',
+	get_stylesheet_directory_uri() . '/source/js/third-party/ouical.min.js',
+	array(),
+	filemtime( get_template_directory() . '/source/js/third-party/ouical.min.js' ),
+	false
+);
+
+
 // date period.
 if ( $dat_webinar_start > $dat_now ) {
 	$period_status = 'upcoming';
@@ -166,6 +176,7 @@ if ( $dat_webinar_start > $dat_now ) {
 					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>,
 					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
 				</p>
+				<div class="new-cal">1</div>
 
 				<p><strong>Local Date:</strong>
 					<span class="webinar-local-date-time"></span>
