@@ -44,10 +44,10 @@ $speakers = get_post_meta( get_the_ID(), 'lf_webinar_speakers', true );
 
 // enqueue calendar library.
 wp_enqueue_script(
-	'ouical-min-js',
-	get_stylesheet_directory_uri() . '/source/js/third-party/ouical.min.js',
+	'ouical-js',
+	get_stylesheet_directory_uri() . '/source/js/third-party/ouical.js',
 	array(),
-	filemtime( get_template_directory() . '/source/js/third-party/ouical.min.js' ),
+	filemtime( get_template_directory() . '/source/js/third-party/ouical.js' ),
 	false
 );
 
@@ -172,18 +172,19 @@ if ( $dat_webinar_start > $dat_now ) {
 				<?php endif; ?>
 
 
-				<p><strong>Date:</strong>
+				<p class="is-style-max-width-100"><strong>Date:</strong>
 					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>,
 					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
 				</p>
-				<div class="new-cal">1</div>
 
-				<p><strong>Local Date:</strong>
+				<p class="is-style-max-width-100"><strong>Start date in your local timezone:</strong>
 					<span class="webinar-local-date-time"></span>
 					<script>
 					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ); ?> * 1000;
 					var webinar_ts_end = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ); ?> * 1000;
+					var webinar_title = "CNCF webinar: <?php the_title(); ?>";
 					</script>
+					<span class="webinar-add-to-cal"></span>
 				</p>
 
 				<p><strong>How to attend:</strong>
