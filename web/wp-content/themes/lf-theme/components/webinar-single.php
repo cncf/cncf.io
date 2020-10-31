@@ -210,7 +210,7 @@ if ( $dat_webinar_start > $dat_now ) {
 					<span class="timezone"><?php echo esc_html( $dat_webinar_start_tz ); ?></span>
 					<span class="end"><?php echo esc_html( $dat_webinar_end->format( 'm/d/Y g:i A' ) ); ?></span>
 					<span class="title">CNCF webinar: <?php the_title(); ?></span>
-					<span class="description">Webinar details found here: <?php the_permalink(); ?></span>
+					<span class="description">Webinar details: <?php the_permalink(); ?></span>
 				</div>
 
 			</div>
