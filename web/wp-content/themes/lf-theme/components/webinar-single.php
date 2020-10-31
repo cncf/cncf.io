@@ -183,6 +183,7 @@ if ( $dat_webinar_start > $dat_now ) {
 					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ); ?> * 1000;
 					var webinar_ts_end = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ); ?> * 1000;
 					var webinar_title = "CNCF webinar: <?php the_title(); ?>";
+					var webinar_link = "<?php the_permalink(); ?>";
 					</script>
 				</p>
 

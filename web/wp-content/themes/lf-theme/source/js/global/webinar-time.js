@@ -25,6 +25,7 @@ jQuery( document ).ready(
 			title: webinar_title,     // Event title
 			start: dat_start,   // Event start date
 			end: dat_end,     // You can also choose to set an end time.
+			description: 'See for more info: ' + webinar_link
 			}
 		});
 
