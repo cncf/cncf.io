@@ -184,6 +184,9 @@ if ( $dat_webinar_start > $dat_now ) {
 					var webinar_ts_end = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ); ?> * 1000;
 					var webinar_title = "CNCF webinar: <?php the_title(); ?>";
 					</script>
+				</p>
+
+				<p class="is-style-max-width-100"><strong>Add to calendar:</strong>
 					<span class="webinar-add-to-cal"></span>
 				</p>
 
