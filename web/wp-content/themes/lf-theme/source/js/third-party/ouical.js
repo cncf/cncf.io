@@ -1,3 +1,4 @@
+// phpcs:ignorefile
 ;(function(exports) {
   var MS_IN_MINUTES = 60 * 1000;
 
