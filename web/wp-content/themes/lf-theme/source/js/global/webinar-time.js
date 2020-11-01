@@ -13,7 +13,13 @@ jQuery( document ).ready(
 			return;
 		}
 		var dat_start = dayjs( new Date( webinar_ts_start ) );
+
+		if ( dat_start.format( 'ZZ' ) === webinar_tz ) {
+			$( 'p.webinar-local-date-time' ).hide();
+			return;
+		}
+
 		var dat_end   = dayjs( new Date( webinar_ts_end ) );
-		$( '.webinar-local-date-time' ).text( dat_start.format( 'dddd MMMM D, YYYY, h:mm' ) + ' - ' + dat_end.format( 'h:mm A Z' ) );
+		$( 'p.webinar-local-date-time span' ).text( dat_start.format( 'dddd MMMM D, YYYY, h:mm' ) + ' - ' + dat_end.format( 'h:mm A ZZ' ) );
 	}
 );

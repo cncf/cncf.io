@@ -193,11 +193,12 @@ if ( $dat_webinar_start > $dat_now ) {
 					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
 				</p>
 
-				<p class="is-style-max-width-100"><strong>Date (localized to your timezone):</strong>
-					<span class="webinar-local-date-time"></span>
+				<p class="is-style-max-width-100 webinar-local-date-time"><strong>Date (localized to your timezone):</strong>
+					<span></span>
 					<script>
 					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ); ?> * 1000;
 					var webinar_ts_end   = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ); ?> * 1000;
+					var webinar_tz       = '<?php echo esc_html( $dat_webinar_end->format( 'O' ) ); ?>';
 					</script>
 				</p>
 
