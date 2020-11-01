@@ -54,9 +54,9 @@ $speakers = get_post_meta( get_the_ID(), 'lf_webinar_speakers', true );
 // enqueue calendar and date js.
 wp_enqueue_script(
 	'add-to-calendar-js',
-	get_stylesheet_directory_uri() . '/source/js/third-party/add-to-calendar.min.js',
+	get_stylesheet_directory_uri() . '/source/js/third-party/add-to-calendar.js',
 	array(),
-	filemtime( get_template_directory() . '/source/js/third-party/add-to-calendar.min.js' ),
+	filemtime( get_template_directory() . '/source/js/third-party/add-to-calendar.js' ),
 	false
 );
 wp_enqueue_script(
