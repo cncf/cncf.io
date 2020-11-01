@@ -51,12 +51,19 @@ $slides_url = get_post_meta( get_the_ID(), 'lf_webinar_slides_url', true );
 // get webinar speakers.
 $speakers = get_post_meta( get_the_ID(), 'lf_webinar_speakers', true );
 
-// enqueue calendar library.
+// enqueue calendar and date js.
 wp_enqueue_script(
 	'add-to-calendar-js',
 	get_stylesheet_directory_uri() . '/source/js/third-party/add-to-calendar.min.js',
 	array(),
 	filemtime( get_template_directory() . '/source/js/third-party/add-to-calendar.min.js' ),
+	false
+);
+wp_enqueue_script(
+	'day-js',
+	get_stylesheet_directory_uri() . '/source/js/third-party/dayjs.min.js',
+	array(),
+	filemtime( get_template_directory() . '/source/js/third-party/dayjs.min.js' ),
 	false
 );
 
@@ -186,10 +193,11 @@ if ( $dat_webinar_start > $dat_now ) {
 					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
 				</p>
 
-				<p class="is-style-max-width-100"><strong>Start date in your local timezone:</strong>
+				<p class="is-style-max-width-100"><strong>Date (localized to your timezone):</strong>
 					<span class="webinar-local-date-time"></span>
 					<script>
 					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ); ?> * 1000;
+					var webinar_ts_end   = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ); ?> * 1000;
 					</script>
 				</p>
 
