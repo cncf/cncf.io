@@ -14,6 +14,6 @@ jQuery( document ).ready(
 		}
 		var dat_start = dayjs( new Date( webinar_ts_start ) );
 		var dat_end   = dayjs( new Date( webinar_ts_end ) );
-		$( '.webinar-local-date-time' ).text( dat_start.format('dddd MMMM D, YYYY, h:mm') + ' - ' + dat_end.format('h:mm A Z') );
+		$( '.webinar-local-date-time' ).text( dat_start.format( 'dddd MMMM D, YYYY, h:mm' ) + ' - ' + dat_end.format( 'h:mm A Z' ) );
 	}
 );
