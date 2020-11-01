@@ -288,9 +288,9 @@
   };
 
   var addCSS = function() {
-    if (!document.getElementById('add-to-calendar-css')) {
-      document.getElementsByTagName('head')[0].appendChild(generateCSS());
-    }
+    // if (!document.getElementById('add-to-calendar-css')) {
+    //   document.getElementsByTagName('head')[0].appendChild(generateCSS());
+    // }
   };
 
   var generateCSS = function() {
