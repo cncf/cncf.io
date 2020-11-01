@@ -89,8 +89,13 @@ input[type=checkbox].add-to-calendar-checkbox {
 	font-weight: 500;
 	font-size: 14px;
 	text-transform: uppercase;
-	padding: 11px 24px 12px 40px;
+	padding: 14px 24px 14px 40px;
 }
+
+.add-to-calendar-label:hover {
+	background-color: #E43B80;
+}
+
 
 .add-to-calendar-dropdown  {
 	position: absolute;
