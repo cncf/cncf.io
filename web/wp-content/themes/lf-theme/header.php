@@ -27,8 +27,7 @@
 	<link rel="manifest"
 		href="/wp-content/themes/lf-theme/images/site.webmanifest">
 	<link rel="mask-icon"
-		href="/wp-content/themes/lf-theme/images/safari-pinned-tab.svg"
-		color="#de176c">
+		href="/wp-content/themes/lf-theme/images/safari-pinned-tab.svg">
 	<link rel="shortcut icon"
 		href="/wp-content/themes/lf-theme/images/favicon.ico">
 	<meta name="apple-mobile-web-app-title" content="CNCF">
