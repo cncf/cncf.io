@@ -20,6 +20,15 @@ $webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone',
 $dat_webinar_start         = Lf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
 $dat_webinar_end           = Lf_Utils::get_webinar_date_time( $webinar_date, $webinar_end_time, $webinar_end_time_period, $webinar_timezone );
 
+// Get the timezone this way since we lose case otherwise and the Google cal entry won't work.
+$tzlist = DateTimeZone::listIdentifiers( DateTimeZone::ALL );
+$tzs    = array();
+foreach ( $tzlist as $tz ) {
+	$slug         = strtolower( str_replace( '/', '-', $tz ) );
+	$tzs[ $slug ] = $tz;
+}
+$dat_webinar_start_tz = $tzs[ $webinar_timezone ];
+
 // get recording URL.
 $recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
 
@@ -41,6 +50,23 @@ $slides_url = get_post_meta( get_the_ID(), 'lf_webinar_slides_url', true );
 
 // get webinar speakers.
 $speakers = get_post_meta( get_the_ID(), 'lf_webinar_speakers', true );
+
+// enqueue calendar and date js.
+wp_enqueue_script(
+	'add-to-calendar-js',
+	get_stylesheet_directory_uri() . '/source/js/third-party/add-to-calendar.js',
+	array(),
+	filemtime( get_template_directory() . '/source/js/third-party/add-to-calendar.js' ),
+	false
+);
+wp_enqueue_script(
+	'day-js',
+	get_stylesheet_directory_uri() . '/source/js/third-party/dayjs.min.js',
+	array(),
+	filemtime( get_template_directory() . '/source/js/third-party/dayjs.min.js' ),
+	false
+);
+
 
 // date period.
 if ( $dat_webinar_start > $dat_now ) {
@@ -162,12 +188,18 @@ if ( $dat_webinar_start > $dat_now ) {
 				<?php endif; ?>
 
 
-				<p><strong>Date:</strong>
-					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>
+				<p class="is-style-max-width-100"><strong>Date:</strong>
+					<?php echo esc_html( $dat_webinar_start->format( 'l F jS, Y' ) ); ?>,
+					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
 				</p>
 
-				<p><strong>Time:</strong>
-					<?php echo esc_html( $dat_webinar_start->format( 'g:i' ) . ' - ' . $dat_webinar_end->format( 'g:i A T' ) ); ?>
+				<p class="is-style-max-width-100 webinar-local-date-time"><strong>Date (localized to your timezone):</strong>
+					<span></span>
+					<script>
+					var webinar_ts_start = <?php echo esc_html( $dat_webinar_start->format( 'U' ) ); ?> * 1000;
+					var webinar_ts_end   = <?php echo esc_html( $dat_webinar_end->format( 'U' ) ); ?> * 1000;
+					var webinar_tz       = '<?php echo esc_html( $dat_webinar_end->format( 'O' ) ); ?>';
+					</script>
 				</p>
 
 				<p><strong>How to attend:</strong>
@@ -181,6 +213,15 @@ if ( $dat_webinar_start > $dat_now ) {
 						Registration link coming soon
 						<?php endif; ?>
 				</p>
+
+				<div title="Add to Calendar" class="add-to-calendar">
+					<span class="start"><?php echo esc_html( $dat_webinar_start->format( 'm/d/Y g:i A' ) ); ?></span>
+					<span class="timezone"><?php echo esc_html( $dat_webinar_start_tz ); ?></span>
+					<span class="end"><?php echo esc_html( $dat_webinar_end->format( 'm/d/Y g:i A' ) ); ?></span>
+					<span class="title">CNCF webinar: <?php the_title(); ?></span>
+					<span class="description">Webinar details: <?php the_permalink(); ?></span>
+				</div>
+
 			</div>
 			<?php endif; ?>
 
