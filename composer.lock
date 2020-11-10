@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "bca07fafdf018af0b4090e4eca73fb8e87ff917d"
+                "reference": "aa1a6d83686281ec3829dc63f880fe6bc3f6bf6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/bca07fafdf018af0b4090e4eca73fb8e87ff917d",
-                "reference": "bca07fafdf018af0b4090e4eca73fb8e87ff917d",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/aa1a6d83686281ec3829dc63f880fe6bc3f6bf6c",
+                "reference": "aa1a6d83686281ec3829dc63f880fe6bc3f6bf6c",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2020-10-15T20:40:26+00:00"
+            "time": "2020-11-10T07:20:26+00:00"
         },
         {
             "name": "composer/installers",
@@ -623,15 +623,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-twitter-feeds",
-            "version": "1.6",
+            "version": "1.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-twitter-feeds/",
-                "reference": "tags/1.6"
+                "reference": "tags/1.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.6.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -881,12 +881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "065a018d3b5c2c84a53db3347cca4e1b7fa362a6"
+                "reference": "e440567339d5fe93d9525e377c5e686b0b08bcca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/065a018d3b5c2c84a53db3347cca4e1b7fa362a6",
-                "reference": "065a018d3b5c2c84a53db3347cca4e1b7fa362a6",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e440567339d5fe93d9525e377c5e686b0b08bcca",
+                "reference": "e440567339d5fe93d9525e377c5e686b0b08bcca",
                 "shasum": ""
             },
             "conflict": {
@@ -1184,7 +1184,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-01T20:01:47+00:00"
+            "time": "2020-11-07T16:07:08+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
