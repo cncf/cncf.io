@@ -37,7 +37,7 @@ if ( $query->have_posts() ) : ?>
 		}
 	} else {
 		// get total list of webinars.
-		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_date' and meta_value >= CURDATE();" );
+		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_date' and meta_value >= DATE(DATE_SUB(NOW(), INTERVAL 7 HOUR));" );
 
 		// if filter matches all webinars.
 		if ( $full_count == $query->found_posts ) {
