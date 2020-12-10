@@ -42,7 +42,8 @@
     "wpackagist-plugin/ultimate-member": "^2.1.2",
     "wpackagist-plugin/um-recaptcha": "^2.1.4",
     "wpackagist-plugin/wp-mail-smtp": "^2.0.1",
-	"wpackagist-plugin/wp-native-php-sessions": "^1.0.0"
+    "wpackagist-plugin/leadin":"^7.48.24",
+	  "wpackagist-plugin/wp-native-php-sessions": "^1.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
