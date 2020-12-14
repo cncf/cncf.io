@@ -1,8 +1,4 @@
 .searchandfilter {
-    @media (min-width: 1000px) {
-        height: 60px;
-    }
-
     >ul {
         height: 100%;
         margin: 0; // reset
@@ -58,10 +54,7 @@
 
 .results-count {
     margin-bottom: 1rem;
-
-    @media (max-width: 599px) {
-        margin-top: 1rem;
-    }
+    margin-top: 1rem;
 }
 
 .search-filter-reset {
