@@ -51,6 +51,7 @@ var mmq = require("gulp-merge-media-queries");
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
+var plumber = require('gulp-plumber');
 
 /** JS plugins */
 var concat = require("gulp-concat");
@@ -100,8 +101,20 @@ function watch() {
  * SASS to CSS tasks
  */
 function styles() {
+
+  const onError = function(err) {
+		notify.onError({
+			title:    "Gulp Error",
+			subtitle: "CSS issue",
+			message:  "<%= error.message %>",
+			sound:    true
+		})(err);
+		this.emit('end');
+  };
+
     return gulp
         .src(styleSRC)
+        .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
         .pipe(
             sass({
@@ -110,7 +123,6 @@ function styles() {
                 precision: 10
             })
         )
-        .on("error",console.error.bind(console))
         .pipe(
             sourcemaps.write({
                 includeContent: false
@@ -151,6 +163,7 @@ function styles() {
           cssnano
         ]))
         .pipe(lineec())
+        .pipe(plumber.stop())
         .pipe(gulp.dest(styleDestination))
         .pipe(filter("**/*.css"))
         .pipe(browserSync.stream())

@@ -64,5 +64,7 @@
         "prettier": "^2.0.5",
         "socket.io": "^2.3.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "gulp-plumber": "^1.2.1"
+    }
 }
