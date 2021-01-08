@@ -53,6 +53,7 @@
 #editor {
     .editor-styles-wrapper {
 
+        // this affects some styles above, do we need it?
         h1,
         h2,
         h3,
@@ -61,8 +62,6 @@
         h6 {
             margin-bottom: 0.5rem;
         }
-
-
     }
 }
 
@@ -71,15 +70,48 @@
     max-width: 100%;
 }
 
+// constraining all blocks in the center.
 .block-editor-writing-flow {
-    max-width: 1150px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 
+// unset margins, so they don't center.
 .block-editor-block-list__layout .wp-block:not(.wp-block-button) {
     margin-left: unset;
     margin-right: unset;
+}
+
+// full block layout.
+.editor-styles-wrapper .block-editor__typewriter .block-editor-block-list__layout.is-root-container>.wp-block[data-align="full"] {
+    margin-left: calc(-100vw / 2 + 1080px / 2);
+    margin-right: calc(-100vw / 2 + 1080px / 2);
+}
+
+// wide block layout.
+.editor-styles-wrapper .block-editor__typewriter .block-editor-block-list__layout.is-root-container>.wp-block[data-align="wide"] {
+
+    @media (min-width: 800px) {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    @media (min-width: 1000px) {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1200px;
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+
+    @media (min-width: 1440px) {
+        margin-left: -100px;
+        margin-right: -100px;
+    }
 }
 
 // Fix the font in the editor.
@@ -100,14 +132,22 @@
     font-family: $font-primary !important;
 }
 
+// style links same as frontend.
 #editor .editor-styles-wrapper a {
     color: $primary-color;
+    text-decoration: none;
+}
+
+// style paragraphs same as frontend.
+p.is-style-default {
+    max-width: 700px;
 }
 
 // Add padding to make more easily selectable.
 .wp-block-group,
 .wp-block-columns {
-    padding: 1em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 // stop ridiculous dropcap in paragraph preview.
@@ -160,39 +200,16 @@
     width: 100vw;
 }
 
-// block using alignwide include:
-// case study overview
-// .alignwide:not(.wp-block-gallery) {
-//     width: 100%;
+// Make SVGs fill containers unless resized (Safe SVG related).
+.wp-block-image:not(.is-resized) img[src$=".svg"] {
+    width: 100%;
+    height: auto;
+}
 
-//     @media (min-width: 800px) {
-//         width: 100vw;
-//         position: relative;
-//         left: 50%;
-//         right: 50%;
-//         margin-left: -50vw;
-//         margin-right: -50vw;
-
-//         >* {
-//             max-width: 1000px;
-//             margin-left: auto;
-//             margin-right: auto;
-//             padding-left: 4em;
-//             padding-right: 4em;
-//         }
-//     }
-// }
-
+// For hero image positioning in div container.
 .background-image-wrapper {
     overflow: hidden;
     position: relative;
-}
-
-figure {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
 }
 
 .background-image-figure img {
@@ -220,13 +237,7 @@ body.wp-admin div.pmc-sidebar ::placeholder {
     color: #c4c4c4;
 }
 
-// Make SVGs fill containers (Safe SVG related).
-img[src$=".svg"] {
-    width: 100%;
-    height: auto;
-}
-
-/* hides the hide pre-publish checklist option */
+// hides the hide pre-publish checklist option.
 .editor-post-publish-panel__footer {
     display: none;
 }

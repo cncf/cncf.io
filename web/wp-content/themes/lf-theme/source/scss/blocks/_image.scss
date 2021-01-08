@@ -22,12 +22,8 @@
     }
 }
 
-.wp-block-image.is-resized {
+.wp-block-image:not(.is-resized) {
     width: 100%;
-
-    img[src$=".svg"] {
-        width: initial;
-    }
 }
 
 figcaption {

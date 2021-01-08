@@ -60,12 +60,6 @@ img {
     height: auto;
 }
 
-// // Make SVGs fill containers (Safe SVG related).
-// img[src$=".svg"] {
-//     width: 100%;
-//     height: auto;
-// }
-
 .button {
     // copied from Gutenberg.
     border: 0; // reset
@@ -226,13 +220,6 @@ img {
     position: relative;
 }
 
-figure {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
-
 .background-image-figure {
     img {
         width: 100%;
@@ -295,7 +282,8 @@ figure {
     }
 }
 
-a.skew-box.secondary, a.skew-box.centered {
+a.skew-box.secondary,
+a.skew-box.centered {
     color: $white;
     text-decoration: none;
     font-weight: 400;
