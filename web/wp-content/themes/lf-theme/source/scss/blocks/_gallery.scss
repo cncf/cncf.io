@@ -25,13 +25,13 @@
         }
 
         .blocks-gallery-item__caption {
-            position: static;
-            padding: 0.5rem 1rem;
+            position: unset;
             font-size: 0.8em;
             font-weight: 400;
             font-style: italic;
             text-align: left;
-            background: transparent;
+            padding: 0.5rem 1rem;
+            background: $white;
             color: $black;
         }
     }
@@ -42,7 +42,12 @@
         margin-bottom: calc(4rem - 1rem);
         width: 100%;
     }
+}
 
+// As we put caption outside the image, we don't want it to grow.
+.blocks-gallery-grid figcaption,
+.wp-block-gallery figcaption {
+    flex-grow: 0;
 }
 
 .blocks-gallery-grid {

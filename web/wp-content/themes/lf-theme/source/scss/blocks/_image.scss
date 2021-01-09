@@ -26,8 +26,17 @@
     width: 100%;
 }
 
-figcaption {
+%caption-base {
     font-size: 0.8em;
     font-weight: 400;
     font-style: italic;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    background: $white;
+    color: $black;
+}
+
+// applies to all captions including Gallery.
+figcaption {
+    @extend %caption-base;
 }
