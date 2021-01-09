@@ -139,7 +139,8 @@
 }
 
 // style paragraphs same as frontend.
-p.is-style-default {
+p.is-style-default,
+p[data-type="core/paragraph"] {
     max-width: 700px;
 }
 
