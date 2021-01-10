@@ -170,7 +170,7 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    max-width: 1150px;
+    max-width: 1186px;
 
     @media (min-width: 1200px) {
         padding: 0;
@@ -871,7 +871,8 @@ div.row .col.section-title {
 
 .annual-report-page .annual-report-sidebar h2 {
     text-align: left;
-    font-size: 32px
+    font-size: 32px;
+    font-weight: 500;
 }
 
 .annual-report-page .annual-report-sidebar .nav-items {

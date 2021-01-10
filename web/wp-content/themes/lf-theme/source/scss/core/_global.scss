@@ -28,6 +28,7 @@ body {
     overflow-x: hidden;
 }
 
+// default content container.
 .container {
     width: 100%;
     max-width: 1050px;
@@ -35,11 +36,11 @@ body {
 
 }
 
+// used by navigation and full width template.
 .container-full-width {
     width: 100%;
     max-width: 1250px;
     margin: auto;
-
 }
 
 .wrap {
