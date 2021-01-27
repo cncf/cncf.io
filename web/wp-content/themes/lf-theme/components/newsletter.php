@@ -12,6 +12,8 @@
 	<h3>Subscribe to the CNCF newsletter to receive regular updates about
 		webinars, events & latest news</h3>
 
+	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=afe5f966-bae5-4fce-bd5d-84f7ae89111b]' ); ?>
+
 	<form id="sfmc-form1" class="newsletter-form"
 		action="https://cloud.email.thelinuxfoundation.org/CNCF-Newsletter-Subscriber-Form">
 		<label for="FirstName" required>
