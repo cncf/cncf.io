@@ -47,8 +47,15 @@
         @import "blocks/latest-jobs";
         @import 'blocks/stats';
         @import "blocks/media-text";
+
+
     }
 }
+
+// Editor
+@import 'editor/outlines';
+@import 'editor/alignment';
+
 
 #editor {
     .editor-styles-wrapper {
@@ -62,55 +69,6 @@
         h6 {
             margin-bottom: 0.5rem;
         }
-    }
-}
-
-// Fixing alignment for blocks in editor.
-.wp-block {
-    max-width: 100%;
-}
-
-// constraining all blocks in the center.
-.block-editor-writing-flow {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-// unset margins, so they don't center.
-.block-editor-block-list__layout .wp-block:not(.wp-block-button) {
-    margin-left: unset;
-    margin-right: unset;
-}
-
-// full block layout.
-.editor-styles-wrapper .block-editor__typewriter .block-editor-block-list__layout.is-root-container>.wp-block[data-align="full"] {
-    margin-left: calc(-100vw / 2 + 1080px / 2);
-    margin-right: calc(-100vw / 2 + 1080px / 2);
-}
-
-// wide block layout.
-.editor-styles-wrapper .block-editor__typewriter .block-editor-block-list__layout.is-root-container>.wp-block[data-align="wide"] {
-
-    @media (min-width: 800px) {
-        margin-left: -10px;
-        margin-right: -10px;
-    }
-
-    @media (min-width: 1000px) {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
-
-    @media (min-width: 1200px) {
-        max-width: 1200px;
-        margin-left: -30px;
-        margin-right: -30px;
-    }
-
-    @media (min-width: 1440px) {
-        margin-left: -100px;
-        margin-right: -100px;
     }
 }
 
@@ -136,12 +94,6 @@
 #editor .editor-styles-wrapper a {
     color: $primary-color;
     text-decoration: none;
-}
-
-// style paragraphs same as frontend.
-p.is-style-default,
-p[data-type="core/paragraph"] {
-    max-width: 700px;
 }
 
 // Add padding to make more easily selectable.
@@ -192,14 +144,14 @@ p[data-type="core/paragraph"] {
 }
 
 // Gutenberg style to break out of page container.
-.alignfull {
-    position: relative;
-    right: 50%;
-    left: 50%;
-    margin-right: -50vw;
-    margin-left: -50vw;
-    width: 100vw;
-}
+// .alignfull {
+    //     position: relative;
+    //     right: 50%;
+    //     left: 50%;
+    //     margin-right: -50vw;
+    //     margin-left: -50vw;
+    //     width: 100vw;
+    // }
 
 // Make SVGs fill containers unless resized (Safe SVG related).
 .wp-block-image:not(.is-resized) img[src$=".svg"] {

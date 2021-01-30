@@ -328,8 +328,16 @@
 
                 // activate menu flyout on hover.
                 &:hover>ul,
-                &:focus>ul,
-                &.focus>ul {
+                &:focus>ul {
+                    left: -1em;
+                    top: 100%;
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+                    overflow: visible;
+                }
+
+                &:focus-within>ul {
                     left: -1em;
                     top: 100%;
                     opacity: 1;
@@ -426,8 +434,20 @@
 
                 // sub sub menu
                 &:hover>ul,
-                &:focus>ul,
-                &.focus>ul {
+                &:focus>ul {
+                    box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.3);
+                    left: calc(100% + 0em);
+                    top: 0;
+                    background: $menu-desktop-submenu-submenu;
+                    overflow: visible;
+
+                    // fixes icons
+                    a {
+                        display: flex;
+                    }
+                }
+
+                &:focus-within>ul {
                     box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.3);
                     left: calc(100% + 0em);
                     top: 0;

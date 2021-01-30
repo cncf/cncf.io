@@ -1,0 +1,100 @@
+// Fixing alignment for blocks in editor.
+.wp-block {
+    max-width: 100%;
+
+    @media (min-width: 1200px) {
+
+        &[data-align="wide"],
+        &[data-align="full"] {
+            .block-editor-block-list__block .block-editor-block-list__block {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .block-editor-block-list__block .block-editor-block-list__block:not([data-type="core/paragraph"]) {
+                max-width: 1000px;
+            }
+
+            .block-editor-block-list__block .block-editor-block-list__block[data-type="core/paragraph"] {
+                margin-left: unset;
+                margin-right: unset;
+            }
+
+
+        }
+    }
+}
+
+// constraining all blocks in the center.
+.block-editor-writing-flow {
+    @media (min-width: 1200px) {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+// unset margins, so they don't center.
+.block-editor-block-list__layout .wp-block:not(.wp-block-button) {
+    margin-left: unset;
+    margin-right: unset;
+}
+
+.block-editor #editor .editor-styles-wrapper .wp-block {
+
+    // WIDE ALIGNMENT.
+    &[data-align="wide"] {
+
+        // @media (min-width: 800px) {
+        //     margin-left: -10px;
+        //     margin-right: -10px;
+        // }
+
+        // @media (min-width: 1000px) {
+        //     margin-left: -15px;
+        //     margin-right: -15px;
+        // }
+
+        @media (min-width: 1200px) {
+            max-width: 1200px;
+            margin-left: -30px;
+            margin-right: -30px;
+        }
+
+        @media (min-width: 1420px) {
+            margin-left: -50px;
+            margin-right: -50px;
+        }
+    }
+
+    // FULL ALIGNMENT.
+    &[data-align="full"] {
+        // @media (min-width: 800px) {
+        //     margin-left: -25px;
+        //     margin-right: -25px;
+        // }
+
+        // @media (min-width: 1000px) {
+        //     margin-left: -30px;
+        //     margin-right: -30px;
+        // }
+
+        @media (min-width: 1200px) {
+            max-width: 1200px;
+            margin-left: -45px;
+            margin-right: -45px;
+        }
+
+        @media (min-width: 1420px) {
+            margin-left: -85px;
+            margin-right: -85px;
+        }
+    }
+}
+
+// style paragraphs same as frontend.
+p.is-style-default,
+p[data-type="core/paragraph"] {
+    max-width: 700px;
+}
