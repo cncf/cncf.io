@@ -12,9 +12,9 @@
 // apply external icon inside main nav - white icon (default)
 .site-navigation .main-navigation {
 
-    a[href^="http://"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
-    a[href^="https://"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]):not([href^="https://cncfci"]),
-    a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf.io"]):not([href^="//localhost"]):not([href^="//dev-cncf"]) {
+    a[href^="http://"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]):not([href$=".pdf"]),
+    a[href^="https://"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]):not([href^="https://cncfci"]):not([href$=".pdf"]),
+    a[href^="//"]:not([href^="//www.cncf.io"]):not([href^="//cncf.io"]):not([href^="//localhost"]):not([href^="//dev-cncf"]):not([href$=".pdf"]) {
 
         &::after {
             @include externalIcon;
@@ -72,13 +72,13 @@
 }
 
 // PDF icon, needs specificty to override external link.
-.site-header .site-navigation .main-navigation,
+.site-navigation .main-navigation,
 .wp-block-buttons {
 
-    a[href^="http://"][href$=".pdf"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
-    a[href^="https://"][href$=".pdf"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]),
-    a[href^="//"][href$=".pdf"]:not([href^="//www.cncf.io"]):not([href^="//cncf.io"]):not([href^="//localhost"]):not([href^="//dev-cncf"]),
-    a[href$=".pdf"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]) {
+    a[href^="http://"][href$=".pdf"],
+    a[href^="https://"][href$=".pdf"],
+    a[href^="//"][href$=".pdf"],
+    a[href$=".pdf"] {
         display: flex;
         align-items: center;
 
