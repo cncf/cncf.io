@@ -84,111 +84,121 @@ function add_projects_shortcode( $atts ) {
 
 			?>
 	<div class="project-box">
-		<!-- thumbnail  -->
 			<?php
-			if ( $external_url ) :
+			if ( $external_url ) {
 				?>
-				<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank" title="<?php echo esc_html( the_title() . $date_accepted ); ?>">
+		<a href="<?php echo esc_url( $external_url ); ?>" rel="noopener"
+			target="_blank"
+			title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
+			class="project-thumbnail-container">
 				<?php
-				endif;
-
+			} else {
+				?>
+			<div class="project-thumbnail-container">
+				<?php
+			}
 			if ( has_post_thumbnail() ) {
 				echo wp_get_attachment_image( get_post_thumbnail_id(), false, false, array( 'class' => 'project-thumbnail' ) );
 			} else {
 				?>
-		<img src="https://via.placeholder.com/100x100/d9d9d9/000000" alt=""
-			class="project-thumbnail">
+				<img src="<?php $image->get_svg( 'cncf-project-icon.svg', true ); ?>"
+					title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
+					class="project-thumbnail">
 				<?php
 			}
-			if ( $external_url ) :
+			if ( $external_url ) {
 				?>
-				</a>
-			<?php endif; ?>
-
-		<h3 class="project-title">
+		</a>
+		<?php } else { ?>
+	</div>
+				<?php
+		}
+		?>
+	<h3 class="project-title">
 
 			<?php if ( $external_url ) : ?>
-		<a href="<?php echo esc_url( $external_url ); ?>"  rel="noopener" target="_blank" title="Visit <?php the_title(); ?>">
+		<a href="<?php echo esc_url( $external_url ); ?>" rel="noopener"
+			target="_blank" title="Visit <?php the_title(); ?>">
 				<?php
 		endif;
 			the_title();
 			if ( $external_url ) :
 				?>
-			</a>
-			<?php endif; ?>
-
-		</h3>
-
-			<?php if ( $project_category ) : ?>
-		<span class="project-category">
-				<?php echo esc_html( $project_category ); ?></span>
+		</a>
 		<?php endif; ?>
 
-		<div class="project-icons">
+	</h3>
+
+			<?php if ( $project_category ) : ?>
+	<span class="project-category">
+				<?php echo esc_html( $project_category ); ?></span>
+	<?php endif; ?>
+
+	<div class="project-icons">
 
 			<?php if ( $github ) : ?>
-			<a title="<?php the_title(); ?> on Github"
-				href="<?php echo esc_html( $github ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/github.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> on Github"
+			href="<?php echo esc_html( $github ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/github.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $devstats ) : ?>
-			<a title="<?php the_title(); ?> on DevStats"
-				href="<?php echo esc_html( $devstats ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/lf-devstats.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> on DevStats"
+			href="<?php echo esc_html( $devstats ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/lf-devstats.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $logos ) : ?>
-			<a title="<?php the_title(); ?> Logos"
-				href="<?php echo esc_html( $logos ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/lf-artwork.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> Logos"
+			href="<?php echo esc_html( $logos ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/lf-artwork.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $stack_overflow ) : ?>
-			<a title="<?php the_title(); ?> on Stack Overflow"
-				href="<?php echo esc_html( $stack_overflow ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/stack-overflow.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> on Stack Overflow"
+			href="<?php echo esc_html( $stack_overflow ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/stack-overflow.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $twitter ) : ?>
-			<a title="<?php the_title(); ?> on Twitter"
-				href="<?php echo esc_html( $twitter ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/twitter.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> on Twitter"
+			href="<?php echo esc_html( $twitter ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/twitter.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $blog ) : ?>
-			<a title="<?php the_title(); ?> Blog"
-				href="<?php echo esc_html( $blog ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/blog.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> Blog"
+			href="<?php echo esc_html( $blog ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/blog.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $mail ) : ?>
-			<a title="<?php the_title(); ?> Contact"
-				href="<?php echo esc_html( $mail ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/email.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> Contact"
+			href="<?php echo esc_html( $mail ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/email.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $slack ) : ?>
-			<a title="<?php the_title(); ?> Slack"
-				href="<?php echo esc_html( $slack ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/slack.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> Slack"
+			href="<?php echo esc_html( $slack ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/slack.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $youtube ) : ?>
-			<a title="<?php the_title(); ?> on YouTube"
-				href="<?php echo esc_html( $youtube ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/youtube.svg' ); ?></a>
-			<?php endif; ?>
+		<a title="<?php the_title(); ?> on YouTube"
+			href="<?php echo esc_html( $youtube ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/youtube.svg' ); ?></a>
+		<?php endif; ?>
 
 			<?php if ( $gitter ) : ?>
-			<a title="<?php the_title(); ?> on Gitter"
-				href="<?php echo esc_html( $gitter ); ?>"
-				 rel="noopener" target="_blank"><?php $image->get_svg( '/social/gitter.svg' ); ?></a>
-			<?php endif; ?>
-
-		</div>
+		<a title="<?php the_title(); ?> on Gitter"
+			href="<?php echo esc_html( $gitter ); ?>" rel="noopener"
+			target="_blank"><?php $image->get_svg( '/social/gitter.svg' ); ?></a>
+		<?php endif; ?>
 
 	</div>
+
+</div>
 			<?php
 		endwhile;
 		wp_reset_postdata();
