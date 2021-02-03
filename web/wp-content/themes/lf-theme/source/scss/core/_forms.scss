@@ -36,7 +36,8 @@ input[type="search"] {
 
 // make selectbox the same on all devices.
 .select-css,
-.gfield_select {
+.gfield_select,
+.hs-form select {
     display: block;
     font-weight: 500;
     color: #444;
@@ -199,11 +200,6 @@ body.um-page-user,
     }
 }
 
-// Hides the Recaptcha badge.
-.grecaptcha-badge {
-    visibility: hidden;
-}
-
 // Gravity Forms.
 .gform_confirmation_wrapper {
     border: 2px solid $success;
@@ -302,7 +298,6 @@ body .gform_wrapper form .top_label {
     }
 }
 
-
 .search-button-align {
     display: flex;
     align-items: baseline;
@@ -327,7 +322,6 @@ body .gform_wrapper form .top_label {
         display: block;
         margin: 0 0.5rem 0 0;
         padding: 0;
-        vertical-align: middle;
         width: 1.25rem;
         height: 1.25rem;
         transform: translate3d(0, 0, 0);
