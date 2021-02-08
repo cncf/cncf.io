@@ -143,6 +143,10 @@
         font-weight: 600;
         border: 2px solid green;
     }
+
+    .submitted-message p {
+        max-width: none;
+    }
 }
 
 
