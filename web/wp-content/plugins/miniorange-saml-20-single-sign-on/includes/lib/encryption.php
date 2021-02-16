@@ -3,23 +3,23 @@
 
 class AESEncryption
 {
-    public static function encrypt_data($rL, $ld)
+    public static function encrypt_data($uY, $uZ)
     {
-        $ld = openssl_digest($ld, "\x73\150\x61\x32\x35\x36");
-        $R2 = "\x41\105\x53\x2d\61\x32\70\x2d\105\103\102";
-        $ou = openssl_encrypt($rL, $R2, $ld, OPENSSL_RAW_DATA || OPENSSL_ZERO_PADDING);
-        return base64_encode($ou);
+        $uZ = openssl_digest($uZ, "\x73\150\x61\x32\65\x36");
+        $Vp = "\x41\x45\x53\x2d\x31\62\x38\x2d\x45\x43\x42";
+        $gb = openssl_encrypt($uY, $Vp, $uZ, OPENSSL_RAW_DATA || OPENSSL_ZERO_PADDING);
+        return base64_encode($gb);
     }
-    public static function decrypt_data($rL, $ld)
+    public static function decrypt_data($uY, $uZ)
     {
-        $G6 = base64_decode($rL);
-        $ld = openssl_digest($ld, "\x73\x68\x61\x32\65\66");
-        $R2 = "\101\105\123\55\61\x32\70\55\105\103\102";
-        $IC = openssl_cipher_iv_length($R2);
-        $Xn = substr($G6, 0, $IC);
-        $rL = substr($G6, $IC);
-        $jW = openssl_decrypt($rL, $R2, $ld, OPENSSL_RAW_DATA || OPENSSL_ZERO_PADDING, $Xn);
-        return $jW;
+        $VN = base64_decode($uY);
+        $uZ = openssl_digest($uZ, "\163\x68\x61\x32\x35\x36");
+        $Vp = "\101\105\123\55\61\x32\x38\x2d\x45\x43\x42";
+        $qR = openssl_cipher_iv_length($Vp);
+        $ML = substr($VN, 0, $qR);
+        $uY = substr($VN, $qR);
+        $Jq = openssl_decrypt($uY, $Vp, $uZ, OPENSSL_RAW_DATA || OPENSSL_ZERO_PADDING, $ML);
+        return $Jq;
     }
 }
 ?>

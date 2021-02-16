@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\x50\x49\x4e\103")) {
-    goto Bp;
+if (defined("\x57\120\111\x4e\x43")) {
+    goto Wk;
 }
 die;
-Bp:
+Wk:

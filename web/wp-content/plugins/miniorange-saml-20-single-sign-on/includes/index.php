@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\120\x49\116\x43")) {
-    goto Tg;
+if (defined("\127\120\x49\x4e\x43")) {
+    goto c8;
 }
 die;
-Tg:
+c8:

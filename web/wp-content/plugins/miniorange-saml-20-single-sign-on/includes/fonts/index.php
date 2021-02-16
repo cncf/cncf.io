@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\120\111\116\x43")) {
-    goto MN;
+if (defined("\127\120\111\x4e\103")) {
+    goto vF;
 }
 die;
-MN:
+vF:
