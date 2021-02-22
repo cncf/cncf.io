@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\120\111\116\x43")) {
-    goto f1;
+if (defined("\127\x50\111\116\103")) {
+    goto SN;
 }
 die;
-f1:
+SN:

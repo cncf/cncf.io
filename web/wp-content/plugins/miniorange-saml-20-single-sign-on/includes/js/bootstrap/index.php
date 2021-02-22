@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\120\x49\x4e\103")) {
-    goto rK;
+if (defined("\x57\x50\111\116\103")) {
+    goto Uw;
 }
 die;
-rK:
+Uw:

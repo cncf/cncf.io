@@ -12,54 +12,54 @@ class AssertionChain
     private $defaultPropertyPath;
     private $alwaysValid = false;
     private $all = false;
-    private $assertionClassName = "\101\x73\163\145\162\x74\134\x41\x73\163\x65\x72\x74\x69\x6f\156";
-    public function __construct($g2, $CB = null, $u6 = null)
+    private $assertionClassName = "\x41\x73\163\x65\162\x74\134\101\163\x73\x65\162\x74\151\x6f\156";
+    public function __construct($Ka, $UA = null, $LZ = null)
     {
-        $this->value = $g2;
-        $this->defaultMessage = $CB;
-        $this->defaultPropertyPath = $u6;
+        $this->value = $Ka;
+        $this->defaultMessage = $UA;
+        $this->defaultPropertyPath = $LZ;
     }
-    public function __call($E2, $vP)
+    public function __call($vT, $Gf)
     {
         if (!(true === $this->alwaysValid)) {
-            goto w23;
+            goto T6;
         }
         return $this;
-        w23:
-        if (\method_exists($this->assertionClassName, $E2)) {
-            goto YpQ;
+        T6:
+        if (\method_exists($this->assertionClassName, $vT)) {
+            goto S7;
         }
-        throw new \RuntimeException("\101\x73\x73\x65\x72\x74\151\x6f\x6e\x20\47" . $E2 . "\x27\x20\x64\x6f\145\163\40\156\x6f\x74\40\x65\x78\151\x73\164\56");
-        YpQ:
-        $pa = new ReflectionClass($this->assertionClassName);
-        $R2 = $pa->getMethod($E2);
-        \array_unshift($vP, $this->value);
-        $po = $R2->getParameters();
-        foreach ($po as $xK => $hO) {
-            if (!isset($vP[$xK])) {
-                goto qDm;
+        throw new \RuntimeException("\101\163\x73\145\162\164\151\157\156\40\x27" . $vT . "\47\40\x64\x6f\145\x73\x20\x6e\157\x74\40\145\x78\x69\x73\164\56");
+        S7:
+        $KY = new ReflectionClass($this->assertionClassName);
+        $Vp = $KY->getMethod($vT);
+        \array_unshift($Gf, $this->value);
+        $vW = $Vp->getParameters();
+        foreach ($vW as $Ok => $nT) {
+            if (!isset($Gf[$Ok])) {
+                goto Kp;
             }
-            goto yRE;
-            qDm:
-            if (!("\x6d\x65\x73\x73\x61\147\x65" == $hO->getName())) {
-                goto cM4;
+            goto x3;
+            Kp:
+            if (!("\x6d\145\x73\163\141\147\145" == $nT->getName())) {
+                goto x6;
             }
-            $vP[$xK] = $this->defaultMessage;
-            cM4:
-            if (!("\160\162\x6f\160\145\x72\x74\171\x50\x61\x74\150" == $hO->getName())) {
-                goto fqd;
+            $Gf[$Ok] = $this->defaultMessage;
+            x6:
+            if (!("\x70\x72\157\x70\145\162\x74\171\x50\141\x74\150" == $nT->getName())) {
+                goto IQ;
             }
-            $vP[$xK] = $this->defaultPropertyPath;
-            fqd:
-            yRE:
+            $Gf[$Ok] = $this->defaultPropertyPath;
+            IQ:
+            x3:
         }
-        CSG:
+        bB:
         if (!$this->all) {
-            goto hFh;
+            goto k6;
         }
-        $E2 = "\141\154\154" . $E2;
-        hFh:
-        \call_user_func_array(array($this->assertionClassName, $E2), $vP);
+        $vT = "\x61\154\154" . $vT;
+        k6:
+        \call_user_func_array(array($this->assertionClassName, $vT), $Gf);
         return $this;
     }
     public function all()
@@ -70,25 +70,25 @@ class AssertionChain
     public function nullOr()
     {
         if (!(null === $this->value)) {
-            goto epZ;
+            goto Z6;
         }
         $this->alwaysValid = true;
-        epZ:
+        Z6:
         return $this;
     }
-    public function setAssertionClassName($vw)
+    public function setAssertionClassName($nW)
     {
-        if (\is_string($vw)) {
-            goto MLd;
+        if (\is_string($nW)) {
+            goto G1;
         }
-        throw new LogicException("\105\170\143\145\160\x74\x69\157\156\40\x63\154\x61\x73\x73\x20\156\x61\155\145\40\155\x75\163\x74\40\x62\x65\x20\160\x61\163\x73\x65\x64\x20\x61\163\40\x61\x20\163\x74\x72\x69\156\147");
-        MLd:
-        if (!("\101\163\x73\x65\162\164\134\x41\x73\163\145\x72\164\x69\x6f\156" !== $vw && !\is_subclass_of($vw, "\x41\x73\163\x65\x72\x74\x5c\101\163\x73\x65\x72\x74\151\157\156"))) {
-            goto Y6a;
+        throw new LogicException("\x45\x78\143\x65\x70\x74\151\157\156\x20\x63\x6c\141\x73\x73\40\x6e\x61\155\x65\40\155\165\163\164\x20\x62\145\x20\x70\141\x73\163\145\144\40\141\x73\x20\x61\40\x73\x74\x72\x69\x6e\x67");
+        G1:
+        if (!("\x41\163\163\145\x72\164\134\x41\x73\163\x65\162\164\x69\x6f\x6e" !== $nW && !\is_subclass_of($nW, "\x41\163\x73\x65\162\x74\134\x41\163\x73\x65\162\164\x69\157\156"))) {
+            goto dA;
         }
-        throw new LogicException($vw . "\40\x69\163\x20\x6e\x6f\164\40\50\x61\40\163\x75\x62\x63\154\x61\163\163\x20\157\x66\51\x20\101\163\163\x65\162\164\x5c\101\163\163\x65\162\x74\x69\x6f\x6e");
-        Y6a:
-        $this->assertionClassName = $vw;
+        throw new LogicException($nW . "\40\151\x73\40\156\x6f\164\40\50\x61\40\163\x75\x62\x63\154\141\163\163\40\157\146\x29\40\x41\x73\163\145\162\x74\134\x41\x73\x73\x65\162\164\x69\x6f\156");
+        dA:
+        $this->assertionClassName = $nW;
         return $this;
     }
 }

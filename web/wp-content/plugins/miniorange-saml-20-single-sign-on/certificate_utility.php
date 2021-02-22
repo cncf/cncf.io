@@ -3,22 +3,22 @@
 
 class CertificateUtility
 {
-    public static function generate_certificate($Ns, $kL, $f7)
+    public static function generate_certificate($YV, $sv, $XO)
     {
-        $Xl = openssl_pkey_new();
-        $gu = openssl_csr_new($Ns, $Xl, $kL);
-        $rb = openssl_csr_sign($gu, null, $Xl, $f7, $kL, time());
-        openssl_csr_export($gu, $Nc);
-        openssl_x509_export($rb, $nu);
-        openssl_pkey_export($Xl, $w8);
-        I55:
-        if (!(($A4 = openssl_error_string()) !== false)) {
-            goto rqU;
+        $oc = openssl_pkey_new();
+        $h2 = openssl_csr_new($YV, $oc, $sv);
+        $wJ = openssl_csr_sign($h2, null, $oc, $XO, $sv, time());
+        openssl_csr_export($h2, $d_);
+        openssl_x509_export($wJ, $LG);
+        openssl_pkey_export($oc, $oC);
+        jAl:
+        if (!(($LR = openssl_error_string()) !== false)) {
+            goto lpq;
         }
-        error_log("\103\145\x72\x74\x69\146\151\143\141\x74\x65\125\164\x69\x6c\x69\164\171\72\x20\x45\x72\x72\x6f\162\40\x67\145\x6e\145\162\141\x74\151\156\147\x20\143\x65\x72\x74\x69\x66\x69\143\141\164\145\x2e\40" . $A4);
-        goto I55;
-        rqU:
-        $E7 = array("\160\x75\142\x6c\151\143\x5f\x6b\x65\171" => $nu, "\160\x72\x69\166\x61\x74\x65\x5f\153\x65\171" => $w8);
-        return $E7;
+        error_log("\103\145\x72\x74\x69\146\x69\143\x61\x74\145\125\x74\x69\154\x69\x74\171\x3a\40\105\x72\162\x6f\162\40\147\x65\x6e\x65\x72\x61\x74\x69\x6e\x67\40\x63\x65\162\x74\x69\146\151\x63\x61\164\x65\x2e\x20" . $LR);
+        goto jAl;
+        lpq:
+        $BH = array("\x70\165\x62\154\151\143\x5f\x6b\145\171" => $LG, "\x70\x72\x69\x76\141\x74\x65\137\x6b\145\171" => $oC);
+        return $BH;
     }
 }

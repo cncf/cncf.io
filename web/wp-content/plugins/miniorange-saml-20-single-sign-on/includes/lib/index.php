@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\x57\120\x49\x4e\x43")) {
-    goto s04;
+if (defined("\x57\x50\111\x4e\103")) {
+    goto rEA;
 }
 die;
-s04:
+rEA:

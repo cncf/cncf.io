@@ -582,10 +582,10 @@ function mo_saml_flush_cache() {
 	}
 }
 
-function mo_saml_get_test_url(){
-
-		return home_url(). '/?option=testidpconfig';
-
+function mo_saml_get_test_url($new_cert = false) {
+	$url = home_url() . '/?option=testidpconfig';
+	$new_cert_url = $new_cert?$url.'&newcert=true':$url;
+	return $new_cert_url;
 }
 
 function mo_saml_get_attribute_mapping_url(){
@@ -630,7 +630,7 @@ function Multisite_enabled(){
 	return "<b><font color='red'> disabled </font></b>";
 }
 
-function miniorange_generate_metadata($download = false){
+function miniorange_generate_metadata($download = false,  $new_cert = false){
 
 		$sp_base_url = get_option('mo_saml_sp_base_url');
 		if(empty($sp_base_url)) {
@@ -643,26 +643,46 @@ function miniorange_generate_metadata($download = false){
 		if(empty($sp_entity_id)) {
 			$sp_entity_id = $sp_base_url.'/wp-content/plugins/miniorange-saml-20-single-sign-on/';
 		}
+        $saml_request_signed      = get_option( 'saml_request_signed' ) ? get_option( 'saml_request_signed' ) : 'unchecked';
 
 		$entity_id = $sp_entity_id;
 		$acs_url = $sp_base_url . '/';
-		$certificate = file_get_contents( plugin_dir_path(__FILE__) . 'resources' . DIRECTORY_SEPARATOR . 'sp-certificate.crt' );
+		if($new_cert) {
+            $certificate = file_get_contents(plugin_dir_path(__FILE__) . 'resources' . DIRECTORY_SEPARATOR . 'miniorange_sp_2020.crt');
+        } else {
+            $certificate = get_option( 'mo_saml_current_cert' );
+        }
+		$validUntilDate = SAMLSPUtilities::getValidUntilDateFromCert($certificate);
 		$certificate = SAMLSPUtilities::desanitize_certificate($certificate);
-
-		header('Content-Type: text/xml');
-		if($download)
-			header('Content-Disposition: attachment; filename="mo-saml-sp-metadata.xml"');
+        if(ob_get_contents())
+            ob_clean();
+		header( 'Content-Type: text/xml' );
+		if($download){
+		    if($new_cert)
+                header('Content-Disposition: attachment; filename="mo-saml-sp-new-metadata.xml"');
+		    else
+                header('Content-Disposition: attachment; filename="mo-saml-sp-metadata.xml"');
+        }
 		echo '<?xml version="1.0"?>
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" validUntil="2020-10-28T23:59:59Z" cacheDuration="PT1446808792S" entityID="' . $entity_id . '">
-  <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-    <md:KeyDescriptor use="signing">
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" validUntil="'.$validUntilDate.'" cacheDuration="PT1446808792S" entityID="' . $entity_id . '">
+  <md:SPSSODescriptor AuthnRequestsSigned="';
+
+    if($saml_request_signed == 'checked')
+        echo 'true';
+    else
+        echo 'false';
+
+    echo '" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">';
+    if($saml_request_signed == 'checked') {
+        echo '<md:KeyDescriptor use="signing">
       <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <ds:X509Data>
           <ds:X509Certificate>' . $certificate . '</ds:X509Certificate>
         </ds:X509Data>
       </ds:KeyInfo>
-    </md:KeyDescriptor>
-    <md:KeyDescriptor use="encryption">
+    </md:KeyDescriptor>';
+    }
+    echo '<md:KeyDescriptor use="encryption">
       <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <ds:X509Data>
           <ds:X509Certificate>' . $certificate . '</ds:X509Certificate>
@@ -682,11 +702,11 @@ function miniorange_generate_metadata($download = false){
   </md:Organization>
   <md:ContactPerson contactType="technical">
     <md:GivenName>miniOrange</md:GivenName>
-    <md:EmailAddress>info@miniorange.com</md:EmailAddress>
+    <md:EmailAddress>info@xecurify.com</md:EmailAddress>
   </md:ContactPerson>
   <md:ContactPerson contactType="support">
     <md:GivenName>miniOrange</md:GivenName>
-    <md:EmailAddress>info@miniorange.com</md:EmailAddress>
+    <md:EmailAddress>info@xecurify.com</md:EmailAddress>
   </md:ContactPerson>
 </md:EntityDescriptor>';
 		exit;

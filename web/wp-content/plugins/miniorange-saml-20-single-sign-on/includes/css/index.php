@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\120\111\116\x43")) {
-    goto Yl;
+if (defined("\x57\120\x49\x4e\103")) {
+    goto Rp;
 }
 die;
-Yl:
+Rp:

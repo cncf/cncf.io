@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\x50\x49\x4e\x43")) {
-    goto bM;
+if (defined("\x57\x50\x49\x4e\x43")) {
+    goto yK;
 }
 die;
-bM:
+yK:

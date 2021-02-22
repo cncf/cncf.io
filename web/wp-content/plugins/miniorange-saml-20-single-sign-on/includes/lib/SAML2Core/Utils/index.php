@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\x57\x50\111\116\103")) {
-    goto AF6;
+if (defined("\127\x50\111\x4e\x43")) {
+    goto keW;
 }
 die;
-AF6:
+keW:

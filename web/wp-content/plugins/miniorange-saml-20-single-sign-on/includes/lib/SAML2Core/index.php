@@ -1,8 +1,8 @@
 <?php
 
 
-if (defined("\127\x50\x49\116\103")) {
-    goto IuT;
+if (defined("\x57\x50\x49\116\103")) {
+    goto nX;
 }
 die;
-IuT:
+nX:
