@@ -44,7 +44,7 @@ $spotlight_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-spotlight-typ
 			?>
 		</span></p>
 
-		<div class="entry-content">
+		<div class="entry-content post-content">
 			<?php the_content(); ?>
 		</div>
 
