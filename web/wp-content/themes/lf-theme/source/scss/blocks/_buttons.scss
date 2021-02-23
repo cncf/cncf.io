@@ -1,68 +1,66 @@
 // Button styling
 .wp-block-button__link {
-    border: 0; // reset
-    border-radius: 0 !important;
-    width: auto;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: $font-primary;
+	border: 0; // reset
+	border-radius: 0 !important;
+	width: auto;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: $font-primary;
 
-    &:hover {
-        text-decoration: none;
-    }
+	&:hover {
+		text-decoration: none;
+	}
 
-    &:visited {
-        color: $white;
-    }
+	&:visited {
+		color: $white;
+	}
 
-    &:not(.has-text-color) {
-        color: $white;
+	&:not(.has-text-color) {
+		color: $white;
 
-        &:hover {
-            color: $white;
-        }
+		&:hover {
+			color: $white;
+		}
 
-        &:visited {
-            color: $white;
-        }
-    }
+		&:visited {
+			color: $white;
+		}
+	}
 
-    &:not(.has-background) {
-        background-color: $default;
+	&:not(.has-background) {
+		background-color: $default;
 
-        &:hover,
-        &:focus {
-            background-color: lighten($default, 5%);
-        }
-    }
+		&:hover,
+		&:focus {
+			background-color: lighten($default, 5%);
+		}
+	}
 
-    // setup all possible combinations using color.scss variables.
-    @each $name,
-    $color in $colors {
+	// setup all possible combinations using color.scss variables.
+	@each $name, $color in $colors {
+		&.has-#{$name}-color {
+			color: $color;
+		}
 
-        &.has-#{$name}-color {
-            color: $color;
-        }
+		&.has-#{$name}-color:hover,
+		&.has-#{$name}-color:focus {
+			color: $color;
+		}
 
-        &.has-#{$name}-color:hover,
-        &.has-#{$name}-color:focus {
-            color: $color;
-        }
+		&.has-#{$name}-background-color:hover,
+		&.has-#{$name}-background-color:focus {
+			background-color: map_get($color_hover, $name);
+		}
 
-        &.has-#{$name}-background-color:hover,
-        &.has-#{$name}-background-color:focus {
-            background-color: map_get($color_hover, $name);
-        }
-
-        &.has-#{$name}-background-color:not(.has-text-color) {
-            color: map_get($text_color, $name);
-        }
-    }
+		&.has-#{$name}-background-color:not(.has-text-color) {
+			color: map_get($text_color, $name);
+		}
+	}
 }
 
 .wp-block-buttons {
-    &.alignright {
-        text-align: right;
-    }
+	&.alignright {
+		text-align: right;
+	}
 }
