@@ -1,0 +1,7 @@
+.wp-block-group {
+	&.is-style-no-padding {
+		.wp-block-group__inner-container {
+			padding: 0;
+		}
+	}
+}

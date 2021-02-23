@@ -370,3 +370,12 @@ register_block_style(
 		'label' => 'No Side Padding',
 	)
 );
+
+// Group.
+register_block_style(
+	'core/group',
+	array(
+		'name'  => 'no-padding',
+		'label' => 'No Padding',
+	)
+);
