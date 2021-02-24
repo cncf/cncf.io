@@ -111,9 +111,11 @@
 		transform: translate(-50%, -50%);
 		top: 50%;
 		left: 50%;
-		width: 80%;
 		padding: 1rem 0;
-		max-height: 90%;
+		max-width: 80%;
+		max-height: 95%;
+		width: unset;
+		height: unset;
 	}
 
 	@media (min-width: 768px) {
