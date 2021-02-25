@@ -1,33 +1,90 @@
 // these have to be !important to override the inline CSS.
+// you need to repeat these for editor styles as markup is different.
+// for now, include the editor styling here for consistency.
 
 .is-style-100-responsive {
-    height: 50px !important;
+	height: 50px !important;
 
-    @media (min-width: 1000px) {
-        height: 100px !important;
-    }
+	@media (min-width: 1000px) {
+		height: 100px !important;
+	}
 }
 
 .is-style-80-responsive {
-    height: 40px !important;
+	height: 40px !important;
 
-    @media (min-width: 1000px) {
-        height: 80px !important;
-    }
+	@media (min-width: 1000px) {
+		height: 80px !important;
+	}
 }
 
 .is-style-60-responsive {
-    height: 30px !important;
+	height: 30px !important;
 
-    @media (min-width: 1000px) {
-        height: 60px !important;
-    }
+	@media (min-width: 1000px) {
+		height: 60px !important;
+	}
 }
 
 .is-style-40-responsive {
-    height: 20px !important;
+	height: 20px !important;
 
-    @media (min-width: 1000px) {
-        height: 40px !important;
-    }
+	@media (min-width: 1000px) {
+		height: 40px !important;
+	}
+}
+
+.is-style-100-responsive {
+	.block-library-spacer__resize-container {
+		height: 50px !important;
+
+		@media (min-width: 1000px) {
+			height: 100px !important;
+		}
+	}
+}
+
+.is-style-80-responsive {
+	.block-library-spacer__resize-container {
+		height: 40px !important;
+
+		@media (min-width: 1000px) {
+			height: 80px !important;
+		}
+	}
+}
+
+.is-style-60-responsive {
+	.block-library-spacer__resize-container {
+		height: 30px !important;
+
+		@media (min-width: 1000px) {
+			height: 60px !important;
+		}
+	}
+}
+
+.is-style-40-responsive {
+	.block-library-spacer__resize-container {
+		height: 20px !important;
+
+		@media (min-width: 1000px) {
+			height: 40px !important;
+		}
+	}
+}
+
+// Style the spacer block (for Editor)
+.block-library-spacer__resize-container {
+	border: 1px solid #f3f4f5;
+	color: #d8d8d8;
+
+	&:after {
+		content: "SPACER BLOCK";
+		color: #d8d8d8;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
 }

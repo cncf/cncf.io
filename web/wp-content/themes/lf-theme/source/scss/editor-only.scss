@@ -12,7 +12,7 @@
 @import "core/normalize";
 @import "core/reset";
 
-// import typography and styles over the top of editor styles defaults.
+// import styles over the top of editor styles defaults.
 #editor {
 	.editor-styles-wrapper {
 		// @import "core/typography";
@@ -50,9 +50,9 @@
 	}
 }
 
-// Editor
-@import "editor/outlines";
-@import "editor/alignment";
+// Editor only styles.
+@import "admin/outlines";
+@import "admin/alignment";
 
 #editor {
 	.editor-styles-wrapper {
@@ -138,16 +138,6 @@
 		transform: translateX(12px);
 	}
 }
-
-// Gutenberg style to break out of page container.
-// .alignfull {
-//     position: relative;
-//     right: 50%;
-//     left: 50%;
-//     margin-right: -50vw;
-//     margin-left: -50vw;
-//     width: 100vw;
-// }
 
 // Make SVGs fill containers unless resized (Safe SVG related).
 .wp-block-image:not(.is-resized) img[src$=".svg"] {
