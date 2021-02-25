@@ -21,6 +21,8 @@ $options = get_option( 'lf-mu' );
 				<p>Copyright &copy; <?php echo esc_html( gmdate( 'Y' ) ); ?>
 					<?php echo wp_kses_post( $options['copyright_textarea'] ); ?>
 				</p>
+
+				<p><a target="_blank" class="external" rel="noopener" href="https://github.com/cncf/cncf.io/issues/new?title=Your+issue&projects=cncf/cncf.io/1&body=From+URL%3A+<?php echo urlencode( get_permalink() ); ?>">Submit issue with this page on GitHub</a>.</p>
 			</div>
 
 	<?php get_template_part( 'components/social-links' ); ?>
