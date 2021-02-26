@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "869d5ea0c4dcc8812e7561f9b4d21eb7da4a78d7"
+                "reference": "d5fc895e116fa43302031f7ee36ab9bc7d45665c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/869d5ea0c4dcc8812e7561f9b4d21eb7da4a78d7",
-                "reference": "869d5ea0c4dcc8812e7561f9b4d21eb7da4a78d7",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/d5fc895e116fa43302031f7ee36ab9bc7d45665c",
+                "reference": "d5fc895e116fa43302031f7ee36ab9bc7d45665c",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-02-22T23:31:00+00:00"
+            "time": "2021-02-26T01:12:17+00:00"
         },
         {
             "name": "composer/installers",
@@ -185,17 +185,20 @@
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "0.1.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "8a7a8b91c27778199cfd4f0c17266fe8a2ca8ffd"
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/8a7a8b91c27778199cfd4f0c17266fe8a2ca8ffd",
-                "reference": "8a7a8b91c27778199cfd4f0c17266fe8a2ca8ffd",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
             },
             "conflict": {
                 "composer/installers": "<1.0.6"
@@ -203,9 +206,9 @@
             "require-dev": {
                 "composer/composer": "1.0.*@dev"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "johnpbloch\\Composer\\WordPressCoreInstaller"
+                "class": "johnpbloch\\Composer\\WordPressCorePlugin"
             },
             "autoload": {
                 "psr-0": {
@@ -223,11 +226,14 @@
                 }
             ],
             "description": "A custom installer to handle deploying WordPress with composer",
+            "keywords": [
+                "wordpress"
+            ],
             "support": {
                 "issues": "https://github.com/johnpbloch/wordpress-core-installer/issues",
-                "source": "https://github.com/johnpbloch/wordpress-core-installer/tree/0.1.2"
+                "source": "https://github.com/johnpbloch/wordpress-core-installer/tree/master"
             },
-            "time": "2013-09-09T15:03:37+00:00"
+            "time": "2015-06-11T15:15:30+00:00"
         },
         {
             "name": "pantheon-systems/quicksilver-pushback",
@@ -731,7 +737,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "7.51.74",
+            "version": "7.51.108",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -739,7 +745,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1613478486"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1614100027"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -953,12 +959,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "640ff0b5dcacc0958534c8c0255b90697f3eb2a8"
+                "reference": "616131e531dedfc378ffd6060e1cfdcce48ff3a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/640ff0b5dcacc0958534c8c0255b90697f3eb2a8",
-                "reference": "640ff0b5dcacc0958534c8c0255b90697f3eb2a8",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/616131e531dedfc378ffd6060e1cfdcce48ff3a2",
+                "reference": "616131e531dedfc378ffd6060e1cfdcce48ff3a2",
                 "shasum": ""
             },
             "conflict": {
@@ -1100,7 +1106,7 @@
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
-                "pimcore/pimcore": "<6.3",
+                "pimcore/pimcore": "<6.8.8",
                 "pocketmine/pocketmine-mp": "<3.15.4",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
                 "prestashop/contactform": ">1.0.1,<4.3",
@@ -1272,7 +1278,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-18T21:02:27+00:00"
+            "time": "2021-02-25T17:25:28+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
