@@ -2,238 +2,234 @@
 // This lets us style lists and links suitable for content.
 
 .entry-content {
+	// annoying event box button fix.
+	.button {
+		&.on-image {
+			background-color: $primary-color;
+			color: $white;
+			margin-top: 1rem;
 
-    // annoying event box button fix.
-    .button {
-        &.on-image {
-            background-color: $primary-color;
-            color: $white;
-            margin-top: 1rem;
+			&:hover {
+				text-decoration: none;
+				color: $primary-color;
+				background-color: $white;
 
-            &:hover {
-                text-decoration: none;
-                color: $primary-color;
-                background-color: $white;
+				a:visited {
+					color: $primary-color !important;
+				}
+			}
 
-                a:visited {
-                    color: $primary-color !important;
-                }
-            }
+			a:visited {
+				color: $primary-color !important;
+			}
+		}
+	}
 
-            a:visited {
-                color: $primary-color !important;
-            }
-        }
-    }
+	p {
+		&:not([class*="is-style"]):not(.hero-parent-link),
+		&.is-style-default {
+			max-width: 700px;
+		}
+	}
 
-    p {
+	.hbspt-form {
+		max-width: 700px;
+	}
 
-        &:not([class*='is-style']):not(.hero-parent-link),
-        &.is-style-default {
-            max-width: 700px;
-        }
-    }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		&:not([class*="is-style"]),
+		&.is-style-default {
+			max-width: 900px;
+		}
+	}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+	ul {
+		list-style: disc;
+		margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 1.5rem;
+		margin-left: 2em;
 
-        &:not([class*='is-style']),
-        &.is-style-default {
-            max-width: 900px;
-        }
-    }
+		// used for tab container.
+		&.no-style {
+			list-style: none;
+			margin-left: 0;
+		}
 
-    ul {
-        list-style: disc;
-        margin-top: 0;
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-        margin-left: 2em;
+		// second level
+		ul {
+			margin-bottom: 0;
 
-        // used for tab container.
-        &.no-style {
-            list-style: none;
-            margin-left: 0;
-        }
+			// third level
+			ul {
+				margin-bottom: 0;
+			}
+		}
+	}
 
-        // second level
-        ul {
-            margin-bottom: 0;
+	ol {
+		list-style: decimal;
+		margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 1.5rem;
+		margin-left: 2em;
+	}
 
-            // third level
-            ul {
-                margin-bottom: 0;
-            }
-        }
-    }
+	pre {
+		background-color: $grey-800;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		overflow: auto;
+		border-radius: 0.3em;
+		border: 1px solid $black;
+		font-family: $font-code;
+		color: $grey-200;
+		// fix for old code blocks.
+		padding-left: 1em;
+		padding-top: 1em;
+		padding-bottom: 1em;
 
-    ol {
-        list-style: decimal;
-        margin-top: 0;
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-        margin-left: 2em;
-    }
+		code {
+			overflow: auto;
+			line-height: 1.5;
+			color: $grey-200;
+		}
 
-    pre {
-        background-color: $grey-800;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        overflow: auto;
-        border-radius: .3em;
-        border: 1px solid $black;
-        font-family: $font-code;
-        color: $grey-200;
-        // fix for old code blocks.
-        padding-left: 1em;
-        padding-top: 1em;
-        padding-bottom: 1em;
+		&.wp-block-preformatted {
+			color: $grey-200;
+		}
+	}
 
-        code {
-            overflow: auto;
-            line-height: 1.5;
-            color: $grey-200;
-        }
+	div[class*="highlighter-"] code,
+	.code-toolbar code {
+		display: block;
+		margin: 0 20px;
+		padding: 15px 16px 14px;
+	}
 
-        &.wp-block-preformatted {
-            color: $grey-200;
-        }
-    }
+	.is-disabled {
+		color: $grey-400;
+		cursor: not-allowed;
+		font-weight: 500;
 
-    div[class*="highlighter-"] code,
-    .code-toolbar code {
-        display: block;
-        margin: 0 20px;
-        padding: 15px 16px 14px;
-    }
+		&:hover {
+			text-decoration: none;
+		}
+	}
 
-    .is-disabled {
-        color: $grey-400;
-        cursor: not-allowed;
-        font-weight: 500;
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.875em;
+		margin-bottom: 1rem;
+	}
 
-        &:hover {
-            text-decoration: none;
-        }
-    }
+	tr:nth-of-type(odd) {
+		background: #fcfcfc;
+	}
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.875em;
-        margin-bottom: 1rem;
-    }
+	th {
+		background: $grey-800;
+		color: $white;
+		font-weight: 600;
+	}
 
-    tr:nth-of-type(odd) {
-        background: #FCFCFC;
-    }
+	td,
+	th {
+		padding: 0.75em;
+		border: 1px solid $grey-100;
+		vertical-align: top;
+	}
 
-    th {
-        background: $grey-800;
-        color: $white;
-        font-weight: 600;
-    }
+	// fix for responsive tables without thead or data-labels.
+	@media only screen and (max-width: 768px) {
+		table:not([class*="has"]) {
+			overflow: hidden;
+			overflow-x: scroll;
+			display: block;
+		}
+	}
 
-    td,
-    th {
-        padding: 0.75em;
-        border: 1px solid $grey-100;
-        vertical-align: top;
-    }
+	// Applied to Single Blog Posts only.
+	&.post-content {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-style: normal;
+			color: $secondary-color;
 
-    // fix for responsive tables without thead or data-labels.
-    @media only screen and (max-width: 768px) {
-        table:not([class*='has']) {
-            overflow: hidden;
-            overflow-x: scroll;
-            display: block;
-        }
-    }
+			b,
+			strong {
+				font-weight: 600;
+				font-style: normal;
+			}
+		}
 
-    // Applied to Single Blog Posts only.
-    &.post-content {
+		h1 {
+			font-size: 1.9em;
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+		}
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-style: normal;
-            color: $secondary-color;
+		h2,
+		.h2,
+		.has-header-2-font-size {
+			font-size: 1.9em;
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+		}
 
-            b,
-            strong {
-                font-weight: 600;
-                font-style: normal;
-            }
-        }
+		h3,
+		.h3,
+		.has-header-3-font-size {
+			font-size: 1.5em;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
 
-        h1 {
-            font-size: 1.9em;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
+		h4,
+		.h4,
+		.has-header-4-font-size {
+			font-size: 1.25em;
+			margin-top: 2rem;
+		}
 
-        }
+		h5,
+		.h5,
+		.has-header-5-font-size {
+			font-size: 1em;
+			margin-top: 2rem;
+		}
 
-        h2,
-        .h2,
-        .has-header-2-font-size {
-            font-size: 1.9em;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
+		ul,
+		ol {
+			max-width: 700px;
+		}
 
-        }
+		a {
+			/* These are technically the same, but use both */
+			overflow-wrap: break-word;
+			word-wrap: break-word;
 
-        h3,
-        .h3,
-        .has-header-3-font-size {
-            font-size: 1.5em;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+			-ms-word-break: break-all;
+			/* This is the dangerous one in WebKit, as it breaks things wherever */
+			word-break: break-all;
+			/* Instead use this non-standard one: */
+			word-break: break-word;
 
-        }
-
-        h4,
-        .h4,
-        .has-header-4-font-size {
-            font-size: 1.250em;
-            margin-top: 2rem;
-
-        }
-
-        h5,
-        .h5,
-        .has-header-5-font-size {
-            font-size: 1em;
-            margin-top: 2rem;
-        }
-
-        ul,
-        ol {
-            max-width: 700px;
-        }
-
-        a {
-            /* These are technically the same, but use both */
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-
-            -ms-word-break: break-all;
-            /* This is the dangerous one in WebKit, as it breaks things wherever */
-            word-break: break-all;
-            /* Instead use this non-standard one: */
-            word-break: break-word;
-
-            /* Adds a hyphen where the word breaks, if supported (No Blink) */
-            -ms-hyphens: auto;
-            -moz-hyphens: auto;
-            -webkit-hyphens: auto;
-            hyphens: auto;
-        }
-    }
+			/* Adds a hyphen where the word breaks, if supported (No Blink) */
+			-ms-hyphens: auto;
+			-moz-hyphens: auto;
+			-webkit-hyphens: auto;
+			hyphens: auto;
+		}
+	}
 }

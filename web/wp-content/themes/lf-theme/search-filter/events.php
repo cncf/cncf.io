@@ -51,7 +51,7 @@
 
 			$color = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
 
-			$color ? $overlay_color = $color : $overlay_color = '#254AAB';
+			$color ? $overlay_color = $color : $overlay_color = 'transparent';
 
 			?>
 	<article class="event-box background-image-wrapper">

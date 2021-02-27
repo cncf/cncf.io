@@ -1,0 +1,25 @@
+.wp-block-separator {
+	max-width: 100px;
+	margin-inline-start: unset;
+	margin-inline-end: unset;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.wp-block-separator {
+	&.aligncenter {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.is-style-wide {
+		max-width: 100%;
+	}
+
+	&.has-background {
+		display: block;
+		height: 1px;
+		border: 0;
+		padding: 0;
+	}
+}

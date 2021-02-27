@@ -1,0 +1,62 @@
+%outline {
+	color: #d8d8d8;
+	position: absolute;
+	left: 1px;
+	top: 0;
+	line-height: 1;
+	// transform: translateY(-100%);
+}
+
+// Group.
+.wp-block-group {
+	border: 1px solid #f3f4f5;
+
+	&:before {
+		content: "GROUP BLOCK";
+		@extend %outline;
+	}
+}
+
+// Columns.
+.wp-block-columns {
+	border: 1px solid #f3f4f5;
+
+	&:before {
+		content: "COLUMNS BLOCK";
+		@extend %outline;
+	}
+}
+
+.block-editor #editor .editor-styles-wrapper .wp-block {
+	&[data-align="wide"] {
+		> .wp-block-group {
+			&:before {
+				content: "WIDE WIDTH GROUP BLOCK";
+				@extend %outline;
+			}
+		}
+
+		> .wp-block-cover {
+			&:before {
+				content: "WIDE WIDTH COVER BLOCK";
+				@extend %outline;
+			}
+		}
+	}
+
+	&[data-align="full"] {
+		> .wp-block-group {
+			&:before {
+				content: "FULL WIDTH GROUP BLOCK";
+				@extend %outline;
+			}
+		}
+
+		> .wp-block-cover {
+			&:before {
+				content: "FULL WIDTH COVER BLOCK";
+				@extend %outline;
+			}
+		}
+	}
+}

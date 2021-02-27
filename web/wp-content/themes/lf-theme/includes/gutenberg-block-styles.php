@@ -175,7 +175,7 @@ register_block_style(
 	'core/paragraph',
 	array(
 		'name'  => 'no-margins',
-		'label' => 'No margins',
+		'label' => 'No top/bottom margin',
 	)
 );
 
@@ -183,7 +183,15 @@ register_block_style(
 	'core/paragraph',
 	array(
 		'name'  => 'bottom-margin',
-		'label' => 'Add 1em Margin',
+		'label' => '1rem bottom margin',
+	)
+);
+
+register_block_style(
+	'core/paragraph',
+	array(
+		'name'  => 'small-bottom-margin',
+		'label' => '0.5rem bottom margin',
 	)
 );
 
@@ -360,5 +368,14 @@ register_block_style(
 	array(
 		'name'  => 'no-side-padding',
 		'label' => 'No Side Padding',
+	)
+);
+
+// Group.
+register_block_style(
+	'core/group',
+	array(
+		'name'  => 'no-padding',
+		'label' => 'No Padding',
 	)
 );

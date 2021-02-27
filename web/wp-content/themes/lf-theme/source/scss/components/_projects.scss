@@ -22,12 +22,12 @@
     align-items: center;
     text-align: center;
     margin-bottom: 1.5em;
+}
 
-    >a {
-        width: 100px;
-        height: 100px;
-        display: flex;
-    }
+.project-thumbnail-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
 }
 
 .project-thumbnail {

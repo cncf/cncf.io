@@ -247,5 +247,33 @@ wp.domReady(
 			icon: 'text',
 			scope: [ 'inserter' ],
 		} );
+
+  const el = wp.element.createElement;
+  const SVG = wp.primitives.SVG;
+  const iconColumnsTwoThirdOneThird = el(
+    SVG,
+    { width: 48, height: 48, viewBox: '0 0 48 48' },
+    el('path', {
+      fillRule: 'evenodd',
+      clipRule: 'evenodd',
+      d:
+      'M39 12C40.1046 12 41 12.8954 41 14V34C41 35.1046 40.1046 36 39 36H9C7.89543 36 7 35.1046 7 34V14C7 12.8954 7.89543 12 9 12H39ZM39 34V14H30V34H39ZM28 34H9V14H28V34Z',
+    })
+  );
+
+    wp.blocks.registerBlockVariation(
+      'core/columns', {
+        name: 'sixty-forty-columns',
+        title: '60 / 40',
+        icon: iconColumnsTwoThirdOneThird,
+        scope: ['block'],
+        innerBlocks: [
+          [ 'core/column', {
+            width: 60 } ],
+          [ 'core/column', {
+            width: 40 } ],
+        ],
+      }
+    );
 	}
 );
