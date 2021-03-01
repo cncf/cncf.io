@@ -12,18 +12,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "d5fc895e116fa43302031f7ee36ab9bc7d45665c"
+                "reference": "5839f09869765b7e040d291f786188e75d84510e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/d5fc895e116fa43302031f7ee36ab9bc7d45665c",
-                "reference": "d5fc895e116fa43302031f7ee36ab9bc7d45665c",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/5839f09869765b7e040d291f786188e75d84510e",
+                "reference": "5839f09869765b7e040d291f786188e75d84510e",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2"
             },
-            "default-branch": true,
             "type": "wordpress-muplugin",
             "license": [
                 "MIT"
@@ -33,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-02-26T01:12:17+00:00"
+            "time": "2021-03-01T09:54:36+00:00"
         },
         {
             "name": "composer/installers",
@@ -163,10 +162,6 @@
                 "zend",
                 "zikula"
             ],
-            "support": {
-                "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.10.0"
-            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -229,10 +224,6 @@
             "keywords": [
                 "wordpress"
             ],
-            "support": {
-                "issues": "https://github.com/johnpbloch/wordpress-core-installer/issues",
-                "source": "https://github.com/johnpbloch/wordpress-core-installer/tree/master"
-            },
             "time": "2015-06-11T15:15:30+00:00"
         },
         {
@@ -258,10 +249,6 @@
                 "MIT"
             ],
             "description": "Push commits made via the Pantheon dashboard back to original GitHub repository.",
-            "support": {
-                "issues": "https://github.com/pantheon-systems/quicksilver-pushback/issues",
-                "source": "https://github.com/pantheon-systems/quicksilver-pushback/tree/master"
-            },
             "time": "2020-08-20T22:12:09+00:00"
         },
         {
@@ -351,10 +338,6 @@
                 "php",
                 "type"
             ],
-            "support": {
-                "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.7.5"
-            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -422,11 +405,6 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "support": {
-                "forum": "https://discourse.roots.io/",
-                "issues": "https://github.com/roots/wp-password-bcrypt/issues",
-                "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
-            },
             "time": "2016-03-01T16:27:06+00:00"
         },
         {
@@ -465,10 +443,6 @@
             ],
             "description": "Install Quicksilver modules for Pantheon into custom locations.",
             "homepage": "https://github.com/rvtraveller/qs-composer-installer",
-            "support": {
-                "issues": "https://github.com/rvtraveller/qs-composer-installer/issues",
-                "source": "https://github.com/rvtraveller/qs-composer-installer/tree/1.2"
-            },
             "time": "2021-01-04T22:27:18+00:00"
         },
         {
@@ -531,9 +505,6 @@
                 "polyfill",
                 "portable"
             ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.1"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -611,10 +582,6 @@
                 "env",
                 "environment"
             ],
-            "support": {
-                "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v3.6.8"
-            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -763,7 +730,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/lh-hsts.zip?timestamp=1594531855"
+                "url": "https://downloads.wordpress.org/plugin/lh-hsts.zip?timestamp=1558146276"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -959,12 +926,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "616131e531dedfc378ffd6060e1cfdcce48ff3a2"
+                "reference": "a6bfc5a1416f0dde1f53b7737b2cf983352737b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/616131e531dedfc378ffd6060e1cfdcce48ff3a2",
-                "reference": "616131e531dedfc378ffd6060e1cfdcce48ff3a2",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a6bfc5a1416f0dde1f53b7737b2cf983352737b8",
+                "reference": "a6bfc5a1416f0dde1f53b7737b2cf983352737b8",
                 "shasum": ""
             },
             "conflict": {
@@ -1146,7 +1113,7 @@
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "simplito/elliptic-php": "<1.0.6",
                 "slim/slim": "<2.6",
-                "smarty/smarty": "<3.1.33",
+                "smarty/smarty": "<3.1.39",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "socialiteproviders/steam": "<1.1",
                 "spoonity/tcpdf": "<6.2.22",
@@ -1264,10 +1231,6 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "support": {
-                "issues": "https://github.com/Roave/SecurityAdvisories/issues",
-                "source": "https://github.com/Roave/SecurityAdvisories/tree/latest"
-            },
             "funding": [
                 {
                     "url": "https://github.com/Ocramius",
@@ -1278,7 +1241,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-25T17:25:28+00:00"
+            "time": "2021-02-26T20:02:39+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1329,11 +1292,6 @@
                 "phpcs",
                 "standards"
             ],
-            "support": {
-                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
-                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
-                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
-            },
             "time": "2020-10-23T02:01:07+00:00"
         },
         {
@@ -1380,11 +1338,6 @@
                 "standards",
                 "wordpress"
             ],
-            "support": {
-                "issues": "https://github.com/WordPress/WordPress-Coding-Standards/issues",
-                "source": "https://github.com/WordPress/WordPress-Coding-Standards",
-                "wiki": "https://github.com/WordPress/WordPress-Coding-Standards/wiki"
-            },
             "time": "2020-05-13T23:57:56+00:00"
         },
         {
@@ -1439,5 +1392,5 @@
     "platform-overrides": {
         "php": "7.2"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
