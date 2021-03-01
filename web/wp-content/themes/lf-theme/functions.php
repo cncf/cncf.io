@@ -87,9 +87,6 @@ require_once 'includes/shortcode-people.php';
 // projects shortcode.
 require_once 'includes/shortcode-projects.php';
 
-// contact form shortcode.
-require_once 'includes/shortcode-contact.php';
-
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';
 
