@@ -10,6 +10,7 @@
 // setup values.
 $person_id = get_the_ID();
 $company   = get_post_meta( get_the_ID(), 'lf_person_company', true );
+$pronouns   = get_post_meta( get_the_ID(), 'lf_person_pronouns', true );
 $linkedin  = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
 $twitter   = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
 $github    = get_post_meta( get_the_ID(), 'lf_person_github', true );
@@ -60,6 +61,11 @@ if ( strlen( $content ) > 20 ) {
 	<?php endif; ?>
 	<div class="people-excerpt">
 		<?php the_excerpt(); ?>
+		<?php
+		if ( $pronouns ) :
+			?>
+			<p>Pronouns: <?php echo esc_html( $pronouns ); ?></p>
+		<?php endif; ?>
 	</div>
 <div class="social-modal-wrapper">
 	<?php
