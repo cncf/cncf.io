@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a89653f98fe780485f10c239fb5464de",
+    "content-hash": "dd1f245c283b9f8dad457d4d8efb9325",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "4b34a6259cea0ded4b4a33dbb80da5bc6890b56c"
+                "reference": "45d502fd5feef86a46442a820c078b20b93e8900"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/4b34a6259cea0ded4b4a33dbb80da5bc6890b56c",
-                "reference": "4b34a6259cea0ded4b4a33dbb80da5bc6890b56c",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/45d502fd5feef86a46442a820c078b20b93e8900",
+                "reference": "45d502fd5feef86a46442a820c078b20b93e8900",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-03-02T12:41:35+00:00"
+            "time": "2021-03-10T04:31:39+00:00"
         },
         {
             "name": "composer/installers",
@@ -686,15 +686,15 @@
         },
         {
             "name": "wpackagist-plugin/flying-scripts",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/flying-scripts/",
-                "reference": "tags/1.2.1"
+                "reference": "tags/1.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/flying-scripts.1.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/flying-scripts.1.2.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -704,7 +704,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "7.51.108",
+            "version": "7.52.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -712,7 +712,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1614100027"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1615210508"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -926,12 +926,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "a6bfc5a1416f0dde1f53b7737b2cf983352737b8"
+                "reference": "ba8a590c26ddca3e0011a055cae7fd5ec28dd5f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a6bfc5a1416f0dde1f53b7737b2cf983352737b8",
-                "reference": "a6bfc5a1416f0dde1f53b7737b2cf983352737b8",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ba8a590c26ddca3e0011a055cae7fd5ec28dd5f5",
+                "reference": "ba8a590c26ddca3e0011a055cae7fd5ec28dd5f5",
                 "shasum": ""
             },
             "conflict": {
@@ -997,6 +997,7 @@
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1",
                 "ezyang/htmlpurifier": "<4.1.1",
+                "facade/ignition": "<=2.5.1,>=2.0|<=1.16.13",
                 "firebase/php-jwt": "<2",
                 "flarum/sticky": ">=0.1-beta.14,<=0.1-beta.15",
                 "flarum/tags": "<=0.1-beta.13",
@@ -1021,6 +1022,7 @@
                 "illuminate/view": ">=7,<7.1.2",
                 "ivankristianto/phpwhois": "<=4.3",
                 "james-heinrich/getid3": "<1.9.9",
+                "joomla/archive": "<1.1.10",
                 "joomla/session": "<1.3.1",
                 "jsmitty12/phpwhois": "<5.1",
                 "kazist/phpwhois": "<=4.2.6",
@@ -1241,7 +1243,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-26T20:02:39+00:00"
+            "time": "2021-03-08T17:27:54+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
