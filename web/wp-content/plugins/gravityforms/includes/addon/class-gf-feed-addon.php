@@ -76,6 +76,13 @@ abstract class GFFeedAddOn extends GFAddOn {
 	private static $_frontend_feeds = array();
 
 	/**
+	 * @since 2.4.23
+	 *
+	 * @var array Tables where table error has been rendered.
+	 */
+	private $_table_error_rendered = array();
+
+	/**
 	 * Plugin starting point. Handles hooks and loading of language files.
 	 */
 	public function init() {
@@ -600,6 +607,11 @@ abstract class GFFeedAddOn extends GFAddOn {
 	public function get_feeds( $form_id = null ) {
 		global $wpdb;
 
+		if ( ! $this->addon_feed_table_exists() ) {
+			$this->show_table_not_exists_error( $wpdb->prefix . 'gf_addon_feed' );
+			return array();
+		}
+
 		$form_filter = is_numeric( $form_id ) ? $wpdb->prepare( 'AND form_id=%d', absint( $form_id ) ) : '';
 
 		$sql = $wpdb->prepare(
@@ -645,6 +657,11 @@ abstract class GFFeedAddOn extends GFAddOn {
 	public function get_feeds_by_slug( $slug, $form_id = null ) {
 		global $wpdb;
 
+		if ( ! $this->addon_feed_table_exists() ) {
+			$this->show_table_not_exists_error( $wpdb->prefix . 'gf_addon_feed' );
+			return array();
+		}
+
 		$form_filter = is_numeric( $form_id ) ? $wpdb->prepare( 'AND form_id=%d', absint( $form_id ) ) : '';
 
 		$sql = $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}gf_addon_feed
@@ -676,6 +693,11 @@ abstract class GFFeedAddOn extends GFAddOn {
 
 	public function get_feed( $id ) {
 		global $wpdb;
+
+		if ( ! $this->addon_feed_table_exists() ) {
+			$this->show_table_not_exists_error( $wpdb->prefix . 'gf_addon_feed' );
+			return false;
+		}
 
 		$sql = $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}gf_addon_feed WHERE id=%d", $id );
 
@@ -898,6 +920,11 @@ abstract class GFFeedAddOn extends GFAddOn {
 	public function insert_feed( $form_id, $is_active, $meta ) {
 		global $wpdb;
 
+		if ( ! $this->addon_feed_table_exists() ) {
+			$this->show_table_not_exists_error( $wpdb->prefix . 'gf_addon_feed' );
+			return false;
+		}
+
 		$meta = json_encode( $meta );
 		$wpdb->insert( "{$wpdb->prefix}gf_addon_feed", array( 'addon_slug' => $this->_slug, 'form_id' => $form_id, 'is_active' => $is_active, 'meta' => $meta ), array( '%s', '%d', '%d', '%s' ) );
 
@@ -906,6 +933,17 @@ abstract class GFFeedAddOn extends GFAddOn {
 
 	public function delete_feed( $id ) {
 		global $wpdb;
+
+		/**
+		 * Allows custom actions to be performed just before a feed is deleted from the database.
+		 *
+		 * @since 2.4.21
+		 *
+		 * @param int         $id   The ID of the feed being deleted.
+		 * @param GFFeedAddOn $this The current instance of the add-on for which the feed is being deleted.
+		 */
+		do_action( 'gform_pre_delete_feed', $id, $this );
+		do_action( "gform_{$this->get_short_slug()}_pre_delete_feed", $id, $this );
 
 		$wpdb->delete( "{$wpdb->prefix}gf_addon_feed", array( 'id' => $id ), array( '%d' ) );
 	}
@@ -976,6 +1014,74 @@ abstract class GFFeedAddOn extends GFAddOn {
 		// Create the new feed.
 		return $this->insert_feed( $new_form_id, $original_feed['is_active'], $meta );
 
+	}
+
+	/**
+	 * Checks if Addon Feed table exists.
+	 *
+	 * @since 2.4.23
+	 *
+	 * @return bool If Addon Feed table exists.
+	 */
+	private function addon_feed_table_exists() {
+		global $wpdb;
+		return $this->table_exists( $wpdb->prefix . 'gf_addon_feed' );
+	}
+
+	/**
+	 * Get the Table does not exist error message.
+	 *
+	 * @since 2.4.23
+	 *
+	 * @param string $table The missing table name.
+	 */
+	private function get_table_not_exists_error( $table ) {
+		$status_page_url = admin_url( 'admin.php?page=gf_system_status' );
+
+		return sprintf(
+			// translators: %1$s represents the missing table, %2$s is the opening link tag, %3$s is the closing link tag.
+			esc_html__( 'The table `%1$s` does not exist. Please visit the %2$sForms > System Status%3$s page and click the "Re-run database upgrade" link (under the Database section) to create the missing table.', 'gravityforms' ),
+			esc_html( $table ),
+			'<a href="' . esc_attr( $status_page_url ) . '" target="_blank" rel="noopener">',
+			'</a>'
+		);
+	}
+
+	/**
+	 * Output a Table does not exist error message.
+	 *
+	 * @since 2.4.23
+	 *
+	 * @param string $table The missing table name.
+	 */
+	private function show_table_not_exists_error( $table ) {
+		// Prevent the error from being displayed more than once.
+		if ( ! empty( $this->_table_error_rendered[ $table ] ) ) {
+			return;
+		}
+
+		$error   = $this->get_table_not_exists_error( $table );
+		$classes = $this->is_gravityforms_supported( '2.5-beta' ) ? 'gf-notice notice-error' : 'notice notice-error';
+
+		$notice = sprintf(
+			'<div class="%s"><p>%s</p></div>',
+			esc_attr( $classes ),
+			wp_kses_post( $error )
+		);
+
+		$this->_table_error_rendered[ $table ] = true;
+
+		if ( ! did_action( 'admin_notices' ) ) {
+			add_action(
+				'admin_notices',
+				function() use ( $notice ) {
+					echo $notice;
+				}
+			);
+			return;
+		}
+
+		echo $notice;
 	}
 
 	/**
@@ -1298,6 +1404,11 @@ abstract class GFFeedAddOn extends GFAddOn {
 	}
 
 	public function get_save_error_message( $sections ) {
+		if ( ! $this->addon_feed_table_exists() ) {
+			global $wpdb;
+			return $this->get_table_not_exists_error( $wpdb->prefix . 'gf_addon_feed' );
+		}
+
 		if ( ! $this->is_detail_page() )
 			return parent::get_save_error_message( $sections );
 

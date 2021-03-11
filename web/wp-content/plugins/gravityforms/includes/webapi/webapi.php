@@ -138,6 +138,12 @@ if ( class_exists( 'GFForms' ) ) {
 			add_action( 'wp_ajax_delete_key', array( $this, 'ajax_delete_key' ) );
 		}
 
+		/**
+		 * Adds admin hooks.
+		 *
+		 * @since unknown
+		 * @since 2.4.18 Removed caps integrations to prevent them being added to the Add-Ons group.
+		 */
 		public function init_admin() {
 			parent::init_admin();
 
@@ -149,6 +155,11 @@ if ( class_exists( 'GFForms' ) ) {
 			add_action( 'gform_after_update_entry', array( $this, 'entry_updated' ), 10, 2 );
 			add_action( 'gform_update_status', array( $this, 'update_entry_status' ), 10, 2 );
 			add_action( 'gform_after_save_form', array( $this, 'after_save_form' ), 10, 2 );
+
+			remove_action( 'members_register_cap_groups', array( $this, 'members_register_cap_group' ), 11 );
+			remove_action( 'members_register_caps', array( $this, 'members_register_caps' ), 11 );
+			remove_filter( 'ure_capabilities_groups_tree', array( $this, 'filter_ure_capabilities_groups_tree' ), 11 );
+			remove_filter( 'ure_custom_capability_groups', array( $this, 'filter_ure_custom_capability_groups' ), 10 );
 		}
 
 		public function init_frontend() {
@@ -329,6 +340,15 @@ if ( class_exists( 'GFForms' ) ) {
 			<?php
 		}
 
+		/**
+		 * Displays the edit page for the key description, user, and permission settings.
+		 *
+		 * @since 2.4
+		 * @since 2.4.22 Removed the "Key (ending in)" row.
+		 *
+		 * @param int  $key_id      The ID of the key being edited.
+		 * @param bool $has_updated Indicates if the key details were updated.
+		 */
 		public function display_api_key_edit( $key_id, $has_updated = false ) {
 
 			$key = $key_id == 0 ? false : $this->get_api_key( $key_id );
@@ -387,10 +407,6 @@ if ( class_exists( 'GFForms' ) ) {
 				if ( $key_id != 0 ) {
 					$last_access = rgobj( $key, 'last_access' ) == '' ? __('Never Accessed', 'gravityforms') : GFCommon::format_date( rgobj( $key, 'last_access' ), true, '', true )
 					?>
-					<tr>
-						<th><?php esc_html_e( 'Key (ending in)', 'gravityforms' )?></th>
-						<td>...<?php echo substr( rgobj( $key, 'consumer_key' ), -7 ); ?></td>
-					</tr>
 					<tr>
 						<th style="padding-top:18px;"><?php esc_html_e( 'Last Access', 'gravityforms' )?></th>
 						<td style="padding-top:18px;"><?php echo esc_html( $last_access ) ?></td>

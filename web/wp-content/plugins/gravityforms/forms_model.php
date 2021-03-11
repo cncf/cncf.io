@@ -2534,6 +2534,20 @@ class GFFormsModel {
 		$wpdb->query( $sql );
 	}
 
+	/**
+	 * Adds a note.
+	 *
+	 * @since 2.4.18 Return statement added.
+	 * @since unknown
+	 *
+	 * @param int     $entry_id  ID of the entry to add the note to.
+	 * @param int     $user_id   ID of the user who created the note.
+	 * @param string  $user_name Name of the user who created the note.
+	 * @param string  $note      Text of the note.
+	 * @param string  $note_type Note type.
+	 * @param null    $sub_type  Note sub-type.
+	 * @return int               ID of the new note.
+	 */
 	public static function add_note( $entry_id, $user_id, $user_name, $note, $note_type = 'user', $sub_type = null ) {
 		global $wpdb;
 
@@ -2563,8 +2577,59 @@ class GFFormsModel {
 		 *
 		 */
 		do_action( 'gform_post_note_added', $wpdb->insert_id, $entry_id, $user_id, $user_name, $note, $note_type, $sub_type );
+
+		return $wpdb->insert_id;
 	}
 
+	/**
+	 * Updates a note.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param int       $note_id      ID of the note to update.
+	 * @param int       $entry_id     ID of the entry to add the note to.
+	 * @param int       $user_id      ID of the user who created the note.
+	 * @param string    $user_name    Name of the user who created the note.
+	 * @param string    $date_created Date and time the note was created in SQL datetime format.
+	 * @param string    $note         Text of the note.
+	 * @param string    $note_type    Note type.
+	 * @param null      $sub_type     Note sub-type.
+	 * @return string
+	 */
+	public static function update_note( $note_id, $entry_id, $user_id, $user_name, $date_created, $note, $note_type = 'user', $sub_type = null ) {
+		global $wpdb;
+
+		$table_name = self::get_entry_notes_table_name();
+		$sql = $wpdb->prepare(
+			"
+                UPDATE $table_name
+                SET
+                entry_id = %d,
+                user_id = %d,
+                user_name = %s,
+                date_created = %s,
+                value = %s,
+                note_type = %s,
+                sub_type = %s
+                WHERE
+                id = %d
+                ", $entry_id, $user_id, $user_name, $date_created, $note, $note_type, $sub_type, $note_id
+		);
+
+		$result = $wpdb->query( $sql );
+
+		return $result;
+	}
+
+	/**
+	 * Deletes a note.
+	 *
+	 * @since 2.4.18 Return statement added.
+	 * @since unknown
+	 *
+	 * @param $note_id  int  ID of the note to delete.
+	 * @return bool|int Success or failure.
+	 */
 	public static function delete_note( $note_id ) {
 		global $wpdb;
 
@@ -2585,8 +2650,10 @@ class GFFormsModel {
 		 */
 		do_action( 'gform_pre_note_deleted', $note_id, $lead_id );
 
-		$sql        = $wpdb->prepare( "DELETE FROM $table_name WHERE id=%d", $note_id );
-		$wpdb->query( $sql );
+		$sql    = $wpdb->prepare( "DELETE FROM $table_name WHERE id=%d", $note_id );
+		$result = $wpdb->query( $sql );
+
+		return $result;
 	}
 
 	public static function delete_notes( $notes ) {
@@ -3144,6 +3211,8 @@ class GFFormsModel {
 		} else {
 			$value = rgpost( $input_name );
 		}
+
+		$value = self::maybe_trim_input( $value, $form['id'], $field );
 
 		$is_form_editor = GFCommon::is_form_editor();
 		$is_entry_detail = GFCommon::is_entry_detail();
@@ -5636,6 +5705,123 @@ class GFFormsModel {
 		);
 	}
 
+	/**
+	 * Get a collection of notes.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param array      $search_criteria {
+	 * 		Array of search criteria.
+	 *
+	 * 		@type int    $id         Get the note with this ID.
+	 * 		@type int    $entry_id   Get notes associated with this entry ID.
+	 * 		@type int    $user_id    Get notes with this user ID.
+	 * 		@type string $user_name  Get notes with this user name.
+	 * 		@type string $note_type  Get notes with this note type.
+	 * 		@type string $sub_type   Get notes with this sub type.
+	 * 		@type string $start_date Get notes on or after this date.  Expects SQL datetime format.
+	 * 		@type string $end_date   Get notes on or before this date.  Expects SQL datetime format.
+	 * }
+	 * @param null|array $sorting {
+	 * 		Array of sort key and direction.
+	 *
+	 * 		@type string $key       Key to sort on.  Options: id, entry_id, user_id, user_name, note_type, sub_type, date.
+	 * 		@type string $direction Sort direction.  Options: ASC, DESC.
+	 * }
+	 * @return array|null|object
+	 */
+	public static function get_notes( $search_criteria = array(), $sorting = null ) {
+		global $wpdb;
+
+		$where = array();
+
+		if ( rgar( $search_criteria, 'id' ) ) {
+			$where[] = $wpdb->prepare( 'n.id = %d', $search_criteria['id'] );
+		}
+
+		if ( rgar( $search_criteria, 'entry_id' ) ) {
+			$where[] = $wpdb->prepare( 'entry_id = %d', $search_criteria['entry_id'] );
+		}
+
+		if ( rgars( $search_criteria, 'user_id' ) ) {
+			$where[] = $wpdb->prepare( 'user_id = %d', $search_criteria['user_id'] );
+		}
+
+		if ( isset( $search_criteria['user_name'] ) ) {
+			if ( '' !== $search_criteria['user_name'] ) {
+				$where[] = $wpdb->prepare('user_name = %s', $search_criteria['user_name']);
+			} else {
+				$where[] = "( user_name = '' OR user_name IS NULL )";
+			}
+		}
+
+		if ( rgar( $search_criteria, 'note_type' ) ) {
+			$where[] = $wpdb->prepare( 'note_type = %s', $search_criteria['note_type'] );
+		}
+
+		if ( isset( $search_criteria['sub_type'] ) ) {
+			if ( '' !== $search_criteria['sub_type'] ) {
+				$where[] = $wpdb->prepare('sub_type = %s', $search_criteria['sub_type']);
+			} else {
+				$where[] = "( sub_type = '' OR sub_type IS NULL )";
+			}
+		}
+
+		if ( rgar( $search_criteria, 'start_date' ) ) {
+			if ( ! is_numeric( $search_criteria['start_date'] ) || (int) $search_criteria['start_date'] != $search_criteria['start_date'] ) {
+				$search_criteria['start_date'] = strtotime( $search_criteria['start_date'] );
+			}
+			$valid_timestamp = gmdate( 'Y-m-d H:i:s', $search_criteria['start_date'] );
+			$where[]         = $wpdb->prepare( 'timestampdiff(SECOND, %s, date_created) >= 0', $valid_timestamp );
+		}
+
+		if ( rgar( $search_criteria, 'end_date' ) ) {
+			if ( ! is_numeric( $search_criteria['end_date'] ) || (int) $search_criteria['end_date'] != $search_criteria['end_date'] ) {
+				$search_criteria['end_date'] = strtotime( $search_criteria['end_date'] );
+			}
+			$valid_timestamp = gmdate( 'Y-m-d H:i:s', $search_criteria['end_date'] );
+			// The user didn't specify and end time, so search until the end of the day.
+			if ( '00:00:00' == substr( $valid_timestamp, -8 ) ) {
+				$valid_timestamp = gmdate( 'Y-m-d', $search_criteria['end_date'] ) . ' 23:59:59';
+			}
+			$where[] = $wpdb->prepare( 'timestampdiff(SECOND, %s, date_created) <= 0', $valid_timestamp );
+		}
+
+		$where = 'WHERE ' . implode( ' AND ', $where );
+
+		if ( empty( $search_criteria ) ) {
+			$where = '';
+		}
+
+		if ( is_array( $sorting ) && ! empty( $sorting ) ) {
+			$sorting_options = array( 'entry_id', 'id', 'user_id', 'date_created', 'value', 'note_type', 'sub_type', 'user_name', 'user_email' );
+			if ( ! isset( $sorting['key'] ) || ! in_array( $sorting['key'], $sorting_options ) ) {
+				$sorting['key'] = 'n.id';
+			}
+
+			if ( 'id' == $sorting['key'] ) {
+				$sorting['key'] = 'n.id';
+			}
+			$direction_options = array( 'ASC', 'DESC' );
+			if ( ! isset( $sorting['direction'] ) || ! in_array( $sorting['direction'], $direction_options )  ) {
+				$sorting['direction'] = 'ASC';
+			}
+			$orderby = 'ORDER BY ' . $sorting['key'] . ' ' . $sorting['direction'];
+		} else {
+			$orderby = 'ORDER BY n.id ASC';
+		}
+
+		$notes_table = self::get_entry_notes_table_name();
+
+		return $wpdb->get_results(
+			"  SELECT n.entry_id, n.id, n.user_id, n.date_created, n.value, n.note_type, n.sub_type, ifnull(u.display_name,n.user_name) as user_name, u.user_email
+												FROM $notes_table n
+												LEFT OUTER JOIN $wpdb->users u ON n.user_id = u.id
+												$where 
+												$orderby"
+		);
+	}
+
 	public static function refresh_lead_field_value( $lead_id, $field_id ) {
 		if ( version_compare( GFForms::$version, '2.3-dev', '>=' ) ) {
 			_deprecated_function( 'GFFormsModel::refresh_lead_field_value', '2.3' );
@@ -7350,6 +7536,22 @@ class GFFormsModel {
 
 		$match_count = 0;
 		foreach ( $logic['rules'] as $rule ) {
+			try {
+				/**
+				 * Filter the conditional logic rule before it is evaluated.
+				 *
+				 * @param array $rule         The conditional logic rule about to be evaluated.
+				 * @param array $form         The current form meta.
+				 * @param array $logic        All details required to evaluate an objects conditional logic.
+				 * @param array $field_values The default field values for this form.
+				 * @param array $entry        The current entry object (if available).
+				 *
+				 * @since 2.4.22
+				 */
+				$rule = apply_filters( 'gform_rule_pre_evaluation', $rule, $form, $logic, $field_values, $entry );
+			} catch ( Error $e ) {
+				GFCommon::log_error( __METHOD__ . '(): Error from function hooked to gform_rule_pre_evaluation. ' . $e->getMessage() );
+			}
 			$source_field   = RGFormsModel::get_field( $form, $rule['fieldId'] );
 			$field_value    = empty( $entry ) ? self::get_field_value( $source_field, $field_values ) : self::get_lead_field_value( $entry, $source_field );
 			$is_value_match = self::is_value_match( $field_value, $rule['value'], $rule['operator'], $source_field, $rule, $form );

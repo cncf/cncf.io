@@ -148,7 +148,7 @@ class GFAsyncUpload {
 			}
 		}
 
-		$tmp_file_name = $form_unique_id . '_input_' . $field_id . '_' . $file_name;
+		$tmp_file_name = $form_unique_id . '_input_' . $field_id . '_' . GFCommon::random_str( 16 ) . '_' . $file_name;
 
 		$tmp_file_name = sanitize_file_name( $tmp_file_name );
 

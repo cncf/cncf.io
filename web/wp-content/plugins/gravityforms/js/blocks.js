@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
  * WordPress dependencies
  */
 const { PanelBody, Placeholder, SelectControl, ServerSideRender, TextControl, TextareaControl, ToggleControl } = wp.components;
-const { InspectorControls } = wp.editor;
+const { InspectorControls } = wp.hasOwnProperty('blockEditor') ? wp.blockEditor : wp.editor;
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
 

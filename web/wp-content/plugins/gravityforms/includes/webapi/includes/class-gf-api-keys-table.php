@@ -13,12 +13,19 @@ class GF_API_Keys_Table extends WP_List_Table {
 		return array( 'widefat', 'striped', 'feeds',  'api_key_table' );
 	}
 
+	/**
+	 * Returns an array of columns to be included in the list table.
+	 *
+	 * @since 2.4
+	 * @since 2.4.22 Removed the key column.
+	 *
+	 * @return array
+	 */
 	function get_columns() {
 
 		return array(
-			'description'  => esc_html__( 'Description', 'gravityforms' ),
-			'key'      => esc_html__( 'Key', 'gravityforms' ),
-			'user'         => esc_html__( 'User', 'gravityforms' ),
+			'description' => esc_html__( 'Description', 'gravityforms' ),
+			'user'        => esc_html__( 'User', 'gravityforms' ),
 			'permissions' => esc_html__( 'Permissions', 'gravityforms' ),
 			'last_access' => esc_html__( 'Last Access', 'gravityforms' ),
 		);
@@ -84,9 +91,43 @@ class GF_API_Keys_Table extends WP_List_Table {
 	}
 
 	function no_items() {
-		echo '<div style="padding:10px;">' . sprintf( esc_html__( 'You don\'t have any API keys. Let\'s go %1$screate one%2$s!', 'gravityforms' ), '<a href="' . $this->get_edit_url( 0 ) . '">', '</a>' ) . '</div>';
+		echo '<div style="padding:10px;">' . sprintf( esc_html__( 'You don\'t have any API keys. Let\'s go %1$screate one%2$s!', 'gravityforms' ), '<a ' . $this->add_key_link() . '>', '</a>' ) . '</div>';
 	}
 
+	/**
+	 * Determines if the API is enabled in the database.
+	 *
+	 * @since 2.4.22.8
+	 *
+	 * @return boolean True if the API is enabled, false otherwise.
+	 */
+	public function is_api_enabled() {
+		$web_api_settings = get_option( 'gravityformsaddon_gravityformswebapi_settings' );
+		return ( !empty( $web_api_settings ) && $web_api_settings['enabled'] );
+	}
+
+	/**
+	 * Return the notice text to display if API access is not enabled.
+	 *
+	 * @since 2.4.22.8
+	 *
+	 * @return string the update notice.
+	 */
+	public function update_notice() {
+		$notice_text = __( 'Click the Update button below to add API Keys.', 'gravityforms' );
+		return $this->is_api_enabled() ? '' : '<div class="api-update-notice"><p>' . $notice_text . '</p></div>';
+	}
+
+	/**
+	 * Return the href attribute for the "Add Key" link if API access is not enabled.
+	 *
+	 * @since 2.4.22.8
+	 *
+	 * @return string The href attribute to add a new key, or a blank string.
+	 */
+	public function add_key_link() {
+		return $this->is_api_enabled() ? 'href="' . $this->get_edit_url( 0 ) . '"' : '';
+	}
 
 	/**
 	 * Display the table
@@ -95,6 +136,8 @@ class GF_API_Keys_Table extends WP_List_Table {
 	 */
 	public function display() {
 		$singular = $this->_args['singular'];
+
+		$disabled = $this->is_api_enabled() ? '' : 'disabled';
 
 		$this->screen->render_screen_reader_content( 'heading_list' );
 		?>
@@ -115,8 +158,9 @@ class GF_API_Keys_Table extends WP_List_Table {
 			</tbody>
 
 		</table>
+		<?php echo $this->update_notice(); ?>
 		<div>
-			<a class="button-secondary gfbutton gaddon-setting" id="add_setting_button" href="<?php echo $this->get_edit_url( 0 )?>">Add Key</a>
+			<a class="button-secondary gfbutton gaddon-setting" id="add_setting_button" <?php echo $this->add_key_link(); echo $disabled ?>>Add Key</a>
 		</div>
 		<?php
 

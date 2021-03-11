@@ -54,12 +54,15 @@ class GF_REST_API {
 			'GF_REST_Entries_Controller',
 			'GF_REST_Entry_Properties_Controller',
 			'GF_REST_Entry_Notifications_Controller',
+			'GF_REST_Notes_Controller',
+			'GF_REST_Entry_Notes_Controller',
 			'GF_REST_Form_Entries_Controller',
 			'GF_REST_Form_Results_Controller',
 			'GF_REST_Form_Submissions_Controller',
 			'GF_REST_Forms_Controller',
 			'GF_REST_Feeds_Controller',
 			'GF_REST_Form_Feeds_Controller',
+			'GF_REST_Form_Field_Filters_Controller',
 		);
 
 		foreach ( $controllers as $controller ) {
@@ -69,6 +72,3 @@ class GF_REST_API {
 	}
 
 }
-
-
-

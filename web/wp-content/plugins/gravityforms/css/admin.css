@@ -46,6 +46,18 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
     margin-bottom: 24px;
 }
 
+.api-update-notice {
+	background-color: #fff;
+	border-left: 4px solid #ffba00;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	font-size: 14px;
+	line-height: 19px;
+	margin: 10px 20px 0 2px;
+	padding: 11px 15px;
+	text-align: left;
+}
+
 .gf_help_content,
 .gf_help_content p {
 	line-height: 1.6;
@@ -5292,4 +5304,44 @@ div .gfield_repeater_cell {
 /*Addded this temporarily to disable extra spacing*/
 .gfield_repeater_cell .gfield_admin_icons {
 	height: 0px;
+}
+
+/* inner 2 column liquid layout */
+
+.inner-sidebar {
+	float: right;
+	clear: right;
+	display: none;
+	width: 281px;
+	position: relative;
+}
+
+.columns-2 .inner-sidebar {
+	margin-right: auto;
+	width: 286px;
+	display: block;
+}
+
+.inner-sidebar #side-sortables,
+.columns-2 .inner-sidebar #side-sortables {
+	min-height: 300px;
+	width: 280px;
+	padding: 0;
+}
+
+.has-right-sidebar .inner-sidebar {
+	display: block;
+}
+
+.has-right-sidebar #post-body {
+	float: left;
+	clear: left;
+	width: 100%;
+	margin-right: -2000px;
+}
+
+.has-right-sidebar #post-body-content {
+	margin-right: 300px;
+	float: none;
+	width: auto;
 }

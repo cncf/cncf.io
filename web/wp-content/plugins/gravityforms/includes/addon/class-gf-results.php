@@ -925,7 +925,7 @@ if ( ! class_exists( 'GFResults' ) ) {
 					}
 
 					if ( ! empty( $content ) ) {
-						$field_results .= "<li>{$content}</li>";
+						$field_results .= "<li>" . wp_kses_post( $content ) . "</li>";
 						$c ++;
 					}
 				}

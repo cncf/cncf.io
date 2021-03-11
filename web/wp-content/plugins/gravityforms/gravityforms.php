@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: Gravity Forms
-Plugin URI: https://www.gravityforms.com
+Plugin URI: https://gravityforms.com
 Description: Easily create web forms and manage form entries within the WordPress admin.
-Version: 2.4.17.11
-Author: rocketgenius
-Author URI: https://www.rocketgenius.com
+Version: 2.4.23
+Author: Gravity Forms
+Author URI: https://gravityforms.com
 License: GPL-2.0+
 Text Domain: gravityforms
 Domain Path: /languages
 
 ------------------------------------------------------------------------
-Copyright 2009-2020 Rocketgenius, Inc.
+Copyright 2009-2021 Rocketgenius, Inc.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -51,8 +51,8 @@ $gf_recaptcha_public_key  = '';
 
 // You can  also add the reCAPTCHA keys to your wp-config.php file to automatically populate on activation
 // Add the two lines of code in the comment below to your wp-config.php to do so:
-// define('GF_RECAPTCHA_SITE_KEY','YOUR_SITE_KEY_GOES_HERE');
-// define('GF_RECAPTCHA_SECRET_KEY','YOUR_SECRET_KEY_GOES_HERE');
+// define('GF_RECAPTCHA_PRIVATE_KEY','YOUR_PRIVATE_KEY_GOES_HERE');
+// define('GF_RECAPTCHA_PUBLIC_KEY','YOUR_PUBLIC_KEY_GOES_HERE');
 //------------------------------------------------------------------------------------------------------------------
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -133,7 +133,7 @@ define( 'GF_SUPPORTED_WP_VERSION', version_compare( get_bloginfo( 'version' ), G
  *
  * @var string GF_MIN_WP_VERSION_SUPPORT_TERMS The version number
  */
-define( 'GF_MIN_WP_VERSION_SUPPORT_TERMS', '5.2' );
+define( 'GF_MIN_WP_VERSION_SUPPORT_TERMS', '5.5' );
 
 
 if ( ! defined( 'GRAVITY_MANAGER_URL' ) ) {
@@ -142,16 +142,7 @@ if ( ! defined( 'GRAVITY_MANAGER_URL' ) ) {
 	 *
 	 * @var string GRAVITY_MANAGER_URL The full URL to the Gravity Manager.
 	 */
-	define( 'GRAVITY_MANAGER_URL', 'https://www.gravityhelp.com/wp-content/plugins/gravitymanager' );
-}
-
-if ( ! defined( 'GRAVITY_MANAGER_PROXY_URL' ) ) {
-	/**
-	 * Defines the Gravity Manager proxy URL.
-	 *
-	 * @var string GRAVITY_MANAGER_PROXY_URL The full URL to the Gravity Manager proxy.
-	 */
-	define( 'GRAVITY_MANAGER_PROXY_URL', 'http://proxy.gravityplugins.com' );
+	define( 'GRAVITY_MANAGER_URL', 'https://gravityapi.com/wp-content/plugins/gravitymanager' );
 }
 
 require_once( plugin_dir_path( __FILE__ ) . 'currency.php' );
@@ -176,10 +167,14 @@ add_action( 'init', array( 'GFForms', 'init' ) );
 add_action( 'wp', array( 'GFForms', 'maybe_process_form' ), 9 );
 add_action( 'admin_init', array( 'GFForms', 'maybe_process_form' ), 9 );
 add_action( 'wp', array( 'GFForms', 'process_exterior_pages' ) );
+add_action( 'admin_init', array( 'GFForms', 'process_exterior_pages' ) );
+add_action( 'wp_ajax_update_auto_update_setting', array( 'GFForms', 'update_auto_update_setting' ) );
 add_filter( 'upgrader_pre_install', array( 'GFForms', 'validate_upgrade' ), 10, 2 );
 add_filter( 'tiny_mce_before_init', array( 'GFForms', 'modify_tiny_mce_4' ), 20 );
 add_filter( 'user_has_cap', array( 'RGForms', 'user_has_cap' ), 10, 3 );
 add_filter( 'query', array( 'GFForms', 'filter_query' ) );
+add_filter( 'plugin_auto_update_setting_html', array( 'GFForms', 'auto_update_message' ), 10, 3 );
+add_filter( 'plugin_auto_update_debug_string', array( 'GFForms', 'auto_update_debug_message' ), 10, 4 );
 
 
 //Hooks for no-conflict functionality
@@ -215,7 +210,7 @@ class GFForms {
 	 *
 	 * @var string $version The version number.
 	 */
-	public static $version = '2.4.17.11';
+	public static $version = '2.4.23';
 
 	/**
 	 * Handles background upgrade tasks.
@@ -487,12 +482,18 @@ class GFForms {
 			}
 
 			if ( $gf_page == 'entry_list' ) {
-				add_filter( 'set-screen-option', array( 'GFForms', 'set_screen_options' ), 10, 3 );
 				add_filter( 'screen_settings', array( 'GFForms', 'show_screen_options' ), 10, 2 );
+				// For WP 5.4.1 and older.
+				add_filter( 'set-screen-option', array( 'GFForms', 'set_screen_options' ), 10, 3 );
+				// For WP 5.4.2+.
+				add_filter( 'set_screen_option_gform_entries_screen_options', array( 'GFForms', 'set_screen_options', ), 10, 3 );
 			}
 
 			if ( $gf_page == 'form_list' ) {
+				// For WP 5.4.1 and older.
 				add_filter( 'set-screen-option', array( 'GFForms', 'set_screen_options' ), 10, 3 );
+				// For WP 5.4.2+.
+				add_filter( 'set_screen_option_gform_forms_per_page', array( 'GFForms', 'set_screen_options' ), 10, 3 );
 			}
 
 			add_filter(	'wp_privacy_personal_data_exporters', array( 'GFForms', 'register_data_exporter' ),	10 );
@@ -620,16 +621,16 @@ class GFForms {
 	 * @return void
 	 */
 	public static function maybe_process_form() {
-		if ( isset( $_POST['gform_submit'] ) ) {
+		if ( isset( $_POST['gform_send_resume_link'] ) ) {
+			require_once( GFCommon::get_base_path() . '/form_display.php' );
+			GFFormDisplay::process_send_resume_link();
+		} elseif ( isset( $_POST['gform_submit'] ) ) {
 			require_once( GFCommon::get_base_path() . '/form_display.php' );
 			$form_id = GFFormDisplay::is_submit_form_id_valid();
 
 			if ( $form_id ) {
 				GFFormDisplay::process_form( $form_id );
 			}
-		} elseif ( isset( $_POST['gform_send_resume_link'] ) ) {
-			require_once( GFCommon::get_base_path() . '/form_display.php' );
-			GFFormDisplay::process_send_resume_link();
 		}
 	}
 
@@ -1246,6 +1247,8 @@ class GFForms {
 			'gravityforms_view_addons'      => esc_html__( 'Manage Add-Ons', 'gravityforms' ),
 			'gravityforms_system_status'    => esc_html__( 'View System Status', 'gravityforms' ),
 			'gravityforms_uninstall'        => esc_html__( 'Uninstall Gravity Forms', 'gravityforms' ),
+			'gravityforms_logging'          => esc_html__( 'Logging Settings', 'gravityforms' ),
+			'gravityforms_api_settings'     => esc_html__( 'REST API Settings', 'gravityforms' ),
 		);
 
 		foreach ( $caps as $cap => $label ) {
@@ -2345,6 +2348,7 @@ class GFForms {
 		), $version, true );
 		wp_register_script( 'gform_system_report_clipboard', $base_url . '/includes/system-status/js/clipboard.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'gform_preview', $base_url . "/js/preview{$min}.js", array( 'jquery' ), $version, true );
+		wp_register_script( 'gform_auto_updates', $base_url . "/js/auto_update{$min}.js", array( 'jquery' ), $version, true );
 
 
 		wp_register_style( 'gform_admin', $base_url . "/css/admin{$min}.css", array(), $version );
@@ -2520,6 +2524,19 @@ class GFForms {
 				);
 				break;
 
+		}
+
+		if ( 'plugins.php' === $hook ) {
+			wp_enqueue_script( 'gform_auto_updates' );
+			wp_localize_script(
+				'gform_auto_updates',
+				'gf_update_ajax',
+				array(
+					'ajaxurl'      => admin_url( 'admin-ajax.php' ),
+					'enable_text'  => __( 'Enable auto-updates', 'gravityforms' ),
+					'disable_text' => __( 'Disable auto-updates', 'gravityforms' ),
+				)
+			);
 		}
 
 		if ( self::page_supports_add_form_button() ) {
@@ -4623,7 +4640,7 @@ class GFForms {
 							array(
 								'id'     => 'gform-form-' . $recent_form_id,
 								'parent' => 'gform-form-recent-forms',
-								'title'  => $form['title'],
+								'title'  => esc_html( $form['title'] ),
 								'href'   => GFCommon::current_user_can_any( 'gravityforms_edit_forms' ) ? admin_url( 'admin.php?page=gf_edit_forms&id=' . $recent_form_id ) : '',
 							)
 						);
@@ -4721,37 +4738,51 @@ class GFForms {
 	 */
 	public static function maybe_auto_update( $update, $item ) {
 
-		if ( isset( $item->slug ) && $item->slug == 'gravityforms' ) {
-
-			GFCommon::log_debug( 'GFForms::maybe_auto_update() - Starting auto-update for gravityforms.' );
-
-			$auto_update_disabled = self::is_auto_update_disabled();
-			GFCommon::log_debug( 'GFForms::maybe_auto_update() - $auto_update_disabled: ' . var_export( $auto_update_disabled, true ) );
-
-			if ( $auto_update_disabled || version_compare( GFForms::$version, $item->new_version, '=>' ) ) {
-				GFCommon::log_debug( 'GFForms::maybe_auto_update() - Aborting update.' );
-
-				return false;
-			}
-
-			$current_major = implode( '.', array_slice( preg_split( '/[.-]/', GFForms::$version ), 0, 1 ) );
-			$new_major     = implode( '.', array_slice( preg_split( '/[.-]/', $item->new_version ), 0, 1 ) );
-
-			$current_branch = implode( '.', array_slice( preg_split( '/[.-]/', GFForms::$version ), 0, 2 ) );
-			$new_branch     = implode( '.', array_slice( preg_split( '/[.-]/', $item->new_version ), 0, 2 ) );
-
-			if ( $current_major == $new_major && $current_branch == $new_branch ) {
-				GFCommon::log_debug( __METHOD__ . '() - OK to update.' );
-
-				return true;
-			} else {
-				GFCommon::log_debug( __METHOD__ . '() - Aborting update. Not on the same major version.' );
-
-				return false;
-			}
+		if ( ! isset( $item->slug ) || $item->slug !== 'gravityforms' ) {
+			return $update;
 		}
 
-		return $update;
+		GFCommon::log_debug( 'GFForms::maybe_auto_update() - Starting auto-update for gravityforms.' );
+
+		$auto_update_disabled = self::is_auto_update_disabled();
+		GFCommon::log_debug( 'GFForms::maybe_auto_update() - $auto_update_disabled: ' . var_export( $auto_update_disabled, true ) );
+
+		if ( $auto_update_disabled || version_compare( GFForms::$version, $item->new_version, '>=' ) ) {
+			GFCommon::log_debug( 'GFForms::maybe_auto_update() - Aborting update.' );
+
+			return false;
+		}
+
+		if ( self::should_update_to_version( $item->new_version ) ) {
+			GFCommon::log_debug( __METHOD__ . '() - OK to update.' );
+
+			return true;
+		} else {
+			GFCommon::log_debug( __METHOD__ . '() - Aborting update. Not on the same major version.' );
+
+			return false;
+		}
+
+	}
+
+	/**
+	 * Determines if the current version should update to the offered version.
+	 *
+	 * @since 2.4.22.4
+	 *
+	 * @param string $offered_ver The version number to be compared against the installed version number.
+	 *
+	 * @return bool
+	 */
+	public static function should_update_to_version( $offered_ver ) {
+		if ( version_compare( GFForms::$version, $offered_ver, '>=' ) ) {
+			return false;
+		}
+
+		$current_branch = implode( '.', array_slice( preg_split( '/[.-]/', GFForms::$version ), 0, 2 ) );
+		$new_branch     = implode( '.', array_slice( preg_split( '/[.-]/', $offered_ver ), 0, 2 ) );
+
+		return $current_branch == $new_branch;
 	}
 
 	/**
@@ -4761,46 +4792,11 @@ class GFForms {
 	 * @access  public
 	 *
 	 * @used-by GFForms::maybe_auto_update()
-	 * @used    DISALLOW_FILE_MODS
-	 * @used    WP_INSTALLING
-	 * @used    AUTOMATIC_UPDATER_DISABLED
-	 * @used    GFORM_DISABLE_AUTO_UPDATE
 	 *
 	 * @return bool True if auto update is disabled.  False otherwise.
 	 */
 	public static function is_auto_update_disabled() {
-
-		// Currently WordPress won't ask Gravity Forms to update if background updates are disabled.
-		// Let's double check anyway.
-
-		// WordPress background updates are disabled if you don't want file changes.
-		if ( defined( 'DISALLOW_FILE_MODS' ) && DISALLOW_FILE_MODS ) {
-			return true;
-		}
-
-		if ( defined( 'WP_INSTALLING' ) ) {
-			return true;
-		}
-
-		$wp_updates_disabled = defined( 'AUTOMATIC_UPDATER_DISABLED' ) && AUTOMATIC_UPDATER_DISABLED;
-
-		/**
-		 * Overrides the WordPress AUTOMATIC_UPDATER_DISABLED constant.
-		 *
-		 * @since Unknown
-		 *
-		 * @param bool $wp_updates_disabled True if disables.  False otherwise.
-		 */
-		$wp_updates_disabled = apply_filters( 'automatic_updater_disabled', $wp_updates_disabled );
-
-		if ( $wp_updates_disabled ) {
-			GFCommon::log_debug( __METHOD__ . '() - Background updates are disabled in WordPress.' );
-
-			return true;
-		}
-
-		// Now check Gravity Forms Background Update Settings
-
+		// Check Gravity Forms Background Update Settings.
 		$enabled = get_option( 'gform_enable_background_updates' );
 		GFCommon::log_debug( 'GFForms::is_auto_update_disabled() - $enabled: ' . var_export( $enabled, true ) );
 
@@ -4818,6 +4814,146 @@ class GFForms {
 		}
 
 		return $disabled;
+	}
+
+	/**
+	 * Filter the auto-update message on the plugins page.
+	 *
+	 * @since Unknown
+	 *
+	 * @param string $html         HTML of the auto-update message.
+	 * @param string $plugin_file  Plugin file.
+	 * @param array  $plugin_data  Plugin details.
+	 *
+	 * @return string|void
+	 */
+	public static function auto_update_message( $html, $plugin_file, $plugin_data ) {
+		// Check if the plugin is Gravity Forms or an add-on.
+		if ( ! self::is_gf_or_addon( $plugin_data['PluginURI'] ) ) {
+			return $html;
+		}
+
+		$update            = GFCommon::get_version_info();
+		$no_update_message = esc_html__( 'Auto-updates unavailable.', 'gravityforms' );
+
+		// If it's not GF core, only filter the message if the license is invalid.
+		if ( 'gravityforms.php' !== substr( $plugin_file, strrpos( $plugin_file, '/' ) + 1 ) ) {
+			if ( ! rgar( $update, 'is_valid_key' ) ) {
+				return $no_update_message;
+			} else {
+				return $html;
+			}
+		}
+
+		// We've gotten this far, so it must be GF core.
+		if ( ! rgar( $update, 'is_valid_key' ) ) {
+			return $no_update_message;
+		}
+
+		$background_updates = get_option( 'gform_enable_background_updates' );
+		if ( $background_updates ) {
+			// auto-updates are enabled, so clicking on this will disable them.
+			$message = esc_html__( 'Disable auto-updates', 'gravityforms' );
+			$action  = 'disable';
+		} else {
+			// auto-updates are disabled, so clicking on this will enable them.
+			$message = esc_html__( 'Enable auto-updates', 'gravityforms' );
+			$action  = 'enable';
+		}
+
+		$html = sprintf(
+			'<a href="%s" class="gf-toggle-auto-update aria-button-if-js" data-gfaction="%s" data-nonce="%s"><span class="dashicons dashicons-update spin hidden gf-update-setting" aria-hidden="true"></span><span class="label gf-update-label">%s</span></a><div class="gf-auto-update-notice notice notice-error notice-alt inline hidden"><p></p></div>',
+			esc_url( 'admin.php?page=gf_settings' ),
+			$action . '-gf-updates',
+			wp_create_nonce( 'gf-updates' ),
+			$message
+		);
+
+		return $html;
+	}
+
+	/**
+	 * Filter the auto-update message on the Site Health page.
+	 *
+	 * @since 2.4.20.2
+	 *
+	 * @param string $auto_updates_string Text of auto-update message.
+	 * @param string $plugin_path         Plugin path.
+	 * @param array  $plugin              Plugin details.
+	 * @param bool   $enabled             Whether auto-updates are enabled.
+	 *
+	 * @return string|void
+	 */
+	public static function auto_update_debug_message( $auto_updates_string, $plugin_path, $plugin, $enabled ) {
+		// Check if the plugin is Gravity Forms or an add-on.
+		if ( ! self::is_gf_or_addon( $plugin['PluginURI'] ) ) {
+			return $auto_updates_string;
+		}
+
+		$update            = GFCommon::get_version_info();
+		$no_update_message = __( 'Please register your copy of Gravity Forms to enable automatic updates.', 'gravityforms' );
+
+		// If it's not GF core, only filter the message if the license is invalid.
+		if ( 'gravityforms.php' !== substr( $plugin_path, strrpos( $plugin_path, '/' ) + 1 ) ) {
+			if ( ! rgar( $update, 'is_valid_key' ) ) {
+				return $no_update_message;
+			} else {
+				return $auto_updates_string;
+			}
+		}
+
+		// Filter the message for GF core.
+		if ( rgar( $update, 'is_valid_key' ) ) {
+			return $auto_updates_string;
+		} else {
+			return $no_update_message;
+		}
+
+	}
+
+	/**
+	 * Enable or disable auto-updates.
+	 *
+	 * AJAX function to enable or disable auto-updates from the WordPress plugins page.
+	 *
+	 * @since 2.4.20.2
+	 */
+	public static function update_auto_update_setting() {
+
+		if ( ! wp_verify_nonce( $_POST['nonce'], 'gf-updates' ) ) {
+			wp_send_json_error( __( 'Permissions error.', 'gravityforms' ) );
+		}
+
+		$acceptable_tasks = array( 'enable-gf-updates', 'disable-gf-updates' );
+		if ( ! rgar( $_POST, 'task' ) || ! in_array( $_POST['task'], $acceptable_tasks ) ) {
+			wp_send_json_error( __( 'Error processing request.  Please refresh and try again.', 'gravityforms' ) );
+		}
+
+		if ( 'enable-gf-updates' == $_POST['task'] ) {
+			update_option( 'gform_enable_background_updates', true );
+			wp_send_json_success( 'success' );
+		} else {
+			update_option( 'gform_enable_background_updates', false );
+			wp_send_json_success( 'success' );
+		}
+
+	}
+
+	/**
+	 * Check if a plugin is Gravity Forms or an offical add-on.
+	 *
+	 * @since 2.4.20.2
+	 *
+	 * @param string $plugin_uri The URI of the plugin as found in the plugin header.
+	 *
+	 * @return bool
+	 */
+	public static function is_gf_or_addon( $plugin_uri ) {
+		if ( strpos( $plugin_uri, 'gravityforms.com' ) ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public static function deprecate_add_on_methods() {
@@ -4993,6 +5129,15 @@ class GFForms {
 		foreach ( $forms as $form ) {
 			$forms_options[ absint( $form->id ) ] = $form->title;
 		}
+
+		/**
+		 * Modify the list of available forms displayed in the shortcode builder.
+		 *
+		 * @since 2.4.23
+		 *
+		 * @param array $forms_options A collection of active forms on site.
+		 */
+		$forms_options = apply_filters( 'gform_shortcode_builder_forms', $forms_options );
 
 		$default_attrs = array(
 			array(
@@ -5956,5 +6101,67 @@ if ( ! function_exists( 'gf_do_action' ) ) {
 			$action .= $modifier;
 			do_action( $action, $args[0], $args[1], $args[2], $args[3], $args[4], $args[5], $args[6], $args[7], $args[8], $args[9] );
 		}
+	}
+}
+
+if ( ! function_exists( 'gf_has_filters' ) ) {
+	/**
+	 * Determines if a callback has been registered for the specified filter.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param array         $filter            An array containing the filter tag and modifiers.
+	 * @param bool|callable $function_to_check The optional callback to check for.
+	 *
+	 * @return bool
+	 */
+	function gf_has_filters( $filter, $function_to_check = false ) {
+		$modifiers = array_splice( $filter, 1, count( $filter ) );
+		$filter    = $filter[0];
+
+		// Adding empty modifier for the base filter.
+		array_unshift( $modifiers, '' );
+
+		foreach ( $modifiers as $modifier ) {
+			$modifier = rgblank( $modifier ) ? '' : sprintf( '_%s', $modifier );
+			$filter   .= $modifier;
+			if ( has_filter( $filter, $function_to_check ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+}
+
+if ( ! function_exists( 'gf_has_filter' ) ) {
+	/**
+	 * Determines if a callback has been registered for the specified filter.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param array         $filter            An array containing the filter tag and modifiers.
+	 * @param bool|callable $function_to_check The optional callback to check for.
+	 *
+	 * @return bool
+	 */
+	function gf_has_filter( $filter, $function_to_check = false ) {
+		return gf_has_filters( $filter, $function_to_check );
+	}
+}
+
+if ( ! function_exists( 'gf_has_action' ) ) {
+	/**
+	 * Determines if a callback has been registered for the specified action.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param array         $action            An array containing the action tag and modifiers.
+	 * @param bool|callable $function_to_check The optional callback to check for.
+	 *
+	 * @return bool
+	 */
+	function gf_has_action( $action, $function_to_check = false ) {
+		return gf_has_filters( $action, $function_to_check );
 	}
 }
