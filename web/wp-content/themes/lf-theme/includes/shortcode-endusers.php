@@ -29,7 +29,8 @@ function add_endusers_shortcode( $atts ) {
 		return;
 	}
 
-	if ( false === ( $endusers = wp_cache_get( 'cncf_latest_endusers' ) ) ) {
+	$endusers = wp_cache_get( 'cncf_latest_endusers' );
+	if ( false === $endusers ) {
 
 		$request = wp_remote_get( 'https://landscape.cncf.io/data/exports/end-users-reverse-chronological.json' );
 		$endusers = wp_remote_retrieve_body( $request );
