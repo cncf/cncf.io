@@ -1413,6 +1413,173 @@ class GFAPI {
 		return $result;
 	}
 
+	// ENTRY NOTES ------------------------------------------------
+
+	/**
+	 * Get notes based on search criteria.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param array $search_criteria Array of search criteria.
+	 * @param array $sorting Sort key and direction.
+	 * @return array|bool
+	 */
+	public static function get_notes( $search_criteria = array(), $sorting = null ) {
+
+		if ( ! $sorting ) {
+			$sorting = array(
+				'key'        => 'id',
+				'direction'  => 'ASC',
+				'is_numeric' => true,
+			);
+		}
+
+		$notes = GFFormsModel::get_notes( $search_criteria, $sorting );
+
+		if ( empty( $notes ) ) {
+			return false;
+		}
+
+		return $notes;
+	}
+
+	/**
+	 * Get note by ID.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param int $note_id ID of the note to retrieve.
+	 * @return array|WP_Error
+	 */
+	public static function get_note( $note_id ) {
+		$note = GFFormsModel::get_notes( array( 'id' => $note_id ) );
+
+		if ( empty( $note ) ) {
+			return new WP_Error( 'note_not_found', __( 'Note not found', 'gravityforms' ) );
+		}
+
+		return $note[0];
+	}
+
+	/**
+	 * Create one note for an entry.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param int    $entry_id ID of the entry to add the note to.
+	 * @param int    $user_id ID of the user to associate with the note.
+	 * @param string $user_name Name of the user to associate with the note.
+	 * @param string $note Text of the note.
+	 * @param string $note_type Note type.
+	 * @param null   $sub_type Not sub-type.
+	 * @return array|int|void|WP_Error
+	 */
+	public static function add_note( $entry_id, $user_id, $user_name, $note, $note_type = 'user', $sub_type = null ) {
+		if ( gf_upgrade()->get_submissions_block() ) {
+			return new WP_Error( 'submissions_blocked', __( 'Submissions are currently blocked due to an upgrade in progress', 'gravityforms' ) );
+		}
+
+		if ( ! self::entry_exists( $entry_id ) ) {
+			return new WP_Error( 'invalid_entry', __( 'Invalid entry', 'gravityforms' ), $entry_id );
+		}
+
+		if ( empty( $note ) || ! is_string( $note ) ) {
+			return new WP_Error( 'invalid_note', __( 'Invalid or empty note', 'gravityforms' ), $entry_id );
+		}
+
+		$new_note = GFFormsModel::add_note( intval( $entry_id ), $user_id, $user_name, wp_kses_post( $note ), sanitize_text_field( $note_type ), sanitize_text_field( $sub_type ) );
+
+		return $new_note;
+	}
+
+	/**
+	 * Delete one note.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param int $note_id ID of the note to delete.
+	 * @return int|WP_Error ID of the deleted note.
+	 */
+	public static function delete_note( $note_id ) {
+		$result = GFFormsModel::delete_note( $note_id );
+
+		if ( ! $result ) {
+			return new WP_Error( 'invalid_note', __( 'Invalid note', 'gravityforms' ), $note_id );
+		}
+
+		return $result;
+	}
+
+	/**
+	 * Update a note.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @param array $note {
+	 * 		Note data to update.
+	 *
+	 *		@type int    $entry_id     ID of the entry associated with the note.
+	 *		@type int    $user_id      ID of the user associated with the note.
+	 * 		@type string $user_name    Name of the user associated with the note.
+	 *		@type string $date_created Date and time the note was created, in SQL datetime format.
+	 *		@type string $value        The text of the note.
+	 *		@type string $note_type    The note type.
+	 *		@type string $sub_type     The note subtype.
+	 * }
+	 * @param int   $note_id ID of the note to update.
+	 * @return bool|WP_Error
+	 */
+	public static function update_note( $note, $note_id = '' ) {
+		if ( gf_upgrade()->get_submissions_block() ) {
+			return new WP_Error( 'submissions_blocked', __( 'Submissions are currently blocked due to an upgrade in progress', 'gravityforms' ) );
+		}
+
+		if ( ! is_array( $note ) || empty( $note ) ) {
+			return new WP_Error( 'invalid_note_format', __( 'Invalid note format', 'gravityforms' ) );
+		}
+
+		if ( empty( $note_id ) ) {
+			if ( rgar( $note, 'id' ) ) {
+				$note_id = absint( $note['id'] );
+			}
+		} else {
+			$note_id = absint( $note_id );
+		}
+
+		if ( empty( $note_id ) ) {
+			return new WP_Error( 'missing_note_id', __( 'Missing note id', 'gravityforms' ) );
+		}
+
+		// make sure the note exists.
+		$current_note = self::get_note( $note_id );
+		if ( ! $current_note || is_wp_error( $current_note ) ) {
+			return new WP_Error( 'note_not_found', __( 'Note not found', 'gravityforms' ) );
+		}
+
+		$note_properties = array(
+			'id',
+			'entry_id',
+			'user_id',
+			'user_name',
+			'date_created',
+			'value',
+			'note_type',
+			'sub_type',
+		);
+
+		$current_note_array = (array) $current_note;
+
+		foreach ( $note_properties as $property ) {
+			if ( ! isset( $note[ $property ] ) ) {
+				$note[ $property ] = $current_note_array[ $property ];
+			}
+		}
+
+		$result = GFFormsModel::update_note( $note['id'], $note['entry_id'], $note['user_id'], $note['user_name'], $note['date_created'], $note['value'], $note['note_type'], $note['sub_type'] );
+
+		return $result;
+	}
+
 	// FORM SUBMISSIONS -------------------------------------------
 
 	/**
@@ -1597,17 +1764,22 @@ class GFAPI {
 	 * @access public
 	 * @global $wpdb
 	 *
-	 * @param mixed  $feed_ids   The ID of the Feed or an array of Feed IDs.
-	 * @param int    $form_id    The ID of the Form to which the Feeds belong.
-	 * @param string $addon_slug The slug of the add-on to which the Feeds belong.
-	 * @param bool   $is_active  If the feed is active.
+	 * @param mixed       $feed_ids   The ID of the Feed or an array of Feed IDs.
+	 * @param null|int    $form_id    The ID of the Form to which the Feeds belong.
+	 * @param null|string $addon_slug The slug of the add-on to which the Feeds belong.
+	 * @param bool        $is_active  If the feed is active.
 	 *
 	 * @return array|WP_Error Either an array of Feed objects or a WP_Error instance.
 	 */
 	public static function get_feeds( $feed_ids = null, $form_id = null, $addon_slug = null, $is_active = true ) {
 		global $wpdb;
 
-		$table       = $wpdb->prefix . 'gf_addon_feed';
+		$table = $wpdb->prefix . 'gf_addon_feed';
+
+		if ( ! GFCommon::table_exists( $table ) ) {
+			return self::get_missing_table_wp_error( $table );
+		}
+
 		$where_arr   = array();
 		$where_arr[] = $wpdb->prepare( 'is_active=%d', $is_active );
 		if ( false === empty( $form_id ) ) {
@@ -1661,6 +1833,10 @@ class GFAPI {
 		}
 
 		$table = $wpdb->prefix . 'gf_addon_feed';
+
+		if ( ! GFCommon::table_exists( $table ) ) {
+			return self::get_missing_table_wp_error( $table );
+		}
 
 		$sql = $wpdb->prepare( "DELETE FROM {$table} WHERE id=%d", $feed_id );
 
@@ -1735,7 +1911,12 @@ class GFAPI {
 			return new WP_Error( 'submissions_blocked', __( 'Submissions are currently blocked due to an upgrade in progress', 'gravityforms' ) );
 		}
 
-		$table          = $wpdb->prefix . 'gf_addon_feed';
+		$table = $wpdb->prefix . 'gf_addon_feed';
+
+		if ( ! GFCommon::table_exists( $table ) ) {
+			return self::get_missing_table_wp_error( $table );
+		}
+
 		$feed_meta_json = json_encode( $feed_meta );
 		$sql            = $wpdb->prepare( "INSERT INTO {$table} (form_id, meta, addon_slug) VALUES (%d, %s, %s)", $form_id, $feed_meta_json, $addon_slug );
 
@@ -1746,6 +1927,19 @@ class GFAPI {
 		}
 
 		return $wpdb->insert_id;
+	}
+
+	/**
+	 * Returns the missing_table WP_Error.
+	 *
+	 * @since 2.4.22
+	 *
+	 * @param string $table The name of the table which does not exist.
+	 *
+	 * @return WP_Error
+	 */
+	private static function get_missing_table_wp_error( $table ) {
+		return new WP_Error( 'missing_table', sprintf( __( 'The %s table does not exist.', 'gravityforms' ), $table ) );
 	}
 
 	// NOTIFICATIONS ----------------------------------------------

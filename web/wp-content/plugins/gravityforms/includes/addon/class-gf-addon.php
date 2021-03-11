@@ -231,6 +231,7 @@ abstract class GFAddOn {
 	 * Override this function to add initialization code (i.e. hooks) for the admin site (WP dashboard)
 	 */
 	public function init_admin() {
+		$this->maybe_cache_gravityapi_oauth_response();
 
 		// enqueues admin scripts
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 10, 0 );
@@ -327,6 +328,54 @@ abstract class GFAddOn {
 	}
 
 	/**
+	 * Check for a response from the Gravity API and temporarily cache the value to a transient.
+	 *
+	 * This method cannot be extended because it's intended for use only by first-party Gravity Forms add-ons.
+	 *
+	 * @since 2.4.23
+	 */
+	private function maybe_cache_gravityapi_oauth_response() {
+		GFForms::include_gravity_api();
+
+		$referer     = isset( $_SERVER['HTTP_REFERER'] ) ? wp_parse_url( esc_url_raw( wp_unslash( $_SERVER['HTTP_REFERER'] ) ) ) : array();
+		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? wp_parse_url( esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) : array();
+
+		if (
+			( rgar( $referer, 'host' ) !== rgar( wp_parse_url( GRAVITY_API_URL ), 'host' ) )
+			|| empty( $request_uri )
+		) {
+			return;
+		}
+
+		// Set up post data.
+		$data = array_filter(
+			array(
+				'auth_payload' => sanitize_text_field( rgpost( 'auth_payload' ) ),
+				'state'        => sanitize_text_field( rgpost( 'state' ) ),
+			)
+		);
+
+		// Get the query string to check which add-on is being authenticated.
+		parse_str(
+			rgar( $request_uri, 'query' ),
+			$query
+		);
+
+		$addon = rgar( $query, 'subview' );
+
+		if (
+			// Couldn't determine the add-on, no request was cached, or the response doesn't contain what we expect.
+			! $addon
+			|| ! get_transient( "gravityapi_request_{$addon}" )
+			|| count( $data ) !== 2
+		) {
+			return;
+		}
+
+		set_transient( "gravityapi_response_{$addon}", $data, 10 * MINUTE_IN_SECONDS );
+	}
+
+	/**
 	 * Override this function to add AJAX hooks or to add initialization code when an AJAX request is being performed
 	 */
 	public function init_ajax() {
@@ -341,6 +390,10 @@ abstract class GFAddOn {
 			require_once( 'class-gf-addon-locking.php' );
 			$config = $this->get_locking_config();
 			new GFAddonLocking( $config, $this );
+		}
+
+		if ( $this->has_plugin_settings_page() && $this->current_user_can_any( $this->_capabilities_settings_page ) ) {
+			add_filter( 'plugin_action_links', array( $this, 'plugin_settings_link' ), 10, 2 );
 		}
 	}
 
@@ -822,7 +875,7 @@ abstract class GFAddOn {
 				}
 				if ( isset( $script['callback'] ) && is_callable( $script['callback'] ) ) {
 					$args = compact( 'form', 'is_ajax' );
-					call_user_func_array( $script['callback'], $args );
+					call_user_func_array( $script['callback'], array_values( $args ) );
 				}
 			}
 		}
@@ -1137,6 +1190,7 @@ abstract class GFAddOn {
 	 *       );
 	 * }
 	 *
+     * @return array|bool
 	 */
 	public function get_results_page_config() {
 		return false;
@@ -1264,6 +1318,11 @@ abstract class GFAddOn {
 		}
 		if ( ! empty( $this->_capabilities_settings_page ) && is_string( $this->_capabilities_settings_page ) ) {
 			$caps[ $this->_capabilities_settings_page ] = esc_html__( 'Add-On Settings', 'gravityforms' );
+		}
+
+		$results_cap = rgars( $this->get_results_page_config(), 'capabilities/0' );
+		if ( ! empty( $results_cap ) && $results_cap !== 'gravityforms_view_entries' && ! isset( $caps[ $results_cap ] ) ) {
+			$caps[ $results_cap ] = esc_html__( 'Results Page', 'gravityforms' );
 		}
 
 		return $caps;
@@ -6247,6 +6306,17 @@ abstract class GFAddOn {
 	 */
 	public function get_slug() {
 		return $this->_slug;
+	}
+
+	/**
+	 * Returns the add-on slug with the gravityforms prefix removed.
+	 *
+	 * @since 2.4.18
+	 *
+	 * @return string
+	 */
+	public function get_short_slug() {
+		return str_replace( 'gravityforms', '', $this->get_slug() );
 	}
 
 	/**

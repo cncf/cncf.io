@@ -1,0 +1,5 @@
+{
+	"_instructions": "Rename file to local-config.json. Set `proxy` below to your local dev url for local browsersync and `certs_path` to your local certs directory",
+	"proxy": "gravity-forms.local",
+	"certs_path": "/Users/morgan/Library/Application Support/Local/run/router/nginx/certs"
+}

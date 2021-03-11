@@ -86,6 +86,7 @@ class GF_Field_Email extends GF_Field {
 		$class_suffix  = $is_entry_detail ? '_admin' : '';
 
 		$class         = $this->emailConfirmEnabled ? '' : $size . $class_suffix; //Size only applies when confirmation is disabled
+		$class         = esc_attr( $class );
 
 		$form_sub_label_placement  = rgar( $form, 'subLabelPlacement' );
 		$field_sub_label_placement = $this->subLabelPlacement;
@@ -132,7 +133,7 @@ class GF_Field_Email extends GF_Field {
                         </div>";
 			} else {
 				return "<div class='ginput_container ginput_container_email ginput_single_email' {$single_style}>
-                            <input class='{$class}' name='input_{$id}' type='{$html_input_type}' class='" . esc_attr( $class ) . "' disabled='disabled' {$single_placeholder_attribute} {$required_attribute} {$invalid_attribute} />
+                            <input name='input_{$id}' type='{$html_input_type}' class='" . esc_attr( $class ) . "' disabled='disabled' {$single_placeholder_attribute} {$required_attribute} {$invalid_attribute} />
                             <div class='gf_clear gf_clear_complex'></div>
                         </div>
                         <div class='ginput_complex ginput_container ginput_container_email ginput_confirm_email' {$confirm_style} id='{$field_id}_container'>

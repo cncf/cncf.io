@@ -828,7 +828,15 @@ final class GF_Entry_List_Table extends WP_List_Table {
 			$table_columns['field_id-id'] = esc_html__( 'Entry Id', 'gravityforms' );
 		}
 
-		$table_columns['column_selector'] = '<a aria-label="' . esc_attr__( 'click to select columns to display', 'gravityforms' ) . '" href="' . trailingslashit( site_url( null, 'admin' ) ) . '?gf_page=select_columns&id=' . absint( $form_id ) . '&TB_iframe=true&height=365&width=600" class="thickbox entries_edit_icon"><i aria-hidden="true" class="fa fa-cog" title="' . esc_attr__( 'click to select columns to display', 'gravityforms' ) . '"></i></a>';
+		$column_selector_url = add_query_arg( array(
+			'gf_page'   => 'select_columns',
+			'id'        => absint( $form_id ),
+			'TB_iframe' => 'true',
+			'height'    => 365,
+			'width'     => 600,
+		), admin_url() );
+
+		$table_columns['column_selector'] = '<a aria-label="' . esc_attr__( 'click to select columns to display', 'gravityforms' ) . '" href="' . esc_url( $column_selector_url ) . '" class="thickbox entries_edit_icon"><i aria-hidden="true" class="fa fa-cog" title="' . esc_attr__( 'click to select columns to display', 'gravityforms' ) . '"></i></a>';
 
 		/**
 		 * Allow the columns to be displayed in the entry list table to be overridden.
@@ -1754,8 +1762,8 @@ final class GF_Entry_List_Table extends WP_List_Table {
 
 			function resetResendNotificationsUI() {
 
-				jQuery(".gform_notifications").attr('checked', false);
-				jQuery('#notifications_container .message, #notifications_override_settings').hide();
+				jQuery( '.gform_notifications' ).prop( 'checked' , false );
+				jQuery( '#notifications_container .message, #notifications_override_settings' ).hide();
 
 			}
 
@@ -1797,7 +1805,7 @@ final class GF_Entry_List_Table extends WP_List_Table {
 
 			function resetPrintUI() {
 
-				jQuery('#print_options input[type="checkbox"]').attr('checked', false);
+				jQuery( '#print_options input[type="checkbox"]' ).prop( 'checked', false );
 
 			}
 
@@ -1831,10 +1839,11 @@ final class GF_Entry_List_Table extends WP_List_Table {
 
 			}
 
-			function closeModal(isSuccess) {
+			function closeModal( isSuccess ) {
 
-				if (isSuccess)
-					jQuery('.check-column input[type="checkbox"]').attr('checked', false);
+				if ( isSuccess ){
+					jQuery( '.check-column input[type="checkbox"]' ).prop( 'checked', false );
+				}
 
 				tb_remove();
 

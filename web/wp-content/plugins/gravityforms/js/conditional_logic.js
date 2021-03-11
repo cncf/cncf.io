@@ -100,7 +100,16 @@ function gf_get_field_action(formId, conditionalLogic){
 
 	var matches = 0;
 	for(var i = 0; i < conditionalLogic["rules"].length; i++){
-		var rule = conditionalLogic["rules"][i];
+		/**
+		 * Filter the conditional logic rule before it is evaluated on the frontend.
+		 *
+		 * @param {object}          rule             The conditional logic rule about to be evaluated.
+		 * @param {(string|number)} formId           The current form ID.
+		 * @param {object}          conditionalLogic All details required to evaluate an objects conditional logic.
+		 *
+		 * @since 2.4.22
+		 */
+		var rule = gform.applyFilters( 'gform_rule_pre_evaluation', jQuery.extend( {}, conditionalLogic["rules"][i] ), formId, conditionalLogic );
 		if(gf_is_match(formId, rule))
 			matches++;
 	}
@@ -172,11 +181,12 @@ function gf_is_match_checkable( $inputs, rule, formId, fieldId ) {
 
 function gf_is_match_default( $input, rule, formId, fieldId ) {
 
-	var val        = $input.val(),
-		values     = ( val instanceof Array ) ? val : [ val ], // transform regular value into array to support multi-select (which returns an array of selected items)
-		matchCount = 0;
+	var val           = $input.val(),
+		values        = ( val instanceof Array ) ? val : [ val ], // transform regular value into array to support multi-select (which returns an array of selected items)
+		matchCount    = 0,
+		valuesLength  = Math.max( values.length, 1 ); // jQuery 3.0: Make sure our length is at least 1 so that the following loop fires.
 
-	for( var i = 0; i < values.length; i++ ) {
+	for( var i = 0; i < valuesLength; i++ ) {
 
 		// fields with pipes in the value will use the label for conditional logic comparison
 		var hasLabel   = values[i] ? values[i].indexOf( '|' ) >= 0 : true,
@@ -199,7 +209,7 @@ function gf_is_match_default( $input, rule, formId, fieldId ) {
 	}
 
 	// if operator is 'isnot', none of the values can match
-	var isMatch = rule.operator == 'isnot' ? matchCount == values.length : matchCount > 0;
+	var isMatch = rule.operator == 'isnot' ? matchCount == valuesLength : matchCount > 0;
 
 	return isMatch;
 }

@@ -558,11 +558,6 @@ body .gform_wrapper ul li.field_description_below div.ginput_container_checkbox 
     clear: both;
 }
 
-.gform_wrapper ul.gfield_checkbox li input[type=checkbox],
-.gform_wrapper ul.gfield_radio li input[type=radio] {
-    width: auto !important;
-}
-
 .gform_wrapper .gfield_checkbox li,
 .gform_wrapper .gfield_radio li {
     position: relative;
