@@ -4,29 +4,29 @@ $white: #ffffff;
 $black: #202020;
 
 // primary - highlight colour
-$primary-300: #E43B80; // cta rollover
-$primary-400: #DE176C; // preferred CTA
+$primary-300: #e43b80; // cta rollover
+$primary-400: #de176c; // preferred CTA
 
 // secondary - bolder colour
 $secondary-300: #908bb1;
 $secondary-500: #4e4a6d;
 $secondary-600: #302b54;
-$secondary-700: #2C2960;
-$secondary-800: #242b5F;
-$secondary-900: #1C214A;
+$secondary-700: #2c2960;
+$secondary-800: #242b5f;
+$secondary-900: #1c214a;
 
 // tertiary
-$tertiary-100: #F0F5F7;
+$tertiary-100: #f0f5f7;
 $tertiary-400: #436ca9;
-$tertiary-600: #416FD9;
-$tertiary-700: #0F1533;
+$tertiary-600: #416fd9;
+$tertiary-700: #0f1533;
 
 // greys.
-$grey-100: #E6E6E6;
-$grey-200: #ABB2BF;
+$grey-100: #e6e6e6;
+$grey-200: #abb2bf;
 $grey-400: #a7a7a6;
 $grey-500: #87969c;
-$grey-700: #A7A4B6; // skew box grey.
+$grey-700: #a7a4b6; // skew box grey.
 $grey-800: #333333;
 
 // main.
@@ -60,7 +60,7 @@ $cs-overlay: $secondary-800;
 $hero-overlay: $secondary-900;
 
 // forms.
-$error: #B80611;
+$error: #b80611;
 $success: green;
 
 // Setup variables for the hamburger.
@@ -76,33 +76,12 @@ $hamburger-hover-opacity: 1;
 $hamburger-active-hover-opacity: 1;
 
 // font-stack.
-$font-primary: -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Helvetica,
-Arial,
-sans-serif,
-Roboto,
-Ubuntu,
-"Apple Color Emoji",
-"Segoe UI Emoji",
-"Segoe UI Symbol";
+$font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, Roboto, Ubuntu,
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-$font-code: Hack,
-"Fira Code",
-Consolas,
-Menlo,
-Monaco,
-"Andale Mono",
-"Lucida Console",
-"Lucida Sans Typewriter",
-"DejaVu Sans Mono",
-"Bitstream Vera Sans Mono",
-"Liberation Mono",
-"Nimbus Mono L",
-"Courier New",
-Courier,
-monospace;
+$font-code: Hack, "Fira Code", Consolas, Menlo, Monaco, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+	"DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier,
+	monospace;
 
 // spacing.
 $sm-padding: 2rem;

@@ -120,7 +120,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 			<?php echo esc_attr( $target_attr ); ?>
 			title="<?php the_title(); ?>">
 			<?php the_title(); ?>
-			</a></p>
+		</a></p>
 		<p class="date-author-row"><span class="posted-date date-icon">
 		<?php echo get_the_date( 'F j, Y' ); ?></span></p>
 	<div class="archive-excerpt"><?php the_content(); ?></div>
