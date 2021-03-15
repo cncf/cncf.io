@@ -155,7 +155,7 @@
 		}
 	}
 
-	// Applied to Single Blog Posts only.
+	// Applied to Single Blog Posts and Spotlight only.
 	&.post-content {
 		h1,
 		h2,
@@ -211,7 +211,9 @@
 
 		ul,
 		ol {
-			max-width: 700px;
+			&:not([class*="is-style-max"]) {
+				max-width: 650px;
+			}
 		}
 
 		a {
