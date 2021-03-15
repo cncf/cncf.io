@@ -14,3 +14,8 @@
 .wp-block-group.has-background {
 	padding: 1.25em 2em;
 }
+
+// added to stop known WP issue where buttons lose margin in columns.
+.wp-block-columns .wp-block-buttons .wp-block-button {
+	margin-right: 0.5em;
+}
