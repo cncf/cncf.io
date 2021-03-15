@@ -52,7 +52,6 @@ class Enqueue {
 			wp_dequeue_style( 'search-filter-plugin-styles' );
 			wp_deregister_style( 'search-filter-plugin-styles' );
 		}
-
 	}
 
 	/**

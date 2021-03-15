@@ -204,7 +204,6 @@ class Lf_Utils {
 		if ( ! $author ) {
 			$authors_to_ignore = array( 3049, 3047, 2910, 3051 ); // Authors we don't want to show a byline for.
 			$author_id = get_post_field( 'post_author', $the_post_id );
-
 			if ( in_array( $author_id, $authors_to_ignore ) ) {
 				return;
 			}
