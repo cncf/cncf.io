@@ -47,10 +47,14 @@ class Enqueue {
 			wp_enqueue_style( 'main', get_template_directory_uri() . '/build/styles.min.css', array(), filemtime( get_template_directory() . '/build/styles.min.css' ), 'all' );
 		}
 
-		// dequeue search filter css on front page.
+		// dequeue search filter js and css on front page.
 		if ( ! is_admin() && is_front_page() ) {
 			wp_dequeue_style( 'search-filter-plugin-styles' );
 			wp_deregister_style( 'search-filter-plugin-styles' );
+			wp_dequeue_script( 'search-filter-plugin-build' );
+			wp_deregister_script( 'search-filter-plugin-build' );
+			wp_dequeue_script( 'search-filter-plugin-chosen' );
+			wp_deregister_script( 'search-filter-plugin-chosen' );
 		}
 	}
 
