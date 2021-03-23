@@ -1,0 +1,126 @@
+.wpai-ftp-browser-grid {
+    display: grid;
+    grid-template-areas: '. . .';
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+#wpallimport-ftp-connection-builder {
+    font-family:unset !important;
+}
+.wpai-ftp-browser-grid > div {
+    text-align: left;
+    padding: 0px 0;
+    font-size: 15px;
+}
+
+.wpai-ftp-browser-grid > a {
+
+}
+.wpai-ftp-browser-link {
+    text-decoration: none;
+}
+.wpai-ftp-browser-dir {
+
+}
+.wpai-ftp-browser-file {
+    font-weight: 600;
+}
+
+.wpai-ftp-browser-preloader-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.wpai-ftp-browser-notice {
+    color: #aa1111;
+    font-weight: bolder;
+    text-align: center;
+    padding: 20px;
+}
+
+.wpai-ftp-browser-control {
+    font-size: 28px;
+    color: #38a659 !important;
+    padding: 0 10px 15px 10px;
+}
+.wpai-ftp-browser-control:hover {
+    color: #7aff91;
+}
+
+.wpai-ftp-browser-document {
+    font-size:20px !important;
+}
+
+.wpai-ftp-browser-folder {
+    font-size:20px !important;
+}
+
+.wpai-ftp-browser-file-selected {
+    left:9px;
+    position:relative;
+}
+
+.ftp-easing-spinner {
+    width: 80px;
+    height: 80px;
+    right: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    margin:auto;
+    top:35%;
+    z-index:2;
+}
+
+.ftp-double-bounce1, .ftp-double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #007cba;
+    opacity: 0.6;
+    position: absolute;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.ftp-double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.wpallimport-ftp-builder .easing-spinner {
+    width: 29px;
+    height: 29px;
+    position: relative;
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: -25px;
+    float: left;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.ftp-mute-all {
+    opacity: 0.4;
+    pointer-events: none;
+}

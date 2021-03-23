@@ -39,7 +39,6 @@
     "wpackagist-plugin/redirection": "^4.4.2",
     "wpackagist-plugin/safe-svg": "^1.9.3",
     "wpackagist-plugin/shortpixel-image-optimiser": "^4.15.3",
-    "wpackagist-plugin/wp-all-import":"^3.5.6",
     "wpackagist-plugin/svg-autocrop": "^0.1.0",
     "wpackagist-plugin/ultimate-member": "^2.1.2",
     "wpackagist-plugin/um-recaptcha": "^2.1.4",
