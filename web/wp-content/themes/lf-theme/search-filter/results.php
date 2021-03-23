@@ -30,6 +30,9 @@ if ( $query->have_posts() ) {
 		case 'lf_spotlight':
 			get_template_part( 'search-filter/spotlights' );
 			break;
+		case 'lf_kubeweekly':
+			get_template_part( 'search-filter/kubeweeklys' );
+			break;
 	}
 } else {
 	echo 'No Results Found';
