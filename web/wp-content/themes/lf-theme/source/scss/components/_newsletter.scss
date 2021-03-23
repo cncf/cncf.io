@@ -57,11 +57,6 @@
 
 // controls the forms elements.
 .newsletter .hbspt-form {
-	// removes captcha image from flow.
-	.hs-recaptcha {
-		display: none;
-	}
-
 	// Displays if required field not filled.
 	.hs-error-msg {
 		font-style: italic;
@@ -145,4 +140,14 @@
 	.submitted-message p {
 		max-width: none;
 	}
+}
+
+// removes captcha image from flow.
+.hs-recaptcha {
+	display: none;
+}
+
+.sidebar-newsletter {
+	float: right;
+	max-width: 400px;
 }
