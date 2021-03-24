@@ -87,6 +87,9 @@ require_once 'includes/shortcode-people.php';
 // projects shortcode.
 require_once 'includes/shortcode-projects.php';
 
+// kubeweeklys shortcode.
+require_once 'includes/shortcode-kubeweeklys.php';
+
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';
 
