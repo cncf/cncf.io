@@ -37,7 +37,7 @@ function add_kubeweeklys_shortcode( $atts ) {
 				title="<?php esc_html( the_title() ); ?>"><?php esc_html( the_title() ); ?></a>
 			</p>
 			
-			<div class="sent date-icon"><?php the_date() ?></div>
+			<div class="sent date-icon"><?php the_date(); ?></div>
 			</div>
 			<?php
 		endwhile;
