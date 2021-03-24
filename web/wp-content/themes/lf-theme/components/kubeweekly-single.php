@@ -11,7 +11,7 @@
 <section class="hero">
 	<div class="container wrap no-background">
 		<p class="hero-parent-link">
-			<a href="<?php echo esc_url( get_home_url() ); ?>/kubeweeklys/" title="See all Kubeweeklys">Kubeweekly</a>
+			<a href="<?php echo esc_url( get_home_url() ); ?>/kubeweekly/" title="See all Kubeweeklys">Kubeweekly</a>
 		</p>
 		<h1 class="hero-post-title" itemprop="headline">
 			<?php
