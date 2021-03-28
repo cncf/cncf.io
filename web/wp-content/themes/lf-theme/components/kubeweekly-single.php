@@ -44,7 +44,7 @@
 
 	</div>
 </section>
-<main class="newsroom-single">
+<main class="kubeweekly-single">
 	<article class="container wrap">
 	<div class="entry-content post-content">
 		<?php
