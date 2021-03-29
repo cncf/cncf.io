@@ -90,6 +90,9 @@ require_once 'includes/shortcode-projects.php';
 // endusers shortcode.
 require_once 'includes/shortcode-endusers.php';
 
+// YouTube Playlist shortcode.
+require_once 'includes/shortcode-eu-playlist.php';
+
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';
 
