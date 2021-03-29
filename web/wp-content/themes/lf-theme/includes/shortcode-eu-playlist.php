@@ -42,7 +42,7 @@ function add_eu_playlist_shortcode( $atts ) {
 	$eu_playlist = wp_cache_get( 'cncf_eu_playlist' );
 	if ( false === $eu_playlist ) {
 
-		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40&key=' . $key );
+		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40&key=' . $key );
 		$eu_playlist = wp_remote_retrieve_body( $request );
 
 		wp_cache_set( 'cncf_eu_playlist', $eu_playlist, '', 6 * HOUR_IN_SECONDS );
@@ -55,7 +55,7 @@ function add_eu_playlist_shortcode( $atts ) {
 	for ( $i = 0; $i < $count; $i++ ) {
 		if ( array_key_exists( $i, $eu_playlist->items ) ) {
 			echo '<div class="newsroom-post-wrapper">';
-			$pub_date = new DateTime( $eu_playlist->items[ $i ]->snippet->publishedAt );
+			$pub_date = new DateTime( $eu_playlist->items[ $i ]->contentDetails->videoPublishedAt );
 			echo '<div class="newsroom-image-wrapper"><div class="wp-block-lf-youtube-lite"><lite-youtube videoid="' . esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ) . '"></lite-youtube></div></div>';
 			echo '<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=' . esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ) . '&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank" title="' . esc_attr( $eu_playlist->items[ $i ]->snippet->title ) . '">' . esc_attr( $eu_playlist->items[ $i ]->snippet->title ) . '</a></h5>';
 			echo '<span class="newsroom-date date-icon">' . esc_html( $pub_date->format( 'F j, Y' ) ) . '</span>';
