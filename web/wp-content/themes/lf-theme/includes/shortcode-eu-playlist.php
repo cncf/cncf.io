@@ -51,18 +51,18 @@ function add_eu_playlist_shortcode( $atts ) {
 
 	ob_start();
 
-	echo '<div class="wp-block-columns">';
+	echo '<section class="wp-block-lf-newsroom is-style-horizontal">';
 	for ( $i = 0; $i < $count; $i++ ) {
-		echo '<div class="wp-block-column">';
+		echo '<div class="newsroom-post-wrapper">';
 		if ( array_key_exists( $i, $eu_playlist->items ) ) {
 			$pub_date = new DateTime( $eu_playlist->items[ $i ]->snippet->publishedAt );
-			echo '<div class="wp-block-lf-youtube-lite"><lite-youtube videoid="' . esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ) . '"></lite-youtube></div>';
+			echo '<div class="newsroom-image-wrapper"><div class="wp-block-lf-youtube-lite"><lite-youtube videoid="' . esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ) . '"></lite-youtube></div></div>';
 			echo '<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=' . esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ) . '&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank" title="' . esc_attr( $eu_playlist->items[ $i ]->snippet->title ) . '">' . esc_attr( $eu_playlist->items[ $i ]->snippet->title ) . '</a></h5>';
 			echo '<span class="newsroom-date date-icon">' . esc_html( $pub_date->format( 'F j, Y' ) ) . '</span>';
 		}
 		echo '</div>';
 	}
-	echo '</div>';
+	echo '</section>';
 	$block_content = ob_get_clean();
 	return $block_content;
 
