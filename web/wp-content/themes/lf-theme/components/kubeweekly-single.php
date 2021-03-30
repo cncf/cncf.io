@@ -32,14 +32,8 @@
 		</div>
 
 		<div class="wp-block-column" style="flex-basis:40%">
-		<div class="wp-block-group has-white-color has-tertiary-400-background-color has-text-color has-background"><div class="wp-block-group__inner-container">
-
-		<h4>Join the KubeWeekly mailing list</h4>
-		<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=cf924a1f-5b8b-40dc-9452-b207c494dae2]' ); ?>
-		<p class="has-small-font-size">By submitting this form, you acknowledge that your information is subject to The Linux Foundation’s <a href="https://www.linuxfoundation.org/privacy/" rel="noopener" class="external" target="_blank">Privacy Policy</a>.</p>
-
-		</div></div>
-		</div>
+		<?php echo do_shortcode( '[kubeweekly-newsletter]' ); ?>
+	</div>
 		</div>
 
 	</div>
@@ -50,10 +44,6 @@
 		<?php
 		the_content();
 		get_template_part( 'components/social-share' );
-		?>
-		<hr class="hr-light">
-		<?php
-		get_template_part( 'components/post-pagination' );
 		?>
 	</div>
 	</article>
