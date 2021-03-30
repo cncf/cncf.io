@@ -21,10 +21,10 @@
 			the_title();
 			?>
 		</h1>
-		<p class="date-author-row"><span
+		<p class="date-author-row kubeweekly-date-author-row"><span
 			class="posted-date date-icon">Posted on
 			<?php
-			the_date();
+			echo get_the_date();
 			?>
 		</span>
 		</p>
