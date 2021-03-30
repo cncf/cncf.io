@@ -28,7 +28,6 @@
 			?>
 		</span>
 		</p>
-		<div style="height:160px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 		</div>
 
 		<div class="wp-block-column" style="flex-basis:40%">
