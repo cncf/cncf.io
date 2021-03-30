@@ -31,12 +31,19 @@ function add_kubeweeklys_shortcode( $atts ) {
 		<?php
 		while ( $kubeweekly_query->have_posts() ) :
 			$kubeweekly_query->the_post();
+			$link_url = get_post_meta( get_the_ID(), 'lf_kubeweekly_external_url', true );
 			?>
 			<div class="kubeweekly-box">
-			<p class="archive-title"><a href="<?php the_permalink(); ?>"
-				title="<?php esc_html( the_title() ); ?>"><?php esc_html( the_title() ); ?></a>
+			<p class="archive-title">
+				
+			<?php
+			if ( $link_url ) {
+				echo '<a class="external is-primary-color" target="_blank" rel="noopener" href="' . esc_url( $link_url ) . '" title="' . esc_html( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</a>';
+			} else {
+				echo '<a href="' . esc_url( get_the_permalink() ) . '" title="' . esc_html( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</a>';
+			}
+			?>
 			</p>
-			
 			<div class="sent date-icon"><?php the_date(); ?></div>
 			</div>
 			<?php
