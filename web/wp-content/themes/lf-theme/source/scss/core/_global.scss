@@ -4,11 +4,11 @@ body {
 	font-family: $font-primary;
 	font-size: 1em; // 16px
 
-	@media (min-width: 1200px) {
-		font-size: 1.125em; // 18px
-	}
+	// @media (min-width: 1200px) {
+	// 	font-size: 1.125em; // 18px
+	// }
 
-	color: $black;
+	color: $text-color;
 	font-weight: 300;
 
 	// added to improve rendering, but could hamper performance.
@@ -31,14 +31,14 @@ body {
 // default content container.
 .container {
 	width: 100%;
-	max-width: 1050px;
+	max-width: $content-width;
 	margin: auto;
 }
 
 // used by navigation and full width template.
 .container-full-width {
 	width: 100%;
-	max-width: 1250px;
+	max-width: $content-width;
 	margin: auto;
 }
 
@@ -194,18 +194,14 @@ img {
 			background-color: lighten($secondary-color, 5%);
 		}
 	}
-}
 
-// makes button plain like icon (wechat, people modal).
-.button-reset {
-	border: none;
-	background: none;
-	box-sizing: border-box;
-	padding: 0;
-	cursor: pointer;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	&.margin-top {
+		margin-top: 1rem;
+	}
+
+	&.margin-top-large {
+		margin-top: 2rem;
+	}
 }
 
 /*

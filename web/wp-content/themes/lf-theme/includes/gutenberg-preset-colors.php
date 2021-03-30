@@ -17,22 +17,22 @@ add_theme_support(
 		array(
 			'name'  => __( 'Pink' ),
 			'slug'  => 'pink-400',
-			'color' => '#DE176C',
+			'color' => '#ff00aa',
 		),
 		array(
 			'name'  => __( 'Purple' ),
 			'slug'  => 'purple-700',
-			'color' => '#2C2960',
-		),
-		array(
-			'name'  => __( 'Blue (Light)' ),
-			'slug'  => 'blue-100',
-			'color' => '#F0F5F7',
+			'color' => '#2a0054',
 		),
 		array(
 			'name'  => __( 'Blue' ),
 			'slug'  => 'tertiary-400',
-			'color' => '#436ca9',
+			'color' => '#0088ff',
+		),
+		array(
+			'name'  => __( 'Blue (Light)' ),
+			'slug'  => 'blue-100',
+			'color' => '#f4f4f4',
 		),
 		array(
 			'name'  => __( 'White' ),
