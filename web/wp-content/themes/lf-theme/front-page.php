@@ -110,9 +110,13 @@ get_template_part( 'components/header' );
 
 <?php
 $image = new Image();
-$image->get_svg( 'icon-newspaper.svg' ); ?>
+$image->get_svg( 'icon-newspaper.svg' );
 
+
+?>
 </section>
+
+<?php the_content(); ?>
 
 	</article>
 </main>
