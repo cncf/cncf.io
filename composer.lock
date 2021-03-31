@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94e0c54e725f2b7c8ecb47977e7b562a",
+    "content-hash": "a89653f98fe780485f10c239fb5464de",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -773,24 +773,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/post-meta-controls/"
-        },
-        {
-            "name": "wpackagist-plugin/postie",
-            "version": "1.9.55",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/postie/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/postie.zip?timestamp=1616195513"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/postie/"
         },
         {
             "name": "wpackagist-plugin/redirection",
