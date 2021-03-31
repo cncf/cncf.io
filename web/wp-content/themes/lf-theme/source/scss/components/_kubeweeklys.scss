@@ -1,4 +1,4 @@
-// Layout of kubeweeklys
+// Layout of kubeweekly listings
 .kubeweeklys-wrapper {
 	display: grid;
 	grid-row-gap: 1rem;
@@ -36,4 +36,9 @@
 // to stop hubspot form making box jump.
 .kubeweekly-newsletter {
 	min-height: 348px;
+}
+
+// force word wrap on mobile
+.kubeweekly-single {
+    word-wrap: break-word;
 }
