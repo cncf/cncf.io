@@ -119,3 +119,10 @@
 		color: $primary-color;
 	}
 }
+
+.training-promotion,
+.hosted-projects {
+	@media (min-width: 768px) {
+		display: flex;
+	}
+}

@@ -89,6 +89,7 @@ get_template_part( 'components/header' );
 		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-80-responsive"></div>
 
 <section class="hosted-projects">
+<div>
 <h2>CNCF hosted projects</h2>
 <ul class="data-display no-style h4">
 					<li><span>16</span> Graduated Projects</li>
@@ -100,8 +101,27 @@ get_template_part( 'components/header' );
 
 				<p class="h4"><a href="#" class="arrow-cta">Learn more about CNCF</a></p>
 				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+				</div>
 
-				<img src="http://www.fillmurray.com/400/400" alt="">
+				<div>
+				<img src="http://www.fillmurray.com/500/400" alt="">
+				</div>
+</section>
+
+<section class="event-highlight">
+
+</section>
+
+<section class="training-promotion">
+<div><h2>Save $2,500 off your next Kubernetes Certification</h2>
+<p class="h4">Enroll as an <a href="#">End User Supporter</a> and <a href="#">receive five 100% off coupon codes for any eLearning class</a>, certification exam, or eLearning + Certification exam "bundle" in the Training and Certification Catalog.</p>
+<p class="h4"><a href="#" class="arrow-cta">Support CNCF and save on certification</a></p>
+				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+</div>
+<div>
+<img src="http://www.fillmurray.com/450/200" alt="">
+</div>
+
 </section>
 
 <div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-80-responsive"></div>
