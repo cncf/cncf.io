@@ -8,6 +8,8 @@
  * @subpackage lf-theme
  * @since 1.0.0
  */
+
+ // phpcs:ignoreFile
 get_template_part( 'components/header' );
 ?>
 <main class="page-content">
