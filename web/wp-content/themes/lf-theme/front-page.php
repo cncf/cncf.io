@@ -91,23 +91,60 @@ get_template_part( 'components/header' );
 		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-80-responsive"></div>
 
 <section class="hosted-projects">
-<div>
-<h2>CNCF hosted projects</h2>
-<ul class="data-display no-style h4">
-					<li><span>16</span> Graduated Projects</li>
-					<li><span>20</span> Incubating Projects</li>
-					<li><span>44</span> Sandbox Projects</li>
-				</ul>
+	<div>
+	<h2>CNCF hosted projects</h2>
+	<?php
+		$query_args = array(
+			'post_type'      => 'lf_project',
+			'post_status'    => array( 'publish' ),
+			'posts_per_page' => 200,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+		);
 
-				<p class="h5">The CNCF hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the non-profit <a href="#">Linux Foundation</a>.</p>
+		$project_query = new WP_Query( $query_args );
 
-				<p class="h4"><a href="#" class="arrow-cta">Learn more about CNCF</a></p>
-				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-				</div>
+		$graduated_count  = 0;
+		$incubating_count = 0;
+		$sandbox_count    = 0;
+		$graduated_logos  = Array();
+		$incubating_logos = Array();
+		$sandbox_logos    = Array();
 
-				<div>
-				<img src="http://www.fillmurray.com/500/400" alt="">
-				</div>
+		if ( $project_query->have_posts() ) {
+			while ( $project_query->have_posts() ) {
+				$project_query->the_post();
+				$stacked_logo_id = get_post_meta( get_the_ID(), 'lf_project_stacked_logo', true );
+				$stacked_logo_url = wp_get_attachment_image_url( $stacked_logo_id );
+				if ( has_term( 'graduated', 'lf-project-stage', get_the_ID() ) ) {
+					$graduated_count++;
+					$graduated_logos[] = $stacked_logo_url;
+				} else if ( has_term( 'incubating', 'lf-project-stage', get_the_ID() ) ) {
+					$incubating_count++;
+					$incubating_logos[] = $stacked_logo_url;
+				} else if ( has_term( 'sandbox', 'lf-project-stage', get_the_ID() ) ) {
+					$sandbox_count++;
+					$sandbox_logos[] = $stacked_logo_url;
+				}
+			}
+		}
+		wp_reset_postdata();
+	?>
+	<ul class="data-display no-style h4">
+		<li><span><?php echo esc_html( $graduated_count ); ?></span> Graduated Projects</li>
+		<li><span><?php echo esc_html( $incubating_count ); ?></span> Incubating Projects</li>
+		<li><span><?php echo esc_html( $sandbox_count ); ?></span> Sandbox Projects</li>
+	</ul>
+	<?php echo var_dump( $graduated_logos ); ?>
+	<p class="h5">The CNCF hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the non-profit <a href="#">Linux Foundation</a>.</p>
+
+	<p class="h4"><a href="#" class="arrow-cta">Learn more about CNCF</a></p>
+	<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+	</div>
+
+	<div>
+	<img src="http://www.fillmurray.com/500/400" alt="">
+	</div>
 </section>
 
 <section class="event-highlight">
