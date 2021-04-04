@@ -120,9 +120,255 @@
 	}
 }
 
-.training-promotion,
-.hosted-projects {
+// .training-promotion,
+// .hosted-projects {
+// 	@media (min-width: 768px) {
+// 		display: flex;
+// 	}
+// }
+
+.user-guide-box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	transition: filter 0.25s ease-out;
+	.arrow-cta {
+		margin-top: auto;
+	}
+	&:hover {
+		filter: opacity(80%);
+		.arrow-cta {
+			transition: all 0.25s ease-out;
+			text-decoration: underline;
+		}
+	}
+}
+
+.event-highlight {
+	background-image: linear-gradient(90deg, rgb(249, 145, 6) 0%, rgb(252, 29, 68) 100%);
+	color: white;
+	position: relative;
+	right: 50%;
+	left: 50%;
+	margin-right: -50vw;
+	margin-left: -50vw;
+	width: 100vw;
+	max-width: 100vw;
+}
+
+.event-highlight-wrapper {
+	display: grid;
+	grid-row-gap: 1.5rem;
+	grid-column-gap: 1.5rem;
+	@media (max-width: 999px) {
+		div:nth-child(2) {
+			grid-row: 1;
+		}
+	}
+
+	@media (min-width: 700px) {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+		div:nth-child(2) {
+			margin-right: 20px;
+		}
+	}
+	@media (min-width: 1000px) {
+		grid-template-columns: 2fr 1.5fr 2fr;
+	}
+	@media (min-width: 1200px) {
+		grid-template-columns: 1.3fr 1fr 1.75fr;
+	}
+}
+
+.project-slider-wrapper {
+	@media (max-width: 999px) {
+		position: relative;
+		right: 50%;
+		left: 50%;
+		margin-right: -50vw;
+		margin-left: -50vw;
+		width: 100vw;
+		max-width: 100vw;
+	}
+	position: relative;
+	&:before {
+		content: " ";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		display: inline-block;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 1) 72%, rgba(255, 255, 255, 0) 100%);
+		z-index: 1;
+		width: 25px;
+		@media (min-width: 768px) {
+			width: 50px;
+		}
+	}
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: inline-block;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 72%);
+		z-index: 1;
+		width: 25px;
+		@media (min-width: 768px) {
+			width: 50px;
+		}
+	}
+}
+
+.slider {
+	opacity: 0;
+}
+
+.slider.slick-initialized {
+	opacity: 1;
+	transition: opacity 0.3s ease-out;
+}
+
+.slick-slider {
+	margin: 0;
+}
+
+.project-slider-wrapper {
+	.slick-initialized .slick-track {
+		display: flex;
+
+		.slick-slide {
+			display: flex;
+			height: auto;
+			justify-content: center;
+		}
+	}
+
+	.slick-slide {
+		border: 1px solid #a9a9a9;
+		margin: 0.5rem;
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+
+		display: flex;
+		align-content: center;
+		align-items: center;
+		justify-content: flex-start;
+
+		img {
+			width: 50px;
+			height: 50px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			border: 1px solid #000;
+			animation-name: pop-sm;
+			animation-duration: 0.2s;
+			animation-timing-function: linear;
+			animation-iteration-count: 1;
+			img {
+				animation-name: pop-lg;
+				animation-duration: 0.3s;
+				animation-timing-function: linear;
+				animation-iteration-count: 1;
+			}
+		}
+	}
+}
+
+/* Pop */
+@keyframes pop-sm {
+	50% {
+		transform: scale(1.2);
+	}
+}
+
+@keyframes pop-lg {
+	50% {
+		transform: scale(1.4);
+	}
+}
+
+// needed for flexbox slick crap.
+.slick-slider {
+	min-height: 1px;
+	min-width: 1px;
+}
+
+.home-announcement {
 	@media (min-width: 768px) {
 		display: flex;
+	}
+}
+
+.announcement-slider-wrapper {
+	@media (max-width: 767px) {
+		margin-top: 1rem;
+	}
+	@media (min-width: 768px) {
+		margin-left: 2rem;
+	}
+	&.slick-dotted.slick-slider {
+		margin-bottom: 0;
+	}
+	p {
+		font-size: 1.25em;
+	}
+
+	.slick-prev:before,
+	.slick-next:before {
+		color: $primary-color;
+	}
+
+	.slick-prev {
+		top: 0;
+		right: 0;
+		left: unset;
+		transform: rotate(90deg);
+	}
+
+	.slick-next {
+		top: unset;
+		bottom: 0;
+		right: 0;
+		left: unset;
+		transform: rotate(-270deg);
+	}
+
+	.margin-bottom-small {
+		margin-bottom: 0.25rem;
+	}
+}
+
+ul.slick-dots {
+	position: unset;
+	display: block;
+	margin: 0;
+	margin-top: 2rem;
+	// padding-top: 2rem;
+	li {
+		width: 30px;
+		height: 30px;
+		button {
+			width: 30px;
+			height: 30px;
+		}
+
+		button:before {
+			font-size: 14px;
+			color: $primary-color;
+			width: 30px;
+			height: 30px;
+			opacity: 1;
+		}
+		&.slick-active {
+			button:before {
+				color: $black;
+			}
+		}
 	}
 }

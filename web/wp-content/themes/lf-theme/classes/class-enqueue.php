@@ -56,6 +56,20 @@ class Enqueue {
 			wp_dequeue_script( 'search-filter-plugin-chosen' );
 			wp_deregister_script( 'search-filter-plugin-chosen' );
 		}
+
+		if ( is_front_page() ) {
+
+			// load main slick.
+			wp_enqueue_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/build/global.js' ), true );
+
+			// load slick config.
+			wp_enqueue_script( 'slick-config', get_template_directory_uri() . '/source/js/third-party/slick.js', array( 'jquery', 'slick' ), filemtime( get_template_directory() . '/source/js/third-party/slick.js' ), true );
+
+			// load slick css.
+			wp_enqueue_style( 'slick-css', 'https://kenwheeler.github.io/slick/slick/slick.css', '', filemtime( get_template_directory() . '/build/styles.css' ), 'all' );
+
+			wp_enqueue_style( 'slick-theme', 'https://kenwheeler.github.io/slick/slick/slick-theme.css', '', filemtime( get_template_directory() . '/build/styles.css' ), 'all' );
+		}
 	}
 
 	/**

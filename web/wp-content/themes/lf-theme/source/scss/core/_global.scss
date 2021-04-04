@@ -9,7 +9,7 @@ body {
 	// }
 
 	color: $text-color;
-	font-weight: 300;
+	font-weight: 400;
 
 	// added to improve rendering, but could hamper performance.
 	-webkit-font-smoothing: antialiased;
@@ -80,7 +80,7 @@ img {
 	white-space: nowrap;
 	text-transform: uppercase;
 	font-family: $font-primary;
-	font-weight: 500;
+	font-weight: 700;
 
 	// defaults
 	background-color: $link-color;
