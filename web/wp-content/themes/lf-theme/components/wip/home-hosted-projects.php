@@ -51,12 +51,18 @@
 
 			<?php if ( $graduated_count && $incubating_count && $sandbox_count ) : ?>
 			<ul class="data-display no-style h4">
-				<li><span><?php echo esc_html( $graduated_count ); ?></span>
-					Graduated Projects</li>
-				<li><span><?php echo esc_html( $incubating_count ); ?></span>
-					Incubating Projects</li>
-				<li><span><?php echo esc_html( $sandbox_count ); ?></span>
-					Sandbox Projects</li>
+				<li><a href="/projects/">
+					<span><?php echo esc_html( $graduated_count ); ?></span>
+						Graduated Projects
+				</a></li>
+				<li><a href="/projects/">
+					<span><?php echo esc_html( $incubating_count ); ?></span>
+						Incubating Projects
+				</a></li>
+				<li><a href="/sandbox-projects/">
+					<span><?php echo esc_html( $sandbox_count ); ?></span>
+						Sandbox Projects
+				</a></li>
 			</ul>
 			<?php endif; ?>
 
@@ -64,7 +70,7 @@
 				class="h5">The CNCF hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the non-profit <a href="https://linuxfoundation.org" class="external is-primary-color" target="_blank">Linux Foundation</a>.</p>
 
 			<p
-				class="h4"><a href="/about/who-we-are/" class="arrow-cta">Learn more about CNCF</a></p>
+				class="h4"><a href="/projects/" class="arrow-cta">Explore CNCF Projects</a></p>
 
 			<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 

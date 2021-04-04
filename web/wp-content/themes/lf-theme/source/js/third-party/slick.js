@@ -82,6 +82,7 @@
           cssEase: "linear",
           lazyLoad: "ondemand",
           adaptiveHeight: true,
+          vertical: false,
         }
       }
     ]

@@ -33,7 +33,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-04-03T22:04:51+00:00"
+            "time": "2021-04-04T10:53:17+00:00"
         },
         {
             "name": "composer/installers",

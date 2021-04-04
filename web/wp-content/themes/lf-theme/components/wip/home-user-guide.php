@@ -20,10 +20,10 @@
 				</div>
 				<div
 					class="has-white-color has-purple-700-background-color has-text-color has-background home-padding user-guide-box">
-					<a href="/projects/" class="box-link"></a>
+					<a href="http://contribute.cncf.io/" class="box-link"></a>
 					<h2>Contributors</h2>
 					<p>Join our welcoming community of doers and contribute to advancing CNCF hosted projects.</p>
-					<a href="/projects/" class="arrow-cta has-white-color">Start contributing</a>
+					<a href="http://contribute.cncf.io/" class="arrow-cta has-white-color">Start contributing</a>
 				</div>
 				<div
 					class="has-white-color has-tertiary-400-background-color has-text-color has-background home-padding user-guide-box">
