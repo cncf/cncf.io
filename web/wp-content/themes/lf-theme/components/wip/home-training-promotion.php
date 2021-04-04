@@ -6,6 +6,7 @@
  * @subpackage lf-theme
  * @since 1.0.0
  */
+
 ?>
 
 <section class="training-promotion">
