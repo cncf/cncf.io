@@ -1,6 +1,6 @@
 <?php
 /**
- * WIP - Home Hero
+ * WIP - Home Event highlight
  *
  * @package WordPress
  * @subpackage lf-theme
@@ -10,7 +10,7 @@
 ?>
 
 <section class="event-highlight">
-<div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
+<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 <div class="container wrap event-highlight-wrapper">
 
 <div>
@@ -30,7 +30,7 @@
 </div>
 
 </div>
-<div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
+<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 </section>
 
 <div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>

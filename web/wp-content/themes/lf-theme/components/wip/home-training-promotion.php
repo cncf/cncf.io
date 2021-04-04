@@ -1,11 +1,12 @@
 <?php
 /**
- * WIP - Home Hero
+ * WIP - Home Training
  *
  * @package WordPress
  * @subpackage lf-theme
  * @since 1.0.0
  */
+
 ?>
 
 <section class="training-promotion">
@@ -22,8 +23,8 @@
 		</div>
 		<div class="wp-block-column" style="flex-basis:43%">
 			<?php
-$image = new Image();
-?>
+			$image = new Image();
+			?>
 			<img src="<?php $image->get_image( 'wip-home/kubernetes-training.jpg' ); ?>"
 				alt="">
 		</div>
@@ -31,5 +32,5 @@ $image = new Image();
 	<div>
 	</div>
 </section>
-<div style="height:40px" aria-hidden="true"
-	class="wp-block-spacer is-style-40-responsive"></div>
+<div style="height:80px" aria-hidden="true"
+	class="wp-block-spacer is-style-80-responsive"></div>
