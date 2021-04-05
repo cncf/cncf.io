@@ -27,18 +27,25 @@
 	max-width: 500px;
 	font-size: 0.8rem;
 	@media (min-width: 414px) {
-		font-size: 1rem;
+		font-size: 1.1rem;
 	}
 	a {
 		color: $body-text-color;
+		&:hover {
+			span {
+				color: $link-hover;
+				text-decoration: underline white;
+			}
+		}
 	}
 	span {
-		color: $primary-color;
+		color: $link-color;
 		font-weight: 700;
 		display: block;
-		font-size: 1rem;
+		font-size: 1.25rem;
+		text-decoration: none;
 		@media (min-width: 414px) {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 		}
 	}
 }
