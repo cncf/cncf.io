@@ -8,7 +8,7 @@
  */
 
 ?>
-<section class="hero">
+<section class="hero kubeweekly-single-hero">
 	<div class="container wrap no-background">
 
 		<div class="wp-block-columns">
@@ -21,7 +21,7 @@
 			the_title();
 			?>
 		</h1>
-		<p class="date-author-row kubeweekly-date-author-row"><span
+		<p class="date-author-row"><span
 			class="posted-date date-icon">Posted on
 			<?php
 			echo get_the_date();
@@ -37,7 +37,7 @@
 
 	</div>
 </section>
-<main class="kubeweekly-single">
+<main class="kubeweekly-single-content">
 	<article class="container wrap">
 	<div class="entry-content post-content">
 		<?php
@@ -47,4 +47,3 @@
 	</div>
 	</article>
 </main>
-

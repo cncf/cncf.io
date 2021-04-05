@@ -11,34 +11,42 @@
 		grid-row-gap: 1.5rem;
 		grid-column-gap: 1.5rem;
 	}
+}
 
-	// Singular item
-	.kubeweekly-box {
-		display: flex;
-		flex-direction: column;
-		background-color: $tertiary-color;
-		padding: 1rem;
+// Singular item
+.kubeweekly-box {
+	display: flex;
+	flex-direction: column;
+	background-color: $tertiary-color;
+	padding: 1rem;
 
-		.kubeweekly-title {
-			margin-top: 1rem;
-			margin-bottom: 0;
-			line-height: 1.4;
-			margin-bottom: auto;
-		}
-
-		.sent {
-			margin-top: 0;
-			font-size: 0.825em;
-		}
+	.sent {
+		margin-top: 0;
+		font-size: 0.825em;
 	}
+}
+
+.kubeweekly-title {
+	margin-top: 1rem;
+	margin-bottom: 0;
+	line-height: 1.4;
+	margin-bottom: auto;
 }
 
 // to stop hubspot form making box jump.
 .kubeweekly-newsletter {
 	min-height: 348px;
+	.hs-fieldtype-text {
+		margin-bottom: 0.25rem;
+	}
 }
 
 // force word wrap on mobile
-.kubeweekly-single {
-    word-wrap: break-word;
+.kubeweekly-single-content {
+	word-wrap: break-word;
+}
+
+.single .kubeweekly-single-hero .date-author-row {
+	color: #202020;
+	margin-top: 2rem;
 }
