@@ -25,13 +25,19 @@ function add_kubeweeklys_shortcode( $atts ) {
 	$kubeweekly_query = new WP_Query( $query_args );
 	ob_start();
 	if ( $kubeweekly_query->have_posts() ) {
-		?>
-
-<div class="kubeweeklys-wrapper">
-		<?php
+		$y = 0;
 		while ( $kubeweekly_query->have_posts() ) :
 			$kubeweekly_query->the_post();
 			$link_url = get_post_meta( get_the_ID(), 'lf_kubeweekly_external_url', true );
+			if ( ( 0 == $y ) || ( $y > (int) get_the_date( 'Y' ) ) ) {
+				if ( 0 != $y ) {
+					echo '</div>';
+				}
+				$y = (int) get_the_date( 'Y' );
+				echo '<h2>' . esc_html( $y ) . '</h2>';
+				echo '<div class="kubeweeklys-wrapper">';
+			}
+
 			?>
 			<div class="kubeweekly-box">
 			<p class="archive-title">
