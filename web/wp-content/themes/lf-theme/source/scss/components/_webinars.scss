@@ -23,15 +23,21 @@
 .presented-by {
 	font-weight: 400;
 	font-size: 0.875em;
-	color: $grey-500;
-	margin-top: auto;
-	align-self: baseline;
-	display: block;
+	color: $body-text-color;
 
 	.webinar-single & {
 		font-size: 1em;
 		font-weight: 500;
 		margin-top: 1rem;
+	}
+
+	.home & {
+		font-weight: 400;
+		font-size: 0.875em;
+		color: $grey-500;
+		margin-top: auto;
+		align-self: baseline;
+		display: block;
 	}
 }
 
