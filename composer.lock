@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "d4c85dd9b101a0491507752571800208b96f4cfd"
+                "reference": "ae068a98ac086ee6be97bd48490bbb8fefd53ca2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/d4c85dd9b101a0491507752571800208b96f4cfd",
-                "reference": "d4c85dd9b101a0491507752571800208b96f4cfd",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/ae068a98ac086ee6be97bd48490bbb8fefd53ca2",
+                "reference": "ae068a98ac086ee6be97bd48490bbb8fefd53ca2",
                 "shasum": ""
             },
             "require": {
