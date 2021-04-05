@@ -53,7 +53,7 @@
 					<span><?php echo esc_html( $graduated_count ); ?></span>
 					Graduated Projects
 				</a></li>
-			<li><a href="/projects/">
+			<li><a href="/projects/#incubating">
 					<span><?php echo esc_html( $incubating_count ); ?></span>
 					Incubating Projects
 				</a></li>
