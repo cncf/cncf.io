@@ -46,7 +46,7 @@ if ( $query->have_posts() ) { ?>
 		$query->the_post();
 		?>
 <div>
-<p class="margin-bottom-small is-style-max-width-100"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+<p class="is-style-max-width-100"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 <span class="date-icon"> <?php echo get_the_date( 'F j, Y' ); ?></span>
 </div>
 		<?php

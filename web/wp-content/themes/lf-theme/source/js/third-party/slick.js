@@ -67,7 +67,7 @@
     vertical: true,
     responsive: [
       {
-        breakpoint: 1000,
+        breakpoint: 768,
         settings: {
           infinite: true,
           slidesToShow: 1,
@@ -75,13 +75,12 @@
           swipeToSlide: true,
           draggable: true,
           arrows: false,
-          // appendArrows: false,
           dots: true,
           autoplay: true,
           autoplaySpeed: 10000,
           cssEase: "linear",
           lazyLoad: "ondemand",
-          adaptiveHeight: true,
+          adaptiveHeight: false,
           vertical: false,
         }
       }

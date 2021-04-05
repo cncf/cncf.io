@@ -25,10 +25,14 @@
 	display: flex;
 	justify-content: space-between;
 	max-width: 500px;
-	font-size: 0.8rem;
-	@media (min-width: 414px) {
-		font-size: 1.1rem;
+	li {
+		font-size: 0.8rem;
+		@media (min-width: 414px) {
+			font-size: 1.1rem;
+			padding-right: 10px;
+		}
 	}
+
 	a {
 		color: $body-text-color;
 		&:hover {
@@ -38,6 +42,7 @@
 			}
 		}
 	}
+
 	span {
 		color: $link-color;
 		font-weight: 700;
@@ -124,8 +129,14 @@
 	background-color: $grey-100;
 	border: 1px solid $primary-color;
 
+	p {
+		margin-bottom: 1rem;
+		@media (min-width: 768px) {
+			margin-bottom: 0.25rem;
+		}
+	}
 	svg {
-		color: $primary-color;
+		color: $secondary-color;
 	}
 }
 

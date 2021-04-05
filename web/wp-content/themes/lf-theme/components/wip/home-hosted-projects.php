@@ -48,7 +48,7 @@
 		<h2>CNCF hosted projects</h2>
 
 		<?php if ( $graduated_count && $incubating_count && $sandbox_count ) : ?>
-		<ul class="data-display no-style h4">
+		<ul class="data-display no-style">
 			<li><a href="/projects/">
 					<span><?php echo esc_html( $graduated_count ); ?></span>
 					Graduated Projects
