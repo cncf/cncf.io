@@ -100,3 +100,8 @@ $('.announcement-slider-wrapper .slick-slide').each(function() {
     $(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
   }
 });
+
+// reload announcements if window size changes.
+$(window).on('orientationchange', function() {
+  $('.announcement-slider-wrapper').slick('setDimensions');
+});

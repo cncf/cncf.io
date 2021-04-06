@@ -30,6 +30,8 @@ get_template_part( 'components/wip/home-training-promotion' );
 
 get_template_part( 'components/wip/home-announcement' );
 
+get_template_part( 'components/wip/home-news' );
+
 the_content(); ?>
 
 	</article>

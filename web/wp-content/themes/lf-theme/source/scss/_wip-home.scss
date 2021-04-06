@@ -427,5 +427,21 @@ ul.slick-dots {
 }
 
 .home-announcement-item {
-	padding-right: 50px;
+	@media (min-width: 768px) {
+		padding-right: 50px;
+	}
+}
+
+.home-news {
+	.newsroom-post-wrapper {
+		height: 100%;
+	}
+}
+
+.better-responsive-columns {
+	@media (max-width: 781px) {
+		.wp-block-column {
+			margin-bottom: 1rem;
+		}
+	}
 }
