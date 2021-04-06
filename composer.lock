@@ -12,18 +12,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "ae068a98ac086ee6be97bd48490bbb8fefd53ca2"
+                "reference": "50b6f353a580de8f8113d047479d0388cfbdc04d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/ae068a98ac086ee6be97bd48490bbb8fefd53ca2",
-                "reference": "ae068a98ac086ee6be97bd48490bbb8fefd53ca2",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/50b6f353a580de8f8113d047479d0388cfbdc04d",
+                "reference": "50b6f353a580de8f8113d047479d0388cfbdc04d",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2"
             },
-            "default-branch": true,
             "type": "wordpress-muplugin",
             "license": [
                 "MIT"
@@ -33,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-04-04T22:46:06+00:00"
+            "time": "2021-04-06T10:06:52+00:00"
         },
         {
             "name": "composer/installers",
@@ -163,10 +162,6 @@
                 "zend",
                 "zikula"
             ],
-            "support": {
-                "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.10.0"
-            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -185,17 +180,20 @@
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "0.1.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "8a7a8b91c27778199cfd4f0c17266fe8a2ca8ffd"
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/8a7a8b91c27778199cfd4f0c17266fe8a2ca8ffd",
-                "reference": "8a7a8b91c27778199cfd4f0c17266fe8a2ca8ffd",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
             },
             "conflict": {
                 "composer/installers": "<1.0.6"
@@ -203,9 +201,9 @@
             "require-dev": {
                 "composer/composer": "1.0.*@dev"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "johnpbloch\\Composer\\WordPressCoreInstaller"
+                "class": "johnpbloch\\Composer\\WordPressCorePlugin"
             },
             "autoload": {
                 "psr-0": {
@@ -223,11 +221,10 @@
                 }
             ],
             "description": "A custom installer to handle deploying WordPress with composer",
-            "support": {
-                "issues": "https://github.com/johnpbloch/wordpress-core-installer/issues",
-                "source": "https://github.com/johnpbloch/wordpress-core-installer/tree/0.1.2"
-            },
-            "time": "2013-09-09T15:03:37+00:00"
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2015-06-11T15:15:30+00:00"
         },
         {
             "name": "pantheon-systems/quicksilver-pushback",
@@ -252,10 +249,6 @@
                 "MIT"
             ],
             "description": "Push commits made via the Pantheon dashboard back to original GitHub repository.",
-            "support": {
-                "issues": "https://github.com/pantheon-systems/quicksilver-pushback/issues",
-                "source": "https://github.com/pantheon-systems/quicksilver-pushback/tree/master"
-            },
             "time": "2020-08-20T22:12:09+00:00"
         },
         {
@@ -345,10 +338,6 @@
                 "php",
                 "type"
             ],
-            "support": {
-                "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.7.5"
-            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -416,11 +405,6 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "support": {
-                "forum": "https://discourse.roots.io/",
-                "issues": "https://github.com/roots/wp-password-bcrypt/issues",
-                "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
-            },
             "time": "2016-03-01T16:27:06+00:00"
         },
         {
@@ -459,10 +443,6 @@
             ],
             "description": "Install Quicksilver modules for Pantheon into custom locations.",
             "homepage": "https://github.com/rvtraveller/qs-composer-installer",
-            "support": {
-                "issues": "https://github.com/rvtraveller/qs-composer-installer/issues",
-                "source": "https://github.com/rvtraveller/qs-composer-installer/tree/1.2"
-            },
             "time": "2021-01-04T22:27:18+00:00"
         },
         {
@@ -525,9 +505,6 @@
                 "polyfill",
                 "portable"
             ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.1"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -605,10 +582,6 @@
                 "env",
                 "environment"
             ],
-            "support": {
-                "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v3.6.8"
-            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -731,7 +704,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "7.52.0",
+            "version": "7.52.143",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -739,7 +712,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1615210508"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1617702987"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -757,7 +730,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/lh-hsts.zip?timestamp=1594531855"
+                "url": "https://downloads.wordpress.org/plugin/lh-hsts.zip?timestamp=1558146276"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1268,10 +1241,6 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "support": {
-                "issues": "https://github.com/Roave/SecurityAdvisories/issues",
-                "source": "https://github.com/Roave/SecurityAdvisories/tree/latest"
-            },
             "funding": [
                 {
                     "url": "https://github.com/Ocramius",
@@ -1333,11 +1302,6 @@
                 "phpcs",
                 "standards"
             ],
-            "support": {
-                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
-                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
-                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
-            },
             "time": "2020-10-23T02:01:07+00:00"
         },
         {
@@ -1384,11 +1348,6 @@
                 "standards",
                 "wordpress"
             ],
-            "support": {
-                "issues": "https://github.com/WordPress/WordPress-Coding-Standards/issues",
-                "source": "https://github.com/WordPress/WordPress-Coding-Standards",
-                "wiki": "https://github.com/WordPress/WordPress-Coding-Standards/wiki"
-            },
             "time": "2020-05-13T23:57:56+00:00"
         },
         {
@@ -1443,5 +1402,5 @@
     "platform-overrides": {
         "php": "7.2"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
