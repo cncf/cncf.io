@@ -15,7 +15,7 @@
 					class="has-white-color has-pink-400-background-color has-text-color has-background home-padding user-guide-box">
 					<a href="/people/end-user-community/" class="box-link"></a>
 					<h2>End Users</h2>
-					<p>Accelerate cloud native technology adoption in close collaboration with peers, project maintainers and CNCF.</p>
+					<p>Accelerate your cloud native technology adoption in close collaboration with peers, project maintainers and CNCF.</p>
 					<a href="/people/end-user-community/" class="arrow-cta has-white-color">Explore end user community</a>
 				</div>
 				<div

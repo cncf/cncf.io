@@ -8,13 +8,13 @@
  */
 
 $args = array(
-	'post_type'              => array( 'post' ),
-	'post_status'            => array( 'publish' ),
-	'has_password'           => false,
-	'posts_per_page'         => '5',
-	'ignore_sticky_posts'    => true,
-	'order'                  => 'DESC',
-	'orderby'                => 'date',
+	'post_type'           => array( 'post' ),
+	'post_status'         => array( 'publish' ),
+	'has_password'        => false,
+	'posts_per_page'      => '5',
+	'ignore_sticky_posts' => true,
+	'order'               => 'DESC',
+	'orderby'             => 'date',
 	'no_found_rows'       => true,
 	'tax_query'           => array(
 		array(
@@ -31,7 +31,7 @@ if ( $query->have_posts() ) { ?>
 
 <section class="home-announcement home-padding">
 
-<div>
+<div class="home-announcement-icon">
 	<?php
 	$image = new Image();
 
@@ -45,7 +45,7 @@ if ( $query->have_posts() ) { ?>
 	while ( $query->have_posts() ) {
 		$query->the_post();
 		?>
-<div>
+<div class="home-announcement-item">
 <p class="is-style-max-width-100"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 <span class="date-icon"> <?php echo get_the_date( 'F j, Y' ); ?></span>
 </div>

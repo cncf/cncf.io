@@ -87,3 +87,16 @@
     ]
 
   } );
+
+  // fix for non-adaptive height issues.
+  let maxHeight = -1;
+$('.announcement-slider-wrapper .slick-slide').each(function() {
+  if ($(this).height() > maxHeight) {
+    maxHeight = $(this).height();
+  }
+});
+$('.announcement-slider-wrapper .slick-slide').each(function() {
+  if ($(this).height() < maxHeight) {
+    $(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
+  }
+});

@@ -7,15 +7,6 @@
  * @since 1.0.0
  */
 
-// need to enqueue youtube lite script.
-wp_enqueue_script(
-	'youtube-lite-js',
-	home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
-	is_admin() ? array( 'wp-editor' ) : null,
-	filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
-	true
-);
-
 ?>
 
 <section class="event-highlight">

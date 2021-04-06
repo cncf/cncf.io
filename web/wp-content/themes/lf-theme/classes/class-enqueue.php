@@ -69,6 +69,18 @@ class Enqueue {
 			wp_enqueue_style( 'slick-css', 'https://kenwheeler.github.io/slick/slick/slick.css', '', filemtime( get_template_directory() . '/build/styles.css' ), 'all' );
 
 			wp_enqueue_style( 'slick-theme', 'https://kenwheeler.github.io/slick/slick/slick-theme.css', '', filemtime( get_template_directory() . '/build/styles.css' ), 'all' );
+
+			// youtube lite script.
+			wp_enqueue_script(
+				'youtube-lite-js',
+				home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
+				is_admin() ? array( 'wp-editor' ) : null,
+				filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
+				true
+			);
+
+			// purecounter countup.
+			wp_enqueue_script( 'purecounter', get_template_directory_uri() . '/source/js/third-party/purecounter_vanilla.js', array(), filemtime( get_template_directory() . '/source/js/third-party/purecounter_vanilla.js' ), false );
 		}
 	}
 

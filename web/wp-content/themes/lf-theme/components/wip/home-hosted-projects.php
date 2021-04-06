@@ -29,13 +29,16 @@
 				$stacked_logo_url = wp_get_attachment_image_url( $stacked_logo_id );
 				if ( has_term( 'graduated', 'lf-project-stage', get_the_ID() ) ) {
 					$graduated_count++;
+					if ( $stacked_logo_url ) {
+						$all_project_logos[] = $stacked_logo_url;
+					}
 				} elseif ( has_term( 'incubating', 'lf-project-stage', get_the_ID() ) ) {
 					$incubating_count++;
+					if ( $stacked_logo_url ) {
+						$all_project_logos[] = $stacked_logo_url;
+					}
 				} elseif ( has_term( 'sandbox', 'lf-project-stage', get_the_ID() ) ) {
 					$sandbox_count++;
-				}
-				if ( $stacked_logo_url ) {
-					$all_project_logos[] = $stacked_logo_url;
 				}
 			}
 		}
@@ -48,21 +51,37 @@
 		<h2>CNCF hosted projects</h2>
 
 		<?php if ( $graduated_count && $incubating_count && $sandbox_count ) : ?>
-		<ul class="data-display no-style">
-			<li><a href="/projects/">
-					<span><?php echo esc_html( $graduated_count ); ?></span>
-					Graduated Projects
-				</a></li>
-			<li><a href="/projects/#incubating">
-					<span><?php echo esc_html( $incubating_count ); ?></span>
-					Incubating Projects
-				</a></li>
-			<li><a href="/sandbox-projects/">
-					<span><?php echo esc_html( $sandbox_count ); ?></span>
-					Sandbox Projects
-				</a></li>
-		</ul>
-		<?php endif; ?>
+
+<ul class="data-display no-style">
+<li><a href="/projects/">
+<span
+data-purecounter-end="<?php echo esc_html( $graduated_count ); ?>"
+data-purecounter-duration="400"
+data-purecounter-delay="50"
+data-purecounter-once="false"
+class="purecounter"><?php echo esc_html( $graduated_count ); ?></span>
+		Graduated Projects
+	</a></li>
+<li><a href="/projects/#incubating">
+<span
+data-purecounter-end="<?php echo esc_html( $incubating_count ); ?>"
+data-purecounter-duration="150"
+data-purecounter-delay="50"
+data-purecounter-once="false"
+class="purecounter"><?php echo esc_html( $incubating_count ); ?></span>
+		Incubating Projects
+	</a></li>
+<li><a href="/sandbox-projects/">
+<span
+data-purecounter-end="<?php echo esc_html( $sandbox_count ); ?>"
+data-purecounter-duration="125"
+data-purecounter-delay="25"
+data-purecounter-once="false"
+class="purecounter"><?php echo esc_html( $sandbox_count ); ?></span>
+		Sandbox Projects
+	</a></li>
+</ul>
+<?php endif; ?>
 
 		<p
 			class="h5">The CNCF hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the non-profit <a rel="noopener" href="https://linuxfoundation.org" class="external is-primary-color" target="_blank">Linux Foundation</a>.</p>
