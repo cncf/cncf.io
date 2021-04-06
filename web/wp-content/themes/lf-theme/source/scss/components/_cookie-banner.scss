@@ -1,7 +1,7 @@
-$banner-background: #596cd5;
+$banner-background: #2B1D39;
 $banner-text: #FFFFFF;
 $banner-text-link: #FFFFFF;
-$banner-button: #3842c7;
+$banner-button: $primary-400;
 
 #cookie-banner {
     font-size: 0.9em;
@@ -67,7 +67,7 @@ $banner-button: #3842c7;
         font-weight: 500;
 
         &:hover {
-            background: darken($banner-button, 10);
+            background: #ff33bb
         }
 
         &:focus {
