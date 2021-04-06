@@ -7,6 +7,15 @@
  * @since 1.0.0
  */
 
+// need to enqueue youtube lite script.
+wp_enqueue_script(
+	'youtube-lite-js',
+	home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
+	is_admin() ? array( 'wp-editor' ) : null,
+	filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
+	true
+);
+
 ?>
 
 <section class="event-highlight">
@@ -24,7 +33,7 @@
 
 <div>
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe loading="lazy" title="KubeCon + CloudNativeCon EU Virtual 2021" width="500" height="281" src="https://www.youtube.com/embed/I_rbIsM-otA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<div class="wp-block-lf-youtube-lite"><lite-youtube videoid="I_rbIsM-otA"></lite-youtube></div>
 </div></figure>
 </div>
 
