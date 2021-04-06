@@ -16,7 +16,6 @@ get_template_part( 'components/header' );
 <main class="page-content">
 	<article class="container wrap entry-content">
 
-
 	<?php
 get_template_part( 'components/wip/home-hero' );
 
