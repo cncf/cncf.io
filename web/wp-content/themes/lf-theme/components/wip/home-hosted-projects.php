@@ -65,7 +65,7 @@
 		<?php endif; ?>
 
 		<p
-			class="h5">The CNCF hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the non-profit <a href="https://linuxfoundation.org" class="external is-primary-color" target="_blank">Linux Foundation</a>.</p>
+			class="h5">The CNCF hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the non-profit <a rel="noopener" href="https://linuxfoundation.org" class="external is-primary-color" target="_blank">Linux Foundation</a>.</p>
 
 		<p
 			class="h4"><a href="/projects/" class="arrow-cta">Explore CNCF Projects</a></p>
@@ -118,7 +118,7 @@
 				<?php foreach ( $project_logos as $project_logo ) { ?>
 				<div class="project-slide" dir="ltr">
 					<img src="<?php echo esc_url( $project_logo ); ?>"
-						loading="lazy">
+						loading="lazy" alt="CNCF Hosted Project">
 				</div>
 
 					<?php

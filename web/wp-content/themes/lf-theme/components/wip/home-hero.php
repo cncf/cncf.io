@@ -31,13 +31,13 @@
 <div class="home-hero__col2 has-white-color background-image-wrapper">
 
 <figure class="background-image-figure">
-<img src="https://fakeimg.pl/800x550" alt="">
+<img src="https://fakeimg.pl/800x550" alt="Background image">
 </figure>
 
 <div class="wrap background-image-text-overlay">
 <div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 	<p class="h5 fw-400">CNCF projects are trusted by organizations around the world</p>
-	<a href="/case-studies/"><img src="https://fakeimg.pl/300x100/?text=Company%20Logo%20300x100%20Max"></a>
+	<a href="/case-studies/"><img src="https://fakeimg.pl/300x100/?text=Company%20Logo%20300x100%20Max" alt="Case Study Name"></a>
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
 	<h2><a  class="has-white-color has-text-color" href="/case-studies/">Approx 70 characters as headline here lorem ipsum dolor sit amet consectetu</a></h2>
 	<a href="/case-studies/" class="button">Read XXXXXXX Case Study</a>

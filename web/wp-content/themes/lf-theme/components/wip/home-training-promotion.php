@@ -30,8 +30,8 @@
 			<?php
 			$image = new Image();
 			?>
-			<img src="<?php $image->get_image( 'wip-home/kubernetes-training.jpg' ); ?>"
-				alt="">
+			<img loading="lazy" src="<?php $image->get_image( 'wip-home/kubernetes-training.jpg' ); ?>"
+				alt="Training">
 		</div>
 	</div>
 	<div>
