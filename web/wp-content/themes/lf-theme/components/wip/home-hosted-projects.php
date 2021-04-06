@@ -95,7 +95,7 @@
 				$partition   = array();
 				$mark        = 0;
 				for ( $px = 0; $px < $size; $px++ ) {
-					$incr             = ( $px < $size_rem ) ? $partlen + 1 : $size_len;
+					$incr             = ( $px < $size_rem ) ? $size_len + 1 : $size_len;
 					$partition[ $px ] = array_slice( $array, $mark, $incr );
 					$mark            += $incr;
 				}
@@ -103,7 +103,6 @@
 			}
 
 			$all_project_logos = partition( $all_project_logos, 3 );
-
 			?>
 		<div class="project-slider-wrapper">
 			<?php
