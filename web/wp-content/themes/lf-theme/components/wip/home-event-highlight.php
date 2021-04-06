@@ -20,13 +20,12 @@
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" class="button external" rel="noopener">Register Now</a>
 
 </div>
-<div><img loading="lazy" src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/KubeCon_EU_2021_web_web-logo.svg" alt="Kubecon"></div>
+<div><img loading="lazy" src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/KubeCon_EU_2021_web_web-logo.svg" alt="Kubecon 2021"></div>
 
 <div>
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<div class="video-wrapper"><iframe loading="lazy" title="KubeCon + CloudNativeCon 2019 Highlights" width="500" height="281" src="https://www.youtube.com/embed/4HkhuxKLEEw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="video-wrapper"><iframe loading="lazy" title="KubeCon + CloudNativeCon EU Virtual 2021" width="500" height="281" src="https://www.youtube.com/embed/I_rbIsM-otA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div></figure>
-
 </div>
 
 </div>

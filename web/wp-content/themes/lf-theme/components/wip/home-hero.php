@@ -31,16 +31,21 @@
 <div class="home-hero__col2 has-white-color background-image-wrapper">
 
 <figure class="background-image-figure">
-<img src="https://fakeimg.pl/800x550" alt="Background image">
+<img src="https://dev-cncfci.pantheonsite.io/wp-content/uploads/2020/05/48353373-ericsson-headquarters-sweden-gettyp.jpg" alt="Background image">
 </figure>
 
 <div class="wrap background-image-text-overlay">
 <div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 	<p class="h5 fw-400">CNCF projects are trusted by organizations around the world</p>
-	<a href="/case-studies/"><img src="https://fakeimg.pl/300x100/?text=Company%20Logo%20300x100%20Max" alt="Case Study Name"></a>
+	<a href="/case-studies/ericsson/">
+	<?php
+			$image = new Image();
+	?>
+			<img loading="lazy" src="<?php $image->get_svg( 'wip-home/ericsson-logo.svg', true ); ?>"
+				alt="Ericsson" width="300" height="64"></a>
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
-	<h2><a  class="has-white-color has-text-color" href="/case-studies/">Approx 70 characters as headline here lorem ipsum dolor sit amet consectetu</a></h2>
-	<a href="/case-studies/" class="button">Read XXXXXXX Case Study</a>
+	<h2><a  class="has-white-color has-text-color" href="/case-studies/">How Ericsson is leveraging cloud native to enable 5G transformation</a></h2>
+	<a href="/case-studies/ericsson/" class="button">Read Ericsson Case Study</a>
 	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 </div>
 
