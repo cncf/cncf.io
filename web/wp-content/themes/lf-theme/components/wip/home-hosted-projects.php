@@ -104,8 +104,8 @@ class="purecounter"><?php echo esc_html( $sandbox_count ); ?></span>
 			/**
 			 * Partition an array
 			 *
-			 * @param array    $array Items.
-			 * @param integrer $size Number of partitions required.
+			 * @param array   $array Items.
+			 * @param integer $size Number of partitions required.
 			 */
 			function partition( $array, $size ) {
 				$list_length = count( $array );

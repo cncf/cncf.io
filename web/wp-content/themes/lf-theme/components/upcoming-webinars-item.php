@@ -73,9 +73,8 @@ if ( $show_images ) :
 
 		<!-- Presented by... Company  -->
 		<?php if ( $company ) : ?>
-		<p class="presented-by">Presented by
-			<?php echo esc_html( $company ); ?></p>
+		<span class="presented-by <?php echo ( is_front_page() ) ? ' live-icon' : ''; ?>">Presented by
+			<?php echo esc_html( $company ); ?></span>
 		<?php endif; ?>
-
 	</div>
 </article>

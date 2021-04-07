@@ -75,15 +75,8 @@ if ( $query->have_posts() ) { ?>
 <div class="wp-block-group alignfull has-white-color has-tertiary-400-background-color has-text-color has-background"><div class="wp-block-group__inner-container">
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 
-
-
 <h2>Latest blog posts &amp; webinars</h2>
-
-
-
 <div class="wp-block-columns better-responsive-columns">
-
-
 	<?php
 	if ( $sticky_post ) {
 		echo '<div class="wp-block-column" style="flex-basis:33.33%">';
@@ -147,20 +140,11 @@ endwhile;
 		wp_reset_postdata();
 		?>
 </div>
-
-
-
 	<?php
 }
-
-
 ?>
 	</div>
-
 </div>
-
-
-
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 </div></div>
 </section>

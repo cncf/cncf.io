@@ -20,7 +20,7 @@
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" class="button external" rel="noopener">Register Now</a>
 
 </div>
-<div><img loading="lazy" src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/KubeCon_EU_2021_web_web-logo.svg" alt="Kubecon 2021"></div>
+<div><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" rel="noopener"><img loading="lazy" src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/KubeCon_EU_2021_web_web-logo.svg" alt="Kubecon 2021"></a></div>
 
 <div>
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
