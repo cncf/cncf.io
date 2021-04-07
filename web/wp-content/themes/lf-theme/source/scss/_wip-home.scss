@@ -85,16 +85,6 @@
 			filter: brightness(0) saturate(100%) invert(100%);
 		}
 	}
-
-	@media (hover: hover) {
-		&:hover {
-			&::after {
-				// hover color experimental TODO
-				// https://codepen.io/sosuke/pen/Pjoqqp
-				filter: brightness(-10%);
-			}
-		}
-	}
 }
 
 .user-guide .home-hero__col2 {
@@ -126,15 +116,6 @@
 		margin-top: auto;
 	}
 	&:hover {
-		&.has-pink-400-background-color {
-			background-color: darken($primary-400, 10%);
-		}
-		&.has-purple-700-background-color {
-			background-color: darken($secondary-700, 10%);
-		}
-		&.has-tertiary-400-background-color {
-			background-color: darken($tertiary-400, 10%);
-		}
 		.arrow-cta {
 			transition: all 0.25s ease-out;
 			text-decoration: underline;
