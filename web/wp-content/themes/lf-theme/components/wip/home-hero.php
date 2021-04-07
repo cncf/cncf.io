@@ -17,7 +17,7 @@
 	<h1>Building sustainable ecosystems for cloud native software
 	</h1>
 	<ul class="data-display no-style h4">
-		<li><span>125K+</span> Contributors</li>
+		<li><span>112K+</span> Contributors</li>
 		<li><span>2M+</span> Contributions</li>
 		<li><span>261M+</span> Lines of Code</li>
 	</ul>
