@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "0fa7af99ea39df2fd4dd5a7529280d4b9fa439ec"
+                "reference": "50b6f353a580de8f8113d047479d0388cfbdc04d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/0fa7af99ea39df2fd4dd5a7529280d4b9fa439ec",
-                "reference": "0fa7af99ea39df2fd4dd5a7529280d4b9fa439ec",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/50b6f353a580de8f8113d047479d0388cfbdc04d",
+                "reference": "50b6f353a580de8f8113d047479d0388cfbdc04d",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-04-04T12:30:10+00:00"
+            "time": "2021-04-06T10:06:52+00:00"
         },
         {
             "name": "composer/installers",
@@ -704,7 +704,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "7.52.0",
+            "version": "7.52.143",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -712,7 +712,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1615210508"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1617702987"
             },
             "require": {
                 "composer/installers": "~1.0"

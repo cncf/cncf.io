@@ -24,8 +24,8 @@
 				&::after {
 					// primary color - pink.
 					// https://codepen.io/sosuke/pen/Pjoqqp
-					filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(2129%) hue-rotate(317deg)
-						brightness(97%) contrast(84%);
+					filter: brightness(0) saturate(100%) invert(34%) sepia(99%) saturate(6593%) hue-rotate(308deg)
+						brightness(97%) contrast(119%);
 				}
 			}
 		}
@@ -128,7 +128,8 @@
 		&::after {
 			// pink
 			// https://codepen.io/sosuke/pen/Pjoqqp
-			filter: invert(31%) sepia(94%) saturate(6410%) hue-rotate(323deg) brightness(89%) contrast(95%);
+			filter: brightness(0) saturate(100%) invert(34%) sepia(99%) saturate(6593%) hue-rotate(308deg)
+				brightness(97%) contrast(119%);
 		}
 	}
 

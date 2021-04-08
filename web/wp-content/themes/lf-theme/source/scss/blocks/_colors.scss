@@ -2,33 +2,36 @@
 // This should match color in gutenberg-preset-colors
 
 // The button color is this.
-$colors: ( // name variable : color to be used.
-    'pink-400': #DE176C,
-    'purple-700': #2C2960,
-    'blue-100': #F0F5F7,
-    'tertiary-400': $tertiary-400,
-    'white': $white,
-    'black': $black,
+$colors: (
+	// name variable : color to be used.
+	"pink-400": #ff00aa,
+	"purple-700": #2a0054,
+	"tertiary-400": #0088ff,
+	"blue-100": #f4f4f4,
+	"white": $white,
+	"black": $black
 );
 
 // When hovered it is this.
-$color_hover: ( // name variable : color to be used.
-    'pink-400': #E43B80,
-    'purple-700': #48549C,
-    'blue-100': #3CB3DD,
-    'tertiary-400': $tertiary-600,
-    'white': $tertiary-color,
-    'black': #252b5f,
+$color_hover: (
+	// name variable : color to be used.
+	"pink-400": #ff33bb,
+	"purple-700": #431f67,
+	"tertiary-400": #416fd9,
+	"blue-100": #3cb3dd,
+	"white": $tertiary-color,
+	"black": #252b5f
 );
 
 // Text color is this.
-$text_color: ( // name variable : color to be used.
-    'pink-400': $white,
-    'purple-700': $white,
-    'blue-100': $secondary-color,
-    'tertiary-400': $white,
-    'white': $black,
-    'black': $white,
+$text_color: (
+	// name variable : color to be used.
+	"pink-400": $white,
+	"purple-700": $white,
+	"tertiary-400": $white,
+	"blue-100": $secondary-color,
+	"white": $black,
+	"black": $white
 );
 
 // Take the first colour to be the default.

@@ -1,63 +1,61 @@
 // Gutenberg style to break out of page container.
 .alignfull {
-    position: relative;
-    right: 50%;
-    left: 50%;
-    margin-right: -50vw;
-    margin-left: -50vw;
-    width: 100vw;
-    max-width: 100vw;
+	position: relative;
+	right: 50%;
+	left: 50%;
+	margin-right: -50vw;
+	margin-left: -50vw;
+	width: 100vw;
+	max-width: 100vw;
 }
 
 // block using alignwide include:
 // case study overview
 .alignwide {
+	@media (min-width: 1200px) {
+		margin-left: calc((100% - 1200px) / 2);
+		width: 1200px;
 
-    @media (min-width: 1200px) {
-        margin-left: calc((100% - 1200px) / 2);
-        width: 1200px;
-
-        &.wp-block-group {
-            .wp-block-group__inner-container {
-                max-width: 100%;
-            }
-        }
-    }
+		&.wp-block-group {
+			.wp-block-group__inner-container {
+				max-width: 100%;
+			}
+		}
+	}
 }
 
 // experimental to try and align all content inside groups and cover.
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-group .wp-block-group__inner-container {
-    max-width: 1050px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 12px;
-    padding-right: 12px;
+	max-width: $content-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 12px;
+	padding-right: 12px;
 
-    @media (min-width: 375px) {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+	@media (min-width: 375px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 
-    @media (min-width: 550px) {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
+	@media (min-width: 550px) {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
 }
 
 .wp-block-group {
-    padding-top: 20px;
-    padding-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .wp-block-group.has-background {
-    padding-left: 0px;
-    padding-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container {
-    padding-left: 0px;
-    padding-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }

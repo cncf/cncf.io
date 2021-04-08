@@ -4,25 +4,25 @@ $white: #ffffff;
 $black: #202020;
 
 // primary - highlight colour
-$primary-300: #e43b80; // cta rollover
-$primary-400: #de176c; // preferred CTA
+$primary-300: #ff33bb; // 10% lighter // #e43b80; // cta rollover
+$primary-400: #ff00aa; // #de176c; // preferred CTA
 
 // secondary - bolder colour
 $secondary-300: #908bb1;
-$secondary-500: #4e4a6d;
-$secondary-600: #302b54;
+$secondary-500: #50326e; // #4e4a6d;
+$secondary-600: #431f67; // #302b54;
 $secondary-700: #2c2960;
 $secondary-800: #242b5f;
-$secondary-900: #1c214a;
+$secondary-900: #2a0552; // #1c214a;
 
 // tertiary
-$tertiary-100: #f0f5f7;
+$tertiary-100: #f4f4f4;
 $tertiary-400: #436ca9;
 $tertiary-600: #416fd9;
-$tertiary-700: #0f1533;
+$tertiary-700: #0088ff;
 
 // greys.
-$grey-100: #e6e6e6;
+$grey-100: #f9f9f9;
 $grey-200: #abb2bf;
 $grey-400: #a7a7a6;
 $grey-500: #87969c;
@@ -49,15 +49,15 @@ $menu-desktop-container: $secondary-900;
 $menu-desktop-submenu: $secondary-600;
 $menu-desktop-submenu-submenu: $secondary-500;
 $menu-desktop-divider: $secondary-900;
-$menu-desktop-search: $secondary-800;
+$menu-desktop-search: $secondary-600;
 
 // menu text/links.
 $menu-link: $white;
 $menu-hover: $grey-100;
 
 // highlight elements (pricing table, case study overlay)
-$cs-overlay: $secondary-800;
-$hero-overlay: $secondary-900;
+$cs-overlay: $tertiary-700;
+$hero-overlay: #2b1d39;
 
 // forms.
 $error: #b80611;
@@ -83,6 +83,10 @@ $font-code: Hack, "Fira Code", Consolas, Menlo, Monaco, "Andale Mono", "Lucida C
 	"DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier,
 	monospace;
 
+$body-text-color: $secondary-900;
+
 // spacing.
 $sm-padding: 2rem;
 $lg-padding: 4rem;
+
+$content-width: 1150px;
