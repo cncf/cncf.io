@@ -38,11 +38,9 @@ if ( $show_images ) :
 		<?php
 		if ( has_post_thumbnail() ) {
 			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-540', '540px', 'archive-image' );
-		} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
-			Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-540', '540px', 'archive-default-svg' );
 		} else {
 			echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-			. '/images/thumbnail-default.svg" alt="' . esc_attr( lf_blocks_get_site() ) . '" class="archive-default-svg"/>';
+			. '/images/webinar-default.jpg" alt="' . esc_attr( lf_blocks_get_site() ) . '" class="archive-image"/>';
 		}
 		?>
 	</div>
