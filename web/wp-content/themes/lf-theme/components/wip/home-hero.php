@@ -32,6 +32,11 @@
 
 <figure class="background-image-figure">
 <img src="https://dev-cncfci.pantheonsite.io/wp-content/uploads/2021/04/malte-helmhold-WKyWsmI6M7Y-unsplash-scaled-e1617779639197.jpg" alt="Background image">
+
+<?php
+// LF_Utils::display_responsive_images( 61155, 'case-study-640', '600px' ); // srcset.
+?>
+
 </figure>
 
 <div class="wrap background-image-text-overlay">
@@ -42,7 +47,7 @@
 	<?php
 			$image = new Image();
 	?>
-			<img loading="lazy" src="<?php $image->get_svg( 'wip-home/ericsson-logo.svg', true ); ?>"
+			<img loading="eager" src="<?php $image->get_svg( 'wip-home/ericsson-logo.svg', true ); ?>"
 				alt="Ericsson" width="300" height="64"></a>
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
 	<h2><a  class="has-white-color has-text-color" href="/case-studies/ericsson/">How Ericsson is using Kubernetes to leverage cloud native &amp; enable 5G transformation</a></h2>

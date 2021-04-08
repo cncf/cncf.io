@@ -15,6 +15,11 @@
 		width: calc(50% + 6vw);
 		padding-left: 6vw;
 		clip-path: polygon(6vw 0, 100% 0, 100% 100%, 0% 100%);
+		h2 {
+			a:hover {
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -353,7 +358,6 @@
 		top: 0;
 		right: 0;
 		left: unset;
-		transform: rotate(90deg);
 	}
 
 	.slick-next {
@@ -361,40 +365,10 @@
 		bottom: 0;
 		right: 0;
 		left: unset;
-		transform: rotate(-270deg);
 	}
 
 	.margin-bottom-small {
 		margin-bottom: 0.25rem;
-	}
-}
-
-ul.slick-dots {
-	position: unset;
-	display: block;
-	margin: 0;
-	margin-top: 2rem;
-	// padding-top: 2rem;
-	li {
-		width: 30px;
-		height: 30px;
-		button {
-			width: 30px;
-			height: 30px;
-		}
-
-		button:before {
-			font-size: 14px;
-			color: $primary-color;
-			width: 30px;
-			height: 30px;
-			opacity: 1;
-		}
-		&.slick-active {
-			button:before {
-				color: $black;
-			}
-		}
 	}
 }
 
