@@ -31,10 +31,9 @@
 <div class="home-hero__col2 has-white-color background-image-wrapper">
 
 <figure class="background-image-figure">
-<img src="https://dev-cncfci.pantheonsite.io/wp-content/uploads/2021/04/malte-helmhold-WKyWsmI6M7Y-unsplash-scaled-e1617779639197.jpg" alt="Background image">
 
 <?php
-// LF_Utils::display_responsive_images( 61155, 'case-study-640', '600px' ); // srcset.
+LF_Utils::display_responsive_images( 61735, 'case-study-640', '600px' ); // srcset.
 ?>
 
 </figure>
