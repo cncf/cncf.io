@@ -25,6 +25,44 @@
 	margin-bottom: 1.5em;
 }
 
+.hbspt-form {
+	input {
+		margin-bottom: .3rem;
+	}
+
+	// Displays if required field not filled.
+	.hs-error-msg {
+		font-style: italic;
+		font-size: 0.725em;
+		margin-bottom: 0.5rem;
+		display: block;
+		margin-right: 8px;
+		width: 95%;
+	}
+
+	.hs_error_rollup {
+		display: none;
+	}
+
+	.submitted-message {
+		padding: 0.8em;
+		max-width: 900px;
+		margin: 1rem auto;
+		text-align: center;
+		font-weight: 600;
+		border: 2px solid white;
+	}
+
+	.submitted-message p {
+		max-width: none;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+}
+
 // form layout.
 .newsletter .hbspt-form .hs-form {
 	display: grid;
@@ -57,21 +95,6 @@
 
 // controls the forms elements.
 .newsletter .hbspt-form {
-	// removes captcha image from flow.
-	.hs-recaptcha {
-		display: none;
-	}
-
-	// Displays if required field not filled.
-	.hs-error-msg {
-		font-style: italic;
-		font-size: 0.725em;
-		margin-bottom: 0.5rem;
-		display: block;
-		margin-right: 8px;
-		width: 95%;
-	}
-
 	input[type="text"],
 	input[type="email"] {
 		height: 40px;
@@ -129,20 +152,9 @@
 		}
 	}
 
-	.hs_error_rollup {
-		display: none;
-	}
+}
 
-	.submitted-message {
-		padding: 0.8em;
-		max-width: 900px;
-		margin: 1rem auto;
-		text-align: center;
-		font-weight: 600;
-		border: 2px solid $success;
-	}
-
-	.submitted-message p {
-		max-width: none;
-	}
+// removes captcha image from flow.
+.hs-recaptcha {
+	display: none;
 }
