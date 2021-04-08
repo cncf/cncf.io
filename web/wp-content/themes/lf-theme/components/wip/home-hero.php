@@ -31,7 +31,7 @@
 <div class="home-hero__col2 has-white-color background-image-wrapper">
 
 <figure class="background-image-figure">
-<img src="https://dev-cncfci.pantheonsite.io/wp-content/uploads/2021/04/austin-distel-qgdJX9mvMJI-unsplash-scaled-e1617778853994.jpg" alt="Background image">
+<img src="https://dev-cncfci.pantheonsite.io/wp-content/uploads/2021/04/malte-helmhold-WKyWsmI6M7Y-unsplash-scaled-e1617779639197.jpg" alt="Background image">
 </figure>
 
 <div class="wrap background-image-text-overlay">
