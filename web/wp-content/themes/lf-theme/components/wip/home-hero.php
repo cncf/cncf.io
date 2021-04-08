@@ -33,7 +33,7 @@
 <figure class="background-image-figure">
 
 <?php
-LF_Utils::display_responsive_images( 61735, 'case-study-640', '600px' ); // srcset.
+LF_Utils::display_responsive_images( 61745, 'case-study-640', '600px' ); // srcset.
 ?>
 
 </figure>
