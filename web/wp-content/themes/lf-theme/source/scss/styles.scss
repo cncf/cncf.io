@@ -25,6 +25,7 @@
 @import "components/searchandfilter";
 @import "components/speakers";
 @import "components/webinars";
+@import "components/kubeweeklys";
 @import "components/tooltips";
 @import "components/modal";
 @import "components/people";
@@ -65,3 +66,5 @@
 @import "blocks/case-study-overview";
 @import "blocks/latest-jobs";
 @import "blocks/stats";
+
+@import "wip-home";

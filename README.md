@@ -11,9 +11,9 @@ CNCF.io runs in a similar way to  LFEvents -[LFEvents Developer Instructions](ht
 
 ### Requirements
 
-* Install [Lando](https://docs.devwithlando.io/) (a Docker Compose utility / abstraction layer). On a Mac using brew, the command is `brew cask install lando`.
+* Install [Lando](https://docs.devwithlando.io/) (a Docker Compose utility/abstraction layer). On a Mac using brew, the command is `brew cask install lando`.
 
-* Install [Terminus](https://pantheon.io/docs/terminus/install/) (CLI for interaction with Pantheon).  Follow all the instructions on that page to setup a [machine token](https://pantheon.io/docs/terminus/install/#machine-token) and [SSH Authentication](https://pantheon.io/docs/terminus/install/#ssh-authentication).  Save the machine token for use in step 2 below.
+* Install [Terminus](https://pantheon.io/docs/terminus/install/) (CLI for interaction with Pantheon).  Follow all the instructions on that page to set up a [machine token](https://pantheon.io/docs/terminus/install/#machine-token) and [SSH Authentication](https://pantheon.io/docs/terminus/install/#ssh-authentication).  Save the machine token for use in step 2 below.
 
 * Get a GitHub [personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) to use in place of a password for performing Git operations over HTTPS.
 
@@ -46,7 +46,7 @@ CNCF.io runs in a similar way to  LFEvents -[LFEvents Developer Instructions](ht
 
 7. Visit the local site URL saved from above.  To find it again run `lando info`.
 
-8. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you having to keep bypassing the privacy warning in your browser.  On MacOS Catalina, I also had to manually go into Keychain Access and set the *.lndo.site certificate to “Always Trust”. See [screenshot](/ca-screenshot.png).
+8. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you from having to keep bypassing the privacy warning in your browser.  On macOS Catalina, I also had to manually go into Keychain Access and set the *.lndo.site certificate to “Always Trust”. See [screenshot](/ca-screenshot.png).
 
 ### Notes
 
@@ -95,7 +95,7 @@ Since the cncfci repo includes phpcs via composer, it will use that version of t
 
 ## Upgrading WordPress core, themes and plugins
 
-Dependencies of this project are managed by [Composer](https://getcomposer.org/). All dependencies of the project are set in [composer.json](https://github.com/LF-Engineering/lfevents/blob/master/composer.json) and are pulled in at deploy time according to what is set in [composer.lock](https://github.com/LF-Engineering/lfevents/blob/master/composer.lock).
+The dependencies of this project are managed by [Composer](https://getcomposer.org/). All dependencies of the project are set in [composer.json](https://github.com/LF-Engineering/lfevents/blob/master/composer.json) and are pulled in at deploy time according to what is set in [composer.lock](https://github.com/LF-Engineering/lfevents/blob/master/composer.lock).
 
 composer.lock is generated from composer.json only when explicitly calling the `composer update` function. Any additional themes or plugins can be added first to composer.json and then `composer update` is run to update composer.lock and pull in the new files.  Dependencies are pegged to a version according to the composer [versioning rules](https://getcomposer.org/doc/articles/versions.md).
 
@@ -109,7 +109,7 @@ To upgrade the version of a dependency, follow these steps:
 
 3. Test the site locally
 
-4. Check in to github and allow the tests to run
+4. Check in to GitHub and allow the tests to run
 
 5. Test the dev instance to make sure all looks good
 

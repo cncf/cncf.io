@@ -29,24 +29,28 @@
 
 	min-height: 280px;
 
-	&:nth-child(5n + 1) .case-study-overlay {
+	&:nth-child(6n + 1) .case-study-overlay {
 		background-color: $cs-overlay;
 	}
 
-	&:nth-child(5n + 2) .case-study-overlay {
+	&:nth-child(6n + 2) .case-study-overlay {
 		background-color: lighten($cs-overlay, 5%);
 	}
 
-	&:nth-child(5n + 3) .case-study-overlay {
+	&:nth-child(6n + 3) .case-study-overlay {
 		background-color: lighten($cs-overlay, 10%);
 	}
 
-	&:nth-child(5n + 4) .case-study-overlay {
-		background-color: darken($cs-overlay, 4%);
+	&:nth-child(6n + 4) .case-study-overlay {
+		background-color: darken($cs-overlay, 10%);
 	}
 
-	&:nth-child(5n + 5) .case-study-overlay {
-		background-color: darken($cs-overlay, 8%);
+	&:nth-child(6n + 5) .case-study-overlay {
+		background-color: darken($cs-overlay, 15%);
+	}
+
+	&:nth-child(6n + 6) .case-study-overlay {
+		background-color: darken($cs-overlay, 20%);
 	}
 
 	img {

@@ -32,7 +32,7 @@
 		href="/wp-content/themes/lf-theme/images/favicon.ico">
 	<meta name="apple-mobile-web-app-title" content="CNCF">
 	<meta name="application-name" content="CNCF">
-	<meta name="msapplication-TileColor" content="#de176c">
+	<meta name="msapplication-TileColor" content="#ff00aa">
 	<meta name="msapplication-config"
 		content="/wp-content/themes/lf-theme/images/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">

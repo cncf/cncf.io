@@ -4,12 +4,12 @@ body {
 	font-family: $font-primary;
 	font-size: 1em; // 16px
 
-	@media (min-width: 1200px) {
-		font-size: 1.125em; // 18px
-	}
+	// @media (min-width: 1200px) {
+	// 	font-size: 1.125em; // 18px
+	// }
 
-	color: $black;
-	font-weight: 300;
+	color: $body-text-color;
+	font-weight: 400;
 
 	// added to improve rendering, but could hamper performance.
 	-webkit-font-smoothing: antialiased;
@@ -31,14 +31,14 @@ body {
 // default content container.
 .container {
 	width: 100%;
-	max-width: 1050px;
+	max-width: $content-width;
 	margin: auto;
 }
 
 // used by navigation and full width template.
 .container-full-width {
 	width: 100%;
-	max-width: 1250px;
+	max-width: $content-width;
 	margin: auto;
 }
 
@@ -80,7 +80,7 @@ img {
 	white-space: nowrap;
 	text-transform: uppercase;
 	font-family: $font-primary;
-	font-weight: 500;
+	font-weight: 700;
 
 	// defaults
 	background-color: $link-color;
@@ -194,18 +194,14 @@ img {
 			background-color: lighten($secondary-color, 5%);
 		}
 	}
-}
 
-// makes button plain like icon (wechat, people modal).
-.button-reset {
-	border: none;
-	background: none;
-	box-sizing: border-box;
-	padding: 0;
-	cursor: pointer;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	&.margin-top {
+		margin-top: 1rem;
+	}
+
+	&.margin-top-large {
+		margin-top: 2rem;
+	}
 }
 
 /*
@@ -269,10 +265,9 @@ img {
 .live-icon {
 	display: inline-flex;
 	align-items: center;
-
 	&::before {
 		content: " ";
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M16 16c0 1.104-.896 2-2 2h-12c-1.104 0-2-.896-2-2v-8c0-1.104.896-2 2-2h12c1.104 0 2 .896 2 2v8zm8-10l-6 4.223v3.554l6 4.223v-12z'/%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%232a0552' d='M16 16c0 1.104-.896 2-2 2h-12c-1.104 0-2-.896-2-2v-8c0-1.104.896-2 2-2h12c1.104 0 2 .896 2 2v8zm8-10l-6 4.223v3.554l6 4.223v-12z'/%3E%3C/svg%3E%0A");
 		background-size: 1em;
 		height: 1em;
 		width: 1em;
