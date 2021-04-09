@@ -1,213 +1,207 @@
 body {
-    height: auto;
-    background-color: $white;
-    font-family: $font-primary;
-    font-size: 1em; // 16px
+	height: auto;
+	background-color: $white;
+	font-family: $font-primary;
+	font-size: 1em; // 16px
 
-    @media (min-width: 1200px) {
-        font-size: 1.125em; // 18px
-    }
+	// @media (min-width: 1200px) {
+	// 	font-size: 1.125em; // 18px
+	// }
 
-    color: $black;
-    font-weight: 300;
+	color: $body-text-color;
+	font-weight: 400;
 
-    // added to improve rendering, but could hamper performance.
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	// added to improve rendering, but could hamper performance.
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-    &.menu-is-active {
-        overflow: hidden;
-    }
+	&.menu-is-active {
+		overflow: hidden;
+	}
 
-    // fixes menu off bottom of screen.
-    overscroll-behavior: none;
+	// fixes menu off bottom of screen.
+	overscroll-behavior: none;
 }
 
 // applied on pages, need this because of .alignwide blocks.
 .page-content {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 // default content container.
 .container {
-    width: 100%;
-    max-width: 1050px;
-    margin: auto;
-
+	width: 100%;
+	max-width: $content-width;
+	margin: auto;
 }
 
 // used by navigation and full width template.
 .container-full-width {
-    width: 100%;
-    max-width: 1250px;
-    margin: auto;
+	width: 100%;
+	max-width: $content-width;
+	margin: auto;
 }
 
 .wrap {
-    padding: 0em 12px;
+	padding: 0em 12px;
 
-    @media (min-width: 375px) {
-        padding: 0em 20px;
-    }
+	@media (min-width: 375px) {
+		padding: 0em 20px;
+	}
 
-    @media (min-width: 550px) {
-        padding: 0em 25px;
-    }
+	@media (min-width: 550px) {
+		padding: 0em 25px;
+	}
 }
 
 img {
-    margin: 0;
-    max-width: 100%;
-    height: auto;
+	margin: 0;
+	max-width: 100%;
+	height: auto;
 }
 
-.button, .hs-button {
-    // copied from Gutenberg.
-    border: 0; // reset
-    padding: 0px; // reset
-    box-shadow: none;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    margin: 0;
-    padding: 11px 24px 12px 24px;
-    text-align: center;
-    text-decoration: none;
-    overflow-wrap: break-word;
+.button,
+.hs-button {
+	// copied from Gutenberg.
+	border: 0; // reset
+	padding: 0px; // reset
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	margin: 0;
+	padding: 11px 24px 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	overflow-wrap: break-word;
 
-    // added.
-    width: auto;
-    white-space: nowrap;
-    text-transform: uppercase;
-    font-family: $font-primary;
-    font-weight: 500;
+	// added.
+	width: auto;
+	white-space: nowrap;
+	text-transform: uppercase;
+	font-family: $font-primary;
+	font-weight: 700;
 
-    // defaults
-    background-color: $link-color;
-    color: $white;
-    transition: all 0.25s ease-out;
+	// defaults
+	background-color: $link-color;
+	color: $white;
+	transition: all 0.25s ease-out;
 
-    &:link,
-    &:visited {
-        color: $white;
-        text-decoration: none;
-    }
+	&:link,
+	&:visited {
+		color: $white;
+		text-decoration: none;
+	}
 
-    &:hover {
-        color: $white;
-        background-color: $link-hover;
-        text-decoration: none;
-    }
+	&:hover {
+		color: $white;
+		background-color: $link-hover;
+		text-decoration: none;
+	}
 
-    &:active {
-        position: relative;
-        top: 1px;
-    }
+	&:active {
+		position: relative;
+		top: 1px;
+	}
 
-    &.header-align {
-        height: 38px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding-left: 12px;
-        padding-right: 12px;
+	&.header-align {
+		height: 38px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding-left: 12px;
+		padding-right: 12px;
 
-        &:hover {
-            text-decoration: none;
-        }
-    }
+		&:hover {
+			text-decoration: none;
+		}
+	}
 
-    &.search-toggle {
-        min-width: initial;
-        background-color: transparent;
-        color: $white;
-        fill: $white;
-        height: 38px;
-        padding: 0;
-        margin-left: 20px;
+	&.search-toggle {
+		min-width: initial;
+		background-color: transparent;
+		color: $white;
+		fill: $white;
+		height: 38px;
+		padding: 0;
+		margin-left: 20px;
 
-        &:hover {
-            svg {
-                transition: all 0.25s ease-out;
-                color: $primary-color;
-                fill: $primary-color;
-            }
-        }
+		&:hover {
+			svg {
+				transition: all 0.25s ease-out;
+				color: $primary-color;
+				fill: $primary-color;
+			}
+		}
 
-        &:visited {
-            color: $white;
-        }
+		&:visited {
+			color: $white;
+		}
+	}
 
-    }
+	&.search-submit {
+		border: 1px solid $white;
+		width: 95px;
+		// iOS overrides.
+		border-radius: 0;
+		-webkit-appearance: none;
+		height: 40px;
 
-    &.search-submit {
-        border: 1px solid $white;
-        width: 95px;
-        // iOS overrides.
-        border-radius: 0;
-        -webkit-appearance: none;
-        height: 40px;
+		&:hover {
+			border: 1px solid $primary-color;
+		}
+	}
 
-        &:hover {
-            border: 1px solid $primary-color;
-        }
-    }
+	&.transparent {
+		background-color: transparent;
+		color: $white;
+		fill: $white;
 
-    &.transparent {
-        background-color: transparent;
-        color: $white;
-        fill: $white;
+		&:hover {
+			color: $primary-color;
+			fill: $primary-color;
+		}
 
-        &:hover {
-            color: $primary-color;
-            fill: $primary-color;
-        }
+		a:visited {
+			color: $white;
+		}
+	}
 
-        a:visited {
-            color: $white;
-        }
-    }
+	&.outline {
+		box-sizing: border-box;
+		border: 1px solid $white;
 
-    &.outline {
-        box-sizing: border-box;
-        border: 1px solid $white;
+		&:hover {
+			background-color: $white;
+			color: $primary-color;
+		}
+	}
 
-        &:hover {
-            background-color: $white;
-            color: $primary-color;
-        }
+	// used for people.
+	&.smaller {
+		// padding: 0.3rem 0.5rem;
+		padding: 6px 12px 5px 12px;
+		font-size: 0.75em;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-    }
+	&.secondary-color {
+		background-color: $secondary-color;
 
-    // used for people.
-    &.smaller {
-        // padding: 0.3rem 0.5rem;
-        padding: 6px 12px 5px 12px;
-        font-size: 0.750em;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
+		&:hover {
+			background-color: lighten($secondary-color, 5%);
+		}
+	}
 
-    &.secondary-color {
-        background-color: $secondary-color;
+	&.margin-top {
+		margin-top: 1rem;
+	}
 
-        &:hover {
-            background-color: lighten($secondary-color, 5%);
-        }
-    }
-}
-
-// makes button plain like icon (wechat, people modal).
-.button-reset {
-    border: none;
-    background: none;
-    box-sizing: border-box;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	&.margin-top-large {
+		margin-top: 2rem;
+	}
 }
 
 /*
@@ -217,25 +211,25 @@ img {
 */
 
 .background-image-wrapper {
-    overflow: hidden;
-    position: relative;
+	overflow: hidden;
+	position: relative;
 }
 
 .background-image-figure {
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-    }
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
 }
 
 .background-image-text-overlay {
-    position: relative;
-    z-index: 2;
+	position: relative;
+	z-index: 2;
 }
 
 /*
@@ -245,83 +239,82 @@ img {
 */
 
 .box-link {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 3;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 3;
 }
 
 /* Assistive text */
 .assistive-text,
 .screen-reader-text,
 .sr-text {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
 }
 
 .live-icon {
-    display: inline-flex;
-    align-items: center;
-
-    &::before {
-        content: ' ';
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M16 16c0 1.104-.896 2-2 2h-12c-1.104 0-2-.896-2-2v-8c0-1.104.896-2 2-2h12c1.104 0 2 .896 2 2v8zm8-10l-6 4.223v3.554l6 4.223v-12z'/%3E%3C/svg%3E");
-        background-size: 1em;
-        height: 1em;
-        width: 1em;
-        background-repeat: no-repeat;
-        margin-right: 5px;
-    }
+	display: inline-flex;
+	align-items: center;
+	&::before {
+		content: " ";
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%232a0552' d='M16 16c0 1.104-.896 2-2 2h-12c-1.104 0-2-.896-2-2v-8c0-1.104.896-2 2-2h12c1.104 0 2 .896 2 2v8zm8-10l-6 4.223v3.554l6 4.223v-12z'/%3E%3C/svg%3E%0A");
+		background-size: 1em;
+		height: 1em;
+		width: 1em;
+		background-repeat: no-repeat;
+		margin-right: 5px;
+	}
 }
 
 a.skew-box.secondary,
 a.skew-box.centered {
-    color: $white;
-    text-decoration: none;
-    font-weight: 400;
+	color: $white;
+	text-decoration: none;
+	font-weight: 400;
 }
 
 a.skew-box.tertiary {
-    color: $secondary-700;
-    background-color: $white;
-    text-decoration: none;
-    font-weight: 400;
+	color: $secondary-700;
+	background-color: $white;
+	text-decoration: none;
+	font-weight: 400;
 }
 
 .skew-box {
-    font-size: 0.775em;
-    font-weight: 400;
-    color: $white;
-    padding: 5px 6px;
-    background-color: $secondary-700;
-    padding-right: 25px;
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
-    // useful if inside flexbox.
-    align-self: start;
+	font-size: 0.775em;
+	font-weight: 400;
+	color: $white;
+	padding: 5px 6px;
+	background-color: $secondary-700;
+	padding-right: 25px;
+	clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
+	// useful if inside flexbox.
+	align-self: start;
 
-    &.secondary {
-        background-color: $grey-700;
-    }
+	&.secondary {
+		background-color: $grey-700;
+	}
 
-    // Case Study box only.
-    &.tertiary {
-        color: $secondary-700;
-        background-color: $white;
-    }
+	// Case Study box only.
+	&.tertiary {
+		color: $secondary-700;
+		background-color: $white;
+	}
 
-    &.centered {
-        margin-right: auto;
-        display: inline-block;
-    }
+	&.centered {
+		margin-right: auto;
+		display: inline-block;
+	}
 }
 
 /*
@@ -331,62 +324,62 @@ a.skew-box.tertiary {
 */
 
 .margin-reset {
-    margin: 0;
+	margin: 0;
 }
 
 .margin-y-small {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 
 .margin-y {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .margin-y-large {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
 .margin-top {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .margin-top-small {
-    margin-top: 0.5rem;
+	margin-top: 0.5rem;
 }
 
 .margin-top-large {
-    margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .margin-bottom-large {
-    margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .margin-bottom-small {
-    margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 
 .margin-bottom {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 @media (min-width: 600px) {
-    .show-mobile-only {
-        display: none;
-    }
+	.show-mobile-only {
+		display: none;
+	}
 }
 
 .show-tablet-only {
-    @media (max-width: 599px) {
-        display: none;
-    }
+	@media (max-width: 599px) {
+		display: none;
+	}
 }
 
 .show-desktop-only {
-    @media (max-width: 999px) {
-        display: none;
-    }
+	@media (max-width: 999px) {
+		display: none;
+	}
 }

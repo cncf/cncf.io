@@ -2,83 +2,83 @@
 
 input[type="text"],
 input[type="email"] {
-    height: 40px;
-    padding: 0.25em;
-    width: 100%;
-    // iOS overrides.
-    border-radius: 0;
-    -webkit-appearance: none;
-    // makes border lighter.
-    border: 1px solid $grey-400;
+	height: 40px;
+	padding: 0.25em;
+	width: 100%;
+	// iOS overrides.
+	border-radius: 0;
+	-webkit-appearance: none;
+	// makes border lighter.
+	border: 1px solid $grey-400;
 }
 
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    height: 40px;
+	height: 40px;
 }
 
 input[type="search"] {
-    padding-left: 1em;
+	padding-left: 1em;
 
-    .no-search-results & {
-        height: 38px;
-    }
+	.no-search-results & {
+		height: 38px;
+	}
 }
 
 .no-search-results {
-    .button {
-        font-size: 100%;
-        line-height: 18px;
-        height: 39.9px;
-    }
+	.button {
+		font-size: 100%;
+		line-height: 18px;
+		height: 39.9px;
+	}
 }
 
 // make selectbox the same on all devices.
 .select-css,
 .gfield_select,
 .hs-form select {
-    display: block;
-    font-weight: 500;
-    color: #444;
-    line-height: 1.3;
-    padding: .6em 1.4em .5em .8em;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    border: 1px solid $grey-400;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
-    border-radius: 0;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: $white;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-        linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
-    background-repeat: no-repeat, repeat;
-    background-position: right .7em top 50%, 0 0;
-    background-size: .65em auto, 100%;
+	display: block;
+	font-weight: 500;
+	color: #444;
+	line-height: 1.3;
+	padding: 0.6em 1.4em 0.5em 0.8em;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	border: 1px solid $grey-400;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+	border-radius: 0;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: $white;
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
+		linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right 0.7em top 50%, 0 0;
+	background-size: 0.65em auto, 100%;
 
-    &::-ms-expand {
-        display: none;
-    }
+	&::-ms-expand {
+		display: none;
+	}
 
-    &:hover {
-        border-color: #888;
-    }
+	&:hover {
+		border-color: #888;
+	}
 
-    &:focus {
-        border-color: #aaa;
-        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-        box-shadow: 0 0 0 3px -moz-mac-focusring;
-        color: $black;
-        outline: none;
-    }
+	&:focus {
+		border-color: #aaa;
+		box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+		box-shadow: 0 0 0 3px -moz-mac-focusring;
+		color: $black;
+		outline: none;
+	}
 
-    option {
-        font-weight: normal;
-    }
+	option {
+		font-weight: normal;
+	}
 }
 
 // control size, adds background to to contact and SB form.
@@ -86,289 +86,285 @@ input[type="search"] {
 .um-page-user .gform_wrapper,
 .um-register,
 .page .gform_wrapper {
-    max-width: 750px;
-    background-color: $tertiary-color;
-    padding: 2em 1em;
-    color: $black;
-    font-size: 1em;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	max-width: 750px;
+	background-color: $tertiary-color;
+	padding: 2em 1em;
+	color: $black;
+	font-size: 1em;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-    @media (min-width: 768px) {
-        padding: $sm-padding;
-        display: table;
-        margin-top: $sm-padding;
-        margin-bottom: $sm-padding;
-    }
+	@media (min-width: 768px) {
+		padding: $sm-padding;
+		display: table;
+		margin-top: $sm-padding;
+		margin-bottom: $sm-padding;
+	}
 }
 
 // makes calendar date icon inline.
 .ginput_container_date {
-    display: flex;
+	display: flex;
 }
 
 // resizes date icon.
 body.um-page-user,
 .page {
-    .gform_wrapper img.ui-datepicker-trigger {
-        width: 34px !important;
-        height: 32px !important;
-    }
+	.gform_wrapper img.ui-datepicker-trigger {
+		width: 34px !important;
+		height: 32px !important;
+	}
 }
 
 // the contact form.
 .contact-form {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 
-    select,
-    textarea {
-        display: block;
-        max-width: 100%;
-    }
+	select,
+	textarea {
+		display: block;
+		max-width: 100%;
+	}
 
-    textarea {
-        width: 100%;
-        padding: 0.5em;
+	textarea {
+		width: 100%;
+		padding: 0.5em;
 
-        // iOS overrides.
-        border-radius: 0;
-        -webkit-appearance: none;
-        // makes border lighter.
-        border: 1px solid $grey-400;
-    }
+		// iOS overrides.
+		border-radius: 0;
+		-webkit-appearance: none;
+		// makes border lighter.
+		border: 1px solid $grey-400;
+	}
 
-    label {
-        margin-bottom: 0.25em;
+	label {
+		margin-bottom: 0.25em;
 
-        span {
-            color: #790000; // matching GF.
-        }
-    }
+		span {
+			color: #790000; // matching GF.
+		}
+	}
 
-    input[type="text"],
-    input[type="email"] {
-        &:focus {
-            border: 1px inset $black;
-        }
-    }
+	input[type="text"],
+	input[type="email"] {
+		&:focus {
+			border: 1px inset $black;
+		}
+	}
 
-    >div {
-        margin-bottom: 1rem;
-    }
+	> div {
+		margin-bottom: 1rem;
+	}
 
-    .form-group {
-        display: flex;
+	.form-group {
+		display: flex;
 
-        >div:not(:last-child) {
-            margin-right: 0.5em;
-        }
+		> div:not(:last-child) {
+			margin-right: 0.5em;
+		}
 
-        &.checkbox-align {
-            align-items: center;
-        }
-    }
+		&.checkbox-align {
+			align-items: center;
+		}
+	}
 
-    .form-even-columns {
-        >* {
-            flex-grow: 1;
-        }
-    }
+	.form-even-columns {
+		> * {
+			flex-grow: 1;
+		}
+	}
 }
 
 // Results Message.
 .form-message {
+	&.is-active {
+		border: 2px solid $black;
+		padding: 1em;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		max-width: 900px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-weight: 600;
+	}
 
-    &.is-active {
-        border: 2px solid $black;
-        padding: 1em;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        font-weight: 600;
-    }
+	&.success {
+		border: 2px solid $success;
+		font-weight: 600;
+	}
 
-    &.success {
-        border: 2px solid $success;
-        font-weight: 600;
-    }
-
-    &.error {
-        border: 2px solid $error;
-    }
+	&.error {
+		border: 2px solid $error;
+	}
 }
 
 // Gravity Forms.
 .gform_confirmation_wrapper {
-    border: 2px solid $success;
-    padding: 2em;
-    margin-bottom: 1rem;
-    font-weight: 600;
+	border: 2px solid $success;
+	padding: 2em;
+	margin-bottom: 1rem;
+	font-weight: 600;
 }
 
 .gform_confirmation_message {
-    font-size: 1.25em;
-    font-weight: 600;
-    color: $black;
+	font-size: 1.25em;
+	font-weight: 600;
+	color: $black;
 }
 
 // UM success message styling.
 .um-postmessage {
-    border: 2px solid $success;
-    padding: 1em;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-weight: 600;
+	border: 2px solid $success;
+	padding: 1em;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-weight: 600;
 }
 
 .gform_wrapper form {
-
-    // forces consistency of labels.
-    label.gfield_label {
-        display: block;
-        margin-bottom: .25em;
-        font-weight: 300;
-    }
+	// forces consistency of labels.
+	label.gfield_label {
+		display: block;
+		margin-bottom: 0.25em;
+		font-weight: 300;
+	}
 }
 
-
 body .gform_wrapper form .top_label {
+	// removes margin from top of inputs.
+	div.ginput_container {
+		margin-top: 0px;
+	}
 
-    // removes margin from top of inputs.
-    div.ginput_container {
-        margin-top: 0px;
-    }
+	// forces datepicker 100%.
+	input.medium.datepicker {
+		width: 100%;
+	}
 
-    // forces datepicker 100%.
-    input.medium.datepicker {
-        width: 100%;
-    }
-
-    // removes extra padding near submit.
-    .gform_footer {
-        padding: 0px 0 10px 0;
-        margin: 0px 0 0 0;
-    }
+	// removes extra padding near submit.
+	.gform_footer {
+		padding: 0px 0 10px 0;
+		margin: 0px 0 0 0;
+	}
 }
 
 // overrides GF on UM pages for input color.
-.um .um-form .gform_wrapper input[type='text'],
-.um .um-form input[type='search'],
-.um .um-form input[type='tel'],
-.um .um-form input[type='password'],
+.um .um-form .gform_wrapper input[type="text"],
+.um .um-form input[type="search"],
+.um .um-form input[type="tel"],
+.um .um-form input[type="password"],
 .um .um-form .ginput_container_textarea textarea {
-    color: $black;
-    border: 2px solid transparent !important;
+	color: $black;
+	border: 2px solid transparent !important;
 
-    &:focus {
-        outline: initial !important;
-        outline-color: initial !important;
-        outline-style: none !important;
-        outline-width: initial !important;
-        outline-offset: -2px;
-        -webkit-focus-ring-color: auto 1px;
-        -webkit-writing-mode: horizontal-tb !important;
-        border: 2px solid rgb(0, 95, 204) !important;
-        border-style: solid;
-        border-radius: 5px;
-    }
+	&:focus {
+		outline: initial !important;
+		outline-color: initial !important;
+		outline-style: none !important;
+		outline-width: initial !important;
+		outline-offset: -2px;
+		-webkit-focus-ring-color: auto 1px;
+		-webkit-writing-mode: horizontal-tb !important;
+		border: 2px solid rgb(0, 95, 204) !important;
+		border-style: solid;
+		border-radius: 5px;
+	}
 }
 
 @media (max-width: 641px) {
-    .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='image']):not([type='file']) {
-        line-height: initial;
-        min-height: initial;
-    }
+	.gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+		line-height: initial;
+		min-height: initial;
+	}
 }
 
 @media (min-width: 641px) {
-
-    .gform_wrapper .gform_footer input.button,
-    .gform_wrapper .gform_page_footer input.button,
-    .gform_wrapper .gform_footer input[type=submit],
-    .gform_wrapper .gform_page_footer input[type=submit] {
-        font-size: 15px !important;
-        border-radius: 0;
-    }
+	.gform_wrapper .gform_footer input.button,
+	.gform_wrapper .gform_page_footer input.button,
+	.gform_wrapper .gform_footer input[type="submit"],
+	.gform_wrapper .gform_page_footer input[type="submit"] {
+		font-size: 15px !important;
+		border-radius: 0;
+	}
 }
 
 .search-button-align {
-    display: flex;
-    align-items: baseline;
+	display: flex;
+	align-items: baseline;
 
-    *:first-child {
-        margin-right: 0.5rem;
-    }
+	*:first-child {
+		margin-right: 0.5rem;
+	}
 }
 
 .checkbox {
-    position: relative;
-    cursor: pointer;
-    display: flex;
+	position: relative;
+	cursor: pointer;
+	display: flex;
 
-    &::selection {
-        background: transparent;
-    }
+	&::selection {
+		background: transparent;
+	}
 
-    input+span {
-        background: $white;
-        content: "";
-        display: block;
-        margin: 0 0.5rem 0 0;
-        padding: 0;
-        width: 1.25rem;
-        height: 1.25rem;
-        transform: translate3d(0, 0, 0);
-        -webkit-backface-visibility: hidden;
+	input + span {
+		background: $white;
+		content: "";
+		display: block;
+		margin: 0 0.5rem 0 0;
+		padding: 0;
+		width: 1.25rem;
+		height: 1.25rem;
+		transform: translate3d(0, 0, 0);
+		-webkit-backface-visibility: hidden;
 
-        &::after {
-            content: "";
-            display: block;
-            transform: scale(0);
-            transition: transform 0.2s;
-            -webkit-transform-style: preserve-3d;
-        }
-    }
+		&::after {
+			content: "";
+			display: block;
+			transform: scale(0);
+			transition: transform 0.2s;
+			-webkit-transform-style: preserve-3d;
+		}
+	}
 
-    @media screen and (min-width: 768px) {
-        &:hover input+span {
-            box-shadow: 0 2px 4px rgba(#000, .15);
-        }
-    }
+	@media screen and (min-width: 768px) {
+		&:hover input + span {
+			box-shadow: 0 2px 4px rgba(#000, 0.15);
+		}
+	}
 
-    input:active+span {
-        box-shadow: 0 4px 8px rgba(#000, .15);
-    }
+	input:active + span {
+		box-shadow: 0 4px 8px rgba(#000, 0.15);
+	}
 
-    input:focus+span {
-        box-shadow: 0 0 0 2px rgb(0, 95, 204);
-    }
+	input:focus + span {
+		box-shadow: 0 0 0 2px rgb(0, 95, 204);
+	}
 
-    input:checked+span::after {
-        transform: scale(1);
-    }
+	input:checked + span::after {
+		transform: scale(1);
+	}
 
-    input {
-        position: absolute;
-        cursor: pointer;
-        opacity: 0;
-    }
+	input {
+		position: absolute;
+		cursor: pointer;
+		opacity: 0;
+	}
 
-    input+span {
-        border-radius: 2px;
-        border: 1px solid $black;
+	input + span {
+		border-radius: 2px;
+		border: 1px solid $black;
 
-        &::after {
-            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+') no-repeat center;
-            background-size: contain;
-            width: 1.2rem;
-            height: 1.2rem;
-        }
-    }
+		&::after {
+			background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+")
+				no-repeat center;
+			background-size: contain;
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+	}
 }

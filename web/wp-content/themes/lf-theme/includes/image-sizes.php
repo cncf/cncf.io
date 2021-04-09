@@ -70,7 +70,7 @@ function lf_custom_image_editor_sizes( $sizes ) {
 		$sizes,
 		array(
 			'newsroom-post-width' => __( 'Blog Width' ),
-			'hero-768'            => __( 'Widescreen Strip' ),
+			'hero-768' => __( 'Widescreen Strip' ),
 		)
 	);
 	return $sizes;

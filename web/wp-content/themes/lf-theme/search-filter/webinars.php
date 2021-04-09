@@ -54,7 +54,7 @@ if ( $query->have_posts() ) : ?>
 <!-- Setup the Play SVG to use it in the loop  -->
 <svg style="display:none">
 	<symbol id="play" viewBox="-1 -1 90 90">
-		<path fill="#DE176C"
+		<path fill="#ff00aa"
 			d="M41.5 83C64.42 83 83 64.42 83 41.5S64.42 0 41.5 0 0 18.58 0 41.5 18.58 83 41.5 83z" />
 		<path d="M62 41.5L29 58V25z" fill="#FFF" />
 	</symbol>

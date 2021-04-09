@@ -93,6 +93,10 @@ require_once 'includes/shortcode-endusers.php';
 // YouTube Playlist shortcode.
 require_once 'includes/shortcode-eu-playlist.php';
 
+// kubeweeklys shortcodes.
+require_once 'includes/shortcode-kubeweeklys.php';
+require_once 'includes/shortcode-kubeweekly-newsletter.php';
+
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';
 

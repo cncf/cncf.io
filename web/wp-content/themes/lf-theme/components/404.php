@@ -30,7 +30,8 @@ $image = new Image();
 				<input type="search" class="search-field margin-y"
 						placeholder="Enter search term"
 						value="<?php echo get_search_query(); ?>" name="s"
-						title="Search for" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+						title="Search for" autocomplete="off" autocorrect="off"
+						autocapitalize="off" spellcheck="false" />
 				</label>
 			</div>
 			<div>

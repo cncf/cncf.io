@@ -1,87 +1,99 @@
 .people-wrapper {
-    display: grid;
-    grid-row-gap: 1rem;
-    grid-column-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+	display: grid;
+	grid-row-gap: 1rem;
+	grid-column-gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+	margin-top: 1rem;
+	margin-bottom: 2rem;
 
-    @media (min-width: 1000px) {
-        grid-row-gap: 1.5rem;
-        grid-column-gap: 1.5rem;
-    }
+	@media (min-width: 1000px) {
+		grid-row-gap: 1.5rem;
+		grid-column-gap: 1.5rem;
+	}
+
+	&.show-descriptions {
+		.people-excerpt {
+			display: block;
+		}
+	}
+
+	&.hide-descriptions {
+		.people-excerpt {
+			display: none;
+		}
+	}
 }
 
 .people-box {
-    background-color: $tertiary-color;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+	background-color: $tertiary-color;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 
-    button.button-reset {
-        width: 100%;
-    }
+	button.button-reset {
+		width: 100%;
+	}
 
-    .people-profile-picture {
-        width: 100%;
-        height: 250px;
+	.people-profile-picture {
+		width: 100%;
+		height: 250px;
 
-        @media (min-width: 376px) and (max-width: 475px) {
-            height: 280px;
-        }
+		@media (min-width: 376px) and (max-width: 475px) {
+			height: 280px;
+		}
 
-        @media (min-width: 700px) {
-            height: 200px
-        }
+		@media (min-width: 700px) {
+			height: 200px;
+		}
 
-        border: 1px solid $grey-200;
-    }
+		border: 1px solid $grey-200;
+	}
 
-    .people-title {
-        margin-top: 0.25em;
-        margin-bottom: 0.25em;
-    }
+	.people-title {
+		margin-top: 0.25em;
+		margin-bottom: 0.25em;
+	}
 
-    .people-company {
-        font-weight: 400;
-        margin-bottom: 0.5em;
-    }
+	.people-company {
+		font-weight: 400;
+		margin-bottom: 0.5em;
+	}
 
-    .people-excerpt p {
-        font-size: 0.825em;
-        margin-bottom: 0.5em;
-        line-height: 1.1;
-    }
+	.people-excerpt p {
+		font-size: 0.825em;
+		margin-bottom: 0.5em;
+		line-height: 1.1;
+	}
 
-    svg {
-        height: 20px;
-        width: auto;
-        fill: $primary-color;
-        color: $primary-color;
-    }
+	svg {
+		height: 20px;
+		width: auto;
+		fill: $primary-color;
+		color: $primary-color;
+	}
 
-    div:last-child {
-        margin-bottom: 0;
-    }
+	div:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .people-social {
-    margin-top: 0.5em;
+	margin-top: 0.5em;
 
-    a {
-        display: inline-block;
+	a {
+		display: inline-block;
 
-        svg {
-            vertical-align: bottom;
-        }
-    }
+		svg {
+			vertical-align: bottom;
+		}
+	}
 }
 
-.people-social+.modal-trigger {
-    margin-top: 1rem;
+.people-social + .modal-trigger {
+	margin-top: 1rem;
 }
 
 .social-modal-wrapper {
-    margin-top: auto;
+	margin-top: auto;
 }

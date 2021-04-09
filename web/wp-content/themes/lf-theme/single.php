@@ -22,9 +22,12 @@ elseif ( is_singular( 'lf_webinar' ) ) :
 elseif ( is_singular( 'lf_event' ) ) :
 	get_template_part( 'components/event-single' );
 
+elseif ( is_singular( 'lf_spotlight' ) ) :
+	get_template_part( 'components/spotlight-single' );
 
-	elseif ( is_singular( 'lf_spotlight' ) ) :
-		get_template_part( 'components/spotlight-single' );
+elseif ( is_singular( 'lf_kubeweekly' ) ) :
+	get_template_part( 'components/kubeweekly-single' );
+
 		// Default.
 else :
 	get_template_part( 'components/post-single' );

@@ -39,9 +39,6 @@ add_theme_support( 'disable-custom-font-sizes' );
 // add preset font sizes.
 require_once 'gutenberg-preset-font-sizes.php';
 
-// include custom block styles.
-require_once 'gutenberg-block-styles.php';
-
 // Remove Block Editor basic theme styles.
 add_action(
 	'wp_print_styles',
