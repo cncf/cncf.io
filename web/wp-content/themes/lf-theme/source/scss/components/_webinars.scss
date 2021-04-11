@@ -160,22 +160,3 @@
 	padding: 2em;
 	background-color: $tertiary-color;
 }
-
-// Footer
-.webinar-footer {
-	margin-top: 5em;
-
-	.webinar-footer-text-wrap {
-		max-width: 1000px;
-		margin-left: auto;
-		margin-right: auto;
-		color: $white;
-		padding-top: 4em;
-		padding-bottom: 4em;
-		line-height: 1.4;
-	}
-}
-
-.webinar-footer + .footer {
-	margin-top: 0;
-}
