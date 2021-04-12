@@ -39,13 +39,13 @@ function add_eu_playlist_shortcode( $atts ) {
 	if ( ! is_int( $count ) || ! $key ) {
 		return;
 	}
-	$eu_playlist = wp_cache_get( 'cncf_eu_playlist' );
+	$eu_playlist = get_transient( 'cncf_eu_playlist' );
 	if ( false === $eu_playlist ) {
 
 		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40&key=' . $key );
 		$eu_playlist = wp_remote_retrieve_body( $request );
 
-		wp_cache_set( 'cncf_eu_playlist', $eu_playlist, '', 6 * HOUR_IN_SECONDS );
+		set_transient( 'cncf_eu_playlist', $eu_playlist, 6 * HOUR_IN_SECONDS );
 	}
 	$eu_playlist = json_decode( $eu_playlist );
 

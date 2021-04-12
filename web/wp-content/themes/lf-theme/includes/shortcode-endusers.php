@@ -29,13 +29,13 @@ function add_endusers_shortcode( $atts ) {
 		return;
 	}
 
-	$endusers = wp_cache_get( 'cncf_latest_endusers' );
+	$endusers = get_transient( 'cncf_latest_endusers' );
 	if ( false === $endusers ) {
 
 		$request = wp_remote_get( 'https://landscape.cncf.io/data/exports/end-users-reverse-chronological.json' );
 		$endusers = wp_remote_retrieve_body( $request );
 
-		wp_cache_set( 'cncf_latest_endusers', $endusers, '', HOUR_IN_SECONDS );
+		set_transient( 'cncf_latest_endusers', $endusers, 6 * HOUR_IN_SECONDS );
 	}
 	$endusers = json_decode( $endusers );
 
