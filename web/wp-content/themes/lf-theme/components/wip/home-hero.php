@@ -7,6 +7,35 @@
  * @since 1.0.0
  */
 
+
+/**
+ * Retrieve posts from another blog and cache the response body.
+ *
+ * @return string Body of the response. Empty string if no body or incorrect parameter given.
+ */
+function prefix_get_posts_from_other_blog() {
+	$metrics = get_transient( 'cncf_homepage_metrics' );
+
+	if ( false === $metrics ) {
+
+		$data = wp_remote_post(
+			'https://devstats.cncf.io/api/v1',
+			array(
+				'headers'     => array( 'Content-Type' => 'application/json; charset=utf-8' ),
+				'body'        => '{"api": "ListProjects"}',
+				'method'      => 'POST',
+				'data_format' => 'body',
+			)
+		);
+
+		$metrics = wp_remote_retrieve_body( $data );
+
+		set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
+	}
+	return $metrics;
+}
+var_dump(json_decode( prefix_get_posts_from_other_blog()));
+
 ?>
 
 <section class="home-hero">
