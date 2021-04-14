@@ -442,4 +442,28 @@ class Lf_Utils {
 		}
 	}
 
+	/**
+	 * Retrieve homepage metrics from devstats.
+	 */
+	public static function get_homepage_metrics() {
+		$metrics = get_transient( 'cncf_homepage_metrics' );
+
+		if ( false === $metrics ) {
+			$data = wp_remote_post(
+				'https://devstats.cncf.io/api/v1',
+				array(
+					'headers'     => array( 'Content-Type' => 'application/json; charset=utf-8' ),
+					'body'        => '{"api":"SiteStats","payload":{"project":"all"}}',
+					'method'      => 'POST',
+					'data_format' => 'body',
+				)
+			);
+
+			$metrics = wp_remote_retrieve_body( $data );
+			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
+		}
+		return $metrics;
+	}
+
+
 }
