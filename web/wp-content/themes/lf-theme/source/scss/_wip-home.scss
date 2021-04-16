@@ -23,6 +23,15 @@
 	}
 }
 
+.home-hero-project {
+	white-space: nowrap;
+	img {
+		width: 100%;
+		max-width: 80px;
+		max-height: 50px;
+	}
+}
+
 .home-hero__col2 {
 	background-color: $black;
 	.background-image-figure {
