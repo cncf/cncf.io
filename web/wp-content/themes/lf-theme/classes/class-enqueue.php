@@ -79,6 +79,9 @@ class Enqueue {
 
 			// purecounter countup.
 			wp_enqueue_script( 'purecounter', get_template_directory_uri() . '/source/js/third-party/purecounter_vanilla.js', array(), filemtime( get_template_directory() . '/source/js/third-party/purecounter_vanilla.js' ), false );
+
+			// load UM fix.
+			wp_enqueue_script( 'um-home-fix', get_template_directory_uri() . '/source/js/third-party/um-home.js', array( 'jquery' ), filemtime( get_template_directory() . '/source/js/third-party/um-home.js' ), true );
 		}
 	}
 
