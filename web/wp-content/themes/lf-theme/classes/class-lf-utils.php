@@ -443,12 +443,12 @@ class Lf_Utils {
 	}
 
 	/**
-	 * Retrieve homepage metrics from devstats.
+	 * Retrieve homepage metrics from devstats and LFX.
 	 */
 	public static function get_homepage_metrics() {
 		$metrics = get_transient( 'cncf_homepage_metrics' );
 
-		if ( false === $metrics ) {
+		if ( false !== $metrics ) {
 			$data = wp_remote_post(
 				'https://devstats.cncf.io/api/v1',
 				array(
@@ -459,7 +459,21 @@ class Lf_Utils {
 				)
 			);
 
-			$metrics = wp_remote_retrieve_body( $data );
+			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
+			$metrics     = array(
+				'contributors'  => $remote_body->contributors,
+				'contributions' => $remote_body->contributions,
+			);
+
+			$data = wp_remote_get( 'https://metrics.lfanalytics.io/v1/projects/cncf-f/summary' );
+			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
+			$metrics['linesofcode'] = $remote_body->metrics_floats->linesOfCode;
+
+			// in case any of the above fails, use reasonable alternatives.
+			$metrics['contributors'] = max( $metrics['contributors'], 120000 );
+			$metrics['contributions'] = max( $metrics['contributions'], 5800000 );
+			$metrics['linesofcode'] = max( $metrics['linesofcode'], 270000000 );
+
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 		}
 		return $metrics;
