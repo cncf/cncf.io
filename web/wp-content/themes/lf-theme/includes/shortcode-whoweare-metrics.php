@@ -38,7 +38,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 								<div class="icon-wrap">
 					<img src="https://www.cncf.io/wp-content/uploads/2020/05/icon-rocket.svg" class="attachment-medium size-medium" alt="Rocket" loading="lazy" height="92.41077" width="92.41107">				</div>
 								<div class="text-wrap" data-mh="facts-text-wrap">
-					<div class="number number-item h2" data-element="lf-number" data-original="633" data-to="633" data-speed="4000">633</div>
+					<div class="number number-item h2">633</div>
 										<span class="count-up-description">CNCF Members</span>
 										</div>
 							</a>
@@ -49,7 +49,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 								<div class="icon-wrap">
 					<img src="https://www.cncf.io/wp-content/uploads/2020/05/icon-settings.svg" class="attachment-medium size-medium" alt="Settings" loading="lazy" height="94.09873" width="110.60081">				</div>
 								<div class="text-wrap" data-mh="facts-text-wrap">
-					<div class="number number-item h2" data-element="lf-number" data-original="104" data-to="104" data-speed="4000">104</div>
+					<div class="number number-item h2">104</div>
 										<span class="count-up-description">Certified Kubernetes Distributions &amp; Platforms</span>
 										</div>
 							</a>
@@ -60,7 +60,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 								<div class="icon-wrap">
 					<img src="https://www.cncf.io/wp-content/uploads/2020/05/icon-members.svg" class="attachment-medium size-medium" alt="Users" loading="lazy" height="106.10079" width="140.8399">				</div>
 								<div class="text-wrap" data-mh="facts-text-wrap">
-					<div class="number number-item h2" data-element="lf-number" data-original="159027" data-to="159027" data-speed="4000">159,027</div>
+					<div class="number number-item h2">163K+</div>
 										<span class="count-up-description">CNCF Meetup members</span>
 										</div>
 							</a>
