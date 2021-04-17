@@ -448,7 +448,7 @@ class Lf_Utils {
 	public static function get_homepage_metrics() {
 		$metrics = get_transient( 'cncf_homepage_metrics' );
 
-		if ( false !== $metrics ) {
+		if ( false === $metrics ) {
 			$data = wp_remote_post(
 				'https://devstats.cncf.io/api/v1',
 				array(
@@ -479,5 +479,17 @@ class Lf_Utils {
 		return $metrics;
 	}
 
+	/**
+	 * Retrieve homepage metrics from devstats and LFX.
+	 */
+	public static function get_whoweare_metrics() {
+		$metrics = get_transient( 'cncf_whoweare_metrics' );
 
+		if ( false === $metrics ) {
+			$metrics = LF_Utils::get_homepage_metrics();
+
+			set_transient( 'cncf_whoweare_metrics', $metrics, DAY_IN_SECONDS );
+		}
+		return $metrics;
+	}
 }
