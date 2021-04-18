@@ -480,7 +480,7 @@ class Lf_Utils {
 	}
 
 	/**
-	 * Retrieve homepage metrics from devstats and LFX.
+	 * Retrieve metrics for Who We Are page block.
 	 */
 	public static function get_whoweare_metrics() {
 		$metrics = get_transient( 'cncf_whoweare_metrics' );
