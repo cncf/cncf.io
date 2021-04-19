@@ -60,6 +60,7 @@
 	object-fit: cover;
 	object-position: center;
 	max-height: 225px;
+
 	@media (min-width: 922px) {
 		max-height: 200px;
 	}
@@ -120,6 +121,12 @@
 				transition: all 0.25s ease;
 				text-decoration: underline;
 			}
+
+			+ .webinars-upcoming-text-wrapper .webinar-title > a {
+				color: $primary-color;
+				transition: all 0.25s ease;
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -127,7 +134,7 @@
 .newsroom-title {
 	margin-top: 5px;
 	margin-bottom: 0;
-	line-height: 1.2;
+	line-height: 1.4;
 	padding: 1rem;
 }
 

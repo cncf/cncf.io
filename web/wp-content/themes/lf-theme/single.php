@@ -16,7 +16,6 @@ if ( is_singular( 'lf_case_study' ) || is_singular( 'lf_case_study_cn' ) ) :
 	// Single Post for Webinars.
 elseif ( is_singular( 'lf_webinar' ) ) :
 	get_template_part( 'components/webinar-single' );
-	get_template_part( 'components/webinar-footer' );
 
 	// Single Post for Events.
 elseif ( is_singular( 'lf_event' ) ) :
