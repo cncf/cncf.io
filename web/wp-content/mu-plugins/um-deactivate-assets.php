@@ -114,6 +114,11 @@ function um_remove_scripts_and_styles() {
 			unset( $wp_styles->queue[ $key ] );
 		}
 	}
+
+	// removes junk loading on all pages that is needed for picture editing modal.
+	if( ! um_is_core_page("user") ){
+        remove_action( 'wp_footer', array( UM()->modal(), 'load_modal_content' ), 9 );
+    }
 }
 
 /**
