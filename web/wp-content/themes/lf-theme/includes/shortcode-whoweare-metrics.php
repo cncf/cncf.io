@@ -41,7 +41,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 		</div>
 
 		<div class="count-up-column">
-			<a class="no-decoration" href="/certification/training/">
+			<a class="no-decoration" href="/about/members/">
 				<div class="icon-wrap">
 					<img src="/wp-content/uploads/2020/05/icon-rocket.svg" class="attachment-medium size-medium" alt="Rocket" loading="lazy" height="92.41077" width="92.41107">
 				</div>
