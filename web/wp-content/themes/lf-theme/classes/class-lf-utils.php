@@ -449,6 +449,14 @@ class Lf_Utils {
 		$metrics = get_transient( 'cncf_homepage_metrics' );
 
 		if ( false === $metrics ) {
+
+			// default values in case of failure.
+			$metrics = array(
+				'contributors' => 120000,
+				'contributions' => 5800000,
+				'linesofcode' => 270000000,
+			);
+
 			$data = wp_remote_post(
 				'https://devstats.cncf.io/api/v1',
 				array(
@@ -459,20 +467,21 @@ class Lf_Utils {
 				)
 			);
 
+			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+				return $metrics;
+			}
+
 			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics     = array(
-				'contributors'  => $remote_body->contributors,
-				'contributions' => $remote_body->contributions,
-			);
+			$metrics['contributors'] = $remote_body->contributors;
+			$metrics['contributions'] = $remote_body->contributions;
 
 			$data = wp_remote_get( 'https://metrics.lfanalytics.io/v1/projects/cncf-f/summary' );
+			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+				return $metrics;
+			}
+
 			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['linesofcode'] = $remote_body->metrics_floats->linesOfCode;
-
-			// in case any of the above fails, use reasonable alternatives.
-			$metrics['contributors'] = max( $metrics['contributors'], 120000 );
-			$metrics['contributions'] = max( $metrics['contributions'], 5800000 );
-			$metrics['linesofcode'] = max( $metrics['linesofcode'], 270000000 );
 
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 		}
@@ -487,18 +496,24 @@ class Lf_Utils {
 
 		if ( false === $metrics ) {
 			$metrics = LF_Utils::get_homepage_metrics();
+			$metrics['certified-kubernetes'] = 103;
+			$metrics['cncf-members'] = 630;
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/certified-kubernetes.json' );
+			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+				return $metrics;
+			}
+
 			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['certified-kubernetes'] = count( $remote_body );
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/cncf-members.json' );
+			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+				return $metrics;
+			}
+
 			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['cncf-members'] = count( $remote_body );
-
-			// in case any of the above fails, use reasonable alternatives.
-			$metrics['certified-kubernetes'] = max( $metrics['certified-kubernetes'], 103 );
-			$metrics['cncf-members'] = max( $metrics['cncf-members'], 630 );
 
 			set_transient( 'cncf_whoweare_metrics', $metrics, DAY_IN_SECONDS );
 		}
