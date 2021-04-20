@@ -488,6 +488,18 @@ class Lf_Utils {
 		if ( false === $metrics ) {
 			$metrics = LF_Utils::get_homepage_metrics();
 
+			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/certified-kubernetes.json' );
+			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
+			$metrics['certified-kubernetes'] = count( $remote_body );
+
+			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/cncf-members.json' );
+			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
+			$metrics['cncf-members'] = count( $remote_body );
+
+			// in case any of the above fails, use reasonable alternatives.
+			$metrics['certified-kubernetes'] = max( $metrics['certified-kubernetes'], 103 );
+			$metrics['cncf-members'] = max( $metrics['cncf-members'], 630 );
+
 			set_transient( 'cncf_whoweare_metrics', $metrics, DAY_IN_SECONDS );
 		}
 		return $metrics;
