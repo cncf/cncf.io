@@ -9,7 +9,7 @@
 		margin-top: 6em;
 	}
 
-	.home & {
+	.page & {
 		margin-top: 0;
 	}
 
@@ -60,4 +60,8 @@
 	font-size: 0.725em;
 	color: $secondary-300;
 	margin-top: 4rem;
+}
+
+.page:not(.home) article.entry-content > :last-child:not(.alignfull) {
+	margin-bottom: 6em;
 }

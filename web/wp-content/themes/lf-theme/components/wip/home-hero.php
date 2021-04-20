@@ -23,12 +23,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<li><span><?php echo esc_html( round( $metrics['linesofcode'] / 1000000, 1 ) ); ?>M+</span> Lines of Code</li>
 	</ul>
 	<p class="h4 fw-400">
-		Cloud Native Computing Foundation (CNCF) serves as the vendor-neutral home for many of the fastest-growing open source projects, including <br/>
-		<span class="home-hero-project">
-			<img src="https://www.cncf.io/wp-content/uploads/2020/05/kubernetes-stacked-color.svg" alt="" loading="lazy" height="100" width="100">
-			<img src="https://www.cncf.io/wp-content/uploads/2020/05/prometheus-stacked-color.svg" alt="" loading="lazy" height="100" width="100">
-			<img src="https://www.cncf.io/wp-content/uploads/2020/05/envoy-stacked-color.svg" alt="" loading="lazy" height="100" width="100">
-		</span>
+	Cloud Native Computing Foundation (CNCF) serves as the vendor-neutral home for many of the fastest-growing open source projects, including Kubernetes, Prometheus, and Envoy.
 	</p>
 	<p class="h4 is-style-small-bottom-margin"><a href="/about/who-we-are/" class="arrow-cta">Learn more about CNCF</a></p>
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer show-mobile-only"></div>

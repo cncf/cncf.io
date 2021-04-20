@@ -39,7 +39,7 @@ if ( $show_images ) :
 		if ( has_post_thumbnail() ) {
 			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-540', '540px', 'archive-image' );
 		} else {
-			echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+			echo '<img loading="lazy" src="' . esc_url( get_stylesheet_directory_uri() )
 			. '/images/webinar-default.jpg" alt="' . esc_attr( lf_blocks_get_site() ) . '" class="archive-image"/>';
 		}
 		?>
