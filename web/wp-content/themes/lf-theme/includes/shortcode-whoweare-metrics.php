@@ -23,14 +23,14 @@ function add_whoweare_metrics_shortcode( $atts ) {
 <section data-element="count-up-block" class="count-up-block" style="--text-main-color: #FFFFFF;">
 	<div class="count-up-wrapper">
 		<div class="count-up-column">
-			<a class="no-decoration" target="_blank" rel="noopener" href="https://all.devstats.cncf.io/">		
+			<a class="no-decoration" target="_blank" rel="noopener" href="https://all.devstats.cncf.io/">
 				<div class="icon-wrap">
-					<img src="https://www.cncf.io/wp-content/uploads/2020/05/icon-computer.svg" class="attachment-medium size-medium" alt="Computer" loading="lazy" height="74.18562" width="118.40117">
+					<img src="/wp-content/uploads/2020/05/icon-computer.svg" class="attachment-medium size-medium" alt="Computer" loading="lazy" height="74.18562" width="118.40117">
 				</div>
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
 					<span data-purecounter-end="<?php echo esc_html( round( $metrics['contributors'] / 1000 ) ); ?>"
-						data-purecounter-delay="20"
+						data-purecounter-delay="15"
 						class="purecounter">
 						<?php echo esc_html( round( $metrics['contributors'] / 1000 ) ); ?>
 					</span>K+
@@ -41,9 +41,9 @@ function add_whoweare_metrics_shortcode( $atts ) {
 		</div>
 
 		<div class="count-up-column">
-			<a class="no-decoration" href="https://www.cncf.io/certification/training/">		
+			<a class="no-decoration" href="/certification/training/">
 				<div class="icon-wrap">
-					<img src="https://www.cncf.io/wp-content/uploads/2020/05/icon-rocket.svg" class="attachment-medium size-medium" alt="Rocket" loading="lazy" height="92.41077" width="92.41107">
+					<img src="/wp-content/uploads/2020/05/icon-rocket.svg" class="attachment-medium size-medium" alt="Rocket" loading="lazy" height="92.41077" width="92.41107">
 				</div>
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
@@ -58,9 +58,9 @@ function add_whoweare_metrics_shortcode( $atts ) {
 			</a>
 		</div>
 		<div class="count-up-column">
-			<a class="no-decoration" href="https://www.cncf.io/certification/software-conformance/">				
+			<a class="no-decoration" href="/certification/software-conformance/">
 				<div class="icon-wrap">
-					<img src="https://www.cncf.io/wp-content/uploads/2020/05/icon-settings.svg" class="attachment-medium size-medium" alt="Settings" loading="lazy" height="94.09873" width="110.60081">
+					<img src="/wp-content/uploads/2020/05/icon-settings.svg" class="attachment-medium size-medium" alt="Settings" loading="lazy" height="94.09873" width="110.60081">
 				</div>
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
@@ -75,14 +75,14 @@ function add_whoweare_metrics_shortcode( $atts ) {
 			</a>
 		</div>
 		<div class="count-up-column">
-			<a class="no-decoration" target="_blank" rel="noopener" href="https://www.meetup.com/pro/cncf/">				
+			<a class="no-decoration" target="_blank" rel="noopener" href="https://www.meetup.com/pro/cncf/">
 				<div class="icon-wrap">
-					<img src="https://www.cncf.io/wp-content/uploads/2020/05/icon-members.svg" class="attachment-medium size-medium" alt="Users" loading="lazy" height="106.10079" width="140.8399">
+					<img src="/wp-content/uploads/2020/05/icon-members.svg" class="attachment-medium size-medium" alt="Users" loading="lazy" height="106.10079" width="140.8399">
 				</div>
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
 					<span data-purecounter-end="163"
-						data-purecounter-delay="20"
+						data-purecounter-delay="10"
 						class="purecounter">
 						163
 					</span>K+
