@@ -30,8 +30,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
 					<span data-purecounter-end="<?php echo esc_html( round( $metrics['contributors'] / 1000 ) ); ?>"
-						data-purecounter-duration="1"
-						data-purecounter-delay="10"
+						data-purecounter-delay="20"
 						class="purecounter">
 						<?php echo esc_html( round( $metrics['contributors'] / 1000 ) ); ?>
 					</span>K+
@@ -49,8 +48,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
 					<span data-purecounter-end="<?php echo esc_html( $metrics['cncf-members'] ); ?>"
-						data-purecounter-duration="1"
-						data-purecounter-delay="10"
+						data-purecounter-delay="20"
 						class="purecounter">
 						<?php echo esc_html( $metrics['cncf-members'] ); ?>
 					</span>
@@ -67,8 +65,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
 					<span data-purecounter-end="<?php echo esc_html( $metrics['certified-kubernetes'] ); ?>"
-						data-purecounter-duration="1"
-						data-purecounter-delay="10"
+						data-purecounter-delay="20"
 						class="purecounter">
 						<?php echo esc_html( $metrics['certified-kubernetes'] ); ?>
 					</span>
@@ -85,8 +82,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 				<div class="text-wrap" data-mh="facts-text-wrap">
 					<div class="number number-item h2">
 					<span data-purecounter-end="163"
-						data-purecounter-duration="1"
-						data-purecounter-delay="10"
+						data-purecounter-delay="20"
 						class="purecounter">
 						163
 					</span>K+
