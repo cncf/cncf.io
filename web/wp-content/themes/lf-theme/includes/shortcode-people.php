@@ -27,9 +27,6 @@ function add_people_shortcode( $atts ) {
 	$chosen_taxonomy = $atts['tax'];
 	$show_descriptions = filter_var( $atts['description'], FILTER_VALIDATE_BOOLEAN );
 
-	r($show_descriptions);
-
-
 	if ( ! is_string( $chosen_taxonomy ) ) {
 		return;
 	}
