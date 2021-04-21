@@ -25,7 +25,10 @@ function add_people_shortcode( $atts ) {
 	);
 
 	$chosen_taxonomy = $atts['tax'];
-	$show_descriptions = $atts['description'];
+	$show_descriptions = filter_var( $atts['description'], FILTER_VALIDATE_BOOLEAN );
+
+	r($show_descriptions);
+
 
 	if ( ! is_string( $chosen_taxonomy ) ) {
 		return;
@@ -71,6 +74,7 @@ function add_people_shortcode( $atts ) {
 
 	$persons_query = new WP_Query( $query_args );
 	if ( $persons_query->have_posts() ) {
+
 		ob_start();
 		?>
 <div class="people-wrapper <?php echo $show_descriptions ? 'show-descriptions' : 'hide-descriptions'; ?>">
