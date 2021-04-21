@@ -87,6 +87,9 @@ require_once 'includes/shortcode-people.php';
 // projects shortcode.
 require_once 'includes/shortcode-projects.php';
 
+// who we are metrics shortcode.
+require_once 'includes/shortcode-whoweare-metrics.php';
+
 // kubeweeklys shortcodes.
 require_once 'includes/shortcode-kubeweeklys.php';
 require_once 'includes/shortcode-kubeweekly-newsletter.php';

@@ -7,6 +7,7 @@
  * @since 1.0.0
  */
 
+$metrics = LF_Utils::get_homepage_metrics();
 ?>
 
 <section class="home-hero">
@@ -17,9 +18,9 @@
 	<h1>Building sustainable ecosystems for cloud native software
 	</h1>
 	<ul class="data-display no-style h4">
-		<li><span>112K+</span> Contributors</li>
-		<li><span>2M+</span> Contributions</li>
-		<li><span>261M+</span> Lines of Code</li>
+		<li><span><?php echo esc_html( round( $metrics['contributors'] / 1000 ) ); ?>K+</span> Contributors</li>
+		<li><span><?php echo esc_html( round( $metrics['contributions'] / 1000000, 1 ) ); ?>M+</span> Contributions</li>
+		<li><span><?php echo esc_html( round( $metrics['linesofcode'] / 1000000, 1 ) ); ?>M+</span> Lines of Code</li>
 	</ul>
 	<p class="h4 fw-400">
 	Cloud Native Computing Foundation (CNCF) serves as the vendor-neutral home for many of the fastest-growing open source projects, including Kubernetes, Prometheus, and Envoy.
