@@ -486,6 +486,17 @@ get_template_part( 'components/hero' );
 		<p>Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition…</p>
 			</div>
 <div class="social-modal-wrapper">
+<div class="people-social">
+					<a href="https://www.linkedin.com/in/ricardo-rocha-739aa718/" rel="noopener" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="currentColor"><title>LinkedIn</title>
+<rect width="512" height="512" rx="15%" fill="currentColor"></rect>
+<circle cx="142" cy="138" r="37" fill="#FFF" class="inner-color"></circle>
+<path stroke="#FFF" stroke-width="66" d="M244 194v198M142 194v198" class="inner-color"></path>
+<path fill="#FFF" d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" class="inner-color"></path>
+</svg>
+
+</a>
+							<a href="https://twitter.com/ahcorporto" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><title>Twitter</title><rect width="512" height="512" rx="15%" fill="currentColor"></rect><path class="inner-color" fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"></path></svg></a>
+						</div>
 					<button data-modal-content-id="modal-60715" data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close" class="js-modal button smaller margin-top" id="label_modal_18" aria-haspopup="dialog">View profile</button>
 		<!-- Modal -->
 		<div class="modal-hide" id="modal-60715" aria-hidden="true">
