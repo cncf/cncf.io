@@ -481,7 +481,7 @@ get_template_part( 'components/hero' );
 		<!-- Name  -->
 	<h4 class="people-title">Ricardo Rocha</h4>
 	<!-- Company  -->
-		<h5 class="people-company">CERN</h5>
+		<h5 class="people-company">(CERN), End User appointed TOC</h5>
 		<div class="people-excerpt">
 		<p>Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition…</p>
 			</div>
@@ -500,7 +500,7 @@ get_template_part( 'components/hero' );
 					<h3 class="modal__title margin-reset">
 						Ricardo Rocha</h3>
 										<h5 class="margin-top-small">
-										(CERN), End User appointed TOC</h5>
+						CERN</h5>
 											
 <p>Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition services and workloads to use cloud native technologies, as well as dissemination and training efforts. Ricardo got CERN to join the CNCF and is a lead of the CNCF Research User Group. Prior to this work Ricardo helped develop the grid computing infrastructure serving the Large Hadron Collider (LHC).</p>
 				</div>
