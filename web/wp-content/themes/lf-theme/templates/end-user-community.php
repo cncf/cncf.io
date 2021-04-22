@@ -491,16 +491,22 @@ get_template_part( 'components/hero' );
 				</div>
 </div><!-- end of people box  -->
 
+
 <div class="people-box">
 	<!-- thumbnail  -->
+			<button data-modal-content-id="modal-60401" data-modal-prefix-class="lf" data-modal-close-text="Close" class="js-modal button-reset" aria-label="Close" id="label_modal_9" aria-haspopup="dialog">
 		<div class="background-image-wrapper people-profile-picture">
 	<figure class="background-image-figure">
-	<img loading="lazy" class="" src="/wp-content/uploads/2020/08/2c70508-1.jpg" alt="">	</figure>
+	<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg" srcset="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg 250w, https://www.cncf.io/wp-content/uploads/2021/02/erin-300x300.jpeg 300w, https://www.cncf.io/wp-content/uploads/2021/02/erin-150x150.jpeg 150w, https://www.cncf.io/wp-content/uploads/2021/02/erin-200x200.jpeg 200w, https://www.cncf.io/wp-content/uploads/2021/02/erin-170x170.jpeg 170w, https://www.cncf.io/wp-content/uploads/2021/02/erin-270x270.jpeg 270w, https://www.cncf.io/wp-content/uploads/2021/02/erin-340x340.jpeg 340w, https://www.cncf.io/wp-content/uploads/2021/02/erin.jpeg 400w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
 	</div>
+		</button>
 		<!-- Name  -->
 	<h4 class="people-title">Erin Boyd</h4>
-	<h5 class="people-company">(Apple), TOC from an End User organization</h5>
-
+	<!-- Company  -->
+		<h5 class="people-company">Apple</h5>
+		<div class="people-excerpt">
+		<p>I have been an active member of the TOC as a contributor from it’s inception. I have led and participated discussions on how to improve the impact of the CNCF through the…</p>
+			</div>
 <div class="social-modal-wrapper">
 			<div class="people-social">
 					<a href="https://www.linkedin.com/in/erin-a-boyd-16871a12/" rel="noopener" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="currentColor"><title>LinkedIn</title>
@@ -514,10 +520,30 @@ get_template_part( 'components/hero' );
 							<a href="https://twitter.com/erinaboyd" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><title>Twitter</title><rect width="512" height="512" rx="15%" fill="currentColor"></rect><path class="inner-color" fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"></path></svg></a>
 							<a href="https://github.com/erinboyd" target="_blank" rel="noopener"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>Github</title><rect height="512" rx="15%" width="512" fill="currentColor"></rect><path class="inner-color" d="m335 499c14 0 12 17 12 17h-182s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg></a>
 						</div>
+						<button data-modal-content-id="modal-60401" data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close" class="js-modal button smaller margin-top" id="label_modal_10" aria-haspopup="dialog">View profile</button>
+		<!-- Modal -->
+		<div class="modal-hide" id="modal-60401" aria-hidden="true">
+			<div class="modal-content-wrapper">
+				<div class="profile__header">
+										<div class="background-image-wrapper people-profile-picture">
+						<figure class="background-image-figure">
+						<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg" srcset="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg 250w, https://www.cncf.io/wp-content/uploads/2021/02/erin-300x300.jpeg 300w, https://www.cncf.io/wp-content/uploads/2021/02/erin-150x150.jpeg 150w, https://www.cncf.io/wp-content/uploads/2021/02/erin-200x200.jpeg 200w, https://www.cncf.io/wp-content/uploads/2021/02/erin-170x170.jpeg 170w, https://www.cncf.io/wp-content/uploads/2021/02/erin-270x270.jpeg 270w, https://www.cncf.io/wp-content/uploads/2021/02/erin-340x340.jpeg 340w, https://www.cncf.io/wp-content/uploads/2021/02/erin.jpeg 400w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
 					</div>
-</div><!-- end of people box  -->
-
+										</div>
+				<div class="modal__content">
+					<h3 class="modal__title margin-reset">
+						Erin Boyd</h3>
+										<h5 class="margin-top-small">
+						Apple</h5>
+											
+<p>I have been an active member of the TOC as a contributor from it’s inception. I have led and participated discussions on how to improve the impact of the CNCF through the TOC and it’s wider community as well as performed the due diligence around countless projects. As an engineer at Apple and a member of the End User Community, I have an opportunity to take the knowledge of being a contributor to Kubernetes and other upstream projects outside the CNCF and focus my attention to the usability and consumption of these technologies and . I feel this can truly help foster projects in the open source way. I have seen the space of projects grow and fully understand the challenges associated with scaling projects while still trying to maintain legitimacy and fairness in this Cloud Native community. Being a committer to the Ambari project and contributor to Kubernetes, I have worked across industries and communities and am sought as a trusted advisor and technical architect for the Kubernetes Storage SIG. As part of the Storage SIG I helped establish an E2E testing framework focused on real use cases from customers and usability of the system. I have consulted with other Kubernetes SIGs from this work to help grow the ecosystem with the vision of a more stable environment. I am dedicated to open source and the growing of the cloud native community to incorporate the tools that make this ecosystem so powerful. I bring to the table the perspective of both a developer, tester and usability fanatic and continually reach across communities to accomplish these shared goals. With my new role at Apple participating as an end user of Kubernetes gives me a fully holistic view I can contribute to evaluating and identifying technologies to continue to grow our Cloud Native community.</p>
+				</div>
+			</div>
+		</div>
+				</div>
 </div>
+
+</div><!-- end of people box  -->
 
 
 				</div></div>
