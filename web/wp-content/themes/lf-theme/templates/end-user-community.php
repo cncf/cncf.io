@@ -149,7 +149,7 @@ get_template_part( 'components/hero' );
 						array(
 							'taxonomy' => 'category',
 							'field'    => 'term_id',
-							'terms'    => 902,
+							'terms'    => 1036,
 						),
 					),
 				);
@@ -418,7 +418,7 @@ get_template_part( 'components/hero' );
 			<button data-modal-content-id="modal-58136" data-modal-prefix-class="lf" data-modal-close-text="Close" class="js-modal button-reset" aria-label="Close" id="label_modal_27" aria-haspopup="dialog">
 		<div class="background-image-wrapper people-profile-picture">
 	<figure class="background-image-figure">
-	<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
+	<img loading="lazy" class="" src="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, /wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, /wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
 	</div>
 		</button>
 		<!-- Name  -->
@@ -448,7 +448,7 @@ get_template_part( 'components/hero' );
 				<div class="profile__header">
 										<div class="background-image-wrapper people-profile-picture">
 						<figure class="background-image-figure">
-						<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
+						<img loading="lazy" class="" src="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, /wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, /wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
 					</div>
 										</div>
 				<div class="modal__content">
@@ -512,7 +512,7 @@ get_template_part( 'components/hero' );
 			<button data-modal-content-id="modal-60401" data-modal-prefix-class="lf" data-modal-close-text="Close" class="js-modal button-reset" aria-label="Close" id="label_modal_9" aria-haspopup="dialog">
 		<div class="background-image-wrapper people-profile-picture">
 	<figure class="background-image-figure">
-	<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg" srcset="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg 250w, https://www.cncf.io/wp-content/uploads/2021/02/erin-300x300.jpeg 300w, https://www.cncf.io/wp-content/uploads/2021/02/erin-150x150.jpeg 150w, https://www.cncf.io/wp-content/uploads/2021/02/erin-200x200.jpeg 200w, https://www.cncf.io/wp-content/uploads/2021/02/erin-170x170.jpeg 170w, https://www.cncf.io/wp-content/uploads/2021/02/erin-270x270.jpeg 270w, https://www.cncf.io/wp-content/uploads/2021/02/erin-340x340.jpeg 340w, https://www.cncf.io/wp-content/uploads/2021/02/erin.jpeg 400w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
+	<img loading="lazy" class="" src="/wp-content/uploads/2021/02/erin-250x250.jpeg" srcset="/wp-content/uploads/2021/02/erin-250x250.jpeg 250w, /wp-content/uploads/2021/02/erin-300x300.jpeg 300w, /wp-content/uploads/2021/02/erin-150x150.jpeg 150w, /wp-content/uploads/2021/02/erin-200x200.jpeg 200w, /wp-content/uploads/2021/02/erin-170x170.jpeg 170w, /wp-content/uploads/2021/02/erin-270x270.jpeg 270w, /wp-content/uploads/2021/02/erin-340x340.jpeg 340w, /wp-content/uploads/2021/02/erin.jpeg 400w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
 	</div>
 		</button>
 		<!-- Name  -->
@@ -542,7 +542,7 @@ get_template_part( 'components/hero' );
 				<div class="profile__header">
 										<div class="background-image-wrapper people-profile-picture">
 						<figure class="background-image-figure">
-						<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg" srcset="https://www.cncf.io/wp-content/uploads/2021/02/erin-250x250.jpeg 250w, https://www.cncf.io/wp-content/uploads/2021/02/erin-300x300.jpeg 300w, https://www.cncf.io/wp-content/uploads/2021/02/erin-150x150.jpeg 150w, https://www.cncf.io/wp-content/uploads/2021/02/erin-200x200.jpeg 200w, https://www.cncf.io/wp-content/uploads/2021/02/erin-170x170.jpeg 170w, https://www.cncf.io/wp-content/uploads/2021/02/erin-270x270.jpeg 270w, https://www.cncf.io/wp-content/uploads/2021/02/erin-340x340.jpeg 340w, https://www.cncf.io/wp-content/uploads/2021/02/erin.jpeg 400w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
+						<img loading="lazy" class="" src="/wp-content/uploads/2021/02/erin-250x250.jpeg" srcset="/wp-content/uploads/2021/02/erin-250x250.jpeg 250w, /wp-content/uploads/2021/02/erin-300x300.jpeg 300w, /wp-content/uploads/2021/02/erin-150x150.jpeg 150w, /wp-content/uploads/2021/02/erin-200x200.jpeg 200w, /wp-content/uploads/2021/02/erin-170x170.jpeg 170w, /wp-content/uploads/2021/02/erin-270x270.jpeg 270w, /wp-content/uploads/2021/02/erin-340x340.jpeg 340w, /wp-content/uploads/2021/02/erin.jpeg 400w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
 					</div>
 										</div>
 				<div class="modal__content">
