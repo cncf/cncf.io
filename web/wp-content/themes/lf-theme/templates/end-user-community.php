@@ -14,9 +14,8 @@ get_template_part( 'components/hero' );
 ?>
 
 <?php
-wp_enqueue_style( 'line-awesome', 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css', array(), filemtime( get_template_directory() . '/build/styles.css' ), 'all' );
+wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', array(), filemtime( get_template_directory() . '/build/global.js' ), 'all' );
 ?>
-
 <main class="page-content end-user-page">
 	<article class="container wrap entry-content">
 		<?php
@@ -34,6 +33,10 @@ wp_enqueue_style( 'line-awesome', 'https://maxst.icons8.com/vue-static/landings/
 				<p class="is-style-max-width-100">The CNCF End User Community is a vendor-neutral group of more than 140 organizations using cloud native technologies to build internal products and services. These experienced practitioners help power CNCF’s <a href="https://youtu.be/u71aL6aVDPg">End User-driven open source</a> ecosystem, steering production experience and accelerating cloud native project growth.</p>
 				<!-- /wp:paragraph -->
 
+				<!-- wp:spacer {"height":40,"className":"is-style-40-responsive"} -->
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
+				<!-- /wp:spacer -->
+
 				<!-- wp:shortcode -->
 				<?php echo do_shortcode( '[eu_casestudies]' ); ?>
 				<!-- /wp:shortcode -->
@@ -45,6 +48,10 @@ wp_enqueue_style( 'line-awesome', 'https://maxst.icons8.com/vue-static/landings/
 				<!-- wp:heading {"className":"is-style-max-width-100"} -->
 				<h2 class="is-style-max-width-100">Explore the benefits in joining the cloud native end user community</h2>
 				<!-- /wp:heading -->
+
+<!-- wp:spacer {"height":40,"className":"is-style-40-responsive"} -->
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
+				<!-- /wp:spacer -->
 
 				<!-- wp:columns {"className":"is-style-equal-height-responsive"} -->
 				<div class="wp-block-columns is-style-equal-height-responsive"><!-- wp:column -->
@@ -126,6 +133,9 @@ wp_enqueue_style( 'line-awesome', 'https://maxst.icons8.com/vue-static/landings/
 				<!-- /wp:spacer -->
 
 				<!-- wp:paragraph -->
+				<p><a href="https://docs.google.com/presentation/d/194SyKdHL7ws_DBOdbrXdowEJi54kIzDdDK_h-6Ag0uo/edit#slide=id.p4" target="_blank" rel="noopener">
+				Explore the benefits of the End User Community in more detail.</a></p>
+
 				<p>Got a question? <a href="/about/contact/" data-type="URL">Contact us to speak about your membership options.</a></p>
 				<!-- /wp:paragraph -->
 
@@ -200,23 +210,9 @@ wp_enqueue_style( 'line-awesome', 'https://maxst.icons8.com/vue-static/landings/
 				?>
 				<!-- end of newsroom -->
 
-				<!-- wp:spacer {"height":80,"className":"is-style-80-responsive"} -->
-				<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-80-responsive"></div>
+				<!-- wp:spacer {"height":20} -->
+				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
-
-				<!-- wp:columns {"className":"is-style-section-header-column"} -->
-				<div class="wp-block-columns is-style-section-header-column"><!-- wp:column {"width":"60%","className":"bh-01"} -->
-				<div class="wp-block-column bh-01" style="flex-basis:60%"><!-- wp:heading {"level":3,"placeholder":"Section header text"} -->
-				<h3>Latest end user videos</h3>
-				<!-- /wp:heading --></div>
-				<!-- /wp:column -->
-
-				<!-- wp:column {"width":"40%","className":"bh-02"} -->
-				<div class="wp-block-column bh-02" style="flex-basis:40%"><!-- wp:heading {"level":6,"placeholder":"View all...","className":"is-style-add-chevron-after"} -->
-				<h6 class="is-style-add-chevron-after"><a rel="noreferrer noopener" href="https://www.youtube.com/playlist?list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank">See all videos</a></h6>
-				<!-- /wp:heading --></div>
-				<!-- /wp:column --></div>
-				<!-- /wp:columns -->
 
 				<!-- wp:shortcode -->
 				<?php echo do_shortcode( '[eu_playlist key="AIzaSyB63Mb5LIvCSVuPQi778uxOAPl64QXK_-M"]' ); ?>
