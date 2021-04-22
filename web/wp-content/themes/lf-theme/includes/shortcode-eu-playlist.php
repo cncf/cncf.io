@@ -43,6 +43,9 @@ function add_eu_playlist_shortcode( $atts ) {
 	if ( false === $eu_playlist ) {
 
 		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40&key=' . $key );
+		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
+			return;
+		}
 		$eu_playlist = wp_remote_retrieve_body( $request );
 
 		set_transient( 'cncf_eu_playlist', $eu_playlist, 6 * HOUR_IN_SECONDS );
