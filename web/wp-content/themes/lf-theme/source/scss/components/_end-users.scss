@@ -36,7 +36,7 @@
 	@media (min-width: 1000px) {
 		grid-row-gap: 1.5rem;
 		grid-column-gap: 1.5rem;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	&.show-descriptions {
@@ -149,4 +149,90 @@
 
 .eucs-box-text-wrapper {
 	padding: 1rem;
+}
+
+$eup-padding: 20px 1rem;
+
+.enduser-pricing-wrapper {
+	margin-top: 2em;
+	margin-bottom: 2rem;
+
+	display: grid;
+	grid-row-gap: 2rem;
+	grid-column-gap: 2rem;
+	grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+
+	@media (min-width: 550px) {
+		grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	}
+
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	// end of grid
+
+	.eup-column {
+		// overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	h3,
+	h4,
+	h5,
+	p {
+		margin-bottom: 0;
+		max-width: 100% !important;
+	}
+	.thead {
+		text-align: center;
+		padding: $eup-padding;
+		color: $white;
+		background-color: $secondary-900;
+		&.alt {
+			background-color: $tertiary-700;
+		}
+	}
+	.tfoot {
+		text-align: center;
+		padding: $eup-padding;
+		color: $white;
+		background-color: #2d2d2f;
+		.main-price {
+			margin-bottom: 0.5rem;
+		}
+		button {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+	.tbody {
+		padding: $eup-padding;
+		background-color: #f5f5f5;
+		color: #2d2d2f;
+		font-weight: 700;
+		font-size: 0.875em;
+		height: 100%;
+
+		ul {
+			list-style: none;
+			margin-left: 0;
+			margin-bottom: 0;
+			li {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	.las,
+	.lab {
+		font-size: 1.25rem;
+		color: $primary-400;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+	.lab {
+		font-weight: 400;
+	}
 }

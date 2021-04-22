@@ -195,6 +195,17 @@ img {
 		}
 	}
 
+	&.tertiary-color {
+		background-color: $tertiary-700;
+
+		&:hover {
+			background-color: lighten($tertiary-700, 5%);
+		}
+	}
+	&.stretch {
+		width: 100%;
+	}
+
 	&.margin-top {
 		margin-top: 1rem;
 	}

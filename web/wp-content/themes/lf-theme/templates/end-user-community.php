@@ -12,6 +12,11 @@ get_template_part( 'components/header' );
 
 get_template_part( 'components/hero' );
 ?>
+
+<?php
+wp_enqueue_style( 'line-awesome', 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css', array(), filemtime( get_template_directory() . '/build/styles.css' ), 'all' );
+?>
+
 <main class="page-content end-user-page">
 	<article class="container wrap entry-content">
 		<?php
@@ -113,7 +118,7 @@ get_template_part( 'components/hero' );
 				<!-- /wp:paragraph -->
 
 				<!-- wp:shortcode -->
-				[eu_pricing]
+				<?php echo do_shortcode( '[eu_pricing]' ); ?>
 				<!-- /wp:shortcode -->
 
 				<!-- wp:spacer {"height":40,"className":"is-style-40-responsive"} -->
@@ -456,7 +461,7 @@ get_template_part( 'components/hero' );
 						Dave Zolotusky</h3>
 										<h5 class="margin-top-small">
 						Platform Engineer at Spotify</h5>
-											
+
 <p>Dave is an engineer in Spotify’s Platform team, where his focus has been core infrastructure, the data platform, and Spotify’s use of cloud services. A noted evangelist for cloud native and open source technologies, Dave spurred Spotify to join the CNCF and remain active in the community, launched the Stockholm CNCF meetup, and is both a CNCF Ambassador and a member of the KubeCon + CloudNativeCon Program Committee.</p>
 
 
@@ -512,7 +517,7 @@ get_template_part( 'components/hero' );
 						Ricardo Rocha</h3>
 										<h5 class="margin-top-small">
 						CERN</h5>
-											
+
 <p>Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition services and workloads to use cloud native technologies, as well as dissemination and training efforts. Ricardo got CERN to join the CNCF and is a lead of the CNCF Research User Group. Prior to this work Ricardo helped develop the grid computing infrastructure serving the Large Hadron Collider (LHC).</p>
 				</div>
 			</div>
@@ -564,7 +569,7 @@ get_template_part( 'components/hero' );
 						Erin Boyd</h3>
 										<h5 class="margin-top-small">
 						Apple</h5>
-											
+
 <p>I have been an active member of the TOC as a contributor from it’s inception. I have led and participated discussions on how to improve the impact of the CNCF through the TOC and it’s wider community as well as performed the due diligence around countless projects. As an engineer at Apple and a member of the End User Community, I have an opportunity to take the knowledge of being a contributor to Kubernetes and other upstream projects outside the CNCF and focus my attention to the usability and consumption of these technologies and . I feel this can truly help foster projects in the open source way. I have seen the space of projects grow and fully understand the challenges associated with scaling projects while still trying to maintain legitimacy and fairness in this Cloud Native community. Being a committer to the Ambari project and contributor to Kubernetes, I have worked across industries and communities and am sought as a trusted advisor and technical architect for the Kubernetes Storage SIG. As part of the Storage SIG I helped establish an E2E testing framework focused on real use cases from customers and usability of the system. I have consulted with other Kubernetes SIGs from this work to help grow the ecosystem with the vision of a more stable environment. I am dedicated to open source and the growing of the cloud native community to incorporate the tools that make this ecosystem so powerful. I bring to the table the perspective of both a developer, tester and usability fanatic and continually reach across communities to accomplish these shared goals. With my new role at Apple participating as an end user of Kubernetes gives me a fully holistic view I can contribute to evaluating and identifying technologies to continue to grow our Cloud Native community.</p>
 				</div>
 			</div>
