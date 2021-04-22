@@ -472,34 +472,37 @@ get_template_part( 'components/hero' );
 
 <div class="people-box">
 	<!-- thumbnail  -->
-			<button data-modal-content-id="modal-58136" data-modal-prefix-class="lf" data-modal-close-text="Close" class="js-modal button-reset" aria-label="Close" id="label_modal_5" aria-haspopup="dialog">
+			<button data-modal-content-id="modal-60715" data-modal-prefix-class="lf" data-modal-close-text="Close" class="js-modal button-reset" aria-label="Close" id="label_modal_17" aria-haspopup="dialog">
 		<div class="background-image-wrapper people-profile-picture">
 	<figure class="background-image-figure">
-	<img loading="lazy" class="" src="//localhost:3000/wp-content/uploads/2020/05/avatar-default.png" srcset="//localhost:3000/wp-content/uploads/2020/05/avatar-default.png 190w, //localhost:3000/wp-content/uploads/2020/05/avatar-default-150x150.png 150w, //localhost:3000/wp-content/uploads/2020/05/avatar-default-170x170.png 170w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
+	<img loading="lazy" class="" src="/wp-content/uploads/2021/03/ricardo-250x250.jpg" srcset="/wp-content/uploads/2021/03/ricardo-250x250.jpg 250w, /wp-content/uploads/2021/03/ricardo-300x300.jpg 300w, /wp-content/uploads/2021/03/ricardo-150x150.jpg 150w, /wp-content/uploads/2021/03/ricardo-200x200.jpg 200w, /wp-content/uploads/2021/03/ricardo-170x170.jpg 170w, /wp-content/uploads/2021/03/ricardo-270x270.jpg 270w, /wp-content/uploads/2021/03/ricardo-340x340.jpg 340w, /wp-content/uploads/2021/03/ricardo-500x500.jpg 500w, /wp-content/uploads/2021/03/ricardo.jpg 631w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
 	</div>
 		</button>
 		<!-- Name  -->
 	<h4 class="people-title">Ricardo Rocha</h4>
 	<!-- Company  -->
-		<h5 class="people-company">(CERN),  End User appointed TOC</h5>
+		<h5 class="people-company">CERN</h5>
+		<div class="people-excerpt">
+		<p>Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition…</p>
+			</div>
 <div class="social-modal-wrapper">
-					<button data-modal-content-id="modal-9999" data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close" class="js-modal button smaller margin-top" id="label_modal_6" aria-haspopup="dialog">View profile</button>
+					<button data-modal-content-id="modal-60715" data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close" class="js-modal button smaller margin-top" id="label_modal_18" aria-haspopup="dialog">View profile</button>
 		<!-- Modal -->
-		<div class="modal-hide" id="modal-9999" aria-hidden="true">
+		<div class="modal-hide" id="modal-60715" aria-hidden="true">
 			<div class="modal-content-wrapper">
 				<div class="profile__header">
 										<div class="background-image-wrapper people-profile-picture">
 						<figure class="background-image-figure">
-						<img loading="lazy" class="" src="//localhost:3000/wp-content/uploads/2020/05/avatar-default.png" srcset="//localhost:3000/wp-content/uploads/2020/05/avatar-default.png 190w, //localhost:3000/wp-content/uploads/2020/05/avatar-default-150x150.png 150w, //localhost:3000/wp-content/uploads/2020/05/avatar-default-170x170.png 170w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
+						<img loading="lazy" class="" src="/wp-content/uploads/2021/03/ricardo-250x250.jpg" srcset="/wp-content/uploads/2021/03/ricardo-250x250.jpg 250w, /wp-content/uploads/2021/03/ricardo-300x300.jpg 300w, /wp-content/uploads/2021/03/ricardo-150x150.jpg 150w, /wp-content/uploads/2021/03/ricardo-200x200.jpg 200w, /wp-content/uploads/2021/03/ricardo-170x170.jpg 170w, /wp-content/uploads/2021/03/ricardo-270x270.jpg 270w, /wp-content/uploads/2021/03/ricardo-340x340.jpg 340w, /wp-content/uploads/2021/03/ricardo-500x500.jpg 500w, /wp-content/uploads/2021/03/ricardo.jpg 631w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
 					</div>
 										</div>
 				<div class="modal__content">
 					<h3 class="modal__title margin-reset">
-					Ricardo Rocha</h3>
+						Ricardo Rocha</h3>
 										<h5 class="margin-top-small">
 						CERN</h5>
-
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula get dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate get, arcu. In enim justo, rhoncus ut imperdiet a.</p>
+											
+<p>Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition services and workloads to use cloud native technologies, as well as dissemination and training efforts. Ricardo got CERN to join the CNCF and is a lead of the CNCF Research User Group. Prior to this work Ricardo helped develop the grid computing infrastructure serving the Large Hadron Collider (LHC).</p>
 				</div>
 			</div>
 		</div>
