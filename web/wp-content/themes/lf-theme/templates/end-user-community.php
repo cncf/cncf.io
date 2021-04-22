@@ -415,25 +415,40 @@ get_template_part( 'components/hero' );
 
 <div class="people-box">
 	<!-- thumbnail  -->
-			<button data-modal-content-id="modal-58136" data-modal-prefix-class="lf" data-modal-close-text="Close" class="js-modal button-reset" aria-label="Close" id="label_modal_5" aria-haspopup="dialog">
+			<button data-modal-content-id="modal-58136" data-modal-prefix-class="lf" data-modal-close-text="Close" class="js-modal button-reset" aria-label="Close" id="label_modal_27" aria-haspopup="dialog">
 		<div class="background-image-wrapper people-profile-picture">
 	<figure class="background-image-figure">
-	<img loading="lazy" class="" src="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, /wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, /wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
+	<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">	</figure>
 	</div>
 		</button>
 		<!-- Name  -->
 	<h4 class="people-title">Dave Zolotusky</h4>
 	<!-- Company  -->
 		<h5 class="people-company">(Spotify), End User appointed TOC</h5>
+		<div class="people-excerpt">
+		<p>Dave is an engineer in Spotify’s Platform team, where his focus has been core infrastructure, the data platform, and Spotify’s use of cloud services</p>
+			</div>
 <div class="social-modal-wrapper">
-					<button data-modal-content-id="modal-58136" data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close" class="js-modal button smaller margin-top" id="label_modal_6" aria-haspopup="dialog">View profile</button>
+			<div class="people-social">
+					<a href="https://www.linkedin.com/in/dzolotusky/" rel="noopener" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="currentColor"><title>LinkedIn</title>
+<rect width="512" height="512" rx="15%" fill="currentColor"></rect>
+<circle cx="142" cy="138" r="37" fill="#FFF" class="inner-color"></circle>
+<path stroke="#FFF" stroke-width="66" d="M244 194v198M142 194v198" class="inner-color"></path>
+<path fill="#FFF" d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" class="inner-color"></path>
+</svg>
+
+</a>
+							<a href="https://twitter.com/dzolotusky" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><title>Twitter</title><rect width="512" height="512" rx="15%" fill="currentColor"></rect><path class="inner-color" fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"></path></svg></a>
+							<a href="https://github.com/dzolotusky" target="_blank" rel="noopener"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>Github</title><rect height="512" rx="15%" width="512" fill="currentColor"></rect><path class="inner-color" d="m335 499c14 0 12 17 12 17h-182s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg></a>
+						</div>
+						<button data-modal-content-id="modal-58136" data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close" class="js-modal button smaller margin-top" id="label_modal_28" aria-haspopup="dialog">View profile</button>
 		<!-- Modal -->
 		<div class="modal-hide" id="modal-58136" aria-hidden="true">
 			<div class="modal-content-wrapper">
 				<div class="profile__header">
 										<div class="background-image-wrapper people-profile-picture">
 						<figure class="background-image-figure">
-						<img loading="lazy" class="" src="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, /wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, /wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
+						<img loading="lazy" class="" src="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg" srcset="https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-250x250.jpg 250w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-150x150.jpg 150w, https://www.cncf.io/wp-content/uploads/2020/10/DaveZolotusky-500x500.jpg 500w" sizes="(max-width: 400px) 100vw, 400px" alt="">						</figure>
 					</div>
 										</div>
 				<div class="modal__content">
@@ -441,7 +456,7 @@ get_template_part( 'components/hero' );
 						Dave Zolotusky</h3>
 										<h5 class="margin-top-small">
 						Platform Engineer at Spotify</h5>
-
+											
 <p>Dave is an engineer in Spotify’s Platform team, where his focus has been core infrastructure, the data platform, and Spotify’s use of cloud services. A noted evangelist for cloud native and open source technologies, Dave spurred Spotify to join the CNCF and remain active in the community, launched the Stockholm CNCF meetup, and is both a CNCF Ambassador and a member of the KubeCon + CloudNativeCon Program Committee.</p>
 
 
@@ -503,7 +518,7 @@ get_template_part( 'components/hero' );
 		<!-- Name  -->
 	<h4 class="people-title">Erin Boyd</h4>
 	<!-- Company  -->
-		<h5 class="people-company">Apple</h5>
+		<h5 class="people-company">(Apple), TOC from an End User organization</h5>
 		<div class="people-excerpt">
 		<p>I have been an active member of the TOC as a contributor from it’s inception. I have led and participated discussions on how to improve the impact of the CNCF through the…</p>
 			</div>
