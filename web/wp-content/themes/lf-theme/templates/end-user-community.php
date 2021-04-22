@@ -157,7 +157,7 @@ get_template_part( 'components/hero' );
 				$query = new WP_Query( $args );
 
 				// if no posts.
-				if ( ! $query->have_posts() && ! $sticky_post ) {
+				if ( ! $query->have_posts() ) {
 					return 'Sorry, there are no posts.';
 				}
 
