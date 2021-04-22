@@ -73,7 +73,10 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 
 				<!-- wp:paragraph -->
 				<p>Connect with peers facing similar challenges and share adoption strategies for cloud native tooling</p>
-				<!-- /wp:paragraph --></div>
+				<!-- /wp:paragraph -->
+				<!-- wp:spacer {"height":20,"className":"is-style-20-responsive"} -->
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
+				<!-- /wp:spacer --></div>
 				<!-- /wp:column -->
 
 				<!-- wp:column -->
@@ -93,7 +96,9 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 
 				<!-- wp:paragraph -->
 				<p>Position your organization to attract outstanding engineers through CNCF’s events, sponsorships and training</p>
-				<!-- /wp:paragraph --></div>
+				<!-- /wp:paragraph --><!-- wp:spacer {"height":20,"className":"is-style-20-responsive"} -->
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
+				<!-- /wp:spacer --></div>
 				<!-- /wp:column -->
 
 				<!-- wp:column -->
@@ -113,7 +118,9 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 				<!-- wp:paragraph -->
 				<p>Maximize open source investment through strategic alignment with Linux Foundation leadership and legal bodies</p>
 				<!-- /wp:paragraph --></div>
-				<!-- /wp:column --></div>
+				<!-- /wp:column --><!-- wp:spacer {"height":20,"className":"is-style-20-responsive"} -->
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
+				<!-- /wp:spacer --></div>
 				<!-- /wp:columns -->
 
 				<!-- wp:spacer {"height":80,"className":"is-style-80-responsive"} -->

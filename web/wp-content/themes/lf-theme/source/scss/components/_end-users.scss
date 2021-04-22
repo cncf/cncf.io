@@ -2,9 +2,9 @@
 
 .enduser-latest-wrapper {
 	display: grid;
-	grid-row-gap: 1rem;
+	grid-row-gap: 1.5rem;
 	grid-column-gap: 1rem;
-	grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 	margin-top: 2em;
 	margin-bottom: 2rem;
 	align-items: center;
@@ -168,7 +168,7 @@
 .eucs-box__logo {
 	flex: 0 1 calc(300px);
 	@media (min-width: 450px) {
-		flex: 0 1 calc(220px);
+		flex: 0 1 calc(250px);
 	}
 	img {
 		max-width: 200px;
@@ -193,6 +193,7 @@
 }
 
 .eucs-box__stat {
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	span {
@@ -285,8 +286,6 @@
 			border-right: dotted #2d2d2f;
 			color: #2d2d2f;
 			padding: 10px 20px;
-			// border-bottom-left-radius: 10px;
-			// border-bottom-right-radius: 10px;
 			font-style: italic;
 			text-align: center;
 			font-size: 0.875em;
@@ -294,7 +293,6 @@
 	}
 	// end of grid.
 	.eup-column {
-		// overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
