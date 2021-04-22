@@ -1,6 +1,6 @@
 <?php
 /**
- * End Users Shortcode
+ * Latest End Users Shortcode
  *
  * @package WordPress
  * @subpackage lf-theme
@@ -8,22 +8,22 @@
  */
 
  /**
-  * Add End Users shortcode.
+  * Add Latest End Users shortcode.
   *
   * @param array $atts Attributes.
   */
-function add_endusers_shortcode( $atts ) {
+function add_eu_latest_shortcode( $atts ) {
 
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'count' => 5, // set default.
+			'count' => 10, // set default.
 		),
 		$atts,
-		'endusers'
+		'eu_latest'
 	);
 
-	$count = $atts['count'];
+	$count = intval( $atts['count'] );
 
 	if ( ! is_int( $count ) ) {
 		return;
@@ -35,13 +35,15 @@ function add_endusers_shortcode( $atts ) {
 		$request = wp_remote_get( 'https://landscape.cncf.io/data/exports/end-users-reverse-chronological.json' );
 		$endusers = wp_remote_retrieve_body( $request );
 
-		set_transient( 'cncf_latest_endusers', $endusers, 6 * HOUR_IN_SECONDS );
+		if ( WP_DEBUG === false ) {
+			set_transient( 'cncf_latest_endusers', $endusers, 6 * HOUR_IN_SECONDS );
+		}
 	}
 	$endusers = json_decode( $endusers );
 
 	ob_start();
 	?>
-<div class="enduser-wrapper">
+<div class="enduser-latest-wrapper">
 	<?php
 	for ( $i = 0; $i < $count; $i++ ) {
 		echo '<img src="' . esc_url( $endusers[ $i ]->logo ) . '" alt="' . esc_attr( $endusers[ $i ]->name ) . '">';
@@ -53,4 +55,4 @@ function add_endusers_shortcode( $atts ) {
 	return $block_content;
 
 }
-add_shortcode( 'endusers', 'add_endusers_shortcode' );
+add_shortcode( 'eu_latest', 'add_eu_latest_shortcode' );

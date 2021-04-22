@@ -93,6 +93,9 @@ require_once 'includes/shortcode-endusers.php';
 // YouTube Playlist shortcode.
 require_once 'includes/shortcode-eu-playlist.php';
 
+// End users case studies.
+require_once 'includes/shortcode-eu-casestudies.php';
+
 // kubeweeklys shortcodes.
 require_once 'includes/shortcode-kubeweeklys.php';
 require_once 'includes/shortcode-kubeweekly-newsletter.php';

@@ -17,7 +17,7 @@ function add_eu_playlist_shortcode( $atts ) {
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'count' => 3, // set default.
+			'count' => 2, // set default.
 			'key' => '',
 		),
 		$atts,
@@ -50,21 +50,33 @@ function add_eu_playlist_shortcode( $atts ) {
 	$eu_playlist = json_decode( $eu_playlist );
 
 	ob_start();
-
-	echo '<section class="wp-block-lf-newsroom is-style-horizontal">';
+	?>
+<section class="end-users-playlist">
+	<?php
 	for ( $i = 0; $i < $count; $i++ ) {
 		if ( array_key_exists( $i, $eu_playlist->items ) ) {
-			echo '<div class="newsroom-post-wrapper">';
+
 			$pub_date = new DateTime( $eu_playlist->items[ $i ]->contentDetails->videoPublishedAt );
-			echo '<div class="newsroom-image-wrapper"><div class="wp-block-lf-youtube-lite"><lite-youtube videoid="' . esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ) . '"></lite-youtube></div></div>';
-			echo '<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=' . esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ) . '&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank" title="' . esc_attr( $eu_playlist->items[ $i ]->snippet->title ) . '">' . esc_attr( $eu_playlist->items[ $i ]->snippet->title ) . '</a></h5>';
-			echo '<span class="newsroom-date date-icon">' . esc_html( $pub_date->format( 'F j, Y' ) ) . '</span>';
-			echo '</div>';
+
+			?>
+	<div class="newsroom-post-wrapper">
+<div class="">
+<div class="wp-block-lf-youtube-lite">
+<lite-youtube videoid="<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>">
+</lite-youtube></div></div>
+
+<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank" title="<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->title ); ?> "><?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->title ); ?></a></h5>
+
+<span class="newsroom-date live-icon"><?php echo esc_html( $pub_date->format( 'F j, Y' ) ); ?></span>
+</div>
+			<?php
 		}
 	}
-	echo '</section>';
+	?>
+
+</section>
+	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'eu_playlist', 'add_eu_playlist_shortcode' );
