@@ -56,27 +56,21 @@
 <li><a href="/projects/">
 <span
 data-purecounter-end="<?php echo esc_html( $graduated_count ); ?>"
-data-purecounter-duration="400"
 data-purecounter-delay="50"
-data-purecounter-once="false"
 class="purecounter"><?php echo esc_html( $graduated_count ); ?></span>
 		Graduated Projects
 	</a></li>
 <li><a href="/projects/#incubating">
 <span
 data-purecounter-end="<?php echo esc_html( $incubating_count ); ?>"
-data-purecounter-duration="150"
 data-purecounter-delay="50"
-data-purecounter-once="false"
 class="purecounter"><?php echo esc_html( $incubating_count ); ?></span>
 		Incubating Projects
 	</a></li>
 <li><a href="/sandbox-projects/">
 <span
 data-purecounter-end="<?php echo esc_html( $sandbox_count ); ?>"
-data-purecounter-duration="125"
 data-purecounter-delay="25"
-data-purecounter-once="false"
 class="purecounter"><?php echo esc_html( $sandbox_count ); ?></span>
 		Sandbox Projects
 	</a></li>
