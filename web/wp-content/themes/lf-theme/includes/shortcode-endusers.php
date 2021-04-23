@@ -207,7 +207,7 @@ function add_eu_pricing_shortcode() {
 <!-- wp:spacer {"height":20} -->
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer show-desktop-only"></div>
 				<!-- /wp:spacer -->
-<a href="https://www.cncf.io/endusersupporter" class="button stretch">Join as Supporter</a>
+<a href="https://www.cncf.io/endusersupporter" class="button tertiary-color stretch">Join as Supporter</a>
 </div>
 
 <!-- div for member CTA  -->
