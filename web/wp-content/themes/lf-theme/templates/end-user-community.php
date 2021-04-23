@@ -22,7 +22,6 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 		if ( have_posts() ) :
 			while ( have_posts() ) :
 				the_post();
-
 				?>
 
 		<!-- wp:heading {"className":"is-style-max-width-100"} -->
@@ -32,7 +31,7 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 
 		<!-- wp:paragraph {"className":"is-style-max-width-100"} -->
 		<p
-			class="is-style-max-width-100">The CNCF End User Community is a vendor-neutral group of more than 140 organizations using cloud native technologies to build internal products and services. These experienced practitioners help power CNCF’s <a href="https://youtu.be/u71aL6aVDPg">End User-driven open source</a> ecosystem, steering production experience and accelerating cloud native project growth.</p>
+			class="is-style-max-width-100">The CNCF End User Community is a vendor-neutral group of more than 140 organizations using cloud native technologies to build their products and services. These experienced practitioners help power CNCF’s <a href="https://youtu.be/u71aL6aVDPg">End User-driven open source</a> ecosystem, steering production experience and accelerating cloud native project growth.</p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:spacer {"height":40,"className":"is-style-40-responsive"} -->
@@ -118,7 +117,7 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 				<div style="height:10px" aria-hidden="true"
 					class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
-				<h4><strong>Recruit and retain top engineering talent</strong>
+				<h4><strong>Recruit top engineering talent</strong>
 				</h4>
 				<!-- /wp:heading -->
 
@@ -185,9 +184,14 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 		<!-- /wp:spacer -->
 
 		<!-- wp:paragraph -->
-		<p><a href="https://docs.google.com/presentation/d/194SyKdHL7ws_DBOdbrXdowEJi54kIzDdDK_h-6Ag0uo/edit#slide=id.p4" target="_blank" rel="noopener">
-				Explore the benefits of the End User Community in more detail.</a></p>
+		<p>Note: CNCF does not offer Individual memberships.</p>
+			<!-- /wp:paragraph -->
 
+				<!-- wp:paragraph -->
+		<p><a href="https://docs.google.com/presentation/d/194SyKdHL7ws_DBOdbrXdowEJi54kIzDdDK_h-6Ag0uo/edit#slide=id.p4" target="_blank" rel="noopener">Explore the benefits of the End User Community in more detail.</a></p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:paragraph -->
 		<p>Got a question? <a href="/about/contact/" data-type="URL">Contact us to speak about your membership options.</a></p>
 		<!-- /wp:paragraph -->
 
