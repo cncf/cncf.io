@@ -35,7 +35,7 @@ function add_eu_casestudies_shortcode() {
 					</a>
 				</div>
 				<p
-					class="h4 eucs-box__headline">Zalando: Europe's leading online fashion platform gets radical with cloud native</p>
+					class="h3 eucs-box__headline">Cloud native powers radical agility at Europe’s leading online fashion platform</p>
 			</div>
 
 			<div class="eucs-box__footer">
@@ -72,15 +72,18 @@ function add_eu_casestudies_shortcode() {
 				alt="Spotify" width="200" height="75">
 					</a>
 				</div>
+				<div class="eucs-box__headline">
 				<p
-					class="h4 eucs-box__headline">An early adopter of containers, Spotify is migrating from homegrown orchestration to Kubernetes</p>
+					class="h4">"We saw the amazing community that’s grown up around Kubernetes, and we wanted to be part of that, to benefit from added velocity, reduced cost, and align on best practices."</p>
+					<p class="italic">— Jai Chakrabarti, Director of Engineering, Infrastructure and Operations at Spotify</p>
+					</div>
 			</div>
 
 			<div class="eucs-box__footer">
 
 				<div class="eucs-box__stat">
-					<span class="h2 eucs-box__stat-headline">1000</span>
-					<span class="h5">Deployments Weekly</span>
+					<span class="h2 eucs-box__stat-headline">2-3x</span>
+					<span class="h5">Improved CPU utilization</span>
 				</div>
 
 				<div class="eucs-box__cta">
@@ -111,14 +114,14 @@ function add_eu_casestudies_shortcode() {
 					</a>
 				</div>
 				<p
-					class="h4 eucs-box__headline">With more than 300 million active users and $55.7 billion in annual revenues last year, JD.com is China's largest retailer, and its operations are the epitome of hyperscale</p>
+					class="h3 eucs-box__headline">How China’s largest retailer leverages Kubernetes for hyperscale e-commerce</p>
 			</div>
 
 			<div class="eucs-box__footer">
 
 				<div class="eucs-box__stat">
-					<span class="h2 eucs-box__stat-headline">2000</span>
-					<span class="h5">Deployments Weekly</span>
+					<span class="h2 eucs-box__stat-headline">60%</span>
+					<span class="h5">Maintenance Time Saved</span>
 				</div>
 
 				<div class="eucs-box__cta">

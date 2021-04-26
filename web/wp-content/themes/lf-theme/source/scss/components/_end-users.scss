@@ -167,11 +167,15 @@
 
 .eucs-box__logo {
 	flex: 0 1 calc(300px);
+
 	@media (min-width: 450px) {
 		flex: 0 1 calc(250px);
 	}
+	a {
+		display: block;
+	}
 	img {
-		max-width: 200px;
+		max-width: 250px;
 		max-height: 75px;
 		margin-right: 1rem;
 		margin-bottom: 0.5rem;

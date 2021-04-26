@@ -31,7 +31,7 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 
 		<!-- wp:paragraph {"className":"is-style-max-width-100"} -->
 		<p
-			class="is-style-max-width-100">The CNCF End User Community is a vendor-neutral group of more than 140 organizations using cloud native technologies to build their products and services. These experienced practitioners help power CNCF’s <a href="https://youtu.be/u71aL6aVDPg" rel="noopener" target="_blank">End User-driven open source</a> ecosystem, steering production experience and accelerating cloud native project growth.</p>
+			class="is-style-max-width-100">The CNCF End User Community is a vendor-neutral group of <a href="https://landscape.cncf.io/card-mode?enduser=yes&style=logo" target="blank" rel="noopener">more than 140 organizations</a> using cloud native technologies to build their products and services. These experienced practitioners help power CNCF’s <a href="https://youtu.be/u71aL6aVDPg" rel="noopener" target="_blank">End User-driven open source</a> ecosystem, steering production experience and accelerating cloud native project growth.</p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:spacer {"height":40,"className":"is-style-40-responsive"} -->
