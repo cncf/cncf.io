@@ -32,12 +32,13 @@ function add_eu_latest_shortcode( $atts ) {
 	$endusers = get_transient( 'cncf_latest_endusers' );
 	if ( false === $endusers ) {
 
-		$request = wp_remote_get( 'https://landscape.cncf.io/api/items?enduser=yes&sort=joined&grouping=no' );
+		$request = wp_remote_get( 'https://landscape.cncf.io/data/exports/end-users-reverse-chronological.json' );
 		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
 			return;
 		}
 
 		$endusers = wp_remote_retrieve_body( $request );
+
 		if ( WP_DEBUG === false ) {
 			set_transient( 'cncf_latest_endusers', $endusers, 6 * HOUR_IN_SECONDS );
 		}
