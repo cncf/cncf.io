@@ -499,7 +499,7 @@ class Lf_Utils {
 			$metrics['certified-kubernetes'] = 103;
 			$metrics['cncf-members'] = 630;
 
-			$data = wp_remote_get( 'https://landscape.cncf.io/api/items?category=certified-kubernetes-distribution,certified-kubernetes-hosted,certified-kubernetes-installer&grouping=no' );
+			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/certified-kubernetes.json' );
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 				return $metrics;
 			}
@@ -507,7 +507,7 @@ class Lf_Utils {
 			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['certified-kubernetes'] = count( $remote_body );
 
-			$data = wp_remote_get( 'https://landscape.cncf.io/api/items?category=cncf-members&grouping=no' );
+			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/cncf-members.json' );
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 				return $metrics;
 			}
