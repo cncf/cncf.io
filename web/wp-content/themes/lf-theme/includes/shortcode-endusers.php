@@ -84,6 +84,7 @@ function add_eu_pricing_shortcode() {
 <li><i class="fas fa-ticket-alt"></i>5 KubeCon in-person tickets (2 tickets for organization with &lt;300 employees)</li>
 <li><i class="fas fa-graduation-cap"></i>5 Linux Foundation Training coupons </li>
 <li><i class="fas fa-tag"></i>End User Recruiting Booth at KubeCon ($7k instead of $21k)</li>
+<li><i class="fas fa-couch"></i>Exclusive <a href="/blog/2021/04/22/introducing-the-cncf-end-user-lounge-exclusive-live-streams-for-end-user-organizations" target="_blank" rel="noopener">CNCF End User Lounge</a> live streams</li>
 </ul>
 </div>
 
@@ -106,14 +107,14 @@ function add_eu_pricing_shortcode() {
 <div class="tbody">
 <ul>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Supporter, plus:</li>
-<li><i class="fab fa-linux"></i>Linux Foundation Silver Membership</li>
+<li><i class="fab fa-linux"></i>Linux Foundation <a href="https://www.linuxfoundation.org/join/#benefits" target="_blank" rel="noopener">Silver Membership</a></li>
 <li><i class="fas fa-vote-yea"></i>Run for Governing Board</li>
 <li><i class="fab fa-youtube"></i>2 online programs a quarter to build thought leadership (on-demand, YouTube, live streams)</li>
 <li><i class="fas fa-ticket-alt"></i>A total of 10 KubeCon in-person tickets</li>
 <li><i class="fas fa-tag"></i>15-seat Linux Foundation Training subscription (worth $7.5k)
 </li>
 <li><i class="fas fa-graduation-cap"></i>A total of 10 Linux Foundation Training coupons </li>
-<li><i class="fas fa-key"></i>Access to the <a href="#">TODO Group</a> to meet other open source organizations </li>
+<li><i class="fas fa-key"></i>Access to the <a href="https://todogroup.org/" target="_blank" rel="noopener">TODO Group</a> to meet other open source organizations </li>
 
 </ul>
 </div>
@@ -150,7 +151,7 @@ function add_eu_pricing_shortcode() {
 
 <div class="tfoot">
 <h4 class="main-price">Up to $120,000</h4>
-<p>&nbsp;</p>
+<p>Annually</p>
 </div>
 
 </div>
@@ -182,7 +183,7 @@ function add_eu_pricing_shortcode() {
 
 <li><i class="fas fa-handshake"></i>Personalized executive engagement from LF leadership team</li>
 
-<li><i class="fab fa-youtube"></i>Exclusive live webinars online program for platinum</li>
+<li><i class="fab fa-youtube"></i>Exclusive live webinars with CNCF online programs</li>
 </ul>
 </div>
 
@@ -198,7 +199,7 @@ function add_eu_pricing_shortcode() {
 <div class="blank-cell"></div>
 
 <div class="lf-membership">
-<p class="margin-reset">Includes Linux Foundation Silver Membership</p>
+<p class="margin-reset">Includes <a href="https://www.linuxfoundation.org/join/#benefits" target="_blank" rel="noopener">Linux Foundation Silver Membership</a></p>
 </div>
 
 <!-- div for supporter CTA -->
