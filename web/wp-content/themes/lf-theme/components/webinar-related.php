@@ -67,7 +67,7 @@
 <div
 	class="wp-block-lf-upcoming-webinars is-style-horizontal entry-content center-align margin-bottom-large">
 <div class="container wrap">
-	<h3 class="margin-top-large">Related upcoming webinars</h3>
+	<h3 class="margin-top-large">Related upcoming online programs</h3>
 	</div>
 	<div class="webinars-upcoming-wrapper container wrap">
 		<?php
