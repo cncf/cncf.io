@@ -96,7 +96,7 @@
 					array(
 						'key'     => 'lf_webinar_date',
 						'value'   => date_i18n( 'Y-m-d' ),
-						'compare' => '>=',
+						'compare' => '>',
 					),
 					array(
 						'key'     => 'lf_webinar_recording',
