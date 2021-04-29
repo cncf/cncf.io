@@ -170,7 +170,7 @@ function lf_post_loop_show_post( $is_featured, $is_sticky, $is_in_the_news_categ
 			<?php
 			echo esc_html( $category_author );
 			if ( 'lf_webinar' === get_post_type() ) {
-				echo ' Webinar';
+				echo ' Online Program';
 			} else {
 				echo ' Blog Post';
 			}

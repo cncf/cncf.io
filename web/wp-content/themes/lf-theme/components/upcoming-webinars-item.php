@@ -56,7 +56,7 @@ if ( $show_images ) :
 		?>
 		<!-- Category of Webinar  -->
 		<a class="skew-box secondary margin-bottom-small" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
-			<?php echo esc_html( $author_category ); ?> Webinar</a>
+			<?php echo esc_html( $author_category ); ?> Online Program</a>
 		<?php endif; ?>
 
 		<!-- Date of webinar  -->

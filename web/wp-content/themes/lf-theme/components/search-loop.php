@@ -57,7 +57,7 @@
 			} elseif ( 'lf_webinar' == get_post_type() ) {
 				$content_type_singular = 'Webinar';
 				$content_type_plural = 'Webinars';
-				$content_type_url = '/webinars/';
+				$content_type_url = '/online-programs/';
 			} elseif ( 'lf_person' == get_post_type() ) {
 				$content_type_singular = 'People';
 				$content_type_plural = 'People';
@@ -117,7 +117,7 @@
 					} elseif ( in_category( 'announcement' ) ) {
 						echo ' Announcement';
 					} elseif ( 'lf_webinar' == get_post_type() ) {
-						echo ' Webinar';
+						echo ' Online Program';
 					} else {
 						echo ' Post';
 					}
