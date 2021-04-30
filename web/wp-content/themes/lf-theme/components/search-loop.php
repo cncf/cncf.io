@@ -55,8 +55,8 @@
 				$content_type_plural = 'Announcements';
 				$content_type_url = '/announcements/';
 			} elseif ( 'lf_webinar' == get_post_type() ) {
-				$content_type_singular = 'Webinar';
-				$content_type_plural = 'Webinars';
+				$content_type_singular = 'Online Program';
+				$content_type_plural = 'Online Programs';
 				$content_type_url = '/online-programs/';
 			} elseif ( 'lf_person' == get_post_type() ) {
 				$content_type_singular = 'People';
