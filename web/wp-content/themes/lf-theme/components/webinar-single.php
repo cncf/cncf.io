@@ -69,9 +69,9 @@ wp_enqueue_script(
 
 
 // date period.
-if ( $dat_webinar_start > $dat_now ) {
+if ( $dat_webinar_end > $dat_now ) {
 	$period_status = 'upcoming';
-} elseif ( ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
+} elseif ( ( $dat_webinar_end < $dat_now ) && ( $recording_url ) ) {
 	$period_status = 'recorded';
 } else {
 	$period_status = 'past';
