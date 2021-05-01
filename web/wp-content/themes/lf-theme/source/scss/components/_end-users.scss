@@ -260,15 +260,6 @@
 		grid-area: member-cta;
 	}
 
-	@media (min-width: 500px) {
-		grid-template-areas:
-			"col1 col2"
-			"col3 col4"
-			"supporter-cta member-cta";
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-	}
-
 	@media (min-width: 1000px) {
 		grid-template-areas:
 			"col1 col2 col3 col4"
