@@ -73,8 +73,7 @@ function add_eu_casestudies_shortcode() {
 					</a>
 				</div>
 				<div class="eucs-box__headline">
-				<p
-					class="h4">"We wanted to be part of the Kubernetes community to benefit from added velocity, reduced cost, and alignment on best practices."</p>
+					<p class="h4">"We wanted to be part of the Kubernetes community to benefit from added velocity, reduced cost, and alignment on best practices."</p>
 					<p class="italic">— Jai Chakrabarti, Director of Engineering, Infrastructure and Operations at Spotify</p>
 					</div>
 			</div>
@@ -114,7 +113,7 @@ function add_eu_casestudies_shortcode() {
 					</a>
 				</div>
 				<p
-					class="h3 eucs-box__headline">How China’s largest retailer leverages Kubernetes for hyperscale e-commerce</p>
+					class="h3 eucs-box__headline">Simplicity and Stability: how Harbor enables image authorization, authentication and access control for China’s largest retailer.</p>
 			</div>
 
 			<div class="eucs-box__footer">
@@ -149,8 +148,8 @@ function add_eu_casestudies_shortcode() {
 				alt="Apple" width="200" height="75">
 					</a>
 				</div>
-				<p
-					class="h4 eucs-box__headline">The Cloud Native Journey @Apple - Alena Prokharchyk, Software Engineer, Apple</p>
+				<p class="h4">"The Kubernetes community is a huge asset to the platform."</p>
+				<p class="italic">— Alena Prokharchyk, Software Engineer, Apple</p>
 			</div>
 
 			<div class="eucs-box__footer">
