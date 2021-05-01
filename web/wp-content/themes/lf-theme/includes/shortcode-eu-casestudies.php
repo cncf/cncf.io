@@ -74,7 +74,7 @@ function add_eu_casestudies_shortcode() {
 				</div>
 				<div class="eucs-box__headline">
 				<p
-					class="h4">"We saw the amazing community that’s grown up around Kubernetes, and we wanted to be part of that, to benefit from added velocity, reduced cost, and align on best practices."</p>
+					class="h4">"We wanted to be part of the Kubernetes community to benefit from added velocity, reduced cost, and alignment on best practices."</p>
 					<p class="italic">— Jai Chakrabarti, Director of Engineering, Infrastructure and Operations at Spotify</p>
 					</div>
 			</div>
