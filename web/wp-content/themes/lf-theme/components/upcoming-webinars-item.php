@@ -40,7 +40,7 @@ if ( $webinar_reg_url ) {
 if ( $show_images ) :
 	?>
 	<div class="newsroom-image-wrapper">
-		<a target='_blank' rel="noopener" class="box-link external is-primary-color" href="<?php echo esc_url( $link_url ); ?>"
+		<a target='_blank' rel="noopener" class="box-link is-primary-color" href="<?php echo esc_url( $link_url ); ?>"
 			title="<?php echo esc_attr( get_the_title() ); ?>"></a>
 		<?php
 		if ( has_post_thumbnail() ) {
