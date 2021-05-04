@@ -4,36 +4,35 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8481736e0fe63398d7fa6e4aea121510",
+    "content-hash": "9bd37c3a69b3e47d5ca8fa63ab7f858c",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
-            "version": "dev-master",
+            "version": "dev-bevy-sync",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "fba0215ce74e44cc59834c754288feaf6410e05b"
+                "reference": "34609e68f4d411285b76f0edd714be7cad5d8d14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/fba0215ce74e44cc59834c754288feaf6410e05b",
-                "reference": "fba0215ce74e44cc59834c754288feaf6410e05b",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/34609e68f4d411285b76f0edd714be7cad5d8d14",
+                "reference": "34609e68f4d411285b76f0edd714be7cad5d8d14",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2"
             },
-            "default-branch": true,
             "type": "wordpress-muplugin",
             "license": [
                 "MIT"
             ],
             "description": "Must Use (MU) plugins used to power WordPress sites cncf.io, lfph.io, and possibly others.",
             "support": {
-                "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
+                "source": "https://github.com/cncf/wp-mu-plugins/tree/bevy-sync",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-04-29T06:47:41+00:00"
+            "time": "2021-05-04T05:18:14+00:00"
         },
         {
             "name": "composer/installers",
