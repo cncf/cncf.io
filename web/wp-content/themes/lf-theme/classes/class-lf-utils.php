@@ -423,7 +423,7 @@ class Lf_Utils {
 		// date period.
 		if ( $dat_webinar_start > $dat_now ) {
 			?>
-			<span class="date-icon">Upcoming Webinar on
+			<span class="date-icon">Upcoming on
 				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
 			</span>
 			<?php

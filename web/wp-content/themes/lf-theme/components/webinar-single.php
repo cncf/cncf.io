@@ -69,9 +69,9 @@ wp_enqueue_script(
 
 
 // date period.
-if ( $dat_webinar_start > $dat_now ) {
+if ( $dat_webinar_end > $dat_now ) {
 	$period_status = 'upcoming';
-} elseif ( ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
+} elseif ( ( $dat_webinar_end < $dat_now ) && ( $recording_url ) ) {
 	$period_status = 'recorded';
 } else {
 	$period_status = 'past';
@@ -80,8 +80,8 @@ if ( $dat_webinar_start > $dat_now ) {
 ?>
 <section class="hero">
 	<div class="container wrap no-background">
-		<p class="hero-parent-link"><a href="/webinars/"
-				title="Go to Webinars">Webinar</a></p>
+		<p class="hero-parent-link"><a href="/online-programs/"
+				title="Go to online programs">Online program</a></p>
 		<h1 class="hero-post-title" itemprop="headline">
 			<?php
 			the_title();
@@ -109,7 +109,7 @@ if ( $dat_webinar_start > $dat_now ) {
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
 		<a class="skew-box secondary centered" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
-				<?php echo esc_html( $author_category ); ?> Webinar
+				<?php echo esc_html( $author_category ); ?> Online program
 			</a>
 		<?php endif; ?>
 
@@ -122,7 +122,7 @@ if ( $dat_webinar_start > $dat_now ) {
 		<?php endif; ?>
 
 			<?php if ( 'past' == $period_status ) : ?>
-		<h3 class="margin-y">This webinar has passed.</h3>
+		<h3 class="margin-y">This program has passed.</h3>
 				<?php if ( $dat_webinar_start ) { ?>
 		<p class="date-icon">Broadcast on <?php echo esc_html( $dat_webinar_start->format( 'l F j, Y, g:iA T' ) ); ?>
 		</p>
@@ -134,7 +134,7 @@ if ( $dat_webinar_start > $dat_now ) {
 				?>
 		<p class="wp-block-buttons"><a target="_blank" href="<?php echo esc_url( $registration_url ); ?>"
 				rel="noopener" class="button margin-top-large "
-				title="Register for <?php the_title(); ?> Webinar">Register
+				title="Register for <?php the_title(); ?> online program">Register
 				Now</a></p>
 		<?php endif; ?>
 
@@ -162,14 +162,14 @@ if ( $dat_webinar_start > $dat_now ) {
 				?>
 		<p><a target="_blank" href="<?php echo esc_url( $slides_url ); ?>"
 				class="button margin-top"
-				title="Download slides for <?php the_title(); ?> Webinar">Download
+				title="Download slides for <?php the_title(); ?> Program">Download
 				Slides</a></p>
 		<?php endif; ?>
 
 		<div class="entry-content">
 
 			<?php if ( $speakers ) : ?>
-			<h5 class="speakers">Webinar Speakers:
+			<h5 class="speakers">Program Speakers:
 				<?php echo esc_html( $speakers ); ?></h5>
 			<?php endif; ?>
 
@@ -178,8 +178,8 @@ if ( $dat_webinar_start > $dat_now ) {
 			<?php if ( 'upcoming' == $period_status ) : ?>
 
 			<div class="webinar-summary margin-y-large">
-				<h3>Webinar Summary</h3>
-				<p class="is-style-max-width-900"><strong>Webinar:</strong>
+				<h3>Summary</h3>
+				<p class="is-style-max-width-900"><strong>Online program:</strong>
 					<?php the_title(); ?></p>
 
 				<?php if ( $speakers ) : ?>
@@ -205,8 +205,8 @@ if ( $dat_webinar_start > $dat_now ) {
 				<p><strong>How to attend:</strong>
 				<?php if ( $registration_url ) : ?>
 					<a target="_blank" href="<?php echo esc_url( $registration_url ); ?>" rel="noopener" class="external is-primary-color is-inline"
-				title="Register for <?php the_title(); ?> Webinar">Register for this
-					webinar</a>
+				title="Register for <?php the_title(); ?> online program">Register for this
+				 online program</a>
 					<?php
 						else :
 							?>
@@ -218,8 +218,8 @@ if ( $dat_webinar_start > $dat_now ) {
 					<span class="start"><?php echo esc_html( $dat_webinar_start->format( 'm/d/Y g:i A' ) ); ?></span>
 					<span class="timezone"><?php echo esc_html( $dat_webinar_start_tz ); ?></span>
 					<span class="end"><?php echo esc_html( $dat_webinar_end->format( 'm/d/Y g:i A' ) ); ?></span>
-					<span class="title">CNCF webinar: <?php the_title(); ?></span>
-					<span class="description">Webinar details: <?php the_permalink(); ?></span>
+					<span class="title">CNCF online program: <?php the_title(); ?></span>
+					<span class="description">Program details: <?php the_permalink(); ?></span>
 				</div>
 
 			</div>

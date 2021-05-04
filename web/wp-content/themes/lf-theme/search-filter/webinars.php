@@ -30,10 +30,10 @@ if ( $query->have_posts() ) : ?>
 
 		// if filter matches all webinars.
 		if ( $full_count == $query->found_posts ) {
-			echo 'Found ' . esc_html( $query->found_posts ) . ' recorded webinars';
+			echo 'Found ' . esc_html( $query->found_posts ) . ' recorded online programs';
 		} else {
 			// else show partial count.
-			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded webinars';
+			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded online programs';
 		}
 	} else {
 		// get total list of webinars.
@@ -41,10 +41,10 @@ if ( $query->have_posts() ) : ?>
 
 		// if filter matches all webinars.
 		if ( $full_count == $query->found_posts ) {
-			echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming webinars';
+			echo 'Found ' . esc_html( $query->found_posts ) . ' upcoming online programs';
 		} else {
 			// else show partial count.
-			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming webinars';
+			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' upcoming online programs';
 		}
 	}
 	?>
@@ -115,7 +115,7 @@ if ( $query->have_posts() ) : ?>
 				$author_category_link = '/lf-author-category/' . $author_category_slug . '/';
 				?>
 		<a class="skew-box secondary" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
-				<?php echo esc_html( $author_category ); ?> Webinar</a>
+				<?php echo esc_html( $author_category ); ?> Online Program</a>
 			<?php endif; ?>
 
 		<h5 class="webinar-title"><a

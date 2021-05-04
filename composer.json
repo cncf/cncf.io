@@ -34,14 +34,14 @@
     "wpackagist-plugin/lh-hsts": "^1.24",
     "wpackagist-plugin/pantheon-advanced-page-cache": "^1.0.0",
     "wpackagist-plugin/post-meta-controls": "^1.3.3",
-    "wpackagist-plugin/redirection": "^4.4.2",
+    "wpackagist-plugin/redirection": "^5",
     "wpackagist-plugin/safe-svg": "^1.9.3",
     "wpackagist-plugin/shortpixel-image-optimiser": "^4.15.3",
     "wpackagist-plugin/svg-autocrop": "^0.1.0",
     "wpackagist-plugin/ultimate-member": "^2.1.2",
     "wpackagist-plugin/um-recaptcha": "^2.1.4",
     "wpackagist-plugin/wp-mail-smtp": "^2.0.1",
-    "wpackagist-plugin/leadin":"^7.48.24",
+    "wpackagist-plugin/leadin":"^8",
     "wpackagist-plugin/wp-native-php-sessions": "^1.0.0"
   },
   "require-dev": {

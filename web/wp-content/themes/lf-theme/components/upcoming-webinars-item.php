@@ -40,7 +40,7 @@ if ( $show_images ) :
 			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-540', '540px', 'archive-image' );
 		} else {
 			echo '<img loading="lazy" src="' . esc_url( get_stylesheet_directory_uri() )
-			. '/images/webinar-default.jpg" alt="' . esc_attr( lf_blocks_get_site() ) . '" class="archive-image"/>';
+			. '/images/online-program-thumb.jpg" alt="' . esc_attr( lf_blocks_get_site() ) . '" class="archive-image"/>';
 		}
 		?>
 	</div>
@@ -56,7 +56,7 @@ if ( $show_images ) :
 		?>
 		<!-- Category of Webinar  -->
 		<a class="skew-box secondary margin-bottom-small" title="See more content from <?php echo esc_attr( $author_category ); ?>" href="<?php echo esc_url( $author_category_link ); ?>">CNCF
-			<?php echo esc_html( $author_category ); ?> Webinar</a>
+			<?php echo esc_html( $author_category ); ?> Online Program</a>
 		<?php endif; ?>
 
 		<!-- Date of webinar  -->

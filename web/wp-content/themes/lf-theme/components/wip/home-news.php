@@ -75,7 +75,7 @@ if ( $query->have_posts() ) { ?>
 <div class="wp-block-group alignfull has-white-color has-tertiary-400-background-color has-text-color has-background"><div class="wp-block-group__inner-container">
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 
-<h2>Latest blog posts &amp; webinars</h2>
+<h2>Latest blog posts &amp; online programs</h2>
 <div class="wp-block-columns better-responsive-columns">
 	<?php
 	if ( $sticky_post ) {
@@ -110,7 +110,7 @@ $args = array(
 		array(
 			'key'     => 'lf_webinar_date',
 			'value'   => date_i18n( 'Y-m-d' ),
-			'compare' => '>=',
+			'compare' => '>',
 			'type'    => 'DATETIME',
 		),
 		array(

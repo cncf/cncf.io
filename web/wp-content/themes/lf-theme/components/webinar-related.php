@@ -31,7 +31,7 @@
 			array(
 				'key'     => 'lf_webinar_date',
 				'value'   => date_i18n( 'Y-m-d' ),
-				'compare' => '>=',
+				'compare' => '>',
 			),
 			array(
 				'key'     => 'lf_webinar_recording',
@@ -67,7 +67,7 @@
 <div
 	class="wp-block-lf-upcoming-webinars is-style-horizontal entry-content center-align margin-bottom-large">
 <div class="container wrap">
-	<h3 class="margin-top-large">Related upcoming webinars</h3>
+	<h3 class="margin-top-large">Related upcoming programs</h3>
 	</div>
 	<div class="webinars-upcoming-wrapper container wrap">
 		<?php
@@ -96,7 +96,7 @@
 					array(
 						'key'     => 'lf_webinar_date',
 						'value'   => date_i18n( 'Y-m-d' ),
-						'compare' => '>=',
+						'compare' => '>',
 					),
 					array(
 						'key'     => 'lf_webinar_recording',
