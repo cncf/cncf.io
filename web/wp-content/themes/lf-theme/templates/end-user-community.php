@@ -447,7 +447,7 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 										<h5 class="margin-top-small">
 											VP Ecosystem</h5>
 										<p>Cheryl is the VP Ecosystem at the CNCF. Her mission is to make end users successful and productive with cloud native technologies such as Kubernetes and Prometheus. In addition to being a prolific public speaker, she founded and runs the Cloud Native London meetup.</p>
-										<p>Previously Cheryl led product management and the DevOps engineering team at a container storage startup. As a software engineer at Google, she wrote backend and search infrastructure for Maps. She holds an MA in Computer Science from the University of Cambridge.&gt;</p>
+										<p>Previously Cheryl led product management and the DevOps engineering team at a container storage startup. As a software engineer at Google, she wrote backend and search infrastructure for Maps. She holds an MA in Computer Science from the University of Cambridge.</p>
 									</div>
 								</div>
 							</div>
