@@ -1,58 +1,63 @@
 .is-style-pricing-table {
-    color: $white;
-    font-size: 0.9em;
-    max-width: 800px;
+	color: $black;
+	font-size: 0.9em;
+	max-width: 800px;
 
-    @media (min-width: 375px) {
-        font-size: 0.95em;
-    }
+	@media (min-width: 375px) {
+		font-size: 0.95em;
+	}
 
-    @media (min-width: 415px) {
-        font-size: initial;
-    }
+	@media (min-width: 415px) {
+		font-size: initial;
+	}
 
-    @media (min-width: 800px) {
-        font-size: 1.25em;
-    }
+	@media (min-width: 800px) {
+		font-size: 1.25em;
+	}
 
-    td,
-    th {
-        border: 0;
-        padding: 1em;
-        word-wrap: break-word;
+	td,
+	th {
+		border: 0;
+		padding: 1em;
+		word-wrap: break-word;
 
-        &:first-child {
-            font-weight: 600;
-            padding-left: 0.5em;
-        }
-    }
+		&:first-child {
+			font-weight: 600;
+			padding-left: 0.5em;
+		}
+	}
 
-    tr {
-        &:first-child {
-            td {
-                background: $secondary-800;
-                font-weight: 600;
-                vertical-align: middle;
-                border-bottom: 1px solid $white;
+	th {
+		color: $white;
+		background: $secondary-800;
+		text-align: left;
+	}
 
-            }
-        }
+	tr {
+		&:first-child {
+			td {
+				//
+				font-weight: 600;
+				vertical-align: middle;
+				border-bottom: 1px solid $white;
+			}
+		}
 
-        &:not(:first-child) {
-            font-weight: 400;
-        }
+		&:not(:first-child) {
+			font-weight: 400;
+		}
 
-        &:nth-of-type(even) {
-            background-color: lighten($cs-overlay, 16%);
-        }
+		&:nth-of-type(even) {
+			background-color: $grey-100;
+		}
 
-        &:nth-of-type(odd) {
-            background-color: lighten($cs-overlay, 8%);
-        }
+		&:nth-of-type(odd) {
+			background-color: #f5f5f5;
+		}
 
-        td:first-child,
-        td:nth-child(2) {
-            border-right: 1px solid $white;
-        }
-    }
+		td:first-child,
+		td:nth-child(2) {
+			border-right: 1px solid $white;
+		}
+	}
 }

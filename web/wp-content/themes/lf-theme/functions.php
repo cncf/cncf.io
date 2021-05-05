@@ -87,6 +87,14 @@ require_once 'includes/shortcode-people.php';
 // projects shortcode.
 require_once 'includes/shortcode-projects.php';
 
+// endusers shortcode.
+require_once 'includes/shortcode-endusers.php';
+
+// YouTube Playlist shortcode.
+require_once 'includes/shortcode-eu-playlist.php';
+
+// End users case studies.
+require_once 'includes/shortcode-eu-casestudies.php';
 // who we are metrics shortcode.
 require_once 'includes/shortcode-whoweare-metrics.php';
 

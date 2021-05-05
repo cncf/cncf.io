@@ -74,9 +74,9 @@ var browserSync = require("browser-sync").create();
 /**
  * BrowserSync Reload.
  */
-function reload(done) {
+function reload(callback) {
   browserSync.reload();
-  done();
+  callback();
 }
 
 /**
