@@ -24,8 +24,15 @@ $webinar_date              = get_post_meta( get_the_ID(), 'lf_webinar_date', tru
 $webinar_start_time        = get_post_meta( get_the_ID(), 'lf_webinar_start_time', true );
 $webinar_start_time_period = get_post_meta( get_the_ID(), 'lf_webinar_start_time_period', true );
 $webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone', true );
+$webinar_reg_url           = get_post_meta( get_the_ID(), 'lf_webinar_registration_url', true );
 $dat_webinar_start         = Lf_Utils::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone, true );
-$date_and_time             = str_replace( ':00', '', $dat_webinar_start->format( 'l F j, g:iA T' ) );
+$date_and_time             = $dat_webinar_start->format( 'l F j' );
+
+if ( $webinar_reg_url ) {
+	$link_url = $webinar_reg_url;
+} else {
+	$link_url = get_the_permalink();
+}
 ?>
 <article class="webinars-upcoming-box">
 
@@ -33,7 +40,7 @@ $date_and_time             = str_replace( ':00', '', $dat_webinar_start->format(
 if ( $show_images ) :
 	?>
 	<div class="newsroom-image-wrapper">
-		<a class="box-link" href="<?php the_permalink(); ?>"
+		<a target='_blank' rel="noopener" class="box-link is-primary-color" href="<?php echo esc_url( $link_url ); ?>"
 			title="<?php echo esc_attr( get_the_title() ); ?>"></a>
 		<?php
 		if ( has_post_thumbnail() ) {
@@ -65,7 +72,7 @@ if ( $show_images ) :
 		<?php endif; ?>
 
 		<!-- Title of webinar  -->
-		<h5 class="webinar-title"><a href="<?php the_permalink(); ?>"
+		<h5 class="webinar-title"><a class="external is-primary-color" target='_blank' rel="noopener" href="<?php echo esc_url( $link_url ); ?>"
 				title="<?php esc_html( the_title() ); ?> on <?php echo esc_html( $date_and_time ); ?>"><?php esc_html( the_title() ); ?></a>
 		</h5>
 

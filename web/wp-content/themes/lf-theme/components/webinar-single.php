@@ -161,7 +161,8 @@ if ( $dat_webinar_end > $dat_now ) {
 			if ( $slides_url ) :
 				?>
 		<p><a target="_blank" href="<?php echo esc_url( $slides_url ); ?>"
-				class="button margin-top"
+				class="button margin-top external"
+				rel="noopener"
 				title="Download slides for <?php the_title(); ?> Program">Download
 				Slides</a></p>
 		<?php endif; ?>
