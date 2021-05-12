@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "19b43c05afd7a0775ed77d5aba01eec1317bc4dd"
+                "reference": "a6dadb61f945d45bc68fc556b11e755591e5be57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/19b43c05afd7a0775ed77d5aba01eec1317bc4dd",
-                "reference": "19b43c05afd7a0775ed77d5aba01eec1317bc4dd",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/a6dadb61f945d45bc68fc556b11e755591e5be57",
+                "reference": "a6dadb61f945d45bc68fc556b11e755591e5be57",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-05-08T05:28:09+00:00"
+            "time": "2021-05-12T06:58:35+00:00"
         },
         {
             "name": "composer/installers",
@@ -1412,15 +1412,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.6.7",
+            "version": "3.6.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.6.7"
+                "reference": "tags/3.6.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.6.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.6.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
