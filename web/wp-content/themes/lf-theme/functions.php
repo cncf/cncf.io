@@ -90,6 +90,9 @@ require_once 'includes/shortcode-projects.php';
 // endusers shortcode.
 require_once 'includes/shortcode-endusers.php';
 
+// homepage case studies shortcode.
+require_once 'includes/shortcode-homepage-casestudies.php';
+
 // YouTube Playlist shortcode.
 require_once 'includes/shortcode-eu-playlist.php';
 
