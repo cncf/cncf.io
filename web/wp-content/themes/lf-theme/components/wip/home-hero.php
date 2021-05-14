@@ -31,31 +31,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 <!-- column 2 -->
 <div class="home-hero__col2 has-white-color background-image-wrapper">
-
-<figure class="background-image-figure">
-
-<?php
-LF_Utils::display_responsive_images( 61745, 'case-study-640', '600px' ); // srcset.
-?>
-
-</figure>
-
-<div class="wrap background-image-text-overlay">
-<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
-	<p class="h5 fw-400">CNCF projects are trusted by organizations around the world</p>
-		<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
-	<a href="/case-studies/ericsson/">
-	<?php
-			$image = new Image();
-	?>
-			<img loading="eager" src="<?php $image->get_svg( 'wip-home/ericsson-logo.svg', true ); ?>"
-				alt="Ericsson" width="300" height="64"></a>
-	<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
-	<h2><a  class="has-white-color has-text-color" href="/case-studies/ericsson/">How Ericsson is using Kubernetes to leverage cloud native &amp; enable 5G transformation</a></h2>
-	<a href="/case-studies/ericsson/" class="button">Read Ericsson Case Study</a>
-	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
-</div>
-
+<?php echo do_shortcode( '[homepage-casestudies ids="23,12,13"]' ); ?>
 </div>
 
 </section>
