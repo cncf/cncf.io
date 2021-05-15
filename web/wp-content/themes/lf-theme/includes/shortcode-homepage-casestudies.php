@@ -9,6 +9,7 @@
 
  /**
   * Add shortcode.
+  * [homepage-casestudies ids="34,22,122"]
   *
   * @param array $atts Attributes.
   */
