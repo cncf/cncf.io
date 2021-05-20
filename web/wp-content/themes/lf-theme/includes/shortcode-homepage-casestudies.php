@@ -27,13 +27,17 @@ function homepage_casestudies_shortcode( $atts ) {
 	ob_start();
 	$ids = explode( ',', $atts['ids'] );
 	shuffle( $ids );
-	var_dump( $ids[0] );
+	$title = get_post_meta( $ids[0], 'lf_case_study_long_title', true );
+	$logo = get_post_meta( $ids[0], 'lf_case_study_company_logo', true );
+	$logo_url = wp_get_attachment_image_src( $logo );
+	$image = get_post_meta( $ids[0], 'lf_case_study_homepage_image', true );
+	$company = get_the_title( $ids[0] );
 	?>
 	
 	<figure class="background-image-figure">
 
 	<?php
-	LF_Utils::display_responsive_images( 61745, 'case-study-640', '600px' ); // srcset.
+	LF_Utils::display_responsive_images( $image, 'case-study-640', '600px' ); // srcset.
 	?>
 
 	</figure>
@@ -46,11 +50,12 @@ function homepage_casestudies_shortcode( $atts ) {
 		<?php
 		$image = new Image();
 		?>
-				<img loading="eager" src="<?php $image->get_svg( 'wip-home/ericsson-logo.svg', true ); ?>"
-					alt="Ericsson" width="300" height="64"></a>
+		<img loading="eager" src="<?php echo esc_url( $logo_url[0] ); ?>" alt="<?php echo esc_attr( $company ); ?>" width="300" height="64"></a>
 		<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
-		<h2><a  class="has-white-color has-text-color" href="/case-studies/ericsson/">How Ericsson is using Kubernetes to leverage cloud native &amp; enable 5G transformation</a></h2>
-		<a href="/case-studies/ericsson/" class="button">Read Ericsson Case Study</a>
+		<h2><a  class="has-white-color has-text-color" href="/case-studies/ericsson/">
+		<?php echo esc_html( $title ); ?>
+		</a></h2>
+		<a href="/case-studies/ericsson/" class="button">Read <?php echo esc_html( $company ); ?> Case Study</a>
 		<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 	</div>
 
