@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "a6dadb61f945d45bc68fc556b11e755591e5be57"
+                "reference": "fb1bbcf677e54af2ba5e615db0bbaad93f9fc126"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/a6dadb61f945d45bc68fc556b11e755591e5be57",
-                "reference": "a6dadb61f945d45bc68fc556b11e755591e5be57",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/fb1bbcf677e54af2ba5e615db0bbaad93f9fc126",
+                "reference": "fb1bbcf677e54af2ba5e615db0bbaad93f9fc126",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-05-12T06:58:35+00:00"
+            "time": "2021-05-20T11:03:44+00:00"
         },
         {
             "name": "composer/installers",
@@ -262,16 +262,16 @@
         },
         {
             "name": "pantheon-systems/wordpress-composer",
-            "version": "5.7.1",
+            "version": "5.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "6753b97e893366bf906a0a9818f3b5b65edcbff8"
+                "reference": "d4d54125f9c1c94cb825a8562f1397833ba41f56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/6753b97e893366bf906a0a9818f3b5b65edcbff8",
-                "reference": "6753b97e893366bf906a0a9818f3b5b65edcbff8",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/d4d54125f9c1c94cb825a8562f1397833ba41f56",
+                "reference": "d4d54125f9c1c94cb825a8562f1397833ba41f56",
                 "shasum": ""
             },
             "require": {
@@ -289,10 +289,10 @@
             ],
             "description": "WordPress for Pantheon with a composer.json file.",
             "support": {
-                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/5.7.1",
+                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/5.7.2",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2021-04-15T06:10:48+00:00"
+            "time": "2021-05-13T03:10:35+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -715,7 +715,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "8.0.1",
+            "version": "8.0.166",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -723,7 +723,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1619091569"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1621502020"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -823,15 +823,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "4.22.1",
+            "version": "4.22.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/4.22.1"
+                "reference": "tags/4.22.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.22.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.22.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -937,12 +937,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "07314cf15422b2e162d591fe8ef2b850612b808f"
+                "reference": "62148111d4ef79d664b0da42729ce5e0705ad4aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/07314cf15422b2e162d591fe8ef2b850612b808f",
-                "reference": "07314cf15422b2e162d591fe8ef2b850612b808f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/62148111d4ef79d664b0da42729ce5e0705ad4aa",
+                "reference": "62148111d4ef79d664b0da42729ce5e0705ad4aa",
                 "shasum": ""
             },
             "conflict": {
@@ -990,8 +990,8 @@
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1|>=2.8.3,<2.8.4",
                 "dolibarr/dolibarr": "<11.0.4",
                 "dompdf/dompdf": ">=0.6,<0.6.2",
-                "drupal/core": ">=7,<7.74|>=8,<8.8.11|>=8.9,<8.9.9|>=9,<9.0.8",
-                "drupal/drupal": ">=7,<7.74|>=8,<8.8.11|>=8.9,<8.9.9|>=9,<9.0.8",
+                "drupal/core": ">=7,<7.80|>=8,<8.9.14|>=9,<9.0.12|>=9.1,<9.1.7",
+                "drupal/drupal": ">=7,<7.80|>=8,<8.9.14|>=9,<9.0.12|>=9.1,<9.1.7",
                 "dweeves/magmi": "<=0.7.24",
                 "endroid/qr-code-bundle": "<3.4.2",
                 "enshrined/svg-sanitize": "<0.13.1",
@@ -1050,6 +1050,7 @@
                 "laravel/framework": "<6.20.26|>=7,<8.40",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "league/commonmark": "<0.18.3",
+                "lexik/jwt-authentication-bundle": "<2.10.7|>=2.11,<2.11.3",
                 "librenms/librenms": "<21.1",
                 "livewire/livewire": ">2.2.4,<2.2.6",
                 "magento/community-edition": ">=2,<2.2.10|>=2.3,<2.3.3",
@@ -1170,20 +1171,21 @@
                 "symfony/http-foundation": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8|>=4.4,<4.4.7|>=5,<5.0.7",
                 "symfony/http-kernel": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.4.13|>=5,<5.1.5",
                 "symfony/intl": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
+                "symfony/maker-bundle": ">=1.27,<1.29.2|>=1.30,<1.31.1",
                 "symfony/mime": ">=4.3,<4.3.8",
                 "symfony/phpunit-bridge": ">=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/polyfill": ">=1,<1.10",
                 "symfony/polyfill-php55": ">=1,<1.10",
                 "symfony/proxy-manager-bridge": ">=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/routing": ">=2,<2.0.19",
-                "symfony/security": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7|>=4.4,<4.4.7|>=5,<5.0.7",
+                "symfony/security": ">=2,<2.7.51|>=2.8,<3.4.49|>=4,<4.4.24|>=5,<5.2.8",
                 "symfony/security-bundle": ">=2,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
-                "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<2.8.37|>=3,<3.3.17|>=3.4,<3.4.7|>=4,<4.0.7",
+                "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<3.4.49|>=4,<4.4.24|>=5,<5.2.9",
                 "symfony/security-csrf": ">=2.4,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
-                "symfony/security-guard": ">=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
-                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.2.12|>=4.3,<4.3.8|>=4.4,<4.4.7|>=5,<5.0.7",
+                "symfony/security-guard": ">=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
+                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
                 "symfony/serializer": ">=2,<2.0.11",
-                "symfony/symfony": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.4.13|>=5,<5.1.5",
+                "symfony/symfony": ">=2,<3.4.49|>=4,<4.4.24|>=5,<5.2.9",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
                 "symfony/var-exporter": ">=4.2,<4.2.12|>=4.3,<4.3.8",
@@ -1213,6 +1215,7 @@
                 "wallabag/tcpdf": "<6.2.22",
                 "wikimedia/parsoid": "<0.12.2",
                 "willdurand/js-translation-bundle": "<2.1.1",
+                "wp-cli/wp-cli": "<2.5",
                 "yii2mod/yii2-cms": "<1.9.2",
                 "yiisoft/yii": ">=1.1.14,<1.1.15",
                 "yiisoft/yii2": "<2.0.38",
@@ -1283,7 +1286,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-06T19:08:33+00:00"
+            "time": "2021-05-19T23:05:50+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1412,15 +1415,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.6.8",
+            "version": "3.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.6.8"
+                "reference": "tags/3.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.6.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.7.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
