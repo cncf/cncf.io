@@ -31,7 +31,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 <!-- column 2 -->
 <div class="home-hero__col2 has-white-color background-image-wrapper">
-<?php echo do_shortcode( '[homepage-casestudies ids="23,12,13"]' ); ?>
+<?php // echo do_shortcode( '[homepage-casestudies ids="34869,34901,60670,34928,34890"]' ); ?>
+<?php echo do_shortcode( '[homepage-casestudies ids="34890"]' ); ?>
 </div>
 
 </section>
