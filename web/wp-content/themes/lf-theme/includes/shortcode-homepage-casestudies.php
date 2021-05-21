@@ -31,6 +31,10 @@ function homepage_casestudies_shortcode( $atts ) {
 	$logo = get_post_meta( $ids[0], 'lf_case_study_company_logo', true );
 	$logo_url = wp_get_attachment_image_src( $logo );
 	$image = get_post_meta( $ids[0], 'lf_case_study_homepage_image', true );
+	if ( ! $image ) {
+		// use the regular listing background image if no homepage image exists.
+		$image = get_post_thumbnail_id( $ids[0] );
+	}
 	$company = get_the_title( $ids[0] );
 	?>
 	
