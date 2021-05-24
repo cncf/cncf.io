@@ -29,7 +29,10 @@ function homepage_casestudies_shortcode( $atts ) {
 	shuffle( $ids );
 
 	$title    = get_post_meta( $ids[0], 'lf_case_study_long_title', true );
-	$logo     = get_post_meta( $ids[0], 'lf_case_study_company_logo', true );
+	$logo     = get_post_meta( $ids[0], 'lf_case_study_homepage_company_logo', true );
+	if ( ! $logo ) {
+		$logo     = get_post_meta( $ids[0], 'lf_case_study_company_logo', true );
+	}
 	$logo_url = wp_get_attachment_image_src( $logo );
 	$image    = get_post_meta( $ids[0], 'lf_case_study_homepage_image', true );
 	$url      = get_permalink( $ids[0] );
