@@ -51,7 +51,6 @@ function homepage_casestudies_shortcode( $atts ) {
 	<div class="wrap background-image-text-overlay">
 	<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 		<p class="h5 fw-400">CNCF projects are trusted by organizations around the world</p>
-			<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
 		<a href="<?php echo esc_url( $url ); ?>">
 		<?php
 		$image = new Image();
