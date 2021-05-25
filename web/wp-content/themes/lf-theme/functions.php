@@ -98,7 +98,8 @@ require_once 'includes/shortcode-eu-playlist.php';
 
 // End users case studies.
 require_once 'includes/shortcode-eu-casestudies.php';
-// who we are metrics shortcode.
+
+// Who we are metrics shortcode.
 require_once 'includes/shortcode-whoweare-metrics.php';
 
 // kubeweeklys shortcodes.
@@ -129,91 +130,6 @@ if ( ! is_admin() ) {
 	}
 	add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
 }
-
-/**
- * Load Project posts in to menu automatically
- *
- * @param array $items The menu items.
- * @param array $menu The menu.
- * @param array $args The arguments.
- */
-function lf_projects_menu_filter( $items, $menu, $args ) {
-
-	if ( is_admin() ) {
-		return $items;
-	}
-	// Setup empty array to add all items to later.
-	$child_items = array();
-	// required, to make sure it doesn't push out other menu items.
-	$menu_order = count( $items );
-	// setup empty variable to identify the parent menu item.
-	$parent_item_id = 0;
-
-	// Declare taxonomy terms & matching CSS class of menu items.
-	$stage_taxonomies = array(
-		'graduated'  => 'lf-projects-graduated',
-		'incubating' => 'lf-projects-incubating',
-		'sandbox'    => 'lf-projects-sandbox',
-	);
-
-	// Loop through each taxonomy from the array.
-	foreach ( $stage_taxonomies as $stage_term => $stage_class ) {
-		$parent_item_id = 0;
-		foreach ( $items as $item ) {
-
-			// Check to see if CSS class is in the menu.
-			if ( in_array( $stage_class, $item->classes ) ) {
-				// The found item wll be the parent ID.
-				$parent_item_id = $item->ID;
-			}
-		}
-		if ( $parent_item_id > 0 ) {
-			$args = array(
-				'post_type'           => array( 'lf_project' ),
-				'post_status'         => array( 'publish' ),
-				'posts_per_page'      => '-1',
-				'ignore_sticky_posts' => false,
-				'order'               => 'ASC',
-				'orderby'             => 'title',
-				'tax_query'           => array(
-					array(
-						'taxonomy' => 'lf-project-stage',
-						'field'    => 'slug',
-						'terms'    => $stage_term,
-					),
-				),
-			);
-
-			// Loop through all match posts and setup as menu items.
-			foreach ( get_posts( $args ) as $post ) {
-
-				$post->menu_item_parent = $parent_item_id;
-				$post->post_type        = 'lf_project';
-				$post->type             = 'project';
-				$post->object           = 'link';
-				$post->status           = 'publish';
-				$post->description      = '';
-				$post->classes          = '';
-				$post->xfn              = '';
-				$post->menu_order       = ++$menu_order;
-				$post->title            = $post->post_title;
-				$post->target           = '_blank';
-				$post->attr_title       = 'Visit ' . $post->post_title;
-
-				// If an external link is present use it.
-				if ( metadata_exists( 'post', $post->ID, 'lf_project_external_url' ) ) {
-					$post->url = get_post_meta( $post->ID, 'lf_project_external_url', true );
-				} else {
-					$post->url = get_permalink( $post->ID );
-				}
-				// push in to child array.
-				array_push( $child_items, $post );
-			}
-		}
-	}
-	return array_merge( $items, $child_items );
-}
-add_filter( 'wp_get_nav_menu_items', 'lf_projects_menu_filter', 10, 3 );
 
 /**
  * The WP REST API is cached heavily by Pantheon so we need to explicitly exclude certain calls from the cache.
