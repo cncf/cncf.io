@@ -129,6 +129,8 @@
 
 .user-guide-box {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	&:hover {
 		.arrow-cta {
 			transition: all 0.25s ease-out;
@@ -143,6 +145,7 @@
 .user-guide-box-text {
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 
 	.arrow-cta {
 		margin-top: auto;
