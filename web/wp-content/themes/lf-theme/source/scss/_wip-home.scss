@@ -129,19 +129,23 @@
 
 .user-guide-box {
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	transition: background-color 0.25s ease-out;
-
-	.arrow-cta {
-		margin-top: auto;
-	}
-
 	&:hover {
 		.arrow-cta {
 			transition: all 0.25s ease-out;
 			text-decoration: underline;
 		}
+		.user-guide-box-image img {
+			opacity: 0.75;
+		}
+	}
+}
+
+.user-guide-box-text {
+	display: flex;
+	flex-direction: column;
+
+	.arrow-cta {
+		margin-top: auto;
 	}
 }
 
