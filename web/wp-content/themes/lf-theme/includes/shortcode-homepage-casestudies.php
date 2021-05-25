@@ -42,7 +42,7 @@ function homepage_casestudies_shortcode( $atts ) {
 	}
 	$company = get_the_title( $ids[0] );
 	?>
-	
+
 	<figure class="background-image-figure">
 
 	<?php
@@ -54,11 +54,11 @@ function homepage_casestudies_shortcode( $atts ) {
 	<div class="wrap background-image-text-overlay">
 	<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 		<p class="h5 fw-400">CNCF projects are trusted by organizations around the world</p>
-		<a href="<?php echo esc_url( $url ); ?>">
+		<a href="<?php echo esc_url( $url ); ?>" class="logo-link">
 		<?php
 		$image = new Image();
 		?>
-		<img loading="eager" src="<?php echo esc_url( $logo_url[0] ); ?>" alt="<?php echo esc_attr( $company ); ?>" width="300" height="64"></a>
+		<img loading="eager" src="<?php echo esc_url( $logo_url[0] ); ?>" alt="<?php echo esc_attr( $company ); ?>" width="300" height="70"></a>
 		<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-20-responsive"></div>
 		<h2><a  class="has-white-color has-text-color" href="<?php echo esc_url( $url ); ?>">
 		<?php echo esc_html( $title ); ?>

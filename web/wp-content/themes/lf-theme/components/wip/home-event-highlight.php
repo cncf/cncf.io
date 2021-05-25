@@ -23,9 +23,7 @@
 <div><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" target="_blank" rel="noopener"><img loading="lazy" src="https://events.linuxfoundation.org/wp-content/uploads/2020/11/KubeCon_NA_2021_web_web-logo-white-1.svg" alt="Kubecon 2021"></a></div>
 
 <div>
-Highlights from
-KubeCon + CloudNativeCon<br>
-North America 2019
+<p class="event-highlight-video-description">KubeCon + CloudNativeCon North America 2019 Highlights</p>
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 <div class="wp-block-lf-youtube-lite"><lite-youtube videoid="56ftznhkdh0"></lite-youtube></div>
 </div></figure>
