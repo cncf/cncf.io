@@ -444,24 +444,6 @@
 					}
 				}
 			}
-
-			// put projects in to multiple columns
-			&.lf-projects-incubating,
-			&.lf-projects-sandbox,
-			&.lf-projects-graduated {
-				> ul {
-					width: calc(14rem * 2);
-					// column-width: 210px;
-					column-count: 2;
-					column-gap: 0px;
-					column-fill: balance;
-
-					li {
-						display: inline-block;
-						width: 100%;
-					}
-				}
-			}
 		}
 	}
 
