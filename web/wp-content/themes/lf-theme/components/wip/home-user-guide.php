@@ -14,11 +14,11 @@
 		<div class="user-guide-box">
 
 			<?php
-			if ( wp_attachment_is_image( 62362 ) ) :
+			if ( wp_attachment_is_image( 62498 ) ) :
 				?>
 			<div class="user-guide-box-image newsroom-image-wrapper">
 				<?php
-				Lf_Utils::display_responsive_images( 62362, 'newsroom-540', '540px', 'archive-image' );
+				Lf_Utils::display_responsive_images( 62498, 'newsroom-540', '540px', 'archive-image' );
 				?>
 			</div>
 						<?php
@@ -38,11 +38,11 @@
 		<div class="user-guide-box">
 
 <?php
-if ( wp_attachment_is_image( 62361 ) ) :
+if ( wp_attachment_is_image( 62497 ) ) :
 	?>
 <div class="user-guide-box-image newsroom-image-wrapper">
 	<?php
-	Lf_Utils::display_responsive_images( 62361, 'newsroom-540', '540px', 'archive-image' );
+	Lf_Utils::display_responsive_images( 62497, 'newsroom-540', '540px', 'archive-image' );
 	?>
 </div>
 			<?php
@@ -64,11 +64,11 @@ endif;
 		<div class="user-guide-box">
 
 <?php
-if ( wp_attachment_is_image( 62363 ) ) :
+if ( wp_attachment_is_image( 62499 ) ) :
 	?>
 <div class="user-guide-box-image newsroom-image-wrapper">
 	<?php
-	Lf_Utils::display_responsive_images( 62363, 'newsroom-540', '540px', 'archive-image' );
+	Lf_Utils::display_responsive_images( 62499, 'newsroom-540', '540px', 'archive-image' );
 	?>
 </div>
 			<?php
