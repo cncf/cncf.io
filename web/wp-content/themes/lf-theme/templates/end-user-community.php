@@ -78,8 +78,8 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 					<!-- wp:column {"width":"90%","className":"bh-01"} -->
 					<div class="wp-block-column bh-01" style="flex-basis:90%">
 						<!-- wp:heading {"level":3,"placeholder":"Section header text","className":"is-style-max-width-100"} -->
-						<h3 class="is-style-max-width-100">Latest news and
-							insights from our end user community</h3>
+						<h2 class="is-style-max-width-100">Latest news and
+							insights from our end user community</h2>
 						<!-- /wp:heading -->
 					</div>
 					<!-- /wp:column -->
@@ -138,8 +138,8 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 				<!-- /wp:spacer -->
 
 				<!-- wp:heading {"level":3,"textColor":"white"} -->
-				<h3 class="has-white-color has-text-color">End user
-					representatives</h3>
+				<h2 class="has-white-color has-text-color">End user
+					representatives</h2>
 				<!-- /wp:heading -->
 
 				<div class="enduser-people-wrapper hide-descriptions">
