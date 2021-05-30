@@ -481,7 +481,7 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 						<!-- Name  -->
 						<h4 class="people-title">Dave Zolotusky</h4>
 						<!-- Company  -->
-						<h5 class="people-company">(Spotify), End User appointed
+						<h5 class="people-company">(Spotify) End User appointed
 							TOC</h5>
 						<div class="people-excerpt">
 							<p>Dave is an engineer in Spotify’s Platform team, where his focus has been core infrastructure, the data platform, and Spotify’s use of cloud services</p>
@@ -596,7 +596,7 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 						<!-- Name  -->
 						<h4 class="people-title">Ricardo Rocha</h4>
 						<!-- Company  -->
-						<h5 class="people-company">(CERN), End User appointed
+						<h5 class="people-company">(CERN) End User appointed
 							TOC</h5>
 						<div class="people-excerpt">
 							<p>Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition…</p>
@@ -695,7 +695,7 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 						<!-- Name  -->
 						<h4 class="people-title">Erin Boyd</h4>
 						<!-- Company  -->
-						<h5 class="people-company">(Apple), TOC from an End User
+						<h5 class="people-company">(Apple) TOC from an End User
 							organization</h5>
 						<div class="people-excerpt">
 							<p>I have been an active member of the TOC as a contributor from it’s inception. I have led and participated discussions on how to improve the impact of the CNCF through the…</p>
