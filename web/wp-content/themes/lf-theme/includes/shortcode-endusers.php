@@ -284,3 +284,47 @@ function add_eu_pricing_shortcode() {
 
 }
 add_shortcode( 'eu_pricing', 'add_eu_pricing_shortcode' );
+
+/**
+ * Add End User Representatives shortcode.
+ *
+ * @param array $atts Attributes.
+ */
+function add_eu_reps( $atts ) {
+
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'person_ids' => '', // set default.
+		),
+		$atts,
+		'eu_reps'
+	);
+
+	if ( ! $atts['person_ids'] ) {
+		return;
+	}
+	$ids = explode( ',', $atts['person_ids'] );
+	ob_start();
+	echo '<div class="enduser-people-wrapper hide-descriptions">';
+
+	foreach ( $ids as $id ) {
+		$args = array(
+			'p'         => $id,
+			'post_type' => 'lf_person',
+		);
+		$query = new WP_Query( $args );
+
+		if ( $query->have_posts() ) {
+			$query->the_post();
+			get_template_part( 'components/people-block' );
+		}
+		wp_reset_postdata();
+	}
+	echo '</div>';
+
+	$block_content = ob_get_clean();
+	return $block_content;
+
+}
+add_shortcode( 'eu_reps', 'add_eu_reps' );
