@@ -133,7 +133,7 @@ if ( ! is_admin() ) {
 
 /**
  * The WP REST API is cached heavily by Pantheon so we need to explicitly exclude certain calls from the cache.
- * From https://pantheon.io/docs/mu-plugin#wp-rest-api-code-classlanguage-textwp-jsoncode-endpoints-cache.
+ * From https://pantheon.io/docs/mu-plugin#wp-rest-api-wp-json-endpoints-cache.
  */
 $regex_json_path_patterns = array(
 	'#^/wp-json/post-meta-controls/v1/?#',
