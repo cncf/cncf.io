@@ -5,8 +5,8 @@ set -ex
 
 TERMINUS_DOES_MULTIDEV_EXIST()
 {
-    # Return 0 (true in shell scripts) if on master since dev always exists
-    if [[ ${CIRCLE_BRANCH} == "master" ]]
+    # Return 0 (true in shell scripts) if on main since dev always exists
+    if [[ ${CIRCLE_BRANCH} == "main" ]]
     then
         return 0;
     fi
@@ -26,9 +26,9 @@ TERMINUS_DOES_MULTIDEV_EXIST()
 
 # I don't know if on non-pull requests CIRCLE_PULL_REQUEST is empty or complete
 # absent -z will return true in either cases.
-if [[ ${CIRCLE_BRANCH} != "master" && -z ${CIRCLE_PULL_REQUEST} ]];
+if [[ ${CIRCLE_BRANCH} != "main" && -z ${CIRCLE_PULL_REQUEST} ]];
 then
-    echo -e "CircleCI will only deploy to Pantheon if on the master branch or creating a pull requests.\n"
+    echo -e "CircleCI will only deploy to Pantheon if on the main branch or creating a pull requests.\n"
     exit 0;
 fi
 

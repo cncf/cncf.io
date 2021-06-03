@@ -11,11 +11,11 @@ set -ex
 # See: https://discuss.circleci.com/t/circle-2-0-global-environment-variables/8681
 #=====================================================================================================================
 echo 'export PATH=$PATH:$HOME/bin:$HOME/terminus/bin' >> $BASH_ENV
-echo 'export BRANCH=$(echo $CIRCLE_BRANCH | grep -v '"'"'^\(master\|[0-9]\+.x\)$'"'"')' >> $BASH_ENV
+echo 'export BRANCH=$(echo $CIRCLE_BRANCH | grep -v '"'"'^\(main\|[0-9]\+.x\)$'"'"')' >> $BASH_ENV
 echo 'export PR_ENV=${BRANCH:+pr-$BRANCH}' >> $BASH_ENV
 echo 'export CIRCLE_ENV=ci-$CIRCLE_BUILD_NUM' >> $BASH_ENV
 # If we are on a pull request
-if [[ $CIRCLE_BRANCH != "master" && -n ${CIRCLE_PULL_REQUEST+x} ]]
+if [[ $CIRCLE_BRANCH != "main" && -n ${CIRCLE_PULL_REQUEST+x} ]]
 then
 	# Then use a pr- branch/multidev
 	PR_NUMBER=${CIRCLE_PULL_REQUEST##*/}
@@ -23,7 +23,7 @@ then
 	echo "export DEFAULT_ENV=pr-${PR_NUMBER}" >> $BASH_ENV
 else
 	# otherwise make the branch name multidev friendly
-	if [[ $CIRCLE_BRANCH == "master" ]]
+	if [[ $CIRCLE_BRANCH == "main" ]]
 	then
 		echo "export DEFAULT_ENV=dev" >> $BASH_ENV
 	else
