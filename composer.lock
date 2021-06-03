@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8481736e0fe63398d7fa6e4aea121510",
+    "content-hash": "c0fed7dcc3d4fc7403e3eff0fbcfa1da",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
-            "version": "dev-master",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
@@ -30,7 +30,7 @@
             ],
             "description": "Must Use (MU) plugins used to power WordPress sites cncf.io, lfph.io, and possibly others.",
             "support": {
-                "source": "https://github.com/cncf/wp-mu-plugins/tree/master",
+                "source": "https://github.com/cncf/wp-mu-plugins/tree/main",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
             "time": "2021-06-02T11:33:51+00:00"
