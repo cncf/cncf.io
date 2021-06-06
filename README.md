@@ -3,7 +3,7 @@
 
 # CNCF.io Developer Instructions
 
-CNCF.io runs in a similar way to  LFEvents -[LFEvents Developer Instructions](https://github.com/LF-Engineering/lfevents).
+CNCF.io runs in a similar way to  [LFEvents](https://github.com/LF-Engineering/lfevents).
 
 -----
 
