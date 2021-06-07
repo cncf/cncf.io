@@ -33,7 +33,7 @@ if ( $cn ) {
 	$case_study_type            = get_post_meta( get_the_ID(), 'lf_case_study_type', true );
 	$case_study_type_additional = get_post_meta( get_the_ID(), 'lf_case_study_type_additional', true );
 
-// new.
+	// new.
 	$case_study_long_title            = get_post_meta( get_the_ID(), 'lf_case_study_long_title', true );
 	$case_study_key_stat            = get_post_meta( get_the_ID(), 'lf_case_study_key_stat', true );
 	$case_study_key_stat_label            = get_post_meta( get_the_ID(), 'lf_case_study_key_stat_label', true );
@@ -66,7 +66,7 @@ if ( $cn ) {
 
 <!-- stat  -->
 <?php if ( $case_study_key_stat || $case_study_key_stat_label ) : ?>
-<p class="case-study-stat"><span><?php echo esc_html($case_study_key_stat); ?></span> <?php echo esc_html($case_study_key_stat_label); ?>
+<p class="case-study-stat"><span><?php echo esc_html( $case_study_key_stat ); ?></span> <?php echo esc_html( $case_study_key_stat_label ); ?>
 </p>
 <?php endif; ?>
 
@@ -92,7 +92,8 @@ if ( $cn ) {
 					<?php
 				}
 				if ( $case_study_type_additional ) {
-					?>&#44;&nbsp;<a class="" title="See all <?php echo esc_attr( $case_study_type_additional ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type_additional ); ?></a>
+					?>
+					&#44;&nbsp;<a class="" title="See all <?php echo esc_attr( $case_study_type_additional ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type_additional ); ?></a>
 					<?php
 				}
 			} else {
@@ -101,7 +102,7 @@ if ( $cn ) {
 					// limits to max 2 projects.
 					$projects = array_slice( $projects, 0, 2 );
 
-					$numItems = count($projects);
+					$numItems = count( $projects );
 					$i = 0;
 					// output for each.
 					foreach ( $projects as $key => $project ) {
@@ -112,11 +113,11 @@ if ( $cn ) {
 							$projects_link = '/case-studies?_sft_lf-project=' . $project->slug;
 						}
 						?>
-			<a class="" title="See all <?php echo esc_attr( $project->name ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $project->name ); ?></a><?php
-												if(++$i < $numItems) {
-													echo ", ";
-												  }
-
+			<a class="" title="See all <?php echo esc_attr( $project->name ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $project->name ); ?></a>
+												  <?php
+													if ( ++$i < $numItems ) {
+														echo ', ';
+													}
 					}
 				}
 			}
@@ -130,8 +131,8 @@ if ( $cn ) {
 
 <div class="marketing-title-and-cta">
 
-<?php if ($case_study_long_title):  ?>
-<p class="case-study-long-title"><?php echo esc_html($case_study_long_title); ?></p>
+<?php if ( $case_study_long_title ) : ?>
+<p class="case-study-long-title"><?php echo esc_html( $case_study_long_title ); ?></p>
 <?php endif; ?>
 <?php if ( $read_case_study ) : ?>
 		<a class="case-study-cta button on-image"

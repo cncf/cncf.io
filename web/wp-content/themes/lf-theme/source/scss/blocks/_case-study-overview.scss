@@ -1,69 +1,79 @@
 .wp-block-lf-case-study-overview {
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
 }
 
 .case-study-overview {
-    display: flex;
-    flex-direction: column-reverse;
-    height: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+	height: 100%;
 
-    @media (min-width: 800px) {
-        flex-direction: row;
-    }
+	@media (min-width: 800px) {
+		flex-direction: row;
+	}
 }
 
 .case-study-intro-wrapper {
-    flex-grow: 1;
+	flex-grow: 1;
 
-    h3 {
-        margin-bottom: 1.5rem;
-    }
+	h3 {
+		margin-bottom: 1.5rem;
+	}
 }
 
 .case-study-overview-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: $sm-padding;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: $sm-padding;
 
-    @media (min-width: 800px) {
-        padding-left: 1em;
-        padding-right: 1em;
-        padding-bottom: 1em;
-        flex-direction: column;
-        flex-grow: 0;
-        flex-shrink: 0;
-        width: 230px;
-        margin-left: 3rem;
-        margin-bottom: 0;
-    }
+	@media (min-width: 800px) {
+		padding-left: 1em;
+		padding-right: 1em;
+		padding-bottom: 1em;
+		flex-direction: column;
+		flex-grow: 0;
+		flex-shrink: 0;
+		width: 230px;
+		margin-left: 3rem;
+		margin-bottom: 0;
+	}
 
-    p {
-        margin-top: 0em;
-        margin-bottom: 0.5rem;
+	p {
+		margin-top: 0em;
+		margin-bottom: 0.5rem;
 
-        @media (min-width: 1000px) {
-            margin-bottom: 1rem;
-        }
+		@media (min-width: 1000px) {
+			margin-bottom: 1rem;
+		}
 
-        font-weight: 500;
-        text-transform: uppercase;
-    }
+		font-weight: 500;
+		text-transform: uppercase;
+	}
 
-    >div {
-        padding-right: 1.5rem;
+	> div {
+		padding-right: 1.5rem;
 
-        @media (min-width: 1000px) {
-            padding-right: 1rem;
-        }
+		@media (min-width: 1000px) {
+			padding-right: 1rem;
+		}
 
-        padding-bottom: 0.5rem;
-    }
+		padding-bottom: 0.5rem;
+	}
 
-    .skew-box {
-        margin-right: 5px;
-        margin-bottom: 10px;
-        display: inline-block;
-    }
+	.skew-box {
+		margin-right: 5px;
+		margin-bottom: 10px;
+		display: inline-block;
+	}
 }
+
+// .projects-column {
+// 	align-content: center;
+// }
+
+// .cs-project-icon {
+// 	width: 22%;
+// 	margin: 0.5em;
+// 	display: inline-block;
+// }

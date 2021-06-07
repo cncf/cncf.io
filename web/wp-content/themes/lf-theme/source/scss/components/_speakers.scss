@@ -1,68 +1,67 @@
 .speakers-wrapper {
-    display: grid;
-    grid-row-gap: 1rem;
-    grid-column-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+	display: grid;
+	grid-row-gap: 1rem;
+	grid-column-gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
 
-    @media (min-width: 600px) {
-        grid-row-gap: 1.5rem;
-        grid-column-gap: 1.5rem;
-        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    }
+	@media (min-width: 600px) {
+		grid-row-gap: 1.5rem;
+		grid-column-gap: 1.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	}
 }
 
 .speaker {
-    background-color: $tertiary-color;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+	background-color: $tertiary-color;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .speaker-photo {
-    img {
-        width: 100%;
-        height: auto;
-        border: 1px solid $grey-200;
-    }
+	img {
+		width: 100%;
+		height: auto;
+		border: 1px solid $grey-200;
+	}
 }
 
 .speaker-title {
-    margin-bottom: auto;
+	margin-bottom: auto;
 
-    a {
-        text-transform: capitalize;
-    }
+	a {
+		text-transform: capitalize;
+	}
 }
 
 .speaker-location {
-    color: $white;
+	color: $white;
 }
 
 .speaker-badges {
-    margin-top: 1rem;
-    display: flex;
-    height: 30px;
+	margin-top: 1rem;
+	display: flex;
+	height: 30px;
 
-    .column:not(:last-of-type) {
-        margin-right: 0.5em;
+	.column:not(:last-of-type) {
+		margin-right: 0.5em;
+	}
 
-    }
+	svg {
+		height: 1.5em;
+		width: auto;
+		opacity: 0.75;
 
-    svg {
-        height: 1.5em;
-        width: auto;
-        opacity: 0.75;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
 // makes UM profile bigger/
 .um-profile-body {
-    max-width: 1000px;
+	max-width: 1100px;
 }
 
 // Hide contact form when editing profile
@@ -71,290 +70,280 @@
 .um-page-account,
 .um-page-login,
 .um-page-password-reset {
+	.gform_wrapper .gform_footer {
+		margin: 0;
+		padding: 0;
 
-    .gform_wrapper .gform_footer {
-        margin: 0;
-        padding: 0;
+		input.button {
+			margin-top: 1rem;
+		}
+	}
 
-        input.button {
-            margin-top: 1rem;
-        }
+	.gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+		line-height: 100% !important;
+	}
 
-    }
+	// Hides Contact Form when editing.
+	.um-profile.um-editing.um-role-um_speaker {
+		.um-field-type_shortcode {
+			display: none;
+		}
 
-    .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='image']):not([type='file']) {
-        line-height: 100% !important;
-    }
+		.um-col-alt {
+			display: flex;
+		}
+	}
 
-    // Hides Contact Form when editing.
-    .um-profile.um-editing.um-role-um_speaker {
-        .um-field-type_shortcode {
-            display: none;
-        }
+	.um-form {
+		.um-button,
+		.um-alt,
+		.um_account_submit_privacy,
+		input[type="submit"].um-button {
+			border: 0; // reset
+			padding: 0px; // reset
+			width: auto;
+			cursor: pointer;
+			text-decoration: none;
+			display: inline-block;
+			text-align: center;
+			padding: 0.7rem 1.1rem;
+			white-space: nowrap;
+			text-transform: uppercase !important;
+			background-color: $primary-color;
+			color: $white;
+			transition: all 0.25s ease-out;
+			margin-right: 1em;
+			border-radius: 0 !important;
+			font-size: 14px !important;
+			min-width: 150px;
+			box-shadow: none;
 
+			a {
+				color: $white;
+			}
 
-        .um-col-alt {
-            display: flex;
-        }
-    }
+			&:active {
+				position: relative;
+				top: 1px;
+			}
 
-    .um-form {
+			&:hover {
+				background-color: lighten($primary-color, 5%);
+				color: $white;
+			}
+		}
+	}
 
-        .um-button,
-        .um-alt,
-        .um_account_submit_privacy,
-        input[type=submit].um-button {
-            border: 0; // reset
-            padding: 0px; // reset
-            width: auto;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            padding: 0.7rem 1.1rem;
-            white-space: nowrap;
-            text-transform: uppercase !important;
-            background-color: $primary-color;
-            color: $white;
-            transition: all 0.25s ease-out;
-            margin-right: 1em;
-            border-radius: 0 !important;
-            font-size: 14px !important;
-            min-width: 150px;
-            box-shadow: none;
+	.um-header {
+		padding: 0;
+		border-bottom: 0;
+	}
 
-            a {
-                color: $white;
-            }
+	.um-alt {
+		background-color: $secondary-color;
+		margin-left: 2em;
+		color: $black;
 
-            &:active {
-                position: relative;
-                top: 1px;
-            }
+		&:hover {
+			background-color: lighten($secondary-color, 5%);
+			color: $black;
+		}
 
-            &:hover {
-                background-color: lighten($primary-color, 5%);
-                color: $white;
-            }
+		&.um-button {
+			color: $black;
 
-        }
-    }
+			&:hover {
+				color: $black;
+			}
+		}
+	}
 
-    .um-header {
-        padding: 0;
-        border-bottom: 0;
-    }
+	.um-half {
+		width: initial;
+	}
 
-    .um-alt {
-        background-color: $secondary-color;
-        margin-left: 2em;
-        color: $black;
-
-        &:hover {
-            background-color: lighten($secondary-color, 5%);
-            color: $black;
-        }
-
-        &.um-button {
-            color: $black;
-
-            &:hover {
-                color: $black;
-            }
-        }
-    }
-
-    .um-half {
-        width: initial;
-    }
-
-    div.uimob960 .um-profile-photo a.um-profile-photo-img {
-        top: initial !important;
-    }
+	div.uimob960 .um-profile-photo a.um-profile-photo-img {
+		top: initial !important;
+	}
 }
 
 .speakers-subnav {
-    width: 100%;
-    margin-bottom: 2rem;
-    line-height: 1.5;
+	width: 100%;
+	margin-bottom: 2rem;
+	line-height: 1.5;
 }
 
 .um-profile-meta {
-    text-align: center;
+	text-align: center;
 
-    .um-meta-text {
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        margin: 0;
-        line-height: 1.5;
-        font-size: initial;
-        margin-top: 1rem;
-    }
+	.um-meta-text {
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		margin: 0;
+		line-height: 1.5;
+		font-size: initial;
+		margin-top: 1rem;
+	}
 }
 
 @media (max-width: 560px) {
-    .um.um-profile .um-header .um-meta-text {
-        padding: 0px !important;
-    }
+	.um.um-profile .um-header .um-meta-text {
+		padding: 0px !important;
+	}
 }
 
 .affiliations-box {
-    margin-top: 2em;
+	margin-top: 2em;
 
-    label {
-        font-size: 1.125em;
-        font-weight: 500;
-        color: #444444;
-    }
+	label {
+		font-size: 1.125em;
+		font-weight: 500;
+		color: #444444;
+	}
 }
 
 .affiliations-box-badges {
-    display: flex;
-    padding: 1em 0;
+	display: flex;
+	padding: 1em 0;
 
-    .column {
-        display: flex;
-        margin-right: 1em;
+	.column {
+		display: flex;
+		margin-right: 1em;
 
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 
-    svg {
-        height: 3.5em;
+	svg {
+		height: 3.5em;
 
-        @media (min-width: 768px) {
-            height: 4em;
-        }
+		@media (min-width: 768px) {
+			height: 4em;
+		}
 
-        width: auto;
-    }
+		width: auto;
+	}
 }
 
 // Speakers Edit Profile Cog Size & Color.
 .um .um-profile-edit {
-    font-size: 40px;
-    height: 40px;
-    line-height: 40px;
-    z-index: 1;
+	font-size: 40px;
+	height: 40px;
+	line-height: 40px;
+	z-index: 1;
 
-    i {
-        font-size: 40px;
-        color: $primary-color;
+	i {
+		font-size: 40px;
+		color: $primary-color;
 
-        &:hover {
-            color: $primary-300;
-        }
-    }
+		&:hover {
+			color: $primary-300;
+		}
+	}
 
-    .um-icon-arrow-up-b,
-    .um-icon-arrow-right-b {
-        color: #e5e5e5;
+	.um-icon-arrow-up-b,
+	.um-icon-arrow-right-b {
+		color: #e5e5e5;
 
-        &:hover {
-            color: #e5e5e5;
-        }
-    }
+		&:hover {
+			color: #e5e5e5;
+		}
+	}
 
-    .um-dropdown-arr {
-        height: 40px;
-    }
-
-
+	.um-dropdown-arr {
+		height: 40px;
+	}
 }
 
 @media (min-width: 1200px) {
-    .um-page-user .um .um-dropdown {
-        transform: translateX(calc(-50% + 17px));
-        top: 50px !important;
-    }
+	.um-page-user .um .um-dropdown {
+		transform: translateX(calc(-50% + 17px));
+		top: 50px !important;
+	}
 }
 
 .um {
-    .um-header.no-cover {
-        display: flex;
-        flex-direction: column;
+	.um-header.no-cover {
+		display: flex;
+		flex-direction: column;
 
-        @media (min-width: 600px) {
-            flex-direction: row;
+		@media (min-width: 600px) {
+			flex-direction: row;
 
-            .um-profile-meta {
-                margin-left: 3rem;
-            }
-        }
+			.um-profile-meta {
+				margin-left: 3rem;
+			}
+		}
 
-        .um-profile-photo {
-
-            margin: 0 !important;
-            text-align: left !important;
-        }
-    }
-
-
+		.um-profile-photo {
+			margin: 0 !important;
+			text-align: left !important;
+		}
+	}
 }
 
 .um.um-profile {
-    color: #666;
-    font-size: 1em;
+	color: #666;
+	font-size: 1em;
 
-    .um-header.no-cover {
-        .um-profile-meta {
-            text-align: left !important;
-        }
+	.um-header.no-cover {
+		.um-profile-meta {
+			text-align: left !important;
+		}
 
-        .um-name {
-            display: none;
-        }
+		.um-name {
+			display: none;
+		}
 
-        .um-name a {
-            color: $black;
-            font-weight: 600 !important;
-        }
-    }
+		.um-name a {
+			color: $black;
+			font-weight: 600 !important;
+		}
+	}
 
-    .um-form {
-        .um-field-label {
-            border-bottom: none;
-            color: $black;
+	.um-form {
+		.um-field-label {
+			border-bottom: none;
+			color: $black;
 
-            label {
-                font-size: initial !important;
-                line-height: initial !important;
-            }
-        }
+			label {
+				font-size: initial !important;
+				line-height: initial !important;
+			}
+		}
 
-        .um-field.um-field-sb_bio {
-            margin-bottom: $sm-padding;
+		.um-field.um-field-sb_bio {
+			margin-bottom: $sm-padding;
 
-            .um-field-label {
-                font-size: 1.125em
-            }
-        }
+			.um-field-label {
+				font-size: 1.125em;
+			}
+		}
 
-        .um-field {
-            padding: 1rem 0 0 0;
-            line-height: 1.5;
-        }
-    }
+		.um-field {
+			padding: 1rem 0 0 0;
+			line-height: 1.5;
+		}
+	}
 }
 
 .um-page-login .um-field-area {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 // makes edit box width 100%.
 .um-page-loggedin .um.um-profile .um-header.no-cover .um-profile-meta {
-    width: 100%;
+	width: 100%;
 }
 
 .um-page-account .um-request-button,
 #um_account_submit_delete {
-    background-color: $error;
-    color: $white;
+	background-color: $error;
+	color: $white;
 }
 
 .um-page-password-reset .um-um_password_id.um {
-    max-width: 600px;
+	max-width: 600px;
 }
