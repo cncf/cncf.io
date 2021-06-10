@@ -80,6 +80,8 @@ function add_projects_shortcode( $atts ) {
 
 			$gitter = get_post_meta( get_the_ID(), 'lf_project_gitter', true );
 
+			$logo = get_post_meta( get_the_ID(), 'lf_project_logo', true );
+
 			$image = new Image();
 
 			?>
@@ -101,7 +103,7 @@ function add_projects_shortcode( $atts ) {
 				echo wp_get_attachment_image( get_post_thumbnail_id(), false, false, array( 'class' => 'project-thumbnail' ) );
 			} else {
 				?>
-				<img src="<?php $image->get_svg( 'cncf-project-icon.svg', true ); ?>"
+				<img src="<?php echo esc_url( $logo ); ?>"
 					title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
 					class="project-thumbnail">
 				<?php
@@ -114,21 +116,6 @@ function add_projects_shortcode( $atts ) {
 				<?php
 		}
 		?>
-	<h3 class="project-title">
-
-			<?php if ( $external_url ) : ?>
-		<a href="<?php echo esc_url( $external_url ); ?>" rel="noopener"
-			target="_blank" title="Visit <?php the_title(); ?>">
-				<?php
-		endif;
-			the_title();
-			if ( $external_url ) :
-				?>
-		</a>
-		<?php endif; ?>
-
-	</h3>
-
 			<?php if ( $project_category ) : ?>
 	<span class="project-category">
 				<?php echo esc_html( $project_category ); ?></span>
