@@ -16,8 +16,6 @@ function add_eu_casestudies_shortcode() {
 			$image = new Image();
 	?>
 <div class="enduser-casestudies-wrapper">
-
-
 	<div class="eucs-box background-image-wrapper">
 		<div class="eucs-box__overlay"></div>
 		<figure class="background-image-figure">
