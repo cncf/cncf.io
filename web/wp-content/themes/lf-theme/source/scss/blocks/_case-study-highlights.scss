@@ -41,7 +41,7 @@
 		flex-direction: column;
 		justify-content: center;
 		padding: 2rem 1rem;
-		border-bottom: 0.1px solid $black;
+		border-bottom: 0.1px solid $grey-400;
 
 		&:last-child {
 			border-bottom: 0px;
@@ -57,7 +57,7 @@
 			padding: 1rem;
 
 			&:nth-child(odd) {
-				border-right: 0.1px solid $black;
+				border-right: 0.1px solid $grey-400;
 			}
 
 			&:nth-child(1),
