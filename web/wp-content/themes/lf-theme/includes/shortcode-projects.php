@@ -99,15 +99,11 @@ function add_projects_shortcode( $atts ) {
 			<div class="project-thumbnail-container">
 				<?php
 			}
-			if ( has_post_thumbnail() ) {
-				echo wp_get_attachment_image( get_post_thumbnail_id(), false, false, array( 'class' => 'project-thumbnail' ) );
-			} else {
-				?>
-				<img src="<?php echo esc_url( $logo ); ?>"
-					title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
-					class="project-thumbnail">
-				<?php
-			}
+			?>
+			<img src="<?php echo esc_url( $logo ); ?>"
+				title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
+				class="project-thumbnail">
+			<?php
 			if ( $external_url ) {
 				?>
 		</a>
