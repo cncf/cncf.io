@@ -25,15 +25,15 @@
 }
 
 .project-thumbnail-container {
-	width: 150px;
-	height: 150px;
+	width: 125px;
+	height: 125px;
 	display: flex;
 }
 
 .project-thumbnail {
 	width: 100%;
-	max-width: 150px;
-	max-height: 150px;
+	max-width: 125px;
+	max-height: 125x;
 
 	&:hover {
 		opacity: 0.8;
