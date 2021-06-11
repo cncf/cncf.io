@@ -102,7 +102,7 @@ if ( $cn ) {
 					// limits to max 2 projects.
 					$projects = array_slice( $projects, 0, 2 );
 
-					$numItems = count( $projects );
+					$number_of_items = count( $projects );
 					$i = 0;
 					// output for each.
 					foreach ( $projects as $key => $project ) {
@@ -115,7 +115,7 @@ if ( $cn ) {
 						?>
 			<a class="" title="See all <?php echo esc_attr( $project->name ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $project->name ); ?></a>
 												  <?php
-													if ( ++$i < $numItems ) {
+													if ( ++$i < $number_of_items ) {
 														echo ', ';
 													}
 					}
