@@ -510,27 +510,7 @@ class="purecounter"><?php echo esc_html( $sandbox_count ); ?></span>
 
 		if ( $all_project_logos ) :
 
-			/**
-			 * Partition an array
-			 *
-			 * @param array   $array Items.
-			 * @param integer $size Number of partitions required.
-			 */
-			function partition( $array, $size ) {
-				$list_length = count( $array );
-				$size_len    = floor( $list_length / $size );
-				$size_rem    = $list_length % $size;
-				$partition   = array();
-				$mark        = 0;
-				for ( $px = 0; $px < $size; $px++ ) {
-					$incr             = ( $px < $size_rem ) ? $size_len + 1 : $size_len;
-					$partition[ $px ] = array_slice( $array, $mark, $incr );
-					$mark            += $incr;
-				}
-				return $partition;
-			}
-
-			$all_project_logos = partition( $all_project_logos, 3 );
+			$all_project_logos = LF_Utils::partition( $all_project_logos, 3 );
 			?>
 		<div class="project-slider-wrapper">
 			<?php
@@ -547,7 +527,6 @@ class="purecounter"><?php echo esc_html( $sandbox_count ); ?></span>
 					<img src="<?php echo esc_url( $project_logo ); ?>"
 						loading="lazy" alt="CNCF Hosted Project">
 				</div>
-
 					<?php
 				}
 				?>
