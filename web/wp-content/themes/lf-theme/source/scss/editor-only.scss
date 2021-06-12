@@ -69,6 +69,10 @@
 			color: $primary-color;
 			text-decoration: none;
 		}
+
+		.is-style-arrow-cta::after {
+			position: static;
+		}
 	}
 }
 

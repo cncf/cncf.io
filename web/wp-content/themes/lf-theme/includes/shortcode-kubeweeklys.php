@@ -70,7 +70,7 @@ add_shortcode( 'kubeweeklys', 'add_kubeweeklys_shortcode' );
   *
   * @param array $atts Attributes.
   */
-  function add_kubeweekly_newsletter_shortcode( $atts ) {
+function add_kubeweekly_newsletter_shortcode( $atts ) {
 	ob_start();
 	?>
 <div class="wp-block-group has-white-color has-tertiary-400-background-color has-text-color has-background kubeweekly-newsletter"><div class="wp-block-group__inner-container">

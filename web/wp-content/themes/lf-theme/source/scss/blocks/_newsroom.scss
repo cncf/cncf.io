@@ -31,6 +31,10 @@
 	flex-direction: column;
 	background-color: $white;
 
+	.home & {
+		height: 100%;
+	}
+
 	&.sticky {
 		.newsroom-image-wrapper:after {
 			content: "FEATURED";

@@ -139,3 +139,23 @@
 		}
 	}
 }
+
+.is-style-arrow-cta {
+	font-weight: 700;
+
+	&::after {
+		content: "";
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='15.815' viewBox='0 0 16 15.815'%3E%3Cpath id='arrow-right-regular' d='M7.789,34.711l-.707.707a.429.429,0,0,0,0,.606l5.54,5.54H.429A.429.429,0,0,0,0,41.993v1a.429.429,0,0,0,.429.429H12.623l-5.54,5.54a.429.429,0,0,0,0,.606l.707.707a.429.429,0,0,0,.606,0L15.874,42.8a.429.429,0,0,0,0-.606L8.4,34.711A.428.428,0,0,0,7.789,34.711Z' transform='translate(0 -34.586)' fill='%23f0a'/%3E%3C/svg%3E");
+		margin-left: 0.2em; // connects to word.
+		padding-left: 1.5em;
+		background-size: 0.8em 0.9em;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	&.has-white-color {
+		&::after {
+			filter: brightness(0) saturate(100%) invert(100%);
+		}
+	}
+}
