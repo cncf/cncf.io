@@ -1,27 +1,20 @@
-/* Specific Print Styles */
+/* Print Styles */
 
 @media print {
 	* {
 		transition: none !important;
 	}
 
-	img {
-		max-width: 100% !important;
-	}
-
 	.wrap {
 		padding: 0em !important;
 	}
 
-	body,
-	.container {
-		color: black;
-		background: white;
-	}
-
 	.site-header {
 		position: static;
-		background: white;
+	}
+
+	.container-full-width {
+		padding: 10px;
 	}
 
 	a:after {
@@ -29,11 +22,6 @@
 		background-size: 0 !important;
 		padding-left: 0 !important;
 		margin-left: 0 !important;
-	}
-
-	.menu-container-with-search,
-	.hamburger {
-		display: none !important;
 	}
 
 	.hello-bar,
@@ -44,52 +32,25 @@
 	}
 
 	.hero {
-		// page-break-after: avoid !important;
-		height: unset !important;
-
 		&.alignfull {
-			position: initial;
 			right: unset;
 			left: unset;
 			margin-right: unset;
 			margin-left: unset;
-			width: unset;
+			width: 100%;
 			max-width: unset;
-			// margin-bottom: 0;
-		}
-
-		&.background-image-wrapper {
-			.hero-parent-link {
-				// margin-top: 2rem;
-				a {
-					color: black;
-				}
-			}
-		}
-
-		// removes image from hero
-		.background-image-figure {
-			display: none;
 		}
 
 		.background-image-text-overlay {
-			padding-left: 0;
-			padding-top: 3rem !important;
-			padding-bottom: 0rem !important;
-
-			p,
-			h1,
-			a {
-				color: black !important;
-			}
+			margin-left: 25px !important;
+			padding-right: 50px;
 		}
 	}
 
 	.footer {
-		padding-top: 1rem;
+		padding-top: 0rem;
 		padding-bottom: 1rem;
-		color: #999;
-		background-color: white;
+		color: white;
 
 		.newsletter,
 		.social-links,
@@ -102,57 +63,4 @@
 	.case-study-subscription-block {
 		display: none !important;
 	}
-
-	.case-study-highlights,
-	.case-study-highlights-wrapper {
-		background-color: white;
-	}
-
-	.case-study-highlights-title,
-	.case-study-highlights-wrapper,
-	.case-study-highlight-text {
-		padding: 0;
-	}
-
-	.case-study-overview {
-		flex-direction: column-reverse;
-	}
-
-	.case-study-overview-wrapper {
-		background-color: white !important;
-		margin-left: 0 !important;
-		// any more width and it is pushed to a new page.
-		width: 368px;
-		> div {
-			background-color: white !important;
-			padding: 0rem;
-		}
-	}
-
-	.single-lf_case_study .hero h1 {
-		font-size: 2em;
-	}
-
-	// Removed this page-break-inside as it just wasnt working.
-	// .single-lf_case_study,
-	// .case-study-single,
-	// .entry-content,
-	// .container.wrap {
-	// 	page-break-inside: avoid !important;
-	// }
-
-	// .case-study-intro-wrapper,
-	// .wp-block-lf-case-study-overview,
-	// .case-study-overview {
-	// 	page-break-inside: always !important;
-	// }
-
-	// img,
-	// p,
-	// h3,
-	// blockquote {
-	// 	page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
-	// 	page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
-	// 	page-break-inside: avoid; /* or 'auto' */
-	// }
 }
