@@ -67,7 +67,11 @@ add_shortcode( 'eu_latest', 'add_eu_latest_shortcode' );
   */
 function add_eu_pricing_shortcode() {
 	ob_start();
+
+	// This is loaded for the icons in the pricing table.
+	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', array(), filemtime( get_template_directory() . '/build/global.js' ), 'all' );
 	?>
+
 <div class="enduser-pricing-wrapper">
 
 <!-- column 1 -->
@@ -79,7 +83,6 @@ function add_eu_pricing_shortcode() {
 
 <div class="tbody">
 <ul>
-
 <li><i class="fas fa-envelope"></i>Private mailing list and calls to meet other cloud native end users</li>
 <li><i class="fas fa-calendar-alt"></i>Unlimited Virtual KubeCon tickets</li>
 <li><i class="fas fa-ticket-alt"></i>5 KubeCon in-person tickets (2 tickets for organization with &lt;300 employees)</li>
@@ -139,13 +142,9 @@ function add_eu_pricing_shortcode() {
 <div class="tbody">
 <ul>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Silver, plus:</li>
-
 <li><i class="fas fa-podium"></i>KubeCon keynote mention upon joining </li>
-
 <li><i class="fas fa-newspaper"></i>Personalized press release upon joining</li>
-
 <li><i class="fas fa-handshake"></i>Quarterly executive engagement with CNCF leadership team</li>
-
 <li><i class="fab fa-youtube"></i>4 online programs a quarter  (on-demand, YouTube, live streams) to build thought leadership</li>
 </ul>
 </div>
@@ -171,19 +170,12 @@ function add_eu_pricing_shortcode() {
 <div class="tbody">
 <ul>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Gold, plus:</li>
-
 <li><i class="fal fa-dharmachakra"></i>Board seat on CNCF Governing Board</li>
-
 <li><i class="fas fa-podium"></i>Exec invite to join a KubeCon keynote upon joining</li>
-
 <li><i class="fas fa-handshake"></i>Personalized executive engagement from CNCF leadership team</li>
-
 <li><i class="fas fa-location-circle"></i>Guidance on open source strategy - e.g. donating a project, running an open source program office</li>
-
 <li><i class="fas fa-user-plus"></i>Recruiting recommendations and DE&I guidance</li>
-
 <li><i class="fas fa-handshake"></i>Personalized executive engagement from LF leadership team</li>
-
 <li><i class="fab fa-youtube"></i>Exclusive live webinars with CNCF online programs</li>
 </ul>
 </div>
@@ -207,7 +199,7 @@ function add_eu_pricing_shortcode() {
 <div class="supporter-cta">
 <!-- wp:spacer {"height":20} -->
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer show-desktop-only"></div>
-				<!-- /wp:spacer -->
+<!-- /wp:spacer -->
 <a href="https://www.cncf.io/endusersupporter" class="button tertiary-color stretch">Join as Supporter</a>
 </div>
 
