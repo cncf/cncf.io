@@ -11,10 +11,12 @@
 
 	.site-header {
 		position: static;
-	}
-
-	.container-full-width {
-		padding: 10px;
+		margin-top: 1rem;
+		.container-full-width {
+			max-width: 100% !important;
+			justify-content: flex-start !important;
+			align-content: flex-start;
+		}
 	}
 
 	a:after {
@@ -27,11 +29,16 @@
 	.hello-bar,
 	#cookie-banner,
 	.back-to-top,
-	.wp-block-embed-youtube {
+	.wp-block-embed-youtube,
+	.header-search,
+	.header-cta {
 		display: none;
 	}
 
 	.hero {
+		height: unset !important;
+		min-height: 175px !important;
+
 		&.alignfull {
 			right: unset;
 			left: unset;
@@ -39,18 +46,20 @@
 			margin-left: unset;
 			width: 100%;
 			max-width: unset;
+			height: 103.1%;
 		}
 
 		.background-image-text-overlay {
 			margin-left: 25px !important;
-			padding-right: 50px;
+			padding-right: 50px !important;
+			max-width: calc(100% - 50px);
 		}
 	}
 
 	.footer {
-		padding-top: 0rem;
-		padding-bottom: 1rem;
-		color: white;
+		margin-top: 2em !important;
+		padding: 1rem !important;
+		color: white !important;
 
 		.newsletter,
 		.social-links,
@@ -58,9 +67,23 @@
 		.copyright-text p:last-child {
 			display: none;
 		}
+
+		.copyright-text {
+			margin-top: 0;
+		}
 	}
 
 	.case-study-subscription-block {
 		display: none !important;
+	}
+
+	.single-lf_case_study .hero h1 {
+		font-size: 1.8em;
+	}
+
+	.wp-block-lf-case-study-highlights,
+	.wp-block-quote {
+		display: block;
+		page-break-inside: avoid;
 	}
 }
