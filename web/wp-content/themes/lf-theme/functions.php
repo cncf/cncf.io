@@ -96,9 +96,6 @@ require_once 'includes/shortcode-homepage-casestudies.php';
 // YouTube Playlist shortcode.
 require_once 'includes/shortcode-eu-playlist.php';
 
-// End users case studies.
-require_once 'includes/shortcode-eu-casestudies.php';
-
 // Who we are metrics shortcode.
 require_once 'includes/shortcode-whoweare-metrics.php';
 

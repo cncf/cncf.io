@@ -15,8 +15,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 <div class="home-hero__col1">
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 
-	<h1>Building sustainable ecosystems for cloud native software
-	</h1>
+	<h1>Building sustainable ecosystems for cloud native software</h1>
 	<ul class="data-display no-style h4">
 		<li><span><?php echo esc_html( round( $metrics['contributors'] / 1000 ) ); ?>K+</span> Contributors</li>
 		<li><span><?php echo esc_html( round( $metrics['contributions'] / 1000000, 1 ) ); ?>M+</span> Contributions</li>
