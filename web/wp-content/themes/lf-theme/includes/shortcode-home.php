@@ -8,7 +8,7 @@
  */
 
  /**
-  * Add shortcode.
+  * Display Case Studies rotator banner on home page.
   * [homepage-casestudies ids="34,22,122"]
   *
   * @param array $atts Attributes.
@@ -44,11 +44,9 @@ function homepage_casestudies_shortcode( $atts ) {
 	?>
 
 	<figure class="background-image-figure">
-
 	<?php
 	LF_Utils::display_responsive_images( $image, 'case-study-640', '600px' ); // srcset.
 	?>
-
 	</figure>
 
 	<div class="wrap background-image-text-overlay">

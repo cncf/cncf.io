@@ -1,6 +1,6 @@
 <?php
 /**
- * Latest End Users Shortcode
+ * Shortcodes for End Users
  *
  * @package WordPress
  * @subpackage lf-theme
@@ -8,7 +8,7 @@
  */
 
  /**
-  * Add Latest End Users shortcode.
+  *  Latest End Users shortcode.
   *
   * @param array $atts Attributes.
   */
@@ -63,7 +63,7 @@ add_shortcode( 'eu_latest', 'add_eu_latest_shortcode' );
 
 
  /**
-  * Add Latest End User Pricing Table shortcode.
+  * End Users Pricing Table shortcode.
   */
 function add_eu_pricing_shortcode() {
 	ob_start();
@@ -100,10 +100,8 @@ function add_eu_pricing_shortcode() {
 </div>
 <!-- column 1 ends -->
 
-
 <!-- column 2 -->
 <div class="eup-column col2">
-
 <div class="thead">
 <h4>Silver Member</h4>
 </div>
@@ -131,7 +129,6 @@ function add_eu_pricing_shortcode() {
 </div>
 <!-- column 2 ends -->
 
-
 <!-- column 3 -->
 <div class="eup-column col3">
 
@@ -157,9 +154,6 @@ function add_eu_pricing_shortcode() {
 </div>
 <!-- column 3 ends -->
 
-
-
-
 <!-- column 4 -->
 <div class="eup-column col4">
 
@@ -183,9 +177,7 @@ function add_eu_pricing_shortcode() {
 <div class="tfoot">
 <h4 class="main-price">$370,000</h4>
 <p>Minimum 3-year commitment</p>
-
 </div>
-
 </div>
 <!-- column 4 ends -->
 
@@ -264,8 +256,6 @@ function add_eu_pricing_shortcode() {
 </table>
 </figure>
 <!-- /wp:table -->
-
-
 				</div>
 			</div>
 		</div>
@@ -278,7 +268,7 @@ function add_eu_pricing_shortcode() {
 add_shortcode( 'eu_pricing', 'add_eu_pricing_shortcode' );
 
 /**
- * Add End User Representatives shortcode.
+ * End User Representatives shortcode.
  *
  * @param array $atts Attributes.
  */
@@ -320,3 +310,80 @@ function add_eu_reps( $atts ) {
 
 }
 add_shortcode( 'eu_reps', 'add_eu_reps' );
+
+/**
+  * End User Playlist shortcode.
+  *
+  * @param array $atts Attributes.
+  */
+  function add_eu_playlist_shortcode( $atts ) {
+
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'count' => 2, // set default.
+			'key' => '',
+		),
+		$atts,
+		'eu_playlist'
+	);
+
+	// need to enqueue youtube lite script.
+	wp_enqueue_script(
+		'youtube-lite-js',
+		home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
+		is_admin() ? array( 'wp-editor' ) : null,
+		filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
+		true
+	);
+
+	$count = $atts['count'];
+	$key = $atts['key'];
+
+	if ( ! is_int( $count ) || ! $key ) {
+		return;
+	}
+	$eu_playlist = get_transient( 'cncf_eu_playlist' );
+	if ( false === $eu_playlist ) {
+
+		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40&key=' . $key );
+		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
+			return;
+		}
+		$eu_playlist = wp_remote_retrieve_body( $request );
+
+		set_transient( 'cncf_eu_playlist', $eu_playlist, 6 * HOUR_IN_SECONDS );
+	}
+	$eu_playlist = json_decode( $eu_playlist );
+
+	ob_start();
+	?>
+<section class="end-users-playlist">
+	<?php
+	for ( $i = 0; $i < $count; $i++ ) {
+		if ( array_key_exists( $i, $eu_playlist->items ) ) {
+
+			$pub_date = new DateTime( $eu_playlist->items[ $i ]->contentDetails->videoPublishedAt );
+
+			?>
+	<div class="newsroom-post-wrapper">
+<div class="">
+<div class="wp-block-lf-youtube-lite">
+<lite-youtube videoid="<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>">
+</lite-youtube></div></div>
+
+<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank" title="<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->title ); ?> "><?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->title ); ?></a></h5>
+
+<span class="newsroom-date live-icon"><?php echo esc_html( $pub_date->format( 'F j, Y' ) ); ?></span>
+</div>
+			<?php
+		}
+	}
+	?>
+
+</section>
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+add_shortcode( 'eu_playlist', 'add_eu_playlist_shortcode' );
