@@ -21,10 +21,10 @@ jQuery( document ).ready(
 		let shouldDisplay = checkSizes();
 		displaySubscription();
 
-		// check that screen is bigger than 800px and intro is larger than 750px.
+		// check that screen is bigger than 800px and intro is larger than 625px.
 		function checkSizes() {
 			let introHeight = intro.offsetHeight;
-			return ( ( $( window ).width() >= 800 ) && ( introHeight >= 750 ) );
+			return ( ( $( window ).width() >= 800 ) && ( introHeight >= 625 ) );
 		}
 
 		// Resize check for is mobile.
