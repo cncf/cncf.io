@@ -25,7 +25,7 @@
 		padding: 1rem 2rem;
 	}
 	@media (min-width: 950px) {
-		padding: 3rem 3rem 0rem 3rem;
+		padding: 2rem 2rem 0rem 2rem;
 	}
 	margin-bottom: 0;
 }
@@ -83,8 +83,8 @@
 		> div {
 			border-bottom: 0;
 			border-right: 1px solid $black;
-			padding-left: 3rem;
-			padding-right: 3rem;
+			padding-left: 2rem;
+			padding-right: 2rem;
 
 			&:last-child {
 				border-right: 0px;
