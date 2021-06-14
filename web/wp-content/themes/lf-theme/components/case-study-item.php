@@ -20,19 +20,9 @@ if ( isset( $query ) && ( 'lf_case_study_cn' === $query->query['post_type'] ) ) 
 $projects = get_the_terms( get_the_ID(), 'lf-project' );
 
 if ( $cn ) {
-
-	// get variables.
-	$case_study_type            = get_post_meta( get_the_ID(), 'lf_case_study_cn_type', true );
-	$case_study_type_additional = get_post_meta( get_the_ID(), 'lf_case_study_cn_type_additional', true );
-
 	$read_case_study = '阅读 案例研究';
 
 } else {
-
-	// get variables.
-	$case_study_type            = get_post_meta( get_the_ID(), 'lf_case_study_type', true );
-	$case_study_type_additional = get_post_meta( get_the_ID(), 'lf_case_study_type_additional', true );
-
 	// new.
 	$case_study_long_title            = get_post_meta( get_the_ID(), 'lf_case_study_long_title', true );
 	$case_study_key_stat            = get_post_meta( get_the_ID(), 'lf_case_study_key_stat', true );
@@ -73,59 +63,7 @@ if ( $cn ) {
 <div class="date-and-type">
 <!-- date  -->
 <p class="case-study-date date-icon"><?php echo get_the_date(); ?></p>
-
-<!-- projects used -->
-<div class="case-study-project-type">
-			<?php
-			if ( $case_study_type || $case_study_type_additional ) {
-				if ( $cn ) {
-					$projects_link = '/case-studies-cn?_sft_lf-project=' . strtolower( $case_study_type );
-					$projects_link_additional = '/case-studies-cn?_sft_lf-project=' . strtolower( $case_study_type_additional );
-				} else {
-					$projects_link = '/case-studies?_sft_lf-project=' . strtolower( $case_study_type );
-					$projects_link_additional = '/case-studies?_sft_lf-project=' . strtolower( $case_study_type_additional );
-				}
-
-				if ( $case_study_type ) {
-					?>
-			<a class="" title="See all <?php echo esc_attr( $case_study_type ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type ); ?></a>
-					<?php
-				}
-				if ( $case_study_type_additional ) {
-					?>
-					&#44;&nbsp;<a class="" title="See all <?php echo esc_attr( $case_study_type_additional ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $case_study_type_additional ); ?></a>
-					<?php
-				}
-			} else {
-				// if an array and no errors.
-				if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) {
-					// limits to max 2 projects.
-					$projects = array_slice( $projects, 0, 2 );
-
-					$number_of_items = count( $projects );
-					$i = 0;
-					// output for each.
-					foreach ( $projects as $key => $project ) {
-
-						if ( $cn ) {
-							$projects_link = '/case-studies-cn?_sft_lf-project=' . $project->slug;
-						} else {
-							$projects_link = '/case-studies?_sft_lf-project=' . $project->slug;
-						}
-						?>
-			<a class="" title="See all <?php echo esc_attr( $project->name ); ?> case studies" href="<?php echo esc_url( $projects_link ); ?>"><?php echo esc_html( $project->name ); ?></a>
-												  <?php
-													if ( ++$i < $number_of_items ) {
-														echo ', ';
-													}
-					}
-				}
-			}
-			?>
-		</div>
-		</div>
-
-
+</div>
 
 </div>
 
