@@ -110,6 +110,10 @@
 		height: unset;
 	}
 
+	img.radar[src$=".svg"] {
+		height: 100.1%;
+	}
+
 	@media (min-width: 768px) {
 		&:hover {
 			img {

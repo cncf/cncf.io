@@ -375,7 +375,7 @@ function add_eu_radar_shortcode( $atts ) {
 			<div class="newsroom-image-wrapper">
 			<a class="box-link" href="<?php echo esc_url( $item_url ); ?>"
 				title="<?php echo esc_url( $eu_radar[ $i ]->name ); ?>"></a>
-			<img loading="lazy" class="archive-image" src="<?php echo esc_url( $eu_radar[ $i ]->image ); ?>" alt="">	</div>
+			<img loading="lazy" class="archive-image radar" src="<?php echo esc_url( $eu_radar[ $i ]->image ); ?>" alt="">	</div>
 
 			<h5 class="newsroom-title"><a href="<?php echo esc_url( $item_url ); ?>"
 				title="<?php echo esc_url( $eu_radar[ $i ]->name ); ?>">
