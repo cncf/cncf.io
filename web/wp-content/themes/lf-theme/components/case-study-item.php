@@ -22,15 +22,18 @@ $projects = get_the_terms( get_the_ID(), 'lf-project' );
 if ( $cn ) {
 	$read_case_study = '阅读 案例研究';
 
-} else {
 	// new.
-	$case_study_long_title            = get_post_meta( get_the_ID(), 'lf_case_study_long_title', true );
-	$case_study_key_stat            = get_post_meta( get_the_ID(), 'lf_case_study_key_stat', true );
-	$case_study_key_stat_label            = get_post_meta( get_the_ID(), 'lf_case_study_key_stat_label', true );
+	$case_study_long_title     = get_post_meta( get_the_ID(), 'lf_case_study_cn_long_title', true );
+	$case_study_key_stat       = get_post_meta( get_the_ID(), 'lf_case_study_cn_key_stat', true );
+	$case_study_key_stat_label = get_post_meta( get_the_ID(), 'lf_case_study_cn_key_stat_label', true );
 
-
+} else {
 	$read_case_study = 'Read Case Study';
 
+	// new.
+	$case_study_long_title     = get_post_meta( get_the_ID(), 'lf_case_study_long_title', true );
+	$case_study_key_stat       = get_post_meta( get_the_ID(), 'lf_case_study_key_stat', true );
+	$case_study_key_stat_label = get_post_meta( get_the_ID(), 'lf_case_study_key_stat_label', true );
 }
 ?>
 
