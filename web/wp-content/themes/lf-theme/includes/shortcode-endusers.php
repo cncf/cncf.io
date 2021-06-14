@@ -376,11 +376,11 @@ function add_eu_radar_shortcode( $atts ) {
 		<div class="wp-block-column" style="flex-basis:33.33%">
 		<div class="newsroom-post-wrapper">
 			<div class="newsroom-image-wrapper">
-			<a class="box-link" href="<?php echo esc_url( $item_url ); ?>"
+			<a class="box-link" target="_blank" rel="noopener" href="<?php echo esc_url( $item_url ); ?>"
 				title="<?php echo esc_attr( $eu_radar[ $i ]->name ); ?>"></a>
 			<img loading="lazy" class="archive-image radar" src="<?php echo esc_url( $eu_radar[ $i ]->image ); ?>" alt="">	</div>
 
-			<h5 class="newsroom-title"><a href="<?php echo esc_url( $item_url ); ?>"
+			<h5 class="newsroom-title"><a target="_blank" rel="noopener" class="external is-primary-color" href="<?php echo esc_url( $item_url ); ?>"
 				title="<?php echo esc_attr( $eu_radar[ $i ]->name ); ?>">
 				<?php echo esc_html( $title ); ?></a>
 			</h5>
