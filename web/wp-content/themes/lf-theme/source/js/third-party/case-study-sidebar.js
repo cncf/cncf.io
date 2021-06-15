@@ -5,7 +5,8 @@
  * @since 1.0.0
  */
 
-$(function(){
+$(
+	function(){
 		// intro content of case study.
 		let intro = document.querySelector( '.case-study-intro-wrapper' );
 
@@ -38,4 +39,5 @@ $(function(){
 		// Update on resize.
 		$( window ).on( 'resize',window.utils.isThrottled( displaySubscription,200,true ) );
 
-  });
+	}
+);
