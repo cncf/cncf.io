@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "2a2e90c43e3ed09d4a7d2d53ba04796c0fc94af6"
+                "reference": "c764b8d9a377e57bc5b4e2c6e43d090921e13945"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/2a2e90c43e3ed09d4a7d2d53ba04796c0fc94af6",
-                "reference": "2a2e90c43e3ed09d4a7d2d53ba04796c0fc94af6",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/c764b8d9a377e57bc5b4e2c6e43d090921e13945",
+                "reference": "c764b8d9a377e57bc5b4e2c6e43d090921e13945",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/case-study-updates",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-06-15T15:17:37+00:00"
+            "time": "2021-06-15T16:29:41+00:00"
         },
         {
             "name": "composer/installers",
@@ -936,12 +936,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "52d05fcfea23c7fc78b14217de218ed695231c87"
+                "reference": "dec8e13f092ec91fbfa1a5873d2d4a2935a5f74e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/52d05fcfea23c7fc78b14217de218ed695231c87",
-                "reference": "52d05fcfea23c7fc78b14217de218ed695231c87",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/dec8e13f092ec91fbfa1a5873d2d4a2935a5f74e",
+                "reference": "dec8e13f092ec91fbfa1a5873d2d4a2935a5f74e",
                 "shasum": ""
             },
             "conflict": {
@@ -1158,7 +1158,7 @@
                 "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
                 "ssddanbrown/bookstack": "<0.29.2",
                 "stormpath/sdk": ">=0,<9.9.99",
-                "studio-42/elfinder": "<2.1.49",
+                "studio-42/elfinder": "<2.1.58",
                 "sulu/sulu": "<1.6.34|>=2,<2.0.10|>=2.1,<2.1.1",
                 "swiftmailer/swiftmailer": ">=4,<5.4.5",
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
@@ -1295,7 +1295,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-15T10:02:54+00:00"
+            "time": "2021-06-15T16:08:57+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
