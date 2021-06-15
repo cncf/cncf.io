@@ -369,9 +369,8 @@ function add_eu_radar_shortcode( $atts ) {
 	<?php
 	for ( $i = 0; $i < $count; $i++ ) {
 		$item_url = 'https://radar.cncf.io/' . $eu_radar[ $i ]->key;
-		$comma_pos = strrpos( $eu_radar[ $i ]->name, ',' );
-		$title = substr( $eu_radar[ $i ]->name, 0, $comma_pos );
-		$date = substr( $eu_radar[ $i ]->name, $comma_pos + 1 );
+		$title    = $eu_radar[ $i ]->name;
+		$date     = $eu_radar[ $i ]->date;
 		?>
 		<div class="wp-block-column" style="flex-basis:33.33%">
 		<div class="newsroom-post-wrapper">
