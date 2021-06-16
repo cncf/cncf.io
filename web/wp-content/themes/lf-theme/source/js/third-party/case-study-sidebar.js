@@ -5,8 +5,9 @@
  * @since 1.0.0
  */
 
-$(
-	function(){
+jQuery( document ).ready(
+	function ( $ ) {
+
 		// intro content of case study.
 		let intro = document.querySelector( '.case-study-intro-wrapper' );
 
