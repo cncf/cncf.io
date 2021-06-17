@@ -439,8 +439,7 @@ function homepage_hosted_projects_shortcode() {
 	if ( $project_query->have_posts() ) {
 		while ( $project_query->have_posts() ) {
 			$project_query->the_post();
-			$stacked_logo_id  = get_post_meta( get_the_ID(), 'lf_project_stacked_logo', true );
-			$stacked_logo_url = wp_get_attachment_image_url( $stacked_logo_id );
+			$stacked_logo_url = get_post_meta( get_the_ID(), 'lf_project_logo', true );
 			if ( has_term( 'graduated', 'lf-project-stage', get_the_ID() ) ) {
 				$graduated_count++;
 				if ( $stacked_logo_url ) {
