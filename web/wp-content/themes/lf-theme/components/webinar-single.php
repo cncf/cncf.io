@@ -150,11 +150,17 @@ if ( $dat_webinar_end > $dat_now ) {
 
 
 			<?php if ( $video_id ) : ?>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
 		<iframe
 			src="https://www.youtube-nocookie.com/embed/<?php echo esc_html( $video_id ); ?>"
+			title=""
+			loading="lazy"
 			frameborder="0"
+			width="500" height="281"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen></iframe>
+			</div></figure>
 		<?php endif; ?>
 
 			<?php
