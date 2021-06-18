@@ -40,6 +40,19 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 				<div style="height:80px" aria-hidden="true"
 					class="wp-block-spacer is-style-80-responsive"></div>
 				<!-- /wp:spacer -->
+				<!-- wp:heading {"level":3,"placeholder":"Section header text","className":"is-style-max-width-100"} -->
+				<h2 class="is-style-max-width-100">Latest news and
+					insights from our end user community</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:shortcode -->
+				<?php echo do_shortcode( '[eu_radar]' ); ?>
+				<!-- /wp:shortcode -->
+
+				<!-- wp:spacer {"height":20} -->
+				<div style="height:20px" aria-hidden="true"
+					class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
 
 
 				<?php
@@ -71,29 +84,6 @@ wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/5db798d128.js', 
 
 				if ( $query->have_posts() ) {
 					?>
-
-
-				<!-- wp:columns {"className":"is-style-section-header-column"} -->
-				<div class="wp-block-columns is-style-section-header-column">
-					<!-- wp:column {"width":"90%","className":"bh-01"} -->
-					<div class="wp-block-column bh-01" style="flex-basis:90%">
-						<!-- wp:heading {"level":3,"placeholder":"Section header text","className":"is-style-max-width-100"} -->
-						<h2 class="is-style-max-width-100">Latest news and
-							insights from our end user community</h2>
-						<!-- /wp:heading -->
-					</div>
-					<!-- /wp:column -->
-
-					<!-- wp:column {"width":"10%","className":"bh-02"} -->
-					<div class="wp-block-column bh-02" style="flex-basis:10%">
-						<!-- wp:heading {"level":6,"placeholder":"View all...","className":"is-style-add-chevron-after"} -->
-						<h6 class="is-style-add-chevron-after"><a
-								href="/blog">See all blog posts</a></h6>
-						<!-- /wp:heading -->
-					</div>
-					<!-- /wp:column -->
-				</div>
-				<!-- /wp:columns -->
 				<div class="wp-block-columns better-responsive-columns">
 					<?php
 					while ( $query->have_posts() ) :

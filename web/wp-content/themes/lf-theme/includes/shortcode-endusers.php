@@ -328,3 +328,73 @@ function add_eu_reps( $atts ) {
 
 }
 add_shortcode( 'eu_reps', 'add_eu_reps' );
+
+ /**
+  * Add End User Radar shortcode.
+  *
+  * @param array $atts Attributes.
+  */
+function add_eu_radar_shortcode( $atts ) {
+
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'count' => 3, // set default.
+		),
+		$atts,
+		'eu_radar'
+	);
+
+	$count = $atts['count'];
+
+	if ( ! is_int( $count ) ) {
+		return;
+	}
+	$eu_radar = get_transient( 'cncf_eu_radar' );
+	if ( false === $eu_radar ) {
+
+		$request = wp_remote_get( 'https://radar.cncf.io/radars.json' );
+		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
+			return;
+		}
+		$eu_radar = wp_remote_retrieve_body( $request );
+
+		set_transient( 'cncf_eu_radar', $eu_radar, 12 * HOUR_IN_SECONDS );
+	}
+	$eu_radar = json_decode( $eu_radar );
+
+	ob_start();
+	?>
+	<div class="wp-block-columns better-responsive-columns">
+	<?php
+	for ( $i = 0; $i < $count; $i++ ) {
+		$item_url = 'https://radar.cncf.io/' . $eu_radar[ $i ]->key;
+		$title    = $eu_radar[ $i ]->name;
+		$date     = $eu_radar[ $i ]->date;
+		?>
+		<div class="wp-block-column" style="flex-basis:33.33%">
+		<div class="newsroom-post-wrapper">
+			<div class="newsroom-image-wrapper">
+			<a class="box-link" target="_blank" rel="noopener" href="<?php echo esc_url( $item_url ); ?>"
+				title="<?php echo esc_attr( $title ); ?>"></a>
+			<img loading="lazy" class="archive-image radar" src="<?php echo esc_url( $eu_radar[ $i ]->image ); ?>" alt="<?php echo esc_attr( $title ); ?>">	</div>
+
+			<h5 class="newsroom-title"><a target="_blank" rel="noopener" class="external is-primary-color" href="<?php echo esc_url( $item_url ); ?>"
+				title="<?php echo esc_attr( $title ); ?>">
+				<?php echo esc_html( $title ); ?></a>
+			</h5>
+			<span class="newsroom-date date-icon">
+				<?php echo esc_html( $date ); ?>
+			</span>
+		</div>
+		</div>
+		<?php
+	}
+	?>
+
+	</div>
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+add_shortcode( 'eu_radar', 'add_eu_radar_shortcode' );
