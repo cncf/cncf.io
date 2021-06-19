@@ -80,6 +80,10 @@ class Enqueue {
 			// purecounter countup.
 			wp_enqueue_script( 'purecounter', get_template_directory_uri() . '/source/js/third-party/purecounter_vanilla.js', array(), filemtime( get_template_directory() . '/source/js/third-party/purecounter_vanilla.js' ), false );
 		}
+
+		if ( is_singular( 'lf_case_study' ) || is_singular( 'lf_case_study_cn' ) ) {
+			wp_enqueue_script( 'sidebar-subscription', get_template_directory_uri() . '/source/js/third-party/case-study-sidebar.js', array( 'jquery' ), filemtime( get_template_directory() . '/source/js/third-party/case-study-sidebar.js' ), true );
+		}
 	}
 
 	/**

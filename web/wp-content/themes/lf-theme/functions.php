@@ -91,20 +91,13 @@ require_once 'includes/shortcode-projects.php';
 require_once 'includes/shortcode-endusers.php';
 
 // homepage case studies shortcode.
-require_once 'includes/shortcode-homepage-casestudies.php';
-
-// YouTube Playlist shortcode.
-require_once 'includes/shortcode-eu-playlist.php';
-
-// End users case studies.
-require_once 'includes/shortcode-eu-casestudies.php';
+require_once 'includes/shortcode-home.php';
 
 // Who we are metrics shortcode.
 require_once 'includes/shortcode-whoweare-metrics.php';
 
 // kubeweeklys shortcodes.
 require_once 'includes/shortcode-kubeweeklys.php';
-require_once 'includes/shortcode-kubeweekly-newsletter.php';
 
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';

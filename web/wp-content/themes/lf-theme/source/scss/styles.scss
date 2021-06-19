@@ -37,6 +37,7 @@
 @import "components/spotlights";
 @import "components/add-to-calendar";
 @import "components/end-users";
+@import "components/home";
 
 // Block Parts and Core Styling.
 @import "blocks/colors";
@@ -68,4 +69,5 @@
 @import "blocks/latest-jobs";
 @import "blocks/stats";
 
-@import "wip-home";
+// Print styles (load last)
+@import "core/print";

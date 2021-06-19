@@ -29,7 +29,11 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	background-color: $tertiary-color; // needs to be changeable.
+	background-color: $white;
+
+	.home & {
+		height: 100%;
+	}
 
 	&.sticky {
 		.newsroom-image-wrapper:after {

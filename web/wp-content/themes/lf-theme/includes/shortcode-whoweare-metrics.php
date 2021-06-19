@@ -8,7 +8,7 @@
  */
 
  /**
-  * Add Kubeweekly Newsletter shortcode.
+  * Who we are Metric shortcode
   *
   * @param array $atts Attributes.
   */

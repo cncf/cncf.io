@@ -182,7 +182,7 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	if ( 'lando' === $_ENV['PANTHEON_ENVIRONMENT'] ) :
 		define( 'WP_DEBUG', true );
 		define( 'WP_DEBUG_DISPLAY', true ); // false to go to log.
-		define( 'WP_DEBUG_LOG', __DIR__ . '/wp-content/uploads/debug.log' ); // Moves log file to writable location.
+		define( 'WP_DEBUG_LOG', __DIR__ . '/wp-content/debug.log' ); // Moves log file to writable location.
 		define( 'SCRIPT_DEBUG', true );
 		define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
 

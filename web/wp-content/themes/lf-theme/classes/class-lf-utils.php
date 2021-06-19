@@ -519,4 +519,24 @@ class Lf_Utils {
 		}
 		return $metrics;
 	}
+
+	/**
+	 * Partition an array
+	 *
+	 * @param array   $array Items.
+	 * @param integer $size Number of partitions required.
+	 */
+	public static function partition( $array, $size ) {
+		$list_length = count( $array );
+		$size_len    = floor( $list_length / $size );
+		$size_rem    = $list_length % $size;
+		$partition   = array();
+		$mark        = 0;
+		for ( $px = 0; $px < $size; $px++ ) {
+			$incr             = ( $px < $size_rem ) ? $size_len + 1 : $size_len;
+			$partition[ $px ] = array_slice( $array, $mark, $incr );
+			$mark            += $incr;
+		}
+		return $partition;
+	}
 }
