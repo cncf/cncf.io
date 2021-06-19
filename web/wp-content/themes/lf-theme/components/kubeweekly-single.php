@@ -8,7 +8,7 @@
  */
 
 ?>
-<section class="hero kubeweekly-single-hero">
+<section class="hero kubeweekly-single-hero" id="maincontent">
 	<div class="container wrap no-background">
 
 		<div class="wp-block-columns">

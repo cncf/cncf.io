@@ -11,7 +11,7 @@
 get_template_part( 'components/header' );
 
 ?>
-<main class="page-content">
+<main class="page-content" id="maincontent">
 	<article class="container-full-width wrap entry-content">
 		<?php
 		if ( have_posts() ) :

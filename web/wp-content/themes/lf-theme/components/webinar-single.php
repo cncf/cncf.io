@@ -78,7 +78,7 @@ if ( $dat_webinar_end > $dat_now ) {
 }
 
 ?>
-<section class="hero">
+<section class="hero" id="maincontent">
 	<div class="container wrap no-background">
 		<p class="hero-parent-link"><a href="/online-programs/"
 				title="Go to online programs">Online program</a></p>

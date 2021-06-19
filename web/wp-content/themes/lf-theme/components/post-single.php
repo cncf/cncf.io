@@ -7,7 +7,9 @@
  * @since 1.0.0
  */
 
-?><section class="hero">
+?>
+
+<section class="hero" id="maincontent">
 	<div class="container wrap no-background">
 		<?php
 		// Category of the post.

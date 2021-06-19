@@ -45,7 +45,7 @@ if ( $event_start_date ) {
 }
 
 ?>
-<section class="hero">
+<section class="hero" id="maincontent">
 	<div class="container wrap no-background">
 		<p class="hero-parent-link"><a href="/events/"
 				title="Go to Events">Event</a></p>
