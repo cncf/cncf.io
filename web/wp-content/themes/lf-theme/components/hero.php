@@ -13,7 +13,7 @@
 $options = get_option( 'lf-mu' );
 ?>
 
-<section class="hero background-image-wrapper">
+<section class="hero background-image-wrapper" id="maincontent">
 
 	<figure class="background-image-figure">
 	<?php

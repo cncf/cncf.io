@@ -20,6 +20,7 @@ endif;
 ?>
 
 <header class="site-header">
+
 	<div class="container-full-width wrap">
 
 		<?php if ( $options['header_image_id'] ) { ?>

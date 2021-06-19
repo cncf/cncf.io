@@ -9,7 +9,13 @@
 
 ?>
 
-<main class="page-content">
+<main class="page-content"
+<?php
+if ( is_front_page() ) {
+	echo ' id="maincontent"';
+}
+?>
+>
 	<article class="container wrap entry-content">
 		<?php
 		if ( have_posts() ) :

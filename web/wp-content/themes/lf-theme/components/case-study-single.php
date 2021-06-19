@@ -9,7 +9,7 @@
 
 ?>
 
-<main class="case-study-single">
+<main class="case-study-single" id="maincontent">
 	<article class="container wrap">
 		<?php
 		while ( have_posts() ) :

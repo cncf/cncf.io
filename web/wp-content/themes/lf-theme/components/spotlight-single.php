@@ -12,7 +12,7 @@ $spotlight_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', t
 $spotlight_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-spotlight-type', true );
 
 ?>
-<section class="hero">
+<section class="hero" id="maincontent">
 	<div class="container wrap no-background">
 		<p class="hero-parent-link"><a href="/spotlights/"
 				title="Go to Spotlights">Spotlight</a></p>
