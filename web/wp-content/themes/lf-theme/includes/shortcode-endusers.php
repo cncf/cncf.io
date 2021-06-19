@@ -425,14 +425,13 @@ function add_eu_radar_shortcode( $atts ) {
 
 	ob_start();
 	?>
-	<div class="wp-block-columns better-responsive-columns">
+	<section class="wp-block-lf-newsroom">
 	<?php
 	for ( $i = 0; $i < $count; $i++ ) {
 		$item_url = 'https://radar.cncf.io/' . $eu_radar[ $i ]->key;
 		$title    = $eu_radar[ $i ]->name;
 		$date     = $eu_radar[ $i ]->date;
 		?>
-		<div class="wp-block-column" style="flex-basis:33.33%">
 		<div class="newsroom-post-wrapper">
 			<div class="newsroom-image-wrapper">
 			<a class="box-link" target="_blank" rel="noopener" href="<?php echo esc_url( $item_url ); ?>"
@@ -447,12 +446,11 @@ function add_eu_radar_shortcode( $atts ) {
 				<?php echo esc_html( $date ); ?>
 			</span>
 		</div>
-		</div>
 		<?php
 	}
 	?>
 
-	</div>
+	</section>
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
