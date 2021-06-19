@@ -4,35 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ca183f1fd29dec4a0d2bd52976229bb",
+    "content-hash": "c0fed7dcc3d4fc7403e3eff0fbcfa1da",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
-            "version": "dev-case-study-updates",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "e87ceed45ebba760145caed6234505237971ae5b"
+                "reference": "cc974307fe383211002307bcc363edb810b76a7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/e87ceed45ebba760145caed6234505237971ae5b",
-                "reference": "e87ceed45ebba760145caed6234505237971ae5b",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/cc974307fe383211002307bcc363edb810b76a7c",
+                "reference": "cc974307fe383211002307bcc363edb810b76a7c",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2"
             },
+            "default-branch": true,
             "type": "wordpress-muplugin",
             "license": [
                 "MIT"
             ],
             "description": "Must Use (MU) plugins used to power WordPress sites cncf.io, lfph.io, and possibly others.",
             "support": {
-                "source": "https://github.com/cncf/wp-mu-plugins/tree/case-study-updates",
+                "source": "https://github.com/cncf/wp-mu-plugins/tree/main",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-06-17T06:18:47+00:00"
+            "time": "2021-06-19T06:49:16+00:00"
         },
         {
             "name": "composer/installers",
@@ -936,12 +937,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "5a0c8d612ebdfe223addfdd2046f80838b59cf95"
+                "reference": "ac3658667fbbdd16f2be6f0976b8527f5f9ddf6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5a0c8d612ebdfe223addfdd2046f80838b59cf95",
-                "reference": "5a0c8d612ebdfe223addfdd2046f80838b59cf95",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ac3658667fbbdd16f2be6f0976b8527f5f9ddf6d",
+                "reference": "ac3658667fbbdd16f2be6f0976b8527f5f9ddf6d",
                 "shasum": ""
             },
             "conflict": {
@@ -1295,7 +1296,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-16T18:06:48+00:00"
+            "time": "2021-06-17T16:09:58+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1456,5 +1457,5 @@
     "platform-overrides": {
         "php": "7.2"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
