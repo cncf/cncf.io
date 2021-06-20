@@ -237,8 +237,9 @@ class Lf_Utils {
 	 * @param string $image_size thumbnail name.
 	 * @param string $max_width width with unit.
 	 * @param string $class_name class to apply to img tag.
+	 * @param string $loading add lazy load attribute.
 	 */
-	public static function display_responsive_images( $image_id, $image_size, $max_width, $class_name = '' ) {
+	public static function display_responsive_images( $image_id, $image_size, $max_width, $class_name = '', $loading = 'lazy' ) {
 
 		// if no image id or not number, return.
 		if ( ! $image_id ) {
@@ -255,20 +256,23 @@ class Lf_Utils {
 		// Get the srcset with various image sizes.
 		$image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
 
+		// get the default size of the passed image sized.
+		$size = wp_get_attachment_image_src( $image_id, $image_size );
+
 		if ( $class_name ) {
 			$class_name = rtrim( esc_html( $class_name ) );
 		}
 
 		if ( ! $image_srcset ) {
 
-			$img           = '<img loading="lazy" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
+			$img           = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
 			$attachment_id = $image_id;
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
 
 		} else {
 
-			$html = '<img loading="lazy" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '" alt="' . self::get_img_alt( $image_id ) . '">';
+			$html = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '" alt="' . self::get_img_alt( $image_id ) . '">';
 
 		}
 
