@@ -1,5 +1,6 @@
 .wp-block-group {
 	&.is-style-no-padding {
+		padding: 0;
 		.wp-block-group__inner-container {
 			padding: 0;
 		}
