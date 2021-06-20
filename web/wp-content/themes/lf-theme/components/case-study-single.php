@@ -25,3 +25,4 @@
 		?>
 	</article>
 </main>
+<?php 	get_template_part( 'components/case-study-cta' ); ?>
