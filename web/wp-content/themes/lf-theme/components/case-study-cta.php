@@ -22,7 +22,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link" href="/enduser/">Explore the benefits of the end user community</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link" href="/enduser/">Explore the end user community</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div></div>
 <!-- /wp:media-text -->
