@@ -9,7 +9,7 @@
 
  /**
   * Display Case Studies rotator banner on home page.
-  * [homepage-casestudies ids="34,22,122"]
+  * [homepage-casestudies case-study-ids="34,22,122"]
   *
   * @param array $atts Attributes.
   */
@@ -18,14 +18,14 @@ function homepage_casestudies_shortcode( $atts ) {
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'ids' => '', // set default.
+			'case-study-ids' => '', // set default.
 		),
 		$atts,
 		'homepage-casestudies'
 	);
 
 	ob_start();
-	$ids = explode( ',', $atts['ids'] );
+	$ids = explode( ',', $atts['case-study-ids'] );
 	shuffle( $ids );
 
 	$title    = get_post_meta( $ids[0], 'lf_case_study_long_title', true );
@@ -281,9 +281,20 @@ add_shortcode( 'homepage-announcements', 'homepage_announcements_shortcode' );
 
  /**
   * Home Hero
-  * [homepage-hero]
+  * [homepage-hero case-study-ids="34869,34901,60670,34928,34890,63299"]
+  *
+  * @param array $atts Attributes.
   */
-function homepage_hero_shortcode() {
+function homepage_hero_shortcode( $atts ) {
+
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'case-study-ids' => '', // set default.
+		),
+		$atts,
+		'homepage-hero'
+	);
 
 	$metrics = LF_Utils::get_homepage_metrics();
 
@@ -310,7 +321,7 @@ function homepage_hero_shortcode() {
 
 <!-- column 2 -->
 <div class="home-hero__col2 has-white-color background-image-wrapper">
-	<?php echo do_shortcode( '[homepage-casestudies ids="34869,34901,60670,34928,34890,63299"]' ); ?>
+	<?php echo homepage_casestudies_shortcode( $atts ); // phpcs:ignore ?>
 </div>
 
 </section>
