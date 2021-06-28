@@ -55,9 +55,23 @@ $options = get_option( 'lf-mu' );
 			<?php elseif ( is_search() ) : ?>
 				<h2 class="page-title"><span>Search results for: </span>
 				<?php echo esc_attr( get_search_query() ); ?></h2>
-			<?php elseif ( ! ( is_404() ) && ( is_page() ) ) : ?>
-				<h1 class="page-title" itemprop="headline"><?php the_title(); ?>
-			</h1>
+				<?php
+			elseif ( ! ( is_404() ) && ( is_page() ) ) :
+				if ( 63395 === wp_get_post_parent_id( $post ) ) {
+					?>
+					<p class="hero-parent-link">
+					<a href="/cloud-native-landscape-guide/" title="Go to the Cloud native landscape guide">Cloud native landscape guide</a>
+					</p>
+				<?php } elseif ( 38018 === wp_get_post_parent_id( $post ) ) { ?>
+					<p class="hero-parent-link">
+					<a href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>
+					</p>
+				<?php } elseif ( 60559 === wp_get_post_parent_id( $post ) ) { ?>
+					<p class="hero-parent-link">
+					<a href="/reports/" title="Go to Reports">Report</a>
+					</p>
+				<?php } ?>
+				<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 			<?php elseif ( ! ( is_404() ) && ( is_single() ) ) : ?>
 				<h1 class="post-title" itemprop="headline"><?php the_title(); ?>
 				</h1>
