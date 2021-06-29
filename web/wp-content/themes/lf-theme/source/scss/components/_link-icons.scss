@@ -140,8 +140,9 @@
 	}
 }
 
-// Arrow CTA style.
-.is-style-arrow-cta {
+// Arrow CTA style (also merged in old Chevron Style).
+.is-style-arrow-cta,
+.is-style-add-chevron-after {
 	font-weight: 700;
 
 	&::after {
@@ -157,27 +158,6 @@
 	&.has-white-color {
 		&::after {
 			filter: brightness(0) saturate(100%) invert(100%);
-		}
-	}
-}
-
-// Chevron Style.
-.is-style-add-chevron-after {
-	a {
-		display: inline-flex;
-		align-items: center;
-
-		&::after {
-			content: " ";
-			background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.662 15.286l-6.9-6.999a.994.994 0 0 0-1.414 0 1.016 1.016 0 0 0 0 1.428L21.544 16l-6.196 6.285a1.016 1.016 0 0 0 0 1.428.994.994 0 0 0 1.414 0l6.899-6.999a1.043 1.043 0 0 0 .001-1.428z' fill='%23ff00aa'/%3E%3Cpath d='M16.662 15.286L9.763 8.287a.994.994 0 0 0-1.414 0 1.016 1.016 0 0 0 0 1.428L14.544 16l-6.196 6.285a1.016 1.016 0 0 0 0 1.428.994.994 0 0 0 1.414 0l6.899-6.999a1.043 1.043 0 0 0 .001-1.428z' fill='%23ff00aa'/%3E%3C/svg%3E");
-			background-size: 1em 1em;
-			height: 1em;
-			width: 1em;
-			background-repeat: no-repeat;
-			margin-left: 0rem;
-			display: inline-flex;
-			white-space: nowrap;
-			align-self: center;
 		}
 	}
 }

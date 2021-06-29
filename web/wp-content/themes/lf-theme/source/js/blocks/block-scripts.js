@@ -97,21 +97,13 @@ wp.domReady(
 						name: 'divider-line',
 						label: 'Divider Line',
 					},
-					{
-						name: 'add-chevron-after',
-						label: 'Add Chevrons',
-					},
+          {
+            name: 'arrow-cta',
+            label: 'Arrow CTA',
+          }
 				]
 			);
 		} );
-
-		wp.blocks.registerBlockStyle(
-			'core/paragraph',
-			{
-				name: 'arrow-cta',
-				label: 'Arrow CTA',
-			}
-		);
 
 		wp.blocks.registerBlockStyle(
 			'core/columns',
