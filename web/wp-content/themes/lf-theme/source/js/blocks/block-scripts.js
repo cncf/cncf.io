@@ -98,6 +98,10 @@ wp.domReady(
 						label: 'Divider Line',
 					},
           {
+            name: 'add-chevron-after',
+            label: 'Add Chevrons',
+          },
+          {
             name: 'arrow-cta',
             label: 'Arrow CTA',
           }
