@@ -16,8 +16,8 @@
 <!-- /wp:spacer -->
 
 <!-- wp:media-text {"mediaPosition":"right","mediaId":62498,"mediaLink":"/end-users/","linkDestination":"custom","mediaType":"image","imageFill":true,"focalPoint":{"x":"0.04","y":"1.00"},"backgroundColor":"tertiary-400","className":"is-style-default"} -->
-<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile is-image-fill is-style-default has-tertiary-400-background-color has-background"><figure class="wp-block-media-text__media" style="background-image:url(/wp-content/uploads/2021/05/end-users.jpg);background-position:4% 100%"><a href="/enduser/"><img src="/wp-content/uploads/2021/05/end-users.jpg" alt="" class="wp-image-62498 size-full"/></a></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","textColor":"white","fontSize":"header-4"} -->
-<p class="has-white-color has-text-color has-header-4-font-size"><strong>Join the CNCF end user community</strong> and accelerate your cloud native technology adoption in close collaboration with peers, project maintainers and CNCF.</p>
+<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile is-image-fill is-style-default has-blue-100-background-color has-background"><figure class="wp-block-media-text__media" style="background-image:url(/wp-content/uploads/2021/05/end-users.jpg);background-position:4% 100%"><a href="/enduser/"><img src="/wp-content/uploads/2021/05/end-users.jpg" alt="" class="wp-image-62498 size-full"/></a></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","textColor":"white","fontSize":"header-4"} -->
+<p class="has-header-4-font-size"><strong>Join the CNCF end user community</strong> and accelerate your cloud native technology adoption in close collaboration with peers, project maintainers and CNCF.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
