@@ -1,0 +1,14 @@
+/**
+ * Landscape embed style sheet
+ *
+ * Hides the "View the full interactive landscape" notice on landscape embds.
+ * Can be included on the end of the embed url as css=https://www.cncf.io/wp-content/themes/lf-theme/source/landscape.css
+ *
+ * @package WordPress
+ * @subpackage lf-theme
+ * @since 1.0.0
+ */
+
+h1 {
+    display: none;
+}
