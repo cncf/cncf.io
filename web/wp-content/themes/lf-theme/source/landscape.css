@@ -12,3 +12,6 @@
 h1 {
 	display: none;
 }
+.MuiListSubheader-sticky {
+	display: none;
+}
