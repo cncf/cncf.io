@@ -15,3 +15,6 @@ h1 {
 .MuiListSubheader-sticky {
 	display: none;
 }
+.borderless-mode .mosaic .logo {
+    height: 80px;
+}
