@@ -11,10 +11,11 @@
 
 // block using alignwide include:
 // case study overview
+// annual report header
 .alignwide {
 	@media (min-width: 1200px) {
 		margin-left: calc((100% - 1200px) / 2);
-		width: 1200px;
+		width: 1200px !important;
 
 		&.wp-block-group {
 			.wp-block-group__inner-container {

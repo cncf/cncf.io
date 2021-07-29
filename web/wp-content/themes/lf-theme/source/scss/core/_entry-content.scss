@@ -1,5 +1,6 @@
 // Use entry-content class to encapsulate the_content.
 // This lets us style lists and links suitable for content.
+// This is
 
 .entry-content {
 	// annoying event box button fix.
@@ -32,8 +33,14 @@
 		}
 	}
 
-	.hbspt-form {
+	.hbspt-form,
+	.wp-block-code {
 		max-width: 700px;
+	}
+
+	pre.wp-block-code {
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	h1,

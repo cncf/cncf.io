@@ -30,7 +30,8 @@
 				margin-bottom: 0;
 			}
 
-			.webinar-single & {
+			.webinar-single &,
+			.single-post & {
 				margin-top: $sm-padding;
 				margin-bottom: $sm-padding;
 			}
