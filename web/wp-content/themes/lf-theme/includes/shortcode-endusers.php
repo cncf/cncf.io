@@ -332,7 +332,7 @@ function add_eu_playlist_shortcode( $atts ) {
 	wp_enqueue_script(
 		'youtube-lite-js',
 		home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
-		is_admin() ? array( 'wp-editor' ) : null,
+		null,
 		filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
 		true
 	);

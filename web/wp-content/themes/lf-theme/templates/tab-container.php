@@ -34,7 +34,7 @@ get_template_part( 'components/hero' );
 wp_enqueue_script(
 	'sticky-js',
 	get_stylesheet_directory_uri() . '/source/js/third-party/sticky.min.js',
-	is_admin() ? array( 'wp-editor' ) : array(),
+	null,
 	filemtime( get_template_directory() . '/source/js/third-party/sticky.min.js' ),
 	true
 );
@@ -42,7 +42,7 @@ wp_enqueue_script(
 wp_enqueue_script(
 	'tab-container-js',
 	get_stylesheet_directory_uri() . '/source/js/third-party/tab-container.js',
-	is_admin() ? array( 'wp-editor' ) : array( 'jquery', 'sticky-js' ),
+	is_admin() ? null : array( 'jquery', 'sticky-js' ),
 	filemtime( get_template_directory() . '/source/js/third-party/tab-container.js' ),
 	true
 );

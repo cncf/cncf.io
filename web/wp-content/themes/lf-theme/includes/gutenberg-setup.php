@@ -46,3 +46,6 @@ add_action(
 		wp_dequeue_style( 'wp-block-library-theme' );
 	}
 );
+
+// Disable new gutenberg widget screen.
+remove_theme_support( 'widgets-block-editor' );
