@@ -30,6 +30,10 @@ wp.domReady(
 		wp.blocks.unregisterBlockType( 'core/social-links' );
 		wp.blocks.unregisterBlockType( 'core/tag-cloud' );
 		wp.blocks.unregisterBlockType( 'core/verse' );
+    wp.blocks.unregisterBlockType( 'core/loginout' );
+    wp.blocks.unregisterBlockType( 'core/site-logo' );
+    wp.blocks.unregisterBlockType( 'core/site-tagline' );
+    wp.blocks.unregisterBlockType( 'core/site-title' );
 
 		// Removed specific block styles.
 		wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
