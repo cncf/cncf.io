@@ -19,7 +19,7 @@
   ],
   "require": {
     "php": ">=7.2",
-    "cncf/wp-mu-plugins": "dev-main",
+    "cncf/wp-mu-plugins": "dev-wp58update",
     "composer/installers": "^1.3.0",
     "pantheon-systems/quicksilver-pushback": "^2.0.1",
     "pantheon-systems/wordpress-composer": "*",
