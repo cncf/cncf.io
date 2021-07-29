@@ -15,7 +15,7 @@
 // import styles over the top of editor styles defaults.
 #editor {
 	.editor-styles-wrapper {
-		// @import "core/typography";
+		@import "core/typography";
 		@import "components/link-icons";
 		@import "components/hero";
 		@import "components/speakers";
@@ -53,7 +53,7 @@
 @import "admin/outlines";
 @import "admin/alignment";
 
-#editor {
+.post-type-post {
 	.editor-styles-wrapper {
 		h1,
 		h2,
@@ -61,7 +61,32 @@
 		h4,
 		h5,
 		h6 {
-			margin-bottom: 0.5rem;
+			&:not([class*="is-style"]),
+			&.is-style-default {
+				max-width: 900px;
+			}
+		}
+
+		p {
+			&:not([class*="is-style"]):not(.hero-parent-link),
+			&.is-style-default {
+				max-width: 700px;
+			}
+		}
+
+		.hbspt-form,
+		.wp-block-code {
+			max-width: 700px;
+		}
+	}
+}
+
+#editor {
+	.editor-styles-wrapper {
+		color: $body-text-color;
+
+		p {
+			line-height: 1.5;
 		}
 
 		// style links same as frontend.
@@ -76,16 +101,11 @@
 	}
 }
 
-// Fix the font in the editor.
-.editor-post-title__block .editor-post-title__input,
-.editor-writing-flow .wp-block textarea,
-.editor-writing-flow .wp-block .wp-block-freeform,
-.editor-rich-text p,
-.editor-post-title__input,
-.wp-block-quote__citation {
+// Editor Post Title.
+.editor-post-title__block .editor-post-title__input {
 	font-family: $font-primary;
 	font-weight: 300;
-	line-height: 1.5;
+	line-height: 1.4;
 }
 
 // Add padding to make more easily selectable.
