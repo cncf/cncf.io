@@ -369,7 +369,11 @@ function add_eu_playlist_shortcode( $atts ) {
 	<div class="newsroom-post-wrapper">
 <div class="">
 <div class="wp-block-lf-youtube-lite">
-<lite-youtube videoid="<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>">
+<lite-youtube
+videoid="<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>"
+webpStatus="0"
+sdthumbStatus="1"
+>
 </lite-youtube></div></div>
 
 <h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank" title="<?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->title ); ?> "><?php echo esc_attr( $eu_playlist->items[ $i ]->snippet->title ); ?></a></h5>
