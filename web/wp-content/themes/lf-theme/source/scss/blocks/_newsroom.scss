@@ -115,9 +115,9 @@
 	}
 
 	img.radar[src$=".svg"] {
-		height: 100.1%;
+		height: 100%;
 		max-height: unset;
-		padding: 0.9rem 0;
+		// padding: 0.9rem 0;
 	}
 
 	@media (min-width: 768px) {
