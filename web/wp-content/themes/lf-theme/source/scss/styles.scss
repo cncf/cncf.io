@@ -42,32 +42,31 @@
 // Block Parts and Core Styling.
 @import "blocks/colors";
 @import "blocks/has-color-function";
+
 @import "blocks/alignment";
 @import "blocks/buttons";
 @import "blocks/columns";
+@import "blocks/gallery";
+@import "blocks/group";
 @import "blocks/image";
 @import "blocks/lists";
-@import "blocks/gradients";
-@import "blocks/group";
+@import "blocks/paragraph-headers";
 @import "blocks/quote";
-@import "blocks/gallery";
-@import "blocks/landscape";
 @import "blocks/separator";
 @import "blocks/spacer";
-@import "blocks/tab-container";
 @import "blocks/table";
-// @import 'blocks/text-on-image'; // lfph only
 @import "blocks/twitter";
-@import "blocks/media-text";
 
-// Blocks.
-@import "blocks/paragraph-headers";
-@import "blocks/newsroom";
-@import "blocks/countup-block";
+// LF Blocks.
 @import "blocks/case-study-highlights";
 @import "blocks/case-study-overview";
-@import "blocks/latest-jobs";
+@import "blocks/landscape";
+@import "blocks/newsroom";
 @import "blocks/stats";
+@import "blocks/tab-container";
 
-// Print styles (load last)
+// LFPH Only
+// @import 'blocks/text-on-image';
+
+// Print styles (load last).
 @import "core/print";

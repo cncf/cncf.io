@@ -31,21 +31,18 @@
 		@import "blocks/buttons";
 		@import "blocks/columns";
 		@import "blocks/lists";
-		@import "blocks/gradients";
 		@import "blocks/quote";
 		@import "blocks/gallery";
-		@import "blocks/landscape";
 		@import "blocks/spacer";
 		@import "blocks/table";
-
-		// Blocks
 		@import "blocks/paragraph-headers";
-		@import "blocks/newsroom";
+
+		// LF Blocks styling needed in editor.
 		@import "blocks/case-study-highlights";
 		@import "blocks/case-study-overview";
-		@import "blocks/latest-jobs";
+		@import "blocks/landscape";
+		@import "blocks/newsroom";
 		@import "blocks/stats";
-		@import "blocks/media-text";
 	}
 }
 

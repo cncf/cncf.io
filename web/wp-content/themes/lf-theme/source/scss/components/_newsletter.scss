@@ -27,7 +27,7 @@
 
 .hbspt-form {
 	input {
-		margin-bottom: .3rem;
+		margin-bottom: 0.3rem;
 	}
 
 	// Displays if required field not filled.
@@ -151,7 +151,6 @@
 			color: $white;
 		}
 	}
-
 }
 
 // removes captcha image from flow.
