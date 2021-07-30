@@ -4,8 +4,13 @@
 // }
 
 // Embedded single tweets
-@media (min-width: 800px) {
-	.wp-block-embed-twitter {
+.wp-block-embed-twitter {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	@media (min-width: 800px) {
 		min-height: 280px;
+	}
+	.wp-block-embed__wrapper {
+		display: inline-block;
 	}
 }
