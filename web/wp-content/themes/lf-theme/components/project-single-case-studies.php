@@ -10,7 +10,6 @@
 global $post;
 $project_slug = $post->post_name;
 
-// setup the arguments.
 $related_args = array(
 	'posts_per_page'     => 2,
 	'ignore_custom_sort' => true,
@@ -38,7 +37,7 @@ if ( ! $related_query->post_count ) {
 
 <div class="wp-block-columns is-style-section-header">
 <div class="wp-block-column bh-01" style="flex-basis:70%">
-<h3>Recent case studies</h3>
+<h3>Case studies that use <?php the_title(); ?></h3>
 </div>
 
 <div class="wp-block-column bh-02" style="flex-basis:30%">

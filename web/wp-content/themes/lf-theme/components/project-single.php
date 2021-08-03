@@ -121,20 +121,13 @@ $image = new Image();
 			<?php echo esc_html( $description ); ?>
 		</p>
 
-		<?php
-			get_template_part( 'components/project-single-online-programs' );
-		?>
-		<?php
-			get_template_part( 'components/project-single-case-studies' );
-		?>
-		<?php
-			get_template_part( 'components/project-single-speakers' );
-		?>
-		<?php
-			get_template_part( 'components/project-single-news' );
-		?>
-
-
+		<?php get_template_part( 'components/project-single-online-programs' ); ?>
+		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
+		<?php get_template_part( 'components/project-single-case-studies' ); ?>
+		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-80-responsive"></div>
+		<?php get_template_part( 'components/project-single-speakers' ); ?>
+		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-80-responsive"></div>
+		<?php get_template_part( 'components/project-single-news' ); ?>
 
 	</article>
 </main>
