@@ -12,12 +12,9 @@ $project_slug = $post->post_name;
 
 $the_project = wp_get_post_terms( $post->ID, 'lf-project', array( 'fields' => 'ids' ) );
 
-// state number of related posts required.
-$number_related_posts = 3;
-
 // setup the arguments.
 $related_args = array(
-	'posts_per_page'     => $number_related_posts,
+	'posts_per_page'     => 3,
 	'ignore_custom_sort' => true,
 	'post_type'          => array( 'lf_webinar' ),
 	'post_status'        => array( 'publish' ),
