@@ -37,7 +37,7 @@ if ( ! $related_query->post_count ) {
 </div>
 
 <div class="wp-block-column bh-02" style="flex-basis:30%">
-<h6 class="is-style-arrow-cta"><a href="/?post_type=post&s=<?php echo esc_attr( $project_name ); ?>">See all related news</a></h6>
+<h6 class="is-style-arrow-cta"><a href="<?php echo esc_url( '/?post_type=post&s=' . $project_name ); ?>">See all related news</a></h6>
 </div>
 </div>
 
