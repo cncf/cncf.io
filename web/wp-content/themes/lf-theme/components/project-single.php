@@ -126,5 +126,10 @@ $image = new Image();
 		<?php get_template_part( 'components/project-single-speakers' ); ?>
 		<?php get_template_part( 'components/project-single-news' ); ?>
 
+		<?php if ( $twitter ) : ?>
+			<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
+			<?php wp_enqueue_script( 'twitter-embed', 'https://platform.twitter.com/widgets.js', array(), '1', true ); ?>
+			<a class="twitter-timeline" data-height="800" href="<?php echo esc_url( $twitter ); ?>">Tweets by PrometheusIO</a> 
+		<?php endif; ?>
 	</article>
 </main>
