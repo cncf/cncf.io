@@ -62,3 +62,4 @@ while ( $related_query->have_posts() ) {
 wp_reset_postdata();
 ?>
 </div>
+<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
