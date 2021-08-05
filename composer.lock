@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "d01ab452f8ebb0503890eafba5661919e46d9c38"
+                "reference": "1efa56d7c2f2a63819b212114909e7e12ee219f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/d01ab452f8ebb0503890eafba5661919e46d9c38",
-                "reference": "d01ab452f8ebb0503890eafba5661919e46d9c38",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/1efa56d7c2f2a63819b212114909e7e12ee219f7",
+                "reference": "1efa56d7c2f2a63819b212114909e7e12ee219f7",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/project-pages",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-07-31T20:24:32+00:00"
+            "time": "2021-08-02T20:21:57+00:00"
         },
         {
             "name": "composer/installers",
@@ -858,15 +858,15 @@
         },
         {
             "name": "wpackagist-plugin/ultimate-member",
-            "version": "2.2.0",
+            "version": "2.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ultimate-member/",
-                "reference": "tags/2.2.0"
+                "reference": "tags/2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ultimate-member.2.2.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/ultimate-member.2.2.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
