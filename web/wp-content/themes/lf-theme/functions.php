@@ -143,7 +143,7 @@ foreach ( $regex_json_path_patterns as $regex_json_path_pattern ) {
 		 * @param obj $server Server object.
 		 */
 		function filter_rest_post_dispatch_send_cache_control( $response, $server ) {
-			$response->header( 'Cache-Control', 'no-cache, must-revalidate, max-age=0' );
+			$server->send_header( 'Cache-Control', 'no-cache, must-revalidate, max-age=0' );
 			return $response;
 		}
 		break;
