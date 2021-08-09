@@ -126,7 +126,8 @@ if ( ! is_admin() ) {
 
 /**
  * The WP REST API is cached heavily by Pantheon so we need to explicitly exclude certain calls from the cache.
- * From https://pantheon.io/docs/mu-plugin#wp-rest-api-wp-json-endpoints-cache.
+ * Modified from https://pantheon.io/docs/mu-plugin#wp-rest-api-wp-json-endpoints-cache and corrected according to
+ * this issue https://github.com/LF-Engineering/lfevents/issues/662
  */
 $regex_json_path_patterns = array(
 	'#^/wp-json/post-meta-controls/v1/?#',
@@ -143,7 +144,7 @@ foreach ( $regex_json_path_patterns as $regex_json_path_pattern ) {
 		 * @param obj $server Server object.
 		 */
 		function filter_rest_post_dispatch_send_cache_control( $response, $server ) {
-			$server->send_header( 'Cache-Control', 'no-cache, must-revalidate, max-age=0' );
+			$response->header( 'Cache-Control', 'no-cache, must-revalidate, max-age=0' );
 			return $response;
 		}
 		break;
