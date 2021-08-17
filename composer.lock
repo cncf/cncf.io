@@ -4,36 +4,35 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69ef0aa3eaa3c8dfdc177af57a5b74f2",
+    "content-hash": "0f005294402af05717fd6181b4dfbdd5",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
-            "version": "dev-main",
+            "version": "dev-people",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "82c2f1418318b1e213907c723bc434f5f3aae5b7"
+                "reference": "43a558ef042519c014d79ed15c39a82f3f03aa3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/82c2f1418318b1e213907c723bc434f5f3aae5b7",
-                "reference": "82c2f1418318b1e213907c723bc434f5f3aae5b7",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/43a558ef042519c014d79ed15c39a82f3f03aa3d",
+                "reference": "43a558ef042519c014d79ed15c39a82f3f03aa3d",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2"
             },
-            "default-branch": true,
             "type": "wordpress-muplugin",
             "license": [
                 "MIT"
             ],
             "description": "Must Use (MU) plugins used to power WordPress sites cncf.io, lfph.io, and possibly others.",
             "support": {
-                "source": "https://github.com/cncf/wp-mu-plugins/tree/main",
+                "source": "https://github.com/cncf/wp-mu-plugins/tree/people",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-08-06T17:30:28+00:00"
+            "time": "2021-08-17T15:33:49+00:00"
         },
         {
             "name": "composer/installers",
@@ -937,12 +936,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "1eb2f918082aab68a3a0858d3d23c36171122fe7"
+                "reference": "6da216d969efa7e52cc7d0af125b8c8bb9caed25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1eb2f918082aab68a3a0858d3d23c36171122fe7",
-                "reference": "1eb2f918082aab68a3a0858d3d23c36171122fe7",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6da216d969efa7e52cc7d0af125b8c8bb9caed25",
+                "reference": "6da216d969efa7e52cc7d0af125b8c8bb9caed25",
                 "shasum": ""
             },
             "conflict": {
@@ -992,7 +991,7 @@
                 "doctrine/mongodb-odm": ">=1,<1.0.2",
                 "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1|>=2.8.3,<2.8.4",
-                "dolibarr/dolibarr": "<11.0.4",
+                "dolibarr/dolibarr": "<14",
                 "dompdf/dompdf": ">=0.6,<0.6.2",
                 "drupal/core": ">=7,<7.80|>=8,<8.9.14|>=9,<9.0.12|>=9.1,<9.1.7",
                 "drupal/drupal": ">=7,<7.80|>=8,<8.9.14|>=9,<9.0.12|>=9.1,<9.1.7",
@@ -1311,7 +1310,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-11T13:12:21+00:00"
+            "time": "2021-08-11T16:04:32+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
