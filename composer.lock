@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "cbf77c8b3d33966bb8c2d412c1ec8b86c76d6894"
+                "reference": "6db760c1f78020ed9b1e9965b9ca2733963733ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/cbf77c8b3d33966bb8c2d412c1ec8b86c76d6894",
-                "reference": "cbf77c8b3d33966bb8c2d412c1ec8b86c76d6894",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/6db760c1f78020ed9b1e9965b9ca2733963733ef",
+                "reference": "6db760c1f78020ed9b1e9965b9ca2733963733ef",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/people",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-08-23T18:08:51+00:00"
+            "time": "2021-08-23T20:07:26+00:00"
         },
         {
             "name": "composer/installers",
@@ -936,12 +936,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "3c3cc12a9f163e589a12b9ea756c5a2dae9c59dd"
+                "reference": "cd0a994884c7323cdc591f02b6027e00c1d88e74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/3c3cc12a9f163e589a12b9ea756c5a2dae9c59dd",
-                "reference": "3c3cc12a9f163e589a12b9ea756c5a2dae9c59dd",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/cd0a994884c7323cdc591f02b6027e00c1d88e74",
+                "reference": "cd0a994884c7323cdc591f02b6027e00c1d88e74",
                 "shasum": ""
             },
             "conflict": {
@@ -1119,7 +1119,7 @@
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
-                "pimcore/pimcore": "<10.0.7",
+                "pimcore/pimcore": "<10.1.1",
                 "pocketmine/pocketmine-mp": "<3.15.4",
                 "pressbooks/pressbooks": "<5.18",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
@@ -1142,8 +1142,8 @@
                 "scheb/two-factor-bundle": ">=0,<3.26|>=4,<4.11",
                 "sensiolabs/connect": "<4.2.3",
                 "serluck/phpwhois": "<=4.2.6",
-                "shopware/core": "<=6.4.1",
-                "shopware/platform": "<=6.4.1",
+                "shopware/core": "<=6.4.3",
+                "shopware/platform": "<=6.4.3",
                 "shopware/production": "<=6.3.5.2",
                 "shopware/shopware": "<=5.6.9",
                 "silverstripe/admin": ">=1.0.3,<1.0.4|>=1.1,<1.1.1",
@@ -1310,7 +1310,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-19T16:07:21+00:00"
+            "time": "2021-08-23T20:03:09+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
