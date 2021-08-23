@@ -10,13 +10,14 @@
 // setup values.
 $person_id = get_the_ID();
 $company   = get_post_meta( get_the_ID(), 'lf_person_company', true );
-$pronouns   = get_post_meta( get_the_ID(), 'lf_person_pronouns', true );
+$pronouns  = get_post_meta( get_the_ID(), 'lf_person_pronouns', true );
 $linkedin  = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
 $twitter   = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
 $github    = get_post_meta( get_the_ID(), 'lf_person_github', true );
 $wechat    = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
 $website   = get_post_meta( get_the_ID(), 'lf_person_website', true );
 $youtube   = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
+$image_url = get_post_meta( get_the_ID(), 'lf_person_image', true );
 
 // setup image class.
 $image = new Image();
@@ -38,14 +39,7 @@ if ( strlen( $content ) > 20 ) {
 	<?php endif; ?>
 	<div class="background-image-wrapper people-profile-picture">
 	<figure class="background-image-figure">
-	<?php
-	if ( has_post_thumbnail() ) {
-		LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'people-250', '400px' );
-	} else {
-		$options = get_option( 'lf-mu' );
-		LF_Utils::display_responsive_images( $options['generic_avatar_id'], 'people-250', '400px' );
-	}
-	?>
+	<img loading="lazy" src="<?php echo esc_attr( $image_url ); ?>" >
 	</figure>
 	</div>
 	<?php if ( $show_modal ) : ?>
@@ -138,14 +132,7 @@ if ( strlen( $content ) > 20 ) {
 					<div
 						class="background-image-wrapper people-profile-picture">
 						<figure class="background-image-figure">
-						<?php
-						if ( has_post_thumbnail() ) {
-							LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'people-250', '400px' );
-						} else {
-							$options = get_option( 'lf-mu' );
-							LF_Utils::display_responsive_images( $options['generic_avatar_id'], 'people-250', '400px' );
-						}
-						?>
+						<img loading="lazy" src="<?php echo esc_attr( $image_url ); ?>" >
 						</figure>
 					</div>
 						<?php
