@@ -72,8 +72,7 @@ get_template_part( 'components/hero' );
 				}
 				?>
 
-				<div
-					style="display: flex; flex-wrap: wrap; align-content: center;">
+				<div class="project-links">
 					<h4 class="margin-bottom-small fw-400">Project Links:</h4>
 
 					<div class="project-icons">
@@ -170,22 +169,6 @@ get_template_part( 'components/hero' );
 		<?php get_template_part( 'components/project-single-case-studies' ); ?>
 		<?php get_template_part( 'components/project-single-speakers' ); ?>
 		<?php get_template_part( 'components/project-single-news' ); ?>
-
-		<?php if ( $twitter && ( preg_match( '/^https?:\/\/(www\.)?twitter\.com\/(#!\/)?(?<name>[^\/]+)(\/\w+)*$/', $twitter, $matches ) ) ) : ?>
-
-		<div class="wp-block-columns is-style-section-header">
-			<div class="wp-block-column bh-01" style="flex-basis:70%">
-				<h3>Latest tweets from <?php the_title(); ?></h3>
-			</div>
-			<div class="wp-block-column bh-02" style="flex-basis:30%">
-				<h6 class="is-style-arrow-cta"><a
-						href="<?php echo esc_url( $twitter ); ?>">See all tweets</a>
-				</h6>
-			</div>
-		</div>
-			<?php echo do_shortcode( '[custom-twitter-feeds screenname=' . esc_html( $matches['name'] ) . ' num=3]' ); ?>
-
-		<?php endif; ?>
 
 	</article>
 </main>
