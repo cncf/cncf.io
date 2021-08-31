@@ -183,7 +183,7 @@ get_template_part( 'components/hero' );
 				</h6>
 			</div>
 		</div>
-			<?php echo do_shortcode( '[custom-twitter-feeds screenname=' . esc_url( $matches['name'] ) . ' num=3]' ); ?>
+			<?php echo do_shortcode( '[custom-twitter-feeds screenname=' . esc_html( $matches['name'] ) . ' num=3]' ); ?>
 
 		<?php endif; ?>
 
