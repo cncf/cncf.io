@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99552beb1d67ea77bb7c98add271c879",
+    "content-hash": "adcdae0d871df34b8acb7daa3a0acd56",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
@@ -675,6 +675,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/code-syntax-block/"
+        },
+        {
+            "name": "wpackagist-plugin/custom-twitter-feeds",
+            "version": "1.8.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/custom-twitter-feeds/",
+                "reference": "tags/1.8.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.8.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/custom-twitter-feeds/"
         },
         {
             "name": "wpackagist-plugin/flying-pages",
@@ -1468,5 +1486,5 @@
     "platform-overrides": {
         "php": "7.2"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }

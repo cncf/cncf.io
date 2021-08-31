@@ -64,7 +64,7 @@
 	$related_query = new WP_Query( $related_args );
 
 	if ( $related_query->have_posts() ) :
-	?>
+		?>
 
 <div
 	class="wp-block-lf-upcoming-webinars entry-content center-align margin-bottom-large">
@@ -123,6 +123,6 @@
 		?>
 	</div>
 </div>
-<?php
+		<?php
 		endif;
 	?>

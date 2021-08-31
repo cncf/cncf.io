@@ -65,4 +65,4 @@ if ( ! $related_query->post_count ) {
 	wp_reset_postdata();
 	?>
 </div>
-<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-80-responsive"></div>
+<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>

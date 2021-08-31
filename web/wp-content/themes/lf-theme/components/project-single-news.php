@@ -27,9 +27,9 @@ if ( ! $related_query->post_count ) {
 }
 
 ?>
-<div class="wp-block-group alignfull has-blue-100-background-color has-background">
+<div class="wp-block-group alignfull ">
 <div class="wp-block-group__inner-container">
-<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
+<!-- <div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div> -->
 
 <div class="wp-block-columns is-style-section-header">
 <div class="wp-block-column bh-01" style="flex-basis:70%">
@@ -53,6 +53,6 @@ wp_reset_postdata();
 ?>
 </div>
 
-<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
+<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-60-responsive"></div>
 </div>
 </div>
