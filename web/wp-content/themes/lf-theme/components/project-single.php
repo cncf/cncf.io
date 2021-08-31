@@ -37,15 +37,15 @@ get_template_part( 'components/hero' );
 
 		<div class="project-single-hero">
 			<!-- column 1 -->
-			<div>
-
-				<div class="project-thumbnail-container is-large">
-					<img src="<?php echo esc_url( $logo ); ?>"
-						title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
-						class="project-thumbnail">
+			<div class="project-single-hero-logo">
+				<div class="project-thumbnail-container">
+				<a class="external" target="_blank"
+					href="<?php echo esc_url( $external_url ); ?>"><img src="<?php echo esc_url( $logo ); ?>"
+						title="Visit <?php echo esc_html( the_title() ); ?> website"
+						class="project-thumbnail"></a>
 				</div>
-
 			</div>
+
 			<!-- column 2 -->
 			<div class="project-single-hero-details">
 				<?php if ( $description ) { ?>
@@ -71,9 +71,6 @@ get_template_part( 'components/hero' );
 					<?php
 				}
 				?>
-
-
-
 
 				<div
 					style="display: flex; flex-wrap: wrap; align-content: center;">
@@ -156,8 +153,8 @@ get_template_part( 'components/hero' );
 
 				<?php if ( $external_url ) { ?>
 
-				<a class="button margin-top external"
-					href="<?php esc_url( $external_url ); ?>">Visit Project
+				<a class="button margin-top external" target="_blank"
+					href="<?php echo esc_url( $external_url ); ?>">Visit Project
 					Website</a>
 					<?php
 				}

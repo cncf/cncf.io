@@ -28,14 +28,6 @@
 	width: 125px;
 	height: 125px;
 	display: flex;
-	&.is-large {
-		width: 225px;
-		height: 225px;
-		.project-thumbnail {
-			max-width: 225px;
-			max-height: 225px;
-		}
-	}
 }
 
 .project-thumbnail {
@@ -63,9 +55,6 @@
 .project-icons {
 	display: flex;
 	flex-wrap: wrap;
-	// align-items: center;
-	// align-items: center;
-	// justify-content: center;
 
 	> * {
 		margin-right: 0.25em;
@@ -95,7 +84,6 @@
 	flex-direction: column;
 	@media (min-width: 768px) {
 		flex-direction: row;
-		// justify-content: flex-start;
 		> div:first-child {
 			width: calc(225px + 4rem);
 			flex-shrink: 0;
@@ -112,4 +100,24 @@
 .single-lf_project .newsroom-post-wrapper {
 	background-color: $tertiary-color;
 	height: 100%;
+}
+
+.project-single-hero-logo {
+	display: flex;
+	align-content: center;
+	align-items: center;
+
+	.project-thumbnail-container {
+		width: 225px;
+		height: 225px;
+
+		a {
+			align-self: center;
+		}
+
+		.project-thumbnail {
+			max-width: 225px;
+			max-height: 225px;
+		}
+	}
 }
