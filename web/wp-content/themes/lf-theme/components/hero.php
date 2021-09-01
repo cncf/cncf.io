@@ -79,7 +79,7 @@ $options = get_option( 'lf-mu' );
 				if ( get_the_ID() && ( Lf_Utils::get_term_names( get_the_ID(), 'lf-project-stage', true ) == 'Sandbox' ) ) {
 					?>
 			<p class="hero-parent-link">
-			<a href="/sandbox-projects/" title="Go to Sadbox Projects">Projects</a>
+			<a href="/sandbox-projects/" title="Go to Sandbox Projects">Projects</a>
 			</p>
 					<?php
 				} else {
