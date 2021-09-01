@@ -49,32 +49,36 @@ get_template_part( 'components/hero' );
 			<!-- column 2 -->
 			<div class="project-single-hero-details">
 				<?php if ( $description ) { ?>
-				<h4 class="margin-bottom-small fw-400">Description:
-					<strong><?php echo esc_html( $description ); ?></strong>
-				</h4>
+				<h3 class="margin-bottom-small fw-400">
+					<?php echo esc_html( $description ); ?>
+				</h3>
 					<?php
 				}
 				?>
 
-				<?php if ( $date_accepted ) { ?>
-				<h4 class="margin-bottom-small fw-400">Accepted to CNCF:
+				<?php if ( $date_accepted && $stage ) { ?>
+				<p class="margin-bottom-large fw-400">
+					<?php the_title() ?>
+					was accepted to CNCF on
 					<strong><?php echo esc_html( $date_accepted ); ?></strong>
-				</h4>
-					<?php
-				}
-				?>
-
-				<?php if ( $stage ) { ?>
-				<h4 class="margin-bottom-small fw-400">Project Stage:
+					and is at the
 					<strong><?php echo esc_html( $stage ); ?></strong>
+					project maturity level.
+				</p>
+					<?php
+				} elseif ( $stage ) {
+				?>
+				<h4 class="margin-bottom-large fw-400">
+					<?php the_title() ?>
+					is at the
+					<strong><?php echo esc_html( $stage ); ?></strong>
+					project maturity level.
 				</h4>
 					<?php
 				}
 				?>
 
-				<div class="project-links">
-					<h4 class="margin-bottom-small fw-400">Project Links:</h4>
-
+				<div class="project-links margin-bottom-small">
 					<div class="project-icons">
 
 						<?php if ( $github ) : ?>
@@ -150,9 +154,11 @@ get_template_part( 'components/hero' );
 					</div>
 				</div>
 
+
+
 				<?php if ( $external_url ) { ?>
 
-				<a class="button margin-top external" target="_blank"
+				<a class="button external margin-bottom-small" target="_blank"
 					href="<?php echo esc_url( $external_url ); ?>">Visit Project
 					Website</a>
 					<?php
