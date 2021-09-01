@@ -37,7 +37,7 @@ get_template_part( 'components/hero' );
 
 		<div class="project-single-hero">
 			<!-- column 1 -->
-			<div class="project-single-hero-logo">
+			<div class="project-single-hero-logo margin-bottom-small">
 				<div class="project-thumbnail-container">
 				<a class="external" target="_blank"
 					href="<?php echo esc_url( $external_url ); ?>"><img src="<?php echo esc_url( $logo ); ?>"
