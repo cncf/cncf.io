@@ -58,7 +58,7 @@ get_template_part( 'components/hero' );
 
 				<?php if ( $date_accepted && $stage ) { ?>
 				<p class="margin-bottom-large fw-400">
-					<?php the_title() ?>
+					<?php the_title(); ?>
 					was accepted to CNCF on
 					<strong><?php echo esc_html( $date_accepted ); ?></strong>
 					and is at the
@@ -67,9 +67,9 @@ get_template_part( 'components/hero' );
 				</p>
 					<?php
 				} elseif ( $stage ) {
-				?>
+					?>
 				<h4 class="margin-bottom-large fw-400">
-					<?php the_title() ?>
+					<?php the_title(); ?>
 					is at the
 					<strong><?php echo esc_html( $stage ); ?></strong>
 					project maturity level.
