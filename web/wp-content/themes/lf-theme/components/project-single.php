@@ -109,7 +109,7 @@ get_template_part( 'components/hero' );
 							target="_blank"><?php $image->get_svg( '/social/stack-overflow.svg' ); ?></a>
 						<?php endif; ?>
 
-						<?php if ( $twitter ) : ?>
+						<?php if ( $twitter && ( preg_match( '/^https?:\/\/(www\.)?twitter\.com\/(#!\/)?(?<name>[^\/]+)(\/\w+)*$/', $twitter, $matches ) ) && ( 'CloudNativeFdn' != $matches['name'] ) ) : ?>
 						<a title="<?php the_title(); ?> on Twitter"
 							href="<?php echo esc_html( $twitter ); ?>"
 							rel="noopener"
