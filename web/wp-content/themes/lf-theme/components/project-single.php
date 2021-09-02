@@ -172,9 +172,9 @@ get_template_part( 'components/hero' );
 			class="wp-block-spacer is-style-80-responsive"></div>
 		<!-- /wp:spacer -->
 		<?php get_template_part( 'components/project-single-online-programs' ); ?>
+		<?php get_template_part( 'components/project-single-news' ); ?>
 		<?php get_template_part( 'components/project-single-case-studies' ); ?>
 		<?php get_template_part( 'components/project-single-speakers' ); ?>
-		<?php get_template_part( 'components/project-single-news' ); ?>
 		<?php get_template_part( 'components/project-single-twitter', null, array( 'twitter' => $twitter ) ); ?>
 
 
