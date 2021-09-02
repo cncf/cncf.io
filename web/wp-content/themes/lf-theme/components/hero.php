@@ -17,7 +17,7 @@ $options = get_option( 'lf-mu' );
 
 	<figure class="background-image-figure">
 		<?php
-		if ( has_post_thumbnail() && ! is_archive() ) {
+		if ( has_post_thumbnail() && ! is_archive() && ! is_singular( 'lf_project' ) ) {
 			Lf_Utils::display_picture( get_post_thumbnail_id(), 'hero' );
 
 		} elseif ( isset( $options['generic_hero_id'] ) && $options['generic_hero_id'] ) {
