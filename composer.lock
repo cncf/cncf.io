@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "e2367bb5aa52837a6b51e9ad6196f392fd9fa430"
+                "reference": "a69fe0b4bda7348d17ce840147b00ac04682d031"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/e2367bb5aa52837a6b51e9ad6196f392fd9fa430",
-                "reference": "e2367bb5aa52837a6b51e9ad6196f392fd9fa430",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/a69fe0b4bda7348d17ce840147b00ac04682d031",
+                "reference": "a69fe0b4bda7348d17ce840147b00ac04682d031",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "source": "https://github.com/cncf/wp-mu-plugins/tree/project-pages",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-09-14T05:47:50+00:00"
+            "time": "2021-09-14T16:50:44+00:00"
         },
         {
             "name": "composer/installers",
@@ -913,15 +913,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-native-php-sessions",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-native-php-sessions/",
-                "reference": "tags/1.2.3"
+                "reference": "tags/1.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-native-php-sessions.1.2.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-native-php-sessions.1.2.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -937,12 +937,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "8cebf1673eccd7e6552732142039c147c1023214"
+                "reference": "506ae662828c26fbf1436954388191c452897bde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/8cebf1673eccd7e6552732142039c147c1023214",
-                "reference": "8cebf1673eccd7e6552732142039c147c1023214",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/506ae662828c26fbf1436954388191c452897bde",
+                "reference": "506ae662828c26fbf1436954388191c452897bde",
                 "shasum": ""
             },
             "conflict": {
@@ -1198,6 +1198,7 @@
                 "symbiote/silverstripe-multivaluefield": ">=3,<3.0.99",
                 "symbiote/silverstripe-queuedjobs": ">=3,<3.0.2|>=3.1,<3.1.4|>=4,<4.0.7|>=4.1,<4.1.2|>=4.2,<4.2.4|>=4.3,<4.3.3|>=4.4,<4.4.3|>=4.5,<4.5.1|>=4.6,<4.6.4",
                 "symbiote/silverstripe-versionedfiles": "<=2.0.3",
+                "symfont/process": ">=0,<4",
                 "symfony/cache": ">=3.1,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/dependency-injection": ">=2,<2.0.17|>=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/error-handler": ">=4.4,<4.4.4|>=5,<5.0.4",
@@ -1328,7 +1329,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-09T17:11:22+00:00"
+            "time": "2021-09-14T13:12:45+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
