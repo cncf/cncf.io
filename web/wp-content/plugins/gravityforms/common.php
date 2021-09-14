@@ -3,6 +3,8 @@ if ( ! class_exists( 'GFForms' ) ) {
 	die();
 }
 
+use \Gravity_Forms\Gravity_Forms\Messages\Dismissable_Messages;
+
 /**
  * Class GFCommon
  *
@@ -42,22 +44,21 @@ class GFCommon {
 	public static function is_numeric( $value, $number_format = '' ) {
 
 		if ( $number_format == 'currency' ) {
-
 			$number_format = self::is_currency_decimal_dot() ? 'decimal_dot' : 'decimal_comma';
 			$value         = self::remove_currency_symbol( $value );
 		}
 
 		switch ( $number_format ) {
-			case 'decimal_dot' :
+			case 'decimal_dot':
 				return preg_match( "/^(-?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]+)?)$/", $value );
 				break;
 
-			case 'decimal_comma' :
+			case 'decimal_comma':
 				return preg_match( "/^(-?[0-9]{1,3}(?:\.?[0-9]{3})*(?:,[0-9]+)?)$/", $value );
 				break;
 
-			default :
-				return preg_match( "/^(-?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?)$/", $value ) || preg_match( "/^(-?[0-9]{1,3}(?:\.?[0-9]{3})*(?:,[0-9]{2})?)$/", $value );
+			default:
+				return preg_match( "/^(-?[0-9]{0,3}(?:,?[0-9]{3})*(?:\.[0-9]{1,2})?)$/", $value ) || preg_match( "/^(-?[0-9]{0,3}(?:\.?[0-9]{3})*(?:,[0-9]{2})?)$/", $value );
 
 		}
 	}
@@ -296,6 +297,43 @@ class GFCommon {
 		return json_decode( $str, $is_assoc );
 	}
 
+	/**
+	 * Decode JSON string to array.
+	 *
+	 * @since 2.5
+	 *
+	 * @param string $value JSON string.
+	 *
+	 * @return array|string
+	 */
+	public static function maybe_decode_json( $value ) {
+
+		if ( self::is_json( $value ) ) {
+			return json_decode( $value, ARRAY_A );
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Determines if provided string is a JSON object.
+	 *
+	 * @since 2.5
+	 *
+	 * @param string $string JSON string.
+	 *
+	 * @return bool
+	 */
+	public static function is_json( $string ) {
+
+		if ( is_string( $string ) && in_array( substr( $string, 0, 1 ), array( '{', '[' ) ) && is_array( json_decode( $string, ARRAY_A ) ) ) {
+			return true;
+		}
+
+		return false;
+
+	}
+
 	//Returns the url of the plugin's root folder
 	public static function get_base_url() {
 		return plugins_url( '', __FILE__ );
@@ -304,6 +342,66 @@ class GFCommon {
 	//Returns the physical path of the plugin's root folder
 	public static function get_base_path() {
 		return dirname( __FILE__ );
+	}
+
+	/**
+	 * Returns the URL to an image within the plugin's image directory.
+	 *
+	 * @since 2.5
+	 *
+	 * @param string $image_path The image path, including subdirectories if needed.
+	 *
+	 * @return string
+	 */
+	public static function get_image_url( $image_path ) {
+		$base = untrailingslashit( self::get_base_url() );
+
+		return sprintf( '%s/images/%s', $base, $image_path );
+	}
+
+	/**
+	 * Returns the path to an image within the plugin's image directory.
+	 *
+	 * @since 2.5
+	 *
+	 * @param string $image_path The image path, including subdirectories if needed.
+	 *
+	 * @return string
+	 */
+	public static function get_image_path( $image_path ) {
+		$base = untrailingslashit( self::get_base_path() );
+
+		return sprintf( '%s/images/%s', $base, $image_path );
+	}
+
+	/**
+	 * Returns the URL to an font file within the plugin's fonts directory.
+	 *
+	 * @since 2.5
+	 *
+	 * @param string $font_path The font path, including subdirectories if needed.
+	 *
+	 * @return string
+	 */
+	public static function get_font_url( $font_path ) {
+		$base = untrailingslashit( self::get_base_url() );
+
+		return sprintf( '%s/fonts/%s', $base, $font_path );
+	}
+
+	/**
+	 * Returns the path to an font file within the plugin's fonts directory.
+	 *
+	 * @since 2.5
+	 *
+	 * @param string $font_path The font path, including subdirectories if needed.
+	 *
+	 * @return string
+	 */
+	public static function get_font_path( $font_path ) {
+		$base = untrailingslashit( self::get_base_path() );
+
+		return sprintf( '%s/fonts/%s', $base, $font_path );
 	}
 
 	/**
@@ -873,6 +971,8 @@ class GFCommon {
 		}
 
 		switch ( $arg1 ) {
+			case 'alt' :
+				return get_post_meta( $media_id, '_wp_attachment_image_alt', true );
 			case 'title' :
 				$media = get_post( $media_id );
 
@@ -1198,6 +1298,65 @@ class GFCommon {
 			$local_date_dmy = date_i18n( 'd/m/Y', $local_timestamp, true );
 			$text           = str_replace( '{date_dmy}', $url_encode ? urlencode( $local_date_dmy ) : $local_date_dmy, $text );
 
+			//date_created, date_updated, payment_date
+			preg_match_all( '/{(date_created|date_updated|payment_date):?(.*?)(?:\s)?}/ism', $text, $matches, PREG_SET_ORDER );
+
+			if ( ! empty( $matches ) ) {
+				// Loop over all the mergetag matches and replace with appropriate date
+				foreach ( $matches as $match ) {
+					$full_tag    = $match[0];
+					$date_string = rgar( $entry, $match[1] );
+					$property    = $match[2];
+
+					if( ! empty( $date_string ) ) {
+						// Expand all modifiers, skipping escaped colons
+						$exploded = explode( ':', str_replace( '\:', '|COLON|', $property ) );
+
+						/*
+						 * If there is a `:format` modifier in a merge tag, grab the formatting
+						 *
+						 * The `:format` modifier should always have the format follow it; it's the next item in the array
+						 * In `foo:format:bar`, "bar" will be the returned format
+						 */
+						$format_key_index = array_search( 'format', $exploded, true );
+						$date_format           = false;
+						if ( false !== $format_key_index && isset( $exploded[ $format_key_index + 1 ] ) ) {
+							// Return escaped colons placeholder
+							$date_format = str_replace( '|COLON|', ':', $exploded[ $format_key_index + 1 ] );
+						}
+
+						$is_human             = in_array( 'human', $exploded, true ); // {date_created:human}
+						$is_diff              = in_array( 'diff', $exploded, true ); // {date_created:diff}
+						$is_raw               = in_array( 'raw', $exploded, true ); // {date_created:raw}
+						$is_timestamp         = in_array( 'timestamp', $exploded, true ); // {date_created:timestamp}
+						$include_time         = in_array( 'time', $exploded, true );  // {date_created:time}
+						$date_gmt_time        = mysql2date( 'G', $date_string );
+						$date_local_timestamp = self::get_local_timestamp( $date_gmt_time );
+
+						// If we're using time diff, we want to have a different default format
+						if ( empty( $date_format ) ) {
+							// translators: %s: relative time from now, used for generic date comparisons. "1 day ago", or "20 seconds ago"
+							$date_format = $is_diff ? esc_html__( '%s ago', 'gravityforms' ) : get_option( 'date_format' );
+						}
+
+						if ( $is_raw ) {
+							$formatted_date = $date_string;
+						} elseif ( $is_timestamp ) {
+							$formatted_date = $date_local_timestamp;
+						} elseif ( $is_diff ) {
+							$formatted_date = sprintf( $date_format, human_time_diff( $date_gmt_time ) );
+						} else {
+							$formatted_date = self::format_date( $date_string, $is_human, $date_format, $include_time );
+						}
+					} else {
+					    $formatted_date = '';
+					}
+
+					$formatted_date = self::format_variable_value( $formatted_date, $url_encode, $esc_html, $format, false );
+					$text           = str_replace( $full_tag, $formatted_date, $text );
+				}
+			}
+
 			// ip
 			$request_ip = rgars( $form, 'personalData/preventIP' ) ? '' : GFFormsModel::get_ip();
 			$ip = isset( $entry['ip'] ) ? $entry['ip'] : $request_ip;
@@ -1259,6 +1418,37 @@ class GFCommon {
 				$value = $url_encode ? urlencode( $value ) : $value;
 
 				$text = str_replace( $full_tag, $value, $text );
+			}
+
+			//created_by
+			preg_match_all( '/{created_by:?(.*?)(?:\s)?}/ism', $text, $matches, PREG_SET_ORDER );
+
+			if ( ! empty( $matches ) ) {
+				$entry_creator = new WP_User( rgar( $entry, 'created_by' ) );
+
+				// Loop over all the mergetag matches and replace with appropriate user data
+				foreach ( $matches as $match ) {
+					$full_tag = $match[0];
+					$property = $match[1];
+
+					switch ( $property ) {
+						case 'roles':
+							$value = implode( ', ', $entry_creator->roles );
+							break;
+
+						// Prevent leaking hashed passwords.
+						case 'user_pass':
+							$value = '';
+							break;
+
+						default:
+							$value = $entry_creator->get( $property );
+							break;
+					}
+
+					$value = self::format_variable_value( $value, $url_encode, $esc_html, '', false );
+					$text  = str_replace( $full_tag, $value, $text );
+				}
 			}
 
 		}
@@ -2481,6 +2671,27 @@ Content-Type: text/html;
 		return false;
 	}
 
+	/**
+	 * Whether the form has a required field.
+	 *
+	 * @since 2.5
+	 *
+	 * @param $form
+	 *
+	 * @return bool Whether there is a required field in the form.
+	 */
+	public static function has_required_field( $form ) {
+		if ( is_array( $form['fields'] ) ) {
+			foreach ( $form['fields'] as $field ) {
+				if ( $field->isRequired ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
 	/***
 	 * Determines if the current user has the proper cabalities to uninstall the plugin specified in $plugin_path.
 	 * Plugins that have been network activated can only be uninstalled by a network admin.
@@ -2681,6 +2892,15 @@ Content-Type: text/html;
 		return $key_info ? $key_info : array();
 	}
 
+	/**
+	 * Get the license and plugins information.
+	 *
+	 * @since unknown
+	 *
+	 * @param bool $cache If we should use the cached data.
+	 *
+	 * @return array|null
+	 */
 	public static function get_version_info( $cache = true ) {
 
 		$version_info = get_option( 'gform_version_info' );
@@ -2740,7 +2960,7 @@ Content-Type: text/html;
 	public static function get_remote_request_params() {
 		global $wpdb;
 
-		return sprintf( 'of=GravityForms&key=%s&v=%s&wp=%s&php=%s&mysql=%s&version=2', urlencode( self::get_key() ), urlencode( self::$version ), urlencode( get_bloginfo( 'version' ) ), urlencode( phpversion() ), urlencode( $wpdb->db_version() ) );
+		return sprintf( 'of=GravityForms&key=%s&v=%s&wp=%s&php=%s&mysql=%s&version=2', urlencode( self::get_key() ), urlencode( self::$version ), urlencode( get_bloginfo( 'version' ) ), urlencode( phpversion() ), urlencode( GFCommon::get_db_version() ) );
 	}
 
 	public static function get_remote_post_params() {
@@ -2795,7 +3015,7 @@ Content-Type: text/html;
 			'v'       => self::$version,
 			'wp'      => get_bloginfo( 'version' ),
 			'php'     => phpversion(),
-			'mysql'   => $wpdb->db_version(),
+			'mysql'   => GFCommon::get_db_version(),
 			'version' => '2',
 			'plugins' => $plugins,
 			'tn'      => $theme_name,
@@ -3219,7 +3439,9 @@ Content-Type: text/html;
 	 *
 	 * @return mixed
 	 */
-	public static function get_radio_choices( $field, $value = '', $disabled_text ) {
+	public static function get_radio_choices( $field, $value, $disabled_text ) {
+		$value = ( is_string( $value ) ) ? $value : '';
+
 		_deprecated_function( 'get_radio_choices', '1.9', 'GF_Field_Checkbox::get_radio_choices' );
 
 		return $field->get_radio_choices( $value, $disabled_text );
@@ -3478,7 +3700,8 @@ Content-Type: text/html;
 			$post_id   = rgar( $lead, 'post_id' );
 			$post_link = '';
 			if ( is_numeric( $post_id ) && self::is_post_field( $field ) ) {
-				$post_link = "<div>You can <a href='post.php?action=edit&post=$post_id'>edit this post</a> from the post page.</div>";
+				// Translators: link to the "Edit Post" page for this post.
+				$post_link = '<div>' . sprintf( __( 'You can <a href="%s">edit this post</a> from the post page.', 'gravityforms' ), 'post.php?action=edit&post=' . $post_id ) . '</div>';
 			}
 		}
 
@@ -3514,7 +3737,7 @@ Content-Type: text/html;
 		switch ( $type ) {
 
 			case 'honeypot':
-				$autocomplete = RGFormsModel::is_html5_enabled() ? "autocomplete='off'" : '';
+				$autocomplete = RGFormsModel::is_html5_enabled() ? "autocomplete='new-password'" : '';
 
 				return "<div class='ginput_container'><input name='input_{$id}' id='{$field_id}' type='text' value='' {$autocomplete}/></div>";
 				break;
@@ -3590,6 +3813,95 @@ Content-Type: text/html;
 		$file_name = basename( $url_info['path'] );
 
 		return $file_name == 'preview.php' || rgget( 'gf_page', $_GET ) == 'preview';
+	}
+
+	/**
+	 * Get default arguments for the preview link. The toolbar menu generator function requires array data, while other
+	 * areas like the form editor and settings pages require filterable button html.
+	 *
+	 * @since 2.5
+	 *
+	 * @param $args
+	 *
+	 * @return array
+	 */
+	private static function get_preview_link_args( $args ) {
+		$options = wp_parse_args( $args, array(
+			'aria-label'   => esc_html__( 'Preview this form', 'gravityforms' ),
+			'capabilities' => array(
+				'gravityforms_edit_forms',
+				'gravityforms_create_form',
+				'gravityforms_preview_forms'
+			),
+			'form_id'      => 0,
+			'label'        => __( 'Preview', 'gravityforms' ),
+			'link_class'   => 'button preview-form gform-button gform-button--white',
+			'menu_class'   => 'gf_form_toolbar_preview',
+			'priority'     => 700,
+			'target'       => '_blank',
+		) );
+
+		$options['url'] = trailingslashit( site_url() ) . '?gf_page=preview&id=' . $options['form_id'];
+
+		return $options;
+	}
+
+	/**
+	 * Returns preview link data as array when needed by menu builder functions.
+	 *
+	 * @since 2.5
+	 *
+	 * @param array $args
+	 *
+	 * @return array
+	 */
+	public static function get_preview_link_data( $args = array() ) {
+		return self::get_preview_link_args( $args );
+	}
+
+	/**
+	 * Gets the html for the preview form link if capabilities are met.
+	 *
+	 * @since 2.5
+	 *
+	 * @param array $args
+	 *
+	 * @return string
+	 */
+	public static function get_preview_link( $args = array() ) {
+		$options = self::get_preview_link_args( $args );
+
+		if ( ! GFCommon::current_user_can_any( $options[ 'capabilities' ] ) ) {
+			return '';
+		}
+
+		$preview_link = sprintf(
+			'
+				<a 
+					aria-label="%s" 
+					href="%s" 
+					class="%s" 
+					target="%s" 
+					rel="noopener"
+				>%s</a>
+				',
+			esc_html__( 'Preview this form', 'gravityforms' ),
+			esc_url( $options['url'] ),
+			esc_attr( $options['link_class'] ),
+			esc_attr( $options['target'] ),
+			esc_html( $options['label'] )
+		);
+
+		/**
+		 * A filter to allow you to modify the form preview link.
+		 *
+		 * @since 2.5
+		 *
+		 * @param string $preview_link The Form preview link HTML.
+		 */
+		$preview_link = apply_filters( 'gform_preview_form_link', $preview_link );
+
+		return $preview_link;
 	}
 
 	public static function clean_extensions( $extensions ) {
@@ -3680,15 +3992,15 @@ Content-Type: text/html;
 
 		// When a proper_filename value exists, it could be a security issue if it's different than the original file name.
 		if ( $proper_filename && strtolower( $proper_filename ) !== strtolower( $file_name ) ) {
-			return new WP_Error( 'invalid_file', esc_html__( 'There was an problem while verifying your file.' ) );
+			return new WP_Error( 'invalid_file', esc_html__( 'There was an problem while verifying your file.', 'gravityforms' ) );
 		}
 
 		// If either $ext or $type are empty, WordPress doesn't like this file and we should bail.
 		if ( ! $ext ) {
-			return new WP_Error( 'illegal_extension', esc_html__( 'Sorry, this file extension is not permitted for security reasons.' ) );
+			return new WP_Error( 'illegal_extension', esc_html__( 'Sorry, this file extension is not permitted for security reasons.', 'gravityforms' ) );
 		}
 		if ( ! $type ) {
-			return new WP_Error( 'illegal_type', esc_html__( 'Sorry, this file type is not permitted for security reasons.' ) );
+			return new WP_Error( 'illegal_type', esc_html__( 'Sorry, this file type is not permitted for security reasons.', 'gravityforms' ) );
 		}
 
 		return true;
@@ -4583,7 +4895,22 @@ Content-Type: text/html;
 		return $field;
 	}
 
+	/**
+	 * Prepare the saved value of a Post Category field for display.
+	 *
+	 * @since Unknown
+	 *
+	 * @param mixed     $value The current value of the Field
+	 * @param GF_Field  $field The Field object
+	 * @param string    $mode  The mode for which we are retrieving the prepared value (defaults to 'entry_detail'
+	 *
+	 * @return mixed
+	 */
 	public static function prepare_post_category_value( $value, $field, $mode = 'entry_detail' ) {
+
+		if ( $field instanceof GF_Field_MultiSelect ) {
+			$value = $field->to_array( $value );
+		}
 
 		if ( ! is_array( $value ) ) {
 			$value = explode( ',', $value );
@@ -4827,7 +5154,13 @@ Content-Type: text/html;
 		$gf_global['gf_currency_config'] = RGCurrency::get_currency( GFCommon::get_currency() );
 		$gf_global['base_url']           = GFCommon::get_base_url();
 		$gf_global['number_formats']     = array();
-		$gf_global['spinnerUrl']         = GFCommon::get_base_url() . '/images/spinner.gif';
+		$gf_global['spinnerUrl']         = GFCommon::get_base_url() . '/images/spinner.svg';
+
+		$gf_global['strings'] = array(
+			'newRowAdded' => __( 'New row added.', 'gravityforms' ),
+			'rowRemoved'  => __( 'Row removed', 'gravityforms' ),
+			'formSaved'   => __( 'The form has been saved.  The content contains the link to return and complete the form.', 'gravityforms' ),
+		);
 
 		$gf_global_json = 'var gf_global = ' . json_encode( $gf_global ) . ';';
 
@@ -4846,7 +5179,9 @@ Content-Type: text/html;
 		$gf_vars['update']                  = esc_html__( 'Update', 'gravityforms' );
 		$gf_vars['previousLabel']           = esc_html__( 'Previous', 'gravityforms' );
 		$gf_vars['selectFormat']            = esc_html__( 'Select a format', 'gravityforms' );
+		$gf_vars['column']                  = esc_html__( 'Column', 'gravityforms' );
 		$gf_vars['editToViewAll']           = esc_html__( '5 of %d items shown. Edit field to view all', 'gravityforms' );
+		$gf_vars['selectAll']               = esc_html__( 'Select All', 'gravityforms' );
 		$gf_vars['enterValue']              = esc_html__( 'Enter a value', 'gravityforms' );
 		$gf_vars['formTitle']               = esc_html__( 'Untitled Form', 'gravityforms' );
 		$gf_vars['formDescription']         = esc_html__( 'We would love to hear from you! Please fill out this form and we will get in touch with you shortly.', 'gravityforms' );
@@ -4855,22 +5190,40 @@ Content-Type: text/html;
 		$gf_vars['loading']                 = esc_html__( 'Loading...', 'gravityforms' );
 		$gf_vars['thisFieldIf']             = esc_html__( 'this field if', 'gravityforms' );
 		$gf_vars['thisSectionIf']           = esc_html__( 'this section if', 'gravityforms' );
-		$gf_vars['thisPage']                = esc_html__( 'this page', 'gravityforms' );
+		$gf_vars['thisPage']                = esc_html__( 'this page if', 'gravityforms' );
 		$gf_vars['thisFormButton']          = esc_html__( 'this form button if', 'gravityforms' );
 		$gf_vars['show']                    = esc_html__( 'Show', 'gravityforms' );
 		$gf_vars['hide']                    = esc_html__( 'Hide', 'gravityforms' );
-		$gf_vars['all']                     = esc_html( _x( 'All', 'Conditional Logic', 'gravityforms' ) );
-		$gf_vars['any']                     = esc_html( _x( 'Any', 'Conditional Logic', 'gravityforms' ) );
-		$gf_vars['ofTheFollowingMatch']     = esc_html__( 'of the following match:', 'gravityforms' );
-		$gf_vars['is']                      = esc_html__( 'is', 'gravityforms' );
-		$gf_vars['isNot']                   = esc_html__( 'is not', 'gravityforms' );
-		$gf_vars['greaterThan']             = esc_html__( 'greater than', 'gravityforms' );
-		$gf_vars['lessThan']                = esc_html__( 'less than', 'gravityforms' );
-		$gf_vars['contains']                = esc_html__( 'contains', 'gravityforms' );
-		$gf_vars['startsWith']              = esc_html__( 'starts with', 'gravityforms' );
-		$gf_vars['endsWith']                = esc_html__( 'ends with', 'gravityforms' );
-		$gf_vars['emptyChoice']             = wp_strip_all_tags( __( 'Empty (no choices selected)', 'gravityforms' ) );
+		$gf_vars['enable']                  = esc_html__( 'Enable', 'gravityforms' );
+		$gf_vars['disable']                 = esc_html__( 'Disable', 'gravityforms' );
+		$gf_vars['enabled']                 = esc_html__( 'Enabled', 'gravityforms' );
+		$gf_vars['disabled']                = esc_html__( 'Disabled', 'gravityforms' );
+		$gf_vars['configure']               = esc_html__( 'Configure', 'gravityform' );
+		$gf_vars['conditional_logic_text']  = esc_html__( 'Conditional Logic', 'gravityforms' );
+		$gf_vars['conditional_logic_desc']  = esc_html__( 'Conditional logic allows you to change what the user sees depending on the fields they select.', 'gravityforms' );
+		/**
+		 * @translators: %1$s is an opening <a> tag containing a href attribute
+		 *               %2$s is a closing <a> tag
+		 */
+		$logic_a11y_warn                   = esc_html__( 'Adding conditional logic to the form submit button could cause usability problems for some users and negatively impact the accessibility of your form. Learn more about button conditional logic in our %1$sdocumentation%2$s.', 'gravityforms' );
+		$logic_a11y_warn_link1             = '<a href="https://docs.gravityforms.com/field-accessibility-warning/" target="_blank" rel="noopener">';
+		$logic_a11y_warn_link2             = '</a>';
+		$gf_vars['conditional_logic_a11y'] = sprintf( $logic_a11y_warn, $logic_a11y_warn_link1, $logic_a11y_warn_link2 );
+		$gf_vars['page']                   = esc_html__( 'Page', 'gravityforms' );
+		$gf_vars['next_button']            = esc_html__( 'Next Button', 'gravityforms' );
+		$gf_vars['all']                    = esc_html( _x( 'All', 'Conditional Logic', 'gravityforms' ) );
+		$gf_vars['any']                    = esc_html( _x( 'Any', 'Conditional Logic', 'gravityforms' ) );
+		$gf_vars['ofTheFollowingMatch']    = esc_html__( 'of the following match:', 'gravityforms' );
+		$gf_vars['is']                     = esc_html__( 'is', 'gravityforms' );
+		$gf_vars['isNot']                  = esc_html__( 'is not', 'gravityforms' );
+		$gf_vars['greaterThan']            = esc_html__( 'greater than', 'gravityforms' );
+		$gf_vars['lessThan']               = esc_html__( 'less than', 'gravityforms' );
+		$gf_vars['contains']               = esc_html__( 'contains', 'gravityforms' );
+		$gf_vars['startsWith']             = esc_html__( 'starts with', 'gravityforms' );
+		$gf_vars['endsWith']               = esc_html__( 'ends with', 'gravityforms' );
+		$gf_vars['emptyChoice']            = wp_strip_all_tags( __( 'Empty (no choices selected)', 'gravityforms' ) );
 
+		$gf_vars['alertLegacyMode']                  = esc_html__( 'This form has legacy markup enabled and doesn’t support field resizing within the editor. Please disable legacy markup in the form settings to enable live resizing.', 'gravityforms' );
 		$gf_vars['thisConfirmation']                 = esc_html__( 'Use this confirmation if', 'gravityforms' );
 		$gf_vars['thisNotification']                 = esc_html__( 'Send this notification if', 'gravityforms' );
 		$gf_vars['confirmationSave']                 = esc_html__( 'Save', 'gravityforms' );
@@ -4903,10 +5256,13 @@ Content-Type: text/html;
 
 		$gf_vars['addFieldFilter']    = esc_html__( 'Add a condition', 'gravityforms' );
 		$gf_vars['removeFieldFilter'] = esc_html__( 'Remove a condition', 'gravityforms' );
-		$gf_vars['filterAndAny']      = esc_html__( 'Include results if {0} match:', 'gravityforms' );
+		$gf_vars['filterAndAny']      = esc_html__( '{0} of the following match:', 'gravityforms' );
 
 		$gf_vars['customChoices']     = esc_html__( 'Custom Choices', 'gravityforms' );
 		$gf_vars['predefinedChoices'] = esc_html__( 'Predefined Choices', 'gravityforms' );
+
+		// translators: {field_title} and {field_type} should not be translated , they are variables
+		$gf_vars['fieldLabelAriaLabel'] = esc_html__( '{field_label} - {field_type}, jump to this field\'s settings', 'gravityforms' );
 
 		if ( is_admin() && rgget( 'id' ) ) {
 
@@ -4917,6 +5273,7 @@ Content-Type: text/html;
 			$gf_vars['addressTypes']       = $address_field->get_address_types( $form['id'] );
 			$gf_vars['defaultAddressType'] = $address_field->get_default_address_type( $form['id'] );
 
+			$gf_vars['idString'] = __( 'ID: ', 'gravityforms' );
 		}
 
 		$prefixes = array_unique( array_filter( array(
@@ -4935,6 +5292,26 @@ Content-Type: text/html;
 			$prefix = wp_strip_all_tags( $prefix );
 
 			$gf_vars['nameFieldDefaultPrefixes'][] = array( 'text' => $prefix, 'value' => $prefix );
+		}
+
+		if ( is_admin() && rgget( 'id' ) ) {
+			$gf_vars['conditionalLogic'] = array(
+				'views' => array(
+					'sidebar'          => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/accordion_header.html' ),
+					'flyout'           => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/flyout.html' ),
+					'logicDescription' => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/logic_description.html' ),
+					'main'             => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/main_control.html' ),
+					'rule'             => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/rule.html' ),
+					'option'           => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/option.html' ),
+					'input'            => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/input.html' ),
+					'select'           => file_get_contents( GFCommon::get_base_path() . '/js/components/form_editor/conditional_flyout/views/select.html' ),
+				),
+				'conditionalLogicHelperText' => __( 'To use conditional logic, please create a field that supports conditional logic.', 'gravityforms' ),
+				'categories'                 => GFForms::get_post_category_options(),
+				'addressOptions'             => GFForms::get_address_rule_value_options( rgget( 'id' ) ),
+				'addRuleText'                => __( 'add another rule', 'gravityforms' ),
+				'removeRuleText'             => __( 'remove this rule', 'gravityforms' ),
+			);
 		}
 
 		$gf_vars_json = 'var gf_vars = ' . json_encode( $gf_vars ) . ';';
@@ -4975,19 +5352,9 @@ Content-Type: text/html;
 	 * @since 2.0
 	 */
 	public static function add_dismissible_message( $text, $key, $type = 'warning', $capabilities = false, $sticky = false, $page = null ) {
-		$message['type']         = $type;
-		$message['text']         = $text;
-		$message['key']          = sanitize_key( $key );
-		$message['capabilities'] = $capabilities;
-		$message['page']         = $page;
+		$dismissable = new Dismissable_Messages();
 
-		if ( $sticky ) {
-			$sticky_messages         = get_option( 'gform_sticky_admin_messages', array() );
-			$sticky_messages[ $key ] = $message;
-			update_option( 'gform_sticky_admin_messages', $sticky_messages );
-		} else {
-			self::$dismissible_messages[] = $message;
-		}
+		$dismissable->add( $text, $key, $type, $capabilities, $sticky, $page );
 	}
 
 	/**
@@ -4998,15 +5365,9 @@ Content-Type: text/html;
 	 * @since 2.0.2.3
 	 */
 	public static function remove_dismissible_message( $key ) {
-		$key = sanitize_key( $key );
-		$sticky_messages = get_option( 'gform_sticky_admin_messages', array() );
-		foreach ( $sticky_messages as $sticky_key => $sticky_message ) {
-			if ( $key == sanitize_key( $sticky_message['key'] ) ) {
-				unset( $sticky_messages[ $sticky_key ] );
-				update_option( 'gform_sticky_admin_messages', $sticky_messages );
-				break;
-			}
-		}
+		$dismissable = new Dismissable_Messages();
+
+		$dismissable->remove( $key );
 	}
 
 	public static function display_admin_message( $errors = false, $messages = false ) {
@@ -5024,7 +5385,7 @@ Content-Type: text/html;
 
 		if ( ! empty( $errors ) ) {
 			?>
-			<div class="error below-h2">
+			<div class="alert error below-h2">
 				<?php if ( count( $errors ) > 1 ) { ?>
 					<ul style="margin: 0.5em 0 0; padding: 2px;">
 						<li><?php echo implode( '</li><li>', $errors ); ?></li>
@@ -5036,7 +5397,7 @@ Content-Type: text/html;
 			<?php
 		} else if ( ! empty( $messages ) ) {
 			?>
-			<div id="message" class="updated below-h2">
+			<div id="message" class="alert success below-h2">
 				<?php if ( count( $messages ) > 1 ) { ?>
 					<ul style="margin: 0.5em 0 0; padding: 2px;">
 						<li><?php echo implode( '</li><li>', $messages ); ?></li>
@@ -5059,77 +5420,9 @@ Content-Type: text/html;
 	 * @since 2.0
 	 */
 	public static function display_dismissible_message( $messages = false, $page = null ) {
+		$dismissable = new Dismissable_Messages();
 
-		if ( ! $messages ) {
-			$messages        = self::$dismissible_messages;
-			$sticky_messages = get_option( 'gform_sticky_admin_messages', array() );
-			$messages        = array_merge( $messages, $sticky_messages );
-			$messages        = array_values( $messages );
-		}
-
-		if ( empty( $page ) ) {
-			$page = GFForms::get_page();
-		}
-
-		if ( ! empty( $messages ) ) {
-			foreach ( $messages as $message ) {
-				if ( isset( $sticky_messages[ $message['key'] ] ) && isset( $message['page'] ) && $message['page'] && $page !== $message['page'] ) {
-					continue;
-				}
-
-				if ( empty( $message['page'] ) && $page == 'site-wide' ) {
-					// Prevent double display on GF pages
-					continue;
-				}
-
-				if ( empty( $message['key'] ) || self::is_message_dismissed( $message['key'] ) ) {
-					continue;
-				}
-
-				if ( isset( $message['capabilities'] ) && $message['capabilities'] && ! GFCommon::current_user_can_any( $message['capabilities'] ) ) {
-					continue;
-				}
-
-				$class = in_array( $message['type'], array(
-					'warning',
-					'error',
-					'updated',
-					'success',
-				) ) ? $message['type'] : 'error';
-				?>
-				<div class="notice below-h1 notice-<?php echo $class; ?> is-dismissible"
-				     data-gf_dismissible_key="<?php echo $message['key'] ?>"
-				     data-gf_dismissible_nonce="<?php echo wp_create_nonce( 'gf_dismissible_nonce' ) ?>">
-					<p>
-						<?php echo $message['text']; ?>
-					</p>
-				</div>
-				<?php
-			}
-			?>
-			<script>
-				jQuery(document).ready(function ($) {
-					$(document).on("click", ".notice-dismiss", function () {
-						var $div = $(this).closest('div.notice');
-						if ($div.length > 0) {
-							var messageKey = $div.data('gf_dismissible_key');
-							var nonce = $div.data('gf_dismissible_nonce');
-							if (messageKey) {
-								jQuery.ajax({
-									url: ajaxurl,
-									data: {
-										action: 'gf_dismiss_message',
-										message_key: messageKey,
-										nonce: nonce
-									}
-								})
-							}
-						}
-					});
-				});
-			</script>
-			<?php
-		}
+		$dismissable->display( $messages, $page );
 	}
 
 	/**
@@ -5138,33 +5431,35 @@ Content-Type: text/html;
 	 * @param $key
 	 */
 	public static function dismiss_message( $key ) {
-		$db_key = self::get_dismissed_message_db_key( $key );
-		update_user_meta( get_current_user_id(), $db_key, true, true );
+		$dismissable = new Dismissable_Messages();
+
+		$dismissable->dismiss( $key );
 	}
 
 	/**
 	 * Has the dismissible message been dismissed by the current user?
+	 *
+	 * @deprecated since 2.5.7
 	 *
 	 * @param $key
 	 *
 	 * @return bool
 	 */
 	public static function is_message_dismissed( $key ) {
-		$db_key = self::get_dismissed_message_db_key( $key );
-
-		return (bool) get_user_meta( get_current_user_id(), $db_key, true );
+		_deprecated_function( __FUNCTION__, '2.5.7', 'Dismissable_Messages::is_dismissed()' );
 	}
 
 	/**
 	 * Returns the database key for the message.
+	 *
+	 * @deprecated since 2.5.7
 	 *
 	 * @param $key
 	 *
 	 * @return string
 	 */
 	public static function get_dismissed_message_db_key( $key ) {
-		$key = sanitize_key( $key );
-		return 'gf_dimissed_' . substr( md5( $key ), 0, 40 );
+		_deprecated_function( __FUNCTION__, '2.5.7', 'Dismissable_Messages::get_db_key()' );
 	}
 
 	private static function requires_gf_vars() {
@@ -5183,10 +5478,216 @@ Content-Type: text/html;
 		return false;
 	}
 
+	/**
+	 * Tests if we should output the hooks JavaScript on the active theme
+	 *
+	 * @since 2.5
+	 *
+	 * @return bool
+	 */
+	public static function requires_gf_hooks_javascript() {
+		require_once self::get_base_path() . '/form_display.php';
+
+		// Script has already been output; bail to avoid duplicating it.
+		return ! GFFormDisplay::$hooks_js_printed;
+	}
+
+	/**
+	 * Common method for outputting scripts inline. Allows for users on WordPress 5.7 and up
+	 * to filter the attributes of the script tag with 'wp_inline_script_attributes'.
+	 *
+	 * @since 2.5.7
+	 *
+	 * @param string $scripts main scripts block without outer tags.
+	 * @param bool   $cdata Whether to allow the cdata filters for this script.
+	 *
+	 * @return string
+	 */
+	public static function get_inline_script_tag( $scripts = '', $cdata = true ) {
+		$script_body = $cdata ? sprintf(
+			'%s %s %s',
+			/**
+			 * Filter the immediate opening of the script block. Allows for CDATA opening tags if needed for XHTML/XML.
+			 *
+			 * @since 1.6.3
+			 */
+			apply_filters( 'gform_cdata_open', '' ),
+			$scripts,
+			/**
+			 * Filter the closing of the script block. Allows for CDATA closing tags if needed for XHTML/XML.
+			 *
+			 * @since 1.6.3
+			 */
+			apply_filters( 'gform_cdata_close', '' )
+		) : $scripts;
+
+		if ( function_exists( 'wp_get_inline_script_tag' ) ) {
+			return wp_get_inline_script_tag( $script_body );
+		}
+
+		return sprintf( '<script type="text/javascript">%s</script>', $script_body );
+	}
+
+	/**
+	 * Display the Gravity Forms header.
+	 *
+	 * @since 2.5
+	 */
+	public static function gf_header() {
+		?>
+		<header class="gform-settings-header">
+			<div class="gform-settings__wrapper">
+				<img src="<?php echo GFCommon::get_base_url(); ?>/includes/settings/images/gravity-logo.svg" alt="Gravity Forms" width="266" />
+
+				<div class="gform-settings-header_buttons">
+					<?php echo apply_filters( 'gform_settings_header_buttons', '' ); ?>
+				</div>
+			</div>
+		</header>
+		<?php
+	}
+
+	/**
+	 * Display the wrapper for admin notifications.
+	 *
+	 * @since 2.5
+	 */
+	public static function notices_section() {
+		?>
+		<div id="gf-admin-notices-wrapper">
+
+			<!-- WP appends notices to the first H tag, so this is here to capture admin notices. -->
+			<h2 class="gf-notice-container"></h2>
+
+		</div>
+		<?php
+
+	}
+
+	/**
+	 * Parse any admin notices and hide any that are non-GF-related.
+	 *
+	 * @since 2.5
+	 *
+	 * @return bool
+	 */
+	public static function find_admin_notices() {
+		if ( ! GFForms::is_gravity_page() ) {
+			return;
+		}
+
+		global $wp_filter;
+		$notices         = $wp_filter['admin_notices']->callbacks;
+		$network_notices = array();
+		if ( rgar( $wp_filter, 'network_admin_notices' ) ) {
+			$network_notices = $wp_filter['network_admin_notices']->callbacks;
+		}
+
+		$all_notices = array_replace( $notices, $network_notices );
+
+		$has_non_gf_notices = false;
+		foreach ( $all_notices as $priority => $notice ) {
+			foreach ( $notice as $name => $callback ) {
+				if ( ! is_callable( $callback['function'] ) ) {
+					continue;
+				}
+
+				ob_start();
+				call_user_func( $callback['function'] );
+				$content = ob_get_clean();
+
+				if ( strpos( $content, 'gf-notice' ) == false ) {
+					remove_action( 'admin_notices', $name, $priority );
+					remove_action( 'network_admin_notices', $name, $priority );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Prevent notices from displaying before they are in their correct location.
+	 *
+	 * When the page first loads, the notices display briefly at the top of the page before
+	 * WordPress finds the first H2 tag where they are supposed to display.
+	 */
+	public static function admin_notices_style() {
+		?>
+		<style>
+			.gf-notice {
+				display: none;
+			}
+			#gf-admin-notices-wrapper .gf-notice,
+			#gf-wordpress-notices {
+				display: block;
+			}
+		</style>
+		<?php
+	}
+
 	public static function maybe_output_gf_vars() {
 		if ( self::requires_gf_vars() ) {
 			echo '<script type="text/javascript">' . self::gf_vars( false ) . '</script>';
 		}
+	}
+
+	/**
+	 * Check the widgets in the referenced sidebar to see if any are GF form widgets.
+	 *
+	 * @param string $sidebar_index The sidebar index/ID to check within.
+	 *
+	 * @since 2.5
+	 *
+	 * @return void
+	 */
+	public static function check_for_gf_widgets( $sidebar_index ) {
+		require_once self::get_base_path() . '/form_display.php';
+		$sidebars = wp_get_sidebars_widgets();
+
+		foreach( $sidebars as $sidebar => $widgets ) {
+
+			if ( $sidebar != $sidebar_index || ! is_array( $widgets ) ) {
+				continue;
+			}
+
+			foreach( $widgets as $widget ) {
+				if ( strpos( $widget, 'gform_widget' ) !== false ) {
+					GFFormDisplay::$sidebar_has_widget = true;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Outputs gforms object and hooks methods depended upon by gform_gravityforms script early so that inline scripts
+	 * in between the dependency and this block can continue to work
+	 *
+	 * @since 2.5
+	 */
+	public static function output_hooks_javascript() {
+		if ( ! self::requires_gf_hooks_javascript() ) {
+			return;
+		}
+
+		$hooks_javascript = self::get_hooks_javascript_code();
+
+		echo '<script type="text/javascript">' . $hooks_javascript . '</script>';
+	}
+
+	/**
+	 * Get the Javascript code from the gforms_hooks file and return it.
+	 *
+	 * @since 2.5
+	 *
+	 * @return false|string
+	 */
+	public static function get_hooks_javascript_code() {
+		require_once self::get_base_path() . '/form_display.php';
+
+		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
+
+		GFFormDisplay::$hooks_js_printed = true;
+
+		return file_get_contents( GFCommon::get_base_path() . '/js/gforms_hooks' . $min . '.js' );
 	}
 
 	/**
@@ -5529,6 +6030,44 @@ Content-Type: text/html;
 		return false;
 	}
 
+	/**
+	 * Localize i18n strings needed for admin and theme.
+	 *
+	 * @since 2.5
+	 */
+	public static function localize_gform_i18n() {
+		wp_localize_script(
+			'gform_gravityforms', 'gform_i18n', array(
+				'datepicker' => array(
+					'days'     => array(
+						'monday'    => esc_html__( 'Mon', 'gravityforms' ),
+						'tuesday'   => esc_html__( 'Tue', 'gravityforms' ),
+						'wednesday' => esc_html__( 'Wed', 'gravityforms' ),
+						'thursday'  => esc_html__( 'Thu', 'gravityforms' ),
+						'friday'    => esc_html__( 'Fri', 'gravityforms' ),
+						'saturday'  => esc_html__( 'Sat', 'gravityforms' ),
+						'sunday'    => esc_html__( 'Sun', 'gravityforms' ),
+					),
+					'months'   => array(
+						'january'   => esc_html__( 'January', 'gravityforms' ),
+						'february'  => esc_html__( 'February', 'gravityforms' ),
+						'march'     => esc_html__( 'March', 'gravityforms' ),
+						'april'     => esc_html__( 'April', 'gravityforms' ),
+						'may'       => esc_html__( 'May', 'gravityforms' ),
+						'june'      => esc_html__( 'June', 'gravityforms' ),
+						'july'      => esc_html__( 'July', 'gravityforms' ),
+						'august'    => esc_html__( 'August', 'gravityforms' ),
+						'september' => esc_html__( 'September', 'gravityforms' ),
+						'october'   => esc_html__( 'October', 'gravityforms' ),
+						'november'  => esc_html__( 'November', 'gravityforms' ),
+						'december'  => esc_html__( 'December', 'gravityforms' ),
+					),
+					'firstDay' => absint( get_option( 'start_of_week' ) ),
+				),
+			)
+		);
+	}
+
 	public static function localize_gform_gravityforms_multifile() {
 		wp_localize_script(
 			'gform_gravityforms', 'gform_gravityforms', array(
@@ -5550,6 +6089,45 @@ Content-Type: text/html;
 				)
 			)
 		);
+	}
+
+	/**
+	 * Localizes a variable for determining if a form is using legacy markup.
+	 *
+	 * @since 2.5
+	 *
+	 * @param string $script The handle of the script in which to localize the variable.
+	 *
+	 */
+	public static function localize_legacy_check( $script ) {
+			$form = RGFormsModel::get_form_meta( rgget( 'id' ) );
+			wp_localize_script( $script, 'gf_legacy', array( 'is_legacy' => GFCommon::is_legacy_markup_enabled( $form ) ) );
+	}
+
+	/**
+	 * Localize legacy checks for each form on the page.
+	 *
+	 * @since 2.5
+	 *
+	 * @see gform_gf_legacy_multi
+	 */
+	public static function localize_gf_legacy_multi() {
+
+		/**
+		 * Allows users to filter the legacy checks for any form on the page.
+		 *
+		 * @since 2.5
+		 *
+		 * @param array
+		 */
+		$data = apply_filters( 'gform_gf_legacy_multi', array() );
+		if ( ! empty( $data ) ) {
+			wp_localize_script(
+				'gform_gravityforms',
+				'gf_legacy_multi',
+				$data
+			);
+		}
 	}
 
 	public static function send_resume_link( $message, $subject, $email, $embed_url, $resume_token ) {
@@ -5945,11 +6523,18 @@ Content-Type: text/html;
 	 *
 	 * Translation files in the WP_LANG_DIR folder have a higher priority.
 	 *
+	 * @since unknown
+	 * @since 2.5.6   Respect user-specific locale settings.
+	 *
 	 * @param string $domain   The plugin text domain. Default is gravityforms.
 	 * @param string $basename The plugin basename. plugin_basename() will be used to get the Gravity Forms basename when not provided.
+	 *
+	 * @return string
 	 */
 	public static function load_gf_text_domain( $domain = 'gravityforms', $basename = '' ) {
-		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+		$current_locale = version_compare( get_bloginfo( 'version', 'display' ), '5.0', '>=' ) ? determine_locale() : self::legacy_determine_locale();
+		$locale         = apply_filters( 'plugin_locale', $current_locale, $domain );
+
 		if ( $locale != 'en_US' && ! is_textdomain_loaded( $domain ) ) {
 			if ( empty( $basename ) ) {
 				$basename = plugin_basename( self::get_base_path() );
@@ -5958,6 +6543,84 @@ Content-Type: text/html;
 			load_textdomain( $domain, sprintf( '%s/gravityforms/%s-%s.mo', WP_LANG_DIR, $domain, $locale ) );
 			load_plugin_textdomain( $domain, false, $basename . '/languages' );
 		}
+
+		return $locale;
+	}
+
+	/**
+	 * This is a copy of the determine_locale() method added in Wordpress 5.0. It is used for previous
+	 * WordPress versions to emulate the same behavior.
+	 *
+	 * @since 2.5.6
+	 *
+	 * @return string
+	 */
+	public static function legacy_determine_locale() {
+		/**
+		 * Filters the locale for the current request prior to the default determination process.
+		 *
+		 * Using this filter allows to override the default logic, effectively short-circuiting the function.
+		 *
+		 * @since 5.0.0
+		 *
+		 * @param string|null $locale The locale to return and short-circuit. Default null.
+		 */
+		$determined_locale = apply_filters( 'pre_determine_locale', null );
+
+		if ( ! empty( $determined_locale ) && is_string( $determined_locale ) ) {
+			return $determined_locale;
+		}
+
+		$determined_locale = get_locale();
+
+		if ( function_exists( 'get_user_locale' ) ) {
+			if ( is_admin() ) {
+				$determined_locale = get_user_locale();
+			}
+
+			if ( isset( $_GET['_locale'] ) && 'user' === $_GET['_locale'] && wp_is_json_request() ) {
+				$determined_locale = get_user_locale();
+			}
+		}
+
+		if ( ! empty( $_GET['wp_lang'] ) && ! empty( $GLOBALS['pagenow'] ) && 'wp-login.php' === $GLOBALS['pagenow'] ) {
+			$determined_locale = sanitize_text_field( $_GET['wp_lang'] );
+		}
+
+		/**
+		 * Filters the locale for the current request.
+		 *
+		 * @since 5.0.0
+		 *
+		 * @param string $locale The locale.
+		 */
+		return apply_filters( 'determine_locale', $determined_locale );
+	}
+
+	/**
+	 * Returns an array of locales or mo translation files found in the WP_LANG_DIR/plugins directory.
+	 *
+	 * @since 2.5.6
+	 *
+	 * @param string $domain       The plugin text domain. Default is gravityforms.
+	 * @param bool   $return_files Indicates if the mo files should be returned using the locales as the keys.
+	 *
+	 * @return array
+	 */
+	public static function get_installed_translations( $domain = 'gravityforms', $return_files = false ) {
+		$files = self::glob( $domain . '-*.mo', WP_LANG_DIR . '/plugins/' );
+
+		if ( ! is_array( $files ) ) {
+			return array();
+		}
+
+		$translations = array();
+
+		foreach ( $files as $file ) {
+			$translations[ str_replace( $domain . '-', '', basename( $file, '.mo' ) ) ] = $file;
+		}
+
+		return $return_files ? $translations : array_keys( $translations );
 	}
 
 	public static function replace_field_variable( $text, $form, $lead, $url_encode, $esc_html, $nl2br, $format, $input_id, $match, $esc_attr = false ) {
@@ -6184,7 +6847,7 @@ Content-Type: text/html;
 
 		$markup = sprintf( '<ul><li>%s</li></ul>', implode( '</li><li>', $markup ) );
 
-		return sprintf( '<h6>%s</h6> %s<br><br>%s', __( 'Visibility', 'gravityforms' ), __( 'Select the visibility for this field.', 'gravityforms' ), $markup );
+		return sprintf( '<strong>%s</strong> %s<br><br>%s', __( 'Visibility', 'gravityforms' ), __( 'Select the visibility for this field.', 'gravityforms' ), $markup );
 	}
 
 	/**
@@ -6343,7 +7006,153 @@ Content-Type: text/html;
 		GFCommon::log_debug( __METHOD__ . '(): Domain matches? '. var_export( $domain_matches, true ) );
 
 		return $domain_matches;
-  }
+  	}
+
+	/**
+	 * Prepare icon markup based on icon type.
+	 *
+	 * @since 2.5
+	 *
+	 * @param array       $item    Array containing an "icon" property.
+	 * @param string|null $default Default icon.
+	 *
+	 * @return string|null
+	 */
+	public static function get_icon_markup( $item, $default = null ) {
+
+		// Get icon.
+		$icon = rgar( $item, 'icon', $default );
+
+		// If icon is empty, return.
+		if ( rgblank( $icon ) ) {
+			return null;
+		}
+
+		// Return icon markup.
+		if ( strpos( $icon, '<svg' ) !== false ) {
+			return $icon;
+		} else if ( filter_var( $icon, FILTER_VALIDATE_URL ) ) {
+			return sprintf( '<img src="%s" />', esc_attr( $icon ) );
+		} else if ( strpos( $icon, 'fa-' ) !== false ) {
+			// Allow for custom types of font awesome implementation.
+			// Keys in on: "fa-icon-name fa*" or "fa* fa-icon-name"
+			preg_match('/(fa[a-z])?(?:[\s]?fa-[a-zA-Z0-9]+[\s]?)(fa[a-z])?/', $icon, $matches );
+			if ( count( $matches ) < 2 ) {
+				return sprintf( '<i class="fa %s"></i>', esc_attr( $icon ) );
+			} else {
+				return sprintf( '<i class="%s"></i>', esc_attr( $icon ) );
+			}
+		} else if ( strpos( $icon, 'dashicons' ) === 0 ) {
+			return sprintf( '<i class="dashicons %s"></i>', esc_attr( $icon ) );
+		} else if ( strpos( $icon, 'gform-icon' ) === 0 ) {
+			return sprintf( '<i class="gform-icon %s"></i>', esc_attr( $icon ) );
+		}
+
+		return null;
+
+	}
+
+	/**
+	 * Determines if a form has legacy markup enabled.
+	 *
+	 * @since 2.5
+	 *
+	 * @param int|array $form_or_id  Form ID or form array.
+	 *
+	 * @return bool
+	 */
+	public static function is_legacy_markup_enabled( $form_or_id ) {
+
+		if ( is_numeric( $form_or_id ) ) {
+			$form = GFAPI::get_form( $form_or_id );
+		} else {
+			$form = $form_or_id;
+		}
+
+		$markup_version = rgar( $form, 'markupVersion' );
+		$is_enabled     = ! $markup_version || (int) $markup_version === 1;
+
+		/**
+		 * Enable or disable legacy markup for a form.
+		 *
+		 * Override legacy markup setting for one or all forms.
+		 *
+		 * @since 2.5
+		 *
+		 * @param bool  $is_enabled Indicates if legacy markup is enabled for the current form. Default is false for forms created with Gravity Forms 2.5 and greater.
+		 * @param array $form       The form object.
+		 */
+		$is_enabled = gf_apply_filters( array( 'gform_enable_legacy_markup', rgar( $form, 'id' ) ), $is_enabled, $form );
+
+		return $is_enabled;
+	}
+
+	/**
+	 * Converts a file size to an easily readable string.
+	 *
+	 * @param int $bytes file size in byes.
+	 *
+	 * @since 2.5
+	 *
+	 * @return string
+	 */
+	public static function format_file_size( $bytes ) {
+
+		if ( $bytes >= 1073741824 ) {
+			$bytes = number_format( $bytes / 1073741824 ) . ' GB';
+		} elseif ( $bytes >= 1048576 ) {
+			$bytes = number_format( $bytes / 1048576 ) . ' MB';
+		} elseif ( $bytes >= 1024 ) {
+			$bytes = number_format( $bytes / 1024 ) . ' KB';
+		} elseif ( $bytes > 1 ) {
+			$bytes = $bytes . ' bytes';
+		} elseif ( $bytes == 1 ) {
+			$bytes = $bytes . ' byte';
+		} else {
+			$bytes = '0 bytes';
+		}
+
+		return $bytes;
+
+	}
+
+	/**
+	 * Sets a new value on an existing array, given a known path.
+	 *
+	 * @since 2.5
+	 *
+	 * @param array $source_array An array with data that requires updating.
+	 * @param array $array_path_keys An indexed array containing the path to update on the $source_array.
+	 * @param mixed $value The new value to set on the $source_array.
+	 */
+	public static function set_array_value( $source_array, $array_path_keys, $value ) {
+		if ( empty( $array_path_keys ) ) {
+			return $source_array;
+		}
+
+		$updated = $source_array;
+		$temp    = &$updated;
+
+		while ( count( $array_path_keys ) > 0 ) {
+			$key = array_shift( $array_path_keys );
+
+			if ( ! is_array( $temp ) ) {
+				$temp = array();
+			}
+
+			if ( $key === '[]' ) {
+				$temp[] = null;
+				end( $temp );
+				$key = key( $temp );
+			}
+
+			$temp = &$temp[ $key ];
+		}
+
+		$temp = $value;
+
+		return $updated;
+	}
 
 	/**
 	 * Generate a random string, using a cryptographically secure
@@ -6371,6 +7180,69 @@ Content-Type: text/html;
 		}
 
 		return implode( '', $pieces );
+	}
+
+	/**
+	 * Check a field group for nested fields and return the key.
+	 *
+	 * @since 2.4.24
+	 *
+	 * @param array $group Field array.
+	 *
+	 * @return string
+	 */
+	public static function get_nested_key( $group ) {
+		$nested_key = rgar( $group, 'sections' ) ? 'sections' : 'fields';
+
+		if ( ( ! rgar( $group, $nested_key ) || empty( $group[ $nested_key ] ) ) && rgar( $group, 'inputs' ) ) {
+			$nested_key = 'inputs';
+		}
+
+		return $nested_key;
+	}
+
+	/**
+	 * Return the version of MySQL or MariaDB currently in use.
+	 *
+	 * @since 2.5
+	 *
+	 * @return string
+	 */
+	public static function get_db_version() {
+		global $wpdb;
+
+		$ver = $wpdb->get_var( 'SELECT version();' );
+
+		return preg_replace( '/[^0-9.].*/', '', $ver );
+	}
+
+	/**
+	 * Return current database management system
+	 *
+	 * @since 2.5
+	 *
+	 * @return string either MySQL or MariaDB
+	 */
+	public static function get_dbms_type() {
+		global $wpdb;
+
+		$ver = $wpdb->get_var( 'SELECT version();' );
+
+		return strpos( strtolower( $ver ), 'mariadb' ) ? 'MariaDB' : 'MySQL';
+
+	}
+
+	/**
+	 * Determines if the given form has an array based fields property.
+	 *
+	 * @since 2.5.7
+	 *
+	 * @param array $form The form to be checked.
+	 *
+	 * @return bool
+	 */
+	public static function form_has_fields( $form ) {
+		return ! empty( $form['fields'] ) && is_array( $form['fields'] );
 	}
 
 }

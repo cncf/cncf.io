@@ -1,0 +1,93 @@
+{
+  "name": "@gravityforms/webpack-config",
+  "version": "1.0.0-beta.1",
+  "description": "Webpack and babel configuration for Gravity Forms development.",
+  "author": "Rocketgenius",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "gravityforms",
+    "webpack",
+    "config"
+  ],
+  "homepage": "https://github.com/gravityforms/gravityforms/tree/HEAD/packages/npm/webpack-config/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gravityforms/gravityforms.git",
+    "directory": "packages/npm/webpack-config"
+  },
+  "bugs": {
+    "url": "https://github.com/gravityforms/gravityforms/issues"
+  },
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.8"
+  },
+  "main": "index.js",
+  "browserslist": {
+    "admin": [
+      ">0.25%",
+      "not ie 11",
+      "not op_mini all"
+    ],
+    "theme": [
+      ">0.25%",
+      "not op_mini all"
+    ]
+  },
+  "scripts": {
+    "js:theme:dev": "cross-env NODE_ENV=themedev BROWSERSLIST_ENV=theme npx webpack",
+    "js:admin:dev": "cross-env NODE_ENV=admindev BROWSERSLIST_ENV=admin npx webpack",
+    "js:theme:prod": "cross-env NODE_ENV=themeprod BROWSERSLIST_ENV=theme npx webpack",
+    "js:admin:prod": "cross-env NODE_ENV=adminprod BROWSERSLIST_ENV=admin npx webpack"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.13",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "^7.0.0",
+    "@babel/plugin-transform-regenerator": "^7.7.0",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@webpack-cli/serve": "^1.2.2",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "concat": "^1.0.3",
+    "core-js": "^3.4.1",
+    "cross-env": "^6.0.3",
+    "css-hot-loader": "^1.4.4",
+    "css-loader": "^5.0.0",
+    "enhanced-resolve": "^4.1.1",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "find-config": "^1.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "ifdef-loader": "^2.1.4",
+    "lodash": "^4.17.15",
+    "matchdep": "^2.0.0",
+    "react-refresh": "^0.9.0",
+    "regenerator-runtime": "^0.13.3",
+    "require-dir": "^1.2.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^2.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.33.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2",
+    "webpack-merge-and-include-globally": "^2.1.20",
+    "webpack-stream": "^6.1.2",
+    "webpack-watch-files-plugin": "^1.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

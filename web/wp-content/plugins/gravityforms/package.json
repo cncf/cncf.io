@@ -1,0 +1,84 @@
+{
+	"name": "gravityforms",
+	"version": "2.5.9",
+	"license": "GPL-2.0",
+	"repository": "https://github.com/gravityforms/gravityforms",
+	"gravityforms": {
+		"paths": {
+			"root": "",
+			"css_dist": "css/",
+			"dev": "dev/",
+			"settings_css_dist": "includes/settings/css/",
+			"fonts": "fonts/",
+			"legacy_css": "legacy/css/",
+			"css_src": "src/css/",
+			"images": "images/",
+			"postcss_assets_base_url": "../",
+			"npm": "node_modules"
+		}
+	},
+	"browserslist": [
+		"last 3 versions",
+		"safari >= 13",
+		"ios >= 13",
+		"android >= 5.1",
+		"not ie <= 10",
+		"not ie_mob <= 11",
+		"not op_mini all",
+		"not bb <= 10",
+		"not samsung 4",
+		"not op_mob <= 12.1"
+	],
+	"engines": {
+		"node": "14.15.0",
+		"npm": "6.14.8"
+	},
+	"scripts": {
+		"gulp": "gulp",
+		"start": "yarn install && npm run gulp -- dev",
+		"dev": "npm run gulp -- dev",
+		"dist": "npm run gulp -- dist",
+		"lint": "eslint . --ext .js,.jsx --fix",
+		"js:theme:dev": "cd node_modules/@gravityforms/webpack-config && npm run js:theme:dev",
+		"js:admin:dev": "cd node_modules/@gravityforms/webpack-config && npm run js:admin:dev",
+		"js:theme:prod": "cd node_modules/@gravityforms/webpack-config && npm run js:theme:prod",
+		"js:admin:prod": "cd node_modules/@gravityforms/webpack-config && npm run js:admin:prod",
+		"validate": "npm run gulp -- validate"
+	},
+	"devDependencies": {
+		"@gravityforms/webpack-config": "file:packages/npm/webpack-config",
+		"@wordpress/eslint-plugin": "^9.1.0",
+		"@wordpress/stylelint-config": "^19.0.3",
+		"autoprefixer": "^10.2.5",
+		"browser-sync": "^2.26.13",
+		"del": "^6.0.0",
+		"eslint": "^7.32.0",
+		"gulp": "^4.0.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-decompress": "^3.0.0",
+		"gulp-footer": "^2.0.2",
+		"gulp-header": "^2.0.9",
+		"gulp-if": "^3.0.0",
+		"gulp-postcss": "^9.0.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-replace": "^1.0.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-stylelint": "^13.0.0",
+		"postcss": "^8.1.4",
+		"postcss-custom-media": "^7.0.8",
+		"postcss-custom-properties": "^10.0.0",
+		"postcss-extend": "^1.0.5",
+		"postcss-import": "^13.0.0",
+		"postcss-mixins": "^7.0.2",
+		"postcss-nested": "^5.0.1",
+		"postcss-preset-env": "^6.7.0",
+		"postcss-rem-to-pixel": "^4.1.2",
+		"require-dir": "^1.2.0",
+		"stylelint": "^13.12.0",
+		"stylelint-order": "^4.1.0",
+		"tailwindcss": "^2.0.3"
+	},
+	"dependencies": {
+		"cross-env": "^7.0.3"
+	}
+}

@@ -138,13 +138,18 @@ function gf_is_match( formId, rule ) {
 		$inputs = $( 'input[id="input_{0}_{1}"], input[id^="input_{0}_{1}_"], input[id^="choice_{0}_{1}_"], select#input_{0}_{1}, textarea#input_{0}_{1}'.format( formId, fieldId ) );
 	}
 
-	var isCheckable = $.inArray( $inputs.attr( 'type' ), [ 'checkbox', 'radio' ] ) !== -1,
-		isMatch     = isCheckable ? gf_is_match_checkable( $inputs, rule, formId, fieldId ) : gf_is_match_default( $inputs.eq( 0 ), rule, formId, fieldId );
+	var isCheckable = $.inArray( $inputs.attr( 'type' ), [ 'checkbox', 'radio' ] ) !== -1;
+	var isMatch     = isCheckable ? gf_is_match_checkable( $inputs, rule, formId, fieldId ) : gf_is_match_default( $inputs.eq( 0 ), rule, formId, fieldId );
 
 	return gform.applyFilters( 'gform_is_value_match', isMatch, formId, rule );
 }
 
 function gf_is_match_checkable( $inputs, rule, formId, fieldId ) {
+
+	// Rule is checking if the checkable is/isn't blank. Return a specific check for that use-case.
+	if ( rule.value === '' ) {
+		return rule.operator === 'is' ? gf_is_checkable_empty( $inputs ) : ! gf_is_checkable_empty( $inputs );
+	}
 
 	var isMatch = false;
 
@@ -177,6 +182,26 @@ function gf_is_match_checkable( $inputs, rule, formId, fieldId ) {
 	} );
 
 	return isMatch;
+}
+
+/**
+ * Check if a collection of checkable inputs has any checked,
+ * or if they are all unchecked.
+ *
+ * @param {jQuery} $inputs A collection of inputs to check.
+ *
+ * @returns {boolean}
+ */
+function gf_is_checkable_empty( $inputs ) {
+	var isEmpty = true;
+
+	$inputs.each( function() {
+		if ( jQuery( this ).is( ':checked' ) ) {
+			isEmpty = false;
+		}
+	} );
+
+	return isEmpty;
 }
 
 function gf_is_match_default( $input, rule, formId, fieldId ) {
@@ -364,7 +389,14 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 
 		if(useAnimation && !isInit){
 			if($target.length > 0){
-				$target.find(':input:hidden:not(.gf-default-disabled)').prop( 'disabled', false );
+				$target.find(':input:hidden:not(.gf-default-disabled)').removeAttr( 'disabled' );
+				if ( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
+					$target.removeAttr( 'disabled' ).css( 'display', '' );
+					if ( '1' == gf_legacy.is_legacy ) {
+						// for legacy markup, remove screen reader class.
+						$target.removeClass( 'screen-reader-text' );
+					}
+				}
 				$target.slideDown(callback);
 			} else if(callback){
 				callback();
@@ -378,8 +410,18 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 			if ( display == '' || display == 'none' ){
 				display = 'list-item';
 			}
-			$target.find(':input:hidden:not(.gf-default-disabled)').prop( 'disabled', false );
-			$target.css('display', display);
+			$target.find(':input:hidden:not(.gf-default-disabled)').removeAttr( 'disabled' );
+
+			// Handle conditional submit and next buttons.
+			if ( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
+				$target.removeAttr( 'disabled' ).css( 'display', '' );
+				if ( '1' == gf_legacy.is_legacy ) {
+					// for legacy markup, remove screen reader class.
+					$target.removeClass( 'screen-reader-text' );
+				}
+			} else {
+				$target.css( 'display', display );
+			}
 
 			if(callback){
 				callback();
@@ -410,14 +452,30 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 		}
 
 		if(useAnimation && !isInit){
-			if($target.length > 0 && $target.is(":visible")) {
-				$target.slideUp(callback);
-			} else if(callback) {
+			if( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
+				$target.attr( 'disabled', 'disabled' ).hide();
+				if ( '1' === gf_legacy.is_legacy ) {
+					// for legacy markup, let screen readers read the button.
+					$target.addClass( 'screen-reader-text' );
+				}
+			} else if ( $target.length > 0 && $target.is( ":visible" ) ) {
+				$target.slideUp( callback );
+			} else if ( callback ) {
 				callback();
 			}
 		} else{
-			$target.hide();
-			$target.find(':input:hidden:not(.gf-default-disabled)').prop( 'disabled', true );
+
+			// Handle conditional submit and next buttons.
+			if ( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
+				$target.attr( 'disabled', 'disabled' ).hide();
+				if ( '1' === gf_legacy.is_legacy ) {
+					// for legacy markup, let screen readers read the button.
+					$target.addClass( 'screen-reader-text' );
+				}
+			} else {
+				$target.css( 'display', 'none' );
+			}
+			$target.find(':input:hidden:not(.gf-default-disabled)').attr( 'disabled', 'disabled' );
 			if(callback){
 				callback();
 			}
@@ -530,6 +588,7 @@ function gf_reset_to_default(targetId, defaultValue){
 			if( gf_is_hidden_pricing_input( element ) ) {
 				var ids = gf_get_ids_by_html_id( element.parents( '.gfield' ).attr( 'id' ) );
 				jQuery( '#input_' + ids[0] + '_' + ids[1] ).text( gformFormatMoney( element.val() ) );
+				element.val( gformFormatMoney( element.val() ) );
 			}
 		}
 		else{
@@ -568,13 +627,13 @@ function gf_reset_to_default(targetId, defaultValue){
 
 function gf_is_hidden_pricing_input( element ) {
 
-	if( element.attr( 'type' ) !== 'hidden' ) {
-		return false;
-	}
-
 	// Check for Single Product fields.
 	if( element.attr( 'id' ) && element.attr( 'id' ).indexOf( 'ginput_base_price' ) === 0 ) {
 		return true;
+	}
+
+	if( element.attr( 'type' ) !== 'hidden' ) {
+		return false;
 	}
 
 	// Check for Shipping fields.
