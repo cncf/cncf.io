@@ -62,10 +62,12 @@
 	);
 
 	$related_query = new WP_Query( $related_args );
-	?>
+
+	if ( $related_query->have_posts() ) :
+		?>
 
 <div
-	class="wp-block-lf-upcoming-webinars is-style-horizontal entry-content center-align margin-bottom-large">
+	class="wp-block-lf-upcoming-webinars entry-content center-align margin-bottom-large">
 <div class="container wrap">
 	<h3 class="margin-top-large">Related upcoming programs</h3>
 	</div>
@@ -121,3 +123,6 @@
 		?>
 	</div>
 </div>
+		<?php
+		endif;
+	?>

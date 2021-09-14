@@ -11,6 +11,7 @@
 
 <main class="page-content"
 <?php
+// Needed on CNCF Only.
 if ( is_front_page() ) {
 	echo ' id="maincontent"';
 }

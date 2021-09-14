@@ -33,7 +33,7 @@
 .project-thumbnail {
 	width: 100%;
 	max-width: 125px;
-	max-height: 125x;
+	max-height: 125px;
 
 	&:hover {
 		opacity: 0.8;
@@ -53,18 +53,8 @@
 }
 
 .project-icons {
-	margin-top: 1rem;
 	display: flex;
 	flex-wrap: wrap;
-	width: 80%;
-
-	@media (min-width: 768px) {
-		width: 70%;
-	}
-
-	align-items: center;
-	align-items: center;
-	justify-content: center;
 
 	> * {
 		margin-right: 0.25em;
@@ -87,4 +77,53 @@
 			color: $primary-color;
 		}
 	}
+}
+
+.project-single-hero {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 768px) {
+		flex-direction: row;
+		> div:first-child {
+			width: calc(225px + 4rem);
+			flex-shrink: 0;
+		}
+	}
+}
+
+.project-single-hero-details {
+	padding: 2rem;
+	background-color: $tertiary-color;
+	flex-grow: 1;
+}
+
+.single-lf_project .newsroom-post-wrapper {
+	background-color: $tertiary-color;
+	height: 100%;
+}
+
+.project-single-hero-logo {
+	display: flex;
+	align-content: center;
+	align-items: center;
+
+	.project-thumbnail-container {
+		width: 225px;
+		height: 225px;
+
+		a {
+			align-self: center;
+		}
+
+		.project-thumbnail {
+			max-width: 225px;
+			max-height: 225px;
+		}
+	}
+}
+
+.project-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
 }
