@@ -22,7 +22,6 @@
 			$is_in_the_news_category = ( is_category( 'news' ) ) ? true : false;
 			$is_announcements_category = ( is_category( 'announcements' ) ) ? true : false;
 			$is_blog_category = ( is_category( 'blog' ) ) ? true : false;
-
 			$featured_post = null;
 			$sticky = get_option( 'sticky_posts' );
 			if ( 1 === $archive_page && $sticky && $is_blog_category ) {
