@@ -4,35 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c366509e5232a6330b2577b8437e67b4",
+    "content-hash": "494c62a0408614eeea6967b7114c82ee",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",
-            "version": "dev-project-pages",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cncf/wp-mu-plugins.git",
-                "reference": "a69fe0b4bda7348d17ce840147b00ac04682d031"
+                "reference": "9d513eb2e5ec2d87b5f3246c57cbf71e81c29b11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/a69fe0b4bda7348d17ce840147b00ac04682d031",
-                "reference": "a69fe0b4bda7348d17ce840147b00ac04682d031",
+                "url": "https://api.github.com/repos/cncf/wp-mu-plugins/zipball/9d513eb2e5ec2d87b5f3246c57cbf71e81c29b11",
+                "reference": "9d513eb2e5ec2d87b5f3246c57cbf71e81c29b11",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2"
             },
+            "default-branch": true,
             "type": "wordpress-muplugin",
             "license": [
                 "MIT"
             ],
             "description": "Must Use (MU) plugins used to power WordPress sites cncf.io, lfph.io, and possibly others.",
             "support": {
-                "source": "https://github.com/cncf/wp-mu-plugins/tree/project-pages",
+                "source": "https://github.com/cncf/wp-mu-plugins/tree/main",
                 "issues": "https://github.com/cncf/wp-mu-plugins/issues"
             },
-            "time": "2021-09-14T16:50:44+00:00"
+            "time": "2021-09-14T18:13:53+00:00"
         },
         {
             "name": "composer/installers",
