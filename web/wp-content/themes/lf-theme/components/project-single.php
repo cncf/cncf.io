@@ -176,8 +176,5 @@ get_template_part( 'components/hero' );
 		<?php get_template_part( 'components/project-single-case-studies' ); ?>
 		<?php get_template_part( 'components/project-single-speakers' ); ?>
 		<?php get_template_part( 'components/project-single-twitter', null, array( 'twitter' => $twitter ) ); ?>
-
-
-
 	</article>
 </main>
