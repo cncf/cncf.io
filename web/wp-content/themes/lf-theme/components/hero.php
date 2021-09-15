@@ -21,8 +21,7 @@ $options = get_option( 'lf-mu' );
 			Lf_Utils::display_picture( get_post_thumbnail_id(), 'hero' );
 
 		} elseif ( is_singular( 'lf_project' ) ) {
-			echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-			. '/images/projects-hero.jpg" alt="CNCF" height="280" width="100%"/>';
+			Lf_Utils::display_picture( 64572, 'hero' );
 
 		} elseif ( isset( $options['generic_hero_id'] ) && $options['generic_hero_id'] ) {
 			Lf_Utils::display_picture( $options['generic_hero_id'], 'hero' );
