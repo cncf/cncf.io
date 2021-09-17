@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69ef0aa3eaa3c8dfdc177af57a5b74f2",
+    "content-hash": "494c62a0408614eeea6967b7114c82ee",
     "packages": [
         {
             "name": "cncf/wp-mu-plugins",

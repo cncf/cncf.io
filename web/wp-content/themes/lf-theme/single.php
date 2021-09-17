@@ -27,6 +27,9 @@ elseif ( is_singular( 'lf_spotlight' ) ) :
 elseif ( is_singular( 'lf_kubeweekly' ) ) :
 	get_template_part( 'components/kubeweekly-single' );
 
+elseif ( is_singular( 'lf_project' ) ) :
+	get_template_part( 'components/project-single' );
+
 		// Default.
 else :
 	get_template_part( 'components/post-single' );

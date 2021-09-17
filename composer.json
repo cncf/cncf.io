@@ -40,7 +40,7 @@
     "wpackagist-plugin/svg-autocrop": "^0.1.0",
     "wpackagist-plugin/ultimate-member": "^2.1.2",
     "wpackagist-plugin/um-recaptcha": "^2.1.4",
-    "wpackagist-plugin/wp-mail-smtp": "^3.0.1",
+    "wpackagist-plugin/wp-mail-smtp": "^3.0.3",
     "wpackagist-plugin/leadin":"^8",
     "wpackagist-plugin/wp-native-php-sessions": "^1.0.0"
   },
