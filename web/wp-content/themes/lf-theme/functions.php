@@ -90,6 +90,9 @@ require_once 'includes/shortcode-projects.php';
 // endusers shortcode.
 require_once 'includes/shortcode-endusers.php';
 
+// members shortcode.
+require_once 'includes/shortcode-members.php';
+
 // homepage case studies shortcode.
 require_once 'includes/shortcode-home.php';
 
