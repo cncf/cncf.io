@@ -323,7 +323,7 @@ function add_playlist_shortcode( $atts ) {
 		array(
 			'count' => 2, // set default.
 			'key' => '',
-			'playlist' => 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40',
+			'playlist_id' => 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40',
 		),
 		$atts,
 		'youtube_playlist'
@@ -338,15 +338,15 @@ function add_playlist_shortcode( $atts ) {
 		true
 	);
 
-	$count    = $atts['count'];
-	$key      = $atts['key'];
-	$playlist = $atts['playlist'];
+	$count       = $atts['count'];
+	$key         = $atts['key'];
+	$playlist_id = $atts['playlist_id'];
 
 	if ( ! is_int( $count ) || ! $key ) {
 		return;
 	}
 
-	if ( 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40' === $playlist ) {
+	if ( 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40' === $playlist_id ) {
 		$transient_name = 'cncf_eu_playlist';
 	} else {
 		$transient_name = 'cncf_member_playlist';
@@ -354,7 +354,7 @@ function add_playlist_shortcode( $atts ) {
 	$playlist = get_transient( $transient_name );
 	if ( false === $playlist ) {
 
-		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=' . $playlist . '&key=' . $key );
+		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=' . $playlist_id . '&key=' . $key );
 		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
 			return;
 		}
