@@ -87,10 +87,10 @@ function add_members_pricing_shortcode() {
 <li><i class="fas fa-envelope"></i>Private member and marketing mailing lists</li>
 <li><i class="fas fa-calendar-alt"></i>Private monthly calls to meet other cloud native marketing experts</li>
 <li><i class="fas fa-ticket-alt"></i>Receive discounts on KubeCon + CloudNativeCon sponsorship</li>
-<li><i class="fas fa-graduation-cap"></i>Display <a href="https://github.com/cncf/artwork/blob/master/examples/other.md#cncf-member-logos" target="_blank" rel="noopener" title="CNCF member logos">CNCF membership logos</a> on your website. Logo also displayed on the CNCF website and in marketing materials. </li>
-<li><i class="fas fa-tag"></i><a href="https://landscape.cncf.io/" target="_blank" rel="noopener" title="CNCF Cloud Native Interactive Landscape">Interactive landscape</a> placement as a member</li>
-<li><i class="fas fa-couch"></i>Apply to be a certified vendor, consulting partner, or training partner via our <a href="https://www.cncf.io/certification/software-conformance/" target="_blank" rel="noopener" title="Certified Kubernetes">Certified Kubernetes</a>, <a href="https://www.cncf.io/certification/kcsp/" target="_blank" rel="noopener" title="Kubernetes Certified Service Provider">Kubernetes Certified Service Provider</a>, and <a href="https://www.cncf.io/certification/training/#kubernetestrainingpartners" target="_blank" rel="noopener" title="Kubernetes Training Partner">Kubernetes Training Partner</a> programs. </li>
-<li><i class="fas fa-ticket-alt"></i>Announcement in the quarterly CNCF New Member press release</li>
+<li><i class="fas fa-certificate"></i>Display <a href="https://github.com/cncf/artwork/blob/master/examples/other.md#cncf-member-logos" target="_blank" rel="noopener" title="CNCF member logos">CNCF membership logos</a> on your website. Logo also displayed on the CNCF website and in marketing materials. </li>
+<li><i class="fas fa-map-marker-alt"></i><a href="https://landscape.cncf.io/" target="_blank" rel="noopener" title="CNCF Cloud Native Interactive Landscape">Interactive landscape</a> placement as a member</li>
+<li><i class="fas fa-graduation-cap"></i>Apply to be a certified vendor, consulting partner, or training partner via our <a href="https://www.cncf.io/certification/software-conformance/" target="_blank" rel="noopener" title="Certified Kubernetes">Certified Kubernetes</a>, <a href="https://www.cncf.io/certification/kcsp/" target="_blank" rel="noopener" title="Kubernetes Certified Service Provider">Kubernetes Certified Service Provider</a>, and <a href="https://www.cncf.io/certification/training/#kubernetestrainingpartners" target="_blank" rel="noopener" title="Kubernetes Training Partner">Kubernetes Training Partner</a> programs. </li>
+<li><i class="fas fa-megaphone"></i>Announcement in the quarterly CNCF New Member press release</li>
 <li><i class="fas fa-ticket-alt"></i>Includes LF Associate Membership</li>
 </ul>
 </div>
@@ -110,23 +110,23 @@ function add_members_pricing_shortcode() {
 
 <div class="tbody">
 <ul>
-<li><em>Silver members actively help grow the cloud native ecosystem. Organizations just getting started contributing should begin their partnership at this level</em></li>
-<li><i class="fas fa-arrow-from-right"></i>Everything included in nonprofit/academic plus:</li>
-<li><i class="fab fa-linux"></i>Run for Governing Board</li>
+<li><em>Silver members actively help grow the cloud native ecosystem. Organizations just getting started contributing should begin their partnership at this level.</em></li>
+<li><i class="fas fa-arrow-from-right"></i>Everything included in nonprofit/academic, plus:</li>
+<li><i class="fas fa-users"></i>Run for Governing Board</li>
 <li><i class="fab fa-youtube"></i>2 online programs a quarter to build thought leadership (on-demand, YouTube, live streams)</li>
-<li><i class="fas fa-ticket-alt"></i>Submit vendor neutral content to CNCF blog, Kubernetes.io blog, & KubeWeekly</li>
-<li><i class="fas fa-tag"></i> Receive access to quarterly analyst reports including Top Analysts by keyword, quotes, and research highlights</li>
-<li><i class="fas fa-graduation-cap"></i>Submit announcements to KubeCon + CloudNativeCon news packages</li>
-<li><i class="fas fa-key"></i>Support End User Driven open source with end user case studies and referral benefits</li>
-<li><i class="fas fa-key"></i>Host a local Kubernetes Community Day</li>
-<li><i class="fas fa-key"></i>Access to the <a href="https://todogroup.org/" target="_blank" rel="noopener" title="TODO Group">TODO Group</a> to meet other open source organizations </li>
-<li><i class="fas fa-key"></i>Ten coupon codes good for any eLearning, certification exam, or eLearning/exam bundle. Additional terms apply. (Part of LF membership)</li>
+<li><i class="fas fa-edit"></i>Submit vendor neutral content to CNCF blog, Kubernetes.io blog, & KubeWeekly</li>
+<li><i class="fas fa-chart-pie"></i> Receive access to quarterly analyst reports including Top Analysts by keyword, quotes, and research highlights</li>
+<li><i class="fas fa-megaphone""></i>Submit announcements to KubeCon + CloudNativeCon news packages</li>
+<li><i class="fas fa-edit"></i>Support End User Driven open source with end user case studies and referral benefits</li>
+<li><i class="fas fa-calendar-alt"></i>Host a local Kubernetes Community Day</li>
+<li><i class="fas fa-ticket-alt"></i>Access to the <a href="https://todogroup.org/" target="_blank" rel="noopener" title="TODO Group">TODO Group</a> to meet other open source organizations </li>
+<li><i class="fas fa-tag"></i>Ten coupon codes good for any eLearning, certification exam, or eLearning/exam bundle. Additional terms apply. (Part of LF membership)</li>
 
 </ul>
 </div>
 
 <div class="tfoot">
-<p><button class="js-modal button-reset" data-modal-content-id="modal-silver" data-modal-prefix-class="lf" data-modal-close-text="Close" title="">See Full Silver Pricing Scale</button></p>
+<h4 class="main-price"><button class="js-modal button-reset" data-modal-content-id="modal-silver" data-modal-prefix-class="lf" data-modal-close-text="Close" title="">See Silver Pricing Scale</button></h4>
 </div>
 
 </div>
@@ -152,8 +152,7 @@ function add_members_pricing_shortcode() {
 </div>
 
 <div class="tfoot">
-<h4 class="main-price">Up to $120,000</h4>
-<p>Annually</p>
+<h4 class="main-price">Up to $120,000 annually</h4>
 <p><a href="https://www.cncf.io/about/contact/">Contact us</a></p>
 </div>
 
@@ -171,9 +170,9 @@ function add_members_pricing_shortcode() {
 <ul>
 <li><em>Platinum members are true agents of change, taking the most active role in making cloud native computing ubiquitous and sustainable, and are recognized publicly for their thought leadership.</em></li>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Gold, plus:</li>
-<li><i class="fal fa-dharmachakra"></i>Board seat on CNCF Governing Board</li>
+<li><i class="fal fa-chair-office"></i>Board seat on CNCF Governing Board</li>
 <li><i class="fas fa-podium"></i>Exec invite to join a KubeCon keynote upon joining</li>
-<li><i class="fas fa-handshake"></i>Personalized executive engagement from CNCF and LF leadership teams: Open source strategy - e.g. donating a project, running an open source program office; Recruiting and DE&I</li>
+<li><i class="fas fa-handshake"></i>Personalized executive engagement from CNCF and LF leadership teams: <br/>- Open source strategy e.g. donating a project, running an open source program office<br/>- Recruiting and DE&I</li>
 <li><i class="fab fa-youtube"></i>Exclusive live webinars with CNCF online programs</li>
 </ul>
 </div>
