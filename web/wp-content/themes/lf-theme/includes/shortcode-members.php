@@ -116,7 +116,7 @@ function add_members_pricing_shortcode() {
 <li><i class="fab fa-youtube"></i>2 online programs a quarter to build thought leadership (on-demand, YouTube, live streams)</li>
 <li><i class="fas fa-edit"></i>Submit vendor neutral content to CNCF blog, Kubernetes.io blog, & KubeWeekly</li>
 <li><i class="fas fa-chart-pie"></i> Receive access to quarterly analyst reports including Top Analysts by keyword, quotes, and research highlights</li>
-<li><i class="fas fa-megaphone""></i>Submit announcements to KubeCon + CloudNativeCon news packages</li>
+<li><i class="fas fa-megaphone"></i>Submit announcements to KubeCon + CloudNativeCon news packages</li>
 <li><i class="fas fa-edit"></i>Support End User Driven open source with end user case studies and referral benefits</li>
 <li><i class="fas fa-calendar-alt"></i>Host a local Kubernetes Community Day</li>
 <li><i class="fas fa-ticket-alt"></i>Access to the <a href="https://todogroup.org/" target="_blank" rel="noopener" title="TODO Group">TODO Group</a> to meet other open source organizations </li>
