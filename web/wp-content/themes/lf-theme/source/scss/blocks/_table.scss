@@ -34,18 +34,7 @@
 	}
 
 	tr {
-		&:first-child {
-			td {
-				//
-				font-weight: 600;
-				vertical-align: middle;
-				border-bottom: 1px solid $white;
-			}
-		}
-
-		&:not(:first-child) {
-			font-weight: 400;
-		}
+		font-weight: 400;
 
 		&:nth-of-type(even) {
 			background-color: $grey-100;
