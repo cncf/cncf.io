@@ -110,7 +110,6 @@ function add_members_pricing_shortcode() {
 
 <div class="tbody">
 <ul>
-<li><em>Silver members actively help grow the cloud native ecosystem. Organizations just getting started contributing should begin their partnership at this level.</em></li>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in nonprofit/academic, plus:</li>
 <li><i class="fas fa-users"></i>Run for Governing Board</li>
 <li><i class="fab fa-youtube"></i>2 online programs a quarter to build thought leadership (on-demand, YouTube, live streams)</li>
@@ -141,7 +140,6 @@ function add_members_pricing_shortcode() {
 
 <div class="tbody">
 <ul>
-<li><em>Gold members are deeply committed to using open source technology, helping CNCF grow, voicing consumer opinions, and giving back to the community. </em></li>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Silver, plus:</li>
 <li><i class="fas fa-podium"></i>KubeCon keynote mention upon joining </li>
 <li><i class="fas fa-newspaper"></i>Personalized press release upon joining</li>
@@ -168,7 +166,6 @@ function add_members_pricing_shortcode() {
 
 <div class="tbody">
 <ul>
-<li><em>Platinum members are true agents of change, taking the most active role in making cloud native computing ubiquitous and sustainable, and are recognized publicly for their thought leadership.</em></li>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Gold, plus:</li>
 <li><i class="fal fa-chair-office"></i>Board seat on CNCF Governing Board</li>
 <li><i class="fas fa-podium"></i>Exec invite to join a KubeCon keynote upon joining</li>
