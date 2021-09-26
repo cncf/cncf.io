@@ -102,6 +102,9 @@ require_once 'includes/shortcode-whoweare-metrics.php';
 // kubeweeklys shortcodes.
 require_once 'includes/shortcode-kubeweeklys.php';
 
+// credits shortcodes.
+require_once 'includes/shortcode-credits.php';
+
 // Fuerza utils.
 require_once 'classes/class-fuerza-utils.php';
 

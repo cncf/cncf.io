@@ -219,3 +219,143 @@
 		vertical-align: middle;
 	}
 }
+
+.credits-pricing-wrapper {
+	margin-top: 2em;
+	display: grid;
+	grid-column-gap: 2rem;
+	grid-row-gap: 20px;
+
+	grid-template-areas:
+		"col1"
+		"supporter-cta"
+		"col2"
+		"col3"
+		"member-cta";
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+
+	.col1 {
+		grid-area: col1;
+	}
+	.col2 {
+		grid-area: col2;
+	}
+	.col3 {
+		grid-area: col3;
+	}
+	.blank-cell {
+		display: none;
+	}
+	.lf-membership {
+		display: none;
+	}
+	.supporter-cta {
+		grid-area: supporter-cta;
+	}
+	.member-cta {
+		grid-area: member-cta;
+	}
+
+	@media (min-width: 900px) {
+		grid-template-areas:
+			"col1 col2 col3"
+			"blank-cell lf-membership lf-membership"
+			"member-cta member-cta member-cta";
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr auto auto;
+		grid-row-gap: 0px;
+		.blank-cell {
+			display: block;
+			grid-area: blank-cell;
+		}
+		.lf-membership {
+			display: block;
+			grid-area: lf-membership;
+			background-color: rgba($tertiary-400, 0.1);
+			border-bottom: dotted #2d2d2f;
+			border-left: dotted #2d2d2f;
+			border-right: dotted #2d2d2f;
+			color: #2d2d2f;
+			padding: 10px 20px;
+			font-style: italic;
+			text-align: center;
+			font-size: 0.875em;
+			a {
+				color: #2d2d2f;
+				text-decoration: underline;
+			}
+		}
+	}
+	// end of grid.
+	.eup-column {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	h3,
+	h4,
+	h5,
+	p {
+		margin-bottom: 0;
+		max-width: 100% !important;
+	}
+	.thead {
+		text-align: center;
+		padding: 20px 1rem;
+		color: $white;
+		background-color: $secondary-900;
+		&.alt {
+			background-color: $tertiary-700;
+		}
+	}
+	.tfoot {
+		text-align: center;
+		padding: 20px 0.5rem;
+		color: $white;
+		background-color: #2d2d2f;
+		min-height: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.main-price {
+			margin-bottom: 0.5rem;
+		}
+		@media (max-width: 1200px) {
+			p {
+				font-size: 0.875em;
+			}
+		}
+		button {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+	.tbody {
+		padding: 20px 1rem;
+		background-color: #f5f5f5;
+		color: #2d2d2f;
+		font-weight: 700;
+		font-size: 0.875em;
+		height: 100%;
+
+		ul {
+			list-style: none;
+			margin-left: 0;
+			margin-bottom: 0;
+			li {
+				margin-bottom: 1.25rem;
+			}
+		}
+	}
+	.fas,
+	.fab,
+	.fal {
+		font-size: 1.1rem;
+		color: $primary-400;
+		margin-right: 0.4rem;
+		vertical-align: middle;
+	}
+}
