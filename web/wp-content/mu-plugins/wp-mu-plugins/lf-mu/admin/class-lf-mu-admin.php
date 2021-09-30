@@ -55,12 +55,7 @@ class Lf_Mu_Admin {
 		$this->site    = ( isset( $options['site'] ) && ! empty( $options['site'] ) ) ? esc_attr( $options['site'] ) : '';
 		$this->is_cncf = ( 'cncf' === $this->site ) ? true : false;
 
-		if ( $this->is_cncf ) {
-			$this->webinar = 'online program';
-		} else {
-			$this->webinar = 'webinar';
-		}
-
+		$this->webinar = 'online program';
 	}
 
 	/**
@@ -607,11 +602,7 @@ class Lf_Mu_Admin {
 				$newid = wp_insert_post( $params ); // will insert or update the post as needed.
 
 				if ( $newid ) {
-					if ( $this->is_cncf ) {
-						wp_set_object_terms( $newid, $level->key, 'lf-project-stage', false );
-					} else {
-						wp_set_object_terms( $newid, $p->category, 'lf-project-stage', false );
-					}
+					wp_set_object_terms( $newid, $level->key, 'lf-project-stage', false );
 				}
 			}
 		}

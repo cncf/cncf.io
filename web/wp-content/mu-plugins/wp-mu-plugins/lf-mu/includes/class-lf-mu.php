@@ -172,39 +172,37 @@ class Lf_Mu {
 
 		// $this->loader->add_action( 'init', $plugin_admin, 'sync_projects' );
 
-		if ( $plugin_admin->is_cncf ) {
-			// Special Easter-egg hook to run full sync of Speakers CPTs.  You just have to update the "Speakers" page.
-			$this->loader->add_action( 'post_updated', $plugin_admin, 'sync_speakers' );
+		// Special Easter-egg hook to run full sync of Speakers CPTs.  You just have to update the "Speakers" page.
+		$this->loader->add_action( 'post_updated', $plugin_admin, 'sync_speakers' );
 
-			// Hooks to keep the lf_speaker CPT in sync with Users of role "Speaker".
-			$this->loader->add_action( 'um_after_user_status_is_changed_hook', $plugin_admin, 'speaker_updated' ); // Action after user status changed.
-			$this->loader->add_action( 'delete_user', $plugin_admin, 'speaker_deleted' ); // Fires immediately before a user is deleted from the database.
-			$this->loader->add_action( 'profile_update', $plugin_admin, 'speaker_updated' ); // Fires immediately after an existing user is updated.
-			$this->loader->add_action( 'um_after_user_account_updated', $plugin_admin, 'speaker_updated' ); // Fired on account page, after updating profile.
+		// Hooks to keep the lf_speaker CPT in sync with Users of role "Speaker".
+		$this->loader->add_action( 'um_after_user_status_is_changed_hook', $plugin_admin, 'speaker_updated' ); // Action after user status changed.
+		$this->loader->add_action( 'delete_user', $plugin_admin, 'speaker_deleted' ); // Fires immediately before a user is deleted from the database.
+		$this->loader->add_action( 'profile_update', $plugin_admin, 'speaker_updated' ); // Fires immediately after an existing user is updated.
+		$this->loader->add_action( 'um_after_user_account_updated', $plugin_admin, 'speaker_updated' ); // Fired on account page, after updating profile.
 
-			// Hook to save year in a meta field for case studies.
-			$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
-			$this->loader->add_action( 'save_post_lf_case_study_cn', $plugin_admin, 'set_case_study_year', 10, 3 );
+		// Hook to save year in a meta field for case studies.
+		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
+		$this->loader->add_action( 'save_post_lf_case_study_cn', $plugin_admin, 'set_case_study_year', 10, 3 );
 
-			// Sync programs with https://community.cncf.io/.
-			$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
-			if ( ! wp_next_scheduled( 'cncf_sync_programs' ) ) {
-				wp_schedule_event( time(), 'twicedaily', 'cncf_sync_programs' );
-			}
-
-			// Sync people with https://github.com/cncf/people.
-			$this->loader->add_action( 'lf_sync_people', $plugin_admin, 'sync_people' );
-			if ( ! wp_next_scheduled( 'lf_sync_people' ) ) {
-				wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
-			}
-
-			// $this->loader->add_action( 'init', $plugin_admin, 'sync_people' ); // phpcs:ignore.
-
-			// Use this command locally if you want to dump a json feed of all current People.
-			// Load browser and view source to copy the properly formatted feed.
-			// $this->loader->add_action( 'init', $plugin_admin, 'dump_people' ); // phpcs:ignore.
-
+		// Sync programs with https://community.cncf.io/.
+		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
+		if ( ! wp_next_scheduled( 'cncf_sync_programs' ) ) {
+			wp_schedule_event( time(), 'twicedaily', 'cncf_sync_programs' );
 		}
+
+		// Sync people with https://github.com/cncf/people.
+		$this->loader->add_action( 'lf_sync_people', $plugin_admin, 'sync_people' );
+		if ( ! wp_next_scheduled( 'lf_sync_people' ) ) {
+			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
+		}
+
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_people' ); // phpcs:ignore.
+
+		// Use this command locally if you want to dump a json feed of all current People.
+		// Load browser and view source to copy the properly formatted feed.
+		// $this->loader->add_action( 'init', $plugin_admin, 'dump_people' ); // phpcs:ignore.
+
 	}
 
 	/**
@@ -231,9 +229,7 @@ class Lf_Mu {
 		$this->loader->add_filter( 'pre_get_posts', $plugin_public, 'remove_news_from_rss' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_nhpt_query_args', $plugin_public, 'remove_news_from_sitemap' );
 
-		if ( $plugin_public->is_cncf ) {
-			$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_kubeweekly_from_sitemap' );
-		}
+		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_kubeweekly_from_sitemap' );
 
 	}
 

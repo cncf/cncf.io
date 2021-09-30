@@ -273,11 +273,7 @@ class Lf_Mu_Public {
 	 */
 	public function remove_news_from_rss( $query ) {
 		if ( $query->is_feed ) {
-			if ( $this->is_cncf ) {
-				$query->set( 'cat', '-229' );
-			} else {
-				$query->set( 'cat', '-6' );
-			}
+			$query->set( 'cat', '-229' );
 		}
 		return $query;
 	}
@@ -288,11 +284,7 @@ class Lf_Mu_Public {
 	 * @param array $args Query args.
 	 */
 	public function remove_news_from_sitemap( $args ) {
-		if ( $this->is_cncf ) {
-			$args['cat'] = -229;
-		} else {
-			$args['cat'] = -6;
-		}
+		$args['cat'] = -229;
 
 		return $args;
 	}
