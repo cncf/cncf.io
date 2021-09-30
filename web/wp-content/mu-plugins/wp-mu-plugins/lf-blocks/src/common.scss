@@ -1,0 +1,60 @@
+/**
+ * #.# Common SCSS
+ *
+ * Declare all colours used in the blocks. Copy from _variables.scss if need to match theme.
+*/
+
+$white: #ffffff;
+$primary-300: #ff33bb;
+$primary-400: #ff00aa;
+$link-color: $primary-400;
+$link-hover: $primary-300;
+
+// font-stack.
+$font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, Roboto, Ubuntu,
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+.button,
+.hs-button {
+	// copied from Gutenberg.
+	border: 0; // reset
+	padding: 0px; // reset
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	margin: 0;
+	padding: 9px 24px 10px 24px;
+	text-align: center;
+	text-decoration: none;
+	overflow-wrap: break-word;
+
+	// added.
+	width: auto;
+	white-space: nowrap;
+	text-transform: uppercase;
+	font-family: $font-primary;
+	font-weight: 700;
+
+	// defaults
+	background-color: $link-color;
+	color: $white;
+	transition: all 0.25s ease-out;
+
+	&:link,
+	&:visited {
+		color: $white;
+		text-decoration: none;
+	}
+
+	&:hover {
+		color: $white;
+		background-color: $link-hover;
+		text-decoration: none;
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+}

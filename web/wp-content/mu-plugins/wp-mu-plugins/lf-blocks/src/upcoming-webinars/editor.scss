@@ -1,0 +1,27 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ *
+ */
+
+// Fixes the preview.
+.block-editor-block-styles__item-preview {
+    .wp-block-lf-upcoming-webinars.is-style-horizontal {
+        .webinars-upcoming-wrapper {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+.is-style-horizontal {
+    .webinars-upcoming-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        margin-bottom: 1em;
+
+        @media (min-width: 1024px) {
+            grid-gap: 1.5em;
+        }
+    }
+}

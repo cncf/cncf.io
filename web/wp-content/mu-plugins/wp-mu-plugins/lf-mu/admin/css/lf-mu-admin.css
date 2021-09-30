@@ -1,0 +1,16 @@
+/**
+* Styling used on Admin settings pages / Global Options page.
+*/
+
+.regular-small-text {
+	width: 15em;
+}
+
+.thumbnail-margin-bottom {
+	margin-bottom: 20px;
+}
+
+.image-preview-wrapper img {
+	max-height: 100px;
+	max-width: 500px;
+}

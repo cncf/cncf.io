@@ -20,7 +20,6 @@ web/wp-content/mu-plugins/pantheon/
 web/wp-content/mu-plugins/pantheon.php
 
 !web/wp-content/mu-plugins/
-web/wp-content/mu-plugins/wp-mu-plugins/
 
 !web/wp-content/plugins/
 web/wp-content/plugins/*
@@ -126,6 +125,8 @@ Thumbs.db
 # Allowing custom plugins
 !web/wp-content/plugins/tab-container-block
 web/wp-content/plugins/tab-container-block/node_modules
+web/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/node_modules
+web/wp-content/mu-plugins/wp-mu-plugins/lf-pre-publish/node_modules
 
 # Ignore local VS code settings
 web/wp-content/themes/lf-theme/.vscode

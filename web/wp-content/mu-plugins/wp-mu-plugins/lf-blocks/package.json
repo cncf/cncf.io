@@ -1,0 +1,14 @@
+{
+  "name": "lf-blocks",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build",
+    "eject": "cgb-scripts eject"
+  },
+  "dependencies": {
+    "@justinribeiro/lite-youtube": "^0.9.0",
+    "cgb-scripts": "1.23.0"
+  }
+}

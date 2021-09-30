@@ -11,15 +11,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/pantheon-systems/wordpress-composer"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/cncf/wp-mu-plugins"
     }
   ],
   "require": {
     "php": ">=7.2",
-    "cncf/wp-mu-plugins": "dev-main",
     "composer/installers": "^1.3.0",
     "pantheon-systems/quicksilver-pushback": "^2.0.1",
     "pantheon-systems/wordpress-composer": "*",
