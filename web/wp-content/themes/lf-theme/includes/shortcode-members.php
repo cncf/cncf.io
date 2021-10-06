@@ -18,7 +18,7 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'count' => 10, // set default.
-			'category' => 'enduser', // endusers, members, platinum.
+			'category' => 'endusers', // endusers, members, platinum.
 			'size' => 'large', // small, medium, large.
 		),
 		$atts,
