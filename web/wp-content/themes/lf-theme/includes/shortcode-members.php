@@ -258,7 +258,7 @@ function add_members_pricing_shortcode() {
 				<li><i class="fas fa-handshake"></i>Personalized executive
 					engagement from CNCF and LF leadership teams: <br />- Open
 					source strategy e.g. donating a project, running an open
-					source program office<br />- Recruiting and DE&I</li>
+					source program office</li>
 				<li><i class="fab fa-youtube"></i>Exclusive live webinars with
 					CNCF online programs</li>
 			</ul>
