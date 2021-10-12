@@ -29,7 +29,7 @@ function add_credits_pricing_shortcode() {
 <div class="tbody">
 <ul>
 <li><i class="fas fa-newspaper"></i>Coordinated CNCF press release</li>
-<li><i class="fas fa-certificate"></i>Appropriate placement on cncf.io/credits/sponsors</li>
+<li><i class="fas fa-certificate"></i>Appropriate placement on the CNCF website</li>
 </ul>
 </div>
 
@@ -73,7 +73,7 @@ function add_credits_pricing_shortcode() {
 <div class="tbody">
 <ul>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Advocate benefits, plus:</li>
-<li><i class="fas fa-certificate"></i>Top cncf.io/credits/sponsors placement with an explanation of the offering</li>
+<li><i class="fas fa-certificate"></i>Top placement on the CNCF website with an explanation of the offering</li>
 <li><i class="fas fa-megaphone"></i>CNCF marketing campaign to drive awareness towards the donation<br/>
 - Coordinated press release and media outreach<br/>
 - Social media shout out to thank your company for their contribution<br/>
