@@ -126,18 +126,12 @@ if ( strlen( $content ) > 20 ) {
 			aria-hidden="true">
 			<div class="modal-content-wrapper">
 				<div class="profile__header">
-					<?php
-					if ( has_post_thumbnail() ) :
-						?>
 					<div
 						class="background-image-wrapper people-profile-picture">
 						<figure class="background-image-figure">
 						<img loading="lazy" src="<?php echo esc_attr( $image_url ); ?>" >
 						</figure>
 					</div>
-						<?php
-						endif;
-					?>
 				</div>
 				<div class="modal__content">
 					<h3 class="modal__title margin-reset">
