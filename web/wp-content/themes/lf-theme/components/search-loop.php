@@ -86,6 +86,10 @@
 				$content_type_singular = 'Page';
 				$content_type_plural = 'Pages';
 				$content_type_url = '/';
+			} elseif ( 'lf_project' == get_post_type() ) {
+				$content_type_singular = 'Project';
+				$content_type_plural = 'Projects';
+				$content_type_url = '/projects/';
 			} else {
 				$content_type_singular = 'Page';
 				$content_type_plural = 'Pages';
@@ -153,14 +157,27 @@
 
 						$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
 						?>
-					<span class="posted-date date-icon">
+						<span class="posted-date date-icon">
 						Event date:
 						<?php
 						echo esc_html( Lf_Utils::display_event_date( $event_start_date ) );
 						?>
-					</span>
+						</span>
 
 						<?php
+					} elseif ( 'lf_project' == get_post_type() ) {
+						$joined_date = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true );
+						if ( $joined_date ) {
+							?>
+						<span class="posted-date date-icon">
+						Accepted to CNCF on
+							<?php
+							echo esc_html( Lf_Utils::display_event_date( $joined_date ) );
+							?>
+						</span>
+
+							<?php
+						}
 					} else {
 						?>
 					<span class="posted-date date-icon">
@@ -180,7 +197,15 @@
 					?>
 				</p>
 
-				<div class="archive-excerpt"><?php the_excerpt(); ?></div>
+				<div class="archive-excerpt">
+					<?php
+					if ( 'lf_project' == get_post_type() ) {
+						echo esc_html( get_post_meta( get_the_ID(), 'lf_project_description', true ) );
+					} else {
+						the_excerpt();
+					}
+					?>
+				</div>
 			</div>
 		</div>
 			<?php
