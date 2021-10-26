@@ -570,13 +570,14 @@ function homepage_event_highlight_shortcode() {
 <div class="container wrap event-highlight-wrapper">
 
 <div>
-<h2>October 11-15, 2021</h2>
-<p class="h5">The CNCF’s flagship conference gathers adopters and technologists from leading open source and cloud native communities for four days of education and advancement of cloud native computing. <strong>#KubeCon + #CloudNativeCon</strong></p>
+<h2>December 9-10, 2021</h2>
+<p class="h5">云原生计算基金会（Cloud Native Computing Foundation）于中国举办的旗舰会议聚集了领先的开源和云原生社区的采用者和技术人员。<br>
+CNCF's flagship conference gathers adopters and technologists from leading open source and cloud native communities in China.</p>
 
-<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" class="button external" target="_blank" rel="noopener">Learn more</a>
+<a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/" class="button external" target="_blank" rel="noopener">Learn more</a>
 
 </div>
-<div><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" target="_blank" rel="noopener"><img loading="lazy" src="https://events.linuxfoundation.org/wp-content/uploads/2020/11/KubeCon_NA_2021_web_web-logo-white-1.svg" alt="Kubecon 2021"></a></div>
+<div><a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/" target="_blank" rel="noopener"><img loading="lazy" src="https://www.lfasiallc.com/wp-content/uploads/2021/06/KubeCon-China-2020-logos-01.svg" alt="Kubecon 2021"></a></div>
 
 <div>
 <p class="event-highlight-video-description">KubeCon + CloudNativeCon North America 2019 Highlights</p>
