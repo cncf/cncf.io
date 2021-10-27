@@ -580,9 +580,9 @@ CNCF's flagship conference gathers adopters and technologists from leading open 
 <div><a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/" target="_blank" rel="noopener"><img loading="lazy" src="https://www.lfasiallc.com/wp-content/uploads/2021/06/KubeCon-China-2020-logos-01.svg" alt="Kubecon 2021"></a></div>
 
 <div>
-<p class="event-highlight-video-description">KubeCon + CloudNativeCon North America 2019 Highlights</p>
+<p class="event-highlight-video-description">KubeCon + CloudNativeCon China 2018 Highlights</p>
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<div class="wp-block-lf-youtube-lite"><lite-youtube videoid="56ftznhkdh0"></lite-youtube></div>
+<div class="wp-block-lf-youtube-lite"><lite-youtube videoid="50jW__9iJqI"></lite-youtube></div>
 </div></figure>
 </div>
 
