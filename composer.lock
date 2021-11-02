@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "367863db5fe837f1778c7319e32d811c",
+    "content-hash": "d83bd50d7be125d7f131a5f04e2d5c26",
     "packages": [
         {
             "name": "composer/installers",
@@ -843,42 +843,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/svg-autocrop/"
-        },
-        {
-            "name": "wpackagist-plugin/ultimate-member",
-            "version": "2.2.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ultimate-member/",
-                "reference": "tags/2.2.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ultimate-member.2.2.5.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ultimate-member/"
-        },
-        {
-            "name": "wpackagist-plugin/um-recaptcha",
-            "version": "2.2.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/um-recaptcha/",
-                "reference": "tags/2.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/um-recaptcha.2.2.0.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/um-recaptcha/"
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
