@@ -72,15 +72,6 @@ require_once 'includes/gutenberg-options.php';
 // post excerpts.
 require_once 'includes/excerpts.php';
 
-// speakers bureau.
-require_once 'includes/speakers-bureau.php';
-
-// speakers bureau bulk email form.
-require_once 'classes/class-speakers-contact.php';
-
-// speakers bureau export.
-require_once 'classes/class-speakers-export.php';
-
 // people shortcode.
 require_once 'includes/shortcode-people.php';
 
