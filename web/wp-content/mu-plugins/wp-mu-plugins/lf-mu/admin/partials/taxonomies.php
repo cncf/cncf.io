@@ -27,7 +27,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-language', array( 'lf_webinar', 'lf_speaker', 'lf_person' ), $args );
+register_taxonomy( 'lf-language', array( 'lf_webinar', 'lf_person' ), $args );
 
 $labels = array(
 	'name'          => __( 'Projects', 'lf-mu' ),
@@ -47,7 +47,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_speaker', 'lf_spotlight', 'lf_person' ), $args );
+register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_spotlight', 'lf_person' ), $args );
 
 $labels = array(
 	'name'          => __( 'Author Category', 'lf-mu' ),
@@ -169,7 +169,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study', 'lf_speaker' ), $args );
+register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study' ), $args );
 
 $labels = array(
 	'name'              => __( 'Country', 'lf-mu' ),
@@ -372,23 +372,6 @@ $args   = array(
 	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-event-host', array( 'lf_event' ), $args );
-
-$args = array(
-	'labels'            => array( 'name' => __( 'Affiliations', 'lf-mu' ) ),
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'show_in_nav_menus' => false,
-	'show_admin_column' => true,
-);
-register_taxonomy( 'lf-speaker-affiliation', array( 'lf_speaker' ), $args );
-$args = array(
-	'labels'            => array( 'name' => __( 'Expertise', 'lf-mu' ) ),
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'show_in_nav_menus' => false,
-	'show_admin_column' => true,
-);
-register_taxonomy( 'lf-speaker-expertise', array( 'lf_speaker' ), $args );
 
 $labels = array(
 	'name'          => __( 'Spotlight Type', 'lf-mu' ),

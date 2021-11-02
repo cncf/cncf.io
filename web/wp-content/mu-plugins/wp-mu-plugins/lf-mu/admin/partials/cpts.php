@@ -130,24 +130,6 @@ $opts = array(
 );
 register_post_type( 'lf_kubeweekly', $opts );
 
-// Hidden from Menu.
-$opts = array(
-	'labels'            => array(
-		'name'          => __( 'Speakers' ),
-		'singular_name' => __( 'Speaker' ),
-		'all_items'     => __( 'All Speakers' ),
-	),
-	'public'            => false,
-	'has_archive'       => false,
-	'show_in_nav_menus' => false,
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'menu_icon'         => 'dashicons-groups',
-	'rewrite'           => array( 'slug' => 'speakers-mirror' ),
-	'supports'          => array( 'title', 'custom-fields' ),
-);
-register_post_type( 'lf_speaker', $opts );
-
 $opts = array(
 	'labels'              => array(
 		'name'          => __( 'People' ),
