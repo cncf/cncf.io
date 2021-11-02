@@ -74,10 +74,6 @@
 				$content_type_singular = 'Event';
 				$content_type_plural = 'Events';
 				$content_type_url = '/events/';
-			} elseif ( 'lf_speaker' == get_post_type() ) {
-				$content_type_singular = 'Speaker';
-				$content_type_plural = 'Speakers';
-				$content_type_url = '/speakers/';
 			} elseif ( 'lf_spotlight' == get_post_type() ) {
 				$content_type_singular = 'Spotlight';
 				$content_type_plural = 'Spotlights';
