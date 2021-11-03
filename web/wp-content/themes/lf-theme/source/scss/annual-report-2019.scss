@@ -1637,20 +1637,16 @@ a.badge:hover {
 	display: inline-flex;
 }
 
-.page-id-26989 .container.main-content,
-.page-template-speakers .container.main-content {
+.page-id-26989 .container.main-content {
 	padding: 0 0 !important;
 }
 
-.page-id-26989 .container.main-content > .row,
-.page-template-speakers .container.main-content > .row {
+.page-id-26989 .container.main-content > .row {
 	margin: 0 0 !important;
 }
 
 .page-id-26989 .container.main-content > .row > h2,
-.page-id-26989 .container.main-content > .row > p,
-.page-template-speakers .container.main-content > .row > h2,
-.page-template-speakers .container.main-content > .row > p {
+.page-id-26989 .container.main-content > .row > p {
 	max-width: 95%;
 	margin: 0 auto;
 	opacity: 0;
@@ -6046,8 +6042,7 @@ div#at4-share {
 		margin: 0;
 	}
 
-	.page-id-26989 .container,
-	.page-template-speakers .container {
+	.page-id-26989 .container {
 		max-width: none;
 	}
 }
@@ -6251,8 +6246,7 @@ div#at4-share {
 		right: auto;
 	}
 
-	.page-id-26989 .container,
-	.page-template-speakers .container {
+	.page-id-26989 .container {
 		width: auto;
 	}
 }
@@ -8625,15 +8619,12 @@ div#at4-share {
 }
 
 @media (min-width: 1250px) {
-	.page-id-26989 header .container,
-	.page-template-speakers header .container {
+	.page-id-26989 header .container {
 		width: 1170px;
 	}
 
 	.page-id-26989 .container.main-content > .row > h2,
-	.page-id-26989 .container.main-content > .row > p,
-	.page-template-speakers .container.main-content > .row > h2,
-	.page-template-speakers .container.main-content > .row > p {
+	.page-id-26989 .container.main-content > .row > p {
 		max-width: 1225px;
 		margin: 0 auto;
 	}
@@ -8641,9 +8632,7 @@ div#at4-share {
 
 @media (max-width: 1249px) {
 	.page-id-26989 .container.main-content > .row > h2,
-	.page-id-26989 .container.main-content > .row > p,
-	.page-template-speakers .container.main-content > .row > h2,
-	.page-template-speakers .container.main-content > .row > p {
+	.page-id-26989 .container.main-content > .row > p {
 		max-width: 95%;
 		margin: 0 auto;
 	}
