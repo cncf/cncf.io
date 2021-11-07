@@ -47,7 +47,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_spotlight', 'lf_person' ), $args );
+register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_spotlight', 'lf_person', 'lf_ktp' ), $args );
 
 $labels = array(
 	'name'          => __( 'Author Category', 'lf-mu' ),
@@ -169,7 +169,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study' ), $args );
+register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study', 'lf_ktp' ), $args );
 
 $labels = array(
 	'name'              => __( 'Country', 'lf-mu' ),
@@ -392,3 +392,43 @@ $args   = array(
 	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-spotlight-type', array( 'lf_spotlight' ), $args );
+
+$labels = array(
+	'name'          => __( 'Certification', 'lf-mu' ),
+	'singular_name' => __( 'Certification', 'lf-mu' ),
+	'search_items'  => __( 'Search Certifications', 'lf-mu' ),
+	'all_items'     => __( 'All Certifications', 'lf-mu' ),
+	'edit_item'     => __( 'Edit Certification', 'lf-mu' ),
+	'update_item'   => __( 'Update Certification', 'lf-mu' ),
+	'add_new_item'  => __( 'Add New Certification', 'lf-mu' ),
+	'new_item_name' => __( 'New Certification Name', 'lf-mu' ),
+	'menu_name'     => __( 'Certifications', 'lf-mu' ),
+);
+$args   = array(
+	'labels'            => $labels,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
+);
+register_taxonomy( 'lf-certification', array( 'lf_ktp' ), $args );
+
+$labels = array(
+	'name'          => __( 'Training Type', 'lf-mu' ),
+	'singular_name' => __( 'Training Type', 'lf-mu' ),
+	'search_items'  => __( 'Search Training Types', 'lf-mu' ),
+	'all_items'     => __( 'All Training Types', 'lf-mu' ),
+	'edit_item'     => __( 'Edit Training Type', 'lf-mu' ),
+	'update_item'   => __( 'Update Training Type', 'lf-mu' ),
+	'add_new_item'  => __( 'Add New Training Type', 'lf-mu' ),
+	'new_item_name' => __( 'New Training Type Name', 'lf-mu' ),
+	'menu_name'     => __( 'Training Types', 'lf-mu' ),
+);
+$args   = array(
+	'labels'            => $labels,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
+);
+register_taxonomy( 'lf-training-type', array( 'lf_ktp' ), $args );

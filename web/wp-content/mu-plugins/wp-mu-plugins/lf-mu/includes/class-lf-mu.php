@@ -174,6 +174,14 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_projects' );
 		}
 
+		// Sync KTPs with landscape.
+		$this->loader->add_action( 'lf_sync_ktps', $plugin_admin, 'sync_ktps' );
+		if ( ! wp_next_scheduled( 'lf_sync_ktps' ) ) {
+			wp_schedule_event( time(), 'twicedaily', 'lf_sync_ktps' );
+		}
+		// Example of how to run a sync locally on demand.
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_ktps' ); //phpcs:ignore.
+
 		// Sync programs with https://community.cncf.io/.
 		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
 		if ( ! wp_next_scheduled( 'cncf_sync_programs' ) ) {
@@ -186,8 +194,6 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
 		}
 
-		// Example of how to run a sync locally on demand:
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_projects' ); //phpcs:ignore.
 	}
 
 	/**

@@ -566,4 +566,119 @@ class Lf_Mu_Admin {
 			wp_delete_post( get_the_id() );
 		}
 	}
+
+	/**
+	 * Sync KTP data from landscape.
+	 */
+	public function sync_ktps() {
+		$ktps_url  = 'https://landscape.' . $this->site . '.io/api/items?category=kubernetes-training-partner&grouping=no';
+		$items_url = 'https://landscape.' . $this->site . '.io/data/items.json';
+		$logos_url = 'https://landscape.' . $this->site . '.io/';
+
+		$args = array(
+			'timeout'   => 100,
+			'sslverify' => false,
+		);
+
+		$data = wp_remote_get( $ktps_url, $args );
+		if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+			return;
+		}
+		$ktps = json_decode( wp_remote_retrieve_body( $data ) );
+
+		$data = wp_remote_get( $items_url, $args );
+		if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+			return;
+		}
+		$items = json_decode( wp_remote_retrieve_body( $data ) );
+		$id_column = array_column( $items, 'id' );
+
+		foreach ( $ktps as $ktp ) {
+			$key = array_search( $ktp->id, $id_column );
+			if ( false === $key ) {
+				continue;
+			}
+
+			$p = $items[ $key ];
+
+			$params = array(
+				'post_type' => 'lf_ktp',
+				'post_title' => $p->name,
+				'post_status' => 'publish',
+				'meta_input' => array(
+					'lf_ktp_external_url' => $p->homepage_url,
+					'lf_ktp_logo' => $logos_url . $p->href,
+				),
+			);
+
+			if ( property_exists( $p, 'twitter' ) ) {
+				$params['meta_input']['lf_ktp_twitter'] = $p->twitter;
+			}
+
+			if ( property_exists( $p, 'repo_url' ) ) {
+				$params['meta_input']['lf_ktp_github'] = $p->repo_url;
+			}
+
+			if ( property_exists( $p, 'description' ) ) {
+				$params['meta_input']['lf_ktp_description'] = $p->description;
+			}
+
+			if ( property_exists( $p, 'extra' ) ) {
+				if ( property_exists( $p->extra, 'dev_stats_url' ) ) {
+					$params['meta_input']['lf_ktp_devstats'] = $p->extra->dev_stats_url;
+				}
+				if ( property_exists( $p->extra, 'artwork_url' ) ) {
+					$params['meta_input']['lf_ktp_logos'] = $p->extra->artwork_url;
+				}
+				if ( property_exists( $p->extra, 'stack_overflow_url' ) ) {
+					$params['meta_input']['lf_ktp_stack_overflow'] = $p->extra->stack_overflow_url;
+				}
+				if ( property_exists( $p->extra, 'accepted' ) ) {
+					$params['meta_input']['lf_ktp_date_accepted'] = $p->extra->accepted;
+				}
+				if ( property_exists( $p->extra, 'blog_url' ) ) {
+					$params['meta_input']['lf_ktp_blog'] = $p->extra->blog_url;
+				}
+				if ( property_exists( $p->extra, 'mailing_list_url' ) ) {
+					$params['meta_input']['lf_ktp_mail'] = $p->extra->mailing_list_url;
+				}
+				if ( property_exists( $p->extra, 'slack_url' ) ) {
+					$params['meta_input']['lf_ktp_slack'] = $p->extra->slack_url;
+				}
+				if ( property_exists( $p->extra, 'youtube_url' ) ) {
+					$params['meta_input']['lf_ktp_youtube'] = $p->extra->youtube_url;
+				}
+				if ( property_exists( $p->extra, 'gitter_url' ) ) {
+					$params['meta_input']['lf_ktp_gitter'] = $p->extra->gitter_url;
+				}
+			}
+
+			$pp = get_page_by_title( $p->name, OBJECT, 'lf_ktp' );
+			if ( $pp ) {
+				$params['ID'] = $pp->ID;
+			}
+
+			$newid = wp_insert_post( $params ); // will insert or update the post as needed.
+
+			if ( $newid ) {
+				$xxx = 'Prometheus';
+				if ( term_exists( $xxx, 'lf-project' ) ) {
+					wp_set_object_terms( $newid, $xxx, 'lf-project', false );
+				}
+				$xxx = 'France';
+				if ( term_exists( $xxx, 'lf-country' ) ) {
+					wp_set_object_terms( $newid, $xxx, 'lf-country', false );
+				}
+				$xxx = 'CKA';
+				if ( term_exists( $xxx, 'lf-certification' ) ) {
+					wp_set_object_terms( $newid, $xxx, 'lf-certification', false );
+				}
+				$xxx = 'E-Learning';
+				if ( term_exists( $xxx, 'lf-training-type' ) ) {
+					wp_set_object_terms( $newid, $xxx, 'lf-training-type', false );
+				}
+			}
+		}
+	}
+
 }
