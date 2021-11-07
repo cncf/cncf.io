@@ -164,17 +164,15 @@ class Lf_Mu {
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'wp_head', $plugin_admin, 'change_adminbar_colors' );
 
+		// Hook to save year in a meta field for case studies.
+		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
+		$this->loader->add_action( 'save_post_lf_case_study_cn', $plugin_admin, 'set_case_study_year', 10, 3 );
+
 		// Sync projects with landscape.
 		$this->loader->add_action( 'lf_sync_projects', $plugin_admin, 'sync_projects' );
 		if ( ! wp_next_scheduled( 'lf_sync_projects' ) ) {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_projects' );
 		}
-
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_projects' );
-
-		// Hook to save year in a meta field for case studies.
-		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
-		$this->loader->add_action( 'save_post_lf_case_study_cn', $plugin_admin, 'set_case_study_year', 10, 3 );
 
 		// Sync programs with https://community.cncf.io/.
 		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
@@ -188,11 +186,9 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
 		}
 
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_people' ); // phpcs:ignore.
+		// Example of how to run a sync locally on demand:
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_projects' );
 
-		// Use this command locally if you want to dump a json feed of all current People.
-		// Load browser and view source to copy the properly formatted feed.
-		// $this->loader->add_action( 'init', $plugin_admin, 'dump_people' ); // phpcs:ignore.
 	}
 
 	/**
