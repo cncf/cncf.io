@@ -182,3 +182,20 @@ $opts = array(
 	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 );
 register_post_type( 'lf_spotlight', $opts );
+
+$opts = array(
+	'labels'              => array(
+		'name'          => __( 'KTPs' ),
+		'singular_name' => __( 'KTP' ),
+		'all_items'     => __( 'All KTPs' ),
+	),
+	'public'              => true,
+	'has_archive'         => false,
+	'show_in_nav_menus'   => false,
+	'show_in_rest'        => true,
+	'show_ui'             => true,
+	'hierarchical'        => false,
+	'rewrite'             => array( 'slug' => 'ktps' ),
+	'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+);
+register_post_type( 'lf_ktp', $opts );
