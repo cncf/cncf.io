@@ -187,8 +187,7 @@ class Lf_Mu {
 		}
 
 		// Example of how to run a sync locally on demand:
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_projects' );
-
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_projects' ); //phpcs:ignore.
 	}
 
 	/**
