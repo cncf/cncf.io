@@ -662,19 +662,18 @@ class Lf_Mu_Admin {
 
 			if ( $newid ) {
 				$xxx = 'Prometheus';
-				if ( term_exists( $xxx, 'lf-project' ) ) {
+				if ( property_exists( $p, 'country' ) ) {
 					wp_set_object_terms( $newid, $xxx, 'lf-project', false );
 				}
-				$xxx = 'France';
-				if ( term_exists( $xxx, 'lf-country' ) ) {
-					wp_set_object_terms( $newid, $xxx, 'lf-country', false );
+				if ( property_exists( $p->crunchbaseData, 'country' ) ) {
+					wp_set_object_terms( $newid, $p->crunchbaseData->country, 'lf-country', false );
 				}
 				$xxx = 'CKA';
-				if ( term_exists( $xxx, 'lf-certification' ) ) {
+				if ( property_exists( $p, 'country' ) ) {
 					wp_set_object_terms( $newid, $xxx, 'lf-certification', false );
 				}
 				$xxx = 'E-Learning';
-				if ( term_exists( $xxx, 'lf-training-type' ) ) {
+				if ( property_exists( $p, 'country' ) ) {
 					wp_set_object_terms( $newid, $xxx, 'lf-training-type', false );
 				}
 			}
