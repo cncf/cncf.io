@@ -355,9 +355,9 @@ class Lf_Mu_Admin {
 	 * Sync projects data from landscape.
 	 */
 	public function sync_projects() {
-		$projects_url = 'https://landscape.' . $this->site . '.io/api/items?project=hosted';
-		$items_url    = 'https://landscape.' . $this->site . '.io/data/items.json';
-		$logos_url    = 'https://landscape.' . $this->site . '.io/';
+		$projects_url = 'https://landscape.cncf.io/api/items?project=hosted';
+		$items_url    = 'https://landscape.cncf.io/data/items.json';
+		$logos_url    = 'https://landscape.cncf.io/';
 
 		$args = array(
 			'timeout'   => 100,
@@ -571,9 +571,9 @@ class Lf_Mu_Admin {
 	 * Sync KTP data from landscape.
 	 */
 	public function sync_ktps() {
-		$ktps_url  = 'https://landscape.' . $this->site . '.io/api/items?category=kubernetes-training-partner&grouping=no';
-		$items_url = 'https://landscape.' . $this->site . '.io/data/items.json';
-		$logos_url = 'https://landscape.' . $this->site . '.io/';
+		$ktps_url  = 'https://landscape.cncf.io/api/items?category=kubernetes-training-partner&grouping=no';
+		$items_url = 'https://landscape.cncf.io/data/items.json';
+		$logos_url = 'https://landscape.cncf.io/';
 
 		$args = array(
 			'timeout'   => 100,
