@@ -611,46 +611,8 @@ class Lf_Mu_Admin {
 				),
 			);
 
-			if ( property_exists( $p, 'twitter' ) ) {
-				$params['meta_input']['lf_ktp_twitter'] = $p->twitter;
-			}
-
-			if ( property_exists( $p, 'repo_url' ) ) {
-				$params['meta_input']['lf_ktp_github'] = $p->repo_url;
-			}
-
 			if ( property_exists( $p, 'description' ) ) {
 				$params['meta_input']['lf_ktp_description'] = $p->description;
-			}
-
-			if ( property_exists( $p, 'extra' ) ) {
-				if ( property_exists( $p->extra, 'dev_stats_url' ) ) {
-					$params['meta_input']['lf_ktp_devstats'] = $p->extra->dev_stats_url;
-				}
-				if ( property_exists( $p->extra, 'artwork_url' ) ) {
-					$params['meta_input']['lf_ktp_logos'] = $p->extra->artwork_url;
-				}
-				if ( property_exists( $p->extra, 'stack_overflow_url' ) ) {
-					$params['meta_input']['lf_ktp_stack_overflow'] = $p->extra->stack_overflow_url;
-				}
-				if ( property_exists( $p->extra, 'accepted' ) ) {
-					$params['meta_input']['lf_ktp_date_accepted'] = $p->extra->accepted;
-				}
-				if ( property_exists( $p->extra, 'blog_url' ) ) {
-					$params['meta_input']['lf_ktp_blog'] = $p->extra->blog_url;
-				}
-				if ( property_exists( $p->extra, 'mailing_list_url' ) ) {
-					$params['meta_input']['lf_ktp_mail'] = $p->extra->mailing_list_url;
-				}
-				if ( property_exists( $p->extra, 'slack_url' ) ) {
-					$params['meta_input']['lf_ktp_slack'] = $p->extra->slack_url;
-				}
-				if ( property_exists( $p->extra, 'youtube_url' ) ) {
-					$params['meta_input']['lf_ktp_youtube'] = $p->extra->youtube_url;
-				}
-				if ( property_exists( $p->extra, 'gitter_url' ) ) {
-					$params['meta_input']['lf_ktp_gitter'] = $p->extra->gitter_url;
-				}
 			}
 
 			$pp = get_page_by_title( $p->name, OBJECT, 'lf_ktp' );
@@ -659,22 +621,19 @@ class Lf_Mu_Admin {
 			}
 
 			$newid = wp_insert_post( $params ); // will insert or update the post as needed.
-
 			if ( $newid ) {
-				$xxx = 'Prometheus';
-				if ( property_exists( $p, 'country' ) ) {
-					wp_set_object_terms( $newid, $xxx, 'lf-project', false );
+				if ( property_exists( $p->crunchbaseData, 'country' ) ) { //phpcs:ignore
+					wp_set_object_terms( $newid, $p->crunchbaseData->country, 'lf-country', false ); //phpcs:ignore
 				}
-				if ( property_exists( $p->crunchbaseData, 'country' ) ) {
-					wp_set_object_terms( $newid, $p->crunchbaseData->country, 'lf-country', false );
-				}
-				$xxx = 'CKA';
-				if ( property_exists( $p, 'country' ) ) {
-					wp_set_object_terms( $newid, $xxx, 'lf-certification', false );
-				}
-				$xxx = 'E-Learning';
-				if ( property_exists( $p, 'country' ) ) {
-					wp_set_object_terms( $newid, $xxx, 'lf-training-type', false );
+				if ( property_exists( $p, 'extra' ) ) {
+					if ( property_exists( $p->extra, 'training_certifications' ) ) {
+						$certs = explode( ',', $p->extra->training_certifications );
+						wp_set_object_terms( $newid, $certs, 'lf-certification', false );
+					}
+					if ( property_exists( $p->extra, 'training_type' ) ) {
+						$types = explode( ',', $p->extra->training_type );
+						wp_set_object_terms( $newid, $types, 'lf-training-type', false );
+					}
 				}
 			}
 		}

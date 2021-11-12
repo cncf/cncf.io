@@ -9,66 +9,64 @@
  * @since 1.0.0
  */
 
-?>
-
-<p class="results-count">
+if ( $query->have_posts() ) :
+	?>
+	<p class="results-count">
 	<?php
-	if ( $query->have_posts() ) :
-		$full_count = $wpdb->get_var( "select count(*) from wp_posts where wp_posts.post_type = 'lf_ktp' and wp_posts.post_status = 'publish';" );
-		if ( $full_count == $query->found_posts ) {
-			echo 'Found ' . esc_html( $query->found_posts ) . ' KTPs';
-		} else {
-			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' KTPs';
-		}
-		?>
-</p>
-<div class="events-wrapper">
+	$full_count = $wpdb->get_var( "select count(*) from wp_posts where wp_posts.post_type = 'lf_ktp' and wp_posts.post_status = 'publish';" );
+	if ( $full_count == $query->found_posts ) {
+		echo 'Found ' . esc_html( $query->found_posts ) . ' KTPs';
+	} else {
+		echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' KTPs';
+	}
+	?>
+	</p>
+	<main class="archive">
+	<div class="container wrap archive-container">
 		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();
-
-			$logo  = get_post_meta( get_the_ID(), 'lf_ktp_logo', true );
-			$image = new Image();
-
+			$target_attr = 'rel="noopener" target="_blank"';
+			$add_external_icon = ' external is-primary-color';
 			$description    = get_post_meta( get_the_id(), 'lf_ktp_description', true );
 			$external_url   = get_post_meta( get_the_ID(), 'lf_ktp_external_url', true );
-			$github         = get_post_meta( get_the_ID(), 'lf_ktp_github', true );
-			$stack_overflow = get_post_meta( get_the_ID(), 'lf_ktp_stack_overflow', true );
-			$devstats       = get_post_meta( get_the_ID(), 'lf_ktp_devstats', true );
-			$logos          = get_post_meta( get_the_ID(), 'lf_ktp_logos', true );
-			$mail           = get_post_meta( get_the_ID(), 'lf_ktp_mail', true );
-			$blog           = get_post_meta( get_the_ID(), 'lf_ktp_blog', true );
-			$twitter        = get_post_meta( get_the_ID(), 'lf_ktp_twitter', true );
-			$slack          = get_post_meta( get_the_ID(), 'lf_ktp_slack', true );
-			$youtube        = get_post_meta( get_the_ID(), 'lf_ktp_youtube', true );
-			$gitter         = get_post_meta( get_the_ID(), 'lf_ktp_gitter', true );
+			$logo   = get_post_meta( get_the_ID(), 'lf_ktp_logo', true );
+			$image = new Image();
+			$country            = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
+			$small_title = str_replace( '(KTP)', '', get_the_title() );
 
 			?>
-	<article class="event-box background-image-wrapper">
-		<div class="event-content-wrapper background-image-text-overlay">
-
-			<div class="event-logo">
-			<?php if ( $logo ) : ?>
-				<a href="<?php the_permalink(); ?>"
-					title="<?php the_title(); ?>">
-				<?php
-						echo wp_get_attachment_image( $logo, 'medium', false );
-				?>
-						  </a>
-		<?php else : ?>
-						<h4 class="event-title"><a href="<?php the_permalink(); ?>"
-					title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
-						<?php endif; ?>
+			<div class="archive-item in-news-item">
+			<div class="archive-image-wrapper"><a
+				href="<?php echo esc_url( $external_url ); ?>"
+				<?php echo $target_attr; //phpcs:ignore ?>
+				title="<?php echo esc_attr( $small_title ); ?>">
+				<img src="<?php echo esc_url( $logo ); ?>"
+						title="<?php echo esc_html( $small_title ); ?>"
+						class="project-thumbnail">
 				</a>
 			</div>
+			<div class="archive-text-wrapper">
+				<p class="archive-title"><a
+				class="<?php echo esc_html( $add_external_icon ); ?>"
+				href="<?php echo esc_url( $external_url ); ?>"
+				<?php echo $target_attr;  //phpcs:ignore ?>
+				title="<?php echo esc_attr( $small_title ); ?>">
+				<?php echo esc_html( $small_title ); ?>
+				</a></p>
+				<p class="date-author-row">
+					<?php
+					echo esc_html( $country );
 
-			<a href="<?php the_permalink(); ?>"
-				class="button on-image">Learn More</a>
-		</div>
-	</article>
-<?php endwhile; ?>
-</div>
-		<?php
+					?>
+				</p>
+				<div class="archive-excerpt"><?php echo esc_html( $description ); ?></div>
+			</div>
+			</div>
+		<?php endwhile; ?>
+	</div>
+	</main>
+	<?php
 else :
 	echo 'No Results Found';
 endif;
