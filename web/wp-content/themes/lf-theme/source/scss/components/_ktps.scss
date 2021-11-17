@@ -1,0 +1,11 @@
+.ktp-results {
+	max-width: 1000px;
+}
+
+@media (min-width: 768px) {
+	.ktp-results .archive-item {
+		&.in-news-item {
+			align-items: center;
+		}
+	}
+}

@@ -1,11 +1,9 @@
-.archive-container {
+.single-column-spaced-items {
 	display: grid;
 	grid-row-gap: 4rem;
 	grid-column-gap: 4rem;
 	grid-template-rows: 1fr;
 	margin-top: 4em;
-	margin-left: auto;
-	margin-right: auto;
 
 	a {
 		color: $primary-color;
@@ -52,7 +50,7 @@
 
 	&.sticky {
 		.archive-image-wrapper:after {
-			content: "FEATURED";
+			content: 'FEATURED';
 			position: absolute;
 
 			z-index: 10;
@@ -128,7 +126,7 @@
 
 	// padding for image wrapper.
 	&::before {
-		content: "";
+		content: '';
 		width: 1px;
 		margin-left: -1px;
 		float: left;
@@ -138,7 +136,7 @@
 
 	&::after {
 		// clear float.
-		content: "";
+		content: '';
 		display: table;
 		clear: both;
 	}
@@ -149,7 +147,7 @@
 	}
 
 	// aligns the SVG default image.
-	img[src$=".svg"] {
+	img[src$='.svg'] {
 		&.archive-default-svg {
 			position: absolute;
 			transform: translateY(-50%);
