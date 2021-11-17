@@ -14,7 +14,7 @@
 	if ( have_posts() ) :
 		?>
 
-	<div class="container wrap archive-container">
+	<div class="container wrap single-column-spaced-items">
 
 		<?php
 		if ( 'landscape' === get_search_query() ) :

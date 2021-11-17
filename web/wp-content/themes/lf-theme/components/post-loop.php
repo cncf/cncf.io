@@ -9,7 +9,7 @@
 
 ?>
 <main class="archive">
-	<div class="container wrap archive-container">
+	<div class="container wrap single-column-spaced-items">
 		<?php
 		if ( have_posts() ) :
 			// setup options.
