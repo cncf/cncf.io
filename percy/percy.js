@@ -15,9 +15,9 @@ PercyScript.run(async (page, percySnapshot) => {
   await page.waitFor(delay);
   await percySnapshot('faq');
 
-  await page.goto(rooturl + 'community/webinars/');
+  await page.goto(rooturl + 'online-programs/');
   await page.waitFor(delay);
-  await percySnapshot('webinars');
+  await percySnapshot('online-programs');
 
   await page.goto(rooturl + 'blog/');
   await page.waitFor(delay);
@@ -35,16 +35,12 @@ PercyScript.run(async (page, percySnapshot) => {
   await page.waitFor(delay);
   await percySnapshot('contact');
 
-  await page.goto(rooturl + 'speakers/');
-  await page.waitFor(delay);
-  await percySnapshot('speakers bureau');
-
   await page.goto(rooturl + 'case-studies/');
   await page.waitFor(delay);
   await percySnapshot('case studies');
 
-  await page.goto(rooturl + 'webinars/');
+  await page.goto(rooturl + 'certification/kubernetes-training-partners/');
   await page.waitFor(delay);
-  await percySnapshot('webinars');
+  await percySnapshot('ktps');
 
 });
