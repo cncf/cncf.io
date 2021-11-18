@@ -189,7 +189,7 @@ $opts = array(
 		'singular_name' => __( 'KTP' ),
 		'all_items'     => __( 'All KTPs' ),
 	),
-	'public'              => true,
+	'public'              => false,
 	'has_archive'         => false,
 	'show_in_nav_menus'   => false,
 	'show_in_rest'        => true,
