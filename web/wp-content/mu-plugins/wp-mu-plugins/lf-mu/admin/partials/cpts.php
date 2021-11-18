@@ -193,7 +193,7 @@ $opts = array(
 	'has_archive'         => false,
 	'show_in_nav_menus'   => false,
 	'show_in_rest'        => true,
-	'show_ui'             => true,
+	'show_ui'             => false,
 	'hierarchical'        => false,
 	'rewrite'             => array( 'slug' => 'ktps' ),
 	'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
