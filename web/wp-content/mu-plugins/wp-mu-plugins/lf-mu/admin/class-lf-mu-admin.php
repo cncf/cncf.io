@@ -623,7 +623,11 @@ class Lf_Mu_Admin {
 			$newid = wp_insert_post( $params ); // will insert or update the post as needed.
 			if ( $newid ) {
 				if ( property_exists( $p->crunchbaseData, 'country' ) ) { //phpcs:ignore
-					wp_set_object_terms( $newid, $p->crunchbaseData->country, 'lf-country', false ); //phpcs:ignore
+					$country = $p->crunchbaseData->country; //phpcs:ignore
+					if ( 'The Netherlands' == $country ) {
+						$country = 'Netherlands';
+					}
+					wp_set_object_terms( $newid, $country, 'lf-country', false );
 				}
 				if ( property_exists( $p, 'extra' ) ) {
 					if ( property_exists( $p->extra, 'training_certifications' ) ) {
