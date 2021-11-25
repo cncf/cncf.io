@@ -1,0 +1,14 @@
+/**
+Theme Name: CNCF Theme
+Theme URI: https://github.com/cncf/cncf.io
+Author: James Hunt, Chris Abraham
+Author URI: https://www.cncf.io
+Version: 1.0.0
+Requires at least: 5.5
+Tested up to: 5.5.1
+Requires PHP: 7.0
+Text Domain: cncf
+Description: A custom theme developed for CNCF website, see the Github repo for usage instructions.
+
+Please refrain from putting any CSS in this file, everything should go within the workflow in the source/sass folder.
+*/
