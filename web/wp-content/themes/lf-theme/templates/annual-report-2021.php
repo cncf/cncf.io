@@ -19,12 +19,4 @@ if ( have_posts() ) :
 endwhile;
 endif;
 
-// wp_enqueue_script(
-// 	'annual-report-js',
-// 	get_stylesheet_directory_uri() . '/source/js/third-party/annual-report.js',
-// 	array( 'jquery' ),
-// 	filemtime( get_template_directory() . '/source/js/third-party/annual-report.js' ),
-// 	true
-// );
-
 get_template_part( 'components/footer' );
