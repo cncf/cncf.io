@@ -1,0 +1,170 @@
+// declare all colours.
+
+$white: #ffffff;
+$black: #202020;
+
+// primary - highlight colour
+$primary-300: #ff33bb; // cta rollover
+$primary-400: #ff00aa; // preferred CTA
+
+// secondary - bolder colour
+$secondary-300: #908bb1;
+$secondary-500: #50326e;
+$secondary-600: #431f67;
+$secondary-700: #2c2960;
+$secondary-800: #242b5f;
+$secondary-900: #2a0552;
+
+// tertiary
+$tertiary-100: #f4f4f4;
+$tertiary-400: #436ca9;
+$tertiary-600: #416fd9;
+$tertiary-700: #0088ff;
+
+// greys.
+$grey-100: #f9f9f9;
+$grey-200: #abb2bf;
+$grey-400: #a7a7a6;
+$grey-500: #87969c;
+$grey-700: #a7a4b6;
+$grey-800: #333333;
+
+// main.
+$primary-color: $primary-400;
+$secondary-color: $secondary-700;
+$tertiary-color: $tertiary-100;
+
+// links.
+$link-color: $primary-400;
+$link-hover: $primary-300;
+
+// mobile menu.
+$menu-mobile-container: $secondary-900;
+$menu-mobile-submenu: $secondary-600;
+$menu-mobile-submenu-submenu: $secondary-500;
+$menu-mobile-divider: $secondary-900;
+
+// desktop menu.
+$menu-desktop-container: $secondary-900;
+$menu-desktop-submenu: $secondary-600;
+$menu-desktop-submenu-submenu: $secondary-500;
+$menu-desktop-divider: $secondary-900;
+$menu-desktop-search: $secondary-600;
+
+// menu text/links.
+$menu-link: $white;
+$menu-hover: $grey-100;
+
+// highlight elements (pricing table, case study overlay)
+$cs-overlay: $secondary-900;
+$hero-overlay: #2b1d39;
+
+// forms.
+$error: #b80611;
+$success: green;
+
+$body-text-color: $secondary-900;
+
+// spacing.
+$sm-padding: 2rem;
+$lg-padding: 4rem;
+
+$content-width: 1150px;
+
+// font-stack.
+$font-primary: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, Roboto,
+	Ubuntu, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$font-code: Hack, 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
+	'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier,
+	monospace;
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 100;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 200;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 300;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 400;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 500;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 600;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 700;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 800;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Clarity City';
+	font-weight: 900;
+	font-style: normal;
+	src: local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.ttf') format('ttf');
+}
