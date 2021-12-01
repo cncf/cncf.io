@@ -15,7 +15,7 @@ $description      = get_post_meta( get_the_id(), 'lf_project_description', true 
 $project_category = get_post_meta( get_the_ID(), 'lf_project_category', true );
 $external_url     = get_post_meta( get_the_ID(), 'lf_project_external_url', true );
 
-$date_accepted = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? gmdate( 'n/j/Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) : '';
+$date_accepted = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? gmdate( 'F j, Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) : '';
 
 // Links for Project.
 $github         = get_post_meta( get_the_ID(), 'lf_project_github', true );
