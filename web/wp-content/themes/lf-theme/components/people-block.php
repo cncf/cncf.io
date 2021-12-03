@@ -8,16 +8,18 @@
  */
 
 // setup values.
-$person_id = get_the_ID();
-$company   = get_post_meta( get_the_ID(), 'lf_person_company', true );
-$pronouns  = get_post_meta( get_the_ID(), 'lf_person_pronouns', true );
-$linkedin  = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
-$twitter   = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
-$github    = get_post_meta( get_the_ID(), 'lf_person_github', true );
-$wechat    = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
-$website   = get_post_meta( get_the_ID(), 'lf_person_website', true );
-$youtube   = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
-$image_url = get_post_meta( get_the_ID(), 'lf_person_image', true );
+global $post;
+$person_id   = get_the_ID();
+$person_slug = $post->post_name;
+$company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
+$pronouns    = get_post_meta( get_the_ID(), 'lf_person_pronouns', true );
+$linkedin    = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
+$twitter     = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
+$github      = get_post_meta( get_the_ID(), 'lf_person_github', true );
+$wechat      = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
+$website     = get_post_meta( get_the_ID(), 'lf_person_website', true );
+$youtube     = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
+$image_url   = get_post_meta( get_the_ID(), 'lf_person_image', true );
 
 // setup image class.
 $image = new Image();
@@ -34,6 +36,7 @@ if ( strlen( $content ) > 20 ) {
 	<?php if ( $show_modal ) : ?>
 		<button
 			data-modal-content-id="modal-<?php echo esc_html( $person_id ); ?>"
+			data-modal-slug="<?php echo esc_html( $person_slug ); ?>"
 			data-modal-prefix-class="lf" data-modal-close-text="Close"
 			class="js-modal button-reset" aria-label="Close">
 	<?php endif; ?>
@@ -119,6 +122,7 @@ if ( strlen( $content ) > 20 ) {
 			?>
 		<button
 			data-modal-content-id="modal-<?php echo esc_html( $person_id ); ?>"
+			data-modal-slug="<?php echo esc_html( $person_slug ); ?>"
 			data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close"
 			class="js-modal button smaller margin-top">View profile</button>
 		<!-- Modal -->
