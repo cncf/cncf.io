@@ -113,9 +113,9 @@ jQuery( document ).ready(
 				}
 
 				if ( $modal_slug !== '' ) {
-					const url = new URL(window.location);
-					url.searchParams.set('p', $modal_slug);
-					window.history.pushState({}, '', url);
+					const url = new URL( window.location );
+					url.searchParams.set( 'p', $modal_slug );
+					window.history.pushState( {}, '', url );
 				}
 
 				event.preventDefault();
@@ -138,9 +138,9 @@ jQuery( document ).ready(
 
 				$page.removeAttr( 'aria-hidden' );
 
-				const url = new URL(window.location);
-				url.searchParams.delete('p');
-				window.history.pushState({}, '', url);
+				const url = new URL( window.location );
+				url.searchParams.delete( 'p' );
+				window.history.pushState( {}, '', url );
 
 				let delay = $js_modal.css( 'animation-duration' );
 				if ( delay != '0s' ) {
