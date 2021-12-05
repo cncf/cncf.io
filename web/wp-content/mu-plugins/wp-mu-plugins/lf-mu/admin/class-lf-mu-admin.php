@@ -540,7 +540,7 @@ class Lf_Mu_Admin {
 			$newid = wp_insert_post( $params ); // will insert or update the post as needed.
 
 			if ( $newid ) {
-				if ( property_exists( $p, 'language' ) ) {
+				if ( property_exists( $p, 'languages' ) ) {
 					wp_set_object_terms( $newid, $p->language, 'lf-language', false );
 				}
 				if ( property_exists( $p, 'projects' ) ) {

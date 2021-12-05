@@ -20,6 +20,8 @@ $wechat      = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
 $website     = get_post_meta( get_the_ID(), 'lf_person_website', true );
 $youtube     = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
 $image_url   = get_post_meta( get_the_ID(), 'lf_person_image', true );
+$languages   = get_the_terms( get_the_ID(), 'lf-language' );
+$projects    = get_the_terms( get_the_ID(), 'lf-project' );
 
 // setup image class.
 $image = new Image();
@@ -147,6 +149,24 @@ if ( strlen( $content ) > 20 ) {
 						<?php echo esc_html( $company ); ?></h5>
 					<?php endif; ?>
 						<?php the_content(); ?>
+
+					Languages: 
+					<?php
+					foreach ( $languages as $language ) {
+						?>
+						<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $language->name ); ?></span>
+						<?php
+					}
+					?>
+					<p>
+					Projects: 
+					<?php
+					foreach ( $projects as $project ) {
+						?>
+						<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $project->name ); ?></span>
+						<?php
+					}
+					?>
 				</div>
 			</div>
 		</div>
