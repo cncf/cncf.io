@@ -270,5 +270,13 @@ jQuery( document ).ready(
 				$close.focus();
 			}
 		);
+
+		// pops open a modal if one is provided in the url.
+		const url = new URL( window.location );
+		slug = url.searchParams.get( 'p' );
+		if ( slug ) {
+			button_class = '.modal-' + slug;
+			$( button_class ).click();
+		}
 	}
 );

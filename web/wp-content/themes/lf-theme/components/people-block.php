@@ -124,7 +124,7 @@ if ( strlen( $content ) > 20 ) {
 			data-modal-content-id="modal-<?php echo esc_html( $person_id ); ?>"
 			data-modal-slug="<?php echo esc_html( $person_slug ); ?>"
 			data-modal-prefix-class="lf" data-modal-close-text="Close" aria-label="Close"
-			class="js-modal button smaller margin-top">View profile</button>
+			class="js-modal button smaller margin-top modal-<?php echo esc_html( $person_slug ); ?>">View profile</button>
 		<!-- Modal -->
 		<div class="modal-hide" id="modal-<?php echo esc_html( $person_id ); ?>"
 			aria-hidden="true">
