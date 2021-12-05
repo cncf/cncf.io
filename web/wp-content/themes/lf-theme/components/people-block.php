@@ -150,20 +150,32 @@ if ( strlen( $content ) > 20 ) {
 					<?php endif; ?>
 						<?php the_content(); ?>
 
-					Languages: 
 					<?php
-					foreach ( $languages as $language ) {
+					if ( $languages ) {
 						?>
-						<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $language->name ); ?></span>
+						<div>Languages:
+						<?php
+						foreach ( $languages as $language ) {
+							?>
+							<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $language->name ); ?></span>
+							<?php
+						}
+						?>
+						</div>
 						<?php
 					}
-					?>
-					<p>
-					Projects: 
-					<?php
-					foreach ( $projects as $project ) {
+
+					if ( $projects ) {
 						?>
-						<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $project->name ); ?></span>
+						<div>Projects:
+						<?php
+						foreach ( $projects as $project ) {
+							?>
+							<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $project->name ); ?></span>
+							<?php
+						}
+						?>
+						</div>
 						<?php
 					}
 					?>
