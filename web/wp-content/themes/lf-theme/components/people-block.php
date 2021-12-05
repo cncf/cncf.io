@@ -20,6 +20,7 @@ $wechat      = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
 $website     = get_post_meta( get_the_ID(), 'lf_person_website', true );
 $youtube     = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
 $image_url   = get_post_meta( get_the_ID(), 'lf_person_image', true );
+$location    = get_post_meta( get_the_ID(), 'lf_person_location', true );
 $languages   = get_the_terms( get_the_ID(), 'lf-language' );
 $projects    = get_the_terms( get_the_ID(), 'lf-project' );
 
@@ -151,6 +152,12 @@ if ( strlen( $content ) > 20 ) {
 						<?php the_content(); ?>
 
 					<?php
+					if ( $location ) {
+						?>
+						<div>Location: <?php echo esc_html( $location ); ?> </div>
+						<?php
+					}
+
 					if ( $languages ) {
 						?>
 						<div>Languages:
@@ -167,7 +174,7 @@ if ( strlen( $content ) > 20 ) {
 
 					if ( $projects ) {
 						?>
-						<div>Projects:
+						<div>CNCF Project Specialties:
 						<?php
 						foreach ( $projects as $project ) {
 							?>
