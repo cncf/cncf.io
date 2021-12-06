@@ -544,7 +544,13 @@ class Lf_Mu_Admin {
 					wp_set_object_terms( $newid, $p->language, 'lf-language', false );
 				}
 				if ( property_exists( $p, 'projects' ) ) {
-					wp_set_object_terms( $newid, $p->projects, 'lf-project', false );
+					foreach ( $p->projects as $proj ) {
+						if ( term_exists( $proj, 'lf-project' ) ) {
+							// Don't allow any non-CNCF projects to be added.
+							$projects_to_add[] = $proj;
+						}
+					}
+					wp_set_object_terms( $newid, $projects_to_add, 'lf-project', false );
 				}
 				if ( property_exists( $p, 'category' ) ) {
 					wp_set_object_terms( $newid, $p->category, 'lf-person-category', false );
