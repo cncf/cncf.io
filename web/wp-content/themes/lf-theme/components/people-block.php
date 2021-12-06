@@ -62,6 +62,13 @@ if ( strlen( $content ) > 20 ) {
 	<div class="people-excerpt">
 		<?php the_excerpt(); ?>
 		<?php
+		if ( $location ) {
+			?>
+			<p>Location: <?php echo esc_html( $location ); ?> </p>
+			<?php
+		}
+
+
 		if ( $pronouns ) :
 			?>
 			<p>Pronouns: <?php echo esc_html( $pronouns ); ?></p>
