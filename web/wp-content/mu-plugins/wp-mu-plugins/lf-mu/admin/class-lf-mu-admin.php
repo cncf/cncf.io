@@ -490,9 +490,6 @@ class Lf_Mu_Admin {
 				'meta_input'   => array(),
 			);
 
-			if ( property_exists( $p, 'excerpt' ) ) {
-				$params['post_excerpt'] = $p->excerpt;
-			}
 			if ( property_exists( $p, 'company' ) ) {
 				$params['meta_input']['lf_person_company'] = $p->company;
 			}
@@ -541,7 +538,7 @@ class Lf_Mu_Admin {
 
 			if ( $newid ) {
 				if ( property_exists( $p, 'languages' ) ) {
-					wp_set_object_terms( $newid, $p->language, 'lf-language', false );
+					wp_set_object_terms( $newid, $p->languages, 'lf-language', false );
 				}
 				if ( property_exists( $p, 'projects' ) ) {
 					foreach ( $p->projects as $proj ) {
