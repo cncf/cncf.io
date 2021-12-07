@@ -1,5 +1,6 @@
 // annual report 2021 styling.
 
+// TODO: Remove unused fonts.
 @font-face {
 	font-family: 'Clarity City';
 	font-weight: 100;
@@ -137,27 +138,5 @@ $font-ar21: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helve
 	position: relative;
 	span {
 		margin-left: 45px;
-	}
-}
-
-.fake-nav {
-	position: sticky;
-	z-index: 2;
-	top: 0;
-	opacity: 0;
-	// disapear.
-	transition-property: opacity, top;
-	transition-duration: 0.25s;
-	transition-timing-function: ease-out;
-	transition-delay: 0s;
-	&.is-sticky {
-		opacity: 1;
-		top: 80px;
-		position: sticky;
-		// appear.
-		transition-property: opacity, top;
-		transition-duration: 0.5s;
-		transition-timing-function: linear;
-		transition-delay: 0s;
 	}
 }
