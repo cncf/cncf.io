@@ -12,7 +12,7 @@ global $post;
 $person_id   = get_the_ID();
 $person_slug = $post->post_name;
 $company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
-$pronouns    = strtolower( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ) );
+$pronouns    = ucwords( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ), $separators = " \t\r\n\f\v\\;/" );
 $linkedin    = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
 $twitter     = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
 $github      = get_post_meta( get_the_ID(), 'lf_person_github', true );
@@ -23,6 +23,9 @@ $image_url   = get_post_meta( get_the_ID(), 'lf_person_image', true );
 $location    = get_post_meta( get_the_ID(), 'lf_person_location', true );
 $languages   = get_the_terms( get_the_ID(), 'lf-language' );
 $projects    = get_the_terms( get_the_ID(), 'lf-project' );
+
+global $wp;
+$current_url = home_url( $wp->request );
 
 // setup image class.
 $image = new Image();
@@ -69,11 +72,10 @@ if ( strlen( $content ) > 20 ) {
 	<h5 class="people-company"><?php echo esc_html( $company ); ?></h5>
 	<?php endif; ?>
 	<div class="people-excerpt">
-		<?php the_excerpt(); ?>
 		<?php
 		if ( $location ) {
 			?>
-			<p>Location: <?php echo esc_html( $location ); ?> </p>
+			<p><span class="strong">Location:</span> <?php echo esc_html( $location ); ?> </p>
 			<?php
 		}
 		?>
@@ -169,39 +171,42 @@ if ( strlen( $content ) > 20 ) {
 						<?php echo esc_html( $company ); ?></h5>
 					<?php endif; ?>
 						<?php the_content(); ?>
-
 					<?php
 					if ( $location ) {
 						?>
-						<div>Location: <?php echo esc_html( $location ); ?> </div>
+						<p><span class="strong">Location:</span> <?php echo esc_html( $location ); ?> </p>
 						<?php
 					}
 
 					if ( $languages ) {
 						?>
-						<div>Languages:
+						<p><span class="strong">Languages:</span>
 						<?php
+						$comma = '';
+						$out = '';
 						foreach ( $languages as $language ) {
-							?>
-							<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $language->name ); ?></span>
-							<?php
+							$out .= esc_html( $comma ) . '<a href="' . $current_url . '">' . esc_html( $language->name ) . '</a>';
+							$comma = ', ';
 						}
+						echo $out; //phpcs:ignore
 						?>
-						</div>
+						</p>
 						<?php
 					}
 
 					if ( $projects ) {
 						?>
-						<div>CNCF Project Specialties:
+						<p><span class="strong">CNCF Project Specialties:</span>
 						<?php
+						$comma = '';
+						$out = '';
 						foreach ( $projects as $project ) {
-							?>
-							<span class="skew-box secondary centered margin-bottom-small" ><?php echo esc_html( $project->name ); ?></span>
-							<?php
+							$out .= esc_html( $comma ) . '<a href="' . $current_url . '">' . esc_html( $project->name ) . '</a>';
+							$comma = ', ';
 						}
+						echo $out; //phpcs:ignore
 						?>
-						</div>
+						</p>
 						<?php
 					}
 					?>
