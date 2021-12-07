@@ -427,21 +427,21 @@ class Lf_Utils {
 		// date period.
 		if ( $dat_webinar_start > $dat_now ) {
 			?>
-			<span class="date-icon">Upcoming on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
+<span class="date-icon">Upcoming on
+			<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+</span>
 			<?php
 		} elseif ( ( $dat_webinar_start ) && ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
 			?>
-			<span class="live-icon">Recorded on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
+<span class="live-icon">Recorded on
+			<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+</span>
 			<?php
 		} elseif ( $dat_webinar_start ) {
 			?>
-			<span class="posted-date date-icon">Broadcast on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
+<span class="posted-date date-icon">Broadcast on
+			<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+</span>
 			<?php
 		}
 	}
@@ -456,8 +456,8 @@ class Lf_Utils {
 
 			// default values in case of failure.
 			$metrics = array(
-				'contributors' => 120000,
-				'contributions' => 5800000,
+				'contributors' => 143000,
+				'contributions' => 7200000,
 				'linesofcode' => 270000000,
 			);
 
@@ -485,7 +485,12 @@ class Lf_Utils {
 			}
 
 			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['linesofcode'] = $remote_body->metrics_floats->linesOfCode;
+
+			$lines_of_code = $remote_body->metrics_floats->linesOfCode ?? '';
+
+			if ( ! $lines_of_code || 0 == $lines_of_code ) {
+				return $metrics;
+			}
 
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 		}
