@@ -12,7 +12,7 @@ global $post;
 $person_id   = get_the_ID();
 $person_slug = $post->post_name;
 $company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
-$pronouns    = get_post_meta( get_the_ID(), 'lf_person_pronouns', true );
+$pronouns    = strtolower( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ) );
 $linkedin    = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
 $twitter     = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
 $github      = get_post_meta( get_the_ID(), 'lf_person_github', true );
@@ -52,7 +52,16 @@ if ( strlen( $content ) > 20 ) {
 	</button>
 	<?php endif; ?>
 	<!-- Name  -->
-	<h4 class="people-title"><?php the_title(); ?></h4>
+	<h4 class="people-title">
+		<?php the_title(); ?>
+			<?php
+			if ( $pronouns ) {
+				?>
+				<span class='pronouns'>(<?php echo esc_html( $pronouns ); ?>)</span>
+				<?php
+			}
+			?>
+	</h4>
 	<!-- Company  -->
 	<?php
 	if ( $company ) :
@@ -67,12 +76,7 @@ if ( strlen( $content ) > 20 ) {
 			<p>Location: <?php echo esc_html( $location ); ?> </p>
 			<?php
 		}
-
-
-		if ( $pronouns ) :
-			?>
-			<p>Pronouns: <?php echo esc_html( $pronouns ); ?></p>
-		<?php endif; ?>
+		?>
 	</div>
 <div class="social-modal-wrapper">
 	<?php
@@ -149,7 +153,15 @@ if ( strlen( $content ) > 20 ) {
 				</div>
 				<div class="modal__content">
 					<h3 class="modal__title margin-reset">
-						<?php the_title(); ?></h3>
+						<?php the_title(); ?>
+						<?php
+						if ( $pronouns ) {
+							?>
+							<span class='pronouns'>(<?php echo esc_html( $pronouns ); ?>)</span>
+							<?php
+						}
+						?>
+					</h3>
 					<?php
 					if ( $company ) :
 						?>
