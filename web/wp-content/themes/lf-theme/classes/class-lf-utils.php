@@ -451,7 +451,7 @@ class Lf_Utils {
 	 */
 	public static function get_homepage_metrics() {
 		$metrics = get_transient( 'cncf_homepage_metrics' );
-		$metrics = false;
+
 		if ( false === $metrics ) {
 
 			// default values in case of failure.
