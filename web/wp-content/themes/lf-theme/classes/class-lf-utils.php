@@ -479,6 +479,8 @@ class Lf_Utils {
 			$metrics['contributors'] = $remote_body->contributors;
 			$metrics['contributions'] = $remote_body->contributions;
 
+			// Turning off remote get of LOC for now since that service has been taken down.
+			/* phpcs:ignore
 			$data = wp_remote_get( 'https://metrics.lfanalytics.io/v1/projects/cncf-f/summary' );
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 				return $metrics;
@@ -492,7 +494,7 @@ class Lf_Utils {
 			} else {
 				$metrics['linesofcode'] = $lines_of_code;
 			}
-
+			*/
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 		}
 		return $metrics;
