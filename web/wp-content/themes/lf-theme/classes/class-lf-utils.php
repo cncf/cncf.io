@@ -458,7 +458,7 @@ class Lf_Utils {
 			$metrics = array(
 				'contributors' => 143000,
 				'contributions' => 7300000,
-				'linesofcode' => 270000000,
+				'linesofcode' => 294100000,
 			);
 
 			$data = wp_remote_post(
