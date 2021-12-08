@@ -457,7 +457,7 @@ class Lf_Utils {
 			// default values in case of failure.
 			$metrics = array(
 				'contributors' => 143000,
-				'contributions' => 7200000,
+				'contributions' => 7300000,
 				'linesofcode' => 270000000,
 			);
 
@@ -485,11 +485,12 @@ class Lf_Utils {
 			}
 
 			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-
 			$lines_of_code = $remote_body->metrics_floats->linesOfCode ?? '';
 
 			if ( ! $lines_of_code || 0 == $lines_of_code ) {
 				return $metrics;
+			} else {
+				$metrics['linesofcode'] = $lines_of_code;
 			}
 
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
