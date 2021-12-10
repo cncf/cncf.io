@@ -552,6 +552,14 @@ class Lf_Mu_Admin {
 				if ( property_exists( $p, 'category' ) ) {
 					wp_set_object_terms( $newid, $p->category, 'lf-person-category', false );
 				}
+				if ( property_exists( $p, 'location' ) ) {
+					$country_arr = explode( ',', $params['meta_input']['lf_person_location'] );
+					$country = trim( end( $country_arr ) );
+					$term_exists = term_exists( $country, 'lf-country' );
+					if ( $term_exists['term_id'] ) {
+						wp_set_object_terms( $newid, (int) $term_exists['term_id'], 'lf-country', false );
+					}
+				}
 
 				$synced_ids[] = $newid;
 			}
