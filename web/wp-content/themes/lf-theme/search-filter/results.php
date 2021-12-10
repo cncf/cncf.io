@@ -30,10 +30,10 @@ if ( $query->have_posts() ) {
 		case 'lf_ktp':
 			get_template_part( 'search-filter/ktps' );
 			break;
-		case 'lf_ktp':
+		case 'lf_person':
 			get_template_part( 'search-filter/ambassadors' );
 			break;
-		}
+	}
 } else {
 	echo 'No Results Found';
 }

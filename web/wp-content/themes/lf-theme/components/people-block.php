@@ -185,7 +185,7 @@ if ( strlen( $content ) > 20 ) {
 						$comma = '';
 						$out = '';
 						foreach ( $languages as $language ) {
-							$out .= esc_html( $comma ) . '<a href="' . $current_url . '">' . esc_html( $language->name ) . '</a>';
+							$out .= esc_html( $comma ) . '<a href="' . $current_url . '/?_sft_lf-language=' . $language->slug . '">' . esc_html( $language->name ) . '</a>';
 							$comma = ', ';
 						}
 						echo $out; //phpcs:ignore
@@ -196,12 +196,12 @@ if ( strlen( $content ) > 20 ) {
 
 					if ( $projects ) {
 						?>
-						<p><span class="strong">CNCF Project Specialties:</span>
+						<p><span class="strong">Specialties:</span>
 						<?php
 						$comma = '';
 						$out = '';
 						foreach ( $projects as $project ) {
-							$out .= esc_html( $comma ) . '<a href="' . $current_url . '">' . esc_html( $project->name ) . '</a>';
+							$out .= esc_html( $comma ) . '<a href="' . $current_url . '/?_sft_lf-project=' . $project->slug . '">' . esc_html( $project->name ) . '</a>';
 							$comma = ', ';
 						}
 						echo $out; //phpcs:ignore
