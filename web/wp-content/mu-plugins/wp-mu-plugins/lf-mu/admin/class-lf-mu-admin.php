@@ -540,6 +540,7 @@ class Lf_Mu_Admin {
 				if ( property_exists( $p, 'languages' ) ) {
 					wp_set_object_terms( $newid, $p->languages, 'lf-language', false );
 				}
+				$projects_to_add = array();
 				if ( property_exists( $p, 'projects' ) ) {
 					foreach ( $p->projects as $proj ) {
 						if ( term_exists( $proj, 'lf-project' ) ) {
