@@ -71,15 +71,6 @@ if ( strlen( $content ) > 20 ) {
 		?>
 	<h5 class="people-company"><?php echo esc_html( $company ); ?></h5>
 	<?php endif; ?>
-	<div class="people-excerpt">
-		<?php
-		if ( $location ) {
-			?>
-			<p><span class="strong">Location:</span> <?php echo esc_html( $location ); ?> </p>
-			<?php
-		}
-		?>
-	</div>
 <div class="social-modal-wrapper">
 	<?php
 		// Social Icons.
@@ -170,7 +161,7 @@ if ( strlen( $content ) > 20 ) {
 					<h5 class="margin-top-small ">
 						<?php echo esc_html( $company ); ?></h5>
 					<?php endif; ?>
-						<?php the_content(); ?>
+					<div class="people-metadata">
 					<?php
 					if ( $location ) {
 						?>
@@ -210,6 +201,9 @@ if ( strlen( $content ) > 20 ) {
 						<?php
 					}
 					?>
+					</div>
+					<?php the_content(); ?>
+
 				</div>
 			</div>
 		</div>
