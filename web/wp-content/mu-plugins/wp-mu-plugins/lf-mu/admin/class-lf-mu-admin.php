@@ -556,7 +556,7 @@ class Lf_Mu_Admin {
 					$country_arr = explode( ',', $params['meta_input']['lf_person_location'] );
 					$country = trim( end( $country_arr ) );
 					$term_exists = term_exists( $country, 'lf-country' );
-					if ( $term_exists['term_id'] ) {
+					if ( $term_exists ) {
 						wp_set_object_terms( $newid, (int) $term_exists['term_id'], 'lf-country', false );
 					}
 				}
