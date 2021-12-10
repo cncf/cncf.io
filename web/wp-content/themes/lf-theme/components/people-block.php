@@ -145,7 +145,13 @@ if ( strlen( $content ) > 20 ) {
 					</div>
 				</div>
 				<div class="modal__content">
-					<h3 class="modal__title margin-reset">
+					<h3 class="modal__title 
+					<?php
+					if ( $company ) {
+						echo 'margin-reset';
+					}
+					?>
+					">
 						<?php the_title(); ?>
 						<?php
 						if ( $pronouns ) {
