@@ -79,7 +79,7 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	define('WP_CONTENT_DIR','/app/web/wp-content');
 	define('WP_CONTENT_URL','https://cncfci.lndo.site/wp-content');
 
-  } else {
+	} else {
 		/** The name of the database for WordPress */
 	define( 'DB_NAME', 'wordpress' );
 	/** MySQL database username */
@@ -88,12 +88,13 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	define( 'DB_PASSWORD', 'wordpress' );
 	/** MySQL hostname */
 	define( 'DB_HOST', 'databasess' );
-  }
-  /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+	}
+	 /** Database Charset to use in creating database tables. */
+	 define( 'DB_CHARSET', 'utf8' );
 
-/** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+	/** The Database Collate type. Don't change this if in doubt. */
+	define( 'DB_COLLATE', '' );
+
 	/**#@+
 	 * Authentication Unique Keys and Salts.
 	 *
@@ -175,12 +176,6 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	define( 'LOGGED_IN_SALT', $_ENV['LOGGED_IN_SALT'] );
 	define( 'NONCE_SALT', $_ENV['NONCE_SALT'] );
 	/**#@-*/
-
-	/*
-* Define wp-content directory outside of WordPress core directory.
-*/
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
 
 	/** A couple extra tweaks to help things run well on Pantheon. */
 	if ( isset( $_SERVER['HTTP_HOST'] ) ) {
