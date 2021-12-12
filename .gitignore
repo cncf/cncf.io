@@ -128,3 +128,12 @@ web/wp-content/mu-plugins/wp-mu-plugins/lf-pre-publish/node_modules
 
 # Ignore local VS code settings
 web/wp-content/themes/lf-theme/.vscode
+
+# Lando Local file
+.lando.local.yml
+
+# ENV files
+.env
+
+# Docker Overrides
+docker-compose.override.yml
