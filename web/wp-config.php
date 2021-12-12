@@ -89,12 +89,12 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 	/** MySQL hostname */
 	define( 'DB_HOST', 'databasess' );
 	}
-	 /** Database Charset to use in creating database tables. */
-	 define( 'DB_CHARSET', 'utf8' );
+
+	/** Database Charset to use in creating database tables. */
+	define( 'DB_CHARSET', 'utf8' );
 
 	/** The Database Collate type. Don't change this if in doubt. */
 	define( 'DB_COLLATE', '' );
-
 	/**#@+
 	 * Authentication Unique Keys and Salts.
 	 *
@@ -190,9 +190,15 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 		define( 'WP_HOME', $scheme . '://' . $_SERVER['HTTP_HOST'] );
 		define( 'WP_SITEURL', $scheme . '://' . $_SERVER['HTTP_HOST'] . '/wp' );
 
+		/*
+		* Define wp-content directory outside of WordPress core directory.
+		*/
+		define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
+		define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
 	}
 	// Don't show deprecations; useful under PHP 5.5.
 	error_reporting( E_ALL ^ E_DEPRECATED );
+
 	// Force the use of a safe temp directory when in a container.
 	if ( defined( 'PANTHEON_BINDING' ) ) :
 		define( 'WP_TEMP_DIR', sprintf( '/srv/bindings/%s/tmp', PANTHEON_BINDING ) );
@@ -220,8 +226,6 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 
 endif;
 
-
-
 /**
  * WordPress Database Table prefix.
  *
@@ -234,6 +238,7 @@ $table_prefix = getenv( 'DB_PREFIX' ) !== false ? getenv( 'DB_PREFIX' ) : 'wp_';
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 }
+
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
 
