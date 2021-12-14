@@ -458,7 +458,7 @@ class Lf_Utils {
 			$metrics = array(
 				'contributors' => 143000,
 				'contributions' => 7300000,
-				'linesofcode' => 294100000,
+				'countries' => 185,
 			);
 
 			$data = wp_remote_post(
@@ -470,31 +470,15 @@ class Lf_Utils {
 					'data_format' => 'body',
 				)
 			);
-
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 				return $metrics;
 			}
 
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['contributors'] = $remote_body->contributors;
+			$remote_body              = json_decode( wp_remote_retrieve_body( $data ) );
+			$metrics['contributors']  = $remote_body->contributors;
 			$metrics['contributions'] = $remote_body->contributions;
+			$metrics['countries']     = $remote_body->countries;
 
-			// Turning off remote get of LOC for now since that service has been taken down.
-			/* phpcs:ignore
-			$data = wp_remote_get( 'https://metrics.lfanalytics.io/v1/projects/cncf-f/summary' );
-			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
-				return $metrics;
-			}
-
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$lines_of_code = $remote_body->metrics_floats->linesOfCode ?? '';
-
-			if ( ! $lines_of_code || 0 == $lines_of_code ) {
-				return $metrics;
-			} else {
-				$metrics['linesofcode'] = $lines_of_code;
-			}
-			*/
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 		}
 		return $metrics;
