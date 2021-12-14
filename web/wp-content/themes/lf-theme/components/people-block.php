@@ -25,7 +25,7 @@ $languages   = get_the_terms( get_the_ID(), 'lf-language' );
 $projects    = get_the_terms( get_the_ID(), 'lf-project' );
 
 global $wp;
-$current_url = home_url( $wp->request );
+$current_url = home_url( 'people/ambassadors' );
 
 // setup image class.
 $image = new Image();
