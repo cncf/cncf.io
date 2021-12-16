@@ -51,7 +51,7 @@ class Image {
 	 * @param string  $file Filename relative to images directory.
 	 * @param boolean $path Set true to return string for image.
 	 */
-	public function get_svg( $file, $path = false ) {
+	public static function get_svg( $file, $path = false ) {
 
 		if ( $path ) {
 			$output = get_stylesheet_directory_uri() . '/images/' . $file;
@@ -79,7 +79,7 @@ class Image {
 	 *
 	 * @param string $file Filename relative to images directory.
 	 */
-	public function get_image( $file ) {
+	public static function get_image( $file ) {
 		$output = '';
 		$output = get_stylesheet_directory_uri() . '/images/' . $file;
 		echo esc_url( $output );

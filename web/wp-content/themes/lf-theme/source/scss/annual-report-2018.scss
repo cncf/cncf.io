@@ -1,4 +1,4 @@
-@import "core/variables";
+@import 'core/variables';
 
 .annual-report-page .container {
 	margin: 0 auto;
@@ -78,7 +78,7 @@ p.has-text-color a {
 .col:after,
 .group:after,
 .row:after {
-	content: "";
+	content: '';
 	display: block;
 	height: 0;
 	clear: both;
@@ -364,7 +364,7 @@ blockquote small {
 
 blockquote .small:before,
 blockquote small:before {
-	content: "\2014 \00A0";
+	content: '\2014 \00A0';
 }
 
 blockquote.pull-right {
@@ -377,12 +377,12 @@ blockquote.pull-right {
 
 blockquote.pull-right .small:before,
 blockquote.pull-right small:before {
-	content: "";
+	content: '';
 }
 
 blockquote.pull-right .small:after,
 blockquote.pull-right small:after {
-	content: "\00A0 \2014";
+	content: '\00A0 \2014';
 }
 
 address {
@@ -546,7 +546,7 @@ a.badge:hover {
 .row:after,
 .row:before {
 	display: table;
-	content: " ";
+	content: ' ';
 }
 
 .container:after {
@@ -668,7 +668,7 @@ h6 {
 }
 
 .cn-list {
-	max-width: 1100px;
+	max-width: 1150px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -1060,7 +1060,7 @@ ul.items > li {
 }
 
 .conferences-section ul.items > li:nth-child(3) {
-	background-image: url("/wp-content/themes/lf-theme/images/annual-reports/2018/attendance_circle_image.png");
+	background-image: url('/wp-content/themes/lf-theme/images/annual-reports/2018/attendance_circle_image.png');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1490,7 +1490,7 @@ section img {
 }
 
 .who-we-are-section {
-	background: url("/wp-content/themes/lf-theme/images/annual-reports/2018/who-we-are-banner-update.jpg");
+	background: url('/wp-content/themes/lf-theme/images/annual-reports/2018/who-we-are-banner-update.jpg');
 	background-size: cover;
 	padding: 35px 20px;
 	background-color: #4f1b39;
@@ -1546,7 +1546,7 @@ section img {
 }
 
 .who-we-are-projects {
-	background: url("/wp-content/themes/lf-theme/images/annual-reports/2018/who-we-are-banner-update.jpg");
+	background: url('/wp-content/themes/lf-theme/images/annual-reports/2018/who-we-are-banner-update.jpg');
 	background-size: cover;
 	padding: 35px 20px;
 	background-color: #8c283f;
@@ -3702,7 +3702,7 @@ h2.bg-title.sub-title {
 
 .happy-birthday-cncf blockquote:after,
 .happy-birthday-cncf blockquote:before {
-	content: "";
+	content: '';
 	width: 100%;
 	height: 5px;
 	background: #211c51;
@@ -4048,62 +4048,62 @@ html .container-wrap {
 		margin-bottom: 25px;
 	}
 
-	.vc_col-sm-1[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-1[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 6.382978723%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-2[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-2[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 14.89361702%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-3[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-3[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 23.404255317%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-4[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-4[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 31.914893614%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-5[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-5[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 40.425531911%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-6[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-6[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 48.93617020799999%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-7[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-7[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 57.446808505%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-8[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-8[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 65.95744680199999%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-9[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-9[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 74.468085099%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-10[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-10[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 82.97872339599999%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-11[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-11[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 91.489361693%;
 		margin-left: 2.1%;
 	}
 
-	.vc_col-sm-12[data-t-w-inherits="small_desktop"]:not([class*="vc_col-md-"]) {
+	.vc_col-sm-12[data-t-w-inherits='small_desktop']:not([class*='vc_col-md-']) {
 		width: 100%;
 	}
 
@@ -4125,7 +4125,7 @@ html .container-wrap {
 		width: 91%;
 	}
 
-	.team-member[data-style="meta_overlaid"] .team-member-image {
+	.team-member[data-style='meta_overlaid'] .team-member-image {
 		height: 500px;
 	}
 }
@@ -4261,7 +4261,7 @@ html .container-wrap {
 		margin: 5px;
 	}
 
-	.single-post[data-bg-header="true"].material .container-wrap:not(.no-sidebar) > .main-content {
+	.single-post[data-bg-header='true'].material .container-wrap:not(.no-sidebar) > .main-content {
 		padding-top: 0;
 	}
 
@@ -4273,7 +4273,7 @@ html .container-wrap {
 		margin-left: 0;
 	}
 
-	.col[data-padding-pos="right"] {
+	.col[data-padding-pos='right'] {
 		padding-right: 0;
 	}
 
@@ -4287,70 +4287,70 @@ html .container-wrap {
 
 	.full-width-content .col,
 	.full-width-content .col .wpb_row,
-	.full-width-content .col[data-using-bg="true"],
-	.vc_row[data-column-margin="none"] .col {
+	.full-width-content .col[data-using-bg='true'],
+	.vc_row[data-column-margin='none'] .col {
 		margin-bottom: 0;
 	}
 }
 
 @media (min-width: 1300px) and (max-width: 1600px) {
 	body:after {
-		content: "four";
+		content: 'four';
 		display: none;
 	}
 
-	.full-width-content .vc_col-sm-3 .team-member[data-style="meta_overlaid"] .team-member-image,
-	.full-width-content .vc_span3 .team-member[data-style="meta_overlaid"] .team-member-image {
+	.full-width-content .vc_col-sm-3 .team-member[data-style='meta_overlaid'] .team-member-image,
+	.full-width-content .vc_span3 .team-member[data-style='meta_overlaid'] .team-member-image {
 		height: 320px;
 	}
 
-	.full-width-content .vc_col-sm-4 .team-member[data-style="meta_overlaid"] .team-member-image,
-	.full-width-content .vc_span4 .team-member[data-style="meta_overlaid"] .team-member-image {
+	.full-width-content .vc_col-sm-4 .team-member[data-style='meta_overlaid'] .team-member-image,
+	.full-width-content .vc_span4 .team-member[data-style='meta_overlaid'] .team-member-image {
 		height: 370px;
 	}
 }
 
 @media (min-width: 990px) and (max-width: 1300px) {
 	body:after {
-		content: "three";
+		content: 'three';
 		display: none;
 	}
 
-	.team-member[data-style="meta_overlaid"] .team-meta h3 {
+	.team-member[data-style='meta_overlaid'] .team-meta h3 {
 		/* font-size: 14px; */
 		line-height: 20px;
 	}
 
-	.team-member[data-style="meta_overlaid"] .team-meta {
+	.team-member[data-style='meta_overlaid'] .team-meta {
 		bottom: 30px;
 	}
 
-	.full-width-content .vc_col-sm-3 .team-member[data-style="meta_overlaid"] .team-member-image,
-	.full-width-content .vc_span3 .team-member[data-style="meta_overlaid"] .team-member-image {
+	.full-width-content .vc_col-sm-3 .team-member[data-style='meta_overlaid'] .team-member-image,
+	.full-width-content .vc_span3 .team-member[data-style='meta_overlaid'] .team-member-image {
 		height: 270px;
 	}
 
-	.full-width-content .vc_col-sm-4 .team-member[data-style="meta_overlaid"] .team-member-image,
-	.full-width-content .vc_span4 .team-member[data-style="meta_overlaid"] .team-member-image {
+	.full-width-content .vc_col-sm-4 .team-member[data-style='meta_overlaid'] .team-member-image,
+	.full-width-content .vc_span4 .team-member[data-style='meta_overlaid'] .team-member-image {
 		height: 320px;
 	}
 
-	.wpb_row:not(.full-width-content) .vc_col-sm-3 .team-member[data-style="meta_overlaid"] .team-member-image,
-	.wpb_row:not(.full-width-content) .vc_span3 .team-member[data-style="meta_overlaid"] .team-member-image {
+	.wpb_row:not(.full-width-content) .vc_col-sm-3 .team-member[data-style='meta_overlaid'] .team-member-image,
+	.wpb_row:not(.full-width-content) .vc_span3 .team-member[data-style='meta_overlaid'] .team-member-image {
 		height: 250px;
 	}
 }
 
 @media (min-width: 470px) and (max-width: 990px) {
 	body:after {
-		content: "two";
+		content: 'two';
 		display: none;
 	}
 }
 
 @media (max-width: 470px) {
 	body:after {
-		content: "one";
+		content: 'one';
 		display: none;
 	}
 
