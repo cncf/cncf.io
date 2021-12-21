@@ -256,9 +256,9 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<div class="section-grid-02">
 				<div>
-					<p>Since we were founded in 2015, we've pioneered cloud native technologies — hosting and growing some of the world's most successful open source projects including Kubernetes, Prometheus, Envoy, ContainerD, and many others.</p>
+					<p>Since we were founded in 2015, we've pioneered cloud native technologies — hosting and growing some of the world's <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing">most successful</a> open source projects including Kubernetes, Prometheus, Envoy, ContainerD, and many <a href="https://www.cncf.io/projects/">others</a>.</p>
 					<p>Today we are a powerhouse for visionary projects and people. If cloud native was fast becoming mainstream before 2020, then the global pandemic pushed adoption into the stratosphere. Now, CNCF hosts 120+ projects with over 142,000 contributors representing 189 countries, and there are no signs of slowing down. In fact, cloud native is actively being adopted by multiple industries, driven by our global community.</p>
-					<p>This year, the Cloud Native Network Function (CNF) Working Group launched as the newest CNCF Telecom Initiative, with representatives from Telecom and cloud native communities. Thanks to our strategic partner vulk.coop, by the end 2021, the CNF Test Suite had more than 60 tests across many important categories. This tool provides feedback on the use of Kubernetes and cloud native best practices in networking applications and platforms, with contributions from 16 organizations.</p>
+					<p>This year, the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> launched as the newest CNCF Telecom Initiative, with representatives from Telecom and cloud native communities. Thanks to our strategic partner vulk.coop, by the end 2021, the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a> had more than 60 tests across many important categories. This tool provides feedback on the use of Kubernetes and cloud native best practices in networking applications and platforms, with contributions from 16 organizations.</p>
 
 					<div aria-hidden="true" class="ar-spacer-80"></div>
 
@@ -354,7 +354,7 @@ Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 
 						<p>Organizations that sell cloud native technologies built on, or integrated with, CNCF projects are eligible to join as general members.</p>
 
-						<a href="#" class="button is-pink">Become a CNCF
+						<a href="/join" class="button is-pink">Become a CNCF
 							Member</a>
 					</div>
 
@@ -387,11 +387,11 @@ Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 
 						<div class="project-display-2">
 							<div class="project-item">
-								<a href=""><img loading="lazy" src="<?php
+								<a href="https://newrelic.com/"><img loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-new-relic.svg', true); ?>" alt=""></a>
 							</div>
 							<div class="project-item">
-								<a href=""><img loading="lazy" src="<?php
+								<a href="https://grafana.com"><img loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>" alt=""></a>
 							</div>
 						</div>
@@ -405,11 +405,11 @@ Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>" alt=""></a>
 
 						<div class="project-display-2">
 							<div class="project-item">
-								<a href=""><img loading="lazy" src="<?php
+								<a href="https://www.h3c.com/en"><img loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-hbc.svg', true); ?>" alt=""></a>
 							</div>
 							<div class="project-item">
-								<a href=""><img loading="lazy" src="<?php
+								<a href="https://www.americanexpress.com/"><img loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>" alt=""></a>
 							</div>
 						</div>
@@ -536,7 +536,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 						<p>End Users leverage cloud native technologies internally, but don't sell cloud native products or services. Come shape the cloud native ecosystem with us!</p>
 
-						<a href="#" class="button is-pink">Join CNCF</a>
+						<a href="/enduser" class="button is-pink">Join CNCF</a>
 					</div>
 
 				</div>
@@ -564,7 +564,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="section-grid-04">
 
 						<div>
-							<a href="#">
+							<a href="https://open.spotify.com">
 								<img loading="lazy" class="spotify-image"
 									src="<?php Image::get_svg('annual-reports/2021/logo-spotify.svg', true); ?>"
 									alt="">
@@ -594,7 +594,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 							<div aria-hidden="true" class="ar-spacer-30"></div>
 
-							<a href="#">
+							<a href="/projects/backstage/">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/logo-backstage.svg', true); ?>"
 									alt="">
@@ -716,7 +716,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>" alt="">
 
 				<div class="shg-02">
 
-					<p class="fw-bold">In response to the cloud native community's evolving needs and geographies, CNCF relaunched the Kubernetes Community Days (KCD) program in 2021 — community-organized events that gather adopters and technologists to learn, collaborate, and network. The goal of the events is to further the adoption and improvement of Kubernetes and cloud native technologies around the world.
+					<p class="fw-bold">In response to the cloud native community's evolving needs and geographies, CNCF relaunched the <a href="https://kubernetescommunitydays.org/">Kubernetes Community Days (KCD)</a> program in 2021 — community-organized events that gather adopters and technologists to learn, collaborate, and network. The goal of the events is to further the adoption and improvement of Kubernetes and cloud native technologies around the world.
 </p>
 
 				</div>
@@ -799,7 +799,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
-				<a href="">
+				<a href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-europe/">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-21.png', true); ?>"
 						alt="">
@@ -808,14 +808,14 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
 				<p
-					class="secondary-sub-section max-w-900">May saw KubeCon + CloudNativeCon EU Virtual once again set record-breaking registration and attendance, with 26,648 registrants (a 42.5% increase on 2020).</p>
+					class="secondary-sub-section max-w-900">May saw <a href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-europe/">KubeCon + CloudNativeCon EU Virtual</a> once again set record-breaking registration and attendance, with 26,648 registrants (a 42.5% increase on 2020).</p>
 
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
 				<div class="section-grid-04">
 
 					<div>
-						<a href="" class="image-link"><img loading="lazy"
+						<a href="https://youtu.be/8hV-ml4WuVM" target="_blank" rel="noreferrer noopener" class="image-link"><img loading="lazy"
 								src="<?php Image::get_image('annual-reports/2021/kubecon-macbook.png', true); ?>"
 								alt=""></a>
 
@@ -830,11 +830,11 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						</div>
 
 						<p
-							class="mb-20 lh-150"><a href="#" class="text-large text-purple fw-semi lh-150">How Cloud Native Tech Helped Peloton Ride to Exponential Growth</a></p>
+							class="mb-20 lh-150"><a href="https://youtu.be/8hV-ml4WuVM" target="_blank" rel="noreferrer noopener" class="text-large text-purple fw-semi lh-150">How Cloud Native Tech Helped Peloton Ride to Exponential Growth</a></p>
 
 						<p class="fw-semi">Jim Haughwout, VP, Peloton </p>
 
-						<a href="#" class="button is-pink">Become a CNCF
+						<a href="/join" class="button is-pink">Become a CNCF
 							Member</a>
 
 					</div>
@@ -952,7 +952,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
-				<a href="">
+				<a href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-north-america/">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-na-21.png', true); ?>"
 						alt="">
@@ -961,7 +961,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
 				<p
-					class="fw-bold max-w-800">As a truly global community, gathering for our first Hybrid KubeCon + CloudNativeCon in Los Angeles in October was a special moment. We welcomed 3,531 attendees in-person, and 19,633 through our virtual event platform — setting a new standard in hybrid events.</p>
+					class="fw-bold max-w-800">As a truly global community, gathering for our first hybrid <a href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-north-america/">KubeCon + CloudNativeCon in Los Angeles</a> in October was a special moment. We welcomed 3,531 attendees in-person, and 19,633 through our virtual event platform — setting a new standard in hybrid events.</p>
 
 				<p
 					class="max-w-800">Research from David Sally tells us that cooperation and collaboration increases 45% when meeting in person and having face-to-face interactions, so we're committed to driving more future opportunities for #TeamCloudNative to collaborate and learn together in-person.</p>
@@ -975,7 +975,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						</div>
 
 						<p
-							class="mb-20 lh-150"><a href="#" class="text-large text-purple fw-semi lh-150">Building support for your <br class="show-over-700">Cloud Native journey</a></p>
+							class="mb-20 lh-150"><a target="_blank" rel="noreferrer noopener" href="https://youtu.be/VzuyyESy9oA" class="text-large text-purple fw-semi lh-150">Building support for your <br class="show-over-700">Cloud Native journey</a></p>
 
 						<p class="fw-semi">Robert Duffy, Expedia</p>
 
@@ -983,7 +983,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 					<div>
 
-						<a href="#" class="image-link"><img loading="lazy"
+						<a href="https://youtu.be/VzuyyESy9oA" target="_blank" rel="noreferrer noopener" class="image-link"><img loading="lazy"
 								src="<?php Image::get_image('annual-reports/2021/blob-speaker.png', true); ?>"
 								alt=""></a>
 
@@ -1159,7 +1159,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 </p>
 							</div>
 
-							<a href="#" class="button is-pink w-full">Download
+							<a href="https://www.cncf.io/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf" class="button is-pink w-full">Download
 								Event<br>
 								Transparency Report</a>
 
@@ -1194,7 +1194,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<p
 						class="fw-bold">Our commitment to enabling collaboration also means we're deeply committed to keeping #TeamCloudNative safe.</p>
 
-					<p>CNCF has a long-standing relationship with Dr. Joel Selanikio, a physician, former CDC epidemiologist and outbreak investigator, and consultant epidemiologist to the DC Department of Health and to FEMA for the COVID-19 response over 2020-21.</p>
+					<p>CNCF has a long-standing relationship with <a href="https://www.futurehealth.live/bio">Dr. Joel Selanikio</a>, a physician, former CDC epidemiologist and outbreak investigator, and consultant epidemiologist to the DC Department of Health and to FEMA for the COVID-19 response over 2020-21.</p>
 
 					<p>Thanks to Dr. Selanikio's continuous council, we have been able to take educated and well-thought out steps to ensure the safety of our community members as we navigate COVID-19. </p>
 
@@ -1229,7 +1229,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div class="section-grid-09">
 
-					<a href="#">
+					<a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/">
 						<img loading="lazy"
 							src="<?php Image::get_image('annual-reports/2021/banner-kubecon-cn-21.png', true); ?>"
 							alt="">
@@ -1272,7 +1272,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<p
 					class="secondary-sub-section max-w-700">See you at our next KubeCon + CloudNativeCon in Valencia!</p>
 
-				<a href="#">
+				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-22.png', true); ?>"
 						alt="">
@@ -1322,9 +1322,9 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div>
 					<p
-						class="fw-bold">This year we launched the Kubernetes and Cloud Native Associate (KCNA) — a pre-professional certification designed for candidates interested in working with cloud native technologies. The KCNA underscores conceptual knowledge of the entire cloud native ecosystem, particularly focusing on Kubernetes, and is meant for more than just developers.</p>
+						class="fw-bold">This year we launched the <a href="https://www.cncf.io/certification/kcna/">Kubernetes and Cloud Native Associate (KCNA)</a> — a pre-professional certification designed for candidates interested in working with cloud native technologies. The KCNA underscores conceptual knowledge of the entire cloud native ecosystem, particularly focusing on Kubernetes, and is meant for more than just developers.</p>
 
-					<p>Alongside, we launched a new practical training course — Inclusive Strategies for Open Source (LFC103) — designed to ​​provide specific strategies for creating inclusive open source communities and codebases, and advice on executing those in communities.</p>
+					<p>Alongside, we launched a new practical training course — <a href="https://training.linuxfoundation.org/training/inclusive-strategies-for-open-source-lfc103/?utm_source=lftraining&utm_medium=pr&utm_campaign=lfc103">Inclusive Strategies for Open Source (LFC103)</a> — designed to ​​provide specific strategies for creating inclusive open source communities and codebases, and advice on executing those in communities.</p>
 
 					<div aria-hidden="true" class="ar-spacer-80 show-upto-1000">
 					</div>
@@ -1375,7 +1375,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<span
 							class="text-green uppercase fw-bold block">Increase</span>
 						<div class="icon-divider smaller"></div>
-						<p>Kubernetes Massively Open Online Course (MOOC) hit 229,000 enrollments.</p>
+						<p><a href="https://www.cncf.io/certification/training/">Kubernetes Massively Open Online Course (MOOC)</a> hit 229,000 enrollments.</p>
 					</div>
 
 					<div>
@@ -1384,7 +1384,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<span
 							class="text-green uppercase fw-bold block">Increase</span>
 						<div class="icon-divider smaller"></div>
-						<p>Certified Kubernetes Administrator (CKA) exam hit 70,000 enrollments.</p>
+						<p><a href="/certification/cka/">Certified Kubernetes Administrator (CKA)</a> exam hit 70,000 enrollments.</p>
 					</div>
 
 					<div>
@@ -1393,7 +1393,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<span
 							class="text-green uppercase fw-bold block">Increase</span>
 						<div class="icon-divider smaller"></div>
-						<p>Certified Kubernetes Application Developer (CKAD) hit 34,000 exam registrations.</p>
+						<p><a href="/certification/ckad/">Certified Kubernetes Application Developer (CKAD)</a> hit 34,000 exam registrations.</p>
 					</div>
 
 					<div>
@@ -1402,7 +1402,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<span
 							class="text-green uppercase fw-bold block">Registrations</span>
 						<div class="icon-divider smaller"></div>
-						<p>Certified Kubernetes Security Specialist (CKS) launched in November 2020.</p>
+						<p><a href="/certification/cks/">Certified Kubernetes Security Specialist (CKS)</a> launched in November 2020.</p>
 					</div>
 
 					<div>
@@ -1411,7 +1411,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<span
 							class="text-green uppercase fw-bold block">Increase</span>
 						<div class="icon-divider smaller"></div>
-						<p>Kubernetes Certified Service Provider (KCSP) program reached 230 certifications in 2021.</p>
+						<p><a href="/certification/kcsp/">Kubernetes Certified Service Provider (KCSP)</a> program reached 230 certifications in 2021.</p>
 					</div>
 
 					<div>
@@ -1420,7 +1420,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<span
 							class="text-green uppercase fw-bold block">Increase</span>
 						<div class="icon-divider smaller"></div>
-						<p>Kubernetes Training Partner (KTP) program grew to 57 certified companies.</p>
+						<p><a href="/certification/kubernetes-training-partners/">Kubernetes Training Partner (KTP)</a> program grew to 57 certified companies.</p>
 					</div>
 
 				</div>
@@ -1441,10 +1441,10 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<p
 							class="secondary-sub-section">Courses that CNCF funded in 2021:</p>
 
-						<p><a href="#" class="lh-125 text-large">Introduction to Kubernetes on Edge with k3s</a><br />
+						<p><a href="https://training.linuxfoundation.org/training/introduction-to-kubernetes-on-edge-with-k3s-lfs156x/" class="lh-125 text-large">Introduction to Kubernetes on Edge with k3s</a><br />
 A deep dive into the use cases and applications of Kubernetes at the edge using examples, labs, and a technical overview of the K3s project and the cloud native edge ecosystem.</p>
 
-						<p><a href="#" class="lh-125 text-large">Inclusive Strategies for Open Source (LFC103)</a><br />
+						<p><a href="https://training.linuxfoundation.org/training/inclusive-strategies-for-open-source-lfc103/" class="lh-125 text-large">Inclusive Strategies for Open Source (LFC103)</a><br />
 Delivers effective strategies for creating inclusive open source communities and code bases.</p>
 
 					</div>
@@ -1491,8 +1491,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<h2 class="section-intro max-w-1000">Throughout 2021, CNCF
 				underscored our commitment to making cloud native ubiquitous. We
-				hosted 16 graduated projects, 26 incubating, and 78 sandbox
-				projects, driven by more than 142,000 contributors from 189
+				hosted <a href="/projects/">16 graduated projects</a>, <a href="/projects/">26 incubating</a>, and <a href="/sandbox-projects/">78 sandbox
+				projects</a>, driven by more than 142,000 contributors from 189
 				countries.</h2>
 
 
@@ -1500,11 +1500,11 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div>
 					<p
-						class="fw-bold">Reflecting the evolution of cloud native, this was the year that solidified Kubernetes' place as the de facto container orchestration tool. In fact, RedHat's Kubernetes adoption, security, and market trends report 2021 noted that: “Kubernetes is used by nearly everyone… (and) is living up to its title as the de facto container orchestrator.”</p>
+						class="fw-bold">Reflecting the evolution of cloud native, this was the year that solidified Kubernetes' place as the de facto container orchestration tool. In fact, <a href="https://www.redhat.com/en/resources/kubernetes-adoption-security-market-trends-2021-overview">RedHat's Kubernetes adoption, security, and market trends report 2021</a> noted that: “Kubernetes is used by nearly everyone… (and) is living up to its title as the de facto container orchestrator.”</p>
 
-					<p>Complementing this maturation in CNCF's graduated projects, in 2021 the Technical Oversight Committee continued to sharpen focus on app delivery and the ease of creating Kubernetes applications, as well as bolstering the range of increasingly-mature storage projects.</p>
+					<p>Complementing this maturation in CNCF's graduated projects, in 2021 the <a href="/people/technical-oversight-committee/">Technical Oversight Committee</a> continued to sharpen focus on app delivery and the ease of creating Kubernetes applications, as well as bolstering the range of increasingly-mature storage projects.</p>
 
-					<p>With security coming under increased global scrutiny this year the CNCF Security Technical Advisory Group published Software Supply Chain Security Best Practices, to provide a holistic approach to supply chain security. Sarah Allen, then co-chair of the CNCF Security TAG stated: “It's exciting to see CNCF projects, like in-toto, providing a key part of supply chain security.”</p>
+					<p>With security coming under increased global scrutiny this year the <a href="https://github.com/cncf/tag-security">CNCF Security Technical Advisory Group</a> published <a href="https://www.cncf.io/announcements/2021/05/14/cncf-paper-defines-best-practices-for-supply-chain-security/">Software Supply Chain Security Best Practices</a>, to provide a holistic approach to supply chain security. Sarah Allen, then co-chair of the CNCF Security TAG stated: “It's exciting to see CNCF projects, like <a href="/projects/in-toto/">in-toto</a>, providing a key part of supply chain security.”</p>
 
 				</div>
 
@@ -1574,12 +1574,12 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 						<div class="project-display-2">
 							<div class="project-item">
-								<a href="#"><img loading="lazy"
+								<a href="/projects/linkerd/"><img loading="lazy"
 										src="<?php Image::get_svg('annual-reports/2021/logo-linkerd.svg', true); ?>"
 										alt=""></a>
 							</div>
 							<div class="project-item">
-								<a href="#"><img loading="lazy"
+								<a href="/projects/open-policy-agent-opa/"><img loading="lazy"
 										src="<?php Image::get_svg('annual-reports/2021/logo-opa.svg', true); ?>"
 										alt=""></a>
 							</div>
@@ -1599,38 +1599,38 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div class="project-display-4">
 					<div class="project-item">
-						<a href="#"><img loading="lazy"
+						<a href="/projects/flux/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-flux.svg', true); ?>"
 								alt=""></a>
 					</div>
 					<div class="project-item">
-						<a href="#"><img loading="lazy"
+						<a href="/projects/keda/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-keda.svg', true); ?>"
 								alt=""></a>
 					</div>
 					<div class="project-item">
-						<a href="#"><img loading="lazy"
+						<a href="/projects/crossplane/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-crossplane.svg', true); ?>"
 								alt=""></a>
 					</div>
 					<div class="project-item">
-						<a href="#"><img loading="lazy"
+						<a href="/projects/longhorn/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-longhorn.svg', true); ?>"
 								alt=""></a>
 					</div>
 
 					<div class="project-item">
-						<a href="#"><img loading="lazy"
+						<a href="/projects/emissary-ingress/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-emissary.svg', true); ?>"
 								alt=""></a>
 					</div>
 					<div class="project-item">
-						<a href="#"><img loading="lazy"
+						<a href="/projects/cilium/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-cilium.svg', true); ?>"
 								alt=""></a>
 					</div>
 					<div class="project-item">
-						<a href="#"><img loading="lazy"
+						<a href="/projects/dapr/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-dapr.svg', true); ?>"
 								alt=""></a>
 					</div>
@@ -1659,7 +1659,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<div>
 						<p
-							class="fw-bold">APISnoop is a community-driven project spearheaded by long-time CNCF contributor and community leader Hippie Hacker, which tracks the testing and conformance coverage of Kubernetes by analyzing the audit logs created by e2e test runs.</p>
+							class="fw-bold"><a href="https://apisnoop.cncf.io/about">APISnoop</a> is a community-driven project spearheaded by long-time CNCF contributor and community leader <a href="https://twitter.com/hippiehacker">Hippie Hacker</a>, which tracks the testing and conformance coverage of Kubernetes by analyzing the audit logs created by e2e test runs.</p>
 
 						<div aria-hidden="true" class="ar-spacer-80"></div>
 
@@ -1785,26 +1785,31 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div class="book-group">
 					<div>
-						<img src="https://via.placeholder.com/546x409/d9d9d9/000000"
+						<a href="https://www.cncf.io/wp-content/uploads/2021/10/Admiral-Bash.pdf">
+							<img src="https://via.placeholder.com/546x409/d9d9d9/000000"
 							alt="">
-
-						<p><span class="fw-bold">Admiral Bash's <br>Island Adventure</span><br>
+						</a>
+						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br>Island Adventure</a></span><br>
 By the Cartografos Group</p>
 					</div>
 
 					<div>
+						<a href="https://www.cncf.io/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">
 						<img src="https://via.placeholder.com/546x409/d9d9d9/000000"
 							alt="">
+						</a>
 
-						<p><span class="fw-bold">From 00-K8s, with Love</span><br>
+						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">From 00-K8s, with Love</a></span><br>
 Donated by Microsoft Azure</p>
 					</div>
 
 					<div>
+						<a href="https://www.cncf.io/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">
 						<img src="https://via.placeholder.com/546x409/d9d9d9/000000"
 							alt="">
+						</a>
 
-						<p><span class="fw-bold">The Illustrated Children's <br />Guide to Kubernetes</span><br>
+						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">The Illustrated Children's <br />Guide to Kubernetes</a></span><br>
 In Italian, thanks to SparkFabrik</p>
 					</div>
 				</div>
@@ -1812,7 +1817,7 @@ In Italian, thanks to SparkFabrik</p>
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
 				<div class="book-cta">
-					<a href="#" class="box-link"></a>
+					<a href="https://github.com/cncf/foundation/blob/master/phippy-guidelines.md" class="box-link"></a>
 					<div class="max-w-600">
 						<p>Are you a maintainer on a graduated project? Do you want to help others better understand the concepts of cloud native computing?</p>
 
@@ -1989,7 +1994,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							<div>
 								<p
 									class="text-medium fw-bold"><span class="text-purple">TOP</span> Cloud Native Committer</p>
-								<p>An individual with incredible technical skills and notable technical achievements in one or multiple CNCF projects. The 2021 recipient was <strong>Nikhita Raghunath</strong>.</p>
+								<p>An individual with incredible technical skills and notable technical achievements in one or multiple CNCF projects. The 2021 recipient was <strong><a href="https://twitter.com/thenikhita">Nikhita Raghunath</a></strong>.</p>
 							</div>
 
 						</div>
@@ -2003,7 +2008,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							<div>
 								<p
 									class="text-medium fw-bold"><span class="text-purple">TOP</span> Cloud Native Ambassador</p>
-								<p>An individual with incredible community-oriented skills, focused on spreading the word and sharing knowledge with the entire cloud native community or within a specific project. The 2021 recipient was <strong>Anaïs Urlichs</strong>.</p>
+								<p>An individual with incredible community-oriented skills, focused on spreading the word and sharing knowledge with the entire cloud native community or within a specific project. The 2021 recipient was <strong><a href="https://twitter.com/urlichsanais">Anaïs Urlichs</a></strong>.</p>
 							</div>
 
 						</div>
@@ -2017,7 +2022,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							<div>
 								<p
 									class="text-medium fw-bold"><span class="text-purple">TOP</span> Documentarian <span class="text-smaller">(new in 2021)</span></p>
-								<p>This award recognizes excellence in documentation contributions to CNCF and its projects. Excellent technical documentation is one of the best ways projects can lower the barrier to contribution. The 2021 recipient was <strong>Tim Bannister</strong>.</p>
+								<p>This award recognizes excellence in documentation contributions to CNCF and its projects. Excellent technical documentation is one of the best ways projects can lower the barrier to contribution. The 2021 recipient was <strong><a href="https://github.com/sftim">Tim Bannister</a></strong>.</p>
 							</div>
 
 						</div>
@@ -2031,7 +2036,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<div class="icon-divider smaller"></div>
 
 						<p
-							class="fw-bold">To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “Chop Wood and Carry Water” awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2021: <strong>Emily Fox, Aeva Black, Tasha Drew, Carlos Panato, Carolyn Van Slyck</strong>.</p>
+							class="fw-bold">To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “Chop Wood and Carry Water” awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2021: <strong><a href="https://twitter.com/TheMoxieFox">Emily Fox</a>, <a href="https://twitter.com/aevavoom">Aeva Black</a>, <a href="https://twitter.com/TashaDrew">Tasha Drew</a>, <a href="https://twitter.com/comedordexis">Carlos Panato</a>, <a href="https://twitter.com/carolynvs">Carolyn Van Slyck</a></strong>.</p>
 
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/community-chop.png', true); ?>"
@@ -2058,7 +2063,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
 				<p
-					class="secondary-sub-section max-w-900">2021 saw the cloud native community switch from the Meetup platform to Cloud Native Community Groups and the new platform has taken off. It has become the singular place where meetups, online programs, project office hours, and community events are run. The platform now hosts over 29,000 members and we are excited to see this platform continue to grow.</p>
+					class="secondary-sub-section max-w-900">2021 saw the cloud native community switch from the Meetup platform to <a href="https://community.cncf.io/">Cloud Native Community Groups</a> and the new platform has taken off. It has become the singular place where meetups, online programs, project office hours, and community events are run. The platform now hosts over 29,000 members and we are excited to see this platform continue to grow.</p>
 
 
 				<div class="sub-section-header-container">
@@ -2153,9 +2158,9 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 			<div aria-hidden="true" class="ar-spacer-40"></div>
 
 			<p
-				class="fw-bold">If you've researched cloud native applications and technologies, you've probably come across the CNCF cloud native landscape. Unsurprisingly, the sheer scale of it can be overwhelming, with so many categories and so many technologies. In 2021, to help make sense of this important tool, we launched the Cloud Native Landscape Guide. This breaks down our mammoth landscape and provides a high-level overview of its layers, columns, and categories.</p>
+				class="fw-bold">If you've researched cloud native applications and technologies, you've probably come across the <a href="https://landscape.cncf.io/">CNCF cloud native landscape</a>. Unsurprisingly, the sheer scale of it can be overwhelming, with so many categories and so many technologies. In 2021, to help make sense of this important tool, we launched the <a href="https://landscape.cncf.io/guide">Cloud Native Landscape Guide</a>. This breaks down our mammoth landscape and provides a high-level overview of its layers, columns, and categories.</p>
 
-			<p>A huge thank you to those who made the guide possible! The cloud native landscape guide was initiated by the CNCF Business Value Subcommittee and Cartografos group. It was authored by Jason Morgan and Catherine Paganini, edited and reviewed by Simon Forster and Ihor Dvoretskyi, and built by Jordi Noguera, with UX consultation from Andrea Velázquez. </p>
+			<p>A huge thank you to those who made the guide possible! The cloud native landscape guide was initiated by the <a href="https://github.com/cncf/business-value">CNCF Business Value Subcommittee</a> and <a href="https://github.com/cncf/cartografos">Cartografos group</a>. It was authored by <a href="https://www.linkedin.com/in/jasonmorgan2/">Jason Morgan</a> and <a href="https://www.linkedin.com/in/catherinepaganini/">Catherine Paganini</a>, edited and reviewed by <a href="https://www.linkedin.com/in/forsters/">Simon Forster</a> and <a href="https://twitter.com/idvoretskyi">Ihor Dvoretskyi</a>, and built by <a href="https://www.linkedin.com/in/jordinoguera/">Jordi Noguera</a>, with UX consultation from <a href="https://www.linkedin.com/in/andreavelazquez1/">Andrea Velázquez</a>. </p>
 
 			</div>
 
@@ -2179,10 +2184,10 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
 				<p
-					class="secondary-sub-section max-w-700">In May, we introduced the new CNCF Cloud Native Glossary Project to provide anyone getting started with cloud native an introduction that is largely free of jargon and assumptions of pre-existing familiarity.</p>
+					class="secondary-sub-section max-w-700">In May, we introduced the new <a href="https://glossary.cncf.io/">CNCF Cloud Native Glossary</a> to provide anyone getting started with cloud native an introduction that is largely free of jargon and assumptions of pre-existing familiarity.</p>
 
 				<p
-					class="fw-bold">It launched with 25 terms and more will be added with time. The project is spearheaded by the Business Value Subcommittee (BVS), whose primary goal is to provide tools to educate executives, business leaders, and non-technical audiences on cloud native technologies and their business value. </p>
+					class="fw-bold">It <a href="https://github.com/cncf/glossary/blob/main/cloudnative-glossary.pdf">launched with 25 terms</a> and more will be added with time. The project is spearheaded by the <a href="https://docs.google.com/document/d/1ktepjTLoxtxiM7rEoPD803FZFC_DnEuIAsBZU6yZY4Y/edit?usp=sharing">Business Value Subcommittee (BVS)</a>, whose primary goal is to provide tools to educate executives, business leaders, and non-technical audiences on cloud native technologies and their business value. </p>
 
 				<img loading="lazy"
 					src="<?php Image::get_image('annual-reports/2021/clipart-glossary.png', true); ?>"
@@ -2203,10 +2208,10 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div class="glossary-cta">
 					<div class="max-w-700">
 						<p
-							class="fw-bold">The Glossary is a community-driven effort and everyone is welcome to contribute new terms, update current ones, or help translate into different languages.  </p>
+							class="fw-bold">The Glossary is a community-driven effort and everyone is welcome to contribute new terms, update current ones, or help translate into different languages.</p>
 					</div>
 
-					<a href="#" class="button">Contribute</a>
+					<a href="https://glossary.cncf.io/contribute/" class="button">Contribute</a>
 
 				</div>
 
@@ -2225,7 +2230,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
 				<p
-					class="secondary-sub-section max-w-800">CNCF proudly supported more than 100 individuals through various mentoring and internship opportunities in 2021, including the LFX mentorship platform (previously known as Community Bridge), Google Summer of Code (GSoC), Google Summer of Docs (GSoD), and Outreachy. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.</p>
+					class="secondary-sub-section max-w-800">CNCF proudly supported more than 100 individuals through various <a href="https://github.com/cncf/mentoring">mentoring and internship</a> opportunities in 2021, including the <a href="https://lfx.linuxfoundation.org/">LFX mentorship platform</a> (previously known as Community Bridge), <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>, <a href="https://developers.google.com/season-of-docs">Google Summer of Docs (GSoD)</a>, and <a href="https://www.outreachy.org/">Outreachy</a>. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.</p>
 
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
@@ -2260,7 +2265,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 </p>
 					</div>
 
-					<a href="#" class="button is-pink">Get involved</a>
+					<a href="https://github.com/cncf/mentoring" class="button is-pink">Get involved</a>
 
 				</div>
 			</div>
@@ -2336,7 +2341,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
 				<p
-					class="max-w-800">A basic premise behind CNCF, our conferences (including KubeCon + CloudNativeCon), and open source, in general, is that interactions are positive-sum. There is no fixed amount of investment, mindshare, or development contribution allocated to specific projects. Equally important, a neutral home for a project and community fosters this type of positive-sum thinking and drives the growth and diversity that we believe are core elements of a successful open source project.</p>
+					class="max-w-800">A basic premise behind CNCF, our conferences (including <a href="https://kubecon.io/">KubeCon + CloudNativeCon</a>), and open source, in general, is that interactions are positive-sum. There is no fixed amount of investment, mindshare, or development contribution allocated to specific projects. Equally important, a neutral home for a project and community fosters this type of positive-sum thinking and drives the growth and diversity that we believe are core elements of a successful open source project.</p>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
@@ -2361,9 +2366,9 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<p
 					class="text-medium">Your comments and feedback are welcome at <a href="mailto:info@cncf.io">info@cncf.io</a>.</p>
 
-				<p>We're looking forward to seeing you in 2022! Check out our calendar for community events near you and don't forget to register for KubeCon+CloudNativeCon Europe in Valencia, May 2022.</p>
+				<p>We're looking forward to seeing you in 2022! Check out our calendar for community events near you and don't forget to register for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">KubeCon+CloudNativeCon Europe</a> in Valencia, May 2022.</p>
 
-				<a href="#">
+				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-22.png', true); ?>"
 						alt="">
