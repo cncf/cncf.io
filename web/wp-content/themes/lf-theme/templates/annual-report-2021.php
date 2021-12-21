@@ -79,7 +79,7 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 
 			<figure class="background-image-shape ">
 				<img loading="eager" src="<?php
-Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure green-gradient">
@@ -92,7 +92,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
 				<div class="nav-box">
 					<a href="#momentum" class="box-link"></a>
 					<img loading="eager" src="<?php
-Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>" alt=""> <span
+Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>" alt="Chart icon"> <span
 						class="show-upto-1000">Momentum</span><span
 						class="show-over-1000">2021<br>
 						Momentum</span>
@@ -100,14 +100,14 @@ Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>" alt=""> <span
 				<div class="nav-box">
 					<a href="#events" class="box-link"></a>
 					<img loading="eager" src="<?php
-Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>" alt="Bullseye icon">
 					<span class="show-upto-1000">Events</span><span
 						class="show-over-1000">Virtual & hybrid events</span>
 				</div>
 				<div class="nav-box">
 					<a href="#training" class="box-link"></a>
 					<img loading="eager" src="<?php
-Image::get_svg('annual-reports/2021/nav-03-code.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/nav-03-code.svg', true); ?>" alt="Code document icon">
 					<span class="show-upto-1000">Training</span><span
 						class="show-over-1000">Training &
 						Certification</span>
@@ -115,7 +115,7 @@ Image::get_svg('annual-reports/2021/nav-03-code.svg', true); ?>" alt="">
 				<div class="nav-box">
 					<a href="#projects" class="box-link"></a>
 					<img loading="eager" src="<?php
-Image::get_svg('annual-reports/2021/nav-04-megaphone.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/nav-04-megaphone.svg', true); ?>" alt="Megaphone icon">
 					<span class="show-upto-1000">Projects</span><span
 						class="show-over-1000">Project Updates &
 						Satisfaction</span>
@@ -123,7 +123,7 @@ Image::get_svg('annual-reports/2021/nav-04-megaphone.svg', true); ?>" alt="">
 				<div class="nav-box">
 					<a href="#community" class="box-link"></a>
 					<img loading="eager" src="<?php
-Image::get_svg('annual-reports/2021/nav-05-expand.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/nav-05-expand.svg', true); ?>" alt="Expanding community icon">
 					<span class="show-upto-1000">Community</span><span
 						class="show-over-1000">Community
 						& Diversity </span>
@@ -131,7 +131,7 @@ Image::get_svg('annual-reports/2021/nav-05-expand.svg', true); ?>" alt="">
 				<div class="nav-box">
 					<a href="#ecosystem" class="box-link"></a>
 					<img loading="eager" src="<?php
-Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 					<span class="show-upto-1000">Ecosystem</span><span
 						class="show-over-1000">Mentoring & Ecosystem</span>
 				</div>
@@ -192,7 +192,7 @@ Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>" alt="People icon">
 						</div>
 						<p><span class="fw-bold">740+ Members</span><br/>Across 6 continents</p>
 					</div>
@@ -201,7 +201,7 @@ Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>" alt="">
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/icon-projects.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/icon-projects.svg', true); ?>" alt="Multiple shapes icon">
 						</div>
 						<p><span class="fw-bold">120+ Projects</span><br/>Driving worldwide <br>transformation</p>
 					</div>
@@ -210,7 +210,7 @@ Image::get_svg('annual-reports/2021/icon-projects.svg', true); ?>" alt="">
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>" alt="Globe icon">
 						</div>
 						<p><span class="fw-bold">142,000+ Contributors</span><br/>Fundamentally changing computing</p>
 					</div>
@@ -236,7 +236,7 @@ Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>" alt="">
 
 			<figure class="background-image-shape">
 				<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -324,7 +324,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 							class="ar-spacer-60 show-upto-700"></div>
 
 						<img loading="lazy" src="<?php
-Image::get_image('annual-reports/2021/blob-membership.png', true); ?>" alt="">
+Image::get_image('annual-reports/2021/blob-membership.png', true); ?>" alt="Masked people walking at conference">
 						<div aria-hidden="true"
 							class="ar-spacer-80 show-upto-700"></div>
 					</div>
@@ -346,7 +346,7 @@ Image::get_image('annual-reports/2021/blob-membership.png', true); ?>" alt="">
 				<div class="graph-explainer-container">
 					<div class="graph"><img loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
-							alt=""></div>
+							alt="Chart showing CNCF Member growth"></div>
 					<div class="graph-explainer">
 						<span class="number-largest has-arrow-after">23%</span>
 
@@ -388,11 +388,11 @@ Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 						<div class="project-display-2">
 							<div class="project-item">
 								<a href="https://newrelic.com/"><img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/logo-new-relic.svg', true); ?>" alt=""></a>
+Image::get_svg('annual-reports/2021/logo-new-relic.svg', true); ?>" alt="New Relic"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://grafana.com"><img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>" alt=""></a>
+Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>" alt="Grafana Labs"></a>
 							</div>
 						</div>
 
@@ -406,11 +406,11 @@ Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>" alt=""></a>
 						<div class="project-display-2">
 							<div class="project-item">
 								<a href="https://www.h3c.com/en"><img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/logo-hbc.svg', true); ?>" alt=""></a>
+Image::get_svg('annual-reports/2021/logo-hbc.svg', true); ?>" alt="H3C"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://www.americanexpress.com/"><img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>" alt=""></a>
+Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>" alt="American Express"></a>
 							</div>
 						</div>
 
@@ -422,7 +422,7 @@ Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>" alt=""></a>
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
-									alt="">
+									alt="People icon">
 							</div>
 							<p><span class="fw-bold">200+ new members</span><br/>80 new members<br>
 from China</p>
@@ -432,7 +432,7 @@ from China</p>
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-building.svg', true); ?>"
-									alt="">
+									alt="Building icon">
 							</div>
 							<p><span class="fw-bold">740+ member <br> organizations</span><br/>23% growth from 2020</p>
 						</div>
@@ -495,7 +495,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-thumbup.svg', true); ?>"
-									alt="">
+									alt="Thumbs up icon">
 							</div>
 							<p><span class="number-large text-purple">100%</span><br/>would recommend CNCF <br>to other companies<br>
 <span class="text-smaller">(2021 End User survey)</span></p>
@@ -505,7 +505,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
-									alt="">
+									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">164+</span><br/>End Users</span></p>
 						</div>
@@ -528,7 +528,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="graph-explainer-container">
 					<div class="graph"><img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/chart-end-user-growth.svg', true); ?>"
-							alt=""></div>
+							alt="Chart showing CNCF end user growth"></div>
 					<div class="graph-explainer">
 						<span class="number-largest has-arrow-after">17%</span>
 
@@ -567,7 +567,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							<a href="https://open.spotify.com">
 								<img loading="lazy" class="spotify-image"
 									src="<?php Image::get_svg('annual-reports/2021/logo-spotify.svg', true); ?>"
-									alt="">
+									alt="Spotify logo">
 							</a>
 
 							<div aria-hidden="true" class="ar-spacer-40"></div>
@@ -583,7 +583,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 								<div class="icon">
 									<img loading="lazy"
 										src="<?php Image::get_svg('annual-reports/2021/icon-w-contributions.svg', true); ?>"
-										alt="">
+										alt="Clipboard icon">
 								</div>
 								<p><span class="number-large text-white">26,648</span><br/>contributions <br/>to 13 different projects</p>
 							</div>
@@ -597,7 +597,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							<a href="/projects/backstage/">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/logo-backstage.svg', true); ?>"
-									alt="">
+									alt="Backstage logo">
 							</a>
 						</div>
 					</div>
@@ -646,7 +646,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<figure class="background-image-shape">
 				<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -674,7 +674,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div class="shg-02">
 					<img loading="lazy" src="<?php
-Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>" alt="">
+Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>" alt="Masked man at a conference">
 				</div>
 
 				<div class="shg-03">
@@ -723,7 +723,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>" alt="">
 
 				<div class="shg-03">
 					<img loading="lazy" src="<?php
-Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
+Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="Drawing of man and woman talking">
 				</div>
 			</div>
 
@@ -744,7 +744,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-frame.svg', true); ?>"
-								alt="">
+								alt="Person in frame icon">
 						</div>
 						<p><span class="fw-bold">12 KCDs</span><br/>In-person, virtual and <br/>hybrid</p>
 					</div>
@@ -754,7 +754,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-mic.svg', true); ?>"
-								alt="">
+								alt="Microphone icon">
 						</div>
 						<p><span class="fw-bold">Presentations</span><br/>in multiple languages<Br/><span class="text-smaller">(English, Chinese, Indonesian, <br/>Italian, Korean, and Spanish)</span></p>
 					</div>
@@ -767,7 +767,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
-								alt="">
+								alt="People icon">
 						</div>
 						<p><span class="fw-bold">7,500+ attendees</span><br/>Adopters & technologists</p>
 					</div>
@@ -778,7 +778,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
-								alt="">
+								alt="Globe icon">
 						</div>
 						<p><span class="fw-bold">12 countries</span><br/>Across the <br>globe</p>
 					</div>
@@ -802,7 +802,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 				<a href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-europe/">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-21.png', true); ?>"
-						alt="">
+						alt="Kubecon EU 2021 banner">
 				</a>
 
 				<div aria-hidden="true" class="ar-spacer-60"></div>
@@ -817,7 +817,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 					<div>
 						<a href="https://youtu.be/8hV-ml4WuVM" target="_blank" rel="noreferrer noopener" class="image-link"><img loading="lazy"
 								src="<?php Image::get_image('annual-reports/2021/kubecon-macbook.png', true); ?>"
-								alt=""></a>
+								alt="Laptop playing a video of keynote talk"></a>
 
 						<div aria-hidden="true"
 							class="ar-spacer-60 show-upto-700"></div>
@@ -854,7 +854,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
-								alt="">
+								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">26,648</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
 					</div>
@@ -866,7 +866,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-mic.svg', true); ?>"
-								alt="">
+								alt="Microphone icon">
 						</div>
 
 						<div>
@@ -893,7 +893,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
-									alt="">
+									alt="Globe icon">
 							</div>
 							<p><span class="number-large text-purple">168</span><br/><span class="text-green uppercase fw-bold">Countries</span>
 <span class="text-medium"><br/>Attendees from six continents
@@ -905,7 +905,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kceu21-attendees.svg', true); ?>"
-							alt="">
+							alt="Chart showing breakdown of Kubecon 2021 EU attendees by country">
 
 					</div>
 				</div>
@@ -922,7 +922,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-building.svg', true); ?>"
-									alt="">
+									alt="Building icon">
 							</div>
 							<p><span class="number-large text-purple">9,092</span><br/><span class="text-green uppercase fw-bold">Companies <br>participated</span></p>
 						</div>
@@ -932,7 +932,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kceu21-companies.svg', true); ?>"
-							alt="">
+							alt="Chart showing breakdown of Kubecon 2021 EU attendees by company type">
 					</div>
 				</div>
 
@@ -955,7 +955,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 				<a href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-north-america/">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-na-21.png', true); ?>"
-						alt="">
+						alt="Kubecon NA 2021 banner">
 				</a>
 
 				<div aria-hidden="true" class="ar-spacer-60"></div>
@@ -985,7 +985,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 						<a href="https://youtu.be/VzuyyESy9oA" target="_blank" rel="noreferrer noopener" class="image-link"><img loading="lazy"
 								src="<?php Image::get_image('annual-reports/2021/blob-speaker.png', true); ?>"
-								alt=""></a>
+								alt="Robert Duffy speaking at conference"></a>
 
 						<div aria-hidden="true"
 							class="ar-spacer-60 show-upto-700"></div>
@@ -1006,7 +1006,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
-								alt="">
+								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">23,164</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
 					</div>
@@ -1018,7 +1018,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
-								alt="">
+								alt="Globe icon">
 						</div>
 						<p><span class="number-large text-purple">154</span><br/><span class="text-green uppercase fw-bold">Countries</span>
 <span class="text-medium"><br/>Attendees from six continents
@@ -1034,13 +1034,13 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 					<div class="border-outline">
 
 						<p
-							class="secondary-sub-section">Breakdown of attendees by location</p>
+							class="secondary-sub-section">Breakdown of in-person attendees by location</p>
 
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-lanyard.svg', true); ?>"
-									alt="">
+									alt="Lanyard icon">
 							</div>
 							<p><span class="number-large text-purple">3,531</span><br/><span class="text-green uppercase fw-bold">In-person</span></p>
 						</div>
@@ -1052,7 +1052,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kcna21-inperson.svg', true); ?>"
-							alt="">
+							alt="Map showing countries with most in-person representation at Kubecon NA 2021">
 
 
 					</div>
@@ -1064,13 +1064,13 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 					<div class="border-outline">
 
 						<p
-							class="secondary-sub-section">Breakdown of attendees by location</p>
+							class="secondary-sub-section">Breakdown of virtual attendees by location</p>
 
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-laptop.svg', true); ?>"
-									alt="">
+									alt="Laptop icon">
 							</div>
 							<p><span class="number-large text-purple">19,633</span><br/><span class="text-green uppercase fw-bold">Virtual</span></p>
 						</div>
@@ -1082,7 +1082,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kcna21-virtual.svg', true); ?>"
-							alt="">
+							alt="Map showing countries with most virtual representation at Kubecon NA 2021">
 
 					</div>
 				</div>
@@ -1098,7 +1098,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-building.svg', true); ?>"
-								alt="">
+								alt="Building icon">
 						</div>
 						<p><span class="number-large text-purple">7,290</span><br/><span class="text-green uppercase fw-bold">Companies <br>participated</span></p>
 					</div>
@@ -1108,7 +1108,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 
 					<img loading="lazy"
 						src="<?php Image::get_svg('annual-reports/2021/chart-kcna21-companies.svg', true); ?>"
-						alt="">
+						alt="Breakdown of Kubecon NA 2021 participants by company type">
 
 				</div>
 
@@ -1128,7 +1128,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>" alt="">
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-w-mic.svg', true); ?>"
-									alt="">
+									alt="Microphone icon">
 							</div>
 							<p
 								class="text-large"><span class="text-white uppercase fw-bold">Speakers </span><br/><span class="text-green uppercase fw-bold">North America 2021</span></p>
@@ -1203,7 +1203,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div class="shg-03">
 					<img loading="lazy" class="image-covid"
 						src="<?php Image::get_image('annual-reports/2021/chart-covid-response.png', true); ?>"
-						alt="">
+						alt="COVID practices icons">
 
 				</div>
 			</div>
@@ -1232,7 +1232,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/">
 						<img loading="lazy"
 							src="<?php Image::get_image('annual-reports/2021/banner-kubecon-cn-21.png', true); ?>"
-							alt="">
+							alt="Kubecon China 2021 banner">
 					</a>
 
 					<div>
@@ -1242,7 +1242,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
-									alt="">
+									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">7,160</span><br/><span class="text-green uppercase fw-bold">Registered Attendees</span></p>
 						</div>
@@ -1253,7 +1253,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							<div class="icon">
 								<img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/icon-mic.svg', true); ?>"
-									alt="">
+									alt="Microphone icon">
 							</div>
 							<p><span class="number-large text-purple">161</span><br/><span class="text-green uppercase fw-bold">Speakers</span></p>
 						</div>
@@ -1275,7 +1275,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-22.png', true); ?>"
-						alt="">
+						alt="KubeCon + CloudNativeCon EU 2022 banner">
 				</a>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -1298,7 +1298,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<figure class="background-image-shape">
 				<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -1336,7 +1336,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<img loading="lazy" class="image-training"
 					src="<?php Image::get_image('annual-reports/2021/clipart-training.png', true); ?>"
-					alt="">
+					alt="Drawing of woman reading a book">
 
 			</div>
 
@@ -1362,7 +1362,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/certifications.png', true); ?>"
-						alt="">
+						alt="Certification logos">
 				</div>
 
 				<div aria-hidden="true" class="ar-spacer-120"></div>
@@ -1451,7 +1451,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/blob-funded-training.png', true); ?>"
-						alt="">
+						alt="Man and woman working on laptops">
 
 				</div>
 
@@ -1475,7 +1475,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 			<figure class="background-image-shape">
 				<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -1510,7 +1510,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<img loading="lazy"
 					src="<?php Image::get_image('annual-reports/2021/blob-projects.jpg', true); ?>"
-					alt="">
+					alt="Man talking to woman with masks on at conference">
 
 			</div>
 
@@ -1528,7 +1528,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<img loading="lazy"
 				src="<?php Image::get_svg('annual-reports/2021/chart-project-velocity.svg', true); ?>"
-				alt="">
+				alt="Chart showing CNCF project velocity">
 
 			<!-- TODO: Share  -->
 
@@ -1544,7 +1544,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<img loading="lazy"
 				src="<?php Image::get_svg('annual-reports/2021/chart-projects-accepted.svg', true); ?>"
-				alt="">
+				alt="Chart showing number of projects accepted to CNCF each year">
 
 			<!-- TODO: Share  -->
 
@@ -1576,12 +1576,12 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							<div class="project-item">
 								<a href="/projects/linkerd/"><img loading="lazy"
 										src="<?php Image::get_svg('annual-reports/2021/logo-linkerd.svg', true); ?>"
-										alt=""></a>
+										alt="Linkerd logo"></a>
 							</div>
 							<div class="project-item">
 								<a href="/projects/open-policy-agent-opa/"><img loading="lazy"
 										src="<?php Image::get_svg('annual-reports/2021/logo-opa.svg', true); ?>"
-										alt=""></a>
+										alt="OPA logo"></a>
 							</div>
 						</div>
 					</div>
@@ -1601,38 +1601,38 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<div class="project-item">
 						<a href="/projects/flux/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-flux.svg', true); ?>"
-								alt=""></a>
+								alt="Flux logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/keda/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-keda.svg', true); ?>"
-								alt=""></a>
+								alt="Keda logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/crossplane/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-crossplane.svg', true); ?>"
-								alt=""></a>
+								alt="Crossplane logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/longhorn/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-longhorn.svg', true); ?>"
-								alt=""></a>
+								alt="Longhorn logo"></a>
 					</div>
 
 					<div class="project-item">
 						<a href="/projects/emissary-ingress/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-emissary.svg', true); ?>"
-								alt=""></a>
+								alt="Emissary logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/cilium/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-cilium.svg', true); ?>"
-								alt=""></a>
+								alt="Cilium logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/dapr/"><img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-dapr.svg', true); ?>"
-								alt=""></a>
+								alt="Dapr logo"></a>
 					</div>
 				</div>
 
@@ -1673,7 +1673,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<img loading="lazy"
 						src="<?php Image::get_svg('annual-reports/2021/chart-endpoint-testing-key.svg', true); ?>"
-						alt="">
+						alt="Endpoint testing chart legend">
 
 					<div aria-hidden="true" class="ar-spacer-30"></div>
 
@@ -1681,7 +1681,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<img loading="lazy"
 					src="<?php Image::get_svg('annual-reports/2021/chart-endpoint-testing.svg', true); ?>"
-					alt="">
+					alt="Chart showing Kubernetes endpoint testing coverage in different versions">
 
 				<!-- TODO: Share  -->
 
@@ -1725,9 +1725,9 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							Hedgehog</span>
 
 						<div class="project-item no-border">
-							<a href=""><img loading="lazy"
+							<a href="/projects/helm/"><img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/logo-helm.svg', true); ?>"
-									alt=""></a>
+									alt="Helm logo"></a>
 						</div>
 
 					</div>
@@ -1745,9 +1745,9 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							Lobster</span>
 
 						<div class="project-item no-border">
-							<a href=""><img loading="lazy"
+							<a href="/projects/linkerd/"><img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/logo-linkerd.svg', true); ?>"
-									alt=""></a>
+									alt="Linkerd logo"></a>
 						</div>
 
 					</div>
@@ -1764,9 +1764,9 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 							Tiger</span>
 
 						<div class="project-item no-border">
-							<a href=""><img loading="lazy"
+							<a href="/projects/tikv/"><img loading="lazy"
 									src="<?php Image::get_svg('annual-reports/2021/logo-tikv.svg', true); ?>"
-									alt=""></a>
+									alt="Tikv logo"></a>
 						</div>
 
 					</div>
@@ -1787,7 +1787,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<div>
 						<a href="https://www.cncf.io/wp-content/uploads/2021/10/Admiral-Bash.pdf">
 							<img src="https://via.placeholder.com/546x409/d9d9d9/000000"
-							alt="">
+							alt="Admiral's Bash book cover">
 						</a>
 						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br>Island Adventure</a></span><br>
 By the Cartografos Group</p>
@@ -1796,7 +1796,7 @@ By the Cartografos Group</p>
 					<div>
 						<a href="https://www.cncf.io/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">
 						<img src="https://via.placeholder.com/546x409/d9d9d9/000000"
-							alt="">
+							alt="From 00-K8s, with Love book cover">
 						</a>
 
 						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">From 00-K8s, with Love</a></span><br>
@@ -1806,7 +1806,7 @@ Donated by Microsoft Azure</p>
 					<div>
 						<a href="https://www.cncf.io/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">
 						<img src="https://via.placeholder.com/546x409/d9d9d9/000000"
-							alt="">
+							alt="The Illustrated Children's Guide to Kubernetes book cover">
 						</a>
 
 						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">The Illustrated Children's <br />Guide to Kubernetes</a></span><br>
@@ -1826,7 +1826,7 @@ In Italian, thanks to SparkFabrik</p>
 
 					<img loading="lazy"
 						src="<?php Image::get_svg('annual-reports/2021/phippy-gang.svg', true); ?>"
-						alt="" class="image-book">
+						alt="Multiple Phippy characters" class="image-book">
 				</div>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -1848,7 +1848,7 @@ In Italian, thanks to SparkFabrik</p>
 
 			<figure class="background-image-shape">
 				<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -1878,7 +1878,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/blob-community.jpg', true); ?>"
-						alt="">
+						alt="Kubecon NA 2021 hosts on stage">
 				</div>
 
 				<div class="shg-03">
@@ -1961,7 +1961,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div class="align-end">
 					<img loading="lazy"
 						src="<?php Image::get_svg('annual-reports/2021/clipart-community.png', true); ?>"
-						alt="">
+						alt="Drawing of two people talking">
 				</div>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -1989,7 +1989,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-01.png', true); ?>"
-								alt="">
+								alt="Nikhita Raghunath">
 
 							<div>
 								<p
@@ -2003,7 +2003,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-02.png', true); ?>"
-								alt="">
+								alt="Anaïs Urlichs">
 
 							<div>
 								<p
@@ -2017,7 +2017,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-03.png', true); ?>"
-								alt="">
+								alt="Tim Bannister">
 
 							<div>
 								<p
@@ -2040,7 +2040,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/community-chop.png', true); ?>"
-							alt="">
+							alt="Photos of several people">
 
 							<div aria-hidden="true" class="ar-spacer-30"></div>
 
@@ -2079,7 +2079,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<div class="icon">
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
-							alt="">
+							alt="People icon">
 					</div>
 					<p><span class="number-large text-purple">27,000+</span><br/><span class="text-green uppercase fw-bold">Attendees</span></p>
 				</div>
@@ -2104,7 +2104,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<img loading="lazy"
 					src="<?php Image::get_svg('annual-reports/2021/chart-meetup-members.svg', true); ?>"
-					alt="">
+					alt="Chart showing number of members in CNCF meetup group over time">
 
 				<!-- TODO: Share  -->
 
@@ -2128,7 +2128,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<figure class="background-image-shape">
 				<img loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="">
+Image::get_svg('annual-reports/2021/shapes.svg', true); ?>" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -2166,7 +2166,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<img loading="lazy"
 				src="<?php Image::get_image('annual-reports/2021/blob-mentoring.jpg', true); ?>"
-				alt="">
+				alt="Two men in masks talking at conference">
 
 				</div>
 
@@ -2191,7 +2191,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<img loading="lazy"
 					src="<?php Image::get_image('annual-reports/2021/clipart-glossary.png', true); ?>"
-					alt="">
+					alt="Drawing of woman walking">
 
 				<div class="quote-container max-w-800">
 					<p
@@ -2246,7 +2246,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<div class="icon">
 							<img loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/icon-w-members.svg', true); ?>"
-								alt="">
+								alt="People icon">
 						</div>
 						<p
 							class="text-large"><span class="text-white uppercase fw-bold">Mentoring </span><br/><span class="text-light-green uppercase fw-bold">In Numbers</span></p>
@@ -2296,7 +2296,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<img loading="lazy"
 				src="<?php Image::get_image('annual-reports/2021/who-staff.png', true); ?>"
-				alt="">
+				alt="Data visulization showing proportion of men and women in staff">
 
 			<div class="sub-section-header-container">
 				<h3 class="sub-section-header">Executive <br
@@ -2305,7 +2305,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<img loading="lazy"
 				src="<?php Image::get_svg('annual-reports/2021/who-exec.svg', true); ?>"
-				alt="">
+				alt="Data visulization showing proportion of men and women in exec leadership">
 
 			<div class="sub-section-header-container">
 				<h3 class="sub-section-header">Governance <br
@@ -2314,7 +2314,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<img loading="lazy"
 				src="<?php Image::get_svg('annual-reports/2021/who-governance.svg', true); ?>"
-				alt="">
+				alt="Data visulization showing proportion of men and women in governance leadership">
 
 			<!-- TODO: Share  -->
 
@@ -2336,7 +2336,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<img loading="lazy"
 					src="<?php Image::get_image('annual-reports/2021/chart-funding.png', true); ?>"
-					alt="">
+					alt="Data visulization showing CNCF funding sources">
 
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
@@ -2371,7 +2371,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">
 					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-22.png', true); ?>"
-						alt="">
+						alt="Kubecon EU 2022 banner">
 				</a>
 
 				<!-- end of article/page container -->
