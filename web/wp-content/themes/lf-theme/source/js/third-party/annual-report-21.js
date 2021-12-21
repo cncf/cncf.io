@@ -20,6 +20,13 @@ function ready( fn ) {
 
 ready( function () {
   relentlessCharts();
+  AOS.init( {
+    disable: 'tablet',
+    duration: 500,
+    easing: 'ease-in',
+    once: true,
+    anchorPlacement: 'bottom-bottom',
+  });
 } );
 
 function relentlessCharts() {
@@ -134,7 +141,5 @@ data4.addEventListener("click", function (e) {
   data.datasets[0].data = [6, 32, 69, 131, 145, 162];
   ar21chart.update();
 });
-
-
 
 }

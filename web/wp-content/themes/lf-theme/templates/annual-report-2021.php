@@ -72,7 +72,8 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 
 					<div aria-hidden="true" class="ar-spacer-80 "></div>
 
-					<div aria-hidden="true" class="ar-spacer-20 show-over-700"></div>
+					<div aria-hidden="true" class="ar-spacer-20 show-over-700">
+					</div>
 
 				</div>
 			</div>
@@ -153,7 +154,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 			<div class="section-header-grid">
 
 				<div class="shg-01">
-					<h2 class="section-title uppercase"><span
+					<h2 class="section-title uppercase" data-aos="fade-up"><span
 							class="text-purple">Welcome</span><br>
 						it's been a year to remember</h2>
 					<div aria-hidden="true" class="ar-spacer-80"></div>
@@ -169,7 +170,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 				</div>
 
 				<div class="shg-03">
-					<img loading="lazy" src="<?php
+					<img loading="lazy" data-aos="fade-left" src="<?php
 Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 						alt="Priyanka Sharma">
 				</div>
@@ -197,7 +198,8 @@ Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 					<p>I hope you enjoy reading these fantastic milestones and reflecting back on the incredible progress we've achieved together this year.</p>
 				</div>
 				<div>
-				<div aria-hidden="true" class="ar-spacer-20 show-upto-700"></div>
+					<div aria-hidden="true" class="ar-spacer-20 show-upto-700">
+					</div>
 
 					<div class="icon-callout-1">
 						<div class="icon">
@@ -274,7 +276,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<p>Today we are a powerhouse for visionary projects and people. If cloud native was fast becoming mainstream before 2020, then the global pandemic pushed adoption into the stratosphere. Now, CNCF hosts 120+ projects with over 142,000 contributors representing 189 countries, and there are no signs of slowing down. In fact, cloud native is actively being adopted by multiple industries, driven by our global community.</p>
 					<p>This year, the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> launched as the newest CNCF Telecom Initiative, with representatives from Telecom and cloud native communities. Thanks to our strategic partner <a href="http://vulk.coop">vulk.coop</a>, by the end 2021, the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a> had more than 60 tests across many important categories. This tool provides feedback on the use of Kubernetes and cloud native best practices in networking applications and platforms, with contributions from 16 organizations.</p>
 
-					<div aria-hidden="true" class="ar-spacer-40 show-over-700"></div>
+					<div aria-hidden="true" class="ar-spacer-40 show-over-700">
+					</div>
 
 					<div class="quote-container">
 						<p
@@ -285,7 +288,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						</div>
 					</div>
 
-					<div aria-hidden="true" class="ar-spacer-80 show-upto-1000"></div>
+					<div aria-hidden="true" class="ar-spacer-80 show-upto-1000">
+					</div>
 
 				</div>
 				<div>
@@ -351,7 +355,8 @@ Image::get_image('annual-reports/2021/blob-membership.png', true); ?>"
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="ar-spacer-20 show-over-700"></div>
+				<div aria-hidden="true" class="ar-spacer-20 show-over-700">
+				</div>
 
 				<div class="sub-section-header-container">
 					<h3 class="sub-section-header">CNCF <br
@@ -441,7 +446,8 @@ Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>"
 					<div>
 						<div aria-hidden="true" class="ar-spacer-80"></div>
 
-						<div aria-hidden="true" class="ar-spacer-60 show-upto-700"></div>
+						<div aria-hidden="true"
+							class="ar-spacer-60 show-upto-700"></div>
 
 						<div class="icon-callout-1 justify-center">
 							<div class="icon">
@@ -571,8 +577,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 			</div>
 		</section>
 
-		<section
-			class="background-image-wrapper alignfull is-spotify-section">
+		<section class="background-image-wrapper alignfull is-spotify-section">
 
 			<div class="background-image-text-overlay">
 				<div class="container wrap text-white">
@@ -600,7 +605,8 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 						</div>
 
-						<div aria-hidden="true" class="ar-spacer-40 show-upto-700"></div>
+						<div aria-hidden="true"
+							class="ar-spacer-40 show-upto-700"></div>
 
 						<div>
 
@@ -625,7 +631,8 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 									alt="Backstage logo">
 							</a>
 
-							<div aria-hidden="true" class="ar-spacer-20 show-upto-700"></div>
+							<div aria-hidden="true"
+								class="ar-spacer-20 show-upto-700"></div>
 
 						</div>
 					</div>
@@ -842,7 +849,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 				<p
 					class="secondary-sub-section max-w-900">May saw <a href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-europe/">KubeCon + CloudNativeCon EU Virtual</a> once again set record-breaking registration and attendance, with 26,648 registrants (a 42.5% increase on 2020).</p>
 
-				<div aria-hidden="true" class="ar-spacer-60 show-over-700"></div>
+				<div aria-hidden="true" class="ar-spacer-60 show-over-700">
+				</div>
 
 				<div class="section-grid-04">
 
@@ -893,7 +901,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<p><span class="number-large text-purple">26,648</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
 					</div>
 
-					<div aria-hidden="true" class="ar-spacer-120 show-upto-700"></div>
+					<div aria-hidden="true" class="ar-spacer-120 show-upto-700">
+					</div>
 
 					<div class="icon-callout-3">
 						<div class="icon">
@@ -1000,9 +1009,11 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 				<p
 					class="max-w-800">Research from David Sally tells us that cooperation and collaboration increases 45% when meeting in person and having face-to-face interactions, so we're committed to driving more future opportunities for #TeamCloudNative to collaborate and learn together in-person.</p>
 
-					<div aria-hidden="true" class="ar-spacer-60 show-over-700 show-upto-1000"></div>
+				<div aria-hidden="true"
+					class="ar-spacer-60 show-over-700 show-upto-1000"></div>
 
-					<div aria-hidden="true" class="ar-spacer-30 show-over-1000"></div>
+				<div aria-hidden="true" class="ar-spacer-30 show-over-1000">
+				</div>
 
 				<div class="section-grid-06">
 
@@ -1027,8 +1038,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 								src="<?php Image::get_image('annual-reports/2021/blob-speaker.png', true); ?>"
 								alt="Robert Duffy speaking at conference"></a>
 
-						<div aria-hidden="true"
-							class="ar-spacer-60"></div>
+						<div aria-hidden="true" class="ar-spacer-60"></div>
 
 					</div>
 
@@ -1050,7 +1060,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<p><span class="number-large text-purple">23,164</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
 					</div>
 
-					<div aria-hidden="true" class="ar-spacer-100 show-upto-700"></div>
+					<div aria-hidden="true" class="ar-spacer-100 show-upto-700">
+					</div>
 
 					<div class="icon-callout-3">
 						<div class="icon">
@@ -1140,7 +1151,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<p><span class="number-large text-purple">7,290</span><br/><span class="text-green uppercase fw-bold">Companies <br>participated</span></p>
 					</div>
 
-					<div aria-hidden="true" class="ar-spacer-100 show-upto-700"></div>
+					<div aria-hidden="true" class="ar-spacer-100 show-upto-700">
+					</div>
 
 					<img loading="lazy"
 						src="<?php Image::get_svg('annual-reports/2021/chart-kcna21-companies.svg', true); ?>"
@@ -1276,7 +1288,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<div>
 						<div aria-hidden="true" class="ar-spacer-30"></div>
 
-						<div aria-hidden="true" class="ar-spacer-80 show-upto-700"></div>
+						<div aria-hidden="true"
+							class="ar-spacer-80 show-upto-700"></div>
 
 						<div class="icon-callout-3">
 							<div class="icon">
@@ -1555,13 +1568,15 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				</div>
 
-				<div aria-hidden="true" class="ar-spacer-60 show-over-700 show-upto-1000"></div>
+				<div aria-hidden="true"
+					class="ar-spacer-60 show-over-700 show-upto-1000"></div>
 
 				<img loading="lazy"
 					src="<?php Image::get_image('annual-reports/2021/blob-projects.jpg', true); ?>"
 					alt="Man talking to woman with masks on at conference">
 
-					<div aria-hidden="true" class="ar-spacer-40 show-over-700 show-upto-1000"></div>
+				<div aria-hidden="true"
+					class="ar-spacer-40 show-over-700 show-upto-1000"></div>
 
 			</div>
 
@@ -1719,7 +1734,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 									class="show-upto-375">Results</h3>
 						</div>
 
-						<div aria-hidden="true" class="ar-spacer-20 show-upto-700"></div>
+						<div aria-hidden="true"
+							class="ar-spacer-20 show-upto-700"></div>
 
 					</div>
 
@@ -1729,7 +1745,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<div aria-hidden="true" class="ar-spacer-30"></div>
 
-					<div aria-hidden="true" class="ar-spacer-60 show-upto-700"></div>
+					<div aria-hidden="true" class="ar-spacer-60 show-upto-700">
+					</div>
 
 				</div>
 
@@ -1884,7 +1901,7 @@ In Italian, thanks to SparkFabrik</p>
 						<p class="fw-bold uppercase mb-0">Donate a character</p>
 					</div>
 
-						<img loading="lazy"
+					<img loading="lazy"
 						src="<?php Image::get_image('annual-reports/2021/phippy-gang.png', true); ?>"
 						alt="Multiple Phippy characters" class="image-book">
 				</div>
@@ -1946,7 +1963,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<div aria-hidden="true" class="ar-spacer-30"></div>
 
-					<div aria-hidden="true" class="ar-spacer-60 show-upto-700"></div>
+					<div aria-hidden="true" class="ar-spacer-60 show-upto-700">
+					</div>
 
 					<h2 class="section-title uppercase">Diversity, equity and
 						inclusion
@@ -1954,7 +1972,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<div aria-hidden="true" class="ar-spacer-40"></div>
 
-					<div aria-hidden="true" class="ar-spacer-40 show-upto-700"></div>
+					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
+					</div>
 
 					<p>CNCF continues to support the development of this incredible cloud native community while also striving to ensure that everyone who participates feels welcome, regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. To date, we've offered close to 3,800 diversity and need-based scholarships.</p>
 
@@ -1985,7 +2004,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 								Kubecon EU</span>
 						</div>
 
-						<div aria-hidden="true" class="ar-spacer-80 show-upto-700"></div>
+						<div aria-hidden="true"
+							class="ar-spacer-80 show-upto-700"></div>
 
 						<div>
 							<span
@@ -2015,7 +2035,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 								Recipients</span>
 						</div>
 
-						<div aria-hidden="true" class="ar-spacer-80 show-upto-700"></div>
+						<div aria-hidden="true"
+							class="ar-spacer-80 show-upto-700"></div>
 
 						<div>
 							<span
@@ -2028,7 +2049,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				</div>
 
-				<div aria-hidden="true" class="ar-spacer-80 show-upto-1000"></div>
+				<div aria-hidden="true" class="ar-spacer-80 show-upto-1000">
+				</div>
 
 				<div class="align-end">
 					<img loading="lazy"
@@ -2052,7 +2074,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<p
 					class="secondary-sub-section max-w-800">Now in their fifth year, the CNCF Community Awards highlighted the most active ambassador and top contributors across all CNCF projects. The awards included:</p>
 
-				<div aria-hidden="true" class="ar-spacer-40 show-over-700"></div>
+				<div aria-hidden="true" class="ar-spacer-40 show-over-700">
+				</div>
 
 				<div class="section-grid-14">
 
@@ -2064,7 +2087,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-01.png', true); ?>"
 								alt="Nikhita Raghunath">
 
-								<div aria-hidden="true" class="ar-spacer-60 show-upto-700"></div>
+							<div aria-hidden="true"
+								class="ar-spacer-60 show-upto-700"></div>
 							<div>
 								<p
 									class="text-medium fw-bold"><span class="text-purple">TOP</span> Cloud Native Committer</p>
@@ -2079,7 +2103,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-02.png', true); ?>"
 								alt="Anaïs Urlichs">
 
-								<div aria-hidden="true" class="ar-spacer-60 show-upto-700"></div>
+							<div aria-hidden="true"
+								class="ar-spacer-60 show-upto-700"></div>
 
 							<div>
 								<p
@@ -2095,7 +2120,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-03.png', true); ?>"
 								alt="Tim Bannister">
 
-								<div aria-hidden="true" class="ar-spacer-60 show-upto-700"></div>
+							<div aria-hidden="true"
+								class="ar-spacer-60 show-upto-700"></div>
 							<div>
 								<p
 									class="text-medium fw-bold"><span class="text-purple">TOP</span> Documentarian <span class="text-smaller">(new in 2021)</span></p>
@@ -2106,7 +2132,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					</div>
 
-					<div aria-hidden="true" class="ar-spacer-120 show-upto-1000"></div>
+					<div aria-hidden="true"
+						class="ar-spacer-120 show-upto-1000"></div>
 
 					<div class="align-end">
 
@@ -2254,7 +2281,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				</div>
 
-				<div aria-hidden="true" class="ar-spacer-40 show-upto-700"></div>
+				<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
+				</div>
 
 				<img loading="lazy"
 					src="<?php Image::get_image('annual-reports/2021/blob-mentoring.jpg', true); ?>"
@@ -2289,7 +2317,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				</div>
 
-				<div aria-hidden="true" class="ar-spacer-40 show-over-700"></div>
+				<div aria-hidden="true" class="ar-spacer-40 show-over-700">
+				</div>
 
 				<div class="quote-container max-w-800">
 					<p
@@ -2311,7 +2340,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<div class="glossary-button">
 
-					<div aria-hidden="true" class="ar-spacer-40 show-upto-700"></div>
+						<div aria-hidden="true"
+							class="ar-spacer-40 show-upto-700"></div>
 
 						<a href="https://glossary.cncf.io/contribute/"
 							class="button is-pink">Contribute</a>
@@ -2377,7 +2407,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 						<div>
 
-						<div aria-hidden="true" class="ar-spacer-80 show-upto-700"></div>
+							<div aria-hidden="true"
+								class="ar-spacer-80 show-upto-700"></div>
 
 							<a href="https://github.com/cncf/mentoring"
 								class="button is-pink">Get involved</a>
@@ -2423,7 +2454,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div>
 
-				<div aria-hidden="true" class="ar-spacer-80 show-upto-1000"></div>
+					<div aria-hidden="true" class="ar-spacer-80 show-upto-1000">
+					</div>
 
 					<div class="sub-section-header-container">
 						<h3 class="sub-section-header">Executive <br
@@ -2434,7 +2466,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						src="<?php Image::get_svg('annual-reports/2021/who-exec.svg', true); ?>"
 						alt="Data visulization showing proportion of men and women in exec leadership">
 
-						<div aria-hidden="true" class="ar-spacer-80 "></div>
+					<div aria-hidden="true" class="ar-spacer-80 "></div>
 
 					<div class="sub-section-header-container">
 						<h3 class="sub-section-header">Governance <br
@@ -2476,13 +2508,13 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					src="<?php Image::get_image('annual-reports/2021/chart-funding.png', true); ?>"
 					alt="Data visulization showing CNCF funding sources">
 
-					<p
-	class="max-w-700 fw-bold">A basic premise behind CNCF, our conferences (including <a href="https://kubecon.io/">KubeCon + CloudNativeCon</a>), and open source, in general, is that interactions are positive-sum. There is no fixed amount of investment, mindshare, or development contribution allocated to specific projects.</p>
+				<p
+					class="max-w-700 fw-bold">A basic premise behind CNCF, our conferences (including <a href="https://kubecon.io/">KubeCon + CloudNativeCon</a>), and open source, in general, is that interactions are positive-sum. There is no fixed amount of investment, mindshare, or development contribution allocated to specific projects.</p>
 
-	<p
-	class="max-w-700">Equally important, a neutral home for a project and community fosters this type of positive-sum thinking and drives the growth and diversity that we believe are core elements of a successful open source project.</p>
+				<p
+					class="max-w-700">Equally important, a neutral home for a project and community fosters this type of positive-sum thinking and drives the growth and diversity that we believe are core elements of a successful open source project.</p>
 
-	<div aria-hidden="true" class="ar-spacer-160"></div>
+				<div aria-hidden="true" class="ar-spacer-160"></div>
 
 			</div>
 		</section>
@@ -2500,10 +2532,11 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					reflecting on all the great things we accomplished together
 					in 2021.</h3>
 
-					<p
+				<p
 					class="text-medium">Your comments and feedback are welcome at <a href="mailto:info@cncf.io">info@cncf.io</a>.</p>
 
-				<p class="max-w-800">We're looking forward to seeing you in 2022! Check out our calendar for community events near you and don't forget to register for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">KubeCon+CloudNativeCon Europe</a> in Valencia, May 2022.</p>
+				<p
+					class="max-w-800">We're looking forward to seeing you in 2022! Check out our calendar for community events near you and don't forget to register for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">KubeCon+CloudNativeCon Europe</a> in Valencia, May 2022.</p>
 
 				<a
 					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">
@@ -2521,12 +2554,21 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 // chart js.
 wp_enqueue_script(
-	'chart-js',
-	get_stylesheet_directory_uri() . '/source/js/third-party/chart.min.js',
-	null,
-	filemtime( get_template_directory() . '/source/js/third-party/chart.min.js' ),
-	true
-	);
+'chart-js',
+get_stylesheet_directory_uri() . '/source/js/third-party/chart.min.js',
+null,
+filemtime( get_template_directory() . '/source/js/third-party/chart.min.js' ),
+true
+);
+
+// aos js.
+wp_enqueue_script(
+'aos-js',
+get_stylesheet_directory_uri() . '/source/js/third-party/aos.js',
+null,
+filemtime( get_template_directory() . '/source/js/third-party/aos.js' ),
+true
+);
 
 // youtube lite script.
 wp_enqueue_script(
@@ -2541,7 +2583,7 @@ true
 wp_enqueue_script(
 'annual-report-21',
 get_stylesheet_directory_uri() . '/source/js/third-party/annual-report-21.js',
-array( 'jquery', 'chart-js' ),
+array( 'jquery', 'chart-js', 'aos-js' ),
 filemtime( get_template_directory() . '/source/js/third-party/annual-report-21.js' ),
 true
 );
