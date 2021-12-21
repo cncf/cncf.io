@@ -2519,7 +2519,14 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 </main>
 <?php
 
-wp_enqueue_script( 'chart-js', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js', array(), '2.7.2', true );
+// chart js.
+wp_enqueue_script(
+	'chart-js',
+	get_stylesheet_directory_uri() . '/source/js/third-party/chart.min.js',
+	null,
+	filemtime( get_template_directory() . '/source/js/third-party/chart.min.js' ),
+	true
+	);
 
 // youtube lite script.
 wp_enqueue_script(
@@ -2530,6 +2537,7 @@ filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
 true
 );
 
+// custom scripts.
 wp_enqueue_script(
 'annual-report-21',
 get_stylesheet_directory_uri() . '/source/js/third-party/annual-report-21.js',
