@@ -1,15 +1,5 @@
 // annual report 2021 styling.
 
-// TODO: Remove unused fonts.
-@font-face {
-	font-family: 'Clarity City';
-	font-weight: 100;
-	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-100.woff2') format('woff2'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-100.woff') format('woff'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-100.ttf') format('ttf');
-}
-
 @font-face {
 	font-family: 'Clarity City';
 	font-weight: 200;
@@ -21,29 +11,11 @@
 
 @font-face {
 	font-family: 'Clarity City';
-	font-weight: 300;
-	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-300.woff2') format('woff2'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-300.woff') format('woff'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-300.ttf') format('ttf');
-}
-
-@font-face {
-	font-family: 'Clarity City';
 	font-weight: 400;
 	font-style: normal;
 	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-400.woff2') format('woff2'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-400.woff') format('woff'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-400.ttf') format('ttf');
-}
-
-@font-face {
-	font-family: 'Clarity City';
-	font-weight: 500;
-	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-500.woff2') format('woff2'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-500.woff') format('woff'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-500.ttf') format('ttf');
 }
 
 @font-face {
@@ -71,15 +43,6 @@
 	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-800.woff2') format('woff2'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-800.woff') format('woff'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-800.ttf') format('ttf');
-}
-
-@font-face {
-	font-family: 'Clarity City';
-	font-weight: 900;
-	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-900.woff2') format('woff2'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-900.woff') format('woff'),
-		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-900.ttf') format('ttf');
 }
 
 // font-stack.
@@ -197,13 +160,6 @@ $ar-gray-900: #414141;
 			@media (min-width: 700px) {
 				padding-top: 60px;
 				padding-bottom: 60px;
-			}
-			@media (min-width: 1000px) {
-				// min-height: 700px;
-				// .background-image-text-overlay {
-				// 	top: 50%;
-				// 	transform: translateY(-50%);
-				// }
 			}
 		}
 		&.is-speakers-section {
@@ -971,7 +927,6 @@ $ar-gray-900: #414141;
 	}
 
 	.section-title {
-		// letter-spacing: 0.05em;
 		font-weight: 800;
 		font-size: 26px;
 		@media (min-width: 375px) {
