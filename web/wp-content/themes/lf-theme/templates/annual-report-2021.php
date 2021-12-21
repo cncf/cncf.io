@@ -1360,9 +1360,8 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
 					</div>
 
-					<img loading="lazy"
-						src="<?php Image::get_image('annual-reports/2021/certifications.png', true); ?>"
-						alt="Certification logos">
+					<img loading="lazy" src="<?php Image::get_svg('annual-reports/2021/certifications', true); ?>" alt="Certification logos">
+
 				</div>
 
 				<div aria-hidden="true" class="ar-spacer-120"></div>
@@ -1914,7 +1913,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<div class="dei-grid">
 						<div>
 							<span
-								class="number-largest has-arrow-after text-purple lh-100">43%</span>
+								class="number-largest text-purple lh-100">43%</span>
 							<span class="text-green uppercase fw-bold block">of
 								keynotes at
 								Kubecon EU</span>
@@ -1922,7 +1921,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 						<div>
 							<span
-								class="number-largest has-arrow-after text-purple lh-100">46%</span>
+								class="number-largest text-purple lh-100">46%</span>
 							<span class="text-green uppercase fw-bold block">of
 								keynotes at
 								Kubecon NA</span>
@@ -1942,7 +1941,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					<div class="dei-grid">
 						<div>
 							<span
-								class="number-largest has-arrow-after text-purple lh-100">685</span>
+								class="number-largest text-purple lh-100">685</span>
 							<span
 								class="text-green uppercase fw-bold block">Diversity
 								Recipients</span>
@@ -1950,7 +1949,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 						<div>
 							<span
-								class="number-largest has-arrow-after text-purple lh-100">807</span>
+								class="number-largest text-purple lh-100">807</span>
 							<span
 								class="text-green uppercase fw-bold block">need-based
 								recipients</span>
@@ -2030,13 +2029,21 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 					</div>
 
 					<div class="align-end">
+
+					<div class="icon">
+						<img loading="lazy"
+							src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+							alt="People icon">
+					</div>
+
 						<p
 							class="text-medium fw-bold uppercase text-purple mb-20">"Chop Wood and Carry Water"</p>
 
-						<div class="icon-divider smaller"></div>
+						<div class="icon-divider no-spacing"></div>
 
-						<p
-							class="fw-bold">To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “Chop Wood and Carry Water” awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2021: <strong><a href="https://twitter.com/TheMoxieFox">Emily Fox</a>, <a href="https://twitter.com/aevavoom">Aeva Black</a>, <a href="https://twitter.com/TashaDrew">Tasha Drew</a>, <a href="https://twitter.com/comedordexis">Carlos Panato</a>, <a href="https://twitter.com/carolynvs">Carolyn Van Slyck</a></strong>.</p>
+						<p>To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “Chop Wood and Carry Water” awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2021:</p>
+
+						<p><strong><a href="https://twitter.com/TheMoxieFox">Emily Fox</a>, <a href="https://twitter.com/aevavoom">Aeva Black</a>, <a href="https://twitter.com/TashaDrew">Tasha Drew</a>, <a href="https://twitter.com/comedordexis">Carlos Panato</a>, <a href="https://twitter.com/carolynvs">Carolyn Van Slyck</a></strong>.</p>
 
 						<img loading="lazy"
 							src="<?php Image::get_svg('annual-reports/2021/community-chop.png', true); ?>"
@@ -2067,7 +2074,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 
 				<div class="sub-section-header-container">
-					<h3 class="sub-section-header">Community<br
+					<h3 class="sub-section-header">Community <br
 							class="show-upto-700">Groups 2021</h3>
 				</div>
 
