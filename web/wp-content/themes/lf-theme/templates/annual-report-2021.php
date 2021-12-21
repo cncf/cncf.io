@@ -257,7 +257,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66456, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -272,7 +272,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<div class="section-grid-02">
 				<div>
-					<p>Since we were founded in 2015, we've pioneered cloud native technologies — hosting and growing some of the world's <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing">most successful</a> open source projects including Kubernetes, Prometheus, Envoy, ContainerD, and many <a href="https://www.cncf.io/projects/">others</a>.</p>
+					<p>Since we were founded in 2015, we've pioneered cloud native technologies — hosting and growing some of the world's <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing">most successful</a> open source projects including Kubernetes, Prometheus, Envoy, ContainerD, and many <a href="/projects/">others</a>.</p>
 					<p>Today we are a powerhouse for visionary projects and people. If cloud native was fast becoming mainstream before 2020, then the global pandemic pushed adoption into the stratosphere. Now, CNCF hosts 120+ projects with over 142,000 contributors representing 189 countries, and there are no signs of slowing down. In fact, cloud native is actively being adopted by multiple industries, driven by our global community.</p>
 					<p>This year, the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> launched as the newest CNCF Telecom Initiative, with representatives from Telecom and cloud native communities. Thanks to our strategic partner <a href="http://vulk.coop">vulk.coop</a>, by the end 2021, the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a> had more than 60 tests across many important categories. This tool provides feedback on the use of Kubernetes and cloud native best practices in networking applications and platforms, with contributions from 16 organizations.</p>
 
@@ -494,7 +494,7 @@ from China</p>
 
 			<figure class="background-image-figure black-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66457, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -643,7 +643,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 			<figure class="background-image-figure black-fade">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66458, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -687,7 +687,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66459, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -734,7 +734,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>"
 
 			<div class="wp-block-lf-youtube-lite">
 				<lite-youtube videoid="Kn7HVDhUsWU" webpStatus="0"
-					sdthumbStatus="0">
+					sdthumbStatus="1">
 				</lite-youtube>
 			</div>
 
@@ -876,8 +876,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 						<p class="fw-semi">Jim Haughwout, VP, Peloton </p>
 
-						<a href="/join" class="button is-pink">Become a CNCF
-							Member</a>
+						<a href="/wp-content/uploads/2021/06/KubeCon_EU_21_Virtual_TransparencyReport_FINAL.pdf" class="button is-pink">Download Event <br>transparency report</a>
 
 					</div>
 				</div>
@@ -1207,9 +1206,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 </p>
 							</div>
 
-							<a href="https://www.cncf.io/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf"
-								class="button is-pink w-full">Download
-								Event<br>
+							<a href="/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf"
+								class="button is-pink w-full">Download Event<br>
 								Transparency Report</a>
 
 						</div>
@@ -1220,7 +1218,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 			<figure class="background-image-figure black-gradient-right">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -1358,7 +1356,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -1377,7 +1375,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 				<div>
 					<p
-						class="fw-bold">This year we launched the <a href="https://www.cncf.io/certification/kcna/">Kubernetes and Cloud Native Associate (KCNA)</a> — a pre-professional certification designed for candidates interested in working with cloud native technologies. The KCNA underscores conceptual knowledge of the entire cloud native ecosystem, particularly focusing on Kubernetes, and is meant for more than just developers.</p>
+						class="fw-bold">This year we launched the <a href="/certification/kcna/">Kubernetes and Cloud Native Associate (KCNA)</a> — a pre-professional certification designed for candidates interested in working with cloud native technologies. The KCNA underscores conceptual knowledge of the entire cloud native ecosystem, particularly focusing on Kubernetes, and is meant for more than just developers.</p>
 
 					<p>Alongside, we launched a new practical training course — <a href="https://training.linuxfoundation.org/training/inclusive-strategies-for-open-source-lfc103/?utm_source=lftraining&utm_medium=pr&utm_campaign=lfc103">Inclusive Strategies for Open Source (LFC103)</a> — designed to ​​provide specific strategies for creating inclusive open source communities and codebases, and advice on executing those in communities.</p>
 
@@ -1431,7 +1429,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 						<span
 							class="text-green uppercase fw-bold block">Increase</span>
 						<div class="icon-divider smaller"></div>
-						<p><a href="https://www.cncf.io/certification/training/">Kubernetes Massively Open Online Course (MOOC)</a> hit 229,000 enrollments.</p>
+						<p><a href="/certification/training/">Kubernetes Massively Open Online Course (MOOC)</a> hit 229,000 enrollments.</p>
 					</div>
 
 					<div>
@@ -1537,7 +1535,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -1564,7 +1562,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 					<p>Complementing this maturation in CNCF's graduated projects, in 2021 the <a href="/people/technical-oversight-committee/">Technical Oversight Committee</a> continued to sharpen focus on app delivery and the ease of creating Kubernetes applications, as well as bolstering the range of increasingly-mature storage projects.</p>
 
-					<p>With security coming under increased global scrutiny this year the <a href="https://github.com/cncf/tag-security">CNCF Security Technical Advisory Group</a> published <a href="https://www.cncf.io/announcements/2021/05/14/cncf-paper-defines-best-practices-for-supply-chain-security/">Software Supply Chain Security Best Practices</a>, to provide a holistic approach to supply chain security. Sarah Allen, then co-chair of the CNCF Security TAG stated: “It's exciting to see CNCF projects, like <a href="/projects/in-toto/">in-toto</a>, providing a key part of supply chain security.”</p>
+					<p>With security coming under increased global scrutiny this year the <a href="https://github.com/cncf/tag-security">CNCF Security Technical Advisory Group</a> published <a href="/announcements/2021/05/14/cncf-paper-defines-best-practices-for-supply-chain-security/">Software Supply Chain Security Best Practices</a>, to provide a holistic approach to supply chain security. Sarah Allen, then co-chair of the CNCF Security TAG stated: “It's exciting to see CNCF projects, like <a href="/projects/in-toto/">in-toto</a>, providing a key part of supply chain security.”</p>
 
 				</div>
 
@@ -1857,35 +1855,35 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 				<div class="book-group">
 					<div>
 						<a
-							href="https://www.cncf.io/wp-content/uploads/2021/10/Admiral-Bash.pdf">
+							href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">
 							<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '600px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 65178, 'large', '600px', '', 'lazy' );
 ?></a>
-						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br>Island Adventure</a></span><br>
+						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br>Island Adventure</a></span><br>
 By the Cartografos Group</p>
 					</div>
 
 					<div>
 						<a
-							href="https://www.cncf.io/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">
+							href="/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">
 							<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '600px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 65186, 'large', '600px', '', 'lazy' );
 ?>
 						</a>
 
-						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">From 00-K8s, with Love</a></span><br>
+						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">From 00-K8s, with Love</a></span><br>
 Donated by Microsoft Azure</p>
 					</div>
 
 					<div>
 						<a
-							href="https://www.cncf.io/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">
+							href="/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">
 							<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '600px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 53783, 'large', '600px', '', 'lazy' );
 ?>
 						</a>
 
-						<p><span class="fw-bold"><a href="https://www.cncf.io/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">The Illustrated Children's <br />Guide to Kubernetes</a></span><br>
+						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">The Illustrated Children's <br />Guide to Kubernetes</a></span><br>
 In Italian, thanks to SparkFabrik</p>
 					</div>
 				</div>
@@ -1931,7 +1929,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -2249,7 +2247,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66464, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -2420,7 +2418,7 @@ Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
 
 			<figure class="background-image-figure black-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 62498, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>

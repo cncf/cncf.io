@@ -1099,6 +1099,9 @@ $ar-gray-900: #414141;
 		@media (min-width: 1000px) {
 			font-size: 18px;
 		}
+		@media (min-width: 1200px) {
+			min-width: 250px;
+		}
 		&:hover {
 			transition: 0.3s;
 		}
