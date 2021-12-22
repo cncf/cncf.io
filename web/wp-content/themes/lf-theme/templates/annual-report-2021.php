@@ -177,7 +177,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 						class="fw-bold">When I look back at 2021, I'm amazed by what we have achieved together on our journey towards making cloud native ubiquitous.</p>
 
 					<p
-						class="mb-0">I want to thank you #TeamCloudNative, for your passion and commitment to this community. Despite all the challenges of the past 12 months, you've made 2021 a year to remember.</p>
+						class="mb-0">I want to thank you #TeamCloudNative, for your passion and commitment to this community. Despite all the challenges of <br class="show-over-1200">the past 12 months, you've made 2021 a year to remember.</p>
 					<div aria-hidden="true" class="ar-spacer-80"></div>
 				</div>
 
