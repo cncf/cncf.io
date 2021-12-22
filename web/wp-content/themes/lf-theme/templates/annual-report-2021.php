@@ -1495,10 +1495,10 @@ Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 						<p
 							class="secondary-sub-section">Courses that CNCF funded in 2021:</p>
 
-						<p><a href="https://training.linuxfoundation.org/training/introduction-to-kubernetes-on-edge-with-k3s-lfs156x/" class="lh-125 text-larger text-purple">Introduction to Kubernetes on Edge with k3s</a><br />
+						<p><a href="https://training.linuxfoundation.org/training/introduction-to-kubernetes-on-edge-with-k3s-lfs156x/" class="lh-125 text-purple"><strong>Introduction to Kubernetes on Edge with k3s</strong></a><br />
 A deep dive into the use cases and applications of Kubernetes at the edge using examples, labs, and a technical overview of the K3s project and the cloud native edge ecosystem.</p>
 
-						<p><a href="https://training.linuxfoundation.org/training/inclusive-strategies-for-open-source-lfc103/" class="lh-125 text-larger text-purple">Inclusive Strategies for Open Source (LFC103)</a><br />
+						<p><a href="https://training.linuxfoundation.org/training/inclusive-strategies-for-open-source-lfc103/" class="lh-125 text-purple"><strong>Inclusive Strategies for Open Source (LFC103)</strong></a><br />
 Delivers effective strategies for creating inclusive open source communities and code bases.</p>
 
 					</div>
