@@ -1879,7 +1879,7 @@ Donated by Microsoft Azure</p>
 						<a
 							href="/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">
 							<?php
-Lf_Utils::display_responsive_images( 53783, 'large', '600px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66466, 'large', '600px', '', 'lazy' );
 ?>
 						</a>
 
