@@ -192,7 +192,7 @@
 			// Arrow after link
 			&::after {
 				display: block;
-				content: "";
+				content: '';
 				border-top: 12px solid $menu-link;
 				border-left: 9px solid transparent;
 				border-right: 9px solid transparent;
@@ -237,7 +237,7 @@
 		width: 100%;
 		justify-content: center;
 
-		input[type="search"] {
+		input[type='search'] {
 			margin-right: 2%;
 			flex-grow: 1;
 		}
@@ -347,7 +347,7 @@
 						// Arrow after link
 						position: absolute;
 						display: block;
-						content: "";
+						content: '';
 						margin-top: -1px;
 						top: 50%;
 						left: calc(100% - 1em - 0px);
@@ -399,7 +399,7 @@
 
 			// add border to a so it doesn't touch edges
 			a {
-				transition: 0s 0s;
+				transition: all 0s 0s;
 				border-bottom: 1px solid $menu-desktop-divider;
 			}
 
