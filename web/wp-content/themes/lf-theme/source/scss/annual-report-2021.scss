@@ -253,7 +253,7 @@ $ar-gray-900: #414141;
 			.background-image-figure:after {
 				background: linear-gradient(90deg, rgba(#000000, 0.75) 0 50%, rgba(#000000, 0.3) 100%);
 				@media (min-width: 1000px) {
-					background: linear-gradient(90deg, #000000 30%, rgba(#000000, 0) 75%);
+					background: linear-gradient(66deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
 				}
 				mix-blend-mode: multiply;
 				background-size: cover;

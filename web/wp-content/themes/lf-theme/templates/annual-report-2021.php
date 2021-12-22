@@ -378,7 +378,8 @@ Image::get_image('annual-reports/2021/blob-membership.png', true); ?>"
 				</div>
 
 				<div class="graph-explainer-container">
-					<div class="graph"><img loading="lazy" width="762" height="436" src="<?php
+					<div class="graph"><img loading="lazy" width="762"
+							height="436" src="<?php
 Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 							alt="Chart showing CNCF Member growth"></div>
 					<div class="graph-explainer">
@@ -570,7 +571,8 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				</div>
 
 				<div class="graph-explainer-container">
-					<div class="graph"><img loading="lazy" width="772" height="399"
+					<div class="graph"><img loading="lazy" width="772"
+							height="399"
 							src="<?php Image::get_svg('annual-reports/2021/chart-end-user-growth.svg', true); ?>"
 							alt="Chart showing CNCF end user growth"></div>
 					<div class="graph-explainer">
@@ -1272,7 +1274,8 @@ Lf_Utils::display_responsive_images( 66482, 'large', '1200px', '', 'lazy' );
 				</div>
 
 				<div class="shg-03">
-					<img loading="lazy" class="image-covid" width="348" height="396"
+					<img loading="lazy" class="image-covid" width="348"
+						height="396"
 						src="<?php Image::get_image('annual-reports/2021/chart-covid-response.png', true); ?>"
 						alt="COVID practices icons">
 
@@ -1411,7 +1414,8 @@ Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 
 				</div>
 
-				<img loading="lazy" width="350" height="500" class="image-training"
+				<img loading="lazy" width="350" height="500"
+					class="image-training"
 					src="<?php Image::get_image('annual-reports/2021/clipart-training.png', true); ?>"
 					alt="Drawing of woman reading a book">
 
@@ -1805,7 +1809,8 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 						class="secondary-sub-section">From a humble PHP app, Phippy has gone on to help thousands of folx take their first steps to understanding cloud native computing — from containerization to automation. Today, Phippy and Friends' mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging, and easy-to-understand manner.</p>
 
 
-					<img loading="lazy" width="250" height="400" class="image-phippy"
+					<img loading="lazy" width="250" height="400"
+						class="image-phippy"
 						src="<?php Image::get_svg('annual-reports/2021/phippy-phippy.svg', true); ?>"
 						alt="Phippy">
 				</div>
@@ -1816,7 +1821,8 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					<div class="friends-item center">
 
-						<img loading="lazy" width="343" height="250" class="image-friend"
+						<img loading="lazy" width="343" height="250"
+							class="image-friend"
 							src="<?php Image::get_svg('annual-reports/2021/phippy-hazel.svg', true); ?>"
 							alt="Hazel">
 
@@ -1837,7 +1843,8 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					<div class="friends-item center">
 
-						<img loading="lazy" width="343" height="250" class="image-friend"
+						<img loading="lazy" width="343" height="250"
+							class="image-friend"
 							src="<?php Image::get_svg('annual-reports/2021/phippy-linky.svg', true); ?>"
 							alt="linky">
 
@@ -1857,7 +1864,8 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					<div class="friends-item center">
 
-						<img loading="lazy" width="343" height="250" class="image-friend"
+						<img loading="lazy" width="343" height="250"
+							class="image-friend"
 							src="<?php Image::get_svg('annual-reports/2021/phippy-tiago.svg', true); ?>"
 							alt="tiago">
 
@@ -2290,7 +2298,8 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 66484, 'large', '1200px', '', 'lazy' );
+				// Mentoring section header.
+Lf_Utils::display_responsive_images( 66464, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -2460,9 +2469,10 @@ Lf_Utils::display_responsive_images( 66484, 'large', '1200px', '', 'lazy' );
 				</div>
 			</div>
 
+			<!-- Mentoring in numbers section  -->
 			<figure class="background-image-figure">
 				<?php
-Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66484, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
