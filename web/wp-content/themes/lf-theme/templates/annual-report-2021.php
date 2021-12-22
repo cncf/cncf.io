@@ -743,7 +743,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>"
 			<div class="section-grid-05">
 
 				<div class="shg-01">
-					<h2 class="section-title uppercase">Kubernetes
+					<h2 class="section-title uppercase text-purple">Kubernetes
 						Community
 						Days</h2>
 
@@ -1230,7 +1230,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 			<div class="section-grid-05">
 
 				<div class="shg-01">
-					<h2 class="section-title uppercase">COVID response</h2>
+					<h2 class="section-title uppercase text-purple">COVID response</h2>
 
 					<div aria-hidden="true" class="ar-spacer-80"></div>
 
@@ -1400,7 +1400,7 @@ Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
-				<h2 class="section-title uppercase">2021 <br>Training Courses
+				<h2 class="section-title uppercase text-purple">2021 <br>Training Courses
 				</h2>
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
@@ -2266,7 +2266,7 @@ Lf_Utils::display_responsive_images( 66464, 'large', '1200px', '', 'lazy' );
 			<div class="section-grid-02">
 
 				<div>
-					<h2 class="section-title uppercase">Cloud Native Landscape
+					<h2 class="section-title uppercase text-purple">Cloud Native Landscape
 						Guide
 					</h2>
 
