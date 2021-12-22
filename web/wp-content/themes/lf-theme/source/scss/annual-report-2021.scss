@@ -1,6 +1,7 @@
 // annual report 2021 styling.
 
 @font-face {
+	font-display: swap;
 	font-family: 'Clarity City';
 	font-weight: 200;
 	font-style: normal;
@@ -10,6 +11,7 @@
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Clarity City';
 	font-weight: 400;
 	font-style: normal;
@@ -19,6 +21,7 @@
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Clarity City';
 	font-weight: 600;
 	font-style: normal;
@@ -28,6 +31,7 @@
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Clarity City';
 	font-weight: 700;
 	font-style: normal;
@@ -37,6 +41,7 @@
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Clarity City';
 	font-weight: 800;
 	font-style: normal;
@@ -96,6 +101,7 @@ $ar-gray-900: #414141;
 		position: relative;
 
 		&.is-hero {
+			background-color: rgba(100, 249, 191, 0.75);
 			.background-image-shape img {
 				opacity: 0.75;
 			}
@@ -350,6 +356,15 @@ $ar-gray-900: #414141;
 		top: -20px;
 		@media (min-width: 414px) {
 			top: -40px;
+		}
+		@media (min-width: 550px) {
+			top: -20px;
+		}
+		@media (min-width: 1000px) {
+			top: -50px;
+		}
+		@media (min-width: 1000px) {
+			top: -60px;
 		}
 		position: relative;
 		z-index: 10;
@@ -1089,7 +1104,7 @@ $ar-gray-900: #414141;
 		text-transform: uppercase;
 	}
 
-	.button {
+	.ar-button {
 		font-family: $font-ar21;
 		background-color: $ar-purple-700;
 		filter: drop-shadow(0px 2px 10px rgba($ar-black, 0.1));
