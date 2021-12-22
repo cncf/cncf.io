@@ -115,7 +115,8 @@ Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>"
 Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>"
 						alt="Bullseye icon">
 					<span class="show-upto-1000">Events</span><span
-						class="show-over-1000">Virtual & <br /> hybrid events</span>
+						class="show-over-1000">Virtual & <br /> hybrid
+						events</span>
 				</div>
 				<div class="nav-box">
 					<a href="#training" title="Jump to Training section"
@@ -181,8 +182,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 				</div>
 
 				<div class="shg-03">
-					<img loading="lazy" width="525" height="625"
-						src="<?php
+					<img loading="lazy" width="525" height="625" src="<?php
 Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 						alt="Priyanka Sharma">
 				</div>
@@ -353,7 +353,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 						<div aria-hidden="true"
 							class="ar-spacer-60 show-upto-700"></div>
 
-						<img loading="lazy" src="<?php
+						<img loading="lazy" width="525" height="423" src="<?php
 Image::get_image('annual-reports/2021/blob-membership.png', true); ?>"
 							alt="Masked people walking at conference">
 						<div aria-hidden="true"
@@ -378,7 +378,7 @@ Image::get_image('annual-reports/2021/blob-membership.png', true); ?>"
 				</div>
 
 				<div class="graph-explainer-container">
-					<div class="graph"><img loading="lazy" src="<?php
+					<div class="graph"><img loading="lazy" width="762" height="436 src="<?php
 Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 							alt="Chart showing CNCF Member growth"></div>
 					<div class="graph-explainer">
@@ -421,14 +421,14 @@ Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 
 						<div class="project-display-2">
 							<div class="project-item">
-								<a href="https://newrelic.com/"><img
-										loading="lazy" src="<?php
+								<a href="https://newrelic.com/"><img width="140"
+										height="100" loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-new-relic.svg', true); ?>"
 										alt="New Relic"></a>
 							</div>
 							<div class="project-item">
-								<a href="https://grafana.com"><img
-										loading="lazy" src="<?php
+								<a href="https://grafana.com"><img width="140"
+										height="100" loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>"
 										alt="Grafana Labs"></a>
 							</div>
@@ -444,12 +444,14 @@ Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>"
 						<div class="project-display-2">
 							<div class="project-item">
 								<a href="https://www.h3c.com/en"><img
-										loading="lazy" src="<?php
+										width="140" height="100" loading="lazy"
+										src="<?php
 Image::get_svg('annual-reports/2021/logo-hbc.svg', true); ?>" alt="H3C"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://www.americanexpress.com/"><img
-										loading="lazy" src="<?php
+										width="140" height="100" loading="lazy"
+										src="<?php
 Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>"
 										alt="American Express"></a>
 							</div>
@@ -568,7 +570,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				</div>
 
 				<div class="graph-explainer-container">
-					<div class="graph"><img loading="lazy"
+					<div class="graph"><img loading="lazy" width="772" height="399"
 							src="<?php Image::get_svg('annual-reports/2021/chart-end-user-growth.svg', true); ?>"
 							alt="Chart showing CNCF end user growth"></div>
 					<div class="graph-explainer">
@@ -722,7 +724,7 @@ Lf_Utils::display_responsive_images( 66459, 'large', '1200px', '', 'lazy' );
 				</div>
 
 				<div class="shg-02">
-					<img loading="lazy" src="<?php
+					<img loading="lazy" width="525" height="627" src="<?php
 Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>"
 						alt="Masked man at a conference">
 				</div>
@@ -772,7 +774,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>"
 				</div>
 
 				<div class="shg-03">
-					<img loading="lazy" src="<?php
+					<img loading="lazy" width="419" height="393419" src="<?php
 Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						alt="Drawing of man and woman talking">
 				</div>
@@ -808,9 +810,10 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 								alt="Microphone icon">
 						</div>
 						<div>
-						<p><span class="lh-125 fw-bold mb-20">Presentations</span><br/>in multiple languages</p>
+							<p><span class="lh-125 fw-bold mb-20">Presentations</span><br/>in multiple languages</p>
 
-						<p class="text-smaller lh-150">(English, Chinese, Indonesian, <br />Italian, Korean, and Spanish)</p>
+							<p
+								class="text-smaller lh-150">(English, Chinese, Indonesian, <br />Italian, Korean, and Spanish)</p>
 						</div>
 					</div>
 				</div>
@@ -856,7 +859,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 				<a
 					href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-europe/">
-					<img loading="lazy"
+					<img loading="lazy" width="1150" height="296"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-21.png', true); ?>"
 						alt="Kubecon EU 2021 banner">
 				</a>
@@ -874,7 +877,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 					<div>
 						<a href="https://youtu.be/8hV-ml4WuVM" target="_blank"
 							rel="noreferrer noopener" class="image-link"><img
-								loading="lazy"
+								loading="lazy" width="525" height="324"
 								src="<?php Image::get_image('annual-reports/2021/kubecon-macbook.png', true); ?>"
 								alt="Laptop playing a video of keynote talk"></a>
 
@@ -963,7 +966,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<div aria-hidden="true"
 							class="ar-spacer-100 show-upto-700"></div>
 
-						<img loading="lazy"
+						<img loading="lazy" width="445" height="247"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kceu21-attendees.svg', true); ?>"
 							alt="Chart showing breakdown of Kubecon 2021 EU attendees by country">
 
@@ -990,7 +993,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<div aria-hidden="true"
 							class="ar-spacer-100 show-upto-700"></div>
 
-						<img loading="lazy"
+						<img loading="lazy" width="445" height="261"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kceu21-companies.svg', true); ?>"
 							alt="Chart showing breakdown of Kubecon 2021 EU attendees by company type">
 					</div>
@@ -1014,7 +1017,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 				<a
 					href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-north-america/">
-					<img loading="lazy"
+					<img loading="lazy" width="1150" height="282"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-na-21.png', true); ?>"
 						alt="Kubecon NA 2021 banner">
 				</a>
@@ -1052,7 +1055,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 						<a href="https://youtu.be/VzuyyESy9oA" target="_blank"
 							rel="noreferrer noopener" class="image-link"><img
-								loading="lazy"
+								loading="lazy" width="525" height="432"
 								src="<?php Image::get_image('annual-reports/2021/blob-speaker.png', true); ?>"
 								alt="Robert Duffy speaking at conference"></a>
 
@@ -1117,7 +1120,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<p
 							class="secondary-sub-section">Most represented countries in attendance</p>
 
-						<img loading="lazy"
+						<img loading="lazy" width="405" height="181"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kcna21-inperson.svg', true); ?>"
 							alt="Map showing countries with most in-person representation at Kubecon NA 2021">
 
@@ -1146,7 +1149,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<p
 							class="secondary-sub-section">Most represented countries in attendance</p>
 
-						<img loading="lazy"
+						<img loading="lazy" width="405" height="172"
 							src="<?php Image::get_svg('annual-reports/2021/chart-kcna21-virtual.svg', true); ?>"
 							alt="Map showing countries with most virtual representation at Kubecon NA 2021">
 
@@ -1172,7 +1175,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 					<div aria-hidden="true" class="ar-spacer-100 show-upto-700">
 					</div>
 
-					<img loading="lazy"
+					<img loading="lazy" width="482" height="342"
 						src="<?php Image::get_svg('annual-reports/2021/chart-kcna21-companies.svg', true); ?>"
 						alt="Breakdown of Kubecon NA 2021 participants by company type">
 
@@ -1269,7 +1272,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 				</div>
 
 				<div class="shg-03">
-					<img loading="lazy" class="image-covid"
+					<img loading="lazy" class="image-covid" width="348" height="396"
 						src="<?php Image::get_image('annual-reports/2021/chart-covid-response.png', true); ?>"
 						alt="COVID practices icons">
 
@@ -1299,7 +1302,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 
 					<a
 						href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/">
-						<img loading="lazy"
+						<img loading="lazy" width="616" height="369"
 							src="<?php Image::get_image('annual-reports/2021/banner-kubecon-cn-21.png', true); ?>"
 							alt="Kubecon China 2021 banner">
 					</a>
@@ -1346,7 +1349,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 
 				<a
 					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/">
-					<img loading="lazy"
+					<img loading="lazy" width="1150" height="241"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-22.png', true); ?>"
 						alt="KubeCon + CloudNativeCon EU 2022 banner">
 				</a>
@@ -1408,7 +1411,7 @@ Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 
 				</div>
 
-				<img loading="lazy" class="image-training"
+				<img loading="lazy" width="350" height="500" class="image-training"
 					src="<?php Image::get_image('annual-reports/2021/clipart-training.png', true); ?>"
 					alt="Drawing of woman reading a book">
 
@@ -1525,7 +1528,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 					</div>
 
-					<img loading="lazy"
+					<img loading="lazy" width="571" height="495"
 						src="<?php Image::get_image('annual-reports/2021/blob-funded-training.png', true); ?>"
 						alt="Man and woman working on laptops">
 
@@ -1591,7 +1594,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true"
 					class="ar-spacer-60 show-over-700 show-upto-1000"></div>
 
-				<img loading="lazy"
+				<img loading="lazy" width="545" height="440"
 					src="<?php Image::get_image('annual-reports/2021/blob-projects.jpg', true); ?>"
 					alt="Man talking to woman with masks on at conference">
 
@@ -1610,7 +1613,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 			<div aria-hidden="true" class="ar-spacer-30"></div>
 
-			<img loading="lazy"
+			<img loading="lazy" width="1150" height="633"
 				src="<?php Image::get_svg('annual-reports/2021/chart-project-velocity.svg', true); ?>"
 				alt="Chart showing CNCF project velocity">
 
@@ -1626,7 +1629,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 			<div aria-hidden="true" class="ar-spacer-30"></div>
 
-			<img loading="lazy"
+			<img loading="lazy" width="1150" height="433"
 				src="<?php Image::get_svg('annual-reports/2021/chart-projects-accepted.svg', true); ?>"
 				alt="Chart showing number of projects accepted to CNCF each year">
 
@@ -1659,12 +1662,13 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 						<div class="project-display-2">
 							<div class="project-item">
 								<a href="/projects/linkerd/"><img loading="lazy"
+										width="140" height="100"
 										src="<?php Image::get_svg('annual-reports/2021/logo-linkerd.svg', true); ?>"
 										alt="Linkerd logo"></a>
 							</div>
 							<div class="project-item">
 								<a href="/projects/open-policy-agent-opa/"><img
-										loading="lazy"
+										width="140" height="100" loading="lazy"
 										src="<?php Image::get_svg('annual-reports/2021/logo-opa.svg', true); ?>"
 										alt="OPA logo"></a>
 							</div>
@@ -1684,39 +1688,45 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 				<div class="project-display-4">
 					<div class="project-item">
-						<a href="/projects/flux/"><img loading="lazy"
+						<a href="/projects/flux/"><img width="140" height="100"
+								loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-flux.svg', true); ?>"
 								alt="Flux logo"></a>
 					</div>
 					<div class="project-item">
-						<a href="/projects/keda/"><img loading="lazy"
+						<a href="/projects/keda/"><img width="140" height="100"
+								loading="lazy"
 								src="<?php Image::get_svg('annual-reports/2021/logo-keda.svg', true); ?>"
 								alt="Keda logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/crossplane/"><img loading="lazy"
+								width="140" height="100"
 								src="<?php Image::get_svg('annual-reports/2021/logo-crossplane.svg', true); ?>"
 								alt="Crossplane logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/longhorn/"><img loading="lazy"
+								width="140" height="100"
 								src="<?php Image::get_svg('annual-reports/2021/logo-longhorn.svg', true); ?>"
 								alt="Longhorn logo"></a>
 					</div>
 
 					<div class="project-item">
 						<a href="/projects/emissary-ingress/"><img
-								loading="lazy"
+								loading="lazy" width="140" height="100"
 								src="<?php Image::get_svg('annual-reports/2021/logo-emissary.svg', true); ?>"
 								alt="Emissary logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/cilium/"><img loading="lazy"
+								width="140" height="100"
 								src="<?php Image::get_svg('annual-reports/2021/logo-cilium.svg', true); ?>"
 								alt="Cilium logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/dapr/"><img loading="lazy"
+								width="140" height="100"
 								src="<?php Image::get_svg('annual-reports/2021/logo-dapr.svg', true); ?>"
 								alt="Dapr logo"></a>
 					</div>
@@ -1759,7 +1769,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					</div>
 
-					<img loading="lazy"
+					<img loading="lazy" width="364" height="281"
 						src="<?php Image::get_svg('annual-reports/2021/chart-endpoint-testing-key.svg', true); ?>"
 						alt="Endpoint testing chart legend">
 
@@ -1770,7 +1780,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 				</div>
 
-				<img loading="lazy"
+				<img loading="lazy" width="1150" height="428"
 					src="<?php Image::get_svg('annual-reports/2021/chart-endpoint-testing.svg', true); ?>"
 					alt="Chart showing Kubernetes endpoint testing coverage in different versions">
 
@@ -1795,7 +1805,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 						class="secondary-sub-section">From a humble PHP app, Phippy has gone on to help thousands of folx take their first steps to understanding cloud native computing — from containerization to automation. Today, Phippy and Friends' mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging, and easy-to-understand manner.</p>
 
 
-					<img loading="lazy" class="image-phippy"
+					<img loading="lazy" width="250" height="400" class="image-phippy"
 						src="<?php Image::get_svg('annual-reports/2021/phippy-phippy.svg', true); ?>"
 						alt="Phippy">
 				</div>
@@ -1806,7 +1816,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					<div class="friends-item center">
 
-						<img loading="lazy" class="image-friend"
+						<img loading="lazy" width="343" height="250" class="image-friend"
 							src="<?php Image::get_svg('annual-reports/2021/phippy-hazel.svg', true); ?>"
 							alt="Hazel">
 
@@ -1817,6 +1827,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 						<div class="project-item no-border">
 							<a href="/projects/helm/"><img loading="lazy"
+									width="140" height="100"
 									src="<?php Image::get_svg('annual-reports/2021/logo-helm.svg', true); ?>"
 									alt="Helm logo"></a>
 						</div>
@@ -1826,7 +1837,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					<div class="friends-item center">
 
-						<img loading="lazy" class="image-friend"
+						<img loading="lazy" width="343" height="250" class="image-friend"
 							src="<?php Image::get_svg('annual-reports/2021/phippy-linky.svg', true); ?>"
 							alt="linky">
 
@@ -1837,6 +1848,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 						<div class="project-item no-border">
 							<a href="/projects/linkerd/"><img loading="lazy"
+									width="140" height="100"
 									src="<?php Image::get_svg('annual-reports/2021/logo-linkerd.svg', true); ?>"
 									alt="Linkerd logo"></a>
 						</div>
@@ -1845,7 +1857,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					<div class="friends-item center">
 
-						<img loading="lazy" class="image-friend"
+						<img loading="lazy" width="343" height="250" class="image-friend"
 							src="<?php Image::get_svg('annual-reports/2021/phippy-tiago.svg', true); ?>"
 							alt="tiago">
 
@@ -1856,6 +1868,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 						<div class="project-item no-border">
 							<a href="/projects/tikv/"><img loading="lazy"
+									width="140" height="100"
 									src="<?php Image::get_svg('annual-reports/2021/logo-tikv.svg', true); ?>"
 									alt="Tikv logo"></a>
 						</div>
@@ -1865,7 +1878,8 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
-				<div aria-hidden="true" class="ar-spacer-40 show-over-1000"></div>
+				<div aria-hidden="true" class="ar-spacer-40 show-over-1000">
+				</div>
 
 				<div class="sub-section-header-container">
 					<h3 class="sub-section-header">New <br
@@ -1939,7 +1953,9 @@ In Italian, thanks to SparkFabrik</p>
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Community &amp; </span><br />Diversity Engagement</h2>
+						<span class="add-blob">Community &amp;
+						</span><br />Diversity Engagement
+					</h2>
 				</div>
 			</div>
 
@@ -1976,7 +1992,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 
 				<div class="shg-02">
 
-					<img loading="lazy"
+					<img loading="lazy" width="525" height="426"
 						src="<?php Image::get_image('annual-reports/2021/blob-community.jpg', true); ?>"
 						alt="Kubecon NA 2021 hosts on stage">
 				</div>
@@ -2075,7 +2091,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 				</div>
 
 				<div class="align-end">
-					<img loading="lazy"
+					<img loading="lazy" width="383" height="359"
 						src="<?php Image::get_svg('annual-reports/2021/clipart-community.png', true); ?>"
 						alt="Drawing of two people talking">
 				</div>
@@ -2181,7 +2197,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 						<div aria-hidden="true" class="ar-spacer-30"></div>
 
 						<div aria-hidden="true"
-						class="ar-spacer-60 show-over-1000"></div>
+							class="ar-spacer-60 show-over-1000"></div>
 
 					</div>
 
@@ -2242,7 +2258,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 
 				<div aria-hidden="true" class="ar-spacer-30"></div>
 
-				<img loading="lazy"
+				<img loading="lazy" width="1150" height="379"
 					src="<?php Image::get_svg('annual-reports/2021/chart-meetup-members.svg', true); ?>"
 					alt="Chart showing number of members in CNCF meetup group over time">
 
@@ -2310,7 +2326,7 @@ Lf_Utils::display_responsive_images( 66464, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
 				</div>
 
-				<img loading="lazy"
+				<img loading="lazy" width="545" height="457"
 					src="<?php Image::get_image('annual-reports/2021/blob-mentoring.jpg', true); ?>"
 					alt="Two men in masks talking at conference">
 
@@ -2462,7 +2478,8 @@ Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 			<p
 				class="secondary-sub-section max-w-800">The Cloud Native Computing Foundation (CNCF) is an open source software foundation dedicated to making cloud native computing universal and sustainable. </p>
 
-				<p class="max-w-700">Presently folx on our staff and governing board self-identify as she/her or he/him. We welcome all individuals and encourage applications for future opportunities on the <a href="https://jobs.cncf.io">CNCF Job board</a>.</p>
+			<p
+				class="max-w-700">Presently folx on our staff and governing board self-identify as she/her or he/him. We welcome all individuals and encourage applications for future opportunities on the <a href="https://jobs.cncf.io">CNCF Job board</a>.</p>
 
 			<div aria-hidden="true" class="ar-spacer-60"></div>
 
@@ -2474,7 +2491,7 @@ Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 						<h3 class="sub-section-header">Staff</h3>
 					</div>
 
-					<img loading="lazy"
+					<img loading="lazy" width="679" height="650"
 						src="<?php Image::get_image('annual-reports/2021/who-staff.png', true); ?>"
 						alt="Data visulization showing proportion of men and women in staff">
 
@@ -2532,7 +2549,7 @@ Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 							class="show-upto-375">Sources</h3>
 				</div>
 
-				<img loading="lazy"
+				<img loading="lazy" width="1150" height="515"
 					src="<?php Image::get_image('annual-reports/2021/chart-funding.png', true); ?>"
 					alt="Data visulization showing CNCF funding sources">
 
@@ -2568,7 +2585,7 @@ Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 
 				<a
 					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">
-					<img loading="lazy"
+					<img loading="lazy" width="1150" height="241"
 						src="<?php Image::get_image('annual-reports/2021/banner-kubecon-eu-22.png', true); ?>"
 						alt="Kubecon EU 2022 banner">
 				</a>
