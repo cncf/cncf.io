@@ -163,6 +163,23 @@ $ar-gray-900: #414141;
 			@media (min-width: 1000px) {
 				min-height: 600px;
 			}
+			// used on cheryl.
+			.black-gradient:after {
+				background: linear-gradient(90deg, rgba(#000000, 0.75) 0 50%, rgba(#000000, 0.3) 100%);
+				@media (min-width: 1000px) {
+					background: linear-gradient(90deg, #000000 30%, rgba(#000000, 0) 75%);
+				}
+				mix-blend-mode: multiply;
+				background-size: cover;
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+			}
 		}
 		&.is-spotify-section {
 			min-height: 340px;
@@ -171,6 +188,18 @@ $ar-gray-900: #414141;
 			@media (min-width: 700px) {
 				padding-top: 60px;
 				padding-bottom: 60px;
+			}
+			.background-image-figure:after {
+				background-color: rgba(#000000, 0.72);
+				background-size: cover;
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
 			}
 		}
 		&.is-speakers-section {
@@ -194,6 +223,23 @@ $ar-gray-900: #414141;
 				padding-top: 80px;
 				padding-bottom: 80px;
 			}
+
+			.background-image-figure:after {
+				background: linear-gradient(90deg, rgba(#000000, 0.3) 0%, rgba(#000000, 0.9) 100%);
+				@media (min-width: 1000px) {
+					background: linear-gradient(90deg, rgba(#000000, 0.2) 35%, rgba(#000000, 0.9) 100%);
+				}
+				mix-blend-mode: multiply;
+				background-size: cover;
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+			}
 		}
 		&.is-mentoring-section {
 			min-height: 340px;
@@ -204,19 +250,22 @@ $ar-gray-900: #414141;
 				padding-bottom: 60px;
 				min-height: 450px;
 			}
-		}
-	}
-
-	.speakers-grid {
-		max-width: 600px;
-		display: grid;
-		grid-auto-rows: max-content max-content;
-		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 30px;
-		.button {
-			grid-column: 1 / 3;
-			grid-row: 3;
-			max-width: 300px;
+			.background-image-figure:after {
+				background: linear-gradient(90deg, rgba(#000000, 0.75) 0 50%, rgba(#000000, 0.3) 100%);
+				@media (min-width: 1000px) {
+					background: linear-gradient(90deg, #000000 30%, rgba(#000000, 0) 75%);
+				}
+				mix-blend-mode: multiply;
+				background-size: cover;
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+			}
 		}
 	}
 
@@ -251,6 +300,34 @@ $ar-gray-900: #414141;
 		left: 0;
 	}
 
+	// header hero only.
+	.nude-green-gradient-50:after {
+		background: linear-gradient(155deg, rgba(217, 173, 158, 0.65) 30%, rgba(96, 255, 193, 0.35) 97%);
+		background-size: cover;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+	}
+
+	// reminaing dividers.
+	.nude-green-gradient-75:after {
+		background: linear-gradient(155deg, rgba(235, 212, 204, 0.65) 20%, rgba(100, 249, 191, 0.65) 100%);
+		background-size: cover;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 6;
+	}
+
 	.background-image-shape {
 		position: absolute;
 		width: 60%;
@@ -269,50 +346,7 @@ $ar-gray-900: #414141;
 		}
 	}
 
-	.black-gradient:after {
-		background: linear-gradient(90deg, rgba(#000000, 0.75) 0 50%, rgba(#000000, 0.3) 100%);
-		@media (min-width: 1000px) {
-			background: linear-gradient(90deg, #000000 30%, rgba(#000000, 0) 75%);
-		}
-		mix-blend-mode: multiply;
-		background-size: cover;
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 3;
-	}
-
-	.black-gradient-right:after {
-		background: linear-gradient(90deg, rgba(#000000, 0.5) 0%, rgba(#000000, 0.8) 100%);
-		mix-blend-mode: multiply;
-		background-size: cover;
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 3;
-	}
-
-	.black-fade:after {
-		background-color: rgba(#000000, 0.75);
-		background-size: cover;
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 3;
-	}
-
+	// not used in hero, but in section heros.
 	.green-gradient:after {
 		background: rgba(100, 249, 191, 0.5);
 		background-size: cover;
@@ -324,34 +358,6 @@ $ar-gray-900: #414141;
 		width: 100%;
 		height: 100%;
 		z-index: 3;
-	}
-
-	// hero.
-	.nude-green-gradient-50:after {
-		background: linear-gradient(155deg, rgba(217, 173, 158, 0.6) 20%, rgba(96, 255, 193, 0.35) 97%);
-		background-size: cover;
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 5;
-	}
-
-	// reminaing dividers.
-	.nude-green-gradient-75:after {
-		background: linear-gradient(155deg, rgba(235, 212, 204, 0.75) 20%, rgba(100, 249, 191, 0.75) 100%);
-		background-size: cover;
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 6;
 	}
 
 	/**
@@ -426,6 +432,19 @@ $ar-gray-900: #414141;
 				width: 36px;
 				height: 36px;
 			}
+		}
+	}
+
+	.speakers-grid {
+		max-width: 600px;
+		display: grid;
+		grid-auto-rows: max-content max-content;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 30px;
+		.button {
+			grid-column: 1 / 3;
+			grid-row: 3;
+			max-width: 300px;
 		}
 	}
 

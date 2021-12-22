@@ -378,7 +378,7 @@ Image::get_image('annual-reports/2021/blob-membership.png', true); ?>"
 				</div>
 
 				<div class="graph-explainer-container">
-					<div class="graph"><img loading="lazy" width="762" height="436 src="<?php
+					<div class="graph"><img loading="lazy" width="762" height="436" src="<?php
 Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 							alt="Chart showing CNCF Member growth"></div>
 					<div class="graph-explainer">
@@ -656,7 +656,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				</div>
 			</div>
 
-			<figure class="background-image-figure black-fade">
+			<figure class="background-image-figure">
 				<?php
 Lf_Utils::display_responsive_images( 66458, 'large', '1200px', '', 'lazy' );
 ?>
@@ -1239,9 +1239,9 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 				</div>
 			</div>
 
-			<figure class="background-image-figure black-gradient-right">
+			<figure class="background-image-figure">
 				<?php
-Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66482, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -1895,7 +1895,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 						<a title="Download Admiral Bash's Island Adventur"
 							href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">
 							<?php
-Lf_Utils::display_responsive_images( 65178, 'large', '600px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66485, 'large', '600px', '', 'lazy' );
 ?></a>
 						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br/>Island Adventure</a></span><br/>
 By the Cartografos Group</p>
@@ -1905,7 +1905,7 @@ By the Cartografos Group</p>
 						<a title="Download From 00-K8s, with Love"
 							href="/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">
 							<?php
-Lf_Utils::display_responsive_images( 65186, 'large', '600px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66486, 'large', '600px', '', 'lazy' );
 ?>
 						</a>
 
@@ -1917,7 +1917,7 @@ Donated by Microsoft Azure</p>
 						<a title="Download The Illustrated Children's Guide to Kubernetes"
 							href="/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">
 							<?php
-Lf_Utils::display_responsive_images( 66466, 'large', '600px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66487, 'large', '600px', '', 'lazy' );
 ?>
 						</a>
 
@@ -1969,7 +1969,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66483, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -2290,7 +2290,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 
 			<figure class="background-image-figure is-gray green-gradient">
 				<?php
-Lf_Utils::display_responsive_images( 66464, 'large', '1200px', '', 'lazy' );
+Lf_Utils::display_responsive_images( 66484, 'large', '1200px', '', 'lazy' );
 ?>
 			</figure>
 		</section>
@@ -2460,7 +2460,7 @@ Lf_Utils::display_responsive_images( 66464, 'large', '1200px', '', 'lazy' );
 				</div>
 			</div>
 
-			<figure class="background-image-figure black-gradient">
+			<figure class="background-image-figure">
 				<?php
 Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 ?>
