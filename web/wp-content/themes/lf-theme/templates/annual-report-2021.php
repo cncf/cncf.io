@@ -734,7 +734,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>"
 
 			<div class="wp-block-lf-youtube-lite">
 				<lite-youtube videoid="Kn7HVDhUsWU" webpStatus="0"
-					sdthumbStatus="1">
+					sdthumbStatus="0">
 				</lite-youtube>
 			</div>
 
