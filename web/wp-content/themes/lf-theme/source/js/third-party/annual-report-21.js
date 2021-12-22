@@ -20,13 +20,6 @@ function ready( fn ) {
 
 ready( function () {
   relentlessCharts();
-  AOS.init( {
-    disable: 'tablet',
-    duration: 500,
-    easing: 'ease-in',
-    once: true,
-    anchorPlacement: 'bottom-bottom',
-  });
 } );
 
 function relentlessCharts() {
