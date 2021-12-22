@@ -165,7 +165,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 			<div class="section-header-grid">
 
 				<div class="shg-01">
-					<h2 class="section-title uppercase" data-aos="fade-up"><span
+					<h2 class="section-title uppercase"><span
 							class="text-purple">Welcome</span><br />
 						it's been a year to remember</h2>
 					<div aria-hidden="true" class="ar-spacer-80"></div>
@@ -182,7 +182,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 
 				<div class="shg-03">
 					<img loading="lazy" width="525" height="625"
-						data-aos="fade-left" src="<?php
+						src="<?php
 Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 						alt="Priyanka Sharma">
 				</div>
@@ -2579,15 +2579,6 @@ filemtime( get_template_directory() . '/source/js/third-party/chart.min.js' ),
 true
 );
 
-// aos js.
-wp_enqueue_script(
-'aos-js',
-get_stylesheet_directory_uri() . '/source/js/third-party/aos.js',
-null,
-filemtime( get_template_directory() . '/source/js/third-party/aos.js' ),
-true
-);
-
 // youtube lite script.
 wp_enqueue_script(
 'youtube-lite-js',
@@ -2601,7 +2592,7 @@ true
 wp_enqueue_script(
 'annual-report-21',
 get_stylesheet_directory_uri() . '/source/js/third-party/annual-report-21.js',
-array( 'jquery', 'chart-js', 'aos-js' ),
+array( 'jquery', 'chart-js' ),
 filemtime( get_template_directory() . '/source/js/third-party/annual-report-21.js' ),
 true
 );
