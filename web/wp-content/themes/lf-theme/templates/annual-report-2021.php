@@ -115,7 +115,7 @@ Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>"
 Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>"
 						alt="Bullseye icon">
 					<span class="show-upto-1000">Events</span><span
-						class="show-over-1000">Virtual & hybrid events</span>
+						class="show-over-1000">Virtual & <br /> hybrid events</span>
 				</div>
 				<div class="nav-box">
 					<a href="#training" title="Jump to Training section"
@@ -663,7 +663,7 @@ Lf_Utils::display_responsive_images( 66458, 'large', '1200px', '', 'lazy' );
 
 		<section>
 
-			<div aria-hidden="true" class="ar-spacer-80"></div>
+			<div aria-hidden="true" class="ar-spacer-100"></div>
 
 			<div class="quote-container">
 				<p
@@ -713,7 +713,7 @@ Lf_Utils::display_responsive_images( 66459, 'large', '1200px', '', 'lazy' );
 				COVID-19
 				pandemic continued to shape 2021</h2>
 
-			<div class="section-grid-03">
+			<div class="section-grid-16">
 
 				<div class="shg-01">
 					<p
@@ -730,7 +730,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>"
 				<div class="shg-03">
 					<div class="quote-container">
 						<p
-							class="quote">KubeCon + CloudNativeCon has always been a celebration of that community spirit, a place where contributors and users from across the world get to meet and share ideas face-to-face.</p>
+							class="quote">KubeCon + CloudNativeCon has always been a celebration of that community spirit, a place where contributors and users from across the world get to meet <br class="show-over-1200">and share ideas face-to-face.</p>
 						<div class="add-quote-marks">
 							<p class="by-name fw-semi">Betsy Amy-Vogt</p>
 							<p class="by-position">SiliconANGLE</p>
@@ -743,7 +743,7 @@ Image::get_image('annual-reports/2021/blob-events.jpg', true); ?>"
 			<div aria-hidden="true" class="ar-spacer-100"></div>
 
 			<p
-				class="secondary-sub-section">Highlights of our North America event...</p>
+				class="secondary-sub-section">Highlights from KubeCon + CloudNativeCon North America...</p>
 
 			<div class="wp-block-lf-youtube-lite">
 				<lite-youtube videoid="Kn7HVDhUsWU" webpStatus="0"
@@ -807,7 +807,11 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 								src="<?php Image::get_svg('annual-reports/2021/icon-mic.svg', true); ?>"
 								alt="Microphone icon">
 						</div>
-						<p><span class="fw-bold">Presentations</span><br/>in multiple languages<Br/><span class="text-smaller">(English, Chinese, Indonesian, <br/>Italian, Korean, and Spanish)</span></p>
+						<div>
+						<p><span class="lh-125 fw-bold mb-20">Presentations</span><br/>in multiple languages</p>
+
+						<p class="text-smaller lh-150">(English, Chinese, Indonesian, <br />Italian, Korean, and Spanish)</p>
+						</div>
 					</div>
 				</div>
 
@@ -1740,7 +1744,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 					<div>
 						<p
-							class="fw-bold"><a href="https://apisnoop.cncf.io/about">APISnoop</a> is a community-driven project spearheaded by long-time CNCF contributor and community leader <a href="https://twitter.com/hippiehacker">Hippie Hacker</a>, which tracks the testing and conformance coverage of Kubernetes by analyzing the audit logs created by e2e test runs.</p>
+							class="fw-bold max-w-500"><a href="https://apisnoop.cncf.io/about">APISnoop</a> is a community-driven project spearheaded by long-time CNCF contributor and community leader <a href="https://twitter.com/hippiehacker">Hippie Hacker</a>, which tracks the testing and conformance coverage of Kubernetes by analyzing the audit logs created by e2e test runs.</p>
 
 						<div aria-hidden="true" class="ar-spacer-80"></div>
 
@@ -1861,6 +1865,8 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
+				<div aria-hidden="true" class="ar-spacer-40 show-over-1000"></div>
+
 				<div class="sub-section-header-container">
 					<h3 class="sub-section-header">New <br
 							class="show-upto-700">Phippy <br
@@ -1933,8 +1939,7 @@ In Italian, thanks to SparkFabrik</p>
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Community </span><br />Engagement
-					</h2>
+						<span class="add-blob">Community &amp; </span><br />Diversity Engagement</h2>
 				</div>
 			</div>
 
@@ -2174,6 +2179,9 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 							alt="Photos of several people">
 
 						<div aria-hidden="true" class="ar-spacer-30"></div>
+
+						<div aria-hidden="true"
+						class="ar-spacer-60 show-over-1000"></div>
 
 					</div>
 
@@ -2454,6 +2462,8 @@ Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 			<p
 				class="secondary-sub-section max-w-800">The Cloud Native Computing Foundation (CNCF) is an open source software foundation dedicated to making cloud native computing universal and sustainable. </p>
 
+				<p class="max-w-700">Presently folx on our staff and governing board self-identify as she/her or he/him. We welcome all individuals and encourage applications for future opportunities on the <a href="https://jobs.cncf.io">CNCF Job board</a>.</p>
+
 			<div aria-hidden="true" class="ar-spacer-60"></div>
 
 			<div class="section-grid-14">
@@ -2546,7 +2556,7 @@ Lf_Utils::display_responsive_images( 66465, 'large', '1200px', '', 'lazy' );
 
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
-				<h3 class="section-intro outro max-w-800">We hope you enjoyed
+				<h3 class="section-intro outro max-w-550">We hope you enjoyed
 					reflecting on all the great things we accomplished together
 					in 2021.</h3>
 
