@@ -1636,12 +1636,15 @@ $ar-gray-900: #414141;
 	}
 
 	.training-stats {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 40px;
 		@media (min-width: 600px) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: auto;
 			column-gap: 40px;
-			row-gap: 40px;
+
 			align-items: flex-end;
 		}
 		@media (min-width: 1000px) {
