@@ -86,7 +86,8 @@ class Enqueue {
 			wp_enqueue_script( 'sidebar-subscription', get_template_directory_uri() . '/source/js/third-party/case-study-sidebar.js', array( 'jquery' ), filemtime( get_template_directory() . '/source/js/third-party/case-study-sidebar.js' ), true );
 		}
 
-		if(is_page_template( 'templates/annual-report-2021.php' ) ) {
+		// if annual report 21.
+		if ( is_page_template( 'templates/annual-report-2021.php' ) ) {
 			wp_dequeue_style( 'wp-block-library' );
 			wp_dequeue_style( 'search-filter-plugin-styles' );
 			wp_dequeue_style( 'ctf_styles' );

@@ -5,7 +5,8 @@
 	font-family: 'Clarity City';
 	font-weight: 200;
 	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-200.woff2') format('woff2'),
+	src: local('ClarityCity-Light'), local('Clarity City'),
+		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-200.woff2') format('woff2'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-200.woff') format('woff'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-200.ttf') format('ttf');
 }
@@ -15,7 +16,8 @@
 	font-family: 'Clarity City';
 	font-weight: 400;
 	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-400.woff2') format('woff2'),
+	src: local('ClarityCity-Regular'), local('Clarity City'),
+		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-400.woff2') format('woff2'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-400.woff') format('woff'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-400.ttf') format('ttf');
 }
@@ -25,7 +27,8 @@
 	font-family: 'Clarity City';
 	font-weight: 600;
 	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-600.woff2') format('woff2'),
+	src: local('ClarityCity-SemiBold'), local('Clarity City'),
+		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-600.woff2') format('woff2'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-600.woff') format('woff'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-600.ttf') format('ttf');
 }
@@ -35,7 +38,8 @@
 	font-family: 'Clarity City';
 	font-weight: 700;
 	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-700.woff2') format('woff2'),
+	src: local('ClarityCity-Bold'), local('Clarity City'),
+		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-700.woff2') format('woff2'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-700.woff') format('woff'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-700.ttf') format('ttf');
 }
@@ -45,7 +49,8 @@
 	font-family: 'Clarity City';
 	font-weight: 800;
 	font-style: normal;
-	src: local('Clarity City'), url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-800.woff2') format('woff2'),
+	src: local('ClarityCity-ExtraBold'), local('Clarity City'),
+		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-800.woff2') format('woff2'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-800.woff') format('woff'),
 		url('/wp-content/themes/lf-theme/source/fonts/ClarityCity-800.ttf') format('ttf');
 }
@@ -402,7 +407,7 @@ $ar-gray-900: #414141;
 		}
 		filter: drop-shadow(0px 2px 10px rgba($ar-black, 0.1));
 		position: relative;
-		transition: 0.3s;
+		transition: all 0.3s;
 		span {
 			margin-left: 12px;
 			@media (min-width: 1000px) {
@@ -411,7 +416,7 @@ $ar-gray-900: #414141;
 		}
 		&:hover {
 			background: $ar-blue-100;
-			transition: 0.3s;
+			transition: all 0.3s;
 		}
 
 		img {
@@ -1104,13 +1109,13 @@ $ar-gray-900: #414141;
 		text-transform: uppercase;
 	}
 
-	.ar-button {
+	.button {
 		font-family: $font-ar21;
 		background-color: $ar-purple-700;
 		filter: drop-shadow(0px 2px 10px rgba($ar-black, 0.1));
 		border-radius: 5px;
 		padding: 12px 25px;
-		transition: 0.3s;
+		transition: background-color 0.3s;
 		@media (min-width: 1000px) {
 			font-size: 18px;
 		}
@@ -1118,7 +1123,7 @@ $ar-gray-900: #414141;
 			min-width: 250px;
 		}
 		&:hover {
-			transition: 0.3s;
+			transition: background-color 0.3s;
 		}
 		&:hover {
 			background: linear-gradient(0deg, rgba($ar-black, 0.1), rgba($ar-black, 0.1)), $ar-purple-700;

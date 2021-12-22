@@ -33,7 +33,8 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 <main class="ar-2021" id="maincontent">
 	<article class="container wrap">
 
-		<section class="background-image-wrapper is-hero alignfull">
+		<section class="background-image-wrapper is-hero alignfull"
+			height="500">
 
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
@@ -46,14 +47,14 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 					<div aria-hidden="true" class="ar-spacer-30"></div>
 
 					<div class="hero-align">
-						<h1 class="hero-title-main uppercase">Annual <br/>
+						<h1 class="hero-title-main uppercase">Annual <br />
 							Report</h1>
 
 						<div aria-hidden="true"
 							class="ar-spacer-40 show-upto-700"></div>
 
 						<h2 class="hero-subheader uppercase">The <br
-								class="show-over-700"> evolution <br/>of us
+								class="show-over-700"> evolution <br />of us
 						</h2>
 					</div>
 
@@ -62,19 +63,22 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 					<p
 						class="fw-semi max-w-800 text-small">The full CNCF Annual Report 2021 will be available soon as a PDF. <br class="show-over-700">Get notified when its available by signing up to our mailing list.</p>
 
-					<a href="#newsletter" class="ar-button">Sign up to Mailing
+					<a href="#newsletter" title="Sign up to mailing list"
+						class="button">Sign up to Mailing
 						List</a>
 
 					<div aria-hidden="true" class="ar-spacer-40"></div>
 
-					<div aria-hidden="true" class="ar-spacer-20 show-over-700"></div>
+					<div aria-hidden="true" class="ar-spacer-20 show-over-700">
+					</div>
 
 					<p
 						class="fw-semi mb-0">Scroll through the report highlights or jump to a section below.</p>
 
 					<div aria-hidden="true" class="ar-spacer-80 "></div>
 
-					<div aria-hidden="true" class="ar-spacer-20 show-over-700"></div>
+					<div aria-hidden="true" class="ar-spacer-20 show-over-700">
+					</div>
 
 				</div>
 			</div>
@@ -82,7 +86,7 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 			<div class="overlay-layer nude-green-gradient-50"></div>
 
 			<figure class="background-image-shape ">
-				<img loading="eager" src="<?php
+				<img width="1000" height="1070" loading="eager" src="<?php
 Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 					alt="Background shapes">
 			</figure>
@@ -95,16 +99,18 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 		<section style="position: relative;">
 			<div class="nav-el">
 				<div class="nav-box">
-					<a href="#momentum" class="box-link"></a>
+					<a href="#momentum" title="Jump to Momentum section"
+						class="box-link"></a>
 					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>"
 						alt="Chart icon"> <span
 						class="show-upto-1000">Momentum</span><span
-						class="show-over-1000">2021<br/>
+						class="show-over-1000">2021<br />
 						Momentum</span>
 				</div>
 				<div class="nav-box">
-					<a href="#events" class="box-link"></a>
+					<a href="#events" title="Jump to Events section"
+						class="box-link"></a>
 					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>"
 						alt="Bullseye icon">
@@ -112,7 +118,8 @@ Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>"
 						class="show-over-1000">Virtual & hybrid events</span>
 				</div>
 				<div class="nav-box">
-					<a href="#training" class="box-link"></a>
+					<a href="#training" title="Jump to Training section"
+						class="box-link"></a>
 					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-03-code.svg', true); ?>"
 						alt="Code document icon">
@@ -121,7 +128,8 @@ Image::get_svg('annual-reports/2021/nav-03-code.svg', true); ?>"
 						Certification</span>
 				</div>
 				<div class="nav-box">
-					<a href="#projects" class="box-link"></a>
+					<a href="#projects" title="Jump to Projects section"
+						class="box-link"></a>
 					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-04-megaphone.svg', true); ?>"
 						alt="Megaphone icon">
@@ -130,7 +138,8 @@ Image::get_svg('annual-reports/2021/nav-04-megaphone.svg', true); ?>"
 						Satisfaction</span>
 				</div>
 				<div class="nav-box">
-					<a href="#community" class="box-link"></a>
+					<a href="#community" title="Jump to Community section"
+						class="box-link"></a>
 					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-05-expand.svg', true); ?>"
 						alt="Expanding community icon">
@@ -139,7 +148,8 @@ Image::get_svg('annual-reports/2021/nav-05-expand.svg', true); ?>"
 						& Diversity </span>
 				</div>
 				<div class="nav-box">
-					<a href="#ecosystem" class="box-link"></a>
+					<a href="#ecosystem" title="Jump to Ecosystem section"
+						class="box-link"></a>
 					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 					<span class="show-upto-1000">Ecosystem</span><span
@@ -156,7 +166,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 
 				<div class="shg-01">
 					<h2 class="section-title uppercase" data-aos="fade-up"><span
-							class="text-purple">Welcome</span><br/>
+							class="text-purple">Welcome</span><br />
 						it's been a year to remember</h2>
 					<div aria-hidden="true" class="ar-spacer-80"></div>
 				</div>
@@ -171,7 +181,8 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 				</div>
 
 				<div class="shg-03">
-					<img loading="lazy" width="525" height="625" data-aos="fade-left" src="<?php
+					<img loading="lazy" width="525" height="625"
+						data-aos="fade-left" src="<?php
 Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 						alt="Priyanka Sharma">
 				</div>
@@ -242,7 +253,7 @@ Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">2021</span><br/>
+						<span class="add-blob">2021</span><br />
 						Momentum
 					</h2>
 				</div>
@@ -273,7 +284,8 @@ Lf_Utils::display_responsive_images( 66456, 'large', '1200px', '', 'lazy' );
 
 			<div class="section-grid-02">
 				<div>
-					<p class="fw-bold">Since we were founded in 2015, we've pioneered cloud native technologies — hosting and growing some of the world's <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing">most successful</a> open source projects including Kubernetes, Prometheus, Envoy, ContainerD, and many <a href="/projects/">others</a>.</p>
+					<p
+						class="fw-bold">Since we were founded in 2015, we've pioneered cloud native technologies — hosting and growing some of the world's <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing">most successful</a> open source projects including Kubernetes, Prometheus, Envoy, ContainerD, and many <a href="/projects/">others</a>.</p>
 					<p>Today we are a powerhouse for visionary projects and people. If cloud native was fast becoming mainstream before 2020, then the global pandemic pushed adoption into the stratosphere. Now, CNCF hosts 120+ projects with over 142,000 contributors representing 189 countries, and there are no signs of slowing down. In fact, cloud native is actively being adopted by multiple industries, driven by our global community.</p>
 					<p>This year, the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> launched as the newest CNCF Telecom Initiative, with representatives from Telecom and cloud native communities. Thanks to our strategic partner <a href="http://vulk.coop">vulk.coop</a>, by the end 2021, the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a> had more than 60 tests across many important categories. This tool provides feedback on the use of Kubernetes and cloud native best practices in networking applications and platforms, with contributions from 16 organizations.</p>
 
@@ -452,8 +464,8 @@ Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>"
 
 						<div class="icon-callout-1 justify-center">
 							<div class="icon">
-								<img loading="lazy"
-									width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								<img loading="lazy" width="89" height="52"
+									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="fw-bold">200+ new members</span><br/>80 new members<br/>
@@ -533,8 +545,8 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-divider"></div>
 						<div class="icon-callout-2">
 							<div class="icon">
-								<img loading="lazy"
-									width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								<img loading="lazy" width="89" height="52"
+									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">164+</span><br/>End Users</span></p>
@@ -672,7 +684,7 @@ Lf_Utils::display_responsive_images( 66458, 'large', '1200px', '', 'lazy' );
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Virtual &amp;</span><br/>
+						<span class="add-blob">Virtual &amp;</span><br />
 						Hybrid Events
 					</h2>
 				</div>
@@ -804,8 +816,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 				<div>
 					<div class="icon-callout-1">
 						<div class="icon">
-							<img loading="lazy"
-								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+							<img loading="lazy" width="89" height="52"
+								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="fw-bold">7,500+ attendees</span><br/>Adopters & technologists</p>
@@ -815,8 +827,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 					<div class="icon-callout-1">
 						<div class="icon">
-							<img loading="lazy"
-								width="67" height="67" src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
+							<img loading="lazy" width="67" height="67"
+								src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 								alt="Globe icon">
 						</div>
 						<p><span class="fw-bold">12 countries</span><br/>Across the <br/>globe</p>
@@ -877,7 +889,9 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 						<p class="fw-semi">Jim Haughwout, VP, Peloton </p>
 
-						<a href="/wp-content/uploads/2021/06/KubeCon_EU_21_Virtual_TransparencyReport_FINAL.pdf" class="button is-pink">Download Event <br/>transparency report</a>
+						<a href="/wp-content/uploads/2021/06/KubeCon_EU_21_Virtual_TransparencyReport_FINAL.pdf"
+							class="button is-pink">Download Event
+							<br />transparency report</a>
 
 					</div>
 				</div>
@@ -894,8 +908,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 				<div class="section-grid-06">
 					<div class="icon-callout-3">
 						<div class="icon">
-							<img loading="lazy"
-								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+							<img loading="lazy" width="89" height="52"
+								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">26,648</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
@@ -933,8 +947,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 						<div class="icon-callout-3">
 							<div class="icon">
-								<img loading="lazy"
-									width="67" height="67" src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
+								<img loading="lazy" width="67" height="67"
+									src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 									alt="Globe icon">
 							</div>
 							<p><span class="number-large text-purple">168</span><br/><span class="text-green uppercase fw-bold">Countries</span>
@@ -1053,8 +1067,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 					<div class="icon-callout-3">
 						<div class="icon">
-							<img loading="lazy"
-								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+							<img loading="lazy" width="89" height="52"
+								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">23,164</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
@@ -1065,8 +1079,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 					<div class="icon-callout-3">
 						<div class="icon">
-							<img loading="lazy"
-								width="67" height="67" src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
+							<img loading="lazy" width="67" height="67"
+								src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 								alt="Globe icon">
 						</div>
 						<p><span class="number-large text-purple">154</span><br/><span class="text-green uppercase fw-bold">Countries</span>
@@ -1208,7 +1222,8 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 							</div>
 
 							<a href="/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf"
-								class="button is-pink w-full">Download Event<br/>
+								class="button is-pink w-full">Download
+								Event<br />
 								Transparency Report</a>
 
 						</div>
@@ -1231,7 +1246,8 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 			<div class="section-grid-05">
 
 				<div class="shg-01">
-					<h2 class="section-title uppercase text-purple">COVID response</h2>
+					<h2 class="section-title uppercase text-purple">COVID
+						response</h2>
 
 					<div aria-hidden="true" class="ar-spacer-80"></div>
 
@@ -1266,7 +1282,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
 				<h2 class="section-title uppercase">Kubecon +
-					CloudNativeCon<br/>China 2021</h2>
+					CloudNativeCon<br />China 2021</h2>
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
@@ -1292,8 +1308,8 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 
 						<div class="icon-callout-3">
 							<div class="icon">
-								<img loading="lazy"
-									width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								<img loading="lazy" width="89" height="52"
+									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">7,160</span><br/><span class="text-green uppercase fw-bold">Registered Attendees</span></p>
@@ -1341,7 +1357,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Training &amp;</span><br/>
+						<span class="add-blob">Training &amp;</span><br />
 						Certification
 					</h2>
 				</div>
@@ -1401,7 +1417,8 @@ Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
-				<h2 class="section-title uppercase text-purple">2021 <br/>Training Courses
+				<h2 class="section-title uppercase text-purple">2021
+					<br />Training Courses
 				</h2>
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
@@ -1521,7 +1538,7 @@ Delivers effective strategies for creating inclusive open source communities and
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
 						<span class="add-blob">Project Updates
-							&</span><br/>Satisfaction
+							&</span><br />Satisfaction
 					</h2>
 				</div>
 			</div>
@@ -1855,7 +1872,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 
 				<div class="book-group">
 					<div>
-						<a
+						<a title="Download Admiral Bash's Island Adventur"
 							href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">
 							<?php
 Lf_Utils::display_responsive_images( 65178, 'large', '600px', '', 'lazy' );
@@ -1865,7 +1882,7 @@ By the Cartografos Group</p>
 					</div>
 
 					<div>
-						<a
+						<a title="Download From 00-K8s, with Love"
 							href="/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">
 							<?php
 Lf_Utils::display_responsive_images( 65186, 'large', '600px', '', 'lazy' );
@@ -1877,7 +1894,7 @@ Donated by Microsoft Azure</p>
 					</div>
 
 					<div>
-						<a
+						<a title="Download The Illustrated Children's Guide to Kubernetes"
 							href="/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">
 							<?php
 Lf_Utils::display_responsive_images( 66466, 'large', '600px', '', 'lazy' );
@@ -1892,7 +1909,8 @@ In Italian, thanks to SparkFabrik</p>
 				<div aria-hidden="true" class="ar-spacer-60"></div>
 
 				<div class="book-cta">
-					<a href="https://github.com/cncf/foundation/blob/master/phippy-guidelines.md"
+					<a title="Donate a character"
+						href="https://github.com/cncf/foundation/blob/master/phippy-guidelines.md"
 						class="box-link"></a>
 					<div class="max-w-600">
 						<p>Are you a maintainer on a graduated project? Do you want to help others better understand the concepts of cloud native computing?</p>
@@ -1915,7 +1933,7 @@ In Italian, thanks to SparkFabrik</p>
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Community </span><br/>Engagement
+						<span class="add-blob">Community </span><br />Engagement
 					</h2>
 				</div>
 			</div>
@@ -1983,7 +2001,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 
 			<div class="sub-section-header-container">
 				<h3 class="sub-section-header">Women &amp; <br
-						class="show-upto-1000">Gender <br/>Non-conforming <br
+						class="show-upto-1000">Gender <br />Non-conforming <br
 						class="show-upto-1000">Speakers</h3>
 			</div>
 
@@ -1999,7 +2017,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 							<span
 								class="number-largest text-purple lh-100">43%</span>
 							<span class="text-green uppercase fw-bold block">of
-								keynotes at <br/>
+								keynotes at <br />
 								Kubecon EU</span>
 						</div>
 
@@ -2010,7 +2028,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 							<span
 								class="number-largest text-purple lh-100">46%</span>
 							<span class="text-green uppercase fw-bold block">of
-								keynotes at <br/>
+								keynotes at <br />
 								Kubecon NA</span>
 						</div>
 					</div>
@@ -2082,7 +2100,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 
 						<div class="community-item">
 
-							<img loading="lazy"
+							<img loading="lazy" width="250" height="250"
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-01.png', true); ?>"
 								alt="Nikhita Raghunath">
 
@@ -2098,7 +2116,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 						<div class="icon-divider"></div>
 						<div class="community-item">
 
-							<img loading="lazy"
+							<img loading="lazy" width="250" height="250"
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-02.png', true); ?>"
 								alt="Anaïs Urlichs">
 
@@ -2115,7 +2133,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 						<div class="icon-divider"></div>
 						<div class="community-item">
 
-							<img loading="lazy"
+							<img loading="lazy" width="250" height="250"
 								src="<?php Image::get_svg('annual-reports/2021/community-awards-03.png', true); ?>"
 								alt="Tim Bannister">
 
@@ -2137,8 +2155,8 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 					<div class="align-end">
 
 						<div class="icon">
-							<img loading="lazy"
-								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+							<img loading="lazy" width="89" height="52"
+								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 
@@ -2191,8 +2209,8 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 
 					<div class="icon-callout-3">
 						<div class="icon">
-							<img loading="lazy"
-								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+							<img loading="lazy" width="89" height="52"
+								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">27,000+</span><br/><span class="text-green uppercase fw-bold">Attendees</span></p>
@@ -2233,7 +2251,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
 						<span class="add-blob">Mentoring &
-						</span><br/>Ecosystem Resources
+						</span><br />Ecosystem Resources
 					</h2>
 				</div>
 			</div>
@@ -2267,7 +2285,8 @@ Lf_Utils::display_responsive_images( 66464, 'large', '1200px', '', 'lazy' );
 			<div class="section-grid-02">
 
 				<div>
-					<h2 class="section-title uppercase text-purple">Cloud Native Landscape
+					<h2 class="section-title uppercase text-purple">Cloud Native
+						Landscape
 						Guide
 					</h2>
 
