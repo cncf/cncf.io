@@ -46,14 +46,14 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 					<div aria-hidden="true" class="ar-spacer-30"></div>
 
 					<div class="hero-align">
-						<h1 class="hero-title-main uppercase">Annual <br />
+						<h1 class="hero-title-main uppercase">Annual <br/>
 							Report</h1>
 
 						<div aria-hidden="true"
 							class="ar-spacer-40 show-upto-700"></div>
 
 						<h2 class="hero-subheader uppercase">The <br
-								class="show-over-700"> evolution <br />of us
+								class="show-over-700"> evolution <br/>of us
 						</h2>
 					</div>
 
@@ -99,7 +99,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>"
 						alt="Chart icon"> <span
 						class="show-upto-1000">Momentum</span><span
-						class="show-over-1000">2021<br>
+						class="show-over-1000">2021<br/>
 						Momentum</span>
 				</div>
 				<div class="nav-box">
@@ -155,7 +155,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 
 				<div class="shg-01">
 					<h2 class="section-title uppercase" data-aos="fade-up"><span
-							class="text-purple">Welcome</span><br>
+							class="text-purple">Welcome</span><br/>
 						it's been a year to remember</h2>
 					<div aria-hidden="true" class="ar-spacer-80"></div>
 				</div>
@@ -178,7 +178,7 @@ Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 				<div class="shg-04">
 					<div class="quote-container">
 						<p
-							class="quote">The power of us is the <br>power of our culture.</p>
+							class="quote">The power of us is the <br/>power of our culture.</p>
 						<div class="add-quote-marks">
 							<p class="by-name fw-semi">Priyanka Sharma</p>
 							<p class="by-position">General Manager, CNCF</p>
@@ -217,7 +217,7 @@ Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 Image::get_svg('annual-reports/2021/icon-projects.svg', true); ?>"
 								alt="Multiple shapes icon">
 						</div>
-						<p><span class="fw-bold">120+ Projects</span><br/>Driving worldwide <br>transformation</p>
+						<p><span class="fw-bold">120+ Projects</span><br/>Driving worldwide <br/>transformation</p>
 					</div>
 					<div class="icon-divider"></div>
 
@@ -241,7 +241,7 @@ Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">2021</span><br />
+						<span class="add-blob">2021</span><br/>
 						Momentum
 					</h2>
 				</div>
@@ -455,7 +455,7 @@ Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>"
 									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 									alt="People icon">
 							</div>
-							<p><span class="fw-bold">200+ new members</span><br/>80 new members<br>
+							<p><span class="fw-bold">200+ new members</span><br/>80 new members<br/>
 from China</p>
 						</div>
 						<div class="icon-divider"></div>
@@ -465,7 +465,7 @@ from China</p>
 									src="<?php Image::get_svg('annual-reports/2021/icon-building.svg', true); ?>"
 									alt="Building icon">
 							</div>
-							<p><span class="fw-bold">740+ member <br> organizations</span><br/>23% growth from 2020</p>
+							<p><span class="fw-bold">740+ member <br/> organizations</span><br/>23% growth from 2020</p>
 						</div>
 					</div>
 
@@ -526,7 +526,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 									src="<?php Image::get_svg('annual-reports/2021/icon-thumbup.svg', true); ?>"
 									alt="Thumbs up icon">
 							</div>
-							<p><span class="number-large text-purple">100%</span><br/>would recommend CNCF <br>to other companies<br>
+							<p><span class="number-large text-purple">100%</span><br/>would recommend CNCF <br/>to other companies<br/>
 <span class="text-smaller">(2021 End User survey)</span></p>
 						</div>
 						<div class="icon-divider"></div>
@@ -671,7 +671,7 @@ Lf_Utils::display_responsive_images( 66458, 'large', '1200px', '', 'lazy' );
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Virtual &amp;</span><br />
+						<span class="add-blob">Virtual &amp;</span><br/>
 						Hybrid Events
 					</h2>
 				</div>
@@ -818,7 +818,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 								src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 								alt="Globe icon">
 						</div>
-						<p><span class="fw-bold">12 countries</span><br/>Across the <br>globe</p>
+						<p><span class="fw-bold">12 countries</span><br/>Across the <br/>globe</p>
 					</div>
 				</div>
 
@@ -876,7 +876,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 
 						<p class="fw-semi">Jim Haughwout, VP, Peloton </p>
 
-						<a href="/wp-content/uploads/2021/06/KubeCon_EU_21_Virtual_TransparencyReport_FINAL.pdf" class="button is-pink">Download Event <br>transparency report</a>
+						<a href="/wp-content/uploads/2021/06/KubeCon_EU_21_Virtual_TransparencyReport_FINAL.pdf" class="button is-pink">Download Event <br/>transparency report</a>
 
 					</div>
 				</div>
@@ -965,7 +965,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 									src="<?php Image::get_svg('annual-reports/2021/icon-building.svg', true); ?>"
 									alt="Building icon">
 							</div>
-							<p><span class="number-large text-purple">9,092</span><br/><span class="text-green uppercase fw-bold">Companies <br>participated</span></p>
+							<p><span class="number-large text-purple">9,092</span><br/><span class="text-green uppercase fw-bold">Companies <br/>participated</span></p>
 						</div>
 
 						<div aria-hidden="true"
@@ -1147,7 +1147,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 								src="<?php Image::get_svg('annual-reports/2021/icon-building.svg', true); ?>"
 								alt="Building icon">
 						</div>
-						<p><span class="number-large text-purple">7,290</span><br/><span class="text-green uppercase fw-bold">Companies <br>participated</span></p>
+						<p><span class="number-large text-purple">7,290</span><br/><span class="text-green uppercase fw-bold">Companies <br/>participated</span></p>
 					</div>
 
 					<div aria-hidden="true" class="ar-spacer-100 show-upto-700">
@@ -1195,19 +1195,19 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 							</div>
 
 							<div>
-								<p><span class="number-large text-white">33%</span><br/><span class="text-white uppercase fw-bold">Accepted Talks</span><br>
+								<p><span class="number-large text-white">33%</span><br/><span class="text-white uppercase fw-bold">Accepted Talks</span><br/>
 <span class="small-text text-white">Represented an end user company</span>
 </p>
 							</div>
 
 							<div>
-								<p><span class="number-large text-white">10%</span><br/><span class="text-white uppercase fw-bold">Keynote Speakers</span><br>
+								<p><span class="number-large text-white">10%</span><br/><span class="text-white uppercase fw-bold">Keynote Speakers</span><br/>
 <span class="small-text text-white">From an end user company</span>
 </p>
 							</div>
 
 							<a href="/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf"
-								class="button is-pink w-full">Download Event<br>
+								class="button is-pink w-full">Download Event<br/>
 								Transparency Report</a>
 
 						</div>
@@ -1265,7 +1265,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
 				<h2 class="section-title uppercase">Kubecon +
-					CloudNativeCon<br>China 2021</h2>
+					CloudNativeCon<br/>China 2021</h2>
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
 
@@ -1340,7 +1340,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Training &amp;</span><br />
+						<span class="add-blob">Training &amp;</span><br/>
 						Certification
 					</h2>
 				</div>
@@ -1400,7 +1400,7 @@ Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
-				<h2 class="section-title uppercase text-purple">2021 <br>Training Courses
+				<h2 class="section-title uppercase text-purple">2021 <br/>Training Courses
 				</h2>
 
 				<div aria-hidden="true" class="ar-spacer-80"></div>
@@ -1495,10 +1495,10 @@ Lf_Utils::display_responsive_images( 66461, 'large', '1200px', '', 'lazy' );
 						<p
 							class="secondary-sub-section">Courses that CNCF funded in 2021:</p>
 
-						<p><a href="https://training.linuxfoundation.org/training/introduction-to-kubernetes-on-edge-with-k3s-lfs156x/" class="lh-125 text-purple"><strong>Introduction to Kubernetes on Edge with k3s</strong></a><br />
+						<p><a href="https://training.linuxfoundation.org/training/introduction-to-kubernetes-on-edge-with-k3s-lfs156x/" class="lh-125 text-purple"><strong>Introduction to Kubernetes on Edge with k3s</strong></a><br/>
 A deep dive into the use cases and applications of Kubernetes at the edge using examples, labs, and a technical overview of the K3s project and the cloud native edge ecosystem.</p>
 
-						<p><a href="https://training.linuxfoundation.org/training/inclusive-strategies-for-open-source-lfc103/" class="lh-125 text-purple"><strong>Inclusive Strategies for Open Source (LFC103)</strong></a><br />
+						<p><a href="https://training.linuxfoundation.org/training/inclusive-strategies-for-open-source-lfc103/" class="lh-125 text-purple"><strong>Inclusive Strategies for Open Source (LFC103)</strong></a><br/>
 Delivers effective strategies for creating inclusive open source communities and code bases.</p>
 
 					</div>
@@ -1520,7 +1520,7 @@ Delivers effective strategies for creating inclusive open source communities and
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
 						<span class="add-blob">Project Updates
-							&</span><br />Satisfaction
+							&</span><br/>Satisfaction
 					</h2>
 				</div>
 			</div>
@@ -1859,7 +1859,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 							<?php
 Lf_Utils::display_responsive_images( 65178, 'large', '600px', '', 'lazy' );
 ?></a>
-						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br>Island Adventure</a></span><br>
+						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br/>Island Adventure</a></span><br/>
 By the Cartografos Group</p>
 					</div>
 
@@ -1871,7 +1871,7 @@ Lf_Utils::display_responsive_images( 65186, 'large', '600px', '', 'lazy' );
 ?>
 						</a>
 
-						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">From 00-K8s, with Love</a></span><br>
+						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/From-00-K8s-with-Love_Digital.pdf">From 00-K8s, with Love</a></span><br/>
 Donated by Microsoft Azure</p>
 					</div>
 
@@ -1883,7 +1883,7 @@ Lf_Utils::display_responsive_images( 66466, 'large', '600px', '', 'lazy' );
 ?>
 						</a>
 
-						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">The Illustrated Children's <br />Guide to Kubernetes</a></span><br>
+						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/11/The-Illustrated-Childrens-Guide-to-Kubernetes-Italian-Spark.pdf">The Illustrated Children's <br/>Guide to Kubernetes</a></span><br/>
 In Italian, thanks to SparkFabrik</p>
 					</div>
 				</div>
@@ -1914,7 +1914,7 @@ In Italian, thanks to SparkFabrik</p>
 			<div class="background-image-text-overlay">
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
-						<span class="add-blob">Community </span><br />Engagement
+						<span class="add-blob">Community </span><br/>Engagement
 					</h2>
 				</div>
 			</div>
@@ -1982,7 +1982,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 
 			<div class="sub-section-header-container">
 				<h3 class="sub-section-header">Women &amp; <br
-						class="show-upto-1000">Gender <br>Non-conforming <br
+						class="show-upto-1000">Gender <br/>Non-conforming <br
 						class="show-upto-1000">Speakers</h3>
 			</div>
 
@@ -1998,7 +1998,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 							<span
 								class="number-largest text-purple lh-100">43%</span>
 							<span class="text-green uppercase fw-bold block">of
-								keynotes at
+								keynotes at <br/>
 								Kubecon EU</span>
 						</div>
 
@@ -2009,7 +2009,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 							<span
 								class="number-largest text-purple lh-100">46%</span>
 							<span class="text-green uppercase fw-bold block">of
-								keynotes at
+								keynotes at <br/>
 								Kubecon NA</span>
 						</div>
 					</div>
@@ -2232,7 +2232,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 				<div class="container wrap">
 					<h2 class="header-title fw-extrabold">
 						<span class="add-blob">Mentoring &
-						</span><br />Ecosystem Resources
+						</span><br/>Ecosystem Resources
 					</h2>
 				</div>
 			</div>
