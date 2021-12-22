@@ -265,7 +265,7 @@ class Lf_Utils {
 
 		if ( ! $image_srcset ) {
 
-			$img           = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
+			$img           = '<img width="' . $size[1] ?? '' . '" height="' . $size[2] ?? '' . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
 			$attachment_id = $image_id;
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
