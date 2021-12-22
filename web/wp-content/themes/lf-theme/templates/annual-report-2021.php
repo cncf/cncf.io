@@ -62,18 +62,19 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 					<p
 						class="fw-semi max-w-800 text-small">The full CNCF Annual Report 2021 will be available soon as a PDF. <br class="show-over-700">Get notified when its available by signing up to our mailing list.</p>
 
-					<a href="#newsletter" class="button">Sign up to Mailing
+					<a href="#newsletter" class="ar-button">Sign up to Mailing
 						List</a>
 
 					<div aria-hidden="true" class="ar-spacer-40"></div>
+
+					<div aria-hidden="true" class="ar-spacer-20 show-over-700"></div>
 
 					<p
 						class="fw-semi mb-0">Scroll through the report highlights or jump to a section below.</p>
 
 					<div aria-hidden="true" class="ar-spacer-80 "></div>
 
-					<div aria-hidden="true" class="ar-spacer-20 show-over-700">
-					</div>
+					<div aria-hidden="true" class="ar-spacer-20 show-over-700"></div>
 
 				</div>
 			</div>
@@ -95,7 +96,7 @@ Image::get_svg('annual-reports/2021/shapes.svg', true); ?>"
 			<div class="nav-el">
 				<div class="nav-box">
 					<a href="#momentum" class="box-link"></a>
-					<img loading="eager" src="<?php
+					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>"
 						alt="Chart icon"> <span
 						class="show-upto-1000">Momentum</span><span
@@ -104,7 +105,7 @@ Image::get_svg('annual-reports/2021/nav-01-bar.svg', true); ?>"
 				</div>
 				<div class="nav-box">
 					<a href="#events" class="box-link"></a>
-					<img loading="eager" src="<?php
+					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>"
 						alt="Bullseye icon">
 					<span class="show-upto-1000">Events</span><span
@@ -112,7 +113,7 @@ Image::get_svg('annual-reports/2021/nav-02-target.svg', true); ?>"
 				</div>
 				<div class="nav-box">
 					<a href="#training" class="box-link"></a>
-					<img loading="eager" src="<?php
+					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-03-code.svg', true); ?>"
 						alt="Code document icon">
 					<span class="show-upto-1000">Training</span><span
@@ -121,7 +122,7 @@ Image::get_svg('annual-reports/2021/nav-03-code.svg', true); ?>"
 				</div>
 				<div class="nav-box">
 					<a href="#projects" class="box-link"></a>
-					<img loading="eager" src="<?php
+					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-04-megaphone.svg', true); ?>"
 						alt="Megaphone icon">
 					<span class="show-upto-1000">Projects</span><span
@@ -130,7 +131,7 @@ Image::get_svg('annual-reports/2021/nav-04-megaphone.svg', true); ?>"
 				</div>
 				<div class="nav-box">
 					<a href="#community" class="box-link"></a>
-					<img loading="eager" src="<?php
+					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-05-expand.svg', true); ?>"
 						alt="Expanding community icon">
 					<span class="show-upto-1000">Community</span><span
@@ -139,7 +140,7 @@ Image::get_svg('annual-reports/2021/nav-05-expand.svg', true); ?>"
 				</div>
 				<div class="nav-box">
 					<a href="#ecosystem" class="box-link"></a>
-					<img loading="eager" src="<?php
+					<img loading="eager" width="36" height="36" src="<?php
 Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 					<span class="show-upto-1000">Ecosystem</span><span
 						class="show-over-1000">Mentoring & Ecosystem</span>
@@ -170,7 +171,7 @@ Image::get_svg('annual-reports/2021/nav-06-eye.svg', true); ?>" alt="Eye icon">
 				</div>
 
 				<div class="shg-03">
-					<img loading="lazy" data-aos="fade-left" src="<?php
+					<img loading="lazy" width="525" height="625" data-aos="fade-left" src="<?php
 Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 						alt="Priyanka Sharma">
 				</div>
@@ -203,7 +204,7 @@ Image::get_image('annual-reports/2021/blob-gm.jpg', true); ?>"
 
 					<div class="icon-callout-1">
 						<div class="icon">
-							<img loading="lazy" src="<?php
+							<img loading="lazy" width="89" height="52" src="<?php
 Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
@@ -213,7 +214,7 @@ Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 
 					<div class="icon-callout-1">
 						<div class="icon">
-							<img loading="lazy" src="<?php
+							<img loading="lazy" width="90" height="94" src="<?php
 Image::get_svg('annual-reports/2021/icon-projects.svg', true); ?>"
 								alt="Multiple shapes icon">
 						</div>
@@ -223,7 +224,7 @@ Image::get_svg('annual-reports/2021/icon-projects.svg', true); ?>"
 
 					<div class="icon-callout-1">
 						<div class="icon">
-							<img loading="lazy" src="<?php
+							<img loading="lazy" width="67" height="67" src="<?php
 Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 								alt="Globe icon">
 						</div>
@@ -452,7 +453,7 @@ Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>"
 						<div class="icon-callout-1 justify-center">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+									width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="fw-bold">200+ new members</span><br/>80 new members<br/>
@@ -533,7 +534,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-2">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+									width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">164+</span><br/>End Users</span></p>
@@ -804,7 +805,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="fw-bold">7,500+ attendees</span><br/>Adopters & technologists</p>
@@ -815,7 +816,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
+								width="67" height="67" src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 								alt="Globe icon">
 						</div>
 						<p><span class="fw-bold">12 countries</span><br/>Across the <br/>globe</p>
@@ -894,7 +895,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">26,648</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
@@ -933,7 +934,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
+									width="67" height="67" src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 									alt="Globe icon">
 							</div>
 							<p><span class="number-large text-purple">168</span><br/><span class="text-green uppercase fw-bold">Countries</span>
@@ -1053,7 +1054,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">23,164</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
@@ -1065,7 +1066,7 @@ Image::get_image('annual-reports/2021/clipart-kcd.png', true); ?>"
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
+								width="67" height="67" src="<?php Image::get_svg('annual-reports/2021/icon-world.svg', true); ?>"
 								alt="Globe icon">
 						</div>
 						<p><span class="number-large text-purple">154</span><br/><span class="text-green uppercase fw-bold">Countries</span>
@@ -1292,7 +1293,7 @@ Lf_Utils::display_responsive_images( 66460, 'large', '1200px', '', 'lazy' );
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+									width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">7,160</span><br/><span class="text-green uppercase fw-bold">Registered Attendees</span></p>
@@ -2137,7 +2138,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 
@@ -2191,7 +2192,7 @@ Lf_Utils::display_responsive_images( 66463, 'large', '1200px', '', 'lazy' );
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
+								width="89" height="52" src="<?php Image::get_svg('annual-reports/2021/icon-members.svg', true); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">27,000+</span><br/><span class="text-green uppercase fw-bold">Attendees</span></p>
@@ -2585,4 +2586,5 @@ array( 'jquery', 'chart-js', 'aos-js' ),
 filemtime( get_template_directory() . '/source/js/third-party/annual-report-21.js' ),
 true
 );
+
 get_template_part( 'components/footer' );
