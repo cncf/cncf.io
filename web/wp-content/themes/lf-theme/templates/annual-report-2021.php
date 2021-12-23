@@ -420,18 +420,24 @@ Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 									class="show-upto-700">Platinum</h3>
 						</div>
 
-						<div class="project-display-2">
+						<div class="project-display-3">
 							<div class="project-item">
-								<a href="https://newrelic.com/"><img 
+								<a href="https://www.att.com/"><img width="140"
 										height="100" loading="lazy" src="<?php
-Image::get_svg('annual-reports/2021/logo-new-relic.svg', true); ?>"
-										alt="New Relic"></a>
+Image::get_svg('annual-reports/2021/logo-att.svg', true); ?>"
+										alt="AT&T"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://grafana.com"><img width="140"
 										height="100" loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>"
 										alt="Grafana Labs"></a>
+							</div>
+							<div class="project-item">
+								<a href="https://newrelic.com/"><img 
+										height="100" loading="lazy" src="<?php
+Image::get_svg('annual-reports/2021/logo-new-relic.svg', true); ?>"
+										alt="New Relic"></a>
 							</div>
 						</div>
 
@@ -442,19 +448,26 @@ Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>"
 									class="show-upto-700">Members</h3>
 						</div>
 
-						<div class="project-display-2">
+						<div class="project-display-3">
 							<div class="project-item">
-								<a href="https://www.h3c.com/en"><img
-										height="100" loading="lazy"
-										src="<?php
-Image::get_svg('annual-reports/2021/logo-hbc.svg', true); ?>" alt="H3C"></a>
-							</div>
-							<div class="project-item">
-								<a href="https://www.americanexpress.com/"><img
+								<a href="https://www.americanexpress.com/"><img 
 										height="100" loading="lazy"
 										src="<?php
 Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>"
 										alt="American Express"></a>
+							</div>
+							<div class="project-item">
+								<a href="https://corporate.charter.com/"><img width="140"
+										height="100" loading="lazy"
+										src="<?php
+Image::get_svg('annual-reports/2021/logo-charter.svg', true); ?>"
+										alt="Charter Communications"></a>
+							</div>
+							<div class="project-item">
+								<a href="https://www.h3c.com/en"><img width="140"
+										height="100" loading="lazy"
+										src="<?php
+Image::get_svg('annual-reports/2021/logo-hbc.svg', true); ?>" alt="H3C"></a>
 							</div>
 						</div>
 

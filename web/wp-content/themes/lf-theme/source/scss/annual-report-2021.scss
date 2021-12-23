@@ -1536,6 +1536,21 @@ $ar-gray-900: #414141;
 		}
 	}
 
+	.project-display-3 {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		@media (min-width: 900px) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		column-gap: 20px;
+		row-gap: 20px;
+		@media (min-width: 1000px) {
+			column-gap: 30px;
+			row-gap: 40px;
+		}
+	}
+
+
 	.project-display-4 {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
