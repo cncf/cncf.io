@@ -2588,10 +2588,9 @@ Lf_Utils::display_responsive_images( 66484, 'large', '1200px', '', 'lazy' );
 					in 2021.</h3>
 
 					 <p
-						class="fw-semi max-w-800 text-medium">The full CNCF Annual Report 2021 will be available soon as a PDF. </p>
-
-				<p
-					class="text-medium">Your comments and feedback are welcome at <a href="mailto:info@cncf.io">info@cncf.io</a>.</p>
+						class="text-medium">The full CNCF Annual Report 2021 will be available soon as a PDF. 
+						<br/>
+						Your comments and feedback are welcome at <a href="mailto:info@cncf.io">info@cncf.io</a>.</p>
 
 				<p
 					class="max-w-800">We're looking forward to seeing you in 2022! Check out our calendar for community events near you and don't forget to register for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">KubeCon+CloudNativeCon Europe</a> in Valencia, May 2022.</p>
