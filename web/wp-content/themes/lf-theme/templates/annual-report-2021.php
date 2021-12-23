@@ -422,7 +422,7 @@ Image::get_svg('annual-reports/2021/chart-membership-growth.svg', true); ?>"
 
 						<div class="project-display-2">
 							<div class="project-item">
-								<a href="https://newrelic.com/"><img width="140"
+								<a href="https://newrelic.com/"><img 
 										height="100" loading="lazy" src="<?php
 Image::get_svg('annual-reports/2021/logo-new-relic.svg', true); ?>"
 										alt="New Relic"></a>
@@ -445,13 +445,13 @@ Image::get_svg('annual-reports/2021/logo-grafana.svg', true); ?>"
 						<div class="project-display-2">
 							<div class="project-item">
 								<a href="https://www.h3c.com/en"><img
-										width="140" height="100" loading="lazy"
+										height="100" loading="lazy"
 										src="<?php
 Image::get_svg('annual-reports/2021/logo-hbc.svg', true); ?>" alt="H3C"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://www.americanexpress.com/"><img
-										width="140" height="100" loading="lazy"
+										height="100" loading="lazy"
 										src="<?php
 Image::get_svg('annual-reports/2021/logo-amex.svg', true); ?>"
 										alt="American Express"></a>
