@@ -1730,7 +1730,7 @@ Lf_Utils::display_responsive_images( 66462, 'large', '1200px', '', 'lazy' );
 					</div>
 					<div class="project-item">
 						<a href="/projects/dapr/"><img loading="lazy"
-								width="140" height="100"
+								height="100"
 								src="<?php Image::get_svg('annual-reports/2021/logo-dapr.svg', true); ?>"
 								alt="Dapr logo"></a>
 					</div>
