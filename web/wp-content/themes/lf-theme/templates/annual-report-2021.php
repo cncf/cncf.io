@@ -60,7 +60,7 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 
 					<div aria-hidden="true" class="ar-spacer-40"></div>
 
-					<p
+					<!-- <p
 						class="fw-semi max-w-800 text-small">The full CNCF Annual Report 2021 will be available soon as a PDF. <br class="show-over-700">Get notified when its available by signing up to our mailing list.</p>
 
 					<a href="#newsletter" title="Sign up to mailing list"
@@ -70,7 +70,7 @@ wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+
 					<div aria-hidden="true" class="ar-spacer-40"></div>
 
 					<div aria-hidden="true" class="ar-spacer-20 show-over-700">
-					</div>
+					</div> -->
 
 					<p
 						class="fw-semi mb-0">Scroll through the report highlights or jump to a section below.</p>
@@ -2586,6 +2586,9 @@ Lf_Utils::display_responsive_images( 66484, 'large', '1200px', '', 'lazy' );
 				<h3 class="section-intro outro max-w-550">We hope you enjoyed
 					reflecting on all the great things we accomplished together
 					in 2021.</h3>
+
+					 <p
+						class="fw-semi max-w-800 text-medium">The full CNCF Annual Report 2021 will be available soon as a PDF. </p>
 
 				<p
 					class="text-medium">Your comments and feedback are welcome at <a href="mailto:info@cncf.io">info@cncf.io</a>.</p>
