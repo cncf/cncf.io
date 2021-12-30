@@ -1,7 +1,7 @@
 // annual report 2021 styling.
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 200;
 	font-style: normal;
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 400;
 	font-style: normal;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 600;
 	font-style: normal;
@@ -34,7 +34,7 @@
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 700;
 	font-style: normal;
@@ -45,7 +45,7 @@
 }
 
 @font-face {
-	font-display: swap;
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 800;
 	font-style: normal;
@@ -104,8 +104,9 @@ $ar-gray-900: #414141;
 	.background-image-wrapper {
 		overflow: hidden;
 		position: relative;
-
+		transition: all 0.3s;
 		&.is-hero {
+			min-height: 500px;
 			background-color: rgba(100, 249, 191, 0.75);
 			.background-image-shape img {
 				opacity: 0.75;
@@ -1549,7 +1550,6 @@ $ar-gray-900: #414141;
 			row-gap: 40px;
 		}
 	}
-
 
 	.project-display-4 {
 		display: grid;
