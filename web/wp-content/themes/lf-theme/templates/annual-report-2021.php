@@ -12,6 +12,12 @@ get_template_part( 'components/header' );
 
 ?>
 
+<style>
+	html {
+	  visibility: hidden;
+	}
+  </style>
+
 <link rel="prefetch"
 	href="<?php echo esc_url( get_template_directory_uri() . '/build/annual-report-2021.min.css' ); ?>"
 	as="style" crossorigin="anonymous" />
@@ -19,9 +25,9 @@ get_template_part( 'components/header' );
 <?php wp_enqueue_style( '2021', get_template_directory_uri() . '/build/annual-report-2021.min.css', array(), filemtime( get_template_directory() . '/build/annual-report-2021.min.css' ), 'all' ); ?>
 
 <?php // phpcs:disable ?>
-<link rel="stylesheet"
+<link rel="stylesheet" type="text/css"
 	href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300;1,600&display=optional"
-	media="print" onload="this.media='all'" crossorigin="anonymous" />
+	media="print" onload="this.media='all'" crossorigin />
 <?php // phpcs:enable ?>
 
 <noscript>
@@ -29,6 +35,23 @@ get_template_part( 'components/header' );
 	wp_enqueue_style( '2021-font', 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300;1,600&display=optional', array(), filemtime( get_template_directory() . '/build/styles.css' ), 'all' );
 	?>
 </noscript>
+
+<?php
+// setup social share content.
+$caption  = '2021 has been a huge year of growth at CNCF, which now hosts 120+ projects with over 142,000 contributors representing 189 countries. Read the CNCF Annual Report 2021: ';
+$page_url = urlencode( get_permalink() );
+$caption  = htmlspecialchars( urlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
+
+/**
+ * Gets Twitter handle.
+ */
+$options = get_option( 'lf-mu' );
+$options && $options['social_twitter_handle'] ? $twitter = $options['social_twitter_handle'] : $twitter = '';
+
+$twitter_url = 'https://twitter.com/intent/tweet?text=' . $caption . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $twitter . '';
+$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $caption . '';
+$mailto_url = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbsp;' . $page_url . '';
+?>
 
 <main class="ar-2021" id="maincontent">
 	<article class="container wrap">
@@ -60,24 +83,42 @@ get_template_part( 'components/header' );
 
 					<div aria-hidden="true" class="ar-spacer-40"></div>
 
-					<!-- <p
-						class="fw-semi max-w-800 text-small">The full CNCF Annual Report 2021 will be available soon as a PDF. <br class="show-over-700">Get notified when its available by signing up to our mailing list.</p>
+					<div class="ar-social-share">
+						<p class="ss-title lh-100 mb-0">Share</p>
 
-					<a href="#newsletter" title="Sign up to mailing list"
-						class="button">Sign up to Mailing
-						List</a>
+						<div class="ss-wrapper">
+							<!-- twitter -->
+							<?php if ( $twitter_url ) : ?>
+							<a target="_blank" aria-label="Share on Twitter"
+								title="Share on Twitter"
+								href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
+							<?php endif; ?>
+
+							<!-- linkedin -->
+							<?php if ( $linkedin_url ) : ?>
+							<a target="_blank" aria-label="Share on Linkedin"
+								title="Share on Linkedin"
+								href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
+							<?php endif; ?>
+
+							<!-- sendto email -->
+							<?php if ( $mailto_url ) : ?>
+							<a target="_blank" aria-label="Share by Email"
+								title="Share by Email"
+								href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
+							<?php endif; ?>
+						</div>
+					</div>
+
 
 					<div aria-hidden="true" class="ar-spacer-40"></div>
-
-					<div aria-hidden="true" class="ar-spacer-20 show-over-700">
-					</div> -->
 
 					<p
 						class="fw-semi mb-0">Scroll through the report highlights or jump to a section below.</p>
 
 					<div aria-hidden="true" class="ar-spacer-80 "></div>
 
-					<div aria-hidden="true" class="ar-spacer-20 show-over-700">
+					<div aria-hidden="true" class="ar-spacer-20 show-over-414">
 					</div>
 
 				</div>
@@ -90,8 +131,7 @@ get_template_part( 'components/header' );
 				<?php
 				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
-				"
-					alt="Background shapes">
+				" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure green-gradient">
@@ -108,9 +148,7 @@ get_template_part( 'components/header' );
 					<?php
 					Image::get_svg( 'annual-reports/2021/nav-01-bar.svg', true );
 					?>
-					"
-						alt="Chart icon"> <span
-						class="show-upto-1000">Momentum</span><span
+					" alt="Chart icon"> <span class="show-upto-1000">Momentum</span><span
 						class="show-over-1000">2021<br />
 						Momentum</span>
 				</div>
@@ -121,8 +159,7 @@ get_template_part( 'components/header' );
 					<?php
 					Image::get_svg( 'annual-reports/2021/nav-02-target.svg', true );
 					?>
-					"
-						alt="Bullseye icon">
+					" alt="Bullseye icon">
 					<span class="show-upto-1000">Events</span><span
 						class="show-over-1000">Virtual & <br /> hybrid
 						events</span>
@@ -134,8 +171,7 @@ get_template_part( 'components/header' );
 					<?php
 					Image::get_svg( 'annual-reports/2021/nav-03-code.svg', true );
 					?>
-					"
-						alt="Code document icon">
+					" alt="Code document icon">
 					<span class="show-upto-1000">Training</span><span
 						class="show-over-1000">Training &
 						Certification</span>
@@ -147,8 +183,7 @@ get_template_part( 'components/header' );
 					<?php
 					Image::get_svg( 'annual-reports/2021/nav-04-megaphone.svg', true );
 					?>
-					"
-						alt="Megaphone icon">
+					" alt="Megaphone icon">
 					<span class="show-upto-1000">Projects</span><span
 						class="show-over-1000">Project Updates &
 						Satisfaction</span>
@@ -160,8 +195,7 @@ get_template_part( 'components/header' );
 					<?php
 					Image::get_svg( 'annual-reports/2021/nav-05-expand.svg', true );
 					?>
-					"
-						alt="Expanding community icon">
+					" alt="Expanding community icon">
 					<span class="show-upto-1000">Community</span><span
 						class="show-over-1000">Community
 						& Diversity </span>
@@ -207,8 +241,7 @@ get_template_part( 'components/header' );
 					<?php
 					Image::get_image( 'annual-reports/2021/blob-gm.jpg', true );
 					?>
-					"
-						alt="Priyanka Sharma">
+					" alt="Priyanka Sharma">
 				</div>
 
 				<div class="shg-04">
@@ -243,8 +276,7 @@ get_template_part( 'components/header' );
 							<?php
 							Image::get_svg( 'annual-reports/2021/icon-members.svg', true );
 							?>
-							"
-								alt="People icon">
+							" alt="People icon">
 						</div>
 						<p><span class="fw-bold">740+ Members</span><br/>Across 6 continents</p>
 					</div>
@@ -256,8 +288,7 @@ get_template_part( 'components/header' );
 							<?php
 							Image::get_svg( 'annual-reports/2021/icon-projects.svg', true );
 							?>
-							"
-								alt="Multiple shapes icon">
+							" alt="Multiple shapes icon">
 						</div>
 						<p><span class="fw-bold">120+ Projects</span><br/>Driving worldwide <br/>transformation</p>
 					</div>
@@ -269,8 +300,7 @@ get_template_part( 'components/header' );
 							<?php
 							Image::get_svg( 'annual-reports/2021/icon-world.svg', true );
 							?>
-							"
-								alt="Globe icon">
+							" alt="Globe icon">
 						</div>
 						<p><span class="fw-bold">142,000+ Contributors</span><br/>Fundamentally changing computing</p>
 					</div>
@@ -299,8 +329,7 @@ get_template_part( 'components/header' );
 				<?php
 				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
-				"
-					alt="Background shapes">
+				" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -393,8 +422,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 						<?php
 						Image::get_image( 'annual-reports/2021/blob-membership.png', true );
 						?>
-						"
-							alt="Masked people walking at conference">
+						" alt="Masked people walking at conference">
 						<div aria-hidden="true"
 							class="ar-spacer-80 show-upto-700"></div>
 					</div>
@@ -422,8 +450,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 							<?php
 							Image::get_svg( 'annual-reports/2021/chart-membership-growth.svg', true );
 							?>
-							"
-							alt="Chart showing CNCF Member growth"></div>
+							" alt="Chart showing CNCF Member growth"></div>
 					<div class="graph-explainer">
 						<span class="number-largest has-arrow-after">23%</span>
 
@@ -477,8 +504,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 										<?php
 										Image::get_svg( 'annual-reports/2021/logo-grafana.svg', true );
 										?>
-										"
-										alt="Grafana Labs"></a>
+										" alt="Grafana Labs"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://newrelic.com/"><img
@@ -486,8 +512,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 										<?php
 										Image::get_svg( 'annual-reports/2021/logo-new-relic.svg', true );
 										?>
-										"
-										alt="New Relic"></a>
+										" alt="New Relic"></a>
 							</div>
 						</div>
 
@@ -505,8 +530,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 										<?php
 										Image::get_svg( 'annual-reports/2021/logo-amex.svg', true );
 										?>
-										"
-										alt="American Express"></a>
+										" alt="American Express"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://corporate.charter.com/"><img
@@ -515,8 +539,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 										<?php
 										Image::get_svg( 'annual-reports/2021/logo-charter.svg', true );
 										?>
-										"
-										alt="Charter Communications"></a>
+										" alt="Charter Communications"></a>
 							</div>
 							<div class="project-item">
 								<a href="https://www.h3c.com/en"><img
@@ -772,8 +795,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<?php
 				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
-				"
-					alt="Background shapes">
+				" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -804,8 +826,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<?php
 					Image::get_image( 'annual-reports/2021/blob-events.jpg', true );
 					?>
-					"
-						alt="Masked man at a conference">
+					" alt="Masked man at a conference">
 				</div>
 
 				<div class="shg-03">
@@ -857,8 +878,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<?php
 					Image::get_image( 'annual-reports/2021/clipart-kcd.png', true );
 					?>
-					"
-						alt="Drawing of man and woman talking">
+					" alt="Drawing of man and woman talking">
 				</div>
 			</div>
 
@@ -979,7 +999,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<p class="fw-semi">Jim Haughwout, VP, Peloton </p>
 
 						<a href="/wp-content/uploads/2021/06/KubeCon_EU_21_Virtual_TransparencyReport_FINAL.pdf"
-							class="button is-pink">Download Event
+							class="button is-pink w-full">Download Event
 							<br />transparency report</a>
 
 					</div>
@@ -1288,21 +1308,24 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div aria-hidden="true"
 							class="ar-spacer-80 show-upto-1000"></div>
 
-						<div class="speakers-grid">
+						<div class="speakers-grid-wrapper">
 
-							<div>
-								<p><span class="number-large text-white">976</span><br/><span class="text-white uppercase fw-bold">Submissions</span></p>
+							<div class="speakers-grid">
+
+								<div>
+									<p><span class="number-largest text-white lh-100">976</span><br/><span class="text-green uppercase text-larger fw-bold">Submissions</span></p>
+								</div>
+
+								<div>
+									<p><span class="number-largest text-white lh-100">227</span><br/><span class="text-green text-larger uppercase fw-bold">Speakers</span></p>
+								</div>
+
+								<a href="/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf"
+									class="button is-pink w-full">Download
+									Event<br />
+									Transparency Report</a>
+
 							</div>
-
-							<div>
-								<p><span class="number-large text-white">227</span><br/><span class="text-white uppercase fw-bold">Speakers</span></p>
-							</div>
-
-							<a href="/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf"
-								class="button is-pink w-full">Download
-								Event<br />
-								Transparency Report</a>
-
 						</div>
 					</div>
 
@@ -1448,8 +1471,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<?php
 				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
-				"
-					alt="Background shapes">
+				" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -1632,8 +1654,7 @@ Delivers effective strategies for creating inclusive open source communities and
 				<?php
 				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
-				"
-					alt="Background shapes">
+				" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -1979,7 +2000,7 @@ Delivers effective strategies for creating inclusive open source communities and
 							<?php
 							Lf_Utils::display_responsive_images( 66485, 'large', '600px', '', 'lazy' );
 							?>
-							</a>
+						</a>
 						<p><span class="fw-bold"><a href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">Admiral Bash's <br/>Island Adventure</a></span><br/>
 By the Cartografos Group</p>
 					</div>
@@ -2049,8 +2070,7 @@ In Italian, thanks to SparkFabrik</p>
 				<?php
 				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
-				"
-					alt="Background shapes">
+				" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -2373,8 +2393,7 @@ In Italian, thanks to SparkFabrik</p>
 				<?php
 				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
-				"
-					alt="Background shapes">
+				" alt="Background shapes">
 			</figure>
 
 			<figure class="background-image-figure is-gray green-gradient">
@@ -2520,33 +2539,24 @@ In Italian, thanks to SparkFabrik</p>
 
 					<div aria-hidden="true" class="ar-spacer-60"></div>
 
-					<div class="mentoring-grid">
+					<p><span class="number-large text-light-green">104 </span><span class="text-white uppercase fw-bold text-medium">Mentorships</span></p>
+
+					<div class="mentoring-numbers">
 						<div>
-							<div>
-								<p><span class="number-large text-light-green">86</span> <span class="text-white uppercase fw-bold">LFX Mentorship</span></p>
-							</div>
-
-							<div>
-								<p><span class="number-large text-light-green">16</span> <span class="text-white uppercase fw-bold">GSOC</span></p>
-							</div>
-
-							<div>
-								<p class="mb-0"><span class="number-large text-light-green">1</span> <span class="text-white uppercase fw-bold">GSOD, Outreachy</span>
-						</p>
-							</div>
-
+							<p class="text-white"><strong>86</strong> (LFX MENTORSHIP)<br/>
+<strong>16</strong> (GOOGLE SUMMER OF CODE)<br/>
+<strong>1</strong> (GOOGLE SUMMER OF DOCS)<br/>
+<strong>1</strong> (OUTREACHY)</p>
 						</div>
-
 						<div>
-
 							<div aria-hidden="true"
 								class="ar-spacer-80 show-upto-700"></div>
 
 							<a href="https://github.com/cncf/mentoring"
 								class="button is-pink">Get involved</a>
-
 						</div>
 					</div>
+
 				</div>
 			</div>
 
@@ -2667,6 +2677,35 @@ In Italian, thanks to SparkFabrik</p>
 				<h3 class="section-intro outro max-w-550">We hope you enjoyed
 					reflecting on all the great things we accomplished together
 					in 2021.</h3>
+
+				<div class="ar-social-share is-pink">
+					<p class="ss-title lh-100 mb-0">Share</p>
+
+					<div class="ss-wrapper">
+						<!-- twitter -->
+						<?php if ( $twitter_url ) : ?>
+						<a target="_blank" aria-label="Share on Twitter"
+							title="Share on Twitter"
+							href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
+						<?php endif; ?>
+
+						<!-- linkedin -->
+						<?php if ( $linkedin_url ) : ?>
+						<a target="_blank" aria-label="Share on Linkedin"
+							title="Share on Linkedin"
+							href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
+						<?php endif; ?>
+
+						<!-- sendto email -->
+						<?php if ( $mailto_url ) : ?>
+						<a target="_blank" aria-label="Share by Email"
+							title="Share by Email"
+							href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
+						<?php endif; ?>
+					</div>
+				</div>
+
+				<div aria-hidden="true" class="ar-spacer-60"></div>
 
 				<p
 					class="text-medium max-w-800">The full CNCF Annual Report 2021 will be available soon as a PDF. Join the CNCF mailing list to be notified when it is available.</p>
