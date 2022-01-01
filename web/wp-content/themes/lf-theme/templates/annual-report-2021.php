@@ -2543,10 +2543,10 @@ In Italian, thanks to SparkFabrik</p>
 
 					<div class="mentoring-numbers">
 						<div>
-							<p class="text-white"><strong>86</strong> (LFX MENTORSHIP)<br/>
-<strong>16</strong> (GOOGLE SUMMER OF CODE)<br/>
-<strong>1</strong> (GOOGLE SUMMER OF DOCS)<br/>
-<strong>1</strong> (OUTREACHY)</p>
+							<p class="text-white"><strong>86</strong> LFX MENTORSHIP<br/>
+<strong>16</strong> GOOGLE SUMMER OF CODE<br/>
+<strong>1</strong> GOOGLE SUMMER OF DOCS<br/>
+<strong>1</strong> OUTREACHY</p>
 						</div>
 						<div>
 							<div aria-hidden="true"
