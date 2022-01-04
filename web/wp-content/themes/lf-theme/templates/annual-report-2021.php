@@ -10,13 +10,17 @@
 
 get_template_part( 'components/header' );
 
+// declare report PDF link to reference as variable.
+$pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/01/CNCF_Annual_Report_2021.pdf';
+
 ?>
 
 <style>
-	html {
-	  visibility: hidden;
-	}
-  </style>
+html {
+	visibility: hidden;
+}
+
+</style>
 
 <link rel="prefetch"
 	href="<?php echo esc_url( get_template_directory_uri() . '/build/annual-report-2021.min.css' ); ?>"
@@ -81,42 +85,51 @@ $mailto_url = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbs
 						</h2>
 					</div>
 
-					<div aria-hidden="true" class="ar-spacer-40"></div>
+					<!-- <div aria-hidden="true" class="ar-spacer-40"></div> -->
 
-					<div class="ar-social-share">
-						<p class="ss-title lh-100 mb-0">Share</p>
+					<div aria-hidden="true" class="ar-spacer-60"></div>
 
-						<div class="ss-wrapper">
-							<!-- twitter -->
-							<?php if ( $twitter_url ) : ?>
-							<a target="_blank" aria-label="Share on Twitter"
-								title="Share on Twitter"
-								href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
-							<?php endif; ?>
+					<div class="hero-grid">
 
-							<!-- linkedin -->
-							<?php if ( $linkedin_url ) : ?>
-							<a target="_blank" aria-label="Share on Linkedin"
-								title="Share on Linkedin"
-								href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
-							<?php endif; ?>
+						<div class="ar-social-share">
+							<p class="ss-title lh-100 mb-0 fw-semi">Share</p>
 
-							<!-- sendto email -->
-							<?php if ( $mailto_url ) : ?>
-							<a target="_blank" aria-label="Share by Email"
-								title="Share by Email"
-								href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
-							<?php endif; ?>
+							<div class="ss-wrapper">
+								<!-- twitter -->
+								<?php if ( $twitter_url ) : ?>
+								<a target="_blank" aria-label="Share on Twitter"
+									title="Share on Twitter"
+									href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
+								<?php endif; ?>
+
+								<!-- linkedin -->
+								<?php if ( $linkedin_url ) : ?>
+								<a target="_blank"
+									aria-label="Share on Linkedin"
+									title="Share on Linkedin"
+									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
+								<?php endif; ?>
+
+								<!-- sendto email -->
+								<?php if ( $mailto_url ) : ?>
+								<a target="_blank" aria-label="Share by Email"
+									title="Share by Email"
+									href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
+								<?php endif; ?>
+							</div>
 						</div>
+
+						<a href="<?php echo esc_url( $pdf_link ); ?>"
+							title="Download CNCF Annual Report 2021 as a PDF"
+							class="button is-style-button-pdf">Download<br
+								class="show-over-500"> full report</a>
+
+						<p
+							class="fw-semi text-medium mb-0">Navigate using the section headings<br class="show-over-1200"> or simply by scrolling.</p>
+
 					</div>
 
-
-					<div aria-hidden="true" class="ar-spacer-40"></div>
-
-					<p
-						class="fw-semi mb-0">Scroll through the report highlights or jump to a section below.</p>
-
-					<div aria-hidden="true" class="ar-spacer-80 "></div>
+					<div aria-hidden="true" class="ar-spacer-100 "></div>
 
 					<div aria-hidden="true" class="ar-spacer-20 show-over-414">
 					</div>
@@ -392,8 +405,6 @@ $mailto_url = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbs
 				</div>
 			</div>
 
-			<!-- TODO: SHARE  -->
-
 			<div aria-hidden="true" class="ar-spacer-160"></div>
 
 		</section>
@@ -463,8 +474,6 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 					</div>
 
 				</div>
-
-				<!-- TODO: SHARE -->
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 			</div>
@@ -681,8 +690,6 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 				</div>
 
-				<!-- TODO: SHARE -->
-
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
 			</div>
@@ -771,6 +778,19 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<p
 						class="by-position">Principal Engineer, Spotify & CNCF TOC member</p>
 				</div>
+			</div>
+
+
+			<div aria-hidden="true" class="ar-spacer-160"></div>
+			<div class="hr-divider"></div>
+			<div aria-hidden="true" class="ar-spacer-100"></div>
+			<div class="more-wrapper">
+				<p
+					class="secondary-sub-section lh-100 mb-0">Enjoyed our 2021 member highlights? Get more details in the full report...</p>
+				<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
+				</div>
+				<a href="<?php echo esc_url( $pdf_link ); ?>"
+					class="button is-pink is-larger">Download Full Report</a>
 			</div>
 
 			<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -1449,6 +1469,19 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				</a>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
+				<div class="hr-divider"></div>
+				<div aria-hidden="true" class="ar-spacer-100"></div>
+				<div class="more-wrapper">
+					<p
+						class="secondary-sub-section lh-100 mb-0">Enjoyed our 2021 event highlights? Get more details in the full report...</p>
+					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
+					</div>
+					<a href="<?php echo esc_url( $pdf_link ); ?>"
+						class="button is-pink is-larger">Download Full
+						Report</a>
+				</div>
+
+				<div aria-hidden="true" class="ar-spacer-160"></div>
 
 			</div>
 		</section>
@@ -1601,8 +1634,6 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 				</div>
 
-				<!-- TODO: Share  -->
-
 				<div aria-hidden="true" class="ar-spacer-100"></div>
 
 				<div class="section-grid-12">
@@ -1632,6 +1663,20 @@ Delivers effective strategies for creating inclusive open source communities and
 				</div>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
+				<div class="hr-divider"></div>
+				<div aria-hidden="true" class="ar-spacer-100"></div>
+				<div class="more-wrapper">
+					<p
+						class="secondary-sub-section lh-100 mb-0">Enjoyed our 2021 training highlights? Get more details in the full report...</p>
+					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
+					</div>
+					<a href="<?php echo esc_url( $pdf_link ); ?>"
+						class="button is-pink is-larger">Download Full
+						Report</a>
+				</div>
+
+				<div aria-hidden="true" class="ar-spacer-160"></div>
+
 
 			</div>
 		</section>
@@ -1716,8 +1761,6 @@ Delivers effective strategies for creating inclusive open source communities and
 				src="<?php Image::get_svg( 'annual-reports/2021/chart-project-velocity.svg', true ); ?>"
 				alt="Chart showing CNCF project velocity">
 
-			<!-- TODO: Share  -->
-
 			<div aria-hidden="true" class="ar-spacer-80"></div>
 
 			<div class="sub-section-header-container">
@@ -1731,8 +1774,6 @@ Delivers effective strategies for creating inclusive open source communities and
 			<img loading="lazy" width="1150" height="433"
 				src="<?php Image::get_svg( 'annual-reports/2021/chart-projects-accepted.svg', true ); ?>"
 				alt="Chart showing number of projects accepted to CNCF each year">
-
-			<!-- TODO: Share  -->
 
 			<div aria-hidden="true" class="ar-spacer-160"></div>
 
@@ -1882,8 +1923,6 @@ Delivers effective strategies for creating inclusive open source communities and
 				<img loading="lazy" width="1150" height="428"
 					src="<?php Image::get_svg( 'annual-reports/2021/chart-endpoint-testing.svg', true ); ?>"
 					alt="Chart showing Kubernetes endpoint testing coverage in different versions">
-
-				<!-- TODO: Share  -->
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
@@ -2045,6 +2084,20 @@ In Italian, thanks to SparkFabrik</p>
 					<img loading="lazy"
 						src="<?php Image::get_image( 'annual-reports/2021/phippy-gang.png', true ); ?>"
 						alt="Multiple Phippy characters" class="image-book">
+				</div>
+
+
+				<div aria-hidden="true" class="ar-spacer-160"></div>
+				<div class="hr-divider"></div>
+				<div aria-hidden="true" class="ar-spacer-100"></div>
+				<div class="more-wrapper">
+					<p
+						class="secondary-sub-section lh-100 mb-0">Enjoyed our 2021 project highlights? Get more details in the full report...</p>
+					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
+					</div>
+					<a href="<?php echo esc_url( $pdf_link ); ?>"
+						class="button is-pink is-larger">Download Full
+						Report</a>
 				</div>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -2368,7 +2421,18 @@ In Italian, thanks to SparkFabrik</p>
 					src="<?php Image::get_svg( 'annual-reports/2021/chart-meetup-members.svg', true ); ?>"
 					alt="Chart showing number of members in CNCF meetup group over time">
 
-				<!-- TODO: Share  -->
+				<div aria-hidden="true" class="ar-spacer-160"></div>
+				<div class="hr-divider"></div>
+				<div aria-hidden="true" class="ar-spacer-100"></div>
+				<div class="more-wrapper">
+					<p
+						class="secondary-sub-section lh-100 mb-0">Enjoyed our 2021 community highlights? Get more details in the full report...</p>
+					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
+					</div>
+					<a href="<?php echo esc_url( $pdf_link ); ?>"
+						class="button is-pink is-larger">Download Full
+						Report</a>
+				</div>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
@@ -2626,8 +2690,6 @@ In Italian, thanks to SparkFabrik</p>
 				</div>
 			</div>
 
-			<!-- TODO: Share  -->
-
 			<div aria-hidden="true" class="ar-spacer-160"></div>
 
 		</section>
@@ -2670,52 +2732,87 @@ In Italian, thanks to SparkFabrik</p>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
-				<h2 class="section-title uppercase">Thank You</h2>
+				<div class="section-grid-17">
 
-				<div aria-hidden="true" class="ar-spacer-60"></div>
+					<div class="shg-01">
+						<h2 class="section-title uppercase">Thank You</h2>
 
-				<h3 class="section-intro outro max-w-550">We hope you enjoyed
-					reflecting on all the great things we accomplished together
-					in 2021.</h3>
+						<div aria-hidden="true" class="ar-spacer-60"></div>
 
-				<div class="ar-social-share is-pink">
-					<p class="ss-title lh-100 mb-0">Share</p>
+						<h3 class="section-intro outro">We hope you enjoyed
+							reflecting on <br class="show-over-1200">all the
+							great things we accomplished <br
+								class="show-over-1200">together
+							in 2021.</h3>
 
-					<div class="ss-wrapper">
-						<!-- twitter -->
-						<?php if ( $twitter_url ) : ?>
-						<a target="_blank" aria-label="Share on Twitter"
-							title="Share on Twitter"
-							href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
-						<?php endif; ?>
+						<p
+							class="text-medium fw-semi">Your comments and feedback are welcome at <a href="mailto:info@cncf.io">info@cncf.io</a>.</p>
 
-						<!-- linkedin -->
-						<?php if ( $linkedin_url ) : ?>
-						<a target="_blank" aria-label="Share on Linkedin"
-							title="Share on Linkedin"
-							href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
-						<?php endif; ?>
-
-						<!-- sendto email -->
-						<?php if ( $mailto_url ) : ?>
-						<a target="_blank" aria-label="Share by Email"
-							title="Share by Email"
-							href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
-						<?php endif; ?>
 					</div>
+
+					<div class="shg-02">
+
+						<a href="<?php echo esc_url( $pdf_link ); ?>"
+							title="Download CNCF Annual Report 2021 PDF">
+							<?php
+							Lf_Utils::display_responsive_images( 66630, 'large', '500px', '', 'lazy' );
+							?>
+				</a>
+
+						<div aria-hidden="true" class="ar-spacer-60"></div>
+
+						<a href="<?php echo esc_url( $pdf_link ); ?>"
+							title="Download CNCF Annual Report 2021 PDF"
+							class="button is-pink is-larger w-full">Download
+							Full
+							Report</a>
+
+						<div aria-hidden="true"
+							class="ar-spacer-120 show-upto-700"></div>
+					</div>
+
+					<div class="shg-03">
+
+						<div class="ar-social-share is-pink">
+							<p class="ss-title lh-100 mb-0">Share</p>
+
+							<div class="ss-wrapper">
+								<!-- twitter -->
+								<?php if ( $twitter_url ) : ?>
+								<a target="_blank" aria-label="Share on Twitter"
+									title="Share on Twitter"
+									href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
+								<?php endif; ?>
+
+								<!-- linkedin -->
+								<?php if ( $linkedin_url ) : ?>
+								<a target="_blank"
+									aria-label="Share on Linkedin"
+									title="Share on Linkedin"
+									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
+								<?php endif; ?>
+
+								<!-- sendto email -->
+								<?php if ( $mailto_url ) : ?>
+								<a target="_blank" aria-label="Share by Email"
+									title="Share by Email"
+									href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
+								<?php endif; ?>
+							</div>
+						</div>
+
+						<div aria-hidden="true" class="ar-spacer-80"></div>
+
+						<p
+							class="event-push"><span class="fw-bold text-purple">We're looking forward to seeing you in 2022!</span><br>Check out our calendar for community events near you and don't forget to register for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">KubeCon+CloudNativeCon Europe</a> in Valencia, May 2022.</p>
+
+
+					</div>
+
 				</div>
 
-				<div aria-hidden="true" class="ar-spacer-60"></div>
-
-				<p
-					class="text-medium max-w-800">The full CNCF Annual Report 2021 will be available soon as a PDF. Join the CNCF mailing list to be notified when it is available.</p>
-				<a href="#newsletter" title="Sign up to mailing list"
-					class="button">Sign up to Mailing List</a>
-				<div aria-hidden="true" class="ar-spacer-40"></div>
-				<p
-					class="text-medium">Your comments and feedback are welcome at <a href="mailto:info@cncf.io">info@cncf.io</a>.</p>
-				<p
-					class="max-w-800">We're looking forward to seeing you in 2022! Check out our calendar for community events near you and don't forget to register for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">KubeCon+CloudNativeCon Europe</a> in Valencia, May 2022.</p>
+				<div aria-hidden="true" class="ar-spacer-40 show-over-1000">
+				</div>
 
 				<a
 					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">
