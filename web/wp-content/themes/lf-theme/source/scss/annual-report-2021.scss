@@ -463,7 +463,7 @@ html {
 				grid-row: 1;
 				grid-column: 1;
 			}
-			.button {
+			.ar-button {
 				grid-row: 1;
 				grid-column: 2;
 			}
@@ -496,7 +496,7 @@ html {
 		grid-auto-rows: max-content max-content;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 30px;
-		.button {
+		.ar-button {
 			grid-column: 1 / 3;
 			grid-row: 3;
 			max-width: 300px;
