@@ -85,9 +85,7 @@ $mailto_url = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbs
 						</h2>
 					</div>
 
-					<!-- <div aria-hidden="true" class="ar-spacer-40"></div> -->
-
-					<div aria-hidden="true" class="ar-spacer-60"></div>
+					<div aria-hidden="true" class="ar-spacer-40"></div>
 
 					<div class="hero-grid">
 
@@ -121,8 +119,8 @@ $mailto_url = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbs
 
 						<a href="<?php echo esc_url( $pdf_link ); ?>"
 							title="Download CNCF Annual Report 2021 as a PDF"
-							class="button is-style-button-pdf">Download<br
-								class="show-over-500"> full report</a>
+							class="ar-button">Download<br class="show-over-500">
+							full report</a>
 
 						<p
 							class="fw-semi text-medium mb-0">Navigate using the section headings<br class="show-over-1200"> or simply by scrolling.</p>
@@ -275,7 +273,7 @@ $mailto_url = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbs
 				<div>
 					<p>We've seen record growth across all areas — from projects, events and the cloud native ecosystem, to membership and community. Most importantly, this year the definition of “us” has evolved to encompass a truly global, welcoming community of doers, working collaboratively to fundamentally change how technology is built and delivered.</p>
 
-					<p>In the spirit of our evolution, the Annual Report is a little different this year. This web version shares all the great highlights of 2021, but if you're after more you can soon download our PDF version which sets out an in-depth analysis of the past 12 months.</p>
+					<p>In the spirit of our evolution, the Annual Report is a little different this year. This web version shares all the great highlights of 2021, but if you're after more please <a href="<?php echo esc_url( $pdf_link ); ?>" title="Download the CNCF Annual Report 2021">download the PDF version</a> which sets out an in-depth analysis of the past 12 months.</p>
 
 					<p>I hope you enjoy reading these fantastic milestones and reflecting back on the incredible progress we've achieved together this year.</p>
 				</div>
@@ -469,7 +467,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 
 						<p>Organizations that sell cloud native technologies built on, or integrated with, CNCF projects are eligible to join as general members.</p>
 
-						<a href="/join" class="button is-pink">Become a CNCF
+						<a href="/join" class="ar-button is-pink">Become a CNCF
 							Member</a>
 					</div>
 
@@ -685,7 +683,8 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 						<p>End Users leverage cloud native technologies internally, but don't sell cloud native products or services. Come shape the cloud native ecosystem with us!</p>
 
-						<a href="/enduser" class="button is-pink">Join CNCF</a>
+						<a href="/enduser" class="ar-button is-pink">Join
+							CNCF</a>
 					</div>
 
 				</div>
@@ -790,7 +789,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
 				</div>
 				<a href="<?php echo esc_url( $pdf_link ); ?>"
-					class="button is-pink is-larger">Download Full Report</a>
+					class="ar-button is-pink is-larger">Download Full Report</a>
 			</div>
 
 			<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -1019,7 +1018,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<p class="fw-semi">Jim Haughwout, VP, Peloton </p>
 
 						<a href="/wp-content/uploads/2021/06/KubeCon_EU_21_Virtual_TransparencyReport_FINAL.pdf"
-							class="button is-pink w-full">Download Event
+							class="ar-button is-pink w-full">Download Event
 							<br />transparency report</a>
 
 					</div>
@@ -1341,7 +1340,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 								</div>
 
 								<a href="/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf"
-									class="button is-pink w-full">Download
+									class="ar-button is-pink w-full">Download
 									Event<br />
 									Transparency Report</a>
 
@@ -1477,7 +1476,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
 					</div>
 					<a href="<?php echo esc_url( $pdf_link ); ?>"
-						class="button is-pink is-larger">Download Full
+						class="ar-button is-pink is-larger">Download Full
 						Report</a>
 				</div>
 
@@ -1671,7 +1670,7 @@ Delivers effective strategies for creating inclusive open source communities and
 					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
 					</div>
 					<a href="<?php echo esc_url( $pdf_link ); ?>"
-						class="button is-pink is-larger">Download Full
+						class="ar-button is-pink is-larger">Download Full
 						Report</a>
 				</div>
 
@@ -2096,7 +2095,7 @@ In Italian, thanks to SparkFabrik</p>
 					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
 					</div>
 					<a href="<?php echo esc_url( $pdf_link ); ?>"
-						class="button is-pink is-larger">Download Full
+						class="ar-button is-pink is-larger">Download Full
 						Report</a>
 				</div>
 
@@ -2430,7 +2429,7 @@ In Italian, thanks to SparkFabrik</p>
 					<div aria-hidden="true" class="ar-spacer-40 show-upto-700">
 					</div>
 					<a href="<?php echo esc_url( $pdf_link ); ?>"
-						class="button is-pink is-larger">Download Full
+						class="ar-button is-pink is-larger">Download Full
 						Report</a>
 				</div>
 
@@ -2559,7 +2558,7 @@ In Italian, thanks to SparkFabrik</p>
 							class="ar-spacer-40 show-upto-700"></div>
 
 						<a href="https://glossary.cncf.io/contribute/"
-							class="button is-pink">Contribute</a>
+							class="ar-button is-pink">Contribute</a>
 					</div>
 				</div>
 
@@ -2617,7 +2616,7 @@ In Italian, thanks to SparkFabrik</p>
 								class="ar-spacer-80 show-upto-700"></div>
 
 							<a href="https://github.com/cncf/mentoring"
-								class="button is-pink">Get involved</a>
+								class="ar-button is-pink">Get involved</a>
 						</div>
 					</div>
 
@@ -2757,13 +2756,13 @@ In Italian, thanks to SparkFabrik</p>
 							<?php
 							Lf_Utils::display_responsive_images( 66630, 'large', '500px', '', 'lazy' );
 							?>
-				</a>
+						</a>
 
 						<div aria-hidden="true" class="ar-spacer-60"></div>
 
 						<a href="<?php echo esc_url( $pdf_link ); ?>"
 							title="Download CNCF Annual Report 2021 PDF"
-							class="button is-pink is-larger w-full">Download
+							class="ar-button is-pink is-larger w-full">Download
 							Full
 							Report</a>
 
