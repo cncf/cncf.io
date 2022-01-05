@@ -605,6 +605,8 @@ class Lf_Mu_Admin {
 		$items = json_decode( wp_remote_retrieve_body( $data ) );
 		$id_column = array_column( $items, 'id' );
 
+		$synced_ids = array();
+
 		foreach ( $ktps as $ktp ) {
 			$key = array_search( $ktp->id, $id_column );
 			if ( false === $key ) {
@@ -652,6 +654,20 @@ class Lf_Mu_Admin {
 					}
 				}
 			}
+
+			$synced_ids[] = $newid;
+		}
+
+		// delete any KTP posts which aren't in $synced_ids.
+		$query = new WP_Query(
+			array(
+				'post_type' => 'lf_ktp',
+				'post__not_in' => $synced_ids,
+			)
+		);
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			wp_delete_post( get_the_id() );
 		}
 	}
 
