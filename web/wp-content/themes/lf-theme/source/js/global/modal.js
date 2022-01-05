@@ -52,6 +52,7 @@ jQuery( document ).ready(
 				$modal_prefix_classes = typeof options.modalPrefixClass !== 'undefined' ? options.modalPrefixClass + '-' : '',
 				$modal_text = options.modalText || '',
 				modal_content_id = typeof options.modalContentId !== 'undefined' ? options.modalContentId : '',
+				$modal_slug = typeof options.modalSlug !== 'undefined' ? options.modalSlug : '',
 				$modal_content = typeof options.modalContentId !== 'undefined' ? $( '#' + modal_content_id ) : '',
 				$modal_title = options.modalTitle || '',
 				$modal_close_text = options.modalCloseText || 'Close',
@@ -111,6 +112,12 @@ jQuery( document ).ready(
 					$( '#js-modal-close' ).focus();
 				}
 
+				if ( $modal_slug !== '' ) {
+					const url = new URL( window.location );
+					url.searchParams.set( 'p', $modal_slug );
+					window.history.pushState( {}, '', url );
+				}
+
 				event.preventDefault();
 			}
 		);
@@ -130,6 +137,10 @@ jQuery( document ).ready(
 				$page = $( '#js-modal-page' );
 
 				$page.removeAttr( 'aria-hidden' );
+
+				const url = new URL( window.location );
+				url.searchParams.delete( 'p' );
+				window.history.pushState( {}, '', url );
 
 				let delay = $js_modal.css( 'animation-duration' );
 				if ( delay != '0s' ) {
@@ -259,5 +270,13 @@ jQuery( document ).ready(
 				$close.focus();
 			}
 		);
+
+		// pops open a modal if one is provided in the url.
+		const url = new URL( window.location );
+		slug = url.searchParams.get( 'p' );
+		if ( slug ) {
+			button_class = '.modal-' + slug;
+			$( button_class ).click();
+		}
 	}
 );

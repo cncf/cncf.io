@@ -265,7 +265,10 @@ class Lf_Utils {
 
 		if ( ! $image_srcset ) {
 
-			$img           = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
+			$width = $size[1] ?? '';
+			$height = $size[2] ?? '';
+
+			$img           = '<img width="' . $width . '" height="' . $height . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
 			$attachment_id = $image_id;
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
@@ -427,21 +430,21 @@ class Lf_Utils {
 		// date period.
 		if ( $dat_webinar_start > $dat_now ) {
 			?>
-			<span class="date-icon">Upcoming on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
+<span class="date-icon">Upcoming on
+			<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+</span>
 			<?php
 		} elseif ( ( $dat_webinar_start ) && ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
 			?>
-			<span class="live-icon">Recorded on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
+<span class="live-icon">Recorded on
+			<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+</span>
 			<?php
 		} elseif ( $dat_webinar_start ) {
 			?>
-			<span class="posted-date date-icon">Broadcast on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
+<span class="posted-date date-icon">Broadcast on
+			<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+</span>
 			<?php
 		}
 	}
@@ -456,9 +459,9 @@ class Lf_Utils {
 
 			// default values in case of failure.
 			$metrics = array(
-				'contributors' => 120000,
-				'contributions' => 5800000,
-				'linesofcode' => 270000000,
+				'contributors' => 143000,
+				'contributions' => 7300000,
+				'countries' => 185,
 			);
 
 			$data = wp_remote_post(
@@ -470,22 +473,14 @@ class Lf_Utils {
 					'data_format' => 'body',
 				)
 			);
-
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 				return $metrics;
 			}
 
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['contributors'] = $remote_body->contributors;
+			$remote_body              = json_decode( wp_remote_retrieve_body( $data ) );
+			$metrics['contributors']  = $remote_body->contributors;
 			$metrics['contributions'] = $remote_body->contributions;
-
-			$data = wp_remote_get( 'https://metrics.lfanalytics.io/v1/projects/cncf-f/summary' );
-			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
-				return $metrics;
-			}
-
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['linesofcode'] = $remote_body->metrics_floats->linesOfCode;
+			$metrics['countries']     = $remote_body->countries;
 
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 		}

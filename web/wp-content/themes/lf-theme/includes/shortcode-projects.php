@@ -53,14 +53,14 @@ function add_projects_shortcode( $atts ) {
 		<?php
 		while ( $project_query->have_posts() ) :
 			$project_query->the_post();
-			$date_accepted = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? ' (accepted to CNCF on ' . gmdate( 'n/j/Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) . ')' : '';
+			$date_accepted = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? ' (accepted to CNCF on ' . gmdate( 'F j, Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) . ')' : '';
 			$project_category = get_post_meta( get_the_ID(), 'lf_project_category', true );
 			$logo = get_post_meta( get_the_ID(), 'lf_project_logo', true );
 			$image = new Image();
 
 			?>
 	<div class="project-box">
-		<a href="<?php the_permalink(); ?>" 
+		<a href="<?php the_permalink(); ?>"
 			title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
 			class="project-thumbnail-container">
 

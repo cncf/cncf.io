@@ -169,7 +169,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study', 'lf_ktp' ), $args );
+register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study', 'lf_ktp', 'lf_person' ), $args );
 
 $labels = array(
 	'name'              => __( 'Country', 'lf-mu' ),

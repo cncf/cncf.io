@@ -11,7 +11,7 @@
 /* eslint-disable no-var */
 
 jQuery( document ).ready(
-	function( $ ) {
+	function ( $ ) {
 		// If page loads with hash, go to it nicely after 1s.
 		if ( window.location.hash ) {
 			// smooth scroll to the anchor id if exists after 1s.
@@ -19,14 +19,14 @@ jQuery( document ).ready(
 				let theHash = $( window.location.hash );
 				let offsetNew = theHash === '#' ? 0 : theHash.offset().top - getSpacing();
 				setTimeout(
-					function() {
+					function () {
 						$( 'html, body' )
-							.animate(
-								{
-									scrollTop: offsetNew,
-								},
-								500
-							);
+						.animate(
+							{
+								scrollTop: offsetNew,
+							},
+							500
+						);
 					},
 					1000
 				);
@@ -39,7 +39,7 @@ jQuery( document ).ready(
 			let lastId;
 			let menuItems = topMenu.find( 'a' );
 			let scrollItems = menuItems.map(
-				function() {
+				function () {
 					let item = $( $( this ).attr( 'href' ) );
 					if ( item.length ) {
 						return item;
@@ -48,22 +48,22 @@ jQuery( document ).ready(
 			);
 
 			// Update nav and hash as user scrolls.
-			$( window ).on( 'scroll', window.utils.isThrottled( navUpdate, 200, true ) );
+			$( window ).on( 'scroll',window.utils.isThrottled( navUpdate,200,true ) );
 
 			// Click handler for menu items so we can get a fancy scroll animation.
 			menuItems.click(
-				function( e ) {
+				function ( e ) {
 					let href = $( this ).attr( 'href' );
 					let offsetTop = href === '#' ? 0 : $( href ).offset()
-						.top - getSpacing();
+					.top - getSpacing();
 					$( 'html, body' )
-						.stop()
-						.animate(
-							{
-								scrollTop: offsetTop,
-							},
-							500
-						);
+					.stop()
+					.animate(
+						{
+							scrollTop: offsetTop,
+						},
+						500
+					);
 					e.preventDefault();
 				}
 			);
@@ -74,21 +74,21 @@ jQuery( document ).ready(
 
 				// Get id of current scroll item, add 20 for padding from header.
 				let cur = scrollItems.map(
-					function() {
+					function () {
 						if ( $( this ).offset().top < fromTop + getSpacing() + 20 ) {
 							return this;
 						}
 					}
 				);
 
-				// Get the id of the current element.
-				cur = cur[ cur.length - 1 ];
-				let id = cur && cur.length ? cur[ 0 ].id : '';
+				  // Get the id of the current element.
+				  cur = cur[cur.length - 1];
+				  let id = cur && cur.length ? cur[0].id : '';
 
 				if ( lastId !== id ) {
-					lastId = id;
-					// Set/remove active class.
-					menuItems
+					  lastId = id;
+					  // Set/remove active class.
+					  menuItems
 						.parent()
 						.removeClass( 'is-active' )
 						.end()
@@ -103,8 +103,8 @@ jQuery( document ).ready(
 								'#' + id
 							);
 						} else {
-							// IE9, IE8, etc.
-							window.location.hash = '#!' + id;
+							  // IE9, IE8, etc.
+							  window.location.hash = '#!' + id;
 						}
 					} else {
 						removeHash();
@@ -140,7 +140,7 @@ jQuery( document ).ready(
 			let loc = window.location;
 
 			if ( 'pushState' in history ) {
-				history.pushState( '', document.title, loc.pathname + loc.search );
+				history.pushState( '',document.title,loc.pathname + loc.search );
 			} else {
 				// Prevent scrolling by storing the page's current scroll offset.
 				scrollV = document.body.scrollTop;

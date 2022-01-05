@@ -24,7 +24,7 @@ jQuery( document ).ready(
 						// Element to scroll to.
 						let target = $( this.hash );
 						// add offset for static menu.
-						const customOffset = 120;
+						const customOffset = 80;
 						target = target.length ? target : $( '[name=' + this.hash.slice( 1 ) + ']' );
 						// Check scroll target exists.
 						if ( target.length ) {

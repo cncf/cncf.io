@@ -490,9 +490,6 @@ class Lf_Mu_Admin {
 				'meta_input'   => array(),
 			);
 
-			if ( property_exists( $p, 'excerpt' ) ) {
-				$params['post_excerpt'] = $p->excerpt;
-			}
 			if ( property_exists( $p, 'company' ) ) {
 				$params['meta_input']['lf_person_company'] = $p->company;
 			}
@@ -540,14 +537,29 @@ class Lf_Mu_Admin {
 			$newid = wp_insert_post( $params ); // will insert or update the post as needed.
 
 			if ( $newid ) {
-				if ( property_exists( $p, 'language' ) ) {
-					wp_set_object_terms( $newid, $p->language, 'lf-language', false );
+				if ( property_exists( $p, 'languages' ) ) {
+					wp_set_object_terms( $newid, $p->languages, 'lf-language', false );
 				}
+				$projects_to_add = array();
 				if ( property_exists( $p, 'projects' ) ) {
-					wp_set_object_terms( $newid, $p->projects, 'lf-project', false );
+					foreach ( $p->projects as $proj ) {
+						if ( term_exists( $proj, 'lf-project' ) ) {
+							// Don't allow any non-CNCF projects to be added.
+							$projects_to_add[] = $proj;
+						}
+					}
+					wp_set_object_terms( $newid, $projects_to_add, 'lf-project', false );
 				}
 				if ( property_exists( $p, 'category' ) ) {
 					wp_set_object_terms( $newid, $p->category, 'lf-person-category', false );
+				}
+				if ( property_exists( $p, 'location' ) ) {
+					$country_arr = explode( ',', $params['meta_input']['lf_person_location'] );
+					$country = trim( end( $country_arr ) );
+					$term_exists = term_exists( $country, 'lf-country' );
+					if ( $term_exists ) {
+						wp_set_object_terms( $newid, (int) $term_exists['term_id'], 'lf-country', false );
+					}
 				}
 
 				$synced_ids[] = $newid;
@@ -592,6 +604,8 @@ class Lf_Mu_Admin {
 		}
 		$items = json_decode( wp_remote_retrieve_body( $data ) );
 		$id_column = array_column( $items, 'id' );
+
+		$synced_ids = array();
 
 		foreach ( $ktps as $ktp ) {
 			$key = array_search( $ktp->id, $id_column );
@@ -640,6 +654,20 @@ class Lf_Mu_Admin {
 					}
 				}
 			}
+
+			$synced_ids[] = $newid;
+		}
+
+		// delete any KTP posts which aren't in $synced_ids.
+		$query = new WP_Query(
+			array(
+				'post_type' => 'lf_ktp',
+				'post__not_in' => $synced_ids,
+			)
+		);
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			wp_delete_post( get_the_id() );
 		}
 	}
 
