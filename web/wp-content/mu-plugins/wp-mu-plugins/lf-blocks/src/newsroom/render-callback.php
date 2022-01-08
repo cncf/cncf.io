@@ -19,7 +19,7 @@ function lf_newsroom_render_callback( $attributes ) {
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	// get the category to display.
-	$category = isset( $attributes['category'] ) ? $attributes['category'] : 'blog';
+	$category = isset( $attributes['category'] ) ? $attributes['category'] : '230';
 	// show images or not.
 	$show_images = isset( $attributes['showImages'] ) ? $attributes['showImages'] : '';
 	// show image border or not.
