@@ -452,23 +452,3 @@ $args   = array(
 	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-report-type', array( 'lf_report' ), $args );
-
-$labels = array(
-	'name'          => __( 'Publish Year', 'lf-mu' ),
-	'singular_name' => __( 'Publish Year', 'lf-mu' ),
-	'search_items'  => __( 'Search Publish Years', 'lf-mu' ),
-	'all_items'     => __( 'All Publish Years', 'lf-mu' ),
-	'edit_item'     => __( 'Edit Publish Year', 'lf-mu' ),
-	'update_item'   => __( 'Update Publish Year', 'lf-mu' ),
-	'add_new_item'  => __( 'Add New Publish Year', 'lf-mu' ),
-	'new_item_name' => __( 'New Publish Year', 'lf-mu' ),
-	'menu_name'     => __( 'Publish Years', 'lf-mu' ),
-);
-$args   = array(
-	'labels'            => $labels,
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'show_in_nav_menus' => false,
-	'show_admin_column' => true,
-);
-register_taxonomy( 'lf-publish-year', array( 'lf_report' ), $args );
