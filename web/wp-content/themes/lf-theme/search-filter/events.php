@@ -27,13 +27,11 @@
 		while ( $query->have_posts() ) :
 			$query->the_post();
 
+			$external_url     = get_post_meta( get_the_ID(), 'lf_event_external_url', true );
 			$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
-
-			$event_end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
-
-			$city = get_post_meta( get_the_ID(), 'lf_event_city', true );
-
-			$country = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
+			$event_end_date   = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
+			$city             = get_post_meta( get_the_ID(), 'lf_event_city', true );
+			$country          = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
 
 			if ( ! $city && ! $country ) {
 				$location = 'TBC';
@@ -73,14 +71,14 @@
 
 			<div class="event-logo">
 			<?php if ( $logo ) : ?>
-				<a href="<?php the_permalink(); ?>"
+				<a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
 					title="<?php the_title(); ?>">
 				<?php
 						echo wp_get_attachment_image( $logo, 'medium', false );
 				?>
 						  </a>
 		<?php else : ?>
-						<h4 class="event-title"><a href="<?php the_permalink(); ?>"
+						<h4 class="event-title external"><a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
 					title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
 						<?php endif; ?>
 				</a>
@@ -93,8 +91,8 @@
 			</h6>
 			<h5
 				class="event-city"><?php echo esc_html( $location ); ?></h5>
-			<a href="<?php the_permalink(); ?>"
-				class="button on-image">Learn More</a>
+			<a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
+				class="button on-image external">Learn More</a>
 		</div>
 	</article>
 <?php endwhile; ?>
