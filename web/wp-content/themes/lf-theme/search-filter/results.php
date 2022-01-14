@@ -36,7 +36,7 @@ if ( $query->have_posts() ) {
 		case 'lf_report':
 			get_template_part( 'search-filter/reports' );
 			break;
-		}
+	}
 } else {
 	echo 'No Results Found';
 }
