@@ -30,6 +30,9 @@ elseif ( is_singular( 'lf_kubeweekly' ) ) :
 elseif ( is_singular( 'lf_project' ) ) :
 	get_template_part( 'components/project-single' );
 
+elseif ( is_singular( 'lf_report' ) ) :
+	get_template_part( 'components/report-single' );
+
 		// Default.
 else :
 	get_template_part( 'components/post-single' );

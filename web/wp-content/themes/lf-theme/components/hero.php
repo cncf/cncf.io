@@ -70,10 +70,6 @@ $options = get_option( 'lf-mu' );
 			<p class="hero-parent-link">
 				<a href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>
 				</p>
-			<?php } elseif ( 60559 === wp_get_post_parent_id( $post ) ) { ?>
-			<p class="hero-parent-link">
-				<a href="/reports/" title="Go to Reports">Report</a>
-				</p>
 			<?php } ?>
 			<h1 class="page-title" itemprop="headline"><?php the_title(); ?>
 			</h1>
@@ -104,8 +100,7 @@ $options = get_option( 'lf-mu' );
 			<?php elseif ( is_home() ) : ?>
 			<h2 class="blog-title"><?php single_post_title(); ?></h2>
 			<?php else : ?>
-			<h1 class="page-title" itemprop="headline"><?php the_title(); ?>
-			</h1>
+			<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 			<?php endif; ?>
 		</div>
 	</div>
