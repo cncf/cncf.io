@@ -29,7 +29,7 @@ if ( $query->have_posts() ) : ?>
 	$y = 0;
 	while ( $query->have_posts() ) :
 		$query->the_post();
-		$report_type = Lf_Utils::get_term_names( get_the_ID(), 'lf-report-type', true );
+		$report_type = ucwords( Lf_Utils::get_term_names( get_the_ID(), 'lf-report-type', true ) );
 		$report_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-report-type', true );
 		$report_year = get_post_meta( get_the_ID(), 'lf_report_published_year', true );
 
@@ -64,7 +64,7 @@ if ( $query->have_posts() ) : ?>
 			$report_type_link = '?_sft_lf-report-type=' . $report_type_slug . '';
 			?>
 			<a class="skew-box secondary" title="See more <?php echo esc_attr( $report_type ); ?> reports" href="<?php echo esc_url( $report_type_link ); ?>">
-			<?php echo esc_html( $report_type ); ?> report</a>
+			<?php echo esc_html( $report_type ); ?> Report</a>
 		<?php endif; ?>
 		<h5 class="webinar-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
