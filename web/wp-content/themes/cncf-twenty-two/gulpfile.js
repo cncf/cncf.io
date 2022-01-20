@@ -266,7 +266,9 @@ function styles() {
 		.pipe( touch() );
 }
 
-// PHP Code Sniffer.
+/**
+ * PHP Code Sniffer.
+ */
 function phpcs( done ) {
 	return (
 		gulp.src( sniffSource )
@@ -276,7 +278,7 @@ function phpcs( done ) {
 				warningSeverity: 0,
 				errorSeverity: 1,
 				showSniffCode: true,
-				report: 'full' // summary or full
+				report: 'full' // summary or full.
 			} ) )
 			.pipe( gulpphpcs.reporter( 'log' ) )
 			.pipe( notify( { message: 'phpcs task complete',onLast: true } ) )
@@ -284,7 +286,9 @@ function phpcs( done ) {
 	done();
 }
 
-// PHP Code Beautifier.
+/**
+ * PHP Code Beautifier.
+ */
 function phpcbf( done ) {
 	return (
 		gulp.src( sniffSource )
@@ -346,8 +350,8 @@ function blocksJS() {
 }
 
 exports.default = gulp.series( styles,globalJS,blocksJS,watch );
+exports.detached = gulp.series( styles,detachedStyles,globalJS,blocksJS, watch );
 exports.build = gulp.series( styles,detachedStyles,globalJS,blocksJS );
 exports.phpcs = gulp.series( phpcs );
 exports.phpcbf = gulp.series( phpcbf );
 exports.standards = gulp.series( phpcbf,phpcs );
-exports.watch = gulp.series( watch );

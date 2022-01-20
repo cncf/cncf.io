@@ -1,4 +1,4 @@
-@import '../core/variables';
+@import '../core/_variables.scss';
 
 .annual-report-page .container {
 	margin: 0 auto;
@@ -668,7 +668,7 @@ h6 {
 }
 
 .cn-list {
-	max-width: 1100px;
+	max-width: 1150px;
 	margin-left: auto;
 	margin-right: auto;
 }

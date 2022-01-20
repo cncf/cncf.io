@@ -17,9 +17,9 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'count' => 10, // set default.
+			'count'    => 10, // set default.
 			'category' => 'endusers', // endusers, members, platinum.
-			'size' => 'large', // small, medium, large.
+			'size'     => 'large', // small, medium, large.
 		),
 		$atts,
 		'cncf_members_latest'
@@ -34,25 +34,25 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	}
 
 	$atts['category'] = strtolower( $atts['category'] );
-	$atts['size'] = strtolower( $atts['size'] );
+	$atts['size']     = strtolower( $atts['size'] );
 
 	$transient_name = '';
-	$remote_url = '';
-	$members_array = '';
+	$remote_url     = '';
+	$members_array  = '';
 
 	if ( 'endusers' == $atts['category'] ) {
 		$transient_name = 'cncf_latest_endusers';
-		$remote_url = 'https://landscape.cncf.io/data/exports/end-users-reverse-chronological.json';
+		$remote_url     = 'https://landscape.cncf.io/data/exports/end-users-reverse-chronological.json';
 	}
 
 	if ( 'members' == $atts['category'] ) {
 		$transient_name = 'cncf_latest_members';
-		$remote_url = 'https://landscape.cncf.io/data/exports/members-reverse-chronological.json';
+		$remote_url     = 'https://landscape.cncf.io/data/exports/members-reverse-chronological.json';
 	}
 
 	if ( 'platinum' == $atts['category'] ) {
 		$transient_name = 'cncf_platinum_members';
-		$remote_url = 'https://landscape.cncf.io/data/exports/cncf-platinum-members.json';
+		$remote_url     = 'https://landscape.cncf.io/data/exports/cncf-platinum-members.json';
 	}
 
 	if ( ! $transient_name ) {

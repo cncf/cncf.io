@@ -203,7 +203,7 @@ class LF_Utils {
 		$author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 		if ( ! $author ) {
 			$authors_to_ignore = array( 3049, 3047, 2910, 3051 ); // Authors we don't want to show a byline for.
-			$author_id = get_post_field( 'post_author', $the_post_id );
+			$author_id         = get_post_field( 'post_author', $the_post_id );
 			if ( in_array( $author_id, $authors_to_ignore ) ) {
 				return;
 			}
@@ -265,7 +265,10 @@ class LF_Utils {
 
 		if ( ! $image_srcset ) {
 
-			$img           = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
+			$width  = $size[1] ?? '';
+			$height = $size[2] ?? '';
+
+			$img           = '<img width="' . $width . '" height="' . $height . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
 			$attachment_id = $image_id;
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
@@ -280,18 +283,18 @@ class LF_Utils {
 			$html,
 			array(
 				'img' => array(
-					'src'    => true,
-					'srcset' => true,
-					'sizes'  => true,
-					'class'  => true,
-					'id'     => true,
-					'width'  => true,
-					'height' => true,
-					'alt'    => true,
-					'align'  => true,
-					'style'  => true,
-					'media'  => true,
-					'loading'  => true,
+					'src'     => true,
+					'srcset'  => true,
+					'sizes'   => true,
+					'class'   => true,
+					'id'      => true,
+					'width'   => true,
+					'height'  => true,
+					'alt'     => true,
+					'align'   => true,
+					'style'   => true,
+					'media'   => true,
+					'loading' => true,
 				),
 			)
 		);
@@ -456,9 +459,9 @@ class LF_Utils {
 
 			// default values in case of failure.
 			$metrics = array(
-				'contributors' => 120000,
-				'contributions' => 5800000,
-				'linesofcode' => 270000000,
+				'contributors'  => 143000,
+				'contributions' => 7300000,
+				'countries'     => 185,
 			);
 
 			$data = wp_remote_post(
@@ -475,17 +478,10 @@ class LF_Utils {
 				return $metrics;
 			}
 
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['contributors'] = $remote_body->contributors;
+			$remote_body              = json_decode( wp_remote_retrieve_body( $data ) );
+			$metrics['contributors']  = $remote_body->contributors;
 			$metrics['contributions'] = $remote_body->contributions;
-
-			$data = wp_remote_get( 'https://metrics.lfanalytics.io/v1/projects/cncf-f/summary' );
-			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
-				return $metrics;
-			}
-
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['linesofcode'] = $remote_body->metrics_floats->linesOfCode;
+			$metrics['countries']     = $remote_body->countries;
 
 			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 		}
@@ -499,16 +495,16 @@ class LF_Utils {
 		$metrics = get_transient( 'cncf_whoweare_metrics' );
 
 		if ( false === $metrics ) {
-			$metrics = LF_Utils::get_homepage_metrics();
+			$metrics                         = self::get_homepage_metrics();
 			$metrics['certified-kubernetes'] = 103;
-			$metrics['cncf-members'] = 630;
+			$metrics['cncf-members']         = 630;
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/certified-kubernetes.json' );
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 				return $metrics;
 			}
 
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
+			$remote_body                     = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['certified-kubernetes'] = count( $remote_body );
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/cncf-members.json' );
@@ -516,7 +512,7 @@ class LF_Utils {
 				return $metrics;
 			}
 
-			$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
+			$remote_body             = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['cncf-members'] = count( $remote_body );
 
 			set_transient( 'cncf_whoweare_metrics', $metrics, DAY_IN_SECONDS );
@@ -556,7 +552,7 @@ class LF_Utils {
 	 * @param string  $file Filename relative to images directory.
 	 * @param boolean $path Set true to return string for image.
 	 */
-	public function get_svg( $file, $path = false ) {
+	public static function get_svg( $file, $path = false ) {
 
 		if ( $path ) {
 			$output = get_stylesheet_directory_uri() . '/images/' . $file;
@@ -584,7 +580,7 @@ class LF_Utils {
 	 *
 	 * @param string $file Filename relative to images directory.
 	 */
-	public function get_image( $file ) {
+	public static function get_image( $file ) {
 		$output = '';
 		$output = get_stylesheet_directory_uri() . '/images/' . $file;
 		echo esc_url( $output );

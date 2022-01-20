@@ -236,7 +236,7 @@ function show_reps( $atts ) {
 	echo '<div class="enduser-people-wrapper hide-descriptions">';
 
 	foreach ( $ids as $id ) {
-		$args = array(
+		$args  = array(
 			'p'         => $id,
 			'post_type' => 'lf_person',
 		);
@@ -266,8 +266,8 @@ function add_playlist_shortcode( $atts ) {
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'count' => 2, // set default.
-			'key' => '',
+			'count'       => 2, // set default.
+			'key'         => '',
 			'playlist_id' => 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40',
 		),
 		$atts,

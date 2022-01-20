@@ -23,7 +23,7 @@ function lf_theme_support_setup() {
 	register_nav_menus(
 		array(
 			'primary' => esc_html__( 'Primary' ),
-			'footer' => esc_html__( 'Footer' ),
+			'footer'  => esc_html__( 'Footer' ),
 		)
 	);
 
@@ -108,15 +108,13 @@ if ( ! is_admin() ) {
 		if ( false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
-		if ( strpos( $url, 'jquery-3.5.1' ) ) {
-			return $url;
-		}
+		// if ( strpos( $url, 'jquery-3.5.1' ) ) {
+		// return $url;
+		// }
 		return str_replace( ' src', ' defer src', $url );
 	}
-	// add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
+	add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
 }
-
-
 
 /**
  * Remove English words from Chinese case studies filters

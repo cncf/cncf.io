@@ -17,14 +17,14 @@ function add_people_shortcode( $atts ) {
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'tax' => 'staff', // set default.
+			'tax'         => 'staff', // set default.
 			'description' => true, // set default.
 		),
 		$atts,
 		'people'
 	);
 
-	$chosen_taxonomy = $atts['tax'];
+	$chosen_taxonomy   = $atts['tax'];
 	$show_descriptions = filter_var( $atts['description'], FILTER_VALIDATE_BOOLEAN );
 
 	if ( ! is_string( $chosen_taxonomy ) ) {

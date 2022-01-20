@@ -20,7 +20,7 @@ function lf_page_block_template() {
 			array(
 				'placeholder' => 'This first introductory paragraph of text should be H3 size lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo',
 				'className'   => 'is-style-max-width-900',
-				'fontSize'   => 'header-3',
+				'fontSize'    => 'header-3',
 
 			),
 		),
@@ -32,4 +32,4 @@ function lf_page_block_template() {
 		),
 	);
 }
-// add_action( 'init', 'lf_page_block_template' );
+// add_action( 'init', 'lf_page_block_template' ); // phpcs:ignore.

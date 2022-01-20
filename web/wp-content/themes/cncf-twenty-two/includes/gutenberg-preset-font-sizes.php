@@ -25,9 +25,9 @@ add_theme_support(
 			'slug' => 'small',
 		),
 		array(
-			'name' => __( 'Normal' ),
-			'size' => 16,
-			'slug' => 'normal',
+			'name'      => __( 'Normal' ),
+			'size'      => 16,
+			'slug'      => 'normal',
 			'isdefault' => true,
 		),
 		array(
