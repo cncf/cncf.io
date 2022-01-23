@@ -87,3 +87,11 @@
 		border-color: $primary-color;
 	}
 }
+
+.searchandfilter {
+	.sf-field-search {
+		label {
+			display: block;
+		}
+	}
+}
