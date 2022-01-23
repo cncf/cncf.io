@@ -27,7 +27,7 @@ $author_category_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-categ
 $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 ?>
 
-<div class="webinar-recorded-box box-shadow">
+<div class="webinar-recorded-box">
 
 	<figure>
 		<a href="<?php the_permalink(); ?>">
