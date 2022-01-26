@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Annual Report 2018
- * Template Post Type: page
+ * Template Post Type: page, lf_report
  *
  * @package WordPress
  * @subpackage lf-theme
