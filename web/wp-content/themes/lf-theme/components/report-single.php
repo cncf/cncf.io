@@ -32,7 +32,7 @@
 	$report_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-report-type', true );
 
 	if ( $report_type ) :
-		$report_type_link = '?_sft_lf-report-type=' . $report_type_slug . '';
+		$report_type_link = '/reports/?_sft_lf-report-type=' . $report_type_slug . '';
 		?>
 		<a class="skew-box secondary centered margin-bottom-small" title="See more <?php echo esc_attr( $report_type ); ?> reports" href="<?php echo esc_url( $report_type_link ); ?>">
 		<?php echo esc_html( $report_type ); ?> Report</a>
