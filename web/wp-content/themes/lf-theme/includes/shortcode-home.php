@@ -579,9 +579,9 @@ function homepage_event_highlight_shortcode() {
 <div><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" target="_blank" rel="noopener"><img loading="lazy" src="https://events.linuxfoundation.org/wp-content/uploads/2021/05/kubecon-eu-2022-webgraphics_white-logo.svg" alt="Kubecon"></a></div>
 
 <div>
-<p class="event-highlight-video-description">KubeCon + CloudNativeCon North America 2021 Highlights</p>
+<p class="event-highlight-video-description">KubeCon + CloudNativeCon 2019 Highlights</p>
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<div class="wp-block-lf-youtube-lite"><lite-youtube videoid="Kn7HVDhUsWU"></lite-youtube></div>
+<div class="wp-block-lf-youtube-lite"><lite-youtube videoid="iGbAdyOKKhc"></lite-youtube></div>
 </div></figure>
 </div>
 
