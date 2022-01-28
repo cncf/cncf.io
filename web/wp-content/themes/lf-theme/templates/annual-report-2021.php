@@ -861,17 +861,6 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 			</div>
 
-			<div aria-hidden="true" class="ar-spacer-100"></div>
-
-			<p
-				class="secondary-sub-section">Highlights from KubeCon + CloudNativeCon North America...</p>
-
-			<div class="wp-block-lf-youtube-lite">
-				<lite-youtube videoid="Kn7HVDhUsWU" webpStatus="0"
-					sdthumbStatus="0">
-				</lite-youtube>
-			</div>
-
 			<div aria-hidden="true" class="ar-spacer-160"></div>
 
 			<div class="section-grid-05">
