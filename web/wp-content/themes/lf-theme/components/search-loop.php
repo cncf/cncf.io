@@ -86,6 +86,10 @@
 				$content_type_singular = 'Project';
 				$content_type_plural = 'Projects';
 				$content_type_url = '/projects/';
+			} elseif ( 'lf_report' == get_post_type() ) {
+				$content_type_singular = 'Report';
+				$content_type_plural = 'Reports';
+				$content_type_url = '/reports/';
 			} else {
 				$content_type_singular = 'Page';
 				$content_type_plural = 'Pages';
