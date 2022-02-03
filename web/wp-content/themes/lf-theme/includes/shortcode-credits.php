@@ -49,7 +49,6 @@ function add_credits_pricing_shortcode() {
 <div class="tbody">
 <ul>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Supporter benefits, plus:</li>
-<li><i class="fas fa-certificate"></i>Featured on the project website that you are directly contributing to</li>
 <li><i class="fab fa-youtube"></i>Bonus online program slot (live webinar, live stream, or on-demand webinar - your choice) to highlight your participation in the program</li>
 <li><i class="fas fa-cogs"></i>For Certified Kubernetes Providers, CNCF will run conformance tests for your platform and submit the results for certification</li>
 
