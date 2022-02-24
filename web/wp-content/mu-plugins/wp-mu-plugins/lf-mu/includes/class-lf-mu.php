@@ -181,12 +181,18 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_ktps' );
 		}
 		// Example of how to run a sync locally on demand.
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_people' ); //phpcs:ignore.
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
 
 		// Sync programs with https://community.cncf.io/.
 		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
 		if ( ! wp_next_scheduled( 'cncf_sync_programs' ) ) {
 			wp_schedule_event( time(), 'twicedaily', 'cncf_sync_programs' );
+		}
+
+		// Sync KCDs with https://community.cncf.io/.
+		$this->loader->add_action( 'lf_sync_kcds', $plugin_admin, 'sync_kcds' );
+		if ( ! wp_next_scheduled( 'lf_sync_kcds' ) ) {
+			wp_schedule_event( time(), 'twicedaily', 'lf_sync_kcds' );
 		}
 
 		// Sync people with https://github.com/cncf/people.

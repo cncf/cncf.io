@@ -78,7 +78,7 @@
 				?>
 						  </a>
 		<?php else : ?>
-						<h4 class="event-title external"><a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
+						<h4 class="event-title"><a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
 					title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
 						<?php endif; ?>
 				</a>
