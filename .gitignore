@@ -137,3 +137,6 @@ web/wp-content/themes/lf-theme/.vscode
 
 # Docker Overrides
 docker-compose.override.yml
+
+# New Theme WIP
+web/wp-content/themes/cncf-twenty-two/
