@@ -56,8 +56,7 @@
 }
 
 // Larger size for Hello Bar and Block Buttons - white with no rollover.
-.hello-bar,
-.wp-block-buttons {
+.hello-bar {
 	a[href^="http://"]:not([href^="http://www.cncf.io"]):not([href^="http://cncf.io"]):not([href^="http://localhost"]):not([href^="http://dev-cncf"]),
     a[href^="https://"]:not([href^="https://www.cncf.io"]):not([href^="https://cncf.io"]):not([href^="https://localhost"]):not([href^="https://dev-cncf"]):not([href^="https://cncfci"]),
     a[href^="//"]:not([href^="//www.cncf"]):not([href^="//cncf"]):not([href^="//localhost"]):not([href^="//dev-cncf"])
