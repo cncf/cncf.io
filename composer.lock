@@ -242,16 +242,16 @@
         },
         {
             "name": "pantheon-systems/wordpress-composer",
-            "version": "5.9.1",
+            "version": "5.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "ebe1aaaf06e21a8b804daf4d67879af888725ccf"
+                "reference": "693eb3d03738e3e31aeac6cecb299c1a7fea1586"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/ebe1aaaf06e21a8b804daf4d67879af888725ccf",
-                "reference": "ebe1aaaf06e21a8b804daf4d67879af888725ccf",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/693eb3d03738e3e31aeac6cecb299c1a7fea1586",
+                "reference": "693eb3d03738e3e31aeac6cecb299c1a7fea1586",
                 "shasum": ""
             },
             "require": {
@@ -269,10 +269,10 @@
             ],
             "description": "WordPress for Pantheon with a composer.json file.",
             "support": {
-                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/5.9.1",
+                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/5.9.2",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2022-02-22T18:11:08+00:00"
+            "time": "2022-03-11T04:11:03+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -717,7 +717,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "8.5.24",
+            "version": "8.6.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -725,7 +725,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1645013593"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1646903950"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -921,12 +921,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9461fa5df0b505bbe4404f20b1759884a27c7572"
+                "reference": "57a3432393ef9539465dc9c36d8cf5b045fe0800"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9461fa5df0b505bbe4404f20b1759884a27c7572",
-                "reference": "9461fa5df0b505bbe4404f20b1759884a27c7572",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/57a3432393ef9539465dc9c36d8cf5b045fe0800",
+                "reference": "57a3432393ef9539465dc9c36d8cf5b045fe0800",
                 "shasum": ""
             },
             "conflict": {
@@ -1196,7 +1196,7 @@
                 "silverstripe/comments": ">=1.3,<1.9.99|>=2,<2.9.99|>=3,<3.1.1",
                 "silverstripe/forum": "<=0.6.1|>=0.7,<=0.7.3",
                 "silverstripe/framework": "<4.10.1",
-                "silverstripe/graphql": "<3.5.2|>=4-alpha.1,<4-alpha.2",
+                "silverstripe/graphql": "<3.5.2|>=4-alpha.1,<4-alpha.2|= 4.0.0-alpha1",
                 "silverstripe/registry": ">=2.1,<2.1.2|>=2.2,<2.2.1",
                 "silverstripe/restfulserver": ">=1,<1.0.9|>=2,<2.0.4",
                 "silverstripe/subsites": ">=2,<2.1.1",
@@ -1370,7 +1370,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-09T12:04:57+00:00"
+            "time": "2022-03-10T00:11:32+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
