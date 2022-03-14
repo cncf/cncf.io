@@ -189,6 +189,12 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'cncf_sync_programs' );
 		}
 
+		// Get views of online programs.
+		$this->loader->add_action( 'cncf_get_program_views', $plugin_admin, 'get_program_views' );
+		if ( ! wp_next_scheduled( 'cncf_get_program_views' ) ) {
+			wp_schedule_event( time(), 'daily', 'get_program_views' );
+		}
+
 		// Sync KCDs with https://community.cncf.io/.
 		$this->loader->add_action( 'lf_sync_kcds', $plugin_admin, 'sync_kcds' );
 		if ( ! wp_next_scheduled( 'lf_sync_kcds' ) ) {

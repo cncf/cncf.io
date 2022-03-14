@@ -82,6 +82,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$site = ( isset( $options['site'] ) && ! empty( $options['site'] ) ) ? esc_attr( $options['site'] ) : '';
 
+		$youtube_api_key = ( isset( $options['youtube_api_key'] ) && ! empty( $options['youtube_api_key'] ) ) ? esc_attr( $options['youtube_api_key'] ) : '';
+
 		settings_fields( $this->plugin_name );
 
 		do_settings_sections( $this->plugin_name );
@@ -504,6 +506,17 @@ if ( ! defined( 'WPINC' ) ) {
 							name="<?php echo esc_html( $this->plugin_name ); ?>[gtm_id]"
 							value="<?php echo esc_attr( $gtm_id ); ?>"
 							placeholder="GTM-KNXFWV" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="youtube_api_key">YouTube API key</label>
+					</th>
+					<td>
+						<input type="text" class="youtube_api_key regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-youtube_api_key"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[youtube_api_key]"
+							value="<?php echo esc_attr( $youtube_api_key ); ?>"
+						/>
 					</td>
 				</tr>
 				<tr>

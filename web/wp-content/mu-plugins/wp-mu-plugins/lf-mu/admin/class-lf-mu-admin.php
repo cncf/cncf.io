@@ -211,6 +211,8 @@ class Lf_Mu_Admin {
 
 		$options['site'] = ( isset( $input['site'] ) && ! empty( $input['site'] ) ) ? esc_html( $input['site'] ) : '';
 
+		$options['youtube_api_key'] = ( isset( $input['youtube_api_key'] ) && ! empty( $input['youtube_api_key'] ) ) ? esc_attr( $input['youtube_api_key'] ) : '';
+
 		return $options;
 	}
 
@@ -349,6 +351,15 @@ class Lf_Mu_Admin {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Get updated view count for all recorded online programs.
+	*/
+	public function get_program_views() {
+		$options = get_option( 'lf-mu' );
+		$youtube_api_key = $options['youtube_api_key'];
+
 	}
 
 	/**
