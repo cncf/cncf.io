@@ -192,7 +192,7 @@ class Lf_Mu {
 		// Get views of online programs.
 		$this->loader->add_action( 'cncf_get_program_views', $plugin_admin, 'get_program_views' );
 		if ( ! wp_next_scheduled( 'cncf_get_program_views' ) ) {
-			wp_schedule_event( time(), 'daily', 'get_program_views' );
+			wp_schedule_event( time(), 'daily', 'cncf_get_program_views' );
 		}
 
 		// Sync KCDs with https://community.cncf.io/.
