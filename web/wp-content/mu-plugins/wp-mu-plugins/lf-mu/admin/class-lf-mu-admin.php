@@ -375,6 +375,10 @@ class Lf_Mu_Admin {
 			$query->the_post();
 			$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
 
+			if ( ! $recording_url ) {
+				continue;
+			}
+
 			preg_match( '%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $recording_url, $match );
 
 			if ( isset( $match[1] ) ) {
