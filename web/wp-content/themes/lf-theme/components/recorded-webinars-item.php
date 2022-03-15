@@ -73,7 +73,13 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 		if ( $webinar_date ) :
 			?>
 	<div class="recorded live-icon">Recorded:
-			<?php echo esc_html( $webinar_date->format( 'F j, Y' ) ) . ' — ' . esc_html( $webinar_views ) . ' views'; ?></div>
+			<?php
+			echo esc_html( $webinar_date->format( 'F j, Y' ) );
+			if ( $webinar_views ) {
+				echo ' — ' . esc_html( $webinar_views ) . ' views';
+			}
+			?>
+			</div>
 			<?php
 			endif;
 		?>
