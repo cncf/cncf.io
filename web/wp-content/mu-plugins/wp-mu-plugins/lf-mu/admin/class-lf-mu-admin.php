@@ -355,11 +355,41 @@ class Lf_Mu_Admin {
 
 	/**
 	 * Get updated view count for all recorded online programs.
-	*/
+	 */
 	public function get_program_views() {
 		$options = get_option( 'lf-mu' );
 		$youtube_api_key = $options['youtube_api_key'];
 
+		if ( ! $youtube_api_key ) {
+			return;
+		}
+
+		$query = new WP_Query(
+			array(
+				'post_type' => 'lf_webinar',
+				'post_status' => 'publish',
+				'posts_per_page' => 10000,
+			)
+		);
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
+
+			preg_match( '%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $recording_url, $match );
+
+			if ( isset( $match[1] ) ) {
+				$vid_id = $match[1];
+
+				$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' . $vid_id . '&key=' . $youtube_api_key );
+				if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
+					return;
+				}
+				$vid_stats = wp_remote_retrieve_body( $request );
+				$vid_stats = json_decode( $vid_stats );
+				$views = $vid_stats->items[0]->statistics->viewCount;
+				update_post_meta( get_the_ID(), 'lf_webinar_recording_views', $views );
+			}
+		}
 	}
 
 	/**

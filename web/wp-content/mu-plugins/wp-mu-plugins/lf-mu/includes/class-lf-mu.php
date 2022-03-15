@@ -181,7 +181,7 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_ktps' );
 		}
 		// Example of how to run a sync locally on demand.
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
+		// $this->loader->add_action( 'init', $plugin_admin, 'get_program_views' ); //phpcs:ignore.
 
 		// Sync programs with https://community.cncf.io/.
 		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
