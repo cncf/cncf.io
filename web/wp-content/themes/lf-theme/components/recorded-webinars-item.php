@@ -22,6 +22,7 @@ $video_id = Lf_Utils::get_youtube_id_from_url( $recording_url );
 // get author category.
 $author_category = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 $author_category_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
+$webinar_views          = get_post_meta( get_the_ID(), 'lf_webinar_recording_views', true );
 
 // get companies (presented by).
 $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
@@ -72,7 +73,7 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 		if ( $webinar_date ) :
 			?>
 	<div class="recorded live-icon">Recorded:
-			<?php echo esc_html( $webinar_date->format( 'F j, Y' ) ); ?></div>
+			<?php echo esc_html( $webinar_date->format( 'F j, Y' ) ) . ' — ' . esc_html( $webinar_views ) . ' views'; ?></div>
 			<?php
 			endif;
 		?>
