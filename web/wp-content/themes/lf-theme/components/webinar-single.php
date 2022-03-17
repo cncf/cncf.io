@@ -148,7 +148,7 @@ if ( $dat_webinar_end > $dat_now ) {
 				<?php
 				echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) );
 				if ( $webinar_views ) {
-					echo ' — ' . esc_html( $webinar_views ) . ' views';
+					echo ' — ' . esc_html( number_format( $webinar_views ) ) . ' views';
 				}
 				?>
 			</p>

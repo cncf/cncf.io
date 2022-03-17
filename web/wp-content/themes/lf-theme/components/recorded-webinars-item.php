@@ -76,7 +76,7 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 			<?php
 			echo esc_html( $webinar_date->format( 'F j, Y' ) );
 			if ( $webinar_views ) {
-				echo ' — ' . esc_html( $webinar_views ) . ' views';
+				echo ' — ' . esc_html( number_format( $webinar_views ) ) . ' views';
 			}
 			?>
 			</div>
