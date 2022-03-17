@@ -51,6 +51,8 @@ $slides_url = get_post_meta( get_the_ID(), 'lf_webinar_slides_url', true );
 // get webinar speakers.
 $speakers = get_post_meta( get_the_ID(), 'lf_webinar_speakers', true );
 
+$webinar_views = get_post_meta( get_the_ID(), 'lf_webinar_recording_views', true );
+
 // enqueue calendar and date js.
 wp_enqueue_script(
 	'add-to-calendar-js',
@@ -143,7 +145,12 @@ if ( $dat_webinar_end > $dat_now ) {
 				?>
 		<div class="recorded">
 			<p class="live-icon">Recorded:
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
+				<?php
+				echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); 
+				if ( $webinar_views ) {
+					echo ' — ' . esc_html( $webinar_views ) . ' views';
+				}
+				?>
 			</p>
 		</div>
 		<?php endif; ?>
