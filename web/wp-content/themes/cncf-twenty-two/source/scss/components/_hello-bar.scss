@@ -1,0 +1,32 @@
+.hello-bar {
+	font-size: 0.825em;
+	background: $black;
+	color: $white;
+	width: 100%;
+	padding: 0.4rem;
+	text-align: center;
+	font-weight: 400;
+	letter-spacing: 0.2px;
+	line-height: 1;
+
+	a {
+		color: inherit;
+		font-weight: 400;
+		text-decoration: underline;
+		text-underline-position: under;
+
+		&:hover {
+			color: inherit;
+			transition: all 0.1s ease;
+			text-decoration: unset;
+			text-underline-position: unset;
+		}
+	}
+}
+
+// hide hello bar when mobile menu is open.
+.has-menu-active {
+	.hello-bar {
+		height: 0;
+	}
+}

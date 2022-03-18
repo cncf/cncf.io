@@ -7,7 +7,7 @@
  * After adding here, make sure your CSS for frontend and backend matches the rules that are generated. To disable the custom opionated gradients you need to specify at least one custom gradient.
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 

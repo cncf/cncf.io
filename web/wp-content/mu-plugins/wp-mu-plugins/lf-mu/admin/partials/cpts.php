@@ -9,6 +9,12 @@
  * @subpackage Lf_Mu/admin/partials
  */
 
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 // Projects.
 $opts = array(
 	'labels'              => array(
@@ -101,8 +107,9 @@ $opts = array(
 		'singular_name' => __( 'Event' ),
 		'all_items'     => __( 'All Events' ),
 	),
-	'public'            => true,
+	'public'            => false,
 	'has_archive'       => false,
+	'show_ui'           => true,
 	'show_in_nav_menus' => false,
 	'show_in_rest'      => true,
 	'hierarchical'      => false,
@@ -199,3 +206,20 @@ $opts = array(
 	'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
 );
 register_post_type( 'lf_ktp', $opts );
+
+$opts = array(
+	'labels'            => array(
+		'name'          => __( 'Reports' ),
+		'singular_name' => __( 'Report' ),
+		'all_items'     => __( 'All Reports' ),
+	),
+	'public'            => true,
+	'has_archive'       => false,
+	'show_in_nav_menus' => false,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'menu_icon'         => 'dashicons-text',
+	'rewrite'           => array( 'slug' => 'reports' ),
+	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+);
+register_post_type( 'lf_report', $opts );

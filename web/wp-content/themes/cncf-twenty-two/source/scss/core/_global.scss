@@ -1,3 +1,7 @@
+html {
+	visibility: visible !important;
+}
+
 body {
 	height: auto;
 	background-color: $white;
@@ -5,19 +9,26 @@ body {
 	font-size: 1em; // 16px
 	color: $body-text-color;
 	font-weight: 400;
-
-	// added to improve rendering, but could hamper performance.
+	letter-spacing: 0.02rem;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
 	// fixes menu off bottom of screen.
 	overscroll-behavior: none;
+
+	&.has-menu-active {
+		// Stops bg moving when open.
+		overflow: hidden;
+		height: 100%;
+		position: fixed;
+		touch-action: none;
+	}
 }
 
 // applied on pages, need this because of .alignwide blocks.
-.page-content {
-	overflow-x: hidden;
-}
+// .page-content {
+// 	overflow-x: hidden;
+// }
 
 // default content container.
 .container {
@@ -27,44 +38,71 @@ body {
 }
 
 .wrap {
-	padding: 0em 12px;
+	padding-left: 12px;
+	padding-right: 12px;
 
 	@media (min-width: 375px) {
-		padding: 0em 20px;
+		padding-left: 24px;
+		padding-right: 24px;
 	}
 
 	@media (min-width: 550px) {
-		padding: 0em 25px;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	// TODO: Check this value.
+	@media (min-width: 1250px) {
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 }
 
-img {
-	margin: 0;
-	max-width: 100%;
-	height: auto;
-}
+// @media (min-width: 600px) {
+// 	.show-mobile-only {
+// 		display: none;
+// 	}
+// }
 
-.background-image-wrapper {
-	overflow: hidden;
-	position: relative;
-}
+// .show-tablet-only {
+// 	@media (max-width: 599px) {
+// 		display: none;
+// 	}
+// }
 
-.background-image-figure {
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		left: 0;
+@media (min-width: 1000px) {
+	.show-upto-1000 {
+		display: none;
 	}
 }
 
-.background-image-text-overlay {
-	position: relative;
-	z-index: 2;
+.show-over-1000 {
+	@media (max-width: 999px) {
+		display: none !important;
+	}
 }
+
+// .background-image-wrapper {
+// 	overflow: hidden;
+// 	position: relative;
+// }
+
+// .background-image-figure {
+// 	img {
+// 		width: 100%;
+// 		height: 100%;
+// 		object-fit: cover;
+// 		position: absolute;
+// 		z-index: 1;
+// 		top: 0;
+// 		left: 0;
+// 	}
+// }
+
+// .background-image-text-overlay {
+// 	position: relative;
+// 	z-index: 2;
+// }
 
 .assistive-text,
 .screen-reader-text,
@@ -113,4 +151,14 @@ img {
 // Do not show the outline on the skip link target.
 #maincontent[tabindex='-1']:focus {
 	outline: 0;
+}
+
+.is-style-max-width-800 {
+	max-width: 800px;
+}
+
+.horizontal-rule {
+	background-color: $white;
+	height: 1px;
+	width: 100%;
 }

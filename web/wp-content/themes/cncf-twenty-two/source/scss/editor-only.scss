@@ -4,7 +4,7 @@
  * Import, add or override any styles here for Editor
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -136,7 +136,7 @@
 	margin-bottom: 0.5rem;
 
 	&.secondary {
-		background-color: $grey-700;
+		background-color: $gray-700;
 	}
 
 	&.tertiary {
@@ -181,7 +181,7 @@
 
 // allows for transparent images to be visible in Sidebar Metabox.
 #pmc-lf_event-logo .pmc-image-container {
-	background-color: $grey-200;
+	background-color: $gray-200;
 }
 
 // make placeholder text easier to see in sidebar.

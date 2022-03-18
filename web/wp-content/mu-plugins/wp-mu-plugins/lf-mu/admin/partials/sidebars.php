@@ -9,6 +9,11 @@
  * @subpackage Lf_Mu/admin/partials
  */
 
+ // If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 // First we define the sidebar with it's tabs, panels and settings.
 $palette = array(
 	'dark-fuschia'     => '#6e1042',

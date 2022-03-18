@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) {
 ?>
 
 <div class="wrap">
-	<h2><?php esc_attr_e( 'Global Site Options', 'lf-mu' ); ?></h2>
+	<h2><?php esc_attr_e( 'Site Options', 'lf-mu' ); ?></h2>
 	<form method="post" name="<?php echo esc_html( $this->plugin_name ); ?>"
 		action="options.php">
 		<?php
@@ -41,6 +41,16 @@ if ( ! defined( 'WPINC' ) ) {
 		$header_cta_text = ( isset( $options['header_cta_text'] ) && ! empty( $options['header_cta_text'] ) ) ? esc_attr( $options['header_cta_text'] ) : '';
 
 		$header_cta_link = ( isset( $options['header_cta_link'] ) && ! empty( $options['header_cta_link'] ) ) ? absint( $options['header_cta_link'] ) : '';
+
+		$footer_image_id = ( isset( $options['footer_image_id'] ) && ! empty( $options['footer_image_id'] ) ) ? absint( $options['footer_image_id'] ) : '';
+
+		$footer_cta_text = ( isset( $options['footer_cta_text'] ) && ! empty( $options['footer_cta_text'] ) ) ? esc_attr( $options['footer_cta_text'] ) : '';
+
+		$footer_cta_link = ( isset( $options['footer_cta_link'] ) && ! empty( $options['footer_cta_link'] ) ) ? absint( $options['footer_cta_link'] ) : '';
+
+		$accessibility_cta_text = ( isset( $options['accessibility_cta_text'] ) && ! empty( $options['accessibility_cta_text'] ) ) ? esc_attr( $options['accessibility_cta_text'] ) : '';
+
+		$accessibility_cta_link = ( isset( $options['accessibility_cta_link'] ) && ! empty( $options['accessibility_cta_link'] ) ) ? absint( $options['accessibility_cta_link'] ) : '';
 
 		$copyright_textarea = ( isset( $options['copyright_textarea'] ) && ! empty( $options['copyright_textarea'] ) ) ? $options['copyright_textarea'] : '';
 
@@ -78,9 +88,9 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$generic_hero_id = ( isset( $options['generic_hero_id'] ) && ! empty( $options['generic_hero_id'] ) ) ? absint( $options['generic_hero_id'] ) : '';
 
-		$gtm_id = ( isset( $options['gtm_id'] ) && ! empty( $options['gtm_id'] ) ) ? esc_attr( $options['gtm_id'] ) : '';
+		$youtube_api_key = ( isset( $options['youtube_api_key'] ) && ! empty( $options['youtube_api_key'] ) ) ? esc_attr( $options['youtube_api_key'] ) : '';
 
-		$site = ( isset( $options['site'] ) && ! empty( $options['site'] ) ) ? esc_attr( $options['site'] ) : '';
+		$gtm_id = ( isset( $options['gtm_id'] ) && ! empty( $options['gtm_id'] ) ) ? esc_attr( $options['gtm_id'] ) : '';
 
 		settings_fields( $this->plugin_name );
 
@@ -111,7 +121,8 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="hello_bar_content">Hello Bar
+					<th scope="row">
+						<label for="hello_bar_content">Hello Bar
 							Content</label>
 					</th>
 					<td colspan="2">
@@ -199,7 +210,7 @@ if ( ! defined( 'WPINC' ) ) {
 					<td>
 						<?php
 						$dropdown_args = array(
-							'selected'          => absint( $header_cta_link ), // grad post id if set.
+							'selected'          => absint( $header_cta_link ), // grab post id if set.
 							'id'                => esc_html( $this->plugin_name ) . '-header_cta_link',
 							'name'              => esc_html( $this->plugin_name ) . '[header_cta_link]',
 							'class'             => 'regular-small-text',
@@ -217,11 +228,96 @@ if ( ! defined( 'WPINC' ) ) {
 		<h2 id="footer">Footer</h2>
 		<table class="form-table" role="presentation">
 			<tbody>
-				<tr>
-					<th scope="row"><label for="copyright_textarea">Copyright
-							Textarea</label>
+			<tr>
+					<th scope="row"><label for="footer_cta_text">Footer
+							CTA Text</label>
 					</th>
 					<td>
+						<input type="text"
+							class="footer_cta_text regular-small-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-footer_cta_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[footer_cta_text]"
+							value="<?php echo esc_html( $footer_cta_text ); ?>"
+							placeholder="Sign up" maxlength="20" />
+					</td>
+					<th scope="row"><label for="footer_cta_link">Footer
+							CTA Link</label>
+					</th>
+					<td>
+						<?php
+						$dropdown_args = array(
+							'selected'          => absint( $footer_cta_link ), // grab post id if set.
+							'id'                => esc_html( $this->plugin_name ) . '-footer_cta_link',
+							'name'              => esc_html( $this->plugin_name ) . '[footer_cta_link]',
+							'class'             => 'regular-small-text',
+							'show_option_none'  => 'No Link (Remove Button)',
+							'option_none_value' => '',
+							'echo'              => true,
+						);
+						wp_dropdown_pages( $dropdown_args ); // phpcs:ignore WordPress.Security.EscapeOutput
+						?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="accessibility_cta_text">Accessibility
+							 Text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="accessibility_cta_text regular-small-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-accessibility_cta_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[accessibility_cta_text]"
+							value="<?php echo esc_html( $accessibility_cta_text ); ?>"
+							placeholder="Read our accessibility statement" maxlength="40" />
+					</td>
+					<th scope="row"><label for="accessibility_cta_link">Accessibility Link</label>
+					</th>
+					<td>
+						<?php
+						$dropdown_args = array(
+							'selected'          => absint( $accessibility_cta_link ), // grab post id if set.
+							'id'                => esc_html( $this->plugin_name ) . '-accessibility_cta_link',
+							'name'              => esc_html( $this->plugin_name ) . '[accessibility_cta_link]',
+							'class'             => 'regular-small-text',
+							'show_option_none'  => 'No Link (Remove Button)',
+							'option_none_value' => '',
+							'echo'              => true,
+						);
+						wp_dropdown_pages( $dropdown_args ); // phpcs:ignore WordPress.Security.EscapeOutput
+						?>
+					</td>
+				</tr>
+			<tr>
+					<th scope="row"><label for="footer_image_id">Footer Logo
+							Image</label>
+					</th>
+					<td colspan="2">
+						<div class='image-preview-wrapper'>
+							<img src='<?php echo esc_url( wp_get_attachment_url( $footer_image_id ) ); ?>'
+								class="image-preview thumbnail-margin-bottom"
+								data-id="<?php echo esc_html( $this->plugin_name ); ?>-footer_image_id">
+						</div>
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-footer_image_id"
+							class="upload_image_button button"
+							value="Choose image" />
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-footer_image_id"
+							class="clear_upload_image_button button"
+							value="Remove image" />
+						<input type="hidden"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-footer_image_id"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-footer_image_id"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[footer_image_id]"
+							value="<?php echo absint( $footer_image_id ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="copyright_textarea">Copyright
+							Textarea</label>
+					</th>
+					<td colspan="3">
 						<?php
 							$copyright_textarea_settings = array(
 								'teeny'         => true, // extra options.
@@ -232,7 +328,7 @@ if ( ! defined( 'WPINC' ) ) {
 							);
 							wp_editor( $copyright_textarea, 'copyright_textarea', $copyright_textarea_settings );
 							?>
-						<p class="description">Copyright © 2020 is inserted
+						<p class="description">Copyright &copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> is inserted
 							automatically before this sentence begins.</p>
 					</td>
 				</tr>
@@ -496,6 +592,17 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
+ 					<th scope="row"><label for="youtube_api_key">YouTube API key</label>
+ 					</th>
+ 					<td>
+ 						<input type="text" class="youtube_api_key regular-text"
+ 							id="<?php echo esc_html( $this->plugin_name ); ?>-youtube_api_key"
+ 							name="<?php echo esc_html( $this->plugin_name ); ?>[youtube_api_key]"
+ 							value="<?php echo esc_attr( $youtube_api_key ); ?>"
+ 						/>
+ 					</td>
+ 				</tr>
+				<tr>
 					<th scope="row"><label for="gtm_id">Google Tag Manager ID</label>
 					</th>
 					<td>
@@ -504,20 +611,6 @@ if ( ! defined( 'WPINC' ) ) {
 							name="<?php echo esc_html( $this->plugin_name ); ?>[gtm_id]"
 							value="<?php echo esc_attr( $gtm_id ); ?>"
 							placeholder="GTM-KNXFWV" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="site">Site</label>
-					</th>
-					<td>
-					<?php
-					$cncf_checked = ( 'cncf' === $site ) ? ' checked="checked"' : '';
-					$lfph_checked = ( 'lfph' === $site ) ? ' checked="checked"' : '';
-					?>
-					<input type="radio" id="<?php echo esc_html( $this->plugin_name ); ?>-cncf" name="<?php echo esc_html( $this->plugin_name ); ?>[site]" value="cncf"<?php echo esc_html( $cncf_checked ); ?>>
-					<label for="<?php echo esc_html( $this->plugin_name ); ?>-cncf">CNCF</label><br>
-					<input type="radio" id="<?php echo esc_html( $this->plugin_name ); ?>-lfph" name="<?php echo esc_html( $this->plugin_name ); ?>[site]" value="lfph"<?php echo esc_html( $lfph_checked ); ?>>
-					<label for="<?php echo esc_html( $this->plugin_name ); ?>-lfph">LFPH</label><br>
 					</td>
 				</tr>
 			</tbody>

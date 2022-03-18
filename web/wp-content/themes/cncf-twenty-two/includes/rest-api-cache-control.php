@@ -3,7 +3,7 @@
  * REST API Cache
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 

@@ -5,7 +5,7 @@
  * Setup Block Editor and options as part of after_setup_theme
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -49,3 +49,6 @@ add_action(
 
 // Disable new gutenberg widget screen.
 remove_theme_support( 'widgets-block-editor' );
+
+// Remove duotone SVG filter injection.
+remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );

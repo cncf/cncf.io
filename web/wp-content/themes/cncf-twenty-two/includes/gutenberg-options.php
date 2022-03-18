@@ -5,7 +5,7 @@
  * Additional settings and functions for Gutenberg
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 

@@ -3,7 +3,7 @@
  * Shortcodes for Members
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -124,26 +124,21 @@ function add_members_pricing_shortcode() {
 					KubeCon + CloudNativeCon sponsorship</li>
 				<li><i class="fas fa-certificate"></i>Display <a
 						href="https://github.com/cncf/artwork/blob/master/examples/other.md#cncf-member-logos"
-						target="_blank" rel="noopener"
 						title="CNCF member logos">CNCF membership logos</a> on
 					your website. Logo also displayed on the CNCF website and in
 					marketing materials. </li>
 				<li><i class="fas fa-map-marker-alt"></i><a
-						href="https://landscape.cncf.io/" target="_blank"
-						rel="noopener"
+						href="https://landscape.cncf.io/"
 						title="CNCF Cloud Native Interactive Landscape">Interactive
 						landscape</a> placement as a member</li>
 				<li><i class="fas fa-graduation-cap"></i>Apply to be a certified
 					vendor, consulting partner, or training partner via our <a
 						href="/certification/software-conformance/"
-						target="_blank" rel="noopener"
 						title="Certified Kubernetes">Certified Kubernetes</a>,
 					<a href="/certification/kcsp/"
-						target="_blank" rel="noopener"
 						title="Kubernetes Certified Service Provider">Kubernetes
 						Certified Service Provider</a>, and <a
 						href="/certification/training/#kubernetestrainingpartners"
-						target="_blank" rel="noopener"
 						title="Kubernetes Training Partner">Kubernetes Training
 						Partner</a> programs. </li>
 				<li><i class="fas fa-megaphone"></i>Announcement in the
@@ -186,8 +181,7 @@ function add_members_pricing_shortcode() {
 				<li><i class="fas fa-calendar-alt"></i>Host a local Kubernetes
 					Community Day</li>
 				<li><i class="fas fa-ticket-alt"></i>Access to the <a
-						href="https://todogroup.org/" target="_blank"
-						rel="noopener" title="TODO Group">TODO Group</a> to meet
+						href="https://todogroup.org/" title="TODO Group">TODO Group</a> to meet
 					other open source organizations </li>
 				<li><i class="fas fa-tag"></i>Ten coupon codes good for any
 					eLearning, certification exam, or eLearning/exam bundle.
@@ -276,7 +270,7 @@ function add_members_pricing_shortcode() {
 
 	<div class="lf-membership">
 		<p
-			class="margin-reset">Includes <a href="https://www.linuxfoundation.org/join/#benefits" target="_blank" rel="noopener">Linux Foundation Silver Membership</a></p>
+			class="margin-reset">Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
 	</div>
 
 </div><!-- end of wrapper -->

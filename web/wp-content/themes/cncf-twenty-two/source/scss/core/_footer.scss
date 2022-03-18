@@ -1,0 +1,89 @@
+.footer {
+	color: $white;
+	background-color: $black;
+	font-size: 10px;
+	@media (min-width: 414px) {
+		font-size: 12px;
+	}
+
+	a:not(.wp-block-button__link) {
+		color: $white;
+		text-decoration: none;
+		font-weight: 700;
+		&:hover {
+			color: $link-color;
+		}
+	}
+
+	nav {
+		display: none;
+
+		@media (min-width: 1000px) {
+			display: grid;
+			grid-column-gap: 1.2%;
+			grid-row-gap: $grid-row-gap;
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+
+			a {
+				font-weight: 400 !important;
+			}
+
+			li {
+				margin-bottom: 10px;
+				line-height: 15.3px;
+			}
+		}
+	}
+
+	&__cta {
+		grid-column: span 12;
+		@media (min-width: 600px) {
+			grid-column: span 8;
+		}
+		@media (min-width: 1000px) {
+			grid-column: span 2;
+		}
+	}
+
+	&__copyright {
+		line-height: 1.4;
+		grid-column: span 12;
+		@media (min-width: 1000px) {
+			grid-column: span 8;
+		}
+		@media (min-width: 1200px) {
+			grid-column: span 9;
+		}
+	}
+
+	&__issue {
+		grid-column: span 12;
+		@media (min-width: 1000px) {
+			grid-column: span 4;
+			text-align: right;
+			align-self: end;
+		}
+		@media (min-width: 1200px) {
+			grid-column: span 3;
+		}
+	}
+
+	@media (min-width: 1000px) {
+		.logo {
+			grid-column: span 6;
+		}
+	}
+
+	.lf-menu-title {
+		font-weight: 700;
+		margin-bottom: 30px;
+	}
+
+	.lf-menu-divider {
+		border: 1px solid $white;
+		width: 20px;
+		display: block;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}

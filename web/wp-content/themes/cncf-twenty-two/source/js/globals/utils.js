@@ -7,30 +7,32 @@
  * @since 1.0.0
  */
 
-( function( global ) {
+// TODO: Throttle not working as it should.
+(function (window) {
 	// Generic throttle function.
 	// window.utils.isThrottled() - how to use.
-	function throttle( callback, wait, immediate = false ) {
-		let timeout = null;
-		let initialCall = true;
-		return function() {
-			const callNow = immediate && initialCall;
-			const next = () => {
-				callback.apply( this, arguments );
-				timeout = null;
-			};
-			if ( callNow ) {
-				initialCall = false;
-				next();
-			}
-			if ( ! timeout ) {
-				timeout = setTimeout( next, wait );
+
+	function throttle(callback, limit) {
+		let waiting = false; // Initially, we're not waiting.
+		return function () {
+			// We return a throttled function.
+			if ( ! waiting) {
+				// If we're not waiting.
+				callback.apply( this, arguments ); // Execute users function.
+				waiting = true; // Prevent future invocations.
+				setTimeout(
+					function () {
+						// After a period of time.
+						waiting = false; // And allow future invocations.
+					},
+					limit
+				);
 			}
 		};
 	}
 
 	// Global bundle.
-	global.utils = {
+	window.utils = {
 		isThrottled: throttle,
 	};
-}( window ) );
+})( window );

@@ -3,7 +3,7 @@
  * KubeWeeklys Shortcode
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -44,7 +44,7 @@ function add_kubeweeklys_shortcode( $atts ) {
 
 			<?php
 			if ( $link_url ) {
-				echo '<a class="external is-primary-color" target="_blank" rel="noopener" href="' . esc_url( $link_url ) . '" title="' . esc_html( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</a>';
+				echo '<a class="external is-primary-color" href="' . esc_url( $link_url ) . '" title="' . esc_html( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</a>';
 			} else {
 				echo '<a href="' . esc_url( get_the_permalink() ) . '" title="' . esc_html( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</a>';
 			}
@@ -76,7 +76,7 @@ function add_kubeweekly_newsletter_shortcode( $atts ) {
 <div class="wp-block-group has-white-color has-tertiary-400-background-color has-text-color has-background kubeweekly-newsletter"><div class="wp-block-group__inner-container">
 <h4>Join the KubeWeekly mailing list</h4>
 	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=cf924a1f-5b8b-40dc-9452-b207c494dae2]' ); ?>
-<p class="has-small-font-size margin-top">By submitting this form, you acknowledge that your information is subject to The Linux Foundation’s <a href="https://www.linuxfoundation.org/privacy/" rel="noopener" class="external has-white-color" target="_blank">Privacy Policy</a>.</p>
+<p class="has-small-font-size margin-top">By submitting this form, you acknowledge that your information is subject to The Linux Foundation’s <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a>.</p>
 </div></div>
 	<?php
 	$block_content = ob_get_clean();

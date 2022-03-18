@@ -7,7 +7,7 @@
  * After adding here, make sure your CSS for frontend and backend matches the rules that are generated. This should also match what is in _colors.scss as this is how the styles are generated.
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -42,7 +42,7 @@ add_theme_support(
 		array(
 			'name'  => __( 'Black' ),
 			'slug'  => 'black',
-			'color' => '#202020',
+			'color' => '#000000',
 		),
 	)
 );

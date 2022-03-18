@@ -1,0 +1,129 @@
+// makes button plain like icon (wechat, people modal).
+.button-reset {
+	border: none;
+	background: none;
+	box-sizing: border-box;
+	padding: 0;
+	cursor: pointer;
+	display: block;
+	// margin-left: auto;
+	// margin-right: auto;
+	margin-left: initial;
+	margin-right: initial;
+	width: unset;
+	// width: 100%;
+}
+
+.hs-button,
+.wp-block-button__link {
+	border: 0; // reset.
+	padding: 0; // reset.
+	margin: 0; // reset.
+	box-shadow: none; // reset.
+	cursor: pointer;
+	word-break: break-word;
+	box-sizing: border-box;
+	border-radius: $button-radius;
+	font-family: $font-primary;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: $lineheight-s;
+	text-align: center;
+	text-decoration: none;
+
+	// defaults
+	width: 100%;
+	max-width: 100%;
+	background-color: $link-color;
+	color: $white;
+	text-transform: uppercase;
+	transition: all 0.25s ease-out;
+
+	// 16px font + 12px makes buttons 40px.
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 40px;
+	padding-right: 40px;
+	// white-space: nowrap;
+
+	&:hover {
+		// &:hover:not(.has-text-color) {
+		color: $white;
+		background-color: $link-hover;
+		text-decoration: none;
+	}
+
+	&:link,
+	&:visited {
+		color: $white;
+		text-decoration: none;
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+
+	// &:not(.has-text-color) {
+	// 	color: $white;
+
+	// 	&:hover {
+	// 		color: $white;
+	// 	}
+
+	// 	&:visited {
+	// 		color: $white;
+	// 	}
+	// }
+
+	// &:not(.has-background) {
+	// 	background-color: $default;
+
+	// 	&:hover,
+	// 	&:focus {
+	// 		background-color: lighten($default, 10%);
+	// 	}
+	// }
+
+	&.has-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		svg {
+			margin-right: 5px;
+		}
+	}
+
+	&.has-no-padding {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&.has-black-color:hover {
+		color: $white !important;
+	}
+}
+
+// setup all possible button combinations using color.scss variables inside button for specificity.
+.wp-block-button__link {
+	@each $name, $color in $colors {
+		&.has-#{$name}-color {
+			color: $color !important;
+		}
+
+		// &.has-#{$name}-color:hover,
+		// &.has-#{$name}-color:focus {
+		// 	color: $color !important;
+		// }
+
+		&.has-#{$name}-background-color:hover,
+		&.has-#{$name}-background-color:focus {
+			color: map_get($text_color, $name) !important;
+			background-color: map_get($color_hover, $name) !important;
+		}
+
+		&.has-#{$name}-background-color:not(.has-text-color) {
+			color: map_get($text_color, $name) !important;
+		}
+	}
+}

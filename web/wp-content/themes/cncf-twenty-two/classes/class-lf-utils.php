@@ -5,7 +5,7 @@
  * Small helpers to improve code and readibility.
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -137,7 +137,7 @@ class LF_Utils {
 	 */
 	public static function plural( $number, $singular = '', $plural = 's' ) {
 
-		if ( 1 == $number ) {
+		if ( 1 === $number ) {
 			return $singular;
 		}
 		return $plural;
@@ -172,7 +172,7 @@ class LF_Utils {
 		// If no end date, show start date in full.
 		if ( ! $event_date_end ) {
 			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
-		} elseif ( $event_date_start == $event_date_end ) {
+		} elseif ( $event_date_start === $event_date_end ) {
 			// Start and end are same day.
 			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
 		} else {
@@ -202,9 +202,11 @@ class LF_Utils {
 
 		$author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
 		if ( ! $author ) {
-			$authors_to_ignore = array( 3049, 3047, 2910, 3051 ); // Authors we don't want to show a byline for.
+			// Authors we don't want to show a byline for.
+			$authors_to_ignore = array( 3049, 3047, 2910, 3051 );
 			$author_id         = get_post_field( 'post_author', $the_post_id );
-			if ( in_array( $author_id, $authors_to_ignore ) ) {
+
+			if ( in_array( $author_id, $authors_to_ignore, true ) ) {
 				return;
 			}
 
@@ -312,7 +314,7 @@ class LF_Utils {
 		if ( ! wp_attachment_is_image( $image_id ) ) {
 			return false;
 		}
-		$img_alt_text = trim( strip_tags( get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ) );
+		$img_alt_text = trim( wp_strip_all_tags( get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ) );
 
 		return $img_alt_text;
 	}
@@ -474,7 +476,7 @@ class LF_Utils {
 				)
 			);
 
-			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
 				return $metrics;
 			}
 
@@ -500,7 +502,7 @@ class LF_Utils {
 			$metrics['cncf-members']         = 630;
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/certified-kubernetes.json' );
-			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
 				return $metrics;
 			}
 
@@ -508,7 +510,7 @@ class LF_Utils {
 			$metrics['certified-kubernetes'] = count( $remote_body );
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/cncf-members.json' );
-			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
+			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
 				return $metrics;
 			}
 

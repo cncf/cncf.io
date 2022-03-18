@@ -3,7 +3,7 @@
  * Shortcodes for End Users
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -33,7 +33,7 @@ function add_eu_pricing_shortcode() {
 <li><i class="fas fa-ticket-alt"></i>5 KubeCon in-person tickets (2 tickets for organization with &lt;300 employees)</li>
 <li><i class="fas fa-graduation-cap"></i>5 Linux Foundation Training coupons </li>
 <li><i class="fas fa-tag"></i>End User Recruiting Booth at KubeCon ($7k instead of $21k)</li>
-<li><i class="fas fa-couch"></i>Exclusive <a href="/blog/2021/04/22/introducing-the-cncf-end-user-lounge-exclusive-live-streams-for-end-user-organizations" target="_blank" rel="noopener">CNCF End User Lounge</a> live streams</li>
+<li><i class="fas fa-couch"></i>Exclusive <a href="/blog/2021/04/22/introducing-the-cncf-end-user-lounge-exclusive-live-streams-for-end-user-organizations">CNCF End User Lounge</a> live streams</li>
 </ul>
 </div>
 
@@ -54,14 +54,14 @@ function add_eu_pricing_shortcode() {
 <div class="tbody">
 <ul>
 <li><i class="fas fa-arrow-from-right"></i>Everything included in Supporter, plus:</li>
-<li><i class="fab fa-linux"></i>Linux Foundation <a href="https://www.linuxfoundation.org/join/#benefits" target="_blank" rel="noopener">Silver Membership</a></li>
+<li><i class="fab fa-linux"></i>Linux Foundation <a href="https://www.linuxfoundation.org/join/#benefits">Silver Membership</a></li>
 <li><i class="fas fa-vote-yea"></i>Run for Governing Board</li>
 <li><i class="fab fa-youtube"></i>2 online programs a quarter to build thought leadership (on-demand, YouTube, live streams)</li>
 <li><i class="fas fa-ticket-alt"></i>A total of 10 KubeCon in-person tickets</li>
 <li><i class="fas fa-tag"></i>15-seat Linux Foundation Training subscription (worth $7.5k)
 </li>
 <li><i class="fas fa-graduation-cap"></i>A total of 10 Linux Foundation Training coupons </li>
-<li><i class="fas fa-key"></i>Access to the <a href="https://todogroup.org/" target="_blank" rel="noopener">TODO Group</a> to meet other open source organizations </li>
+<li><i class="fas fa-key"></i>Access to the <a href="https://todogroup.org/">TODO Group</a> to meet other open source organizations </li>
 
 </ul>
 </div>
@@ -129,13 +129,13 @@ function add_eu_pricing_shortcode() {
 <div class="blank-cell"></div>
 
 <div class="lf-membership">
-<p class="margin-reset">Includes <a href="https://www.linuxfoundation.org/join/#benefits" target="_blank" rel="noopener">Linux Foundation Silver Membership</a></p>
+<p class="margin-reset">Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
 </div>
 
 <!-- div for supporter CTA -->
 <div class="supporter-cta">
 <!-- wp:spacer {"height":20} -->
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer show-desktop-only"></div>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer show-over-1000"></div>
 <!-- /wp:spacer -->
 <a href="https://www.cncf.io/endusersupporter" class="button tertiary-color stretch">Join as Supporter</a>
 </div>
@@ -143,7 +143,7 @@ function add_eu_pricing_shortcode() {
 <!-- div for member CTA  -->
 <div class="member-cta">
 <!-- wp:spacer {"height":20} -->
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer show-desktop-only"></div>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer show-over-1000"></div>
 <!-- /wp:spacer -->
 <a href="https://cncf.io/lfmembership" class="button stretch">Join as CNCF Member</a>
 </div>
@@ -329,7 +329,7 @@ sdthumbStatus="1"
 >
 </lite-youtube></div></div>
 
-<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=<?php echo esc_attr( $playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" target="_blank" title="<?php echo esc_attr( $playlist->items[ $i ]->snippet->title ); ?> "><?php echo esc_attr( $playlist->items[ $i ]->snippet->title ); ?></a></h5>
+<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=<?php echo esc_attr( $playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" title="<?php echo esc_attr( $playlist->items[ $i ]->snippet->title ); ?> "><?php echo esc_attr( $playlist->items[ $i ]->snippet->title ); ?></a></h5>
 
 <span class="newsroom-date live-icon"><?php echo esc_html( $pub_date->format( 'F j, Y' ) ); ?></span>
 </div>
@@ -391,11 +391,11 @@ function add_eu_radar_shortcode( $atts ) {
 		?>
 		<div class="newsroom-post-wrapper">
 			<div class="newsroom-image-wrapper">
-			<a class="box-link" target="_blank" rel="noopener" href="<?php echo esc_url( $item_url ); ?>"
+			<a class="box-link" href="<?php echo esc_url( $item_url ); ?>"
 				title="<?php echo esc_attr( $title ); ?>"></a>
 			<img loading="lazy" class="archive-image radar" src="<?php echo esc_url( $eu_radar[ $i ]->image ); ?>" alt="<?php echo esc_attr( $title ); ?>">	</div>
 
-			<h5 class="newsroom-title"><a target="_blank" rel="noopener" class="external is-primary-color" href="<?php echo esc_url( $item_url ); ?>"
+			<h5 class="newsroom-title"><a class="external is-primary-color" href="<?php echo esc_url( $item_url ); ?>"
 				title="<?php echo esc_attr( $title ); ?>">
 				<?php echo esc_html( $title ); ?></a>
 			</h5>

@@ -164,9 +164,10 @@ class Lf_Mu {
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'wp_head', $plugin_admin, 'change_adminbar_colors' );
 
-		// Hook to save year in a meta field for case studies.
+		// Hook to save year in a meta fields for filtering.
 		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
 		$this->loader->add_action( 'save_post_lf_case_study_cn', $plugin_admin, 'set_case_study_year', 10, 3 );
+		$this->loader->add_action( 'save_post_lf_report', $plugin_admin, 'set_report_year', 10, 3 );
 
 		// Sync projects with landscape.
 		$this->loader->add_action( 'lf_sync_projects', $plugin_admin, 'sync_projects' );
@@ -180,12 +181,24 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_ktps' );
 		}
 		// Example of how to run a sync locally on demand.
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_people' ); //phpcs:ignore.
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
 
 		// Sync programs with https://community.cncf.io/.
 		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
 		if ( ! wp_next_scheduled( 'cncf_sync_programs' ) ) {
 			wp_schedule_event( time(), 'twicedaily', 'cncf_sync_programs' );
+		}
+
+		// Get video views from YouTube for online programs.
+		$this->loader->add_action( 'cncf_get_program_views', $plugin_admin, 'get_program_views' );
+		if ( ! wp_next_scheduled( 'cncf_get_program_views' ) ) {
+			wp_schedule_event( time(), 'daily', 'cncf_get_program_views' );
+		}
+
+		// Sync KCDs with https://community.cncf.io/.
+		$this->loader->add_action( 'lf_sync_kcds', $plugin_admin, 'sync_kcds' );
+		if ( ! wp_next_scheduled( 'lf_sync_kcds' ) ) {
+			wp_schedule_event( time(), 'twicedaily', 'lf_sync_kcds' );
 		}
 
 		// Sync people with https://github.com/cncf/people.
@@ -194,6 +207,21 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
 		}
 
+		$this->loader->add_filter( 'dashboard_glance_items', $plugin_admin, 'custom_glance_items', 10, 1 );
+
+		$this->loader->add_filter( 'manage_lf_webinar_posts_columns', $plugin_admin, 'set_custom_edit_lf_webinar_columns' );
+
+		$this->loader->add_action( 'manage_lf_webinar_posts_custom_column', $plugin_admin, 'custom_lf_webinar_column', 10, 2 );
+
+		$this->loader->add_filter( 'manage_lf_event_posts_columns', $plugin_admin, 'set_custom_edit_lf_event_columns' );
+
+		$this->loader->add_action( 'manage_lf_event_posts_custom_column', $plugin_admin, 'custom_lf_event_column', 10, 2 );
+
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_dashboard_widget_info' );
+
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'remove_dashboard_widgets' );
+
+		$this->loader->add_filter( 'pre_get_posts', $plugin_admin, 'set_events_admin_order' );
 	}
 
 	/**

@@ -1,0 +1,37 @@
+// _back-to-top.scss
+
+.back-to-top {
+	background-color: rgba(0, 0, 0, 0.1);
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10;
+	width: 80px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: visibility 0s 2s, opacity 1s linear;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 1s linear;
+	}
+
+	&:hover {
+		animation-name: pop-lg;
+		animation-duration: 0.3s;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+		svg,
+		path {
+			stroke: $primary-400;
+		}
+	}
+}

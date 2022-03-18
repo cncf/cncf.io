@@ -1,0 +1,25 @@
+input[type='text'],
+input[type='email'],
+input[type='search'] {
+	height: 50px;
+	padding-left: 12px;
+	width: 100%;
+	border-radius: 3px;
+	-webkit-appearance: none;
+	// makes border lighter.
+	border: 1px solid $gray-500;
+}
+
+// other forms bg use  - $gray-100
+
+// Controls autocomplete styles.
+input,
+textarea,
+select {
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus {
+		// Stop Chrome autofill by 9999s.
+		transition: background-color 9999s ease-out 0s;
+	}
+}

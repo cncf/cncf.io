@@ -3,7 +3,7 @@
  * Who We Are Metrics Shortcode
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -14,7 +14,7 @@
   */
 function add_whoweare_metrics_shortcode( $atts ) {
 	// purecounter countup.
-	wp_enqueue_script( 'purecounter', get_template_directory_uri() . '/source/js/third-party/purecounter_vanilla.js', array(), filemtime( get_template_directory() . '/source/js/third-party/purecounter_vanilla.js' ), false );
+	wp_enqueue_script( 'purecounter', get_template_directory_uri() . '/source/js/on-demand/purecounter_vanilla.js', array(), filemtime( get_template_directory() . '/source/js/on-demand/purecounter_vanilla.js' ), false );
 
 	$metrics = LF_Utils::get_whoweare_metrics();
 
@@ -23,7 +23,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 <section data-element="count-up-block" class="count-up-block" style="--text-main-color: #FFFFFF;">
 	<div class="count-up-wrapper">
 		<div class="count-up-column">
-			<a class="no-decoration" target="_blank" rel="noopener" href="https://all.devstats.cncf.io/">
+			<a class="no-decoration" href="https://all.devstats.cncf.io/">
 				<div class="icon-wrap">
 					<img src="/wp-content/uploads/2020/05/icon-computer.svg" class="attachment-medium size-medium" alt="Computer" loading="lazy" height="74.18562" width="118.40117">
 				</div>
@@ -75,7 +75,7 @@ function add_whoweare_metrics_shortcode( $atts ) {
 			</a>
 		</div>
 		<div class="count-up-column">
-			<a class="no-decoration" target="_blank" rel="noopener" href="https://www.meetup.com/pro/cncf/">
+			<a class="no-decoration" href="https://www.meetup.com/pro/cncf/">
 				<div class="icon-wrap">
 					<img src="/wp-content/uploads/2020/05/icon-members.svg" class="attachment-medium size-medium" alt="Users" loading="lazy" height="106.10079" width="140.8399">
 				</div>

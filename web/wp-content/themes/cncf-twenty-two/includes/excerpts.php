@@ -5,7 +5,7 @@
  * Different options to dealing with excerpts.
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 

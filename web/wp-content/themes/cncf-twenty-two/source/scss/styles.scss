@@ -1,8 +1,36 @@
 @import 'core/variables';
+@import 'core/colors';
 @import 'core/normalize';
 @import 'core/reset';
 @import 'core/global';
-@import 'core/focus';
+@import 'core/focus'; // TODO
+@import 'core/grid'; // TODO
+@import 'core/animations';
+@import 'core/typography';
+@import 'core/hamburger';
+
+@import 'core/header';
+@import 'core/footer';
+@import 'core/buttons';
+@import 'core/forms'; // TODO
+
+@import 'components/back-to-top';
+@import 'components/cookie-banner';
+@import 'components/hello-bar';
+@import 'components/home-hero';
+@import 'components/modal';
+@import 'components/newsletter';
+// @import 'components/search';
+@import 'components/social-links';
+
+@import 'blocks/has-color';
+@import 'blocks/spacers';
+
+// social links
+// newsletter
+// copyright
+// create-issue
+
 // @import 'core/typography';
 // @import 'core/forms';
 // @import 'core/pagination';
@@ -12,7 +40,7 @@
 // @import 'components/header';
 // @import 'components/link-icons';
 // @import 'components/hamburger';
-// @import 'components/hello-bar';
+//
 // @import 'components/hero';
 // @import 'components/archive';
 // @import 'components/single';
@@ -26,12 +54,11 @@
 // @import 'components/webinars';
 // @import 'components/kubeweeklys';
 // @import 'components/tooltips';
-// @import 'components/modal';
+
 // @import 'components/people';
 // @import 'components/projects';
 // @import 'components/case-studies';
 // @import 'components/newsletter';
-// @import 'components/cookie-banner';
 // @import 'components/events';
 // @import 'components/spotlights';
 // @import 'components/add-to-calendar';

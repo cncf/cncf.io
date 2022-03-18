@@ -76,81 +76,79 @@ function lf_events_render_callback( $attributes ) {
 
 	<?php
 
-	while ( $query->have_posts() ) :
-		$query->the_post();
-		$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
+while ( $query->have_posts() ) :
+	$query->the_post();
 
-		$event_end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
+	$external_url     = get_post_meta( get_the_ID(), 'lf_event_external_url', true );
+	$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
+	$event_end_date   = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
+	$city             = get_post_meta( get_the_ID(), 'lf_event_city', true );
+	$country          = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
 
-		$city = get_post_meta( get_the_ID(), 'lf_event_city', true );
+	if ( ! $city && ! $country ) {
+		$location = 'TBC';
+	} elseif ( ! $country ) {
+		$location = $city;
+	} elseif ( ! $city ) {
+		$location = $country;
+	} else {
+		$location = $city . ', ' . $country;
+	}
 
-		$country = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
+	$logo = get_post_meta( get_the_ID(), 'lf_event_logo', true );
 
-		if ( ! $city && ! $country ) {
-			$location = 'TBC';
-		} elseif ( ! $country ) {
-			$location = $city;
-		} elseif ( ! $city ) {
-			$location = $country;
-		} else {
-			$location = $city . ', ' . $country;
-		}
+	$background = get_post_meta( get_the_ID(), 'lf_event_background', true );
 
-		$logo = get_post_meta( get_the_ID(), 'lf_event_logo', true );
+	$color = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
 
-		$background = get_post_meta( get_the_ID(), 'lf_event_background', true );
+	$color ? $overlay_color = $color : $overlay_color = 'transparent';
 
-		$color = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
+	?>
+<article class="event-box background-image-wrapper">
 
-		$color ? $overlay_color = $color : $overlay_color = 'transparent';
+<div class="event-overlay"
+	style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
+</div>
+
+	<?php if ( $background ) : ?>
+<figure class="background-image-figure">
+		<?php
+		LF_Utils::display_responsive_images( $background, 'event-415', '415px' );
 
 		?>
+</figure>
+<?php endif; ?>
 
-	<article class="event-box background-image-wrapper box-shadow">
+<div class="event-content-wrapper background-image-text-overlay">
 
-		<div class="event-overlay"
-			style="background-color: <?php echo esc_html( $overlay_color ); ?> ">
-		</div>
-
-		<?php if ( $background ) : ?>
-		<figure class="background-image-figure">
-			<?php
-			LF_Utils::display_responsive_images( $background, 'event-270', '250px' );
-			?>
-		</figure>
-		<?php endif; ?>
-
-		<div class="event-content-wrapper background-image-text-overlay">
-
-			<div class="event-logo">
-				<?php if ( $logo ) : ?>
-				<a href="<?php the_permalink(); ?>"
-					title="<?php the_title(); ?>">
-					<?php
-					echo wp_get_attachment_image( $logo, 'medium', false );
-					?>
-				</a>
-				<?php else : ?>
-				<h4 class="event-title"><a href="<?php the_permalink(); ?>"
-						title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h4>
-				<?php endif; ?>
-				</a>
-			</div>
-
-			<h6 class="event-date">
-				<?php
-				echo esc_html( Lf_Utils::display_event_date( $event_start_date, $event_end_date ) );
-				?>
-			</h6>
-			<h5
-				class="event-city"><?php echo esc_html( $location ); ?></h5>
-			<a href="<?php the_permalink(); ?>"
-				class="button on-image">Learn More</a>
-		</div>
-	</article>
+	<div class="event-logo">
+	<?php if ( $logo ) : ?>
+		<a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
+			title="<?php the_title(); ?>">
 		<?php
-endwhile;
+				echo wp_get_attachment_image( $logo, 'medium', false );
+		?>
+				  </a>
+<?php else : ?>
+				<h4 class="event-title external"><a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
+			title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+				<?php endif; ?>
+		</a>
+	</div>
+
+	<h6 class="event-date">
+		<?php
+				echo esc_html( Lf_Utils::display_event_date( $event_start_date, $event_end_date ) );
+		?>
+	</h6>
+	<h5
+		class="event-city"><?php echo esc_html( $location ); ?></h5>
+	<a target="_blank" rel="noopener" href="<?php echo esc_url( $external_url ); ?>"
+		class="button on-image external">Learn More</a>
+</div>
+</article>
+		<?php
+	endwhile;
 	wp_reset_postdata();
 	?>
 </div>

@@ -52,7 +52,6 @@ class Lf_Mu_Public {
 		$this->version     = $version;
 
 		$options = get_option( $this->plugin_name );
-		$this->site        = ( isset( $options['site'] ) && ! empty( $options['site'] ) ) ? esc_attr( $options['site'] ) : '';
 	}
 
 	/**
@@ -63,13 +62,27 @@ class Lf_Mu_Public {
 	}
 
 	/**
+	 * Check if we should load GTM.
+	 *
+	 * @return boolean
+	 */
+	public function should_load_gtm() {
+		$options = get_option( $this->plugin_name );
+		$current_domain = parse_url( home_url(), PHP_URL_HOST );
+		$live_site_domain = 'www.cncf.io';
+
+		if ( ! $options['gtm_id'] || $live_site_domain !== $current_domain || is_user_logged_in() ) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
 	 * Inserts <head> Google Tag Manager code.
 	 */
 	public function insert_gtm_head() {
-		$options = get_option( $this->plugin_name );
-		$current_domain = parse_url( home_url(), PHP_URL_HOST );
-		$live_site_domain = 'www.' . $options['site'] . '.io';
-		if ( ! $options['site'] || ! $options['gtm_id'] || $live_site_domain !== $current_domain || is_user_logged_in() ) {
+
+		if ( ! $this->should_load_gtm() ) {
 			return;
 		}
 
@@ -91,10 +104,7 @@ class Lf_Mu_Public {
 	 * Inserts the <body> Google Tag Manager code.
 	 */
 	public function insert_gtm_body() {
-		$options = get_option( $this->plugin_name );
-		$current_domain = parse_url( home_url(), PHP_URL_HOST );
-		$live_site_domain = 'www.' . $options['site'] . '.io';
-		if ( ! $options['site'] || ! $options['gtm_id'] || $live_site_domain !== $current_domain || is_user_logged_in() ) {
+		if ( ! $this->should_load_gtm() ) {
 			return;
 		}
 

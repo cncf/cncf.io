@@ -3,7 +3,7 @@
  * Shortcodes for Credits page
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 

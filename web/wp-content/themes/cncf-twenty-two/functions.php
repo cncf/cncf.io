@@ -5,7 +5,7 @@
  * Try to keep this file as clean as possible
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -22,8 +22,22 @@ function lf_theme_support_setup() {
 
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary' ),
-			'footer'  => esc_html__( 'Footer' ),
+			'about_01'          => esc_html__( 'About 1' ),
+			'about_02'          => esc_html__( 'About 2' ),
+			'projects_01'       => esc_html__( 'Projects 1' ),
+			'projects_02'       => esc_html__( 'Projects 2' ),
+			'certifications_01' => esc_html__( 'Certifications 1' ),
+			'certifications_02' => esc_html__( 'Certifications 2' ),
+			'community_01'      => esc_html__( 'Community 1' ),
+			'community_02'      => esc_html__( 'Community 2' ),
+			'community_03'      => esc_html__( 'Community 3' ),
+			'blog_01'           => esc_html__( 'Blog 1' ),
+			'blog_02'           => esc_html__( 'Blog 2' ),
+			'footer_01'         => esc_html__( 'Footer 1' ),
+			'footer_02'         => esc_html__( 'Footer 2' ),
+			'footer_03'         => esc_html__( 'Footer 3' ),
+			'footer_04'         => esc_html__( 'Footer 4' ),
+			'footer_05'         => esc_html__( 'Footer 5' ),
 		)
 	);
 
@@ -36,7 +50,7 @@ function lf_theme_support_setup() {
 		)
 	);
 
-	// Remove tags support from posts
+	// Remove tags support from posts.
 	unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 
 	// include custom image sizes.
@@ -47,8 +61,6 @@ function lf_theme_support_setup() {
 
 }
 add_action( 'after_setup_theme', 'lf_theme_support_setup' );
-
-
 
 /**
  * Includes (enable as appropriate)
@@ -94,7 +106,7 @@ require_once 'includes/shortcode-credits.php';
 // LF utils.
 require_once 'classes/class-lf-utils.php';
 
-// WP REST API cache control
+// WP REST API cache control.
 require_once 'includes/rest-api-cache-control.php';
 
 /* Will only run on front end of site */
@@ -102,15 +114,14 @@ if ( ! is_admin() ) {
 	/**
 	 * Make all JS defer onload apart from files specified.
 	 *
+	 * Use strpos to exclude specific files.
+	 *
 	 * @param string $url the URL.
 	 */
 	function defer_parsing_of_js( $url ) {
 		if ( false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
-		// if ( strpos( $url, 'jquery-3.5.1' ) ) {
-		// return $url;
-		// }
 		return str_replace( ' src', ' defer src', $url );
 	}
 	add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
@@ -125,7 +136,7 @@ if ( ! is_admin() ) {
 function filter_english( $input_object, $sfid ) {
 
 	// if not the Chinese Case studies filters, then skip.
-	if ( 8158 != $sfid ) {
+	if ( 8158 !== $sfid ) {
 		return $input_object;
 	}
 

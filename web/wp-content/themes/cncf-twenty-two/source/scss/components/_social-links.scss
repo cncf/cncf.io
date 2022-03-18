@@ -1,0 +1,52 @@
+.social-links {
+	grid-column: span 12;
+
+	@media (min-width: 600px) {
+		grid-column: span 8;
+	}
+
+	@media (min-width: 1000px) {
+		grid-column: span 6;
+		align-self: end;
+	}
+
+	@media (max-width: 999px) {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(10, minmax(0, 1fr));
+	}
+
+	li {
+		text-align: center;
+	}
+
+	// WeChat.
+	.button-reset {
+		margin: auto;
+	}
+}
+
+.social-links {
+	svg {
+		height: 25px;
+		max-width: 30px;
+		fill: $white;
+		color: $white;
+		&:hover {
+			fill: $primary-color;
+			color: $primary-color;
+
+			animation-name: pop-lg;
+			animation-duration: 0.3s;
+			animation-timing-function: linear;
+			animation-iteration-count: 1;
+		}
+	}
+}
