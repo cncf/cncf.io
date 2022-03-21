@@ -1,4 +1,5 @@
-// phpcs:ignore.
+// phpcs:ignoreFile.
+
 // (function () {
 // document.addEventListener('DOMContentLoaded', function () {
 // const video = document.querySelector('.home-hero__video');

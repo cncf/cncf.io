@@ -4,8 +4,9 @@
  * You should only need to change these few values to get everything up and running
  */
 
-// Local project URL. From MAMP or Lando - whatever local server you use.
-var PROJECT_URL = 'https://cncfci.lndo.site';
+// URL that will be used for hot reloading via Browser Sync.
+// This should match with the prxoy setting in your.lando.yml file.
+var BROWSERSYNC_URL = 'https://bs.cncfci.lndo.site';
 
 // Project folder related to gulpfile position.
 const PROJECT_FOLDER = '.';
@@ -86,18 +87,19 @@ const gulp = require( 'gulp' ),
 
 	browserSync = require( 'browser-sync' ).create();
 
+  /**
+ * Error handler
+ */
+function errorHandler(err) {
+  console.error(err.toString());
+}
+
 /**
  * BrowserSync Reload.
  */
 function reload( callback ) {
 	browserSync.reload();
 	callback();
-}
-/**
- * Error handler
- */
-function errorHandler(err) {
-  console.error(err.toString());
 }
 
 /**
@@ -111,11 +113,16 @@ function watch() {
 	gulp.watch( editorJSWatchFiles,gulp.series( [editorJS,reload] ) );
 	gulp.watch( globalJSWatchFiles,gulp.series( [globalJS,reload] ) );
 
-	return browserSync.init( {
-		proxy: PROJECT_URL,
-		open: false,
-		notify: false
-	} );
+  return browserSync.init({
+    proxy: 'http://appserver_nginx',
+    socket: {
+      domain: BROWSERSYNC_URL,
+      port: 80 // NOT the 3000 you might expect.
+    },
+    open: false,
+    logLevel: "debug",
+    logConnections: true,
+});
 }
 
 /**
@@ -335,6 +342,7 @@ function editorJS() {
 }
 
 exports.default = gulp.series( styles,globalJS,editorJS,watch );
+exports.watch = gulp.series( styles,globalJS,editorJS,watch );
 exports.detached = gulp.series( styles,detachedStyles,globalJS,editorJS,watch );
 exports.build = gulp.series( styles,detachedStyles,globalJS,editorJS );
 exports.phpcs = gulp.series( phpcs );

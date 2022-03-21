@@ -1,9 +1,12 @@
 /**
  * Menu / Navigation
  *
- * @package WordPress
+ * @package
  * @since 1.0.0
  */
+
+/* eslint-disable no-unused-expressions */
+
 (function () {
 	document.addEventListener(
 		'DOMContentLoaded',
@@ -14,20 +17,20 @@
 			 *
 			 * @param {*} callback
 			 * @param {*} limit
-			 * @return
+			 * @return {Function} Callback.
 			 */
 			function throttle(callback, limit) {
-				let wait = false; // Initially, we're not waiting
+				let wait = false; // Initially, we're not waiting.
 				return function () {
-					// We return a throttled function
+					// We return a throttled function.
 					if ( ! wait) {
-						// If we're not waiting
-						callback.call(); // Execute users function
-						wait = true; // Prevent future invocations
+						// If we're not waiting.
+						callback.call(); // Execute users function.
+						wait = true; // Prevent future invocations.
 						setTimeout(
 							function () {
-								// After a period of time
-								wait = false; // And allow future invocations
+								// After a period of time.
+								wait = false; // Allow future invocations.
 							},
 							limit
 						);
@@ -64,7 +67,6 @@
                     target.style.removeProperty( 'overflow' );
                     target.style.removeProperty( 'transition-duration' );
                     target.style.removeProperty( 'transition-property' );
-                    // alert("!");
 					},
 					duration
 				);
@@ -115,7 +117,7 @@
 			 *
 			 * @param {*} target
 			 * @param {*} duration
-			 * @return
+			 * @return {Function} Slide toggle.
 			 */
 			let slideToggle = (target, duration = 500) => {
 				if (window.getComputedStyle( target ).display === 'none') {

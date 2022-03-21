@@ -25,6 +25,14 @@
         "globals": {
             "jQuery": "readonly",
             "wp": "readonly"
+        },
+        "parserOptions": {
+            "ecmaVersion": 2021
+        },
+        "rules": {
+            "prefer-const": "off",
+            "@wordpress/no-global-event-listener": 0,
+            "camelcase": 1
         }
     },
     "repository": {
