@@ -127,7 +127,7 @@ web/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/node_modules
 web/wp-content/mu-plugins/wp-mu-plugins/lf-pre-publish/node_modules
 
 # Ignore local VS code settings
-web/wp-content/themes/lf-theme/.vscode
+web/wp-content/themes/cncf-twenty-two/.vscode
 
 # Lando Local file
 .lando.local.yml
