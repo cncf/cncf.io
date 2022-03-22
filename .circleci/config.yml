@@ -109,11 +109,10 @@ jobs:
             - slack/status:
                 fail_only: true
 
-                
     build_css_js:
         <<: *defaults
         docker:
-            - image: circleci/node:9.9-stretch
+            - image: cimg/node:14.19
               auth:
                 username: $DOCKERHUB_USERNAME
                 password: $DOCKERHUB_PASSWORD
@@ -123,7 +122,7 @@ jobs:
 
             - run:
                 name: Check current version of node
-                command: npm -v
+                command: node -v
 
             - run:
                 name: compile css/js
