@@ -127,10 +127,10 @@ jobs:
 
             - run:
                 name: compile css/js
-                command: 'cd $HOME/example_wordpress_composer/web/wp-content/themes/lf-theme/; npm install; npm run build'
+                command: 'cd $HOME/example_wordpress_composer/web/wp-content/themes/cncf-twenty-two/; npm install; npm run build'
 
             - persist_to_workspace:
-                root: web/wp-content/themes/lf-theme
+                root: web/wp-content/themes/cncf-twenty-two
                 paths:
                     - build
 
@@ -153,7 +153,7 @@ jobs:
 
             - run:
                 name: copy build
-                command: cp -r /tmp/build $HOME/example_wordpress_composer/web/wp-content/themes/lf-theme/
+                command: cp -r /tmp/build $HOME/example_wordpress_composer/web/wp-content/themes/cncf-twenty-two/
 
             - run:
                 name: dependencies
