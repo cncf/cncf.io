@@ -4,21 +4,20 @@
  *
  * Adapted from vanillatop https://github.com/bernydole/vanillatop
  *
- * @package
+ * @package WordPress
  * @since 1.0.0
  */
 
 /* eslint-disable no-mixed-operators */
-/* eslint-disable no-unused-expressions */
 
-(function () {
+( function() {
 	document.addEventListener(
 		'DOMContentLoaded',
-		function () {
+		function() {
 			// declare the back to top element.
 			const goTopButton = document.querySelector( '.back-to-top' );
 
-			if ( ! goTopButton) {
+			if ( ! goTopButton ) {
 				return;
 			}
 
@@ -34,17 +33,17 @@
 			// Track whether call is currently in process.
 			let tick = false;
 
-			function scrollToTop(duration) {
-				let start = window.pageYOffset,
-				startTime = Math.floor( Date.now() );
+			function scrollToTop( duration ) {
+				const start = window.pageYOffset,
+					startTime = Math.floor( Date.now() );
 
 				function scroll() {
-					Math.easeInOutQuad = function (t) {
-						return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+					Math.easeInOutQuad = function( t ) {
+						return t < 0.5 ? 2 * t * t : -1 + ( 4 - 2 * t ) * t;
 					};
-					let time = Math.min( 1, (Math.floor( Date.now() ) - startTime) / duration );
-					window.scroll( 0, Math.ceil( Math.easeInOutQuad( time ) * (0 - start) + start ) );
-					if (window.pageYOffset === 0) {
+					const time = Math.min( 1, ( Math.floor( Date.now() ) - startTime ) / duration );
+					window.scroll( 0, Math.ceil( Math.easeInOutQuad( time ) * ( 0 - start ) + start ) );
+					if ( window.pageYOffset === 0 ) {
 						return;
 					}
 					requestAnimationFrame( scroll );
@@ -52,8 +51,8 @@
 				scroll();
 			}
 
-			function scrollingDown(currentScrollPosition) {
-				if (currentScrollPosition > offset) {
+			function scrollingDown( currentScrollPosition ) {
+				if ( currentScrollPosition > offset ) {
 					goTopButton.classList.add( 'is-active' );
 				} else {
 					goTopButton.classList.remove( 'is-active' );
@@ -63,28 +62,28 @@
 			// add event listener to element.
 			goTopButton.addEventListener(
 				'click',
-				function () {
+				function() {
 					! window.requestAnimationFrame ? window.scrollTo( 0, 0 ) : scrollToTop( scrollDuration );
-				}
+				},
 			);
 
 			// control scroll listening speed.
 			window.addEventListener(
 				'scroll',
-				function () {
+				function() {
 					lastScrollPosition = window.scrollY;
-					if ( ! tick) {
+					if ( ! tick ) {
 						setTimeout(
-							function () {
+							function() {
 								scrollingDown( lastScrollPosition );
 								tick = false;
 							},
-							800
+							800,
 						);
 					}
 					tick = true;
-				}
+				},
 			);
-		}
+		},
 	);
-})();
+}() );

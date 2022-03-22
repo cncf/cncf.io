@@ -79,9 +79,7 @@ const gulp = require( 'gulp' ),
 	lineec = require( 'gulp-line-ending-corrector' ),
 	sourcemaps = require( 'gulp-sourcemaps' ),
 	touch = require( 'gulp-touch-cmd' ),
-  notify = require( 'gulp-notify' ),
-	gulpphpcs = require( 'gulp-phpcs' ),
-	gulpphpcbf = require( 'gulp-phpcbf' ),
+ notify = require( 'gulp-notify' ),
 	rename = require( 'gulp-rename' ),
 	filter = require( 'gulp-filter' ),
 
@@ -135,6 +133,8 @@ function styles() {
 		.pipe( sourcemaps.init() )
 		.pipe(
 			sass( {
+    indentType: "tab",
+    indentWidth: 1,
 				errLogToConsole: true,
 				outputStyle: 'expanded',
 				precision: 10
@@ -259,43 +259,6 @@ function styles() {
 }
 
 /**
- * PHP Code Sniffer.
- */
-function phpcs( done ) {
-	return (
-		gulp.src( sniffSource )
-			.pipe( gulpphpcs( {
-				bin: '../../../../vendor/bin/phpcs',
-				standard: 'WordPress',
-				warningSeverity: 0,
-				errorSeverity: 1,
-				showSniffCode: true,
-				report: 'full' // summary or full.
-			} ) )
-			.pipe( gulpphpcs.reporter( 'log' ) )
-			.pipe( notifier.notify( { message: 'phpcs task complete',onLast: true } ) )
-	);
-	done();
-}
-
-/**
- * PHP Code Beautifier.
- */
-function phpcbf( done ) {
-	return (
-		gulp.src( sniffSource )
-			.pipe( gulpphpcbf( {
-				bin: '../../../../vendor/bin/phpcbf',
-				standard: 'WordPress'
-			} ) )
-			.on( 'error',console.error.bind( console ) )
-			.pipe( gulp.dest( './' ) )
-			.pipe( notify( { message: 'phpcbf complete',onLast: true } ) )
-	);
-	done();
-}
-
-/**
  * Global JS files
  */
 function globalJS() {
@@ -345,6 +308,5 @@ exports.default = gulp.series( styles,globalJS,editorJS,watch );
 exports.watch = gulp.series( styles,globalJS,editorJS,watch );
 exports.detached = gulp.series( styles,detachedStyles,globalJS,editorJS,watch );
 exports.build = gulp.series( styles,detachedStyles,globalJS,editorJS );
-exports.phpcs = gulp.series( phpcs );
-exports.phpcbf = gulp.series( phpcbf );
-exports.standards = gulp.series( phpcbf,phpcs );
+exports.production = gulp.series( styles,detachedStyles,globalJS,editorJS );
+exports.prod = gulp.series( styles,detachedStyles,globalJS,editorJS );
