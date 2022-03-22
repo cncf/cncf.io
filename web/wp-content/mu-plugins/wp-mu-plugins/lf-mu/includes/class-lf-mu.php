@@ -180,8 +180,6 @@ class Lf_Mu {
 		if ( ! wp_next_scheduled( 'lf_sync_ktps' ) ) {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_ktps' );
 		}
-		// Example of how to run a sync locally on demand.
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
 
 		// Sync programs with https://community.cncf.io/.
 		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
@@ -206,6 +204,10 @@ class Lf_Mu {
 		if ( ! wp_next_scheduled( 'lf_sync_people' ) ) {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
 		}
+
+		// Example of how to run a sync locally on demand.
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
+		// $this->loader->add_action( 'init', $plugin_admin, 'get_program_views' ); //phpcs:ignore.
 
 		$this->loader->add_filter( 'dashboard_glance_items', $plugin_admin, 'custom_glance_items', 10, 1 );
 
@@ -247,9 +249,7 @@ class Lf_Mu {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'wpdocs_dequeue_dashicon' );
 		$this->loader->add_filter( 'pre_get_posts', $plugin_public, 'remove_news_from_rss' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_nhpt_query_args', $plugin_public, 'remove_news_from_sitemap' );
-
 		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_kubeweekly_from_sitemap' );
-
 	}
 
 	/**

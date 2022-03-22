@@ -7,7 +7,7 @@ Version: 2.0.0
 Requires at least: 5.9
 Tested up to: 5.9.1
 Requires PHP: 7.0
-Text Domain: lf-theme
+Text Domain: cncf-theme
 Description: A custom theme developed for CNCF website, see the Github repo for usage instructions.
 
 Please refrain from putting any CSS in this file, everything should go within the workflow in the source/sass folder.

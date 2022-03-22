@@ -67,8 +67,8 @@ class Lf_Mu_Public {
 	 * @return boolean
 	 */
 	public function should_load_gtm() {
-		$options = get_option( $this->plugin_name );
-		$current_domain = parse_url( home_url(), PHP_URL_HOST );
+		$options          = get_option( $this->plugin_name );
+		$current_domain   = wp_parse_url( home_url(), PHP_URL_HOST );
 		$live_site_domain = 'www.cncf.io';
 
 		if ( ! $options['gtm_id'] || $live_site_domain !== $current_domain || is_user_logged_in() ) {
@@ -161,7 +161,7 @@ class Lf_Mu_Public {
 			$url_arr = array( 'code.jquery.com', 's.w.org' );
 
 			foreach ( $url_arr as $url ) {
-				$key = array_search( $url, $hints );
+				$key = array_search( $url, $hints, true );
 				if ( false !== $key ) {
 					unset( $hints[ $key ] );
 				}

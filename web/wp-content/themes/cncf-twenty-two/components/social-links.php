@@ -5,7 +5,7 @@
  * Pulls in from Global options and displays inline SVGs with outbound links.
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 

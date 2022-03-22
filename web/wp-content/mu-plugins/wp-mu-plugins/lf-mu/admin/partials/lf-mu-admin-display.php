@@ -139,7 +139,8 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="hello_bar_text">Text and Link Color</label>
+					<th scope="row"><label for="hello_bar_text">Text and Link
+							Color</label>
 					</th>
 					<td>
 						<div class="pagebox">
@@ -228,7 +229,7 @@ if ( ! defined( 'WPINC' ) ) {
 		<h2 id="footer">Footer</h2>
 		<table class="form-table" role="presentation">
 			<tbody>
-			<tr>
+				<tr>
 					<th scope="row"><label for="footer_cta_text">Footer
 							CTA Text</label>
 					</th>
@@ -259,8 +260,9 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="accessibility_cta_text">Accessibility
-							 Text</label>
+					<th scope="row"><label
+							for="accessibility_cta_text">Accessibility
+							Text</label>
 					</th>
 					<td>
 						<input type="text"
@@ -268,9 +270,12 @@ if ( ! defined( 'WPINC' ) ) {
 							id="<?php echo esc_html( $this->plugin_name ); ?>-accessibility_cta_text"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[accessibility_cta_text]"
 							value="<?php echo esc_html( $accessibility_cta_text ); ?>"
-							placeholder="Read our accessibility statement" maxlength="40" />
+							placeholder="Read our accessibility statement"
+							maxlength="40" />
 					</td>
-					<th scope="row"><label for="accessibility_cta_link">Accessibility Link</label>
+					<th scope="row"><label
+							for="accessibility_cta_link">Accessibility
+							Link</label>
 					</th>
 					<td>
 						<?php
@@ -287,7 +292,7 @@ if ( ! defined( 'WPINC' ) ) {
 						?>
 					</td>
 				</tr>
-			<tr>
+				<tr>
 					<th scope="row"><label for="footer_image_id">Footer Logo
 							Image</label>
 					</th>
@@ -339,7 +344,8 @@ if ( ! defined( 'WPINC' ) ) {
 		<table class="form-table" role="presentation">
 			<tbody>
 				<tr>
-					<th scope="row"><label for="social_email">Contact Form</label>
+					<th scope="row"><label for="social_email">Contact
+							Form</label>
 					</th>
 					<td>
 						<input type="text" class="social_email regular-text"
@@ -430,8 +436,7 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label
-							for="social_slack">Slack</label>
+					<th scope="row"><label for="social_slack">Slack</label>
 					</th>
 					<td>
 						<input type="text" class="social_slack regular-text"
@@ -442,8 +447,7 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label
-							for="social_twitch">Twitch</label>
+					<th scope="row"><label for="social_twitch">Twitch</label>
 					</th>
 					<td>
 						<input type="text" class="social_twitch regular-text"
@@ -465,10 +469,12 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="social_twitter_handle">Twitter Handle (used for social sharing)</label>
+					<th scope="row"><label for="social_twitter_handle">Twitter
+							Handle (used for social sharing)</label>
 					</th>
 					<td>
-						<input type="text" class="social_twitter_handle regular-text"
+						<input type="text"
+							class="social_twitter_handle regular-text"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-social_twitter_handle"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[social_twitter_handle]"
 							value="<?php echo esc_html( $social_twitter_handle ); ?>"
@@ -592,18 +598,19 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
- 					<th scope="row"><label for="youtube_api_key">YouTube API key</label>
- 					</th>
- 					<td>
- 						<input type="text" class="youtube_api_key regular-text"
- 							id="<?php echo esc_html( $this->plugin_name ); ?>-youtube_api_key"
- 							name="<?php echo esc_html( $this->plugin_name ); ?>[youtube_api_key]"
- 							value="<?php echo esc_attr( $youtube_api_key ); ?>"
- 						/>
- 					</td>
- 				</tr>
+					<th scope="row"><label for="youtube_api_key">YouTube API
+							key</label>
+					</th>
+					<td>
+						<input type="text" class="youtube_api_key regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-youtube_api_key"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[youtube_api_key]"
+							value="<?php echo esc_attr( $youtube_api_key ); ?>" />
+					</td>
+				</tr>
 				<tr>
-					<th scope="row"><label for="gtm_id">Google Tag Manager ID</label>
+					<th scope="row"><label for="gtm_id">Google Tag Manager
+							ID</label>
 					</th>
 					<td>
 						<input type="text" class="gtm_id regular-text"
