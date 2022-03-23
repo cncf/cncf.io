@@ -118,13 +118,13 @@ if ( ! is_admin() ) {
 	 *
 	 * @param string $url the URL.
 	 */
-	function defer_parsing_of_js( $url ) {
+	function lf_defer_parsing_of_js( $url ) {
 		if ( false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
 		return str_replace( ' src', ' defer src', $url );
 	}
-	add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
+	add_filter( 'script_loader_tag', 'lf_defer_parsing_of_js', 10 );
 }
 
 /**
@@ -133,7 +133,7 @@ if ( ! is_admin() ) {
  * @param array $input_object Input Object.
  * @param int   $sfid ID of form.
  */
-function filter_english( $input_object, $sfid ) {
+function lf_filter_english( $input_object, $sfid ) {
 
 	// if not the Chinese Case studies filters, then skip.
 	if ( 8158 !== $sfid ) {
@@ -146,4 +146,15 @@ function filter_english( $input_object, $sfid ) {
 
 	return $input_object;
 }
-add_filter( 'sf_input_object_pre', 'filter_english', 10, 2 );
+add_filter( 'sf_input_object_pre', 'lf_filter_english', 10, 2 );
+
+/**
+ * Replace WordPress version appended to styles with filemtime.
+ *
+ * @param array $styles Styles.
+ * @return void
+ */
+function lf_update_styles_with_filemtime( $styles ) {
+	$styles->default_version = filemtime( get_template_directory() . '/style.css' );
+}
+add_action( 'wp_default_styles', 'lf_update_styles_with_filemtime' );
