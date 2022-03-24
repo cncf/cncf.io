@@ -192,6 +192,3 @@ workflows:
       - code_sniff_unit_test:
             requires:
                 - build
-      - run_percy_tests:
-            requires:
-                - build_and_deploy_cncf
