@@ -42,6 +42,7 @@ services:
   node:
     type: 'node:14'
     ssl: true
+    scanner: false
   appserver:
     run:
       - /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs
@@ -102,7 +103,7 @@ services:
    2. Install the Node.js dependencies: `lando npm install`
    3. Compile the files: `lando npm run build`
 
-8. Visit the local site URL saved from above.  To find it again run `lando info`.
+8. Visit the local site URL saved from above. To find it again run `lando info`.
 
 9. In the admin you will need to edit the [Search & Filter](https://cncfci.lndo.site/wp/wp-admin/edit.php?post_type=search-filter-widget) settings.  The full url to the result pages are hardcoded in the "Display Results" of each filter.  These will need to be set to the correpsonding local instance url.
 
@@ -120,15 +121,7 @@ services:
 
 ## Theme Development
 
-To activate development mode, using Browsersync and watch files, run `npm start`.
-
-TODO: Requires update.
-
------
-
-## Percy Tests
-
-[Percy](https://percy.io/) performs visual regression tests on each push to the repo.  It is a great way to spot unintended render issues across the site.  If a particular build diverges from the baseline snapshots, the changes need to be fixed or "Approved" to be incorporated into a new baseline.
+To activate Browsersync to watch files, run `lando npm start` in the theme directory. You will then be able to browse the bs.* url listed previously and see the site auto-update whenever there is a change in the underlying source code.
 
 -----
 
@@ -161,20 +154,6 @@ lando phpcs -i
 
 The dependencies of this project are managed by [Composer](https://getcomposer.org/). All dependencies of the project are set in [composer.json](https://github.com/cncf/cncf.io/blob/master/composer.json) and are pulled in at deploy time according to what is set in [composer.lock](https://github.com/cncf/cncf.io/blob/master/composer.lock).
 
-composer.lock is generated from composer.json only when explicitly calling the `composer update` function. Any additional themes or plugins can be added first to composer.json and then `composer update` is run to update composer.lock and pull in the new files.  Dependencies are pegged to a version according to the composer [versioning rules](https://getcomposer.org/doc/articles/versions.md).
+composer.lock is generated from composer.json only when explicitly calling the `lando composer update` function. Any additional themes or plugins can be added first to composer.json and then `lando composer update` is run to update composer.lock and pull in the new files.  Dependencies are pegged to a version according to the composer [versioning rules](https://getcomposer.org/doc/articles/versions.md).
 
 It's good practice to keep WordPress and all plugins set at their latest releases to inherit any security patches and upgraded functionality.  Upgrading to a new version, however, sometimes has unintended consequences so it's critical to run all tests before deploying live.
-
-To upgrade the version of a dependency, follow these steps:
-
-1. Edit [composer.json](https://github.com/cncf/cncf.io/blob/master/composer.json) to set the new version rule
-
-2. Run `lando composer update [package]` to update [composer.lock](https://github.com/cncf/cncf.io/blob/master/composer.lock) for just that package or run `lando composer update` to upgrade all packages to the latest versions which satisfy the constraints set in composer.json
-
-3. Test the site locally
-
-4. Check in to GitHub and allow the tests to run
-
-5. Test the dev instance to make sure all looks good
-
-6. Deploy live

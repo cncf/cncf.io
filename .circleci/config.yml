@@ -171,16 +171,6 @@ jobs:
                 failure_message: "$COMMIT_AUTHOR's *$CIRCLE_JOB* job has failed \n- $COMMIT_HASH: $COMMIT_MESSAGE"
 
 
-    run_percy_tests:
-        <<: *defaults
-        steps:
-            - checkout
-
-            - run:
-                name: Percy tests
-                command: ./.circleci/percy-tests.sh $TERMINUS_SITE
-
-
 workflows:
   build_and_test:
     jobs:
