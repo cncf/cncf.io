@@ -42,12 +42,10 @@ services:
   node:
     type: 'node:14'
     ssl: true
-    command: cd /app/web/wp-content/themes/cncf-twenty-two && node_modules/.bin/gulp build && node_modules/.bin/gulp watch
   appserver:
     run:
       - /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs
       - /app/vendor/bin/phpcs -i
-      - echo "\n\n\nOpen 'https://bs.cncfci.lndo.site' to access hot reloading\nRun lando logs -s node -f to see BrowserSync loading status\n\n\n";
 tooling:
   npm:
     service: node
