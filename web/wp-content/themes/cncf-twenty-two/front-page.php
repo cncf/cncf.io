@@ -8,18 +8,21 @@
  */
 
 get_template_part( 'components/header' );
-
-			wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-demand/video.js', null, filemtime( get_template_directory() . '/source/js/on-demand/video.js' ), true );
 ?>
+<link rel="preload" as="image" href="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg">
 
-
+<?php
+wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-demand/video.js', null, filemtime( get_template_directory() . '/source/js/on-demand/video.js' ), true );
+?>
 
 <main id="maincontent">
 	<section class="home-hero">
 
 		<div aria-hidden="true" class="home-hero__overlay"></div>
 
-		<video class="home-hero__video" width="100%" autoplay loop muted playsinline>
+		<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg" width="100%" height="100%" class="home-hero__poster">
+
+		<video class="home-hero__video" width="100%" preload="none" loop muted playsinline>
 			<source
 				src="/wp-content/themes/cncf-twenty-two/source/videos/hero.mp4"
 				type="video/mp4">
@@ -38,7 +41,7 @@ get_template_part( 'components/header' );
 				<div style="height:35px" aria-hidden="true"
 					class="wp-block-spacer"></div>
 
-				<h2>CNCF is the vendor-neutral hub of c<strong>cloud native
+				<h2>CNCF is the vendor-neutral hub of <strong>cloud native
 						computing</strong>. Hosting
 					cutting-edge projects like Kubernetes and Envoy to make
 					cloud native

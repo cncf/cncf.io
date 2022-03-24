@@ -1,13 +1,59 @@
-// phpcs:ignoreFile.
+/**
+ * Homepage video.
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */
 
-// (function () {
-// document.addEventListener('DOMContentLoaded', function () {
-// const video = document.querySelector('.home-hero__video');
+// phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
 
-// const overlay = document.querySelector('.home-hero__overlay');
+(function () {
+	document.addEventListener(
+		'DOMContentLoaded',
+		function () {
 
-// video.addEventListener('loadeddata', e => {
-// overlay.classList.add('video-has-loaded');
-// });
-// });
-// })();
+			const overlay = document.querySelector( '.home-hero__overlay' );
+
+			const poster = document.querySelector( '.home-hero__poster' );
+
+			const video = document.querySelector( '.home-hero__video' );
+
+			async function playVideo() {
+				try {
+					await video.play();
+				} catch (err) {
+					console.log( err )
+				}
+			}
+
+			async function loadedPoster() {
+				try {
+					await poster.complete;
+				} catch (err) {
+					console.log( err )
+				}
+			}
+
+			// once poster loads, apply lighter overlay.
+			if (loadedPoster()) {
+				overlay.classList.add( 'poster-has-loaded' );
+			}
+
+			// start preloading video.
+			video.preload = 'auto';
+
+			// watch for canplay ability.
+			video.addEventListener(
+				'canplay',
+				(e) => {
+					playVideo();
+					// fade out poster.
+					poster.classList.add( 'video-has-loaded' );
+				},
+				{ once: true }
+			)
+
+			// end.
+		}
+	);
+})();

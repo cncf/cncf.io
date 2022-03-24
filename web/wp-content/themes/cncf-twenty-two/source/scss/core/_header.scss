@@ -297,10 +297,11 @@
 			padding-top: 10px;
 			padding-bottom: 10px;
 			margin-left: 20px;
-			width: 120px;
+			min-width: 120px;
 			flex-shrink: 0;
+			width: min-content;
 			@media (min-width: 1250px) {
-				width: 134px;
+				min-width: 134px;
 				margin-left: 52px;
 			}
 		}
@@ -412,8 +413,8 @@
 				padding-right: 18px;
 			}
 			@media (min-width: 1250px) {
-				padding-left: 24px;
-				padding-right: 24px;
+				padding-left: 26px;
+				padding-right: 26px;
 			}
 		}
 		&.is-open > a span {
@@ -421,6 +422,7 @@
 			&:after {
 				content: '';
 				position: absolute;
+				left: 0;
 				bottom: -32px;
 				height: 5px;
 				display: block;
@@ -501,7 +503,7 @@
 
 		.col2 {
 			grid-column: span 7;
-			padding-right: 50px;
+			padding-right: 40px;
 		}
 
 		.col3 {

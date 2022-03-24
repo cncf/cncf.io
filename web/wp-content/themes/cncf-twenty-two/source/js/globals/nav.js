@@ -8,8 +8,6 @@
 // phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
 // phpcs:disable Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 
-/* eslint-disable no-unused-expressions */
-
 ( function () {
 	document.addEventListener(
 		'DOMContentLoaded',
