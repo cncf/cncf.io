@@ -11,7 +11,7 @@
 get_template_part( 'components/header' );
 
 // declare report PDF link to reference as variable.
-$pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/01/CNCF_Annual_Report_2021.pdf';
+$pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/03/CNCF-AR_FINAL-24.03.pdf';
 
 ?>
 
