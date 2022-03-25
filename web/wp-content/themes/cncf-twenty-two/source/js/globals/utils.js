@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-// TODO: Throttle not working as it should.
+// TODO: Throttle not working as it should?
 ( function( window ) {
 	// Generic throttle function.
 	// window.utils.isThrottled() - how to use.

@@ -185,6 +185,8 @@
 				clearTimeout( closeDropdownTimeout );
 			};
 
+			// TODO: Use hoverintent.
+			// https://github.com/svivian/sv-hover-intent-js .
 			const openDropdown = function ( el ) {
 				// Remove active menu.
 				menuItems.forEach( ( items ) => items.classList.remove( 'is-open' ) );

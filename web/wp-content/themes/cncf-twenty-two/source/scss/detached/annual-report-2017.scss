@@ -12,13 +12,20 @@
 		display: none;
 	}
 
-	a {
+	a:not(.wp-block-button__link) {
 		background-color: transparent;
-	}
+		color: #337ab7;
+		text-decoration: none;
+		&:focus,
+		&:hover {
+			color: #23527c;
+			text-decoration: underline;
+		}
 
-	a:active,
-	a:hover {
-		outline: 0;
+		&:focus {
+			outline: 5px auto -webkit-focus-ring-color;
+			outline-offset: -2px;
+		}
 	}
 
 	strong {
@@ -45,22 +52,6 @@
 		overflow: auto;
 		font-family: monospace, monospace;
 		font-size: 1em;
-	}
-
-	a {
-		color: #337ab7;
-		text-decoration: none;
-	}
-
-	a:focus,
-	a:hover {
-		color: #23527c;
-		text-decoration: underline;
-	}
-
-	a:focus {
-		outline: 5px auto -webkit-focus-ring-color;
-		outline-offset: -2px;
 	}
 
 	img {
@@ -738,10 +729,6 @@
 	position: relative;
 }
 
-.open > a {
-	outline: 0;
-}
-
 .progress {
 	height: 20px;
 	margin-bottom: 20px;
@@ -910,7 +897,6 @@ div.row .col.section-title {
 .annual-report-page .annual-report-sidebar .nav-items li a:focus,
 .annual-report-page .annual-report-sidebar .nav-items li a:hover {
 	background-color: transparent;
-	outline: 0;
 }
 
 .annual-report-page .banner-section {
@@ -1503,7 +1489,7 @@ ul.items > li {
 
 	.annual-report-page .members-and-growing-section ul.items.floatnone > li {
 		float: left;
-		display: inline-block;
+		// display: inline-block;
 	}
 
 	.annual-report-page .who-we-are-section ul.items {

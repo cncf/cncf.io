@@ -101,90 +101,99 @@ $font-code: Hack, 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono', 'Lucida C
 	monospace;
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 100;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-Thin'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 200;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-ExtraLight'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 300;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-Light'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 400;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-Regular'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 500;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-Medium'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 600;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-SemiBold'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 700;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-Bold'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 800;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-ExtraBold'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.ttf') format('ttf');
 }
 
 @font-face {
+	font-display: optional;
 	font-family: 'Clarity City';
 	font-weight: 900;
 	font-style: normal;
-	src: local('Clarity City'),
+	src: local('ClarityCity-Black'), local('Clarity City'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.ttf') format('ttf');

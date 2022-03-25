@@ -1,5 +1,5 @@
 /**
- * Annual Report JS
+ * Annual Report JS for 2017, 2018, 2019
  *
  * @package WordPress
  * @since 1.0.0

@@ -85,7 +85,7 @@ function reload( callback ) {
 function watch() {
 	gulp.watch( projectPHPWatchFiles,reload );
 	gulp.watch( projectHTMLWatchFiles ).on( 'change',reload );
-	gulp.watch( styleWatchFiles,gulp.series( [styles] ) );
+	gulp.watch( styleWatchFiles,gulp.series( [styles, detachedStyles] ) );
 	gulp.watch( thirdpartyJSWatchFiles,gulp.series( [reload] ) );
 	gulp.watch( editorJSWatchFiles,gulp.series( [editorJS,reload] ) );
 	gulp.watch( globalJSWatchFiles,gulp.series( [globalJS,reload] ) );
@@ -239,10 +239,10 @@ function detachedStyles() {
 				]
 		)
 	)
-	   .pipe( sourcemaps.write() )
-	   .pipe( lineec() )
-	   .pipe( gulp.dest( styleDestination ) )
-	   .pipe( filter( '**/*.css' ) )
+	.pipe( sourcemaps.write() )
+	.pipe( lineec() )
+	.pipe( gulp.dest( styleDestination ) )
+	.pipe( filter( '**/*.css' ) )
 	.pipe(
 		mmq(
 			{
@@ -250,7 +250,7 @@ function detachedStyles() {
 			}
 		)
 	)
-	   .pipe( browserSync.stream() )
+	.pipe( browserSync.stream() )
 	.pipe(
 		rename(
 			{
