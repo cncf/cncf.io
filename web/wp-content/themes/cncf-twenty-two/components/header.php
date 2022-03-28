@@ -13,7 +13,7 @@ get_header();
 
 $site_options = get_option( 'lf-mu' );
 
-if ( $site_options['show_hello_bar'] ) :
+if ( isset( $site_options['show_hello_bar'] ) && $site_options['show_hello_bar'] ) :
 	get_template_part( 'components/hello-bar' );
 endif;
 
@@ -22,11 +22,11 @@ endif;
 <header class="header">
 	<div class="container wrap">
 
-		<?php if ( $site_options['header_image_id'] ) { ?>
+		<?php if ( isset( $site_options['header_image_id'] ) && $site_options['header_image_id'] ) { ?>
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
 				<img src="<?php echo esc_url( wp_get_attachment_url( $site_options['header_image_id'] ) ); ?>"
-					height="38" alt="<?php echo bloginfo( 'name' ); ?>">
+					width="210" height="40" alt="<?php echo bloginfo( 'name' ); ?>">
 			</a>
 		</div>
 		<?php } ?>
@@ -249,7 +249,7 @@ endif;
 			<div style="height:40px" aria-hidden="true" class="wp-block-spacer">
 			</div>
 
-			<?php if ( $site_options['header_cta_text'] && $site_options['header_cta_link'] ) : ?>
+			<?php if ( isset( $site_options['header_cta_text'] ) && isset( $site_options['header_cta_link'] ) && $site_options['header_cta_text'] && $site_options['header_cta_link'] ) : ?>
 
 			<div class="header-cta">
 				<a href="<?php echo esc_url( get_permalink( $site_options['header_cta_link'] ) ); ?>"

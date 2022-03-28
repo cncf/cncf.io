@@ -97,7 +97,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 								<?php if ( $twitter_url ) : ?>
 								<a target="_blank" aria-label="Share on Twitter"
 									title="Share on Twitter"
-									href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
+									href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
 								<?php endif; ?>
 
 								<!-- linkedin -->
@@ -105,14 +105,14 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 								<a target="_blank"
 									aria-label="Share on Linkedin"
 									title="Share on Linkedin"
-									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
+									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
 								<?php endif; ?>
 
 								<!-- sendto email -->
 								<?php if ( $mailto_url ) : ?>
 								<a target="_blank" aria-label="Share by Email"
 									title="Share by Email"
-									href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
+									href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
 								<?php endif; ?>
 							</div>
 						</div>
@@ -140,7 +140,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 			<figure class="background-image-shape">
 				<img width="1000" height="1070" loading="lazy" src="
 				<?php
-				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
+				Lf_Utils::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
 				" alt="Background shapes">
 			</figure>
@@ -157,7 +157,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
 					<?php
-					Image::get_svg( 'annual-reports/2021/nav-01-bar.svg', true );
+					Lf_Utils::get_svg( 'annual-reports/2021/nav-01-bar.svg', true );
 					?>
 					" alt="Chart icon"> <span class="show-upto-1000">Momentum</span><span
 						class="show-over-1000">2021<br />
@@ -168,7 +168,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
 					<?php
-					Image::get_svg( 'annual-reports/2021/nav-02-target.svg', true );
+					Lf_Utils::get_svg( 'annual-reports/2021/nav-02-target.svg', true );
 					?>
 					" alt="Bullseye icon">
 					<span class="show-upto-1000">Events</span><span
@@ -180,7 +180,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
 					<?php
-					Image::get_svg( 'annual-reports/2021/nav-03-code.svg', true );
+					Lf_Utils::get_svg( 'annual-reports/2021/nav-03-code.svg', true );
 					?>
 					" alt="Code document icon">
 					<span class="show-upto-1000">Training</span><span
@@ -192,7 +192,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
 					<?php
-					Image::get_svg( 'annual-reports/2021/nav-04-megaphone.svg', true );
+					Lf_Utils::get_svg( 'annual-reports/2021/nav-04-megaphone.svg', true );
 					?>
 					" alt="Megaphone icon">
 					<span class="show-upto-1000">Projects</span><span
@@ -204,7 +204,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
 					<?php
-					Image::get_svg( 'annual-reports/2021/nav-05-expand.svg', true );
+					Lf_Utils::get_svg( 'annual-reports/2021/nav-05-expand.svg', true );
 					?>
 					" alt="Expanding community icon">
 					<span class="show-upto-1000">Community</span><span
@@ -216,7 +216,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
 					<?php
-					Image::get_svg( 'annual-reports/2021/nav-06-eye.svg', true );
+					Lf_Utils::get_svg( 'annual-reports/2021/nav-06-eye.svg', true );
 					?>
 					" alt="Eye icon">
 					<span class="show-upto-1000">Ecosystem</span><span
@@ -250,7 +250,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 				<div class="shg-03">
 					<img loading="lazy" width="525" height="625" src="
 					<?php
-					Image::get_image( 'annual-reports/2021/blob-gm.jpg', true );
+					Lf_Utils::get_image( 'annual-reports/2021/blob-gm.jpg', true );
 					?>
 					" alt="Priyanka Sharma">
 				</div>
@@ -285,7 +285,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						<div class="icon">
 							<img loading="lazy" width="89" height="52" src="
 							<?php
-							Image::get_svg( 'annual-reports/2021/icon-members.svg', true );
+							Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true );
 							?>
 							" alt="People icon">
 						</div>
@@ -297,7 +297,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						<div class="icon">
 							<img loading="lazy" width="90" height="94" src="
 							<?php
-							Image::get_svg( 'annual-reports/2021/icon-projects.svg', true );
+							Lf_Utils::get_svg( 'annual-reports/2021/icon-projects.svg', true );
 							?>
 							" alt="Multiple shapes icon">
 						</div>
@@ -309,7 +309,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 						<div class="icon">
 							<img loading="lazy" width="67" height="67" src="
 							<?php
-							Image::get_svg( 'annual-reports/2021/icon-world.svg', true );
+							Lf_Utils::get_svg( 'annual-reports/2021/icon-world.svg', true );
 							?>
 							" alt="Globe icon">
 						</div>
@@ -338,7 +338,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 			<figure class="background-image-shape">
 				<img loading="lazy" src="
 				<?php
-				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
+				Lf_Utils::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
 				" alt="Background shapes">
 			</figure>
@@ -429,7 +429,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 
 						<img loading="lazy" width="525" height="423" src="
 						<?php
-						Image::get_image( 'annual-reports/2021/blob-membership.png', true );
+						Lf_Utils::get_image( 'annual-reports/2021/blob-membership.png', true );
 						?>
 						" alt="Masked people walking at conference">
 						<div aria-hidden="true"
@@ -457,7 +457,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 					<div class="graph"><img loading="lazy" width="762"
 							height="436" src="
 							<?php
-							Image::get_svg( 'annual-reports/2021/chart-membership-growth.svg', true );
+							Lf_Utils::get_svg( 'annual-reports/2021/chart-membership-growth.svg', true );
 							?>
 							" alt="Chart showing CNCF Member growth"></div>
 					<div class="graph-explainer">
@@ -501,7 +501,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 								<a href="https://www.att.com/"><img width="140"
 										height="100" loading="lazy" src="
 										<?php
-										Image::get_svg( 'annual-reports/2021/logo-att.svg', true );
+										Lf_Utils::get_svg( 'annual-reports/2021/logo-att.svg', true );
 										?>
 										" alt="AT&T"></a>
 							</div>
@@ -509,7 +509,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 								<a href="https://grafana.com"><img width="140"
 										height="100" loading="lazy" src="
 										<?php
-										Image::get_svg( 'annual-reports/2021/logo-grafana.svg', true );
+										Lf_Utils::get_svg( 'annual-reports/2021/logo-grafana.svg', true );
 										?>
 										" alt="Grafana Labs"></a>
 							</div>
@@ -517,7 +517,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 								<a href="https://newrelic.com/"><img
 										height="100" loading="lazy" src="
 										<?php
-										Image::get_svg( 'annual-reports/2021/logo-new-relic.svg', true );
+										Lf_Utils::get_svg( 'annual-reports/2021/logo-new-relic.svg', true );
 										?>
 										" alt="New Relic"></a>
 							</div>
@@ -535,7 +535,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 								<a href="https://www.americanexpress.com/"><img
 										height="100" loading="lazy" src="
 										<?php
-										Image::get_svg( 'annual-reports/2021/logo-amex.svg', true );
+										Lf_Utils::get_svg( 'annual-reports/2021/logo-amex.svg', true );
 										?>
 										" alt="American Express"></a>
 							</div>
@@ -544,7 +544,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 										width="140" height="100" loading="lazy"
 										src="
 										<?php
-										Image::get_svg( 'annual-reports/2021/logo-charter.svg', true );
+										Lf_Utils::get_svg( 'annual-reports/2021/logo-charter.svg', true );
 										?>
 										" alt="Charter Communications"></a>
 							</div>
@@ -553,7 +553,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 										width="140" height="100" loading="lazy"
 										src="
 										<?php
-										Image::get_svg( 'annual-reports/2021/logo-hbc.svg', true );
+										Lf_Utils::get_svg( 'annual-reports/2021/logo-hbc.svg', true );
 										?>
 										" alt="H3C"></a>
 							</div>
@@ -569,7 +569,7 @@ The CNCF ecosystem continues to grow across vendor and end user memberships, mak
 						<div class="icon-callout-1 justify-center">
 							<div class="icon">
 								<img loading="lazy" width="89" height="52"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="fw-bold">200+ new members</span><br/>80 new members<br/>
@@ -579,7 +579,7 @@ from China</p>
 						<div class="icon-callout-1 justify-center">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-building.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-building.svg', true ); ?>"
 									alt="Building icon">
 							</div>
 							<p><span class="fw-bold">740+ member <br/> organizations</span><br/>23% growth from 2020</p>
@@ -640,7 +640,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-2">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-thumbup.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-thumbup.svg', true ); ?>"
 									alt="Thumbs up icon">
 							</div>
 							<p><span class="number-large text-purple">100%</span><br/>would recommend CNCF <br/>to other companies<br/>
@@ -650,7 +650,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-2">
 							<div class="icon">
 								<img loading="lazy" width="89" height="52"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">164+</span><br/>End Users</span></p>
@@ -674,7 +674,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="graph-explainer-container">
 					<div class="graph"><img loading="lazy" width="772"
 							height="399"
-							src="<?php Image::get_svg( 'annual-reports/2021/chart-end-user-growth.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-end-user-growth.svg', true ); ?>"
 							alt="Chart showing CNCF end user growth"></div>
 					<div class="graph-explainer">
 						<span class="number-largest has-arrow-after">17%</span>
@@ -711,7 +711,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div>
 							<a href="https://open.spotify.com">
 								<img loading="lazy" class="image-spotify"
-									src="<?php Image::get_svg( 'annual-reports/2021/logo-spotify.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-spotify.svg', true ); ?>"
 									alt="Spotify logo">
 							</a>
 
@@ -730,7 +730,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							<div class="icon-callout-2 text-white">
 								<div class="icon">
 									<img loading="lazy"
-										src="<?php Image::get_svg( 'annual-reports/2021/icon-w-contributions.svg', true ); ?>"
+										src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-w-contributions.svg', true ); ?>"
 										alt="Clipboard icon">
 								</div>
 								<p><span class="number-large text-white">26,648</span><br/>contributions <br/>to 13 different projects</p>
@@ -744,7 +744,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 							<a href="/projects/backstage/">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/logo-backstage.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-backstage.svg', true ); ?>"
 									alt="Backstage logo">
 							</a>
 
@@ -812,7 +812,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 			<figure class="background-image-shape">
 				<img loading="lazy" src="
 				<?php
-				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
+				Lf_Utils::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
 				" alt="Background shapes">
 			</figure>
@@ -843,7 +843,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="shg-02">
 					<img loading="lazy" width="525" height="627" src="
 					<?php
-					Image::get_image( 'annual-reports/2021/blob-events.jpg', true );
+					Lf_Utils::get_image( 'annual-reports/2021/blob-events.jpg', true );
 					?>
 					" alt="Masked man at a conference">
 				</div>
@@ -884,7 +884,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="shg-03">
 					<img loading="lazy" width="419" height="393419" src="
 					<?php
-					Image::get_image( 'annual-reports/2021/clipart-kcd.png', true );
+					Lf_Utils::get_image( 'annual-reports/2021/clipart-kcd.png', true );
 					?>
 					" alt="Drawing of man and woman talking">
 				</div>
@@ -906,7 +906,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-frame.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-frame.svg', true ); ?>"
 								alt="Person in frame icon">
 						</div>
 						<p><span class="fw-bold">12 KCDs</span><br/>In-person, virtual and <br class="show-upto-700">hybrid</p>
@@ -916,7 +916,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-mic.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-mic.svg', true ); ?>"
 								alt="Microphone icon">
 						</div>
 						<div>
@@ -934,7 +934,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy" width="89" height="52"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="fw-bold">7,500+ attendees</span><br/>Adopters & technologists</p>
@@ -945,7 +945,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-1">
 						<div class="icon">
 							<img loading="lazy" width="67" height="67"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-world.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-world.svg', true ); ?>"
 								alt="Globe icon">
 						</div>
 						<p><span class="fw-bold">12 countries</span><br/>Across the <br/>globe</p>
@@ -970,7 +970,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<a
 					href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-europe/">
 					<img loading="lazy" width="1150" height="296"
-						src="<?php Image::get_image( 'annual-reports/2021/banner-kubecon-eu-21.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/banner-kubecon-eu-21.png', true ); ?>"
 						alt="Kubecon EU 2021 banner">
 				</a>
 
@@ -988,7 +988,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<a href="https://youtu.be/8hV-ml4WuVM" target="_blank"
 							rel="noreferrer noopener" class="image-link"><img
 								loading="lazy" width="525" height="324"
-								src="<?php Image::get_image( 'annual-reports/2021/kubecon-macbook.png', true ); ?>"
+								src="<?php Lf_Utils::get_image( 'annual-reports/2021/kubecon-macbook.png', true ); ?>"
 								alt="Laptop playing a video of keynote talk"></a>
 
 						<div aria-hidden="true"
@@ -1026,7 +1026,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy" width="89" height="52"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">26,648</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
@@ -1038,7 +1038,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-mic.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-mic.svg', true ); ?>"
 								alt="Microphone icon">
 						</div>
 
@@ -1065,7 +1065,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy" width="67" height="67"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-world.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-world.svg', true ); ?>"
 									alt="Globe icon">
 							</div>
 							<p><span class="number-large text-purple">168</span><br/><span class="text-green uppercase fw-bold">Countries</span>
@@ -1077,7 +1077,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							class="ar-spacer-100 show-upto-700"></div>
 
 						<img loading="lazy" width="445" height="247"
-							src="<?php Image::get_svg( 'annual-reports/2021/chart-kceu21-attendees.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-kceu21-attendees.svg', true ); ?>"
 							alt="Chart showing breakdown of Kubecon 2021 EU attendees by country">
 
 					</div>
@@ -1094,7 +1094,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-building.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-building.svg', true ); ?>"
 									alt="Building icon">
 							</div>
 							<p><span class="number-large text-purple">9,092</span><br/><span class="text-green uppercase fw-bold">Companies <br/>participated</span></p>
@@ -1104,7 +1104,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							class="ar-spacer-100 show-upto-700"></div>
 
 						<img loading="lazy" width="445" height="261"
-							src="<?php Image::get_svg( 'annual-reports/2021/chart-kceu21-companies.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-kceu21-companies.svg', true ); ?>"
 							alt="Chart showing breakdown of Kubecon 2021 EU attendees by company type">
 					</div>
 				</div>
@@ -1128,7 +1128,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<a
 					href="https://events.linuxfoundation.org/archive/2021/kubecon-cloudnativecon-north-america/">
 					<img loading="lazy" width="1150" height="282"
-						src="<?php Image::get_image( 'annual-reports/2021/banner-kubecon-na-21.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/banner-kubecon-na-21.png', true ); ?>"
 						alt="Kubecon NA 2021 banner">
 				</a>
 
@@ -1166,7 +1166,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<a href="https://youtu.be/VzuyyESy9oA" target="_blank"
 							rel="noreferrer noopener" class="image-link"><img
 								loading="lazy" width="525" height="432"
-								src="<?php Image::get_image( 'annual-reports/2021/blob-speaker.png', true ); ?>"
+								src="<?php Lf_Utils::get_image( 'annual-reports/2021/blob-speaker.png', true ); ?>"
 								alt="Robert Duffy speaking at conference"></a>
 
 						<div aria-hidden="true" class="ar-spacer-60"></div>
@@ -1185,7 +1185,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy" width="89" height="52"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">23,164</span><br/><span class="text-green uppercase fw-bold">Total Registrations</span></p>
@@ -1197,7 +1197,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy" width="67" height="67"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-world.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-world.svg', true ); ?>"
 								alt="Globe icon">
 						</div>
 						<p><span class="number-large text-purple">154</span><br/><span class="text-green uppercase fw-bold">Countries</span>
@@ -1219,7 +1219,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-lanyard.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-lanyard.svg', true ); ?>"
 									alt="Lanyard icon">
 							</div>
 							<p><span class="number-large text-purple">3,531</span><br/><span class="text-green uppercase fw-bold">In-person</span></p>
@@ -1231,7 +1231,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							class="secondary-sub-section">Most represented countries in attendance</p>
 
 						<img loading="lazy" width="405" height="181"
-							src="<?php Image::get_svg( 'annual-reports/2021/chart-kcna21-inperson.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-kcna21-inperson.svg', true ); ?>"
 							alt="Map showing countries with most in-person representation at Kubecon NA 2021">
 
 
@@ -1248,7 +1248,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-laptop.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-laptop.svg', true ); ?>"
 									alt="Laptop icon">
 							</div>
 							<p><span class="number-large text-purple">19,633</span><br/><span class="text-green uppercase fw-bold">Virtual</span></p>
@@ -1260,7 +1260,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 							class="secondary-sub-section">Most represented countries in attendance</p>
 
 						<img loading="lazy" width="405" height="172"
-							src="<?php Image::get_svg( 'annual-reports/2021/chart-kcna21-virtual.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-kcna21-virtual.svg', true ); ?>"
 							alt="Map showing countries with most virtual representation at Kubecon NA 2021">
 
 					</div>
@@ -1276,7 +1276,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-building.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-building.svg', true ); ?>"
 								alt="Building icon">
 						</div>
 						<p><span class="number-large text-purple">7,290</span><br/><span class="text-green uppercase fw-bold">Companies <br/>participated</span></p>
@@ -1286,7 +1286,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					</div>
 
 					<img loading="lazy" width="482" height="342"
-						src="<?php Image::get_svg( 'annual-reports/2021/chart-kcna21-companies.svg', true ); ?>"
+						src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-kcna21-companies.svg', true ); ?>"
 						alt="Breakdown of Kubecon NA 2021 participants by company type">
 
 				</div>
@@ -1306,7 +1306,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-3 align-start">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-w-mic.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-w-mic.svg', true ); ?>"
 									alt="Microphone icon">
 							</div>
 							<p
@@ -1375,7 +1375,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="shg-03">
 					<img loading="lazy" class="image-covid" width="348"
 						height="396"
-						src="<?php Image::get_image( 'annual-reports/2021/chart-covid-response.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/chart-covid-response.png', true ); ?>"
 						alt="COVID practices icons">
 
 				</div>
@@ -1405,7 +1405,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<a
 						href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/">
 						<img loading="lazy" width="616" height="369"
-							src="<?php Image::get_image( 'annual-reports/2021/banner-kubecon-cn-21.png', true ); ?>"
+							src="<?php Lf_Utils::get_image( 'annual-reports/2021/banner-kubecon-cn-21.png', true ); ?>"
 							alt="Kubecon China 2021 banner">
 					</a>
 
@@ -1418,7 +1418,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy" width="89" height="52"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 									alt="People icon">
 							</div>
 							<p><span class="number-large text-purple">7,160</span><br/><span class="text-green uppercase fw-bold">Registered Attendees</span></p>
@@ -1429,7 +1429,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						<div class="icon-callout-3">
 							<div class="icon">
 								<img loading="lazy"
-									src="<?php Image::get_svg( 'annual-reports/2021/icon-mic.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-mic.svg', true ); ?>"
 									alt="Microphone icon">
 							</div>
 							<p><span class="number-large text-purple">161</span><br/><span class="text-green uppercase fw-bold">Speakers</span></p>
@@ -1452,7 +1452,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<a
 					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/">
 					<img loading="lazy" width="1150" height="241"
-						src="<?php Image::get_image( 'annual-reports/2021/banner-kubecon-eu-22.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/banner-kubecon-eu-22.png', true ); ?>"
 						alt="KubeCon + CloudNativeCon EU 2022 banner">
 				</a>
 
@@ -1490,7 +1490,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 			<figure class="background-image-shape">
 				<img loading="lazy" src="
 				<?php
-				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
+				Lf_Utils::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
 				" alt="Background shapes">
 			</figure>
@@ -1530,7 +1530,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 				<img loading="lazy" width="350" height="500"
 					class="image-training"
-					src="<?php Image::get_image( 'annual-reports/2021/clipart-training.png', true ); ?>"
+					src="<?php Lf_Utils::get_image( 'annual-reports/2021/clipart-training.png', true ); ?>"
 					alt="Drawing of woman reading a book">
 
 			</div>
@@ -1557,7 +1557,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					</div>
 
 					<img loading="lazy"
-						src="<?php Image::get_svg( 'annual-reports/2021/certifications.svg', true ); ?>"
+						src="<?php Lf_Utils::get_svg( 'annual-reports/2021/certifications.svg', true ); ?>"
 						alt="Certification logos">
 
 				</div>
@@ -1645,7 +1645,7 @@ Delivers effective strategies for creating inclusive open source communities and
 					</div>
 
 					<img loading="lazy" width="571" height="495"
-						src="<?php Image::get_image( 'annual-reports/2021/blob-funded-training.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/blob-funded-training.png', true ); ?>"
 						alt="Man and woman working on laptops">
 
 				</div>
@@ -1685,7 +1685,7 @@ Delivers effective strategies for creating inclusive open source communities and
 			<figure class="background-image-shape">
 				<img loading="lazy" src="
 				<?php
-				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
+				Lf_Utils::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
 				" alt="Background shapes">
 			</figure>
@@ -1727,7 +1727,7 @@ Delivers effective strategies for creating inclusive open source communities and
 					class="ar-spacer-60 show-over-700 show-upto-1000"></div>
 
 				<img loading="lazy" width="545" height="440"
-					src="<?php Image::get_image( 'annual-reports/2021/blob-projects.jpg', true ); ?>"
+					src="<?php Lf_Utils::get_image( 'annual-reports/2021/blob-projects.jpg', true ); ?>"
 					alt="Man talking to woman with masks on at conference">
 
 				<div aria-hidden="true"
@@ -1746,7 +1746,7 @@ Delivers effective strategies for creating inclusive open source communities and
 			<div aria-hidden="true" class="ar-spacer-30"></div>
 
 			<img loading="lazy" width="1150" height="633"
-				src="<?php Image::get_svg( 'annual-reports/2021/chart-project-velocity.svg', true ); ?>"
+				src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-project-velocity.svg', true ); ?>"
 				alt="Chart showing CNCF project velocity">
 
 			<div aria-hidden="true" class="ar-spacer-80"></div>
@@ -1760,7 +1760,7 @@ Delivers effective strategies for creating inclusive open source communities and
 			<div aria-hidden="true" class="ar-spacer-30"></div>
 
 			<img loading="lazy" width="1150" height="433"
-				src="<?php Image::get_svg( 'annual-reports/2021/chart-projects-accepted.svg', true ); ?>"
+				src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-projects-accepted.svg', true ); ?>"
 				alt="Chart showing number of projects accepted to CNCF each year">
 
 			<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -1791,13 +1791,13 @@ Delivers effective strategies for creating inclusive open source communities and
 							<div class="project-item">
 								<a href="/projects/linkerd/"><img loading="lazy"
 										width="140" height="100"
-										src="<?php Image::get_svg( 'annual-reports/2021/logo-linkerd.svg', true ); ?>"
+										src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-linkerd.svg', true ); ?>"
 										alt="Linkerd logo"></a>
 							</div>
 							<div class="project-item">
 								<a href="/projects/open-policy-agent-opa/"><img
 										width="140" height="100" loading="lazy"
-										src="<?php Image::get_svg( 'annual-reports/2021/logo-opa.svg', true ); ?>"
+										src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-opa.svg', true ); ?>"
 										alt="OPA logo"></a>
 							</div>
 						</div>
@@ -1818,44 +1818,44 @@ Delivers effective strategies for creating inclusive open source communities and
 					<div class="project-item">
 						<a href="/projects/flux/"><img width="140" height="100"
 								loading="lazy"
-								src="<?php Image::get_svg( 'annual-reports/2021/logo-flux.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-flux.svg', true ); ?>"
 								alt="Flux logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/keda/"><img width="140" height="100"
 								loading="lazy"
-								src="<?php Image::get_svg( 'annual-reports/2021/logo-keda.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-keda.svg', true ); ?>"
 								alt="Keda logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/crossplane/"><img loading="lazy"
 								width="140" height="100"
-								src="<?php Image::get_svg( 'annual-reports/2021/logo-crossplane.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-crossplane.svg', true ); ?>"
 								alt="Crossplane logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/longhorn/"><img loading="lazy"
 								width="140" height="100"
-								src="<?php Image::get_svg( 'annual-reports/2021/logo-longhorn.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-longhorn.svg', true ); ?>"
 								alt="Longhorn logo"></a>
 					</div>
 
 					<div class="project-item">
 						<a href="/projects/emissary-ingress/"><img
 								loading="lazy" width="140" height="100"
-								src="<?php Image::get_svg( 'annual-reports/2021/logo-emissary.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-emissary.svg', true ); ?>"
 								alt="Emissary logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/cilium/"><img loading="lazy"
 								width="140" height="100"
-								src="<?php Image::get_svg( 'annual-reports/2021/logo-cilium.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-cilium.svg', true ); ?>"
 								alt="Cilium logo"></a>
 					</div>
 					<div class="project-item">
 						<a href="/projects/dapr/"><img loading="lazy"
 								height="100"
-								src="<?php Image::get_svg( 'annual-reports/2021/logo-dapr.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-dapr.svg', true ); ?>"
 								alt="Dapr logo"></a>
 					</div>
 				</div>
@@ -1898,7 +1898,7 @@ Delivers effective strategies for creating inclusive open source communities and
 					</div>
 
 					<img loading="lazy" width="364" height="281"
-						src="<?php Image::get_svg( 'annual-reports/2021/chart-endpoint-testing-key.svg', true ); ?>"
+						src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-endpoint-testing-key.svg', true ); ?>"
 						alt="Endpoint testing chart legend">
 
 					<div aria-hidden="true" class="ar-spacer-30"></div>
@@ -1909,7 +1909,7 @@ Delivers effective strategies for creating inclusive open source communities and
 				</div>
 
 				<img loading="lazy" width="1150" height="428"
-					src="<?php Image::get_svg( 'annual-reports/2021/chart-endpoint-testing.svg', true ); ?>"
+					src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-endpoint-testing.svg', true ); ?>"
 					alt="Chart showing Kubernetes endpoint testing coverage in different versions">
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -1933,7 +1933,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 					<img loading="lazy" width="250" height="400"
 						class="image-phippy"
-						src="<?php Image::get_svg( 'annual-reports/2021/phippy-phippy.svg', true ); ?>"
+						src="<?php Lf_Utils::get_svg( 'annual-reports/2021/phippy-phippy.svg', true ); ?>"
 						alt="Phippy">
 				</div>
 
@@ -1945,7 +1945,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 						<img loading="lazy" width="343" height="250"
 							class="image-friend"
-							src="<?php Image::get_svg( 'annual-reports/2021/phippy-hazel.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/phippy-hazel.svg', true ); ?>"
 							alt="Hazel">
 
 						<span class="text-largest block uppercase">Hazel</span>
@@ -1956,7 +1956,7 @@ Delivers effective strategies for creating inclusive open source communities and
 						<div class="project-item no-border">
 							<a href="/projects/helm/"><img loading="lazy"
 									width="140" height="100"
-									src="<?php Image::get_svg( 'annual-reports/2021/logo-helm.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-helm.svg', true ); ?>"
 									alt="Helm logo"></a>
 						</div>
 
@@ -1967,7 +1967,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 						<img loading="lazy" width="343" height="250"
 							class="image-friend"
-							src="<?php Image::get_svg( 'annual-reports/2021/phippy-linky.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/phippy-linky.svg', true ); ?>"
 							alt="linky">
 
 						<span class="text-largest block uppercase">Linky</span>
@@ -1978,7 +1978,7 @@ Delivers effective strategies for creating inclusive open source communities and
 						<div class="project-item no-border">
 							<a href="/projects/linkerd/"><img loading="lazy"
 									width="140" height="100"
-									src="<?php Image::get_svg( 'annual-reports/2021/logo-linkerd.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-linkerd.svg', true ); ?>"
 									alt="Linkerd logo"></a>
 						</div>
 
@@ -1988,7 +1988,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 						<img loading="lazy" width="343" height="250"
 							class="image-friend"
-							src="<?php Image::get_svg( 'annual-reports/2021/phippy-tiago.svg', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/phippy-tiago.svg', true ); ?>"
 							alt="tiago">
 
 						<span class="text-largest block uppercase">Tiago</span>
@@ -1999,7 +1999,7 @@ Delivers effective strategies for creating inclusive open source communities and
 						<div class="project-item no-border">
 							<a href="/projects/tikv/"><img loading="lazy"
 									width="140" height="100"
-									src="<?php Image::get_svg( 'annual-reports/2021/logo-tikv.svg', true ); ?>"
+									src="<?php Lf_Utils::get_svg( 'annual-reports/2021/logo-tikv.svg', true ); ?>"
 									alt="Tikv logo"></a>
 						</div>
 
@@ -2070,7 +2070,7 @@ In Italian, thanks to SparkFabrik</p>
 					</div>
 
 					<img loading="lazy"
-						src="<?php Image::get_image( 'annual-reports/2021/phippy-gang.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/phippy-gang.png', true ); ?>"
 						alt="Multiple Phippy characters" class="image-book">
 				</div>
 
@@ -2109,7 +2109,7 @@ In Italian, thanks to SparkFabrik</p>
 			<figure class="background-image-shape">
 				<img loading="lazy" src="
 				<?php
-				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
+				Lf_Utils::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
 				" alt="Background shapes">
 			</figure>
@@ -2140,7 +2140,7 @@ In Italian, thanks to SparkFabrik</p>
 				<div class="shg-02">
 
 					<img loading="lazy" width="525" height="426"
-						src="<?php Image::get_image( 'annual-reports/2021/blob-community.jpg', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/blob-community.jpg', true ); ?>"
 						alt="Kubecon NA 2021 hosts on stage">
 				</div>
 
@@ -2239,7 +2239,7 @@ In Italian, thanks to SparkFabrik</p>
 
 				<div class="align-end">
 					<img loading="lazy" width="383" height="359"
-						src="<?php Image::get_svg( 'annual-reports/2021/clipart-community.png', true ); ?>"
+						src="<?php Lf_Utils::get_svg( 'annual-reports/2021/clipart-community.png', true ); ?>"
 						alt="Drawing of two people talking">
 				</div>
 
@@ -2269,7 +2269,7 @@ In Italian, thanks to SparkFabrik</p>
 						<div class="community-item">
 
 							<img loading="lazy" width="250" height="250"
-								src="<?php Image::get_svg( 'annual-reports/2021/community-awards-01.png', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/community-awards-01.png', true ); ?>"
 								alt="Nikhita Raghunath">
 
 							<div aria-hidden="true"
@@ -2285,7 +2285,7 @@ In Italian, thanks to SparkFabrik</p>
 						<div class="community-item">
 
 							<img loading="lazy" width="250" height="250"
-								src="<?php Image::get_svg( 'annual-reports/2021/community-awards-02.png', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/community-awards-02.png', true ); ?>"
 								alt="Anaïs Urlichs">
 
 							<div aria-hidden="true"
@@ -2302,7 +2302,7 @@ In Italian, thanks to SparkFabrik</p>
 						<div class="community-item">
 
 							<img loading="lazy" width="250" height="250"
-								src="<?php Image::get_svg( 'annual-reports/2021/community-awards-03.png', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/community-awards-03.png', true ); ?>"
 								alt="Tim Bannister">
 
 							<div aria-hidden="true"
@@ -2324,7 +2324,7 @@ In Italian, thanks to SparkFabrik</p>
 
 						<div class="icon">
 							<img loading="lazy" width="89" height="52"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 								alt="People icon">
 						</div>
 
@@ -2338,7 +2338,7 @@ In Italian, thanks to SparkFabrik</p>
 						<p><strong><a href="https://twitter.com/TheMoxieFox">Emily Fox</a>, <a href="https://twitter.com/aevavoom">Aeva Black</a>, <a href="https://twitter.com/TashaDrew">Tasha Drew</a>, <a href="https://twitter.com/comedordexis">Carlos Panato</a>, <a href="https://twitter.com/carolynvs">Carolyn Van Slyck</a></strong>.</p>
 
 						<img loading="lazy"
-							src="<?php Image::get_svg( 'annual-reports/2021/community-chop.png', true ); ?>"
+							src="<?php Lf_Utils::get_svg( 'annual-reports/2021/community-chop.png', true ); ?>"
 							alt="Photos of several people">
 
 						<div aria-hidden="true" class="ar-spacer-30"></div>
@@ -2381,7 +2381,7 @@ In Italian, thanks to SparkFabrik</p>
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy" width="89" height="52"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-members.svg', true ); ?>"
 								alt="People icon">
 						</div>
 						<p><span class="number-large text-purple">27,000+</span><br/><span class="text-green uppercase fw-bold">Attendees</span></p>
@@ -2406,7 +2406,7 @@ In Italian, thanks to SparkFabrik</p>
 				<div aria-hidden="true" class="ar-spacer-30"></div>
 
 				<img loading="lazy" width="1150" height="379"
-					src="<?php Image::get_svg( 'annual-reports/2021/chart-meetup-members.svg', true ); ?>"
+					src="<?php Lf_Utils::get_svg( 'annual-reports/2021/chart-meetup-members.svg', true ); ?>"
 					alt="Chart showing number of members in CNCF meetup group over time">
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
@@ -2443,7 +2443,7 @@ In Italian, thanks to SparkFabrik</p>
 			<figure class="background-image-shape">
 				<img loading="lazy" src="
 				<?php
-				Image::get_svg( 'annual-reports/2021/shapes.svg', true );
+				Lf_Utils::get_svg( 'annual-reports/2021/shapes.svg', true );
 				?>
 				" alt="Background shapes">
 			</figure>
@@ -2488,7 +2488,7 @@ In Italian, thanks to SparkFabrik</p>
 				</div>
 
 				<img loading="lazy" width="545" height="457"
-					src="<?php Image::get_image( 'annual-reports/2021/blob-mentoring.jpg', true ); ?>"
+					src="<?php Lf_Utils::get_image( 'annual-reports/2021/blob-mentoring.jpg', true ); ?>"
 					alt="Two men in masks talking at conference">
 
 			</div>
@@ -2515,7 +2515,7 @@ In Italian, thanks to SparkFabrik</p>
 						class="fw-bold">It <a href="https://github.com/cncf/glossary/blob/main/cloudnative-glossary.pdf">launched with 25 terms</a> and more will be added with time. The project is spearheaded by the <a href="https://docs.google.com/document/d/1ktepjTLoxtxiM7rEoPD803FZFC_DnEuIAsBZU6yZY4Y/edit?usp=sharing">Business Value Subcommittee (BVS)</a>, whose primary goal is to provide tools to educate executives, business leaders, and non-technical audiences on cloud native technologies and their business value. </p>
 
 					<img loading="lazy" class="image-glossary"
-						src="<?php Image::get_image( 'annual-reports/2021/clipart-glossary.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/clipart-glossary.png', true ); ?>"
 						alt="Drawing of woman walking">
 
 				</div>
@@ -2582,7 +2582,7 @@ In Italian, thanks to SparkFabrik</p>
 					<div class="icon-callout-3">
 						<div class="icon">
 							<img loading="lazy"
-								src="<?php Image::get_svg( 'annual-reports/2021/icon-w-members.svg', true ); ?>"
+								src="<?php Lf_Utils::get_svg( 'annual-reports/2021/icon-w-members.svg', true ); ?>"
 								alt="People icon">
 						</div>
 						<p
@@ -2645,7 +2645,7 @@ In Italian, thanks to SparkFabrik</p>
 					</div>
 
 					<img loading="lazy" width="679" height="650"
-						src="<?php Image::get_image( 'annual-reports/2021/who-staff.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/who-staff.png', true ); ?>"
 						alt="Data visulization showing proportion of men and women in staff">
 
 				</div>
@@ -2661,7 +2661,7 @@ In Italian, thanks to SparkFabrik</p>
 					</div>
 
 					<img loading="lazy"
-						src="<?php Image::get_svg( 'annual-reports/2021/who-exec.svg', true ); ?>"
+						src="<?php Lf_Utils::get_svg( 'annual-reports/2021/who-exec.svg', true ); ?>"
 						alt="Data visulization showing proportion of men and women in exec leadership">
 
 					<div aria-hidden="true" class="ar-spacer-80 "></div>
@@ -2672,7 +2672,7 @@ In Italian, thanks to SparkFabrik</p>
 					</div>
 
 					<img loading="lazy"
-						src="<?php Image::get_svg( 'annual-reports/2021/who-governance.svg', true ); ?>"
+						src="<?php Lf_Utils::get_svg( 'annual-reports/2021/who-governance.svg', true ); ?>"
 						alt="Data visulization showing proportion of men and women in governance leadership">
 
 				</div>
@@ -2701,7 +2701,7 @@ In Italian, thanks to SparkFabrik</p>
 				</div>
 
 				<img loading="lazy" width="1150" height="515"
-					src="<?php Image::get_image( 'annual-reports/2021/chart-funding.png', true ); ?>"
+					src="<?php Lf_Utils::get_image( 'annual-reports/2021/chart-funding.png', true ); ?>"
 					alt="Data visulization showing CNCF funding sources">
 
 				<p
@@ -2769,7 +2769,7 @@ In Italian, thanks to SparkFabrik</p>
 								<?php if ( $twitter_url ) : ?>
 								<a target="_blank" aria-label="Share on Twitter"
 									title="Share on Twitter"
-									href="<?php echo esc_url( $twitter_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
+									href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
 								<?php endif; ?>
 
 								<!-- linkedin -->
@@ -2777,14 +2777,14 @@ In Italian, thanks to SparkFabrik</p>
 								<a target="_blank"
 									aria-label="Share on Linkedin"
 									title="Share on Linkedin"
-									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
+									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
 								<?php endif; ?>
 
 								<!-- sendto email -->
 								<?php if ( $mailto_url ) : ?>
 								<a target="_blank" aria-label="Share by Email"
 									title="Share by Email"
-									href="<?php echo esc_url( $mailto_url ); ?>"><?php Image::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
+									href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
 								<?php endif; ?>
 							</div>
 						</div>
@@ -2805,7 +2805,7 @@ In Italian, thanks to SparkFabrik</p>
 				<a
 					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">
 					<img loading="lazy" width="1150" height="241"
-						src="<?php Image::get_image( 'annual-reports/2021/banner-kubecon-eu-22.png', true ); ?>"
+						src="<?php Lf_Utils::get_image( 'annual-reports/2021/banner-kubecon-eu-22.png', true ); ?>"
 						alt="Kubecon EU 2022 banner">
 				</a>
 

@@ -62,7 +62,7 @@ $site_options = get_option( 'lf-mu' );
 					?>
 			</nav>
 
-			<?php if ( $site_options['footer_cta_text'] && $site_options['footer_cta_link'] ) : ?>
+			<?php if ( isset( $site_options['footer_cta_text'] ) && isset( $site_options['footer_cta_link'] ) && $site_options['footer_cta_text'] && $site_options['footer_cta_link'] ) : ?>
 				<div class="footer__cta">
 					<a href="<?php echo esc_url( get_permalink( $site_options['footer_cta_link'] ) ); ?>"
 						class="wp-block-button__link has-no-padding"><?php echo esc_html( $site_options['footer_cta_text'] ); ?></a>
@@ -74,14 +74,14 @@ $site_options = get_option( 'lf-mu' );
 
 		<div class="lf-grid">
 
-			<!-- Only on desktop  -->
 			<?php
-			if ( $site_options['footer_image_id'] ) {
+			// Only on desktop.
+			if ( isset( $site_options['footer_image_id'] ) && $site_options['footer_image_id'] ) {
 				?>
 			<div class="logo show-over-1000">
 				<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
 					<img src="<?php echo esc_url( wp_get_attachment_url( $site_options['footer_image_id'] ) ); ?>"
-						height="38" alt="<?php echo bloginfo( 'name' ); ?>">
+					width="210" height="40" alt="<?php echo bloginfo( 'name' ); ?>">
 				</a>
 			</div>
 
@@ -103,16 +103,14 @@ $site_options = get_option( 'lf-mu' );
 
 		<?php get_template_part( 'components/copyright' ); ?>
 
-		<!-- This needs to be bigger to allow for cookie banner -->
-		<div style="height:70px" aria-hidden="true" class="wp-block-spacer">
-		</div>
+		<?php
+		// This needs to be bigger to allow for cookie banner.
+		?>
+		<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>
 
 	</div>
 </footer>
 <?php
 get_template_part( 'components/back-to-top' );
-?>
-<?php
 get_template_part( 'components/cookie-banner' );
-?>
-<?php get_footer(); ?>
+get_footer();

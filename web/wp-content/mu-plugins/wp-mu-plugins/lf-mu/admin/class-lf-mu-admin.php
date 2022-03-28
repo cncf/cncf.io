@@ -304,7 +304,7 @@ class Lf_Mu_Admin {
 	 */
 	public function get_program_views() {
 		$options         = get_option( 'lf-mu' );
-		$youtube_api_key = $options['youtube_api_key'];
+		$youtube_api_key = $options['youtube_api_key'] ?? '';
 
 		if ( ! $youtube_api_key ) {
 			return;

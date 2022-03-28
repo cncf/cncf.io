@@ -42,3 +42,5 @@
 		<?php wp_body_open(); ?>
 		<?php // Skip Link should be first focusable element on a page. ?>
 		<a class="skip-link" href="#maincontent">Skip to content</a>
+
+		<a class="skip-link" href="/accessibility-statement">Accessibility Help</a>

@@ -17,7 +17,7 @@ $cookies_button_text = 'Accept';
 $cookies_link        = 'https://www.linuxfoundation.org/cookies/';
 ?>
 
-<div id="cookie-banner">
+<div id="cookie-banner" tabindex="10">
 
 	<p class="cookie-title"><?php echo esc_html( $cookies_text ); ?></p>
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -25,8 +25,8 @@ $cookies_link        = 'https://www.linuxfoundation.org/cookies/';
 		class="cookie-text"><?php echo sprintf( '<a class="cookie-link" href="%s">%s</a>', esc_html( $cookies_link ), esc_html( $cookies_link_text ) ); ?></p>
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 
-	<button id="cookie-banner-button" tabindex="0" role="button"
-		class="wp-block-button__link has-black-background-color has-background has-icon">
+	<button id="cookie-banner-button"  role="button"
+		class="wp-block-button__link has-black-background-color has-background has-icon" tabindex="10">
 		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 			viewBox="0 0 24 24" fill="#FFF">
 			<path
