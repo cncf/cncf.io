@@ -258,6 +258,15 @@ $sidebar    = array(
 							'placeholder'   => 'Oliver Gould',
 						),
 						array(
+							'type'          => 'image',
+							'data_type'     => 'meta',
+							'data_key'      => 'guest_author_image',
+							'label'         => __( 'Guest Author Image' ),
+							'help'          => __( 'Image should be at least 200x200px with face centered.' ),
+							'ui_border_top' => false,
+							'register_meta' => true,
+						),
+						array(
 							'type'          => 'text',
 							'data_type'     => 'meta',
 							'data_key'      => 'external_url',
