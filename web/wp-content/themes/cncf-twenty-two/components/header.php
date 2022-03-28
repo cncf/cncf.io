@@ -62,17 +62,7 @@ endif;
 								<ul class="menu">
 									<li class="lf-menu-title">Featured Reads
 									</li>
-
-									<!-- // TODO: Welcome post from Priyanka? -->
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-									<br>
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-									<br>
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-
+									<?php get_menu_featured_reads(); ?>
 								</ul>
 							</div>
 						</div>
@@ -106,17 +96,7 @@ endif;
 								<ul class="menu">
 									<li class="lf-menu-title">Latest Tech Radars
 									</li>
-
-									<!-- // TODO: Radars loop -->
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-									<br>
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-									<br>
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-
+									<?php get_menu_tech_radars(); ?>
 								</ul>
 							</div>
 						</div>
@@ -227,17 +207,7 @@ endif;
 								<ul class="menu">
 									<li class="lf-menu-title">Latest Blog Posts
 									</li>
-
-									<!-- // TODO: Welcome post from Priyanka? -->
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-									<br>
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-									<br>
-									<img src="https://via.placeholder.com/340x120/d9d9d9/000000"
-										alt="">
-
+									<?php get_menu_blog_posts(); ?>
 								</ul>
 							</div>
 						</div>

@@ -109,6 +109,9 @@ require_once 'classes/class-lf-utils.php';
 // WP REST API cache control.
 require_once 'includes/rest-api-cache-control.php';
 
+// Megamenu helper functions.
+require_once 'includes/megamenu-helpers.php';
+
 /* Will only run on front end of site */
 if ( ! is_admin() ) {
 	/**
