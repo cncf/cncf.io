@@ -3,69 +3,62 @@
 $white: #ffffff;
 $black: #000000;
 
-// primary - highlight colour
-// $primary-300: #ff33bb; // cta rollover
 $primary-400: #d62293; // preferred CTA
-
-// secondary - bolder colour
-// $secondary-300: #908bb1;
-// $secondary-500: #50326e;
-// $secondary-600: #431f67;
-$secondary-700: yellow;
-// $secondary-800: #242b5f;
-$secondary-900: yellow;
+$primary-color: $primary-400;
 
 $tertiary-400: #62a1ff;
-
-// tertiary
-// $tertiary-100: #f4f4f4;
-// $tertiary-400: #436ca9;
-// $tertiary-600: #416fd9;
-// $tertiary-700: #0088ff;
 
 // grays.
 $gray-100: #fdfdfd;
 $gray-200: #f8f8f8;
-$gray-300: #e6e6e6;
-// $gray-400: #a7a7a6;
+$gray-300: #eeeeee;
+$gray-400: #e6e6e6;
 $gray-500: #c4c4c4;
-$gray-700: #707070; // #808080;
-// $gray-800: #333333;
+$gray-700: #747474;
 
+// Menu.
 $shade-01: #dd9ef4;
 $shade-02: #f29996;
 $shade-03: #96b0f2;
 $shade-04: #aff6ed;
 $shade-05: #f6e2af;
-
-// main.
-$primary-color: $primary-400;
-// $secondary-color: $secondary-700;
-// $tertiary-color: $tertiary-100;
+// Home Page Boxes.
+$shade-06: #e2befe;
+$shade-07: #bed8fe;
+$shade-08: #b1fbde;
 
 // links.
 $link-color: $primary-400;
 $link-hover: $gray-700;
 
+// spare colors from previous site.
+// $secondary-color: $secondary-700;
+// $tertiary-color: $tertiary-100;
+// primary - highlight colour
+// $primary-300: #ff33bb; // cta rollover
+// tertiary
+// $tertiary-100: #f4f4f4;
+// $tertiary-400: #62a1ff;
+// $tertiary-600: #416fd9;
+// $tertiary-700: #0088ff;
+// $gray-400: #a7a7a6;
+// #707070; // #808080; // $gray-800: #333333;
 // mobile menu.
-// $menu-mobile-container: $secondary-900;
+// $menu-mobile-container: $black;
 // $menu-mobile-submenu: $secondary-600;
 // $menu-mobile-submenu-submenu: $secondary-500;
-// $menu-mobile-divider: $secondary-900;
-
+// $menu-mobile-divider: $black;
 // desktop menu.
-// $menu-desktop-container: $secondary-900;
+// $menu-desktop-container: $black;
 // $menu-desktop-submenu: $secondary-600;
 // $menu-desktop-submenu-submenu: $secondary-500;
-// $menu-desktop-divider: $secondary-900;
+// $menu-desktop-divider: $black;
 // $menu-desktop-search: $secondary-600;
-
 // menu text/links.
 // $menu-link: $white;
 // $menu-hover: $gray-100;
-
 // highlight elements (pricing table, case study overlay)
-// $cs-overlay: $secondary-900;
+// $cs-overlay: $black;
 // $hero-overlay: #2b1d39;
 
 // forms.

@@ -6,7 +6,10 @@ body {
 	height: auto;
 	background-color: $white;
 	font-family: $font-primary;
-	font-size: 1em; // 16px
+	font-size: 0.875em; // 14px.
+	@media (min-width: 768px) {
+		font-size: 1em; // 16px.
+	}
 	color: $body-text-color;
 	font-weight: 400;
 	letter-spacing: 0.02rem;
@@ -17,7 +20,7 @@ body {
 	overscroll-behavior: none;
 
 	&.has-menu-active {
-		// Stops bg moving when open.
+		// Stops bg moving when menu open.
 		overflow: hidden;
 		height: 100%;
 		position: fixed;
@@ -69,6 +72,12 @@ body {
 // 		display: none;
 // 	}
 // }
+
+@media (min-width: 600px) {
+	.show-upto-600 {
+		display: none;
+	}
+}
 
 @media (min-width: 1000px) {
 	.show-upto-1000 {
@@ -155,10 +164,4 @@ body {
 
 .is-style-max-width-800 {
 	max-width: 800px;
-}
-
-.horizontal-rule {
-	background-color: $white;
-	height: 1px;
-	width: 100%;
 }

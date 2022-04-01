@@ -1,30 +1,37 @@
-@import "core/variables";
-@import "core/colors";
-@import "core/normalize";
-@import "core/reset";
-@import "core/global";
-@import "core/focus"; // TODO
-@import "core/grid"; // TODO
-@import "core/animations";
-@import "core/typography";
-@import "core/hamburger";
+@import 'core/variables';
+@import 'core/colors';
+@import 'core/normalize';
+@import 'core/reset';
+@import 'core/global';
+@import 'core/focus'; // TODO
+@import 'core/grid'; // TODO
+@import 'core/animations';
+@import 'core/typography';
+@import 'core/hamburger';
 
-@import "core/header";
-@import "core/footer";
-@import "core/buttons";
-@import "core/forms"; // TODO
+@import 'core/header';
+@import 'core/footer';
+@import 'core/buttons';
+@import 'core/forms'; // TODO
 
-@import "components/back-to-top";
-@import "components/cookie-banner";
-@import "components/hello-bar";
-@import "components/home-hero";
-@import "components/modal";
-@import "components/newsletter";
-// @import "components/search";
-@import "components/social-links";
+@import 'components/back-to-top';
+@import 'components/cookie-banner';
+@import 'components/hello-bar';
+@import 'components/home-hero';
+@import 'components/modal';
+@import 'components/newsletter';
+@import 'components/people';
+@import 'components/social-links';
+@import 'components/title';
 
-@import "blocks/has-color";
-@import "blocks/spacers";
+@import 'blocks/has-color';
+@import 'blocks/alignment';
+@import 'blocks/columns';
+@import 'blocks/groups';
+@import 'blocks/images';
+@import 'blocks/lists';
+@import 'blocks/separator';
+@import 'blocks/spacers';
 
 // social links
 // newsletter

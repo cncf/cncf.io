@@ -102,6 +102,12 @@
 	&.has-black-color:hover {
 		color: $white !important;
 	}
+
+	&.is-style-reduced-height {
+		// 16px font + 10px makes buttons 36px.
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
 
 // setup all possible button combinations using color.scss variables inside button for specificity.

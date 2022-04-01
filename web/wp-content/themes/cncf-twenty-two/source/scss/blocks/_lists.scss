@@ -1,0 +1,24 @@
+// generic ul.
+
+article {
+	ul {
+		list-style: disc;
+		margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 1.5rem;
+		margin-left: 26px;
+	}
+}
+
+article {
+	ul.is-style-more-spacing {
+		list-style: disc;
+		margin-top: 0;
+		margin-right: 0;
+		margin-bottom: 1.5rem;
+		margin-left: 26px;
+		li {
+			padding-bottom: 12px;
+		}
+	}
+}

@@ -33,7 +33,7 @@
 		// @import "blocks/lists";
 		// @import "blocks/quote";
 		// @import "blocks/gallery";
-		// @import "blocks/spacer";
+		@import 'blocks/spacers';
 		// @import "blocks/table";
 		// @import "blocks/paragraph-headers";
 
@@ -43,6 +43,16 @@
 		// @import "blocks/landscape";
 		// @import "blocks/newsroom";
 		// @import "blocks/stats";
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 	}
 }
 
@@ -50,33 +60,33 @@
 @import 'editor/outlines';
 @import 'editor/alignment';
 
-.post-type-post {
-	.editor-styles-wrapper {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			&:not([class*='is-style']),
-			&.is-style-default {
-				max-width: 900px;
-			}
-		}
+// .post-type-post {
+// 	.editor-styles-wrapper {
+// 		h1,
+// 		h2,
+// 		h3,
+// 		h4,
+// 		h5,
+// 		h6 {
+// 			&:not([class*='is-style']),
+// 			&.is-style-default {
+// 				max-width: 900px;
+// 			}
+// 		}
 
-		p {
-			&:not([class*='is-style']):not(.hero-parent-link),
-			&.is-style-default {
-				max-width: 700px;
-			}
-		}
+// 		p {
+// 			&:not([class*='is-style']):not(.hero-parent-link),
+// 			&.is-style-default {
+// 				max-width: 700px;
+// 			}
+// 		}
 
-		.hbspt-form,
-		.wp-block-code {
-			max-width: 700px;
-		}
-	}
-}
+// 		.hbspt-form,
+// 		.wp-block-code {
+// 			max-width: 700px;
+// 		}
+// 	}
+// }
 
 #editor {
 	.editor-styles-wrapper {
@@ -91,10 +101,6 @@
 			color: $primary-color;
 			text-decoration: none;
 		}
-
-		.is-style-arrow-cta::after {
-			position: static;
-		}
 	}
 }
 
@@ -106,77 +112,37 @@
 }
 
 // Add padding to make more easily selectable.
-.wp-block-group,
-.wp-block-columns {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
+// .wp-block-group,
+// .wp-block-columns {
+// 	padding-top: 1rem;
+// 	padding-bottom: 1rem;
+// }
 
 // stop ridiculous dropcap in paragraph preview.
-.block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
-	float: none;
-	font-size: inherit;
-	line-height: inherit;
-	font-weight: inherit;
-	margin: inherit;
-	text-transform: inherit;
-	font-style: inherit;
-}
+// .block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
+// 	float: none;
+// 	font-size: inherit;
+// 	line-height: inherit;
+// 	font-weight: inherit;
+// 	margin: inherit;
+// 	text-transform: inherit;
+// 	font-style: inherit;
+// }
 
-.skew-box {
-	font-size: 0.775em;
-	font-weight: 400;
-	color: $white;
-	padding: 5px 6px;
-	background-color: $secondary-700;
-	padding-right: 25px;
-	clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, calc(100% - 22px) 0);
-	// useful if inside flexbox.
-	align-self: start;
-	margin-bottom: 0.5rem;
-
-	&.secondary {
-		background-color: $gray-700;
-	}
-
-	&.tertiary {
-		color: $secondary-700;
-		background-color: $white;
-	}
-
-	&.centered {
-		margin-left: auto;
-		margin-right: auto;
-		display: inline-block;
-		transform: translateX(12px);
-	}
-}
+// .has-drop-cap:not(:focus)::first-letter {
+// 	float: none;
+// 	font-size: inherit;
+// 	line-height: inherit;
+// 	font-weight: inherit;
+// 	margin: inherit;
+// 	text-transform: inherit;
+// 	font-style: inherit;
+// }
 
 // Make SVGs fill containers unless resized (Safe SVG related).
 .wp-block-image:not(.is-resized) img[src$='.svg'] {
 	width: 100%;
 	height: auto;
-}
-
-// For hero image positioning in div container.
-.background-image-wrapper {
-	overflow: hidden;
-	position: relative;
-}
-
-.background-image-figure img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	left: 0;
-}
-
-.background-image-text-overlay {
-	position: relative;
-	z-index: 2;
 }
 
 // allows for transparent images to be visible in Sidebar Metabox.
@@ -187,9 +153,4 @@
 // make placeholder text easier to see in sidebar.
 body.wp-admin div.pmc-sidebar ::placeholder {
 	color: #c4c4c4;
-}
-
-// hides the hide pre-publish checklist option.
-.editor-post-publish-panel__footer {
-	display: none;
 }

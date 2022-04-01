@@ -70,8 +70,6 @@
 
 // applies at all responsive sizes.
 .main-menu {
-	background-color: $white;
-
 	.menu-item-has-children {
 		a:hover {
 			color: rgba(0, 0, 0, 0.7);
@@ -158,7 +156,7 @@
 
 @media (max-width: 999px) {
 	.header {
-		border-bottom: 1px solid $gray-300;
+		border-bottom: 1px solid $gray-400;
 		transition: background-color 0.25s ease-in-out;
 		.has-menu-active & {
 			background-color: $gray-200;
@@ -186,6 +184,7 @@
 	}
 
 	.main-menu {
+		background-color: $white;
 		&__wrapper {
 			padding-top: 10px;
 		}
@@ -224,7 +223,7 @@
 				font-size: 18px;
 				padding-top: 16px;
 				padding-bottom: 16px;
-				border-bottom: 1px solid $gray-300;
+				border-bottom: 1px solid $gray-400;
 				transition: border 0.1s ease-out;
 				padding-right: 5px;
 				display: flex;
@@ -262,12 +261,12 @@
 				.col2,
 				.col3 {
 					margin-top: 20px;
-					border-top: 1px solid $gray-300;
+					border-top: 1px solid $gray-400;
 				}
 
 				.col3 {
 					padding-bottom: 20px;
-					border-bottom: 1px solid $gray-300;
+					border-bottom: 1px solid $gray-400;
 				}
 			}
 		}
@@ -512,7 +511,7 @@
 
 		.col3 {
 			grid-column: span 9;
-			border-left: 1px solid $gray-300;
+			border-left: 1px solid $gray-400;
 			background-color: $gray-100;
 			padding-left: 30px;
 		}

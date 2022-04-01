@@ -6,14 +6,7 @@
 	}
 }
 
-.is-style-20-60 {
-	height: 20px !important;
-
-	@media (min-width: 600px) {
-		height: 60px !important;
-	}
-}
-
+// newsletter
 .is-style-30-40 {
 	height: 30px !important;
 
@@ -22,6 +15,16 @@
 	}
 }
 
+// newsletter
+.is-style-20-60 {
+	height: 20px !important;
+
+	@media (min-width: 600px) {
+		height: 60px !important;
+	}
+}
+
+// newsletter
 .is-style-30-60 {
 	height: 30px !important;
 
@@ -30,6 +33,7 @@
 	}
 }
 
+// footer.
 .is-style-40-60 {
 	height: 40px !important;
 
@@ -38,6 +42,7 @@
 	}
 }
 
+// footer.
 .is-style-40-80 {
 	height: 40px !important;
 
@@ -46,18 +51,47 @@
 	}
 }
 
-// .is-style-40-60 {
-// 	height: 40px !important;
+// page title top
+.is-style-70-90 {
+	height: 70px !important;
 
-// 	@media (min-width: 600px) {
-// 		height: 60px !important;
-// 	}
-// }
+	@media (min-width: 1200px) {
+		height: 90px !important;
+	}
+}
 
+// page title bottom
+.is-style-60-70 {
+	height: 60px !important;
+
+	@media (min-width: 1200px) {
+		height: 70px !important;
+	}
+}
+
+// footer
 .is-style-70-100 {
 	height: 70px !important;
 
 	@media (min-width: 600px) {
 		height: 100px !important;
+	}
+}
+
+// section ends.
+.is-style-40-responsive {
+	height: 20px !important;
+
+	@media (min-width: 600px) {
+		height: 40px !important;
+	}
+}
+
+// section ends.
+.is-style-120-responsive {
+	height: 80px !important;
+
+	@media (min-width: 600px) {
+		height: 120px !important;
 	}
 }

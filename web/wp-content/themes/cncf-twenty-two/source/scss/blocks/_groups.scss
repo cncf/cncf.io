@@ -1,0 +1,38 @@
+.wp-block-group {
+	&.is-style-no-padding {
+		padding: 0;
+		.wp-block-group__inner-container {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.wp-block-group {
+	&.is-style-gradient-down-section {
+		padding: 0; // reset.
+		padding-top: 80px;
+		padding-bottom: 80px;
+		@media (min-width: 1200px) {
+			padding-top: 120px;
+			padding-bottom: 120px;
+		}
+		// TODO: Optimise gradient file or encode?
+		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-down.png');
+		background-repeat: repeat-x;
+		background-color: white;
+	}
+	&.is-style-gradient-up-section {
+		padding: 0; // reset.
+		padding-top: 80px;
+		padding-bottom: 80px;
+		@media (min-width: 1200px) {
+			padding-top: 120px;
+			padding-bottom: 120px;
+		}
+		// TODO: Optimise gradient file or encode?
+		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-up.png');
+		background-repeat: repeat-x;
+		background-color: white;
+	}
+}

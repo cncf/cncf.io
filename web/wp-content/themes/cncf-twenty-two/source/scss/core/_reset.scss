@@ -42,3 +42,14 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+// stop ridiculous dropcap style.
+.has-drop-cap:not(:focus)::first-letter {
+	float: none;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+	margin: inherit;
+	text-transform: inherit;
+	font-style: inherit;
+}

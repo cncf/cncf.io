@@ -1,0 +1,16 @@
+.is-style-blob-grid {
+	--wp--style--block-gap: 50px;
+	.wp-block-column:nth-child(2) {
+		// flex-basis: 580px;
+		@media (min-width: 1000px) {
+			max-width: 580px;
+		}
+	}
+	.wp-block-image {
+		margin-top: 0;
+		.alignleft {
+			margin-right: 0;
+			margin-top: 0;
+		}
+	}
+}

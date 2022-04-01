@@ -3,6 +3,114 @@ li {
 	line-height: $line-height;
 }
 
+article {
+	p + p {
+		margin-top: 30px;
+	}
+}
+
 .ls-0 {
 	letter-spacing: 0;
+}
+
+a {
+	font-weight: 700;
+	color: $primary-color;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// h1,
+// h2,
+// .h1,
+// .h2,
+// .has-header-1-font-size,
+// .has-header-2-font-size {
+// 	font-size: 1.9em;
+// }
+
+h2,
+.h2,
+.is-style-section-heading {
+	font-weight: 700;
+	line-height: 120%;
+	font-size: 30px;
+	max-width: 900px;
+	@media (min-width: 1200px) {
+		font-size: 36px;
+		line-height: 150%;
+	}
+}
+
+h3,
+.h3 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 125%;
+}
+
+.is-style-opening-paragraph {
+	font-weight: 400;
+	line-height: 150%;
+	font-size: 18px;
+	max-width: 900px;
+	@media (min-width: 1200px) {
+		font-size: 34px;
+	}
+	// all designs add at least 50px margin.
+	margin-bottom: 50px;
+}
+
+.is-style-spaced-uppercase {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 125%;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.is-style-link-cta {
+	position: relative;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 100%;
+	font-size: 20px;
+	margin-bottom: 14px;
+	@media (min-width: 1200px) {
+		font-size: 20px;
+	}
+	a {
+		text-decoration: none;
+		color: $black;
+		&:hover {
+			color: #d62293;
+			text-decoration: none;
+		}
+	}
+	&:after {
+		position: absolute;
+		content: '';
+		border-bottom: 2px solid #d62293;
+		left: 0;
+		bottom: -14px;
+		width: 100%;
+		height: 2px;
+	}
+}
+
+.is-style-boxed-uppercase {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 140%;
+	border: 3.75px solid $black;
+	text-transform: uppercase;
+	padding: 2px 6px 0px 6px;
+}
+
+.has-24-font-size {
+	--wp--preset--font-size--24: 24px;
 }

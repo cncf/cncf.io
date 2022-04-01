@@ -16,7 +16,7 @@
 
 	opacity: 0;
 	visibility: hidden;
-	transition: visibility 0s 2s, opacity 1s linear;
+	transition: opacity 1s linear;
 
 	&.is-active {
 		opacity: 1;

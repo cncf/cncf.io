@@ -1,0 +1,19 @@
+.title-wrapper {
+	padding-top: 70px;
+	padding-bottom: 60px;
+	@media (min-width: 1200px) {
+		padding-top: 90px;
+		padding-bottom: 70px;
+	}
+}
+
+.is-style-page-title {
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 140%;
+	font-size: 28px;
+	letter-spacing: 0;
+	@media (min-width: 1200px) {
+		font-size: 40px;
+	}
+}
