@@ -34,10 +34,29 @@ wp.domReady(
     wp.blocks.unregisterBlockType( 'core/site-logo' );
     wp.blocks.unregisterBlockType( 'core/site-tagline' );
     wp.blocks.unregisterBlockType( 'core/site-title' );
+    wp.blocks.unregisterBlockType( 'core/page-title' );
 
 		// Removed specific block styles.
 		wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
 		wp.blocks.unregisterBlockStyle( 'core/quote', 'large' );
+		wp.blocks.unregisterBlockStyle( 'core/button', 'fill' );
+		wp.blocks.unregisterBlockStyle( 'core/button', 'outline' );
+		wp.blocks.unregisterBlockStyle( 'core/separator', 'dots' );
+		wp.blocks.unregisterBlockStyle( 'core/separator', 'wide' );
+
+		wp.blocks.registerBlockStyle(
+			'core/separator',
+			[
+				{
+					label: 'Full Width Line',
+					name: 'horizontal-rule',
+				},
+				{
+					label: 'Shadow Line',
+					name: 'shadow-line',
+				}
+		]
+		);
 
 		let blocksToStyle = [
 			'core/heading',
@@ -49,69 +68,104 @@ wp.domReady(
 				block,
 				[
 					{
-						name: 'default',
 						label: 'Default',
+						name: 'default',
 						isDefault: true,
 					},
 					{
-						name: 'max-width-600',
-						label: 'Max width 600px',
+						label: 'Spaced Uppercase',
+						name: 'spaced-uppercase',
 					},
-					{
-						name: 'max-width-700',
-						label: 'Max width 700px',
-					},
-					{
-						name: 'max-width-800',
-						label: 'Max width 800px',
-					},
+					// {
+					// 	name: 'max-width-700',
+					// 	label: 'Max width 700px',
+					// },
+					// {
+					// 	name: 'max-width-800',
+					// 	label: 'Max width 800px',
+					// },
 					{
 						name: 'max-width-900',
 						label: 'Max width 900px',
 					},
-					{
-						name: 'max-width-100',
-						label: 'Max width 100%',
-					},
-					{
-						name: 'center-width-700',
-						label: 'Max width 700px & Centered',
-					},
-					{
-						name: 'center-width-800',
-						label: 'Max width 800px & Centered',
-					},
-					{
-						name: 'center-width-900',
-						label: 'Max width 900px & Centered',
-					},
-					{
-						name: 'no-margins',
-						label: 'No top/bottom margin',
-					},
-					{
-						name: 'bottom-margin',
-						label: '1rem bottom margin',
-					},
-					{
-						name: 'small-bottom-margin',
-						label: '0.5rem bottom margin',
-					},
-					{
-						name: 'divider-line',
-						label: 'Divider Line',
-					},
-          {
-            name: 'add-chevron-after',
-            label: 'Add Chevrons',
-          },
-          {
-            name: 'arrow-cta',
-            label: 'Arrow CTA',
-          }
+					// {
+					// 	name: 'max-width-100',
+					// 	label: 'Max width 100%',
+					// },
+					// {
+					// 	name: 'center-width-700',
+					// 	label: 'Max width 700px & Centered',
+					// },
+					// {
+					// 	name: 'center-width-800',
+					// 	label: 'Max width 800px & Centered',
+					// },
+					// {
+					// 	name: 'center-width-900',
+					// 	label: 'Max width 900px & Centered',
+					// },
+					// {
+					// 	name: 'no-margins',
+					// 	label: 'No top/bottom margin',
+					// },
+					// {
+					// 	name: 'bottom-margin',
+					// 	label: '1rem bottom margin',
+					// },
+					// {
+					// 	name: 'small-bottom-margin',
+					// 	label: '0.5rem bottom margin',
+					// },
+					// {
+					// 	name: 'divider-line',
+					// 	label: 'Divider Line',
+					// }
 				]
 			);
 		} );
+
+
+		wp.blocks.registerBlockStyle(
+			'core/paragraph',
+			[
+				{
+					label: 'Opening Paragraph',
+					name: 'opening-paragraph',
+				},
+				{
+					label: 'Link CTA',
+					name: 'link-cta',
+				},
+				{
+					label: 'Boxed Uppercase',
+					name: 'boxed-uppercase',
+				}
+		]
+		);
+
+		wp.blocks.registerBlockStyle(
+			'core/heading',
+			[
+				{
+				label: 'Page Title',
+				name: 'page-title',
+			},
+			{
+				label: 'Section Heading',
+				name: 'section-heading',
+			}
+		]
+		);
+
+		wp.blocks.registerBlockStyle(
+			'core/image',
+			[
+				{
+				label: 'Blob',
+				name: 'blob',
+			}
+		]
+		);
 
 		wp.blocks.registerBlockStyle(
 			'core/columns',
@@ -161,54 +215,77 @@ wp.domReady(
 			'core/list',
 			[
 				{
-					name: 'spaced-items',
-					label: 'Spaced items',
-				},
-				{
-					name: 'dash',
-					label: 'Dash',
-				},
-				{
-					name: 'minimal-dash',
-					label: 'Dash (Minimal)',
-				},
-				{
-					name: 'max-width-600',
-					label: 'Max width 600px',
-				},
-				{
-					name: 'max-width-700',
-					label: 'Max width 700px',
-				},
-				{
-					name: 'max-width-800',
-					label: 'Max width 800px',
-				},
+					label: 'More Spacing',
+						name: 'more-spacing',
+				}
+				// {
+				// 	name: 'spaced-items',
+				// 	label: 'Spaced items',
+				// },
+				// {
+				// 	name: 'dash',
+				// 	label: 'Dash',
+				// },
+				// {
+				// 	name: 'minimal-dash',
+				// 	label: 'Dash (Minimal)',
+				// },
+				// {
+				// 	name: 'max-width-600',
+				// 	label: 'Max width 600px',
+				// },
+				// {
+				// 	name: 'max-width-700',
+				// 	label: 'Max width 700px',
+				// },
+				// {
+				// 	name: 'max-width-800',
+				// 	label: 'Max width 800px',
+				// },
 			]
 		);
 
-		wp.blocks.registerBlockStyle(
-			'core/gallery',
-			{
-				name: 'no-margins',
-				label: 'No top/bottom margin',
-			}
-		);
+		// wp.blocks.registerBlockStyle(
+		// 	'core/gallery',
+		// 	{
+		// 		name: 'no-margins',
+		// 		label: 'No top/bottom margin',
+		// 	}
+		// );
+
+		// wp.blocks.registerBlockStyle(
+		// 	'core/media-text',
+		// 	{
+		// 		name: 'no-side-padding',
+		// 		label: 'No Side Padding',
+		// 	}
+		// );
 
 		wp.blocks.registerBlockStyle(
-			'core/media-text',
-			{
-				name: 'no-side-padding',
-				label: 'No Side Padding',
-			}
-		);
-
-		wp.blocks.registerBlockStyle(
-			'core/group',
+			'core/group',[
 			{
 				name: 'no-padding',
 				label: 'No Padding',
+			},
+			{
+				name: 'gradient-section',
+				label: 'Gradient Section',
 			}
+		]
+		);
+
+		wp.blocks.registerBlockStyle(
+			'core/button',[
+				{
+					label: 'Default',
+					name: 'default',
+					isDefault: true,
+				},
+			{
+				label: 'Reduced Height',
+				name: 'reduced-height',
+			}
+		]
 		);
 
 		wp.blocks.registerBlockStyle(
@@ -218,86 +295,86 @@ wp.domReady(
 					name: '40-responsive',
 					label: '40px Responsive',
 				},
+				// {
+				// 	name: '60-responsive',
+				// 	label: '60px Responsive',
+				// },
+				// {
+				// 	name: '80-responsive',
+				// 	label: '80px Responsive',
+				// },
 				{
-					name: '60-responsive',
-					label: '60px Responsive',
-				},
-				{
-					name: '80-responsive',
-					label: '80px Responsive',
-				},
-				{
-					name: '100-responsive',
-					label: '100px Responsive',
+					name: '120-responsive',
+					label: '120px Responsive',
 				},
 			]
 		);
 
-		// Used for Join page.
-		wp.blocks.registerBlockVariation(
-			'core/columns', {
-				name: 'join-table',
-				title: 'Join Table (4 Columns)',
-				attributes: {
-					className: 'is-style-join-table' },
-				isDefault: false,
-				innerBlocks: [
-					[ 'core/column', {
-						width: 25,
-						className: 'jt-01' } ],
-					[ 'core/column', {
-						width: 25,
-						className: 'jt-02' } ],
-					[ 'core/column', {
-						width: 25,
-						className: 'jt-03' } ],
-					[ 'core/column', {
-						width: 25,
-						className: 'jt-04' } ],
-				],
-				icon: 'text',
-				scope: [ 'inserter' ],
-			} );
+		// // Used for Join page.
+		// wp.blocks.registerBlockVariation(
+		// 	'core/columns', {
+		// 		name: 'join-table',
+		// 		title: 'Join Table (4 Columns)',
+		// 		attributes: {
+		// 			className: 'is-style-join-table' },
+		// 		isDefault: false,
+		// 		innerBlocks: [
+		// 			[ 'core/column', {
+		// 				width: 25,
+		// 				className: 'jt-01' } ],
+		// 			[ 'core/column', {
+		// 				width: 25,
+		// 				className: 'jt-02' } ],
+		// 			[ 'core/column', {
+		// 				width: 25,
+		// 				className: 'jt-03' } ],
+		// 			[ 'core/column', {
+		// 				width: 25,
+		// 				className: 'jt-04' } ],
+		// 		],
+		// 		icon: 'text',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
-		// Used for Join page.
-		wp.blocks.registerBlockVariation(
-			'core/columns', {
-				name: 'join-table-one',
-				title: 'Join Table (1 Column)',
-				attributes: {
-					className: 'is-style-join-table-one' },
-				isDefault: false,
-				innerBlocks: [
-					[ 'core/column', {
-						width: 100,
-						className: 'jt-05' } ],
-				],
-				icon: 'text',
-				scope: [ 'inserter' ],
-			} );
+		// // Used for Join page.
+		// wp.blocks.registerBlockVariation(
+		// 	'core/columns', {
+		// 		name: 'join-table-one',
+		// 		title: 'Join Table (1 Column)',
+		// 		attributes: {
+		// 			className: 'is-style-join-table-one' },
+		// 		isDefault: false,
+		// 		innerBlocks: [
+		// 			[ 'core/column', {
+		// 				width: 100,
+		// 				className: 'jt-05' } ],
+		// 		],
+		// 		icon: 'text',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
 		// Used for End User page.
-		wp.blocks.registerBlockVariation(
-			'core/columns', {
-				name: 'end-user-table',
-				title: 'End User Table (3 Columns)',
-				attributes: {
-					className: 'is-style-end-user-table' },
-				isDefault: false,
-				innerBlocks: [
-					[ 'core/column', {
-						width: 33.3,
-						className: 'eu-01' } ],
-					[ 'core/column', {
-						width: 33.3,
-						className: 'eu-02' } ],
-					[ 'core/column', {
-						width: 33.3,
-						className: 'eu-03' } ],
-				],
-				icon: 'text',
-				scope: [ 'inserter' ],
-			} );
+		// wp.blocks.registerBlockVariation(
+		// 	'core/columns', {
+		// 		name: 'end-user-table',
+		// 		title: 'End User Table (3 Columns)',
+		// 		attributes: {
+		// 			className: 'is-style-end-user-table' },
+		// 		isDefault: false,
+		// 		innerBlocks: [
+		// 			[ 'core/column', {
+		// 				width: 33.3,
+		// 				className: 'eu-01' } ],
+		// 			[ 'core/column', {
+		// 				width: 33.3,
+		// 				className: 'eu-02' } ],
+		// 			[ 'core/column', {
+		// 				width: 33.3,
+		// 				className: 'eu-03' } ],
+		// 		],
+		// 		icon: 'text',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
 		// Unstyled list used in columns.
 		wp.blocks.registerBlockVariation(
@@ -312,151 +389,151 @@ wp.domReady(
 			} );
 
 		// Pricing Table 3 Columns.
-		wp.blocks.registerBlockVariation(
-			'core/table', {
-				name: 'pricing-table-three',
-				title: 'Pricing Table (3 Columns)',
-				attributes: {
-					className: 'is-style-pricing-table',
-					hasFixedLayout: true,
-					body: [
-						{
-							cells: [
-								{
-									content: 'Cell 1',
-									tag: 'td',
-								},
-								{
-									content: 'Cell 2',
-									tag: 'td',
-								},
-								{
-									content: 'Cell 3',
-									tag: 'td',
-								},
-							],
-						},
-					],
+		// wp.blocks.registerBlockVariation(
+		// 	'core/table', {
+		// 		name: 'pricing-table-three',
+		// 		title: 'Pricing Table (3 Columns)',
+		// 		attributes: {
+		// 			className: 'is-style-pricing-table',
+		// 			hasFixedLayout: true,
+		// 			body: [
+		// 				{
+		// 					cells: [
+		// 						{
+		// 							content: 'Cell 1',
+		// 							tag: 'td',
+		// 						},
+		// 						{
+		// 							content: 'Cell 2',
+		// 							tag: 'td',
+		// 						},
+		// 						{
+		// 							content: 'Cell 3',
+		// 							tag: 'td',
+		// 						},
+		// 					],
+		// 				},
+		// 			],
 
-				},
-				isDefault: false,
-				icon: 'editor-table',
-				scope: [ 'inserter' ],
-			} );
+		// 		},
+		// 		isDefault: false,
+		// 		icon: 'editor-table',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
 		// Pricing Table 2 Columns.
-		wp.blocks.registerBlockVariation(
-			'core/table', {
-				name: 'pricing-table-two',
-				title: 'Pricing Table (2 Columns)',
-				attributes: {
-					className: 'is-style-pricing-table',
-					hasFixedLayout: true,
-					body: [
-						{
-							cells: [
-								{
-									content: 'Cell 1',
-									tag: 'td',
-								},
-								{
-									content: 'Cell 2',
-									tag: 'td',
-								},
-							],
-						},
-					],
-				},
-				isDefault: false,
-				icon: 'editor-table',
-				scope: [ 'inserter' ],
-			} );
+		// wp.blocks.registerBlockVariation(
+		// 	'core/table', {
+		// 		name: 'pricing-table-two',
+		// 		title: 'Pricing Table (2 Columns)',
+		// 		attributes: {
+		// 			className: 'is-style-pricing-table',
+		// 			hasFixedLayout: true,
+		// 			body: [
+		// 				{
+		// 					cells: [
+		// 						{
+		// 							content: 'Cell 1',
+		// 							tag: 'td',
+		// 						},
+		// 						{
+		// 							content: 'Cell 2',
+		// 							tag: 'td',
+		// 						},
+		// 					],
+		// 				},
+		// 			],
+		// 		},
+		// 		isDefault: false,
+		// 		icon: 'editor-table',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
 		// Button - PDF
-		wp.blocks.registerBlockVariation(
-			'core/buttons', {
-				name: 'button-pdf',
-				title: 'Button (PDF Icon)',
-				attributes: {
-					className: 'is-style-button-pdf' },
-				isDefault: false,
-				icon: 'media-document',
-				scope: [ 'inserter' ],
-			} );
+		// wp.blocks.registerBlockVariation(
+		// 	'core/buttons', {
+		// 		name: 'button-pdf',
+		// 		title: 'Button (PDF Icon)',
+		// 		attributes: {
+		// 			className: 'is-style-button-pdf' },
+		// 		isDefault: false,
+		// 		icon: 'media-document',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
 		// Used for Section Headers on home.
-		wp.blocks.registerBlockVariation(
-			'core/columns', {
-				name: 'section-header',
-				title: 'Section Header',
-				attributes: {
-					className: 'is-style-section-header' },
-				isDefault: false,
-				innerBlocks: [
-					[ 'core/column', {
-						width: 70,
-						className: 'bh-01',
-					},
-					[
-						[ 'core/heading', {
-							level: 3,
-							placeholder: 'Section header text' },
-						],
-					],
-					],
-					[ 'core/column', {
-						width: 30,
-						className: 'bh-02',
-					},
-					[
-						[ 'core/heading', {
-							level: 6,
-							placeholder: 'View all...',
-						},
-						],
-					],
-					],
-				],
-				icon: 'text',
-				scope: [ 'inserter' ],
-			} );
+		// wp.blocks.registerBlockVariation(
+		// 	'core/columns', {
+		// 		name: 'section-header',
+		// 		title: 'Section Header',
+		// 		attributes: {
+		// 			className: 'is-style-section-header' },
+		// 		isDefault: false,
+		// 		innerBlocks: [
+		// 			[ 'core/column', {
+		// 				width: 70,
+		// 				className: 'bh-01',
+		// 			},
+		// 			[
+		// 				[ 'core/heading', {
+		// 					level: 3,
+		// 					placeholder: 'Section header text' },
+		// 				],
+		// 			],
+		// 			],
+		// 			[ 'core/column', {
+		// 				width: 30,
+		// 				className: 'bh-02',
+		// 			},
+		// 			[
+		// 				[ 'core/heading', {
+		// 					level: 6,
+		// 					placeholder: 'View all...',
+		// 				},
+		// 				],
+		// 			],
+		// 			],
+		// 		],
+		// 		icon: 'text',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
 		// Used for Section Headers on home (when in column).
-		wp.blocks.registerBlockVariation(
-			'core/columns', {
-				name: 'section-header-column',
-				title: 'Section Header (for column layout)',
-				attributes: {
-					className: 'is-style-section-header-column' },
-				isDefault: false,
-				innerBlocks: [
-					[ 'core/column', {
-						width: 60,
-						className: 'bh-01',
-					},
-					[
-						[ 'core/heading', {
-							level: 3,
-							placeholder: 'Section header text' },
-						],
-					],
-					],
-					[ 'core/column', {
-						width: 40,
-						className: 'bh-02',
-					},
-					[
-						[ 'core/heading', {
-							level: 6,
-							placeholder: 'View all...',
-						},
-						],
-					],
-					],
-				],
-				icon: 'text',
-				scope: [ 'inserter' ],
-			} );
+		// wp.blocks.registerBlockVariation(
+		// 	'core/columns', {
+		// 		name: 'section-header-column',
+		// 		title: 'Section Header (for column layout)',
+		// 		attributes: {
+		// 			className: 'is-style-section-header-column' },
+		// 		isDefault: false,
+		// 		innerBlocks: [
+		// 			[ 'core/column', {
+		// 				width: 60,
+		// 				className: 'bh-01',
+		// 			},
+		// 			[
+		// 				[ 'core/heading', {
+		// 					level: 3,
+		// 					placeholder: 'Section header text' },
+		// 				],
+		// 			],
+		// 			],
+		// 			[ 'core/column', {
+		// 				width: 40,
+		// 				className: 'bh-02',
+		// 			},
+		// 			[
+		// 				[ 'core/heading', {
+		// 					level: 6,
+		// 					placeholder: 'View all...',
+		// 				},
+		// 				],
+		// 			],
+		// 			],
+		// 		],
+		// 		icon: 'text',
+		// 		scope: [ 'inserter' ],
+		// 	} );
 
 		const el = wp.element.createElement;
 		const SVG = wp.primitives.SVG;

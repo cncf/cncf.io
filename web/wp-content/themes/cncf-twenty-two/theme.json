@@ -1,0 +1,93 @@
+{
+    "$schema": "https://schemas.wp.org/wp/5.9/theme.json",
+    "version": 2,
+    "settings": {
+        "layout": {
+            "contentSize": "1200px"
+        },
+        "typography": {
+            "dropCap": false,
+            "customFontSize": false,
+            "textDecoration": false,
+            "fontFamilies": [
+                {
+                    "fontFamily": "Clarity City,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Roboto,Ubuntu,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                    "slug": "primary",
+                    "name": "Primary"
+                }
+            ],
+            "fontSizes": [
+                {
+                    "slug": "extra-small",
+                    "size": "10px",
+                    "name": "Extra small"
+                },
+                {
+                    "slug": "small",
+                    "size": "14px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "normal",
+                    "size": "16px",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "medium",
+                    "size": "18px",
+                    "name": "Medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "20px",
+                    "name": "Large"
+                },
+                {
+                    "slug": "larger",
+                    "size": "24px",
+                    "name": "Larger"
+                },
+                {
+                    "slug": "extra-large",
+                    "size": "46px",
+                    "name": "Extra large"
+                }
+            ]
+        },
+        "color": {
+            "custom": false,
+            "customGradient": false,
+            "gradients": [],
+            "link": false,
+            "defaultPalette": false,
+            "defaultGradients": false,
+            "palette": [
+                {
+                    "slug": "pink-400",
+                    "color": "#ff00aa",
+                    "name": "Pink 400"
+                },
+                {
+                    "slug": "pink-400",
+                    "color": "#ff00aa",
+                    "name": "Pink 400"
+                },
+                {
+                    "slug": "pink-400",
+                    "color": "#ff00aa",
+                    "name": "Pink 400"
+                },
+                {
+                    "slug": "black",
+                    "color": "#000000",
+                    "name": "Black"
+                },
+                {
+                    "slug": "white",
+                    "color": "#FFFFFF",
+                    "name": "White"
+                }
+            ]
+        }
+    }
+}

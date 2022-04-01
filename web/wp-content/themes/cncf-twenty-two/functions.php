@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignoreFile
 /**
  * Theme Functions
  *
@@ -77,31 +77,31 @@ if ( WP_DEBUG === true ) {
 require_once 'includes/gutenberg-options.php';
 
 // post excerpts.
-require_once 'includes/excerpts.php';
+// require_once 'includes/excerpts.php';
 
 // people shortcode.
-require_once 'includes/shortcode-people.php';
+require_once 'includes/shortcodes/people.php';
 
 // projects shortcode.
-require_once 'includes/shortcode-projects.php';
+// require_once 'includes/shortcode-projects.php';
 
 // endusers shortcode.
-require_once 'includes/shortcode-endusers.php';
+// require_once 'includes/shortcode-endusers.php';
 
 // members shortcode.
-require_once 'includes/shortcode-members.php';
+// require_once 'includes/shortcode-members.php';
 
 // homepage case studies shortcode.
-require_once 'includes/shortcode-home.php';
+// require_once 'includes/shortcode-home.php';
 
 // Who we are metrics shortcode.
-require_once 'includes/shortcode-whoweare-metrics.php';
+// require_once 'includes/shortcode-whoweare-metrics.php';
 
 // kubeweeklys shortcodes.
-require_once 'includes/shortcode-kubeweeklys.php';
+// require_once 'includes/shortcode-kubeweeklys.php';
 
 // credits shortcodes.
-require_once 'includes/shortcode-credits.php';
+// require_once 'includes/shortcode-credits.php';
 
 // LF utils.
 require_once 'classes/class-lf-utils.php';
