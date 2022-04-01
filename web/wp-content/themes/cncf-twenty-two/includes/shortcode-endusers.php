@@ -213,140 +213,6 @@ function add_eu_pricing_shortcode() {
 add_shortcode( 'eu_pricing', 'add_eu_pricing_shortcode' );
 
 /**
- * Show Representatives shortcode.
- *
- * @param array $atts Attributes.
- */
-function show_reps( $atts ) {
-
-	// Attributes.
-	$atts = shortcode_atts(
-		array(
-			'person_ids' => '', // set default.
-		),
-		$atts,
-		'show_reps'
-	);
-
-	if ( ! $atts['person_ids'] ) {
-		return;
-	}
-	$ids = explode( ',', $atts['person_ids'] );
-	ob_start();
-	echo '<div class="enduser-people-wrapper hide-descriptions">';
-
-	foreach ( $ids as $id ) {
-		$args  = array(
-			'p'         => $id,
-			'post_type' => 'lf_person',
-		);
-		$query = new WP_Query( $args );
-
-		if ( $query->have_posts() ) {
-			$query->the_post();
-			get_template_part( 'components/people-block' );
-		}
-		wp_reset_postdata();
-	}
-	echo '</div>';
-
-	$block_content = ob_get_clean();
-	return $block_content;
-
-}
-add_shortcode( 'show_reps', 'show_reps' );
-
-/**
- * End User Playlist shortcode.
- *
- * @param array $atts Attributes.
- */
-function add_playlist_shortcode( $atts ) {
-
-	// Attributes.
-	$atts = shortcode_atts(
-		array(
-			'count'       => 2, // set default.
-			'key'         => '',
-			'playlist_id' => 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40',
-		),
-		$atts,
-		'youtube_playlist'
-	);
-
-	// need to enqueue youtube lite script.
-	wp_enqueue_script(
-		'youtube-lite-js',
-		home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
-		null,
-		filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
-		true
-	);
-
-	$count       = $atts['count'];
-	$key         = $atts['key'];
-	$playlist_id = $atts['playlist_id'];
-
-	if ( ! is_int( $count ) || ! $key ) {
-		return;
-	}
-
-	if ( 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40' === $playlist_id ) {
-		$transient_name = 'cncf_eu_playlist';
-	} else {
-		$transient_name = 'cncf_member_playlist';
-	}
-	$playlist = get_transient( $transient_name );
-	if ( false === $playlist ) {
-
-		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=' . $playlist_id . '&key=' . $key );
-		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
-			return;
-		}
-		$playlist = wp_remote_retrieve_body( $request );
-
-		set_transient( $transient_name, $playlist, 6 * HOUR_IN_SECONDS );
-	}
-	$playlist = json_decode( $playlist );
-
-	ob_start();
-	?>
-<section class="end-users-playlist">
-	<?php
-	for ( $i = 0; $i < $count; $i++ ) {
-		if ( array_key_exists( $i, $playlist->items ) ) {
-
-			$pub_date = new DateTime( $playlist->items[ $i ]->contentDetails->videoPublishedAt );
-
-			?>
-	<div class="newsroom-post-wrapper">
-<div class="">
-<div class="wp-block-lf-youtube-lite">
-<lite-youtube
-videoid="<?php echo esc_attr( $playlist->items[ $i ]->snippet->resourceId->videoId ); ?>"
-webpStatus="0"
-sdthumbStatus="1"
->
-</lite-youtube></div></div>
-
-<h5 class="newsroom-title"><a href="https://www.youtube.com/watch?v=<?php echo esc_attr( $playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40" title="<?php echo esc_attr( $playlist->items[ $i ]->snippet->title ); ?> "><?php echo esc_attr( $playlist->items[ $i ]->snippet->title ); ?></a></h5>
-
-<span class="newsroom-date live-icon"><?php echo esc_html( $pub_date->format( 'F j, Y' ) ); ?></span>
-</div>
-			<?php
-		}
-	}
-	?>
-
-</section>
-	<?php
-	$block_content = ob_get_clean();
-	return $block_content;
-}
-add_shortcode( 'youtube_playlist', 'add_playlist_shortcode' );
-
-
-/**
  * Add End User Radar shortcode.
  *
  * @param array $atts Attributes.
@@ -371,7 +237,7 @@ function add_eu_radar_shortcode( $atts ) {
 	if ( false === $eu_radar ) {
 
 		$request = wp_remote_get( 'https://radar.cncf.io/radars.json' );
-		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
+		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) !== 200 ) ) {
 			return;
 		}
 		$eu_radar = wp_remote_retrieve_body( $request );
