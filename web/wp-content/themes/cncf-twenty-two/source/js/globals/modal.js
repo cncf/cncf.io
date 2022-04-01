@@ -70,7 +70,7 @@ jQuery( document ).ready(
 
 				// insert code at the end.
 				$modal_code = '<' + $modal_tag + ' ' + $modal_role_dialog + ' ' + $modal_role_alertdialog + ' id="js-modal" class="' + $modal_prefix_classes + 'modal" aria-labelledby="modal-title" open ' + $modal_aria + '><div role="document" class="' + $modal_prefix_classes + 'modal__wrapper">';
-				$modal_code += '<div class="' + $modal_prefix_classes + 'modal-close__wrapper"><button type="button" id="js-modal-close" class="' + $modal_prefix_classes + 'modal-close" data-content-back-id="' + modal_content_id + '" data-focus-back="' + $modal_starter_id + '" title="' + $modal_close_title + '">';
+				$modal_code += '<div class="' + $modal_prefix_classes + 'modal-close__wrapper"><button type="button" id="js-modal-close" class="' + $modal_prefix_classes + 'modal-close" data-content-back-id="' + modal_content_id + '" data-focus-back="' + $modal_starter_id + '" title="Close">';
 				if ( $modal_close_img !== '' ) {
 					 $modal_code += '<img src="' + $modal_close_img + '" alt="' + $modal_close_text + '" class="' + $modal_prefix_classes + 'modal__closeimg" />';
 				} else {
@@ -99,7 +99,7 @@ jQuery( document ).ready(
 
 				// add overlay.
 				if ( $modal_background_click !== 'disabled' ) {
-					$modal_overlay = '<span id="js-modal-overlay" class="' + $modal_prefix_classes + 'modal-overlay" title="' + $modal_close_title + '" data-background-click="enabled"><span class="invisible">' + $modal_close_text + '</span></span>';
+					$modal_overlay = '<span id="js-modal-overlay" class="' + $modal_prefix_classes + 'modal-overlay" title="Close" data-background-click="enabled"><span class="screen-reader-text">' + $modal_close_text + '</span></span>';
 				} else {
 					$modal_overlay = '<span id="js-modal-overlay" class="' + $modal_prefix_classes + 'modal-overlay" data-background-click="disabled"></span>';
 				}

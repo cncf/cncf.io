@@ -1,6 +1,7 @@
 <?php
 /**
- * Page
+ * Template Name: No Page Title
+ * Template Post Type: page
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -8,8 +9,6 @@
  */
 
 get_template_part( 'components/header' );
-
-get_template_part( 'components/title' );
 
 get_template_part( 'components/page-single' );
 

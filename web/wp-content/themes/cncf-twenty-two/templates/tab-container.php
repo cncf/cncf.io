@@ -12,7 +12,7 @@ require_once dirname( __FILE__ ) . '/../includes/tab-container-filter.php';
 
 get_template_part( 'components/header' );
 
-get_template_part( 'components/hero' );
+get_template_part( 'components/title' );
 
 ?>
 

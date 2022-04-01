@@ -7,35 +7,36 @@
  * @since 1.0.0
  */
 
- /**
-  * Add People shortcode.
-  *
-  * @param array $atts Attributes.
-  */
+/**
+ * Add People shortcode.
+ *
+ * @param array $atts Attributes.
+ */
 function add_people_shortcode( $atts ) {
 
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'tax'         => 'staff', // set default.
-			'description' => true, // set default.
+			'tax'      => 'staff', // set default.
+			'profiles' => true, // set default.
 		),
 		$atts,
 		'people'
 	);
 
-	$chosen_taxonomy   = $atts['tax'];
-	$show_descriptions = filter_var( $atts['description'], FILTER_VALIDATE_BOOLEAN );
+	$chosen_taxonomy = $atts['tax'];
+	$show_profile    = filter_var( $atts['profiles'], FILTER_VALIDATE_BOOLEAN );
 
 	if ( ! is_string( $chosen_taxonomy ) ) {
 		return;
 	}
+
 	$meta_key = 'lf_person_is_priority';
 
 	$query_args = array(
 		'post_type'      => 'lf_person',
 		'post_status'    => array( 'publish' ),
-		'posts_per_page' => -1,
+		'posts_per_page' => 200,
 		'tax_query'      => array(
 			array(
 				'taxonomy' => 'lf-person-category',
@@ -70,16 +71,18 @@ function add_people_shortcode( $atts ) {
 	);
 
 	$persons_query = new WP_Query( $query_args );
+
 	if ( $persons_query->have_posts() ) {
 
 		ob_start();
 		?>
-<div class="people-wrapper <?php echo $show_descriptions ? 'show-descriptions' : 'hide-descriptions'; ?>">
+<div class="people-wrapper">
 		<?php
 		while ( $persons_query->have_posts() ) :
 			$persons_query->the_post();
 
-			get_template_part( 'components/people-block' );
+			get_template_part( 'components/people-item', null, array( 'show_profile' => $show_profile ) );
+
 		endwhile;
 		wp_reset_postdata();
 	}
