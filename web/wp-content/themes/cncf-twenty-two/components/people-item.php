@@ -60,7 +60,7 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 		<button
 			data-modal-content-id="modal-<?php echo esc_html( $person_id ); ?>"
 			data-modal-slug="<?php echo esc_html( $person_slug ); ?>"
-			data-modal-prefix-class="person" class="js-modal button-reset">
+			data-modal-prefix-class="person" class="js-modal button-reset modal-<?php echo esc_html( $person_slug ); ?>">
 			<?php endif; ?>
 			<h3 class="person__name">
 				<?php the_title(); ?>
