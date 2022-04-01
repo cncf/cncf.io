@@ -20,7 +20,7 @@ wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-de
 
 		<div aria-hidden="true" class="home-hero__overlay"></div>
 
-		<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg" width="100%" height="100%" class="home-hero__poster">
+		<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg" width="100%" height="100%" class="home-hero__poster" alt="Make cloud native ubiquitous">
 
 		<video class="home-hero__video" width="100%" preload="none" loop muted playsinline>
 			<source

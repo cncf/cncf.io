@@ -30,7 +30,9 @@ $site_options = get_option( 'lf-mu' );
 	<?php endif; ?>
 
 	<?php if ( isset( $site_options['social_wechat_id'] ) ) : ?>
-	<li class="social-wechat_id"><button class="js-modal button-reset" data-modal-content-id="modal-wechat" data-modal-prefix-class="lf" data-modal-close-text="Close" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"><?php LF_Utils::get_svg( 'social/wechat.svg' ); ?></button></li>
+	<li class="social-wechat_id"><button class="js-modal button-reset"
+	data-modal-prefix-class="generic"
+	data-modal-content-id="modal-wechat"  title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"><?php LF_Utils::get_svg( 'social/wechat.svg' ); ?></button></li>
 	<?php endif; ?>
 
 	<?php if ( isset( $site_options['social_youtube'] ) ) : ?>
@@ -69,7 +71,6 @@ $site_options = get_option( 'lf-mu' );
 if ( isset( $site_options['social_wechat_id'] ) ) :
 	// Modal.
 	?>
-
 	<div class="modal-hide" id="modal-wechat" aria-hidden="true">
 			<div class="modal-content-wrapper">
 				<div class="modal__content"
