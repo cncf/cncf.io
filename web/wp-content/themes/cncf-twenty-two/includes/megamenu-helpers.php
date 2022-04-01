@@ -90,18 +90,17 @@ function get_menu_tech_radars() {
 		$title    = $t_radars[ $i ]->name;
 		$date     = $t_radars[ $i ]->date;
 		?>
-		<div class="newsroom-post-wrapper">
-			<div class="newsroom-image-wrapper">
-			<a class="box-link" href="<?php echo esc_url( $item_url ); ?>"
-				title="<?php echo esc_attr( $title ); ?>"></a>
-			<img loading="lazy" class="archive-image radar" src="<?php echo esc_url( $t_radars[ $i ]->image ); ?>" alt="<?php echo esc_attr( $title ); ?>">	</div>
+		<div>
 
-			<h5 class="newsroom-title"><a class="external is-primary-color" href="<?php echo esc_url( $item_url ); ?>"
+			<a href="<?php echo esc_url( $item_url ); ?>"
+				title="<?php echo esc_attr( $title ); ?>"></a>
+			<img loading="lazy" src="<?php echo esc_url( $t_radars[ $i ]->image ); ?>" alt="<?php echo esc_attr( $title ); ?>">
+
+			<p><a href="<?php echo esc_url( $item_url ); ?>"
 				title="<?php echo esc_attr( $title ); ?>">
 				<?php echo esc_html( $title ); ?></a>
-			</h5>
-			<span class="newsroom-date date-icon">
-				<?php echo esc_html( $date ); ?>
+			</p>
+			<span><?php echo esc_html( $date ); ?>
 			</span>
 		</div>
 		<?php
@@ -128,4 +127,5 @@ function get_menu_blog_posts() {
 		echo '</a>';
 		echo '<br>';
 	}
+	wp_reset_postdata();
 }
