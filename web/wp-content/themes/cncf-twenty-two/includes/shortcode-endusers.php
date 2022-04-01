@@ -267,7 +267,6 @@ function add_playlist_shortcode( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'count'       => 2, // set default.
-			'key'         => '',
 			'playlist_id' => 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40',
 		),
 		$atts,
@@ -284,10 +283,12 @@ function add_playlist_shortcode( $atts ) {
 	);
 
 	$count       = $atts['count'];
-	$key         = $atts['key'];
 	$playlist_id = $atts['playlist_id'];
 
-	if ( ! is_int( $count ) || ! $key ) {
+	$options         = get_option( 'lf-mu' );
+	$youtube_api_key = $options['youtube_api_key'] ?? '';
+
+	if ( ! is_int( $count ) || ! $youtube_api_key ) {
 		return;
 	}
 
@@ -299,7 +300,7 @@ function add_playlist_shortcode( $atts ) {
 	$playlist = get_transient( $transient_name );
 	if ( false === $playlist ) {
 
-		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=' . $playlist_id . '&key=' . $key );
+		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=' . $playlist_id . '&key=' . $youtube_api_key );
 		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
 			return;
 		}
