@@ -198,11 +198,11 @@ title="">See Silver Pricing Scale</button></p>
 
 </div>
 
-<?php
-get_template_part( 'components/silver-member-pricing-modal' );
-?>
+	<?php
+	get_template_part( 'components/silver-member-pricing-modal' );
+	?>
 
-<?php
+	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
 

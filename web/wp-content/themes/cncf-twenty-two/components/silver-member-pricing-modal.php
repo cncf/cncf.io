@@ -9,7 +9,7 @@
  * @since 1.0.0
  */
 
- ?>
+?>
 
 <!-- Modal -->
 <div class="modal-hide" id="modal-silver" aria-hidden="true">

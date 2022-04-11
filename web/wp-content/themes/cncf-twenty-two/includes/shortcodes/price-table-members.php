@@ -193,9 +193,9 @@ function add_members_pricing_shortcode() {
 
 </div><!-- end of wrapper -->
 
-<?php
-get_template_part( 'components/silver-member-pricing-modal' );
-?>
+	<?php
+	get_template_part( 'components/silver-member-pricing-modal' );
+	?>
 
 	<?php
 	$block_content = ob_get_clean();
