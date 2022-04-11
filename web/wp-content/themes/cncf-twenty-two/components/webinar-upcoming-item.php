@@ -33,7 +33,8 @@ if ( $webinar_reg_url ) {
 
 		<?php
 		// Date of Webinar.
-		if ( $date_and_time ) : ?>
+		if ( $date_and_time ) :
+			?>
 		<span class="webinar-upcoming-item__date "><?php echo esc_html( $date_and_time ); ?></span>
 		<?php endif; ?>
 
@@ -42,7 +43,8 @@ if ( $webinar_reg_url ) {
 
 		<?php
 		// Presented by... Company.
-		if ( $company ) : ?>
+		if ( $company ) :
+			?>
 		<span class="webinar-upcoming-item__company">Presented by
 			<?php echo esc_html( $company ); ?></span>
 		<?php endif; ?>

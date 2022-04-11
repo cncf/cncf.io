@@ -9,9 +9,9 @@
 
 /**
  * Add Projects shortcode.
-*
-* @param array $atts Attributes.
-*/
+ *
+ * @param array $atts Attributes.
+ */
 function add_projects_shortcode( $atts ) {
 
 	// Attributes.

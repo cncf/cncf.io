@@ -8,7 +8,7 @@
  */
 
 // Include the Tab Container Filter.
-require_once(get_template_directory().'/includes/tab-container-filter.php' );
+require_once( get_template_directory() . '/includes/tab-container-filter.php' );
 
 get_template_part( 'components/header' );
 

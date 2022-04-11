@@ -25,13 +25,11 @@ if ( is_tag() || is_tax() ) :
 		?>
 	<h1 class="is-style-page-title">All <?php single_cat_title(); ?> Posts</h1>
 			<?php
-	}
-	elseif ( is_tax( 'lf-report-type' ) ) {
+	} elseif ( is_tax( 'lf-report-type' ) ) {
 		?>
 		<h1 class="is-style-page-title">All <?php single_cat_title(); ?> Reports</h1>
 				<?php
-	}
-	else {
+	} else {
 
 		// Used for annual reports search?
 		?>
@@ -63,9 +61,9 @@ if ( is_tag() || is_tax() ) :
 				<a href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>
 				</p>
 				<?php
-	}
-	// PAGE TITLE.
-	?>
+			}
+			// PAGE TITLE.
+			?>
 	<h1 class="is-style-page-title" itemprop="headline"><?php the_title(); ?>
 	</h1>
 			<?php
@@ -77,18 +75,18 @@ if ( is_tag() || is_tax() ) :
 	<?php elseif ( ! ( is_404() ) && ( is_single() ) ) : ?>
 
 		<?php
-			if ( is_singular('lf_case_study') || is_singular('lf_case_study_cn')) {
-				?>
+		if ( is_singular( 'lf_case_study' ) || is_singular( 'lf_case_study_cn' ) ) {
+			?>
 <!-- // case study title  -->
 
-					<?php
-			} else {
-				?>
+				<?php
+		} else {
+			?>
 	<h1 class="is-style-post-title" itemprop="headline"><?php the_title(); ?>
 	</h1>
 				<?php
-			}
-			?>
+		}
+		?>
 
 		<?php
 		if ( is_singular( 'lf_report' ) ) {

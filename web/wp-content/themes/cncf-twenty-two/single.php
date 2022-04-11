@@ -27,7 +27,7 @@ elseif ( is_singular( 'lf_project' ) ) :
 elseif ( is_singular( 'lf_report' ) ) :
 	get_template_part( 'components/title' );
 	get_template_part( 'components/report-single' );
-// Default.
+	// Default.
 else :
 	get_template_part( 'components/title' );
 	get_template_part( 'components/post-single' );

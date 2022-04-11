@@ -64,7 +64,7 @@ function add_upcoming_webinars_shortcode( $atts ) {
 	if ( $query->have_posts() ) {
 		?>
 <div class="webinars columns-three">
-<?php
+		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();
 
@@ -72,10 +72,10 @@ function add_upcoming_webinars_shortcode( $atts ) {
 
 		endwhile;
 		wp_reset_postdata();
-	?>
+		?>
 </div>
 
-	<?php
+		<?php
 	} else {
 		?>
 
@@ -87,7 +87,7 @@ function add_upcoming_webinars_shortcode( $atts ) {
 			<p>But new online programs will be scehduled soon. <a href="#newsletter" title="Sign up for newsletter">Sign up for our newsletter to get the latest updated.</p>
 		</div>
 
-	<?php
+		<?php
 	}
 	$block_content = ob_get_clean();
 	return $block_content;

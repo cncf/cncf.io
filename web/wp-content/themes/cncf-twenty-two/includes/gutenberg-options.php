@@ -134,7 +134,6 @@ function lf_register_block_patterns() {
 			)
 		);
 
-
 	}
 
 }

@@ -80,7 +80,7 @@ function add_playlist_shortcode( $atts ) {
 		$composed_playlist = wp_remote_retrieve_body( $request );
 
 		if ( WP_DEBUG === false ) {
-		set_transient( $transient_name, $composed_playlist, 6 * HOUR_IN_SECONDS );
+			set_transient( $transient_name, $composed_playlist, 6 * HOUR_IN_SECONDS );
 		}
 	}
 

@@ -88,7 +88,7 @@ elseif ( is_singular( 'lf_report' ) ) :
 		<?php
 	}
 	?>
-<?php
+	<?php
 else :
 	// Single Post.
 	$all_categories = get_the_category();

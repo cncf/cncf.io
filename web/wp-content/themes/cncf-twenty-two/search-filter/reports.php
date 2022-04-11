@@ -46,7 +46,7 @@ if ( $query->have_posts() ) : ?>
 			?>
 			<div style="height:50px" aria-hidden="true"
 	class="wp-block-spacer is-style-30-50"></div>
-			<h2><?php echo esc_html( $report_year );  ?></h2>
+			<h2><?php echo esc_html( $report_year ); ?></h2>
 			<div style="height:50px" aria-hidden="true"
 	class="wp-block-spacer is-style-30-50"></div>
 			<?php

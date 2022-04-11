@@ -65,7 +65,7 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 <div class="webinar-recorded-item__date-views-wrapper">
 		<?php
 		if ( $webinar_date ) :
-		?>
+			?>
 	<span class="webinar-recorded-item__date">
 			<?php
 			echo esc_html( $webinar_date->format( 'F j, Y' ) );

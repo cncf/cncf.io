@@ -124,7 +124,7 @@ endif;
 									wp_reset_postdata();
 
 
-									get_template_part('components/next-event');
+									get_template_part( 'components/next-event' );
 									?>
 
 							</div>

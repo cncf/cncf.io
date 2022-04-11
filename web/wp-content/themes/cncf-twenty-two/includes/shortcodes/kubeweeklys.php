@@ -9,7 +9,7 @@
 
 /**
  * Add kubeweeklys shortcode.
-*/
+ */
 function add_kubeweeklys_shortcode() {
 
 	$query_args = array(
@@ -27,30 +27,30 @@ function add_kubeweeklys_shortcode() {
 		?>
 		<section class="kubeweeklys">
 			<?php
-		while ( $kubeweekly_query->have_posts() ) :
-			$kubeweekly_query->the_post();
+			while ( $kubeweekly_query->have_posts() ) :
+				$kubeweekly_query->the_post();
 
-			$link_url = get_post_meta( get_the_ID(), 'lf_kubeweekly_external_url', true );
+				$link_url = get_post_meta( get_the_ID(), 'lf_kubeweekly_external_url', true );
 
-			if ( ! $link_url ) {
-				$link_url = get_the_permalink();
-			}
-
-			// If end of a year, insert a closing div.
-			if ( ( 0 == $y ) || ( $y > (int) get_the_date( 'Y' ) ) ) :
-				if ( 0 != $y ) {
-					echo '</div>';
+				if ( ! $link_url ) {
+					$link_url = get_the_permalink();
 				}
-				$y = (int) get_the_date( 'Y' );
-				// Output the year to being.
-				?>
+
+				// If end of a year, insert a closing div.
+				if ( ( 0 == $y ) || ( $y > (int) get_the_date( 'Y' ) ) ) :
+					if ( 0 != $y ) {
+						echo '</div>';
+					}
+					$y = (int) get_the_date( 'Y' );
+					// Output the year to being.
+					?>
 				<h2><?php echo esc_html( $y ); ?></h2>
-				<?php
-				echo '<div class="kubeweeklys-section columns-three">';
-	?>
 					<?php
-			endif;
-			?>
+					echo '<div class="kubeweeklys-section columns-three">';
+					?>
+					<?php
+				endif;
+				?>
 
 			<div class="kubeweekly-item">
 
@@ -60,9 +60,9 @@ function add_kubeweeklys_shortcode() {
 			<span class="kubeweekly-item__date"><?php the_date(); ?></span>
 
 			</div>
-			<?php
+				<?php
 		endwhile;
-		wp_reset_postdata();
+			wp_reset_postdata();
 	}
 	?>
 </div>

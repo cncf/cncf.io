@@ -34,7 +34,7 @@ class="wp-block-spacer is-style-30-60"></div>
 
 </div>
 
-<?php // is-featured-item post-archive__item.  ?>
+<?php // is-featured-item post-archive__item. ?>
 <div class="<?php echo esc_html( $classes ); ?>">
 <?php
 
@@ -82,9 +82,9 @@ else :
 	$category_author = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 
 	$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
-?>
+	?>
 
-	<div class="post-archive__image-wrapper <?php echo esc_attr($sticky_status); ?>">
+	<div class="post-archive__image-wrapper <?php echo esc_attr( $sticky_status ); ?>">
 
 	<?php
 	if ( is_sticky() ) {
@@ -152,7 +152,7 @@ else :
 			?>
 		</span>
 
-		<div class="post-archive__excerpt"><?php echo wp_kses_post(get_the_excerpt()); ?></div>
+		<div class="post-archive__excerpt"><?php echo wp_kses_post( get_the_excerpt() ); ?></div>
 	</div>
 
 	<?php

@@ -31,7 +31,7 @@
 			'end_size'  => 1,
 			'prev_text' => $prev_text,
 			'next_text' => $next_text,
-			'class' => 'pagination-wrapper'
+			'class' => 'pagination-wrapper',
 		)
 	);
 

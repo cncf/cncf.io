@@ -16,12 +16,12 @@ if ( $query->have_posts() ) : ?>
 		$full_count = $wpdb->get_var( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_webinar' and wp_posts.post_status = 'publish' and meta_key='lf_webinar_recording_url' and meta_value <> '';" );
 
 		// if filter matches all webinars.
-		if ( $full_count == $query->found_posts ) {
-			echo 'Found ' . esc_html( $query->found_posts ) . ' recorded online programs';
-		} else {
-			// else show partial count.
-			echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded online programs';
-		}
+	if ( $full_count == $query->found_posts ) {
+		echo 'Found ' . esc_html( $query->found_posts ) . ' recorded online programs';
+	} else {
+		// else show partial count.
+		echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' recorded online programs';
+	}
 	?>
 </p>
 <div style="height:50px" aria-hidden="true"

@@ -215,9 +215,9 @@ get_template_part( 'components/title' );
 	endwhile;
 		?>
 
-<?php
-get_template_part( 'components/pagination' );
- ?>
+		<?php
+		get_template_part( 'components/pagination' );
+		?>
 	</div>
 		<?php
 else :

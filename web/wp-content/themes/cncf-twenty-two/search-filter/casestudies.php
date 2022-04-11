@@ -11,7 +11,7 @@
 
 if ( $query->have_posts() ) : ?>
 
-<?php
+	<?php
 	// get total list of case studies.
 	$count_case_study = wp_count_posts( 'lf_case_study' );
 	$full_count       = $count_case_study->publish;
