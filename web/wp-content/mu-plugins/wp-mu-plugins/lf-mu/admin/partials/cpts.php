@@ -20,7 +20,7 @@ $opts = array(
 	'has_archive'         => false,
 	'show_in_nav_menus'   => false,
 	'show_in_rest'        => true,
-	'show_ui'             => false,
+	'show_ui'             => true,
 	'hierarchical'        => false,
 	'rewrite'             => array( 'slug' => 'projects' ),
 	'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
