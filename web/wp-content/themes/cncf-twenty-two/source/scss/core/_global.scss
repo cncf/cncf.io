@@ -35,7 +35,10 @@ body {
 // default content container.
 .container {
 	width: 100%;
-	max-width: $content-width;
+	max-width: 100%;
+	@media (min-width: 1200px) {
+		max-width: $content-width;
+	}
 	margin: auto;
 }
 
@@ -80,6 +83,12 @@ body {
 
 .show-over-600 {
 	@media (max-width: 599px) {
+		display: none !important;
+	}
+}
+
+.show-over-800 {
+	@media (max-width: 799px) {
 		display: none !important;
 	}
 }

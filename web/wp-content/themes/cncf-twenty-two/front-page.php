@@ -24,63 +24,48 @@ wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-de
 			width="100%" height="100%" class="home-hero__poster"
 			alt="Make cloud native ubiquitous">
 
-		<video class="home-hero__video" width="100%" preload="none" loop muted
-			playsinline>
-			<source
-				src="/wp-content/themes/cncf-twenty-two/source/videos/hero.mp4?v=<?php echo esc_url( filemtime( get_template_directory() . '/source/videos/hero.mp4' ) ); ?>"
-				type="video/mp4">
-			<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg"
-				alt="Make cloud native ubiquitous">
-		</video>
+		<div class="home-hero__video-wrapper">
+			<video class="home-hero__video" width="100%" preload="none" loop
+				muted playsinline>
+				<source
+					src="/wp-content/themes/cncf-twenty-two/source/videos/hero.mp4?v=<?php echo esc_url( filemtime( get_template_directory() . '/source/videos/hero.mp4' ) ); ?>"
+					type="video/mp4">
+				<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg"
+					alt="Make cloud native ubiquitous">
+			</video>
+		</div>
 
 		<div class="home-hero__content">
 			<div class="container wrap">
 
-				<h1>MAKE<br />
+				<h1 class="home-hero__title">MAKE<br />
 					CLOUD NATIVE<br />
 					<span>UBIQUITOUS</span>
 				</h1>
 
-				<div style="height:35px" aria-hidden="true"
-					class="wp-block-spacer"></div>
-
-				<h2>CNCF is the vendor-neutral hub of <strong>cloud native
+				<h2 class="home-hero__description">CNCF is the vendor-neutral
+					hub of <strong>cloud native
 						computing</strong>. Hosting
 					cutting-edge projects like Kubernetes and Envoy to make
 					cloud native
 					universal and sustainable.</h2>
 
-				<div style="height:70px" aria-hidden="true"
-					class="wp-block-spacer"></div>
-
 				<div class="horizontal-rule"></div>
 
-				<div style="height:70px" aria-hidden="true"
-					class="wp-block-spacer"></div>
-
 				<ul class="home-hero__metric_wrapper">
-					<li><a href="#" class="wp-block-button__link">Learn More</a>
+					<li class="show-over-800"><a href="/about/who-we-are/"
+							class="wp-block-button__link">Learn More</a>
 					</li>
 					<li>116 <span>Projects</span></li>
 					<li>152K <span>Contributors</span></li>
-					<li>7.9M <span>Contrubitions</span></li>
-					<li>187 <span>Countries</span></li>
+					<li>7.9M <span>Contributions</span></li>
+					<li class="show-over-600">187 <span>Countries</span></li>
 				</ul>
-
 			</div>
 		</div>
 	</section>
 
 	<article class="container wrap">
-		<div style="height:100px" aria-hidden="true" class="wp-block-spacer">
-		</div>
-
-		<h2>CNCF projects are <br />
-			fundamentally changing <br />
-			cloud native computing</h2>
-
-		<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
