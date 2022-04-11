@@ -145,6 +145,7 @@
 	}
 	&__image {
 		border-radius: 3px;
+		filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.1));
 	}
 	&__text-wrapper {
 		// height: 100%;0

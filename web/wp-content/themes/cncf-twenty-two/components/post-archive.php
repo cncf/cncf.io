@@ -101,8 +101,10 @@ if ( have_posts() ) :
 			)
 		);
 	}
-		endif;
-?>
+	else :
+		echo '<h3>Sorry, there are no posts here.</h3>';
+	endif;
+	?>
 
 </div>
 		<?php get_template_part( 'components/pagination' ); ?>

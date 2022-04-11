@@ -27,6 +27,20 @@ elseif ( is_singular( 'lf_spotlight' ) ) :
 		title="Go to Spotlights">Spotlight</a>
 </span>
 	<?php
+	// get spotlight type.
+	$spotlight_type      = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', true );
+	$spotlight_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-spotlight-type', true );
+	$spotlight_type_link = '/spotlights/?_sft_lf-spotlight-type=' . $spotlight_type_slug;
+
+	?>
+<div class="space-slash">&nbsp;/&nbsp;</div>
+<span><a class="author-category"
+		title="See <?php echo esc_attr( $spotlight_type ); ?> posts"
+		href="<?php echo esc_url( $spotlight_type_link ); ?>">
+		<?php echo esc_html( $spotlight_type ); ?>
+	</a></span>
+
+	<?php
 	elseif ( is_archive() || is_search() || is_category() ) :
 		?>
 	<!-- display nothing -->
