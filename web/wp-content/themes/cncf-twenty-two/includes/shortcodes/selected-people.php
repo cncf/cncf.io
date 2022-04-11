@@ -2,7 +2,7 @@
 /**
  * Selected People Shortcode
  *
- * Usage
+ * Usage:
  * [selected_people people_ids="66351,51177,51298,64375" profiles=false]
  *
  * @package WordPress

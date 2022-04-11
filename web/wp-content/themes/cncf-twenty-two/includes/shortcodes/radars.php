@@ -2,6 +2,9 @@
 /**
  * Radars
  *
+ * Usage:
+ * [radars count=6]
+ *
  * @package WordPress
  * @subpackage cncf-theme
  * @since 1.0.0

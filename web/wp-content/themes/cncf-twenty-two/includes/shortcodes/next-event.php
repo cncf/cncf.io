@@ -3,7 +3,6 @@
  * Next Event
  *
  * Usage:
- *
  * [next_event]
  *
  * @package WordPress

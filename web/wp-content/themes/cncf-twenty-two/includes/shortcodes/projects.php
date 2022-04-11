@@ -2,6 +2,9 @@
 /**
  * Projects Shortcode
  *
+ * Usage:
+ * [projects stage="graduated|incubating|sandbox"]
+ *
  * @package WordPress
  * @subpackage cncf-theme
  * @since 1.0.0

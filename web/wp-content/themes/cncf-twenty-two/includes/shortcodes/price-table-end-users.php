@@ -2,6 +2,9 @@
 /**
  * End Users Pricing Table
  *
+ * Usage
+ * [end_user_pricing]
+ *
  * @package WordPress
  * @subpackage cncf-theme
  * @since 1.0.0

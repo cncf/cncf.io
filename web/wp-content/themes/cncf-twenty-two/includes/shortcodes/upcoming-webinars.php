@@ -3,7 +3,6 @@
  * Upcoming Webinars
  *
  * Usage:
- *
  * [upcoming_webinars count=6]
  *
  * @package WordPress

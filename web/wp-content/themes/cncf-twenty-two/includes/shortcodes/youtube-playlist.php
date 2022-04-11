@@ -3,7 +3,6 @@
  * YouTube Playlist
  *
  * Usage:
- *
  * [youtube_playlist playlist="members|endusers" count=4]
  *
  * @package WordPress

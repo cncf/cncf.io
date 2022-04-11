@@ -2,6 +2,9 @@
 /**
  * Shortcodes for Members
  *
+ * Usage:
+ * [cncf_members_latest category="endusers|members|platinum" count=20 size="small|medium|large"]
+ *
  * @package WordPress
  * @subpackage cncf-theme
  * @since 1.0.0

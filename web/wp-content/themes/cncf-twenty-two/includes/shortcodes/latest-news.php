@@ -3,7 +3,6 @@
  * Latest News
  *
  * Usage:
- *
  * [latest_news]
  *
  * Used on front page only.

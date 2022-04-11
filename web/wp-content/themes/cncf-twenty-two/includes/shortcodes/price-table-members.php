@@ -2,6 +2,9 @@
 /**
  * Members (Join) Pricing Table
  *
+ * Usage:
+ * [members_pricing]
+ *
  * @package WordPress
  * @subpackage cncf-theme
  * @since 1.0.0
