@@ -16,9 +16,8 @@ get_template_part( 'components/header' );
 wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-demand/video.js', null, filemtime( get_template_directory() . '/source/js/on-demand/video.js' ), true );
 ?>
 
-<main>
+<main class="home-body">
 	<section class="home-hero">
-
 		<div aria-hidden="true" class="home-hero__overlay"></div>
 
 		<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg"
@@ -28,7 +27,7 @@ wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-de
 		<video class="home-hero__video" width="100%" preload="none" loop muted
 			playsinline>
 			<source
-				src="/wp-content/themes/cncf-twenty-two/source/videos/hero.mp4"
+				src="/wp-content/themes/cncf-twenty-two/source/videos/hero.mp4?v=<?php echo filemtime( get_template_directory() . '/source/videos/hero.mp4' ); ?>"
 				type="video/mp4">
 			<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg"
 				alt="Make cloud native ubiquitous">
