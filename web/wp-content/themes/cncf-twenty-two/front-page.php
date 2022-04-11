@@ -65,6 +65,21 @@ wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-de
 		</div>
 	</section>
 
+	<div class="container wrap">
+
+	<?php
+	echo do_shortcode('[home_projects]');
+	?>
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer">
+		</div>
+
+<?php
+	echo do_shortcode('[home_case_studies]');
+	?>
+
+	</div>
+
 	<article class="container wrap">
 		<?php
 		if ( have_posts() ) :

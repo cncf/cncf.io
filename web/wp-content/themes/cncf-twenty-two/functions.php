@@ -96,6 +96,7 @@ require_once 'includes/excerpts.php';
 
 // Shortcodes
 require_once 'includes/shortcodes/benefits.php';
+require_once 'includes/shortcodes/home.php';
 require_once 'includes/shortcodes/kubeweeklys.php';
 require_once 'includes/shortcodes/latest-news.php';
 require_once 'includes/shortcodes/members.php';
@@ -110,12 +111,6 @@ require_once 'includes/shortcodes/radars.php';
 require_once 'includes/shortcodes/selected-people.php';
 require_once 'includes/shortcodes/upcoming-webinars.php';
 require_once 'includes/shortcodes/youtube-playlist.php';
-
-
-// TODO
-// homepage case studies shortcode.
-// require_once 'includes/shortcode-home.php';
-
 
 /* Will only run on front end of site */
 if ( ! is_admin() ) {
