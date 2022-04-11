@@ -2,7 +2,7 @@
 /**
  * Search & Filter Pro
  *
- * Webinars
+ * Reports
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -11,11 +11,11 @@
 
 if ( $query->have_posts() ) : ?>
 
-<p class="results-count">
+<p class="search-filter-results-count">
 	<?php
 	$full_count = $wpdb->get_var( "select count(*) from wp_posts where wp_posts.post_type = 'lf_report' and wp_posts.post_status = 'publish';" );
 
-	// if filter matches all webinars.
+	// if filter matches all.
 	if ( $full_count == $query->found_posts ) {
 		echo 'Found ' . esc_html( $query->found_posts ) . ' reports';
 	} else {
@@ -24,6 +24,11 @@ if ( $query->have_posts() ) : ?>
 	}
 	?>
 </p>
+<div style="height:50px" aria-hidden="true"
+	class="wp-block-spacer is-style-30-50"></div>
+
+<hr
+	class="wp-block-separator has-text-color has-background has-gray-500-background-color has-gray-500-color is-style-horizontal-rule">
 
 	<?php
 	$y = 0;
@@ -33,44 +38,49 @@ if ( $query->have_posts() ) : ?>
 		$report_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-report-type', true );
 		$report_year      = get_post_meta( get_the_ID(), 'lf_report_published_year', true );
 
+		// If end of a year, insert a closing div.
 		if ( $y !== $report_year ) {
 			if ( 0 !== $y ) {
 				echo '</div>';
 			}
-			echo '<h2 class="h3">' . esc_html( $report_year ) . '</h2>';
-			echo '<div class="reports-wrapper">';
+			?>
+			<div style="height:50px" aria-hidden="true"
+	class="wp-block-spacer is-style-30-50"></div>
+			<h2><?php echo esc_html( $report_year );  ?></h2>
+			<div style="height:50px" aria-hidden="true"
+	class="wp-block-spacer is-style-30-50"></div>
+			<?php
+			echo '<div class="reports-section columns-three">';
 			$y = $report_year;
 		}
 		?>
-<div class="report-box">
+<div class="report-item">
 
-	<div class="newsroom-image-wrapper">
-		<a class="box-link is-primary-color"
-			href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"></a>
+	<a class="report-item__link" href="<?php the_permalink(); ?>"
+		title="<?php echo esc_attr( get_the_title() ); ?>">
 		<?php
-		if ( has_post_thumbnail( $lf_post ) ) {
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id( $lf_post ), 'newsroom-540', '540px', 'archive-image' );
-		} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
-			Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-540', '540px', 'archive-default-svg' );
+		if ( has_post_thumbnail() ) {
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-540', '540px', 'report-item__image' );
 		} else {
-			echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-			. '/images/thumbnail-default.svg" alt="' . esc_attr( lf_blocks_get_site() ) . '" class="archive-default-svg"/>';
+			$site_options = get_option( 'lf-mu' );
+			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-540', '540px', 'report-item__image' );
 		}
 		?>
-	</div>
+		</a>
 
+		<div class="report-item__text-wrapper">
 		<?php
 		if ( $report_type ) :
 			$report_type_link = '?_sft_lf-report-type=' . $report_type_slug . '';
 			?>
-	<a class="skew-box secondary"
-		title="See more <?php echo esc_attr( $report_type ); ?> reports"
-		href="<?php echo esc_url( $report_type_link ); ?>">
+<a class="author-category" title="See more <?php echo esc_attr( $report_type ); ?> reports"
+	href="<?php echo esc_url( $report_type_link ); ?>">
 			<?php echo esc_html( $report_type ); ?> Report</a>
-	<?php endif; ?>
-	<h3 class="report-title h5"><a
-			href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+<?php endif; ?>
 
+<h3 class="report-item__title"><a
+		href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		</div>
 </div>
 
 		<?php

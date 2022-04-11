@@ -51,7 +51,7 @@ function homepage_casestudies_shortcode( $atts ) {
 
 <div class="wrap background-image-text-overlay">
 <div style="height:60px" aria-hidden="true"
-class="wp-block-spacer is-style-60-responsive"></div>
+class="wp-block-spacer"></div>
 <p
 class="h5 fw-400">CNCF projects are trusted by organizations around the world</p>
 <a href="<?php echo esc_url( $url ); ?>" class="logo-link">
@@ -59,7 +59,7 @@ class="h5 fw-400">CNCF projects are trusted by organizations around the world</p
 alt="<?php echo esc_attr( $company ); ?>" width="300"
 height="70"></a>
 <div style="height:20px" aria-hidden="true"
-class="wp-block-spacer is-style-20-responsive"></div>
+class="wp-block-spacer"></div>
 <h2><a class="has-white-color has-text-color"
 href="<?php echo esc_url( $url ); ?>">
 	<?php echo esc_html( $title ); ?>
@@ -218,70 +218,6 @@ function homepage_latest_news_webinar_shortcode() {
 }
 add_shortcode( 'homepage-latest-news-webinar', 'homepage_latest_news_webinar_shortcode' );
 
-/**
- * Display Announcements on home page.
- * [homepage-announcements]
- */
-function homepage_announcements_shortcode() {
-
-	$args = array(
-		'post_type'           => array( 'post' ),
-		'post_status'         => array( 'publish' ),
-		'has_password'        => false,
-		'posts_per_page'      => '5',
-		'ignore_sticky_posts' => true,
-		'order'               => 'DESC',
-		'orderby'             => 'date',
-		'no_found_rows'       => true,
-		'tax_query'           => array(
-			array(
-				'taxonomy' => 'category',
-				'field'    => 'term_id',
-				'terms'    => 787,
-			),
-		),
-	);
-
-	$query = new WP_Query( $args );
-
-	if ( $query->have_posts() ) {
-
-		ob_start();
-		?>
-<section class="home-announcement home-padding">
-<div class="home-announcement-icon">
-		<?php
-
-		Lf_utils::get_svg( 'icon-newspaper.svg' );
-		?>
-</div>
-<div class="announcement-slider-wrapper">
-		<?php
-
-		while ( $query->have_posts() ) {
-			$query->the_post();
-			?>
-<div class="home-announcement-item">
-<p
-class="is-style-max-width-100"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-<span class="date-icon">
-			<?php echo get_the_date( 'F j, Y' ); ?></span>
-</div>
-			<?php
-		}
-	}
-	wp_reset_postdata();
-
-	?>
-</div>
-
-</section>
-
-	<?php
-	$block_content = ob_get_clean();
-	return $block_content;
-}
-add_shortcode( 'homepage-announcements', 'homepage_announcements_shortcode' );
 
 /**
  * Home Hero
@@ -308,8 +244,7 @@ function homepage_hero_shortcode( $atts ) {
 <section class="home-hero">
 <!-- column 1 -->
 <div class="home-hero__col1">
-<div style="height:40px" aria-hidden="true"
-class="wp-block-spacer is-style-40-responsive"></div>
+
 
 <h1>Building sustainable ecosystems for cloud native software</h1>
 <ul class="data-display no-style h4">

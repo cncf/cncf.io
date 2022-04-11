@@ -35,3 +35,8 @@ select {
 		margin-bottom: 80px;
 	}
 }
+
+// Remove small X in search bar in Chrome.
+input[type='search']::-webkit-search-cancel-button {
+	display: none;
+}

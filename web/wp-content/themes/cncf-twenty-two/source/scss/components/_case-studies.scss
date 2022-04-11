@@ -1,0 +1,392 @@
+.case-studies {
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+	grid-template-columns: 1fr;
+
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
+}
+
+.case-study-item {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	color: $white;
+	min-height: 250px;
+	@media (min-width: 600px) {
+		min-height: 280px;
+	}
+	height: 100%;
+	&__overlay {
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		object-fit: cover;
+		position: absolute;
+		z-index: 2;
+		background-color: $black;
+		opacity: 0.7;
+		@media (min-width: 600px) {
+			opacity: 0.8;
+		}
+	}
+	&__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		filter: grayscale(100%);
+	}
+	&__content {
+		position: relative;
+		z-index: 2;
+		padding: 24px 33px;
+		@media (min-width: 1000px) {
+			padding: 20px 20px;
+		}
+		@media (min-width: 1200px) {
+			padding: 36px 33px;
+		}
+		height: 100%;
+		// grid layout.
+		display: grid;
+		grid-template-areas:
+			'title'
+			'hr'
+			'description'
+			'date';
+		grid-template-rows: auto auto auto 1fr;
+		@media (min-width: 600px) {
+			grid-column-gap: 40px;
+			grid-template-areas:
+				'title description'
+				'stats description'
+				'stats description'
+				'date cta';
+			grid-template-columns: 6fr 5fr;
+		}
+		@media (min-width: 1000px) {
+			grid-column-gap: 20px;
+		}
+		@media (min-width: 1200px) {
+			grid-column-gap: 40px;
+		}
+	}
+	&__title {
+		grid-area: title;
+		margin-bottom: 10px;
+		a {
+			color: $white;
+		}
+	}
+	&__title-hr {
+		grid-area: hr;
+		margin-bottom: 10px;
+	}
+	&__stats {
+		grid-area: stats;
+		margin-top: 20px;
+		color: $tertiary-400;
+	}
+	&__stat-larger {
+		font-size: 40px;
+		line-height: 40px;
+		font-weight: 700;
+	}
+	&__stat-default {
+		display: block;
+		font-weight: 700;
+	}
+	&__date-wrapper {
+		grid-area: date;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	&__date {
+		font-size: 12px;
+		margin-top: auto;
+		display: block;
+	}
+	&__description {
+		grid-area: description;
+		margin-top: 10px;
+		font-size: 13px;
+		letter-spacing: 0.02em;
+		@media (min-width: 600px) {
+			margin-top: 0;
+			font-size: 16px;
+			line-height: 149.99%;
+		}
+	}
+	&__cta {
+		grid-area: cta;
+		align-self: end;
+		@media (min-width: 1000px) {
+			font-size: 14px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@media (min-width: 1200px) {
+			font-size: 16px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
+.case-study-single {
+	.hero {
+		overflow: hidden;
+		position: relative;
+
+		&__image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+		}
+
+		&__figure:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			background-color: $black;
+			opacity: 0.8;
+		}
+
+		&__text-overlay {
+			position: relative;
+			z-index: 2;
+			padding-top: 60px;
+			padding-bottom: 70px;
+		}
+
+		.parent-link {
+			color: $white;
+			margin-bottom: 20px;
+			@media (min-width: 1200px) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	.wp-block-lf-case-study-overview {
+		.is-style-opening-paragraph {
+			max-width: 700px;
+		}
+	}
+
+	.case-study-overview {
+		display: flex;
+		flex-direction: column-reverse;
+		@media (min-width: 1000px) {
+			flex-direction: row;
+		}
+
+		// col1
+		&__intro {
+			@media (min-width: 1000px) {
+				margin-right: 50px;
+			}
+			@media (min-width: 1200px) {
+				margin-right: 100px;
+			}
+		}
+		// col2
+		&__meta {
+			@media (min-width: 1000px) {
+				width: 300px;
+				flex-shrink: 0;
+			}
+			@media (min-width: 1200px) {
+				width: 380px;
+				flex-shrink: 0;
+			}
+		}
+		&__logo {
+			margin-top: 20px;
+			@media (min-width: 1000px) {
+				margin-top: 50px;
+			}
+			@media (min-width: 1200px) {
+				margin-top: 100px;
+			}
+			width: min(50%, 300px);
+			max-height: 150px;
+			object-fit: contain;
+			object-position: left center;
+		}
+		&__taxonomies {
+			margin-top: 40px;
+			padding: 30px 20px;
+			background-color: $white;
+			border-radius: 10px;
+			filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
+
+			.row {
+				display: flex;
+				flex-direction: row;
+
+				line-height: 150%;
+			}
+			.row:not(:last-child) {
+				margin-bottom: 25px;
+			}
+			.col1 {
+				font-weight: 700;
+				flex-basis: 150px;
+				flex-shrink: 0;
+			}
+			.col2 {
+			}
+		}
+		&__projects {
+			margin-top: 50px;
+		}
+		&__project-icons {
+			margin-top: 40px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		&__project-icon {
+			margin-right: 30px;
+			margin-bottom: 30px;
+			@media (min-width: 1000px) {
+				margin-right: 20px;
+				margin-bottom: 20px;
+			}
+			@media (min-width: 1200px) {
+				margin-right: 30px;
+				margin-bottom: 30px;
+			}
+			img {
+				height: 45px;
+				width: auto;
+				display: block;
+			}
+		}
+	}
+
+	// add spacing for old case studies.
+	p,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		max-width: 900px;
+	}
+
+	h2 {
+		margin-top: 50px;
+		margin-bottom: 30px;
+		@media (min-width: 1200px) {
+			margin-top: 100px;
+			margin-bottom: 60px;
+		}
+	}
+
+	h2,
+	h3 {
+		line-height: 150%;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+			margin-bottom: 20px;
+		}
+		+ .wp-block-quote,
+		.wp-block-gallery {
+			margin-top: 0;
+		}
+	}
+
+	.wp-block-image,
+	.wp-block-quote,
+	.wp-block-gallery,
+	.wp-block-embed,
+	.wp-block-lf-youtube-lite {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		@media (min-width: 1000px) {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
+}
+
+.wp-block-lf-case-study-highlights {
+	margin-top: 80px;
+	margin-bottom: 60px;
+	// By the numbers.
+	.case-study-title {
+		text-align: center;
+		margin-bottom: 30px;
+		@media (min-width: 1000px) {
+			text-align: left;
+			margin-bottom: 50px;
+		}
+	}
+
+	.case-study-highlights {
+		background: $white;
+		border: 1px solid $gray-300;
+		filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
+		border-radius: 10px;
+		// grid columns-three
+		grid-row-gap: 0;
+		grid-column-gap: 0;
+		@media (min-width: 600px) {
+			grid-template-columns: 1fr;
+		}
+		@media (min-width: 1000px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		&__col {
+			text-align: center;
+			padding: 25px 30px;
+			@media (max-width: 999px) {
+				&:nth-child(1),
+				&:nth-child(2) {
+					border-bottom: 1px solid $gray-300;
+				}
+			}
+			@media (min-width: 1000px) {
+				padding: 50px 30px;
+				&:nth-child(1),
+				&:nth-child(2) {
+					border-right: 1px solid $gray-300;
+				}
+			}
+		}
+		&__heading {
+			margin-bottom: 30px;
+		}
+		&__text {
+			padding-left: 20px;
+			padding-right: 20px;
+			line-height: 140%;
+		}
+	}
+}

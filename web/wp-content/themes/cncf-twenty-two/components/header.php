@@ -16,7 +16,6 @@ $site_options = get_option( 'lf-mu' );
 if ( isset( $site_options['show_hello_bar'] ) && $site_options['show_hello_bar'] ) :
 	get_template_part( 'components/hello-bar' );
 endif;
-
 ?>
 
 <header class="header">
@@ -26,7 +25,8 @@ endif;
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
 				<img src="<?php echo esc_url( wp_get_attachment_url( $site_options['header_image_id'] ) ); ?>"
-					width="210" height="40" alt="<?php echo bloginfo( 'name' ); ?>">
+					width="210" height="40"
+					alt="<?php echo bloginfo( 'name' ); ?>">
 			</a>
 		</div>
 		<?php } ?>
@@ -62,9 +62,73 @@ endif;
 								<ul class="menu">
 									<li class="lf-menu-title">Featured Reads
 									</li>
-									<?php get_menu_featured_reads(); ?>
 								</ul>
+								<div class="columns-one">
+									<?php
+									$annual_report = array(
+										'fields'         => 'ids',
+										'post_type'      => 'lf_report',
+										'post_status'    => array( 'publish' ),
+										'posts_per_page' => 1,
+										'orderby'        => 'date',
+										'order'          => 'DESC',
+										'tax_query'      => array(
+											array(
+												'taxonomy' => 'lf-report-type',
+												'field'    => 'slug',
+												'terms'    => 'annual',
+											),
+										),
+									);
+
+									$survey = array(
+										'fields'         => 'ids',
+										'post_type'      => 'lf_report',
+										'post_status'    => array( 'publish' ),
+										'posts_per_page' => 1,
+										'orderby'        => 'date',
+										'order'          => 'DESC',
+										'tax_query'      => array(
+											array(
+												'taxonomy' => 'lf-report-type',
+												'field'    => 'slug',
+												'terms'    => 'survey',
+											),
+										),
+									);
+
+									$annual_report_query = get_posts( $annual_report );
+									$survey_query        = get_posts( $survey );
+									// Merge the two results.
+									$post_ids = array_merge( $annual_report_query, $survey_query );
+
+									// Finalise the query.
+									if ( $post_ids ) :
+										$final_args = array(
+											'post_type' => array( 'lf_report' ),
+											'post__in'  => $post_ids,
+											'orderby'   => 'post__in',
+											'order'     => 'ASC',
+										);
+										$query      = new WP_Query( $final_args );
+
+										if ( $query->have_posts() ) :
+											while ( $query->have_posts() ) :
+												$query->the_post();
+
+												get_template_part( 'components/main-menu-item' );
+
+	endwhile;
+									endif;
+									endif;
+									wp_reset_postdata();
+
+
+									get_template_part('components/next-event');
+									?>
+
 							</div>
+						</div>
 						</div>
 					</ul>
 				</li>
@@ -96,9 +160,65 @@ endif;
 								<ul class="menu">
 									<li class="lf-menu-title">Latest Tech Radars
 									</li>
-									<?php get_menu_tech_radars(); ?>
 								</ul>
-							</div>
+
+<?php
+// Get all radars.
+$tech_radars_all = LF_utils::get_tech_radars();
+// Limit to latest 3 items.
+$tech_radars = array_slice( $tech_radars_all, 0, 3 );
+
+if ( is_array( $tech_radars ) ) :
+	?>
+<div class="columns-one">
+	<?php
+	foreach ( $tech_radars as $tech_radar ) :
+
+		$url         = 'https://radar.cncf.io/' . $tech_radar->key;
+		$radar_title = $tech_radar->name;
+		$date        = $tech_radar->date;
+		$image       = $tech_radar->image;
+		?>
+
+<div class="main-menu-item radar-menu-item">
+	<div
+		class="main-menu-item__image-wrapper">
+
+		<a href="<?php echo esc_url( $url ); ?>"
+			title="<?php echo esc_html( $radar_title ); ?>" class="main-menu-item__link">
+
+			<?php
+			if ( $image ) {
+				?>
+<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_html( $radar_title ); ?>" class="main-menu-item__image">
+				<?php
+			} else {
+				// show generic.
+				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-540', '540px', 'main-menu-item__image' );
+			}
+			?>
+		</a>
+	</div>
+	<div class="main-menu-item__text-wrapper">
+
+		<a class="author-category" title="See more tech radars" href="/radars/">Tech Radar</a>
+
+		<span class="main-menu-item__title">
+			<a href="<?php echo esc_url( $url ); ?>"
+				title="<?php echo esc_html( $radar_title ); ?>"><?php echo esc_html( $radar_title ); ?></a>
+		</span>
+		<span
+			class="main-menu-item__date"><?php echo esc_html( $date ); ?></span>
+	</div>
+</div>
+		<?php
+endforeach;
+	?>
+</div>
+	<?php
+endif;
+?>
+								</div>
 						</div>
 					</ul>
 				</li>
@@ -130,12 +250,15 @@ endif;
 								<ul class="menu">
 									<li class="lf-menu-title">Recommended Links
 									</li>
-
-									<!-- // TODO: Training advert -->
-									<img src="https://via.placeholder.com/340x220/d9d9d9/000000"
-										alt="">
-
 								</ul>
+
+								<div class="columns-one">
+
+								<?php
+									get_template_part( 'components/promotion' );
+								?>
+								</div>
+
 							</div>
 						</div>
 					</ul>
@@ -207,8 +330,39 @@ endif;
 								<ul class="menu">
 									<li class="lf-menu-title">Latest Blog Posts
 									</li>
-									<?php get_menu_blog_posts(); ?>
 								</ul>
+
+								<?php
+								$args  = array(
+									'post_type'           => 'post',
+									'post_status'         => array( 'publish' ),
+									'posts_per_page'      => 3,
+									'orderby'             => 'date',
+									'order'               => 'DESC',
+									'ignore_sticky_posts' => false,
+									'category_name'       => 'blog,announcements',
+								);
+								$query = new WP_Query( $args );
+
+								if ( $query->have_posts() ) :
+									?>
+								<div class="columns-one">
+									<?php
+
+									while ( $query->have_posts() ) {
+										$query->the_post();
+
+										get_template_part( 'components/main-menu-item' );
+									}
+
+									?>
+								</div>
+
+									<?php
+								endif;
+								wp_reset_postdata();
+								?>
+
 							</div>
 						</div>
 					</ul>
@@ -260,7 +414,8 @@ endif;
 					</form>
 
 					<div style="height:100px" aria-hidden="true"
-						class="wp-block-spacer show-upto-1000"></div>
+						class="wp-block-spacer show-upto-1000">
+					</div>
 
 					<button class="button-reset search-toggle show-over-1000"
 						type="button" aria-label="Close">

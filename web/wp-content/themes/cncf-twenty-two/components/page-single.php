@@ -9,7 +9,7 @@
 
 ?>
 
-<main id="maincontent">
+<main>
 	<article class="container wrap">
 		<?php
 		if ( have_posts() ) :

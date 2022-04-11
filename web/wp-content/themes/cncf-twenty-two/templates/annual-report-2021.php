@@ -57,7 +57,7 @@ $linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_u
 $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbsp;' . $page_url . '';
 ?>
 
-<main class="ar-2021" id="maincontent">
+<main class="ar-2021">
 	<article class="container wrap">
 
 		<section class="background-image-wrapper is-hero alignfull" height="500"
@@ -95,14 +95,14 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 							<div class="ss-wrapper">
 								<!-- twitter -->
 								<?php if ( $twitter_url ) : ?>
-								<a target="_blank" aria-label="Share on Twitter"
+								<a  aria-label="Share on Twitter"
 									title="Share on Twitter"
 									href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
 								<?php endif; ?>
 
 								<!-- linkedin -->
 								<?php if ( $linkedin_url ) : ?>
-								<a target="_blank"
+								<a
 									aria-label="Share on Linkedin"
 									title="Share on Linkedin"
 									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
@@ -110,7 +110,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 
 								<!-- sendto email -->
 								<?php if ( $mailto_url ) : ?>
-								<a target="_blank" aria-label="Share by Email"
+								<a  aria-label="Share by Email"
 									title="Share by Email"
 									href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
 								<?php endif; ?>
@@ -985,8 +985,8 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="section-grid-04">
 
 					<div>
-						<a href="https://youtu.be/8hV-ml4WuVM" target="_blank"
-							rel="noreferrer noopener" class="image-link"><img
+						<a href="https://youtu.be/8hV-ml4WuVM"
+							 class="image-link"><img
 								loading="lazy" width="525" height="324"
 								src="<?php Lf_Utils::get_image( 'annual-reports/2021/kubecon-macbook.png', true ); ?>"
 								alt="Laptop playing a video of keynote talk"></a>
@@ -1002,7 +1002,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						</div>
 
 						<p
-							class="mb-20 lh-150"><a href="https://youtu.be/8hV-ml4WuVM" target="_blank" rel="noreferrer noopener" class="text-larger  text-purple fw-semi lh-125">How Cloud Native Tech Helped Peloton Ride to Exponential Growth</a></p>
+							class="mb-20 lh-150"><a href="https://youtu.be/8hV-ml4WuVM"   class="text-larger  text-purple fw-semi lh-125">How Cloud Native Tech Helped Peloton Ride to Exponential Growth</a></p>
 
 						<p class="fw-semi">Jim Haughwout, VP, Peloton </p>
 
@@ -1155,7 +1155,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 						</div>
 
 						<p
-							class="mb-20 lh-125"><a target="_blank" rel="noreferrer noopener" href="https://youtu.be/VzuyyESy9oA" class="text-larger text-purple fw-semi lh-125">Building support for your <br class="show-over-700">Cloud Native journey</a></p>
+							class="mb-20 lh-125"><a   href="https://youtu.be/VzuyyESy9oA" class="text-larger text-purple fw-semi lh-125">Building support for your <br class="show-over-700">Cloud Native journey</a></p>
 
 						<p class="fw-semi">Robert Duffy, Expedia</p>
 
@@ -1163,8 +1163,8 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 					<div>
 
-						<a href="https://youtu.be/VzuyyESy9oA" target="_blank"
-							rel="noreferrer noopener" class="image-link"><img
+						<a href="https://youtu.be/VzuyyESy9oA"
+							 class="image-link"><img
 								loading="lazy" width="525" height="432"
 								src="<?php Lf_Utils::get_image( 'annual-reports/2021/blob-speaker.png', true ); ?>"
 								alt="Robert Duffy speaking at conference"></a>
@@ -2767,14 +2767,14 @@ In Italian, thanks to SparkFabrik</p>
 							<div class="ss-wrapper">
 								<!-- twitter -->
 								<?php if ( $twitter_url ) : ?>
-								<a target="_blank" aria-label="Share on Twitter"
+								<a  aria-label="Share on Twitter"
 									title="Share on Twitter"
 									href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-twitter.svg' ); ?></a>
 								<?php endif; ?>
 
 								<!-- linkedin -->
 								<?php if ( $linkedin_url ) : ?>
-								<a target="_blank"
+								<a
 									aria-label="Share on Linkedin"
 									title="Share on Linkedin"
 									href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-linkedin.svg' ); ?></a>
@@ -2782,7 +2782,7 @@ In Italian, thanks to SparkFabrik</p>
 
 								<!-- sendto email -->
 								<?php if ( $mailto_url ) : ?>
-								<a target="_blank" aria-label="Share by Email"
+								<a  aria-label="Share by Email"
 									title="Share by Email"
 									href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'annual-reports/2021/social-mail.svg' ); ?></a>
 								<?php endif; ?>

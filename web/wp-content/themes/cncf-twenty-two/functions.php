@@ -50,9 +50,6 @@ function lf_theme_support_setup() {
 		)
 	);
 
-	// Remove tags support from posts.
-	unregister_taxonomy_for_object_type( 'post_tag', 'post' );
-
 	// include custom image sizes.
 	require_once 'includes/image-sizes.php';
 
@@ -61,6 +58,18 @@ function lf_theme_support_setup() {
 
 }
 add_action( 'after_setup_theme', 'lf_theme_support_setup' );
+
+/**
+ * Remove tags support from posts.
+ *
+ * TODO: Move to WP MU.
+ *
+ * @return void
+ */
+function lf_unregister_tags_for_posts() {
+    unregister_taxonomy_for_object_type( 'post_tag', 'post' );
+}
+add_action( 'init', 'lf_unregister_tags_for_posts' );
 
 /**
  * Includes (enable as appropriate)
@@ -73,44 +82,40 @@ if ( WP_DEBUG === true ) {
 	require_once 'includes/development.php';
 }
 
-// gutenberg options.
-require_once 'includes/gutenberg-options.php';
-
-// post excerpts.
-// require_once 'includes/excerpts.php';
-
-// people shortcode.
-require_once 'includes/shortcodes/people.php';
-
-// projects shortcode.
-// require_once 'includes/shortcode-projects.php';
-
-// endusers shortcode.
-// require_once 'includes/shortcode-endusers.php';
-
-// members shortcode.
-// require_once 'includes/shortcode-members.php';
-
-// homepage case studies shortcode.
-// require_once 'includes/shortcode-home.php';
-
-// Who we are metrics shortcode.
-// require_once 'includes/shortcode-whoweare-metrics.php';
-
-// kubeweeklys shortcodes.
-// require_once 'includes/shortcode-kubeweeklys.php';
-
-// credits shortcodes.
-// require_once 'includes/shortcode-credits.php';
-
 // LF utils.
 require_once 'classes/class-lf-utils.php';
 
 // WP REST API cache control.
 require_once 'includes/rest-api-cache-control.php';
 
-// Megamenu helper functions.
-require_once 'includes/megamenu-helpers.php';
+// Gutenberg options.
+require_once 'includes/gutenberg-options.php';
+
+// Post excerpts.
+require_once 'includes/excerpts.php';
+
+// Shortcodes
+require_once 'includes/shortcodes/benefits.php';
+require_once 'includes/shortcodes/kubeweeklys.php';
+require_once 'includes/shortcodes/latest-news.php';
+require_once 'includes/shortcodes/members.php';
+require_once 'includes/shortcodes/metrics.php';
+require_once 'includes/shortcodes/next-event.php';
+require_once 'includes/shortcodes/people.php';
+require_once 'includes/shortcodes/price-table-cloud-credits.php';
+require_once 'includes/shortcodes/price-table-end-users.php';
+require_once 'includes/shortcodes/price-table-members.php';
+require_once 'includes/shortcodes/projects.php';
+require_once 'includes/shortcodes/radars.php';
+require_once 'includes/shortcodes/selected-people.php';
+require_once 'includes/shortcodes/upcoming-webinars.php';
+require_once 'includes/shortcodes/youtube-playlist.php';
+
+
+// TODO
+// homepage case studies shortcode.
+// require_once 'includes/shortcode-home.php';
+
 
 /* Will only run on front end of site */
 if ( ! is_admin() ) {

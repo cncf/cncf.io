@@ -15,24 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_template_part( 'components/header' );
 
-// if ( is_home() ) {
-// 	get_template_part( 'components/home' );
-// } else if ( is_single() ) {
-// 	get_template_part( 'components/post' );
-// } else if ( is_page() ) {
-// 	get_template_part( 'components/page' );
-// } else if ( is_archive() ) {
-// 	get_template_part( 'components/archive' );
-// } else if ( is_search() ) {
-// 	get_template_part( 'components/search' );
-// } else
 if ( is_404() ) {
 	get_template_part( 'components/404' );
-}
-else { // TODO: Else Home in final fix.
-	get_template_part( 'components/page' );
-}
+} else if ( is_search() ) {
+	get_template_part( 'components/search' );
+} else {
+	// default archive view.
+	get_template_part( 'components/title' );
+	get_template_part( 'components/post-archive' );
 
-
+}
 
 get_template_part( 'components/footer' );

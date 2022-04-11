@@ -79,7 +79,9 @@ function add_playlist_shortcode( $atts ) {
 
 		$composed_playlist = wp_remote_retrieve_body( $request );
 
+		if ( WP_DEBUG === false ) {
 		set_transient( $transient_name, $composed_playlist, 6 * HOUR_IN_SECONDS );
+		}
 	}
 
 	$composed_playlist = json_decode( $composed_playlist );
@@ -94,7 +96,7 @@ function add_playlist_shortcode( $atts ) {
 			$pub_date = new DateTime( $composed_playlist->items[ $i ]->contentDetails->videoPublishedAt );
 
 			?>
-	<div class="playlist-item">
+	<div class="youtube-playlist__item">
 		<div class="wp-block-lf-youtube-lite">
 			<lite-youtube
 				videoid="<?php echo esc_attr( $composed_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>"
@@ -102,12 +104,13 @@ function add_playlist_shortcode( $atts ) {
 			</lite-youtube>
 		</div>
 
-		<h3><a href="https://www.youtube.com/watch?v=<?php echo esc_attr( $composed_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=<?php echo esc_attr( $playlist_id ); ?>"
+		<div class="youtube-playlist__text-wrapper">
+		<h3 class="youtube-playlist__title"><a class="youtube-playlist__link" href="https://www.youtube.com/watch?v=<?php echo esc_attr( $composed_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>&list=<?php echo esc_attr( $playlist_id ); ?>"
 				title="<?php echo esc_attr( $composed_playlist->items[ $i ]->snippet->title ); ?> "><?php echo esc_attr( $composed_playlist->items[ $i ]->snippet->title ); ?></a>
 		</h3>
 
-		<span><?php echo esc_html( $pub_date->format( 'F j, Y' ) ); ?></span>
-
+		<span class="youtube-playlist__date" ><?php echo esc_html( $pub_date->format( 'F j, Y' ) ); ?></span>
+		</div>
 	</div>
 			<?php
 		}

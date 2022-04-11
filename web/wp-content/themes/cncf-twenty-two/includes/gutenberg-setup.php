@@ -66,4 +66,5 @@ add_theme_support( 'custom-line-height' );
 // }
 // );
 
-add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+// Cannot use this as it overwrites CNCF styles.
+// add_filter( 'should_load_separate_core_block_assets', '__return_true' );

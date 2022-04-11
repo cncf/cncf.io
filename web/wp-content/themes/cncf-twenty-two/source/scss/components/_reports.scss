@@ -1,0 +1,35 @@
+.report-item {
+	background-color: $white;
+	filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.05));
+	border-radius: 5px;
+
+	&__link {
+	}
+	&__image {
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-bottom: 1px solid $gray-300;
+		display: block;
+	}
+	&__text-wrapper {
+		padding-top: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 30px;
+		@media (min-width: 1200px) {
+			padding-top: 24px;
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 24px;
+		}
+		.author-category {
+			margin-bottom: 20px;
+		}
+	}
+	&__title {
+		font-size: 20px;
+		a {
+			color: $black;
+		}
+	}
+}

@@ -1,24 +1,73 @@
-// generic ul.
-
-article {
+article,
+.generic-modal {
+	li {
+		line-height: $line-height;
+	}
+	// generic ul.
 	ul {
 		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+	ul,
+	ol {
 		margin-top: 0;
 		margin-right: 0;
 		margin-bottom: 1.5rem;
 		margin-left: 26px;
+		ul,
+		ol {
+			margin-bottom: 0;
+		}
+		li {
+			// apply margin-left here not on ul.
+			margin-left: 52px;
+		}
+	}
+
+	p {
+		+ ol,
+		+ ul {
+			margin-top: 20px;
+		}
 	}
 }
 
-article {
-	ul.is-style-more-spacing {
-		list-style: disc;
-		margin-top: 0;
-		margin-right: 0;
-		margin-bottom: 1.5rem;
-		margin-left: 26px;
-		li {
-			padding-bottom: 12px;
+article,
+.generic-modal {
+	ul,
+	ol {
+		&.is-style-more-spacing {
+			li {
+				padding-bottom: 12px;
+			}
+		}
+	}
+
+	ul,
+	ol {
+		&.is-style-no-style-list {
+			li {
+				// TODO: This might not work as intended.
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.post-content {
+	ul {
+		margin-bottom: 20px;
+		// second level
+		ul {
+			margin-bottom: 0;
+
+			// third level
+			ul {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

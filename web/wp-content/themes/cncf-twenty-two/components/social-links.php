@@ -26,13 +26,13 @@ $site_options = get_option( 'lf-mu' );
 
 	<?php if ( isset( $site_options['social_linkedin'] ) ) : ?>
 	<li class="social-linkedin"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on LinkedIn'; ?>"
-			href="<?php echo esc_url( $site_options['social_linkedin'] ); ?>"><?php LF_Utils::get_svg( 'social/linkedin.svg' ); ?></a></li>
+			href="<?php echo esc_url( $site_options['social_linkedin'] ); ?>"><?php LF_Utils::get_svg( 'social/linkedin-black.svg' ); ?></a></li>
 	<?php endif; ?>
 
 	<?php if ( isset( $site_options['social_wechat_id'] ) ) : ?>
 	<li class="social-wechat_id"><button class="js-modal button-reset"
 	data-modal-prefix-class="generic"
-	data-modal-content-id="modal-wechat"  title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"><?php LF_Utils::get_svg( 'social/wechat.svg' ); ?></button></li>
+	data-modal-content-id="modal-wechat" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"><?php LF_Utils::get_svg( 'social/wechat.svg' ); ?></button></li>
 	<?php endif; ?>
 
 	<?php if ( isset( $site_options['social_youtube'] ) ) : ?>

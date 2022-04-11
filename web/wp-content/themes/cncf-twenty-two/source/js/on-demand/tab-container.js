@@ -13,11 +13,10 @@
 jQuery( document ).ready(
 	function( $ ) {
 		// Setup Sticky.
-		let sticky;
 		let setSticky;
 		( setSticky = function() {
 			sticky = new Sticky(
-				'.sticky-element',
+				'.sticky__element',
 				{
 					marginTop: getSpacing(),
 					marginBottom: 100,
@@ -48,7 +47,7 @@ jQuery( document ).ready(
 		}
 
 		// create array of elements from nav links.
-		let topMenu = $( '.tab-container-nav' );
+		let topMenu = $( '.sticky__nav' );
 		if ( topMenu.length > 0 ) {
 			let lastId;
 			let menuItems = topMenu.find( 'a' );
@@ -95,7 +94,7 @@ jQuery( document ).ready(
 				// Get id of current scroll item, add 20 for padding from header.
 				let cur = scrollItems.map(
 					function() {
-						if ( $( this ).offset().top < fromTop + getSpacing() + 20 ) {
+						if ( $( this ).offset().top < fromTop + getSpacing() + 60 ) {
 							return this;
 						}
 					}
@@ -176,13 +175,13 @@ jQuery( document ).ready(
 
 		// Looks for nav item and checks its in view.
 		function navInView() {
-			let currentItem = $( '.tab-container-nav-item.is-active' );
+			let currentItem = $( '.sticky__nav-item.is-active' );
 			let winW = $( window ).width();
 
 			if ( winW > 799 && currentItem.length ) {
 				currentItem[ 0 ].scrollIntoView(
 					{
-						block: 'nearest',
+						behavior: 'instant', block: 'center'
 					}
 				);
 			}

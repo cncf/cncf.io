@@ -4,10 +4,8 @@
 // The button color is this.
 $colors: (
 	// name variable : color to be used.
-	'primary-400': #ff00aa,
-	'secondary-700': #2a0054,
+	'primary-400': $primary-400,
 	'tertiary-400': $tertiary-400,
-	'blue-100': #f4f4f4,
 	'white': $white,
 	'black': $black,
 	'gray-700': $gray-700
@@ -17,9 +15,7 @@ $colors: (
 $color_hover: (
 	// name variable : color to be used.
 	'primary-400': $gray-700,
-	'secondary-700': #431f67,
 	'tertiary-400': $tertiary-400,
-	'blue-100': $gray-700,
 	'white': $gray-700,
 	'black': $gray-700,
 	'gray-700': $black
@@ -29,9 +25,7 @@ $color_hover: (
 $text_color: (
 	// name variable : color to be used.
 	'primary-400': $white,
-	'secondary-700': $white,
 	'tertiary-400': $white,
-	'blue-100': $white,
 	'white': $black,
 	'black': $white,
 	'gray-700': $white

@@ -19,52 +19,41 @@ function lf_hero_render_callback( $attributes, $content ) {
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
-	// setup options.
-	$options = get_option( 'lf-mu' );
-
 	ob_start();
 	?>
-<section
-class="hero background-image-wrapper alignfull <?php echo esc_html( $classes ); ?>">
+<section class="hero alignfull <?php echo esc_html( $classes ); ?>">
 
-<figure class="background-image-figure">
+<figure class="hero__figure">
 	<?php
 	if ( has_post_thumbnail() ) {
-		Lf_Utils::display_picture( get_post_thumbnail_id(), 'hero' );
-	} elseif ( isset( $options['generic_hero_id'] ) && $options['generic_hero_id'] ) {
-		Lf_Utils::display_picture( $options['generic_hero_id'], 'hero' );
+		Lf_Utils::display_picture( get_post_thumbnail_id(), 'hero', 'hero__image' );
 	} else {
-		echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-		. '/images/hero-default.jpg" alt="' . esc_attr( lf_blocks_get_site() ) . '"  height="400" width="100%"/>';
+		// setup site options.
+		$site_options = get_option( 'lf-mu' );
+		Lf_Utils::display_picture( $site_options['generic_hero_id'], 'hero', 'hero__image' );
 	}
 	?>
 </figure>
 
-<div class="container wrap background-image-text-overlay">
-<div>
-<p class="hero-parent-link">
+<div class="container wrap hero__text-overlay title-wrapper">
+
+<span>
 	<?php
 	if ( is_singular( 'lf_case_study' ) ) :
 		?>
-<a href="/case-studies/" title="Go to Case Studies">Case
+<a class="parent-link has-text-color has-white-text" href="/case-studies/" title="Go to Case Studies">Case
 Study</a>
 		<?php
 elseif ( is_singular( 'lf_case_study_cn' ) ) :
 	?>
-<a href="/case-studies-cn/" title="最终用户案例研究">最终用户案例研究</a>
-	<?php
-elseif ( is_singular( 'lf_webinar' ) ) :
-	?>
-<a href="/webinars/" title="Go to Webinars">Webinar</a>
-
-	<?php
-else :
-	echo '';
+<a class="parent-link has-text-color has-white-text" href="/case-studies-cn/" title="最终用户案例研究">最终用户案例研究</a>
+<?php
 endif;
 ?>
-</p>
-	<?php echo wp_kses_post( $content ); ?>
-</div>
+</span>
+
+<h1 class="is-style-case-study-title"><?php the_title(); ?></h1>
+
 </div>
 </section>
 

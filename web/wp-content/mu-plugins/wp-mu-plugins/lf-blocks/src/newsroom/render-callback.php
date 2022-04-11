@@ -169,7 +169,7 @@ function lf_newsroom_show_post( $lf_post, $show_images, $sticky = false ) {
 				Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-540', '540px', 'archive-default-svg' );
 			} else {
 				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
-				. '/images/thumbnail-default.svg" alt="' . esc_attr( lf_blocks_get_site() ) . '" class="archive-default-svg"/>';
+				. '/images/thumbnail-default.svg" alt="CNCF" class="archive-default-svg"/>';
 			}
 		}
 		?>

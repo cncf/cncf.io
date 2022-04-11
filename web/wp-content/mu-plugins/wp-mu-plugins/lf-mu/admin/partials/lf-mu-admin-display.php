@@ -92,6 +92,32 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$gtm_id = ( isset( $options['gtm_id'] ) && ! empty( $options['gtm_id'] ) ) ? esc_attr( $options['gtm_id'] ) : '';
 
+		$promotion_image_id = ( isset( $options['promotion_image_id'] ) && ! empty( $options['promotion_image_id'] ) ) ? absint( $options['promotion_image_id'] ) : '';
+
+		$promotion_title_text = ( isset( $options['promotion_title_text'] ) && ! empty( $options['promotion_title_text'] ) ) ? esc_html( $options['promotion_title_text'] ) : '';
+
+		$promotion_body_text = ( isset( $options['promotion_body_text'] ) && ! empty( $options['promotion_body_text'] ) ) ? esc_html( $options['promotion_body_text'] ) : '';
+
+		$promotion_cta_text = ( isset( $options['promotion_cta_text'] ) && ! empty( $options['promotion_cta_text'] ) ) ? esc_html( $options['promotion_cta_text'] ) : '';
+
+		$promotion_cta_link_id = ( isset( $options['promotion_cta_link_id'] ) && ! empty( $options['promotion_cta_link_id'] ) ) ? absint( $options['promotion_cta_link_id'] ) : '';
+
+		$event_logo_id = ( isset( $options['event_logo_id'] ) && ! empty( $options['event_logo_id'] ) ) ? absint( $options['event_logo_id'] ) : '';
+
+		$event_background_image_id = ( isset( $options['event_background_image_id'] ) && ! empty( $options['event_background_image_id'] ) ) ? absint( $options['event_background_image_id'] ) : '';
+
+		$event_background_color = ( isset( $options['event_background_color'] ) && ! empty( $options['event_background_color'] ) ) ? esc_html( $options['event_background_color'] ) : '';
+
+		$event_text = ( isset( $options['event_text'] ) && ! empty( $options['event_text'] ) ) ? esc_html( $options['event_text'] ) : '';
+
+		$event_cta_text = ( isset( $options['event_cta_text'] ) && ! empty( $options['event_cta_text'] ) ) ? esc_html( $options['event_cta_text'] ) : '';
+
+		$event_cta_color = ( isset( $options['event_cta_color'] ) && ! empty( $options['event_cta_color'] ) ) ? esc_html( $options['event_cta_color'] ) : '';
+
+		$event_cta_text = ( isset( $options['event_cta_text'] ) && ! empty( $options['event_cta_text'] ) ) ? esc_html( $options['event_cta_text'] ) : '';
+
+		$event_cta_link = ( isset( $options['event_cta_link'] ) && ! empty( $options['event_cta_link'] ) ) ? esc_url( $options['event_cta_link'] ) : '';
+
 		settings_fields( $this->plugin_name );
 
 		do_settings_sections( $this->plugin_name );
@@ -99,8 +125,10 @@ if ( ! defined( 'WPINC' ) ) {
 		?>
 		<hr />
 		<a href="#hello">Hello Bar</a> | <a href="#header">Header</a> | <a
-			href="#footer">Footer</a> | <a href="#social">Social Media</a> | <a
-			href="#other">Other</a>
+			href="#footer">Footer</a> | <a href="#social">Social Media</a>
+		| <a href="#event">Event</a>
+		| <a href="#promotion">Promotion</a>
+		| <a href="#other">Other</a>
 		<hr />
 		<h2 id="hello">Hello Bar</h2>
 		<table class="form-table" role="presentation">
@@ -518,6 +546,207 @@ if ( ! defined( 'WPINC' ) ) {
 				</tr>
 			</tbody>
 		</table>
+		<hr />
+		<h2 id="event">Next Event</h2>
+		<table class="form-table" role="presentation">
+			<tbody>
+				<tr>
+					<th scope="row"><label for="event_logo_id">Event Logo</label>
+					</th>
+					<td colspan="3">
+						<div class='image-preview-wrapper'>
+							<img src='<?php echo esc_url( wp_get_attachment_url( $event_logo_id ) ); ?>'
+								class="image-preview thumbnail-margin-bottom"
+								data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id">
+						</div>
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
+							class="upload_image_button button"
+							value="Choose image" />
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
+							class="clear_upload_image_button button"
+							value="Remove image" />
+						<input type="hidden"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_logo_id]"
+							value="<?php echo absint( $event_logo_id ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="event_background_image_id">Event Background Image</label>
+					</th>
+					<td colspan="3">
+						<div class='image-preview-wrapper'>
+							<img src='<?php echo esc_url( wp_get_attachment_url( $event_background_image_id ) ); ?>'
+								class="image-preview thumbnail-margin-bottom"
+								data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id">
+						</div>
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
+							class="upload_image_button button"
+							value="Choose image" />
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
+							class="clear_upload_image_button button"
+							value="Remove image" />
+						<input type="hidden"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_background_image_id]"
+							value="<?php echo absint( $event_background_image_id ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="event_text">Event Text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="event_text regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_text]"
+							value="<?php echo esc_html( $event_text ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="event_background_color">Event Background Color</label>
+					</th>
+					<td>
+						<input type="text"
+							class="event_background_color regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_color"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_background_color]"
+							value="<?php echo esc_html( $event_background_color ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="event_cta_color">Event CTA Color</label>
+					</th>
+					<td>
+						<input type="text"
+							class="event_cta_color regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_cta_color"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_cta_color]"
+							value="<?php echo esc_url( $event_cta_color ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="event_cta_text">Event
+							CTA Text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="event_cta_text regular-small-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_cta_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_cta_text]"
+							value="<?php echo esc_html( $event_cta_text ); ?>"
+							placeholder="Register Now" maxlength="20" />
+					</td>
+					<th scope="row"><label for="event_cta_link">Event
+							CTA Link</label>
+					</th>
+					<td>
+						<input type="text"
+							class="event_cta_link regular-small-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_cta_link"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_cta_link]"
+							value="<?php echo esc_html( $event_cta_link ); ?>"
+							placeholder="https://domain.com" />
+					</td>
+				</tr>
+				</tbody>
+		</table>
+
+		<hr />
+		<h2 id="promotion">Promotion Banner</h2>
+		<table class="form-table" role="presentation">
+			<tbody>
+				<tr>
+					<th scope="row"><label for="promotion_image_id">Promo
+							Image</label>
+					</th>
+					<td colspan="3">
+						<div class='image-preview-wrapper'>
+							<img src='<?php echo esc_url( wp_get_attachment_url( $promotion_image_id ) ); ?>'
+								class="image-preview thumbnail-margin-bottom"
+								data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id">
+						</div>
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id"
+							class="upload_image_button button"
+							value="Choose image" />
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id"
+							class="clear_upload_image_button button"
+							value="Remove image" />
+						<input type="hidden"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_image_id]"
+							value="<?php echo absint( $promotion_image_id ); ?>" />
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label for="promotion_title_text">Promotion
+							Title text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="promotion_title_text regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_title_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_title_text]"
+							value="<?php echo esc_html( $promotion_title_text ); ?>" />
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label for="promotion_body_text">Promotion
+							Body text</label>
+					</th>
+					<td colspan="3">
+						<input type="text"
+							class="promotion_body_text regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_body_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_body_text]"
+							value="<?php echo esc_html( $promotion_body_text ); ?>" />
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label for="promotion_cta_text">Promotion
+							CTA Text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="promotion_cta_text regular-small-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_cta_text"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_cta_text]"
+							value="<?php echo esc_html( $promotion_cta_text ); ?>"
+							placeholder="Become End User" maxlength="20" />
+					</td>
+					<th scope="row"><label for="promotion_cta_link_id">Promotion
+							CTA Link</label>
+					</th>
+					<td>
+						<?php
+						$dropdown_args = array(
+							'selected'          => absint( $promotion_cta_link_id ), // grab post id if set.
+							'id'                => esc_html( $this->plugin_name ) . '-promotion_cta_link_id',
+							'name'              => esc_html( $this->plugin_name ) . '[promotion_cta_link_id]',
+							'class'             => 'regular-small-text',
+							'show_option_none'  => 'No Link',
+							'option_none_value' => '',
+							'echo'              => true,
+						);
+						wp_dropdown_pages( $dropdown_args ); // phpcs:ignore WordPress.Security.EscapeOutput
+						?>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
 		<hr />
 		<h2 id="other">Other</h2>
 		<table class="form-table" role="presentation">

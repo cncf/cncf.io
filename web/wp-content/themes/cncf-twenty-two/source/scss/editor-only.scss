@@ -15,24 +15,24 @@
 // import styles over the top of editor styles defaults.
 #editor {
 	.editor-styles-wrapper {
-		// @import "core/typography";
+		@import 'core/colors';
+		@import 'core/buttons';
+		@import 'components/case-studies';
 		// @import "components/link-icons";
 		// @import "components/hero";
 		// @import "components/webinars";
 		// @import "components/events";
 		// @import "components/people";
 		// @import "components/projects";
-		// @import "components/case-studies";
 		// @import "components/spotlights";
 		// @import "components/countup";
 
-		// @import "blocks/colors";
-		// @import "blocks/has-color-function";
-		// @import "blocks/buttons";
-		// @import "blocks/columns";
+		@import 'blocks/has-color';
+		@import 'blocks/images';
 		// @import "blocks/lists";
 		// @import "blocks/quote";
 		// @import "blocks/gallery";
+		@import 'blocks/separator';
 		@import 'blocks/spacers';
 		// @import "blocks/table";
 		// @import "blocks/paragraph-headers";

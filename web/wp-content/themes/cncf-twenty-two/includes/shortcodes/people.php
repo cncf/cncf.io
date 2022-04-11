@@ -2,6 +2,11 @@
 /**
  * People Shortcode
  *
+ * Usage
+ * [people tax="staff"]
+ * [people tax="technical-oversight-committee" profiles=true]
+ * [people tax="toc-contributors" profiles=false]
+ *
  * @package WordPress
  * @subpackage cncf-theme
  * @since 1.0.0

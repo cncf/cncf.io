@@ -1,0 +1,35 @@
+.benefits {
+	max-width: 1000px;
+	&__item {
+		// everything inside this button.
+		.button-reset {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+			text-align: center;
+			@media (min-width: 1000px) {
+				align-items: flex-start;
+				text-align: left;
+			}
+			-webkit-tap-highlight-color: transparent;
+		}
+	}
+	&__image-wrapper {
+		height: 120px;
+		width: 100%;
+		@media (max-width: 999px) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+
+// Modal.
+.generic-modal__wrapper {
+	.benefits-col1 {
+		min-width: 170px;
+		text-align: center;
+	}
+}

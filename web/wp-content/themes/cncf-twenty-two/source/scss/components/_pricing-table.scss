@@ -1,0 +1,177 @@
+// generic styling.
+.pricing-table {
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+	grid-template-columns: 1fr;
+	@media (min-width: 600px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.column {
+		background: $white;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		&:nth-child(1) {
+			.thead {
+				background-color: $shade-09;
+				background: conic-gradient(from 53deg at 37% 100%, rgba($shade-09, 1) 0%, rgba($shade-09, 0.95) 100%);
+			}
+		}
+		&:nth-child(2) {
+			.thead {
+				background-color: $shade-10;
+				background: conic-gradient(from 53deg at 37% 100%, rgba($shade-10, 1) 0%, rgba($shade-10, 0.95) 100%);
+			}
+		}
+		&:nth-child(3) {
+			.thead {
+				background-color: $shade-11;
+				background: conic-gradient(from 53deg at 37% 100%, rgba($shade-11, 1) 0%, rgba($shade-11, 0.95) 100%);
+			}
+		}
+		&:nth-child(4) {
+			.thead {
+				background-color: $shade-12;
+				background: conic-gradient(from 53deg at 37% 100%, rgba($shade-12, 1) 0%, rgba($shade-12, 0.95) 100%);
+			}
+		}
+	}
+	.thead {
+		padding: 14px 20px;
+		color: $white;
+		text-align: center;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		h3 {
+			font-size: 20px;
+			@media (min-width: 1000px) {
+				font-size: 16px;
+			}
+			@media (min-width: 1200px) {
+				font-size: 20px;
+			}
+		}
+	}
+	.tbody {
+		border-left: 1px solid $gray-400;
+		border-right: 1px solid $gray-400;
+		padding: 26px 20px;
+		@media (min-width: 1000px) {
+			padding: 20px 15px;
+		}
+		@media (min-width: 1200px) {
+			padding: 26px 20px;
+		}
+		height: 100%;
+		p {
+			font-weight: 600;
+			margin-bottom: 20px;
+			font-size: 15px;
+			@media (min-width: 600px) {
+				font-size: 16px;
+			}
+		}
+		ul {
+			font-size: 13px;
+			margin-bottom: 0px;
+			@media (min-width: 600px) {
+				font-size: 14px;
+			}
+			li:not(:last-child) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+	.tfoot {
+		padding: 20px 20px;
+		background-color: $black;
+		color: $white;
+		text-align: center;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		@media (min-width: 1200px) {
+			height: 100px;
+		}
+		.button-reset {
+			width: 100%;
+			color: $white;
+			font-weight: 700;
+		}
+	}
+	.lf-membership-style {
+		background-color: $white;
+		border-bottom: dashed $shade-10 2px;
+		border-left: dashed $shade-10 2px;
+		border-right: dashed $shade-10 2px;
+		color: #000000;
+		padding: 10px 20px;
+		font-style: italic;
+		text-align: center;
+		font-size: 12px;
+		a {
+			color: #000000;
+		}
+	}
+	// Members Table.
+	&.members-table {
+		@media (min-width: 1000px) {
+			grid-row-gap: 0;
+			.lf-membership {
+				grid-column: span 3;
+				font-size: 20px;
+				padding: 28px 20px;
+			}
+		}
+	}
+	// Cloud Credits Table.
+	&.cloud-credits-table {
+		@media (min-width: 600px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: 1000px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.column {
+			&:nth-child(1) {
+				.thead {
+					background-color: $shade-10;
+					background: conic-gradient(
+						from 53deg at 37% 100%,
+						rgba($shade-10, 1) 0%,
+						rgba($shade-10, 0.95) 100%
+					);
+				}
+			}
+			&:nth-child(2) {
+				.thead {
+					background-color: $shade-11;
+					background: conic-gradient(
+						from 53deg at 37% 100%,
+						rgba($shade-11, 1) 0%,
+						rgba($shade-11, 0.95) 100%
+					);
+				}
+			}
+			&:nth-child(3) {
+				.thead {
+					background-color: $shade-12;
+					background: conic-gradient(
+						from 53deg at 37% 100%,
+						rgba($shade-12, 1) 0%,
+						rgba($shade-12, 0.95) 100%
+					);
+				}
+			}
+		}
+		.tfoot {
+			@media (min-width: 1200px) {
+				height: unset;
+			}
+		}
+	}
+}

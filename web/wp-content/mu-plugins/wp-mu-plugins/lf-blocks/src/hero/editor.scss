@@ -5,10 +5,36 @@
  *
  */
 
-.hero .background-image-text-overlay {
-    text-align: left;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.hero {
+	display: none;
+
+	// &.background-image-text-overlay {
+	// 	text-align: left;
+	// 	width: 100%;
+	// 	max-width: 800px;
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// }
 }
+
+// .background-image-wrapper {
+// 	overflow: hidden;
+// 	position: relative;
+// }
+
+// .background-image-figure {
+// 	img {
+// 		width: 100%;
+// 		height: 100%;
+// 		object-fit: cover;
+// 		position: absolute;
+// 		z-index: 1;
+// 		top: 0;
+// 		left: 0;
+// 	}
+// }
+
+// .background-image-text-overlay {
+// 	position: relative;
+// 	z-index: 2;
+// }

@@ -220,6 +220,30 @@ class Lf_Mu_Admin {
 
 		$options['gtm_id'] = ( isset( $input['gtm_id'] ) && ! empty( $input['gtm_id'] ) ) ? esc_html( $input['gtm_id'] ) : '';
 
+		$options['promotion_image_id'] = ( isset( $input['promotion_image_id'] ) && ! empty( $input['promotion_image_id'] ) ) ? absint( $input['promotion_image_id'] ) : '';
+
+		$options['promotion_title_text'] = ( isset( $input['promotion_title_text'] ) && ! empty( $input['promotion_title_text'] ) ) ? esc_html( $input['promotion_title_text'] ) : '';
+
+		$options['promotion_body_text'] = ( isset( $input['promotion_body_text'] ) && ! empty( $input['promotion_body_text'] ) ) ? esc_html( $input['promotion_body_text'] ) : '';
+
+		$options['promotion_cta_text'] = ( isset( $input['promotion_cta_text'] ) && ! empty( $input['promotion_cta_text'] ) ) ? esc_html( $input['promotion_cta_text'] ) : '';
+
+		$options['promotion_cta_link_id'] = ( isset( $input['promotion_cta_link_id'] ) && ! empty( $input['promotion_cta_link_id'] ) ) ? absint( $input['promotion_cta_link_id'] ) : '';
+
+		$options['event_logo_id'] = ( isset( $input['event_logo_id'] ) && ! empty( $input['event_logo_id'] ) ) ? absint( $input['event_logo_id'] ) : '';
+
+		$options['event_background_image_id'] = ( isset( $input['event_background_image_id'] ) && ! empty( $input['event_background_image_id'] ) ) ? absint( $input['event_background_image_id'] ) : '';
+
+		$options['event_text'] = ( isset( $input['event_text'] ) && ! empty( $input['event_text'] ) ) ? esc_html( $input['event_text'] ) : '';
+
+		$options['event_background_color'] = ( isset( $input['event_background_color'] ) && ! empty( $input['event_background_color'] ) ) ? esc_html( $input['event_background_color'] ) : '';
+
+		$options['event_cta_color'] = ( isset( $input['event_cta_color'] ) && ! empty( $input['event_cta_color'] ) ) ? esc_html( $input['event_cta_color'] ) : '';
+
+		$options['event_cta_text'] = ( isset( $input['event_cta_text'] ) && ! empty( $input['event_cta_text'] ) ) ? esc_html( $input['event_cta_text'] ) : '';
+
+		$options['event_cta_link'] = ( isset( $input['event_cta_link'] ) && ! empty( $input['event_cta_link'] ) ) ? esc_url( $input['event_cta_link'] ) : '';
+
 		return $options;
 	}
 

@@ -27,7 +27,8 @@
 	font-family: $font-primary;
 	font-size: 16px;
 	font-weight: 700;
-	line-height: $lineheight-s;
+	line-height: 105%;
+	letter-spacing: 0.02em;
 	text-align: center;
 	text-decoration: none;
 
@@ -102,11 +103,16 @@
 	&.has-black-color:hover {
 		color: $white !important;
 	}
+}
 
+// parent container, styles are attached here.
+.wp-block-button {
 	&.is-style-reduced-height {
-		// 16px font + 10px makes buttons 36px.
-		padding-top: 10px;
-		padding-bottom: 10px;
+		.wp-block-button__link {
+			// 16px font + 10px makes buttons 36px.
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
 	}
 }
 

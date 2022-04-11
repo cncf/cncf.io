@@ -12,6 +12,10 @@
 	@media (min-width: 1200px) {
 		padding: 0;
 	}
+
+	a {
+		color: #ff00aa;
+	}
 }
 
 @media (max-width: 1024px) {
@@ -3813,10 +3817,6 @@ h2.bg-title.sub-title {
 
 .annual-report-sidebar {
 	max-width: 100%;
-}
-
-body a {
-	color: #ff00aa;
 }
 
 .project-title,

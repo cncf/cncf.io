@@ -1,0 +1,39 @@
+.metrics {
+	color: $black;
+	max-width: 1000px;
+	@media (min-width: 1200px) {
+		grid-column-gap: 10%;
+	}
+	&__column {
+		text-align: center;
+	}
+	&__link {
+		color: $black;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
+	&__image-wrapper {
+		height: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-content: center;
+	}
+	&__image {
+		margin-bottom: 20px;
+		max-width: 108px;
+		max-height: 92px;
+		object-fit: contain;
+	}
+	&__description {
+		margin-top: 10px;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 130%;
+		@media (min-width: 1200px) {
+			font-size: 16px;
+		}
+	}
+}

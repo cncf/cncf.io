@@ -1,0 +1,144 @@
+.sticky {
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 800px) {
+		flex-direction: row;
+	}
+
+	&__column {
+		@media (min-width: 800px) {
+			margin-right: 50px;
+			max-width: 200px;
+			min-width: 200px;
+			width: 200px;
+		}
+
+		@media (min-width: 900px) {
+			max-width: 250px;
+			min-width: 250px;
+			width: 250px;
+		}
+
+		@media (min-width: 1000px) {
+			max-width: 300px;
+			min-width: 300px;
+			width: 300px;
+		}
+
+		@media (min-width: 1200px) {
+			max-width: 330px;
+			min-width: 330px;
+			width: 330px;
+		}
+	}
+	&__element {
+		max-width: 100%;
+
+		@media (min-width: 800px) {
+			width: 200px;
+		}
+
+		@media (min-width: 900px) {
+			width: 250px;
+		}
+
+		@media (min-width: 1000px) {
+			width: 300px;
+		}
+
+		@media (min-width: 1200px) {
+			width: 330px;
+		}
+	}
+
+	&__nav-wrapper {
+		// restricts height of side menu.
+		@media (max-height: 615px) and (min-width: 800px) {
+			height: calc(100vh - 50px - 50px);
+		}
+
+		@media (min-height: 616px) and (min-width: 800px) {
+			// height - top - spacer - extra.
+			height: calc(100vh - 125px - 100px - 150px);
+		}
+
+		@media (min-width: 800px) {
+			overflow-y: scroll;
+		}
+	}
+
+	&__nav {
+		margin: 0; // reset.
+		margin-bottom: 50px;
+		max-width: 100%;
+		list-style-type: none;
+		padding-right: 15px;
+		@media (min-width: 800px) {
+			margin-bottom: 0;
+		}
+
+		&-item {
+			a {
+				padding-bottom: 12px;
+				display: block;
+			}
+			@media (min-width: 800px) {
+				padding-top: 9px;
+				padding-bottom: 9px;
+
+				&.is-active {
+					a {
+						border-left: 4px solid $black;
+						filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.05));
+					}
+				}
+
+				a {
+					border-left: 4px solid transparent;
+					background-color: $white;
+					display: block;
+					padding-left: 20px;
+					padding-top: 10px;
+					padding-right: 10px;
+					padding-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	&__content {
+		max-width: 800px;
+	}
+}
+
+.wp-block-lf-tab-container-block {
+	margin-bottom: 70px;
+
+	@media (max-width: 799px) {
+		padding: 25px;
+		@media (min-width: 800px) {
+			padding: 50px;
+		}
+		background-color: $white;
+		border: 1px solid $gray-400;
+		filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
+		border-radius: 10px;
+	}
+	@media (min-width: 800px) {
+		&:last-child {
+			margin-bottom: 100px;
+		}
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 25px;
+		@media (min-width: 800px) {
+			margin-bottom: 50px;
+		}
+	}
+}

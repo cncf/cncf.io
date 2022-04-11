@@ -23,7 +23,7 @@ $pdf_link = '/cncf-annual-report-2020-pdf';
 wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2020.min.css', array(), filemtime( get_template_directory() . '/build/annual-report-2020.min.css' ), 'all' );
 ?>
 
-<main class="ar-2020" id="maincontent">
+<main class="ar-2020">
 	<div class="container wrap">
 		<figure class="wp-block-image alignfull size-full"><img loading="eager"
 				width="2500" height="1153"

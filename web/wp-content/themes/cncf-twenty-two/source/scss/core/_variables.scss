@@ -2,6 +2,7 @@
 
 $white: #ffffff;
 $black: #000000;
+$purple: #4a23cc;
 
 $primary-400: #d62293; // preferred CTA
 $primary-color: $primary-400;
@@ -9,10 +10,10 @@ $primary-color: $primary-400;
 $tertiary-400: #62a1ff;
 
 // grays.
-$gray-100: #fdfdfd;
+$gray-100: #fcfcfc;
 $gray-200: #f8f8f8;
-$gray-300: #eeeeee;
-$gray-400: #e6e6e6;
+$gray-300: #eaeaea;
+$gray-400: #d0d0d0; // $gray-400: #e6e6e6;
 $gray-500: #c4c4c4;
 $gray-700: #747474;
 
@@ -26,40 +27,15 @@ $shade-05: #f6e2af;
 $shade-06: #e2befe;
 $shade-07: #bed8fe;
 $shade-08: #b1fbde;
+// Pricing Table
+$shade-09: #3177e1;
+$shade-10: #828282;
+$shade-11: #ab9344;
+$shade-12: #293850;
 
 // links.
 $link-color: $primary-400;
 $link-hover: $gray-700;
-
-// spare colors from previous site.
-// $secondary-color: $secondary-700;
-// $tertiary-color: $tertiary-100;
-// primary - highlight colour
-// $primary-300: #ff33bb; // cta rollover
-// tertiary
-// $tertiary-100: #f4f4f4;
-// $tertiary-400: #62a1ff;
-// $tertiary-600: #416fd9;
-// $tertiary-700: #0088ff;
-// $gray-400: #a7a7a6;
-// #707070; // #808080; // $gray-800: #333333;
-// mobile menu.
-// $menu-mobile-container: $black;
-// $menu-mobile-submenu: $secondary-600;
-// $menu-mobile-submenu-submenu: $secondary-500;
-// $menu-mobile-divider: $black;
-// desktop menu.
-// $menu-desktop-container: $black;
-// $menu-desktop-submenu: $secondary-600;
-// $menu-desktop-submenu-submenu: $secondary-500;
-// $menu-desktop-divider: $black;
-// $menu-desktop-search: $secondary-600;
-// menu text/links.
-// $menu-link: $white;
-// $menu-hover: $gray-100;
-// highlight elements (pricing table, case study overlay)
-// $cs-overlay: $black;
-// $hero-overlay: #2b1d39;
 
 // forms.
 $error: #b80611;
@@ -67,14 +43,7 @@ $error: #b80611;
 
 $body-text-color: $black;
 
-// spacing.
-// $sm-padding: 2rem;
-// $lg-padding: 4rem;
-
 $content-width: 1200px;
-
-$lineheight-s: 105%;
-$lineheight-l: 140%;
 $button-radius: 3px;
 $grid-column-gap: 3%;
 $grid-row-gap: 30px;
@@ -85,13 +54,16 @@ $cookie-banner-text: $black;
 $cookie-banner-link: $black;
 $cookie-banner-button: $black;
 
-// font-stack.
+// font-stacks.
 $font-primary: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, Roboto,
 	Ubuntu, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 $font-code: Hack, 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
 	'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier,
 	monospace;
+
+$font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times',
+	'Source Serif Pro', serif;
 
 @font-face {
 	font-display: optional;
@@ -192,3 +164,15 @@ $font-code: Hack, 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono', 'Lucida C
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.ttf') format('ttf');
 }
 // TODO: Remove unused weights.
+
+// Source Serif Pro - Italic
+@font-face {
+	font-display: optional;
+	font-family: 'Source Serif Pro';
+	font-style: italic;
+	font-weight: 400;
+	src: local('SourceSerifPro-It'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.ttf') format('truetype');
+}

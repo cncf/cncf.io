@@ -172,7 +172,7 @@ class LF_Utils {
 		// If no end date, show start date in full.
 		if ( ! $event_date_end ) {
 			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
-		} elseif ( $event_date_start === $event_date_end ) {
+		} elseif ( $event_date_start == $event_date_end ) {
 			// Start and end are same day.
 			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
 		} else {
@@ -188,12 +188,11 @@ class LF_Utils {
 	}
 
 	/**
-	 * Display Author if not CNCF.
+	 * Display Author or Guest Author.
 	 *
-	 * @param string  $the_post_id Post ID.
-	 * @param boolean $with_class Adds surround tag.
+	 * @param number $the_post_id Post ID.
 	 */
-	public static function display_author( $the_post_id, $with_class = false ) {
+	public static function display_author( $the_post_id ) {
 
 		// if no post id or not number, return.
 		if ( ! $the_post_id || ! is_integer( $the_post_id ) ) {
@@ -201,12 +200,13 @@ class LF_Utils {
 		}
 
 		$author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
+
 		if ( ! $author ) {
 			// Authors we don't want to show a byline for.
 			$authors_to_ignore = array( 3049, 3047, 2910, 3051 );
 			$author_id         = get_post_field( 'post_author', $the_post_id );
 
-			if ( in_array( $author_id, $authors_to_ignore, true ) ) {
+			if ( in_array( $author_id, $authors_to_ignore, false ) ) {
 				return;
 			}
 
@@ -218,15 +218,10 @@ class LF_Utils {
 			return;
 		}
 
-		if ( $with_class ) {
-			// Insert with surrounding class icon.
-			$author = '<span class="author-name author-icon">By ' . $author . '</span>';
-		} else {
-			// Insert the author.
-			$author = 'By ' . $author;
-		}
+		// Create author byline.
+		$author_byline = 'By ' . $author;
 
-		return $author;
+		return $author_byline;
 
 	}
 
@@ -413,45 +408,6 @@ class LF_Utils {
 	}
 
 	/**
-	 * Get author row for webinar in loop.
-	 */
-	public static function get_webinar_author_row() {
-		// Get date and time now.
-		$dat_now = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
-
-		// Get date and time of webinar for comparison.
-		$webinar_date              = get_post_meta( get_the_ID(), 'lf_webinar_date', true );
-		$webinar_start_time        = get_post_meta( get_the_ID(), 'lf_webinar_start_time', true );
-		$webinar_start_time_period = get_post_meta( get_the_ID(), 'lf_webinar_start_time_period', true );
-		$webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone', true );
-		$dat_webinar_start         = self::get_webinar_date_time( $webinar_date, $webinar_start_time, $webinar_start_time_period, $webinar_timezone );
-
-		// get recording URL.
-		$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
-
-		// date period.
-		if ( $dat_webinar_start > $dat_now ) {
-			?>
-			<span class="date-icon">Upcoming on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
-			<?php
-		} elseif ( ( $dat_webinar_start ) && ( $dat_webinar_start < $dat_now ) && ( $recording_url ) ) {
-			?>
-			<span class="live-icon">Recorded on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
-			<?php
-		} elseif ( $dat_webinar_start ) {
-			?>
-			<span class="posted-date date-icon">Broadcast on
-				<?php echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) ); ?>
-			</span>
-			<?php
-		}
-	}
-
-	/**
 	 * Retrieve homepage metrics from devstats and LFX.
 	 */
 	public static function get_homepage_metrics() {
@@ -485,7 +441,9 @@ class LF_Utils {
 			$metrics['contributions'] = $remote_body->contributions;
 			$metrics['countries']     = $remote_body->countries;
 
-			set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
+			if ( WP_DEBUG === false ) {
+				set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
+			}
 		}
 		return $metrics;
 	}
@@ -502,6 +460,7 @@ class LF_Utils {
 			$metrics['cncf-members']         = 630;
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/certified-kubernetes.json' );
+
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
 				return $metrics;
 			}
@@ -517,9 +476,35 @@ class LF_Utils {
 			$remote_body             = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['cncf-members'] = count( $remote_body );
 
-			set_transient( 'cncf_whoweare_metrics', $metrics, DAY_IN_SECONDS );
+			if ( WP_DEBUG === false ) {
+				set_transient( 'cncf_whoweare_metrics', $metrics, DAY_IN_SECONDS );
+			}
 		}
 		return $metrics;
+	}
+
+	/**
+	 * Retrieve Tech Radars data.
+	 */
+	public static function get_tech_radars() {
+
+		$tech_radars = get_transient( 'tech_radars' );
+
+		if ( false === $tech_radars ) {
+
+			$request = wp_remote_get( 'https://radar.cncf.io/radars.json' );
+
+			if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
+				return;
+			}
+			$tech_radars = wp_remote_retrieve_body( $request );
+
+			if ( WP_DEBUG === false ) {
+				set_transient( 'tech_radars', $tech_radars, 12 * HOUR_IN_SECONDS );
+			}
+		}
+		return json_decode( $tech_radars );
+
 	}
 
 	/**
@@ -586,5 +571,40 @@ class LF_Utils {
 		$output = '';
 		$output = get_stylesheet_directory_uri() . '/images/' . $file;
 		echo esc_url( $output );
+	}
+
+	/**
+	 * Wrap arrays utility.
+	 *
+	 * @param array $value Wrap in an array.
+	 */
+	public static function wrap( $value ) {
+		if ( is_null( $value ) ) {
+			return array();
+		}
+
+		return is_array( $value ) ? $value : array( $value );
+	}
+
+	/**
+	 * Merge class names in to one string.
+	 *
+	 * @param array $array Array of class names.
+	 * @return array
+	 */
+	public static function merge_classes( $array ) {
+		$class_list = static::wrap( $array );
+
+		$classes = array();
+
+		foreach ( $class_list as $class => $constraint ) {
+			if ( is_numeric( $class ) ) {
+				$classes[] = $constraint;
+			} elseif ( $constraint ) {
+				$classes[] = $class;
+			}
+		}
+
+		return rtrim( implode( ' ', $classes ) );
 	}
 }

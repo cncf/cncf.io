@@ -8,7 +8,7 @@
  */
 
 // Include the Tab Container Filter.
-require_once dirname( __FILE__ ) . '/../includes/tab-container-filter.php';
+require_once(get_template_directory().'/includes/tab-container-filter.php' );
 
 get_template_part( 'components/header' );
 
@@ -17,7 +17,7 @@ get_template_part( 'components/title' );
 ?>
 
 <main>
-	<article class="container wrap entry-content">
+	<article class="container wrap">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :

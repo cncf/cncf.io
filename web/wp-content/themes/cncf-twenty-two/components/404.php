@@ -11,7 +11,7 @@
 
 ?>
 
-<main id="maincontent">
+<main>
 	<article class="container wrap">
 
 		<div style="height:40px" aria-hidden="true" class="wp-block-spacer">
