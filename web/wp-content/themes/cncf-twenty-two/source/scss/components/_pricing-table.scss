@@ -100,11 +100,21 @@
 		border-bottom-right-radius: 5px;
 		@media (min-width: 1200px) {
 			height: 100px;
+			line-height: 150%;
 		}
 		.button-reset {
 			width: 100%;
 			color: $white;
 			font-weight: 700;
+		}
+		@media (min-width: 1000px) {
+			p {
+				font-size: 14px;
+				line-height: 16px;
+				@media (min-width: 1200px) {
+					font-size: 16px;
+				}
+			}
 		}
 	}
 	.lf-membership-style {
@@ -179,11 +189,24 @@
 			}
 		}
 	}
+}
 
-	// End User Table.
-	&.end-user-table {
-		.member-cta {
+.pricing-table-cta {
+	display: grid;
+	grid-template-columns: 1fr;
+	@media (min-width: 600px) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: $grid-column-gap;
+	}
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(4, 1fr);
+		&__col2 {
 			grid-column: span 3;
 		}
 	}
+
+	// &__col1 {
+	// }
 }
+//
+// grid-row-gap: $grid-row-gap;

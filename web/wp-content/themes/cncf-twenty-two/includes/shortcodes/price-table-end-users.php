@@ -180,26 +180,29 @@ title="">See Silver Pricing Scale</button></p>
 	<div class="lf-membership lf-membership-style show-over-1000">
 		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
 	</div>
-
+</div>
 	<!-- CTA Buttons  -->
-	<div class="supporter-cta">
+	<div class="pricing-table-cta">
 
+	<div class="pricing-table-cta__col1">
 		<div style="height:20px" aria-hidden="true"
-			class="wp-block-spacer show-over-1000"></div>
+			class="wp-block-spacer"></div>
 
 		<a href="https://www.cncf.io/endusersupporter"
-			class="wp-block-button__link has-gray-700-background-color has-background">Join as Supporter</a>
+			class="wp-block-button__link has-gray-700-background-color has-background has-no-padding">Join as Supporter</a>
+
 	</div>
-	<div class="member-cta">
+
+	<div class="pricing-table-cta__col2">
 
 		<div style="height:20px" aria-hidden="true"
-			class="wp-block-spacer show-over-1000"></div>
+			class="wp-block-spacer"></div>
+
 		<a href="https://cncf.io/lfmembership" class="wp-block-button__link">Join as
 			CNCF Member</a>
 
 	</div>
-
-</div>
+	</div>
 
 	<?php
 	get_template_part( 'components/silver-member-pricing-modal' );
