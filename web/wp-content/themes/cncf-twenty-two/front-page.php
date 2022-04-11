@@ -27,7 +27,7 @@ wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-de
 		<video class="home-hero__video" width="100%" preload="none" loop muted
 			playsinline>
 			<source
-				src="/wp-content/themes/cncf-twenty-two/source/videos/hero.mp4?v=<?php echo filemtime( get_template_directory() . '/source/videos/hero.mp4' ); ?>"
+				src="/wp-content/themes/cncf-twenty-two/source/videos/hero.mp4?v=<?php echo esc_url( filemtime( get_template_directory() . '/source/videos/hero.mp4' ) ); ?>"
 				type="video/mp4">
 			<img src="/wp-content/themes/cncf-twenty-two/images/home-hero-poster.jpg"
 				alt="Make cloud native ubiquitous">
