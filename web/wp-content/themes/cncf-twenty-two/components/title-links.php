@@ -2,7 +2,7 @@
 /**
  * Title Links
  *
- * One file to control all the different taxonomie/parent links.
+ * One file to control all the different taxonomy/parent links.
  * TODO: Probably should merge with title.php and be done.
  *
  * @package WordPress

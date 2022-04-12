@@ -11,7 +11,6 @@
 
 ?>
 <!doctype html>
-<!-- TODO: no focus  -->
 <html <?php language_attributes(); ?> class="no-focus-outline">
 
 	<head>

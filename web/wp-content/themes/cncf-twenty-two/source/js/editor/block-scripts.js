@@ -145,29 +145,6 @@ wp.blocks.registerBlockStyle(
 ]
 );
 
-// TODO: Still relevant? Still needed?
-// wp.blocks.registerBlockStyle(
-// 	'core/columns',
-// 	[
-// 		{
-// 			label: 'Equal Height, Better Responsive',
-// 			name: 'equal-height-responsive',
-// 		},
-// 		{
-// 			name: 'equal-height-responsive-mobile-mini',
-// 			label: 'Equal Height, Better Responsive, Mini Mobile Columns',
-// 		},
-// 		{
-// 			name: 'column-white-background',
-// 			label: 'Columns with White Background',
-// 		},
-// 		{
-// 			name: 'column-white-padded',
-// 			label: 'White and Padded',
-// 		},
-// 	]
-// );
-
 wp.blocks.registerBlockStyle(
 	'core/list',
 	[

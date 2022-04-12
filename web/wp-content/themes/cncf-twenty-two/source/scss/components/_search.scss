@@ -1,0 +1,31 @@
+.search {
+	&__highlighted {
+		border: 1px solid black;
+		padding: 2em;
+	}
+	&__item {
+		&-title {
+			max-width: 900px;
+			margin-bottom: 35px;
+			a {
+				color: $black;
+				font-size: 24px;
+				line-height: 150%;
+			}
+		}
+		&-excerpt {
+			max-width: 900px;
+		}
+		&-meta {
+			margin-bottom: 35px;
+		}
+	}
+	.author-category {
+		margin-bottom: 35px;
+		font-size: 12px;
+		line-height: 12px;
+	}
+	.author-category + .author-category {
+		margin-left: 40px;
+	}
+}

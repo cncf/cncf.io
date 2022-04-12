@@ -19,7 +19,7 @@ get_template_part( 'components/title-links' );
 ?>
 
 <?php
-		// TODO: Sort this old code out.
+// TODO: Sort this old code out.
 if ( is_tag() || is_tax() ) :
 	if ( is_tax( 'lf-author-category' ) ) {
 		?>
@@ -55,7 +55,7 @@ if ( is_tag() || is_tax() ) :
 
 		elseif ( ! ( is_404() ) && ( is_page() ) ) :
 			if ( 38018 === wp_get_post_parent_id( $post ) ) {
-				// TODO > move this to the other file.
+				// TODO > move this to the other file? Test once page built.
 				?>
 	<p class="hero-parent-link">
 				<a href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>

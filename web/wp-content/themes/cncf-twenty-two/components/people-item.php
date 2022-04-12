@@ -79,7 +79,6 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 			<?php
 endif;
 
-		// Company or Job Title? TODO: Check.
 		if ( $company ) :
 			?>
 		<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
@@ -161,7 +160,6 @@ endif;
 			</h3>
 
 			<?php
-			// Company or Job Title? TODO: Check.
 			if ( $company ) :
 				?>
 		<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
