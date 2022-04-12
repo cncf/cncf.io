@@ -378,8 +378,8 @@ class LF_Utils {
 			$class_name = rtrim( esc_html( $class_name ) );
 		}
 		$html = '<picture>' . self::get_picture_srcsets( $image_id, $mappings ) . '
-		<img src="' . $img[0] . '" decoding="async" class="' . $class_name . '" alt="' . self::get_img_alt( $image_id ) . '">
-		</picture>';
+	<img src="' . $img[0] . '" decoding="async" class="' . $class_name . '" alt="' . self::get_img_alt( $image_id ) . '">
+	</picture>';
 
 		$allowed_elements = array(
 			'src'    => true,
@@ -420,6 +420,7 @@ class LF_Utils {
 				'contributors'  => 143000,
 				'contributions' => 7300000,
 				'countries'     => 185,
+				'projects'      => 117,
 			);
 
 			$data = wp_remote_post(
@@ -440,12 +441,75 @@ class LF_Utils {
 			$metrics['contributors']  = $remote_body->contributors;
 			$metrics['contributions'] = $remote_body->contributions;
 			$metrics['countries']     = $remote_body->countries;
+			$metrics['projects']      = wp_count_posts( 'lf_project' )->publish;
 
 			if ( WP_DEBUG === false ) {
 				set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
 			}
 		}
 		return $metrics;
+	}
+
+	/**
+	 * Get project data used on home page.
+	 *
+	 * @return array
+	 */
+	public static function get_homepage_project_metrics() {
+		$query_args = array(
+			'post_type'      => 'lf_project',
+			'post_status'    => array( 'publish' ),
+			'posts_per_page' => 200,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+		);
+
+		$project_query = new WP_Query( $query_args );
+
+		$graduated_count   = 0;
+		$incubating_count  = 0;
+		$sandbox_count     = 0;
+		$all_project_logos = array();
+
+		if ( $project_query->have_posts() ) {
+			while ( $project_query->have_posts() ) {
+				$project_query->the_post();
+				$stacked_logo_url = get_post_meta( get_the_ID(), 'lf_project_logo', true );
+				if ( has_term( 'graduated', 'lf-project-stage', get_the_ID() ) ) {
+					$graduated_count++;
+					if ( $stacked_logo_url ) {
+						$all_project_logos[] = array(
+							'title' => get_the_title(),
+							'logo'  => $stacked_logo_url,
+							'url'   => get_the_permalink(),
+						);
+					}
+				} elseif ( has_term( 'incubating', 'lf-project-stage', get_the_ID() ) ) {
+					$incubating_count++;
+					if ( $stacked_logo_url ) {
+						$all_project_logos[] = array(
+							'title' => get_the_title(),
+							'logo'  => $stacked_logo_url,
+							'url'   => get_the_permalink(),
+						);
+					}
+				} elseif ( has_term( 'sandbox', 'lf-project-stage', get_the_ID() ) ) {
+					$sandbox_count++;
+				}
+			}
+		}
+
+		$project_metrics = array(
+			'graduated_count'  => $graduated_count,
+			'incubating_count' => $incubating_count,
+			'sandbox_count'    => $sandbox_count,
+			'project_data'     => $all_project_logos,
+		);
+
+		wp_reset_postdata();
+
+		return $project_metrics;
+
 	}
 
 	/**

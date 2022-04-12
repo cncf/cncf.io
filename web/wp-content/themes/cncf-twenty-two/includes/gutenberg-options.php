@@ -95,45 +95,6 @@ function lf_register_block_patterns() {
 			)
 		);
 
-		$content = '<!-- wp:group {"className":"is-style-no-padding is-style-see-all"} -->
-		<div class="wp-block-group is-style-no-padding is-style-see-all"><!-- wp:columns {"verticalAlignment":"top"} -->
-		<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":80} -->
-		<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%"><!-- wp:heading {"className":"is-style-section-heading"} -->
-		<h2 class="is-style-section-heading">Latest from CNCF</h2>
-		<!-- /wp:heading --></div>
-		<!-- /wp:column -->
-
-		<!-- wp:column {"verticalAlignment":"top","width":20} -->
-		<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%"><!-- wp:paragraph -->
-		<p>&nbsp;</p>
-		<!-- /wp:paragraph --></div>
-		<!-- /wp:column --></div>
-		<!-- /wp:columns -->
-
-		<!-- wp:shortcode -->
-		[latest_news]
-		<!-- /wp:shortcode -->
-
-		<!-- wp:group {"layout":{"type":"flex","allowOrientation":false,"justifyContent":"center"}} -->
-		<div class="wp-block-group"><!-- wp:paragraph {"align":"left","className":"is-style-link-cta"} -->
-		<p class="has-text-align-left is-style-link-cta">LATEST POSTS</p>
-		<!-- /wp:paragraph --></div>
-		<!-- /wp:group --></div>
-		<!-- /wp:group -->';
-
-		register_block_pattern(
-			'lf/see-all-section',
-			array(
-				'title'         => __( 'See All Section' ),
-				'description'   => _x( 'Used to posistion the See All link underneath on mobile', 'Block pattern description' ),
-				'content'       => trim( $content ),
-				'categories'    => array( 'hero' ),
-				'keywords'      => array( 'all', 'link' ),
-				'viewportWidth' => 1400,
-				'blockTypes'    => array( 'core/columns' ),
-			)
-		);
-
 	}
 
 }

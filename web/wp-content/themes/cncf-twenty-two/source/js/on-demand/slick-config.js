@@ -1,7 +1,7 @@
 // phpcs:ignorefile
 jQuery(document).ready(function( $ ) {
 
-	jQuery( ".home-projects__slider-item-1" ).slick( {
+	jQuery( ".home-projects-slider-item-1" ).slick( {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -18,7 +18,7 @@ jQuery(document).ready(function( $ ) {
     speed: 4500
   } );
 
-  jQuery( ".home-projects__slider-item-2" ).slick( {
+  jQuery( ".home-projects-slider-item-2" ).slick( {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,

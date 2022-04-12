@@ -14,3 +14,13 @@
 		}
 	}
 }
+
+// Overwrites the terrible WordPress defaults.
+@media (min-width: 600px) and (max-width: 781px) {
+	body .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:only-child) {
+		flex-basis: 100% !important;
+	}
+	body .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:nth-child(even) {
+		margin-left: 0 !important;
+	}
+}

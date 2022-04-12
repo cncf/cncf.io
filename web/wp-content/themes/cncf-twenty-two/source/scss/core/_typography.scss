@@ -74,14 +74,19 @@ h3,
 	}
 	text-decoration: none;
 	color: $black;
-	&:hover {
-		color: #d62293;
+	a {
 		text-decoration: none;
+		color: $black;
+		&:hover {
+			color: $primary-400;
+			text-decoration: none;
+		}
 	}
+
 	&:after {
 		position: absolute;
 		content: '';
-		border-bottom: 2px solid #d62293;
+		border-bottom: 2px solid $primary-400;
 		left: 0;
 		bottom: -14px;
 		width: 100%;
@@ -235,7 +240,13 @@ h3,
 }
 .has-extra-extra-large-font-size {
 	// 46px
-	@media (max-width: 999px) {
+	@media (max-width: 389px) {
+		font-size: 28px !important;
+	}
+	@media (min-width: 390px) and (max-width: 599px) {
+		font-size: 30px !important;
+	}
+	@media (min-width: 600px) and (max-width: 999px) {
 		font-size: 36px !important;
 	}
 }

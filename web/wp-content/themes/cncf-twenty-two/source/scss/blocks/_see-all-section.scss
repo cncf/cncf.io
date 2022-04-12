@@ -1,3 +1,5 @@
+// TODO: Rename to block
+
 .is-style-see-all {
 	@media (min-width: 1000px) {
 		position: relative;
@@ -6,7 +8,8 @@
 	.is-style-link-cta {
 		margin-top: 50px;
 		text-align: center;
-
+		margin-left: auto;
+		margin-right: auto;
 		@media (min-width: 1000px) {
 			margin-top: 0;
 			position: absolute;

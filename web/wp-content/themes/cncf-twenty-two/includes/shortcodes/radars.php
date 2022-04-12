@@ -36,12 +36,16 @@ function add_radars_shortcode( $atts ) {
 	// Get all radars.
 	$tech_radars_all = LF_utils::get_tech_radars();
 
+	// Check its an array.
+	if ( ! is_array( $tech_radars_all ) ) {
+		return;
+	}
+
 	// Limit to count items.
 	$tech_radars = array_slice( $tech_radars_all, 0, $count );
 
-	if ( is_array( $tech_radars ) ) :
 		ob_start();
-		?>
+	?>
 <div class="radars columns-three">
 		<?php
 		foreach ( $tech_radars as $tech_radar ) :
@@ -78,11 +82,7 @@ endforeach;
 		?>
 </div>
 		<?php
-endif;
-	?>
-
-	<?php
-	$block_content = ob_get_clean();
-	return $block_content;
+		$block_content = ob_get_clean();
+		return $block_content;
 }
 add_shortcode( 'radars', 'add_radars_shortcode' );

@@ -8,142 +8,6 @@
  */
 
 /**
- * Home Hosted Projects
- * [home_projects]
- */
-function add_home_projects_shortcode() {
-
-	$query_args = array(
-		'post_type'      => 'lf_project',
-		'post_status'    => array( 'publish' ),
-		'posts_per_page' => 200,
-		'orderby'        => 'title',
-		'order'          => 'ASC',
-	);
-
-	$project_query = new WP_Query( $query_args );
-
-	$graduated_count   = 0;
-	$incubating_count  = 0;
-	$sandbox_count     = 0;
-	$all_project_logos = array();
-
-	if ( $project_query->have_posts() ) {
-		while ( $project_query->have_posts() ) {
-			$project_query->the_post();
-			$stacked_logo_url = get_post_meta( get_the_ID(), 'lf_project_logo', true );
-			if ( has_term( 'graduated', 'lf-project-stage', get_the_ID() ) ) {
-				$graduated_count++;
-				if ( $stacked_logo_url ) {
-					$all_project_logos[] = $stacked_logo_url;
-				}
-			} elseif ( has_term( 'incubating', 'lf-project-stage', get_the_ID() ) ) {
-				$incubating_count++;
-				if ( $stacked_logo_url ) {
-					$all_project_logos[] = $stacked_logo_url;
-				}
-			} elseif ( has_term( 'sandbox', 'lf-project-stage', get_the_ID() ) ) {
-				$sandbox_count++;
-			}
-		}
-	}
-	wp_reset_postdata();
-	ob_start();
-
-	r($all_project_logos);
-	?>
-
-<section class="home-projects">
-
-	<?php if ( $graduated_count && $incubating_count && $sandbox_count ) :
-
-	// load pure counter countup script.
-	wp_enqueue_script( 'purecounter', get_template_directory_uri() . '/source/js/libraries/purecounter.min.js', array(), filemtime( get_template_directory() . '/source/js/libraries/purecounter.min.js' ), false );
-
-	?>
-
-	<div class="home-projects__numbers">
-		<div class="home-projects__numbers-graduated">
-			<a href="/projects/">
-				<span
-					data-purecounter-end="<?php echo esc_html( $graduated_count ); ?>"
-					data-purecounter-delay="75"
-					class="purecounter number"><?php echo esc_html( $graduated_count ); ?></span>
-				<span class="project">Graduated <br>Projects</span>
-			</a>
-		</div>
-		<div class="home-projects__numbers-incubating">
-			<a href="/projects/#incubating">
-				<span
-					data-purecounter-end="<?php echo esc_html( $incubating_count ); ?>"
-					data-purecounter-delay="20"
-					class="purecounter number"><?php echo esc_html( $incubating_count ); ?></span>
-				<span class="project">Incubating <br>Projects</span>
-			</a>
-		</div>
-		<div class="home-projects__numbers-sandbox">
-			<a href="/sandbox-projects/">
-				<span
-					data-purecounter-end="<?php echo esc_html( $sandbox_count ); ?>"
-					data-purecounter-delay="0"
-					class="purecounter number"><?php echo esc_html( $sandbox_count ); ?></span>
-				<span class="project">Sandbox <br>Projects</span>
-			</a>
-		</div>
-	</div>
-	<?php endif; ?>
-
-	<?php
-
-	if ( $all_project_logos ) :
-
-		// load slick css.
-		wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/build/slick.min.css', array(), filemtime( get_template_directory() . '/build/slick.min.css' ), 'all' );
-
-		// load main slick.
-		wp_enqueue_script( 'slick', get_template_directory_uri() . '/source/js/libraries/slick.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/source/js/libraries/slick.min.js' ), true );
-
-		// load slick config.
-		wp_enqueue_script( 'slick-config', get_template_directory_uri() . '/source/js/on-demand/slick-config.js', array( 'jquery', 'slick' ), filemtime( get_template_directory() . '/source/js/on-demand/slick-config.js' ), true );
-
-		$all_project_logos = LF_Utils::partition( $all_project_logos, 2 );
-		?>
-	<div class="home-projects__slider">
-		<?php
-		$i = 0;
-		foreach ( $all_project_logos as $project_logos ) {
-			$i++;
-		$direction = ( $i % 2 == 0 ) ? 'rtl' : 'ltr'; // phpcs:ignore
-
-			?>
-		<div class="slider home-projects__slider-item-<?php echo esc_html( $i ); ?>"
-			dir="<?php echo esc_html( $direction ); ?>">
-			<?php foreach ( $project_logos as $project_logo ) {
-				?>
-			<div class="home-projects__slider-slide" dir="ltr">
-				<img src="<?php echo esc_url( $project_logo ); ?>"
-					loading="lazy" alt="CNCF Hosted Project">
-			</div>
-			<?php
-			}
-			?>
-
-		</div>
-		<?php
-		}
-		?>
-	</div>
-	<?php endif; ?>
-
-</section>
-
-<?php
-	$block_content = ob_get_clean();
-	return $block_content;
-}
-add_shortcode( 'home_projects', 'add_home_projects_shortcode' );
-
-/**
  * Display Case Studies rotator banner on home page.
  * [home_case_studies ids="34,22,122"]
  *
@@ -160,47 +24,66 @@ function add_home_case_studies_shortcode( $atts ) {
 		'home_case_studies'
 	);
 
+	$selected_ids = explode( ',', $atts['ids'] );
+	shuffle( $selected_ids );
+	$finals_ids = array_slice( $selected_ids, 0, 2 );
+
 	ob_start();
-	$ids = explode( ',', $atts['ids'] );
-	shuffle( $ids );
-
-	$title = get_post_meta( $ids[0], 'lf_case_study_long_title', true );
-	$logo  = get_post_meta( $ids[0], 'lf_case_study_homepage_company_logo', true );
-	if ( ! $logo ) {
-		$logo = get_post_meta( $ids[0], 'lf_case_study_company_logo', true );
-	}
-	$logo_url = wp_get_attachment_image_src( $logo );
-	$image    = get_post_meta( $ids[0], 'lf_case_study_homepage_image', true );
-	$url      = get_permalink( $ids[0] );
-	if ( ! $image ) {
-		// use the regular listing background image if no homepage image exists.
-		$image = get_post_thumbnail_id( $ids[0] );
-	}
-	$company = get_the_title( $ids[0] );
 	?>
-<div class="featured-case-study">
-	<figure class="background-image-figure">
+
+<div class="featured-case-studies columns-two">
+
+	<?php
+
+	foreach ( $finals_ids as $id ) :
+
+		$company     = get_the_title( $id );
+		$description = get_post_meta( $id, 'lf_case_study_long_title', true );
+		$url         = get_permalink( $id );
+		$logo        = get_post_meta( $id, 'lf_case_study_homepage_company_logo', true );
+		if ( ! $logo ) {
+			$logo = get_post_meta( $id, 'lf_case_study_company_logo', true );
+		}
+		$background_image = get_post_meta( $id, 'lf_case_study_homepage_image', true );
+		if ( ! $background_image ) {
+			// use the regular listing background image if no homepage image exists.
+			$image = get_post_thumbnail_id( $id );
+		}
+		?>
+	<div class="featured-case-studies__item">
+
+		<a href="<?php echo esc_url( $url ); ?>" class="box-link"
+			title="Read <?php echo esc_html( $company ); ?> case study"></a>
+
+		<figure class="featured-case-studies__bg-figure">
+			<?php
+			LF_Utils::display_responsive_images( $background_image, 'case-study-640', '600px', 'featured-case-studies__bg-image' );
+			?>
+		</figure>
+
+		<div class="featured-case-studies__text-overlay">
+
+			<span class="author-category">Case Study</span>
+
+			<figure class="featured-case-studies__logo-figure">
+				<?php
+				LF_Utils::display_responsive_images( $logo, 'full', '200px', 'featured-case-studies__logo' );
+				?>
+			</figure>
+			<p class="featured-case-studies__description">
+		<?php echo esc_html( $description ); ?>
+		</p>
+
+		</div>
+
+	</div>
+
 		<?php
-	LF_Utils::display_responsive_images( $image, 'case-study-640', '600px' ); // srcset.
+	endforeach;
 	?>
-	</figure>
-
-	<a href="<?php echo esc_url( $url ); ?>" class="logo-link">
-		<img loading="eager" src="<?php // echo esc_url( $logo_url[0] ); ?>"
-			alt="<?php echo esc_attr( $company ); ?>" width="300"
-			height="70"></a>
-
-	<h2><a class="has-white-color has-text-color"
-			href="<?php echo esc_url( $url ); ?>">
-			<?php echo esc_html( $title ); ?>
-		</a></h2>
-
-	<a href="<?php echo esc_url( $url ); ?>" class="button">Read
-		<?php echo esc_html( $company ); ?> Case Study</a>
-
 </div>
 
-<?php
+	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
 }
@@ -224,16 +107,16 @@ function homepage_user_guide_shortcode() {
 		<div class="user-guide-box">
 
 			<?php
-	if ( wp_attachment_is_image( 62498 ) ) :
-		?>
+			if ( wp_attachment_is_image( 62498 ) ) :
+				?>
 			<div class="user-guide-box-image newsroom-image-wrapper">
 				<?php
-		Lf_Utils::display_responsive_images( 62498, 'newsroom-540', '540px', 'archive-image' );
-		?>
+				Lf_Utils::display_responsive_images( 62498, 'newsroom-540', '540px', 'archive-image' );
+				?>
 			</div>
-			<?php
+				<?php
 endif;
-	?>
+			?>
 			<div
 				class="has-white-color has-pink-400-background-color has-text-color has-background home-padding user-guide-box-text">
 				<a href="/enduser/" class="box-link"
@@ -248,16 +131,16 @@ endif;
 
 		<div class="user-guide-box">
 			<?php
-	if ( wp_attachment_is_image( 62497 ) ) :
-		?>
+			if ( wp_attachment_is_image( 62497 ) ) :
+				?>
 			<div class="user-guide-box-image newsroom-image-wrapper">
 				<?php
-		Lf_Utils::display_responsive_images( 62497, 'newsroom-540', '540px', 'archive-image' );
-		?>
+				Lf_Utils::display_responsive_images( 62497, 'newsroom-540', '540px', 'archive-image' );
+				?>
 			</div>
-			<?php
+				<?php
 endif;
-	?>
+			?>
 			<div
 				class="has-white-color has-purple-700-background-color has-text-color has-background home-padding user-guide-box-text">
 				<a href="http://contribute.cncf.io/" class="box-link"
@@ -271,16 +154,16 @@ endif;
 		</div>
 		<div class="user-guide-box">
 			<?php
-	if ( wp_attachment_is_image( 62499 ) ) :
-		?>
+			if ( wp_attachment_is_image( 62499 ) ) :
+				?>
 			<div class="user-guide-box-image newsroom-image-wrapper">
 				<?php
-		Lf_Utils::display_responsive_images( 62499, 'newsroom-540', '540px', 'archive-image' );
-		?>
+				Lf_Utils::display_responsive_images( 62499, 'newsroom-540', '540px', 'archive-image' );
+				?>
 			</div>
-			<?php
+				<?php
 endif;
-	?>
+			?>
 			<div
 				class="has-white-color has-tertiary-400-background-color has-text-color has-background home-padding user-guide-box-text">
 				<a href="/about/join/" class="box-link"
@@ -295,7 +178,7 @@ endif;
 	</div>
 </section>
 
-<?php
+	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
 }
@@ -344,7 +227,7 @@ function homepage_event_highlight_shortcode() {
 
 	</div>
 </section>
-<?php
+	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
 }
