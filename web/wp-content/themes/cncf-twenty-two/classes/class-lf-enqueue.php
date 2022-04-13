@@ -56,6 +56,9 @@ class LF_Enqueue {
 			wp_dequeue_script( 'search-filter-plugin-chosen' );
 			wp_deregister_script( 'search-filter-plugin-chosen' );
 			wp_dequeue_style( 'ctf_styles' );
+
+			// add animation css.
+			wp_enqueue_style( 'aos', get_template_directory_uri() . '/source/css/aos.css', array(), filemtime( get_template_directory() . '/source/css/aos.css' ), 'all' );
 		}
 
 		// Annual report 21 optimisations.
@@ -82,6 +85,11 @@ class LF_Enqueue {
 
 		} else {
 			wp_enqueue_script( 'global-scripts', get_template_directory_uri() . '/build/globals.min.js', null, filemtime( get_template_directory() . '/build/globals.min.js' ), true );
+		}
+
+		// load animation library on homepage.
+		if ( ! is_admin() && is_front_page() ) {
+			wp_enqueue_script( 'aos-scripts', get_template_directory_uri() . '/source/js/libraries/aos.js', null, filemtime( get_template_directory() . '/source/js/libraries/aos.js' ), true );
 		}
 
 	}
