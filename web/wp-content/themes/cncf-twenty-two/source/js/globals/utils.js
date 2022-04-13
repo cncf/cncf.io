@@ -45,10 +45,10 @@
 
 			// AOS only set to load on the homepage.
 			if (typeof AOS == "undefined") {
-				console.log( 'undefined' );
 				return;
 			}
 
+			console.log('AOS init');
 			// Initialize AOS.
 			AOS.init(
 				{
