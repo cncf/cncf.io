@@ -48,7 +48,7 @@
 				return;
 			}
 
-			console.log('AOS init');
+			console.log( 'AOS init' );
 			// Initialize AOS.
 			AOS.init(
 				{
