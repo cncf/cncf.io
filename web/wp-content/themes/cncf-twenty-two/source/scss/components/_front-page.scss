@@ -266,13 +266,10 @@
 		&:focus,
 		&:active {
 			border: 1px solid rgba($gray-300, 0.3);
-
-			img {
-				animation-name: pop-sm;
-				animation-duration: 0.3s;
-				animation-timing-function: linear;
-				animation-iteration-count: 1;
-			}
+			animation-name: pop-sm;
+			animation-duration: 0.2s;
+			animation-timing-function: linear;
+			animation-iteration-count: 1;
 		}
 	}
 }
