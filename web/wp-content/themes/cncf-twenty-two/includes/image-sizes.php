@@ -12,25 +12,25 @@
  * @since    1.0.0
  */
 
-// Media images, no hard crop.
-add_image_size( 'newsroom-media-coverage', 325, 200, false );
-
 // Newsroom, mobile, featured, retina.
-add_image_size( 'newsroom-260', 261, 137, true );
-add_image_size( 'newsroom-325', 325, 171, true );
-add_image_size( 'newsroom-540', 540, 285, true );
-add_image_size( 'newsroom-600', 600, 315, true );
-add_image_size( 'newsroom-1200', 1200, 630, true );
-add_image_size( 'newsroom-post-width', 900, 9999, false );
+add_image_size( 'newsroom-200', 200, 110, true ); // for megamenu items.
+add_image_size( 'newsroom-400', 400, 220, true ); // regular blog item and tech radar items; megamenu item Retina.
+add_image_size( 'newsroom-700', 700, 385, true ); // featured blog item; regular blog item Retina.
+add_image_size( 'newsroom-1400', 1400, 770, true ); // featured blog item Retina.
+
+add_image_size( 'newsroom-post-width', 900 ); // for in-post images.
+add_image_size( 'newsroom-post-width-r', 1800 ); // for in-post images Retina.
+add_image_size( 'newsroom-media-coverage', 600, 200, false ); // for media coverage logos (which often go wide on tablets).
+add_image_size( 'newsroom-media-coverage-r', 1200, 400, false ); // for media coverage logos (which often go wide on tablets).
 
 // case study.
-add_image_size( 'case-study-320', 320, 260, true );
-add_image_size( 'case-study-640', 640, 520, true );
+add_image_size( 'case-study-590', 590, 310, true ); // for homepage tile background.
+add_image_size( 'case-study-1180', 1180, 620, true ); // for homepage tile background Retina.
+add_image_size( 'case-study-600', 600, 480, true ); // for case study listing tile background (we don't need Retina since it's blurred by overlay anyway).
 
 // event.
-add_image_size( 'event-317', 317, 272, true );
-add_image_size( 'event-415', 415, 356, true );
-add_image_size( 'event-634', 634, 544, true );
+add_image_size( 'event-380', 380, 260, true ); // event tile background.
+add_image_size( 'event-760', 760, 520, true ); // event tile background Retina.
 
 /**
  * Add custom image sizes to media select.

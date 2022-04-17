@@ -102,16 +102,16 @@ else :
 
 			if ( has_post_thumbnail() && $is_featured ) {
 				// display large featured image.
-				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-600', '600px', 'post-archive__image' );
+				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-700', '700px', 'post-archive__image' );
 
 			} elseif ( has_post_thumbnail() ) {
 				// display smaller news image.
-				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-540', '540px', 'post-archive__image' );
+				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'post-archive__image' );
 
 			} else {
 				// show generic.
 				$site_options = get_option( 'lf-mu' );
-				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-540', '540px', 'post-archive__image' );
+				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'post-archive__image' );
 			}
 			?>
 		</a>

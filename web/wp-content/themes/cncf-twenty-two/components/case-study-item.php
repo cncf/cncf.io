@@ -44,7 +44,7 @@ if ( $cn ) {
 	<?php if ( get_post_thumbnail_id() ) : ?>
 	<figure class="case-study-item__bg-figure">
 		<?php
-		LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'case-study-640', '600px', 'case-study-item__bg-image' );
+		LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'case-study-600', '600px', 'case-study-item__bg-image' );
 		?>
 	</figure>
 	<?php endif; ?>

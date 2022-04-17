@@ -164,9 +164,9 @@ function lf_newsroom_show_post( $lf_post, $show_images, $sticky = false ) {
 
 			<?php
 			if ( has_post_thumbnail( $lf_post ) ) {
-				Lf_Utils::display_responsive_images( get_post_thumbnail_id( $lf_post ), 'newsroom-540', '540px', 'archive-image' );
+				Lf_Utils::display_responsive_images( get_post_thumbnail_id( $lf_post ), 'newsroom-400', '400px', 'archive-image' );
 			} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
-				Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-540', '540px', 'archive-default-svg' );
+				Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-400', '400px', 'archive-default-svg' );
 			} else {
 				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
 				. '/images/thumbnail-default.svg" alt="CNCF" class="archive-default-svg"/>';
@@ -234,7 +234,7 @@ function lf_newsroom_block_get_image_src_landscape( $object, $field_name, $reque
 
 	$feat_img_array = wp_get_attachment_image_src(
 		$object['featured_media'],
-		'newsroom-325',
+		'newsroom-400',
 		false
 	);
 	return $feat_img_array[0] ?? null;

@@ -57,7 +57,7 @@ function add_home_case_studies_shortcode( $atts ) {
 
 		<figure class="featured-case-studies__bg-figure">
 			<?php
-			LF_Utils::display_responsive_images( $background_image, 'case-study-640', '600px', 'featured-case-studies__bg-image' );
+			LF_Utils::display_responsive_images( $background_image, 'case-study-590', '590px', 'featured-case-studies__bg-image' );
 			?>
 		</figure>
 

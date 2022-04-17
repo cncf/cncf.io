@@ -71,7 +71,7 @@ if ( $query->have_posts() ) : ?>
 		<?php if ( $background ) : ?>
 		<figure class="event-item__bg-figure">
 			<?php
-			LF_Utils::display_responsive_images( $background, 'event-415', '415px', 'event-item__bg-image' );
+			LF_Utils::display_responsive_images( $background, 'event-380', '380px', 'event-item__bg-image' );
 
 			?>
 		</figure>
