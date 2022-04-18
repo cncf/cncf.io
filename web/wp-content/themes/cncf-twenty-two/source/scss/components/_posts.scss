@@ -111,6 +111,7 @@
 		}
 		&.in-the-news-item {
 			.post-archive__link {
+				background-color: $white;
 				border: 1px solid black;
 				display: flex;
 				align-items: center;
@@ -132,6 +133,7 @@
 				width: 80%;
 				height: 90%;
 				object-fit: contain;
+				filter: none;
 
 				@media (min-width: 768px) {
 					height: 180px;
