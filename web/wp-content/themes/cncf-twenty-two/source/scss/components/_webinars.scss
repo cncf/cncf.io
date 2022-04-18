@@ -10,12 +10,12 @@
 	height: 100%;
 	&__date {
 		font-weight: 700;
-		font-size: 9px;
-		line-height: 9px;
+		font-size: 12px;
+		line-height: 125%;
 		text-transform: uppercase;
 		display: block;
 		color: $gray-700;
-		letter-spacing: 0.15em;
+		letter-spacing: 0.2em;
 		margin-bottom: 15px;
 	}
 	&__link {
