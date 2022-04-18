@@ -127,7 +127,7 @@
 		height: 70vh;
 		min-height: 300px;
 		max-height: 800px;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -40%);
 		padding: 0;
 	}
 
@@ -166,7 +166,7 @@
 			display: block;
 			position: relative;
 			background: url('../images/icon-close.svg');
-			background-size: 20px 25px;
+			background-size: 25px 25px;
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-color: $black;
