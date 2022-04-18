@@ -306,12 +306,12 @@ endif;
 			</div>
 			</div>
 
-			<div class="latest-news-wrapper columns-three">
+			<div class="columns-three">
 			<?php
 			while ( $related_query->have_posts() ) {
 				$related_query->the_post();
 
-				get_template_part( 'components/latest-news-vertical-item' );
+				get_template_part( 'components/news-item-vertical' );
 			}
 			?>
 </div>

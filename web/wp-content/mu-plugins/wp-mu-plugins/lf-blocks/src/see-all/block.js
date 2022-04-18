@@ -20,9 +20,9 @@ import Edit from './edit.js';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-
+const { InnerBlocks } = wp.blockEditor;
 /**
- * Register: aa Gutenberg Block.
+ * Register: Gutenberg Block.
  *
  * Registers a new block provided a unique name and an object defining its
  * behavior. Once registered, the block is made editor as an option to any
@@ -34,37 +34,26 @@ const { registerBlockType } = wp.blocks;
  * @return {?WPBlock}          The block, if it has been successfully registered; otherwise `undefined`.
  */
 registerBlockType(
-	'lf/newsroom',
+	'lf/see-all',
 	{
-		title: __( 'LF | Newsroom' ),
-		description: __( 'Display posts from the LF Newsroom' ),
-		icon: 'excerpt-view',
+		title: __( 'LF | See All' ),
+		description: __( 'The See All block allows for a link to be positioned next to the headline which responsively flows to the bottom of the stack on mobile.' ),
+		icon: 'table',
 		category: 'lf',
 		keywords: [
-			__( 'news' ),
-			__( 'newsroom' ),
-			__( 'announcements' ),
-			__( 'blog' ),
+			__( 'see all' ),
+			__( 'see more' ),
+			__( 'title' ),
+			__( 'hero' ),
 			__( 'lf' ),
 		],
-		example: {},
-		attributes: {
-			numberposts: {
-				type: 'integer',
-				default: 4,
-			},
-			order: {
-				type: 'string',
-				default: 'desc',
-			},
-			category: {
-				type: 'string',
-			},
-		},
+		attributes: {},
 		html: false,
 		edit: Edit,
-		save() {
-			return null;
+		save: () => {
+			return (
+				<InnerBlocks.Content />
+			);
 		},
 	}
 );

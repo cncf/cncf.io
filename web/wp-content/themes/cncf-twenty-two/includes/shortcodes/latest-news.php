@@ -19,7 +19,6 @@
  */
 function add_latest_news_shortcode( $atts ) {
 
-	// TODO: Possibly rename to home-latest-news.
 	// TODO: Reuse this for other blocks?
 	// Attributes.
 	$atts = shortcode_atts(

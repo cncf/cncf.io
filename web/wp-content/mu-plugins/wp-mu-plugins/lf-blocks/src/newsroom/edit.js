@@ -39,7 +39,7 @@ class Newsroom extends Component {
 
 renderControl = () => {
 	const { attributes, setAttributes, categories } = this.props;
-	const { category, numberposts, showImages, showBorder, order } = attributes;
+	const { category, numberposts, order } = attributes;
 
 	// get the list of categories to select.
 	const menuOptions = [
@@ -81,18 +81,6 @@ renderControl = () => {
 					] }
 					onChange={ ( value ) => setAttributes( { order: value } ) }
 				/>
-				<ToggleControl
-					label={ __( 'Show Images' ) }
-					help={ showImages ? 'Featured images are shown.' : 'No images are shown.' }
-					checked={ showImages }
-					onChange={ this.toggleAttribute( 'showImages' ) }
-				/>
-				<ToggleControl
-					label={ __( 'Show Image Border' ) }
-					help={ showBorder ? 'Image border is now displayed.' : 'No border is shown.' }
-					checked={ showBorder }
-					onChange={ this.toggleAttribute( 'showBorder' ) }
-				/>
 			</PanelBody>
 		</InspectorControls>
 	);
@@ -110,11 +98,9 @@ renderList = () => {
 			{ data.map(
 				post => (
 					<div key={ post.id } className="newsroom-post-wrapper">
-						{ this.props.attributes.showImages &&
 							<div className="newsroom-image-wrapper">
 								<img src={ post.featured_image_src ? post.featured_image_src : 'https://via.placeholder.com/325x171/d9d9d9/000000' } alt="Post Thumbnail" />
 							</div>
-						}
 						<p
 							className="newsroom-title"
 							dangerouslySetInnerHTML={ { __html: post.title.rendered } }

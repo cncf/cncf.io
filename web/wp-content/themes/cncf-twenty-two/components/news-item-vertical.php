@@ -1,6 +1,6 @@
 <?php
 /**
- * Latest News Item - Vertical
+ * News Item - Vertical
  *
  * Styling in posts.scss
  *
@@ -13,7 +13,7 @@ $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 
 ?>
 
-<div class="latest-news-vertical-item <?php echo esc_attr( $sticky_status ); ?>">
+<div class="news-item-vertical <?php echo esc_attr( $sticky_status ); ?>">
 
 	<?php
 	if ( is_sticky() ) {
@@ -30,20 +30,20 @@ $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 		<?php
 		if ( has_post_thumbnail() ) {
 			// display smaller news image.
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'latest-news-vertical-item__image' );
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'news-item-vertical__image' );
 
 		} else {
 			// show generic.
 			// get site options.
 			$site_options = get_option( 'lf-mu' );
-			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'latest-news-vertical-item__image' );
+			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'news-item-vertical__image' );
 
 		}
 		?>
-		<h3 class="latest-news-vertical-item__title"><?php the_title(); ?></h3>
+		<h3 class="news-item-vertical__title"><?php the_title(); ?></h3>
 	</a>
 
 	<span
-		class="latest-news-vertical-item__date"><?php echo get_the_date( 'F j, Y' ); ?></span>
+		class="news-item-vertical__date"><?php echo get_the_date( 'F j, Y' ); ?></span>
 
 </div>

@@ -1,0 +1,43 @@
+/**
+ * Edit screen code
+ *
+ * @package WordPress
+ * @since 1.0.0
+ *
+ * @tags
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
+ * @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact
+ * @phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
+ * @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
+ */
+
+const { InnerBlocks } = wp.blockEditor;
+const { Component } = wp.element;
+
+class SeeAll extends Component {
+	render() {
+
+		return (
+
+			<div className="alignfull">
+				<section className="hero background-image-wrapper">
+
+					<figure className="background-image-figure">
+						<img src="" alt="Hero" />
+					</figure>
+
+					<div className="container wrap background-image-text-overlay">
+						<div>
+							<InnerBlocks
+								template={ heroTemplate }
+							/>
+						</div>
+					</div>
+				</section>
+			</div>
+		);
+	}
+}
+
+export default SeeAll;

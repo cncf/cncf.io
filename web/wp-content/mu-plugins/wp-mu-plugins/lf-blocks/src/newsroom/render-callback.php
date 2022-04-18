@@ -15,21 +15,18 @@
  */
 function lf_newsroom_render_callback( $attributes ) {
 	// get the quantity to display, if not default.
-	$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 4;
+	$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 3;
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	// get the category to display.
 	$category = isset( $attributes['category'] ) && (int) $attributes['category'] ? $attributes['category'] : '230';
-	// show images or not.
-	$show_images = isset( $attributes['showImages'] ) ? $attributes['showImages'] : '';
-	// show image border or not.
-	$show_border = isset( $attributes['showBorder'] ) ? $attributes['showBorder'] : '';
 	// order of posts.
 	$order = isset( $attributes['order'] ) ? $attributes['order'] : 'DESC';
 
 	// get sticky posts.
 	$sticky_post = null;
 	$sticky      = get_option( 'sticky_posts' );
+
 	if ( $sticky ) {
 		$args        = array(
 			'posts_per_page'      => 1,
@@ -83,25 +80,18 @@ function lf_newsroom_render_callback( $attributes ) {
 		return 'Sorry, there are no posts.';
 	}
 
-	if ( $show_border ) {
-		$classes .= ' has-images-border';
-	}
-
 	ob_start();
 	?>
-<section class="wp-block-lf-newsroom <?php echo esc_html( $classes ); ?>">
+<section class="wp-block-lf-newsroom columns-three <?php echo esc_html( $classes ); ?>">
 
 	<?php
-	if ( $sticky_post ) {
-		lf_newsroom_show_post( $sticky_post, $show_images, true );
-	}
-
-	if ( $quantity > 0 ) :
-		while ( $query->have_posts() ) :
-			$query->the_post();
-			lf_newsroom_show_post( get_the_ID(), $show_images, false );
+	while ( $query->have_posts() ) :
+		$query->the_post();
+		// TODO: Change template for In the News.
+		// if ( in_category( 'news', get_the_ID() ) ) {} // phpcs:ignore.
+		get_template_part( 'components/news-item-vertical' );
 	endwhile;
-endif;
+
 	wp_reset_postdata();
 	?>
 
@@ -122,7 +112,8 @@ function lf_newsroom_show_post( $lf_post, $show_images, $sticky = false ) {
 	if ( ! $lf_post ) {
 		return;
 	}
-	$options = get_option( 'lf-mu' );
+	$site_options = get_option( 'lf-mu' );
+
 	if ( $sticky ) {
 		$sticky_class = 'sticky';
 	} else {
@@ -165,8 +156,8 @@ function lf_newsroom_show_post( $lf_post, $show_images, $sticky = false ) {
 			<?php
 			if ( has_post_thumbnail( $lf_post ) ) {
 				Lf_Utils::display_responsive_images( get_post_thumbnail_id( $lf_post ), 'newsroom-400', '400px', 'archive-image' );
-			} elseif ( isset( $options['generic_thumb_id'] ) && $options['generic_thumb_id'] ) {
-				Lf_Utils::display_responsive_images( $options['generic_thumb_id'], 'newsroom-400', '400px', 'archive-default-svg' );
+			} elseif ( isset( $site_options['generic_thumb_id'] ) && $site_options['generic_thumb_id'] ) {
+				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'archive-default-svg' );
 			} else {
 				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
 				. '/images/thumbnail-default.svg" alt="CNCF" class="archive-default-svg"/>';

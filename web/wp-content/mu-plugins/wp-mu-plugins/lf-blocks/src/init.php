@@ -218,6 +218,20 @@ function lf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+	// See All Block.
+	require_once 'see-all/render-callback.php';
+	register_block_type(
+		'lf/see-all',
+		array(
+			'attributes'      => array(
+				'className'  => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_see_all_render_callback',
+		)
+	);
+
 	// Tab Container block.
 	register_block_type(
 		'lf/tab-container-block',
