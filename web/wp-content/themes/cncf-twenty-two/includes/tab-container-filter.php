@@ -30,8 +30,8 @@ function lf_content_filter( $content ) {
 
 			<p class="is-style-spaced-uppercase">Table of contents</p>
 
-			<div style="height:100px" aria-hidden="true"
-					class="wp-block-spacer is-style-60-100"></div>
+			<div style="height:70px" aria-hidden="true"
+					class="wp-block-spacer is-style-60-70"></div>
 
 			<div class="sticky__nav-wrapper">
 
