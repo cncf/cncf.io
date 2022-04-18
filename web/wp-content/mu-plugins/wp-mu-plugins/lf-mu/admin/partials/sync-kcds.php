@@ -66,7 +66,7 @@ $data = wp_remote_get( 'https://community.cncf.io/api/search/event?q=kcd' );
 						'lf_event_date_end'      => $dt_date_end->format( 'Y-m-d' ),
 						'lf_event_city'          => $venue_city,
 						'lf_event_event-logo'    => '',
-						'lf_event_background'    => 68674,
+						'lf_event_background'    => 70945,
 						'lf_event_overlay_color' => $background_colors[ $background_color ],
 					),
 				);
