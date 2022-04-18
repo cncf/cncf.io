@@ -30,6 +30,10 @@
 		background: linear-gradient(180deg, $gray-500 0%, rgba(196, 196, 196, 0) 100%);
 		opacity: 0.15 !important;
 	}
+	&.is-style-section-padding {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
 }
 
 // TODO: Not a selectable style.

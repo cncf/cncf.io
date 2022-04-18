@@ -22,17 +22,7 @@ $classes = LF_Utils::merge_classes(
 $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 ?>
 
-<div class="post-archive__spacer" aria-hidden="true">
-
-<div style="height:30px" aria-hidden="true"
-class="wp-block-spacer"></div>
-
-<hr class="wp-block-separator is-style-shadow-line">
-
-<div style="height:30px" aria-hidden="true"
-class="wp-block-spacer"></div>
-
-</div>
+<hr class="wp-block-separator is-style-shadow-line is-style-section-padding">
 
 <?php // is-featured-item post-archive__item. ?>
 <div class="<?php echo esc_html( $classes ); ?>">

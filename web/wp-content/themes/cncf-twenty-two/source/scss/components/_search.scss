@@ -1,4 +1,7 @@
 .search {
+	.columns-one {
+		grid-row-gap: 0;
+	}
 	&__highlighted {
 		border: 1px solid black;
 		padding: 2em;

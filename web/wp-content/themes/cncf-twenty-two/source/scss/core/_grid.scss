@@ -10,7 +10,7 @@
 .columns-one {
 	display: grid;
 	grid-column-gap: $grid-column-gap;
-	grid-row-gap: $grid-row-gap;
+	grid-row-gap: 0px;
 	grid-template-columns: 1fr;
 }
 

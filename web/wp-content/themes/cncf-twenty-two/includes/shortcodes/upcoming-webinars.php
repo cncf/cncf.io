@@ -80,6 +80,7 @@ function add_upcoming_webinars_shortcode( $atts ) {
 
 		<div class="webinars columns-one">
 			<h3>Sorry, there are no online programs scheduled right now.</h3>
+
 			<div style="height:40px" aria-hidden="true"
 					class="wp-block-spacer"></div>
 

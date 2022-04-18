@@ -64,7 +64,7 @@
 
 .post-archive {
 	// Hide the first divider line.
-	.columns-one .post-archive__spacer:first-child {
+	.columns-one .wp-block-separator:first-child {
 		display: none;
 	}
 	&__item {
