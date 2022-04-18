@@ -23,13 +23,13 @@ if ( $query->have_posts() ) : ?>
 	}
 	?>
 </p>
-<div style="height:50px" aria-hidden="true"
-	class="wp-block-spacer is-style-30-50"></div>
+<div style="height:40px" aria-hidden="true"
+	class="wp-block-spacer is-style-30-40"></div>
 
 <hr
 	class="wp-block-separator has-text-color has-background has-gray-500-background-color has-gray-500-color is-style-horizontal-rule">
 
-<div style="height:50px" aria-hidden="true"
+	<div style="height:50px" aria-hidden="true"
 	class="wp-block-spacer is-style-30-50"></div>
 
 <div class="ktp columns-two">

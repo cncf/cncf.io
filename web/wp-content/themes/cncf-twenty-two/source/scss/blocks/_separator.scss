@@ -9,6 +9,8 @@
 
 .wp-block-separator {
 	opacity: 1;
+	margin-block-end: 0;
+	margin-block-start: 0;
 }
 
 // Now set our own styles, still have to use !important though – sigh.

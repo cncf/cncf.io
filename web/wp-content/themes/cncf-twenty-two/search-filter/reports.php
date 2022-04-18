@@ -24,13 +24,13 @@ if ( $query->have_posts() ) : ?>
 	}
 	?>
 </p>
-<div style="height:50px" aria-hidden="true"
-	class="wp-block-spacer is-style-30-50"></div>
+<div style="height:40px" aria-hidden="true"
+	class="wp-block-spacer is-style-30-40"></div>
 
 <hr
 	class="wp-block-separator has-text-color has-background has-gray-500-background-color has-gray-500-color is-style-horizontal-rule">
 
-	<?php
+<?php
 	$y = 0;
 	while ( $query->have_posts() ) :
 		$query->the_post();
@@ -44,12 +44,14 @@ if ( $query->have_posts() ) : ?>
 				echo '</div>';
 			}
 			?>
-			<div style="height:50px" aria-hidden="true"
+<div style="height:50px" aria-hidden="true"
 	class="wp-block-spacer is-style-30-50"></div>
-			<h2><?php echo esc_html( $report_year ); ?></h2>
-			<div style="height:50px" aria-hidden="true"
-	class="wp-block-spacer is-style-30-50"></div>
-			<?php
+
+<h2><?php echo esc_html( $report_year ); ?></h2>
+
+<div style="height:40px" aria-hidden="true"
+	class="wp-block-spacer is-style-30-40"></div>
+<?php
 			echo '<div class="reports-section columns-three">';
 			$y = $report_year;
 		}
@@ -66,27 +68,28 @@ if ( $query->have_posts() ) : ?>
 			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'report-item__image' );
 		}
 		?>
-		</a>
+	</a>
 
-		<div class="report-item__text-wrapper">
+	<div class="report-item__text-wrapper">
 		<?php
 		if ( $report_type ) :
 			$report_type_link = '?_sft_lf-report-type=' . $report_type_slug . '';
 			?>
-<a class="author-category" title="See more <?php echo esc_attr( $report_type ); ?> reports"
-	href="<?php echo esc_url( $report_type_link ); ?>">
+		<a class="author-category"
+			title="See more <?php echo esc_attr( $report_type ); ?> reports"
+			href="<?php echo esc_url( $report_type_link ); ?>">
 			<?php echo esc_html( $report_type ); ?> Report</a>
-<?php endif; ?>
+		<?php endif; ?>
 
-<h3 class="report-item__title"><a
-		href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		</div>
+		<h3 class="report-item__title"><a
+				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+	</div>
 </div>
 
-		<?php
+<?php
 
 	endwhile;
 	?>
 </div>
-	<?php
+<?php
 endif;
