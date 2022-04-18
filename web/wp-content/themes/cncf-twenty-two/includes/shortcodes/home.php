@@ -50,7 +50,7 @@ function add_home_case_studies_shortcode( $atts ) {
 			$image = get_post_thumbnail_id( $id );
 		}
 		?>
-	<div class="featured-case-studies__item" data-aos="fade-up">
+	<div class="featured-case-studies__item">
 
 		<a href="<?php echo esc_url( $url ); ?>" class="box-link"
 			title="Read <?php echo esc_html( $company ); ?> case study"></a>
