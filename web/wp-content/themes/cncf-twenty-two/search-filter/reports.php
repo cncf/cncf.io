@@ -30,7 +30,7 @@ if ( $query->have_posts() ) : ?>
 <hr
 	class="wp-block-separator has-text-color has-background has-gray-500-background-color has-gray-500-color is-style-horizontal-rule">
 
-<?php
+	<?php
 	$y = 0;
 	while ( $query->have_posts() ) :
 		$query->the_post();
@@ -51,7 +51,7 @@ if ( $query->have_posts() ) : ?>
 
 <div style="height:40px" aria-hidden="true"
 	class="wp-block-spacer is-style-30-40"></div>
-<?php
+			<?php
 			echo '<div class="reports-section columns-three">';
 			$y = $report_year;
 		}
@@ -86,10 +86,10 @@ if ( $query->have_posts() ) : ?>
 	</div>
 </div>
 
-<?php
+		<?php
 
 	endwhile;
 	?>
 </div>
-<?php
+	<?php
 endif;
