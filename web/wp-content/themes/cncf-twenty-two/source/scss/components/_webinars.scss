@@ -114,11 +114,14 @@
 			align-items: center;
 		}
 		font-weight: 700;
-		font-size: 9px;
-		line-height: 9px;
+		font-size: 10px;
+		@media (min-width: 800px) {
+			font-size: 12px;
+		}
+		line-height: 125%;
+		letter-spacing: 0.2em;
 		text-transform: uppercase;
 		color: $black;
-		letter-spacing: 0.15em;
 	}
 	&__svg {
 		max-height: 14px;
@@ -129,7 +132,7 @@
 		display: flex;
 		align-items: center;
 		@media (min-width: 800px) {
-			flex-basis: 270px;
+			white-space: nowrap;
 		}
 	}
 	&__views {
@@ -138,7 +141,7 @@
 		margin-top: 20px;
 		@media (min-width: 800px) {
 			margin-top: 0;
-			margin-left: 30px;
+			margin-left: 60px;
 		}
 	}
 }
