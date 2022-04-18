@@ -64,6 +64,7 @@
 
 	&__issue {
 		grid-column: span 12;
+		line-height: 1.4;
 		@media (min-width: 1000px) {
 			grid-column: span 4;
 			text-align: right;
