@@ -279,4 +279,4 @@
 			$( button_class ).click();
 		}
 	}
-);
+	);
