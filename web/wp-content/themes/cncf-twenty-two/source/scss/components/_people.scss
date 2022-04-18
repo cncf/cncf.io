@@ -64,7 +64,9 @@
 		line-height: 140%;
 		color: $gray-700;
 	}
-
+	&__metadata {
+		margin-top: 30px;
+	}
 	&__company {
 		margin-top: 10px;
 		@media (min-width: 1200px) {
@@ -96,6 +98,9 @@
 
 		&-margin {
 			margin-top: 50px;
+			> *:not(:last-child) {
+				margin-right: 10px;
+			}
 		}
 	}
 
@@ -203,12 +208,15 @@
 	}
 
 	&__content {
+		font-size: 12px;
+		line-height: 150%;
+		letter-spacing: 0.02em;
+
 		p:not(:last-child) {
 			margin-bottom: 20px;
 		}
 		@media (min-width: 768px) {
 			padding: 0;
-			font-size: 12px;
 		}
 		a {
 			color: $primary-color;

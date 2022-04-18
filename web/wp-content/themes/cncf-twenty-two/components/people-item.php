@@ -165,17 +165,17 @@ endif;
 		<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
 		<?php endif; ?>
 
-					<div class="people-metadata">
+					<div class="person__metadata">
 						<?php
 						if ( $location ) {
 							?>
-						<p><span class="strong">Location:</span> <?php echo esc_html( $location ); ?> </p>
+						<p><strong>Location:</strong> <?php echo esc_html( $location ); ?> </p>
 							<?php
 						}
 
 						if ( $languages ) {
 							?>
-						<p><span class="strong">Languages:</span>
+						<p><strong>Languages:</strong>
 							<?php
 							$comma = '';
 							$out   = '';
@@ -191,7 +191,7 @@ endif;
 
 						if ( $projects ) {
 							?>
-						<p><span class="strong">Specialties:</span>
+						<p><strong>Specialties:</strong>
 							<?php
 							$comma = '';
 							$out   = '';
