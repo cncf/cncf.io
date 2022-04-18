@@ -199,13 +199,13 @@ get_template_part( 'components/title' );
 					?>
 				</div>
 			</div>
-			<div style="height:40px" aria-hidden="true"
-class="wp-block-spacer is-style-30-40"></div>
+			<div style="height:30px" aria-hidden="true"
+class="wp-block-spacer"></div>
 
 <hr class="wp-block-separator is-style-shadow-line">
 
-<div style="height:40px" aria-hidden="true"
-class="wp-block-spacer is-style-30-40"></div>
+<div style="height:30px" aria-hidden="true"
+class="wp-block-spacer"></div>
 
 			<?php
 	endwhile;

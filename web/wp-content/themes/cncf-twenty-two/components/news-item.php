@@ -24,13 +24,13 @@ $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 
 <div class="post-archive__spacer" aria-hidden="true">
 
-<div style="height:60px" aria-hidden="true"
-class="wp-block-spacer is-style-30-60"></div>
+<div style="height:30px" aria-hidden="true"
+class="wp-block-spacer"></div>
 
 <hr class="wp-block-separator is-style-shadow-line">
 
-<div style="height:60px" aria-hidden="true"
-class="wp-block-spacer is-style-30-60"></div>
+<div style="height:30px" aria-hidden="true"
+class="wp-block-spacer"></div>
 
 </div>
 
