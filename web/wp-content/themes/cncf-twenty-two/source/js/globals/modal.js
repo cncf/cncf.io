@@ -7,20 +7,18 @@
  * @since 1.0.0
  */
 
-document.addEventListener(
-	'DOMContentLoaded',
-	function load() {
-	if ( ! window.jQuery) {
-		return setTimeout( load, 50 );
-	}
+// @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
 
-	jQuery( document ).ready(
+window.addEventListener(
+	'load',
+	() => {
+		jQuery( document ).ready(
 		function( $ ) {
 			/*
-			* jQuery simple and accessible modal window, using ARIA
-			* @version v1.11.1
-			* Website: https://a11y.nicolas-hoffmann.net/modal/
-			* License MIT: https://github.com/nico3333fr/jquery-accessible-modal-window-aria/blob/master/LICENSE
+				* jQuery simple and accessible modal window, using ARIA
+				* @version v1.11.1
+				* Website: https://a11y.nicolas-hoffmann.net/modal/
+				* License MIT: https://github.com/nico3333fr/jquery-accessible-modal-window-aria/blob/master/LICENSE
 				*/
 
 			// init.
@@ -79,23 +77,23 @@ document.addEventListener(
 					$modal_code  = '<' + $modal_tag + ' ' + $modal_role_dialog + ' ' + $modal_role_alertdialog + ' id="js-modal" class="' + $modal_prefix_classes + 'modal" aria-labelledby="modal-title" open ' + $modal_aria + '><div role="document" class="' + $modal_prefix_classes + 'modal__wrapper">';
 					$modal_code += '<div class="' + $modal_prefix_classes + 'modal-close__wrapper"><button type="button" id="js-modal-close" class="' + $modal_prefix_classes + 'modal-close" data-content-back-id="' + modal_content_id + '" data-focus-back="' + $modal_starter_id + '" title="Close">';
 					if ( $modal_close_img !== '' ) {
-							$modal_code += '<img src="' + $modal_close_img + '" alt="' + $modal_close_text + '" class="' + $modal_prefix_classes + 'modal__closeimg" />';
+						$modal_code += '<img src="' + $modal_close_img + '" alt="' + $modal_close_text + '" class="' + $modal_prefix_classes + 'modal__closeimg" />';
 					} else {
-								$modal_code += '<span class="' + $modal_prefix_classes + 'modal-close__text screen-reader-text">' + $modal_close_text + '</span>';
+						$modal_code += '<span class="' + $modal_prefix_classes + 'modal-close__text screen-reader-text">' + $modal_close_text + '</span>';
 					}
 					$modal_code += '</button></div>';
 					$modal_code += '<div class="' + $modal_prefix_classes + 'modal__content">';
 					if ( $modal_title !== '' ) {
-								$modal_code += '<h1 id="modal-title" class="' + $modal_prefix_classes + 'modal-title">' + $modal_title + '</h1>';
+						$modal_code += '<h1 id="modal-title" class="' + $modal_prefix_classes + 'modal-title">' + $modal_title + '</h1>';
 					}
 
 					if ( $modal_text !== '' ) {
-							$modal_code += '<p>' + $modal_text + '</p>';
+						$modal_code += '<p>' + $modal_text + '</p>';
 					} else if ( modal_content_id !== '' && $modal_content.length ) {
-							$modal_code += '<div id="js-modal-content">';
-							$modal_code += $modal_content.html();
-							$modal_code += '</div>';
-							$modal_content.empty();
+						$modal_code += '<div id="js-modal-content">';
+						$modal_code += $modal_content.html();
+						$modal_code += '</div>';
+						$modal_content.empty();
 					}
 					$modal_code += '</div></div></' + $modal_tag + '>';
 
@@ -151,23 +149,23 @@ document.addEventListener(
 
 					let delay = $js_modal.css( 'animation-duration' );
 					if ( delay != '0s' ) {
-							let timeout = parseFloat( delay.replace( 's', '' ) ) * 1000;
-							timeout++;
+						let timeout = parseFloat( delay.replace( 's', '' ) ) * 1000;
+						timeout++;
 
-							$js_modal.removeClass( $class_element );
+						$js_modal.removeClass( $class_element );
 						setTimeout(
 							function() {
-								$js_modal.addClass( $class_element_reverse );
+									$js_modal.addClass( $class_element_reverse );
 							},
 							1
 						);
 						setTimeout(
 							function() {
-								$body.removeClass( 'no-scroll' );
-								$js_modal.remove();
-								$js_modal_overlay.remove();
+										$body.removeClass( 'no-scroll' );
+										$js_modal.remove();
+										$js_modal_overlay.remove();
 								if ( $content_back_id !== '' ) {
-											$( '#' + $content_back_id ).html( $js_modal_content.html() );
+									$( '#' + $content_back_id ).html( $js_modal_content.html() );
 								}
 								$( $focus_back ).focus();
 								$js_modal.removeClass( $class_element_reverse );
@@ -176,9 +174,9 @@ document.addEventListener(
 							timeout
 						);
 					} else {
-							$body.removeClass( 'no-scroll' );
-							$js_modal.remove();
-							$js_modal_overlay.remove();
+						$body.removeClass( 'no-scroll' );
+						$js_modal.remove();
+						$js_modal_overlay.remove();
 						if ( $content_back_id !== '' ) {
 							$( '#' + $content_back_id ).html( $js_modal_content.html() );
 						}
@@ -191,6 +189,7 @@ document.addEventListener(
 				'#js-modal-overlay',
 				function( event ) {
 					let $close = $( '#js-modal-close' );
+
 					event.preventDefault();
 					$close.trigger( 'click' );
 				}
@@ -210,8 +209,8 @@ document.addEventListener(
 					let $close = $( '#js-modal-close' );
 
 					if ( event.keyCode == 13 || event.keyCode == 32 ) { // space or enter.
-							event.preventDefault();
-							$close.trigger( 'click' );
+						event.preventDefault();
+						$close.trigger( 'click' );
 					}
 				}
 			)
@@ -223,7 +222,7 @@ document.addEventListener(
 					$close    = $( '#js-modal-close' );
 
 					if ( event.keyCode == 27 ) { // esc.
-							$close.trigger( 'click' );
+						$close.trigger( 'click' );
 					}
 					if ( event.keyCode == 9 ) { // tab or maj+tab.
 						// get list of all children elements in given object.
@@ -261,7 +260,7 @@ document.addEventListener(
 					$close        = $( '#js-modal-close' );
 
 					if ( $js_modal.length && event.keyCode == 9 && in_jsmodal === false ) { // tab or maj+tab.
-							$close.focus();
+						$close.focus();
 					}
 				}
 			)
@@ -284,7 +283,5 @@ document.addEventListener(
 			}
 		}
 	);
-
-	},
-	false
+	}
 );
