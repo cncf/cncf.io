@@ -8,7 +8,7 @@
  */
 
 // Include the Tab Container Filter.
-require_once( get_template_directory() . '/includes/tab-container-filter.php' );
+require_once get_template_directory() . '/includes/tab-container-filter.php';
 
 get_template_part( 'components/header' );
 
@@ -22,7 +22,7 @@ get_template_part( 'components/title' );
 		if ( have_posts() ) :
 			while ( have_posts() ) :
 				the_post();
-				 the_content();
+				the_content();
 			endwhile;
 		endif;
 		?>

@@ -64,11 +64,12 @@
 
 	&__issue {
 		grid-column: span 12;
-		line-height: 1.4;
+		line-height: 3;
 		@media (min-width: 1000px) {
 			grid-column: span 4;
 			text-align: right;
 			align-self: end;
+			line-height: 1.7;
 		}
 		@media (min-width: 1200px) {
 			grid-column: span 3;
@@ -92,9 +93,5 @@
 		display: block;
 		margin-top: 20px;
 		margin-bottom: 20px;
-	}
-
-	.footer__issue {
-		line-height: 1.3rem;
 	}
 }
