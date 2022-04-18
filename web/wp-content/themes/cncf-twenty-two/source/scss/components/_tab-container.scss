@@ -84,6 +84,7 @@
 				display: block;
 			}
 			@media (min-width: 800px) {
+				// This is needed for drop shadow.
 				padding-top: 9px;
 				padding-bottom: 9px;
 
@@ -98,10 +99,10 @@
 					border-left: 4px solid transparent;
 					background-color: $white;
 					display: block;
+					padding-top: 6px;
+					padding-bottom: 6px;
 					padding-left: 20px;
-					padding-top: 10px;
 					padding-right: 10px;
-					padding-bottom: 10px;
 				}
 			}
 		}
