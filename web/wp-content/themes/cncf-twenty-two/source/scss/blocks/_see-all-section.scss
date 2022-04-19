@@ -1,21 +1,25 @@
 // TODO: Rename to block
 
 .is-style-see-all {
-	@media (min-width: 1000px) {
+	@media (max-width: 999px) {
 		position: relative;
+		margin-bottom: 80px;
+	}
+	@media (min-width: 1000px) {
+		.wp-block-columns > .wp-block-column:last-child {
+			text-align: right;
+		}
 	}
 
 	.is-style-link-cta {
-		margin-top: 50px;
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		@media (min-width: 1000px) {
-			margin-top: 0;
+		@media (max-width: 999px) {
 			position: absolute;
-			top: 15px;
-			right: 0;
-			// transform: translateY(-50%);
+			bottom: 0 - 30px - 50px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@media (min-width: 1000px) {
+			margin-bottom: 30px;
 		}
 	}
 }
