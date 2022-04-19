@@ -129,7 +129,7 @@ function lf_register_block_patterns() {
 			'lf/see-all-section',
 			array(
 				'title'         => __( 'See All Section' ),
-				'description'   => _x( 'Used to posistion the See All link underneath on mobile', 'Block pattern description' ),
+				'description'   => _x( 'Used to position the See All link underneath on mobile', 'Block pattern description' ),
 				'content'       => trim( $content ),
 				'categories'    => array( 'hero' ),
 				'keywords'      => array( 'all', 'link' ),

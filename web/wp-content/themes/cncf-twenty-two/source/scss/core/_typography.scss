@@ -86,7 +86,10 @@ h3,
 	&:after {
 		position: absolute;
 		content: '';
-		border-bottom: 2px solid $primary-400;
+		border-bottom: 3px solid $primary-400;
+		@media (min-width: 800px) {
+			border-bottom: 2px solid $primary-400;
+		}
 		left: 0;
 		bottom: -14px;
 		width: 100%;

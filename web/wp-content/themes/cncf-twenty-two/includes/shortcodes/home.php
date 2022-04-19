@@ -88,3 +88,59 @@ function add_home_case_studies_shortcode( $atts ) {
 	return $block_content;
 }
 add_shortcode( 'home_case_studies', 'add_home_case_studies_shortcode' );
+
+/**
+ * Intro boxes shortcode.
+ */
+function add_home_intro_boxes_shortcode() {
+
+	ob_start();
+	?>
+<div class="home-intro-boxes columns-three">
+
+<div class="home-intro-box">
+	<h3 class="home-intro-box__title">Members</h3>
+	<div class="home-intro-box__text-wrapper">
+		<p><strong>Building and selling cloud native tech?</strong></p>
+		<p class="home-intro-box__text">Shape the ecosystem and drive cross-company collaboration with more than 700 members.</p>
+		<p
+class="is-style-link-cta"><a href="/about/join/">Become a Member</a></p>
+	</div>
+</div>
+
+<div class="home-intro-box">
+	<h3 class="home-intro-box__title">Contributors</h3>
+	<div class="home-intro-box__text-wrapper">
+		<p><strong>Looking to get involved?</strong></p>
+		<p class="home-intro-box__text">From coders to creatives, join our welcoming, global community and advance CNCF cloud native projects.</p>
+		<p
+class="is-style-link-cta"><a href="http://contribute.cncf.io/">Start Contributing</a></p>
+	</div>
+</div>
+
+<div class="home-intro-box">
+	<h3 class="home-intro-box__title">End Users</h3>
+	<div class="home-intro-box__text-wrapper">
+		<p><strong>Using cloud native technologies?</strong></p>
+		<p class="home-intro-box__text">Accelerate your adoption in close collaboration with peers, project maintainers, and CNCF.</p>
+		<p
+class="is-style-link-cta"><a href="/enduser/">Join the Community</a></p>
+	</div>
+</div>
+
+<div class="home-intro-box">
+	<h3 class="home-intro-box__title">New to CNCF?</h3>
+	<img class="home-intro-box__goldie" src="<?php LF_utils::get_image( 'home-goldie.png' ); ?>" alt="Goldie">
+	<div class="home-intro-box__text-wrapper">
+		<p
+class="is-style-link-cta"><a href="/about/who-we-are/">Learn More</a></p>
+	</div>
+</div>
+
+
+</div>
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+add_shortcode( 'home_intro_boxes', 'add_home_intro_boxes_shortcode' );
