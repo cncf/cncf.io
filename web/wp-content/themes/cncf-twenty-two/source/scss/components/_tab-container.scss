@@ -114,7 +114,7 @@
 }
 
 .wp-block-lf-tab-container-block {
-	margin-bottom: 70px;
+	margin-bottom: 50px;
 
 	@media (max-width: 799px) {
 		padding: 25px;
@@ -137,9 +137,9 @@
 	h4,
 	h5,
 	h6 {
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 		@media (min-width: 800px) {
-			margin-bottom: 50px;
+			margin-bottom: 25px;
 		}
 	}
 }
