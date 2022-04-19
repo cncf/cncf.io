@@ -60,7 +60,8 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 		<button
 			data-modal-content-id="modal-<?php echo esc_html( $person_id ); ?>"
 			data-modal-slug="<?php echo esc_html( $person_slug ); ?>"
-			data-modal-prefix-class="person" class="js-modal button-reset modal-<?php echo esc_html( $person_slug ); ?>">
+			data-modal-prefix-class="person"
+			class="js-modal button-reset modal-<?php echo esc_html( $person_slug ); ?>">
 			<?php endif; ?>
 			<h3 class="person__name">
 				<?php the_title(); ?>
@@ -147,35 +148,39 @@ endif;
 
 				<div class="modal__content">
 
-			<h3 class="person__name">
-				<?php the_title(); ?>
-				<br class="show-upto-600">
-				<?php
-				if ( $pronouns ) :
-					?>
-		<span class="person__pronouns">(<?php echo esc_html( $pronouns ); ?>)</span>
+					<h3 class="person__name">
+						<?php the_title(); ?>
+						<br class="show-upto-600">
+						<?php
+						if ( $pronouns ) :
+							?>
+						<span
+							class="person__pronouns">(<?php echo esc_html( $pronouns ); ?>)</span>
+							<?php
+		endif;
+						?>
+					</h3>
+
 					<?php
-endif;
-				?>
-			</h3>
+					if ( $company ) :
+						?>
+					<h4 class="person__company">
+						<?php echo esc_html( $company ); ?></h4>
+					<?php endif; ?>
 
-			<?php
-			if ( $company ) :
-				?>
-		<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
-		<?php endif; ?>
-
-					<div class="person__metadata">
+					<?php if ( $location || $projects || $languages ) : ?>
+					<ul class="person__metadata">
 						<?php
 						if ( $location ) {
 							?>
-						<p><strong>Location:</strong> <?php echo esc_html( $location ); ?> </p>
+						<li><strong>Location:</strong>
+							<?php echo esc_html( $location ); ?> </li>
 							<?php
 						}
 
 						if ( $languages ) {
 							?>
-						<p><strong>Languages:</strong>
+						<li><strong>Languages:</strong>
 							<?php
 							$comma = '';
 							$out   = '';
@@ -183,15 +188,15 @@ endif;
 								$out  .= esc_html( $comma ) . '<a title="See more Ambassadors who speak ' . esc_html( $language->name ) . '" href="' . $current_url . '/?_sft_lf-language=' . $language->slug . '">' . esc_html( $language->name ) . '</a>';
 								$comma = ', ';
 							}
-		echo $out; //phpcs:ignore
+						echo $out; //phpcs:ignore
 							?>
-</p>
+						</li>
 							<?php
 						}
 
 						if ( $projects ) {
 							?>
-						<p><strong>Specialties:</strong>
+						<li><strong>Specialties:</strong>
 							<?php
 							$comma = '';
 							$out   = '';
@@ -199,65 +204,66 @@ endif;
 								$out  .= esc_html( $comma ) . '<a title="See more Ambassadors who specialize in ' . esc_html( $project->name ) . '" href="' . $current_url . '/?_sft_lf-project=' . $project->slug . '">' . esc_html( $project->name ) . '</a>';
 								$comma = ', ';
 							}
-echo $out; //phpcs:ignore
+						echo $out; //phpcs:ignore
 							?>
-</p>
+						</li>
 							<?php
 						}
 						?>
-					</div>
+					</ul>
+					<?php endif; ?>
 
 					<div class="person__content">
-					<?php the_content(); ?>
+						<?php the_content(); ?>
 					</div>
 
 					<div class="person__social">
-			<?php
-			// Social Icons.
-			if ( $linkedin || $twitter || $github || $wechat || $website || $youtube ) :
-				?>
-			<div class="person__social-margin">
-				<?php
-				if ( $linkedin ) :
-					?>
-				<a
-					href="<?php echo esc_url( $linkedin ); ?>"><?php LF_Utils::get_svg( 'social/boxed-linkedin.svg' ); ?></a>
-					<?php
-			endif;
-				if ( $twitter ) :
-					?>
-				<a
-					href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-twitter.svg' ); ?></a>
-					<?php
-			endif;
-				if ( $github ) :
-					?>
-				<a
-					href="<?php echo esc_url( $github ); ?>"><?php LF_Utils::get_svg( 'social/boxed-github.svg' ); ?></a>
-					<?php
-			endif;
-				if ( $wechat ) :
-					?>
-				<a
-					href="<?php echo esc_url( $wechat ); ?>"><?php LF_Utils::get_svg( 'social/boxed-wechat.svg' ); ?></a>
-					<?php
-			endif;
-				if ( $website ) :
-					?>
-				<a
-					href="<?php echo esc_url( $website ); ?>"><?php LF_Utils::get_svg( 'social/boxed-website.svg' ); ?></a>
-					<?php
-			endif;
-				if ( $youtube ) :
-					?>
-				<a
-					href="<?php echo esc_url( $youtube ); ?>"><?php LF_Utils::get_svg( 'social/boxed-youtube.svg' ); ?></a>
-					<?php
-			endif;
-				?>
-			</div>
-			<?php endif; ?>
-		</div>
+						<?php
+						// Social Icons.
+						if ( $linkedin || $twitter || $github || $wechat || $website || $youtube ) :
+							?>
+						<div class="person__social-margin">
+							<?php
+							if ( $linkedin ) :
+								?>
+							<a
+								href="<?php echo esc_url( $linkedin ); ?>"><?php LF_Utils::get_svg( 'social/boxed-linkedin.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $twitter ) :
+								?>
+							<a
+								href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-twitter.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $github ) :
+								?>
+							<a
+								href="<?php echo esc_url( $github ); ?>"><?php LF_Utils::get_svg( 'social/boxed-github.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $wechat ) :
+								?>
+							<a
+								href="<?php echo esc_url( $wechat ); ?>"><?php LF_Utils::get_svg( 'social/boxed-wechat.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $website ) :
+								?>
+							<a
+								href="<?php echo esc_url( $website ); ?>"><?php LF_Utils::get_svg( 'social/boxed-website.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $youtube ) :
+								?>
+							<a
+								href="<?php echo esc_url( $youtube ); ?>"><?php LF_Utils::get_svg( 'social/boxed-youtube.svg' ); ?></a>
+								<?php
+								endif;
+							?>
+						</div>
+						<?php endif; ?>
+					</div>
 
 
 				</div>

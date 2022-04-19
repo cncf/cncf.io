@@ -66,6 +66,12 @@
 	}
 	&__metadata {
 		margin-top: 20px;
+		li {
+			margin-bottom: 20px;
+			@media (min-width: 1200px) {
+				margin-bottom: 5px;
+			}
+		}
 	}
 	&__company {
 		margin-top: 10px;
