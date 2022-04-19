@@ -11,6 +11,8 @@
 
 /**
  * Block Template - Page
+ *
+ * TODO: Update or remove.
  */
 function lf_page_block_template() {
 	$page_type_object           = get_post_type_object( 'page' );
@@ -96,31 +98,31 @@ function lf_register_block_patterns() {
 		);
 
 		$content = '<!-- wp:group {"className":"is-style-no-padding is-style-see-all"} -->
-		<div class="wp-block-group is-style-no-padding is-style-see-all"><!-- wp:columns {"verticalAlignment":"top"} -->
-		<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":80} -->
-		<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%"><!-- wp:heading {"className":"is-style-section-heading"} -->
-		<h2 class="is-style-section-heading">Latest from CNCF</h2>
+		<div class="wp-block-group is-style-no-padding is-style-see-all"><!-- wp:columns {"verticalAlignment":"bottom"} -->
+		<div class="wp-block-columns are-vertically-aligned-bottom"><!-- wp:column {"verticalAlignment":"bottom","width":"80%"} -->
+		<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:80%"><!-- wp:heading {"className":"is-style-section-heading"} -->
+		<h2 class="is-style-section-heading">Thank you to our Platinum Members for their commitment to advancing cloud native ecosystems</h2>
 		<!-- /wp:heading --></div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"verticalAlignment":"top","width":20} -->
-		<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%"><!-- wp:paragraph -->
-		<p>&nbsp;</p>
+		<!-- wp:column {"verticalAlignment":"bottom","width":"20%"} -->
+		<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"is-style-link-cta"} -->
+		<p class="has-text-align-right is-style-link-cta"><a href="#">MORE LINKS</a></p>
 		<!-- /wp:paragraph --></div>
 		<!-- /wp:column --></div>
 		<!-- /wp:columns -->
+
+		<!-- wp:spacer {"height":"40px","className":"is-style-20-40"} -->
+		<div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-20-40"></div>
+		<!-- /wp:spacer -->
 
 		<!-- wp:shortcode -->
 		[latest_news]
 		<!-- /wp:shortcode -->
 
-		<!-- wp:group {"layout":{"type":"flex","allowOrientation":false,"justifyContent":"center"}} -->
-		<div class="wp-block-group">
-		<!-- wp:paragraph {"className":"is-style-link-cta"} -->
-		<p class="is-style-link-cta"><a href="#">MORE LINKS</a></p>
-		<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group --></div>
+		<!-- wp:spacer {"height":"40px","className":"is-style-20-40"} -->
+		<div style="height:40px" aria-hidden="true" class="wp-block-spacer is-style-20-40"></div>
+		<!-- /wp:spacer --></div>
 		<!-- /wp:group -->';
 
 		register_block_pattern(

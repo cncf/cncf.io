@@ -1,9 +1,8 @@
-// TODO: Rename to block
-
 .is-style-see-all {
 	@media (max-width: 999px) {
 		position: relative;
 		margin-bottom: 80px;
+		display: inline-block;
 	}
 	@media (min-width: 1000px) {
 		.wp-block-columns > .wp-block-column:last-child {
@@ -19,7 +18,7 @@
 			transform: translateX(-50%);
 		}
 		@media (min-width: 1000px) {
-			margin-bottom: 30px;
+			margin-bottom: 25px;
 		}
 	}
 }
