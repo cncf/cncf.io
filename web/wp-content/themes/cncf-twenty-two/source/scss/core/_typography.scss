@@ -104,7 +104,7 @@ h3,
 	padding: 2px 6px 0px 6px;
 }
 
-// blog posts.
+// blog and spotlight posts content.
 .post-content {
 	@media (min-width: 900px) {
 		* {
@@ -153,6 +153,17 @@ h3,
 		}
 	}
 
+	h4,
+	h5,
+	h6 {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		@media (min-width: 1200px) {
+			margin-top: 40px;
+			margin-bottom: 25px;
+		}
+	}
+
 	.wp-block-code {
 		margin-left: unset;
 		margin-top: 20px;
@@ -163,6 +174,19 @@ h3,
 			word-wrap: break-word;
 			padding-left: 20px;
 			padding-top: 0;
+		}
+	}
+
+	ul {
+		margin-bottom: 20px;
+		// second level
+		ul {
+			margin-bottom: 0;
+
+			// third level
+			ul {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -188,12 +212,75 @@ h3,
 		hyphens: auto;
 	}
 
-	.wp-block-image {
+	.wp-block-image,
+	.wp-block-quote,
+	.wp-block-gallery,
+	.wp-block-embed,
+	.wp-block-lf-youtube-lite {
 		margin-top: 50px;
 		margin-bottom: 50px;
 		@media (min-width: 1200px) {
 			margin-top: 60px;
 			margin-bottom: 80px;
+		}
+	}
+}
+
+// case studies (maybe reports but not yet).
+.page-content {
+	p,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		max-width: 900px;
+	}
+
+	ul {
+		max-width: 800px;
+	}
+
+	h2 {
+		margin-top: 50px;
+		margin-bottom: 30px;
+		@media (min-width: 1200px) {
+			margin-top: 100px;
+			margin-bottom: 60px;
+		}
+	}
+
+	h2,
+	h3 {
+		line-height: 150%;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+			margin-bottom: 20px;
+		}
+		+ .wp-block-quote,
+		.wp-block-gallery {
+			margin-top: 0;
+		}
+	}
+
+	.wp-block-image,
+	.wp-block-quote,
+	.wp-block-gallery,
+	.wp-block-embed,
+	.wp-block-lf-youtube-lite {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		@media (min-width: 1000px) {
+			margin-top: 60px;
+			margin-bottom: 60px;
 		}
 	}
 }
@@ -206,6 +293,7 @@ h3,
 	max-width: 900px;
 }
 
+// not attached as a style.
 .is-style-mb0 {
 	margin-bottom: 0 !important;
 }

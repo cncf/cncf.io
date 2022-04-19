@@ -251,8 +251,6 @@
 				flex-basis: 130px;
 				flex-shrink: 0;
 			}
-			.col2 {
-			}
 		}
 		&__projects {
 			margin-top: 50px;
@@ -279,59 +277,6 @@
 				width: auto;
 				display: block;
 			}
-		}
-	}
-
-	// add spacing for old case studies.
-	p,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		max-width: 900px;
-	}
-
-	h2 {
-		margin-top: 50px;
-		margin-bottom: 30px;
-		@media (min-width: 1200px) {
-			margin-top: 100px;
-			margin-bottom: 60px;
-		}
-	}
-
-	h2,
-	h3 {
-		line-height: 150%;
-	}
-
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-top: 40px;
-		margin-bottom: 20px;
-		@media (min-width: 1200px) {
-			margin-top: 60px;
-			margin-bottom: 20px;
-		}
-		+ .wp-block-quote,
-		.wp-block-gallery {
-			margin-top: 0;
-		}
-	}
-
-	.wp-block-image,
-	.wp-block-quote,
-	.wp-block-gallery,
-	.wp-block-embed,
-	.wp-block-lf-youtube-lite {
-		margin-top: 40px;
-		margin-bottom: 40px;
-		@media (min-width: 1000px) {
-			margin-top: 60px;
-			margin-bottom: 60px;
 		}
 	}
 }

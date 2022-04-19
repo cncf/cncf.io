@@ -56,18 +56,3 @@ article,
 		}
 	}
 }
-
-.post-content {
-	ul {
-		margin-bottom: 20px;
-		// second level
-		ul {
-			margin-bottom: 0;
-
-			// third level
-			ul {
-				margin-bottom: 0;
-			}
-		}
-	}
-}

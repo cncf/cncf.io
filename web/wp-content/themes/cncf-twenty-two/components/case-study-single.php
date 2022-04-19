@@ -10,7 +10,7 @@
 ?>
 
 <main class="case-study-single">
-	<article class="container wrap">
+	<article class="container wrap page-content">
 		<?php
 		while ( have_posts() ) :
 			the_post();
