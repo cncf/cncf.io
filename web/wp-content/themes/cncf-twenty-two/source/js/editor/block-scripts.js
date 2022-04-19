@@ -172,6 +172,19 @@ wp.blocks.registerBlockStyle(
 	{
 		label: 'Gradient Up Section',
 		name: 'gradient-up-section',
+	},
+	{
+		label: 'Box Shadow',
+		name: 'box-shadow',
+	}
+]
+);
+
+wp.blocks.registerBlockStyle(
+	'core/columns',[
+	{
+		label: '50px Padding',
+		name: '50px-padding',
 	}
 ]
 );
