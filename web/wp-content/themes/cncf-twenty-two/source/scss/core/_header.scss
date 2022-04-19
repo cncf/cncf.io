@@ -582,15 +582,15 @@
 	&__text-wrapper {
 		padding-left: 20px;
 		padding-right: 10px;
-		// height: 100%; ??
 		display: flex;
 		flex-direction: column;
 		.author-category {
 			margin-top: 5px;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 		}
 	}
 	&__title {
+		margin-top: 5px;
 		margin-bottom: 8px;
 		// experimental line restriction.
 		display: -webkit-box;
