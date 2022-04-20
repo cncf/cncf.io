@@ -16,9 +16,7 @@
 wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-demand/video.js', null, filemtime( get_template_directory() . '/source/js/on-demand/video.js' ), true );
 
 $metrics = LF_Utils::get_homepage_metrics();
-
 ?>
-
 	<section class="home-hero">
 		<div aria-hidden="true" class="home-hero__overlay"></div>
 
@@ -45,8 +43,9 @@ $metrics = LF_Utils::get_homepage_metrics();
 					<span>UBIQUITOUS</span>
 				</h1>
 
-				<h2 class="home-hero__description">
-				CNCF is the vendor-neutral hub of <strong>cloud native</strong> computing, hosting cutting-edge open source projects like Kubernetes, Prometheus and Envoy to make cloud native universal and sustainable.</h2>
+				<h2 class="home-hero__description">CNCF is the open source vendor-neutral
+					hub of <strong>cloud native computing</strong>, hosting
+					projects like Kubernetes and Prometheus to make it universal and sustainable.</h2>
 
 				<div class="horizontal-rule"></div>
 
