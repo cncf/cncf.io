@@ -39,39 +39,3 @@ jQuery(document).ready(function( $ ) {
 
 
 });
-
-
-
-  // $( ".announcement-slider-wrapper" ).slick( {
-  //   infinite: true,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   arrows: true,
-  //   dots: false,
-  //   autoplay: true,
-  //   autoplaySpeed: 10000,
-  //   cssEase: "linear",
-  //   lazyLoad: "ondemand",
-  //   adaptiveHeight: true,
-  //   vertical: true,
-  //   responsive: [
-  //     {
-  //       breakpoint: 768,
-  //       settings: {
-  //         infinite: true,
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         swipeToSlide: true,
-  //         draggable: true,
-  //         arrows: false,
-  //         dots: true,
-  //         autoplay: true,
-  //         autoplaySpeed: 10000,
-  //         cssEase: "linear",
-  //         lazyLoad: "ondemand",
-  //         adaptiveHeight: false,
-  //         vertical: false,
-  //       }
-  //     }
-  //   ]
-  // } );

@@ -24,15 +24,15 @@ are
 the foundation of cloud native computing </h2>
 </div>
 <div class="home-projects-intro__col2">
-<p>As part of the <a href="https://linuxfoundation.org/">Linux Foundation</a>, we provide support, oversight and direction for fast-growing, <a href="https://github.com/cncf/toc/blob/main/DEFINITION.md">cloud native</a> projects, including Kubernetes, Envoy, and Prometheus.</p>
+<p>As part of the <a href="https://linuxfoundation.org/">Linux Foundation</a>, we provide support, oversight and direction for open source <a href="https://github.com/cncf/toc/blob/main/DEFINITION.md">cloud native</a> projects at all stages of their maturity:</p>
 </div>
 
 </div>
 <!-- END Intro  -->
 
 <div class="wp-block-group is-style-no-padding is-style-see-all">
-<div class="wp-block-columns are-vertically-aligned-top">
-<div class="wp-block-column is-vertically-aligned-top"
+<div class="wp-block-columns are-vertically-aligned-bottom">
+<div class="wp-block-column is-vertically-aligned-bottom"
 style="flex-basis:80%">
 
 <?php
@@ -79,9 +79,9 @@ class="purecounter number"><?php echo esc_html( $project_metrics['sandbox_count'
 
 </div>
 
-<div class="wp-block-column is-vertically-aligned-top"
+<div class="wp-block-column is-vertically-aligned-bottom"
 style="flex-basis:20%">
-<p>&nbsp;</p>
+<p class="has-text-align-right is-style-link-cta"><a href="/projects">ALL Projects</a></p>
 </div>
 </div>
 
@@ -132,11 +132,7 @@ endforeach;
 </div>
 <!-- slider end  -->
 
-<div class="wp-block-group"
-style="display: flex;justify-content: center">
-<p
-class="is-style-link-cta"><a href="/projects">ALL Projects</a></p>
-</div>
+
 </div>
 
 </div>

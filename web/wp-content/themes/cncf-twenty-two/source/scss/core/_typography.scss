@@ -332,6 +332,7 @@ h3,
 }
 .has-extra-extra-large-font-size {
 	// 46px
+	line-height: 140%;
 	@media (max-width: 389px) {
 		font-size: 28px !important;
 	}

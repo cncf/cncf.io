@@ -572,6 +572,70 @@ class LF_Utils {
 	}
 
 	/**
+	 * Get Ambassadors
+	 *
+	 * Returns random array of Ambassadors.
+	 * Array contains [url to image of person, url to link to person] for each entry.
+	 * Phippy characters inserted for fun at position [0] and [6].
+	 */
+	public static function get_ambassadors() {
+
+		$people = array();
+
+		$args  = array(
+			'post_type'      => 'lf_person',
+			'posts_per_page' => 32,
+			'no_found_rows'  => true,
+			'orderby'        => 'rand',
+			'tax_query'      => array(
+				array(
+					'taxonomy' => 'lf-person-category',
+					'field'    => 'slug',
+					'terms'    => 'ambassadors',
+				),
+			),
+		);
+		$query = new WP_Query( $args );
+		while ( $query->have_posts() ) {
+
+			$query->the_post();
+			global $post;
+			$person_id           = get_the_ID();
+			$person_title        = $post->post_title;
+			$person_slug         = $post->post_name;
+			$person_image_url    = get_post_meta( get_the_ID(), 'lf_person_image', true );
+			$ambassador_url      = home_url( 'people/ambassadors' );
+			$person_profile_link = $ambassador_url . '/?p=' . $person_slug;
+
+			$people[] = array(
+				'title' => $person_title,
+				'image' => $person_image_url,
+				'link'  => $person_profile_link,
+			);
+		}
+
+		$phippy = array(
+			'title' => 'Phippy',
+			'image' => get_stylesheet_directory_uri() . '/images/home-ambassador-phippy.jpg',
+			'link'  => home_url( 'phippy' ),
+		);
+
+		$tiago = array(
+			'title' => 'Tiago',
+			'image' => get_stylesheet_directory_uri() . '/images/home-ambassador-tiago.jpg',
+			'link'  => home_url( 'phippy' ),
+		);
+
+		// Insert Phippy at 4th spot (for initial display).
+		array_splice( $people, 3, 0, array( $phippy ) );
+
+		// Add Tiago to array.
+		array_push( $people, $tiago );
+
+		return $people;
+	}
+
+	/**
 	 * Partition an array
 	 *
 	 * @param array   $array Items.

@@ -17,7 +17,11 @@ get_template_part( 'components/home-projects' );
 		echo do_shortcode( '[home_case_studies ids="64415,34869,34901,34928,34890"]' );
 		?>
 		<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
+		<?php echo do_shortcode( '[home_intro_boxes]' ); ?>
+		<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
 		<?php echo do_shortcode( '[next_event]' ); ?>
+		<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
+		<?php echo do_shortcode( '[home_ambassadors]' ); ?>
 		<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
 		<?php echo do_shortcode( '[latest_news]' ); ?>
 		<?php

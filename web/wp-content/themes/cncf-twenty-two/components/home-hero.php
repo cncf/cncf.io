@@ -45,12 +45,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 					<span>UBIQUITOUS</span>
 				</h1>
 
-				<h2 class="home-hero__description">CNCF is the vendor-neutral
-					hub of <strong>cloud native
-						computing</strong>. Hosting
-					cutting-edge projects like Kubernetes and Envoy to make
-					cloud native
-					universal and sustainable.</h2>
+				<h2 class="home-hero__description">
+				CNCF is the vendor-neutral hub of <strong>cloud native</strong> computing, hosting cutting-edge open source projects like Kubernetes, Prometheus and Envoy to make cloud native universal and sustainable.</h2>
 
 				<div class="horizontal-rule"></div>
 
