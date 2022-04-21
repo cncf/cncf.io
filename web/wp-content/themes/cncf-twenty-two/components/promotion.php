@@ -9,10 +9,10 @@
 
 $site_options = get_option( 'lf-mu' );
 
-$promotion_image_id = $site_options['promotion_image_id'] ?? '';
-$promotion_title_text = $site_options['promotion_title_text'] ?? '';
-$promotion_body_text = $site_options['promotion_body_text'] ?? '';
-$promotion_cta_text = $site_options['promotion_cta_text'] ?? '';
+$promotion_image_id    = $site_options['promotion_image_id'] ?? '';
+$promotion_title_text  = $site_options['promotion_title_text'] ?? '';
+$promotion_body_text   = $site_options['promotion_body_text'] ?? '';
+$promotion_cta_text    = $site_options['promotion_cta_text'] ?? '';
 $promotion_cta_link_id = $site_options['promotion_cta_link_id'] ?? '';
 
 if ( $promotion_image_id && $promotion_title_text && $promotion_cta_text && $promotion_cta_link_id ) :

@@ -27,7 +27,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 	<div class="container wrap">
 		<figure class="wp-block-image alignfull size-full"><img loading="eager"
 				width="2500" height="1153"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-New.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-New.jpg' ); ?>"
 				alt="CNCF Annual Report 2020"
 				sizes="(max-width: 2500px) 100vw, 2500px">
 		</figure>
@@ -114,14 +114,14 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-default">CNCF employs <a href="https://www.cncf.io/people/staff/">34</a> people from various backgrounds and locations; 71% are women, 29% are men. CNCF’s Governance Leadership, comprising the Governing Board and Technical Oversight Committee, is 14% women and 86% men.</p>
 		<figure class="wp-block-image alignwide size-large"><img loading="lazy"
 				width="819" height="264"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-01-1.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-01-1.svg' ); ?>"
 				alt="CNCF Staff, Governance, Leadership" class="wp-image-59679">
 		</figure>
 		<p
 			class="is-style-max-width-100">CNCF’s revenue is derived from four primary fundraising sources, including membership, event sponsorship, event registration, and training.</p>
 		<figure class="wp-block-image alignwide size-large"><img loading="lazy"
 				width="776" height="350"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-NEW2-02.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-NEW2-02.svg' ); ?>"
 				alt="Funding and Expenditure" class="wp-image-59755"></figure>
 		<p
 			class="is-style-default">A basic premise behind CNCF, our conferences (including <a href="https://www.cncf.io/community/kubecon-cloudnativecon-events/">KubeCon + CloudNativeCon</a>), and open source, in general, is that interactions are positive-sum. There is no fixed amount of investment, mindshare, or development contribution allocated to specific projects. Just as open source development is based on the idea that, collectively, we are smarter than any one of us, open source foundations work for the betterment of the entire community. </p>
@@ -138,7 +138,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:50%">
 				<figure class="wp-block-image size-large"><img loading="lazy"
 						width="1024" height="683"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/49091729693_232894eafb_k-1024x683.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/49091729693_232894eafb_k-1024x683.jpg' ); ?>"
 						alt="Dan Kohn" class="wp-image-59300"></figure>
 			</div>
 		</div>
@@ -176,7 +176,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 				<div class="wp-block-image">
 					<figure class="alignright size-full is-resized"><img
 							loading="lazy"
-							src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-03-1.svg"
+							src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-03-1.svg' ); ?>"
 							alt="CNCF Membership Growth" class="wp-image-59682"
 							width="443" height="606"></figure>
 				</div>
@@ -203,7 +203,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="wp-block-spacer is-style-40-responsive"></div>
 		<figure class="wp-block-image alignwide size-large"><img loading="lazy"
 				width="772" height="281"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-04-1.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-04-1.svg' ); ?>"
 				alt="End User Survey Results 2020" class="wp-image-59683">
 		</figure>
 		<div style="height:80px" aria-hidden="true"
@@ -224,7 +224,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-full"><img loading="lazy"
 						width="407" height="573"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-05.svg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-05.svg' ); ?>"
 						alt="" class="wp-image-59572"></figure>
 			</div>
 		</div>
@@ -264,7 +264,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-full"><img loading="lazy"
 						width="361" height="545"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-06.svg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-06.svg' ); ?>"
 						alt="" class="wp-image-59594"></figure>
 			</div>
 		</div>
@@ -304,7 +304,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:30%">
 				<figure class="wp-block-image size-full"><img loading="lazy"
 						width="753" height="1020"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-07-1.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-07-1.jpg' ); ?>"
 						alt="End user case studies"></figure>
 			</div>
 		</div>
@@ -316,13 +316,13 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 		<p
 			class="is-style-default">At each event, attendees had access – both live and on-demand – to over 215 sessions, including keynotes, breakout sessions, tutorials, maintainer track sessions, and the expanded 101 track sessions.&nbsp;</p>
 		<figure class="wp-block-image size-full is-resized"><img
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-08.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-08.svg' ); ?>"
 				alt="Industry and Job Function that attended KubeCon NA 2020"
 				width="1000"></figure>
 		<p
 			class="is-style-default">While the pandemic limited our in-person interaction, going virtual allowed CNCF to massively increase its conference reach. North America attendance increased 90% over the prior year’s in-person KubeCon + CloudNativeCon North America event in San Diego. </p>
 		<p
-			class="is-style-default">The CNCF issued a <a href="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/KubeCon_NA_20_Virtual_Report.pdf">Transparency Report</a> to recap the event; the report included detailed data covering attendee demographics, attendee and speaker diversity, and attendee sentiment on their conference experience. The Transparency Report for <a href="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/KubeCon_CloudNativeCon_EU_2020_Post-Event-Report.pdf">KubeCon + CloudNativeCon Europe</a> is also available for 2020. The overall satisfaction scores from attendees were 87% for EU and 90% for NA.</p>
+			class="is-style-default">The CNCF issued a <a href="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/KubeCon_NA_20_Virtual_Report.pdf' ); ?>">Transparency Report</a> to recap the event; the report included detailed data covering attendee demographics, attendee and speaker diversity, and attendee sentiment on their conference experience. The Transparency Report for <a href="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/KubeCon_CloudNativeCon_EU_2020_Post-Event-Report.pdf' ); ?>">KubeCon + CloudNativeCon Europe</a> is also available for 2020. The overall satisfaction scores from attendees were 87% for EU and 90% for NA.</p>
 		<div style="height:80px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-responsive"></div>
 		<h3 id="wellness">Wellness Activities&nbsp;</h3>
@@ -334,7 +334,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<li>Session: Stress &amp; Mental Health in Technology, Dr. Jennifer
 				Akullian, Founder | Psychologist, Growth Coaching Institute</li>
 			<li>Access to <a
-					href="https://events.linuxfoundation.org/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/OSMI-Handbook_KCCNCNA20_FINAL.pdf">Open
+					href="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/OSMI-Handbook_KCCNCNA20_FINAL.pdf' ); ?>">Open
 					Sourcing Mental Illness (OSMI) handbook</a> (available at
 				NA)&nbsp;
 			</li>
@@ -397,7 +397,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 					to Serverless on Kubernetes</a></li>
 		</ul>
 		<figure class="wp-block-image size-large is-resized"><img loading="lazy"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-10-1.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-10-1.svg' ); ?>"
 				alt="Kubernetes Training" class="wp-image-59684" width="500"
 				height="NaN"></figure>
 		<div style="height:40px" aria-hidden="true"
@@ -413,13 +413,13 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 		<p
 			class="is-style-default">CNCF projects are classified by maturity level, ranging from sandbox to incubating to graduated. CNCF uses these maturity levels to indicate to enterprises the degree of project readiness for enterprise adoption. </p>
 		<figure class="wp-block-image size-large is-resized"><img loading="lazy"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-11.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-11.svg' ); ?>"
 				alt="Project Maturity Levels" class="wp-image-59597" width="500"
 				height="NaN"></figure>
 		<p
 			class="is-style-default">Graduated projects are suitable for the vast majority of enterprises. Incubating projects are suitable for early adopters, and sandbox projects are suitable for innovators. Projects increase their maturity level by demonstrating to the TOC that they have attained end user and vendor adoption, established a healthy rate of code commits and codebase changes, and attracted committers from multiple organizations. </p>
 		<figure class="wp-block-image size-large is-resized"><img loading="lazy"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-12.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-12.svg' ); ?>"
 				alt="Project Stats 2020" class="wp-image-59598" width="500">
 		</figure>
 		<p
@@ -427,7 +427,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 		<p>In 2020 the <a href="https://github.com/cncf/toc">CNCF TOC</a> accepted 35 new projects:</p>
 		<figure class="wp-block-image alignwide size-full"><img loading="lazy"
 				width="2200" height="1700"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics16.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics16.jpg' ); ?>"
 				alt="35 new projects accepted in 2020"></figure>
 		<div style="height:80px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-responsive"></div>
@@ -441,7 +441,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:65%">
 				<figure class="wp-block-image size-large is-resized"><img
 						loading="lazy"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-13.svg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-13.svg' ); ?>"
 						alt="Project Maintainer Survey Results"
 						class="wp-image-59599" width="691" height="182">
 				</figure>
@@ -452,7 +452,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 		<h3 id="project-updates">Project Updates&nbsp;</h3>
 		<figure class="wp-block-image alignwide size-full"><img loading="lazy"
 				width="2560" height="1083"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEW-03-scaled.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEW-03-scaled.jpg' ); ?>"
 				alt="Project updates" class="wp-image-59691"></figure>
 		<p>Many incubation and graduation moves demonstrated steady forward progress for each of these projects:&nbsp;</p>
 		<ul>
@@ -581,7 +581,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-large is-resized"><img
 						loading="lazy"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-events-862x1024.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-events-862x1024.jpg' ); ?>"
 						alt="CNCF Event Logos" class="wp-image-59756"
 						width="448" height="531"></figure>
 			</div>
@@ -686,7 +686,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-full is-resized"><img
 						loading="lazy"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-15.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-15.jpg' ); ?>"
 						alt="Web page example showing community spotlight"
 						class="wp-image-59603" width="464" height="639">
 				</figure>
@@ -699,7 +699,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-max-width-100">To improve access to activities and services that CNCF offers to its hosted projects, the <a href="http://servicedesk.cncf.io">CNCF Service Desk</a> serves as a single access point for all CNCF services. If you’re a CNCF project&nbsp;maintainer, all you have to do is visit <a href="http://servicedesk.cncf.io/">http://servicedesk.cncf.io</a> to request support.&nbsp;</p>
 		<figure class="wp-block-image alignwide size-large"><img loading="lazy"
 				width="450" height="224"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-16.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-16.svg' ); ?>"
 				alt="Ticket status through 2020" class="wp-image-59627">
 		</figure>
 		<div style="height:40px" aria-hidden="true"
@@ -719,7 +719,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-default">Including the 2020 virtual events, CNCF has offered more than 2,300 diversity and need-based scholarships to attend KubeCon + CloudNativeCon and other CNCF hosted events over the course of its life.&nbsp;</p>
 		<figure class="wp-block-image size-full"><img loading="lazy"
 				width="2200" height="600"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEWWW21.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEWWW21.jpg' ); ?>"
 				alt="727 diversity applications, 185 need-based scholarships"
 				class="wp-image-59705"></figure>
 		<div style="height:80px" aria-hidden="true"
@@ -750,7 +750,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-full"><img loading="lazy"
 						width="496" height="280"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-17-2.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-17-2.jpg' ); ?>"
 						alt="Community Award winners Ian Coldwater and Ben Elder">
 				</figure>
 			</div>
@@ -759,7 +759,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-max-width-100">To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “<strong>Chop Wood and Carry Water”</strong> awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2020: <a href="https://twitter.com/erinaboyd"><strong>Erin Boyd</strong></a><strong>, </strong><a href="https://twitter.com/fuzzychef"><strong>Josh Berkus</strong></a><strong>, </strong><a href="https://twitter.com/bridgetkromhout"><strong>Bridget Kromhout</strong></a><strong>, </strong><a href="https://twitter.com/bacongobbler"><strong>Matt Fisher</strong></a><strong>, and </strong><a href="https://twitter.com/TwitchiH"><strong>Richard Hartmann</strong></a><strong>.</strong></p>
 		<figure class="wp-block-image size-full"><img loading="lazy"
 				width="1270" height="280"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-18-2.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-18-2.jpg' ); ?>"
 				alt="Erin Boyd, Josh Berkus, Bridget Kromhout, Matt Fisher, and Richard Hartmann."
 				class="wp-image-59699"></figure>
 		<div style="height:40px" aria-hidden="true"
@@ -767,7 +767,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 		<p
 			class="is-style-default">We also celebrate the contributions that end users make to our ecosystem, including providing upstream contributions to projects, creating and maintaining open source projects to expand the ecosystem, and providing significant insights into successes and failures. We were thrilled to grant our <a href="https://www.cncf.io/announcements/2020/08/20/cloud-native-computing-foundation-grants-zalando-the-top-end-user-award/#:~:text=%E2%80%93%20August%2020%2C%202020%20%E2%80%93%20The,contributions%20to%20the%20cloud%20native">Top End User Award to Zalando</a> in recognition of its notable contributions to the cloud native ecosystem, including chairing the CNCF Developer Experience SIG.</p>
 		<figure class="wp-block-image size-full is-resized"><img loading="lazy"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-19.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-19.jpg' ); ?>"
 				alt="Zalando CNCF Award Winner 2020" class="wp-image-59633"
 				width="747" height="417"></figure>
 		<div style="height:80px" aria-hidden="true"
@@ -777,7 +777,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-max-width-100">In 2020, CNCF supported more than 194 <a href="https://meetups.cncf.io/">Meetup</a> groups in 53 countries, with greater than 158,000 members. In 2020, we experienced a nearly 10% increase in CNCF Meetup members.</p>
 		<figure class="wp-block-image alignwide size-full"><img loading="lazy"
 				width="589" height="328"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-20-1.svg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-20-1.svg' ); ?>"
 				alt="CNCF Meetup member growth" class="wp-image-59700"></figure>
 		<p
 			class="is-style-max-width-100">CNCF also kicked off the <a href="https://community.cncf.io/">Cloud Native Community Groups</a> program, which will supersede the Meetup program in the future, and will become a single hosting place for the Cloud Native community initiatives.&nbsp;</p>
@@ -795,7 +795,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-large"><img loading="lazy"
 						width="1024" height="874"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-21-1024x874.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-21-1024x874.jpg' ); ?>"
 						alt="Audience at CNCF event" class="wp-image-59631">
 				</figure>
 			</div>
@@ -809,7 +809,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-default">We accepted 22 new CNCF ambassadors and provided financial support for ambassador-run meetups in 2020. We are excited to have this worldwide group of people with diverse interests, experiences, and technical backgrounds help drive local and global cloud native communities. Please check out the <a href="https://www.cncf.io/spotlights/?_sft_lf-spotlight-type=ambassador">interviews</a> with several of our CNCF ambassadors from the Ambassador Spotlights section on the <a href="https://www.cncf.io/">CNCF homepage</a>.</p>
 		<figure class="wp-block-image size-full"><img loading="lazy"
 				width="2560" height="1297"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEW-02-scaled.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEW-02-scaled.jpg' ); ?>"
 				alt="New ambassadors for 2020" class="wp-image-59701"></figure>
 		<div style="height:80px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-responsive"></div>
@@ -823,7 +823,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			</div>
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-full is-resized"><img
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-22-scaled.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-22-scaled.jpg' ); ?>"
 						alt="Mentorships web page" class="wp-image-59630"
 						width="500"></figure>
 			</div>
@@ -862,7 +862,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-large"><img loading="lazy"
 						width="1024" height="736"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-23-1024x736.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-23-1024x736.jpg' ); ?>"
 						alt="Devstats web page" class="wp-image-59629"></figure>
 			</div>
 		</div>
@@ -877,7 +877,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-default">The Cloud Native Trailmap continues to show a path for organizations to adopt the graduated and incubating projects hosted by CNCF.</p>
 		<figure class="wp-block-image size-full"><img loading="lazy"
 				width="2389" height="926"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-24-1.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-24-1.jpg' ); ?>"
 				alt="CNCF Landscape and Trail Map" class="wp-image-59641">
 		</figure>
 		<div style="height:80px" aria-hidden="true"
@@ -910,7 +910,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			class="is-style-default">By open sourcing security audits and processes, the working group hopes to inspire other projects to undertake similar efforts in their respective open source communities. Full findings and recommendations from the audits are listed <a href="https://www.cncf.io/blog/2019/08/06/open-sourcing-the-kubernetes-security-audit/">here</a>.</p>
 		<figure class="wp-block-image size-full"><img loading="lazy"
 				width="2560" height="1182"
-				src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEW-01-scaled.jpg"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphicsNEW-01-scaled.jpg' ); ?>"
 				alt="Nine CNCF-hosted Projects received security audits in 2020">
 		</figure>
 		<div style="height:40px" aria-hidden="true"
@@ -929,7 +929,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 			<div class="wp-block-column" style="flex-basis:40%">
 				<figure class="wp-block-image size-full is-resized"><img
 						loading="lazy"
-						src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-china.jpg"
+						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-china.jpg' ); ?>"
 						alt="Growth in China, 50 new member, 3rd largest national contributor"
 						class="wp-image-59734" width="518" height="702">
 				</figure>

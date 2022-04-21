@@ -18,16 +18,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php wp_head(); ?>
 		<link rel="icon"
-			href="/wp-content/themes/cncf-twenty-two/images/favicon.ico"
+			href="<?php echo esc_url( get_template_directory_uri() . '/images/favicon.ico' ); ?>"
 			sizes="any">
 		<link rel="icon"
-			href="/wp-content/themes/cncf-twenty-two/images/favicon.svg"
-			sizes="any"
-			type="image/svg+xml">
+			href="<?php echo esc_url( get_template_directory_uri() . '/images/favicon.svg' ); ?>"
+			sizes="any" type="image/svg+xml">
 		<link rel="apple-touch-icon"
-			href="/wp-content/themes/cncf-twenty-two/images/apple-touch-icon.png">
+			href="<?php echo esc_url( get_template_directory_uri() . '/images/apple-touch-icon.png' ); ?>">
 		<link rel="manifest"
-			href="/wp-content/themes/cncf-twenty-two/images/manifest.webmanifest">
+			href="<?php echo esc_url( get_template_directory_uri() . '/images/manifest.webmanifest' ); ?>">
 		<meta name="theme-color" content="#000000">
 		<meta http-equiv="X-UA-Compatible" content="IE=11">
 		<style>
@@ -42,4 +41,8 @@
 		<?php // Skip Link should be first focusable element on a page. ?>
 		<a class="skip-link" href="#maincontent">Skip to content</a>
 
-		<a class="skip-link" href="/accessibility-statement">Accessibility Help</a>
+		<?php if ( isset( $site_options['accessibility_cta_link'] ) ) : ?>
+		<a class="skip-link"
+			href="<?php echo esc_url( get_permalink( $site_options['accessibility_cta_link'] ) ); ?>">Accessibility
+			help</a>
+		<?php endif; ?>
