@@ -204,9 +204,6 @@ function add_home_ambassadors_shortcode() {
 
 		// Grab first 4 for initial load.
 		$initial_ambassadors = array_slice( $ambassadors, 0, 4 );
-
-		// Leave the rest for JS.
-		$animated_ambassadors = array_slice( $ambassadors, 4 );
 		?>
 	<div class="home-ambassadors-heptagons">
 		<?php
@@ -223,7 +220,7 @@ function add_home_ambassadors_shortcode() {
 			$count++;
 		}
 		?>
-		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__lg05"
+		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg05"
 			title="Join the Foundation of Doers - with Priyanka Sharma"
 			href="https://www.youtube.com/watch?v=u71aL6aVDPg">
 			<img alt="Priyanka Sharma"
@@ -270,6 +267,9 @@ function add_home_ambassadors_shortcode() {
 				let elements = document.querySelectorAll(
 					'.home-ambassadors-heptagons__animate');
 
+				// keep track of which to show next. Start at 4th element.
+				let $i = 4;
+
 				// loop over each, and apply to each image.
 				elements.forEach(function(element) {
 					// Random Time.
@@ -285,9 +285,11 @@ function add_home_ambassadors_shortcode() {
 					}
 					// Set Interval to loop.
 					setInterval(function changeImage() {
-						let randomAmbassador = ambassadors[
-							Math.floor(Math.random() *
-								ambassadors.length)];
+						let randomAmbassador = ambassadors[$i++];
+						if ( $i == ambassadors.length ) {
+							$i = 0;
+						}
+
 						element.classList.remove(
 							"fade-out");
 						element.classList.add("fade-in");

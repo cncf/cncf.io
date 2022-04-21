@@ -587,6 +587,7 @@ class LF_Utils {
 			'posts_per_page' => 32,
 			'no_found_rows'  => true,
 			'orderby'        => 'rand',
+			'post_status'    => array( 'publish' ),
 			'tax_query'      => array(
 				array(
 					'taxonomy' => 'lf-person-category',
