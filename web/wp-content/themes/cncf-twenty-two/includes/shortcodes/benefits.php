@@ -62,7 +62,7 @@ function add_cncf_benefits_shortcode() {
 					<div style="height:30px" aria-hidden="true"
 						class="wp-block-spacer"></div>
 
-					<p><strong>Leverage CNCF's global reach to drive your go-to-market strategies with CNCF marketing programs:</strong></p>
+					<h4 class="has-large-font-size">Leverage CNCF's global reach to drive your go-to-market strategies with CNCF marketing programs:</h4>
 
 					<div style="height:30px" aria-hidden="true"
 						class="wp-block-spacer"></div>
@@ -138,7 +138,7 @@ function add_cncf_benefits_shortcode() {
 					<div style="height:30px" aria-hidden="true"
 						class="wp-block-spacer"></div>
 
-					<p><strong>Engage with our project’s ecosystems, network with fellow members, and help shape the cloud-native market though:</strong></p>
+					<h4 class="has-large-font-size">Engage with our project’s ecosystems, network with fellow members, and help shape the cloud-native market though:</h4>
 
 					<div style="height:30px" aria-hidden="true"
 						class="wp-block-spacer"></div>
@@ -228,7 +228,7 @@ native community</p>
 					<div style="height:30px" aria-hidden="true"
 						class="wp-block-spacer"></div>
 
-					<p><strong>Connect with the foundation of doers to attract high calibre engineering talent and change the future of cloud native:</strong></p>
+					<h4 class="has-large-font-size">Connect with the foundation of doers to attract high calibre engineering talent and change the future of cloud native:</h4>
 
 					<div style="height:30px" aria-hidden="true"
 						class="wp-block-spacer"></div>
