@@ -45,7 +45,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 				<h2 class="home-hero__description">CNCF is the open source vendor-neutral
 					hub of <strong>cloud native computing</strong>, hosting
-					projects like Kubernetes and Prometheus to make it universal and sustainable.</h2>
+					projects like Kubernetes and Prometheus to make cloud native universal and sustainable.</h2>
 
 				<div class="horizontal-rule"></div>
 
