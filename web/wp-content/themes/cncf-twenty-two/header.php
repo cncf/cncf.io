@@ -10,7 +10,7 @@
  */
 
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-focus-outline">
 
 	<head>

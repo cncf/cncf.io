@@ -18,6 +18,7 @@
 		// TODO: Optimise gradient file or encode?
 		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-down.png');
 		background-repeat: repeat-x;
+		background-position: 0 top;
 		background-color: $white;
 	}
 	&.is-style-gradient-up-section {

@@ -1,4 +1,4 @@
-<?php
+[<?php
 /**
  * Shortcode
  *
@@ -151,7 +151,6 @@ function add_home_intro_boxes_shortcode() {
 }
 add_shortcode( 'home_intro_boxes', 'add_home_intro_boxes_shortcode' );
 
-
 /**
  * Home Ambassadors
  *
@@ -207,7 +206,7 @@ function add_home_ambassadors_shortcode() {
 		?>
 	<div class="home-ambassadors-heptagons">
 		<?php
-				$count = 1;
+		$count = 1;
 		foreach ( $initial_ambassadors as $ambassador ) {
 			?>
 		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg0<?php echo esc_html( $count ); ?>"
@@ -285,8 +284,9 @@ function add_home_ambassadors_shortcode() {
 					}
 					// Set Interval to loop.
 					setInterval(function changeImage() {
-						let randomAmbassador = ambassadors[$i++];
-						if ( $i == ambassadors.length ) {
+						let randomAmbassador = ambassadors[
+							$i++];
+						if ($i == ambassadors.length) {
 							$i = 0;
 						}
 
@@ -335,3 +335,93 @@ endif;
 	return $block_content;
 }
 add_shortcode( 'home_ambassadors', 'add_home_ambassadors_shortcode' );
+
+/**
+ * Home Terminal
+ *
+ * Usage:
+ * [home_terminal]
+ */
+function add_home_terminal_shortcode() {
+	ob_start();
+	?>
+<div class="home-terminal">
+
+	<div class="home-terminal__text-wrapper">
+
+		<h2 class="has-extra-extra-large-font-size">We're redefining how
+			software gets built</h2>
+
+		<div style="height:60px" aria-hidden="true"
+			class="wp-block-spacer is-style-30-60"></div>
+
+		<p
+			class="home-terminal__text">We drive team velocity through cross-industry collaboration, contributions, and guidance from experienced practitioners. Whether your background is technical or creative, everybody is welcome to join us in making cloud native ubiquitous.</p>
+
+	</div>
+
+	<div class="home-terminal__code-block">
+
+		<div class="home-terminal__status-bar">
+			<div class="home-terminal__button"></div>
+			<div class="home-terminal__button"></div>
+			<div class="home-terminal__button"></div>
+		</div>
+		<div class="home-terminal__window">
+
+			<img width="630" height="440" alt="Terminal displaying code examples for running Kubernetes cluster" class="home-terminal__image home-terminal__replace"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+				data-src="
+	<?php
+	LF_utils::get_svg( 'terminal.svg', true )
+	?>
+">
+			<noscript>
+				<img class="home-terminal__image" width="630" height="440" src="
+	<?php
+	LF_utils::get_svg( 'terminal.svg', true )
+	?>
+" alt="Terminal displaying code examples for running Kubernetes cluster">
+				<style>
+				.home-terminal__replace {
+					display: none;
+				}
+				</style>
+			</noscript>
+		</div>
+	</div>
+	<div class="home-terminal__cta">
+		<p
+			class="is-style-link-cta"><a href="https://contribute.cncf.io/">Contribute</a></p>
+	</div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+
+let terminal = document.querySelector('.home-terminal__replace');
+
+if ('IntersectionObserver' in window) {
+
+let imageObserver = new IntersectionObserver(function(entries, observer) {
+	entries.forEach(function(entry) {
+		if (entry.isIntersecting) {
+			let terminal = entry.target;
+			terminal.src = terminal.dataset.src;
+			terminal.classList.remove('home-terminal__replace');
+			imageObserver.unobserve(terminal);
+		}
+	});
+});
+imageObserver.observe(terminal);
+} else {
+// Fallback if IO not supported.
+terminal.src = terminal.dataset.src;
+}
+});
+</script>
+
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+add_shortcode( 'home_terminal', 'add_home_terminal_shortcode' );

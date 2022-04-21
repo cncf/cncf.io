@@ -23,6 +23,8 @@ get_template_part( 'components/home-projects' );
 		<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
 		<?php echo do_shortcode( '[home_ambassadors]' ); ?>
 		<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
+		<?php echo do_shortcode( '[home_terminal]' ); ?>
+		<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
 		<?php echo do_shortcode( '[latest_news]' ); ?>
 		<?php
 // 		if ( have_posts() ) :
