@@ -45,26 +45,19 @@
 			const isIOS = typeof navigator.standalone === 'boolean';
 
 			if (isIOS) {
-
-				video.addEventListener(
-					'loadedmetadata',
-					(e) => {
-						alert( {loadedmetadata} )
-					},
-					{ once: true }
-					);
+				console.log( 'It iOS' );
 
 				video.addEventListener(
 					'loadeddata',
 					(e) => {
-						alert( {loadeddata} )
+						console.log( {loadeddata} )
 					},
 					{ once: true }
 					);
 				video.addEventListener(
 					'canplay',
 					(e) => {
-						alert( {canplay} )
+						console.log( {canplay} )
 					},
 					{ once: true }
 					);
@@ -72,23 +65,32 @@
 					video.addEventListener(
 						'canplaythrough',
 						(e) => {
-							alert( {canplaythrough} )
+							console.log( {canplaythrough} )
 						},
 						{ once: true }
 						);
+
+				video.addEventListener(
+					'loadedmetadata',
+					(e) => {
+						console.log( {loadedmetadata} )
+					},
+					{ once: true }
+					);
 
 				// watch for loadeddata ability.
 				video.addEventListener(
 				'loadeddata',
 				(e) => {
-					playVideo();
-					// fade out poster.
-					poster.classList.add( 'video-has-loaded' );
+					// playVideo(); // phpcs:ignore.
+					// fade out poster. // phpcs:ignore.
+					// poster.classList.add( 'video-has-loaded' ); // phpcs:ignore.
 				},
 				{ once: true }
-				)
+				);
 
 			} else {
+				console.log( 'Not iOS' )
 				// watch for canplay ability.
 				video.addEventListener(
 				'canplay',
