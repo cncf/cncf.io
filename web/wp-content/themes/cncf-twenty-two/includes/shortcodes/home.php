@@ -136,7 +136,7 @@ function add_home_intro_boxes_shortcode() {
 
 	<div class="home-intro-box">
 		<h3 class="home-intro-box__title">New to CNCF?</h3>
-		<img class="home-intro-box__goldie"
+		<img class="home-intro-box__goldie" loading="lazy"
 			src="<?php LF_utils::get_image( 'home-goldie.png' ); ?>"
 			alt="Goldie">
 		<div class="home-intro-box__text-wrapper">
@@ -212,7 +212,7 @@ function add_home_ambassadors_shortcode() {
 		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg0<?php echo esc_html( $count ); ?>"
 			title="<?php echo esc_html( 'View ' . $ambassador['title'] ); ?>"
 			href="<?php echo esc_url( $ambassador['link'] ); ?>">
-			<img alt="<?php echo esc_html( $ambassador['title'] ); ?>"
+			<img alt="<?php echo esc_html( $ambassador['title'] ); ?>" loading="lazy"
 				src="<?php echo esc_url( $ambassador['image'] ); ?>"
 				class="home-ambassadors-heptagons__image"></a>
 			<?php
@@ -222,7 +222,7 @@ function add_home_ambassadors_shortcode() {
 		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg05"
 			title="Join the Foundation of Doers - with Priyanka Sharma"
 			href="https://www.youtube.com/watch?v=u71aL6aVDPg">
-			<img alt="Priyanka Sharma"
+			<img alt="Priyanka Sharma" loading="lazy"
 				src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/home-ambassador-priyanka.jpg' ); ?>"
 				class="home-ambassadors-heptagons__image"></a>
 
@@ -367,7 +367,7 @@ function add_home_terminal_shortcode() {
 		</div>
 		<div class="home-terminal__window">
 
-			<img width="630" height="440" alt="Terminal displaying code examples for running Kubernetes cluster" class="home-terminal__image home-terminal__replace"
+			<img width="630" height="440" alt="Terminal displaying code examples for running Kubernetes cluster" class="home-terminal__image home-terminal__replace" loading="lazy"
 				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
 				data-src="
 	<?php

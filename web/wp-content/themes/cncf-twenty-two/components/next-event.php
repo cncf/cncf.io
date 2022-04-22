@@ -21,7 +21,7 @@ if ( $event_logo_id && $event_cta_text && $event_cta_link ) :
 	?>
 <div class="next-event" role="banner"
 	style="background: <?php echo esc_attr( $event_background_color ); ?>;">
-	<a class="box-link"	href="<?php echo esc_url( $event_cta_link ); ?>"></a>
+	<a class="box-link"	href="<?php echo esc_url( $event_cta_link ); ?>" title="The next event from CNCF"></a>
 
 	<div class="next-event__column-wrapper">
 		<div class="next-event__col1">

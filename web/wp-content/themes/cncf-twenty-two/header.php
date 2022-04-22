@@ -38,9 +38,13 @@
 
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
-		<?php // Skip Link should be first focusable element on a page. ?>
-		<a class="skip-link" href="#maincontent">Skip to content</a>
 
+		<?php
+		// Cookie Banner should be first focusable element on a page.
+		get_template_part( 'components/cookie-banner' );
+		// Followed by Skip Link and Accessibility help link if set.
+		?>
+		<a class="skip-link" href="#maincontent">Skip to content</a>
 		<?php if ( isset( $site_options['accessibility_cta_link'] ) ) : ?>
 		<a class="skip-link"
 			href="<?php echo esc_url( get_permalink( $site_options['accessibility_cta_link'] ) ); ?>">Accessibility

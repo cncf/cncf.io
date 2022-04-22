@@ -80,7 +80,7 @@ $site_options = get_option( 'lf-mu' );
 				?>
 			<div class="logo show-over-1000">
 				<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
-					<img src="<?php echo esc_url( wp_get_attachment_url( $site_options['footer_image_id'] ) ); ?>"
+					<img src="<?php echo esc_url( wp_get_attachment_url( $site_options['footer_image_id'] ) ); ?>" loading="lazy"
 					width="210" height="40" alt="<?php echo bloginfo( 'name' ); ?>">
 				</a>
 			</div>
@@ -112,5 +112,4 @@ $site_options = get_option( 'lf-mu' );
 </footer>
 <?php
 get_template_part( 'components/back-to-top' );
-get_template_part( 'components/cookie-banner' );
 get_footer();
