@@ -120,7 +120,7 @@
 	}
 }
 
-.home-projects {
+.home-projects > .wp-block-group {
 	padding-top: 80px;
 	padding-bottom: 40px;
 	@media (min-width: 800px) {
@@ -219,9 +219,9 @@
 			color: $gray-700;
 		}
 	}
-	p {
-		line-height: 180%;
-	}
+	// p {
+	// 	line-height: 180%;
+	// }
 }
 
 .home-projects-slider {
