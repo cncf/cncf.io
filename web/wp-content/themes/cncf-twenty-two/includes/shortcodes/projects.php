@@ -63,11 +63,11 @@ function add_projects_shortcode( $atts ) {
 			?>
 	<div class="project-item">
 		<a href="<?php the_permalink(); ?>"
-			title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
+			title="<?php echo esc_html( the_title_attribute() . $date_accepted ); ?>"
 			class="project-item__link">
 
 			<img src="<?php echo esc_url( $logo ); ?>"
-				title="<?php echo esc_html( the_title() . $date_accepted ); ?>"
+				title="<?php echo esc_html( the_title_attribute() . $date_accepted ); ?>"
 				class="project-item__image">
 		</a>
 			<?php if ( $project_category ) : ?>

@@ -142,13 +142,13 @@ get_template_part( 'components/title' );
 						?>
 				<p class="search__item-title"><a
 						href="<?php echo esc_url( $link_url ); ?>"
-						title="<?php the_title(); ?>">
+						title="<?php the_title_attribute(); ?>">
 						<?php the_title(); ?></a></p>
 						<?php
 					} else {
 						?>
 				<p class="search__item-title"><a href="<?php the_permalink(); ?>"
-						title="<?php the_title(); ?>">
+						title="<?php the_title_attribute(); ?>">
 						<?php the_title(); ?></a></p>
 						<?php
 					}

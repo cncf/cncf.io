@@ -122,7 +122,7 @@ if ( $dat_webinar_end > $dat_now ) {
 			<div class="wp-block-embed__wrapper">
 				<iframe
 					src="https://www.youtube-nocookie.com/embed/<?php echo esc_html( $video_id ); ?>"
-					title="Video of <?php the_title(); ?>" loading="lazy"
+					title="Video of <?php the_title_attribute(); ?>" loading="lazy"
 					frameborder="0" width="500" height="281"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>

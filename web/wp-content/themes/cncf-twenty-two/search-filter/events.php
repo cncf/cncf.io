@@ -82,7 +82,7 @@ if ( $query->have_posts() ) : ?>
 			<div>
 				<?php if ( $logo ) : ?>
 				<a href="<?php echo esc_url( $external_url ); ?>"
-					title="<?php the_title(); ?>">
+					title="<?php the_title_attribute(); ?>">
 					<?php
 					LF_Utils::display_responsive_images( $logo, 'medium', '300px', 'event-item__logo' );
 					?>
@@ -90,7 +90,7 @@ if ( $query->have_posts() ) : ?>
 				<?php else : ?>
 				<h3 class="event-item__title"><a
 						href="<?php echo esc_url( $external_url ); ?>"
-						title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 				</h3>
 				<?php endif; ?>
 

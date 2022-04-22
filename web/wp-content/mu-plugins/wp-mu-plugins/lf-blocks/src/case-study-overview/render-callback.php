@@ -257,7 +257,7 @@ endif;
 						?>
 					<div class="case-study-overview__project-icon">
 						<img loading="lazy"
-							src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-color.svg'; ?>"
+							src="<?php echo esc_url( get_template_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-color.svg'; ?>"
 							alt="<?php echo esc_html( $project->name ); ?>">
 					</div>
 						<?php

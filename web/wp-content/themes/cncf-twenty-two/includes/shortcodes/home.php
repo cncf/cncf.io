@@ -223,7 +223,7 @@ function add_home_ambassadors_shortcode() {
 			title="Join the Foundation of Doers - with Priyanka Sharma"
 			href="https://www.youtube.com/watch?v=u71aL6aVDPg">
 			<img alt="Priyanka Sharma" loading="lazy"
-				src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/home-ambassador-priyanka.jpg' ); ?>"
+				src="<?php echo esc_url( get_template_directory_uri() . '/images/home-ambassador-priyanka.jpg' ); ?>"
 				class="home-ambassadors-heptagons__image"></a>
 
 		<svg class="home-ambassadors-heptagons__sm01" aria-hidden="true">

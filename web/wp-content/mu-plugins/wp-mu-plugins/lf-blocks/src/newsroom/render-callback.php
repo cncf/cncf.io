@@ -145,7 +145,7 @@ function lf_newsroom_show_post( $lf_post, $show_images, $sticky = false ) {
 			if ( has_post_thumbnail( $lf_post ) ) {
 				echo wp_get_attachment_image( get_post_thumbnail_id( $lf_post ), 'newsroom-media-coverage', false, array( 'class' => 'media-logo' ) );
 			} else {
-				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+				echo '<img src="' . esc_url( get_template_directory_uri() )
 				. '/images/thumbnail-default.svg" alt="CNCF Media Coverage" />';
 			}
 		} else {
@@ -159,7 +159,7 @@ function lf_newsroom_show_post( $lf_post, $show_images, $sticky = false ) {
 			} elseif ( isset( $site_options['generic_thumb_id'] ) && $site_options['generic_thumb_id'] ) {
 				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'archive-default-svg' );
 			} else {
-				echo '<img src="' . esc_url( get_stylesheet_directory_uri() )
+				echo '<img src="' . esc_url( get_template_directory_uri() )
 				. '/images/thumbnail-default.svg" alt="CNCF" class="archive-default-svg"/>';
 			}
 		}

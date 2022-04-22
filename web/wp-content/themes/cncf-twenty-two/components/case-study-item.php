@@ -52,7 +52,7 @@ if ( $cn ) {
 	<div class="case-study-item__content">
 
 		<!-- title -->
-		<h2 class="case-study-item__title"><a title="<?php the_title(); ?>"
+		<h2 class="case-study-item__title"><a title="<?php the_title_attribute(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 		<!-- horizontal rule only on mobile -->

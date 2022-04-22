@@ -617,13 +617,13 @@ class LF_Utils {
 
 		$phippy = array(
 			'title' => 'Phippy',
-			'image' => get_stylesheet_directory_uri() . '/images/home-ambassador-phippy.jpg',
+			'image' => get_template_directory_uri() . '/images/home-ambassador-phippy.jpg',
 			'link'  => home_url( 'phippy' ),
 		);
 
 		$tiago = array(
 			'title' => 'Tiago',
-			'image' => get_stylesheet_directory_uri() . '/images/home-ambassador-tiago.jpg',
+			'image' => get_template_directory_uri() . '/images/home-ambassador-tiago.jpg',
 			'link'  => home_url( 'phippy' ),
 		);
 
@@ -671,10 +671,10 @@ class LF_Utils {
 	public static function get_svg( $file, $path = false ) {
 
 		if ( $path ) {
-			$output = get_stylesheet_directory_uri() . '/images/' . $file;
+			$output = get_template_directory_uri() . '/images/' . $file;
 			echo esc_url( $output );
 		} else {
-			$abs_path = get_stylesheet_directory() . '/images/' . $file;
+			$abs_path = get_template_directory_uri() . '/images/' . $file;
 			if ( file_exists( $abs_path ) ) {
 				ob_start();
 				include $abs_path;
@@ -698,7 +698,7 @@ class LF_Utils {
 	 */
 	public static function get_image( $file ) {
 		$output = '';
-		$output = get_stylesheet_directory_uri() . '/images/' . $file;
+		$output = get_template_directory_uri() . '/images/' . $file;
 		echo esc_url( $output );
 	}
 

@@ -42,7 +42,7 @@ $project_slug = strtolower( get_the_title() );
 				<a class="projects-single-box__link"
 					href="<?php echo esc_url( $external_url ); ?>"><img
 						src="<?php echo esc_url( $logo ); ?>"
-						title="Visit <?php echo esc_html( the_title() ); ?> website"
+						title="Visit <?php echo esc_html( the_title_attribute() ); ?> website"
 						class="projects-single-box__image"></a>
 			</div>
 
@@ -61,8 +61,7 @@ $project_slug = strtolower( get_the_title() );
 				if ( $date_accepted && $stage ) {
 					?>
 				<p class="projects-single-box__accepted">
-					<?php the_title(); ?>
-was accepted to CNCF on
+					<?php the_title(); ?>&nbsp;was accepted to CNCF on
 <strong><?php echo esc_html( $date_accepted ); ?></strong>
 and is at the
 <strong><?php echo esc_html( $stage ); ?></strong>
@@ -99,52 +98,52 @@ project maturity level.
 					<div class="projects-single-box__icons">
 
 						<?php if ( $github ) : ?>
-						<a title="<?php the_title(); ?> on Github"
+						<a title="<?php the_title_attribute(); ?> on Github"
 							href="<?php echo esc_html( $github ); ?>"><?php LF_utils::get_svg( '/social/boxed-github.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $devstats ) : ?>
-						<a title="<?php the_title(); ?> on DevStats"
+						<a title="<?php the_title_attribute(); ?> on DevStats"
 							href="<?php echo esc_html( $devstats ); ?>"><?php LF_utils::get_svg( '/social/boxed-lf-devstats.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $logos ) : ?>
-						<a title="<?php the_title(); ?> Logos"
+						<a title="<?php the_title_attribute(); ?> Logos"
 							href="<?php echo esc_html( $logos ); ?>"><?php LF_utils::get_svg( '/social/boxed-lf-artwork.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $stack_overflow ) : ?>
-						<a title="<?php the_title(); ?> on Stack Overflow"
+						<a title="<?php the_title_attribute(); ?> on Stack Overflow"
 							href="<?php echo esc_html( $stack_overflow ); ?>"><?php LF_utils::get_svg( '/social/boxed-stack-overflow.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $twitter && ( preg_match( '/^https?:\/\/(www\.)?twitter\.com\/(#!\/)?(?<name>[^\/]+)(\/\w+)*$/', $twitter, $matches ) ) && ( 'CloudNativeFdn' != $matches['name'] ) ) : ?>
-						<a title="<?php the_title(); ?> on Twitter"
+						<a title="<?php the_title_attribute(); ?> on Twitter"
 							href="<?php echo esc_html( $twitter ); ?>"><?php LF_utils::get_svg( '/social/boxed-twitter.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $blog ) : ?>
-						<a title="<?php the_title(); ?> Blog"
+						<a title="<?php the_title_attribute(); ?> Blog"
 							href="<?php echo esc_html( $blog ); ?>"><?php LF_utils::get_svg( '/social/boxed-blog.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $mail ) : ?>
-						<a title="<?php the_title(); ?> Contact"
+						<a title="<?php the_title_attribute(); ?> Contact"
 							href="<?php echo esc_html( $mail ); ?>"><?php LF_utils::get_svg( '/social/boxed-email.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $slack ) : ?>
-						<a title="<?php the_title(); ?> Slack"
+						<a title="<?php the_title_attribute(); ?> Slack"
 							href="<?php echo esc_html( $slack ); ?>"><?php LF_utils::get_svg( '/social/boxed-slack.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $youtube ) : ?>
-						<a title="<?php the_title(); ?> on YouTube"
+						<a title="<?php the_title_attribute(); ?> on YouTube"
 							href="<?php echo esc_html( $youtube ); ?>"><?php LF_utils::get_svg( '/social/boxed-youtube.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $gitter ) : ?>
-						<a title="<?php the_title(); ?> on Gitter"
+						<a title="<?php the_title_attribute(); ?> on Gitter"
 							href="<?php echo esc_html( $gitter ); ?>"><?php LF_utils::get_svg( '/social/boxed-gitter.svg' ); ?></a>
 						<?php endif; ?>
 

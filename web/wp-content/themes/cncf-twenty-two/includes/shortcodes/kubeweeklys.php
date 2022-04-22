@@ -58,7 +58,7 @@ function add_kubeweeklys_shortcode() {
 			<div class="kubeweekly-item">
 
 			<p class="kubeweekly-item__title">
-			<a class="kubeweekly-item__link" href="<?php echo esc_url( $link_url ); ?>" title="<?php echo esc_html( get_the_title() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
+			<a class="kubeweekly-item__link" href="<?php echo esc_url( $link_url ); ?>" title="<?php echo esc_html( the_title_attribute() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 			</p>
 			<span class="kubeweekly-item__date"><?php the_date(); ?></span>
 

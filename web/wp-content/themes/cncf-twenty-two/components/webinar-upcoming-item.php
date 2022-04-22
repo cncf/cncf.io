@@ -39,7 +39,7 @@ if ( $webinar_reg_url ) {
 		<?php endif; ?>
 
 		<a class="webinar-upcoming-item__link" href="<?php echo esc_url( $link_url ); ?>"
-				title="<?php esc_html( the_title() ); ?> on <?php echo esc_html( $date_and_time ); ?>"><h3 class="webinar-upcoming-item__title"><?php esc_html( the_title() ); ?></h3></a>
+				title="<?php the_title_attribute(); ?> on <?php echo esc_html( $date_and_time ); ?>"><h3 class="webinar-upcoming-item__title"><?php esc_html( the_title() ); ?></h3></a>
 
 		<?php
 		// Presented by... Company.

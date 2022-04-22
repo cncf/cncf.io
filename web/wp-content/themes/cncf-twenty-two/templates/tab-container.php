@@ -33,7 +33,7 @@ get_template_part( 'components/title' );
 // Include the JS file.
 wp_enqueue_script(
 	'sticky-js',
-	get_stylesheet_directory_uri() . '/source/js/libraries/sticky.min.js',
+	get_template_directory_uri() . '/source/js/libraries/sticky.min.js',
 	null,
 	filemtime( get_template_directory() . '/source/js/libraries/sticky.min.js' ),
 	true
@@ -41,7 +41,7 @@ wp_enqueue_script(
 
 wp_enqueue_script(
 	'tab-container-js',
-	get_stylesheet_directory_uri() . '/source/js/on-demand/tab-container.js',
+	get_template_directory_uri() . '/source/js/on-demand/tab-container.js',
 	is_admin() ? null : array( 'jquery', 'sticky-js' ),
 	filemtime( get_template_directory() . '/source/js/on-demand/tab-container.js' ),
 	true

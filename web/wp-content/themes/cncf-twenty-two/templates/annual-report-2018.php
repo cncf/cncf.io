@@ -29,7 +29,7 @@ endif;
 
 	wp_enqueue_script(
 		'annual-report-js',
-		get_stylesheet_directory_uri() . '/source/js/on-demand/annual-report-pre-2020.js',
+		get_template_directory_uri() . '/source/js/on-demand/annual-report-pre-2020.js',
 		array( 'jquery' ),
 		filemtime( get_template_directory() . '/source/js/on-demand/annual-report-pre-2020.js' ),
 		true

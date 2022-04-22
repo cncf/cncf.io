@@ -1,6 +1,6 @@
 <?php
 /**
- * News Item
+ * News Item - Horizontal
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -38,14 +38,14 @@ if ( $is_in_the_news_category ) :
 
 	?>
 
-<a class="post-archive__link" href="<?php echo esc_url( $link_url ); ?>" title="<?php the_title(); ?>">
+<a class="post-archive__link" href="<?php echo esc_url( $link_url ); ?>" title="<?php the_title_attribute(); ?>">
 
 		<?php
 		if ( has_post_thumbnail() ) {
 			echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-media-coverage', false, array( 'class' => 'post-archive__image' ) );
 
 		} else {
-			echo '<img class="post-archive__image" src="' . esc_url( get_stylesheet_directory_uri() )
+			echo '<img class="post-archive__image" src="' . esc_url( get_template_directory_uri() )
 			. '/images/default-media-logo.svg" alt="CNCF Media Coverage" />';
 		}
 		?>
@@ -54,7 +54,7 @@ if ( $is_in_the_news_category ) :
 
 	<span class="post-archive__title">
 		<a href="<?php echo esc_url( $link_url ); ?>"
-			title="<?php the_title(); ?>">
+			title="<?php the_title_attribute(); ?>">
 			<?php the_title(); ?>
 		</a>
 	</span>
@@ -86,7 +86,7 @@ else :
 	}
 	?>
 
-		<a class="post-archive__link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+		<a class="post-archive__link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 
 			<?php
 
@@ -124,7 +124,7 @@ else :
 		?>
 
 <span class="post-archive__title">
-	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 		<?php the_title(); ?>
 	</a>
 </span>

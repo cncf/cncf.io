@@ -2819,7 +2819,7 @@ In Italian, thanks to SparkFabrik</p>
 // chart js.
 wp_enqueue_script(
 	'chart-js',
-	get_stylesheet_directory_uri() . '/source/js/libraries/chart.min.js',
+	get_template_directory_uri() . '/source/js/libraries/chart.min.js',
 	null,
 	filemtime( get_template_directory() . '/source/js/libraries/chart.min.js' ),
 	true
@@ -2837,7 +2837,7 @@ wp_enqueue_script(
 // custom scripts.
 wp_enqueue_script(
 	'annual-report-21',
-	get_stylesheet_directory_uri() . '/source/js/on-demand/annual-report-21.js',
+	get_template_directory_uri() . '/source/js/on-demand/annual-report-21.js',
 	array( 'jquery', 'chart-js' ),
 	filemtime( get_template_directory() . '/source/js/on-demand/annual-report-21.js' ),
 	true

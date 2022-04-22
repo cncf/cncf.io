@@ -42,7 +42,7 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 
 		<figure class="person__image">
 			<img loading="lazy" src="<?php echo esc_attr( $image_url ); ?>"
-				alt="Picture of <?php the_title(); ?>">
+				alt="Picture of <?php the_title_attribute(); ?>">
 		</figure>
 
 		<?php
@@ -143,7 +143,7 @@ endif;
 				<figure class="person__image">
 					<img loading="lazy"
 						src="<?php echo esc_attr( $image_url ); ?>"
-						alt="Picture of <?php the_title(); ?>">
+						alt="Picture of <?php the_title_attribute(); ?>">
 				</figure>
 
 				<div class="modal__content">

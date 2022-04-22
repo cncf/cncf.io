@@ -59,7 +59,7 @@ if ( $query->have_posts() ) : ?>
 <div class="report-item">
 
 	<a class="report-item__link" href="<?php the_permalink(); ?>"
-		title="<?php echo esc_attr( get_the_title() ); ?>">
+		title="<?php echo esc_attr( the_title_attribute() ); ?>">
 		<?php
 		if ( has_post_thumbnail() ) {
 			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'report-item__image' );
