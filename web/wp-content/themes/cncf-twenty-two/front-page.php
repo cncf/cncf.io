@@ -9,11 +9,10 @@
 
 get_template_part( 'components/header' );
 get_template_part( 'components/home-hero' );
-get_template_part( 'components/home-projects' );
 ?>
-
 <article class="container wrap">
-	<?php
+	<?php get_template_part( 'components/home-projects' );
+
 	if ( have_posts() ) :
 		while ( have_posts() ) :
 			the_post();
