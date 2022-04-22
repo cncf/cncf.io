@@ -34,7 +34,8 @@ h3,
 .h3 {
 	font-weight: 700;
 	font-size: 24px;
-	line-height: 125%;
+	line-height: 170%;
+	// line-height: 125%; // TODO: Where did 125 come from?
 }
 
 .is-style-opening-paragraph {
@@ -229,6 +230,7 @@ h3,
 		}
 	}
 }
+// end of post content
 
 // case studies (maybe reports but not yet).
 .page-content {
@@ -288,6 +290,7 @@ h3,
 		}
 	}
 }
+// end of page content.
 
 .is-style-max-width-800 {
 	max-width: 800px;
@@ -298,6 +301,7 @@ h3,
 }
 
 // not attached as a style.
+// TODO: Actually used anywhere?
 .is-style-mb0 {
 	margin-bottom: 0 !important;
 }
@@ -342,4 +346,8 @@ h3,
 	@media (min-width: 600px) and (max-width: 999px) {
 		font-size: 36px !important;
 	}
+}
+
+.normal-case {
+	text-transform: none !important;
 }
