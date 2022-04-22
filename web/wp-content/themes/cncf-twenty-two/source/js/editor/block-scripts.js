@@ -141,7 +141,11 @@ wp.blocks.registerBlockStyle(
 		{
 		label: 'Blob',
 		name: 'blob',
-	}
+		},
+		{
+			label: 'Rounded Corners',
+			name: 'rounded-corners',
+		}
 ]
 );
 
@@ -185,6 +189,14 @@ wp.blocks.registerBlockStyle(
 	{
 		label: '50px Padding',
 		name: '50px-padding',
+	},
+	{
+		label: '50px Gap',
+		name: '50px-gap',
+	},
+	{
+		label: '70px Gap',
+		name: '70px-gap',
 	}
 ]
 );

@@ -1,4 +1,12 @@
-// applies to the Figure.
+// Reminder that image styles are applied to the parent Figure.
+
+.is-style-rounded-corners {
+	border-radius: 5px;
+	img {
+		border-radius: inherit;
+	}
+}
+
 .is-style-blob {
 	display: block;
 	img {

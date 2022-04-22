@@ -38,3 +38,12 @@
 		}
 	}
 }
+
+.wp-block-columns:not(.is-not-stacked-on-mobile) {
+	&.is-style-50px-gap {
+		--wp--style--block-gap: 50px;
+	}
+	&.is-style-70px-gap {
+		--wp--style--block-gap: 70px;
+	}
+}

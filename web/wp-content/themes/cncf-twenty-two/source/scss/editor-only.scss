@@ -17,32 +17,17 @@
 	.editor-styles-wrapper {
 		@import 'core/colors';
 		@import 'core/buttons';
+		@import 'core/typography';
 		@import 'components/case-studies';
-		// @import "components/link-icons";
-		// @import "components/hero";
-		// @import "components/webinars";
-		// @import "components/events";
-		// @import "components/people";
-		// @import "components/projects";
-		// @import "components/spotlights";
-		// @import "components/countup";
-
 		@import 'blocks/has-color';
+		@import 'blocks/block-quote';
+		@import 'blocks/columns';
+		@import 'blocks/groups';
 		@import 'blocks/images';
-		// @import "blocks/lists";
-		// @import "blocks/quote";
-		// @import "blocks/gallery";
+		@import 'blocks/lists';
 		@import 'blocks/separator';
 		@import 'blocks/spacers';
-		// @import "blocks/table";
-		// @import "blocks/paragraph-headers";
-
-		// LF Blocks styling needed in editor.
-		// @import "blocks/case-study-highlights";
-		// @import "blocks/case-study-overview";
-		// @import "blocks/landscape";
-		// @import "blocks/newsroom";
-		// @import "blocks/stats";
+		@import 'blocks/video';
 
 		h1,
 		h2,

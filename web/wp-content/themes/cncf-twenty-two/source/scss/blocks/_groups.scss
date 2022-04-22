@@ -6,9 +6,6 @@
 			padding-right: 0;
 		}
 	}
-}
-
-.wp-block-group {
 	&.is-style-gradient-down-section {
 		padding: 0; // reset.
 		padding-top: 80px;
@@ -39,5 +36,9 @@
 		border: 1px solid $gray-400;
 		box-sizing: border-box;
 		border-radius: 10px;
+		padding: 40px 20px;
+		@media (min-width: 1000px) {
+			padding: 40px;
+		}
 	}
 }
