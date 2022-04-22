@@ -702,7 +702,7 @@
 			'terminal text'
 			'terminal cta';
 		grid-template-columns: 3fr 2fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 2fr 1fr;
 	}
 	@media (min-width: 1000px) {
 		grid-column-gap: 40px;
@@ -726,7 +726,6 @@
 		position: relative;
 		@media (min-width: 800px) {
 			grid-area: terminal;
-			align-self: flex-start;
 			margin-top: 0;
 			margin-bottom: 0;
 		}
@@ -764,7 +763,6 @@
 			font-weight: 700;
 			font-size: 8px;
 			line-height: 140%;
-
 			letter-spacing: 0.1em;
 			color: #ffffff;
 			text-transform: uppercase;

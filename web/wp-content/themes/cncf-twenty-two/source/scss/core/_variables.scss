@@ -68,8 +68,9 @@ $font-code: Hack, 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono', 'Lucida C
 $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times',
 	'Source Serif Pro', serif;
 
+// TODO: Have swapped optional for fallback. Combine with preload of css for performance?
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 100;
 	font-style: normal;
@@ -80,7 +81,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 200;
 	font-style: normal;
@@ -91,7 +92,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 300;
 	font-style: normal;
@@ -102,7 +103,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 400;
 	font-style: normal;
@@ -113,7 +114,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 500;
 	font-style: normal;
@@ -124,7 +125,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 600;
 	font-style: normal;
@@ -135,7 +136,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 700;
 	font-style: normal;
@@ -146,7 +147,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 800;
 	font-style: normal;
@@ -157,7 +158,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 }
 
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Clarity City';
 	font-weight: 900;
 	font-style: normal;
@@ -170,7 +171,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 
 // Source Serif Pro - Italic
 @font-face {
-	font-display: optional;
+	font-display: fallback;
 	font-family: 'Source Serif Pro';
 	font-style: italic;
 	font-weight: 400;
