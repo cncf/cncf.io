@@ -47,41 +47,20 @@
 			if (isIOS) {
 				console.log( 'It iOS' );
 
-				video.addEventListener(
-					'loadeddata',
-					(e) => {
-						console.log( {loadeddata} )
-					},
-					{ once: true }
-					);
-				video.addEventListener(
-					'canplay',
-					(e) => {
-						console.log( {canplay} )
-					},
-					{ once: true }
-					);
+				function addListenerMulti(el, s, fn) {
+					s.split( ' ' ).forEach( e => el.addEventListener( e, fn, false ) );
+				}
 
-					video.addEventListener(
-						'canplaythrough',
-						(e) => {
-							console.log( {canplaythrough} )
-						},
-						{ once: true }
-						);
-
-				// watch for loadeddata ability.
-				video.addEventListener(
-				'loadeddata',
-				(e) => {
-					// playVideo(); // phpcs:ignore.
-					// fade out poster. // phpcs:ignore.
-					// poster.classList.add( 'video-has-loaded' ); // phpcs:ignore.
-				},
-				{ once: true }
-				);
+				addListenerMulti(
+					video,
+					'abort canplay canplaythrough durationchange emptied encrypted ended error interruptbegin interruptend loadeddata loadedmetadata loadstart mozaudioavailable pause play playing progress ratechange seeked seeking stalled suspend volumechange waiting',
+					function(e){
+						console.log( e.type );
+					}
+					);
 
 			} else {
+
 				console.log( 'Not iOS' )
 				// watch for canplay ability.
 				video.addEventListener(
