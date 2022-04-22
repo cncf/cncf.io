@@ -22,7 +22,6 @@
 				try {
 					await video.play();
 				} catch (err) {
-					console.log( 'Video failed to play' )
 					console.log( err )
 				}
 			}
@@ -31,7 +30,6 @@
 				try {
 					await poster.complete;
 				} catch (err) {
-					console.log( 'Poster failed to finish loading' )
 					console.log( err )
 				}
 			}
@@ -44,10 +42,9 @@
 			// start preloading video.
 			video.preload = 'auto';
 
+			// Check for iOS devices as they don't trigger same video events.
 			const isIOS = typeof navigator.standalone === 'boolean';
-
 			if (isIOS) {
-				console.log( 'It iOS' );
 
 				// watch for loadedmetadata ability.
 				video.addEventListener(
@@ -62,7 +59,6 @@
 
 			} else {
 
-				console.log( 'Not iOS' )
 				// watch for canplay ability.
 				video.addEventListener(
 				'canplay',
@@ -74,7 +70,6 @@
 				{ once: true }
 				)
 			}
-
 			// end.
 		}
 	);
