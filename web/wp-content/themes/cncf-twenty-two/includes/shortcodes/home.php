@@ -268,18 +268,16 @@ function add_home_ambassadors_shortcode() {
 
 				// keep track of which to show next. Start at 4th element.
 				let $i = 4;
+				let $j = 0;
 
 				// loop over each, and apply to each image.
 				elements.forEach(function(element) {
-					// Random Time.
-					function randomTime() {
+					function getDelay() {
 						const displayTimes = ["7000", "4750",
-							"3500", "4000", "5500", "6000"
+							"3500", "4000", "15500", "6000"
 						];
 						return parseInt(
-							displayTimes[Math.floor(Math
-								.random() * displayTimes
-								.length)]
+							displayTimes[$j++]
 						);
 					}
 					// Set Interval to loop.
@@ -314,7 +312,7 @@ function add_home_ambassadors_shortcode() {
 							element.classList.add(
 								"fade-out");
 						}, 520);
-					}, randomTime());
+					}, getDelay());
 				});
 			},
 		);
