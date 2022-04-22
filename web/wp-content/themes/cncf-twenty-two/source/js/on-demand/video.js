@@ -49,7 +49,7 @@
 				video.addEventListener(
 					'loadedmetadata',
 					(e) => {
-						console.log({loadedmetadata})
+						console.log( {loadedmetadata} )
 					},
 					{ once: true }
 					);
@@ -57,14 +57,14 @@
 				video.addEventListener(
 					'loadeddata',
 					(e) => {
-						console.log({loadeddata})
+						console.log( {loadeddata} )
 					},
 					{ once: true }
 					);
 				video.addEventListener(
 					'canplay',
 					(e) => {
-						console.log({canplay})
+						console.log( {canplay} )
 					},
 					{ once: true }
 					);
@@ -72,7 +72,7 @@
 					video.addEventListener(
 						'canplaythrough',
 						(e) => {
-							console.log({canplaythrough})
+							console.log( {canplaythrough} )
 						},
 						{ once: true }
 						);

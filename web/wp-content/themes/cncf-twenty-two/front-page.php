@@ -11,7 +11,8 @@ get_template_part( 'components/header' );
 get_template_part( 'components/home-hero' );
 ?>
 <article class="container wrap">
-	<?php get_template_part( 'components/home-projects' );
+	<?php
+	get_template_part( 'components/home-projects' );
 
 	if ( have_posts() ) :
 		while ( have_posts() ) :
