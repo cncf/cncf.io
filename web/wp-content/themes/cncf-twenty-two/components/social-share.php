@@ -12,19 +12,19 @@
 /**
  * Gets the URL to share from current permalink.
  */
-$page_url = urlencode( get_permalink() );
+$page_url = rawurlencode( get_permalink() );
 
 /**
  * Gets the title of the page from current page.
  */
-$page_title = htmlspecialchars( urlencode( html_entity_decode( get_the_title(), ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
+$page_title = htmlspecialchars( rawurlencode( html_entity_decode( get_the_title(), ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
 
 /**
  * Gets the featured image.
  */
 $featured_image = wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'full' );
 if ( $featured_image ) {
-	$featured_image = urlencode( $featured_image );
+	$featured_image = rawurlencode( $featured_image );
 }
 
 /**

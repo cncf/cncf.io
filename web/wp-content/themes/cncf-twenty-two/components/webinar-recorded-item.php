@@ -41,8 +41,7 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 		} else {
 			// setup options.
 			$site_options = get_option( 'lf-mu' );
-
-			echo wp_get_attachment_image( $site_options['generic_thumb_id'], 'full', false, array( 'class' => 'webinar-recorded-item__image' ) );
+			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'full', '400px', 'webinar-recorded-item__image' );
 		}
 		?>
 		</a>

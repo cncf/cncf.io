@@ -13,7 +13,7 @@ $is_in_the_news_category = $args['is_in_the_news'] ? true : false;
 $is_blog_category        = $args['is_blog'] ? true : false;
 
 // Merge classes.
-$classes = LF_Utils::merge_classes(
+$classes       = LF_Utils::merge_classes(
 	array(
 		$is_featured ? 'is-featured-item' : '',
 		$is_in_the_news_category ? 'post-archive__item in-the-news-item' : 'post-archive__item ',
@@ -42,8 +42,7 @@ if ( $is_in_the_news_category ) :
 
 		<?php
 		if ( has_post_thumbnail() ) {
-			echo wp_get_attachment_image( get_post_thumbnail_id(), 'newsroom-media-coverage', false, array( 'class' => 'post-archive__image' ) );
-
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-media-coverage', '600px', 'post-archive__image' );
 		} else {
 			echo '<img class="post-archive__image" src="' . esc_url( get_template_directory_uri() )
 			. '/images/default-media-logo.svg" alt="CNCF Media Coverage" />';
@@ -115,10 +114,10 @@ else :
 		<span><a class="author-category"
 				title="See <?php echo esc_attr( $category_author ); ?> posts"
 				href="<?php echo esc_url( $category_link ); ?>">
-								 <?php
-									echo esc_html( $category_author );
-									?>
-		 Post</a></span>
+			<?php
+			echo esc_html( $category_author );
+			?>
+			Post</a></span>
 			<?php
 		endif;
 		?>
