@@ -16,10 +16,10 @@
 			padding-top: 100px;
 		}
 		// TODO: Optimise gradient file or encode?
-		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-down.png');
+		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-down.png'),
+			linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
 		background-repeat: repeat-x;
 		background-position: 0 top;
-		background-color: yellow;
 	}
 	&.is-style-gradient-up-section {
 		padding: 0; // reset.
@@ -28,9 +28,10 @@
 			padding-bottom: 100px;
 		}
 		// TODO: Optimise gradient file or encode?
-		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-up.png');
+		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-up.png'),
+			linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
 		background-repeat: repeat-x;
-		background-color: white;
+		background-position: 0 bottom;
 	}
 	&.is-style-box-shadow {
 		background-color: white;
