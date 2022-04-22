@@ -70,14 +70,6 @@
 						{ once: true }
 						);
 
-				video.addEventListener(
-					'loadedmetadata',
-					(e) => {
-						console.log( {loadedmetadata} )
-					},
-					{ once: true }
-					);
-
 				// watch for loadeddata ability.
 				video.addEventListener(
 				'loadeddata',
