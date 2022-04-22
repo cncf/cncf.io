@@ -723,11 +723,52 @@
 		border: 1px solid $gray-800;
 		filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.25));
 		background: radial-gradient(102.2% 102.2% at 2.24% 100%, #010101 0.27%, #1a214a 100%);
+		position: relative;
 		@media (min-width: 800px) {
 			grid-area: terminal;
 			align-self: flex-start;
 			margin-top: 0;
 			margin-bottom: 0;
+		}
+	}
+	&__download {
+		position: absolute;
+		top: 0;
+		right: 20px;
+		max-width: 75px;
+		padding: 6px;
+		background: linear-gradient(136.4deg, #d62293 26.67%, #d62263 80%);
+		filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.35));
+		border-radius: 0px 0px 5px 5px;
+		text-align: center;
+		@media (min-width: 1000px) {
+			right: 30px;
+		}
+		&:hover {
+			transition: background 0.3s ease-in;
+			background: linear-gradient(308.06deg, #d62293 16.3%, #d62263 83.94%);
+		}
+		&:active {
+			.home-terminal__download-image,
+			.home-terminal__download-text {
+				filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.35));
+			}
+		}
+
+		&-image {
+			filter: drop-shadow(0px -0.25px 0.5px rgba(0, 0, 0, 0.25));
+			margin: auto;
+		}
+		&-text {
+			margin-top: 5px;
+			font-weight: 700;
+			font-size: 8px;
+			line-height: 140%;
+
+			letter-spacing: 0.1em;
+			color: #ffffff;
+			text-transform: uppercase;
+			filter: drop-shadow(0px -0.25px 0.5px rgba(0, 0, 0, 0.25));
 		}
 	}
 	&__status-bar {
@@ -757,7 +798,7 @@
 		}
 	}
 	&__window {
-		padding: 20px 10px;
+		padding: 25px 10px 10px 10px;
 	}
 	&__cta {
 		padding-top: 30px;
