@@ -1,4 +1,4 @@
-// Block alignment.
+// Block alignment on frontend.
 
 // Gutenberg style to break out of page container.
 .alignfull {
@@ -9,37 +9,19 @@
 	margin-left: -50vw;
 	width: 100vw;
 	max-width: 100vw;
-	// &.wp-block-group {
-	// .wp-block-group__inner-container {
-	// 					max-width: 1200px;
-	// 				}
-	// 			}
 }
 
-// block using alignwide include:
-// case study overview
-// annual report header
-// .alignwide {
-// 	@media (min-width: 1200px) {
-// 		margin-left: calc((100% - 1200px) / 2);
-// 		width: 1200px !important;
-
-// 		&.wp-block-group {
-// 			.wp-block-group__inner-container {
-// 				max-width: 100%;
-// 			}
-// 		}
-// 	}
-// }
-
+// Experimental: Fixing WordPress group issues #33374.
+// If something is not respecting max-width, add not exception here.
 .wp-block-group.alignfull {
-	> *:not(.wp-block-group):not(.wp-block-columns):not([abc^='is-style-max']) {
+	> *:not(.wp-block-group):not(.wp-block-columns):not([class^='is-style-']) {
 		max-width: $content-width;
 		margin-left: auto;
 		margin-right: auto;
 	}
 }
 
+// Experimental: Fixing WordPress group issues #33374.
 .wp-block-group.alignfull {
 	.wp-block-group,
 	.wp-block-columns {
@@ -66,53 +48,8 @@ body .wp-block-group.alignfull {
 		padding-right: 25px;
 	}
 
-	// TODO: Check this value.
 	@media (min-width: 1250px) {
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 }
-
-// // experimental to try and align all content inside groups and cover.
-// .wp-block-cover-image .wp-block-cover__inner-container,
-// .wp-block-cover .wp-block-cover__inner-container,
-// .wp-block-group .wp-block-group__inner-container {
-// 	max-width: $content-width;
-// 	margin-left: auto;
-// 	margin-right: auto;
-
-// 	// copy wrap.
-// 	padding-left: 12px;
-// 	padding-right: 12px;
-
-// 	@media (min-width: 375px) {
-// 		padding-left: 24px;
-// 		padding-right: 24px;
-// 	}
-
-// 	@media (min-width: 550px) {
-// 		padding-left: 25px;
-// 		padding-right: 25px;
-// 	}
-
-// 	// TODO: Check this value.
-// 	@media (min-width: 1250px) {
-// 		padding-left: 0px;
-// 		padding-right: 0px;
-// 	}
-// }
-
-// .wp-block-group {
-// 	padding-top: 20px;
-// 	padding-bottom: 20px;
-// }
-
-// .wp-block-group.has-background {
-// 	padding-left: 0px;
-// 	padding-right: 0px;
-// }
-
-// .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container {
-// 	padding-left: 0px;
-// 	padding-right: 0px;
-// }
