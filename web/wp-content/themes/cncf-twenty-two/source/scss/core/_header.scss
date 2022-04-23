@@ -10,6 +10,7 @@
 .logo {
 	width: 175px;
 	flex-shrink: 0;
+	display: inline-flex;
 
 	@media (min-width: 1000px) {
 		width: 210px;
@@ -20,7 +21,7 @@
 		margin-right: 52px;
 	}
 
-	a {
+	img {
 		display: block;
 	}
 }
