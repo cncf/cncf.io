@@ -13,7 +13,7 @@
 	text-transform: uppercase;
 	line-height: 140%;
 	font-size: 28px;
-	@media (min-width: 1200px) {
+	@media (min-width: 1000px) {
 		font-size: 40px;
 	}
 }
@@ -36,6 +36,17 @@
 	line-height: 150%;
 	font-size: 40px;
 	color: $white;
+	@media (min-width: 1000px) {
+		font-size: 60px;
+	}
+}
+
+// Project single title - unique, not hooked to Block Editor.
+.is-style-project-single-title {
+	font-weight: 700;
+	max-width: 800px;
+	line-height: 150%;
+	font-size: 40px;
 	@media (min-width: 1000px) {
 		font-size: 60px;
 	}

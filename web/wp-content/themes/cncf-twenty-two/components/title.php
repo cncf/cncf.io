@@ -70,7 +70,7 @@ if ( is_tag() || is_tax() ) :
 			elseif ( is_singular( 'lf_project' ) ) :
 
 				?>
-	<h1 class="is-style-page-title normal-case" itemprop="headline"><?php the_title(); ?>
+	<h1 class="is-style-project-single-title" itemprop="headline"><?php the_title(); ?>
 	</h1>
 	<?php elseif ( ! ( is_404() ) && ( is_single() ) ) : ?>
 

@@ -70,7 +70,10 @@
 		padding: 25px;
 		display: flex;
 		flex-direction: column;
-		height: calc(100% - 200px);
+		// Hack to make dates align.
+		@media (min-width: 1000px) {
+			height: calc(100% - 200px);
+		}
 	}
 	&__title {
 		font-size: 20px;
@@ -104,8 +107,7 @@
 }
 
 .webinar-single {
-	&__company {
-	}
+	// &__company {}
 	&__meta-wrapper {
 		display: flex;
 		flex-direction: column;

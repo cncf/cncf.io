@@ -67,7 +67,7 @@ and is at the
 <strong><?php echo esc_html( $stage ); ?></strong>
 project maturity level.
 </p>
-								<?php
+					<?php
 				} elseif ( $stage ) {
 					?>
 				<p class="projects-single-box__accepted">
@@ -88,12 +88,12 @@ project maturity level.
 
 					<?php if ( $external_url ) : ?>
 
-					<div class="wp-block-button is-style-default"><a
+					<div class="wp-block-button is-style-reduced-height"><a
 							href="<?php echo esc_url( $external_url ); ?>"
 							class="wp-block-button__link">Visit Project
 							Website</a></div>
 						<?php
-					endif;
+endif;
 					?>
 					<div class="projects-single-box__icons">
 
@@ -155,109 +155,120 @@ project maturity level.
 		<div style="height:120px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-120"></div>
 
-	<?php
-	// CASE STUDIES.
-	$related_args = array(
-		'posts_per_page'     => 2,
-		'ignore_custom_sort' => true,
-		'post_type'          => array( 'lf_case_study' ),
-		'post_status'        => array( 'publish' ),
-		'order'              => 'DESC',
-		'orderby'            => 'date',
-		'no_found_rows'      => true,
-		'tax_query'          => array(
-			array(
-				'taxonomy' => 'lf-project',
-				'field'    => 'slug',
-				'terms'    => $project_slug,
+		<?php
+		// CASE STUDIES.
+		$related_args = array(
+			'posts_per_page'     => 2,
+			'ignore_custom_sort' => true,
+			'post_type'          => array( 'lf_case_study' ),
+			'post_status'        => array( 'publish' ),
+			'order'              => 'DESC',
+			'orderby'            => 'date',
+			'no_found_rows'      => true,
+			'tax_query'          => array(
+				array(
+					'taxonomy' => 'lf-project',
+					'field'    => 'slug',
+					'terms'    => $project_slug,
+				),
 			),
-		),
-	);
+		);
 
-	$related_query = new WP_Query( $related_args );
+		$related_query = new WP_Query( $related_args );
 
-	if ( $related_query->have_posts() ) :
-		?>
+		if ( $related_query->have_posts() ) :
+			?>
 
-<div class="wp-block-group is-style-no-padding is-style-see-all">
-			<div class="wp-block-columns are-vertically-aligned-top">
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%">
-			<h3 class="is-style-section-heading"><?php the_title(); ?> case studies</h3>
+		<div class="wp-block-group is-style-no-padding is-style-see-all">
+			<div class="wp-block-columns are-vertically-aligned-bottom">
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:70%">
+					<h3 class="is-style-section-heading"><?php the_title(); ?>
+						case studies</h3>
+				</div>
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:30%">
+					<p class="has-text-align-right is-style-link-cta"><a href="<?php echo esc_url( '/case-studies/?_sft_lf-project=' . $project_slug ); ?>">Related Case
+Studies</a></p>
+				</div>
 			</div>
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%">
-			<p>&nbsp;</p>
-			</div>
-			</div>
+			<div style="height:40px" aria-hidden="true"
+				class="wp-block-spacer is-style-20-40"></div>
 
 			<div class="case-studies">
-		<?php
-		while ( $related_query->have_posts() ) {
-			$related_query->the_post();
-			get_template_part( 'components/case-study-item' );
-		}
-		?>
-	</div>
-		<div class="wp-block-group">
-		<a
-					href="<?php echo esc_url( '/case-studies/?_sft_lf-project=' . $project_slug ); ?>" class="has-text-align-left is-style-link-cta" >Related Case Studies</a>
+				<?php
+				while ( $related_query->have_posts() ) {
+					$related_query->the_post();
+					get_template_part( 'components/case-study-item' );
+				}
+				?>
+			</div>
+			<div style="height:40px" aria-hidden="true"
+				class="wp-block-spacer is-style-20-40"></div>
 		</div>
-		</div>
+
 
 		<div style="height:120px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-120"></div>
 
 			<?php
 			wp_reset_postdata();
-		endif;
-	?>
+endif;
+		?>
 
-			<?php
-			// ONLINE PROGRAMS.
+		<?php
+		// ONLINE PROGRAMS.
 
-			$programs_args = array(
-				'posts_per_page'     => 3,
-				'ignore_custom_sort' => true,
-				'post_type'          => array( 'lf_webinar' ),
-				'post_status'        => array( 'publish' ),
-				'meta_key'           => 'lf_webinar_date',
-				'order'              => 'DESC',
-				'orderby'            => 'meta_value',
-				'no_found_rows'      => true,
-				'meta_query'         => array(
-					array(
-						'key'     => 'lf_webinar_recording_url',
-						'value'   => 0,
-						'compare' => '>',
-					),
+		$programs_args = array(
+			'posts_per_page'     => 3,
+			'ignore_custom_sort' => true,
+			'post_type'          => array( 'lf_webinar' ),
+			'post_status'        => array( 'publish' ),
+			'meta_key'           => 'lf_webinar_date',
+			'order'              => 'DESC',
+			'orderby'            => 'meta_value',
+			'no_found_rows'      => true,
+			'meta_query'         => array(
+				array(
+					'key'     => 'lf_webinar_recording_url',
+					'value'   => 0,
+					'compare' => '>',
 				),
-				'tax_query'          => array(
-					array(
-						'taxonomy' => 'lf-project',
-						'field'    => 'slug',
-						'terms'    => $project_slug,
-					),
+			),
+			'tax_query'          => array(
+				array(
+					'taxonomy' => 'lf-project',
+					'field'    => 'slug',
+					'terms'    => $project_slug,
 				),
-			);
+			),
+		);
 
-			$programs_query = new WP_Query( $programs_args );
+		$programs_query = new WP_Query( $programs_args );
 
-			if ( $programs_query->have_posts() ) :
+		if ( $programs_query->have_posts() ) :
 
-				?>
+			?>
 
 		<div class="wp-block-group is-style-no-padding is-style-see-all">
-			<div class="wp-block-columns are-vertically-aligned-top">
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%">
-			<h3 class="is-style-section-heading">Recorded <?php the_title(); ?> programs</h3>
+			<div class="wp-block-columns are-vertically-aligned-bottom">
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:70%">
+					<h3 class="is-style-section-heading">Recorded
+						<?php the_title(); ?> programs</h3>
+				</div>
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:30%">
+					<p class="has-text-align-right is-style-link-cta"><a href="<?php echo esc_url( '/online-programs?_sft_lf-project=' . $project_slug ); ?>">See
+more recordings</a></p>
+				</div>
 			</div>
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%">
-			<p>&nbsp;</p>
-			</div>
-			</div>
+			<div style="height:40px" aria-hidden="true"
+				class="wp-block-spacer is-style-20-40"></div>
 			<div class="webinars columns-three">
 				<?php
 				while ( $programs_query->have_posts() ) :
-						$programs_query->the_post();
+					$programs_query->the_post();
 
 					get_template_part( 'components/webinar-recorded-item' );
 
@@ -265,18 +276,17 @@ project maturity level.
 				?>
 
 			</div>
-		<div class="wp-block-group">
-		<a class="has-text-align-left is-style-link-cta" href="<?php echo esc_url( '/online-programs?_sft_lf-project=' . $project_slug ); ?>">See more recordings</a>
-		</div>
+			<div style="height:40px" aria-hidden="true"
+				class="wp-block-spacer is-style-20-40"></div>
 		</div>
 
 		<div style="height:120px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-120"></div>
 
-				<?php
-				wp_reset_postdata();
+			<?php
+			wp_reset_postdata();
 endif;
-			?>
+		?>
 		<?php
 		// NEWS.
 
@@ -295,30 +305,37 @@ endif;
 
 		if ( $related_query->have_posts() ) :
 			?>
-<div class="wp-block-group is-style-no-padding is-style-see-all">
-			<div class="wp-block-columns are-vertically-aligned-top">
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%">
-			<h3 class="is-style-section-heading">Recent <?php the_title(); ?> news</h3>
+		<div class="wp-block-group is-style-no-padding is-style-see-all">
+			<div class="wp-block-columns are-vertically-aligned-bottom">
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:80%">
+					<h3 class="is-style-section-heading">Recent
+						<?php the_title(); ?> news</h3>
+				</div>
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:20%">
+					<p class="has-text-align-right is-style-link-cta"><a
+href="<?php echo esc_url( '/?post_type=post&s=' . $project_slug ); ?>">See
+all news</a></p>
+				</div>
 			</div>
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%">
-			<p>&nbsp;</p>
-			</div>
-			</div>
+			<div style="height:40px" aria-hidden="true"
+				class="wp-block-spacer is-style-20-40"></div>
 
 			<div class="columns-three">
-			<?php
-			while ( $related_query->have_posts() ) {
-				$related_query->the_post();
+				<?php
+				while ( $related_query->have_posts() ) {
+					$related_query->the_post();
 
-				get_template_part( 'components/news-item-vertical' );
-			}
-			?>
-</div>
+					get_template_part( 'components/news-item-vertical' );
+				}
+				?>
+			</div>
 
-		<div class="wp-block-group">
-		<a class="has-text-align-left is-style-link-cta" href="<?php echo esc_url( '/?post_type=post&s=' . $project_slug ); ?>">See all news</a>
+			<div style="height:40px" aria-hidden="true"
+				class="wp-block-spacer is-style-20-40"></div>
 		</div>
-		</div>
+
 
 		<div style="height:120px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-120"></div>
@@ -338,26 +355,30 @@ endif;
 			if ( ! strpos( $out, 'Unable to load Tweets' ) ) :
 				?>
 		<div class="wp-block-group is-style-no-padding is-style-see-all">
-			<div class="wp-block-columns are-vertically-aligned-top">
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:80%">
-			<h3 class="is-style-section-heading">Latest tweets from <?php the_title(); ?></h3>
+			<div class="wp-block-columns are-vertically-aligned-bottom">
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:80%">
+					<h3 class="is-style-section-heading">Latest tweets from
+						<?php the_title(); ?></h3>
+				</div>
+				<div class="wp-block-column is-vertically-aligned-bottom"
+					style="flex-basis:20%">
+					<p
+						class="has-text-align-right is-style-link-cta"><a href="<?php echo esc_url( $twitter ); ?>">See all tweets</a></p>
+				</div>
 			</div>
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%">
-			<p>&nbsp;</p>
-			</div>
-			</div>
+			<div style="height:40px" aria-hidden="true"
+				class="wp-block-spacer is-style-20-40"></div>
 
 				<?php
-					echo $out; //phpcs:ignore
+		echo $out; //phpcs:ignore
 				?>
-		<div class="wp-block-group">
-		<a class="has-text-align-left is-style-link-cta" href="<?php echo esc_url( $twitter ); ?>">See all tweets</a>
+			<div style="height:100px" aria-hidden="true"
+				class="wp-block-spacer"></div>
 		</div>
-		</div>
-
 				<?php
 
-			endif;
+		endif;
 endif;
 		?>
 

@@ -109,9 +109,10 @@
 .wp-block-button {
 	&.is-style-reduced-height {
 		.wp-block-button__link {
-			// 16px font + 10px makes buttons 36px.
-			padding-top: 10px;
-			padding-bottom: 10px;
+			font-size: 14px;
+			// 14px font + 11px makes buttons 36px.
+			padding-top: 11px;
+			padding-bottom: 11px;
 		}
 	}
 }

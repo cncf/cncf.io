@@ -58,6 +58,7 @@
 			background-repeat: repeat-x;
 			background-color: $white;
 			padding: 50px 20px 50px 20px;
+			border-radius: 10px;
 			@media (min-width: 600px) {
 				padding: 50px 30px 50px 50px;
 				grid-column: span 9;
@@ -65,12 +66,16 @@
 			}
 		}
 		&__description {
-			font-size: 30px;
+			font-size: 22px;
+			@media (min-width: 1000px) {
+				font-size: 30px;
+			}
 			line-height: 140%;
 			letter-spacing: 0.02em;
 			max-width: 700px;
 		}
 		&__accepted {
+			letter-spacing: 0.02em;
 		}
 		&__links {
 			display: flex;
