@@ -147,7 +147,7 @@
 
 			.hs-button {
 				background-color: $white;
-				color: black;
+				color: $black;
 				text-transform: capitalize;
 				white-space: nowrap;
 				&:hover {
@@ -168,12 +168,12 @@
 		}
 	}
 
-	// success message.
+	// success message for newsletter footer only.
 	.submitted-message {
-		padding: 0.8em;
-		max-width: 800px;
-		text-align: center;
-		font-weight: 700;
+		display: flex;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
 		border: 2px solid $white;
 		min-height: 280px;
 		@media (min-width: 500px) {
@@ -187,4 +187,16 @@
 	.submitted-message p {
 		max-width: none;
 	}
+}
+
+// success formating for all forms (Kubeweekly and Contact)
+// success message.
+.submitted-message {
+	padding: 20px;
+	text-align: center;
+	border: 2px solid $black;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 24px;
+	max-width: 100%;
 }
