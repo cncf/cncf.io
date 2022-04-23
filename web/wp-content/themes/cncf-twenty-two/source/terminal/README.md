@@ -19,4 +19,4 @@ You can also open the CNCF.terminal file directly by clicking on it, but this wi
 
 ## Got feedback?
 
-Open an issue.
+If you have any feedback please open an issue in this repo.
