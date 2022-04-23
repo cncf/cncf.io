@@ -270,6 +270,10 @@ wp.blocks.registerBlockStyle(
 			label: '120px (80px mobile)',
 			name: '80-120',
 		},
+		{
+			label: '150px (100px mobile)',
+			name: '100-150',
+		},
 	]
 );
 

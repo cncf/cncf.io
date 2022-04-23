@@ -114,3 +114,12 @@
 		height: 120px !important;
 	}
 }
+
+// bigger space section.
+.is-style-100-150 {
+	height: 100px !important;
+
+	@media (min-width: 600px) {
+		height: 150px !important;
+	}
+}
