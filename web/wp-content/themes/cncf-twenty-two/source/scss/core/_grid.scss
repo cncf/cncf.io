@@ -54,12 +54,12 @@
 	}
 }
 
-// Projects
+// Projects only.
 .columns-five {
 	display: grid;
 	grid-column-gap: $grid-column-gap;
-	grid-row-gap: $grid-row-gap;
-	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+	grid-row-gap: calc($grid-row-gap * 2);
+	grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
 	@media (min-width: 1000px) {
 		grid-template-columns: repeat(5, 1fr);
 	}

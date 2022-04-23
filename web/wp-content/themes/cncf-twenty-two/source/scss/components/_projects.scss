@@ -1,8 +1,3 @@
-.projects-archive {
-	&.columns-five {
-		grid-row-gap: calc($grid-row-gap * 2);
-	}
-}
 .project-item {
 	display: flex;
 	flex-direction: column;

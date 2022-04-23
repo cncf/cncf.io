@@ -108,6 +108,66 @@ h3,
 	padding: 2px 6px 0px 6px;
 }
 
+.is-style-max-width-800 {
+	max-width: 800px;
+}
+
+.is-style-max-width-900 {
+	max-width: 900px;
+}
+
+// not attached as a style.
+// TODO: Actually used anywhere?
+.is-style-mb0 {
+	margin-bottom: 0 !important;
+}
+
+// TODO: Responsive sized fonts inline with designs.
+.has-extra-small-font-size {
+	// 10px
+}
+.has-small-font-size {
+	// 14px
+}
+.has-normal-font-size {
+	// 16px
+}
+.has-medium-font-size {
+	// 18px
+}
+.has-large-font-size {
+	// 20px
+	@media (max-width: 999px) {
+		font-size: 18px !important;
+	}
+}
+.has-larger-font-size {
+	// 24px
+	@media (max-width: 999px) {
+		font-size: 16px !important;
+	}
+}
+.has-extra-large-font-size {
+	// 36px
+}
+.has-extra-extra-large-font-size {
+	// 46px
+	line-height: 140%;
+	@media (max-width: 389px) {
+		font-size: 28px !important;
+	}
+	@media (min-width: 390px) and (max-width: 599px) {
+		font-size: 30px !important;
+	}
+	@media (min-width: 600px) and (max-width: 999px) {
+		font-size: 36px !important;
+	}
+}
+
+.normal-case {
+	text-transform: none !important;
+}
+
 // blog and spotlight posts content.
 .post-content {
 	@media (min-width: 900px) {
@@ -295,63 +355,3 @@ h3,
 	}
 }
 // end of page content.
-
-.is-style-max-width-800 {
-	max-width: 800px;
-}
-
-.is-style-max-width-900 {
-	max-width: 900px;
-}
-
-// not attached as a style.
-// TODO: Actually used anywhere?
-.is-style-mb0 {
-	margin-bottom: 0 !important;
-}
-
-// TODO: Responsive sized fonts inline with designs.
-.has-extra-small-font-size {
-	// 10px
-}
-.has-small-font-size {
-	// 14px
-}
-.has-normal-font-size {
-	// 16px
-}
-.has-medium-font-size {
-	// 18px
-}
-.has-large-font-size {
-	// 20px
-	@media (max-width: 999px) {
-		font-size: 18px !important;
-	}
-}
-.has-larger-font-size {
-	// 24px
-	@media (max-width: 999px) {
-		font-size: 16px !important;
-	}
-}
-.has-extra-large-font-size {
-	// 36px
-}
-.has-extra-extra-large-font-size {
-	// 46px
-	line-height: 140%;
-	@media (max-width: 389px) {
-		font-size: 28px !important;
-	}
-	@media (min-width: 390px) and (max-width: 599px) {
-		font-size: 30px !important;
-	}
-	@media (min-width: 600px) and (max-width: 999px) {
-		font-size: 36px !important;
-	}
-}
-
-.normal-case {
-	text-transform: none !important;
-}
