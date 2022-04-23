@@ -12,9 +12,9 @@
 }
 
 // Experimental: Fixing WordPress group issues #33374.
-// If something is not respecting max-width, add not exception here.
+// If something is not respecting max-width, add :not exception here.
 .wp-block-group.alignfull {
-	> *:not(.wp-block-group):not(.wp-block-columns):not([class^='is-style-']) {
+	> *:not(.wp-block-group):not(.wp-block-columns):not([class*='is-style-max']) {
 		max-width: $content-width;
 		margin-left: auto;
 		margin-right: auto;
