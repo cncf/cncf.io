@@ -11,6 +11,9 @@
 	}
 
 	.is-style-link-cta {
+		@media (max-width: 500px) {
+			white-space: nowrap;
+		}
 		@media (max-width: 999px) {
 			position: absolute;
 			bottom: 0 - 30px - 50px;
