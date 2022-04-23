@@ -111,7 +111,7 @@ else :
 			$category_link = get_home_url() . '/lf-author-category/' . $category_author_slug . '/';
 			?>
 
-		<span><a class="author-category"
+		<span><a class="author-category has-larger-style"
 				title="See <?php echo esc_attr( $category_author ); ?> posts"
 				href="<?php echo esc_url( $category_link ); ?>">
 			<?php

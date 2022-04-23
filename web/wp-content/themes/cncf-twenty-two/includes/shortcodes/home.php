@@ -63,7 +63,7 @@ function add_home_case_studies_shortcode( $atts ) {
 
 		<div class="featured-case-studies__text-overlay">
 
-			<span class="author-category">Case Study</span>
+			<span class="author-category has-larger-style">Case Study</span>
 
 			<figure class="featured-case-studies__logo-figure">
 				<?php

@@ -109,7 +109,7 @@ get_template_part( 'components/title' );
 			?>
 		<div class="search__item">
 
-			<a class="author-category" title="See all <?php echo esc_attr( $content_type_plural ); ?>" href="<?php echo esc_attr( $content_type_url ); ?>">
+			<a class="author-category has-larger-style" title="See all <?php echo esc_attr( $content_type_plural ); ?>" href="<?php echo esc_attr( $content_type_url ); ?>">
 					<?php echo esc_html( $content_type_singular ); ?>
 				</a>
 
@@ -117,7 +117,7 @@ get_template_part( 'components/title' );
 				if ( $category_author ) :
 					$category_link = '/lf-author-category/' . $category_author_slug . '/';
 					?>
-				<a class="author-category" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_link ); ?>">CNCF
+				<a class="author-category has-larger-style" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_link ); ?>">CNCF
 					<?php
 					echo esc_html( $category_author );
 
