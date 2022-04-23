@@ -1,0 +1,66 @@
+// Use LF Grid on parent and then use grid-column: span 8; etc on children to match design layout.
+.lf-grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+}
+
+// Latest news in menu.
+.columns-one {
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: 0px;
+	grid-template-columns: 1fr;
+}
+
+// YouTube Playlist.
+.columns-two {
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+	grid-template-columns: 1fr;
+	@media (min-width: 800px) {
+		// grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+// Latest News
+.columns-three {
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+	grid-template-columns: 1fr;
+	@media (min-width: 600px) {
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	}
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	&.columns-two-on-mobile {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
+}
+
+// Metrics
+.columns-four {
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+// Projects
+.columns-five {
+	display: grid;
+	grid-column-gap: $grid-column-gap;
+	grid-row-gap: $grid-row-gap;
+	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+	@media (min-width: 1000px) {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}

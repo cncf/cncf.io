@@ -1,0 +1,49 @@
+// Overwrites the terrible WordPress defaults.
+@media (min-width: 600px) and (max-width: 781px) {
+	body .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:only-child) {
+		flex-basis: 100% !important;
+	}
+	body .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:nth-child(even) {
+		margin-left: 0 !important;
+	}
+}
+
+// Experimental.
+// Overrides terrible WordPress default bottom margin.
+.wp-block-columns {
+	margin-bottom: 0;
+}
+
+.is-style-blob-grid {
+	--wp--style--block-gap: 50px;
+	.wp-block-column:nth-child(2) {
+		@media (min-width: 1000px) {
+			max-width: 580px;
+		}
+	}
+	.wp-block-image {
+		margin-top: 0;
+		.alignleft {
+			margin-right: 0;
+			margin-top: 0;
+		}
+	}
+}
+
+.wp-block-columns {
+	&.is-style-50px-padding {
+		padding: 25px;
+		@media (min-width: 800px) {
+			padding: 45px 50px;
+		}
+	}
+}
+
+.wp-block-columns:not(.is-not-stacked-on-mobile) {
+	&.is-style-50px-gap {
+		--wp--style--block-gap: 50px;
+	}
+	&.is-style-70px-gap {
+		--wp--style--block-gap: 70px;
+	}
+}

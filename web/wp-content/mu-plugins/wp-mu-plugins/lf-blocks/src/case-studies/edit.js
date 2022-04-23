@@ -38,7 +38,7 @@ class CaseStudies extends Component {
 						min={ 1 }
 						max={ 12 }
 						value={ numberposts }
-						onChange={ value => setAttributes( { numberposts: value } ) }
+						onChange={ value => setAttributes( { numberposts: parseInt(value) } ) }
 					/>
 				</PanelBody>
 			</InspectorControls>
@@ -53,25 +53,19 @@ class CaseStudies extends Component {
 
 		const data = posts.slice( 0, numberposts );
 		return (
-			<div className="case-studies-wrapper">
+			<div className="case-studies">
 				{ data.map(
 					post => (
-						<div className="case-study-box" key={ post.id } style={ { backgroundColor: '#2a0552' } }>
+						<div className="case-study-item" key={ post.id } style={ { backgroundColor: '#2b2b2b' } }>
 
-							<div className="case-study-content-wrapper">
-								<div className="title-stat-date-type">
-									<h2 className="case-study-title" dangerouslySetInnerHTML={ { __html: post.title.rendered } } />
-									<p className="case-study-stat"><span>{ post.meta.lf_case_study_key_stat }</span>{ post.meta.lf_case_study_key_stat_label }</p>
-									<p className="case-study-date date-icon">{ formatDate( post.date ) }</p>
-									<div className="case-study-project-type">Project,
-										Project</div>
-								</div>
+							<div className="case-study-item__wrapper">
+									<h2 className="case-study-item__title" dangerouslySetInnerHTML={ { __html: post.title.rendered } } />
+									<p className="case-study-item__stat"><span>{ post.meta.lf_case_study_key_stat }</span>&nbsp;{ post.meta.lf_case_study_key_stat_label }</p>
+									<p className="case-study-item__description">{ post.meta.lf_case_study_long_title }</p>
 
-								<div className="marketing-title-and-cta">
-									<p className="case-study-long-title">{ post.meta.lf_case_study_long_title }</p>
-									<span className="case-study-cta hs-button on-image">Read Case Study</span>
-								</div>
+									<p className="case-study-item__date">{ formatDate( post.date ) }</p>
 
+									<span className="case-study-item__cta ">Read Case Study</span>
 							</div>
 						</div>
 					)

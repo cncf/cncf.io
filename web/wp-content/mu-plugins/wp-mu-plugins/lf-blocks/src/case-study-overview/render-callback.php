@@ -21,6 +21,8 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 		return;
 	}
 
+	$case_study_description = get_post_meta( get_the_ID(), 'lf_case_study_long_title', true );
+
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
@@ -54,10 +56,11 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 		$product_type_text = '产品类型';
 		$challenge_text    = '挑战';
 		$date_published    = '出版';
+		$projects_used     = '使用的项目';
+		$url_type          = '-cn';
 
-		$url_type = '-cn';
-
-		$company_logo = get_post_meta( get_the_ID(), 'lf_case_study_cn_company_logo', true );
+		$company_logo     = get_post_meta( get_the_ID(), 'lf_case_study_cn_company_logo', true );
+		$long_description = get_post_meta( get_the_ID(), 'lf_case_study_cn_long_title', true );
 
 	} else {
 
@@ -81,11 +84,11 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 		$product_type_text = 'Product Type';
 		$challenge_text    = 'Challenges';
 		$date_published    = 'Published';
+		$projects_used     = 'Projects used';
+		$url_type          = '';
 
-		$url_type = '';
-
-		$company_logo = get_post_meta( get_the_ID(), 'lf_case_study_company_logo', true );
-
+		$company_logo     = get_post_meta( get_the_ID(), 'lf_case_study_company_logo', true );
+		$long_description = get_post_meta( get_the_ID(), 'lf_case_study_long_title', true );
 	}
 
 	$projects = get_the_terms( get_the_ID(), 'lf-project' );
@@ -98,138 +101,163 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 	<div class="case-study-overview">
 
 		<!-- column 1 -->
-		<div class="case-study-intro-wrapper">
+		<div class="case-study-overview__intro">
+
+			<h2 class="is-style-opening-paragraph">
+				<?php echo esc_html( $long_description ); ?></h2>
+
 			<?php echo $content; //phpcs:ignore ?>
+
 		</div>
 
 		<!-- column 2 -->
-		<div class="case-study-overview-wrapper">
+		<div class="case-study-overview__meta">
 
-			<!-- organisation block -->
-			<div>
-	<?php
-	if ( $company_logo ) {
-		LF_Utils::display_responsive_images( $company_logo, 'spotlight-320', '200px', 'case-study-company-logo' );
-	} else {
-		?>
-		<p><span class="strong"><?php echo esc_html( $organisation_text ); ?>:</span> <?php the_title(); ?></p>
-		<?php
-	}
-
-	if ( ! empty( $challenges ) && ! is_wp_error( $challenges ) ) :
-
-		$number_of_items = count( $challenges );
-		$i = 0;
-		?>
-				<p><span class="strong"><?php echo esc_html( $challenge_text ); ?>:</span>
-				<?php foreach ( $challenges as $challenge ) { ?>
-					<?php
-					if ( ++$i < $number_of_items ) {
-						$comma = ', ';
-					} else {
-						$comma = '';
-					}
-					?>
-					<a
-					title="See more case studies with a <?php echo esc_attr( $challenge->name ); ?> challenge"
-					href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-challenge<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $challenge->slug ); ?>"><?php echo esc_html( $challenge->name ); ?></a><?php echo esc_html( $comma ); ?>
-					<?php
-				}
+			<!-- logo -->
+			<?php
+			if ( $company_logo ) {
+				LF_Utils::display_responsive_images( $company_logo, 'spotlight-320', '200px', 'case-study-overview__logo' );
+			} else {
+				// Insert spacer to maintain layout.
 				?>
-				</p>
+				<div style="height:5px" aria-hidden="true"
+				class="wp-block-spacer case-study-overview__logo"></div>
 				<?php
-				endif;
+			}
+			?>
 
-	if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) :
+			<div class="case-study-overview__taxonomies">
+				<?php
 
-		$number_of_items = count( $industries );
-		$i = 0;
-		?>
-				<p><span class="strong"><?php echo esc_html( $industry_text ); ?>:</span>
-				<?php foreach ( $industries as $industry ) { ?>
-					<?php
-					if ( ++$i < $number_of_items ) {
-						$comma = ', ';
-					} else {
-						$comma = '';
-					}
+				if ( ! empty( $challenges ) && ! is_wp_error( $challenges ) ) :
+
+					$number_of_items = count( $challenges );
+					$i               = 0;
 					?>
-				<a
-					title="See more case studies from <?php echo esc_attr( $industry->name ); ?>"
-					href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-industry<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $industry->slug ); ?>"><?php echo esc_html( $industry->name ); ?></a><?php echo esc_html( $comma ); ?>
+				<div class="row">
+					<div class="col1">
+						<?php echo esc_html( $challenge_text ); ?>:</div>
+					<div class="col2">
+						<?php foreach ( $challenges as $challenge ) { ?>
+							<?php
+							if ( ++$i < $number_of_items ) {
+								$comma = ', ';
+							} else {
+								$comma = '';
+							}
+							?>
+						<a title="See more case studies with a <?php echo esc_attr( $challenge->name ); ?> challenge"
+							href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-challenge<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $challenge->slug ); ?>"><?php echo esc_html( $challenge->name ); ?></a><?php echo esc_html( $comma ); ?>
+							<?php
+						}
+						?>
+					</div>
+				</div>
 					<?php
-				}
-				?>
-			</p>
-				<?php
-			endif;
-
-	if ( ! empty( $location ) && ! is_wp_error( $location ) ) :
-		?>
-				<p><span class="strong"><?php echo esc_html( $location_text ); ?>:</span>
-				<a
-					title="See more case studies from <?php echo esc_attr( $location ); ?>"
-					href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-country<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $location_slug ); ?>"><?php echo esc_html( $location ); ?></a>
-</p>
-				<?php
 endif;
 
-	if ( ! empty( $cloud_types ) && ! is_wp_error( $cloud_types ) ) :
+				if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) :
 
-		$number_of_items = count( $cloud_types );
-		$i = 0;
-		?>
-				<p><span class="strong"><?php echo esc_html( $cloud_type_text ); ?>:</span>
-				<?php foreach ( $cloud_types as $cloud_type ) { ?>
-					<?php
-					if ( ++$i < $number_of_items ) {
-						$comma = ', ';
-					} else {
-						$comma = '';
-					}
+					$number_of_items = count( $industries );
+					$i               = 0;
 					?>
-				<a
-					title="See more case studies with a <?php echo esc_attr( $cloud_type->name ); ?> cloud type"
-					href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-cloud-type<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $cloud_type->slug ); ?>"><?php echo esc_html( $cloud_type->name ); ?></a><?php echo esc_html( $comma ); ?>
+				<div class="row">
+					<div class="col1"><?php echo esc_html( $industry_text ); ?>:
+					</div>
+					<div class="col2">
+						<?php foreach ( $industries as $industry ) { ?>
+							<?php
+							if ( ++$i < $number_of_items ) {
+								$comma = ', ';
+							} else {
+								$comma = '';
+							}
+							?>
+						<a title="See more case studies from <?php echo esc_attr( $industry->name ); ?>"
+							href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-industry<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $industry->slug ); ?>"><?php echo esc_html( $industry->name ); ?></a><?php echo esc_html( $comma ); ?>
+							<?php
+						}
+						?>
+					</div>
+				</div>
 					<?php
-				}
-				?>
-</p>
-				<?php
 endif;
 
-	if ( ! empty( $product_type ) && ! is_wp_error( $product_type ) ) :
-		?>
-				<p><span class="strong"><?php echo esc_html( $product_type_text ); ?>:</span>
-				<a
-					title="See more case studies with <?php echo esc_attr( $product_type ); ?> product type"
-					href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-product-type<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $product_type_slug ); ?>"><?php echo esc_html( $product_type ); ?></a>
-			</p>
-				<?php
+				if ( ! empty( $location ) && ! is_wp_error( $location ) ) :
+					?>
+
+				<div class="row">
+					<div class="col1"><?php echo esc_html( $location_text ); ?>:
+					</div>
+					<div class="col2">
+						<a title="See more case studies from <?php echo esc_attr( $location ); ?>"
+							href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-country<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $location_slug ); ?>"><?php echo esc_html( $location ); ?></a>
+					</div>
+				</div>
+					<?php
 endif;
-	?>
-			<p><span class="strong"><?php echo esc_html( $date_published ); ?>:</span> <?php the_date(); ?></p>
+
+				if ( ! empty( $cloud_types ) && ! is_wp_error( $cloud_types ) ) :
+
+					$number_of_items = count( $cloud_types );
+					$i               = 0;
+					?>
+				<div class="row">
+					<div class="col1">
+						<?php echo esc_html( $cloud_type_text ); ?>:</div>
+					<div class="col2">
+						<?php foreach ( $cloud_types as $cloud_type ) { ?>
+							<?php
+							if ( ++$i < $number_of_items ) {
+								$comma = ', ';
+							} else {
+								$comma = '';
+							}
+							?>
+						<a title="See more case studies with a <?php echo esc_attr( $cloud_type->name ); ?> cloud type"
+							href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-cloud-type<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $cloud_type->slug ); ?>"><?php echo esc_html( $cloud_type->name ); ?></a><?php echo esc_html( $comma ); ?>
+							<?php
+						}
+						?>
+					</div>
+				</div>
+					<?php
+endif;
+
+				if ( ! empty( $product_type ) && ! is_wp_error( $product_type ) ) :
+					?>
+				<div class="row">
+					<div class="col1">
+						<?php echo esc_html( $product_type_text ); ?>:</div>
+					<div class="col2">
+						<a title="See more case studies with <?php echo esc_attr( $product_type ); ?> product type"
+							href="/case-studies<?php echo esc_attr( $url_type ); ?>?_sft_lf-product-type<?php echo esc_attr( $url_type ); ?>=<?php echo esc_attr( $product_type_slug ); ?>"><?php echo esc_html( $product_type ); ?></a>
+					</div>
+				</div>
+					<?php
+endif;
+				?>
+				<div class="row">
+					<div class="col1">
+						<?php echo esc_html( $date_published ); ?>:</div>
+					<div class="col2"><?php the_date(); ?></div>
+				</div>
 			</div>
 
+			<!-- Project area  -->
 			<?php if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) { ?>
-			<div>
-			<h5 class="margin-bottom">
-					<?php
-					if ( 'lf_case_study_cn' === get_post_type() ) {
-						echo '使用的项目';
-					} else {
-						echo 'Projects used';
-					}
-					?>
-				</h5>
+			<div class="case-study-overview__projects">
 
-				<div class="case-study-project-icons">
+				<p
+					class="is-style-spaced-uppercase"><?php echo esc_html( $projects_used ); ?></p>
+
+				<div class="case-study-overview__project-icons">
 					<?php
 					foreach ( $projects as $project ) {
 						?>
-					<div class="case-study-project-icon">
+					<div class="case-study-overview__project-icon">
 						<img loading="lazy"
-							src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-color.svg'; ?>"
+							src="<?php echo esc_url( get_template_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-color.svg'; ?>"
 							alt="<?php echo esc_html( $project->name ); ?>">
 					</div>
 						<?php
@@ -241,15 +269,8 @@ endif;
 			}
 			?>
 
-<div class="case-study-subscription-block">
-			<h5 class="margin-bottom">Stay informed</h5>
-<p class="margin-bottom">Get the latest news from our community of doers. Subscribe to the CNCF newsletter.</p>
-	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=afe5f966-bae5-4fce-bd5d-84f7ae89111b]' ); ?>
-	<p class="privacy-agreement">See footer for our privacy policy.</p>
-			</div>
-
-			</div>
 		</div>
+	</div>
 </section>
 	<?php
 	$block_content = ob_get_clean();

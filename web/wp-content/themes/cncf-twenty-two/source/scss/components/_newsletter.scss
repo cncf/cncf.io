@@ -1,0 +1,190 @@
+// removes captcha image from flow.
+.hs-recaptcha {
+	display: none;
+}
+
+.newsletter {
+	line-height: 140%;
+
+	&__title {
+		line-height: $line-height;
+		font-size: 24px;
+		@media (min-width: 1000px) {
+			font-size: 40px;
+		}
+	}
+
+	&__privacy a {
+		font-weight: 800;
+	}
+	// form container.
+	.hbspt-form {
+		min-height: 300px;
+		@media (min-width: 500px) {
+			min-height: 100px;
+		}
+		@media (min-width: 1000px) {
+			min-height: 20px;
+		}
+
+		// Displays if required field not filled.
+		.hs-error-msg {
+			display: block;
+			margin-right: 8px;
+			width: 95%;
+			padding-top: 15px;
+		}
+
+		// form inputs wrapper.
+		.hs-form {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 30px;
+
+			@media (min-width: 500px) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			}
+
+			@media (min-width: 700px) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			@media (min-width: 950px) {
+				grid-template-columns: 1fr 1fr 1.75fr 1.2fr 1.2fr;
+				grid-row-gap: 1.5rem;
+				grid-column-gap: 1.5rem;
+			}
+
+			input[type='text'],
+			input[type='email'] {
+				height: 60px;
+				@media (min-width: 500px) {
+					height: 42px;
+				}
+				width: 100%;
+				background: transparent;
+				border: none;
+				border-bottom: 2px solid $white;
+				border-radius: 0;
+				transition: all 0.25s ease;
+				color: $white;
+				font-size: 16px;
+				@media (min-width: 500px) {
+					font-size: 20px;
+				}
+				line-height: 105%;
+				&::placeholder {
+					color: $white;
+					font-size: 16px;
+					@media (min-width: 500px) {
+						font-size: 20px;
+					}
+					line-height: 105%;
+				}
+				&:focus {
+					outline: 0;
+					border-bottom: 2px solid $primary-color;
+					transition: color 0.25s ease;
+					&::placeholder {
+						transition: color 0.25s ease;
+						color: transparent;
+					}
+				}
+			}
+
+			// Controls autocomplete styles.
+			input,
+			textarea,
+			select {
+				&:-webkit-autofill,
+				&:-webkit-autofill:hover,
+				&:-webkit-autofill:focus {
+					-webkit-text-fill-color: $white;
+				}
+			}
+
+			select {
+				appearance: none;
+				background: transparent;
+				border: 0px solid transparent;
+				border-bottom: 2px solid $white;
+				border-radius: 0;
+				box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0);
+				display: block;
+				height: 60px;
+				@media (min-width: 500px) {
+					height: 42px;
+				}
+				margin: 0;
+				max-width: 100%;
+				padding: 0.5em 0 calc(0.5em + 1px) 0;
+				transition: all 0.25s ease;
+				width: 100%;
+				color: $white;
+				font-size: 16px;
+				@media (min-width: 500px) {
+					font-size: 20px;
+				}
+				line-height: 105%;
+
+				&::-ms-expand {
+					display: none;
+				}
+
+				&:focus {
+					outline: 0;
+					border-bottom: 2px solid $primary-color;
+					&::placeholder {
+						transition: color 0.4s ease;
+						color: transparent;
+					}
+				}
+
+				option {
+					font-weight: normal;
+				}
+			}
+
+			.hs-button {
+				background-color: $white;
+				color: black;
+				text-transform: capitalize;
+				white-space: nowrap;
+				&:hover {
+					background-color: $primary-400;
+					color: $white;
+				}
+			}
+
+			// underline errors.
+			.hs-input.invalid {
+				border-bottom: 2px dashed $error !important;
+			}
+
+			// hide general error message.
+			.hs_error_rollup {
+				display: none;
+			}
+		}
+	}
+
+	// success message.
+	.submitted-message {
+		padding: 0.8em;
+		max-width: 800px;
+		text-align: center;
+		font-weight: 700;
+		border: 2px solid $white;
+		min-height: 280px;
+		@media (min-width: 500px) {
+			min-height: 80px;
+		}
+		@media (min-width: 1000px) {
+			min-height: unset;
+		}
+	}
+
+	.submitted-message p {
+		max-width: none;
+	}
+}

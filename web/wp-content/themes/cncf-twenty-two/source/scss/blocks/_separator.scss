@@ -1,0 +1,48 @@
+// first reset dumb WordPress default styles.
+.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+	height: unset;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	width: unset;
+}
+
+.wp-block-separator {
+	opacity: 1;
+	margin-block-end: 0;
+	margin-block-start: 0;
+}
+
+// Now set our own styles, still have to use !important though – sigh.
+.wp-block-separator.is-style-default,
+.is-style-horizontal-rule,
+.horizontal-rule {
+	background-color: $white;
+	height: 1px !important;
+	width: 100% !important;
+}
+
+.wp-block-separator {
+	&.is-style-shadow-line {
+		border-bottom: 0;
+		width: 100% !important;
+		height: 10px !important;
+		background: linear-gradient(180deg, $gray-500 0%, rgba(196, 196, 196, 0) 100%);
+		opacity: 0.15 !important;
+	}
+	&.is-style-section-padding {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
+}
+
+// TODO: Not a selectable style.
+// Used for case studies only?
+.wp-block-separator {
+	&.is-style-stubby {
+		width: 40px !important;
+		height: 4px !important;
+		background: $white;
+		margin-left: unset;
+	}
+}

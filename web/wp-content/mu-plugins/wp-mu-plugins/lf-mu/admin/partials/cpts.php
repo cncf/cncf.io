@@ -9,6 +9,12 @@
  * @subpackage Lf_Mu/admin/partials
  */
 
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 // Projects.
 $opts = array(
 	'labels'              => array(

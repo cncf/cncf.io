@@ -27,7 +27,7 @@ function lf_blocks_frontend_assets() {
 	if ( has_block( 'lf/landscape' ) ) {
 		wp_enqueue_script(
 			'landscape-resize',
-			'//landscape.' . lf_blocks_get_site() . '.io/iframeResizer.js',
+			'//landscape.cncf.io/iframeResizer.js',
 			null,
 			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 			true
@@ -87,73 +87,20 @@ add_action( 'enqueue_block_editor_assets', 'lf_blocks_editor_assets' );
  */
 function lf_blocks_register_dynamic_blocks() {
 
-	// Upcoming Webinars Block.
-	require_once 'upcoming-webinars/render-callback.php';
+	// Case Studies Block.
+	require_once 'case-studies/render-callback.php';
 	register_block_type(
-		'lf/upcoming-webinars',
-		array(
-			'attributes'      => array(
-				'className'  => array(
-					'type' => 'string',
-				),
-				'showImages' => array(
-					'type'    => 'boolean',
-					'default' => true,
-				),
-				'showBorder' => array(
-					'type'    => 'boolean',
-					'default' => true,
-				),
-			),
-			'render_callback' => 'lf_upcoming_webinars_render_callback',
-		)
-	);
-
-	// Events Block.
-	require_once 'events/render-callback.php';
-	register_block_type(
-		'lf/events',
+		'lf/case-studies',
 		array(
 			'attributes'      => array(
 				'className'   => array(
-					'type' => 'string',
-				),
-				'category'    => array(
 					'type' => 'string',
 				),
 				'numberposts' => array(
 					'type' => 'number',
 				),
 			),
-			'render_callback' => 'lf_events_render_callback',
-		)
-	);
-
-	// Newsroom Block.
-	require_once 'newsroom/render-callback.php';
-	register_block_type(
-		'lf/newsroom',
-		array(
-			'attributes'      => array(
-				'className'  => array(
-					'type' => 'string',
-				),
-				'showImages' => array(
-					'type'    => 'boolean',
-					'default' => true,
-				),
-				'showBorder' => array(
-					'type'    => 'boolean',
-					'default' => true,
-				),
-				'order'      => array(
-					'type' => 'string',
-				),
-				'category'   => array(
-					'type' => 'string',
-				),
-			),
-			'render_callback' => 'lf_newsroom_render_callback',
+			'render_callback' => 'lf_case_studies_render_callback',
 		)
 	);
 
@@ -203,9 +150,23 @@ function lf_blocks_register_dynamic_blocks() {
 		)
 	);
 
-	// YouTube Lite block.
+	// Hero block.
+	require_once 'hero/render-callback.php';
 	register_block_type(
-		'lf/youtube-lite',
+		'lf/hero',
+		array(
+			'attributes'      => array(
+				'className' => array(
+					'type' => 'string',
+				),
+			),
+			'render_callback' => 'lf_hero_render_callback',
+		)
+	);
+
+	// iFrame block.
+	register_block_type(
+		'lf/iframe',
 		array(
 			'attributes' => array(
 				'className' => array(
@@ -229,63 +190,31 @@ function lf_blocks_register_dynamic_blocks() {
 		),
 	);
 
-	// iFrame block.
+	// Newsroom Block.
+	require_once 'newsroom/render-callback.php';
 	register_block_type(
-		'lf/iframe',
-		array(
-			'attributes' => array(
-				'className' => array(
-					'type' => 'string',
-				),
-			),
-		),
-	);
-
-	// Hero block.
-	require_once 'hero/render-callback.php';
-	register_block_type(
-		'lf/hero',
+		'lf/newsroom',
 		array(
 			'attributes'      => array(
-				'className' => array(
+				'className'  => array(
+					'type' => 'string',
+				),
+				'showImages' => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'showBorder' => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'order'      => array(
+					'type' => 'string',
+				),
+				'category'   => array(
 					'type' => 'string',
 				),
 			),
-			'render_callback' => 'lf_hero_render_callback',
-		)
-	);
-
-	// Case Studies Block.
-	require_once 'case-studies/render-callback.php';
-	register_block_type(
-		'lf/case-studies',
-		array(
-			'attributes'      => array(
-				'className'   => array(
-					'type' => 'string',
-				),
-				'numberposts' => array(
-					'type' => 'number',
-				),
-			),
-			'render_callback' => 'lf_case_studies_render_callback',
-		)
-	);
-
-	// Spotlight Block.
-	require_once 'spotlight/render-callback.php';
-	register_block_type(
-		'lf/spotlight',
-		array(
-			'attributes'      => array(
-				'className'   => array(
-					'type' => 'string',
-				),
-				'numberposts' => array(
-					'type' => 'number',
-				),
-			),
-			'render_callback' => 'lf_spotlight_render_callback',
+			'render_callback' => 'lf_newsroom_render_callback',
 		)
 	);
 
@@ -307,50 +236,17 @@ function lf_blocks_register_dynamic_blocks() {
 		),
 	);
 
-	// Stats block.
-	require_once 'stats/render-callback.php';
+	// YouTube Lite block.
 	register_block_type(
-		'lf/stats',
+		'lf/youtube-lite',
 		array(
-			'attributes'      => array(
-				'className'     => array(
-					'type' => 'string',
-				),
-				'headingText01' => array(
-					'type' => 'string',
-				),
-				'headingText02' => array(
-					'type' => 'string',
-				),
-				'headingText03' => array(
-					'type' => 'string',
-				),
-				'headingText04' => array(
-					'type' => 'string',
-				),
-				'headingText05' => array(
-					'type' => 'string',
-				),
-				'smallerText01' => array(
-					'type' => 'string',
-				),
-				'smallerText02' => array(
-					'type' => 'string',
-				),
-				'smallerText03' => array(
-					'type' => 'string',
-				),
-				'smallerText04' => array(
-					'type' => 'string',
-				),
-				'smallerText05' => array(
+			'attributes' => array(
+				'className' => array(
 					'type' => 'string',
 				),
 			),
-			'render_callback' => 'lf_stats_block_render_callback',
-		)
+		),
 	);
-
 }
 add_action( 'init', 'lf_blocks_register_dynamic_blocks' );
 
@@ -376,11 +272,17 @@ function add_lf_block_categories( $categories ) {
 }
 add_filter( 'block_categories_all', 'add_lf_block_categories' );
 
-/**
- * Return site acronym
- */
-function lf_blocks_get_site() {
-	$options = get_option( 'lf-mu' );
-	$site    = ( isset( $options['site'] ) && ! empty( $options['site'] ) ) ? esc_attr( $options['site'] ) : 'cncf';
-	return $site;
+
+
+function lf_register_meta() {
+    register_post_meta(
+        'lf_case_study',
+        'lf_case_study_long_title',
+        [
+            'show_in_rest' => true,
+            'single'       => true,
+            'type'         => 'string',
+        ]
+    );
 }
+add_action( 'init', 'lf_register_meta');

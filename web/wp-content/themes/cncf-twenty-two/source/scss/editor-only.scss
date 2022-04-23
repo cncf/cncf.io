@@ -1,0 +1,141 @@
+/**
+* Editor Styles
+*
+* Import, add or override any styles here for Editor
+*
+* @package WordPress
+* @subpackage cncf-theme
+* @since 1.0.0
+*/
+
+@import 'core/variables';
+@import 'core/normalize';
+@import 'core/reset';
+
+// import styles over the top of editor styles defaults.
+#editor {
+	.editor-styles-wrapper {
+		@import 'core/colors';
+		@import 'core/buttons';
+		@import 'core/typography';
+		@import 'components/case-studies';
+		@import 'blocks/has-color';
+		@import 'blocks/block-quote';
+		@import 'blocks/columns';
+		@import 'blocks/groups';
+		@import 'blocks/images';
+		@import 'blocks/lists';
+		@import 'blocks/separator';
+		@import 'blocks/spacers';
+		@import 'blocks/video';
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Editor only styles.
+@import 'editor/outlines';
+@import 'editor/alignment';
+
+// .post-type-post {
+// 	.editor-styles-wrapper {
+// 		h1,
+// 		h2,
+// 		h3,
+// 		h4,
+// 		h5,
+// 		h6 {
+// 			&:not([class*='is-style']),
+// 			&.is-style-default {
+// 				max-width: 900px;
+// 			}
+// 		}
+
+// 		p {
+// 			&:not([class*='is-style']):not(.hero-parent-link),
+// 			&.is-style-default {
+// 				max-width: 700px;
+// 			}
+// 		}
+
+// 		.hbspt-form,
+// 		.wp-block-code {
+// 			max-width: 700px;
+// 		}
+// 	}
+// }
+
+#editor {
+	.editor-styles-wrapper {
+		color: $body-text-color;
+
+		p {
+			line-height: 1.5;
+		}
+
+		// style links same as frontend.
+		a {
+			color: $primary-color;
+			text-decoration: none;
+		}
+	}
+}
+
+// Editor Post Title.
+.editor-post-title__block .editor-post-title__input {
+	font-family: $font-primary;
+	font-weight: 300;
+	line-height: 1.4;
+}
+
+// Add padding to make more easily selectable.
+// .wp-block-group,
+// .wp-block-columns {
+// 	padding-top: 1rem;
+// 	padding-bottom: 1rem;
+// }
+
+// stop ridiculous dropcap in paragraph preview.
+// .block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
+// 	float: none;
+// 	font-size: inherit;
+// 	line-height: inherit;
+// 	font-weight: inherit;
+// 	margin: inherit;
+// 	text-transform: inherit;
+// 	font-style: inherit;
+// }
+
+// .has-drop-cap:not(:focus)::first-letter {
+// 	float: none;
+// 	font-size: inherit;
+// 	line-height: inherit;
+// 	font-weight: inherit;
+// 	margin: inherit;
+// 	text-transform: inherit;
+// 	font-style: inherit;
+// }
+
+// Make SVGs fill containers unless resized (Safe SVG related).
+.wp-block-image:not(.is-resized) img[src$='.svg'] {
+	width: 100%;
+	height: auto;
+}
+
+// allows for transparent images to be visible in Sidebar Metabox.
+#pmc-lf_event-logo .pmc-image-container {
+	background-color: $gray-200;
+}
+
+// make placeholder text easier to see in sidebar.
+body.wp-admin div.pmc-sidebar ::placeholder {
+	color: #c4c4c4;
+}

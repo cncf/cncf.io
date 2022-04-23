@@ -1,0 +1,154 @@
+{
+    "$schema": "https://schemas.wp.org/wp/5.9/theme.json",
+    "version": 2,
+    "settings": {
+        "layout": {
+            "contentSize": "1200px"
+        },
+        "typography": {
+            "dropCap": false,
+            "customFontSize": false,
+            "textDecoration": false,
+            "fontFamilies": [
+                {
+                    "fontFamily": "Clarity City,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Roboto,Ubuntu,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                    "slug": "primary",
+                    "name": "Primary"
+                }
+            ],
+            "fontSizes": [
+                {
+                    "slug": "extra-small",
+                    "size": "10px",
+                    "name": "Extra small"
+                },
+                {
+                    "slug": "small",
+                    "size": "14px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "normal",
+                    "size": "16px",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "medium",
+                    "size": "18px",
+                    "name": "Medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "20px",
+                    "name": "Large"
+                },
+                {
+                    "slug": "larger",
+                    "size": "24px",
+                    "name": "Larger"
+                },
+                {
+                    "slug": "extra-large",
+                    "size": "36px",
+                    "name": "Extra large"
+                },
+				{
+                    "slug": "extra-extra-large",
+                    "size": "46px",
+                    "name": "Extra Extra large"
+                }
+            ]
+        },
+        "color": {
+            "custom": false,
+            "customGradient": false,
+            "gradients": [],
+            "link": false,
+            "defaultPalette": false,
+            "defaultGradients": false,
+            "palette": [
+                {
+                    "slug": "pink-400",
+                    "color": "#d62293",
+                    "name": "Pink 400"
+                },
+                {
+                    "slug": "tertiary-400",
+                    "color": "#62a1ff",
+                    "name": "Tertiary 400"
+                },
+                {
+                    "slug": "black",
+                    "color": "#000000",
+                    "name": "Black"
+                },
+                {
+                    "slug": "gray-700",
+                    "color": "#747474",
+                    "name": "Gray 700"
+                },
+                {
+                    "slug": "gray-500",
+                    "color": "#c4c4c4",
+                    "name": "Gray 500"
+                },
+                {
+                    "slug": "gray-400",
+                    "color": "#e6e6e6",
+                    "name": "Gray 400"
+                },
+                {
+                    "slug": "gray-300",
+                    "color": "#eeeeee",
+                    "name": "Gray 300"
+                },
+                {
+                    "slug": "gray-200",
+                    "color": "#f8f8f8",
+                    "name": "Gray 200"
+                },
+                {
+                    "slug": "gray-100",
+                    "color": "#fcfcfc",
+                    "name": "Gray 100"
+                },
+                {
+                    "slug": "white",
+                    "color": "#FFFFFF",
+                    "name": "White"
+                },
+				{
+                    "slug": "purple",
+                    "color": "#4A23CC",
+                    "name": "Purple"
+                }
+            ]
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "radius": false
+                },
+                "color": {
+                    "palette": [
+                        {
+                            "slug": "pink-400",
+                            "color": "#d62293",
+                            "name": "Pink 400"
+                        },
+                        {
+                            "slug": "black",
+                            "color": "#000000",
+                            "name": "Black"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--primary)"
+		}
+	}
+}

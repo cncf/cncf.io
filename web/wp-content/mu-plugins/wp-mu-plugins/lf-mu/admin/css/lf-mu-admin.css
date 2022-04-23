@@ -1,5 +1,5 @@
 /**
-* Styling used on Admin settings pages / Global Options page.
+* Styling used on Admin settings pages / Site Options page.
 */
 
 .regular-small-text {
@@ -13,4 +13,33 @@
 .image-preview-wrapper img {
 	max-height: 100px;
 	max-width: 500px;
+}
+
+#dashboard_right_now a.lf_webinar-count:before,
+#dashboard_right_now span.lf_webinar-count:before {
+	content: '\f236';
+}
+#dashboard_right_now a.lf_event-count:before,
+#dashboard_right_now span.lf_event-count:before {
+	content: '\f145';
+}
+#dashboard_right_now a.lf_kubeweekly-count:before,
+#dashboard_right_now span.lf_kubeweekly-count:before {
+	content: '\f466';
+}
+#dashboard_right_now a.lf_report-count:before,
+#dashboard_right_now span.lf_report-count:before {
+	content: '\f478';
+}
+#dashboard_right_now a.lf_case_study-count:before,
+#dashboard_right_now span.lf_case_study-count:before {
+	content: '\f313';
+}
+#dashboard_right_now a.lf_case_study_cn-count:before,
+#dashboard_right_now span.lf_case_study_cn-count:before {
+	content: '\f313';
+}
+#dashboard_right_now a.lf_spotlight-count:before,
+#dashboard_right_now span.lf_spotlight-count:before {
+	content: '\f507';
 }

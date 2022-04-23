@@ -21,9 +21,6 @@ import './case-study-highlights/block.js';
 // Case Study Overview Block.
 import './case-study-overview/block.js';
 
-// Upcoming Events Block.
-import './events/block.js';
-
 // Hero Block.
 import './hero/block.js';
 
@@ -36,17 +33,8 @@ import './landscape/block.js';
 // Newsroom Block.
 import './newsroom/block.js';
 
-// Spotlight Block.
-import './spotlight/block.js';
-
-// Stats Block.
-import './stats/block.js';
-
 // Tab Container Block.
 import './tab-container-block/block.js';
-
-// Upcoming Webinars Block.
-import './upcoming-webinars/block.js';
 
 // YouTube Lite Block.
 import './youtube-lite/block.js';

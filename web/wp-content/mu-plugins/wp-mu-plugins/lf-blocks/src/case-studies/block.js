@@ -50,7 +50,7 @@ registerBlockType(
 		attributes: {
 			numberposts: {
 				type: 'integer',
-				default: 4,
+				default: 2,
 			},
 		},
 		html: false,

@@ -16,7 +16,7 @@
 function lf_case_studies_render_callback( $attributes ) {
 
 	// get the quantity to display, if not default.
-	$quantity = isset( $attributes['numberposts'] ) ? $attributes['numberposts'] : 4;
+	$quantity = isset( $attributes['numberposts'] ) ? $attributes['numberposts'] : 2;
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
@@ -41,7 +41,7 @@ function lf_case_studies_render_callback( $attributes ) {
 	?>
 <section
 	class="wp-block-lf-case-studies <?php echo esc_html( $classes ); ?>">
-	<div class="case-studies-wrapper">
+	<div class="case-studies">
 
 	<?php
 

@@ -1,0 +1,42 @@
+input[type='text'],
+input[type='email'],
+input[type='search'] {
+	height: 50px;
+	padding-left: 12px;
+	width: 100%;
+	border-radius: 3px;
+	-webkit-appearance: none;
+	// makes border lighter.
+	border: 1px solid $gray-500;
+}
+
+// other forms bg use  - $gray-100
+
+// Controls autocomplete styles.
+input,
+textarea,
+select {
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus {
+		// Stop Chrome autofill by 9999s.
+		transition: background-color 9999s ease-out 0s;
+	}
+}
+
+// Restrict hubspot contact form to 790px. Must use !important.
+// Selector is not great and may interfere with other forms.
+.hs-form-iframe {
+	max-width: 800px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	@media (min-width: 1200px) {
+		margin-top: 80px;
+		margin-bottom: 80px;
+	}
+}
+
+// Remove small X in search bar in Chrome.
+input[type='search']::-webkit-search-cancel-button {
+	display: none;
+}

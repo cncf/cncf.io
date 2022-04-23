@@ -18,7 +18,7 @@ const { Component } = wp.element;
 class Hero extends Component {
 	render() {
 		const heroTemplate = [
-			[ 'core/heading', { placeholder: 'Your custom page title', level: 1, textColor: 'white' } ],
+			[ 'core/heading', { level: 1, textColor: 'white' } ],
 		];
 
 		return (
@@ -26,7 +26,7 @@ class Hero extends Component {
 				<section className="hero background-image-wrapper">
 
 					<figure className="background-image-figure">
-						<img src="https://via.placeholder.com/1400x300/BADA55/000000" alt="Hero" />
+						<img src="" alt="Hero" />
 					</figure>
 
 					<div className="container wrap background-image-text-overlay">

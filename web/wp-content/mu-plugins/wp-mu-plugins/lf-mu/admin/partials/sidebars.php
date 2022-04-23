@@ -9,6 +9,11 @@
  * @subpackage Lf_Mu/admin/partials
  */
 
+ // If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 // First we define the sidebar with it's tabs, panels and settings.
 $palette = array(
 	'dark-fuschia'     => '#6e1042',
@@ -251,6 +256,15 @@ $sidebar    = array(
 							'ui_border_top' => true,
 							'default_value' => '',
 							'placeholder'   => 'Oliver Gould',
+						),
+						array(
+							'type'          => 'image',
+							'data_type'     => 'meta',
+							'data_key'      => 'guest_author_image',
+							'label'         => __( 'Guest Author Image' ),
+							'help'          => __( 'Image should be at least 200x200px with face centered.' ),
+							'ui_border_top' => false,
+							'register_meta' => true,
 						),
 						array(
 							'type'          => 'text',
@@ -586,6 +600,40 @@ $sidebar    = array(
 							'ui_border_top' => true,
 							'default_value' => '',
 							'placeholder'   => 'https://email.linuxfoundation.org/linux-foundation-events-snapshot-march-2021',
+						),
+					),
+				),
+			),
+		),
+	),
+);
+$sidebars[] = $sidebar;
+
+$sidebar    = array(
+	'id'              => 'lf-sidebar-report',
+	'id_prefix'       => 'lf_',
+	'label'           => __( 'Report Settings' ),
+	'post_type'       => 'lf_report',
+	'data_key_prefix' => 'lf_report_',
+	'icon_dashicon'   => 'admin-settings',
+	'tabs'            => array(
+		array(
+			'label'  => __( 'Tab label' ),
+			'panels' => array(
+				array(
+					'label'        => __( 'General' ),
+					'initial_open' => true,
+					'settings'     => array(
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'pdf_url',
+							'label'         => __( 'PDF URL' ),
+							'help'          => __( 'When this is set the report page will use the standard template.' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+							'default_value' => '',
+							'placeholder'   => 'https://www.cncf.io/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf',
 						),
 					),
 				),

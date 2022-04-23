@@ -1,0 +1,129 @@
+.search-filter-results-count {
+	font-size: 14px;
+	font-style: italic;
+	margin-top: 20px;
+}
+
+// main search and filter class.
+.searchandfilter {
+	input[type='text'],
+	input[type='email'],
+	input[type='search'] {
+		height: 40px;
+	}
+
+	.sf-field-search {
+		label {
+			display: block;
+		}
+	}
+
+	// Select boxes.
+	.chosen-container {
+		width: 100% !important;
+		max-width: 100%;
+		display: inline-block;
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		// Select boxes font.
+		&.chosen-container-single {
+			.chosen-single {
+				font-weight: 400;
+				height: 40px;
+				line-height: 40px;
+				div b {
+					background-position-y: 10px;
+				}
+			}
+		}
+
+		.chosen-results li {
+			line-height: 30px;
+		}
+	}
+
+	ul li {
+		padding: 0;
+		line-height: 100%;
+		height: 40px;
+		margin-bottom: 20px;
+	}
+	> ul {
+		height: 100%;
+		margin: 0; // reset
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+
+		> *:not(:last-of-type) {
+			flex-grow: 1;
+			margin-right: 30px;
+		}
+
+		> *:last-of-type {
+			min-width: 80px;
+			margin-right: 0;
+		}
+
+		@media (max-width: 599px) {
+			> li {
+				padding: 0.5em 0;
+
+				.sf-input-select {
+					width: 100%;
+				}
+			}
+		}
+
+		select.sf-input-select {
+			min-width: 150px;
+		}
+
+		@media (min-width: 1000px) {
+			.sf-input-select {
+				visibility: hidden;
+			}
+		}
+	}
+
+	// search and filter reset button.
+	.search-filter-reset {
+		display: inline-block;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 12px;
+		border: 2px solid $black;
+		background-color: $white;
+		color: $black;
+		width: 100%;
+		padding: 10px 20px;
+	}
+	&[data-sf-form-id='8151'] {
+		> ul {
+			> *:not(:last-of-type) {
+				margin-right: 12px;
+			}
+		}
+	}
+	// &[data-sf-form-id='67180'] {
+	// height: unset;
+	// margin-bottom: 1rem;
+	// > ul {
+	// 	display: flex;
+	// 	flex-wrap: wrap;
+	// }
+	// .sf-field-search {
+	// 	flex-basis: 100%;
+	// margin-right: 0;
+	// 	label {
+	// 		flex-basis: 100%;
+	// 	}
+	// }
+	// }
+}

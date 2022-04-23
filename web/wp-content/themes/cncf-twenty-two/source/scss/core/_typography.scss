@@ -1,0 +1,357 @@
+article {
+	p {
+		line-height: $line-height;
+	}
+
+	p + p {
+		margin-top: 20px;
+	}
+}
+
+a {
+	font-weight: 700;
+	color: $primary-color;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+h2,
+.h2,
+.is-style-section-heading {
+	font-weight: 700;
+	line-height: 120%;
+	font-size: 30px;
+	max-width: 900px;
+	@media (min-width: 1200px) {
+		font-size: 36px;
+		line-height: 150%;
+	}
+}
+
+h3,
+.h3 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 170%;
+	// line-height: 125%; // TODO: Where did 125 come from?
+}
+
+.is-style-opening-paragraph {
+	font-weight: 400;
+	line-height: 150%;
+	font-size: 22px;
+	max-width: 900px;
+	@media (min-width: 1200px) {
+		font-size: 34px;
+	}
+	margin-bottom: 50px;
+}
+
+.is-style-spaced-uppercase {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 125%;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.is-style-link-cta {
+	position: relative;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 100%;
+	font-size: 14px;
+	margin-bottom: 14px;
+	@media (min-width: 390px) {
+		font-size: 16px;
+		margin-bottom: 16px;
+	}
+	@media (min-width: 1200px) {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	text-decoration: none;
+	color: $black;
+	a {
+		text-decoration: none;
+		color: $black;
+		&:hover {
+			color: $primary-400;
+			text-decoration: none;
+		}
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		border-bottom: 3px solid $primary-400;
+		@media (min-width: 800px) {
+			border-bottom: 2px solid $primary-400;
+		}
+		left: 0;
+		bottom: -14px;
+		width: 100%;
+		height: 2px;
+	}
+}
+
+.is-style-boxed-uppercase {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 140%;
+	border: 3.75px solid $black;
+	text-transform: uppercase;
+	padding: 2px 6px 0px 6px;
+}
+
+// blog and spotlight posts content.
+.post-content {
+	@media (min-width: 900px) {
+		* {
+			max-width: 900px;
+		}
+	}
+	font-size: 14px;
+	@media (min-width: 390px) {
+		font-size: 15px;
+	}
+	@media (min-width: 1200px) {
+		font-size: 16px;
+	}
+
+	p + p {
+		margin-top: 30px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 400;
+		line-height: 150%;
+		// Added as PR team add strong to Headings.
+		strong {
+			font-weight: 400;
+		}
+	}
+
+	h2 {
+		font-size: 28px;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		@media (min-width: 1200px) {
+			font-size: 34px;
+			margin-top: 80px;
+			margin-bottom: 45px;
+		}
+	}
+
+	h3 {
+		margin-top: 40px;
+		margin-bottom: 30px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+			margin-bottom: 35px;
+		}
+	}
+
+	h4,
+	h5,
+	h6 {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		@media (min-width: 1200px) {
+			margin-top: 40px;
+			margin-bottom: 25px;
+		}
+	}
+
+	.wp-block-code {
+		margin-left: unset;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		code {
+			max-width: 900px;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			padding-left: 20px;
+			padding-top: 0;
+			border: 0;
+		}
+	}
+
+	ul {
+		margin-bottom: 20px;
+		// second level
+		ul {
+			margin-bottom: 0;
+
+			// third level
+			ul {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	pre:not(.wp-block-code) {
+		max-width: 900px;
+		margin-left: unset;
+		background: #2b2b2b;
+		color: $white;
+		padding: 1em;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		overflow: auto;
+		border-radius: 0.3em;
+		line-height: 1.5;
+	}
+
+	// Stops links pushing out container.
+	a {
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		word-break: break-all;
+		word-break: break-word;
+		hyphens: auto;
+	}
+
+	.wp-block-image,
+	.wp-block-quote,
+	.wp-block-gallery,
+	.wp-block-embed,
+	.wp-block-lf-youtube-lite {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+			margin-bottom: 80px;
+		}
+	}
+}
+// end of post content
+
+// case studies, reports.
+.page-content {
+	p,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		max-width: 900px;
+	}
+
+	ul {
+		max-width: 800px;
+	}
+
+	h2 {
+		margin-top: 50px;
+		margin-bottom: 30px;
+		@media (min-width: 1200px) {
+			margin-top: 100px;
+			margin-bottom: 60px;
+		}
+	}
+
+	h2,
+	h3 {
+		line-height: 150%;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+			margin-bottom: 20px;
+		}
+		+ .wp-block-quote,
+		.wp-block-gallery {
+			margin-top: 0;
+		}
+	}
+
+	.wp-block-image,
+	.wp-block-quote,
+	.wp-block-gallery,
+	.wp-block-embed,
+	.wp-block-lf-youtube-lite {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		@media (min-width: 1000px) {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
+}
+// end of page content.
+
+.is-style-max-width-800 {
+	max-width: 800px;
+}
+
+.is-style-max-width-900 {
+	max-width: 900px;
+}
+
+// not attached as a style.
+// TODO: Actually used anywhere?
+.is-style-mb0 {
+	margin-bottom: 0 !important;
+}
+
+// TODO: Responsive sized fonts inline with designs.
+.has-extra-small-font-size {
+	// 10px
+}
+.has-small-font-size {
+	// 14px
+}
+.has-normal-font-size {
+	// 16px
+}
+.has-medium-font-size {
+	// 18px
+}
+.has-large-font-size {
+	// 20px
+	@media (max-width: 999px) {
+		font-size: 18px !important;
+	}
+}
+.has-larger-font-size {
+	// 24px
+	@media (max-width: 999px) {
+		font-size: 16px !important;
+	}
+}
+.has-extra-large-font-size {
+	// 36px
+}
+.has-extra-extra-large-font-size {
+	// 46px
+	line-height: 140%;
+	@media (max-width: 389px) {
+		font-size: 28px !important;
+	}
+	@media (min-width: 390px) and (max-width: 599px) {
+		font-size: 30px !important;
+	}
+	@media (min-width: 600px) and (max-width: 999px) {
+		font-size: 36px !important;
+	}
+}
+
+.normal-case {
+	text-transform: none !important;
+}

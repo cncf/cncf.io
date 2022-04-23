@@ -53,14 +53,6 @@ registerBlockType(
 				type: 'integer',
 				default: 4,
 			},
-			showImages: {
-				type: 'boolean',
-				default: true,
-			},
-			showBorder: {
-				type: 'boolean',
-				default: true,
-			},
 			order: {
 				type: 'string',
 				default: 'desc',

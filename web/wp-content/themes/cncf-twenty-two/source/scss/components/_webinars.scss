@@ -1,0 +1,147 @@
+.webinar-upcoming-item {
+	background-color: $white;
+	border: 1px solid $gray-300;
+	filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
+	border-radius: 5px;
+	padding: 25px;
+
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	&__date {
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 125%;
+		text-transform: uppercase;
+		display: block;
+		color: $gray-700;
+		letter-spacing: 0.2em;
+		margin-bottom: 15px;
+	}
+	&__link {
+		color: $black;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 150%;
+		margin-bottom: 20px;
+	}
+	&__company {
+		color: $gray-700;
+		font-size: 12px;
+		margin-top: auto;
+	}
+}
+
+.webinar-recorded-item {
+	background-color: $white;
+	filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
+	border-radius: 5px;
+	&__figure {
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		&:hover {
+			.webinar-recorded-item__overlay {
+				opacity: 1;
+				transition: opacity 0.25s ease-out;
+			}
+		}
+	}
+	&__figure-link {
+		height: 200px;
+	}
+	&__image {
+		margin: -10% 0;
+		display: block;
+		width: 100%;
+	}
+	&__overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0.8;
+		transition: opacity 0.25s ease-out;
+	}
+	&__text-wrapper {
+		padding: 25px;
+		display: flex;
+		flex-direction: column;
+		height: calc(100% - 200px);
+	}
+	&__title {
+		font-size: 20px;
+		line-height: 140%;
+		margin-bottom: 15px;
+	}
+	&__link {
+		color: $black;
+	}
+	&__presented {
+		font-size: 12px;
+		line-height: 140%;
+		color: $gray-700;
+		margin-bottom: 20px;
+	}
+	&__date-views-wrapper {
+		margin-top: auto;
+		font-size: 12px;
+		line-height: 140%;
+		color: $gray-700;
+		font-weight: 700;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__date {
+		text-align: left;
+	}
+	&__views {
+		text-align: right;
+	}
+}
+
+.webinar-single {
+	&__company {
+	}
+	&__meta-wrapper {
+		display: flex;
+		flex-direction: column;
+		@media (min-width: 800px) {
+			flex-direction: row;
+			align-items: center;
+		}
+		font-weight: 700;
+		font-size: 10px;
+		@media (min-width: 800px) {
+			font-size: 12px;
+		}
+		line-height: 125%;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: $black;
+	}
+	&__svg {
+		max-height: 14px;
+		margin-right: 10px;
+		padding-bottom: 2px;
+	}
+	&__date {
+		display: flex;
+		align-items: center;
+		@media (min-width: 800px) {
+			white-space: nowrap;
+		}
+	}
+	&__views {
+		display: flex;
+		align-items: center;
+		margin-top: 20px;
+		@media (min-width: 800px) {
+			margin-top: 0;
+			margin-left: 60px;
+		}
+	}
+}

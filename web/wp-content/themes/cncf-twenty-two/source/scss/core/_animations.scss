@@ -1,0 +1,24 @@
+/* Pop */
+@keyframes pop-sm {
+	50% {
+		transform: scale(1.2);
+	}
+}
+
+@keyframes pop-lg {
+	50% {
+		transform: scale(1.4);
+	}
+}
+
+// animation-name: pop-sm;
+// animation-duration: 0.2s;
+// animation-timing-function: linear;
+// animation-iteration-count: 1;
+
+// img {
+// 	animation-name: pop-lg;
+// 	animation-duration: 0.3s;
+// 	animation-timing-function: linear;
+// 	animation-iteration-count: 1;
+// }

@@ -5,12 +5,36 @@
  *
  */
 
-// add padding so it is selectable.
 .case-study-overview {
-	padding: 1rem;
+	// add padding so it is selectable.
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	@media (min-width: 1200px) {
+		display: flex;
+		flex-direction: row;
+		.case-study-overview-wrapper {
+			margin-left: 30px;
+			flex-basis: 300px;
+			flex-grow: 1;
+			flex-shrink: 0;
+		}
+	}
+	.components-placeholder.is-small .components-placeholder__instructions {
+		display: block;
+	}
+	.long-title {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
 }
 
 .case-study-overview-wrapper {
 	padding: 1rem;
 	background-color: #f4f4f4;
+}
+
+.components-placeholder.components-placeholder {
+	min-height: unset;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }

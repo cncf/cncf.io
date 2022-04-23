@@ -1,0 +1,25 @@
+.social-share {
+	&__title {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: 0.15em;
+		color: $gray-700;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+	}
+	&__wrapper {
+		a {
+			display: inline-block;
+
+			svg {
+				height: 30px;
+				width: auto;
+				color: $black;
+			}
+		}
+		a:not(:last-child) {
+			margin-right: 15px;
+		}
+	}
+}

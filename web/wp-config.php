@@ -3,7 +3,7 @@
  * WP Config
  *
  * @package WordPress
- * @subpackage lf-theme
+ * @subpackage cncf-theme
  * @since 1.0.0
  */
 
@@ -245,7 +245,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
 
-if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && php_sapi_name() != 'cli' ) {
+if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && 'lando' != $_ENV['PANTHEON_ENVIRONMENT'] && php_sapi_name() != 'cli' ) {
 	// Redirect to https://$primary_domain in the Live environment.
 	if ( 'live' === $_ENV['PANTHEON_ENVIRONMENT'] ) {
 		$primary_domain = 'www.cncf.io';

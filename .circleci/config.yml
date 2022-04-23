@@ -109,11 +109,10 @@ jobs:
             - slack/status:
                 fail_only: true
 
-                
     build_css_js:
         <<: *defaults
         docker:
-            - image: circleci/node:9.9-stretch
+            - image: cimg/node:14.19
               auth:
                 username: $DOCKERHUB_USERNAME
                 password: $DOCKERHUB_PASSWORD
@@ -123,14 +122,14 @@ jobs:
 
             - run:
                 name: Check current version of node
-                command: npm -v
+                command: node -v
 
             - run:
                 name: compile css/js
-                command: 'cd $HOME/example_wordpress_composer/web/wp-content/themes/lf-theme/; npm install; npm run build'
+                command: 'cd $HOME/example_wordpress_composer/web/wp-content/themes/cncf-twenty-two/; npm install; npm run build'
 
             - persist_to_workspace:
-                root: web/wp-content/themes/lf-theme
+                root: web/wp-content/themes/cncf-twenty-two
                 paths:
                     - build
 
@@ -153,7 +152,7 @@ jobs:
 
             - run:
                 name: copy build
-                command: cp -r /tmp/build $HOME/example_wordpress_composer/web/wp-content/themes/lf-theme/
+                command: cp -r /tmp/build $HOME/example_wordpress_composer/web/wp-content/themes/cncf-twenty-two/
 
             - run:
                 name: dependencies
@@ -172,16 +171,6 @@ jobs:
                 failure_message: "$COMMIT_AUTHOR's *$CIRCLE_JOB* job has failed \n- $COMMIT_HASH: $COMMIT_MESSAGE"
 
 
-    run_percy_tests:
-        <<: *defaults
-        steps:
-            - checkout
-
-            - run:
-                name: Percy tests
-                command: ./.circleci/percy-tests.sh $TERMINUS_SITE
-
-
 workflows:
   build_and_test:
     jobs:
@@ -193,6 +182,3 @@ workflows:
       - code_sniff_unit_test:
             requires:
                 - build
-      - run_percy_tests:
-            requires:
-                - build_and_deploy_cncf

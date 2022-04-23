@@ -180,8 +180,6 @@ class Lf_Mu {
 		if ( ! wp_next_scheduled( 'lf_sync_ktps' ) ) {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_ktps' );
 		}
-		// Example of how to run a sync locally on demand.
-		// $this->loader->add_action( 'init', $plugin_admin, 'get_program_views' ); //phpcs:ignore.
 
 		// Sync programs with https://community.cncf.io/.
 		$this->loader->add_action( 'cncf_sync_programs', $plugin_admin, 'sync_programs' );
@@ -189,7 +187,7 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'cncf_sync_programs' );
 		}
 
-		// Get views of online programs.
+		// Get video views from YouTube for online programs.
 		$this->loader->add_action( 'cncf_get_program_views', $plugin_admin, 'get_program_views' );
 		if ( ! wp_next_scheduled( 'cncf_get_program_views' ) ) {
 			wp_schedule_event( time(), 'daily', 'cncf_get_program_views' );
@@ -207,6 +205,25 @@ class Lf_Mu {
 			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
 		}
 
+		// Example of how to run a sync locally on demand.
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
+		// $this->loader->add_action( 'init', $plugin_admin, 'get_program_views' ); //phpcs:ignore.
+
+		$this->loader->add_filter( 'dashboard_glance_items', $plugin_admin, 'custom_glance_items', 10, 1 );
+
+		$this->loader->add_filter( 'manage_lf_webinar_posts_columns', $plugin_admin, 'set_custom_edit_lf_webinar_columns' );
+
+		$this->loader->add_action( 'manage_lf_webinar_posts_custom_column', $plugin_admin, 'custom_lf_webinar_column', 10, 2 );
+
+		$this->loader->add_filter( 'manage_lf_event_posts_columns', $plugin_admin, 'set_custom_edit_lf_event_columns' );
+
+		$this->loader->add_action( 'manage_lf_event_posts_custom_column', $plugin_admin, 'custom_lf_event_column', 10, 2 );
+
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_dashboard_widget_info' );
+
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'remove_dashboard_widgets' );
+
+		$this->loader->add_filter( 'pre_get_posts', $plugin_admin, 'set_events_admin_order' );
 	}
 
 	/**
@@ -232,9 +249,7 @@ class Lf_Mu {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'wpdocs_dequeue_dashicon' );
 		$this->loader->add_filter( 'pre_get_posts', $plugin_public, 'remove_news_from_rss' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_nhpt_query_args', $plugin_public, 'remove_news_from_sitemap' );
-
 		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_kubeweekly_from_sitemap' );
-
 	}
 
 	/**

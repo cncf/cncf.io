@@ -23,58 +23,52 @@ class CaseStudyHighlight extends Component {
 
 		return (
 			<div
-				className="case-study-highlights alignwide">
+				className="case-study-highlights">
 				<div className="container case-study-highlights-wrapper">
-					<div>
+					<div className="column">
 						<RichText
 							tagName="h3"
 							className={ className }
-							placeholder={ __( 'Heading Text 1', 'lf-blocks' ) }
-							keepPlaceholderOnFocus={ false }
+							placeholder={ __( 'Short Heading Text 1', 'lf-blocks' ) }
 							value={ headingText01 }
 							onChange={ value => setAttributes( { headingText01: value } ) }
 						/>
 						<RichText
 							tagName="p"
 							className={ className }
-							placeholder={ __( 'Smaller Text 1', 'lf-blocks' ) }
-							keepPlaceholderOnFocus={ false }
+							placeholder={ __( 'Longer Text 1', 'lf-blocks' ) }
 							value={ smallerText01 }
 							onChange={ value => setAttributes( { smallerText01: value } ) }
 						/>
 					</div>
-					<div>
+					<div className="column">
 						<RichText
 							tagName="h3"
 							className={ className }
-							placeholder={ __( 'Heading Text 2', 'lf-blocks' ) }
-							keepPlaceholderOnFocus={ false }
+							placeholder={ __( 'Short Heading Text 2', 'lf-blocks' ) }
 							value={ headingText02 }
 							onChange={ value => setAttributes( { headingText02: value } ) }
 						/>
 						<RichText
 							tagName="p"
 							className={ className }
-							placeholder={ __( 'Smaller Text 2', 'lf-blocks' ) }
-							keepPlaceholderOnFocus={ false }
+							placeholder={ __( 'Longer Text 2', 'lf-blocks' ) }
 							value={ smallerText02 }
 							onChange={ value => setAttributes( { smallerText02: value } ) }
 						/>
 					</div>
-					<div>
+					<div className="column">
 						<RichText
 							tagName="h3"
 							className={ className }
-							placeholder={ __( 'Heading Text 3', 'lf-blocks' ) }
-							keepPlaceholderOnFocus={ false }
+							placeholder={ __( 'Short Heading Text 3', 'lf-blocks' ) }
 							value={ headingText03 }
 							onChange={ value => setAttributes( { headingText03: value } ) }
 						/>
 						<RichText
 							tagName="p"
 							className={ className }
-							placeholder={ __( 'Smaller Text 3', 'lf-blocks' ) }
-							keepPlaceholderOnFocus={ false }
+							placeholder={ __( 'Longer Text 3', 'lf-blocks' ) }
 							value={ smallerText03 }
 							onChange={ value => setAttributes( { smallerText03: value } ) }
 						/>

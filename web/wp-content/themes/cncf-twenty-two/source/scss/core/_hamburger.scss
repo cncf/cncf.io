@@ -1,0 +1,101 @@
+/**
+ * Hamburger Menu
+ * Based on https://github.com/jonsuh/hamburgers
+ *
+ */
+
+// Setup variables for the hamburger.
+$hamburger-active-layer-color: $primary-color;
+$hamburger-layer-color: $black;
+$hamburger-padding-x: 0px;
+$hamburger-padding-y: 0px;
+$hamburger-layer-width: 24px;
+$hamburger-layer-height: 4px;
+$hamburger-layer-spacing: 3px;
+$hamburger-hover-opacity: 1;
+$hamburger-active-hover-opacity: 1;
+
+// Output the hamburger CSS
+.hamburger {
+	padding: $hamburger-padding-y $hamburger-padding-x;
+	cursor: pointer;
+
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+
+	// Normalize the <button>
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+
+	&:hover {
+		opacity: $hamburger-hover-opacity;
+	}
+
+	&.is-active {
+		.hamburger-inner {
+			background-color: transparent;
+			transform: rotateY(180deg);
+
+			&::before {
+				transform: translate3d(0, $hamburger-layer-height + $hamburger-layer-spacing, 0) rotate(45deg);
+			}
+
+			&::after {
+				transform: translate3d(0, ($hamburger-layer-height + $hamburger-layer-spacing) * -1, 0) rotate(-45deg);
+			}
+		}
+
+		&:hover {
+			opacity: $hamburger-active-hover-opacity;
+		}
+	}
+}
+
+.hamburger-box {
+	width: $hamburger-layer-width;
+	height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+	display: inline-block;
+	position: relative;
+	perspective: $hamburger-layer-width * 2;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: calc($hamburger-layer-height / -2);
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+		background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	&,
+	&::before,
+	&::after {
+		width: $hamburger-layer-width;
+		height: 3px;
+		background-color: $hamburger-layer-color;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+
+	&::before {
+		top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+	}
+
+	&::after {
+		bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+	}
+}

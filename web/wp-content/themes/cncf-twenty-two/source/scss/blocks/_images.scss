@@ -1,0 +1,34 @@
+// Reminder that image styles are applied to the parent Figure.
+
+.is-style-rounded-corners {
+	border-radius: 5px;
+	img {
+		border-radius: inherit;
+	}
+}
+
+.is-style-blob {
+	display: block;
+	img {
+		max-width: 100%;
+		mask-position: center;
+		@media (min-width: 768px) {
+			mask-position: center right;
+		}
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzE1IiBoZWlnaHQ9IjU4OCIgdmlld0JveD0iMCAwIDcxNSA1ODgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01NDguMzI4IDk2LjY5NDNMNTQ4LjMyOCA5Ni42OTQ1QzYyMy44NjQgMTQ2LjgyIDY3Ny45NjQgMjA3LjcwMyA2OTcuNDk0IDI3MS42NzhDNzE3LjAxMSAzMzUuNjEgNzAyLjAzNCA0MDIuNzE0IDYzOS4yMzMgNDY1LjQxMUM1MTMuNTc2IDU5MC44NjEgMjg5LjM2NSA2MTEuMzU2IDEzOC40ODkgNTExLjE4M0M2My4wNjUxIDQ2MS4xMDcgMjAuMjU0NCAzOTAuMzYzIDExLjk5MjUgMzE2LjQ4NkMzLjczMDgxIDI0Mi42MSAzMC4wMTA3IDE2NS41NTEgOTIuODY1NyAxMDIuODI2QzIxOC41MzkgLTIyLjU4NTkgMzk3LjQ3IC0zLjU2MDcyIDU0OC4zMjggOTYuNjk0M1oiIGZpbGw9IiM4Njg2ODYiLz4KPC9zdmc+Cg==');
+	}
+	// only show captions on blobs for SR.
+	figcaption {
+		position: absolute !important;
+		clip: rect(1px, 1px, 1px, 1px);
+		overflow: hidden;
+		height: 1px;
+		width: 1px;
+	}
+}
+
+main .wp-block-image figcaption {
+	text-align: left;
+}

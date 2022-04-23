@@ -1,0 +1,38 @@
+#cookie-banner {
+	position: fixed;
+	z-index: 1000000;
+	padding: 28px 24px;
+	border-radius: 0px;
+	color: $cookie-banner-text;
+	background: $cookie-banner-bg;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.05));
+	font-weight: 700;
+	visibility: hidden;
+	text-align: center;
+	line-height: 135%;
+
+	@media (min-width: 600px) {
+		left: unset;
+		bottom: 1rem;
+		right: 1rem;
+		max-width: 380px;
+		border-radius: 5px;
+		text-align: left;
+	}
+}
+
+.cookie-title {
+	font-size: 16px;
+	@media (min-width: 600px) {
+		font-size: 18px;
+	}
+}
+.cookie-text {
+	font-size: 9px;
+}
+.cookie-link {
+	color: $black;
+}

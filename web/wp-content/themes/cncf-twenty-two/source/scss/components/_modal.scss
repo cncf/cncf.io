@@ -1,0 +1,173 @@
+// needed for old browsers.
+dialog {
+	display: block;
+}
+
+// removes scroll when modal is opened.
+.no-scroll {
+	overflow: hidden;
+}
+
+.modal-hide {
+	display: none;
+}
+
+.modal-content-wrapper {
+	display: flex;
+	flex-direction: column;
+
+	@media (max-width: 767px) {
+		padding: 1rem;
+		.modal__content {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		height: 100%;
+		.modal__content {
+			margin-left: 2rem;
+			margin-right: 2rem;
+			padding-bottom: 2rem;
+			@media (min-width: 1000px) {
+				margin-left: 50px;
+				margin-right: 50px;
+			}
+		}
+	}
+}
+
+// overlay covers everything.
+.generic-modal-overlay,
+.person-modal-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 666;
+	cursor: pointer;
+	background: black;
+	background: rgba(0, 0, 0, 0.65);
+	backdrop-filter: blur(10px);
+}
+
+// generic modal
+.generic-modal {
+	position: fixed;
+	background: $white;
+	z-index: 667;
+	border: 0;
+	overflow: auto;
+	min-height: 300px;
+	max-height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	max-width: 100%;
+
+	@media (min-width: 768px) {
+		width: 75%;
+		max-width: 800px;
+		height: 70vh;
+		min-height: 300px;
+		max-height: 800px;
+		padding: 50px 25px;
+		border-radius: 10px;
+	}
+	@media (min-width: 1200px) {
+		max-width: 1000px;
+		padding: 60px 30px;
+	}
+
+	&__wrapper {
+		height: 100%;
+	}
+
+	&-close__wrapper {
+		@media (max-width: 767px) {
+			position: sticky;
+			top: -14px;
+			width: calc(100% - 1em);
+			z-index: 99;
+			background-color: $white;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	&-close {
+		background: $white;
+		width: 50px;
+		height: 50px;
+		border: none;
+		border-radius: 0;
+		cursor: pointer;
+		display: inline-block;
+		@media (min-width: 768px) {
+			position: absolute;
+			top: 20px;
+			right: 25px;
+		}
+		&::before {
+			content: '';
+			display: block;
+			position: relative;
+			background: url('../images/icon-close.svg');
+			background-size: 25px 25px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: $black;
+			width: 40px;
+			height: 40px;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			outline: none;
+			cursor: pointer;
+			opacity: 1;
+			@media (min-width: 768px) {
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		&:hover {
+			&::before {
+				opacity: 0.5;
+			}
+		}
+
+		&:focus,
+		&:hover,
+		&:active {
+			outline-color: $link-hover;
+			color: $black;
+		}
+
+		&-overlay[data-background-click='disabled'] {
+			cursor: auto;
+		}
+	}
+	&__content {
+		height: 100%;
+	}
+}
+
+#modal-wechat-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+	height: 100%;
+
+	img {
+		display: block;
+		max-width: 400px;
+		max-height: 400px;
+	}
+}

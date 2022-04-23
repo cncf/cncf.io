@@ -15,6 +15,7 @@
 const { InnerBlocks } = wp.blockEditor;
 const { Component } = wp.element;
 const { Placeholder } = wp.components;
+const { useSelect } = wp.data;
 
 class CaseStudyOverview extends Component {
 	render() {
@@ -26,13 +27,24 @@ class CaseStudyOverview extends Component {
 			[ 'core/paragraph', { placeholder: 'Solution paragraph' } ],
 			[ 'core/heading', { content: 'Impact', level: 3 } ],
 			[ 'core/paragraph', { placeholder: 'Impact paragraph' } ],
-			[ 'lf/youtube-lite' ],
 		];
+
+		const meta = wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' );
+		const longTitle = meta['lf_case_study_long_title'];
 
 		return (
 			<div className="alignwide">
 				<div className="case-study-overview">
 					<div className="case-study-intro-wrapper">
+						<h2 className="long-title">{ longTitle }</h2>
+						<Placeholder
+						style={ { minHeight: '40px', backgroundColor: '#dedede' } }
+						key="placeholder"
+						icon="info-outline"
+						label="&nbsp;Fill in the Case Study Settings sidebar to set the long title ↗️"
+						instructions="The long title will be displayed on the case study index and at the top of the case study"
+						></Placeholder>
+
 						<InnerBlocks
 							template={ overview_template }
 						/>
@@ -40,9 +52,12 @@ class CaseStudyOverview extends Component {
 
 					<div className="case-study-overview-wrapper">
 						<Placeholder
-							label="Fill in the Settings sidebar for this to be populated ↗️"
-						>
-						</Placeholder>
+						style={ { minHeight: '40px', backgroundColor: '#dedede' } }
+						key="placeholder"
+						icon="info-outline"
+						label="&nbsp;Fill in the Settings sidebar to add dynamic data ↗️"
+						instructions="Choose related projects, country, product type, challenges and industry"
+						></Placeholder>
 						<p>Company: Dynamic Data</p>
 						<p>Industry: Dynamic Data</p>
 						<p>Location: Dynamic Data</p>
