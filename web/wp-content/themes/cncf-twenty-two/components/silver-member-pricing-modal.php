@@ -18,10 +18,10 @@
 
 			<h3>Silver Member Pricing Scale</h3>
 
-			<div style="height:80px" aria-hidden="true" class="wp-block-spacer">
+			<div style="height:50px" aria-hidden="true" class="wp-block-spacer">
 		</div>
 
-			<figure class="wp-block-table is-style-pricing-table">
+			<figure class="wp-block-table is-style-shaded">
 				<table class="has-fixed-layout">
 					<caption class="screen-reader-text">Silver Member Pricing
 						Scale</caption>

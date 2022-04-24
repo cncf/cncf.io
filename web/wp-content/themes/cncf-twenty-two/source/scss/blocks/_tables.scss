@@ -1,0 +1,53 @@
+.wp-block-table {
+	&.is-style-shaded {
+		@media (max-width: 646px) {
+			width: 100%;
+			overflow-x: scroll;
+			th,
+			td {
+				min-width: 240px;
+			}
+			.has-fixed-layout {
+				table-layout: auto;
+			}
+		}
+		table {
+			border-spacing: 0;
+			border-color: transparent;
+			border: none;
+			border-collapse: collapse;
+		}
+		table,
+		tr,
+		td,
+		th {
+			border: none;
+		}
+		td + td {
+			border-left: $white 2px solid;
+		}
+		th,
+		td {
+			padding: 20px;
+		}
+		thead {
+			border-bottom: 0;
+			background-color: $black;
+			color: $white;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 125%;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			text-align: left;
+		}
+		tbody {
+			tr:nth-child(odd) {
+				background: #f8f8f8;
+			}
+			tr:nth-child(even) {
+				background: #eeeeee;
+			}
+		}
+	}
+}
