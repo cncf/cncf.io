@@ -28,7 +28,7 @@ function lf_blocks_frontend_assets() {
 		wp_enqueue_script(
 			'landscape-resize',
 			'//landscape.cncf.io/iframeResizer.js',
-			null,
+			array( 'jquery' ),
 			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 			true
 		);
