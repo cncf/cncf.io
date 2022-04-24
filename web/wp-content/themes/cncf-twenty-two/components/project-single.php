@@ -373,9 +373,11 @@ endif;
 				<?php
 		echo $out; //phpcs:ignore
 				?>
-			<div style="height:100px" aria-hidden="true"
+			<div style="height:40px" aria-hidden="true"
 				class="wp-block-spacer"></div>
 		</div>
+		<div style="height:100px" aria-hidden="true"
+				class="wp-block-spacer"></div>
 				<?php
 
 		endif;
