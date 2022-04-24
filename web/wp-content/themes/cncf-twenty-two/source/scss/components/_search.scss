@@ -1,6 +1,9 @@
 .search {
 	.columns-one {
 		grid-row-gap: 0;
+		.wp-block-separator:first-child {
+			display: none;
+		}
 	}
 	&__highlighted {
 		border: 1px solid $black;

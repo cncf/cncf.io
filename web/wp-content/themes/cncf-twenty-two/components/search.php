@@ -19,7 +19,6 @@ get_template_part( 'components/title' );
 	<div class="container wrap columns-one">
 
 		<?php
-		// TODO: Make this paged so only shows on page 1.
 		if ( 'landscape' === get_search_query() && ! is_paged() ) :
 			?>
 		<div class="search__item search__highlighted">
@@ -107,6 +106,9 @@ get_template_part( 'components/title' );
 			}
 
 			?>
+
+<hr class="wp-block-separator is-style-shadow-line is-style-section-padding">
+
 		<div class="search__item">
 
 		<div class="search__category">
@@ -201,8 +203,6 @@ get_template_part( 'components/title' );
 					?>
 				</div>
 			</div>
-
-<hr class="wp-block-separator is-style-shadow-line is-style-section-padding">
 
 			<?php
 	endwhile;
