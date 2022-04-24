@@ -9,7 +9,7 @@
 	input[type='text'],
 	input[type='email'],
 	input[type='search'] {
-		height: 40px;
+		min-height: 40px;
 	}
 
 	.sf-field-search {
@@ -41,7 +41,8 @@
 		}
 
 		.chosen-results li {
-			line-height: 30px;
+			line-height: 100%;
+			padding: 15px 6px;
 		}
 	}
 
