@@ -12,6 +12,8 @@ require_once get_template_directory() . '/includes/tab-container-filter.php';
 
 get_template_part( 'components/header' );
 
+get_template_part( 'components/skip-link-target' );
+
 get_template_part( 'components/title' );
 
 ?>

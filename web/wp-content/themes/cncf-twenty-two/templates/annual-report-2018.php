@@ -10,6 +10,7 @@
 
 get_template_part( 'components/header' );
 
+get_template_part( 'components/skip-link-target' );
 ?>
 
 <link rel="prefetch"

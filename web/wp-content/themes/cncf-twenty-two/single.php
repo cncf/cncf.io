@@ -9,6 +9,8 @@
 
 get_template_part( 'components/header' );
 
+get_template_part( 'components/skip-link-target' );
+
 if ( is_singular( 'lf_case_study' ) || is_singular( 'lf_case_study_cn' ) ) :
 	get_template_part( 'components/case-study-single' );
 

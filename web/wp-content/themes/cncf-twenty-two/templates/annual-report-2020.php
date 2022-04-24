@@ -10,6 +10,8 @@
 
 get_template_part( 'components/header' );
 
+get_template_part( 'components/skip-link-target' );
+
 // declare report PDF link to reference as variable.
 $pdf_link = '/cncf-annual-report-2020-pdf';
 

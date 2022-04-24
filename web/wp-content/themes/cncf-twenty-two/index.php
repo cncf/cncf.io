@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_template_part( 'components/header' );
 
+get_template_part( 'components/skip-link-target' );
+
 if ( is_404() ) {
 	get_template_part( 'components/404' );
 } else if ( is_search() ) {

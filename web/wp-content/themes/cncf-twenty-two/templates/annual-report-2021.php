@@ -10,17 +10,12 @@
 
 get_template_part( 'components/header' );
 
+get_template_part( 'components/skip-link-target' );
+
 // declare report PDF link to reference as variable.
 $pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/03/CNCF-AR_FINAL-24.03.pdf';
 
 ?>
-
-<style>
-html {
-	visibility: hidden;
-}
-
-</style>
 
 <link rel="prefetch"
 	href="<?php echo esc_url( get_template_directory_uri() . '/build/annual-report-2021.min.css' ); ?>"
