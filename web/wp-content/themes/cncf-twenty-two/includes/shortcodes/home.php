@@ -288,30 +288,21 @@ function add_home_ambassadors_shortcode() {
 							$i = 0;
 						}
 
-						element.classList.remove(
-							"fade-out");
-						element.classList.add("fade-in");
-						setTimeout(() => {
-							element.children[0]
-								.src =
-								randomAmbassador[
-									'image'];
-							element.children[0]
-								.alt =
-								randomAmbassador[
-									'title'];
-							element.title =
-								'View ' +
-								randomAmbassador[
-									'title'];
-							element.href =
-								randomAmbassador[
-									'link'];
-							element.classList
-								.remove("fade-in");
-							element.classList.add(
-								"fade-out");
-						}, 520);
+						element.children[0]
+							.src =
+							randomAmbassador[
+								'image'];
+						element.children[0]
+							.alt =
+							randomAmbassador[
+								'title'];
+						element.title =
+							'View ' +
+							randomAmbassador[
+								'title'];
+						element.href =
+							randomAmbassador[
+								'link'];
 					}, getDelay());
 				});
 			},
