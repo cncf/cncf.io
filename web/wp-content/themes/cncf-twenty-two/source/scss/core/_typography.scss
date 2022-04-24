@@ -250,10 +250,12 @@ h3,
 		}
 	}
 
-	ul {
+	ul,
+	ol {
 		margin-bottom: 20px;
 		// second level
-		ul {
+		ul,
+		ol {
 			margin-bottom: 0;
 
 			// third level
@@ -311,7 +313,8 @@ h3,
 		max-width: 900px;
 	}
 
-	ul {
+	ul,
+	ol {
 		max-width: 800px;
 	}
 
