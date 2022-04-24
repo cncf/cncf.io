@@ -1,5 +1,7 @@
 html {
 	visibility: visible !important;
+	// Controls anchor link padding.
+	scroll-padding-top: 120px;
 }
 
 body {
@@ -144,7 +146,7 @@ body {
 		left: 5px;
 		top: 5px;
 		width: auto;
-		z-index: 100000;
+		z-index: 999999;
 	}
 }
 
