@@ -5,6 +5,7 @@
 	&__highlighted {
 		border: 1px solid $black;
 		padding: 2em;
+		margin-bottom: 60px;
 	}
 	&__item {
 		&-title {
@@ -23,10 +24,24 @@
 			margin-bottom: 35px;
 		}
 	}
-	.author-category {
-		margin-bottom: 35px;
-	}
-	.author-category + .author-category {
-		margin-left: 40px;
+	&__category {
+		margin-bottom: 20px;
+		@media (min-width: 800px) {
+			margin-bottom: 35px;
+		}
+		display: flex;
+		flex-direction: column;
+		@media (min-width: 800px) {
+			flex-direction: row;
+			.author-category + .author-category {
+				margin-left: 40px;
+			}
+		}
+		> a {
+			margin-bottom: 20px;
+			@media (min-width: 800px) {
+				margin-bottom: 0px;
+			}
+		}
 	}
 }

@@ -20,7 +20,7 @@ get_template_part( 'components/title' );
 
 		<?php
 		// TODO: Make this paged so only shows on page 1.
-		if ( 'landscape' === get_search_query() ) :
+		if ( 'landscape' === get_search_query() && ! is_paged() ) :
 			?>
 		<div class="search__item search__highlighted">
 				<p class="search__item-title"><a
@@ -36,7 +36,7 @@ get_template_part( 'components/title' );
 
 			<?php
 		endif;
-		if ( 'kubecon' === get_search_query() ) :
+		if ( 'kubecon' === get_search_query() && ! is_paged() ) :
 			?>
 		<div class="search__item search__highlighted">
 				<p class="search__item-title"><a
@@ -109,6 +109,8 @@ get_template_part( 'components/title' );
 			?>
 		<div class="search__item">
 
+		<div class="search__category">
+
 			<a class="author-category has-larger-style" title="See all <?php echo esc_attr( $content_type_plural ); ?>" href="<?php echo esc_attr( $content_type_url ); ?>">
 					<?php echo esc_html( $content_type_singular ); ?>
 				</a>
@@ -135,7 +137,7 @@ get_template_part( 'components/title' );
 					?>
 				</a>
 				<?php endif; ?>
-
+			</div>
 					<?php
 					if ( in_category( 'news' ) && ( get_post_meta( get_the_ID(), 'lf_post_external_url', true ) ) ) {
 						$link_url = get_post_meta( get_the_ID(), 'lf_post_external_url', true );
