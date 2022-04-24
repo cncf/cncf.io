@@ -98,4 +98,7 @@ $hamburger-active-hover-opacity: 1;
 	&::after {
 		bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
 	}
+	@media (prefers-reduced-motion: reduce) {
+		transition: none !important;
+	}
 }

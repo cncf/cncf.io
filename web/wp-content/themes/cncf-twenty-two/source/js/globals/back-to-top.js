@@ -25,7 +25,7 @@
 			const offset = 1500;
 
 			// how long scroll takes.
-			const scrollDuration = 900;
+			let scrollDuration = 900;
 
 			// Setup variable to store scroll position.
 			let lastScrollPosition = 0;
@@ -33,15 +33,31 @@
 			// Track whether call is currently in process.
 			let tick = false;
 
+			// Get matchMedia setting.
+			let motionMatchMedia = window.matchMedia( '(prefers-reduced-motion)' );
+
+			/**
+			 * Sets animation speed based on preferences.
+			 */
+			function getMotionMatch() {
+				if (motionMatchMedia.matches) {
+					scrollDuration = 0
+				}
+			}
+			// Watches for change event to reload based on prefs.
+			motionMatchMedia.addEventListener( 'change', getMotionMatch );
+			// runs on first load.
+			getMotionMatch();
+
 			function scrollToTop( duration ) {
-				const start = window.pageYOffset,
+				const start   = window.pageYOffset,
 					startTime = Math.floor( Date.now() );
 
 				function scroll() {
 					Math.easeInOutQuad = function( t ) {
 						return t < 0.5 ? 2 * t * t : -1 + ( 4 - 2 * t ) * t;
 					};
-					const time = Math.min( 1, ( Math.floor( Date.now() ) - startTime ) / duration );
+					const time         = Math.min( 1, ( Math.floor( Date.now() ) - startTime ) / duration );
 					window.scroll( 0, Math.ceil( Math.easeInOutQuad( time ) * ( 0 - start ) + start ) );
 					if ( window.pageYOffset === 0 ) {
 						return;

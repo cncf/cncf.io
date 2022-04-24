@@ -239,6 +239,27 @@
 
 			const menuHeadings = document.querySelectorAll( '.menu-item-has-children > a' );
 
+			// Set default animation speed in ms.
+			let animationSpeed = 1250;
+
+			// Get matchMedia setting.
+			let motionMatchMedia = window.matchMedia( '(prefers-reduced-motion)' );
+
+			/**
+			 * Sets animation speed based on preferences.
+			 */
+			function getMotionMatch() {
+				if (motionMatchMedia.matches) {
+					animationSpeed = 0
+				} else {
+					animationSpeed = 1250
+				}
+			}
+			// Watches for change event to reload based on prefs.
+			motionMatchMedia.addEventListener( 'change', getMotionMatch );
+			// runs on first load.
+			getMotionMatch();
+
 			menuHeadings.forEach(
 				function ( heading ) {
 					heading.addEventListener(
@@ -249,7 +270,7 @@
 								// TODO: Add will-change?
 								heading.classList.toggle( 'is-open' );
 								const subMenu = heading.nextElementSibling;
-								slideToggle( subMenu,1000 );
+								slideToggle( subMenu, animationSpeed );
 							} else if ( heading.getAttribute( 'href' ) === '#' ) {
 								e.preventDefault();
 							}

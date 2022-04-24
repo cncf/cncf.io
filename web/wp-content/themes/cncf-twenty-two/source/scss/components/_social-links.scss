@@ -42,11 +42,14 @@
 		&:hover {
 			fill: $primary-color;
 			color: $primary-color;
-
 			animation-name: pop-lg;
 			animation-duration: 0.3s;
 			animation-timing-function: linear;
 			animation-iteration-count: 1;
+			@media (prefers-reduced-motion: reduce) {
+				animation-name: none;
+				animation-duration: 0;
+			}
 		}
 	}
 }

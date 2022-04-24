@@ -25,11 +25,32 @@ jQuery( document ).ready(
 			);
 		} )();
 
+		// Set default animation speed.
+		let animationSpeed = 500;
+
+		// Get matchMedia setting.
+		let motionMatchMedia = window.matchMedia( '(prefers-reduced-motion)' );
+
+		/**
+		 * Sets animation speed based on preferences.
+		 */
+		function getMotionMatch() {
+			if (motionMatchMedia.matches) {
+				animationSpeed = 0
+			} else {
+				animationSpeed = 500
+			}
+		}
+		// Watches for change event to reload based on prefs.
+		motionMatchMedia.addEventListener( 'change', getMotionMatch );
+		// runs on first load.
+		getMotionMatch();
+
 		// If page loads with hash, go to it nicely after 1s.
 		if ( window.location.hash ) {
 			// smooth scroll to the anchor id if exists after 1s.
 			if ( $( window.location.hash ).length ) {
-				let theHash = $( window.location.hash );
+				let theHash   = $( window.location.hash );
 				let offsetNew = theHash === '#' ? 0 : theHash.offset().top - getSpacing();
 				setTimeout(
 					function() {
@@ -38,7 +59,7 @@ jQuery( document ).ready(
 								{
 									scrollTop: offsetNew,
 								},
-								500
+								animationSpeed
 							);
 					},
 					1000
@@ -50,7 +71,7 @@ jQuery( document ).ready(
 		let topMenu = $( '.sticky__nav' );
 		if ( topMenu.length > 0 ) {
 			let lastId;
-			let menuItems = topMenu.find( 'a' );
+			let menuItems   = topMenu.find( 'a' );
 			let scrollItems = menuItems.map(
 				function() {
 					let item = $( $( this ).attr( 'href' ) );
@@ -72,7 +93,7 @@ jQuery( document ).ready(
 			// Click handler for menu items so we can get a fancy scroll animation.
 			menuItems.click(
 				function( e ) {
-					let href = $( this ).attr( 'href' );
+					let href      = $( this ).attr( 'href' );
 					let offsetTop = href === '#' ? 0 : $( href ).offset()
 						.top - getSpacing();
 					$( 'html, body' )
@@ -81,7 +102,7 @@ jQuery( document ).ready(
 							{
 								scrollTop: offsetTop,
 							},
-							500
+							animationSpeed
 						);
 					e.preventDefault();
 				}
@@ -101,7 +122,7 @@ jQuery( document ).ready(
 				);
 
 				// Get the id of the current element.
-				cur = cur[ cur.length - 1 ];
+				cur    = cur[ cur.length - 1 ];
 				let id = cur && cur.length ? cur[ 0 ].id : '';
 
 				if ( lastId !== id ) {
@@ -135,9 +156,9 @@ jQuery( document ).ready(
 		// Get spacing required from top of window for content.
 		function getSpacing() {
 			let spacingTotal = 0;
-			let winH = $( window ).height();
-			let winW = $( window ).width();
-			const adminBar = $( '#wpadminbar' );
+			let winH         = $( window ).height();
+			let winW         = $( window ).width();
+			const adminBar   = $( '#wpadminbar' );
 
 			if ( winH < 616 && winW > 514 ) {
 				spacingTotal += 40;
@@ -168,7 +189,7 @@ jQuery( document ).ready(
 				loc.hash = '';
 
 				// Restore the scroll offset, should be flicker free.
-				document.body.scrollTop = scrollV;
+				document.body.scrollTop  = scrollV;
 				document.body.scrollLeft = scrollH;
 			}
 		}
@@ -176,7 +197,7 @@ jQuery( document ).ready(
 		// Looks for nav item and checks its in view.
 		function navInView() {
 			let currentItem = $( '.sticky__nav-item.is-active' );
-			let winW = $( window ).width();
+			let winW        = $( window ).width();
 
 			if ( winW > 799 && currentItem.length ) {
 				currentItem[ 0 ].scrollIntoView(

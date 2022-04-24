@@ -274,6 +274,10 @@
 			animation-duration: 0.2s;
 			animation-timing-function: linear;
 			animation-iteration-count: 1;
+			@media (prefers-reduced-motion: reduce) {
+				animation-name: none;
+				animation-duration: 0;
+			}
 		}
 	}
 }

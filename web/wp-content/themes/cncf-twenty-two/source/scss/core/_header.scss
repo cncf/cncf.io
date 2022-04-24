@@ -75,6 +75,9 @@
 		a:hover {
 			color: rgba(0, 0, 0, 0.7);
 			transition: color 0.25s ease-in;
+			@media (prefers-reduced-motion: reduce) {
+				transition: none;
+			}
 		}
 
 		> a {
@@ -221,6 +224,9 @@
 			padding-right: 25px;
 		}
 		transition: top 0.5s ease-in-out;
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
 		transform-style: preserve-3d;
 		// activate the menu.
 		&.is-active {
@@ -243,9 +249,15 @@
 
 				&.is-open {
 					transition: all 0.5s ease-in;
+					@media (prefers-reduced-motion: reduce) {
+						transition: none;
+					}
 					&::after {
 						// opening menu.
 						transition: transform 0.3s ease-in;
+						@media (prefers-reduced-motion: reduce) {
+							transition: none;
+						}
 						transform: rotate(180deg) translateY(-50%);
 					}
 				}
@@ -262,6 +274,9 @@
 					transform-origin: 50% 0%;
 					// closing menu.
 					transition: all 0.2s ease-out;
+					@media (prefers-reduced-motion: reduce) {
+						transition: none;
+					}
 				}
 			}
 
@@ -377,7 +392,6 @@
 				background: transparent;
 				border: none;
 				border-bottom: 2px solid $white;
-				// transition: all 0.25s ease;
 				color: $white;
 				line-height: 105%;
 				font-size: 16px;
@@ -502,7 +516,10 @@
 			> .col-container {
 				opacity: 1;
 				visibility: visible;
-				transition: all 0.75s ease-out;
+				transition: all 1s ease-out;
+				@media (prefers-reduced-motion: reduce) {
+					transition: none;
+				}
 			}
 		}
 	}
@@ -528,6 +545,9 @@
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.75s ease;
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
 
 		.col1 {
 			grid-column: span 8;
