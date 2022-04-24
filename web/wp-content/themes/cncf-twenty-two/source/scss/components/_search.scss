@@ -1,6 +1,7 @@
 .search {
 	.columns-one {
 		grid-row-gap: 0;
+		// Hide the first divider line.
 		.wp-block-separator:first-child {
 			display: none;
 		}

@@ -128,7 +128,9 @@ else :
 	</a>
 </span>
 
-<span class="post-archive__item_date">
+		<div class="post-archive__excerpt"><?php echo wp_kses_post( get_the_excerpt() ); ?></div>
+
+		<span class="post-archive__item_date">
 			<?php
 			echo get_the_date();
 			?>
@@ -140,8 +142,6 @@ else :
 
 			?>
 		</span>
-
-		<div class="post-archive__excerpt"><?php echo wp_kses_post( get_the_excerpt() ); ?></div>
 	</div>
 
 	<?php
