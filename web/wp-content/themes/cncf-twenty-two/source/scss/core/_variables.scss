@@ -4,6 +4,7 @@ $white: #ffffff;
 $black: #000000;
 $purple: #4a23cc;
 
+$primary-300: #c53490;
 $primary-400: #d62293; // preferred CTA
 $primary-color: $primary-400;
 
@@ -14,7 +15,7 @@ $gray-050: #fdfdfd;
 $gray-100: #fcfcfc;
 $gray-200: #f8f8f8;
 $gray-300: #eaeaea;
-$gray-400: #d0d0d0; // $gray-400: #e6e6e6;
+$gray-400: #d0d0d0;
 $gray-500: #c4c4c4;
 $gray-700: #747474;
 $gray-800: #828282;
@@ -38,11 +39,10 @@ $shade-13: #293850;
 
 // links.
 $link-color: $primary-400;
-$link-hover: #c53490;
+$link-hover: $primary-300;
 
 // forms.
 $error: #b80611;
-// $success: green;
 
 $body-text-color: $black;
 
