@@ -47,7 +47,7 @@ function lf_case_study_highlights_render_callback( $attributes ) {
 
 			<?php if ( $heading_text01 ) : ?>
 			<p
-				class="case-study-highlights__heading is-style-spaced-uppercase has-text-color has-purple-color">
+				class="case-study-highlights__heading is-style-spaced-uppercase has-large-font-size has-text-color has-purple-color">
 				<?php echo wp_kses_post( $heading_text01 ); ?></p>
 				<?php
 endif;
@@ -64,7 +64,7 @@ endif;
 
 			<?php if ( $heading_text02 ) : ?>
 			<p
-				class="case-study-highlights__heading is-style-spaced-uppercase has-text-color has-purple-color">
+				class="case-study-highlights__heading is-style-spaced-uppercase has-large-font-size has-text-color has-purple-color">
 				<?php echo wp_kses_post( $heading_text02 ); ?></p>
 				<?php
 endif;
@@ -81,7 +81,7 @@ endif;
 
 			<?php if ( $heading_text03 ) : ?>
 			<p
-				class="case-study-highlights__heading is-style-spaced-uppercase has-text-color has-purple-color">
+				class="case-study-highlights__heading is-style-spaced-uppercase has-large-font-size has-text-color has-purple-color">
 				<?php echo wp_kses_post( $heading_text03 ); ?></p>
 				<?php
 endif;
