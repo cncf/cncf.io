@@ -22,7 +22,6 @@
 		@import 'blocks/has-color';
 		@import 'blocks/block-quote';
 		@import 'blocks/images';
-		@import 'blocks/lists';
 		@import 'blocks/separator';
 		@import 'blocks/spacers';
 		@import 'blocks/video';
@@ -42,34 +41,6 @@
 // Editor only styles.
 @import 'editor/outlines';
 @import 'editor/alignment';
-
-// .post-type-post {
-// 	.editor-styles-wrapper {
-// 		h1,
-// 		h2,
-// 		h3,
-// 		h4,
-// 		h5,
-// 		h6 {
-// 			&:not([class*='is-style']),
-// 			&.is-style-default {
-// 				max-width: 900px;
-// 			}
-// 		}
-
-// 		p {
-// 			&:not([class*='is-style']):not(.hero-parent-link),
-// 			&.is-style-default {
-// 				max-width: 700px;
-// 			}
-// 		}
-
-// 		.hbspt-form,
-// 		.wp-block-code {
-// 			max-width: 700px;
-// 		}
-// 	}
-// }
 
 #editor {
 	.editor-styles-wrapper {
@@ -94,33 +65,16 @@
 	line-height: 1.4;
 }
 
-// Add padding to make more easily selectable.
-// .wp-block-group,
-// .wp-block-columns {
-// 	padding-top: 1rem;
-// 	padding-bottom: 1rem;
-// }
-
 // stop ridiculous dropcap in paragraph preview.
-// .block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
-// 	float: none;
-// 	font-size: inherit;
-// 	line-height: inherit;
-// 	font-weight: inherit;
-// 	margin: inherit;
-// 	text-transform: inherit;
-// 	font-style: inherit;
-// }
-
-// .has-drop-cap:not(:focus)::first-letter {
-// 	float: none;
-// 	font-size: inherit;
-// 	line-height: inherit;
-// 	font-weight: inherit;
-// 	margin: inherit;
-// 	text-transform: inherit;
-// 	font-style: inherit;
-// }
+.block-editor-block-preview__content .has-drop-cap:not(:focus):first-letter {
+	float: none;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+	margin: inherit;
+	text-transform: inherit;
+	font-style: inherit;
+}
 
 // Make SVGs fill containers unless resized (Safe SVG related).
 .wp-block-image:not(.is-resized) img[src$='.svg'] {
