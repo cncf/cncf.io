@@ -206,6 +206,15 @@ wp.blocks.registerBlockStyle(
 );
 
 wp.blocks.registerBlockStyle(
+	'core/table',[
+	{
+		label: 'Shaded',
+		name: 'shaded',
+	},
+]
+);
+
+wp.blocks.registerBlockStyle(
 	'core/button',[
 		{
 			label: 'Default',
