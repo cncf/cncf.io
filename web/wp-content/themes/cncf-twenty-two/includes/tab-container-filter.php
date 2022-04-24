@@ -35,7 +35,7 @@ function lf_content_filter( $content ) {
 
 			<div class="sticky__nav-wrapper">
 
-				<ul id="sticky__nav" class="sticky__nav is-style-no-style-list">
+				<ul id="sticky__nav" class="sticky__nav">
 					<?php
 					// grab the data-menu-title and id from each tag to construct the menu.
 					foreach ( $matches[0] as $match ) :

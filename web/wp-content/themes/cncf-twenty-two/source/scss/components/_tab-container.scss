@@ -60,7 +60,7 @@
 
 		@media (min-height: 616px) and (min-width: 800px) {
 			// height - top - spacer - extra.
-			height: calc(100vh - 125px - 100px - 150px);
+			height: calc(100vh - 125px - 100px - 50px);
 		}
 
 		@media (min-width: 800px) {
