@@ -45,7 +45,10 @@
 		// Followed by Skip Link and Accessibility help link if set.
 		?>
 		<a class="skip-link" href="#maincontent">Skip to content</a>
-		<?php if ( isset( $site_options['accessibility_cta_link'] ) ) : ?>
+		<?php
+		$site_options = get_option( 'lf-mu' );
+		if ( isset( $site_options['accessibility_cta_link'] ) ) :
+			?>
 		<a class="skip-link"
 			href="<?php echo esc_url( get_permalink( $site_options['accessibility_cta_link'] ) ); ?>">Accessibility
 			help</a>
