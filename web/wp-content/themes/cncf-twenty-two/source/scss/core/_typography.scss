@@ -28,6 +28,10 @@ h2,
 		font-size: 36px;
 		line-height: 150%;
 	}
+	&.has-text-align-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 h3,
@@ -50,6 +54,10 @@ h3,
 	}
 	@media (min-width: 1200px) {
 		font-size: 34px;
+	}
+	&.has-text-align-center {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
@@ -87,7 +95,6 @@ h3,
 			text-decoration: none;
 		}
 	}
-
 	&:after {
 		position: absolute;
 		content: '';
