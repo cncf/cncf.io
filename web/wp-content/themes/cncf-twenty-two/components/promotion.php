@@ -37,7 +37,7 @@ if ( $promotion_image_id && $promotion_title_text && $promotion_cta_text && $pro
 
 	<p class="main-menu-item__body"><?php echo esc_html( $promotion_body_text ); ?></p>
 
-	<a class="is-style-link-cta" href="<?php echo esc_url( get_permalink( $site_options['promotion_cta_link_id'] ) ); ?>"><?php echo esc_html( $promotion_cta_text ); ?></a>
+	<p class="is-style-link-cta"><a href="<?php echo esc_url( get_permalink( $site_options['promotion_cta_link_id'] ) ); ?>"><?php echo esc_html( $promotion_cta_text ); ?></a></p>
 
 	</div>
 </div>
