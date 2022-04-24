@@ -114,7 +114,10 @@
 }
 
 .wp-block-lf-tab-container-block {
-	margin-bottom: 50px;
+	margin-bottom: 60px;
+	@media (min-width: 800px) {
+		margin-bottom: 80px;
+	}
 
 	@media (max-width: 799px) {
 		padding: 25px;
