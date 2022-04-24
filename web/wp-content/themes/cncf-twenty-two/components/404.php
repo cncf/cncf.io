@@ -20,7 +20,8 @@
 		<div class="wp-block-image">
 			<figure class="aligncenter size-full">
 				<img loading="eager" width="1000" height="1000" src="<?php Lf_Utils::get_image( '404.png', true ); ?>
-" alt="Error 404, this page was not found">
+" alt="Error 404, this page was not found"
+style="max-height: 50vh; width: auto;">
 			</figure>
 		</div>
 
