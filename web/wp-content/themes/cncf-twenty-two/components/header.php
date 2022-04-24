@@ -201,7 +201,7 @@ if ( is_array( $tech_radars ) ) :
 	</div>
 	<div class="main-menu-item__text-wrapper">
 
-		<a class="author-category" title="See more tech radars" href="/radars/">Tech Radar</a>
+		<a class="author-category" title="See more tech radars" href="https://radar.cncf.io/">Tech Radar</a>
 
 		<span class="main-menu-item__title">
 			<a href="<?php echo esc_url( $url ); ?>"
