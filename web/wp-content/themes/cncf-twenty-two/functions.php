@@ -127,7 +127,7 @@ if ( ! is_admin() ) {
 		}
 		return str_replace( ' src', ' defer src', $url );
 	}
-	add_filter( 'script_loader_tag', 'lf_defer_parsing_of_js', 10 );
+	add_filter( 'script_loader_tag', 'lf_defer_parsing_of_js', 10, 3 );
 }
 
 /**
