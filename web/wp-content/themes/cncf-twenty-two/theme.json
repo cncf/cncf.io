@@ -5,6 +5,10 @@
         "layout": {
             "contentSize": "1200px"
         },
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
         "typography": {
             "dropCap": false,
             "customFontSize": false,
