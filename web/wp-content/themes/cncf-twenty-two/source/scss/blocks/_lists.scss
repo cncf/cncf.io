@@ -16,14 +16,14 @@ article,
 		margin-top: 0;
 		margin-right: 0;
 		margin-bottom: 1.5rem;
-		margin-left: 26px;
+		margin-left: 0px;
 		ul,
 		ol {
 			margin-bottom: 0;
 		}
 		li {
 			// apply margin-left here not on ul.
-			margin-left: 52px;
+			margin-left: 20px;
 		}
 	}
 
@@ -44,14 +44,16 @@ article,
 				padding-bottom: 12px;
 			}
 		}
-	}
-
-	ul,
-	ol {
-		&.is-style-no-style-list {
+		&.is-style-mega-spacing {
 			li {
-				// TODO: This might not work as intended.
+				padding-bottom: 20px;
+			}
+		}
+		&.is-style-table-contents {
+			li {
 				margin-left: 0;
+				list-style: none;
+				padding-bottom: 10px;
 			}
 		}
 	}

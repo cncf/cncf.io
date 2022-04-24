@@ -157,8 +157,12 @@ wp.blocks.registerBlockStyle(
 			name: 'more-spacing',
 		},
 		{
-			label: 'No Padding',
-			name: 'no-style-list',
+			label: 'Mega Spacing',
+			name: 'mega-spacing',
+		},
+		{
+			label: 'Table of Contents',
+			name: 'table-contents',
 		}
 	]
 );
