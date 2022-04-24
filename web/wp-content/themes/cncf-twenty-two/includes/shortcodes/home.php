@@ -368,7 +368,7 @@ function add_home_terminal_shortcode() {
 		</div>
 		<div class="home-terminal__window">
 
-			<img width="630" height="440" alt="Terminal displaying code examples for running Kubernetes cluster" class="home-terminal__image home-terminal__replace" loading="lazy"
+			<img width="630" height="525" alt="Terminal displaying code examples for running Kubernetes cluster" class="home-terminal__image home-terminal__replace" loading="lazy"
 				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
 				data-src="
 	<?php
@@ -376,7 +376,7 @@ function add_home_terminal_shortcode() {
 	?>
 ">
 			<noscript>
-				<img class="home-terminal__image" width="630" height="440" src="
+				<img class="home-terminal__image" width="630" height="525" src="
 	<?php
 	LF_utils::get_svg( 'terminal.svg', true )
 	?>
