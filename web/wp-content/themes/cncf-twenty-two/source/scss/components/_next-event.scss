@@ -2,6 +2,7 @@
 .home article .next-event {
 	position: relative;
 	width: 100%;
+	border-radius: 5px;
 	&:hover {
 		.wp-block-button__link {
 			background-color: $gray-700 !important;
@@ -30,6 +31,11 @@
 		height: 70%;
 		position: relative;
 		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
 		@media (min-width: 700px) {
 			height: 100%;
 			width: 40%;
@@ -39,7 +45,7 @@
 		}
 	}
 	&__col2 {
-		height: 50%;
+		height: 65%;
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -58,11 +64,12 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		align-content: center;
-		justify-content: center;
 		padding: 30px;
 		@media (min-width: 700px) {
 			padding: 40px 30px 60px 30px;
+		}
+		@media (min-width: 1200px) {
+			padding: 60px 30px 60px 30px;
 		}
 	}
 	&__text {
@@ -86,15 +93,23 @@
 		height: 100%;
 		top: 0;
 		left: 0;
+
+		@media (min-width: 700px) {
+			max-height: 420px;
+		}
 	}
 	&__bg-image {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: top center;
 		position: absolute;
 		z-index: 1;
 		top: 0;
 		left: 0;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		opacity: 0.6;
 		@media (min-width: 700px) {
 			position: static;
 			object-position: 0px center;

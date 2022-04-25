@@ -32,7 +32,7 @@
 	@media (min-width: 515px) and (max-height: 615px) {
 		position: relative;
 	}
-	background-color: $gray-100;
+	background-color: $gray-050;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -318,6 +318,7 @@
 
 @media (min-width: 1000px) {
 	.header {
+		background-color: rgba($gray-050, 0.98);
 		.wp-block-button__link {
 			padding-top: 10px;
 			padding-bottom: 10px;
