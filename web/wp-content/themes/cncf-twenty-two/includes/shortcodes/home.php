@@ -212,7 +212,8 @@ function add_home_ambassadors_shortcode() {
 		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg0<?php echo esc_html( $count ); ?>"
 			title="<?php echo esc_html( 'View ' . $ambassador['title'] ); ?>"
 			href="<?php echo esc_url( $ambassador['link'] ); ?>">
-			<img alt="<?php echo esc_html( $ambassador['title'] ); ?>" loading="lazy"
+			<img alt="<?php echo esc_html( $ambassador['title'] ); ?>"
+				loading="lazy"
 				src="<?php echo esc_url( $ambassador['image'] ); ?>"
 				class="home-ambassadors-heptagons__image"></a>
 			<?php
@@ -333,6 +334,9 @@ add_shortcode( 'home_ambassadors', 'add_home_ambassadors_shortcode' );
  */
 function add_home_terminal_shortcode() {
 	ob_start();
+
+	// load home-terminal.js.
+	wp_enqueue_script( 'home-terminal', get_template_directory_uri() . '/source/js/on-demand/home-terminal.js', array(), filemtime( get_template_directory() . '/source/js/on-demand/home-terminal.js' ), false );
 	?>
 <div class="home-terminal">
 
@@ -351,15 +355,19 @@ function add_home_terminal_shortcode() {
 
 	<div class="home-terminal__code-block">
 
-	<div class="home-terminal__download">
-		<a href="https://github.com/cncf/cncf.io/tree/main/web/wp-content/themes/cncf-twenty-two/source/terminal/" class="box-link"></a>
+		<div class="home-terminal__download">
+			<a href="https://github.com/cncf/cncf.io/tree/main/web/wp-content/themes/cncf-twenty-two/source/terminal/"
+				class="box-link"></a>
 
-		<img class="home-terminal__download-image" width="35" height="23" loading="lazy" src="<?php LF_utils::get_svg( 'cncf-icon-download-w.svg', true ); ?>" alt="">
+			<img class="home-terminal__download-image" width="35" height="23"
+				loading="lazy"
+				src="<?php LF_utils::get_svg( 'cncf-icon-download-w.svg', true ); ?>"
+				alt="">
 
-		<p class="home-terminal__download-text">
-		Download Theme
-		</p>
-</div>
+			<p class="home-terminal__download-text">
+Download Theme
+</p>
+		</div>
 
 		<div class="home-terminal__status-bar">
 			<div class="home-terminal__button"></div>
@@ -368,11 +376,18 @@ function add_home_terminal_shortcode() {
 		</div>
 		<div class="home-terminal__window">
 
-			<img width="630" height="525" alt="Terminal displaying code examples for running Kubernetes cluster" class="home-terminal__image home-terminal__replace" loading="lazy"
+			<img width="630" height="525"
+				alt="Terminal displaying code examples for running Kubernetes cluster"
+				class="home-terminal__image home-terminal__replace"
+				loading="lazy"
 				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
 				data-src="
 	<?php
 	LF_utils::get_svg( 'terminal.svg', true )
+	?>
+" data-reduced-motion-src="
+	<?php
+	LF_utils::get_svg( 'terminal-reduced-motion.svg', true )
 	?>
 ">
 			<noscript>
@@ -385,6 +400,7 @@ function add_home_terminal_shortcode() {
 				.home-terminal__replace {
 					display: none;
 				}
+
 				</style>
 			</noscript>
 		</div>
@@ -394,31 +410,6 @@ function add_home_terminal_shortcode() {
 			class="is-style-link-cta"><a href="https://contribute.cncf.io/">Contribute</a></p>
 	</div>
 </div>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-
-let terminal = document.querySelector('.home-terminal__replace');
-
-if ('IntersectionObserver' in window) {
-
-let imageObserver = new IntersectionObserver(function(entries, observer) {
-	entries.forEach(function(entry) {
-		if (entry.isIntersecting) {
-			let terminal = entry.target;
-			terminal.src = terminal.dataset.src;
-			terminal.classList.remove('home-terminal__replace');
-			imageObserver.unobserve(terminal);
-		}
-	});
-});
-imageObserver.observe(terminal);
-} else {
-// Fallback if IO not supported.
-terminal.src = terminal.dataset.src;
-}
-});
-</script>
-
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
