@@ -125,6 +125,9 @@ if ( ! is_admin() ) {
 		if ( false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
+		if ( strpos( $url, 'jquery.min.js' ) ) {
+			return $url;
+		}
 		return str_replace( ' src', ' defer src', $url );
 	}
 	add_filter( 'script_loader_tag', 'lf_defer_parsing_of_js', 10, 3 );
