@@ -682,5 +682,13 @@
 		&:after {
 			bottom: -12px;
 		}
+		a {
+			text-decoration: none;
+			color: $black;
+			&:hover {
+				color: $primary-400;
+				text-decoration: none;
+			}
+		}
 	}
 }
