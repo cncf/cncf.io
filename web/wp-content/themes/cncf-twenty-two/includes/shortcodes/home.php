@@ -280,16 +280,19 @@ function add_home_ambassadors_shortcode() {
 				let $i = 4;
 				let $j = 0;
 
+				let ambassadorsToPreload = ambassadors.slice(0, 4);
+
+				ambassadorsToPreload.forEach(ambassador => {
+
+					const link = document.createElement('link');
+					link.setAttribute('rel', 'preload');
+					link.setAttribute('href', ambassador['image']);
+					link.setAttribute('as', 'image');
+					document.head.appendChild(link);
+				});
+
 				// loop over each, and apply to each image.
 				elements.forEach(function(element) {
-
-					function preloadImage(url, callback){
-						var img = new Image();
-						img.src = url;
-						console.log('image ' + url + ' has been loaded')
-						img.onload = callback;
-					}
-
 					function getDelay() {
 						const displayTimes = ["7000", "4750",
 							"3500", "4000", "15500", "6000"
@@ -298,31 +301,28 @@ function add_home_ambassadors_shortcode() {
 							displayTimes[$j++]
 						);
 					}
-
 					// Set Interval to loop.
-					setInterval(function changeImage() {
+					setInterval( function changeImage() {
 						let nextAmbassador = ambassadors[
 							$i++];
-
 						if ($i == ambassadors.length) {
 							$i = 0;
 						}
 
-						preloadImage( nextAmbassador['image'], fadeAndSwitch() )
+						element.classList.remove(
+							"fade-out");
+						element.classList.add("fade-in");
 
-						function fadeAndSwitch(){
-							console.log('fade and switch is called')
-							element.classList.remove("fade-out");
-							element.classList.add("fade-in");
-							setTimeout(() => {
-								element.children[0].alt = nextAmbassador['title'];
-								element.title =	'View ' + nextAmbassador['title'];
-								element.href = nextAmbassador['link'];
-								element.children[0].src = nextAmbassador['image'];
-								element.classList.remove("fade-in");
-								element.classList.add("fade-out");
-							}, 400);
-						}
+						setTimeout(() => {
+						element.href = nextAmbassador['link'];
+
+						element.children[0].src = nextAmbassador['image'];
+						element.children[0].alt = nextAmbassador['title'];
+						element.title =	'View ' + nextAmbassador['title'];
+						element.classList.remove("fade-in");
+						element.classList.add("fade-out");
+						}, 400 );
+
 					}, getDelay());
 				});
 			},
