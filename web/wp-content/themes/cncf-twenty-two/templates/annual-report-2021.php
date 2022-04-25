@@ -24,9 +24,7 @@ $pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/03/CNCF-AR_FINAL-24.03.
 <?php wp_enqueue_style( '2021', get_template_directory_uri() . '/build/annual-report-2021.min.css', array(), filemtime( get_template_directory() . '/build/annual-report-2021.min.css' ), 'all' ); ?>
 
 <?php // phpcs:disable ?>
-<link rel="stylesheet" type="text/css"
-	href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300;1,600&display=optional"
-	media="print" onload="this.media='all'" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300;1,600&display=optional" media="print" onload="this.media='all'" crossorigin />
 <?php // phpcs:enable ?>
 
 <noscript>

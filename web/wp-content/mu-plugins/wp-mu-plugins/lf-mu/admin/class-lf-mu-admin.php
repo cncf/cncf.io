@@ -270,7 +270,7 @@ class Lf_Mu_Admin {
 			return;
 		}
 
-		$change_adminbar_colors = '<style type="text/css">
+		$change_adminbar_colors = '<style>
 			#wpadminbar { background-color:#12881D; }
 		</style>';
 		echo $change_adminbar_colors; // phpcs:ignore

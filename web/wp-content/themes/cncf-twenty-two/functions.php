@@ -47,6 +47,8 @@ function lf_theme_support_setup() {
 			'search-form',
 			'gallery',
 			'caption',
+			'script',
+			'style',
 		)
 	);
 

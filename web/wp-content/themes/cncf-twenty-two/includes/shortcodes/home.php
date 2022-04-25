@@ -253,7 +253,7 @@ function add_home_ambassadors_shortcode() {
 		</svg>
 	</div>
 
-	<script type="text/javascript">
+	<script>
 	(function() {
 		document.addEventListener(
 			'DOMContentLoaded',
