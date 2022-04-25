@@ -28,7 +28,7 @@
 		<link rel="manifest"
 			href="<?php echo esc_url( get_template_directory_uri() . '/images/manifest.webmanifest' ); ?>">
 		<meta name="theme-color" content="#000000">
-		<meta http-equiv="X-UA-Compatible" content="IE=11">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<style>
 		html {
 			visibility: hidden;
