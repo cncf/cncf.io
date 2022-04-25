@@ -282,6 +282,14 @@ function add_home_ambassadors_shortcode() {
 
 				// loop over each, and apply to each image.
 				elements.forEach(function(element) {
+
+					function preloadImage(url, callback){
+						var img = new Image();
+						img.src = url;
+						console.log('image ' + url + ' has been loaded')
+						img.onload = callback;
+					}
+
 					function getDelay() {
 						const displayTimes = ["7000", "4750",
 							"3500", "4000", "15500", "6000"
@@ -290,29 +298,31 @@ function add_home_ambassadors_shortcode() {
 							displayTimes[$j++]
 						);
 					}
+
 					// Set Interval to loop.
 					setInterval(function changeImage() {
-						let randomAmbassador = ambassadors[
+						let nextAmbassador = ambassadors[
 							$i++];
+
 						if ($i == ambassadors.length) {
 							$i = 0;
 						}
 
-						element.children[0]
-							.src =
-							randomAmbassador[
-								'image'];
-						element.children[0]
-							.alt =
-							randomAmbassador[
-								'title'];
-						element.title =
-							'View ' +
-							randomAmbassador[
-								'title'];
-						element.href =
-							randomAmbassador[
-								'link'];
+						preloadImage( nextAmbassador['image'], fadeAndSwitch() )
+
+						function fadeAndSwitch(){
+							console.log('fade and switch is called')
+							element.classList.remove("fade-out");
+							element.classList.add("fade-in");
+							setTimeout(() => {
+								element.children[0].alt = nextAmbassador['title'];
+								element.title =	'View ' + nextAmbassador['title'];
+								element.href = nextAmbassador['link'];
+								element.children[0].src = nextAmbassador['image'];
+								element.classList.remove("fade-in");
+								element.classList.add("fade-out");
+							}, 400);
+						}
 					}, getDelay());
 				});
 			},
