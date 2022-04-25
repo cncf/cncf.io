@@ -350,6 +350,7 @@
 			left: 0;
 			right: 0;
 			background-color: $gray-700;
+			// background-color: rgba(#222222, 0.85);
 			transition: opacity 0.15s ease-in;
 			&.is-active {
 				opacity: 1;

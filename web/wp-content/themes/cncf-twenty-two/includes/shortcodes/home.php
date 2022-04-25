@@ -370,9 +370,7 @@ function add_home_terminal_shortcode() {
 
 			<img class="home-terminal__download-image" width="35" height="23" role="presentation"
 				loading="lazy"
-				src="<?php LF_utils::get_svg( 'cncf-icon-download-w.svg', true ); ?>"
-				alt="">
-
+				src="<?php LF_utils::get_svg( 'cncf-icon-download-w.svg', true ); ?>">
 			<p class="home-terminal__download-text">
 Download Theme
 </p>
@@ -398,18 +396,17 @@ Download Theme
 	<?php
 	LF_utils::get_svg( 'terminal-reduced-motion.svg', true )
 	?>
-">
+	">
 			<noscript>
-				<img class="home-terminal__image" width="630" height="525" src="
-	<?php
-	LF_utils::get_svg( 'terminal.svg', true )
-	?>
-" alt="Terminal displaying code examples for running Kubernetes cluster">
+				<img class="home-terminal__image" width="600" height="525" src="
+				<?php
+				LF_utils::get_svg( 'terminal.svg', true )
+				?>
+	" alt="Terminal displaying code examples for running Kubernetes cluster">
 				<style>
 				.home-terminal__replace {
 					display: none;
 				}
-
 				</style>
 			</noscript>
 		</div>
