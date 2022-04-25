@@ -16,6 +16,7 @@
 	button.button-reset {
 		width: 100%;
 		text-align: left;
+		color: $black;
 		&:hover {
 			.person__name {
 				color: $primary-color;
