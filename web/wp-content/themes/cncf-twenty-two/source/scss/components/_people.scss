@@ -130,7 +130,6 @@
 	bottom: 0;
 	right: 0;
 	max-width: 100%;
-
 	@media (min-width: 768px) {
 		top: 50%;
 		left: 50%;
@@ -163,15 +162,16 @@
 		border-radius: 0;
 		cursor: pointer;
 		display: inline-block;
+		padding: 0;
 		@media (min-width: 768px) {
 			position: absolute;
 			top: 0px;
-			right: 5px;
+			right: 0px;
 		}
 
 		@media (min-width: 1000px) {
-			top: -1px;
-			right: 6px;
+			top: 0;
+			right: 0;
 		}
 		&::before {
 			content: '';
@@ -182,8 +182,8 @@
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-color: $black;
-			width: 40px;
-			height: 40px;
+			width: 50px;
+			height: 50px;
 			z-index: 100;
 			top: 0;
 			left: 0;
