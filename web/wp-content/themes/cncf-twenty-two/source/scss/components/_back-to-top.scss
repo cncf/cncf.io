@@ -8,6 +8,7 @@
 	z-index: 10;
 	width: 80px;
 	height: 80px;
+	border-radius: 5px;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -25,7 +26,7 @@
 	}
 
 	&:hover {
-		animation-name: pop-lg;
+		animation-name: pop-sm;
 		animation-duration: 0.3s;
 		animation-timing-function: linear;
 		animation-iteration-count: 1;
