@@ -75,7 +75,7 @@ if ( isset( $site_options['social_wechat_id'] ) ) :
 			<div class="modal-content-wrapper">
 				<div class="modal__content"
 					id="modal-wechat-content">
-					<img loading="lazy" src="<?php echo esc_url( wp_get_attachment_url( $site_options['social_wechat_id'] ) ); ?>">
+					<img alt="CNCF on WeChat" loading="lazy" src="<?php echo esc_url( wp_get_attachment_url( $site_options['social_wechat_id'] ) ); ?>">
 				</div>
 			</div>
 		</div>
