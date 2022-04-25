@@ -263,6 +263,15 @@ function add_home_ambassadors_shortcode() {
 				let ambassadors =
 					<?php echo wp_json_encode( $ambassadors ); ?>;
 
+				// Get matchMedia setting.
+				let motionMatchMedia = window.matchMedia(
+					'(prefers-reduced-motion)');
+
+				// Stop script if user wants reduced motion.
+				if (motionMatchMedia.matches) {
+					return;
+				}
+
 				// get all the elements to change.
 				let elements = document.querySelectorAll(
 					'.home-ambassadors-heptagons__animate');
