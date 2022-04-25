@@ -17,6 +17,7 @@
 		width: 100%;
 		text-align: left;
 		color: $black;
+		-webkit-tap-highlight-color: transparent;
 		&:hover {
 			.person__name {
 				color: $primary-color;

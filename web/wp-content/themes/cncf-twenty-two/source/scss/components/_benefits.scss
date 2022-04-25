@@ -8,11 +8,12 @@
 			align-items: center;
 			height: 100%;
 			text-align: center;
+			color: $black;
+			-webkit-tap-highlight-color: transparent;
 			@media (min-width: 1000px) {
 				align-items: flex-start;
 				text-align: left;
 			}
-			-webkit-tap-highlight-color: transparent;
 		}
 	}
 	&__image-wrapper {
