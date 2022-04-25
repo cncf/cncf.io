@@ -55,6 +55,9 @@
 		&:focus {
 			color: $white;
 			background-color: $black;
+			.arrows {
+				color: $white;
+			}
 		}
 	}
 
@@ -78,9 +81,9 @@
 
 	.arrows {
 		color: $black;
-		&:hover {
-			color: $white;
-		}
+		// &:hover {
+		// 	color: $white;
+		// }
 	}
 
 	@media (max-width: 500px) {
