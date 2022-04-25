@@ -35,7 +35,7 @@ endif;
 			<ul class="main-menu__wrapper">
 				<li class="menu-item-has-children">
 					<a href="#"><span>About</span></a>
-					<ul class="sub-menu">
+					<div class="sub-menu">
 						<div class="col-container">
 							<div class="col1">
 								<?php
@@ -130,11 +130,11 @@ endif;
 							</div>
 						</div>
 						</div>
-					</ul>
+					</div>
 				</li>
 				<li class="menu-item-has-children"><a
 						href="#"><span>Projects</span></a>
-					<ul class="sub-menu">
+					<div class="sub-menu">
 						<div class="col-container">
 							<div class="col1">
 								<?php
@@ -220,11 +220,11 @@ endif;
 ?>
 								</div>
 						</div>
-					</ul>
+					</div>
 				</li>
 				<li class="menu-item-has-children"><a
 						href="#"><span>Certification</span></a>
-					<ul class="sub-menu">
+					<div class="sub-menu">
 						<div class="col-container">
 							<div class="col1">
 								<?php
@@ -261,12 +261,12 @@ endif;
 
 							</div>
 						</div>
-					</ul>
+					</div>
 
 				</li>
 				<li class="menu-item-has-children"><a
 						href="#"><span>Community</span></a>
-					<ul class="sub-menu">
+					<div class="sub-menu">
 						<div class="col-container">
 							<div class="col1">
 								<?php
@@ -299,12 +299,12 @@ endif;
 								?>
 							</div>
 						</div>
-					</ul>
+					</div>
 
 				</li>
 				<li class="menu-item-has-children"><a href="#"><span>Blog &
 							News</span></a>
-					<ul class="sub-menu">
+					<div class="sub-menu">
 						<div class="col-container">
 							<div class="col1">
 								<?php
@@ -365,7 +365,7 @@ endif;
 
 							</div>
 						</div>
-					</ul>
+					</div>
 
 				</li>
 			</ul>
