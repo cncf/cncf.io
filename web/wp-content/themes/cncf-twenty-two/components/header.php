@@ -395,7 +395,7 @@ endif;
 			<div class="header__search_wrapper">
 				<div class="header__search_container">
 
-					<form class="search-form" method="get"
+					<form class="search-form" method="get" autocomplete="off"
 						action="<?php echo esc_url( home_url() ); ?>"
 						role="search">
 						<label for="search-bar"
@@ -405,7 +405,7 @@ endif;
 							id="search-bar"
 							value="<?php echo esc_attr( get_search_query() ); ?>"
 							name="s" placeholder="I'm looking for..."
-							title="Search CNCF site" autocomplete="off"
+							title="Search CNCF site"
 							autocorrect="off" autocapitalize="off"
 							spellcheck="false" maxlength="98" required>
 						<input
