@@ -153,7 +153,11 @@ if ( $dat_webinar_end > $dat_now ) {
 
 		<?php endif; ?>
 
+		<div class="post-content">
+
 			<?php the_content(); ?>
+
+		</div>
 
 			<?php
 		endif;
