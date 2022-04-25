@@ -21,7 +21,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 	<div aria-hidden="true" class="home-hero__overlay"></div>
 
 	<img src="<?php echo esc_url( get_template_directory_uri() . '/images/home-hero-poster.jpg' ); ?>"
-		width=100% height=100% class="home-hero__poster"
+		class="home-hero__poster" style="width: 100%; height: 100%;"
 		alt="Make cloud native ubiquitous">
 
 	<div class="home-hero__video-wrapper">
