@@ -227,7 +227,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 				<figure class="wp-block-image size-full"><img loading="lazy"
 						width="407" height="573"
 						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-05.svg' ); ?>"
-						alt="" class="wp-image-59572"></figure>
+						alt="45% of attendees and 31% of talks came from end user companies" class="wp-image-59572"></figure>
 			</div>
 		</div>
 		<div style="height:80px" aria-hidden="true"
@@ -267,7 +267,7 @@ wp_enqueue_style( '2020', get_template_directory_uri() . '/build/annual-report-2
 				<figure class="wp-block-image size-full"><img loading="lazy"
 						width="361" height="545"
 						src="<?php echo esc_url( get_template_directory_uri() . '/images/annual-reports/2020/CNCF-Annual-Report-2020-graphics-06.svg' ); ?>"
-						alt="" class="wp-image-59594"></figure>
+						alt="Tech Radars" class="wp-image-59594"></figure>
 			</div>
 		</div>
 		<div style="height:80px" aria-hidden="true"

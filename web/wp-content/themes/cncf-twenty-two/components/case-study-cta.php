@@ -24,7 +24,7 @@
 						style="background-image:url(/wp-content/uploads/2021/05/end-users.jpg);background-position:49% 40%">
 						<a href="/enduser/"><img
 								src="/wp-content/uploads/2021/05/end-users.jpg"
-								alt="" class="wp-image-62498 size-full" /></a>
+								alt="CNCF End Users celebrate at a conference" class="wp-image-62498 size-full" /></a>
 					</figure>
 					<div class="wp-block-media-text__content">
 						<!-- wp:spacer {"height":"40px","className":"is-style-default"} -->

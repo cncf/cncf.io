@@ -12,7 +12,7 @@
 ?>
 
 <?php // Image included here to speed up CSS background image. ?>
-<img aria-hidden="true" width="0" height="0" style="display:none !important;"
+<img aria-hidden="true" width="0" height="0" style="display:none !important;" role="presentation"
 	src="<?php echo esc_url( get_template_directory_uri() . '/images/bg-cncf-pattern.png' ); ?>">
 
 <section class="home-projects">
