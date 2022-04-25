@@ -330,7 +330,7 @@
 		padding: 15px 20px 15px 20px;
 		@media (min-width: 800px) {
 			font-size: 30px;
-			padding: 16px 20px 16px 28px;
+			padding: 11px 20px 7px 25px;
 		}
 	}
 	&:nth-child(1) {
@@ -424,12 +424,12 @@
 		@media (min-width: 710px) {
 			display: flex;
 			flex-direction: column;
-			padding: 25px 20px 28px 28px;
+			padding: 22px 20px 28px 25px;
 		}
 	}
 	&__text {
 		@media (min-width: 710px) {
-			margin-bottom: 40px;
+			margin-bottom: 35px;
 		}
 	}
 	.is-style-link-cta {
@@ -670,9 +670,12 @@
 		&__image {
 			clip-path: url(#heptagon);
 			object-fit: cover;
-			min-width: 100%;
-			height: auto;
 			aspect-ratio: 1/1;
+			min-width: 100%;
+			min-height: 100%;
+			// Safari.
+			height: 100%;
+			width: 100%;
 		}
 	}
 	.is-style-link-cta {
