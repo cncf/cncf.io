@@ -11,7 +11,7 @@ jQuery( document ).ready(
 		jQuery( ".home-projects-slider-item-1" ).slick(
 			{
 				infinite: true,
-				slidesToShow: 4,
+				slidesToShow: 10,
 				slidesToScroll: 1,
 				swipeToSlide: false,
 				draggable: false,
@@ -30,7 +30,7 @@ jQuery( document ).ready(
 		jQuery( ".home-projects-slider-item-2" ).slick(
 			{
 				infinite: true,
-				slidesToShow: 4,
+				slidesToShow: 10,
 				slidesToScroll: 1,
 				swipeToSlide: false,
 				draggable: false,
