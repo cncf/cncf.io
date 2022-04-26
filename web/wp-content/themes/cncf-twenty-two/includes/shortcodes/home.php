@@ -280,17 +280,6 @@ function add_home_ambassadors_shortcode() {
 				let $i = 4;
 				let $j = 0;
 
-				let ambassadorsToPreload = ambassadors.slice(0, 4);
-
-				ambassadorsToPreload.forEach(ambassador => {
-
-					const link = document.createElement('link');
-					link.setAttribute('rel', 'preload');
-					link.setAttribute('href', ambassador['image']);
-					link.setAttribute('as', 'image');
-					document.head.appendChild(link);
-				});
-
 				// loop over each, and apply to each image.
 				elements.forEach(function(element) {
 					function getDelay() {
@@ -302,27 +291,28 @@ function add_home_ambassadors_shortcode() {
 						);
 					}
 					// Set Interval to loop.
-					setInterval( function changeImage() {
+					setInterval(function changeImage() {
 						let nextAmbassador = ambassadors[
 							$i++];
 						if ($i == ambassadors.length) {
 							$i = 0;
 						}
 
-						element.classList.remove(
-							"fade-out");
-						element.classList.add("fade-in");
-
-						setTimeout(() => {
-						element.href = nextAmbassador['link'];
-
-						element.children[0].src = nextAmbassador['image'];
-						element.children[0].alt = nextAmbassador['title'];
-						element.title =	'View ' + nextAmbassador['title'];
-						element.classList.remove("fade-in");
-						element.classList.add("fade-out");
-						}, 400 );
-
+						element.children[0]
+							.src =
+							nextAmbassador[
+								'image'];
+						element.children[0]
+							.alt =
+							nextAmbassador[
+								'title'];
+						element.title =
+							'View ' +
+							nextAmbassador[
+								'title'];
+						element.href =
+							nextAmbassador[
+								'link'];
 					}, getDelay());
 				});
 			},
