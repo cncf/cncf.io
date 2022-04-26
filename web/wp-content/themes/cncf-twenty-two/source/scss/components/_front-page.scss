@@ -442,7 +442,9 @@
 
 .home-ambassadors {
 	text-align: center;
+	margin-bottom: 60px;
 	@media (min-width: 800px) {
+		margin-bottom: 20px;
 		text-align: left;
 		display: grid;
 		grid-column-gap: 40px;
@@ -470,7 +472,9 @@
 			}
 		}
 	}
-
+	@media (min-width: 1000px) {
+		margin-bottom: 0;
+	}
 	&-heptagons {
 		margin-top: 20px;
 		margin-bottom: 20px;

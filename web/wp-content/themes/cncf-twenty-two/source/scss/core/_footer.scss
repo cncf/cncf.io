@@ -21,8 +21,8 @@
 
 	nav {
 		display: none;
-
 		@media (min-width: 1000px) {
+			letter-spacing: 0.02em;
 			grid-column: span 10;
 			display: grid;
 			grid-column-gap: 1.2%;
@@ -91,7 +91,8 @@
 		border: 1px solid $white;
 		width: 20px;
 		display: block;
-		margin-top: 20px;
-		margin-bottom: 20px;
+		margin-top: 18px;
+		margin-bottom: 18px;
+		opacity: 0.25;
 	}
 }
