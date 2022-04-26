@@ -129,7 +129,7 @@ if ( $dat_webinar_end > $dat_now ) {
 			</div>
 		</figure>
 
-		<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-60-100">
+		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-40-80">
 		</div>
 
 
@@ -148,7 +148,7 @@ if ( $dat_webinar_end > $dat_now ) {
 					Slides</a></div>
 		</div>
 
-		<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-60-100">
+		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-40-80">
 		</div>
 
 		<?php endif; ?>
