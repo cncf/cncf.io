@@ -57,7 +57,7 @@ function add_home_case_studies_shortcode( $atts ) {
 
 		<figure class="featured-case-studies__bg-figure">
 			<?php
-			LF_Utils::display_responsive_images( $background_image, 'case-study-590', '590px', 'featured-case-studies__bg-image', 'lazy', the_title_attribute() );
+			LF_Utils::display_responsive_images( $background_image, 'case-study-590', '590px', 'featured-case-studies__bg-image', 'lazy', get_the_title() );
 			?>
 		</figure>
 
@@ -67,7 +67,7 @@ function add_home_case_studies_shortcode( $atts ) {
 
 			<figure class="featured-case-studies__logo-figure">
 				<?php
-				LF_Utils::display_responsive_images( $logo, 'full', '200px', 'featured-case-studies__logo', 'lazy', the_title_attribute() );
+				LF_Utils::display_responsive_images( $logo, 'full', '200px', 'featured-case-studies__logo', 'lazy', get_the_title() );
 				?>
 			</figure>
 			<p class="featured-case-studies__description">

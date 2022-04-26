@@ -62,10 +62,10 @@ if ( $query->have_posts() ) : ?>
 		title="<?php echo esc_attr( the_title_attribute() ); ?>">
 		<?php
 		if ( has_post_thumbnail() ) {
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'report-item__image', 'lazy', the_title_attribute() );
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'report-item__image', 'lazy', get_the_title() );
 		} else {
 			$site_options = get_option( 'lf-mu' );
-			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'report-item__image', 'lazy', the_title_attribute() );
+			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'report-item__image', 'lazy', get_the_title() );
 		}
 		?>
 	</a>

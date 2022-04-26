@@ -116,7 +116,7 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 			<!-- logo -->
 			<?php
 			if ( $company_logo ) {
-				LF_Utils::display_responsive_images( $company_logo, 'spotlight-320', '200px', 'case-study-overview__logo', 'lazy', the_title_attribute() );
+				LF_Utils::display_responsive_images( $company_logo, 'spotlight-320', '200px', 'case-study-overview__logo', 'lazy', get_the_title() );
 			} else {
 				// Insert spacer to maintain layout.
 				?>
