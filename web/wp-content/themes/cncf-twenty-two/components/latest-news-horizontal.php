@@ -7,9 +7,6 @@
  * @since 1.0.0
  */
 
-// TODO: Exclude current post via template_part control.
-// 'post__not_in'       => array( get_the_ID() ) // phpcs:ignore.
-
 $args  = array(
 	'post_type'           => 'post',
 	'post_status'         => array( 'publish' ),

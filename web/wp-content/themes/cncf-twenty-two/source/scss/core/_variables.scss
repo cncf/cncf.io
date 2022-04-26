@@ -67,40 +67,6 @@ $font-code: Hack, 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono', 'Lucida C
 $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times',
 	'Source Serif Pro', serif;
 
-// TODO: Have swapped optional for fallback. Combine with preload of css for performance?
-@font-face {
-	font-display: fallback;
-	font-family: 'Clarity City';
-	font-weight: 100;
-	font-style: normal;
-	src: local('ClarityCity-Thin'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-100.ttf') format('ttf');
-}
-
-@font-face {
-	font-display: fallback;
-	font-family: 'Clarity City';
-	font-weight: 200;
-	font-style: normal;
-	src: local('ClarityCity-ExtraLight'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.ttf') format('ttf');
-}
-
-@font-face {
-	font-display: fallback;
-	font-family: 'Clarity City';
-	font-weight: 300;
-	font-style: normal;
-	src: local('ClarityCity-Light'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-300.ttf') format('ttf');
-}
-
 @font-face {
 	font-display: fallback;
 	font-family: 'Clarity City';
@@ -110,17 +76,6 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.ttf') format('ttf');
-}
-
-@font-face {
-	font-display: fallback;
-	font-family: 'Clarity City';
-	font-weight: 500;
-	font-style: normal;
-	src: local('ClarityCity-Medium'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-500.ttf') format('ttf');
 }
 
 @font-face {
@@ -156,18 +111,6 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.ttf') format('ttf');
 }
 
-@font-face {
-	font-display: fallback;
-	font-family: 'Clarity City';
-	font-weight: 900;
-	font-style: normal;
-	src: local('ClarityCity-Black'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-900.ttf') format('ttf');
-}
-// TODO: Remove unused weights.
-
 // Source Serif Pro - Italic
 @font-face {
 	font-display: fallback;
@@ -177,5 +120,5 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 	src: local('SourceSerifPro-It'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.ttf') format('truetype');
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.ttf') format('ttf');
 }

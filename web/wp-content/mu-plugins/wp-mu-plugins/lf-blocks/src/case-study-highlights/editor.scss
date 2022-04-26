@@ -1,5 +1,3 @@
-//  Note: P + H3 switch places on frontend vs backend.
-// TODO: This is old CSS?
 #editor .editor-styles-wrapper {
 	.case-study-highlights {
 		margin-top: 30px;
@@ -27,14 +25,15 @@
 			h3 {
 				margin: 0;
 				font-weight: 700;
-				margin-bottom: 0.5rem;
+				margin-bottom: 30px;
 				text-transform: uppercase;
 				color: #4a23cc;
-				font-size: 1rem;
+				font-size: 20px;
 				letter-spacing: 0.02em;
 
 				strong {
 					font-weight: 700;
+					color: red;
 				}
 			}
 
@@ -42,7 +41,7 @@
 				margin: 0;
 				font-weight: 400;
 				color: #000000;
-				font-size: 1rem;
+				font-size: 20px;
 			}
 		}
 	}

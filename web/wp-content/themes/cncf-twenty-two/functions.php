@@ -64,8 +64,6 @@ add_action( 'after_setup_theme', 'lf_theme_support_setup' );
 /**
  * Remove tags support from posts.
  *
- * TODO: Move to WP MU.
- *
  * @return void
  */
 function lf_unregister_tags_for_posts() {

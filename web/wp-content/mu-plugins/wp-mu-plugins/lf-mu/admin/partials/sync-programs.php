@@ -101,7 +101,7 @@ foreach ( $chapters as $chapter ) {
 				wp_set_object_terms( $newid, 'end-user', 'lf-topic', true );
 			}
 		} else {
-			// todo later: turn any matching CPTs to draft since they may have been cancelled/unpublished.
+			// TODO: Turn any matching CPTs to draft since they may have been cancelled/unpublished.
 			continue;
 		}
 	}

@@ -10,7 +10,7 @@ input[type='search'] {
 	border: 1px solid $gray-500;
 }
 
-// other forms bg use  - $gray-100
+// other forms bg use - $gray-100
 
 // Controls autocomplete styles.
 input,
@@ -24,7 +24,7 @@ select {
 	}
 }
 
-// Restrict hubspot contact form to 790px. Must use !important.
+// Restrict hubspot contact form to 800px. Must use !important.
 // Selector is not great and may interfere with other forms.
 .hs-form-iframe {
 	max-width: 800px;
