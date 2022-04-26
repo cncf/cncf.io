@@ -34,7 +34,7 @@ $classes = LF_Utils::merge_classes(
 					<?php if ( get_post_thumbnail_id() ) : ?>
 					<figure class="is-style-rounded-corners">
 						<?php
-						LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-700', '590px' );
+						LF_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-700', '590px', 'lazy', get_the_title() );
 						?>
 					</figure>
 					<?php endif; ?>

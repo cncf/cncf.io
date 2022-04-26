@@ -235,8 +235,9 @@ class LF_Utils {
 	 * @param string $max_width width with unit.
 	 * @param string $class_name class to apply to img tag.
 	 * @param string $loading add lazy load attribute.
+	 * @param string $alt alt text to use / override.
 	 */
-	public static function display_responsive_images( $image_id, $image_size, $max_width, $class_name = '', $loading = 'lazy' ) {
+	public static function display_responsive_images( $image_id, $image_size, $max_width, $class_name = '', $loading = 'lazy', $alt = '' ) {
 
 		// if no image id or not number, return.
 		if ( ! $image_id ) {
@@ -260,19 +261,25 @@ class LF_Utils {
 			$class_name = rtrim( esc_html( $class_name ) );
 		}
 
+		if ( $alt ) {
+			$alt_text = trim( esc_attr( wp_strip_all_tags( $alt ) ) );
+		} else {
+			$alt_text = self::get_img_alt( $image_id );
+		}
+
 		if ( ! $image_srcset ) {
 
 			$width  = $size[1] ?? '';
 			$height = $size[2] ?? '';
 
-			$img           = '<img width="' . $width . '" height="' . $height . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . self::get_img_alt( $image_id ) . '">';
+			$img           = '<img width="' . $width . '" height="' . $height . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . $alt_text . '">';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
 			$attachment_id = $image_id;
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
 
 		} else {
 
-			$html = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" decoding="async" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '" alt="' . self::get_img_alt( $image_id ) . '">';
+			$html = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" decoding="async" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '" alt="' . $alt_text . '">';
 
 		}
 

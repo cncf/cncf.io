@@ -23,13 +23,21 @@
 		color: $gray-700;
 		max-width: min(75%, 600px);
 	}
+	&[class*='has-'] {
+		> p {
+			font-size: inherit;
+			@media (min-width: 1200px) {
+				font-size: inherit;
+			}
+		}
+	}
 	&.is-style-smaller-quote {
 		> p {
 			line-height: 175%;
 			letter-spacing: 0.02em;
 			font-size: 16px;
 			@media (min-width: 1200px) {
-				font-size: 20px;
+				font-size: 22px;
 				line-height: 160%;
 			}
 		}

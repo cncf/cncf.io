@@ -28,7 +28,7 @@ if ( $event_logo_id && $event_cta_text && $event_cta_link ) :
 
 			<div class="next-event__text-wrapper">
 				<?php
-				Lf_Utils::display_responsive_images( $event_logo_id, 'full', '200px', 'next-event__logo' );
+				Lf_Utils::display_responsive_images( $event_logo_id, 'full', '200px', 'next-event__logo', 'lazy', 'The next event from CNCF' );
 				?>
 
 				<span

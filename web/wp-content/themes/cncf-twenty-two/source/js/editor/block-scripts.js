@@ -58,6 +58,7 @@ wp.blocks.unregisterBlockStyle( 'core/button', 'fill' );
 wp.blocks.unregisterBlockStyle( 'core/button', 'outline' );
 wp.blocks.unregisterBlockStyle( 'core/separator', 'dots' );
 wp.blocks.unregisterBlockStyle( 'core/separator', 'wide' );
+wp.blocks.unregisterBlockStyle( 'core/quote', 'plain' );
 
 wp.blocks.registerBlockStyle(
 	'core/separator',
@@ -69,6 +70,16 @@ wp.blocks.registerBlockStyle(
 		{
 			label: 'Shadow Line',
 			name: 'shadow-line',
+		}
+]
+);
+
+wp.blocks.registerBlockStyle(
+	'core/quote',
+	[
+		{
+			label: 'Smaller Quote',
+			name: 'smaller-quote',
 		}
 ]
 );

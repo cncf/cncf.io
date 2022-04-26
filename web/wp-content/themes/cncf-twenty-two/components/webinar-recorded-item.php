@@ -41,7 +41,7 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 		} else {
 			// setup options.
 			$site_options = get_option( 'lf-mu' );
-			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'full', '400px', 'webinar-recorded-item__image' );
+			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'full', '400px', 'webinar-recorded-item__image', 'lazy', get_the_title() );
 		}
 		?>
 		</a>

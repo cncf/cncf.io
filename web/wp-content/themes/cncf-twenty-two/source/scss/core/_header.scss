@@ -320,11 +320,12 @@
 	.header {
 		background-color: rgba($gray-050, 0.98);
 		.wp-block-button__link {
-			padding-top: 10px;
-			padding-bottom: 10px;
+			padding-top: 6px;
+			padding-bottom: 6px;
 			margin-left: 20px;
 			min-width: 120px;
 			flex-shrink: 0;
+			border-radius: 4px;
 			width: min-content;
 			@media (min-width: 1250px) {
 				min-width: 134px;
@@ -339,6 +340,7 @@
 			margin-left: 20px;
 			@media (min-width: 1250px) {
 				margin-left: 40px;
+				height: 30px;
 			}
 		}
 
@@ -385,7 +387,7 @@
 			.wp-block-button__link {
 				border: 1px solid $white;
 				// extra margin as SVGs not aligned.
-				margin-right: 5px;
+				margin-right: 10px;
 				transition: none;
 			}
 			input[type='search'] {

@@ -71,7 +71,7 @@ if ( $query->have_posts() ) : ?>
 		<?php if ( $background ) : ?>
 		<figure class="event-item__bg-figure">
 			<?php
-			LF_Utils::display_responsive_images( $background, 'event-380', '380px', 'event-item__bg-image' );
+			LF_Utils::display_responsive_images( $background, 'event-380', '380px', 'event-item__bg-image', 'lazy', get_the_title() );
 
 			?>
 		</figure>
@@ -84,7 +84,7 @@ if ( $query->have_posts() ) : ?>
 				<a href="<?php echo esc_url( $external_url ); ?>"
 					title="<?php the_title_attribute(); ?>">
 					<?php
-					LF_Utils::display_responsive_images( $logo, 'medium', '300px', 'event-item__logo' );
+					LF_Utils::display_responsive_images( $logo, 'medium', '300px', 'event-item__logo', 'lazy', get_the_title() );
 					?>
 				</a>
 				<?php else : ?>

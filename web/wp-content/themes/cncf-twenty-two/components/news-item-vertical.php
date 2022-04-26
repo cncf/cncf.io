@@ -39,7 +39,7 @@ $classes = LF_Utils::merge_classes(
 		<div class="news-item-vertical__media-image-wrapper">
 			<?php
 			if ( has_post_thumbnail() ) {
-				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'news-item-vertical__image' );
+				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'news-item-vertical__image', 'lazy', get_the_title() );
 			} else {
 				echo '<img class="news-item-vertical__image" src="' . esc_url( get_template_directory_uri() )
 				. '/images/default-media-logo.svg" alt="CNCF Media Coverage" />';
@@ -66,13 +66,13 @@ else :
 		<?php
 		if ( has_post_thumbnail() ) {
 			// display smaller news image.
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'news-item-vertical__image' );
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'news-item-vertical__image', 'lazy', get_the_title() );
 
 		} else {
 			// show generic.
 			// get site options.
 			$site_options = get_option( 'lf-mu' );
-			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'news-item-vertical__image' );
+			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'news-item-vertical__image', 'lazy', get_the_title() );
 		}
 		?>
 		<h3 class="news-item-vertical__title"><?php the_title(); ?></h3>

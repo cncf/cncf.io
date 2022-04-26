@@ -15,13 +15,13 @@
 		<?php
 		if ( has_post_thumbnail() ) {
 			// display smaller news image.
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'spotlight-item__image' );
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'spotlight-item__image', 'lazy', get_the_title() );
 
 		} else {
 			// show generic.
 			// get site options.
 			$site_options = get_option( 'lf-mu' );
-			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'spotlight-item__image' );
+			Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'spotlight-item__image', 'lazy', get_the_title() );
 
 		}
 		?>

@@ -23,11 +23,11 @@
 	cursor: pointer;
 	word-break: break-word;
 	box-sizing: border-box;
-	border-radius: $button-radius;
+	border-radius: 5px;
 	font-family: $font-primary;
 	font-size: 16px;
 	font-weight: 700;
-	line-height: 105%;
+	line-height: 18px;
 	letter-spacing: 0.02em;
 	text-align: center;
 	text-decoration: none;
@@ -40,9 +40,9 @@
 	text-transform: uppercase;
 	transition: all 0.25s ease-out;
 
-	// 16px font + 12px makes buttons 40px.
-	padding-top: 12px;
-	padding-bottom: 12px;
+	// 18px line-height + 11px + 11px makes buttons 40px.
+	padding-top: 11px;
+	padding-bottom: 11px;
 	padding-left: 40px;
 	padding-right: 40px;
 	// white-space: nowrap;
@@ -64,27 +64,6 @@
 		position: relative;
 		top: 1px;
 	}
-
-	// &:not(.has-text-color) {
-	// 	color: $white;
-
-	// 	&:hover {
-	// 		color: $white;
-	// 	}
-
-	// 	&:visited {
-	// 		color: $white;
-	// 	}
-	// }
-
-	// &:not(.has-background) {
-	// 	background-color: $default;
-
-	// 	&:hover,
-	// 	&:focus {
-	// 		background-color: lighten($default, 10%);
-	// 	}
-	// }
 
 	&.has-icon {
 		display: flex;
@@ -110,9 +89,11 @@
 	&.is-style-reduced-height {
 		.wp-block-button__link {
 			font-size: 14px;
-			// 14px font + 11px makes buttons 36px.
-			padding-top: 11px;
-			padding-bottom: 11px;
+			line-height: 16px;
+			border-radius: 3px;
+			// 16px line-height + 10px makes buttons 36px.
+			padding-top: 10px;
+			padding-bottom: 10px;
 		}
 	}
 }

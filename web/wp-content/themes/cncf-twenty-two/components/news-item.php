@@ -42,7 +42,7 @@ if ( $is_in_the_news_category ) :
 
 		<?php
 		if ( has_post_thumbnail() ) {
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-media-coverage', '600px', 'post-archive__image' );
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-media-coverage', '600px', 'post-archive__image', 'lazy', get_the_title() );
 		} else {
 			echo '<img class="post-archive__image" src="' . esc_url( get_template_directory_uri() )
 			. '/images/default-media-logo.svg" alt="CNCF Media Coverage" />';
@@ -91,16 +91,16 @@ else :
 
 			if ( has_post_thumbnail() && $is_featured ) {
 				// display large featured image.
-				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-700', '700px', 'post-archive__image' );
+				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-700', '700px', 'post-archive__image', 'lazy', get_the_title() );
 
 			} elseif ( has_post_thumbnail() ) {
 				// display smaller news image.
-				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'post-archive__image' );
+				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-400', '400px', 'post-archive__image', 'lazy', get_the_title() );
 
 			} else {
 				// show generic.
 				$site_options = get_option( 'lf-mu' );
-				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'post-archive__image' );
+				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'post-archive__image', 'lazy', get_the_title() );
 			}
 			?>
 		</a>

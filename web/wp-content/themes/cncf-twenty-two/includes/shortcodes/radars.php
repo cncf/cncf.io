@@ -69,7 +69,7 @@ function add_radars_shortcode( $atts ) {
 			} else {
 				// show generic.
 				$site_options = get_option( 'lf-mu' );
-				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'radar-item__image' );
+				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'radar-item__image', 'lazy', get_the_title() );
 			}
 			?>
 			<h3 class="radar-item__title"><?php echo esc_html( $radar_title ); ?></h3>
