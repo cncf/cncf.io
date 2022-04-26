@@ -150,6 +150,26 @@ function lf_blocks_register_dynamic_blocks() {
 		)
 	);
 
+	// Events block.
+	require_once 'events/render-callback.php';
+	register_block_type(
+		'lf/events',
+		array(
+			'attributes'      => array(
+				'className'   => array(
+					'type' => 'string',
+				),
+				'category'    => array(
+					'type' => 'string',
+				),
+				'numberposts' => array(
+					'type' => 'number',
+				),
+			),
+			'render_callback' => 'lf_events_render_callback',
+		)
+	);
+
 	// Hero block.
 	require_once 'hero/render-callback.php';
 	register_block_type(
