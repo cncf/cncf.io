@@ -23,7 +23,7 @@ if ( $promotion_image_id && $promotion_title_text && $promotion_cta_text && $pro
 		<a href="<?php echo esc_url( get_permalink( $site_options['promotion_cta_link_id'] ) ); ?>"
 			title="<?php echo esc_html( $promotion_title_text ); ?>" class="main-menu-item__link">
 			<?php
-			Lf_Utils::display_responsive_images( $promotion_image_id, 'full', '200px', 'main-menu-item__image' );
+			Lf_Utils::display_responsive_images( $promotion_image_id, 'full', '200px', 'main-menu-item__image', 'lazy', esc_html( $promotion_title_text ) );
 			?>
 		</a>
 	</div>

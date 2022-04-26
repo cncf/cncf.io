@@ -14,7 +14,7 @@
 	$author_image  = get_post_meta( get_the_ID(), 'lf_post_guest_author_image', true );
 	$author_byline = Lf_Utils::display_author( get_the_ID() );
 	if ( $author_image ) {
-		Lf_Utils::display_responsive_images( $author_image, 'thumbnail', '7px', 'post-author__image' );
+		Lf_Utils::display_responsive_images( $author_image, 'thumbnail', '7px', 'post-author__image', 'lazy', esc_html( $author_byline ) );
 	}
 	?>
 	<div>
