@@ -47,6 +47,10 @@
 		}
 		@media (min-width: 1000px) {
 			grid-column: span 2;
+			.wp-block-button__link {
+				padding-top: 9px;
+				padding-bottom: 9px;
+			}
 		}
 	}
 
