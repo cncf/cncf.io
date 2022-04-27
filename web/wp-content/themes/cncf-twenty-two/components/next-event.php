@@ -19,7 +19,7 @@ $event_text                = $site_options['event_text'] ?? '';
 
 if ( $event_logo_id && $event_cta_text && $event_cta_link ) :
 	?>
-<div class="next-event" role="banner"
+<div class="next-event has-animation-scale-2" role="banner"
 	style="background: <?php echo esc_attr( $event_background_color ); ?>;">
 	<a class="box-link"	href="<?php echo esc_url( $event_cta_link ); ?>" title="The next event from CNCF"></a>
 

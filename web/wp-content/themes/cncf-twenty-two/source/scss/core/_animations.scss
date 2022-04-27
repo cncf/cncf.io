@@ -4,3 +4,23 @@
 		transform: scale(1.05);
 	}
 }
+
+@media (hover: hover) {
+	.has-animation-scale-2 {
+		transition-property: transform;
+		transition-duration: 0.3s;
+		transform: translate3d(0, 0, 0);
+		&:hover {
+			transform: scale(1.02);
+		}
+	}
+
+	.has-animation-drop-shadow {
+		transition-property: transform;
+		transition-duration: 0.3s;
+		transition: filter;
+		&:hover {
+			filter: drop-shadow(0 0 11px rgba(20, 20, 20, 0.3));
+		}
+	}
+}
