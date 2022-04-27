@@ -9,7 +9,7 @@
  */
 
 html {
-	line-height: 1.15; /* 1 */
+	line-height: 1.5; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -91,10 +91,9 @@ abbr[title] {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-// TODO: Should this be 700???
 b,
 strong {
-	font-weight: 800;
+	font-weight: bolder;
 }
 
 /**

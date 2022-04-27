@@ -26,7 +26,7 @@ h2,
 	max-width: 900px;
 	@media (min-width: 1000px) {
 		font-size: 36px;
-		line-height: 150%;
+		line-height: 149%;
 	}
 	&.has-text-align-center {
 		margin-left: auto;
@@ -39,7 +39,6 @@ h3,
 	font-weight: 700;
 	font-size: 24px;
 	line-height: 170%;
-	// line-height: 125%; // TODO: Where did 125 come from?
 }
 
 .is-style-opening-paragraph {
@@ -127,12 +126,6 @@ h3,
 	max-width: 900px;
 }
 
-// not attached as a style.
-// TODO: Actually used anywhere?
-.is-style-mb0 {
-	margin-bottom: 0 !important;
-}
-
 // TODO: Responsive sized fonts inline with designs.
 .has-extra-small-font-size {
 	// 10px
@@ -160,6 +153,10 @@ h3,
 }
 .has-extra-large-font-size {
 	// 36px
+	// Phippy page.
+	@media (max-width: 999px) {
+		font-size: 24px !important;
+	}
 }
 .has-extra-extra-large-font-size {
 	// 46px
@@ -174,10 +171,6 @@ h3,
 		font-size: 36px !important;
 	}
 }
-
-// .normal-case {
-// 	text-transform: none !important;
-// }
 
 // blog and spotlight posts content.
 .post-content {

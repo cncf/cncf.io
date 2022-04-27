@@ -43,7 +43,17 @@
 		color: $white;
 	}
 	&__title {
-		margin-top: min(36%, 150px);
+		margin-top: min(36%, 140px);
+		// Macbook 12"
+		@media (min-width: 1200px) and (min-height: 660px) and (max-height: 900px) {
+			margin-top: 0;
+			padding-top: max(60px, calc(100vh - 136px - 80px - 510px)); // Min space.
+		}
+		// margin-top: min(36%, 100px);
+		// @media (min-height: 660px) {
+		// 	padding-top: 50px;
+		// 	margin-top: calc(100vh - 136px - 80px - 510px);
+		// }
 		font-weight: 800;
 		font-size: 38px;
 		line-height: 135%;
@@ -65,8 +75,8 @@
 		margin-top: min(8%, 40px);
 		margin-bottom: min(8%, 40px);
 		@media (min-width: 412px) {
-			margin-top: min(10%, 60px);
-			margin-bottom: min(10%, 60px);
+			margin-top: min(10%, 45px);
+			margin-bottom: min(10%, 50px);
 		}
 		letter-spacing: 0.02em;
 		font-weight: 400;

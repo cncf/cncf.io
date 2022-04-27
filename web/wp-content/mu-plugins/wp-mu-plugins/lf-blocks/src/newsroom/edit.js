@@ -116,7 +116,6 @@ renderList = () => {
 
 render() {
 	const { posts, className, attributes } = this.props;
-	const { showBorder } = attributes;
 
 	return ! posts ? (
 		<Placeholder label={ __( 'Loading...' ) }>
@@ -125,7 +124,7 @@ render() {
 	) : (
 		<Fragment>
 			{ this.renderControl() }
-			<div className={ ` ${ className } ${ showBorder ? 'has-images-border' : '' } ` }>
+			<div className={ `${ className }` }>
 				{ this.renderList() }
 			</div>
 		</Fragment>

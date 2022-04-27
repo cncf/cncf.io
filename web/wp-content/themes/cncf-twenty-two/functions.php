@@ -64,8 +64,6 @@ add_action( 'after_setup_theme', 'lf_theme_support_setup' );
 /**
  * Remove tags support from posts.
  *
- * TODO: Move to WP MU.
- *
  * @return void
  */
 function lf_unregister_tags_for_posts() {
@@ -114,26 +112,34 @@ require_once 'includes/shortcodes/selected-people.php';
 require_once 'includes/shortcodes/upcoming-webinars.php';
 require_once 'includes/shortcodes/youtube-playlist.php';
 
-/* Will only run on front end of site */
-if ( ! is_admin() ) {
-	/**
-	 * Make all JS defer onload apart from files specified.
-	 *
-	 * Use strpos to exclude specific files.
-	 *
-	 * @param string $url the URL.
-	 */
-	function lf_defer_parsing_of_js( $url ) {
-		if ( false === strpos( $url, '.js' ) ) {
-			return $url;
-		}
-		if ( strpos( $url, 'jquery.min.js' ) ) {
-			return $url;
-		}
-		return str_replace( ' src', ' defer src', $url );
+/**
+ * Make all JS defer onload apart from files specified.
+ *
+ * Use strpos to exclude specific files.
+ *
+ * @param string $url the URL.
+ */
+function lf_defer_parsing_of_js( $url ) {
+	// Stop if admin.
+	if ( is_admin() ) {
+		return $url;
 	}
-	add_filter( 'script_loader_tag', 'lf_defer_parsing_of_js', 10, 3 );
+	// Stop if not JS.
+	if ( false === strpos( $url, '.js' ) ) {
+		return $url;
+	}
+	// List of scripts that should not be deferred.
+	$do_not_defer_scripts = array(
+		'jquery',
+	);
+	foreach( $do_not_defer_scripts as $script ){
+		if ( strpos( $url, $script ) ) {
+			return $url;
+		}
+	}
+	return str_replace( ' src', ' defer src', $url );
 }
+add_filter( 'script_loader_tag', 'lf_defer_parsing_of_js', 10, 3 );
 
 /**
  * Remove English words from Chinese case studies filters

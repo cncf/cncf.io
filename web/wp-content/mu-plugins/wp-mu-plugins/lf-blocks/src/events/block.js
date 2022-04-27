@@ -34,17 +34,16 @@ const { registerBlockType } = wp.blocks;
  * @return {?WPBlock}          The block, if it has been successfully registered; otherwise `undefined`.
  */
 registerBlockType(
-	'lf/newsroom',
+	'lf/events',
 	{
-		title: __( 'LF | Newsroom' ),
-		description: __( 'Display posts from the LF Newsroom' ),
-		icon: 'excerpt-view',
+		title: __( 'LF | Events' ),
+		description: __( 'Block showing upcoming events.' ),
+		icon: 'calendar',
 		category: 'lf',
 		keywords: [
-			__( 'news' ),
-			__( 'newsroom' ),
-			__( 'announcements' ),
-			__( 'blog' ),
+			__( 'events' ),
+			__( 'exhibitions' ),
+			__( 'shows' ),
 			__( 'lf' ),
 		],
 		example: {},
@@ -52,10 +51,6 @@ registerBlockType(
 			numberposts: {
 				type: 'integer',
 				default: 3,
-			},
-			order: {
-				type: 'string',
-				default: 'desc',
 			},
 			category: {
 				type: 'string',

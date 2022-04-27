@@ -80,6 +80,12 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	}
 	$members_array = json_decode( $members_array );
 
+	// if the array is smaller than the count then use the array count for the loop.
+	$array_count = count( $members_array );
+	if ( $array_count < $count ) {
+		$count = $array_count;
+	}
+
 	ob_start();
 	?>
 <div class="members <?php echo esc_html( 'logo_' . $atts['size'] ); ?>">
