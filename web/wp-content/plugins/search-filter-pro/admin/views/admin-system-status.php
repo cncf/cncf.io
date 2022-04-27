@@ -379,7 +379,7 @@ if ( $current_tab == "status") {
 						
 						$number_of_rows = $row_count[0]->{"COUNT(*)"};
 						
-						echo '<mark class="yes">&#10004; ' . $number_of_rows . " " . __('Rows Found', 'search-filter-pro') . '</mark>';
+						echo '<mark class="yes">&#10004; ' . esc_attr( $number_of_rows ) . " " . __('Rows Found', 'search-filter-pro') . '</mark>';
 					}
 					
 				
@@ -562,7 +562,7 @@ else if ( $current_tab == "search-forms")
 		
 ?>
 
-<table class="widefat" cellspacing="0" id="">
+<table class="widefat" cellspacing="0">
 	<thead>
 		<tr>
 			<th colspan="3" data-export-label="<?php echo esc_attr($search_form->post_title); ?>"><a href="<?php echo admin_url( 'post.php?post='.$search_form->ID.'&action=edit' ); ?>" target="_blank"><?php echo $search_form->post_title; ?> - <?php echo $search_form->ID; ?></a></th>
@@ -578,34 +578,37 @@ else if ( $current_tab == "search-forms")
 
 				//as we only want to update "enabled", then load all settings and update only this key
 				$search_form_fields = Search_Filter_Helper::get_fields_meta($search_form->ID);
-				$filters = array();
-				foreach($search_form_fields as $key => $field)
-				{
-					$valid_filter_types = array("tag", "category", "taxonomy", "post_meta");
-					
-					if(in_array($field['type'], $valid_filter_types))
+
+				if ( is_array( $search_form_fields ) ) {
+					$filters = array();
+					foreach($search_form_fields as $key => $field)
 					{
-						if(($field['type']=="tag")||($field['type']=="category")||($field['type']=="taxonomy"))
+						$valid_filter_types = array("tag", "category", "taxonomy", "post_meta");
+						
+						if(in_array($field['type'], $valid_filter_types))
 						{
-							array_push($filters, "_sft_".$field['taxonomy_name']);
-						}
-						else if($field['type']=="post_meta")
-						{
-							if($field['meta_type']=="choice")
+							if(($field['type']=="tag")||($field['type']=="category")||($field['type']=="taxonomy"))
 							{
-								array_push($filters, "_sfm_".$field['meta_key']);
+								array_push($filters, "_sft_".$field['taxonomy_name']);
+							}
+							else if($field['type']=="post_meta")
+							{
+								if($field['meta_type']=="choice")
+								{
+									array_push($filters, "_sfm_".$field['meta_key']);
+								}
 							}
 						}
-					}
-					else
-					{
-						array_push($filters, $field['type']);
-					}
+						else
+						{
+							array_push($filters, $field['type']);
+						}
 
+					}
+					
+					echo implode(", " , $filters);
 				}
-				
-				echo implode(", " , $filters);
-			?>
+				?>
 			</td>
 		</tr>
 		<tr>

@@ -2,9 +2,9 @@
 Author: Smash Balloon
 Contributors: smashballoon, craig-at-smash-balloon
 Support Website: http://smashballoon/custom-twitter-feeds/
-Requires at least: 3.4
-Tested up to: 5.7
-Stable tag: 1.14
+Tested up to: 5.9.3
+Requires PHP: 5.6
+Stable tag: 2.0
 License: Non-distributable, Not for resale
 
 Custom Twitter Feeds Pro allows you to display completely customizable Twitter feeds of your user timeline, home timeline, hashtag, and more on your website.
@@ -41,6 +41,33 @@ If you like the plugin then please consider leaving a [review](https://wordpress
 For simple step-by-step directions on how to set up Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/docs/ 'Custom Twitter Feeds setup guide').
 
 == Changelog ==
+= 2.0 =
+* Important: Minimum supported WordPress version has been raised from 3.5 to 4.1.
+* New: Our biggest update ever! We've completely redesigned the plugin settings from head to toe to make it easier to create, manage, and customize your Twitter feeds.
+* New: All your feeds are now displayed in one place on the "All Feeds" page. This shows a list of any existing (legacy) feeds and any new ones that you create. Note: If you updated from a version prior to v1.13 then you may need to view your feeds on your webpage so that the plugin can locate them and list them here.
+* New: Easily edit individual feed settings for new feeds instead of cumbersome shortcode options.
+* New: It's now much easier to create feeds. Just click "Add New", select your feed type, connect your account, and you're done!
+* New: Brand new feed customizer. We've completely redesigned feed customization from the ground up, reorganizing the settings to make them easier to find.
+* New: Live Feed Preview. You can now see changes you make to your feeds in real time, right in the settings page. Easily preview them on desktop, tablet, and mobile sizes.
+* New: We've added a new Feed Templates feature. You can now select a feed template when creating a feed to make it much quicker and easier to get started with the type of feed you want to display. Selecting a template preconfigures the feed customization settings to match that template, saving you time and effort.
+* New: Color Scheme option. It's now easier than ever to change colors across your feed without needing to adjust individual color settings. Just set a color scheme to effortlessly change colors across your entire feed.
+* New: You can now change the number of columns in your feed across desktop, tablet, and mobile.
+* New: Easily import and export feed settings to make it simple to move feeds across sites.
+* New: Added a Post Style setting which allows you to add a boxed style to your Tweets, with a background color, border radius, and box shadow.
+* New: Added a new custom text header option, so you can now add custom text to the header for your feed.
+* Fix: Fixed a PHP warning related to information for the header being empty.
+* Fix: Tweets with quoted media were causing HTML errors and the feed layout would be affected.
+
+= 1.14.1 =
+* Fix: Fixed several issues with GDPR Cookie Consent by Web Toffee integration.
+* Fix: Fixed CSS to allow for right to left carousels.
+* Fix: Fixed duplicate MySQL queries issue when checking for the resized images table.
+* Fix: Changed the location of the cookie.txt file (used by the server to collect twitter card information) and removed it after it was used.
+* Fix: Added support for the shortcode setting "feedid" to allow custom names of feed caches to prevent conflicts.
+* Fix: Some links to Twitter in feeds were using the author name instead of the Twitter handle and would occasionally cause errors.
+* Fix: Fixed the inability to show just one tweet if only one tweet was available for an account/hashtag.
+* Fix: Removed an extra character that would appear near the author's name under certain circumstances.
+
 = 1.14 =
 * New: The locations of the Twitter feeds on your site will now be logged and listed on a single page for easier management. After this feature has been active for awhile, a "Feed Finder" link will appear next to the Feed Type setting on the plugin Settings page which allows you to see a list of all feeds on your site along with their locations.
 * Fix: Updated jQuery methods for compatibility with WordPress 5.7.

@@ -3,10 +3,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$meta_key_text_input = Search_Filter_Helper::get_option( 'meta_key_text_input' );
+
 ?>
 				<p class="item-container sf_input_type">
 					<label for="{0}[{1}][choice_input_type]"><?php _e("Input type: ", $this->plugin_slug); ?><br />
-						<select name="{0}[{1}][choice_input_type]" class="" id="{0}[{1}][choice_input_type]">
+						<select data-field-template-name="{0}[{1}][choice_input_type]" class="" data-field-template-id="{0}[{1}][choice_input_type]">
 							<option value="select"<?php $this->set_selected($values['choice_input_type'], "select"); ?>><?php _e("Dropdown", $this->plugin_slug); ?></option>
 							<option value="checkbox"<?php $this->set_selected($values['choice_input_type'], "checkbox"); ?>><?php _e("Checkbox", $this->plugin_slug); ?></option>
 							<option value="radio"<?php $this->set_selected($values['choice_input_type'], "radio"); ?>><?php _e("Radio", $this->plugin_slug); ?></option>
@@ -16,21 +19,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 				<p class="item-container" style="padding-right:0;">
 			
-					<label for="{0}[{1}][choice_heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" id="{0}[{1}][choice_heading]" name="{0}[{1}][choice_heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
+					<label for="{0}[{1}][choice_heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" data-field-template-id="{0}[{1}][choice_heading]" data-field-template-name="{0}[{1}][choice_heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
 				</p>
 				<div class="clear"></div>
 				
 				<p class="sf_all_items_label item-container">
 					<label for="{0}[{1}][all_items_label]"><?php _e("Change All Items Label?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("override the default - e.g. &quot;All Items&quot;", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-					<input class="" id="{0}[{1}][all_items_label]" name="{0}[{1}][all_items_label]" type="text" value="<?php echo esc_attr($values['all_items_label']); ?>"></label>
+					<input class="" data-field-template-id="{0}[{1}][all_items_label]" data-field-template-name="{0}[{1}][all_items_label]" type="text" value="<?php echo esc_attr($values['all_items_label']); ?>"></label>
 				</p>
 				<p class="sf_accessibility_label">
 					<label for="{0}[{1}][choice_accessibility_label]"><?php _e("Add screen reader text?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("adds hidden text that will be read by screen readers - complies with WCAG 2.0", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-					<input class="" id="{0}[{1}][choice_accessibility_label]" name="{0}[{1}][choice_accessibility_label]" type="text" value="<?php echo esc_attr($values['choice_accessibility_label']); ?>"></label>
+					<input class="" data-field-template-id="{0}[{1}][choice_accessibility_label]" data-field-template-name="{0}[{1}][choice_accessibility_label]" type="text" value="<?php echo esc_attr($values['choice_accessibility_label']); ?>"></label>
 				</p>
 				<p class="sf_operator item-container">
 					<label for="{0}[{1}][operator]"><?php _e("Search Operator", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("AND - posts must have each option selected, OR - posts must have any of the options selected", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-						<select name="{0}[{1}][operator]" id="{0}[{1}][operator]">
+						<select data-field-template-name="{0}[{1}][operator]" data-field-template-id="{0}[{1}][operator]">
 							<option value="and"<?php $this->set_selected($values['operator'], "and"); ?>><?php _e("AND", $this->plugin_slug); ?></option>
 							<option value="or"<?php $this->set_selected($values['operator'], "or"); ?>><?php _e("OR", $this->plugin_slug); ?></option>
 						</select>
@@ -41,18 +44,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p class="item-container" style="">
 					
 					<span class="sf_make_combobox">
-						<input class="checkbox" type="checkbox" id="{0}[{1}][combo_box]" name="{0}[{1}][combo_box]"<?php $this->set_checked($values['combo_box']); ?>>
+						<input class="checkbox" type="checkbox" data-field-template-id="{0}[{1}][combo_box]" data-field-template-name="{0}[{1}][combo_box]"<?php $this->set_checked($values['combo_box']); ?>>
 						<label for="{0}[{1}][combo_box]"><?php _e("Make Combobox?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("Allow for text input to find values, with autocomplete and dropdown suggest", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label><br />
 					</span>
-					<input class="checkbox " type="checkbox" id="{0}[{1}][show_count]" name="{0}[{1}][show_count]"<?php $this->set_checked($values['show_count']); ?>>
+					<input class="checkbox " type="checkbox" data-field-template-id="{0}[{1}][show_count]" data-field-template-name="{0}[{1}][show_count]"<?php $this->set_checked($values['show_count']); ?>>
 					<label for="{0}[{1}][show_count]"><?php _e("Display count?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("display the number of posts for each option - only available if Auto Count is enabled", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label><br />
 
-					<input class="checkbox " type="checkbox" id="{0}[{1}][hide_empty]" name="{0}[{1}][hide_empty]"<?php $this->set_checked($values['hide_empty']); ?>>
+					<input class="checkbox " type="checkbox" data-field-template-id="{0}[{1}][hide_empty]" data-field-template-name="{0}[{1}][hide_empty]"<?php $this->set_checked($values['hide_empty']); ?>>
 					<label for="{0}[{1}][hide_empty]"><?php _e("Hide Empty?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("hide values with no results - only available if Auto Count is enabled", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 				</p>
                 <p class="item-container" style="padding-right:0;">
                     <span class="sf_combobox_message">
-                        <label for="{0}[{1}][no_results_message]"><?php _e("Combobox No Results message", $this->plugin_slug); ?><br /><input class="" id="{0}[{1}][no_results_message]" name="{0}[{1}][no_results_message]" type="text" value="<?php echo esc_attr($values['no_results_message']); ?>"></label>
+                        <label for="{0}[{1}][no_results_message]"><?php _e("Combobox No Results message", $this->plugin_slug); ?><br /><input class="" data-field-template-id="{0}[{1}][no_results_message]" data-field-template-name="{0}[{1}][no_results_message]" type="text" value="<?php echo esc_attr($values['no_results_message']); ?>"></label>
                     </span>
                 </p>
 				<div class="clear"></div>
@@ -65,18 +68,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<label for="{0}[{1}][choice_meta_key]">
 						
 						<?php
-							$all_meta_keys = $this->get_all_post_meta_keys();
-							echo '<select name="{0}[{1}][choice_meta_key]" class="meta_key choice_meta_key" id="{0}[{1}][choice_meta_key]">';
-							
-							foreach($all_meta_keys as $v){
-								//$data[] = $v->meta_key;
+							if($meta_key_text_input == 1 ) {
+								?>
+								<input type="text" placeholder="<?php echo esc_attr__( 'Enter a meta key', 'search-filter' ); ?>" style="width: 100%" class="meta_key choice_meta_key" data-field-template-name="{0}[{1}][choice_meta_key]" data-field-template-id="{0}[{1}][choice_meta_key]" value="<?php echo esc_attr($values['choice_meta_key']); ?>" />
+								<?php
+							} else {
+								$all_meta_keys = $this->get_all_post_meta_keys();
+								echo '<select data-field-template-name="{0}[{1}][choice_meta_key]" class="meta_key choice_meta_key" data-field-template-id="{0}[{1}][choice_meta_key]">';
 								
-								echo '<option value="'.$v.'"'.$this->set_selected($values['choice_meta_key'], $v, false).'>'.$v."</option>";
+								foreach($all_meta_keys as $v){
+									//$data[] = $v->meta_key;
+									
+									echo '<option value="'.$v.'"'.$this->set_selected($values['choice_meta_key'], $v, false).'>'.$v."</option>";
+								}
+								echo '</select>';
 							}
-							echo '</select>';
+							
 							
 						?>
-						<input type="hidden"  name="{0}[{1}][choice_meta_key]" id="{0}[{1}][choice_meta_key]" class="meta_key_hidden"  value="<?php echo esc_attr($values['choice_meta_key']); ?>" disabled="disabled" />
+						<input type="hidden" data-field-template-name="{0}[{1}][choice_meta_key_hidden]" data-field-template-id="{0}[{1}][choice_meta_key_hidden]" class="meta_key_hidden"  value="<?php echo esc_attr($values['choice_meta_key']); ?>" disabled="disabled" />
 					</label>
 				</p>
 				<br class="clear" />
@@ -89,7 +99,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				
 				<p class="item-container sf_choice_get_options">
 					<label for="{0}[{1}][choice_get_option_mode]"><?php _e("Get Options: ", $this->plugin_slug); ?><br />
-						<select name="{0}[{1}][choice_get_option_mode]" class="" id="{0}[{1}][choice_get_option_mode]">
+						<select data-field-template-name="{0}[{1}][choice_get_option_mode]" class="" data-field-template-id="{0}[{1}][choice_get_option_mode]">
 							<option value="auto"<?php $this->set_selected($values['choice_get_option_mode'], "auto"); ?>><?php _e("Automatically", $this->plugin_slug); ?></option>
 							<option value="manual"<?php $this->set_selected($values['choice_get_option_mode'], "manual"); ?>><?php _e("Manual Entry", $this->plugin_slug); ?></option>
 						</select>
@@ -97,26 +107,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 				<p class="item-container sf_choice_order_options" style="padding-right:0;">
 					<label for="{0}[{1}][choice_order_option_by]"><?php _e("Order Options by: ", $this->plugin_slug); ?><br />
-						<select name="{0}[{1}][choice_order_option_by]" class="sf_choice_order_option_by" id="{0}[{1}][choice_order_option_by]">
+						<select data-field-template-name="{0}[{1}][choice_order_option_by]" class="sf_choice_order_option_by" data-field-template-id="{0}[{1}][choice_order_option_by]">
 							<option value="value"<?php $this->set_selected($values['choice_order_option_by'], "value"); ?>><?php _e("Value", $this->plugin_slug); ?></option>
 							<option value="label"<?php $this->set_selected($values['choice_order_option_by'], "label"); ?>><?php _e("Label", $this->plugin_slug); ?></option>
 							<option value="none"<?php $this->set_selected($values['choice_order_option_by'], "none"); ?>><?php _e("None", $this->plugin_slug); ?></option>
 						</select>
 					</label>
 					
-						<select name="{0}[{1}][choice_order_option_dir]" class="sf_choice_order_option_dir" id="{0}[{1}][choice_order_option_dir]">
+						<select data-field-template-name="{0}[{1}][choice_order_option_dir]" class="sf_choice_order_option_dir" data-field-template-id="{0}[{1}][choice_order_option_dir]">
 							<option value="asc"<?php $this->set_selected($values['choice_order_option_dir'], "asc"); ?>><?php _e("ASC", $this->plugin_slug); ?></option>
 							<option value="desc"<?php $this->set_selected($values['choice_order_option_dir'], "desc"); ?>><?php _e("DESC", $this->plugin_slug); ?></option>
 						</select>
 						
-						<select name='{0}[{1}][choice_order_option_type]' class="sf_choice_order_option_type" id="{0}[{1}][choice_order_option_type]">
+						<select data-field-template-name='{0}[{1}][choice_order_option_type]' class="sf_choice_order_option_type" data-field-template-id="{0}[{1}][choice_order_option_type]">
                             <option value="numeric"<?php $this->set_selected($values['choice_order_option_type'], "numeric"); ?>><?php _e("Numerical", $this->plugin_slug); ?></option>
 							<option value="alphabetic"<?php $this->set_selected($values['choice_order_option_type'], "alphabetic"); ?>><?php _e("Alphabetical", $this->plugin_slug); ?></option>
 						</select>
 					
 				</p>
 				<p class="item-container choice_is_acf">
-					<input class="checkbox " type="checkbox" id="{0}[{1}][choice_is_acf]" name="{0}[{1}][choice_is_acf]"<?php $this->set_checked($values['choice_is_acf']); ?>>
+					<input class="checkbox " type="checkbox" data-field-template-id="{0}[{1}][choice_is_acf]" data-field-template-name="{0}[{1}][choice_is_acf]"<?php $this->set_checked($values['choice_is_acf']); ?>>
 					<label for="{0}[{1}][choice_is_acf]"><?php _e("Is ACF Field?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("if this is an 'Advanced Custom Fields' field enable here to sync labels & options with ACF directly", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 				</p>
 				<div class="clear"></div>

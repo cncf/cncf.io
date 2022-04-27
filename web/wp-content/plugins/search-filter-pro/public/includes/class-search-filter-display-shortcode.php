@@ -51,8 +51,6 @@ class Search_Filter_Display_Shortcode {
 
         //$current_query = $searchform->current_query()->get_array();
 
-        //var_dump($current_query);
-
         //give priority to user selections by setting them up after
 
         /*$categories = array();
@@ -328,11 +326,13 @@ class Search_Filter_Display_Shortcode {
             $base_form_id = (int)$id;
             if(Search_Filter_Helper::has_wpml())
             {
-                $base_form_id = Search_Filter_Helper::wpml_object_id($id, 'search-filter-widget', true, ICL_LANGUAGE_CODE);
+                $current_lang = Search_Filter_Helper::wpml_current_language();
+                if ( $current_lang ) {
+                    $base_form_id = Search_Filter_Helper::wpml_object_id($id, 'search-filter-widget', true, $current_lang);
+                }
             }
 
-
-
+            
             if(get_post_status($base_form_id)!="publish")
             {
                 return;
@@ -674,11 +674,10 @@ class Search_Filter_Display_Shortcode {
                         $lang_code = "";
 
                         if(Search_Filter_Helper::has_wpml()){
-
-                            $lang_code = ICL_LANGUAGE_CODE;
+                            $lang_code = Search_Filter_Helper::wpml_current_language();
                         }
                         else{
-	                        //$lang_code = strtolower(substr( get_bloginfo ( 'language' ), 0, 2 ));
+	                        $lang_code = strtolower( substr( get_bloginfo ( 'language' ), 0, 2 ) );
                         }
 
 
@@ -695,6 +694,17 @@ class Search_Filter_Display_Shortcode {
                             if($display_results_as=="shortcode") {
 
                                 $form_attributes['data-ajax-data-type'] = "json";
+                                $form_attributes['data-ajax-links-selector'] = ".pagination a";
+                            }
+                            else{
+	                            if( $ajax_links_selector != "" )
+	                            {
+		                            //$form_attr.=' data-ajax-links-selector="'.$ajax_links_selector.'"';
+		                            $form_attributes['data-ajax-links-selector'] = $ajax_links_selector;
+	                            }
+	                            else{
+		                            //$form_attributes['data-ajax-links-selector'] = '';
+	                            }
                             }
 
                             if(has_filter('sf_ajax_data_type')) {
@@ -738,20 +748,14 @@ class Search_Filter_Display_Shortcode {
                             }
 
 
-                            if($ajax_links_selector!="")
-                            {
-                                //$form_attr.=' data-ajax-links-selector="'.$ajax_links_selector.'"';
-                                $form_attributes['data-ajax-links-selector'] = $ajax_links_selector;
-                            }
+
 
                             if($update_ajax_url!="")
                             {
-                                //$form_attr.=' data-update-ajax-url="'.$update_ajax_url.'"';
                                 $form_attributes['data-update-ajax-url'] = $update_ajax_url;
                             }
                             if($only_results_ajax!="")
                             {
-                                //$form_attr.=' data-only-results-ajax="'.$only_results_ajax.'"';
                                 $form_attributes['data-only-results-ajax'] = $only_results_ajax;
                             }
 
@@ -760,14 +764,12 @@ class Search_Filter_Display_Shortcode {
 
                             if($scroll_to_pos!="")
                             {
-                                //$form_attr.=' data-scroll-to-pos="'.$scroll_to_pos.'"';
                                 $form_attributes['data-scroll-to-pos'] = $scroll_to_pos;
 
                                 if($scroll_to_pos=="custom")
                                 {
                                     if($custom_scroll_to!="")
                                     {
-                                        //$form_attr.=' data-custom-scroll-to="'.$custom_scroll_to.'"';
                                         $form_attributes['data-custom-scroll-to'] = $custom_scroll_to;
                                     }
                                 }
@@ -775,7 +777,6 @@ class Search_Filter_Display_Shortcode {
 
                             if($scroll_on_action!="")
                             {
-                                //$form_attr.=' data-scroll-on-action="'.$scroll_on_action.'"';
                                 $form_attributes['data-scroll-on-action'] = $scroll_on_action;
                             }
                         }
@@ -785,19 +786,15 @@ class Search_Filter_Display_Shortcode {
                         {
                             $init_paged = (int)$_GET['sf_paged'];
                         }
-                        //$form_attr.=' data-init-paged="'.$init_paged.'"';
-                        //$form_attr.=' data-auto-update="'.$ajax_auto_submit.'"';
                         $form_attributes['data-init-paged'] = $init_paged;
                         $form_attributes['data-auto-update'] = $ajax_auto_submit;
 
                         if($auto_count==1)
                         {
-                            //$form_attr.=' data-auto-count="'.esc_attr($auto_count).'"';
                             $form_attributes['data-auto-count'] = $auto_count;
 
                             if($auto_count_refresh_mode==1)
                             {
-                                //$form_attr.=' data-auto-count-refresh-mode="'.esc_attr($auto_count_refresh_mode).'"';
                                 $form_attributes['data-auto-count-refresh-mode'] = $auto_count_refresh_mode;
                             }
                         }
@@ -810,6 +807,11 @@ class Search_Filter_Display_Shortcode {
                         $form_attributes['autocomplete'] = "off";
                         $form_attributes['data-instance-count'] = $searchandfilter->get_form_count($base_form_id);
 
+                        $ajax_update_sections = apply_filters("search_filter_form_attributes_update_sections", [], $base_form_id);
+
+                        if ( ! empty( $ajax_update_sections ) ) {
+                            $form_attributes['data-ajax-update-sections'] = wp_json_encode( $ajax_update_sections );
+                        }
 
                         if(has_filter("search_filter_form_attributes"))
                         {

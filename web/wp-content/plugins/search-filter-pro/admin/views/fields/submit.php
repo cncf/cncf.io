@@ -22,15 +22,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="widget-content">
 		
 			<p class="item-container">
-				<label for="{0}[{1}][heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" id="{0}[{1}][heading]" name="{0}[{1}][heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
+				<label for="{0}[{1}][heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" data-field-template-id="{0}[{1}][heading]" data-field-template-name="{0}[{1}][heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
 			</p>
 			<p class="item-container">
-				<label for="{0}[{1}][label]"><?php _e("Submit label", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("Text that appears on the button", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br /><input class="" id="{0}[{1}][label]" name="{0}[{1}][label]" type="text" value="<?php echo esc_attr($values['label']); ?>"></label>
+				<label for="{0}[{1}][label]"><?php _e("Submit label", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("Text that appears on the button", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br /><input class="" data-field-template-id="{0}[{1}][label]" data-field-template-name="{0}[{1}][label]" type="text" value="<?php echo esc_attr($values['label']); ?>"></label>
 			</p>
 			<div class="clear"></div>
 		</div>
 		
-		<input type="hidden" name="{0}[{1}][type]" class="widget-id" id="hidden_type" value="<?php echo $values['type']; ?>">
+		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo $values['type']; ?>">
 		
 		<br class="clear" />
 		

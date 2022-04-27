@@ -93,8 +93,9 @@ class Search_Filter_Register_Widget extends WP_Widget
 							
 							if ( Search_Filter_Helper::has_wpml() )
 							{
-								if(defined("ICL_LANGUAGE_CODE")) {
-									$formid = Search_Filter_Helper::wpml_object_id( $formid, 'search-filter-widget', true, ICL_LANGUAGE_CODE );
+								$current_lang = Search_Filter_Helper::wpml_current_language();
+								if ( $current_lang ) {
+									$formid = Search_Filter_Helper::wpml_object_id( $formid, 'search-filter-widget', true, $current_lang );
 								}
 							}
 

@@ -111,7 +111,7 @@ class Search_Filter_Wp_Data
     }
 
 
-    public static function get_taxonomy_term_by($by = "id", $term_name, $taxonomy_name)
+    public static function get_taxonomy_term_by($by, $term_name, $taxonomy_name)
     {
         self::setup($taxonomy_name);
 

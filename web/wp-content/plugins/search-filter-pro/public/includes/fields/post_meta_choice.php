@@ -53,6 +53,12 @@ class Search_Filter_Field_Post_Meta_Choice {
 			if($args['combo_box']==1)
 			{
 				$attributes['data-combobox'] = '1';
+
+				if (isset( $args['no_results_message'] ) ) {
+					if(!empty($args['no_results_message'])){
+						$attributes['data-combobox-nrm'] = $args['no_results_message'];
+					}
+				}
 			}
 			
 			$args['show_default_option_sf'] = true;
@@ -320,11 +326,17 @@ class Search_Filter_Field_Post_Meta_Choice {
 			$post_types = array_keys($post_types_arr);
 		}
 
+		$post_stati_arr = $searchform->settings("post_status");
+		$post_stati = array();
+		if(is_array($post_stati_arr)){
+			$post_stati = array_keys($post_stati_arr);
+		}
+
 		$args = array(
 			'post_type' => $post_types,
 			'fields' => 'ids',
 			'posts_per_page' => 1,
-			'post_status'=>'publish',
+			'post_status'=> $post_stati,
 			'meta_query' => array(
 				array(
 					'key' => $meta_key,
@@ -346,12 +358,12 @@ class Search_Filter_Field_Post_Meta_Choice {
 
 		return $post_id;
 	}
-
+	
 	private function get_acf_options($args)
 	{
 		$options = array();
 		
-		if(!function_exists('get_field_object'))
+		if( ! function_exists( 'get_field_object' ) )
 		{
 			return $options;
 		}
@@ -364,29 +376,51 @@ class Search_Filter_Field_Post_Meta_Choice {
 		$hide_empty = $args['hide_empty'];
 
 		//$post_id = $this->find_post_id_with_field($name); //acf needs to have at least 1 post id with the post meta attached in order to lookup the rest of the field
-		$post_id = $this->find_post_id_with_field_2($args['meta_key']); //acf needs to have at least 1 post id with the post meta attached in order to lookup the rest of the field
-		$field = get_field_object($args['meta_key'], $post_id);
+		//do_action( 'wpml_switch_language', 'nl' );
+		//do_action( 'wpml_switch_language', 'nl' );
+		$post_id = $this->find_post_id_with_field_2( $args['meta_key'] ); //acf needs to have at least 1 post id with the post meta attached in order to lookup the rest of the field
+		$field = get_field_object( $args['meta_key'], $post_id );
+		
+		// @this is a temporary hook for fixing ACF fields + WPML issues - it will be removed
+		// this part gets the translated version of the field / options
+		$field = apply_filters('sf_input_object_acf_field', $field, $args['meta_key'], $this->sfid );
+		
 
+		if ( ! $field ) {
+			return $options;
+		}
+		if ( ! is_array( $field ) ) {
+			return $options;
+		}
 		$options_array = array();
+		global $searchandfilter;
 		
 		if(!isset($field['choices']))
 		{
 			if(($field['type']=="post_object")||($field['type']=="page_link")||($field['type']=="relationship"))
 			{
 				$cached_options = $this->get_options_from_cache($args);
-
+				
 				foreach($cached_options as $sf_option)
 				{
-					$sf_option->label = get_the_title($sf_option->value);
+					$post_id = absint( $sf_option->value );
+					$sf_option->label = get_the_title($post_id);
+
+					/* if ( Search_Filter_Helper::has_wpml() ) {
+						$post_type = get_post_type( $post_id );
+						$current_lang = Search_Filter_Helper::wpml_current_language();
+						$translated_post_id = Search_Filter_Helper::wpml_object_id( $post_id, $post_type, false, $current_lang );
+						$sf_option->label = get_the_title($translated_post_id);
+					} */
 					
-					$option = $this->create_option($name, $sf_option->value, $sf_option->label, $hide_empty, $show_count, $show_count_format_sf);
+					
+					$option = $this->create_option($name, $post_id, $sf_option->label, $hide_empty, $show_count, $show_count_format_sf);
 			
 					if($option)
 					{
 						array_push($options, $option);
 					}
 				}
-				
 				//$field['return_format']==strtolower("object")
 				
 			}

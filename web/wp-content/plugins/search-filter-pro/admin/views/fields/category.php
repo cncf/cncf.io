@@ -61,29 +61,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<fieldset class="item-container">
 					<br />
 					<p>
-						<input class="checkbox" type="checkbox" id="{0}[{1}][show_count]" name="{0}[{1}][show_count]"<?php $this->set_checked($values['show_count']); ?>>
+						<input class="checkbox" type="checkbox" data-field-template-id="{0}[{1}][show_count]" data-field-template-name="{0}[{1}][show_count]"<?php $this->set_checked($values['show_count']); ?>>
 						<label for="{0}[{1}][show_count]"><?php _e("Display count?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("display the number of posts in each category", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 					</p>
 					<p>
-						<input class="checkbox" type="checkbox" id="{0}[{1}][hide_empty]" name="{0}[{1}][hide_empty]"<?php $this->set_checked($values['hide_empty']); ?>>
+						<input class="checkbox" type="checkbox" data-field-template-id="{0}[{1}][hide_empty]" data-field-template-name="{0}[{1}][hide_empty]"<?php $this->set_checked($values['hide_empty']); ?>>
 						<label for="{0}[{1}][hide_empty]"><?php _e("Hide empty terms?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("hide categories with no posts/items", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 					</p>
 					<p>
-						<input class="checkbox" type="checkbox" id="{0}[{1}][hierarchical]" name="{0}[{1}][hierarchical]"<?php $this->set_checked($values['hierarchical']); ?>>
+						<input class="checkbox" type="checkbox" data-field-template-id="{0}[{1}][hierarchical]" data-field-template-name="{0}[{1}][hierarchical]"<?php $this->set_checked($values['hierarchical']); ?>>
 						<label for="{0}[{1}][hierarchical]"><?php _e("Hierarchical?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("show child categories underneath their parents", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 					</p>
 					<p class="sf_include_children">
-						<input class="checkbox" type="checkbox" id="{0}[{1}][include_children]" name="{0}[{1}][include_children]"<?php $this->set_checked($values['include_children']); ?>>
+						<input class="checkbox" type="checkbox" data-field-template-id="{0}[{1}][include_children]" data-field-template-name="{0}[{1}][include_children]"<?php $this->set_checked($values['include_children']); ?>>
 						<label for="{0}[{1}][include_children]"><?php _e("Include Children in Parents?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("results in child categories will also be returned when a user searches its parent", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 					</p>
                     <p class="sf_make_combobox" style="vertical-align: top;">
-                        <input class="checkbox" type="checkbox" id="{0}[{1}][combo_box]" name="{0}[{1}][combo_box]"<?php $this->set_checked($values['combo_box']); ?> style="vertical-align: top;margin-top:2px;">
+                        <input class="checkbox" type="checkbox" data-field-template-id="{0}[{1}][combo_box]" data-field-template-name="{0}[{1}][combo_box]"<?php $this->set_checked($values['combo_box']); ?> style="vertical-align: top;margin-top:2px;">
                         <label for="{0}[{1}][combo_box]" style="display:inline-block;">
 							<?php _e("Make Combobox?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("Allow for text input to find values, with autocomplete and dropdown suggest", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
                             <br />
                             <span class="sf_combobox_message" style="padding-top:10px; display:inline-block;">
 
-                                <input class="" id="{0}[{1}][no_results_message]" name="{0}[{1}][no_results_message]" type="text" value="<?php echo esc_attr($values['no_results_message']); ?>">
+                                <input class="" data-field-template-id="{0}[{1}][no_results_message]" data-field-template-name="{0}[{1}][no_results_message]" type="text" value="<?php echo esc_attr($values['no_results_message']); ?>">
                                 <br /><em><?php _e("No Matches message", $this->plugin_slug); ?></em>
                                 <span class="hint--top hint--info" data-hint="<?php _e("This message is usually displayed when there are no matches in the list - leave blank for default", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
 
@@ -103,7 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					<p class="item-container">
 						<label for="{0}[{1}][order_by]"><?php _e("Order terms by: ", $this->plugin_slug); ?><br />
-							<select name="{0}[{1}][order_by]" id="{0}[{1}][order_by]">
+							<select data-field-template-name="{0}[{1}][order_by]" data-field-template-id="{0}[{1}][order_by]">
 								<option value="default"<?php $this->set_selected($values['order_by'], "default"); ?>><?php _e("Default", $this->plugin_slug); ?></option>
 								<option value="id"<?php $this->set_selected($values['order_by'], "id"); ?>><?php _e("ID", $this->plugin_slug); ?></option>
 								<option value="name"<?php $this->set_selected($values['order_by'], "name"); ?>><?php _e("Name", $this->plugin_slug); ?></option>
@@ -112,7 +112,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<option value="term_group"<?php $this->set_selected($values['order_by'], "term_group"); ?>><?php _e("Term Group", $this->plugin_slug); ?></option>
 							</select>
 							
-							<select name="{0}[{1}][order_dir]" id="{0}[{1}][order_dir]">
+							<select data-field-template-name="{0}[{1}][order_dir]" data-field-template-id="{0}[{1}][order_dir]">
 								<option value="asc"<?php $this->set_selected($values['order_dir'], "asc"); ?>><?php _e("ASC", $this->plugin_slug); ?></option>
 								<option value="desc"<?php $this->set_selected($values['order_dir'], "desc"); ?>><?php _e("DESC", $this->plugin_slug); ?></option>
 							</select>
@@ -123,16 +123,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<p class="item-container">
 						
 						<label for="{0}[{1}][exclude_ids]"><?php _e("Exclude IDs", $this->plugin_slug); ?>
-							<span class="hint--top hint--info" data-hint="<?php _e("comma seperated list of category IDs to exclude", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="exclude_ids settings_exclude_ids" id="{0}[{1}][exclude_ids]" name="{0}[{1}][exclude_ids]" type="text" value="<?php echo esc_attr($values['exclude_ids']); ?>">
-							<input class="exclude_ids_hidden" id="{0}[{1}][exclude_ids_hidden]" name="{0}[{1}][exclude_ids]" type="hidden" value="<?php echo esc_attr($values['exclude_ids']); ?>" disabled="disabled">
+							<span class="hint--top hint--info" data-hint="<?php _e("comma separated list of category IDs to exclude", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
+							<input class="exclude_ids settings_exclude_ids" data-field-template-id="{0}[{1}][exclude_ids]" data-field-template-name="{0}[{1}][exclude_ids]" type="text" value="<?php echo esc_attr($values['exclude_ids']); ?>">
+							<input class="exclude_ids_hidden" data-field-template-id="{0}[{1}][exclude_ids_hidden]" data-field-template-name="{0}[{1}][exclude_ids]" type="hidden" value="<?php echo esc_attr($values['exclude_ids']); ?>" disabled="disabled">
 						</label>
 						<?php
 							$tax_obj = get_taxonomy('category');
 						?>
 						<a href="#" class="dashicons-search search-tax-button button-secondary sfmodal" data-taxonomy-name="<?php echo esc_attr($tax_obj->name); ?>" data-taxonomy-label="<?php echo esc_attr($tax_obj->label); ?>"></a>
 						<br />
-						<input class="checkbox sync_include_exclude" type="checkbox" id="{0}[{1}][sync_include_exclude]" name="{0}[{1}][sync_include_exclude]"<?php $this->set_checked($values['sync_include_exclude']); ?>>
+						<input class="checkbox sync_include_exclude" type="checkbox" data-field-template-id="{0}[{1}][sync_include_exclude]" data-field-template-name="{0}[{1}][sync_include_exclude]"<?php $this->set_checked($values['sync_include_exclude']); ?>>
 						<label for="{0}[{1}][sync_include_exclude]"><?php _e("Sync with Settings?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("This will show / hide categories for this field based upon the settings from the &quot;Settings &amp; Defaults&quot;", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 						
 					</p>
@@ -144,7 +144,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 			<br class="clear" />
 			
-			<input type="hidden" name="{0}[{1}][type]" class="widget-id" id="hidden_type" value="category">
+			<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="category">
 			
 
 			<div class="widget-control-actions">

@@ -34,7 +34,7 @@
 		var meta_prefs_action_name = "meta_prefs_set";
 
 		// Place your administration-specific JavaScript here
-		var $metabox_prefs = $('#screen-meta #screen-options-wrap .metabox-prefs');
+		var $metabox_prefs = $('#screen-meta #screen-options-wrap .metabox-prefs.view-mode');
 		var $screen_options_link = $('#screen-options-link-wrap');
 		var $screen_options_wrap = $('#screen-options-wrap');
 		
@@ -54,14 +54,14 @@
 			
 			if(!$(hide_element).hasClass("hidden"))
 			{
-				$this.attr("checked", "checked");
+				$this.prop("checked", true);
 			}
 		
 		});
 		
 		//
 		$metabox_prefs.find('.handle-custom-prefs input[type="checkbox"]').off("change"); //remove existing handlers
-		$metabox_prefs.find('.handle-custom-prefs input[type="checkbox"]').change(function()
+		$metabox_prefs.find('.handle-custom-prefs input[type="checkbox"]').on( 'change', function()
 		{
 			var hide_element = $(this).attr('data-target');
 			var show_option_value = 0;
@@ -87,7 +87,7 @@
 			
 		});
 		
-		$(".handle-dismiss-button").click(function()
+		$(".handle-dismiss-button").on( 'click', function()
 		{
 			var hide_element = $(this).attr('data-target');
 			var show_option_value = 0;
@@ -96,7 +96,7 @@
 			$(hide_element).addClass("hidden");
 			
 			//uncheck checkbox
-			$metabox_prefs.find('.handle-custom-prefs input[type="checkbox"][data-target="'+hide_element+'"]').removeAttr("checked");
+			$metabox_prefs.find('.handle-custom-prefs input[type="checkbox"][data-target="'+hide_element+'"]').prop("checked", false);
 			
 			//add user feedback that the element has been hidden and can be shown again by adding flicker effect to the screen options button 
 			//$screen_options_link.css('background-color', '#f00');

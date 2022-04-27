@@ -57,7 +57,7 @@
 					}
 				}
 				
-				item.click(function()
+				item.on( 'click', function()
 				{
 					//add overlay
 					var $overlay = jQuery('<div/>', {
@@ -107,7 +107,7 @@
 					$popup.append($popup_footer);
 					
 					var $close_button = $popup_header.find(".sf-close-ajax-window");
-					$close_button.click(function()
+					$close_button.on( 'click', function()
 					{
 						$('.sf-thickbox-overlay').remove();
 						$popup.remove();
@@ -115,7 +115,7 @@
 					});
 					
 					var $select_none_button = $popup_footer.find(".sf-meta-select-none");
-					$select_none_button.click(function()
+					$select_none_button.on( 'click', function()
 					{
 						$popup_content.find('.sf-thickbox-content input[type="checkbox"]').each(function(){
 						
@@ -127,7 +127,7 @@
 					});
 					
 					var $select_all_button = $popup_footer.find(".sf-meta-select-all");
-					$select_all_button.click(function()
+					$select_all_button.on( 'click', function()
 					{
 						$popup_content.find('.sf-thickbox-content input[type="checkbox"]').each(function(){
 						
@@ -139,7 +139,7 @@
 					});
 					
 					var $add_options_button = $popup_footer.find(".sf-meta-add-options");
-					$add_options_button.click(function()
+					$add_options_button.on( 'click', function()
 					{
 						var $no_sort_label = $widget_ref.find(".no_sort_label");
 						var $replace_options_checkbox = $popup_footer.find('.replace-options-checkbox');
@@ -238,7 +238,7 @@
 				{
 					item.attr("data-init-popup", 1);
 										
-					item.click(function()
+					item.on( 'click', function()
 					{
 						if(!item.hasClass("disabled"))
 						{
@@ -293,7 +293,7 @@
 							$popup.append($popup_footer);
 							
 							var $close_button = $popup_header.find(".sf-close-ajax-window");
-							$close_button.click(function()
+							$close_button.on( 'click', function()
 							{
 								$('.sf-thickbox-overlay').remove();
 								$popup.remove();
@@ -301,7 +301,7 @@
 							});
 							
 							var $select_none_button = $popup_footer.find(".sf-meta-select-none");
-							$select_none_button.click(function()
+							$select_none_button.on( 'click', function()
 							{
 								$popup_content.find('.sf-thickbox-content input[type="checkbox"]').each(function(){
 								
@@ -313,7 +313,7 @@
 							});
 							
 							var $select_all_button = $popup_footer.find(".sf-meta-select-all");
-							$select_all_button.click(function()
+							$select_all_button.on( 'click', function()
 							{
 								$popup_content.find('.sf-thickbox-content input[type="checkbox"]').each(function(){
 								
@@ -326,7 +326,7 @@
 							
 							var $update_button = $popup_footer.find(".sf-update-button");
 							
-							$update_button.click(function()
+							$update_button.on( 'click', function()
 							{
 								var $replace_options_checkbox = $popup_footer.find('.replace-options-checkbox');
 								var $checked_options = $popup_content.find('.sf-thickbox-content input[type="checkbox"]:checked');
@@ -410,7 +410,7 @@
 				}
 				var container = item.parent();
 			
-				item.find('.widget-top').click(function(e){
+				item.find('.widget-top').on( 'click', function(e){
 					
 					e.stopPropagation();
 					e.preventDefault();
@@ -447,7 +447,7 @@
 					return false;
 				});
 				
-				item.find('.widget-control-remove').click(function(e){				
+				item.find('.widget-control-remove').on( 'click', function(e){				
 					
 					item.slideUp("fast", function(){
 						
@@ -462,7 +462,7 @@
 					return false;
 				});
 				
-				item.find('.widget-control-advanced').click(function(e){
+				item.find('.widget-control-advanced').on( 'click', function(e){
 				
 					$(this).parent().find(".advanced-settings").slideToggle("fast");
 					$(this).toggleClass("active");
@@ -470,7 +470,7 @@
 					return false;
 				});
 				
-				item.find('.widget-control-close').click(function(e){
+				item.find('.widget-control-close').on( 'click', function(e){
 				
 					itemInside.slideUp("fast");
 					
@@ -489,7 +489,7 @@
 					showHideFields($input_type_field.val());
 					
 					//grab the input type
-					$input_type_field.change(function(e)
+					$input_type_field.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFields(input_type);
@@ -499,7 +499,7 @@
 					var $combobox_container = item.find(".sf_make_combobox");
 					var $combobox = item.find(".sf_make_combobox input:checkbox");
 
-					$combobox.change(function()
+					$combobox.on( 'change', function()
 					{
 						var tinput_type = item.find('.sf_input_type select').val();
 						
@@ -599,7 +599,7 @@
 					
 					var $combobox = item.find(".sf_make_combobox input:checkbox");
 					
-					$combobox.change(function()
+					$combobox.on( 'change', function()
 					{
                         var tinput_type = item.find('.sf_input_type select').val();
 
@@ -629,7 +629,7 @@
 					
 					
 					//grab the input type
-					$input_type_field.change(function(e)
+					$input_type_field.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFieldsAuthor(input_type);						
@@ -666,7 +666,7 @@
 					// start off by showing/hiding correct fields
 					showHideFields($input_type_field.val());
 					
-					$input_type_field.change(function(e)
+					$input_type_field.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFields(input_type);
@@ -674,7 +674,7 @@
 					
 					
 					//grab the input type
-					$meta_key_manual_toggle.change(function(e)
+					$meta_key_manual_toggle.on( 'change', function(e)
 					{
 						setPostMetaManualFields();
 					});
@@ -692,11 +692,11 @@
 						setPostMetaUseSameFields($(this));
 					});
 					
-					$use_same_toggle.change(function(e)
+					$use_same_toggle.on( 'change', function(e)
 					{
 						setPostMetaUseSameFields($(this));
 					});
-					$start_meta_key.change(function(e)
+					$start_meta_key.on( 'change', function(e)
 					{
 						setPostMetaStartKey($(this));
 					});
@@ -737,7 +737,7 @@
 					var $number_input_type_field = item.find('.sf_number_input_type select');
 					
 					showHideFieldsMetaNumber($number_input_type_field.val());
-					$number_input_type_field.change(function(e)
+					$number_input_type_field.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFieldsMetaNumber(input_type);
@@ -745,7 +745,7 @@
 					
 					var $sf_display_input_as = item.find('.sf_display_input_as select');
 					showHideFieldsMetaNumberDisplayInputAs($sf_display_input_as.val());
-					$sf_display_input_as.change(function(e)
+					$sf_display_input_as.on( 'change', function(e)
 					{
 						var display_input_as = $(this).val();
 						showHideFieldsMetaNumberDisplayInputAs(display_input_as);
@@ -756,9 +756,10 @@
 					var $input_type_field = item.find('.sf_input_type select');
 					
 					// start off by showing/hiding correct fields
+					
 					showHideFields($input_type_field.val());
 					
-					$input_type_field.change(function(e)
+					$input_type_field.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFields(input_type);
@@ -766,40 +767,65 @@
 					
 					var $input_type_field = item.find('.sf_input_type select');
 					
-					// start off by showing/hiding correct fields
-					showHideFields($input_type_field.val());
-					
-					$input_type_field.change(function(e)
-					{
-						var input_type = $(this).val();
-						showHideFields(input_type);
-					});
 					
 					var $choice_get_options_field = item.find('.sf_choice_get_options select');
 					var $choice_order_options_by_field = item.find('.sf_choice_order_options select.sf_choice_order_option_by');
 
 					// start off by showing/hiding correct fields
 					showHideFieldsMetaChoiceOptions($choice_get_options_field.val());
-					$choice_get_options_field.change(function(e)
+					$choice_get_options_field.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFieldsMetaChoiceOptions(input_type);
 					});
 					// start off by showing/hiding correct fields
 					showHideFieldsMetaChoiceOrderBy($choice_order_options_by_field.val());
-					$choice_order_options_by_field.change(function(e)
+					$choice_order_options_by_field.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFieldsMetaChoiceOrderBy(input_type);
 					});
 
+
+					var $combobox = item.find(".sf_make_combobox input:checkbox");
+
+					$combobox.on( 'change', function()
+					{
+						var tinput_type = item.find('.sf_input_type select').val();
+						
+						if(tinput_type=="multiselect")
+						{
+							if($(this).prop("checked"))
+							{
+								item.find(".sf_all_items_label").show();
+							}
+							else
+							{
+								item.find(".sf_all_items_label").hide();
+							}
+						}
+
+						if((tinput_type=="multiselect")||(tinput_type=="select")){
+							if($(this).prop("checked")){
+								item.find(".sf_combobox_message input").prop("disabled", false);
+								item.find(".sf_combobox_message").css("opacity", 1);
+							}
+							else {
+                                item.find(".sf_combobox_message input").prop("disabled", true);
+                                item.find(".sf_combobox_message").css("opacity", 0.7);
+							}
+						}
+
+
+					});
+					
 					/* date */
 					var $date_input_type = item.find('.sf_date_input select');
 					
 					// start off by showing/hiding correct fields
 					showHideFields($date_input_type.val());
 					
-					$date_input_type.change(function(e)
+					$date_input_type.on( 'change', function(e)
 					{
 						var input_type = $(this).val();
 						showHideFields(input_type);
@@ -810,7 +836,7 @@
 					
 					var $combobox = item.find(".sf_make_combobox input:checkbox");
 					
-					$combobox.change(function()
+					$combobox.on( 'change', function()
 					{
 						var tinput_type = $(this).parent().parent().find('.sf_input_type select').val();
 						
@@ -882,7 +908,7 @@
 						}
 					});
 					
-					$clear_option_button.click(function(){
+					$clear_option_button.on( 'click', function(){
 					
 						
 						var $sort_options = $sort_options_list.find("li:not(.sort-option-template)");
@@ -905,7 +931,7 @@
 					
 					});
 					
-					$add_sort_button.click(function(){
+					$add_sort_button.on( 'click', function(){
 					
 						
 						var $meta_key_manual_toggle  = item.find(".meta_key_manual_toggle");
@@ -991,7 +1017,7 @@
 					
 					metaTypeChange($checked_radio);
 					
-					$meta_type_radio.change(function()
+					$meta_type_radio.on( 'change', function()
 					{
 						$meta_type_radio.attr("data-radio-checked", 0);
 						$(this).attr("data-radio-checked", 1);
@@ -1053,7 +1079,7 @@
 						
 					});
 					
-					$add_option_button.click(function(){
+					$add_option_button.on( 'click', function(){
 					
 						
 						var $meta_key_manual_toggle  = item.find(".meta_key_manual_toggle");
@@ -1083,7 +1109,7 @@
 					
 					$detect_option_button.SfPopupMeta();
 					
-					$clear_option_button.click(function(){
+					$clear_option_button.on( 'click', function(){
 					
 						
 						var $meta_options = $meta_options_list.find("li:not(.meta-option-template)");
@@ -1183,7 +1209,7 @@
 						$sort_option.find('.sort-options-advanced').hide();
 					}
 					
-					$sort_by_option.change(function()
+					$sort_by_option.on( 'change', function()
 					{
 						if($(this).val()=="meta_value")
 						{
@@ -1195,7 +1221,7 @@
 						}
 					});
 					
-					$sort_option.find(".widget-control-option-remove").click(function(){
+					$sort_option.find(".widget-control-option-remove").on( 'click', function(){
 								
 						$sort_option.slideUp("fast",function(){
 							$sort_option.remove();
@@ -1210,7 +1236,7 @@
 						
 					});
 					
-					/*$advanced_button.click(function(){
+					/*$advanced_button.on( 'click', function(){
 						
 						$(this).toggleClass("active");
 						$sort_option.find('.sort-options-advanced').slideToggle("fast");
@@ -1426,7 +1452,7 @@
 
                         if(item.find(".sf_make_combobox input").prop("checked")) {
                             item.find(".sf_combobox_message input").prop("disabled", false);
-                            item.find(".sf_combobox_message").css("opacity", 1);
+							item.find(".sf_combobox_message").css("opacity", 1);
                         }
                         else{
                             item.find(".sf_combobox_message input").prop("disabled", true);
@@ -1625,7 +1651,7 @@
 							
 							metaTypeChange($checked_radio);
 							
-							$meta_type_radio.change(function()
+							$meta_type_radio.on( 'change', function()
 							{
 								$meta_type_radio.attr("data-radio-checked", 0);
 								$(this).attr("data-radio-checked", 1);
@@ -1687,7 +1713,7 @@
 					
 				});
 				
-				container.click(function()
+				container.on( 'click', function()
 				{//prevent animation when the container is closed - no need to animate the helper to an invisible DIV.....
 					/*if(container.hasClass("closed"))
 					{
@@ -1829,8 +1855,13 @@
 				}
 				
 				//rename
-				$(this).attr("id",$(this).attr("data-field-template-id").parse("widget-field", widgetId));
-				$(this).attr("name",$(this).attr("data-field-template-name").parse("widget-field", widgetId));
+				if ( $(this).attr("data-field-template-id") ) {
+					$(this).attr("id",$(this).attr("data-field-template-id").parse("widget-field", widgetId));
+				}
+				if ( $(this).attr("data-field-template-name") ) {
+					$(this).attr("name",$(this).attr("data-field-template-name").parse("widget-field", widgetId));
+				}
+				
 				
 			});
 			
@@ -1865,9 +1896,12 @@
 				}
 				
 				//rename
-				$(this).attr("id",$(this).attr("data-field-template-id").parse("widget-field", widgetId, optionId));
-				$(this).attr("name",$(this).attr("data-field-template-name").parse("widget-field", widgetId, optionId));
-				
+				if ( $(this).attr("data-field-template-id") ) {
+					$(this).attr("id",$(this).attr("data-field-template-id").parse("widget-field", widgetId, optionId));
+				}
+				if ( $(this).attr("data-field-template-name") ) {
+					$(this).attr("name",$(this).attr("data-field-template-name").parse("widget-field", widgetId, optionId));
+				}				
 			});
 			
 			$inputLabels.each(function()
@@ -1885,7 +1919,7 @@
 		
 		function initMetaOptionControls($meta_option, $meta_options_list, $no_sort_label)
 		{
-			$meta_option.find(".widget-control-option-remove").click(function(){
+			$meta_option.find(".widget-control-option-remove").on( 'click', function(){
 						
 				$meta_option.slideUp("fast",function(){
 					$meta_option.remove();
@@ -1900,7 +1934,7 @@
 				
 			});
 			
-			$meta_option.find(".widget-control-option-advanced").click(function(){
+			$meta_option.find(".widget-control-option-advanced").on( 'click', function(){
 				
 				$(this).toggleClass("active");
 				$meta_option.find('.meta-options-advanced').slideToggle("fast");
@@ -1974,6 +2008,13 @@
 				var $self = $this;
 				var val = $self.find('option[value="'+$self.val()+'"]').attr("data-sf-base");
 				var real_display_method = $active_results_display.val();
+
+				if ( ( real_display_method !== 'custom_dce_posts' ) && ( real_display_method !== 'custom_dce_google_maps' )  && ( real_display_method !== 'custom_dce_google_maps_posts' ) ) {
+					$template_pagination_table.show();
+					
+				} else {
+					$template_pagination_table.hide();
+				}
                 var $labels = $self.parent().parent().parent().find("label");
 				$labels.removeClass("active");
 				$self.parent().addClass("active");
@@ -2111,12 +2152,10 @@
 
                 if(built_in_display_methods.indexOf(real_display_method) == -1)
                 {//then its another display method, a third party integration, which means we set ajax selectors
-					console.log("hide selectors");
                     $template_ajax_table.addClass("template_hide_ajax_selectors");
                     $template_pagination_table.addClass("template_hide_ajax_selectors");
                 }
                 else{
-                    console.log("show selectors");
                     $template_ajax_table.removeClass("template_hide_ajax_selectors");
                     $template_pagination_table.removeClass("template_hide_ajax_selectors");
 
@@ -2162,7 +2201,7 @@
 			/* sort by */
 			var $default_sort_by = $('.setup .default_sort_by');
 			var $sort_by_meta_container_default = $('.setup .sort_by_meta_container_default');
-			$default_sort_by.change(function(e)
+			$default_sort_by.on( 'change', function(e)
 			{
 				handleDefaultSortBy($(this), $sort_by_meta_container_default);
 			});
@@ -2172,7 +2211,7 @@
 			
 			var $secondary_sort_by = $('.setup .secondary_sort_by');
 			var $sort_by_meta_container_secondary = $('.setup .sort_by_meta_container_secondary');
-			$secondary_sort_by.change(function(e)
+			$secondary_sort_by.on( 'change', function(e)
 			{
 				handleDefaultSortBy($(this), $sort_by_meta_container_secondary);
 			});
@@ -2312,12 +2351,12 @@
 			}
 			
 			$input.after($inputClone);
-			$input.attr("disabled","disabled");
+			$input.prop("disabled",true);
 		}
 		
 		function enableInput($input)
 		{
-			$input.removeAttr("disabled");
+			$input.prop("disabled", false);
 			
 			var $inputClone = $input.parent().find(".clone");
 			
@@ -2371,30 +2410,7 @@
 		
 		initSetupField();
 		
-		
-		//load tooltips
-		$('body').on( 'mouseover', '[data-hint]', function() {
-			
-			$(this).qtip({
-				overwrite: false, // Make sure another tooltip can't overwrite this one without it being explicitly destroyed
-				content: {
-					attr: 'data-hint' // Tell qTip2 to look inside this attr for its content
-				},
-				style: { classes: 'sf-tootlip' },
-				position: {
-					my: 'bottom left',
-					at: 'top center',
-					viewport: $(window),
-					adjust: {
-						method: 'shift none'
-					}
-				},
-				show: {
-				ready: true // Needed to make it show on first mouseover event
-				}
-			});
-		});
-		
+				
 		
 		function setMetaSettingsFields($list)
 		{
@@ -2423,10 +2439,12 @@
 						}
 						
 						//rename
-						$(this).attr("id",$(this).attr("data-field-template-id").parse(itemId));
-						$(this).attr("name",$(this).attr("data-field-template-name").parse(itemId));
-						
-						
+						if ( $(this).attr("data-field-template-id") ) {
+							$(this).attr("id",$(this).attr("data-field-template-id").parse(itemId));
+						}
+						if ( $(this).attr("data-field-template-name") ) {
+							$(this).attr("name",$(this).attr("data-field-template-name").parse(itemId));
+						}
 					});
 					
 					$inputLabels.each(function()
@@ -2473,7 +2491,7 @@
 			});
 			
 			
-			$settings_tab_radio.change(function()
+			$settings_tab_radio.on( 'change', function()
 			{
 				$settings_tab_radio.attr("data-radio-checked", 0);
 				$(this).attr("data-radio-checked", 1);
@@ -2486,7 +2504,7 @@
 			var $meta_list_template = $meta_list.find(".template");
 			var $add_condition_button = $("#search-filter-settings-box .sf_tab_content_post_meta .add-option-button");
 			
-			$meta_list.find(".option-remove").click(removeMetaOption);
+			$meta_list.find(".option-remove").on( 'click', removeMetaOption);
 			
 			$meta_list.find(".meta_date_value_current_date").each(function(){
 				metaSettingsCurrentDateChange($(this));
@@ -2511,7 +2529,7 @@
 			
 			setMetaSettingsFields($("#search-filter-settings-box .sf_tab_content_post_meta ul.meta_list li:not(.template)"));
 			
-			$add_condition_button.click(function(){
+			$add_condition_button.on( 'click', function(){
 			
 				
 				var $meta_option = $meta_list_template.clone();
@@ -2520,7 +2538,7 @@
 				
 				$meta_list.append($meta_option);
 				
-				$meta_option.find(".option-remove").click(removeMetaOption);
+				$meta_option.find(".option-remove").on( 'click', removeMetaOption);
 				
 				$meta_option.find(".meta_type").on("change", function(){
 					metaSettingsFieldTypeChange($(this));

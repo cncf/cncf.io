@@ -21,12 +21,12 @@ class Search_Filter_Helper {
 	public static $log_time_running = array();
 	public static $has_wpml_checked = false;
 	public static $has_wpml = false;
+	public static $extensions = array();
 
 	public function __construct()
 	{
 
 	}
-
 	public static function start_log($name = "")
     {
         self::$log_time_start[$name] = microtime(true);
@@ -81,7 +81,6 @@ class Search_Filter_Helper {
     }
     public static function print_log($name = "", $running = false, $important = false)
     {
-        //echo "<br /><br />********************************<br />
         if($important)
         {
             echo "<strong>";
@@ -144,6 +143,18 @@ class Search_Filter_Helper {
 
         return self::$has_wpml;
 	}
+	
+	public static function wpml_current_language()
+	{
+		if(!self::has_wpml())
+        {
+           return false;
+		}
+		
+		$current_language_code = apply_filters( 'wpml_current_language', null );
+
+        return $current_language_code;
+	}
 	public static function has_polylang()
 	{
 		//global $polylang;
@@ -165,6 +176,22 @@ class Search_Filter_Helper {
 			return false;
 		}
 
+	}
+	public static function has_custom_layouts() {
+		if ( class_exists( 'Custom_Layouts' ) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public static function has_dynamic_ooo() {
+
+		if ( defined( 'DCE_VERSION' ) ) {
+			if ( version_compare( DCE_VERSION, '1.9.6.7.2', '>=' ) ) {
+				return true;
+			}
+		}
+		return false;
 	}
 	public static function wc_get_page_id($page_name = '')
 	{
@@ -296,6 +323,7 @@ class Search_Filter_Helper {
 				'load_js_css' => 1,
 				'combobox_script' => "chosen",
 				'remove_all_data' => 0,
+				'meta_key_text_input' => 0,
 
 			);
 

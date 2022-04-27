@@ -24,7 +24,7 @@ class Search_Filter_Taxonomy_Object_Walker extends Walker_Category {
     private $term_rewrite_depth = 0;
     private $parents_names = array();
 
-	function __construct($defaults = array(), &$options_obj)  {
+	function __construct( $defaults, &$options_obj )  {
 
 		$type = 'checkbox';
 		$this->type = $type;
@@ -33,7 +33,7 @@ class Search_Filter_Taxonomy_Object_Walker extends Walker_Category {
 		$this->options_obj = $options_obj;
 	}
 	
-	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+	function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
 
 		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
 	}
@@ -46,6 +46,7 @@ class Search_Filter_Taxonomy_Object_Walker extends Walker_Category {
 		$sfid = $args['sfid'];
 		$defaults = $args['defaults'];
 		$hide_empty = $args['hide_empty'];
+		$sf_hide_empty = $args['sf_hide_empty'];
 		$show_option_all_sf = $args['show_option_all_sf'];
 		$show_default_option_sf = $args['show_default_option_sf'];
 		$show_count = $args['show_count'];
@@ -162,8 +163,7 @@ class Search_Filter_Taxonomy_Object_Walker extends Walker_Category {
 		}
 
         $this->parents_names[$current_depth] = $taxonomy_term->slug;
-
-		if((intval($hide_empty)!=1)||($option_count!=0))
+		if((intval($sf_hide_empty)!=1)||($option_count!=0))
 		{
 			
 			$option->value = $taxonomy_term_slug;

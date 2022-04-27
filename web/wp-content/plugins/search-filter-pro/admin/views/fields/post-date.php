@@ -24,18 +24,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<fieldset class="item-container">
 				<p class="sf_input_type">
 					<label for="{0}[{1}][input_type]"><?php _e("Input type: ", $this->plugin_slug); ?><br />
-						<select name="{0}[{1}][input_type]" class="" id="{0}[{1}][input_type]">
+						<select data-field-template-name="{0}[{1}][input_type]" class="" data-field-template-id="{0}[{1}][input_type]">
 							<option value="date"<?php $this->set_selected($values['input_type'], "date"); ?>><?php _e("Date", $this->plugin_slug); ?></option>
 							<option value="daterange"<?php $this->set_selected($values['input_type'], "daterange"); ?>><?php _e("Date Range", $this->plugin_slug); ?></option>
 						</select>
 					</label>
 				</p>
 				<p>
-					<label for="{0}[{1}][heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" id="{0}[{1}][heading]" name="{0}[{1}][heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
+					<label for="{0}[{1}][heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" data-field-template-id="{0}[{1}][heading]" data-field-template-name="{0}[{1}][heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
 				</p>
 				<p class="sf_accessibility_label">
 						<label for="{0}[{1}][accessibility_label]"><?php _e("Add screen reader text?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("adds hidden text that will be read by screen readers - complies with WCAG 2.0", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-						<input class="" id="{0}[{1}][accessibility_label]" name="{0}[{1}][accessibility_label]" type="text" value="<?php echo esc_attr($values['accessibility_label']); ?>"></label>
+						<input class="" data-field-template-id="{0}[{1}][accessibility_label]" data-field-template-name="{0}[{1}][accessibility_label]" type="text" value="<?php echo esc_attr($values['accessibility_label']); ?>"></label>
 					</p>
 			</fieldset>
 			<fieldset class="item-container">
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					{
 						if($values['date_format'] == $aformat)
 						{
-							echo '<input type="hidden" disabled="disabled" class="date_format_hidden" value="'.$formati.'" id="{0}[{1}][date_format_hidden]" name="{0}[{1}][date_format_hidden]" />';
+							echo '<input type="hidden" disabled="disabled" class="date_format_hidden" value="'.$formati.'" data-field-template-id="{0}[{1}][date_format_hidden]" data-field-template-name="{0}[{1}][date_format_hidden]" />';
 						}
 						
 						$formati++;
@@ -63,9 +63,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
 					
 					
-					<label for="{0}[{1}][date_format][0]"><input class="date_format_radio" id="{0}[{1}][date_format][0]" name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[0] ?>"<?php echo $this->set_radio($values['date_format'], $format[0]); ?>><?php echo date($format[0]) ?></label><br />
-					<label for="{0}[{1}][date_format][1]"><input class="date_format_radio" id="{0}[{1}][date_format][1]" name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[1] ?>"<?php echo $this->set_radio($values['date_format'], $format[1]); ?>><?php echo date($format[1]) ?></label><br />
-					<label for="{0}[{1}][date_format][2]"><input class="date_format_radio" id="{0}[{1}][date_format][2]" name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[2] ?>"<?php echo $this->set_radio($values['date_format'], $format[2]); ?>><?php echo date($format[2]) ?></label><br />
+					<label for="{0}[{1}][date_format][0]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][0]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[0] ?>"<?php echo $this->set_radio($values['date_format'], $format[0]); ?>><?php echo date($format[0]) ?></label><br />
+					<label for="{0}[{1}][date_format][1]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][1]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[1] ?>"<?php echo $this->set_radio($values['date_format'], $format[1]); ?>><?php echo date($format[1]) ?></label><br />
+					<label for="{0}[{1}][date_format][2]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][2]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[2] ?>"<?php echo $this->set_radio($values['date_format'], $format[2]); ?>><?php echo date($format[2]) ?></label><br />
 					<!--<label for="{0}[{1}][date_format]"><input class="" id="{0}[{1}][date_format]" name="{0}[{1}][date_format]" type="radio"> Custom: <input type="text" size="10" /></label>-->
 				</p>
 			</fieldset>
@@ -79,19 +79,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<p class="sf_range_min">
 						<label for="{0}[{1}][date_from_prefix]">
 							<?php _e("From Prefix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear before the From field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" id="{0}[{1}][date_from_prefix]" name="{0}[{1}][date_from_prefix]" type="text" size="7" value="<?php echo $values['date_from_prefix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_from_prefix]" data-field-template-name="{0}[{1}][date_from_prefix]" type="text" size="7" value="<?php echo $values['date_from_prefix']; ?>">
 						</label>
 					</p>
 					<p class="sf_range_max">
 						<label for="{0}[{1}][date_from_postfix]">
 							<?php _e("From Postfix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear after the From field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" id="{0}[{1}][date_from_postfix]" name="{0}[{1}][date_from_postfix]" type="text" size="7" value="<?php echo $values['date_from_postfix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_from_postfix]" data-field-template-name="{0}[{1}][date_from_postfix]" type="text" size="7" value="<?php echo $values['date_from_postfix']; ?>">
 						</label>
 					</p>
 					<p class="sf_range_step">
 						<label for="{0}[{1}][date_from_placeholder]">
 							<?php _e("From Placeholder", $this->plugin_slug); ?><br />
-							<input class="" id="{0}[{1}][date_from_placeholder]" name="{0}[{1}][date_from_placeholder]" type="text" size="7" value="<?php echo $values['date_from_placeholder']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_from_placeholder]" data-field-template-name="{0}[{1}][date_from_placeholder]" type="text" size="7" value="<?php echo $values['date_from_placeholder']; ?>">
 						</label>
 					</p>
 				</fieldset>
@@ -100,19 +100,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<p class="sf_range_min">
 						<label for="{0}[{1}][date_to_prefix]">
 							<?php _e("To Prefix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear before the To field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" id="{0}[{1}][date_to_prefix]" name="{0}[{1}][date_to_prefix]" type="text" size="7" value="<?php echo $values['date_to_prefix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_to_prefix]" data-field-template-name="{0}[{1}][date_to_prefix]" type="text" size="7" value="<?php echo $values['date_to_prefix']; ?>">
 						</label>
 					</p>
 					<p class="sf_range_max">
 						<label for="{0}[{1}][date_to_postfix]">
 							<?php _e("To Postfix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear after the To field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" id="{0}[{1}][date_to_postfix]" name="{0}[{1}][date_to_postfix]" type="text" size="7" value="<?php echo $values['date_to_postfix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_to_postfix]" data-field-template-name="{0}[{1}][date_to_postfix]" type="text" size="7" value="<?php echo $values['date_to_postfix']; ?>">
 						</label>
 					</p>
 					<p class="sf_range_step">
 						<label for="{0}[{1}][date_to_placeholder]">
 							<?php _e("To Placeholder", $this->plugin_slug); ?><br />
-							<input class="" id="{0}[{1}][date_to_placeholder]" name="{0}[{1}][date_to_placeholder]" type="text" size="7" value="<?php echo $values['date_to_placeholder']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_to_placeholder]" data-field-template-name="{0}[{1}][date_to_placeholder]" type="text" size="7" value="<?php echo $values['date_to_placeholder']; ?>">
 						</label>
 					</p>
 				</fieldset>
@@ -120,10 +120,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p class="item-container" style="">
 					
 					
-					<input class="checkbox" type="checkbox" id="{0}[{1}][date_use_dropdown_year]" name="{0}[{1}][date_use_dropdown_year]"<?php $this->set_checked($values['date_use_dropdown_year']); ?>>
+					<input class="checkbox" type="checkbox" data-field-template-id="{0}[{1}][date_use_dropdown_year]" data-field-template-name="{0}[{1}][date_use_dropdown_year]"<?php $this->set_checked($values['date_use_dropdown_year']); ?>>
 					<label for="{0}[{1}][date_use_dropdown_year]"><?php _e("Use dropdown for Year", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("Add dropdown for Year", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label><br />
 					
-					<input class="checkbox " type="checkbox" id="{0}[{1}][date_use_dropdown_month]" name="{0}[{1}][date_use_dropdown_month]"<?php $this->set_checked($values['date_use_dropdown_month']); ?>>
+					<input class="checkbox " type="checkbox" data-field-template-id="{0}[{1}][date_use_dropdown_month]" data-field-template-name="{0}[{1}][date_use_dropdown_month]"<?php $this->set_checked($values['date_use_dropdown_month']); ?>>
 					<label for="{0}[{1}][date_use_dropdown_month]"><?php _e("Use dropdown for month", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("Add dropdown for month", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
 				</p>
 				
@@ -133,7 +133,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<br class="clear" />
 		
-		<input type="hidden" name="{0}[{1}][type]" class="widget-id" id="hidden_type" value="<?php echo esc_attr($values['type']); ?>" />
+		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo esc_attr($values['type']); ?>" />
 		
 
 		<div class="widget-control-actions">

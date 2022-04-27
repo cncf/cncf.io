@@ -324,12 +324,16 @@ class Search_Filter_Field_Taxonomy extends Search_Filter_Field_Base {
 		$options = array();
 		
 		$options_obj = new Search_Filter_Taxonomy_Options();
-
+		global $searchandfilter;
 		//use a walker to silence output, and create a custom object which is stored in `$options`
+
+		// @ todo - for efficency, figure out if we're using ustom post stati
+		// if not using custom post stati, then use regular `hide_empty` (the WP query is more efficient)
 		$args['walker'] = new Search_Filter_Taxonomy_Object_Walker($args['sf_name'], $options_obj);
-
+		$args['sf_hide_empty'] = $args['hide_empty'];
+		$args['hide_empty'] = false;
+		
 		$output = wp_list_categories($args); //nothing is returned here but `$options` is updated
-
 		$options = $options_obj->get();
 
         return $options;

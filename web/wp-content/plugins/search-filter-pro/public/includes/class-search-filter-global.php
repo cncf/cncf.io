@@ -39,9 +39,10 @@ class Search_Filter_Global
 		add_action('search_filter_do_query', array($this, 'query_posts'), 10); //legacy
 		add_action('search_filter_query_posts', array($this, 'query_posts'), 10);
 		add_action('search_filter_setup_pagination', array($this, 'setup_pagination'), 10);
-		//add_action('search_filter_update_post_cache', array($this, 'update_cache'), 10);
+		add_action('search_filter_remove_pagination', array($this, 'remove_pagination'), 10);
 
 		add_action('search_filter_pagination_init', array($this, 'set_pagination_init'), 10);
+		add_action('search_filter_pagination_unset', array($this, 'set_pagination_unset'), 10);
 		add_action('wp', array($this, 'set_queried_object'), 10);
 
 		//to prevent loops within loops, we need to keep track of which one is active
@@ -56,23 +57,12 @@ class Search_Filter_Global
 
 	public function loop_start($query)
 	{
-
-		if(isset($query->query_vars['search_filter_id'])){
-
-			if(SEARCH_FILTER_QUERY_DEBUG==true)
-            {
+		if($query->get('search_filter_id')){
+			if(SEARCH_FILTER_QUERY_DEBUG==true) {
                 echo "\r\n<!-- #sfdebug loop_start | query \r\n";
 
                 $query_args_new = $query->query_vars;
-                //$query_args_new['post__in'] = "Count: ".count($query->query_vars['post__in']);
                 var_dump($query_args_new);
-                //var_dump($query);
-
-	            /*foreach($query->posts as $post){
-	            	echo "ID: {$post->ID}\r\n";
-	            }*/
-
-
 	            echo "\r\nLast SQL-Query: {$query->request}";
                 echo "\r\n -->\r\n";
             }
@@ -114,6 +104,16 @@ class Search_Filter_Global
 		$this->data->$sfid->query->setup_pagination();
 	}
 
+	public function remove_pagination($sfid)
+	{
+		if(!isset($this->data->$sfid))
+		{
+			$this->data->$sfid = new Search_Filter_Config($this->plugin_slug, $sfid);
+		}
+
+		$this->data->$sfid->query->remove_pagination();
+	}
+
 	public function query_posts($sfid)
 	{
 		//$this->active_sfid = $sfid;
@@ -150,17 +150,14 @@ class Search_Filter_Global
 		return $this->get($sfid)->is_valid_form();
 	}
 
-	/* public function update_cache($postID)
-	{
-		$this->post_cache->init_cache_options();
-		$this->post_cache->setup_cached_search_forms();
-		$this->post_cache->update_post_cache($postID);
-	} */
-
-
 	public function set_pagination_init()
 	{
 		$this->pagination_init = true;
+	}
+
+	public function set_pagination_unset()
+	{
+		$this->pagination_init = false;
 	}
 
 	public function has_pagination_init()

@@ -300,6 +300,7 @@ class Search_Filter_Query {
 
         global $searchandfilter;
         if(!$searchandfilter->has_pagination_init()) {
+
             add_filter('get_pagenum_link', array($this, 'pagination_fix_pagenum'), 100);
             add_filter('paginate_links', array($this, 'pagination_fix_paginate'), 100);
 
@@ -370,7 +371,19 @@ class Search_Filter_Query {
 		}
 		
 	}
-	/* ***************************** */
+	
+	public function remove_pagination()
+	{
+		global $searchandfilter;
+		if ( $searchandfilter->has_pagination_init() ) {
+			remove_filter('get_pagenum_link', array($this, 'pagination_fix_pagenum'), 100);
+			remove_filter('paginate_links', array($this, 'pagination_fix_paginate'), 100);
+			do_action("search_filter_pagination_unset");
+
+		}
+		
+	}
+	
 	public function prep_query($all_terms = false)
 	{
 		global $wpdb;
@@ -407,8 +420,6 @@ class Search_Filter_Query {
 				}
 			}
 
-            //$this->query_args['search_filter_id'] = $this->sfid;
-
 			$this->add_permalink_filters();
 		}
         else if(($all_terms==true) && ($this->has_prep_terms==false))
@@ -417,14 +428,6 @@ class Search_Filter_Query {
             $this->cache->init_all_filter_terms();
         }
 
-        if(SEARCH_FILTER_QUERY_DEBUG==true)
-        {
-            //echo "\r\n<!-- #sfdebug prep_query (".$this->sfid.") | query \r\n";
-            $query_args_new = $this->query_args;
-            $query_args_new['post__in'] = "Count: ".count($this->query_args['post__in']);
-            //var_dump($query_args_new);
-            //echo "\r\n -->\r\n";
-        }
 
 	}
 
@@ -432,25 +435,13 @@ class Search_Filter_Query {
 	{//apply any regular WP_Query logic
 		global $searchandfilter;
 
-		/*if($searchandfilter->get($this->sfid)->settings("maintain_state")==1){
-
-			add_filter( 'the_permalink', array($this, 'maintain_search_settings'), 20);
-			add_filter( 'post_link', array($this, 'maintain_search_settings'), 20);
-			add_filter( 'page_link', array($this, 'maintain_search_settings'), 20);
-			add_filter( 'post_type_link', array($this, 'maintain_search_settings'), 20);
-		}*/
+		
 	}
 	public function remove_permalink_filters()
 	{
 		global $searchandfilter;
 
-		/*if($searchandfilter->get($this->sfid)->settings("maintain_state")==1)
-		{
-			remove_filter( 'the_permalink', array($this, 'maintain_search_settings'), 20);
-			remove_filter( 'post_link', array($this, 'maintain_search_settings'), 20);
-			remove_filter( 'page_link', array($this, 'maintain_search_settings'), 20);
-			remove_filter( 'post_type_link', array($this, 'maintain_search_settings'), 20);
-		}*/
+		
 	}
 
 	public function maintain_search_settings($url) {
@@ -766,8 +757,7 @@ class Search_Filter_Query {
 			foreach ($authors as &$author)
 			{
 				$the_author = get_user_by('slug', esc_attr($author));
-
-				$author = (int)$the_author->ID;
+				$author = intval( $the_author->ID );
 			}
 			
 			$args['author'] = implode(",", $authors); //here we set the post types that we want WP to search
@@ -1168,8 +1158,6 @@ class Search_Filter_Query {
 
 	public function pagination_fix_pagenum($url)
 	{
-		//$new_url = $this->pagination_fix(remove_query_arg("sf_paged", $url));
-
 		$new_url = $this->pagination_fix($url);
 		return $new_url;
 	}
