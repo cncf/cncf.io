@@ -434,6 +434,9 @@
 	}
 	&__text {
 		@media (min-width: 710px) {
+			font-size: 16px;
+			line-height: 150%;
+			letter-spacing: 0.02em;
 			margin-bottom: 35px;
 		}
 	}
