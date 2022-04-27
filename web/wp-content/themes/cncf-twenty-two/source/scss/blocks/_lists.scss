@@ -56,5 +56,10 @@ article,
 				padding-bottom: 10px;
 			}
 		}
+		&.is-style-max-width-900 {
+			li {
+				max-width: 900px;
+			}
+		}
 	}
 }

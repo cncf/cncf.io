@@ -174,6 +174,10 @@ wp.blocks.registerBlockStyle(
 		{
 			label: 'Table of Contents',
 			name: 'table-contents',
+		},
+		{
+			label: 'Max width 900px',
+			name: 'max-width-900',
 		}
 	]
 );
