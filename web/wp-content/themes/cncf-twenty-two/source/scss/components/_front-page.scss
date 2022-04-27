@@ -274,15 +274,14 @@
 		&:focus,
 		&:active {
 			border: 1px solid rgba($gray-300, 0.3);
-			transform: scale(1.15);
-			// animation-name: pop-sm;
-			// animation-duration: 0.2s;
-			// animation-timing-function: linear;
-			// animation-iteration-count: 1;
-			// @media (prefers-reduced-motion: reduce) {
-			// 	animation-name: none;
-			// 	animation-duration: 0;
-			// }
+			animation-name: pop-sm;
+			animation-duration: 0.3s;
+			animation-timing-function: linear;
+			animation-iteration-count: 1;
+			@media (prefers-reduced-motion: reduce) {
+				animation-name: none;
+				animation-duration: 0;
+			}
 		}
 	}
 }
