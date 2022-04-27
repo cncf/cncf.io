@@ -121,7 +121,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</tr>
 				<tr>
 					<td>
-						<label for="auto_submit"><?php _e("Auto submit form?", $this->plugin_slug ); ?><span class="hint--top hint--info" data-hint="<?php _e("Update the results whenever a user changes a value - no need for a submit button", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></label>
+						<label for="auto_submit"><?php _e("Auto submit form?", $this->plugin_slug ); ?><span class="hint--top hint--info" data-hint="<?php _e("Update the results whenever a user changes a value - no need for a submit button", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i><span class="sf-tooltip"></span></span></label>
 					</td>
 					<td>
 						<input class="checkbox auto_submit" type="checkbox" id="auto_submit" name="auto_submit"<?php $this->set_checked($values['auto_submit']); ?>> 
@@ -191,9 +191,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<td>
 						<input class="checkbox inherit_current_post_type_archive" type="checkbox" id="inherit_current_post_type_archive" name="inherit_current_post_type_archive"<?php $this->set_checked($values['inherit_current_post_type_archive']); ?>><label for="inherit_current_post_type_archive"><?php _e(" Post Type Archives <!--(is_post_type_archive)-->", $this->plugin_slug ); ?></label><br />
 						<input class="checkbox inherit_current_taxonomy_archive" type="checkbox" id="inherit_current_taxonomy_archive" name="inherit_current_taxonomy_archive"<?php $this->set_checked($values['inherit_current_taxonomy_archive']); ?>><label for="inherit_current_taxonomy_archive"><?php _e(" Tag, Category &amp; Taxonomy Archives <!--(is_tag, is_category, is_tax)-->", $this->plugin_slug ); ?></label><br />
-						<!--<input class="checkbox inherit_current_single_post" type="checkbox" id="" name="inherit_current_single_post"<?php $this->set_checked($values['inherit_current_single_post']); ?>> Individual Posts &amp; Custom Post Types (is_single)<br />-->
+						<!--<input class="checkbox inherit_current_single_post" type="checkbox" name="inherit_current_single_post"<?php $this->set_checked($values['inherit_current_single_post']); ?>> Individual Posts &amp; Custom Post Types (is_single)<br />-->
 						<input class="checkbox inherit_current_author_archive" type="checkbox" id="inherit_current_author_archive" name="inherit_current_author_archive"<?php $this->set_checked($values['inherit_current_author_archive']); ?>><label for="inherit_current_author_archive"><?php _e(" Author Archives<!-- (is_author)-->", $this->plugin_slug ); ?></label><br />
-						<!--<input class="checkbox inherit_current_date_archive" type="checkbox" id="" name="inherit_current_date_archive"<?php $this->set_checked($values['inherit_current_date_archive']); ?>> Date Archives<br />-->
+						<!--<input class="checkbox inherit_current_date_archive" type="checkbox" name="inherit_current_date_archive"<?php $this->set_checked($values['inherit_current_date_archive']); ?>> Date Archives<br />-->
 						
 						
 						
@@ -264,13 +264,26 @@ if ( ! defined( 'ABSPATH' ) ) {
                 '<p><a href="https://searchandfilter.com/documentation/3rd-party/easy-digital-downloads/" target="_blank">'.__("View the Easy Digital Downloads setup instructions", $this->plugin_slug ).'</a></p>',
 
             'base'          => 'shortcode'
-        );
+		);
+		
+		if ( Search_Filter_Helper::has_custom_layouts() ) {
+			$display_results_methods['custom_layouts'] = array(
+				'label'         => __('Custom Layouts'),
+				'description'   =>
+					'<p>'.__("Use a powerful drag and drop editor to design your results.", $this->plugin_slug ).'</p>',
+					// '<p><a href="https://searchandfilter.com/documentation/3rd-party/easy-digital-downloads/" target="_blank">'.__("View the Easy Digital Downloads setup instructions", $this->plugin_slug ).'</a></p>',
+
+				'base'          => 'shortcode'
+			);
+		}
+		
         $display_results_methods['custom'] = array(
             'label'         => __('Custom'),
             'description'   => '<p>'.__("Manually add S&F to an existing query and then simply supply the URL where this can be located.", $this->plugin_slug ).'</p>'.
 				'<p><a href="https://searchandfilter.com/documentation/search-results/custom/" target="_blank">'.__("View the Custom setup instructions", $this->plugin_slug ).'</a></p>',
             'base'          => 'custom'
-        );
+		);
+		
 
         if(has_filter("search_filter_admin_option_display_results"))
         {
@@ -364,7 +377,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</td>
 						<td>
 							<input class="checkbox enable_taxonomy_archives" type="checkbox" id="enable_taxonomy_archives" name="enable_taxonomy_archives"<?php $this->set_checked($values['enable_taxonomy_archives']); ?>>
-							<input type="hidden"  name="enable_taxonomy_archives" class="enable_taxonomy_archives" id="enable_taxonomy_archives"  value="<?php echo $values['enable_taxonomy_archives']; ?>" disabled="disabled" />
+							<input type="hidden"  name="enable_taxonomy_archives" class="enable_taxonomy_archives" id="enable_taxonomy_archives_hidden"  value="<?php echo $values['enable_taxonomy_archives']; ?>" disabled="disabled" />
 							<small class="taxonomy_archive_woocommerce_label"><?php _e("In WooCommerce this will mean the search form also works with your Product Tag and Product Category Archives.", $this->plugin_slug); ?></small>
 						</td>
 					</tr>
@@ -473,7 +486,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<option value="custom"<?php $this->set_selected($values['scroll_to_pos'], "custom"); ?>><?php _e("Custom Selector:", $this->plugin_slug); ?></option>
 							</select>
 							<div class="custom_scroll_to">
-								<input type="text" id="" name="custom_scroll_to" class="" value="<?php echo esc_attr($values['custom_scroll_to']); ?>" size="14" placeholder="<?php _e("#id or .class", $this->plugin_slug); ?>" />
+								<input type="text" name="custom_scroll_to" class="" value="<?php echo esc_attr($values['custom_scroll_to']); ?>" size="14" placeholder="<?php _e("#id or .class", $this->plugin_slug); ?>" />
 							</div>
 						</span>
 						
@@ -611,7 +624,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<tr class="tpl_use_ajax_rows tpl_pagination_scroll_rows">
 					<td>
 						<label for="infinite_scroll_trigger">
-							<?php _e("Infinite Scroll Trigger:", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("This should be a container which contains only the results themselves (the repeatable content for each result listing)", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
+							<?php _e("Infinite Scroll Trigger:", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("Choose an offset in pixels to activate infinite scroll", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
 							<!--<small><?php _e("* if using the demo template set this to <strong>.search-filter-results-list<strong>", $this->plugin_slug); ?></small><br />-->
 						</label>
 					</td>
@@ -636,7 +649,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<td>
 					<div class="sf_post_types">
 						<?php
-							
 							foreach ($post_stati as $post_status)
 							{
 								?>
@@ -647,51 +659,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 								
 								<?php
 							}
-							/*echo "<hr />";
-							foreach ($post_stati_private as $post_status)
-							{
-								?>
-								<label for="{0}[{1}][post_status][<?php echo $post_status->name; ?>]">
-									<input class="checkbox" type="checkbox" id="{0}[{1}][post_status][<?php echo $post_status->name; ?>]" value="publish" name="settings_post_status[<?php echo $post_status->name; ?>]"<?php $this->set_checked($values['post_status'][$post_status->name]); ?>>
-									<?php echo $post_status->label; ?>
-								</label>
-								
-								<?php
-							}*/
-						
 						?>
-					
-						<!--<label for="{0}[{1}][post_status][publish]">
-							<input class="checkbox" type="checkbox" id="{0}[{1}][post_status][publish]" value="publish" name="settings_post_status[publish]"<?php $this->set_checked($values['post_status']['publish']); ?>>
-							<?php _e('Published', $this->plugin_slug); ?>
-						</label>
-						
-						<label for="{0}[{1}][post_status][pending]">
-							<input class="checkbox" type="checkbox" id="{0}[{1}][post_status][pending]" value="pending" name="settings_post_status[pending]"<?php $this->set_checked($values['post_status']['pending']); ?>>
-							<?php _e('Pending', $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("post is pending review", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
-						</label>
-						
-						<label for="{0}[{1}][post_status][draft]">
-							<input class="checkbox" type="checkbox" id="{0}[{1}][post_status][draft]" value="draft" name="settings_post_status[draft]"<?php $this->set_checked($values['post_status']['draft']); ?>>						
-							<?php _e('Draft', $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("a post in draft status", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
-						</label>
-						
-						<label for="{0}[{1}][post_status][future]">
-							<input class="checkbox" type="checkbox" id="{0}[{1}][post_status][future]" value="future" name="settings_post_status[future]"<?php $this->set_checked($values['post_status']['future']); ?>>
-							<?php _e('Future', $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("a post to publish in the future", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
-						</label>
-						
-						<label for="{0}[{1}][post_status][private]">
-							<input class="checkbox" type="checkbox" id="{0}[{1}][post_status][private]" value="private" name="settings_post_status[private]"<?php $this->set_checked($values['post_status']['private']); ?>>
-							<?php _e('Private', $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("not visible to users who are not logged in", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
-						</label>-->
 					</div>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<label for="exclude_post_ids">
-					<?php _e("Exclude Post IDs:", $this->plugin_slug ); ?><span class="hint--top hint--info" data-hint="<?php _e("comma seperated list of post IDs to exclude - these can be of any post type", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
+					<?php _e("Exclude Post IDs:", $this->plugin_slug ); ?><span class="hint--top hint--info" data-hint="<?php _e("comma separated list of post IDs to exclude - these can be of any post type", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
 					</label>
 				</td>
 				<td>
@@ -759,6 +734,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<td>
 					<fieldset>
 						<?php
+						
+						$meta_key_text_input = Search_Filter_Helper::get_option( 'meta_key_text_input' );
+						if($meta_key_text_input == 1 ) {
+							?>
+							<input type="text" placeholder="<?php echo esc_attr__( 'Enter a meta key', 'search-filter' ); ?> " style="width: 100%" name="default_meta_key" class="meta_key" id="default_meta_key" value="<?php echo esc_attr($values['default_meta_key']); ?>" />
+							<?php
+						} else {
 							$all_meta_keys = $this->get_all_post_meta_keys();
 							echo '<select name="default_meta_key" class="meta_key" id="default_meta_key">';
 							foreach($all_meta_keys as $v)
@@ -766,6 +748,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								echo '<option value="'.$v.'"'.$this->set_selected($values['default_meta_key'], $v, false).'>'.$v."</option>";
 							}
 							echo '</select> ';
+						}
 							
 						?> 
 					
@@ -823,13 +806,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<td>
 					<fieldset>
 						<?php
-							$all_meta_keys = $this->get_all_post_meta_keys();
-							echo '<select name="secondary_meta_key" class="meta_key" id="secondary_meta_key">';
-							foreach($all_meta_keys as $v)
-							{						
-								echo '<option value="'.$v.'"'.$this->set_selected($values['secondary_meta_key'], $v, false).'>'.$v."</option>";
+							if($meta_key_text_input == 1 ) {
+								?>
+								<input type="text" placeholder="<?php echo esc_attr__( 'Enter a meta key', 'search-filter' ); ?> " style="width: 100%" name="secondary_meta_key" class="meta_key" id="secondary_meta_key" value="<?php echo esc_attr($values['secondary_meta_key']); ?>" />
+								<?php
+							} else {
+								$all_meta_keys = $this->get_all_post_meta_keys();
+								echo '<select name="secondary_meta_key" class="meta_key" id="secondary_meta_key">';
+								foreach($all_meta_keys as $v)
+								{						
+									echo '<option value="'.$v.'"'.$this->set_selected($values['secondary_meta_key'], $v, false).'>'.$v."</option>";
+								}
+								echo '</select> ';
 							}
-							echo '</select> ';
 							
 						?> 
 					

@@ -629,7 +629,7 @@ class Search_Filter_Admin_Notices {
 		{
 			$message = array(
 				'type' 		=> 'error',
-				'message' 	=> __('You can only select the following post types: ', $this->plugin_slug) . '<strong>' . implode($post_types_labels, ', ') . '</strong>' . __(' (or change your display method)', $this->plugin_slug)
+				'message' 	=> __('You can only select the following post types: ', $this->plugin_slug) . '<strong>' . implode( ', ' , $post_types_labels ) . '</strong>' . __(' (or change your display method)', $this->plugin_slug)
 			);
 			
 			array_push($this->post_message_log, $message);

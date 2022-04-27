@@ -12,25 +12,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<td>
 				<label for="settings_post_meta[{0}][meta_key]">
 					<?php
-						$all_meta_keys = $this->get_all_post_meta_keys();
-						echo '<select name="settings_post_meta[{0}][meta_key]" class="meta_key" id="settings_post_meta[{0}][meta_key]" data-field-template-id="settings_post_meta[{0}][meta_key]" data-field-template-name="settings_post_meta[{0}][meta_key]">';
-						
-						foreach($all_meta_keys as $v){
-							//$data[] = $v->meta_key;
+					
+						$meta_key_text_input = Search_Filter_Helper::get_option( 'meta_key_text_input' );
+						if($meta_key_text_input == 1 ) {
+							?>
+							<input type="text" placeholder="<?php echo esc_attr__( 'Enter a meta key', 'search-filter' ); ?>" style="width: 100%"  class="meta_key" data-field-template-id="settings_post_meta[{0}][meta_key]" data-field-template-name="settings_post_meta[{0}][meta_key]" value="<?php echo esc_attr($values['meta_key']); ?>" />
+							<?php
+						} else {
+							$all_meta_keys = $this->get_all_post_meta_keys();
+							echo '<select class="meta_key" data-field-template-id="settings_post_meta[{0}][meta_key]" data-field-template-name="settings_post_meta[{0}][meta_key]">';
 							
-							echo '<option value="'.$v.'"'.$this->set_selected($values['meta_key'], $v, false).'>'.$v."</option>";
+							foreach($all_meta_keys as $v){
+								//$data[] = $v->meta_key;
+								
+								echo '<option value="'.$v.'"'.$this->set_selected($values['meta_key'], $v, false).'>'.$v."</option>";
+							}
+							echo '</select>';
 						}
-						echo '</select>';
 						
 					?>
-					<input type="hidden"  name="{0}[{1}][meta_key]" id="{0}[{1}][meta_key]" class="meta_key_hidden"  value="<?php echo $values['meta_key']; ?>" disabled="disabled" data-field-template-id="settings_post_meta[{0}][meta_key]" data-field-template-name="settings_post_meta[{0}][meta_key]" />
+					<input type="hidden" class="meta_key_hidden"  value="<?php echo $values['meta_key']; ?>" disabled="disabled" data-field-template-id="settings_post_meta[{0}][meta_key]" data-field-template-name="settings_post_meta[{0}][meta_key]" />
 				</label>
 			</td>
 			<td>
 				<label for="settings_post_meta[{0}][meta_type]">
 					<?php
-						$all_meta_keys = $this->get_all_post_meta_keys();
-						echo '<select name="settings_post_meta[{0}][meta_type]" class="meta_type" id="settings_post_meta[{0}][meta_type]" data-field-template-id="settings_post_meta[{0}][meta_type]" data-field-template-name="settings_post_meta[{0}][meta_type]">';
+					
+						echo '<select class="meta_type" data-field-template-id="settings_post_meta[{0}][meta_type]" data-field-template-name="settings_post_meta[{0}][meta_type]">';
 						
 							echo '<option value="CHAR"'.$this->set_selected($values['meta_type'], "CHAR", false).'>char</option>';
 							echo '<option value="NUMERIC"'.$this->set_selected($values['meta_type'], "NUMERIC", false).'>numeric</option>';
@@ -45,15 +53,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 						echo '</select>';
 						
 					?>
-					<input type="hidden" name="settings_post_meta[{0}][meta_type]" id="settings_post_meta[{0}][meta_type]" class="meta_type"  value="<?php echo $values['meta_type']; ?>" disabled="disabled" data-field-template-id="settings_post_meta[{0}][meta_type]" data-field-template-name="settings_post_meta[{0}][meta_type]" />
+					<input type="hidden" class="meta_type"  value="<?php echo $values['meta_type']; ?>" disabled="disabled" data-field-template-id="settings_post_meta[{0}][meta_type]" data-field-template-name="settings_post_meta[{0}][meta_type]" />
 				</label>
 			</td>
 			<td>
 				<label for="{0}[{1}][meta_compare]">
 					<?php
-						$all_meta_keys = $this->get_all_post_meta_keys();
-						
-						echo '<select name="settings_post_meta[{0}][meta_compare]" class="meta_compare" id="settings_post_meta[{0}][meta_compare]" data-field-template-id="settings_post_meta[{0}][meta_compare]" data-field-template-name="settings_post_meta[{0}][meta_compare]">';
+						echo '<select class="meta_compare" data-field-template-id="settings_post_meta[{0}][meta_compare]" data-field-template-name="settings_post_meta[{0}][meta_compare]">';
 						
 							echo '<option value="e"'.$this->set_selected($values['meta_compare'], "e", false).' class="date-format-supported">= &nbsp;&nbsp;(equals)</option>';
 							echo '<option value="ne"'.$this->set_selected($values['meta_compare'], "ne", false).' class="date-format-supported">!= &nbsp;(not equals)</option>';
@@ -74,33 +80,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 						
 						echo '</select>';
 					?>
-					<input type="hidden" name="settings_post_meta[{0}][meta_compare]" id="settings_post_meta[{0}][meta_compare]" class="meta_compare"  value="<?php echo $values['meta_compare']; ?>" disabled="disabled" data-field-template-id="settings_post_meta[{0}][meta_compare]" data-field-template-name="settings_post_meta[{0}][meta_compare]" />
+					<input type="hidden" name="settings_post_meta[{0}][meta_compare]" class="meta_compare"  value="<?php echo $values['meta_compare']; ?>" disabled="disabled" data-field-template-name="settings_post_meta[{0}][meta_compare]" />
 				</label>
 			</td>
 			<td width="170">
 				
 				<div class="meta_value_c">
-					<input type="text" name="settings_post_meta[{0}][meta_value]" id="settings_post_meta[{0}][meta_value]" class="meta_value"  value="<?php echo $values['meta_value']; ?>" data-field-template-id="settings_post_meta[{0}][meta_value]" data-field-template-name="settings_post_meta[{0}][meta_value]" />
+					<input type="text" class="meta_value"  value="<?php echo $values['meta_value']; ?>" data-field-template-id="settings_post_meta[{0}][meta_value]" data-field-template-name="settings_post_meta[{0}][meta_value]" />
 				</div>
 				
 				
 				<div class="meta_value_date_c">
-					<input type="text" maxlength="8" name="settings_post_meta[{0}][meta_date_value_date]" placeholder="YYYYMMDD" id="settings_post_meta[{0}][meta_date_value_date]" class="meta_date_value_date"  value="<?php echo $values['meta_date_value_date']; ?>" data-field-template-id="settings_post_meta[{0}][meta_date_value_date]" data-field-template-name="settings_post_meta[{0}][meta_date_value_date]" />
+					<input type="text" maxlength="8" placeholder="YYYYMMDD" class="meta_date_value_date"  value="<?php echo $values['meta_date_value_date']; ?>" data-field-template-id="settings_post_meta[{0}][meta_date_value_date]" data-field-template-name="settings_post_meta[{0}][meta_date_value_date]" />
 					
 					<br />
 					<label for="settings_post_meta[{0}][meta_date_value_current_date]">
-						<input type="checkbox" name="settings_post_meta[{0}][meta_date_value_current_date]" class="meta_date_value_current_date" id="settings_post_meta[{0}][meta_date_value_current_date]" data-field-template-id="settings_post_meta[{0}][meta_date_value_current_date]" data-field-template-name="settings_post_meta[{0}][meta_date_value_current_date]" <?php $this->set_checked($values['meta_date_value_current_date']); ?>>
+						<input type="checkbox" class="meta_date_value_current_date" data-field-template-id="settings_post_meta[{0}][meta_date_value_current_date]" data-field-template-name="settings_post_meta[{0}][meta_date_value_current_date]" <?php $this->set_checked($values['meta_date_value_current_date']); ?>>
 						<?php echo __('Current Date', $this->plugin_slug); ?> 
 						<span class="hint--top hint--info" data-hint="<?php _e("this meta query is always performed against the current date", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
 					</label>
 				</div>
 				<div class="meta_value_timestamp_c">
 					
-					<input type="text" name="settings_post_meta[{0}][meta_date_value_timestamp]" placeholder="" id="settings_post_meta[{0}][meta_date_value_timestamp]" class="meta_date_value_timestamp"  value="<?php echo $values['meta_date_value_timestamp']; ?>" data-field-template-id="settings_post_meta[{0}][meta_date_value_timestamp]" data-field-template-name="settings_post_meta[{0}][meta_date_value_timestamp]" />
+					<input type="text" placeholder="" class="meta_date_value_timestamp"  value="<?php echo $values['meta_date_value_timestamp']; ?>" data-field-template-id="settings_post_meta[{0}][meta_date_value_timestamp]" data-field-template-name="settings_post_meta[{0}][meta_date_value_timestamp]" />
 					
 					<br />
 					<label for="settings_post_meta[{0}][meta_date_value_current_timestamp]">
-						<input type="checkbox" name="settings_post_meta[{0}][meta_date_value_current_timestamp]" class="meta_date_value_current_timestamp" id="settings_post_meta[{0}][meta_date_value_current_timestamp]" data-field-template-id="settings_post_meta[{0}][meta_date_value_current_timestamp]" data-field-template-name="settings_post_meta[{0}][meta_date_value_current_timestamp]" <?php $this->set_checked($values['meta_date_value_current_timestamp']); ?>>
+						<input type="checkbox" class="meta_date_value_current_timestamp" data-field-template-id="settings_post_meta[{0}][meta_date_value_current_timestamp]" data-field-template-name="settings_post_meta[{0}][meta_date_value_current_timestamp]" <?php $this->set_checked($values['meta_date_value_current_timestamp']); ?>>
 						<?php echo __('Current Time', $this->plugin_slug); ?> 
 						<span class="hint--top hint--info" data-hint="<?php _e("this meta query is always performed against the current time (NOW)", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span>
 					</label>

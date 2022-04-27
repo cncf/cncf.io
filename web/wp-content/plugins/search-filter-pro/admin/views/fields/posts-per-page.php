@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						
 				<p class="sf_input_type">
 					<label for="{0}[{1}][input_type]"><?php _e("Input type: ", $this->plugin_slug); ?><br />
-						<select name="{0}[{1}][input_type]" class="" id="{0}[{1}][input_type]">
+						<select data-field-template-name="{0}[{1}][input_type]" class="" data-field-template-id="{0}[{1}][input_type]">
 							<option value="select"<?php $this->set_selected($values['input_type'], "select"); ?>><?php _e("Dropdown", $this->plugin_slug); ?></option>
 							<option value="radio"<?php $this->set_selected($values['input_type'], "radio"); ?>><?php _e("Radio", $this->plugin_slug); ?></option>
 						</select>
@@ -37,19 +37,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 				<p class="">
 					<label for="{0}[{1}][all_items_label]"><?php _e("Change All Items Label?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("override the default - e.g. &quot;Sort Results By&quot;", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-					<input class="" id="{0}[{1}][all_items_label]" name="{0}[{1}][all_items_label]" type="text" value="<?php echo esc_attr($values['all_items_label']); ?>"></label>
+					<input class="" data-field-template-id="{0}[{1}][all_items_label]" data-field-template-name="{0}[{1}][all_items_label]" type="text" value="<?php echo esc_attr($values['all_items_label']); ?>"></label>
 				</p>				
 			</fieldset>
 			
 			<fieldset class="item-container">
 				
 				<p class="">
-					<label for="{0}[{1}][heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" id="{0}[{1}][heading]" name="{0}[{1}][heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
+					<label for="{0}[{1}][heading]"><?php _e("Add a heading?", $this->plugin_slug); ?><br /><input class="" data-field-template-id="{0}[{1}][heading]" data-field-template-name="{0}[{1}][heading]" type="text" value="<?php echo esc_attr($values['heading']); ?>"></label>
 				</p>
 				
 				<p class="sf_accessibility_label">
 					<label for="{0}[{1}][accessibility_label]"><?php _e("Add screen reader text?", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("adds hidden text that will be read by screen readers - complies with WCAG 2.0", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-					<input class="" id="{0}[{1}][accessibility_label]" name="{0}[{1}][accessibility_label]" type="text" value="<?php echo esc_attr($values['accessibility_label']); ?>"></label>
+					<input class="" data-field-template-id="{0}[{1}][accessibility_label]" data-field-template-name="{0}[{1}][accessibility_label]" type="text" value="<?php echo esc_attr($values['accessibility_label']); ?>"></label>
 				</p>
 			</fieldset>
 			<div class="clear"></div>
@@ -60,14 +60,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p class="sf_range_min">
 					<label for="{0}[{1}][ppp_min]">
 						<?php _e("Min Value", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("the lowest value that a user can select", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-						<input class="ppp_min" id="{0}[{1}][ppp_min]" name="{0}[{1}][ppp_min]" type="text" size="7" value="<?php echo esc_attr($values['ppp_min']); ?>">
+						<input class="ppp_min" data-field-template-id="{0}[{1}][ppp_min]" data-field-template-name="{0}[{1}][ppp_min]" type="text" size="7" value="<?php echo esc_attr($values['ppp_min']); ?>">
 					</label>
 				</p>
 				
 				<p class="sf_range_max">
 					<label for="{0}[{1}][ppp_max]">
 						<?php _e("Max Value", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("the highest value that a user can select", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-						<input class="ppp_max" id="{0}[{1}][ppp_max]" name="{0}[{1}][ppp_max]" type="text" size="7" value="<?php echo esc_attr($values['ppp_max']); ?>">
+						<input class="ppp_max" data-field-template-id="{0}[{1}][ppp_max]" data-field-template-name="{0}[{1}][ppp_max]" type="text" size="7" value="<?php echo esc_attr($values['ppp_max']); ?>">
 					</label>
 				</p>
 				
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p class="sf_range_step">
 					<label for="{0}[{1}][ppp_step]">
 						<?php _e("Step", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("the increment amount", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-						<input class="" id="{0}[{1}][ppp_step]" name="{0}[{1}][ppp_step]" type="text" size="7" value="<?php echo esc_attr($values['ppp_step']); ?>">
+						<input class="" data-field-template-id="{0}[{1}][ppp_step]" data-field-template-name="{0}[{1}][ppp_step]" type="text" size="7" value="<?php echo esc_attr($values['ppp_step']); ?>">
 					</label>
 				</p>
 			</fieldset>
@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<br class="clear" />
 		
-		<input type="hidden" name="{0}[{1}][type]" class="widget-id" id="hidden_type" value="<?php echo $values['type']; ?>">
+		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo $values['type']; ?>">
 		
 		<div class="widget-control-actions">
 			<div class="alignleft">

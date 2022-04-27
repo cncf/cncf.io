@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							
 							<br /><br />
 							<div style="padding:10px;background-color: #EAEAEA;border: 1px solid #ddd;">
-								<p><?php _e('A faster setting means more posts will be cached in each process, however this is generally considered to me more resource intensive.', $this->plugin_slug); ?></p>
+								<p><?php _e('A faster setting means more posts will be cached in each process, however this is generally considered to be more resource intensive.', $this->plugin_slug); ?></p>
 								<p><?php _e('Using a high setting when your server cannot support it may result in internal server errors and resource limits being reached.', $this->plugin_slug); ?></p>
 							</div>
 							
@@ -88,6 +88,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<br /><br />
 							<div style="padding:10px;background-color: #EAEAEA;border: 1px solid #ddd;">
 								<p><?php _e('This does not need to be enabled unless you are experiencing performance issues.', $this->plugin_slug); ?></p>
+								<p><?php _e('* This feature is currently not compatible with translation plugins.', $this->plugin_slug); ?></p>
 							</div>
 
 						</label>
@@ -200,6 +201,18 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 <?php _e('If you have modified any posts while the plugin is disabled / removed, you will likely need to rebuild the cache when activating Search & Filter again. ', $this->plugin_slug); ?>
                             </p>
                         </div>
+					</label>
+
+				</td>
+			</tr>
+			<tr valign="top">
+				<th scope="row" valign="top">
+					<?php _e('Use text input for meta keys', $this->plugin_slug); ?><br />
+				</th>
+				<td>
+					<label>
+						<input id="search_filter_meta_key_text_input" name="search_filter_meta_key_text_input" type="checkbox" class="" value="1"<?php $this->set_checked($meta_key_text_input); ?> />
+						<?php _e('Enabling this option allows you to directly enter your meta keys and can significantly improve performance in the admin UI when you have a large number of meta keys', $this->plugin_slug); ?>
 					</label>
 
 				</td>

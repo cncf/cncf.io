@@ -1,0 +1,45 @@
+<wpml-config>
+	<custom-types>
+		<custom-type translate="1">search-filter-widget</custom-type>
+	</custom-types>
+	<custom-fields>
+		<custom-field action="translate">_search-filter-fields</custom-field>
+		<custom-field action="copy">_search-filter-settings</custom-field>
+		<custom-field action="translate">_search-filter-results-url</custom-field>
+	</custom-fields>
+	<custom-fields-texts>
+		<key name="_search-filter-fields">
+			<key name="*">
+				<key name="heading" />
+				<key name="placeholder" />
+				<key name="accessibility_label" />
+				<key name="all_items_label" />
+				<key name="no_results_message" />
+				<key name="date_from_prefix" />
+				<key name="date_from_postfix" />
+				<key name="date_from_placeholder" />
+				<key name="date_to_prefix" />
+				<key name="date_to_postfix" />
+				<key name="date_to_placeholder" />
+				<key name="choice_heading" />
+				<key name="choice_accessibility_label" />
+				<key name="number_heading" />
+				<key name="number_accessibility_label" />
+				<key name="date_heading" />
+				<key name="date_accessibility_label" />
+				<key name="thousand_seperator" />
+				<key name="decimal_seperator" />
+				<key name="number_values_seperator" />
+				<key name="range_value_prefix" />
+				<key name="range_value_postfix" />
+				<key name="all_items_label_number" />
+				<key name="label" />
+				<key name="sort_options">
+					<key name="*">
+						<key name="sort_label" />
+					</key>
+				</key>
+			</key>
+		</key>
+	</custom-fields-texts>
+</wpml-config>

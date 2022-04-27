@@ -400,11 +400,6 @@ class Search_Filter_Field_Post_Meta_Number {
         $decimal_point = $args['decimal_seperator'];
 		$decimal_places = $args['decimal_places'];
 		
-		$diff = $max - $min;
-		$istep = ceil($diff/$step);
-		
-		$input_class = SF_CLASS_PRE."input-select";
-		
 		$value_prefix = $args['prefix'];
 		$value_postfix = $args['postfix'];
 		
@@ -436,32 +431,32 @@ class Search_Filter_Field_Post_Meta_Number {
 		
 		$value = $min;
 
-		for($value=$min; $value<=$max; $value+=$step)
-		{
-			$min_val = (float) $value;
-			$max_val = (float) $min_val + $step;
-
-			/*if($max_val>$max)
+		if ( $step > 0 ) {
+			for($value=$min; $value<=$max; $value+=$step)
 			{
-				$max_val = (float) $max;
-			}*/
-			
-			$min_label = number_format( (float)$min_val, $decimal_places, $decimal_point, $thousand_seperator );
-			$max_label = number_format( (float)$max_val, $decimal_places, $decimal_point, $thousand_seperator );
-			
-			$option = new stdClass();
-			$option->label = $value_prefix.$min_label.$value_postfix." - ".$value_prefix.$max_label.$value_postfix;
-			$option->attributes = array(
-				'class' => SF_CLASS_PRE.'level-0 '
-			);
-			
-			
-			$option->value = $min_val.'+'.$max_val;
-			array_push($options, $option);
-			
+				$min_val = (float) $value;
+				$max_val = (float) $min_val + $step;
+
+				/*if($max_val>$max)
+				{
+					$max_val = (float) $max;
+				}*/
+				
+				$min_label = number_format( (float)$min_val, $decimal_places, $decimal_point, $thousand_seperator );
+				$max_label = number_format( (float)$max_val, $decimal_places, $decimal_point, $thousand_seperator );
+				
+				$option = new stdClass();
+				$option->label = $value_prefix.$min_label.$value_postfix." - ".$value_prefix.$max_label.$value_postfix;
+				$option->attributes = array(
+					'class' => SF_CLASS_PRE.'level-0 '
+				);
+				
+				
+				$option->value = $min_val.'+'.$max_val;
+				array_push($options, $option);
+				
+			}
 		}
-		
-		
 		
 		return $options;
 	}

@@ -25,19 +25,19 @@ class Search_Filter_Activator {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		add_action( 'wpmu_new_blog', array($this, 'on_create_blog'), 10, 6 );
+		add_action( 'wp_initialize_site', array( $this, 'init_new_site_dbs' ) );
 	}
 
-	public function on_create_blog( $blog_id, $user_id, $domain, $path, $site_id, $meta )
-	{
-		if ( is_plugin_active_for_network( 'search-filter-pro/search-filter-pro.php' ) )
-		{
-			switch_to_blog( $blog_id );
-			$this->db_install();
-			restore_current_blog();
+	public function init_new_site_dbs( $new_site ) {
+		if ( is_a( $new_site, 'WP_Site' ) ) {
+			if ( is_plugin_active_for_network( 'search-filter-pro/search-filter-pro.php' ) )
+			{
+				switch_to_blog( $new_site->blog_id );
+				$this->db_install();
+				restore_current_blog();
+			}
 		}
 	}
-
 	public function activate($network_wide) {
 		
 		global $wpdb;

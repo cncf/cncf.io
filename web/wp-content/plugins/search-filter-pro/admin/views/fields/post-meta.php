@@ -25,9 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<p><?php _e("Choose from displaying the field as numerical data, choice input or date picker.", $this->plugin_slug); ?><br /></p>
 			
 			<div class="tab-header sf_meta_type">
-				<label for="{0}[{1}][meta_type][0]" class="active"><input data-radio-checked="<?php echo ($values['meta_type']=="number") ? 1 : 0 ?>" class="meta_type_radio" id="{0}[{1}][meta_type][0]" name="{0}[{1}][meta_type]" type="radio" value="number"<?php $this->set_radio($values['meta_type'], 'number'); ?>><?php _e("Number", $this->plugin_slug); ?></label> 
-				<label for="{0}[{1}][meta_type][1]"><input data-radio-checked="<?php echo ($values['meta_type']=="choice") ? 1 : 0 ?>" class="meta_type_radio" id="{0}[{1}][meta_type][1]" name="{0}[{1}][meta_type]" type="radio" value="choice"<?php $this->set_radio($values['meta_type'], 'choice'); ?>><?php _e("Choice", $this->plugin_slug); ?></label>
-				<label for="{0}[{1}][meta_type][2]"><input data-radio-checked="<?php echo ($values['meta_type']=="date") ? 1 : 0 ?>" class="meta_type_radio" id="{0}[{1}][meta_type][2]" name="{0}[{1}][meta_type]" type="radio" value="date"<?php $this->set_radio($values['meta_type'], 'date'); ?>><?php _e("Date", $this->plugin_slug); ?></label>
+				<label for="{0}[{1}][meta_type][0]" class="active"><input data-radio-checked="<?php echo ($values['meta_type']=="number") ? 1 : 0 ?>" class="meta_type_radio" data-field-template-id="{0}[{1}][meta_type][0]" data-field-template-name="{0}[{1}][meta_type]" type="radio" value="number"<?php $this->set_radio($values['meta_type'], 'number'); ?>><?php _e("Number", $this->plugin_slug); ?></label> 
+				<label for="{0}[{1}][meta_type][1]"><input data-radio-checked="<?php echo ($values['meta_type']=="choice") ? 1 : 0 ?>" class="meta_type_radio" data-field-template-id="{0}[{1}][meta_type][1]" data-field-template-name="{0}[{1}][meta_type]" type="radio" value="choice"<?php $this->set_radio($values['meta_type'], 'choice'); ?>><?php _e("Choice", $this->plugin_slug); ?></label>
+				<label for="{0}[{1}][meta_type][2]"><input data-radio-checked="<?php echo ($values['meta_type']=="date") ? 1 : 0 ?>" class="meta_type_radio" data-field-template-id="{0}[{1}][meta_type][2]" data-field-template-name="{0}[{1}][meta_type]" type="radio" value="date"<?php $this->set_radio($values['meta_type'], 'date'); ?>><?php _e("Date", $this->plugin_slug); ?></label>
 			</div>
 			<br class="clear">
 			
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<br class="clear" />
 		
-		<input type="hidden" name="{0}[{1}][type]" class="widget-id" id="hidden_type" value="<?php echo esc_attr($values['type']); ?>" />
+		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo esc_attr($values['type']); ?>" />
 		
 
 		<div class="widget-control-actions">

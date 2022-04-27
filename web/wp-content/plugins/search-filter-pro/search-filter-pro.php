@@ -11,7 +11,7 @@
  * Plugin Name:       Search & Filter Pro
  * Plugin URI:        https://searchandfilter.com
  * Description:       Search & Filtering for posts, products and custom posts. Allow your users to Search & Filter by categories, tags, taxonomies, custom fields, post meta, post dates, post types and authors.
- * Version:           2.5.1
+ * Version:           2.5.12
  * Author:            Code Amp
  * Author URI:        http://www.codeamp.com
  * Text Domain:       search-filter
@@ -33,30 +33,35 @@ if ( ! defined( 'SEARCH_FILTER_QUERY_DEBUG' ) ) {
 }
 
 if ( ! defined( 'SEARCH_FILTER_VERSION' ) ) {
-	define('SEARCH_FILTER_VERSION', "2.5.1");
+	define('SEARCH_FILTER_VERSION', "2.5.12");
 }
 
 if ( ! defined( 'SEARCH_FILTER_PRO_BASE_PATH' ) ) {
 	define('SEARCH_FILTER_PRO_BASE_PATH', __FILE__);
 }
 
-if ( ! function_exists('sf_write_log')) {
+if ( ! function_exists( 'sf_write_log' ) ) {
 	function sf_write_log( $log, $error_log = true ) {
 		if ( true == SEARCH_FILTER_DEBUG ) {
-			if($error_log) {
+			if ( $error_log ) {
 				if ( is_array( $log ) || is_object( $log ) ) {
-					error_log( print_r( $log, true ) );
+					ob_start();
+					var_dump($log);
+					$output = ob_get_clean();
+					error_log( $output );
 				} else {
 					error_log( $log );
 				}
 			}
-			else{
+			else {
 				$debug_file = WP_CONTENT_DIR."/debug.log";
+				$output = '';
 				if ( is_array( $log ) || is_object( $log ) ) {
-					$log = ( print_r( $log, true ) );
+					ob_start();
+					var_dump($log);
+					$output = ob_get_clean();
 				}
-
-				file_put_contents($debug_file, $log, FILE_APPEND | LOCK_EX);
+				file_put_contents($debug_file, $output, FILE_APPEND | LOCK_EX);
 			}
 		}
 	}
@@ -149,17 +154,16 @@ function deactivate_search_filter($network_wide) {
 register_activation_hook( __FILE__, 'activate_search_filter' );
 register_deactivation_hook( __FILE__, 'deactivate_search_filter' );
 
-if( (!is_admin()) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) )
+if ( ( ! is_admin() ) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) )
 {
     require_once( plugin_dir_path( __FILE__ ) . 'public/class-search-filter.php' );
-    add_action('plugins_loaded', array('Search_Filter', 'get_instance'));
+    add_action( 'plugins_loaded', array( 'Search_Filter', 'get_instance' ) );
 }
 
 
 /*----------------------------------------------------------------------------*
  * Dashboard and Administrative Functionality
  *----------------------------------------------------------------------------*/
-//if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 if ( is_admin() ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-search-filter-admin.php' );
 	add_action( 'plugins_loaded', array( 'Search_Filter_Admin', 'get_instance' ) );

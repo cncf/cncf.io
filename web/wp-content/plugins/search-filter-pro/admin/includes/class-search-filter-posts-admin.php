@@ -53,7 +53,6 @@ class Search_Filter_Posts_Admin {
 	public function enqueue_admin_scripts()
 	{
 		wp_enqueue_script( $this->plugin_slug . '-admin-posts-script', plugins_url( '/assets/js/admin-posts.js',dirname(__FILE__) ), array( 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery' ), Search_Filter_Admin::VERSION );
-		wp_enqueue_script( $this->plugin_slug . '-admin-posts-qtip-script', plugins_url( '/assets/js/jquery.qtip.min.js',dirname(__FILE__) ), array( 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery' ), Search_Filter_Admin::VERSION );
 	}
 	
 	function save_search_form_meta($post_id, $post)
@@ -987,11 +986,10 @@ class Search_Filter_Posts_Admin {
 		}
 		
 		//now add a default for published if the form has not been saved before
-		if(!isset($settings['post_status']))
+		if( ! isset( $settings['post_status'] ) )
 		{
-			$defaults['post_status']['publish'] = "publish";
+			$defaults['post_status']['publish'] = "1";
 		}
-		
 		
 		if(is_array($settings))
 		{
@@ -1048,10 +1046,8 @@ class Search_Filter_Posts_Admin {
 		}
 	}
 	
-	function set_checked($current_value)
-	{
-		if($current_value!="")
-		{
+	function set_checked($current_value) {
+		if( 1 === absint( $current_value ) ) {
 			echo ' checked="checked"';
 		}
 	}
@@ -1060,13 +1056,18 @@ class Search_Filter_Posts_Admin {
 	{
 		global $wpdb;
 		$data   =   array();
-		$wpdb->query("
-			SELECT `meta_key`, `meta_value`
-			FROM $wpdb->postmeta
-			WHERE `post_id` = $post_id
-		");
+		$wpdb->query( $wpdb->prepare(
+			"
+				SELECT `meta_key`, `meta_value`
+				FROM $wpdb->postmeta
+				WHERE `post_id` = '%d'
+			",
+			$post_id
+		) );
+
+
 		foreach($wpdb->last_result as $k => $v){
-			$data[$v->meta_key] =   $v->meta_value;
+			$data[$v->meta_key] = $v->meta_value;
 		};
 		return $data;
 	}

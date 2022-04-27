@@ -390,67 +390,14 @@ class Search_Filter {
 
                         $ajax_data = apply_filters("search_filter_ajax_object_$clean_data_type", $ajax_data);
                     }
-
                 }
 
                 do_action("search_filter_api_header");
-                echo Search_Filter_Helper::json_encode($ajax_data);
+				header('Content-Type: application/json; charset=utf-8');
+                echo wp_json_encode($ajax_data);
                 exit;
-
-				/*if($sf_data=="results")
-				{
-					if($sf_inst->settings("display_results_as")=="shortcode")
-					{
-						$results = array();
-						
-						//$results['form'] = $this->display_shortcode->display_shortcode(array("id" => $sfid));
-						$results['results'] = $sf_inst->query()->the_results();
-						
-						echo Search_Filter_Helper::json_encode($results);
-						exit;
-					}
-				}
-				else if($sf_data=="all")
-				{
-					if($sf_inst->settings("display_results_as")=="shortcode")
-					{
-						$results = array();
-
-						$results['form'] = $this->display_shortcode->display_shortcode(array("id" => $sfid));
-						$results['results'] = $sf_inst->query()->the_results();
-
-						echo Search_Filter_Helper::json_encode($results);
-						exit;
-					}
-				}
-				else if($sf_data=="form")
-				{
-					$results = array();
-                    $results['form'] = $this->display_shortcode->display_shortcode(array("id" => $sfid));
-					
-					echo Search_Filter_Helper::json_encode($results);
-					exit;
-				}
-				else if($sf_data=="vc_results")
-				{
-					$results = array();
-
-                    $results_output = "";
-                    if(has_filter("search_filter_ajax_results"))
-                    {
-                        $results['results'] = apply_filters("search_filter_ajax_results", $results_output);
-                    }
-					$results['form'] = $this->display_shortcode->display_shortcode(array("id" => $sfid));
-
-					echo Search_Filter_Helper::json_encode($results);
-					exit;
-				}*/
-
-				//do_action("");
-				
 			}
 		}
-        //exit;
 	}
 
 	public function handle_template($original_template)
@@ -692,7 +639,12 @@ class Search_Filter {
 		wp_register_script( $this->plugin_slug . '-plugin-select2', plugins_url( 'assets/js/select2'.$file_ext, __FILE__ ), array('jquery'), self::VERSION );
 		wp_register_script( $this->plugin_slug . '-plugin-jquery-i18n', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n'.$file_ext, array('jquery'), self::VERSION );
 		//wp_register_script( $this->plugin_slug . '-plugin-jquery-i18n', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/i18n/datepicker-nl.js', array('jquery'), self::VERSION );
-		wp_localize_script($this->plugin_slug . '-plugin-build', 'SF_LDATA', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'home_url' => (home_url('/')) ));
+		$js_data = array( 
+			'ajax_url'   => admin_url( 'admin-ajax.php' ),
+			'home_url'   => home_url('/'),
+			'extensions' => apply_filters( 'search_filter_extensions', array() ),
+		);
+		wp_localize_script($this->plugin_slug . '-plugin-build', 'SF_LDATA', $js_data );
 		
 		$lazy_load_js 				= Search_Filter_Helper::get_option( 'lazy_load_js' );
 		$load_js_css 				= Search_Filter_Helper::get_option( 'load_js_css' );
@@ -701,8 +653,6 @@ class Search_Filter {
 		{
 			$this->enqueue_scripts();
 		}
-		
-		
 	}
 	public function enqueue_scripts()
 	{

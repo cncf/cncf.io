@@ -68,13 +68,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<label for="{0}[{1}][meta_key]">
 				<?php _e("Meta Key: ", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("choose a meta key to sort by", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span> 
 				<?php
-					$all_meta_keys = $this->get_all_post_meta_keys();
-					echo '<select name="{0}[{1}][sort_options][{2}][meta_key]" class="meta_key" id="{0}[{1}][sort_options][{2}][meta_key]">';
-					foreach($all_meta_keys as $v)
-					{						
-						echo '<option value="'.$v.'"'.$this->set_selected($values['meta_key'], $v, false).'>'.$v."</option>";
+					$meta_key_text_input = Search_Filter_Helper::get_option( 'meta_key_text_input' );
+					if($meta_key_text_input == 1 ) {
+						?>
+						<input type="text" placeholder="<?php echo esc_attr__( 'Enter a meta key', 'search-filter' ); ?> " style="width: 100%"  name="{0}[{1}][sort_options][{2}][meta_key]" class="meta_key" id="{0}[{1}][sort_options][{2}][meta_key]" value="<?php echo esc_attr($values['meta_key']); ?>" />
+						<?php
+					} else {
+						$all_meta_keys = $this->get_all_post_meta_keys();
+						echo '<select name="{0}[{1}][sort_options][{2}][meta_key]" class="meta_key" id="{0}[{1}][sort_options][{2}][meta_key]">';
+						foreach($all_meta_keys as $v)
+						{						
+							echo '<option value="'.$v.'"'.$this->set_selected($values['meta_key'], $v, false).'>'.$v."</option>";
+						}
+						echo '</select>';
 					}
-					echo '</select>';
 					
 				?>
 			</label>
