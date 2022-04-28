@@ -8,6 +8,8 @@
 // phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
 // phpcs:disable Generic.Formatting.MultipleStatementAlignment.NotSameWarning
 
+// =include ../libraries/hoverintent.min.js
+
 ( function () {
 	document.addEventListener(
 		'DOMContentLoaded',
@@ -178,52 +180,67 @@
 			let closeDropdownTimeout;
 
 			const startCloseTimeout = function () {
-				closeDropdownTimeout = setTimeout( () => closeDropdown(),50 );
+				closeDropdownTimeout = setTimeout( () => closeDropdown(), 50 );
 			};
 
 			const stopCloseTimeout = function () {
 				clearTimeout( closeDropdownTimeout );
 			};
 
-			// TODO: Use hoverintent.
-			// https://github.com/svivian/sv-hover-intent-js .
-			const openDropdown = function ( el ) {
-				// Remove active menu.
-				menuItems.forEach( ( items ) => items.classList.remove( 'is-open' ) );
-				// Set current menu to active.
-				el.classList.add( 'is-open' );
-			};
+						const openDropdown = function ( el ) {
+							// Remove active menu.
+							menuItems.forEach( ( items ) => items.classList.remove( 'is-open' ) );
+							// Set current menu to active.
+							el.classList.add( 'is-open' );
+						};
 
 			const closeDropdown = function () {
 				// Remove active class from all menu items.
 				menuItems.forEach( ( items ) => items.classList.remove( 'is-open' ) );
 			};
 
-			// Bind mouse event to each menu item.
+			// HoverIntent.
+			// Options: https://github.com/tristen/hoverintent.
 			menuItems.forEach(
-				( el ) => {
-					// Mouse enter event.
-					el.addEventListener(
-						'mouseenter',
+				item => {
+					hoverintent(
+					item,
 						function () {
-							stopCloseTimeout();
-							openDropdown( this );
+								stopCloseTimeout();
+								openDropdown( this )
 						},
-						false,
-					);
-					// Mouse leave event.
-					el.addEventListener( 'mouseleave',() => startCloseTimeout(),false );
-				},
-			);
+					function () {
+							startCloseTimeout()
+					}
+					).options(
+							{
+								sensitivity: 8,
+								interval: 50,
+						}
+							)
+					}
+				);
 
 			// Bind mouse event to each sub-menu.
 			menuSubs.forEach(
-				( el ) => {
-					el.addEventListener( 'mouseenter',() => stopCloseTimeout(),false );
-					el.addEventListener( 'mouseleave',() => startCloseTimeout(),false );
+				( element ) => {
+					element.addEventListener( 'mouseenter',() => stopCloseTimeout(), false );
+					element.addEventListener( 'mouseleave',() => startCloseTimeout(), false );
 				},
 			);
 
+			// Let Escape key close the menu.
+			document.addEventListener(
+				'keydown',
+				function(e) {
+					// Target escape Key.
+					if (e.keyCode == 27) {
+						startCloseTimeout()
+					}
+				}
+				);
+
+			// Hamburger - Mobile only.
 			hamburger.addEventListener(
 				'click',
 				function ( e ) {
@@ -237,6 +254,7 @@
 				},
 			);
 
+			// Select the titles that activate sub-menus on mobile.
 			const menuHeadings = document.querySelectorAll( '.menu-item-has-children > a' );
 
 			// Set default animation speed in ms.

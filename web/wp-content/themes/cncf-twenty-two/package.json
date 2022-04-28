@@ -29,6 +29,7 @@
         "gulp": "^4.0.2",
         "gulp-concat": "^2.6.1",
         "gulp-filter": "^7.0.0",
+        "gulp-include": "^2.4.1",
         "gulp-line-ending-corrector": "^1.0.3",
         "gulp-merge-media-queries": "^0.2.1",
         "gulp-notify": "^4.0.0",

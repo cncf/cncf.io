@@ -53,6 +53,7 @@ const gulp = require( 'gulp' ),
 	/** JS plugins */
 	concat = require( 'gulp-concat' ),
 	terser = require( 'gulp-terser' ),
+	include = require('gulp-include')
 
 	/** Utility plugins */
 	lineec     = require( 'gulp-line-ending-corrector' ),
@@ -293,6 +294,8 @@ function detachedStyles() {
 function globalJS() {
 	return gulp
 		.src( jsGlobalSrc )
+		.pipe(include())
+		.on('error', console.log)
 		.pipe( concat( jsGlobalFile + '.js' ) )
 		.pipe( lineec() )
 		.pipe( gulp.dest( jsGlobalDestination ) )

@@ -513,8 +513,8 @@
 			}
 		}
 
-		// activate pop-out menu.
-		&:hover > .sub-menu,
+		// activate pop-out menu, with is-open class or with focus.
+		&.is-open > .sub-menu,
 		&:focus > .sub-menu,
 		&:focus-within > .sub-menu {
 			opacity: 1;
