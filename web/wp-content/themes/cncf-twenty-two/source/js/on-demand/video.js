@@ -76,6 +76,7 @@
 				video.addEventListener(
 				'loadedmetadata',
 				(e) => {
+					video.load();
 					playVideo();
 					// fade out poster.
 					poster.classList.add( 'video-has-loaded' );
