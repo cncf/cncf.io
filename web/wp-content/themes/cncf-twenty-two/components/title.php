@@ -54,9 +54,9 @@ if ( is_tag() || is_tax() ) :
 		elseif ( ! ( is_404() ) && ( is_page() ) ) :
 			if ( 38018 === wp_get_post_parent_id( $post ) ) {
 				?>
-	<p class="hero-parent-link">
-				<a href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>
-				</p>
+	<span>
+				<a class="parent-link" href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>
+			</span>
 				<?php
 			}
 			// PAGE TITLE.
