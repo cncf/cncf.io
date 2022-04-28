@@ -624,11 +624,11 @@
 		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
+		line-height: 115%;
 
 		a {
 			color: $black;
 			font-size: 11px;
-			line-height: 115%;
 		}
 	}
 	&__date {
