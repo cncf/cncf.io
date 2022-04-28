@@ -47,6 +47,12 @@
 
 		.chosen-drop {
 			z-index: 6;
+			.chosen-results {
+				.active-result {
+					display: flex;
+					align-items: center;
+				}
+			}
 		}
 	}
 
