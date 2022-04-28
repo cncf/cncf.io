@@ -447,7 +447,7 @@
 				padding-right: 26px;
 			}
 		}
-		&.is-open > a span {
+		> a span {
 			position: relative;
 			&:after {
 				content: '';
@@ -457,6 +457,7 @@
 				height: 5px;
 				display: block;
 				width: 100%;
+				background-color: transparent;
 			}
 		}
 		&:nth-child(1).is-open span:after {
