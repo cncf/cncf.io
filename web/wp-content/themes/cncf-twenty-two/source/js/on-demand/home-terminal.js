@@ -17,20 +17,24 @@
 		let imageToDisplay = terminal.dataset.src;
 
 		// Get matchMedia setting.
-		let motionMatchMedia = window.matchMedia( '(prefers-reduced-motion)' );
+		let prefersReducedMotionSetting = window.matchMedia( '(prefers-reduced-motion)' );
+		let prefersReducedMotionQuery   = window.matchMedia( '(prefers-reduced-motion: reduce)' );
+		let prefersReducedMotion        = ! prefersReducedMotionQuery || prefersReducedMotionQuery.matches;
 
 		/**
 		 * Sets the terminal image based on preferences.
 		 */
 		function getMotionMatch() {
-			if (motionMatchMedia.matches) {
+			if (prefersReducedMotion) {
 				imageToDisplay = terminal.dataset.reducedMotionSrc;
 			} else {
 				imageToDisplay = terminal.dataset.src;
 			}
 		}
 		// Watches for change event to reload based on prefs.
-		motionMatchMedia.addEventListener( 'change', getMotionMatch );
+		if (prefersReducedMotionSetting.addEventListener) {
+			prefersReducedMotionSetting.addEventListener( 'change', getMotionMatch );
+		}
 		// runs on first load.
 		getMotionMatch();
 

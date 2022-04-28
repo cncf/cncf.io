@@ -40,21 +40,24 @@
 		}
 
 		// Get matchMedia setting.
-		let motionMatchMedia = window.matchMedia( '(prefers-reduced-motion)' );
+		let prefersReducedMotionSetting = window.matchMedia( '(prefers-reduced-motion)' );
+		let prefersReducedMotionQuery = window.matchMedia( '(prefers-reduced-motion: reduce)' );
+		let prefersReducedMotion = ! prefersReducedMotionQuery || prefersReducedMotionQuery.matches;
 
 		/**
 		 * Should the video play.
 		 */
 		function getMotionMatch() {
-			if (motionMatchMedia.matches) {
+			if (prefersReducedMotion) {
 				video.pause();
-				return;
 			} else {
 				videoCanPlay();
 			}
 		}
 		// Watches for change event to reload based on prefs.
-		motionMatchMedia.addEventListener( 'change', getMotionMatch );
+		if (prefersReducedMotionSetting.addEventListener) {
+			prefersReducedMotionSetting.addEventListener( 'change', getMotionMatch );
+		}
 		// runs on first load.
 		getMotionMatch();
 

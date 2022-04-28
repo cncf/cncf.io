@@ -264,11 +264,11 @@ function add_home_ambassadors_shortcode() {
 					<?php echo wp_json_encode( $ambassadors ); ?>;
 
 				// Get matchMedia setting.
-				let motionMatchMedia = window.matchMedia(
-					'(prefers-reduced-motion)');
+				let prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+				let prefersReducedMotion = !prefersReducedMotionQuery || prefersReducedMotionQuery.matches;
 
 				// Stop script if user wants reduced motion.
-				if (motionMatchMedia.matches) {
+				if (prefersReducedMotion) {
 					return;
 				}
 
