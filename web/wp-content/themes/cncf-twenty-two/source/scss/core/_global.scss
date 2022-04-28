@@ -20,6 +20,9 @@ body {
 
 	// fixes menu off bottom of screen.
 	overscroll-behavior: none;
+	max-width: 100%;
+	// hacky fix to stop overflow on screens with scrollbar.
+	overflow-x: hidden;
 
 	&.has-menu-active {
 		// Stops bg moving when menu open.
@@ -38,11 +41,11 @@ body {
 // default content container.
 .container {
 	width: 100%;
+	margin: auto;
 	max-width: 100%;
 	@media (min-width: 1200px) {
 		max-width: $content-width;
 	}
-	margin: auto;
 }
 
 .wrap {
@@ -64,18 +67,6 @@ body {
 		padding-right: 0px;
 	}
 }
-
-// @media (min-width: 600px) {
-// 	.show-mobile-only {
-// 		display: none;
-// 	}
-// }
-
-// .show-tablet-only {
-// 	@media (max-width: 599px) {
-// 		display: none;
-// 	}
-// }
 
 @media (min-width: 600px) {
 	.show-upto-600 {

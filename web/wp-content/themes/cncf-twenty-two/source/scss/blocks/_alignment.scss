@@ -8,14 +8,16 @@
 	margin-right: -50vw;
 	margin-left: -50vw;
 	width: 100vw;
-	max-width: 100%;
 }
 
 // Experimental: Fixing WordPress group issues #33374.
 // If something is not respecting max-width, add :not exception here.
 .wp-block-group.alignfull {
 	> *:not(.wp-block-group):not(.wp-block-columns):not([class*='is-style-max']):not(.is-style-opening-paragraph) {
-		max-width: $content-width;
+		max-width: 100%;
+		@media (min-width: 1200px) {
+			max-width: $content-width;
+		}
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -25,7 +27,10 @@
 .wp-block-group.alignfull {
 	.wp-block-group,
 	.wp-block-columns {
-		max-width: $content-width;
+		max-width: 100%;
+		@media (min-width: 1200px) {
+			max-width: $content-width;
+		}
 		margin-left: auto;
 		margin-right: auto;
 		width: 100%;
