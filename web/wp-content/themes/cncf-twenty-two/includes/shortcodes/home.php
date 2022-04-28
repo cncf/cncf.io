@@ -209,7 +209,7 @@ function add_home_ambassadors_shortcode() {
 		$count = 1;
 		foreach ( $initial_ambassadors as $ambassador ) {
 			?>
-		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg0<?php echo esc_html( $count ); ?> has-animation-drop-shadow"
+		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg0<?php echo esc_html( $count ); ?>"
 			title="<?php echo esc_html( 'View ' . $ambassador['title'] ); ?>"
 			href="<?php echo esc_url( $ambassador['link'] ); ?>">
 			<img alt="<?php echo esc_html( $ambassador['title'] ); ?>"
@@ -220,7 +220,7 @@ function add_home_ambassadors_shortcode() {
 			$count++;
 		}
 		?>
-		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg05 has-animation-drop-shadow"
+		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg05"
 			title="Join the Foundation of Doers - with Priyanka Sharma"
 			href="https://www.youtube.com/watch?v=u71aL6aVDPg">
 			<img alt="Priyanka Sharma" loading="lazy"
