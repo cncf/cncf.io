@@ -34,14 +34,14 @@
 			width: 100%;
 			height: 280px;
 			@media (min-width: 1200px) {
-				height: 230px;
+				height: 250px;
 			}
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
-			// &:hover {
-			// 	opacity: 0.9;
-			// 	transition: opacity 0.25s ease-in;
-			// }
+			&:hover {
+				opacity: 0.9;
+				transition: opacity 0.25s ease-in;
+			}
 		}
 	}
 
