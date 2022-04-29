@@ -28,7 +28,7 @@
 						the foundation of cloud native computing </h2>
 				</div>
 				<div class="home-projects-intro__col2">
-					<p>As part of the <a href="https://linuxfoundation.org/">Linux Foundation</a>, we provide support, oversight and direction for fast-growing, cloud native projects, including Kubernetes, Envoy, and Prometheus.</p>
+					<p>As part of the <a href="https://linuxfoundation.org/">Linux Foundation</a>, we provide support, oversight and direction for fast-growing, <a href="https://github.com/cncf/toc/blob/main/DEFINITION.md">cloud native</a> projects, including Kubernetes, Envoy, and Prometheus.</p>
 				</div>
 
 			</div>

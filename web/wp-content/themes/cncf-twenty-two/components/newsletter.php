@@ -11,7 +11,7 @@
 <section class="newsletter" id="newsletter">
 
 	<p
-		class="newsletter__title is-style-max-width-800"><strong>Subscribe</strong> for updates, event info, webinars and the latest community news</p>
+		class="newsletter__title is-style-max-width-800"><strong>Subscribe</strong> for updates, event info, webinars, and the latest community news</p>
 
 	<div style="height:60px" aria-hidden="true"
 		class="wp-block-spacer is-style-20-60"></div>
