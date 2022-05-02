@@ -96,6 +96,12 @@
 			padding-top: 11px;
 			padding-bottom: 11px;
 			margin-bottom: 6px;
+			&:hover {
+				.lf-menu-description {
+					transition: color 0.25s ease;
+					color: $black;
+				}
+			}
 
 			.lf-menu-description {
 				display: block;
@@ -104,6 +110,7 @@
 				line-height: 160%;
 				padding-top: 8px;
 				color: $gray-700;
+				transition: color 0.25s ease;
 			}
 		}
 
