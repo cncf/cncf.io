@@ -480,9 +480,6 @@
 		&__cta {
 			grid-area: cta;
 			padding-top: 50px;
-			@media (min-width: 1200px) {
-				padding-top: 70px;
-			}
 		}
 	}
 	@media (min-width: 1000px) {
@@ -815,7 +812,7 @@
 		padding: 25px 10px 10px 10px;
 	}
 	&__cta {
-		padding-top: 34px;
+		padding-top: 50px;
 		@media (min-width: 800px) {
 			grid-area: cta;
 		}

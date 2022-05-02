@@ -168,8 +168,8 @@ function add_home_ambassadors_shortcode() {
 			#TeamCloudNative
 		</h2>
 
-		<div style="height:60px" aria-hidden="true"
-			class="wp-block-spacer is-style-30-60"></div>
+		<div style="height:40px" aria-hidden="true"
+			class="wp-block-spacer is-style-20-40"></div>
 
 		<p
 			class="home-ambassadors__text">CNCF is deeply committed to the success of our community and ensure individuals carve their own path in the cloud native ecosystem, no matter their background or future goals. </p>
