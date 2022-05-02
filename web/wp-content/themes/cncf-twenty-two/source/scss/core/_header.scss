@@ -14,10 +14,6 @@
 
 	@media (min-width: 1000px) {
 		width: 210px;
-		margin-right: 20px;
-	}
-
-	@media (min-width: 1200px) {
 		margin-right: 52px;
 	}
 
@@ -93,8 +89,8 @@
 		.menu * a {
 			display: block;
 			font-weight: bold;
-			font-size: 18px;
-			line-height: 120%;
+			font-size: 19px;
+			line-height: 115%;
 			text-decoration: none;
 			color: $black;
 			padding-top: 11px;
@@ -339,10 +335,10 @@
 
 		.search-toggle.button-reset {
 			margin-left: 20px;
+			height: 30px;
+			width: 30px;
 			@media (min-width: 1250px) {
 				margin-left: 40px;
-				height: 30px;
-				width: 30px;
 			}
 		}
 
@@ -354,8 +350,7 @@
 			top: 100%;
 			left: 0;
 			right: 0;
-			background-color: $gray-700;
-			// background-color: rgba(#222222, 0.85);
+			background-color: rgba(#222222, 0.85);
 			transition: opacity 0.15s ease-in;
 			&.is-active {
 				opacity: 1;
@@ -388,8 +383,6 @@
 			align-items: baseline;
 			.wp-block-button__link {
 				border: 1px solid $white;
-				// extra margin as SVGs not aligned.
-				margin-right: 10px;
 				transition: none;
 			}
 			input[type='search'] {
@@ -410,13 +403,17 @@
 				}
 				&:focus {
 					outline: 0;
-					border-bottom: 2px solid $black;
+					border-bottom: 2px solid $primary-color;
 					transition: color 0.25s ease;
 					&::placeholder {
 						transition: color 0.25s ease;
 						color: transparent;
 					}
 				}
+			}
+			input[type='submit'] {
+				background-color: transparent;
+				border-radius: 0;
 			}
 		}
 	}
@@ -438,10 +435,6 @@
 			padding-top: 33px;
 			padding-left: 12px;
 			padding-right: 12px;
-			@media (min-width: 1100px) {
-				padding-left: 18px;
-				padding-right: 18px;
-			}
 			@media (min-width: 1250px) {
 				padding-left: 26px;
 				padding-right: 26px;

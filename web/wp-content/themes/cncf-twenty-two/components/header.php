@@ -409,7 +409,7 @@ endif;
 							autocorrect="off" autocapitalize="off"
 							spellcheck="false" maxlength="98" required>
 						<input
-							class="wp-block-button__link has-no-padding has-gray-700-background-color has-background"
+							class="wp-block-button__link has-no-padding"
 							type="submit" value="Search" />
 					</form>
 
