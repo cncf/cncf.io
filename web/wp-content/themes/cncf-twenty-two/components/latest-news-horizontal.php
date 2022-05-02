@@ -16,6 +16,12 @@ $args  = array(
 	'ignore_sticky_posts' => false,
 	'category_name'       => 'blog,announcements',
 );
+
+global $post;
+if ( $post->ID ) {
+	$args['post__not_in'] = array( $post->ID );
+}
+
 $query = new WP_Query( $args );
 
 if ( $query->have_posts() ) :
