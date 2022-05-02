@@ -195,7 +195,7 @@ class LF_Utils {
 	public static function display_author( $the_post_id ) {
 
 		// if no post id or not number, return.
-		if ( ! $the_post_id || ! is_integer( $the_post_id ) ) {
+		if ( ! $the_post_id || ! is_integer( $the_post_id ) || 'lf_spotlight' === get_post_type( $the_post_id ) ) {
 			return;
 		}
 
