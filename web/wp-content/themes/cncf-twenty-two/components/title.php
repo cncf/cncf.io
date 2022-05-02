@@ -86,7 +86,7 @@ if ( is_tag() || is_tax() ) :
 		?>
 
 		<?php
-		if ( is_singular( 'lf_report' ) ) {
+		if ( is_singular( 'lf_report' ) || is_singular( 'lf_spotlight' ) || is_singular( 'lf_kubeweekly' ) ) {
 			?>
 <div style="height:50px" aria-hidden="true"
 	class="wp-block-spacer is-style-30-50"></div>

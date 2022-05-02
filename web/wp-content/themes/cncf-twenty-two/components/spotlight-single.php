@@ -11,9 +11,6 @@
 
 <main class="spotlight">
 	<article class="container wrap post-content">
-<?php
-get_template_part( 'components/post-author' );
-?>
 
 <div style="height:60px" aria-hidden="true"
 			class="wp-block-spacer is-style-40-60">
