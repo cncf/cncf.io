@@ -78,6 +78,12 @@ elseif ( is_singular( 'lf_project' ) ) :
 </span>
 		<?php
 	}
+elseif ( is_singular( 'lf_kubeweekly' ) ) :
+	?>
+<span><a class="parent-link"
+		href="<?php echo esc_url( get_home_url() ); ?>/kubeweekly/"
+		title="See all Kubeweeklys">Kubeweekly</a></span>
+		<?php
 elseif ( is_singular( 'lf_report' ) ) :
 	?>
 <span><a class="parent-link"
