@@ -354,8 +354,8 @@ function add_home_terminal_shortcode() {
 		<h2 class="has-extra-extra-large-font-size">We're redefining how
 			software gets built</h2>
 
-		<div style="height:60px" aria-hidden="true"
-			class="wp-block-spacer is-style-30-60"></div>
+		<div style="height:40px" aria-hidden="true"
+			class="wp-block-spacer is-style-20-40"></div>
 
 		<p
 			class="home-terminal__text">We drive team velocity through cross-industry collaboration, contributions, and guidance from experienced practitioners. Whether your background is technical or creative, everybody is welcome to join us in making cloud native ubiquitous.</p>

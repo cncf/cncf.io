@@ -690,9 +690,6 @@
 			width: 100%;
 		}
 	}
-	.is-style-link-cta {
-		font-size: 20px;
-	}
 }
 
 .hide-svg {
@@ -721,7 +718,7 @@
 			'terminal text'
 			'terminal cta';
 		grid-template-columns: 3fr 2fr;
-		grid-template-rows: 2fr 1fr;
+		grid-template-rows: 1fr 1fr;
 	}
 	@media (min-width: 1000px) {
 		grid-column-gap: 40px;
@@ -818,15 +815,9 @@
 		padding: 25px 10px 10px 10px;
 	}
 	&__cta {
-		padding-top: 30px;
-		.is-style-link-cta {
-			font-size: 20px;
-		}
+		padding-top: 34px;
 		@media (min-width: 800px) {
 			grid-area: cta;
-		}
-		@media (min-width: 1000px) {
-			padding-top: 30px;
 		}
 	}
 }
