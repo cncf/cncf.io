@@ -14,14 +14,4 @@
 			transform: scale(1.02);
 		}
 	}
-
-	// Not used anywhere, filter outline does not work properly with heptagon clippath.
-	// .has-animation-drop-shadow {
-	// 	transition-property: transform;
-	// 	transition-duration: 0.3s;
-	// 	transition: filter;
-	// 	&:hover {
-	// 		filter: drop-shadow(0 0 11px rgba(20, 20, 20, 0.3));
-	// 	}
-	// }
 }
