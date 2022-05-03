@@ -28,7 +28,7 @@ function add_cncf_metrics_shortcode() {
 
 	<div class="metrics__column">
 
-		<a href="https://all.devstats.cncf.io/" class="metrics__link"
+		<a href="https://all.devstats.cncf.io/" class="metrics__link has-animation-scale-2"
 			title="See CNCF Project Contributors at Dev Stats">
 
 			<div class="metrics__image-wrapper">
@@ -55,7 +55,7 @@ function add_cncf_metrics_shortcode() {
 
 	<div class="metrics__column">
 
-		<a href="/about/members/" class="metrics__link"
+		<a href="/about/members/" class="metrics__link has-animation-scale-2"
 			title="See CNCF Members">
 
 			<div class="metrics__image-wrapper">
@@ -81,7 +81,7 @@ function add_cncf_metrics_shortcode() {
 
 	<div class="metrics__column">
 
-		<a href="/certification/software-conformance/" class="metrics__link"
+		<a href="/certification/software-conformance/" class="metrics__link has-animation-scale-2"
 			title="See Certified Kubernetes Distributions & Platforms">
 
 			<div class="metrics__image-wrapper">
@@ -108,7 +108,7 @@ function add_cncf_metrics_shortcode() {
 
 	<div class="metrics__column">
 
-		<a href="https://www.meetup.com/pro/cncf/" class="metrics__link"
+		<a href="https://www.meetup.com/pro/cncf/" class="metrics__link has-animation-scale-2"
 			title="See CNCF Meetups">
 
 			<div class="metrics__image-wrapper">

@@ -20,11 +20,10 @@ if ( is_singular( 'lf_webinar' ) ) :
 	<?php
 elseif ( is_singular( 'lf_spotlight' ) ) :
 	?>
-<span>
+		<div class="parent-link-align">
 	<a class="parent-link"
 		href="<?php echo esc_url( get_home_url() ); ?>/spotlights/"
 		title="Go to Spotlights">Spotlight</a>
-</span>
 	<?php
 	// get spotlight type.
 	$spotlight_type      = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', true );
@@ -38,7 +37,7 @@ elseif ( is_singular( 'lf_spotlight' ) ) :
 		href="<?php echo esc_url( $spotlight_type_link ); ?>">
 		<?php echo esc_html( $spotlight_type ); ?>
 	</a></span>
-
+</div>
 	<?php
 	elseif ( is_archive() || is_search() || is_category() ) :
 		?>
@@ -86,9 +85,10 @@ elseif ( is_singular( 'lf_kubeweekly' ) ) :
 		<?php
 elseif ( is_singular( 'lf_report' ) ) :
 	?>
-<span><a class="parent-link"
+		<div class="parent-link-align">
+	<a class="parent-link"
 		href="<?php echo esc_url( get_home_url() ); ?>/reports/"
-		title="See all Reports">Report</a></span>
+		title="See all Reports">Report</a>
 
 	<?php
 
@@ -107,6 +107,7 @@ elseif ( is_singular( 'lf_report' ) ) :
 		<?php
 	}
 	?>
+	</div>
 	<?php
 else :
 	// Single Post.
@@ -115,11 +116,10 @@ else :
 		// Only get the first item in the array.
 		$category = array_shift( $all_categories );
 		?>
-<span>
+	<div class="parent-link-align">
 	<a class="parent-link"
 		href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"
 		title="See <?php echo esc_html( $category->name ); ?> posts"><?php echo esc_html( $category->name ); ?></a>
-</span>
 		<?php
 	}
 	// Get the Category Author.
@@ -136,5 +136,7 @@ else :
 	</a></span>
 		<?php
 	}
-
+	?>
+	</div>
+	<?php
 endif;

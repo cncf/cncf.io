@@ -13,6 +13,10 @@
 		flex-direction: column;
 		align-items: center;
 		height: 100%;
+		&:hover {
+			color: $gray-900;
+			text-decoration: none;
+		}
 	}
 	&__image-wrapper {
 		height: 120px;

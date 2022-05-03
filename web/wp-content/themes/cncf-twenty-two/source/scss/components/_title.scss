@@ -68,12 +68,17 @@
 	}
 }
 
+.parent-link-align {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 40px;
+}
+
 .title-wrapper {
 	.author-category,
 	.space-slash,
 	.parent-link {
 		line-height: 150%;
-		margin-bottom: 40px;
 		font-size: 14px;
 		@media (min-width: 375px) {
 			font-size: 15px;
