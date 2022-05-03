@@ -103,7 +103,7 @@ elseif ( is_singular( 'lf_report' ) ) :
 <a class="parent-link"
 	title="See more <?php echo esc_attr( $report_type ); ?> reports"
 	href="<?php echo esc_url( $report_type_link ); ?>">
-		<?php echo esc_html( $report_type ); ?> Report</a>
+		<?php echo esc_html( $report_type ); ?></a>
 		<?php
 	}
 	?>
