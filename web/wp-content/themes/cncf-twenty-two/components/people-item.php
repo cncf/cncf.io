@@ -30,7 +30,7 @@ $current_url = home_url( 'people/ambassadors' );
 $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : false;
 
 ?>
-<div class="person">
+<div class="person has-animation-scale-2">
 	<?php
 	// Make image link if show_modal.
 	if ( $show_modal ) :
