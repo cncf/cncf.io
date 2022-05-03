@@ -61,7 +61,7 @@ function add_projects_shortcode( $atts ) {
 			$logo             = get_post_meta( get_the_ID(), 'lf_project_logo', true );
 
 			?>
-	<div class="project-item">
+	<div class="project-item has-animation-scale-2">
 		<a href="<?php the_permalink(); ?>"
 			title="<?php echo esc_html( the_title_attribute() . $date_accepted ); ?>"
 			class="project-item__link">
