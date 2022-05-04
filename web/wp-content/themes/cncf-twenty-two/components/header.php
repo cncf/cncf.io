@@ -406,7 +406,7 @@ endif;
 							value="<?php echo esc_attr( get_search_query() ); ?>"
 							name="s" placeholder="I'm looking for..."
 							title="Search CNCF site"
-							autocorrect="off" autocapitalize="off"
+							autocapitalize="off"
 							spellcheck="false" maxlength="98" required>
 						<input
 							class="wp-block-button__link has-no-padding"
