@@ -31,7 +31,7 @@ style="max-height: 50vh; width: auto;">
 		<h1 class="has-text-align-center">The page you entered is out of sync
 		</h1>
 
-		<div style="height:20px" aria-hidden="true" class="wp-block-spacer">
+		<div style="height:50px" aria-hidden="true" class="wp-block-spacer is-style-30-50">
 		</div>
 
 		<form class="search-form" method="get"
@@ -44,7 +44,7 @@ style="max-height: 50vh; width: auto;">
 				autocomplete="off" autocorrect="off" autocapitalize="off"
 				spellcheck="false" maxlength="98" required>
 			<input
-				class="wp-block-button__link has-no-padding has-gray-700-background-color has-background"
+				class="wp-block-button__link has-no-padding"
 				type="submit" value="Search" />
 		</form>
 	</article>

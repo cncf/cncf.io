@@ -370,7 +370,7 @@ endif;
 				</li>
 			</ul>
 
-			<div style="height:40px" aria-hidden="true" class="wp-block-spacer">
+			<div style="height:60px;" aria-hidden="true" class="wp-block-spacer show-upto-1000">
 			</div>
 
 			<?php if ( isset( $site_options['header_cta_text'] ) && isset( $site_options['header_cta_link'] ) && $site_options['header_cta_text'] && $site_options['header_cta_link'] ) : ?>
