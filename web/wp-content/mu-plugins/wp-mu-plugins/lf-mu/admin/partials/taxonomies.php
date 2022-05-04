@@ -30,6 +30,7 @@ $args   = array(
 	'show_in_rest'      => true,
 	'hierarchical'      => false,
 	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-language', array( 'lf_webinar', 'lf_person' ), $args );
 
@@ -49,6 +50,7 @@ $args   = array(
 	'show_in_rest'      => true,
 	'hierarchical'      => false,
 	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_spotlight', 'lf_person' ), $args );
 
@@ -107,6 +109,7 @@ $args   = array(
 	'show_in_rest'      => true,
 	'hierarchical'      => false,
 	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-topic', array( 'lf_webinar' ), $args );
 
