@@ -231,6 +231,9 @@
 			font-weight: 700;
 			transition: all 0.25s ease-out;
 		}
+		.person__image img {
+			height: unset;
+		}
 
 		@media (min-width: 768px) {
 			.person__image {
