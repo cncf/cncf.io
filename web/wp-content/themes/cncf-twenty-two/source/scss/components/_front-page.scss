@@ -673,18 +673,30 @@
 				max-width: 160px;
 			}
 			height: auto;
-			aspect-ratio: 1/1;
 			filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
+			@supports (aspect-ratio: auto) {
+				aspect-ratio: 1/1;
+			}
+			// For slightly older browsers.
+			@supports not (aspect-ratio: auto) {
+				max-height: 250px;
+			}
 		}
 		&__image {
 			clip-path: url(#heptagon);
 			object-fit: cover;
-			aspect-ratio: 1/1;
-			min-width: 100%;
-			min-height: 100%;
-			// Safari.
-			height: 100%;
-			width: 100%;
+			@supports (aspect-ratio: auto) {
+				aspect-ratio: 1/1;
+				min-width: 100%;
+				min-height: 100%;
+				// Safari.
+				height: 100%;
+				width: 100%;
+			}
+			// For slightly older browsers.
+			@supports not (aspect-ratio: auto) {
+				max-height: 250px;
+			}
 		}
 	}
 }
