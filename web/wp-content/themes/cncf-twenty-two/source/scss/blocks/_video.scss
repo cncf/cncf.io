@@ -3,3 +3,10 @@
 		border-radius: 10px;
 	}
 }
+
+.wp-block-embed.is-type-video {
+	border-radius: 10px;
+	iframe {
+		border-radius: 10px;
+	}
+}
