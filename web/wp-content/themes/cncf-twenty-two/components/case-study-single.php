@@ -17,6 +17,11 @@
 			the_content();
 		endwhile;
 		?>
+		<!-- wp:spacer {"height":"40px"} -->
+		<div style="height:40px" aria-hidden="true"
+			class="wp-block-spacer"></div>
+		<!-- /wp:spacer -->
+
 	</article>
 </main>
 <?php
