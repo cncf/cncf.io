@@ -69,7 +69,7 @@ $args   = array(
 	'hierarchical'      => false,
 	'show_in_nav_menus' => false,
 );
-register_taxonomy( 'lf-author-category', array( 'lf_webinar', 'post' ), $args );
+register_taxonomy( 'lf-author-category', array( 'post' ), $args );
 
 $labels = array(
 	'name'          => __( 'Company', 'lf-mu' ),

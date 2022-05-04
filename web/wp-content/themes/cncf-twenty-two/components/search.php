@@ -51,11 +51,10 @@ get_template_part( 'components/title' );
 		while ( have_posts() ) :
 			the_post();
 
-			// Get the Category Author.
-			$category_author      = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
-			$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
-
 			if ( in_category( 'blog' ) ) {
+				// Get the Category Author.
+				$category_author      = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+				$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 				$content_type_singular = 'Blog Post';
 				$content_type_plural   = 'Blog Posts';
 				$content_type_url      = '/blog/';
@@ -118,7 +117,7 @@ get_template_part( 'components/title' );
 				</a>
 
 				<?php
-				if ( $category_author ) :
+				if ( isset( $category_author ) && $category_author ) :
 					$category_link = '/lf-author-category/' . $category_author_slug . '/';
 					?>
 				<a class="author-category has-larger-style" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_link ); ?>">CNCF
@@ -131,8 +130,6 @@ get_template_part( 'components/title' );
 						echo ' Media Coverage';
 					} elseif ( in_category( 'announcement' ) ) {
 						echo ' Announcement';
-					} elseif ( 'lf_webinar' == get_post_type() ) {
-						echo ' Online Program';
 					} else {
 						echo ' Post';
 					}
