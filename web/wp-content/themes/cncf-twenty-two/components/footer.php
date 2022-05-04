@@ -17,6 +17,14 @@ $site_options = get_option( 'lf-mu' );
 
 	<div class="container wrap">
 
+	<?php
+	// Phippy image for homepage.
+	// TODO: change ID to 71509 when using live db. This is a step in our deploy steps.
+	if ( is_front_page() ) {
+		LF_Utils::display_responsive_images( 72428, 'newsroom-post-width-r', '1024px', 'home-phippy', 'lazy', 'Phippy family in front of grass and sky' );
+	}
+	?>
+
 		<div style="height:70px" aria-hidden="true"
 			class="wp-block-spacer is-style-70-100"></div>
 
