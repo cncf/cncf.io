@@ -13,6 +13,10 @@
 	display: inline-flex;
 
 	@media (min-width: 1000px) {
+		width: 195px;
+		margin-right: 26px;
+	}
+	@media (min-width: 1250px) {
 		width: 210px;
 		margin-right: 52px;
 	}
@@ -440,23 +444,26 @@
 			white-space: nowrap;
 			padding-bottom: 33px;
 			padding-top: 33px;
-			padding-left: 12px;
-			padding-right: 12px;
+			padding-left: 8px;
+			padding-right: 8px;
 			@media (min-width: 1250px) {
-				padding-left: 26px;
-				padding-right: 26px;
+				padding-left: 20px;
+				padding-right: 20px;
 			}
 		}
 		> a span {
 			position: relative;
+			padding-left: 6px;
+			padding-right: 6px;
 			&:after {
 				content: '';
 				position: absolute;
-				left: -3%;
+				left: 0;
+				right: 0;
 				bottom: -33px;
 				height: 5px;
 				display: block;
-				width: 106%;
+				width: 100%;
 				background-color: transparent;
 			}
 		}
