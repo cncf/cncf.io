@@ -4,6 +4,7 @@
 	grid-column-gap: $grid-column-gap;
 	grid-row-gap: $grid-row-gap;
 	align-items: baseline;
+	justify-content: center;
 	.search-input {
 		height: 50px;
 		width: 100%;
@@ -13,6 +14,7 @@
 		color: $black;
 		font-size: 16px;
 		letter-spacing: 0.02em;
+		text-align: right;
 		@media (min-width: 1000px) {
 			height: 32px;
 			font-size: 20px;
@@ -21,7 +23,9 @@
 		}
 		line-height: 105%;
 		font-size: 16px;
+		// iOS overrides.
 		border-radius: 0;
+		-webkit-appearance: none;
 		grid-column: span 7;
 		@media (min-width: 500px) {
 			grid-column: span 9;
@@ -33,20 +37,18 @@
 			color: $black;
 			@media (min-width: 1000px) {
 				color: $white;
-				text-align: right;
 			}
 		}
 		&:focus {
 			outline: 0;
 			border-bottom: 2px solid $primary-color;
 			transition: color 0.25s ease;
-			&::placeholder {
-				transition: color 0.25s ease;
-				color: transparent;
-			}
 		}
-		::-webkit-search-cancel-button {
-			color: $white;
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			-webkit-appearance: none;
 		}
 	}
 	.wp-block-button__link {
