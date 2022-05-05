@@ -26,12 +26,12 @@
 		object-fit: cover;
 		position: absolute;
 		z-index: 2;
+		border-radius: 10px;
 		background-color: $black;
 		opacity: 0.7;
 		@media (min-width: 600px) {
 			opacity: 0.8;
 		}
-		border-radius: 10px;
 	}
 	&__bg-image {
 		width: 100%;
@@ -41,13 +41,16 @@
 		z-index: 1;
 		top: 0;
 		left: 0;
-		filter: grayscale(100%);
+		// filter: grayscale(100%);
 		border-radius: 10px;
 	}
 	&__content {
 		position: relative;
 		z-index: 2;
-		padding: 24px 33px;
+		padding: 20px;
+		@media (min-width: 375px) {
+			padding: 32px;
+		}
 		@media (min-width: 1000px) {
 			padding: 20px 20px;
 		}
@@ -59,9 +62,9 @@
 		display: grid;
 		grid-template-areas:
 			'title'
-			'hr'
+			'stats'
 			'description'
-			'date';
+			'cta';
 		grid-template-rows: auto auto auto 1fr;
 		@media (min-width: 600px) {
 			grid-column-gap: 40px;
@@ -81,14 +84,10 @@
 	}
 	&__title {
 		grid-area: title;
-		margin-bottom: 10px;
+		margin-bottom: 18px;
 		a {
 			color: $white;
 		}
-	}
-	&__title-hr {
-		grid-area: hr;
-		margin-bottom: 10px;
 	}
 	&__stats {
 		grid-area: stats;
@@ -96,8 +95,10 @@
 		color: $tertiary-400;
 	}
 	&__stat-larger {
-		font-size: 40px;
-		line-height: 40px;
+		// font-size: 40px;
+		font-size: 30px;
+		// line-height: 40px;
+		line-height: 36px;
 		font-weight: 700;
 	}
 	&__stat-default {
@@ -117,18 +118,27 @@
 	}
 	&__description {
 		grid-area: description;
-		margin-top: 10px;
+		margin-top: 16px;
 		font-size: 13px;
 		letter-spacing: 0.02em;
+		line-height: 150%;
 		@media (min-width: 600px) {
 			margin-top: 0;
 			font-size: 16px;
-			line-height: 150%;
 		}
 	}
 	&__cta {
 		grid-area: cta;
-		align-self: end;
+		margin-top: 26px;
+		@media (max-width: 599px) {
+			width: fit-content;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+		@media (min-width: 600px) {
+			align-self: end;
+			margin-top: 0;
+		}
 		@media (min-width: 1000px) {
 			font-size: 14px;
 			padding-left: 10px;

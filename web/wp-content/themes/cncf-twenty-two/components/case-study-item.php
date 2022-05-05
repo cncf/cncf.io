@@ -55,14 +55,9 @@ if ( $cn ) {
 		<h2 class="case-study-item__title"><a title="<?php the_title_attribute(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-		<!-- horizontal rule only on mobile -->
-		<hr
-			class="show-upto-600 wp-block-separator has-text-color has-background has-white-background-color has-white-color is-style-stubby
-			case-study-item__title-hr">
-
-		<!-- stat with horizontal rule, only on desktop  -->
+		<!-- stat with horizontal rule -->
 		<?php if ( $case_study_key_stat || $case_study_key_stat_label ) : ?>
-		<div class="show-over-600">
+		<div>
 			<hr
 				class="wp-block-separator has-text-color has-background has-white-background-color has-white-color is-style-stubby">
 			<p class="case-study-item__stats"><span class="case-study-item__stat-larger"><?php echo esc_html( $case_study_key_stat ); ?></span> <span class="case-study-item__stat-default"><?php echo esc_html( $case_study_key_stat_label ); ?></span></p>
@@ -70,9 +65,9 @@ if ( $cn ) {
 		<?php endif; ?>
 
 		<!-- date  -->
-		<div class="case-study-item__date-wrapper">
+		<div class="case-study-item__date-wrapper show-over-600">
 		<span class="case-study-item__date"><?php echo get_the_date(); ?></span>
-</div>
+		</div>
 
 		<!-- description -->
 		<?php if ( $case_study_description ) : ?>
@@ -81,7 +76,7 @@ if ( $cn ) {
 		<?php endif; ?>
 
 		<?php if ( $read_case_study ) : ?>
-		<a class="case-study-item__cta wp-block-button__link show-over-600"
+		<a class="case-study-item__cta wp-block-button__link"
 			href="<?php the_permalink(); ?>"><?php echo esc_html( $read_case_study ); ?></a>
 		<?php endif; ?>
 
