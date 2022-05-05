@@ -14,30 +14,6 @@
 	document.addEventListener(
 		'DOMContentLoaded',
 		function () {
-			// TODO: Refactor and neaten.
-			/**
-			 * Throttle.
-			 *
-			 * @param {*} callback Function name
-			 * @param {*} limit    Time to wait.
-			 * @return {Function} Callback.
-			 */
-			function throttle( callback,limit ) {
-				let wait = false;
-				return function () {
-					if ( ! wait ) {
-						callback.call();
-						wait = true;
-						setTimeout(
-							function () {
-								wait = false;
-							},
-							limit,
-						);
-					}
-				};
-			}
-
 			/**
 			 * Slideup
 			 *
@@ -127,47 +103,37 @@
 				return slideUp( target,duration );
 			};
 
-			// TODO: Integrate isMobile check.
-			let isMobile = checkMobile();
-
-			function checkMobile() {
+			const isMobile = function() {
 				return window.innerWidth < 1000;
 			}
 
+			// Run on load.
+			isMobile();
+
 			// Resize check for is mobile.
-			// TODO: Move Throttle as global?
-			window.addEventListener(
-				'resize',
-				throttle(
-					function () {
-						isMobile = checkMobile();
-					},
-					100,
-				),
-			);
-
-			const hamburger = document.querySelector( '.hamburger' );
-
-			const mainMenu = document.querySelector( '.main-menu' );
-
-			if ( ! hamburger && ! mainMenu ) {
-				return;
-			}
+			window.addEventListener( 'resize', window.utils.isThrottled( isMobile, 200, true ) );
 
 			const searchButtons = document.querySelectorAll( '.search-toggle' );
 
 			const searchBar = document.querySelector( '.header__search_wrapper' );
 
+			const searchInput = document.querySelector( '.header .search-input' );
+
+			// Find all search buttons and apply event listener to them to toggle is-active.
 			searchButtons.forEach(
 				function ( button ) {
 					button.addEventListener(
 						'click',
 						function ( e ) {
 							e.preventDefault();
-							if ( isMobile ) {
+							// Return if isMobile as this shouldn't do anything on mobile.
+							if ( isMobile() ) {
 								return;
 							}
 							searchBar.classList.toggle( 'is-active' );
+							// put the cursor in the input field.
+							searchInput.focus();
+							searchInput.setSelectionRange( 98, 98 );
 						},
 					);
 				},
@@ -179,24 +145,39 @@
 
 			let closeDropdownTimeout;
 
+			// Start to close.
 			const startCloseTimeout = function () {
 				closeDropdownTimeout = setTimeout( () => closeDropdown(), 50 );
 			};
 
+			// Stop close.
 			const stopCloseTimeout = function () {
 				clearTimeout( closeDropdownTimeout );
 			};
 
-						const openDropdown = function ( el ) {
-							// Remove active menu.
-							menuItems.forEach( ( items ) => items.classList.remove( 'is-open' ) );
-							// Set current menu to active.
-							el.classList.add( 'is-open' );
-						};
+			const openDropdown = function ( el ) {
+				// Remove active menu.
+				menuItems.forEach(
+					 ( item ) => {
+							item.classList.remove( 'is-open' )
+							item.blur();
+				}
+					);
+				document.activeElement?.blur(); // phpcs:ignore.
+				// Set current menu to active.
+				el.classList.add( 'is-open' );
+				el.focus();
+			};
 
 			const closeDropdown = function () {
+				document.activeElement?.blur(); // phpcs:ignore.
 				// Remove active class from all menu items.
-				menuItems.forEach( ( items ) => items.classList.remove( 'is-open' ) );
+				menuItems.forEach(
+					 ( item ) => {
+							item.classList.remove( 'is-open' );
+							item.blur();
+				}
+					);
 			};
 
 			// HoverIntent.
@@ -210,7 +191,8 @@
 								openDropdown( this )
 						},
 					function () {
-							startCloseTimeout()
+							stopCloseTimeout();
+							startCloseTimeout();
 					}
 					).options(
 							{
@@ -238,14 +220,18 @@
 						startCloseTimeout()
 					}
 				}
-				);
+			);
+
+			const hamburger = document.querySelector( '.hamburger' );
+
+			const mainMenu = document.querySelector( '.main-menu' );
 
 			// Hamburger - Mobile only.
 			hamburger.addEventListener(
 				'click',
 				function ( e ) {
 					e.preventDefault();
-					if ( ! isMobile ) {
+					if ( ! isMobile() ) {
 						return;
 					}
 					hamburger.classList.toggle( 'is-active' );
@@ -288,13 +274,15 @@
 						'click',
 						function ( e ) {
 							e.preventDefault();
-							if ( isMobile ) {
-								// TODO: Add will-change?
+							if ( isMobile() ) {
 								heading.classList.toggle( 'is-open' );
 								const subMenu = heading.nextElementSibling;
 								slideToggle( subMenu, animationSpeed );
-							} else if ( heading.getAttribute( 'href' ) === '#' ) {
-								e.preventDefault();
+							} else {
+								// Stop empty menu parents jumping to top of screen on click.
+								if ( heading.getAttribute( 'href' ) === '#' ) {
+									e.preventDefault();
+								}
 							}
 						},
 					);

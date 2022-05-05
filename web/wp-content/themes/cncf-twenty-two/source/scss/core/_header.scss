@@ -60,6 +60,15 @@
 			height: 80px;
 		}
 	}
+
+	.search-form {
+		.search-input {
+			font-size: 16px;
+			&::placeholder {
+				font-size: 16px;
+			}
+		}
+	}
 }
 
 .hamburger {
@@ -186,22 +195,6 @@
 		.lf-menu-title + .menu-item {
 			a {
 				padding-top: 0;
-			}
-		}
-
-		.search-form {
-			display: grid;
-			grid-template-columns: repeat(12, 1fr);
-			grid-column-gap: $grid-column-gap;
-			grid-row-gap: $grid-row-gap;
-			.search-input {
-				grid-column: span 7;
-				::-webkit-search-cancel-button {
-					color: $white;
-				}
-			}
-			.wp-block-button__link {
-				grid-column: span 5;
 			}
 		}
 	}
@@ -388,45 +381,6 @@
 			width: 100%;
 			align-items: center;
 			justify-content: flex-end;
-		}
-
-		.search-form {
-			display: flex;
-			align-items: baseline;
-			.wp-block-button__link {
-				border: 1px solid $white;
-				transition: none;
-			}
-			input[type='search'] {
-				height: 32px;
-				width: 100%;
-				background: transparent;
-				border: none;
-				border-bottom: 2px solid $white;
-				color: $white;
-				line-height: 105%;
-				font-size: 16px;
-				border-radius: 0;
-				&::placeholder {
-					color: $white;
-					font-size: 16px;
-					line-height: 105%;
-					text-align: right;
-				}
-				&:focus {
-					outline: 0;
-					border-bottom: 2px solid $primary-color;
-					transition: color 0.25s ease;
-					&::placeholder {
-						transition: color 0.25s ease;
-						color: transparent;
-					}
-				}
-			}
-			input[type='submit'] {
-				background-color: transparent;
-				border-radius: 0;
-			}
 		}
 	}
 

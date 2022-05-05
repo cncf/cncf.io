@@ -368,7 +368,7 @@ function add_home_terminal_shortcode() {
 			<a href="https://github.com/cncf/cncf.io/tree/main/web/wp-content/themes/cncf-twenty-two/source/terminal/"
 				class="box-link" title="Download CNCF Theme for Terminal"></a>
 
-			<img class="home-terminal__download-image" width="35" height="23" role="presentation"
+			<img class="home-terminal__download-image" width="35" height="23" alt=""
 				loading="lazy"
 				src="<?php LF_utils::get_svg( 'cncf-icon-download-w.svg', true ); ?>">
 			<p class="home-terminal__download-text">

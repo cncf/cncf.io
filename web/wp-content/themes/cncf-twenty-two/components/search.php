@@ -217,14 +217,14 @@ else :
 			<strong><?php echo get_search_query(); ?></strong>. Try searching
 			again:</h3>
 
-		<form role="search" method="get" class="no-search-results"
+		<form role="search" method="get" class="no-search-results" autocomplete="off"
 			action="<?php echo esc_url( home_url() ); ?>">
 			<label><span class="search-text screen-reader-text">Search the
 					site</span>
 				<input type="search" class="search-field margin-y"
 					placeholder="Enter search term"
 					value="<?php echo get_search_query(); ?>" name="s"
-					title="Search for" autocomplete="off" autocorrect="off"
+					title="Search for"
 					autocapitalize="off" spellcheck="false" />
 			</label>
 

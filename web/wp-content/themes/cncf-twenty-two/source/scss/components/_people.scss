@@ -234,6 +234,7 @@
 		}
 		.person__image img {
 			height: unset;
+			max-width: 400px;
 		}
 
 		@media (min-width: 768px) {
