@@ -26,6 +26,7 @@
 
 .cookie-title {
 	font-size: 16px;
+	line-height: 140%;
 	@media (min-width: 600px) {
 		font-size: 18px;
 	}
@@ -35,4 +36,5 @@
 }
 .cookie-link {
 	color: $black;
+	text-decoration: underline;
 }
