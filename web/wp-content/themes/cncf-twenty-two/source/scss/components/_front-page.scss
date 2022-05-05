@@ -659,9 +659,9 @@
 		&__link {
 			display: block;
 			width: 100%; // 100% and rely on grid pattern?
-			@media (min-width: 800px) and (max-width: 999px) {
-				max-width: 160px;
-			}
+			// @media (min-width: 800px) and (max-width: 999px) {
+			// 	max-width: 160px;
+			// }
 			height: auto;
 			filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
 			aspect-ratio: 1/1;
