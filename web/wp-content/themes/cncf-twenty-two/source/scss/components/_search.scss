@@ -58,8 +58,8 @@
 		border: 1px solid $black;
 		transition: none;
 		height: 50px;
-		border-radius: 4px;
 		@media (min-width: 1000px) {
+			border-radius: 0;
 			height: unset;
 			color: $white;
 			border: 1px solid $white;
