@@ -6,6 +6,7 @@
 
 .wp-block-embed.is-type-video {
 	border-radius: 10px;
+	overflow: hidden;
 	iframe {
 		border-radius: 10px;
 	}
