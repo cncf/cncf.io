@@ -163,14 +163,14 @@
 							item.blur();
 				}
 					);
-				document.activeElement ? .blur();
+				document.activeElement?.blur(); // phpcs:ignore.
 				// Set current menu to active.
 				el.classList.add( 'is-open' );
 				el.focus();
 			};
 
 			const closeDropdown = function () {
-				document.activeElement ? .blur();
+				document.activeElement?.blur(); // phpcs:ignore.
 				// Remove active class from all menu items.
 				menuItems.forEach(
 					 ( item ) => {
