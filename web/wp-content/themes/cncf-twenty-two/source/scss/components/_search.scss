@@ -70,13 +70,15 @@
 }
 
 @media (min-width: 1000px) {
-	.error404 article {
+	.error404 article,
+	.search main {
 		.search-form {
 			max-width: 500px;
 			margin: auto;
 			.search-input {
 				border-bottom: 2px solid $black;
 				color: $black;
+				height: 42px;
 				&::placeholder {
 					color: $black;
 					text-align: right;
@@ -85,6 +87,15 @@
 			.wp-block-button__link {
 				color: $black;
 				border: 1px solid $black;
+			}
+		}
+	}
+	.search main .search-form {
+		margin-left: unset;
+		.search-input {
+			text-align: left;
+			&::placeholder {
+				text-align: left;
 			}
 		}
 	}

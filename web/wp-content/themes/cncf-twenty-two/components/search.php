@@ -217,19 +217,12 @@ else :
 			<strong><?php echo get_search_query(); ?></strong>. Try searching
 			again:</h3>
 
-		<form role="search" method="get" class="no-search-results" autocomplete="off"
-			action="<?php echo esc_url( home_url() ); ?>">
-			<label><span class="search-text screen-reader-text">Search the
-					site</span>
-				<input type="search" class="search-field margin-y"
-					placeholder="Enter search term"
-					value="<?php echo get_search_query(); ?>" name="s"
-					title="Search for"
-					autocapitalize="off" spellcheck="false" />
-			</label>
+			<div style="height:50px" aria-hidden="true" class="wp-block-spacer is-style-30-50">
+		</div>
 
-			<input type="submit" class="button" value="Search" />
-		</form>
+			<?php
+			get_template_part( 'components/search-form' );
+			?>
 	</div>
 	<?php
 endif;
