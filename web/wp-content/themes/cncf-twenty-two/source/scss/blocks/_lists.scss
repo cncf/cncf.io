@@ -42,11 +42,19 @@ article,
 		&.is-style-more-spacing {
 			li {
 				padding-bottom: 12px;
+				ul,
+				ol {
+					margin-top: 12px;
+				}
 			}
 		}
 		&.is-style-mega-spacing {
 			li {
 				padding-bottom: 20px;
+				ul,
+				ol {
+					margin-top: 20px;
+				}
 			}
 		}
 		&.is-style-table-contents {
@@ -54,6 +62,10 @@ article,
 				margin-left: 0;
 				list-style: none;
 				padding-bottom: 10px;
+				ul,
+				ol {
+					margin-top: 10px;
+				}
 			}
 		}
 		&.is-style-max-width-900 {
