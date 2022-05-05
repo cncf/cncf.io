@@ -157,15 +157,27 @@
 
 			const openDropdown = function ( el ) {
 				// Remove active menu.
-				menuItems.forEach( ( item ) => item.classList.remove( 'is-open' ) );
+				menuItems.forEach(
+					 ( item ) => {
+							item.classList.remove( 'is-open' )
+							item.blur();
+				}
+					);
+				document.activeElement ? .blur();
 				// Set current menu to active.
 				el.classList.add( 'is-open' );
-
+				el.focus();
 			};
 
 			const closeDropdown = function () {
+				document.activeElement ? .blur();
 				// Remove active class from all menu items.
-				menuItems.forEach( ( item ) => item.classList.remove( 'is-open' ) );
+				menuItems.forEach(
+					 ( item ) => {
+							item.classList.remove( 'is-open' );
+							item.blur();
+				}
+					);
 			};
 
 			// HoverIntent.
@@ -262,7 +274,6 @@
 						'click',
 						function ( e ) {
 							e.preventDefault();
-
 							if ( isMobile() ) {
 								heading.classList.toggle( 'is-open' );
 								const subMenu = heading.nextElementSibling;
