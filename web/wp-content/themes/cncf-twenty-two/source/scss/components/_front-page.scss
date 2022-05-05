@@ -664,28 +664,34 @@
 			}
 			height: auto;
 			filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
-			@supports (aspect-ratio: auto) {
-				aspect-ratio: 1/1;
-			}
+			aspect-ratio: 1/1;
 			// For slightly older browsers.
 			@supports not (aspect-ratio: auto) {
-				max-height: 250px;
+				max-height: 100%;
+				max-width: 100%;
+				min-width: 100%;
+				min-height: 100%;
+				height: 100%;
+				width: 100%;
 			}
 		}
 		&__image {
 			clip-path: url(#heptagon);
 			object-fit: cover;
-			@supports (aspect-ratio: auto) {
-				aspect-ratio: 1/1;
-				min-width: 100%;
-				min-height: 100%;
-				// Safari.
-				height: 100%;
-				width: 100%;
-			}
+			aspect-ratio: 1/1;
+			min-width: 100%;
+			min-height: 100%;
+			// Safari.
+			height: 100%;
+			width: 100%;
 			// For slightly older browsers.
 			@supports not (aspect-ratio: auto) {
-				max-height: 250px;
+				max-height: max-content;
+				max-width: max-content;
+				min-width: unset;
+				min-height: unset;
+				height: auto;
+				width: 100%;
 			}
 		}
 	}
