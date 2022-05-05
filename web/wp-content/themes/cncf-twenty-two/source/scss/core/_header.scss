@@ -62,6 +62,9 @@
 	}
 
 	.search-form {
+		@media (min-width: 1000px) {
+			max-width: 430px;
+		}
 		.search-input {
 			font-size: 16px;
 			&::placeholder {

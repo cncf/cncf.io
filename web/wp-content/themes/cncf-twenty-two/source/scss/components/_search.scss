@@ -41,8 +41,6 @@
 		}
 		&:focus {
 			outline: 0;
-			border-bottom: 2px solid $primary-color;
-			transition: color 0.25s ease;
 		}
 		&::-webkit-search-decoration,
 		&::-webkit-search-cancel-button,
