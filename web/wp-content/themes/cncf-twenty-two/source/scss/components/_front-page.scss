@@ -302,16 +302,6 @@
 	min-width: 1px;
 }
 
-.has-cncf-background-pattern {
-	background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-cncf-pattern.png');
-	background-position: bottom;
-}
-
-// .has-cncf-background-pattern-and-gradient {
-// 	background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-cncf-pattern.png');
-// 	background-position: bottom;
-// }
-
 .home-intro-boxes {
 	@media (min-width: 1000px) {
 		grid-row-gap: 70px;
