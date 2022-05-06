@@ -3,12 +3,17 @@
 .back-to-top {
 	background-color: rgba(0, 0, 0, 0.1);
 	position: fixed;
+	z-index: 10;
 	bottom: 20px;
 	right: 20px;
-	z-index: 10;
-	width: 80px;
-	height: 80px;
-	border-radius: 5px;
+	width: 54px;
+	height: 54px;
+	border-radius: 3px;
+	@media (min-width: 1000px) {
+		width: 80px;
+		height: 80px;
+		border-radius: 5px;
+	}
 	display: flex;
 	justify-content: center;
 	align-content: center;
