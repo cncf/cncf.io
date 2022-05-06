@@ -364,7 +364,7 @@
 			background-color: rgba(#222222, 0.85);
 			transition: opacity 0.15s ease-in;
 			&.is-active {
-				opacity: 0.85;
+				opacity: 1;
 				visibility: visible;
 				transition: opacity 0.15s ease-in;
 			}
