@@ -10,7 +10,7 @@
 		width: 100%;
 		background: transparent;
 		border: none;
-		border-bottom: 2px solid $black;
+		border-bottom: 1px solid $black;
 		color: $black;
 		font-size: 16px;
 		letter-spacing: 0.02em;
@@ -18,7 +18,7 @@
 		@media (min-width: 1000px) {
 			height: 32px;
 			font-size: 20px;
-			border-bottom: 2px solid $white;
+			border-bottom: 1px solid $white;
 			color: $white;
 		}
 		line-height: 105%;
