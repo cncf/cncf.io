@@ -193,8 +193,10 @@
 			line-height: 44px;
 			width: 65px;
 			text-align: left;
+			text-align: right;
+			margin-right: 20px;
 		}
-		@media (min-width: 1000px) {
+		@media (min-width: 1034px) {
 			margin-bottom: 0px;
 			font-size: 60px;
 			line-height: 100%;
