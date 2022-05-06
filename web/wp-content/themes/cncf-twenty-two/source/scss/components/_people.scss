@@ -55,7 +55,7 @@
 	}
 	&__name {
 		margin-top: 30px;
-		line-height: 150%;
+		line-height: 130%;
 		@media (min-width: 1200px) {
 			margin-top: 24px;
 		}
@@ -91,6 +91,7 @@
 
 		a {
 			display: inline-block;
+			transition: color 0.25s ease-in;
 			&:hover {
 				svg {
 					transition: color 0.25s ease-in;
