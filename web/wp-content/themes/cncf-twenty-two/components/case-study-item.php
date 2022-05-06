@@ -55,11 +55,12 @@ if ( $cn ) {
 		<h2 class="case-study-item__title"><a title="<?php the_title_attribute(); ?>"
 				href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
+		<!-- horizontal rule -->
+		<hr class="wp-block-separator has-text-color has-background has-white-background-color has-white-color is-style-stubby case-study-item__hr">
+
 		<!-- stat with horizontal rule -->
 		<?php if ( $case_study_key_stat || $case_study_key_stat_label ) : ?>
 		<div>
-			<hr
-				class="wp-block-separator has-text-color has-background has-white-background-color has-white-color is-style-stubby">
 			<p class="case-study-item__stats"><span class="case-study-item__stat-larger"><?php echo esc_html( $case_study_key_stat ); ?></span> <span class="case-study-item__stat-default"><?php echo esc_html( $case_study_key_stat_label ); ?></span></p>
 		</div>
 		<?php endif; ?>

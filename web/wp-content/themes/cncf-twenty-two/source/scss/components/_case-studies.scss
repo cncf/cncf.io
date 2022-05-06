@@ -62,6 +62,7 @@
 		display: grid;
 		grid-template-areas:
 			'title'
+			'hr'
 			'stats'
 			'description'
 			'cta';
@@ -70,6 +71,7 @@
 			grid-column-gap: 40px;
 			grid-template-areas:
 				'title description'
+				'hr description'
 				'stats description'
 				'stats description'
 				'date cta';
@@ -88,6 +90,9 @@
 		a {
 			color: $white;
 		}
+	}
+	&__hr {
+		grid-area: hr;
 	}
 	&__stats {
 		grid-area: stats;
@@ -131,6 +136,7 @@
 		grid-area: cta;
 		margin-top: 26px;
 		@media (max-width: 599px) {
+			align-self: end;
 			width: fit-content;
 			padding-left: 16px;
 			padding-right: 16px;
