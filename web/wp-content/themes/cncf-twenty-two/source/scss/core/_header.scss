@@ -457,6 +457,7 @@
 			opacity: 0;
 			visibility: hidden;
 			overflow: hidden;
+			height: 0;
 
 			// style.
 			background-color: $white;
@@ -488,6 +489,7 @@
 			opacity: 1;
 			visibility: visible;
 			overflow: visible;
+			height: unset;
 			> .col-container {
 				opacity: 1;
 				visibility: visible;
