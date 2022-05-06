@@ -38,7 +38,6 @@
 	right: 0;
 	width: 100%;
 	z-index: 20;
-
 	&:after {
 		content: '';
 		position: absolute;
@@ -63,7 +62,8 @@
 
 	.search-form {
 		@media (min-width: 1000px) {
-			max-width: 430px;
+			width: 430px;
+			display: flex;
 		}
 		.search-input {
 			font-size: 16px;
@@ -325,23 +325,22 @@
 @media (min-width: 1000px) {
 	.header {
 		background-color: rgba($gray-050, 0.98);
+		// Both Buttons in Header.
 		.wp-block-button__link {
-			padding-top: 6px;
-			padding-bottom: 6px;
+			padding: 6px 0px;
 			margin-left: 20px;
-			min-width: 120px;
+			min-width: 100px;
 			flex-shrink: 0;
 			border-radius: 4px;
 			width: min-content;
 			@media (min-width: 1250px) {
 				min-width: 134px;
-				margin-left: 52px;
 			}
 		}
+		// Join CTA Button.
 		.header-cta .wp-block-button__link {
 			text-transform: capitalize;
 		}
-
 		.search-toggle.button-reset {
 			margin-left: 20px;
 			height: 30px;
