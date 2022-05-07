@@ -141,7 +141,7 @@ function add_home_intro_boxes_shortcode() {
 			alt="Goldie">
 		<div class="home-intro-box__text-wrapper">
 			<p
-				class="is-style-link-cta"><a href="/about/who-we-are/">Learn More</a></p>
+				class="is-style-link-cta"><a href="/about/who-we-are/" title="Learn more about CNCF">Learn More</a></p>
 		</div>
 	</div>
 </div>
