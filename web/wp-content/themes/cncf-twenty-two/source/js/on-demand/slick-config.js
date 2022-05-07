@@ -23,6 +23,8 @@ jQuery( document ).ready(
 				centerMode: true,
 				variableWidth: true,
 				lazyLoad: "ondemand",
+				pauseOnHover: false,
+				pauseOnFocus: false,
 				speed: 4500
 			}
 		);
@@ -44,6 +46,8 @@ jQuery( document ).ready(
 				lazyLoad: "ondemand",
 				initialSlide: 6,
 				speed: 5000,
+				pauseOnHover: false,
+				pauseOnFocus: false,
 				rtl: true
 			}
 		);

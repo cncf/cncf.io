@@ -10,13 +10,10 @@
 // setup options.
 $site_options = get_option( 'lf-mu' );
 ?>
-
 <header class="title-wrapper container wrap">
-
 <?php
 get_template_part( 'components/title-links' );
 ?>
-
 <?php
 if ( is_tag() || is_tax() ) :
 	if ( is_tax( 'lf-author-category' ) ) {
@@ -28,7 +25,6 @@ if ( is_tag() || is_tax() ) :
 		<h1 class="is-style-page-title">All <?php single_cat_title(); ?> Reports</h1>
 				<?php
 	} else {
-
 		// Used for annual reports search?
 		?>
 	<h1 class="is-style-page-title">
@@ -38,25 +34,21 @@ if ( is_tag() || is_tax() ) :
 	}
 	?>
 	<?php elseif ( is_author() ) : ?>
-	X<h1 class="blog-title">All posts by <?php the_author(); ?></h1>
-
+	<h1 class="is-style-page-title">All posts by <?php the_author(); ?></h1>
 	<?php elseif ( is_archive() ) : ?>
-
 	<h1 class="is-style-page-title">
 		<?php single_cat_title(); ?>
 	</h1>
-
 	<?php elseif ( is_search() ) : ?>
 	<h2 class="is-style-page-title">Search results for:
 	<span class="has-text-color has-primary-400-color"><?php echo esc_attr( get_search_query() ); ?></span></h2>
 		<?php
-
 		elseif ( ! ( is_404() ) && ( is_page() ) ) :
 			if ( 38018 === wp_get_post_parent_id( $post ) ) {
 				?>
-	<span>
+	<div class="parent-link-align">
 				<a class="parent-link" href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>
-			</span>
+			</div>
 				<?php
 			}
 			// PAGE TITLE.
@@ -65,17 +57,14 @@ if ( is_tag() || is_tax() ) :
 	</h1>
 			<?php
 			elseif ( is_singular( 'lf_project' ) ) :
-
 				?>
 	<h1 class="is-style-project-single-title" itemprop="headline"><?php the_title(); ?>
 	</h1>
 	<?php elseif ( ! ( is_404() ) && ( is_single() ) ) : ?>
-
 		<?php
 		if ( is_singular( 'lf_case_study' ) || is_singular( 'lf_case_study_cn' ) ) {
 			?>
 <!-- // case study title  -->
-
 				<?php
 		} else {
 			?>
@@ -84,7 +73,6 @@ if ( is_tag() || is_tax() ) :
 				<?php
 		}
 		?>
-
 		<?php
 		if ( is_singular( 'lf_report' ) || is_singular( 'lf_spotlight' ) || is_singular( 'lf_kubeweekly' ) ) {
 			?>
@@ -94,12 +82,9 @@ if ( is_tag() || is_tax() ) :
 			<?php
 		}
 		?>
-
 	<?php elseif ( is_home() ) : ?>
-	de<h2 class="blog-title"><?php single_post_title(); ?></h2>
+	<h2 class="blog-title"><?php single_post_title(); ?></h2>
 	<?php else : ?>
-	last<h1 class="is-style-page-title" itemprop="headline"><?php the_title(); ?></h1>
+	<h1 class="is-style-page-title" itemprop="headline"><?php the_title(); ?></h1>
 	<?php endif; ?>
-
-
 </header>
