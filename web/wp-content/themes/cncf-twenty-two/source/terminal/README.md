@@ -4,7 +4,7 @@ To celebrate the new CNCF website design, we've released a MacOS Terminal theme 
 
 ## Download CNCF Theme
 
-<a href="https://raw.github.com/cncf/cncf.io/main/web/wp-content/themes/cncf-twenty-two/source/terminal/CNCF.terminal" download>Download the CNCF.terminal file</a>
+<a href="https://dev-cncfci.pantheonsite.io/wp-content/themes/cncf-twenty-two/source/terminal/CNCF.terminal" download>Download the CNCF.terminal file</a>
 
 ## Activating the theme
 
