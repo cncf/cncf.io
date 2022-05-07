@@ -6,6 +6,7 @@
  * @subpackage cncf-theme
  * @since 1.0.0
  */
+
 // setup options.
 $site_options = get_option( 'lf-mu' );
 ?>
