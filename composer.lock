@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb1710e553d43ee9cf731274f20b938c",
+    "content-hash": "f824286faaf8f234677935d0f88f40d7",
     "packages": [
         {
             "name": "composer/installers",
@@ -822,24 +822,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/redirection/"
-        },
-        {
-            "name": "wpackagist-plugin/regenerate-thumbnails-advanced",
-            "version": "2.4.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails-advanced/",
-                "reference": "tags/2.4.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails-advanced.2.4.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails-advanced/"
         },
         {
             "name": "wpackagist-plugin/safe-svg",
