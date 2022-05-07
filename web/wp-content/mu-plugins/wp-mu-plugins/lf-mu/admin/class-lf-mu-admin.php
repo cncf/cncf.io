@@ -360,7 +360,7 @@ class Lf_Mu_Admin {
 				}
 				$vid_stats = wp_remote_retrieve_body( $request );
 				$vid_stats = json_decode( $vid_stats );
-				$views     = $vid_stats->items[0]->statistics->viewCount;
+				$views     = $vid_stats->items[0]->statistics->viewCount ?? 0;
 				update_post_meta( get_the_ID(), 'lf_webinar_recording_views', $views );
 			}
 		}
