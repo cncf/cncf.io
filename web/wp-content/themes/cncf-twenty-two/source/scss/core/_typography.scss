@@ -179,7 +179,7 @@ h3,
 // blog and spotlight posts content.
 .post-content {
 	@media (min-width: 900px) {
-		* {
+		*:not(.is-style-full-width) {
 			max-width: 900px;
 		}
 	}
