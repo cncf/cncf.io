@@ -1,10 +1,10 @@
 # CNCF Theme for Terminal
 
-To celebrate the new CNCF website design, we've released a MacOS Terminal theme inspired by the websites color palette.
+To celebrate the new CNCF website design, we've released a MacOS Terminal theme inspired by the new color palette.
 
 ## Download CNCF Theme
 
-<a href="https://dev-cncfci.pantheonsite.io/wp-content/themes/cncf-twenty-two/source/terminal/CNCF.terminal" download>Download the CNCF.terminal file</a>
+[Download the CNCF.terminal file](https://raw.github.com/cncf/cncf.io/main/web/wp-content/themes/cncf-twenty-two/source/terminal/CNCF.terminal).
 
 ## Activating the theme
 
