@@ -9,13 +9,12 @@ To celebrate the new CNCF website design, we've released a MacOS Terminal theme 
 ## Activating the theme
 
 1. Open Terminal
-2. Go to Settings
-2. Click the "Gear" icon
-3. Click Import...
+2. Go to "Preferences..."
+2. In "Profiles" tab, click the "..." icon at the bottom of the list of themes and then "Import..."
 4. Select the CNCF.terminal file
 5. Click Default
 
-You can also open the CNCF.terminal file directly by clicking on it, but this will not set the theme as default, so your Terminal theme will reset when re-opened.
+Now when you open a new Terminal window it will use the CNCF theme.
 
 ## Got feedback?
 
