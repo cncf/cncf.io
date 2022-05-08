@@ -28,9 +28,11 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 	<figure class="webinar-recorded-item__figure">
 		<a href="<?php the_permalink(); ?>"  class="webinar-recorded-item__figure-link">
 
-		<?php if ( $video_id ) { ?>
-
-			<img loading="lazy" src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
+		<?php
+		if ( $video_id ) {
+			// Applying loading lazy to this YouTueb image stops it appearing.
+			?>
+			<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
 				alt="<?php the_title_attribute(); ?>" class="webinar-recorded-item__image">
 
 <svg class="webinar-recorded-item__overlay" width="70" height="71">
