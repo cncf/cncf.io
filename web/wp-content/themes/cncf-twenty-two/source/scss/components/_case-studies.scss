@@ -5,7 +5,7 @@
 	grid-template-columns: 1fr;
 
 	@media (min-width: 1000px) {
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: repeat(2, minmax(400px, 1fr));
 	}
 }
 
