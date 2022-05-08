@@ -85,6 +85,16 @@ wp.blocks.registerBlockStyle(
 );
 
 wp.blocks.registerBlockStyle(
+	'core/code',
+	[
+		{
+			label: 'Full Width',
+			name: 'full-width',
+		}
+]
+);
+
+wp.blocks.registerBlockStyle(
 	'core/paragraph',
 	[
 		{
