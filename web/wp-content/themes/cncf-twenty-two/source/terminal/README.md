@@ -2,11 +2,11 @@
 
 To celebrate the new CNCF website design, we've released a MacOS Terminal theme inspired by the new color palette.
 
-## Download CNCF Theme
+## Download the CNCF theme
 
 [Download the CNCF.terminal file](https://raw.github.com/cncf/cncf.io/main/web/wp-content/themes/cncf-twenty-two/source/terminal/CNCF.terminal.zip)
 
-## Activating the theme
+## Activate the theme
 
 1. Open Terminal
 2. Go to "Preferences..."
