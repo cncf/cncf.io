@@ -92,6 +92,7 @@ pantheon.upstream.yml
 *.tar
 *.zip
 *.tgz
+!web/wp-content/themes/cncf-twenty-two/source/terminal/CNCF.terminal.zip
 
 # Logs and databases #
 ######################
