@@ -130,7 +130,7 @@ function lf_defer_parsing_of_js( $url ) {
 	}
 	// List of scripts that should not be deferred.
 	$do_not_defer_scripts = array( 'jquery' );
-	if ( count($do_not_defer_scripts) > 0 ) {
+	if ( ! is_front_page() && count($do_not_defer_scripts) > 0 ) {
  	foreach( $do_not_defer_scripts as $script ){
 		if ( strpos( $url, $script ) ) {
 			return $url;
