@@ -62,7 +62,7 @@ function add_radars_shortcode( $atts ) {
 			<?php
 			if ( $image ) {
 				?>
-			<img src="<?php echo esc_url( $image ); ?>"
+			<img src="<?php echo esc_url( $image ); ?>" loading="lazy"
 				alt="<?php echo esc_html( $radar_title ); ?>"
 				class="radar-item__image">
 				<?php
