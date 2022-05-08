@@ -22,7 +22,7 @@
 					class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center is-image-fill has-gray-300-background-color has-background">
 					<figure class="wp-block-media-text__media"
 						style="background-image:url(/wp-content/uploads/2021/05/end-users.jpg);background-position:49% 40%">
-						<a href="/enduser/"><img
+						<a href="/enduser/"><img loading="lazy"
 								src="/wp-content/uploads/2021/05/end-users.jpg"
 								alt="CNCF End Users celebrate at a conference" class="wp-image-62498 size-full" /></a>
 					</figure>

@@ -30,7 +30,7 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 
 		<?php if ( $video_id ) { ?>
 
-			<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
+			<img loading="lazy" src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/hqdefault.jpg"
 				alt="<?php the_title_attribute(); ?>" class="webinar-recorded-item__image">
 
 <svg class="webinar-recorded-item__overlay" width="70" height="71">

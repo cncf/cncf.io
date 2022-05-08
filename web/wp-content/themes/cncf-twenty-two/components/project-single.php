@@ -41,7 +41,7 @@ $project_slug = strtolower( get_the_title() );
 
 				<a class="projects-single-box__link"
 					href="<?php echo esc_url( $external_url ); ?>"><img
-						src="<?php echo esc_url( $logo ); ?>"
+						src="<?php echo esc_url( $logo ); ?>" loading="lazy"
 						title="Visit <?php echo esc_html( the_title_attribute() ); ?> website"
 						class="projects-single-box__image"></a>
 			</div>

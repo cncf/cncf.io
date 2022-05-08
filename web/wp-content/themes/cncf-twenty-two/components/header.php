@@ -24,7 +24,7 @@ endif;
 		<?php if ( isset( $site_options['header_image_id'] ) && $site_options['header_image_id'] ) { ?>
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
-				<img src="<?php echo esc_url( wp_get_attachment_url( $site_options['header_image_id'] ) ); ?>"
+				<img loading="eager" src="<?php echo esc_url( wp_get_attachment_url( $site_options['header_image_id'] ) ); ?>"
 					width="210" height="40"
 					alt="<?php echo bloginfo( 'name' ); ?>">
 			</a>
@@ -190,7 +190,7 @@ if ( is_array( $tech_radars ) ) :
 			<?php
 			if ( $image ) {
 				?>
-<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_html( $radar_title ); ?>" class="main-menu-item__image">
+<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_html( $radar_title ); ?>" class="main-menu-item__image" loading="lazy">
 				<?php
 			} else {
 				// show generic.
