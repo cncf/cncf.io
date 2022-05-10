@@ -50,8 +50,6 @@ class Lf_Mu_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
-
-		$options = get_option( $this->plugin_name );
 	}
 
 	/**
@@ -86,6 +84,8 @@ class Lf_Mu_Public {
 			return;
 		}
 
+		$options = get_option( $this->plugin_name );
+
 		$analytics_code = <<<EOD
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -107,6 +107,8 @@ class Lf_Mu_Public {
 		if ( ! $this->should_load_gtm() ) {
 			return;
 		}
+
+		$options = get_option( $this->plugin_name );
 
 		$analytics_code = <<<EOD
 	<!-- Google Tag Manager (noscript) -->
