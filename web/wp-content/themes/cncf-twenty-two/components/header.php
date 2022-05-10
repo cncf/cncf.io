@@ -223,7 +223,7 @@ endif;
 					</div>
 				</li>
 				<li class="menu-item-has-children"><a
-						href="#"><span>Certification</span></a>
+						href="#"><span>Training</span></a>
 					<div class="sub-menu">
 						<div class="col-container">
 							<div class="col1">
