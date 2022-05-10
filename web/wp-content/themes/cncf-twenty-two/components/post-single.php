@@ -22,8 +22,8 @@ while ( have_posts() ) :
 		the_content();
 		?>
 
-		<div style="height:60px" aria-hidden="true"
-			class="wp-block-spacer is-style-40-60">
+		<div style="height:80px"
+			aria-hidden="true" class="wp-block-spacer is-style-80-120">
 		</div>
 		<?php
 		get_template_part( 'components/social-share' );
