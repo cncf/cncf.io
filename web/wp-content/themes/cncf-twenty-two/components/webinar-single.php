@@ -84,22 +84,29 @@ if ( $dat_webinar_end > $dat_now ) {
 
 		<div class="webinar-single__meta-wrapper">
 
-			<div class="webinar-single__date">
 				<?php
-				if ( 'recorded' === $period_status ) {
+				if ( is_a( $dat_webinar_start, 'DateTime' ) ) :
 					?>
+
+			<div class="webinar-single__date">
+					<?php
+					if ( 'recorded' === $period_status ) {
+						?>
 							<img src="<?php LF_utils::get_svg( 'icon-camera.svg', true ); ?>" alt="Camera Icon" class="webinar-single__svg"> Recorded:
 						<?php
-				} else {
-					?>
+					} else {
+						?>
 				Broadcast:
-					<?php
-				}
-				echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) );
-				?>
+						<?php
+					}
+					echo esc_html( $dat_webinar_start->format( 'l F j, Y' ) );
+					?>
 			</div>
 
-			<?php if ( $webinar_views ) : ?>
+					<?php
+				endif;
+				if ( $webinar_views ) :
+					?>
 			<div class="webinar-single__views">
 
 			<img src="<?php LF_utils::get_svg( 'icon-views.svg', true ); ?>" alt="Views Icon" class="webinar-single__svg">
