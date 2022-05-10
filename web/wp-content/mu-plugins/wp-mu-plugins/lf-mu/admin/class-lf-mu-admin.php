@@ -341,26 +341,29 @@ class Lf_Mu_Admin {
 				'posts_per_page' => 9999,
 			)
 		);
+
 		while ( $query->have_posts() ) {
 			$query->the_post();
 			$recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true );
-
 			if ( ! $recording_url ) {
 				continue;
 			}
 
 			preg_match( '%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $recording_url, $match );
-
 			if ( isset( $match[1] ) ) {
 				$vid_id = $match[1];
 
 				$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' . $vid_id . '&key=' . $youtube_api_key );
 				if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) !== 200 ) ) {
-					return;
+					continue;
 				}
 				$vid_stats = wp_remote_retrieve_body( $request );
 				$vid_stats = json_decode( $vid_stats );
-				$views     = $vid_stats->items[0]->statistics->viewCount ?? 0;
+				if ( ! property_exists( $vid_stats, 'items' ) || ! isset( $vid_stats->items[0] ) ) {
+					continue;
+				}
+
+				$views = $vid_stats->items[0]->statistics->viewCount;
 				update_post_meta( get_the_ID(), 'lf_webinar_recording_views', $views );
 			}
 		}
