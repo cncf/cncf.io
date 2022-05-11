@@ -13,10 +13,10 @@
  */
 
 // Newsroom, mobile, featured, retina.
-add_image_size( 'newsroom-200', 200, 110, true ); // for megamenu items.
-add_image_size( 'newsroom-400', 400, 220, true ); // regular blog item and tech radar items; megamenu item Retina.
-add_image_size( 'newsroom-700', 700, 385, true ); // featured blog item; regular blog item Retina.
-add_image_size( 'newsroom-1400', 1400, 770, true ); // featured blog item Retina.
+add_image_size( 'newsroom-194', 194, 102, true ); // megamenu.
+add_image_size( 'newsroom-388', 388, 204, true ); // x2: tile/normal frame, megamenu retina.
+add_image_size( 'newsroom-776', 776, 408, true ); // x4: featured, tile/normal retina.
+add_image_size( 'newsroom-1552', 1552, 816, true ); // x8: featured retina.
 
 add_image_size( 'newsroom-post-width', 900 ); // for in-post images.
 add_image_size( 'newsroom-post-width-r', 1800 ); // for in-post images Retina.
