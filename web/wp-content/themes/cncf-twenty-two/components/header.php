@@ -194,7 +194,7 @@ if ( is_array( $tech_radars ) ) :
 				<?php
 			} else {
 				// show generic.
-				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-400', '400px', 'main-menu-item__image' );
+				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-388', '400px', 'main-menu-item__image' );
 			}
 			?>
 		</a>
