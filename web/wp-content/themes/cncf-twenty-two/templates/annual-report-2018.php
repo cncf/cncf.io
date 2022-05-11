@@ -1809,7 +1809,7 @@ get_template_part( 'components/skip-link-target' );
 								 <a href="http://deis.io/">Deis</a>
 								 (now part of Microsoft) Platform Architect Matt Butcher was looking for a way to explain Kubernetes to technical and non-technical people alike. Inspired by his daughter’s prolific stuffed animal collection, he came up with the idea of
 								 <em>
-								 <a href="https://www.cncf.io/the-childrens-illustrated-guide-to-kubernetes/">The Illustrated Children’s Guide to Kubernetes</a>
+								 <a href="https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/">The Illustrated Children’s Guide to Kubernetes</a>
 								 </em>
 								 . Thus Phippy, the yellow giraffe and PHP application, along with her friends, were born.
 							  </p>
@@ -1862,7 +1862,7 @@ get_template_part( 'components/skip-link-target' );
 							  The CNCF Cloud Native
 							  <a href="https://landscape.cncf.io/">Landscape</a>
 							  is intended as a map through the previously uncharted terrain of cloud native technologies. The landscape started in November 2016 as a static image of fewer than 100 projects and products. It has grown through the power of collaborative editing to track more than 600 items and now includes a
-							  <a href="https://landscape.cncf.io/format=serverless">serverless</a>
+							  <a href="https://landscape.cncf.io/serverless">serverless</a>
 							  landscape. The project has more than 4,000 stars on GitHub.
 						   </p>
 									<p>

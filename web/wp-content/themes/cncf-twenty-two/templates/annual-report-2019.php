@@ -2939,9 +2939,9 @@ In 2019, DevStats moved from bare metal to Kubernetes. The tool now uses Kuberne
 The CNCF Cloud Native
 <a href="https://landscape.cncf.io/">Landscape</a>
 has become the standard way of charting the myriad options in the cloud native ecosystem. The landscape started in November 2016 as a static image of fewer than 100 projects and products. It has grown through the power of collaborative editing to track more than 1,200 projects, products, and companies and now includes a
-<a href="https://landscape.cncf.io/format=serverless">serverless</a>
+<a href="https://landscape.cncf.io/serverless">serverless</a>
 landscape and the CNCF
-<a href="https://landscape.cncf.io/format=members">member</a>
+<a href="https://landscape.cncf.io/members">member</a>
 landscape. The project has more than 6,000 stars on GitHub.
 </p>
 												<p style="text-align: left;">
