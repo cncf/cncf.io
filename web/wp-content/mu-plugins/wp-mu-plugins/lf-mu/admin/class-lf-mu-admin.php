@@ -571,4 +571,12 @@ class Lf_Mu_Admin {
 		);
 		return $query;
 	}
+
+	/**
+	 * Removes unneeded large image sizes default to WP.
+	 */
+	public function remove_image_sizes() {
+		remove_image_size( '1536x1536' );             // 2 x Medium Large (1536 x 1536).
+		remove_image_size( '2048x2048' );             // 2 x Large (2048 x 2048).
+	}
 }
