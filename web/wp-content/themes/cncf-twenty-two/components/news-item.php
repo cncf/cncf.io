@@ -95,7 +95,7 @@ else :
 			} else {
 				// show generic.
 				$site_options = get_option( 'lf-mu' );
-				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-388', '388px', 'post-archive__image', 'lazy', get_the_title() );
+				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-776', '776px', 'post-archive__image', 'lazy', get_the_title() );
 			}
 			?>
 		</a>
