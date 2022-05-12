@@ -106,6 +106,8 @@
 			width: 100%;
 			color: $white;
 			font-weight: 700;
+			line-height: 150%;
+			text-decoration: underline;
 		}
 		@media (min-width: 1000px) {
 			p {
@@ -134,6 +136,10 @@
 	// Members and End Users Table.
 	&.members-table,
 	&.end-user-table {
+		.lf-membership a {
+			text-decoration: underline;
+		}
+
 		@media (min-width: 1000px) {
 			grid-row-gap: 0;
 			.lf-membership {

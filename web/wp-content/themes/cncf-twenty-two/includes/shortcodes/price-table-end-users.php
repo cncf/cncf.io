@@ -47,7 +47,7 @@ function add_end_user_pricing_shortcode() {
 
 		<div class="tfoot">
 			<h4>$4,500</h4>
-			<p>$1,800 (&lt;300 employees)</p>
+			<h4>$1,800 ( &lt; 300 employees)</h4>
 		</div>
 
 	</div>
@@ -85,12 +85,11 @@ function add_end_user_pricing_shortcode() {
 		</div>
 
 		<div class="tfoot">
-			<h4>$7,000-$50,000</h4>
 <p>
 <button class="js-modal button-reset"
 data-modal-content-id="modal-silver"
 data-modal-prefix-class="generic"
-title="">See Silver Pricing Scale</button></p>
+title="">See Silver<br class="show-over-1000">Pricing Scale</button></p>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
@@ -123,8 +122,7 @@ title="">See Silver Pricing Scale</button></p>
 		</div>
 
 		<div class="tfoot">
-			<h4>Up to $120,000</h4>
-			<p>Annually</p>
+		<h4>Up to $120,000<br class="show-over-1000">annually</h4>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
@@ -165,7 +163,7 @@ title="">See Silver Pricing Scale</button></p>
 
 		<div class="tfoot">
 			<h4>$370,000</h4>
-			<p>Minimum 3-year commitment</p>
+			<span class="has-small-font-size">Minimum 3-year commitment<br>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
