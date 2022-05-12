@@ -106,7 +106,7 @@ function add_members_pricing_shortcode() {
 			<h4><button class="js-modal button-reset"
 					data-modal-content-id="modal-silver"
 					data-modal-prefix-class="generic"
-					title="">See  <br class="show-over-1000">Silver Pricing Scale</button></h4>
+					title="">See Silver<br class="show-over-1000">Pricing Scale</button></h4>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
@@ -142,8 +142,7 @@ function add_members_pricing_shortcode() {
 		</div>
 
 		<div class="tfoot">
-			<h4>Up to  <br class="show-over-1000">$120,000 annually</h4>
-			<span><a href="/about/contact/">Contact us</a></span>
+			<h4>Up to $120,000<br class="show-over-1000">annually</h4>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
@@ -179,7 +178,6 @@ function add_members_pricing_shortcode() {
 		<div class="tfoot">
 			<h4>$370,000</h4>
 			<span class="has-small-font-size">Minimum 3-year commitment<br>
-			<a href="/about/contact/">Contact us</a></span>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
