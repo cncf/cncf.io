@@ -89,7 +89,7 @@ function add_end_user_pricing_shortcode() {
 <button class="js-modal button-reset"
 data-modal-content-id="modal-silver"
 data-modal-prefix-class="generic"
-title="">See Silver<br class="show-over-1000">Pricing Scale</button></p>
+title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
@@ -122,7 +122,7 @@ title="">See Silver<br class="show-over-1000">Pricing Scale</button></p>
 		</div>
 
 		<div class="tfoot">
-		<h4>Up to $120,000<br class="show-over-1000">annually</h4>
+		<h4>Up to $120,000 <br class="show-over-1000">annually</h4>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
