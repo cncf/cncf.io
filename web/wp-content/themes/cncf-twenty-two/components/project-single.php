@@ -128,7 +128,7 @@ endif;
 						<?php endif; ?>
 
 						<?php if ( $mail ) : ?>
-						<a title="<?php the_title_attribute(); ?> Contact"
+						<a title="<?php the_title_attribute(); ?> Discussion Group"
 							href="<?php echo esc_html( $mail ); ?>"><?php LF_utils::get_svg( '/social/boxed-email.svg' ); ?></a>
 						<?php endif; ?>
 
