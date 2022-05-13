@@ -34,7 +34,7 @@
 		z-index: 3;
 		background-color: $black;
 		&.poster-has-loaded {
-			background-color: rgba($black, 0.6);
+			background-color: rgba($black, 0.55);
 		}
 	}
 	&__content {
