@@ -136,8 +136,8 @@ else :
 			?>
 			<?php
 			// Post author.
-			if ( in_category( 'blog' ) && Lf_Utils::display_author( get_the_ID(), true ) ) {
-				echo ' | ' . wp_kses_post( Lf_Utils::display_author( get_the_ID(), true ) );
+			if ( in_category( 'blog' ) && Lf_Utils::display_author( get_the_ID() ) ) {
+				echo ' | ' . wp_kses_post( Lf_Utils::display_author( get_the_ID() ) );
 			}
 
 			?>
