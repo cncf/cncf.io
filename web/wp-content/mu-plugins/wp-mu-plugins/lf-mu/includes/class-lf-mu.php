@@ -160,6 +160,7 @@ class Lf_Mu {
 		$this->loader->add_filter( 'pmc_create_sidebar', $plugin_admin, 'create_sidebar' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'remove_menu_items' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_taxonomies' );
+		$this->loader->add_action( 'init', $plugin_admin, 'unregister_tags_for_posts' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'options_update' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'change_adminbar_colors' );

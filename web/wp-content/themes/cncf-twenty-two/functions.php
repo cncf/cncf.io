@@ -62,16 +62,6 @@ function lf_theme_support_setup() {
 add_action( 'after_setup_theme', 'lf_theme_support_setup' );
 
 /**
- * Remove tags support from posts.
- *
- * @return void
- */
-function lf_unregister_tags_for_posts() {
-    unregister_taxonomy_for_object_type( 'post_tag', 'post' );
-}
-add_action( 'init', 'lf_unregister_tags_for_posts' );
-
-/**
  * Includes (enable as appropriate)
  */
 require 'classes/class-lf-enqueue.php';
