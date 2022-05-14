@@ -56,10 +56,13 @@ $classes = LF_Utils::merge_classes(
 				</div>
 			</div>
 		</div>
-		<div style="height:30px" aria-hidden="true" class="wp-block-spacer">
-		</div>
 			<?php
 		}
+		?>
+		<div style="height:30px"
+			aria-hidden="true" class="wp-block-spacer">
+		</div>
+		<?php
 		get_template_part( 'components/social-share' );
 		?>
 	</article>
