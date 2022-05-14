@@ -17,10 +17,15 @@
 			the_content();
 		endwhile;
 		?>
-		<!-- wp:spacer {"height":"40px"} -->
-		<div style="height:40px" aria-hidden="true"
-			class="wp-block-spacer"></div>
-		<!-- /wp:spacer -->
+		<div style="height:80px"
+			aria-hidden="true" class="wp-block-spacer is-style-60-100">
+		</div>
+		<?php
+		get_template_part( 'components/social-share' );
+		?>
+		<div style="height:80px"
+			aria-hidden="true" class="wp-block-spacer is-style-60-100">
+		</div>
 
 	</article>
 </main>
