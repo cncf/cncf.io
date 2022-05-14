@@ -170,5 +170,11 @@ if ( $dat_webinar_end > $dat_now ) {
 		endif;
 endwhile;
 		?>
-	</article>
+		<div style="height:80px"
+			aria-hidden="true" class="wp-block-spacer is-style-60-100">
+		</div>
+		<?php
+		get_template_part( 'components/social-share' );
+		?>
+</article>
 </main>
