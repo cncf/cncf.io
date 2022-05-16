@@ -86,6 +86,10 @@ get_template_part( 'components/title' );
 				$content_type_singular = 'Spotlight';
 				$content_type_plural   = 'Spotlights';
 				$content_type_url      = '/spotlights/';
+			} elseif ( 'lf_human' == get_post_type() ) {
+				$content_type_singular = 'Human of Cloud Native';
+				$content_type_plural   = 'Humans of Cloud Native';
+				$content_type_url      = '/humans-of-cloud-native/';
 			} elseif ( 'page' == get_post_type() ) {
 				$content_type_singular = 'Page';
 				$content_type_plural   = 'Pages';

@@ -39,6 +39,14 @@ elseif ( is_singular( 'lf_spotlight' ) ) :
 		</a></span>
 </div>
 	<?php
+elseif ( is_singular( 'lf_human' ) ) :
+	?>
+<div class="parent-link-align">
+	<a class="parent-link"
+		href="<?php echo esc_url( get_home_url() ); ?>/humans-of-cloud-native/"
+		title="Go to Humans of Cloud Native">Human of Cloud Native</a>
+</div>
+	<?php
 elseif ( is_archive() || is_search() || is_category() ) :
 	?>
 <!-- display nothing -->

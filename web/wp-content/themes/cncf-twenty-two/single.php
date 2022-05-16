@@ -22,6 +22,10 @@ elseif ( is_singular( 'lf_spotlight' ) ) :
 	get_template_part( 'components/title' );
 	get_template_part( 'components/spotlight-single' );
 
+elseif ( is_singular( 'lf_human' ) ) :
+	get_template_part( 'components/title' );
+	get_template_part( 'components/human-single' );
+
 elseif ( is_singular( 'lf_project' ) ) :
 	get_template_part( 'components/title' );
 	get_template_part( 'components/project-single' );
