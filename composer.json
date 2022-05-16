@@ -36,6 +36,7 @@
     "wpackagist-plugin/svg-autocrop": "^0.1.0",
     "wpackagist-plugin/wp-mail-smtp": "^3.0.3",
     "wpackagist-plugin/leadin":"^8",
+    "wpackagist-plugin/find-my-blocks":"^3.5.4",
     "wpackagist-plugin/regenerate-thumbnails-advanced":"^2.4.0",
     "wpackagist-plugin/wp-native-php-sessions": "^1.0.0"
   },
