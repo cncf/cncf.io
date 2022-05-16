@@ -25,6 +25,9 @@ if ( $query->have_posts() ) {
 		case 'lf_spotlight':
 			get_template_part( 'search-filter/spotlights' );
 			break;
+		case 'lf_human':
+			get_template_part( 'search-filter/humans' );
+			break;
 		case 'lf_ktp':
 			get_template_part( 'search-filter/ktps' );
 			break;
