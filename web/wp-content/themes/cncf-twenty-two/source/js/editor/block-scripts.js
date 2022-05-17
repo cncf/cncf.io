@@ -151,6 +151,10 @@ blocksToStyle.forEach( ( block ) => {
 			{
 				label: 'Max width 900px',
 				name: 'max-width-900',
+			},
+			{
+				label: 'Max width 90%',
+				name: 'max-width-90',
 			}
 		]
 	);
