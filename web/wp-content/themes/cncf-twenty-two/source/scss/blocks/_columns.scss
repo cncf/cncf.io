@@ -40,6 +40,9 @@
 }
 
 .wp-block-columns:not(.is-not-stacked-on-mobile) {
+	&.is-style-0px-gap {
+		--wp--style--block-gap: 0px;
+	}
 	&.is-style-50px-gap {
 		--wp--style--block-gap: 50px;
 	}

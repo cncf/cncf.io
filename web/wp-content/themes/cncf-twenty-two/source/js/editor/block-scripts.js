@@ -220,6 +220,10 @@ wp.blocks.registerBlockStyle(
 		name: '50px-padding',
 	},
 	{
+		label: '0px Gap',
+		name: '0px-gap',
+	},
+	{
 		label: '50px Gap',
 		name: '50px-gap',
 	},
