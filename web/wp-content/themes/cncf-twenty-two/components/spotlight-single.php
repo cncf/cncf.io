@@ -19,8 +19,7 @@
 		<?php
 
 		if ( has_post_thumbnail() ) {
-			// display smaller news image.
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-post-width', '900px', 'spotlight__image', 'lazy', get_the_title() );
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-post-width', '900px', 'spotlight__image', 'eager', get_the_title() );
 		}
 
 		if ( have_posts() ) :

@@ -1,6 +1,6 @@
 <?php
 /**
- * Spotlight
+ * Humans of Cloud Native
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -17,6 +17,11 @@
 		</div>
 
 		<?php
+
+		if ( has_post_thumbnail() ) {
+			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-post-width', '900px', 'human__image', 'eager', get_the_title() );
+		}
+
 		if ( have_posts() ) :
 			while ( have_posts() ) :
 				the_post();
