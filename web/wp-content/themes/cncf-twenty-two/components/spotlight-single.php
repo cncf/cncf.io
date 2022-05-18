@@ -12,8 +12,8 @@
 <main class="spotlight">
 	<article class="container wrap post-content">
 
-<div style="height:60px" aria-hidden="true"
-			class="wp-block-spacer is-style-40-60">
+	<div style="height:30px" aria-hidden="true"
+			class="wp-block-spacer">
 		</div>
 
 		<?php
