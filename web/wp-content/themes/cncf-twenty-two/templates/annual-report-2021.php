@@ -110,10 +110,22 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 							</div>
 						</div>
 
+						<div class="hero-report-cta">
+
 						<a href="<?php echo esc_url( $pdf_link ); ?>"
 							title="Download CNCF Annual Report 2021 as a PDF"
 							class="ar-button">Download<br class="show-over-500">
 							full report</a>
+
+							<p
+							class="fw-semi text-smaller mb-0 uppercase lh-125"><a href="https://www.cncf.io/wp-content/uploads/2022/05/CNCF_Annual_Report_2021-ja.pdf" title="Download CNCF Annual Report 2021 in Japanese as PDF">or get the 
+							<?php
+							Lf_Utils::get_svg( 'annual-reports/2021/jp.svg' );
+							?>
+				 Japanese version</a></p>
+
+						</div>
+
 
 						<p
 							class="fw-semi text-medium mb-0">Navigate using the section headings<br class="show-over-1200"> or simply by scrolling.</p>

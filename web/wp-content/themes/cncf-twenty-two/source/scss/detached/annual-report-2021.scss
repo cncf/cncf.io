@@ -444,9 +444,14 @@ html {
 		display: grid;
 		gap: 30px;
 		@media (min-width: 500px) {
-			grid-template-columns: 2fr 1fr;
 			gap: 40px;
+			grid-template-columns: 3fr 3fr;
 			align-items: center;
+		}
+		@media (min-width: 600px) {
+			gap: 80px;
+			grid-template-columns: 5fr 3fr;
+
 			.fw-semi.text-medium {
 				grid-row: 1;
 				grid-column: 1;
@@ -474,7 +479,7 @@ html {
 		}
 		@media (min-width: 1200px) {
 			grid-template-columns: 3fr 2.2fr 2.2fr;
-			gap: 50px;
+			gap: 70px;
 		}
 	}
 
@@ -1051,6 +1056,35 @@ html {
 		font-weight: 400;
 		@media (min-width: 1000px) {
 			font-size: 40px;
+		}
+	}
+
+	.hero-report-cta {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		.ar-button {
+			@media (min-width: 550px) {
+				width: 100%;
+			}
+		}
+		p {
+			margin-top: 10px;
+			@media (min-width: 500px) {
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			a {
+				color: $ar-black;
+			}
+		}
+		svg {
+			height: 12px;
+			width: auto;
+			padding-left: 1px;
+			padding-right: 1px;
+			padding-bottom: 1px;
 		}
 	}
 
