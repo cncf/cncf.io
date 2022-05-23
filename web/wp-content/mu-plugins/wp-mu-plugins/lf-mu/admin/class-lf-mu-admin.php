@@ -208,7 +208,7 @@ class Lf_Mu_Admin {
 
 		$options['social_youtube'] = ( isset( $input['social_youtube'] ) && ! empty( $input['social_youtube'] ) ) ? esc_url( $input['social_youtube'] ) : '';
 
-		$options['social_wechat'] = ( isset( $input['social_wechat'] ) && ! empty( $input['social_wechat'] ) ) ? absint( $input['social_wechat'] ) : '';
+		$options['social_wechat'] = ( isset( $input['social_wechat'] ) && ! empty( $input['social_wechat'] ) ) ? esc_url( $input['social_wechat'] ) : '';
 
 		$options['generic_thumb_id'] = ( isset( $input['generic_thumb_id'] ) && ! empty( $input['generic_thumb_id'] ) ) ? absint( $input['generic_thumb_id'] ) : '';
 

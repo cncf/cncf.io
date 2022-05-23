@@ -80,7 +80,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$social_youtube = ( isset( $options['social_youtube'] ) && ! empty( $options['social_youtube'] ) ) ? esc_attr( $options['social_youtube'] ) : '';
 
-		$social_wechat = ( isset( $options['social_wechat'] ) && ! empty( $options['social_wechat'] ) ) ? absint( $options['social_wechat'] ) : '';
+		$social_wechat = ( isset( $options['social_wechat'] ) && ! empty( $options['social_wechat'] ) ) ? esc_url( $options['social_wechat'] ) : '';
 
 		$generic_thumb_id = ( isset( $options['generic_thumb_id'] ) && ! empty( $options['generic_thumb_id'] ) ) ? absint( $options['generic_thumb_id'] ) : '';
 
