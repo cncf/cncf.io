@@ -29,10 +29,9 @@ $site_options = get_option( 'lf-mu' );
 			href="<?php echo esc_url( $site_options['social_linkedin'] ); ?>"><?php LF_Utils::get_svg( 'social/linkedin-black.svg' ); ?></a></li>
 	<?php endif; ?>
 
-	<?php if ( isset( $site_options['social_wechat_id'] ) && $site_options['social_wechat_id'] ) : ?>
-	<li class="social-wechat_id"><button class="js-modal button-reset"
-	data-modal-prefix-class="generic"
-	data-modal-content-id="modal-wechat" title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"><?php LF_Utils::get_svg( 'social/wechat.svg' ); ?></button></li>
+	<?php if ( isset( $site_options['social_wechat'] ) && $site_options['social_wechat'] ) : ?>
+	<li class="social-wechat"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"
+			href="<?php echo esc_url( $site_options['social_wechat'] ); ?>"><?php LF_Utils::get_svg( 'social/wechat.svg' ); ?></a></li>
 	<?php endif; ?>
 
 	<?php if ( isset( $site_options['social_youtube'] ) && $site_options['social_youtube'] ) : ?>
@@ -65,18 +64,3 @@ $site_options = get_option( 'lf-mu' );
 			href="<?php echo esc_url( $site_options['social_slack'] ); ?>"><?php LF_Utils::get_svg( 'social/slack.svg' ); ?></a></li>
 	<?php endif; ?>
 </ul>
-
-<?php
-// Include WeChat Modal only when WeChat Social is activated.
-if ( isset( $site_options['social_wechat_id'] ) ) :
-	// Modal.
-	?>
-	<div class="modal-hide" id="modal-wechat" aria-hidden="true">
-			<div class="modal-content-wrapper">
-				<div class="modal__content"
-					id="modal-wechat-content">
-					<img alt="CNCF on WeChat" loading="lazy" src="<?php echo esc_url( wp_get_attachment_url( $site_options['social_wechat_id'] ) ); ?>">
-				</div>
-			</div>
-		</div>
-	<?php endif; ?>
