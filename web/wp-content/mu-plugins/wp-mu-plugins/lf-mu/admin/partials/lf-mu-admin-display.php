@@ -80,7 +80,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$social_youtube = ( isset( $options['social_youtube'] ) && ! empty( $options['social_youtube'] ) ) ? esc_attr( $options['social_youtube'] ) : '';
 
-		$social_wechat_id = ( isset( $options['social_wechat_id'] ) && ! empty( $options['social_wechat_id'] ) ) ? absint( $options['social_wechat_id'] ) : '';
+		$social_wechat = ( isset( $options['social_wechat'] ) && ! empty( $options['social_wechat'] ) ) ? absint( $options['social_wechat'] ) : '';
 
 		$generic_thumb_id = ( isset( $options['generic_thumb_id'] ) && ! empty( $options['generic_thumb_id'] ) ) ? absint( $options['generic_thumb_id'] ) : '';
 
@@ -521,27 +521,14 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="social_wechat_id">WeChat</label>
+					<th scope="row"><label for="social_wechat">WeChat</label>
 					</th>
 					<td>
-						<div class='image-preview-wrapper'>
-							<img src='<?php echo esc_url( wp_get_attachment_url( $social_wechat_id ) ); ?>'
-								class="image-preview thumbnail-margin-bottom"
-								data-id="<?php echo esc_html( $this->plugin_name ); ?>-social_wechat_id">
-						</div>
-						<input type="button"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-social_wechat_id"
-							class="upload_image_button button"
-							value="Choose image" />
-						<input type="button"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-social_wechat_id"
-							class="clear_upload_image_button button"
-							value="Remove image" />
-						<input type="hidden"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-social_wechat_id"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-social_wechat_id"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[social_wechat_id]"
-							value="<?php echo absint( $social_wechat_id ); ?>" />
+						<input type="text" class="social_wechat regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-social_wechat"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[social_wechat]"
+							value="<?php echo esc_url( $social_wechat ); ?>"
+							placeholder="https://www.cncf.io/wechat" />
 					</td>
 				</tr>
 			</tbody>
