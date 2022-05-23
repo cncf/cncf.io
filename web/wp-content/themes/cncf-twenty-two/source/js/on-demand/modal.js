@@ -22,6 +22,10 @@
 		let $modals = $( '.js-modal' ),
 		$body       = $( 'body' );
 
+		if ( 0 === $modals.length ) {
+			return;
+		}
+
 		$modals.each(
 			function( index_to_expand ) {
 				let $this     = $( this ),
