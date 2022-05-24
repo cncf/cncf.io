@@ -120,6 +120,7 @@
 
 // Menu only.
 .main-menu .next-event {
+	border-radius: 5px;
 	position: relative;
 	width: 100%;
 	height: 120px;
@@ -127,7 +128,8 @@
 	&__logo {
 		width: 135px;
 		height: auto;
-		margin-bottom: 10px;
+		max-height: 80px;
+		margin-bottom: 15px;
 	}
 	&__column-wrapper {
 		display: flex;
@@ -163,10 +165,13 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: bottom;
 		position: absolute;
 		z-index: 1;
 		top: 0;
 		left: 0;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
 	}
 	.wp-block-button__link {
 		display: none;
