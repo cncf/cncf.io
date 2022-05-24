@@ -110,6 +110,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$event_text = ( isset( $options['event_text'] ) && ! empty( $options['event_text'] ) ) ? esc_html( $options['event_text'] ) : '';
 
+		$event_text_color = ( isset( $options['event_text_color'] ) && ! empty( $options['event_text_color'] ) ) ? esc_html( $options['event_text_color'] ) : '';
+
 		$event_cta_text = ( isset( $options['event_cta_text'] ) && ! empty( $options['event_cta_text'] ) ) ? esc_html( $options['event_cta_text'] ) : '';
 
 		$event_cta_color = ( isset( $options['event_cta_color'] ) && ! empty( $options['event_cta_color'] ) ) ? esc_html( $options['event_cta_color'] ) : '';
@@ -594,6 +596,17 @@ if ( ! defined( 'WPINC' ) ) {
 							id="<?php echo esc_html( $this->plugin_name ); ?>-event_text"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[event_text]"
 							value="<?php echo esc_html( $event_text ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="event_text_color">Event Text Color</label>
+					</th>
+					<td>
+						<input type="text"
+							class="event_text_color regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-event_text_color"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[event_text_color]"
+							value="<?php echo esc_html( $event_text_color ); ?>" />
 					</td>
 				</tr>
 				<tr>

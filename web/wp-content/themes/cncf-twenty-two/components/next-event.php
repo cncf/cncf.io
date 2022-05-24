@@ -16,6 +16,7 @@ $event_cta_color           = $site_options['event_cta_color'] ?? '';
 $event_cta_text            = $site_options['event_cta_text'] ?? '';
 $event_cta_link            = $site_options['event_cta_link'] ?? '';
 $event_text                = $site_options['event_text'] ?? '';
+$event_text_color          = $site_options['event_text_color'] ?? '';
 
 if ( $event_logo_id && $event_cta_text && $event_cta_link ) :
 	?>
@@ -32,7 +33,7 @@ if ( $event_logo_id && $event_cta_text && $event_cta_link ) :
 				?>
 
 				<span
-					class="next-event__text"><?php echo esc_html( $event_text ); ?></span>
+					class="next-event__text" style="color: <?php echo esc_attr( $event_text_color ); ?>;"><?php echo esc_html( $event_text ); ?></span>
 
 				<button
 					class="wp-block-button__link button-reset has-background"

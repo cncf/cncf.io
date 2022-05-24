@@ -236,6 +236,8 @@ class Lf_Mu_Admin {
 
 		$options['event_text'] = ( isset( $input['event_text'] ) && ! empty( $input['event_text'] ) ) ? esc_html( $input['event_text'] ) : '';
 
+		$options['event_text_color'] = ( isset( $input['event_text_color'] ) && ! empty( $input['event_text_color'] ) ) ? esc_html( $input['event_text_color'] ) : '';
+
 		$options['event_background_color'] = ( isset( $input['event_background_color'] ) && ! empty( $input['event_background_color'] ) ) ? esc_html( $input['event_background_color'] ) : '';
 
 		$options['event_cta_color'] = ( isset( $input['event_cta_color'] ) && ! empty( $input['event_cta_color'] ) ) ? esc_html( $input['event_cta_color'] ) : '';
