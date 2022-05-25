@@ -1,11 +1,9 @@
 <?php
-namespace TwitterFeed;
 
 // Don't load directly
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
-
 
 class CtfOauthConnectPro extends CtfOauthConnect
 {
@@ -33,9 +31,6 @@ class CtfOauthConnectPro extends CtfOauthConnect
 	        case "listsmeta":
 		        $this->base_url = 'https://api.twitter.com/1.1/lists/list.json';
 		        break;
-            case "listlookup":
-                $this->base_url = 'https://api.twitter.com/1.1/lists/show.json';
-                break;
 	        case "accountlookup":
 	        	$this->base_url = 'https://api.twitter.com/1.1/account/verify_credentials.json';
 	        	break;

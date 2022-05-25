@@ -6,8 +6,6 @@
  * @version 1.13 Custom Twitter Feeds by Smash Balloon
  *
  */
-use TwitterFeed\Pro\CTF_Parse_Pro;
-use TwitterFeed\Pro\CTF_Display_Elements_Pro;
 // Don't load directly
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
@@ -24,14 +22,11 @@ $quoted_name = CTF_Parse_Pro::get_quoted_name( $quoted );
 $quoted_verfied = CTF_Parse_Pro::get_quoted_verified( $quoted );
 $quoted_screen_name = CTF_Parse_Pro::get_quoted_screen_name( $quoted );
 $quoted_text = apply_filters( 'ctf_quoted_tweet_text', $quoted['text'], $feed_options, $quoted );
-
-$linkbox_attr = CTF_Display_Elements_Pro::get_element_attribute( 'linkbox', $feed_options );
-
-
+    
 if ( $quoted_media && ( $quoted_media[0]['type'] == 'video' || $quoted_media[0]['type'] == 'animated_gif') ) :
 ?>
 
-<div class="ctf-quoted-media-wrap"<?php echo CTF_Display_Elements_Pro::get_available_images_attribute( $quoted ) ?> <?php echo $linkbox_attr ?>>
+<div class="ctf-quoted-media-wrap"<?php echo CTF_Display_Elements_Pro::get_available_images_attribute( $quoted ) ?>>
     <?php
     $medium = $quoted_media[0];
     isset($medium['poster']) ? $ctf_lightbox_image = $medium['poster'] : $ctf_lightbox_image = $medium['url'];
@@ -39,7 +34,7 @@ if ( $quoted_media && ( $quoted_media[0]['type'] == 'video' || $quoted_media[0][
     ?>
     <div class="ctf-quoted-video">
         <?php if ( $disablelightbox && ($medium['type'] != 'video' && $medium['type'] != 'animated_gif') || ! $disablelightbox ) : ?>
-            <a href="<?php echo esc_url( $media_link ) ?>" class="<?php echo esc_attr( $media_link_classes ); ?>" <?php echo $linkbox_link_att_string ?> target="_blank" rel="nofollow noopener noreferrer">
+            <a href="<?php echo esc_url( $media_link ) ?>" class="<?php echo esc_attr( $media_link_classes ); ?>"<?php echo $linkbox_link_att_string ?>  target="_blank" rel="noopener noreferrer">
         <?php endif; ?>
             <?php echo ctf_get_fa_el( 'ctf_playbtn' ); ?>
 
@@ -63,12 +58,12 @@ if ( $quoted_media && ( $quoted_media[0]['type'] == 'video' || $quoted_media[0][
             <?php endif; ?>
 
             <span class="ctf-quoted-author-screenname">@<?php echo esc_html( $quoted_screen_name ) ?></span>
-            <p class="ctf-quoted-tweet-text"><?php echo nl2br( $quoted_text ) ?></p>
+            <p class="ctf-quoted-tweet-text" style="' . $feed_options['tweettextsize'] . $feed_options['tweettextweight'] . $feed_options['textcolor'] ?>"><?php echo nl2br( $quoted_text ) ?></p>
         </div>
     </div>
 </div>
 <?php else : ?>
-<a href="<?php echo esc_url( 'https://twitter.com/' . $quoted_screen_name . '/status/' . $quoted['id_str'] ) ?>" class="ctf-quoted-tweet" target="_blank" rel="nofollow noopener noreferrer" <?php echo $linkbox_attr ?>>
+<a href="<?php echo esc_url( 'https://twitter.com/' . $quoted_screen_name . '/status/' . $quoted['id_str'] ) ?>" class="ctf-quoted-tweet" style="<?php echo esc_attr( $feed_options['quotedauthorsize'] . $feed_options['quotedauthorweight'] . $feed_options['textcolor'] ) ?>" target="_blank" rel="noopener noreferrer">
     <?php if ( $quoted_media ) : ?>
         <div class="ctf-quoted-media-wrap"<?php echo CTF_Display_Elements_Pro::get_available_images_attribute( $quoted ) ?>>
             <?php
@@ -90,7 +85,7 @@ if ( $quoted_media && ( $quoted_media[0]['type'] == 'video' || $quoted_media[0][
         <span class="ctf-quoted-verified"><?php echo ctf_get_fa_el( 'fa-check-circle' ) ?></span>
         <?php endif; // user is verified ?>
         <span class="ctf-quoted-author-screenname">@<?php echo esc_html( $quoted_screen_name ) ?></span>
-        <p class="ctf-quoted-tweet-text"><?php echo nl2br( $quoted_text ) ?></p>
+        <p class="ctf-quoted-tweet-text" style="<?php echo esc_attr( $feed_options['tweettextsize'] . $feed_options['tweettextweight'] . $feed_options['textcolor'] ) ?>"><?php echo nl2br( $quoted_text ) ?></p>
     </div>
 </a>
 <?php endif;

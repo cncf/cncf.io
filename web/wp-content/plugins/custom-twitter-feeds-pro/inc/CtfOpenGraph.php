@@ -17,9 +17,8 @@
 	Original can be found at https://github.com/scottmac/opengraph/blob/master/OpenGraph.php
 
 */
-namespace TwitterFeed;
 
-class CtfOpenGraph implements \Iterator
+class CtfOpenGraph implements Iterator
 {
     /**
      * There are base schema's based on type, this is just
@@ -82,7 +81,7 @@ class CtfOpenGraph implements \Iterator
     static private function _parse($HTML) {
         $old_libxml_error = libxml_use_internal_errors(true);
 
-        $doc = new \DOMDocument();
+        $doc = new DOMDocument();
         $doc->loadHTML($HTML);
 
         libxml_use_internal_errors($old_libxml_error);
@@ -128,7 +127,7 @@ class CtfOpenGraph implements \Iterator
 
         //Fallback to use image_src if ogp::image isn't set.
         if (!isset($page->values['image'])) {
-            $domxpath = new \DOMXPath($doc);
+            $domxpath = new DOMXPath($doc);
             $elements = $domxpath->query("//link[@rel='image_src']");
 
             if ($elements->length > 0) {
