@@ -141,3 +141,5 @@ endforeach;
 		</div>
 	</div>
 </section>
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer show-upto-800"></div>
+

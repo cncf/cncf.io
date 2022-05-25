@@ -80,6 +80,12 @@ body {
 	}
 }
 
+@media (min-width: 800px) {
+	.show-upto-800 {
+		display: none;
+	}
+}
+
 .show-over-800 {
 	@media (max-width: 799px) {
 		display: none !important;
