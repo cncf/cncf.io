@@ -91,10 +91,8 @@
 
 		a {
 			display: inline-block;
-			transition: color 0.25s ease-in;
 			&:hover {
 				svg {
-					transition: color 0.25s ease-in;
 					color: $primary-color;
 				}
 			}
