@@ -584,6 +584,7 @@
 		.author-category {
 			margin-top: 5px;
 			margin-bottom: 5px;
+			line-height: 120%;
 		}
 	}
 	&__title {
@@ -594,7 +595,7 @@
 		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
-		line-height: 115%;
+		line-height: 90%;
 
 		a {
 			color: $black;
