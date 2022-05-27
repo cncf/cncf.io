@@ -37,6 +37,9 @@
 		margin-bottom: 15px;
 		color: $black;
 	}
+	&__link:hover {
+		text-decoration: none;
+	}
 	&__date {
 		margin-top: auto;
 		color: $gray-700;

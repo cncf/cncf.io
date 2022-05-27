@@ -21,6 +21,9 @@
 	&__link {
 		color: $black;
 	}
+	&__link:hover {
+		text-decoration: none;
+	}
 	&__title {
 		font-size: 18px;
 		line-height: 150%;
@@ -82,6 +85,9 @@
 	}
 	&__link {
 		color: $black;
+	}
+	&__link:hover {
+		text-decoration: none;
 	}
 	&__presented {
 		font-size: 12px;

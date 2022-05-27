@@ -25,6 +25,9 @@
 	a {
 		color: $black;
 	}
+	a:hover {
+		text-decoration: none;
+	}
 	&__date {
 		font-size: 12px;
 		line-height: 140%;

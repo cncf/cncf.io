@@ -27,6 +27,9 @@
 		color: $black;
 		margin-bottom: 20px;
 	}
+	&__link:hover {
+		text-decoration: none;
+	}
 	&__description {
 		font-size: 13px;
 		@media (min-width: 800px) {
@@ -34,5 +37,8 @@
 		}
 		letter-spacing: 0.02em;
 		margin-top: 20px;
+	}
+	a:hover {
+		text-decoration: none;
 	}
 }

@@ -27,6 +27,9 @@
 	&__link {
 		color: $black;
 	}
+	&__link:hover {
+		text-decoration: none;
+	}
 	&__date {
 		font-size: 12px;
 	}

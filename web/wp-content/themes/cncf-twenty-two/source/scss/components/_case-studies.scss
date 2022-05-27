@@ -90,6 +90,9 @@
 		a {
 			color: $white;
 		}
+		a:hover {
+			text-decoration: none;
+		}
 	}
 	&__hr {
 		grid-area: hr;

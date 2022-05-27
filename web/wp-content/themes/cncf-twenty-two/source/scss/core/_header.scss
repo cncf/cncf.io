@@ -86,6 +86,7 @@
 .main-menu {
 	.menu-item-has-children {
 		a:hover {
+			text-decoration: none;
 			color: rgba(0, 0, 0, 0.7);
 			@media (prefers-reduced-motion: reduce) {
 				transition: none;
