@@ -33,6 +33,7 @@
 			}
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
+			transition: opacity 0.25s ease-in;
 			&:hover {
 				opacity: 0.9;
 				transition: opacity 0.25s ease-in;
