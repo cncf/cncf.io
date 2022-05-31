@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="human-item">
+<div class="human-item has-animation-scale-2">
 	<a href="<?php the_permalink(); ?>"
 		title="<?php the_title_attribute(); ?>">
 		<?php

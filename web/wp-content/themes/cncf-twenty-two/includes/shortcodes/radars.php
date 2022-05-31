@@ -56,7 +56,7 @@ function add_radars_shortcode( $atts ) {
 			$image       = $tech_radar->image;
 			?>
 
-	<div class="radar-item">
+	<div class="radar-item has-animation-scale-2">
 		<a href="<?php echo esc_url( $url ); ?>"
 			title="<?php echo esc_html( $radar_title ); ?>">
 			<?php

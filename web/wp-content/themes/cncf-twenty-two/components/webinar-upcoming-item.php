@@ -29,7 +29,7 @@ if ( $webinar_reg_url ) {
 	$link_url = get_the_permalink();
 }
 ?>
-<article class="webinar-upcoming-item">
+<article class="webinar-upcoming-item has-animation-scale-2">
 
 		<?php
 		// Date of Webinar.

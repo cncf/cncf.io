@@ -16,6 +16,7 @@ $classes = LF_Utils::merge_classes(
 	array(
 		$is_in_the_news_category ? 'news-item-vertical in-the-news-item' : 'news-item-vertical ',
 		is_sticky() ? 'is-sticky-news' : 'not-sticky',
+		'has-animation-scale-2',
 	)
 );
 ?>

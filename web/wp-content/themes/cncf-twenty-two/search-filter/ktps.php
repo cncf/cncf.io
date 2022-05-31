@@ -46,7 +46,7 @@ if ( $query->have_posts() ) : ?>
 
 		?>
 
-	<div class="ktp-item">
+	<div class="ktp-item has-animation-scale-2">
 
 		<a href="<?php echo esc_url( $external_url ); ?>"
 			title="<?php echo esc_attr( $name ); ?>"

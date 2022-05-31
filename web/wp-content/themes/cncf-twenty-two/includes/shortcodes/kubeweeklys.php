@@ -55,7 +55,7 @@ function add_kubeweeklys_shortcode() {
 				endif;
 				?>
 
-			<div class="kubeweekly-item">
+			<div class="kubeweekly-item has-animation-scale-2">
 
 			<p class="kubeweekly-item__title">
 			<a class="kubeweekly-item__link" href="<?php echo esc_url( $link_url ); ?>" title="<?php echo esc_html( the_title_attribute() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>

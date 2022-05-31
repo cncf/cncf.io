@@ -32,7 +32,7 @@ $color = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
 $color ? $overlay_color = $color : $overlay_color = 'transparent';
 
 ?>
-<div class="event-item">
+<div class="event-item has-animation-scale-2">
 
 	<div class="event-item__overlay"
 		style="background-color: <?php echo esc_html( $overlay_color ); ?> ">

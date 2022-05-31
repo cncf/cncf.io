@@ -23,7 +23,7 @@ $webinar_views        = get_post_meta( get_the_ID(), 'lf_webinar_recording_views
 $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 ?>
 
-<div class="webinar-recorded-item">
+<div class="webinar-recorded-item has-animation-scale-2">
 
 	<figure class="webinar-recorded-item__figure">
 		<a href="<?php the_permalink(); ?>"  class="webinar-recorded-item__figure-link">

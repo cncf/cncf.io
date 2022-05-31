@@ -56,7 +56,7 @@ if ( $query->have_posts() ) : ?>
 			$y = $report_year;
 		}
 		?>
-<div class="report-item">
+<div class="report-item has-animation-scale-2">
 
 	<a class="report-item__link" href="<?php the_permalink(); ?>"
 		title="<?php echo esc_attr( the_title_attribute() ); ?>">
