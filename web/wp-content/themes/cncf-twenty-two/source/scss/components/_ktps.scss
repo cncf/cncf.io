@@ -25,10 +25,13 @@
 	&__link {
 		font-size: 24px;
 		color: $black;
-		margin-bottom: 20px;
+		margin-bottom: 12px;
 	}
 	&__link:hover {
 		text-decoration: none;
+	}
+	&__country {
+		font-size: 12px;
 	}
 	&__description {
 		font-size: 13px;

@@ -60,11 +60,12 @@ if ( $query->have_posts() ) : ?>
 		<a class="ktp-item__link" href="<?php echo esc_url( $external_url ); ?>"
 			title="Visit <?php echo esc_attr( $name ); ?>">
 			<?php echo esc_html( $name ); ?>
+		</a>
 
-			<a class="is-style-spaced-uppercase has-text-color has-primary-400-color" title="Filter by Country"
-				href="?_sft_lf-country=<?php echo esc_html( $country_slug ); ?>"><?php echo esc_html( $country ); ?></a>
+		<a class="ktp-item__country is-style-spaced-uppercase has-text-color has-gray-700-color" title="Filter by Country"
+			href="?_sft_lf-country=<?php echo esc_html( $country_slug ); ?>"><?php echo esc_html( $country ); ?></a>
 
-			<p class="ktp-item__description"><?php echo esc_html( $description ); ?></p>
+		<p class="ktp-item__description"><?php echo esc_html( $description ); ?></p>
 
 	</div>
 	<?php endwhile; ?>
