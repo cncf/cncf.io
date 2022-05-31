@@ -1,7 +1,7 @@
 /* Pop */
 @keyframes pop-sm {
 	50% {
-		transform: scale(1.05);
+		transform: scale(1.03);
 	}
 }
 
@@ -11,7 +11,7 @@
 		transition-duration: 0.3s;
 		transform: translate3d(0, 0, 0);
 		&:hover {
-			transform: scale(1.02);
+			transform: scale(1.013);
 		}
 	}
 }
