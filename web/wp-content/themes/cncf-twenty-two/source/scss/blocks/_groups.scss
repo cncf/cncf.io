@@ -13,7 +13,7 @@
 			padding-top: 100px;
 		}
 		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-down.png'),
-			linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+			linear-gradient($gray-050, $gray-050);
 		background-repeat: repeat-x;
 		background-position: 0 top;
 	}
@@ -24,7 +24,7 @@
 			padding-bottom: 100px;
 		}
 		background-image: url('/wp-content/themes/cncf-twenty-two/images/bg-gradient-gray-up.png'),
-			linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+			linear-gradient($gray-050, $gray-050);
 		background-repeat: repeat-x;
 		background-position: 0 bottom;
 	}
