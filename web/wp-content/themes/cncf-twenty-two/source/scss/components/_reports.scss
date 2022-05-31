@@ -12,16 +12,10 @@
 		display: block;
 	}
 	&__text-wrapper {
-		padding-top: 20px;
-		padding-left: 20px;
-		padding-right: 20px;
-		padding-bottom: 30px;
-		@media (min-width: 1200px) {
-			padding-top: 24px;
-			padding-left: 30px;
-			padding-right: 30px;
-			padding-bottom: 24px;
-		}
+		padding-top: 25px;
+		padding-right: 25px;
+		margin-bottom: 40px;
+		padding-left: 25px;
 		.author-category {
 			margin-bottom: 20px;
 		}
@@ -31,6 +25,7 @@
 	}
 	&__title {
 		font-size: 20px;
+		line-height: 140%;
 		a {
 			color: $black;
 		}
