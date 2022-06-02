@@ -138,6 +138,9 @@ function add_members_pricing_shortcode() {
 				<li>Increased access to Linux
 					Foundation’s invitation-only Linux Foundation Member Summit
 				</li>
+				<li>50-seat annual Linux Foundation Training subscription OR 10 Linux Foundation Training coupons. 
+					Additional terms apply. (Cannot be combined with any other membership training benefits.)
+				</li>
 			</ul>
 		</div>
 

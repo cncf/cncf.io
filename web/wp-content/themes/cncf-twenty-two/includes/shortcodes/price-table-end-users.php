@@ -72,11 +72,10 @@ function add_end_user_pricing_shortcode() {
 				</li>
 				<li>A total of 10 KubeCon
 					in-person tickets</li>
-				<li>15-seat Linux Foundation Training
-					subscription (worth $7.5k)
+				<li>15-seat annual Linux Foundation Training subscription (worth $7.5k) OR 
+					10 Linux Foundation Training coupons. Additional terms apply.  
+					(Cannot be combined with any other membership training benefits.) 
 				</li>
-				<li>A total of 10 Linux
-					Foundation Training coupons </li>
 				<li>Access to the <a
 						href="https://todogroup.org/">TODO Group</a> to meet
 					other open source organizations </li>
@@ -118,6 +117,11 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 				<li>4 online programs a quarter
 					(on-demand, YouTube, live streams) to build thought
 					leadership</li>
+				<li>50-seat annual Linux Foundation Training subscription OR 
+					10 Linux Foundation Training coupons.  Additional terms apply.  
+					(Cannot be combined with any other membership training benefits.) 
+				</li>
+
 			</ul>
 		</div>
 
