@@ -114,10 +114,7 @@
 			padding-bottom: 11px;
 			margin-bottom: 6px;
 			&:hover {
-				.lf-menu-description {
-					transition: color 0.25s ease;
-					color: $black;
-				}
+				color: #6f6f6f;
 			}
 
 			.lf-menu-description {
@@ -126,8 +123,6 @@
 				font-size: 11px;
 				line-height: 160%;
 				padding-top: 8px;
-				color: $gray-700;
-				transition: color 0.25s ease;
 			}
 		}
 
