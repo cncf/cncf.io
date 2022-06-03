@@ -31,8 +31,8 @@
 			opacity: 0;
 		}
 		&.video-has-loaded-safari {
-			transition: all 0.45s ease-out;
-			transition-delay: 0.25s;
+			transition: all 0s ease-out;
+			// transition-delay: 0.25s;
 			visibility: hidden;
 			opacity: 0;
 		}
