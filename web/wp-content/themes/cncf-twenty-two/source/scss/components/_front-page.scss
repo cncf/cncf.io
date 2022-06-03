@@ -283,6 +283,38 @@
 			}
 		}
 	}
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		display: inline-block;
+		background: linear-gradient(90deg, rgba($gray-050, 1) 72%, rgba($gray-050, 0) 100%);
+		z-index: 1;
+		width: 25px;
+
+		@media (min-width: 768px) {
+			width: 50px;
+		}
+	}
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: inline-block;
+		background: linear-gradient(90deg, rgba($gray-050, 0) 0%, rgba($gray-050, 1) 72%);
+		z-index: 1;
+		width: 25px;
+
+		@media (min-width: 768px) {
+			width: 50px;
+		}
+	}
 }
 
 .slider {
