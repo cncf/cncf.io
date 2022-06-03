@@ -55,13 +55,14 @@ dialog {
 }
 
 // generic modal
+// Used on benefits, price table for end users and members.
 .generic-modal {
 	position: fixed;
 	background: $white;
 	z-index: 667;
 	border: 0;
 	overflow: auto;
-	min-height: 300px;
+	min-height: 100vh;
 	max-height: 100%;
 	top: 0;
 	left: 0;
@@ -157,20 +158,5 @@ dialog {
 	}
 	&__content {
 		height: 100%;
-	}
-}
-
-#modal-wechat-content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-	width: 100%;
-	height: 100%;
-
-	img {
-		display: block;
-		max-width: 400px;
-		max-height: 400px;
 	}
 }
