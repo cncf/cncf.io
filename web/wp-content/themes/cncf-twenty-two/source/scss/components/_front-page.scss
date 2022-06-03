@@ -26,6 +26,13 @@
 		transition: all 0.5s ease-out;
 		&.video-has-loaded {
 			transition: all 0.45s ease-out;
+			transition-delay: 0.1s;
+			visibility: hidden;
+			opacity: 0;
+		}
+		&.video-has-loaded-safari {
+			transition: all 0.45s ease-out;
+			transition-delay: 0.25s;
 			visibility: hidden;
 			opacity: 0;
 		}
@@ -49,11 +56,6 @@
 			margin-top: 0;
 			padding-top: max(60px, calc(100vh - 136px - 80px - 510px)); // Min space.
 		}
-		// margin-top: min(36%, 100px);
-		// @media (min-height: 660px) {
-		// 	padding-top: 50px;
-		// 	margin-top: calc(100vh - 136px - 80px - 510px);
-		// }
 		font-weight: 800;
 		font-size: 38px;
 		line-height: 135%;
