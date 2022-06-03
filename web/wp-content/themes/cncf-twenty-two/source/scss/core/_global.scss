@@ -28,15 +28,8 @@ body {
 		// Stops bg moving when menu open.
 		overflow: hidden;
 		height: 100%;
-		position: fixed;
-		touch-action: none;
 	}
 }
-
-// applied on pages, need this because of .alignwide blocks.
-// .the-content {
-// 	overflow-x: hidden;
-// }
 
 // default content container.
 .container {
