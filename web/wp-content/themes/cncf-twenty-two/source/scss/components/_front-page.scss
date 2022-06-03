@@ -26,13 +26,6 @@
 		transition: all 0.5s ease-out;
 		&.video-has-loaded {
 			transition: all 0.45s ease-out;
-			transition-delay: 0.1s;
-			visibility: hidden;
-			opacity: 0;
-		}
-		&.video-has-loaded-safari {
-			transition: all 0s ease-out;
-			// transition-delay: 0.25s;
 			visibility: hidden;
 			opacity: 0;
 		}
