@@ -10,12 +10,12 @@
 
 // Experimental.
 // Overrides terrible WordPress default bottom margin.
-.wp-block-columns {
+body .wp-block-columns {
 	margin-bottom: 0;
 }
 
 .is-style-blob-grid {
-	--wp--style--block-gap: 50px;
+	gap: 50px;
 	.wp-block-column:nth-child(2) {
 		@media (min-width: 1000px) {
 			max-width: 580px;
@@ -41,12 +41,12 @@
 
 .wp-block-columns:not(.is-not-stacked-on-mobile) {
 	&.is-style-0px-gap {
-		--wp--style--block-gap: 0px;
+		gap: 0px;
 	}
 	&.is-style-50px-gap {
-		--wp--style--block-gap: 50px;
+		gap: 50px;
 	}
 	&.is-style-70px-gap {
-		--wp--style--block-gap: 70px;
+		gap: 70px;
 	}
 }
