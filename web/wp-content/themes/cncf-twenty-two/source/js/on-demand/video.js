@@ -92,7 +92,7 @@
 				(e) => {
 					playVideo();
 					// fade out poster.
-					poster.classList.add( 'video-has-loaded-safari' );
+					poster.classList.add( 'video-has-loaded' );
 				},
 				{ once: true }
 				)
