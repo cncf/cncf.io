@@ -1,0 +1,9 @@
+body .wp-block-gallery {
+	gap: 30px;
+	align-items: stretch;
+	height: 100%;
+
+	.wp-block-image {
+		margin: 0;
+	}
+}
