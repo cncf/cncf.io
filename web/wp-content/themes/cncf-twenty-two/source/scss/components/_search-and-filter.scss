@@ -125,19 +125,16 @@
 			}
 		}
 	}
-	// &[data-sf-form-id='67180'] {
-	// height: unset;
-	// margin-bottom: 1rem;
-	// > ul {
-	// 	display: flex;
-	// 	flex-wrap: wrap;
-	// }
-	// .sf-field-search {
-	// 	flex-basis: 100%;
-	// margin-right: 0;
-	// 	label {
-	// 		flex-basis: 100%;
-	// 	}
-	// }
-	// }
+}
+
+@media (max-width: 599px) {
+	.searchandfilter > ul > li .sf-input-select {
+		width: 100%;
+		background: rgba(230, 230, 230, 0.5);
+		border: 1px solid $gray-500;
+		border-radius: 5px;
+		padding-right: 3px;
+		color: $black;
+		height: 40px;
+	}
 }
