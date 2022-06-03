@@ -170,6 +170,10 @@ wp.blocks.registerBlockStyle(
 		{
 			label: 'Rounded Corners',
 			name: 'rounded-corners',
+		},
+		{
+			label: 'No Margin',
+			name: 'no-margin',
 		}
 ]
 );
