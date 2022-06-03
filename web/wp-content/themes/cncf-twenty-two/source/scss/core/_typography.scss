@@ -137,19 +137,7 @@ h3,
 	max-width: 90%;
 }
 
-// TODO: Responsive sized fonts inline with designs.
-.has-extra-small-font-size {
-	// 10px
-}
-.has-small-font-size {
-	// 14px
-}
-.has-normal-font-size {
-	// 16px
-}
-.has-medium-font-size {
-	// 18px
-}
+// Responsively resize fonts inline with designs to match block.json font sizes.
 .has-large-font-size {
 	// 20px
 	@media (max-width: 999px) {
@@ -331,6 +319,11 @@ h3,
 		max-width: 800px;
 	}
 
+	h2,
+	h3 {
+		line-height: 150%;
+	}
+
 	h2 {
 		margin-top: 50px;
 		margin-bottom: 30px;
@@ -340,21 +333,31 @@ h3,
 		}
 	}
 
-	h2,
 	h3 {
-		line-height: 150%;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+		}
+	}
+
+	h4 {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		font-size: 1.125em;
+	}
+
+	h5,
+	h6 {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		font-size: 1rem;
 	}
 
 	h3,
 	h4,
 	h5,
 	h6 {
-		margin-top: 40px;
-		margin-bottom: 20px;
-		@media (min-width: 1200px) {
-			margin-top: 60px;
-			margin-bottom: 20px;
-		}
 		+ .wp-block-quote,
 		.wp-block-gallery {
 			margin-top: 0;
