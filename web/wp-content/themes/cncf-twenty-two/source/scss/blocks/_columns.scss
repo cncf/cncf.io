@@ -15,7 +15,9 @@ body .wp-block-columns {
 }
 
 .is-style-blob-grid {
-	gap: 50px;
+	@media (min-width: 782px) {
+		gap: 0 50px;
+	}
 	.wp-block-column:nth-child(2) {
 		@media (min-width: 1000px) {
 			max-width: 580px;
@@ -42,12 +44,18 @@ body .wp-block-columns {
 
 .wp-block-columns:not(.is-not-stacked-on-mobile) {
 	&.is-style-0px-gap {
-		gap: 0px;
+		@media (min-width: 782px) {
+			gap: 0;
+		}
 	}
 	&.is-style-50px-gap {
-		gap: 50px;
+		@media (min-width: 782px) {
+			gap: 0 50px;
+		}
 	}
 	&.is-style-70px-gap {
-		gap: 70px;
+		@media (min-width: 782px) {
+			gap: 0 70px;
+		}
 	}
 }
