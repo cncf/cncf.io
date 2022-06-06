@@ -1,9 +1,15 @@
 body .wp-block-gallery {
-	gap: 0 30px;
+	gap: 30px;
 	align-items: stretch;
 	height: 100%;
 
 	.wp-block-image {
 		margin: 0;
+	}
+}
+
+@media (max-width: 781px) {
+	body .wp-block-gallery.has-nested-images {
+		margin-top: 30px;
 	}
 }

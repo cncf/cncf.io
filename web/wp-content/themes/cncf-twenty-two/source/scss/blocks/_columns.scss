@@ -9,14 +9,18 @@
 }
 
 // Experimental.
-// Overrides terrible WordPress default bottom margin.
 body .wp-block-columns {
+	// Overrides terrible WordPress default bottom margin.
 	margin-bottom: 0;
+	//
+	@media (max-width: 781px) {
+		row-gap: 0px !important;
+	}
 }
 
 .is-style-blob-grid {
 	@media (min-width: 782px) {
-		gap: 0 50px;
+		gap: 0px 50px;
 	}
 	.wp-block-column:nth-child(2) {
 		@media (min-width: 1000px) {
@@ -25,7 +29,7 @@ body .wp-block-columns {
 	}
 	.wp-block-image {
 		margin-top: 0;
-		.alignleft {
+		&.alignleft {
 			margin-right: 0;
 			margin-top: 0;
 			margin-inline-end: 0;
