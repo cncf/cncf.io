@@ -79,7 +79,7 @@
 					video.load();
 					playVideo();
 					// fade out poster.
-					poster.classList.add( 'video-has-loaded' );
+					poster.classList.add( 'video-has-loaded-ios' );
 				},
 				{ once: true }
 				)

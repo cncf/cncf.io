@@ -29,6 +29,12 @@
 			visibility: hidden;
 			opacity: 0;
 		}
+		&.video-has-loaded-ios {
+			transition: all 0.45s ease-out;
+			visibility: hidden;
+			transition-delay: 0.5s;
+			opacity: 0;
+		}
 	}
 	&__overlay {
 		z-index: 3;
