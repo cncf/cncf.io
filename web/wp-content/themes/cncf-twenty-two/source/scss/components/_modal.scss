@@ -62,14 +62,13 @@ dialog {
 	z-index: 667;
 	border: 0;
 	overflow: auto;
-	min-height: 100vh;
+	min-height: 300px;
 	max-height: 100%;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	max-width: 100%;
-
 	@media (min-width: 768px) {
 		top: 50%;
 		left: 50%;
@@ -87,9 +86,9 @@ dialog {
 		padding: 60px 30px;
 	}
 
-	&__wrapper {
-		height: 100%;
-	}
+	// &__wrapper {
+	// 	height: 100%;
+	// }
 
 	&-close__wrapper {
 		@media (max-width: 767px) {
