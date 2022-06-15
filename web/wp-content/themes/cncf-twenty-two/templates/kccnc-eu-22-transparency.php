@@ -1,7 +1,9 @@
 <?php
 /**
- * Template Name: Annual Report 2021
+ * Template Name: KCCNC EU 22 Transparency
  * Template Post Type: lf_report
+ *
+ * File for the KCCNC EU 2022 Transparency Report
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -13,19 +15,19 @@ get_template_part( 'components/header' );
 get_template_part( 'components/skip-link-target' );
 
 // declare report PDF link to reference as variable.
-$pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/01/CNCF_Annual_Report_2021.pdf';
+$pdf_link = '';
 
 ?>
 
 <link rel="prefetch"
-	href="<?php echo esc_url( get_template_directory_uri() . '/build/annual-report-2021.min.css' ); ?>"
+	href="<?php echo esc_url( get_template_directory_uri() . '/build/kccnc-eu-22-transparency.min.css' ); ?>"
 	as="style" crossorigin="anonymous" />
 
-<?php wp_enqueue_style( '2021', get_template_directory_uri() . '/build/annual-report-2021.min.css', array(), filemtime( get_template_directory() . '/build/annual-report-2021.min.css' ), 'all' ); ?>
+<?php wp_enqueue_style( 'kccnc-eu-22', get_template_directory_uri() . '/build/kccnc-eu-22-transparency.min.css', array(), filemtime( get_template_directory() . '/build/kccnc-eu-22-transparency.min.css' ), 'all' ); ?>
 
 <?php
 // setup social share content.
-$caption  = '2021 has been a huge year of growth at CNCF, which now hosts 120+ projects with over 142,000 contributors representing 189 countries. Read the CNCF Annual Report 2021: ';
+$caption  = 'Read the CNCF KubeCon & CloudNativeCon Europe 2022 Transparency Report: ';
 $page_url = rawurlencode( get_permalink() );
 $caption  = htmlspecialchars( rawurlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
 
@@ -37,10 +39,10 @@ $options && $options['social_twitter_handle'] ? $twitter = $options['social_twit
 
 $twitter_url  = 'https://twitter.com/intent/tweet?text=' . $caption . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $twitter . '';
 $linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $caption . '';
-$mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&nbsp;' . $page_url . '';
+$mailto_url   = 'mailto:?subject=CNCF KubeCon & CloudNativeCon Europe 2022 Transparency Report&body=' . $caption . '&nbsp;' . $page_url . '';
 ?>
 
-<main class="ar-2021">
+<main class="kccnc-eu-22">
 	<article class="container wrap">
 
 		<section class="background-image-wrapper is-hero alignfull" height="500"
@@ -52,12 +54,12 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 					<div aria-hidden="true" class="ar-spacer-120"></div>
 
 					<h2 class="hero-title uppercase add-blob smaller">
-						CNCF 2021</h2>
+						CNCF KCCNC EU 2022</h2>
 
 					<div aria-hidden="true" class="ar-spacer-30"></div>
 
 					<div class="hero-align">
-						<h1 class="hero-title-main uppercase">Annual <br />
+						<h1 class="hero-title-main uppercase">Transparency <br />
 							Report</h1>
 
 						<div aria-hidden="true"
@@ -112,9 +114,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 							<?php
 							Lf_Utils::get_svg( 'annual-reports/2021/jp.svg' );
 							?>
-				 Japanese version</a></p>
-
-						</div>
+							 Japanese version</a></p></div>
 
 
 						<p
@@ -2796,13 +2796,6 @@ In Italian, thanks to SparkFabrik</p>
 
 				<div aria-hidden="true" class="ar-spacer-40 show-over-1000">
 				</div>
-
-				<a
-					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe">
-					<img loading="lazy" width="1150" height="241"
-						src="<?php Lf_Utils::get_image( 'annual-reports/2021/banner-kubecon-eu-22.png', true ); ?>"
-						alt="Kubecon EU 2022 banner">
-				</a>
 
 				<div aria-hidden="true" class="ar-spacer-160"></div>
 
