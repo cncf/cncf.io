@@ -6,7 +6,7 @@
     "scripts": {
         "start": "gulp",
         "watch": "gulp",
-        "watch:detached": "gulp detached",
+        "detached": "gulp detached",
         "build": "gulp build",
         "prod": "gulp build",
         "standards": "gulp standards",

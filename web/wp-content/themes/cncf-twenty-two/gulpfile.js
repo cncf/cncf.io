@@ -29,6 +29,7 @@ var jsEditorDestination = PROJECT_FOLDER + '/build/';
 var jsEditorFile        = 'editor-scripts';
 
 var styleWatchFiles        = PROJECT_FOLDER + '/source/scss/**/*.scss';
+var styleWatchDetachedStyles = PROJECT_FOLDER + '/source/scss/detached/*.scss';
 var editorJSWatchFiles     = PROJECT_FOLDER + '/source/js/editor/**/*.js';
 var globalJSWatchFiles     = PROJECT_FOLDER + '/source/js/globals/**/*.js';
 var thirdpartyJSWatchFiles = PROJECT_FOLDER + '/source/js/on-demand/**/*.js';
@@ -87,6 +88,7 @@ function watch() {
 	gulp.watch( projectPHPWatchFiles,reload );
 	gulp.watch( projectHTMLWatchFiles ).on( 'change',reload );
 	gulp.watch( styleWatchFiles,gulp.series( [styles] ) );
+	gulp.watch( styleWatchDetachedStyles,gulp.series( [detachedStyles] ) );
 	gulp.watch( thirdpartyJSWatchFiles,gulp.series( [reload] ) );
 	gulp.watch( editorJSWatchFiles,gulp.series( [editorJS,reload] ) );
 	gulp.watch( globalJSWatchFiles,gulp.series( [globalJS,reload] ) );
