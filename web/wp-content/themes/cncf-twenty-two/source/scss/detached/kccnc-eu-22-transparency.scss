@@ -2370,13 +2370,14 @@ html {
 			&__opening {
 				font-family: $font-kccnc-eu-22-serif;
 				font-style: italic;
-				font-weight: 600;
+				font-weight: 400;
+				line-height: 160%;
+				color: $kccnc-eu-22-gray-700;
 				font-size: 30px;
 				@media (min-width: 1200px) {
 					font-size: 40px;
+					max-width: 585px;
 				}
-				line-height: 160%;
-				color: $kccnc-eu-22-gray-700;
 			}
 			&__comments {
 				font-weight: 600;
@@ -2386,7 +2387,8 @@ html {
 		}
 	}
 
-	// Copied from LFE. We use largest and larger.
+	// Copied from LFE.
+	// We use largest and larger size.
 	.sponsors-logos {
 		display: flex;
 		flex-flow: row wrap;
