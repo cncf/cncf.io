@@ -503,7 +503,7 @@ General Manager, CNCF</p>
 
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-40"></div>
+				<div aria-hidden="true" style="height: 40px;"></div>
 
 				<p class="sub-header is-centered">Top Three Job Functions</p>
 
