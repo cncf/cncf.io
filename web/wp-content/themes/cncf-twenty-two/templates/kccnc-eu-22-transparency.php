@@ -242,7 +242,7 @@ General Manager, CNCF</p>
 " alt="Megaphone icon">
 						</div>
 						<div class="text">
-							<span>2300+</span><br />
+							<span>2,300+</span><br />
 							Pieces of media coverage
 						</div>
 					</div>
