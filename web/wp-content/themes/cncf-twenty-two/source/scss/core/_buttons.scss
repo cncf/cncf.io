@@ -12,6 +12,9 @@
 	margin-right: initial;
 	width: unset;
 	// width: 100%;
+	&:active {
+		color: inherit;
+	}
 }
 
 .hs-button,
