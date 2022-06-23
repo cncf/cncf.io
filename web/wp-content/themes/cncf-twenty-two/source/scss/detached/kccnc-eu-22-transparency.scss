@@ -278,6 +278,24 @@ html {
 			top: 0;
 			left: 0;
 		}
+		&.darken-on-mobile {
+			@media (max-width: 999px) {
+				&:after {
+					background-color: #000000;
+					background-size: cover;
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 2;
+					opacity: 0.5;
+					mix-blend-mode: multiply;
+				}
+			}
+		}
 	}
 
 	.background-image-text-overlay {
@@ -1741,6 +1759,9 @@ html {
 		}
 		&__container {
 			max-width: 660px;
+		}
+		&__image {
+			object-position: center top;
 		}
 		.divider {
 			width: 100%;
