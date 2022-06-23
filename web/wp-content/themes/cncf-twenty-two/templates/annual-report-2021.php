@@ -112,7 +112,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 							<?php
 							Lf_Utils::get_svg( 'annual-reports/2021/jp.svg' );
 							?>
-				 Japanese version</a></p>
+							 Japanese version</a></p>
 
 						</div>
 
@@ -2817,15 +2817,6 @@ wp_enqueue_script(
 	get_template_directory_uri() . '/source/js/libraries/chart.min.js',
 	null,
 	filemtime( get_template_directory() . '/source/js/libraries/chart.min.js' ),
-	true
-);
-
-// youtube lite script.
-wp_enqueue_script(
-	'youtube-lite-js',
-	home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
-	null,
-	filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
 	true
 );
 
