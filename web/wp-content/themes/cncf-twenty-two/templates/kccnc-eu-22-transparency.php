@@ -229,8 +229,8 @@ General Manager, CNCF</p>
 " alt="Heart icon">
 						</div>
 						<div class="text">
-							<span>$20K</span><br />
-							Raised for Ukraine fund
+							<span>7,084</span><br />
+							In-person attendees
 						</div>
 					</div>
 
