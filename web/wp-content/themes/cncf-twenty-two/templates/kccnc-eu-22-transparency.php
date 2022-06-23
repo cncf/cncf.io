@@ -899,12 +899,12 @@ KubeCon + CloudNativeCon Valencia was our first time back together in-person sin
 
 			<div class="lf-grid dei">
 				<div class="dei__col-1">
-					<p><strong>Diversity, Equity & Inclusivity</strong></p>
+				<p class="sub-header">Diversity, Equity & Inclusivity</p>
 					<p>CNCF strives to ensure that everyone who participates in KubeCon + CloudNativeCon feels welcome, regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. Just over 8% of attendees identified as a person of color and many preferred not to answer. As part of our deep commitment to diversity, equity, and inclusivity, we hosted a number of workshops and networking opportunities to help connect individuals to opportunities within tech.
 </p>
 				</div>
 				<div class="dei__col-2">
-					<p><strong>Gold CHAOSS D&I Event Badge</strong></p>
+					<p class="sub-header">Gold CHAOSS D&I Event Badge</p>
 					<img width="291" height="70" src="
 					<?php
 					Lf_Utils::get_image( $report_folder . 'dandigold.png' );
