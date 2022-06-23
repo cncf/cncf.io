@@ -1517,7 +1517,7 @@ Computing Engineer</p>
 			<div aria-hidden="true" class="report-spacer-40"></div>
 
 			<p
-				class="opening-paragraph">More than <strong>2,400 people</strong> joined us for KubeCon + CloudNativeCon Europe thanks to the Dan Kohn Scholarship Fund, including diversity, need-based, and student scholarship recipients.</p>
+				class="opening-paragraph max-w-1000">More than <strong>2,400 people</strong> joined us for KubeCon + CloudNativeCon Europe thanks to the Dan Kohn Scholarship Fund, including diversity, need-based, and student scholarship recipients.</p>
 
 			<div class="kccnc-table-container">
 				<table class="kccnc-table">
