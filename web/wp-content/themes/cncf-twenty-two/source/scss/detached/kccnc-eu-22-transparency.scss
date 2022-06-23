@@ -1194,8 +1194,10 @@ html {
 		}
 		&__slider {
 			margin-top: 50px;
-			.slick-list {
-				padding-right: 25%;
+			@media (min-width: 800px) {
+				.slick-list {
+					padding-right: 25%;
+				}
 			}
 			.slick-track {
 				display: flex !important;
@@ -1203,7 +1205,9 @@ html {
 			.slick-slide {
 				max-height: 500px;
 				height: inherit !important;
-				margin-right: 20px;
+				@media (min-width: 800px) {
+					margin-right: 20px;
+				}
 				> div {
 					height: 100%;
 					> div {
