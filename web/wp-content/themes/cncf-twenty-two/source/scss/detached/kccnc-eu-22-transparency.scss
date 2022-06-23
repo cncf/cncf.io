@@ -495,7 +495,10 @@ html {
 	.opening-paragraph {
 		line-height: 150%;
 		font-size: 20px;
-		margin-bottom: 80px;
+		margin-bottom: 60px;
+		@media (min-width: 412px) {
+			margin-bottom: 80px;
+		}
 		@media (min-width: 1200px) {
 			font-size: 30px;
 			margin-bottom: 120px;

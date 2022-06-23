@@ -1572,7 +1572,7 @@ Computing Engineer</p>
 				</table>
 			</div>
 
-			<div aria-hidden="true" class="report-spacer-75"></div>
+			<div aria-hidden="true" class="report-spacer-120"></div>
 
 			<div class="sub-header">Sponsored By</div>
 
