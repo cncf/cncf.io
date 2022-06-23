@@ -1270,7 +1270,7 @@ KubeCon + CloudNativeCon Valencia was our first time back together in-person sin
 		<section class="section-10 alignfull background-image-wrapper">
 
 			<figure class="background-image-figure">
-				<?php LF_Utils::display_responsive_images( 73889, 'full', '1200px', '', 'lazy', 'Speaker at a colocated event' ); ?>
+				<?php LF_Utils::display_responsive_images( 73898, 'full', '1200px', '', 'lazy', 'Speaker at a colocated event' ); ?>
 			</figure>
 
 			<div class="background-image-text-overlay">
@@ -1598,7 +1598,7 @@ Computing Engineer</p>
 			<div class="shadow-hr"></div>
 
 			<div class="scholarships">
-				<?php LF_Utils::display_responsive_images( 73890, 'full', '800px', 'scholarships__image', 'lazy', 'People on Scholarships at KubeCon + CloudNativeCon Europe 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 73897, 'full', '800px', 'scholarships__image', 'lazy', 'People on Scholarships at KubeCon + CloudNativeCon Europe 2022' ); ?>
 
 				<div class="scholarships__title-wrapper">
 					<h2 class="scholarships__title">Check out our scholarship
