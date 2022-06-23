@@ -542,6 +542,10 @@ KubeCon + CloudNativeCon Valencia was our first time back together in-person sin
 										</thead>
 										<tbody>
 											<tr>
+												<td>Architect</td>
+												<td>3127</td>
+											</tr>
+											<tr>
 												<td>Business Operations</td>
 												<td>189</td>
 											</tr>
