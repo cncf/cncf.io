@@ -2415,10 +2415,12 @@ html {
 		&.largest .logo {
 			height: 9rem;
 			width: 12rem;
+			margin: 0; // reset.
 		}
 		&.larger .logo {
 			height: 8rem;
 			width: 8rem;
+			margin: 0; // reset.
 		}
 
 		@media (min-width: 412px) {
