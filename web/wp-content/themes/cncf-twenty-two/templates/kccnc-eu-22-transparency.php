@@ -279,10 +279,67 @@ General Manager, CNCF</p>
 							class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720298987342" title="KubeCon + CloudNativeCon Europe 2022 Photo Gallery">See more</a></p>
 					</div>
 				</div>
-				<!-- TODO: Slider  -->
-				<img src="https://picsum.photos/1200/500" alt=""
-					class="section-02__slider">
-			</div>
+
+
+				<div class="section-02__slider">
+
+					<div>
+						<?php LF_Utils::display_responsive_images( 73940, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73945, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73936, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73937, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73938, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73939, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73946, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73944, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73943, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73942, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+					<div>
+						<?php LF_Utils::display_responsive_images( 73941, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from Kubecon + CloudNativeCon Europe 2022' ); ?>
+					</div>
+
+				</div>
+
+				<div class="section-02__controls">
+					<button class="button-reset  section-02__prev"><svg
+							width="12" height="19" viewBox="0 0 12 19"
+							fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M10.4131 17.627L2.41309 9.62695L10.4131 1.62695"
+								stroke="black" stroke-width="3" />
+							<span class="screen-reader-text">Previous
+								Photo</span>
+						</svg>
+					</button>
+					<button class="button-reset section-02__next"><svg
+							width="12" height="19" viewBox="0 0 12 19"
+							fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M1.41309 1.62695L9.41309 9.62695L1.41309 17.627"
+								stroke="black" stroke-width="3" />
+							<span class="screen-reader-text">Next Photo</span>
+						</svg>
+					</button>
+				</div>
 
 		</section>
 
@@ -2588,11 +2645,17 @@ wp_enqueue_script(
 	true
 );
 
+// load slick css.
+wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/build/slick.min.css', array(), filemtime( get_template_directory() . '/build/slick.min.css' ), 'all' );
+
+// load main slick.
+wp_enqueue_script( 'slick', get_template_directory_uri() . '/source/js/libraries/slick.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/source/js/libraries/slick.min.js' ), true );
+
 // custom scripts.
 wp_enqueue_script(
 	'kccnc-eu-22-report',
 	get_template_directory_uri() . '/source/js/on-demand/kccnc-eu-22-report.js',
-	array( 'jquery' ),
+	array( 'jquery', 'slick' ),
 	filemtime( get_template_directory() . '/source/js/on-demand/kccnc-eu-22-report.js' ),
 	true
 );
