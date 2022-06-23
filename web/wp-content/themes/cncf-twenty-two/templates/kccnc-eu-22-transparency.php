@@ -720,7 +720,7 @@ General Manager, CNCF</p>
 
 		<section class="section-04 alignfull background-image-wrapper">
 
-			<figure class="background-image-figure">
+			<figure class="background-image-figure darken-on-mobile">
 				<?php LF_Utils::display_responsive_images( 73885, 'full', '1200px', '', 'lazy', 'Audience at Kubecon + CloudNativeCon Europe 2022' ); ?>
 			</figure>
 
@@ -1288,8 +1288,8 @@ General Manager, CNCF</p>
 
 		<section class="section-10 alignfull background-image-wrapper">
 
-			<figure class="background-image-figure">
-				<?php LF_Utils::display_responsive_images( 73898, 'full', '1200px', '', 'lazy', 'Speaker at a colocated event' ); ?>
+			<figure class="background-image-figure darken-on-mobile">
+				<?php LF_Utils::display_responsive_images( 73898, 'full', '1200px', 'section-10__image', 'lazy', 'Speaker at a colocated event' ); ?>
 			</figure>
 
 			<div class="background-image-text-overlay">
