@@ -2296,7 +2296,7 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 								<td>44</td>
 							</tr>
 							<tr>
-								<td>Unique</td>
+								<td>Total Unique</td>
 								<td>47</td>
 								<td>96</td>
 								<td>146</td>
