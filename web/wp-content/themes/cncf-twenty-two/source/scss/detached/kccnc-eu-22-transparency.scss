@@ -689,6 +689,75 @@ html {
 		}
 	}
 
+	.floating-flowers {
+		@media (max-width: 799px) {
+			display: none;
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+			overflow: hidden;
+			height: 1px;
+			width: 1px;
+		}
+		@media (min-width: 800px) {
+			position: relative;
+			width: 100%;
+			img {
+				position: absolute;
+				z-index: 2;
+				object-fit: contain;
+				object-position: top;
+				width: 100%;
+				height: 700px;
+				top: 0;
+			}
+		}
+	}
+
+	.floating-flowers-01 {
+		@media (min-width: 800px) {
+			img {
+				opacity: 1;
+				left: 50%;
+				transform: translateY(-30%);
+			}
+		}
+		@media (min-width: 1200px) {
+			img {
+				transform: translateY(-20%);
+			}
+		}
+	}
+
+	.floating-flowers-02 {
+		@media (min-width: 800px) {
+			img {
+				opacity: 0.25;
+				left: 50%;
+				transform: translateY(-35%);
+			}
+		}
+		@media (min-width: 1200px) {
+			img {
+				transform: translateY(-25%);
+			}
+		}
+	}
+
+	.floating-flowers-03 {
+		@media (min-width: 800px) {
+			img {
+				opacity: 0.25;
+				left: -50%;
+				transform: translateY(-35%);
+			}
+		}
+		@media (min-width: 1200px) {
+			img {
+				transform: translateY(-25%);
+			}
+		}
+	}
+
 	/**
 	HERO
 	**/
