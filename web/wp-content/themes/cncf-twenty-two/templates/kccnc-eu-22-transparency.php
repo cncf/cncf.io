@@ -2176,7 +2176,7 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 				<p
 					class="max-w-900">When Spain dropped its mask mandate on April 7 and put this law into effect (which we discovered would affect large groups on April 20) it resulted in a further reduction in local staffing for the event. Our vendors were only able to secure folx who would voluntarily wear a mask. This resulted in even lower staffing levels onsite which we know affected the attendee experience. With all of this taking place in the several weeks prior to the event, it was difficult to produce the event as our community expects. </p>
 				<p
-					class="max-w-900">Vendors were not the only challenge. A greater number of attendees were reluctant to comply with the mask mandate than we saw at our North America event last November. Events staff did their best to maintain enforcement, despite reduced staff, changing laws, and general mask fatigue.</p>
+					class="max-w-900">Vendors were not the only challenge. A greater number of attendees were reluctant to comply with the mask mandate than we saw at our North America event last October. Events staff did their best to maintain enforcement, despite reduced staff, changing laws, and general mask fatigue.</p>
 				<p
 					class="max-w-900">We appreciate your support and partnership in this journey and hope to be in a more stable stage of pandemic management for upcoming events with a return to the standards we are all used to.</p>
 
