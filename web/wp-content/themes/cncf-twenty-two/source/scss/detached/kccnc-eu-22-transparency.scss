@@ -1935,10 +1935,8 @@ html {
 						height: 60px;
 					}
 					img {
-						max-height: 30px;
-						@media (min-width: 412px) {
-							max-height: 60px;
-						}
+						max-height: 100%;
+						width: auto;
 					}
 				}
 				.number {
