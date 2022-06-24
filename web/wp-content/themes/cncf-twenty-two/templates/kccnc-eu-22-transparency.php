@@ -73,7 +73,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 								<div class="wp-block-button hero__button"><a
 										href="<?php echo esc_url( $pdf_link ); ?>"
 										class="wp-block-button__link"
-										title="Download full report as PDF">Download
+										title="Download this report as a PDF">Download
 										PDF</a>
 								</div>
 
@@ -2581,13 +2581,13 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 					<div class="thanks__col3">
 
 						<div class="wp-block-button"><a
-								href="<?php echo esc_url( $pdf_link ); ?>"
+								href="<?php echo esc_url( $pdf_link ); ?>" title="Download this report in PDF format"
 								class="wp-block-button__link">Download PDF</a>
 						</div>
 
 					</div>
 					<div class="thanks__col4">
-						<p>Check out our <a href="<?php echo esc_url( $event_link ); ?>">calendar for community events</a> near you and don't forget to <a href="<?php echo esc_url( $event_link ); ?>">register</a> for KubeCon+CloudNativeCon North America in Detroit, October 2022.</p>
+						<p>Check out our <a href="https://community.cncf.io" title="Community Events">calendar for community events</a> near you and don't forget to <a href="<?php echo esc_url( $event_link ); ?>" title="Register for KubeCon+CloudNativeCon North America">register</a> for KubeCon+CloudNativeCon North America in Detroit, October 2022.</p>
 
 					</div>
 				</div>
