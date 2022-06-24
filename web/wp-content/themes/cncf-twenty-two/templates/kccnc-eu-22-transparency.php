@@ -977,7 +977,7 @@ General Manager, CNCF</p>
 					Lf_Utils::get_image( $report_folder . 'dandigold.png' );
 					?>
 					" alt="Gold CHAOSS D&I Event Badge" loading="lazy">
-					<p>Awarded to events in the open source community that fosters healthy D&I practices. KubeCon + CloudNativeCon achieved this award for our DEI work in Valencia.</p>
+					<p>Awarded to events in the open source community that foster healthy D&I practices. KubeCon + CloudNativeCon achieved this award for our DEI work in Valencia.</p>
 				</div>
 			</div>
 
