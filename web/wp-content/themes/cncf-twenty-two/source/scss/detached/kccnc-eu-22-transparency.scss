@@ -781,6 +781,11 @@ html {
 		}
 	}
 
+	.z-index-fix {
+		position: relative;
+		z-index: 3;
+	}
+
 	/**
 	HERO
 	**/
