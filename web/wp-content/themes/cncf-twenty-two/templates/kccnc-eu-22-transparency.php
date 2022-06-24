@@ -2019,7 +2019,7 @@ Computing Engineer</p>
 				<div class="coverage__col2">
 					<p><a href="https://thenewstack.io/envoy-gateway-offers-to-standardize-kubernetes-ingress/">The New Stack</a> - Envoy Gateway Offers to Standardize Kubernetes Ingress</p>
 					<p><a href="https://www.infoworld.com/article/3660637/cncf-launches-ethics-in-open-source-training-course.html">InfoWorld</a> - CNCF launches ethics in open source training course</p>
-					<p><a href="https://techcrunch.com/2022/05/18/cncf-launches-a-new-program-to-help-telcos-adopt-kubernetes/">TechCrunch</a> - The Envoy Gateway project wants to bring Envoy to the masses</p>
+					<p><a href="https://techcrunch.com/2022/05/16/the-envoy-gateway-project-wants-to-bring-envoy-to-the-masses/">TechCrunch</a> - The Envoy Gateway project wants to bring Envoy to the masses</p>
 					<p><a href="https://containerjournal.com/kubecon-cnc-eu-2022/cncf-launches-cloud-native-network-function-certification-program/">Container Journal</a> - CNCF Launches Cloud Native Network Function Certification Program</p>
 					<p><a href="https://containerjournal.com/kubecon-cnc-eu-2022/prometheus-associate-certification-will-demonstrate-ability-to-monitor-infrastructure/">Container Journal</a> - Prometheus Associate Certification will Demonstrate Ability to Monitor Infrastructure</p>
 					<p><a href="https://containerjournal.com/kubecon-cnc-eu-2022/replicated-accelerates-adoption-of-kubernetes-based-applications/">Container Journal</a> - Boeing Joins Cloud Native Computing Foundation as a Platinum Member</p>
