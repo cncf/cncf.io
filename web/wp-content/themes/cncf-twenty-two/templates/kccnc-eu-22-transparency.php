@@ -2549,8 +2549,8 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
 					<div class="wp-block-lf-youtube-lite">
-						<lite-youtube videoid="SqesB4xcAUY" webpStatus="1"
-							sdthumbStatus="0">
+						<lite-youtube videoid="SqesB4xcAUY" webpStatus="0"
+							sdthumbStatus="1">
 						</lite-youtube>
 					</div>
 				</div>
