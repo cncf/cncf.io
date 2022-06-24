@@ -1470,6 +1470,7 @@ html {
 				@media (min-width: 900px) {
 					position: relative;
 					bottom: -50px;
+					flex-grow: 1;
 				}
 				@media (min-width: 1200px) {
 					bottom: -65px;
@@ -1491,12 +1492,16 @@ html {
 				margin-top: 40px;
 				@media (min-width: 900px) {
 					margin-top: 0px;
-					margin-left: 20px;
-					width: 400px;
+					margin-left: 15px;
+					max-width: 400px;
+				}
+				@media (min-width: 1200px) {
+					max-width: 380px;
+					padding: 22px 36px 40px 36px;
 				}
 			}
 			&__number {
-				font-weight: 700;
+				font-weight: 800;
 				line-height: 1.2;
 				font-size: 66px;
 				@media (min-width: 372px) {
@@ -1509,7 +1514,7 @@ html {
 					font-size: 80px;
 				}
 				@media (min-width: 1000px) {
-					font-size: 96px;
+					font-size: 90px;
 				}
 				&:after {
 					background-image: url("data:image/svg+xml,%3Csvg width='52' height='68' viewBox='0 0 52 68' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 3.4668L48.3428 25.8096M26 3.4668V64.4668M26 3.4668L11.7178 17.6846L3.5929 25.8096' stroke='%23f59e20' stroke-opacity='1' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -1525,15 +1530,14 @@ html {
 				background-color: $kccnc-eu-22-white;
 				width: 100%;
 				height: 1px;
-				margin-top: 10px;
 				margin-bottom: 30px;
+				margin-top: 10px;
 				@media (min-width: 1000px) {
 					margin-top: 10px;
-					margin-bottom: 30px;
 				}
 				@media (min-width: 1200px) {
-					margin-bottom: 40px;
-					margin-top: 20px;
+					margin-bottom: 25px;
+					margin-top: 5px;
 				}
 			}
 			&__text {
@@ -1551,6 +1555,10 @@ html {
 				font-size: 12px;
 				@media (min-width: 372px) {
 					font-size: 13px;
+				}
+				@media (min-width: 1200px) {
+					margin-top: 30px;
+					font-size: 14px;
 				}
 			}
 		}

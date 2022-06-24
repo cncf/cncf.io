@@ -824,7 +824,7 @@ General Manager, CNCF</p>
 
 					</div>
 
-					<img loading="lazy" width="762" height="436" src="
+					<img loading="lazy" width="802" height="480" src="
 							<?php LF_Utils::get_svg( $report_folder . 'attendees-yoy-growth.svg', true ); ?>
 							" alt="Chart showing year on year attendee growth">
 				</div>
