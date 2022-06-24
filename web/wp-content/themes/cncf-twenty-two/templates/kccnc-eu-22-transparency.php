@@ -354,7 +354,7 @@ General Manager, CNCF</p>
 				</div>
 
 				<p class="opening-paragraph max-w-1100">
-				KubeCon + CloudNativeCon Valencia was our first time back together in-person since Barcelona in 2019 and <strong>we more than doubled the number of folks who joined us</strong>, both in Valencia and virtually. Our European community accounted for the largest number of attendees, but it was wonderful to see folks coming from as far as Africa, Australia and South America to be with us.</p>
+				KubeCon + CloudNativeCon Valencia was our first European time together in-person since Barcelona in 2019 and <strong>we more than doubled the number of folks who joined us</strong>, both in Valencia and virtually. Our European community accounted for the largest number of attendees, but it was wonderful to see folks coming from as far as Africa, Australia and South America to be with us.</p>
 
 				<p class="sub-header">Demographics</p>
 
