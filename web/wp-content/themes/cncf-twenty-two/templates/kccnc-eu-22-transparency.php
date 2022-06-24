@@ -1046,7 +1046,7 @@ General Manager, CNCF</p>
 
 				<?php LF_Utils::display_responsive_images( 73894, 'full', '414px', 'show-upto-500', 'lazy', esc_html( $event_text ) ); ?>
 
-				<?php LF_Utils::display_responsive_images( 73893, 'full', '1200px', 'show-over-500', 'lazy', esc_html( $event_text ) ); ?>
+				<?php LF_Utils::display_responsive_images( 73893, 'full', '1200px', 'show-over-500 has-animation-scale-2', 'lazy', esc_html( $event_text ) ); ?>
 
 			</a>
 
@@ -2593,7 +2593,7 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 					<?php LF_Utils::display_responsive_images( 73894, 'full', '414px', 'show-upto-500', 'lazy', esc_html( $event_text ) ); ?>
 
 
-					<?php LF_Utils::display_responsive_images( 73893, 'full', '1200px', 'show-over-500', 'lazy', esc_html( $event_text ) ); ?>
+					<?php LF_Utils::display_responsive_images( 73893, 'full', '1200px', 'show-over-500 has-animation-scale-2', 'lazy', esc_html( $event_text ) ); ?>
 
 				</a>
 
