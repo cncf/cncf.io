@@ -1249,8 +1249,7 @@ General Manager, CNCF</p>
 					<div class="section-number">3/6</div>
 				</div>
 
-				<p class="opening-paragraph max-w-1000">
-				Valencia played host to the inaugural <a href="https://events.linuxfoundation.org/cloud-native-telco-day-europe/" title="Cloud Native Telco Day">Cloud Native Telco Day</a> featuring speakers from major telco service providers like Deutsche Telekom, Bell Canada, Orange, and Swisscom.</p>
+				<p class="opening-paragraph max-w-1000 z-index-fix">Valencia played host to the inaugural <a href="https://events.linuxfoundation.org/cloud-native-telco-day-europe/" title="Cloud Native Telco Day">Cloud Native Telco Day</a> featuring speakers from major telco service providers like Deutsche Telekom, Bell Canada, Orange, and Swisscom.</p>
 				<p
 					class="opening-paragraph max-w-1000">Co-located events feature industry experts covering topics like security, web assembly, AI, GitOps, edge, and more.</p>
 
