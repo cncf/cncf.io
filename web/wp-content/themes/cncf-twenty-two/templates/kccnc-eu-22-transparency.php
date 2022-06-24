@@ -1365,7 +1365,7 @@ General Manager, CNCF</p>
 						<p>Sponsor-hosted co-located event packages are solely available to level sponsors of KubeCon + CloudNativeCon North America 2022.</p>
 
 						<div class="wp-block-button"><a
-								href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/sponsor/"
+								href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/colocated-events/#hosts"
 								title="Sponsor KubeCon + CloudNativeCon North America 2022"
 								class="wp-block-button__link">Co-Lo Events
 								Packages</a>
