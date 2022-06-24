@@ -74,7 +74,6 @@ $mailto_url   = 'mailto:?subject=CNCF KubeCon + CloudNativeCon Europe 2022 Trans
 										href="<?php echo esc_url( $pdf_link ); ?>"
 										class="wp-block-button__link"
 										title="Download full report as PDF">Download
-										full
 										PDF</a>
 								</div>
 
@@ -2377,36 +2376,36 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 
 				<div class="sponsors-logos largest even orphan-by-5">
 					<div class="sponsors-logo-item"><a
-							href="https://eti.cisco.com?eid=108103&amp;ccid=cc002838"><img
+							href="https://eti.cisco.com?eid=108103&amp;ccid=cc002838" title="Cisco website"><img
 								width="400" height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-cisco.svg', true ); ?>"
 								class="logo" alt="Cisco logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.huawei.com/"><img width="241"
+							href="https://www.huawei.com/" title="Huawei website"><img width="241"
 								height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-huawei.svg', true ); ?>"
 								class="logo" alt="Huawei Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="http://www.intel.com/"><img width="338"
+							href="http://www.intel.com/" title="Intel website"><img width="338"
 								height="139"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-intel.svg', true ); ?>"
 								class="logo" alt="Intel Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.kasten.io/kubernetes-product-of-the-year"><img
+							href="https://www.kasten.io/kubernetes-product-of-the-year" title="Kasten website"><img
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-kasten.svg', true ); ?>"
 								class="logo" alt="Kasten Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.redhat.com/"><img width="400"
+							href="https://www.redhat.com/" title="Redhat website"><img width="400"
 								height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-redhat.svg', true ); ?>"
 								class="logo" alt="Redhat Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.vmware.com"><img width="400"
+							href="https://www.vmware.com" title="VMWare website"><img width="400"
 								height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-vmware.svg', true ); ?>"
 								class="logo" alt="VMWare Logo"
@@ -2421,103 +2420,103 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 
 				<div class="sponsors-logos larger odd orphan-by-4 orphan-by-8">
 					<div class="sponsors-logo-item"><a
-							href="https://www.aquasec.com/"><img width="406"
+							href="https://www.aquasec.com/" title="Aqua website"><img width="406"
 								height="129"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-aqua.svg', true ); ?>"
 								class="logo" alt="Aqua Logo" loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://aws.amazon.com/"><img width="400"
+							href="https://aws.amazon.com/" title="AWS website"><img width="400"
 								height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-aws.svg', true ); ?>"
 								class="logo" alt="AWS Logo" loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://circleci.com/"><img width="290"
+							href="https://circleci.com/" title="Circle CI website"><img width="290"
 								height="242"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-circleci.svg', true ); ?>"
 								class="logo" alt="Circle CI Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.cockroachlabs.com/"><img
+							href="https://www.cockroachlabs.com/" title="Cockroach Labs website"><img
 								width="400" height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-cockroach-labs.svg', true ); ?>"
 								class="logo" alt="Cockroach Labs Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.datadoghq.com/"><img width="400"
+							href="https://www.datadoghq.com/" title="Datadog website"><img width="400"
 								height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-datadog.svg', true ); ?>"
 								class="logo" alt="Datadog Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://about.gitlab.com/"><img
+							href="https://about.gitlab.com/" title="GitLab website"><img
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-gitlab.svg', true ); ?>"
 								class="logo" alt="GitLab Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://cloud.google.com/"><img
+							href="https://cloud.google.com/" title="Google Cloud website"><img
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-google-cloud.svg', true ); ?>"
 								class="logo" alt="Google Cloud Logo"
 								loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/"><img
+							href="https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/" title="Microsoft Azure website"><img
 								width="400" height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-microsoft-azure.svg', true ); ?>"
 								class="logo" alt="Microsoft Azure Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.oracle.com"><img width="412"
+							href="https://www.oracle.com" title="Oracle website"><img width="412"
 								height="67"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-oracle.svg', true ); ?>"
 								class="logo" alt="Oracle Logo"
 								loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://portworx.com/"><img width="406"
+							href="https://portworx.com/" title="Portworx website"><img width="406"
 								height="158"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-portworx.svg', true ); ?>"
 								class="logo" alt="Portworx Logo"
 								loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.paloaltonetworks.com/prisma/cloud"><img
+							href="https://www.paloaltonetworks.com/prisma/cloud" title="Prisma Cloud website"><img
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-prisma-cloud.svg', true ); ?>"
 								class="logo" alt="Prisma Cloud Logo"
 								loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.suse.com/products/suse-rancher/"><img
+							href="https://www.suse.com/products/suse-rancher/" title="SUSE Rancher website"><img
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-rancher.svg', true ); ?>"
 								class="logo" alt="SUSE Rancher Logo"
 								loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://snyk.io/"><img width="400"
+							href="https://snyk.io/" title="Snyk website"><img width="400"
 								height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-snyk.svg', true ); ?>"
 								class="logo" alt="Snyk Logo" loading="lazy"></a>
 					</div>
 					<div class="sponsors-logo-item"><a
-							href="https://sysdig.com/"><img width="400"
+							href="https://sysdig.com/" title="Sysdig website"><img width="400"
 								height="245"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-sysdig.svg', true ); ?>"
 								class="logo" alt="Sysdig Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://goteleport.com/"><img
+							href="https://goteleport.com/" title="Teleport website"><img
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-teleport.svg', true ); ?>"
 								class="logo" alt="Teleport Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://www.trilio.io/"><img width="396"
+							href="https://www.trilio.io/" title="Trilio website"><img width="396"
 								height="114"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-trilio.svg', true ); ?>"
 								class="logo" alt="Trilio Logo"
 								loading="lazy"></a></div>
 					<div class="sponsors-logo-item"><a
-							href="https://ubuntu.com/"><img
+							href="https://ubuntu.com/" title="Ubuntu website"><img
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-canonical-ubuntu.svg', true ); ?>"
 								class="logo" alt="Canonical  Ubuntu Logo"
 								loading="lazy"></a>
@@ -2576,8 +2575,7 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 
 						<div class="wp-block-button"><a
 								href="<?php echo esc_url( $pdf_link ); ?>"
-								class="wp-block-button__link">Download Full
-								Report</a>
+								class="wp-block-button__link">Download PDF</a>
 						</div>
 
 					</div>
