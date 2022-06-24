@@ -194,7 +194,7 @@ Lf_Utils::get_image( $report_folder . 'motif.png' );
 
 					<p>It was exciting for me personally to see how much this incredible community has evolved since my first KubeCon + CloudNativeCon in 2016 when just 1500 of us gathered together. In Valencia, we had more than 7,000 folks joining in-person plus 11,000 virtually! And what's more, 65% of you were first-time attendees.</p>
 
-					<p>In fact, we had a lot of firsts in Valencia. Boeing joined us as a platinum member - the first airline to join CNCF. We hosted Cloud Native Telco Day for the very first time, gathering huge players like Deutsche Telekom and Orange who are advancing the industry. Plus, we hosted our first CTO Summit where we discussed how organizations achieve resiliency in multi-cloud strategies.</p>
+					<p>In fact, we had a lot of firsts in Valencia. Boeing joined us as a platinum member - the first aerospace organization to join CNCF. We hosted Cloud Native Telco Day for the very first time, gathering huge players like Deutsche Telekom and Orange who are advancing the industry. Plus, we hosted our first CTO Summit where we discussed how organizations achieve resiliency in multi-cloud strategies.</p>
 
 					<p>I've really enjoyed looking back at the event as we put this transparency report together for you. Can't wait to see you this October in Detroit for KubeCon + CloudNativeCon North America! </p>
 
