@@ -2201,8 +2201,7 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 						<span class="incident__large">3</span>
 						<span class="incident__text">1 attendee and 2 staff
 							taken to urgent care during the event (this was not
-							COVID-19 related and everyone is ok!)
-							Reported</span>
+							COVID-19 related and everyone is ok!)</span>
 					</div>
 				</div>
 
