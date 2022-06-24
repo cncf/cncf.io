@@ -190,7 +190,7 @@ Lf_Utils::get_image( $report_folder . 'motif.png' );
 
 			<div class="lf-grid section-01__grid">
 				<div class="section-01__grid-col1">
-					<p><strong>Wow, did it feel good to be back together! KubeCon + CloudNativeCon Valencia was the first time we'd gathered TeamCloudNative in Europe for two years and the atmosphere felt electric. It was such a great opportunity to greet our old friends and welcome many new folks to the family.</strong></p>
+					<p><strong>Wow, did it feel good to be back together! KubeCon + CloudNativeCon Valencia was the first time we'd gathered TeamCloudNative in Europe for three years and the atmosphere felt electric. It was such a great opportunity to greet our old friends and welcome many new folks to the family.</strong></p>
 
 					<p>It was exciting for me personally to see how much this incredible community has evolved since my first KubeCon + CloudNativeCon in 2016 when just 1500 of us gathered together. In Valencia, we had more than 7,000 folks joining in-person plus 11,000 virtually! And what's more, 65% of you were first-time attendees.</p>
 
@@ -354,7 +354,7 @@ General Manager, CNCF</p>
 				</div>
 
 				<p class="opening-paragraph max-w-1100">
-				KubeCon + CloudNativeCon Valencia was our first European time together in-person since Barcelona in 2019 and <strong>we more than doubled the number of folks who joined us</strong>, both in Valencia and virtually. Our European community accounted for the largest number of attendees, but it was wonderful to see folks coming from as far as Africa, Australia and South America to be with us.</p>
+				KubeCon + CloudNativeCon Valencia was our first European in-person event since Barcelona in 2019 and <strong>we more than doubled the number of folks who joined us</strong>, both in Valencia and virtually. Our European community accounted for the largest number of attendees, but it was wonderful to see folks coming from as far as Africa, Australia and South America to be with us.</p>
 
 				<p class="sub-header">Demographics</p>
 
@@ -881,7 +881,7 @@ General Manager, CNCF</p>
 							<td>1,535</td>
 							<td>4,300</td>
 							<td>7,700</td>
-							<td>18.682</td>
+							<td>18,682</td>
 							<td>26,648</td>
 							<td>18,550</td>
 						</tr>
