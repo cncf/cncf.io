@@ -1872,7 +1872,7 @@ Computing Engineer</p>
 					</div>
 					<p class="reach__title">YouTube Playlist</p>
 
-					<p>As of June 16, event session videos have garnered more than 17,000 views.</p>
+					<p>As of June 24, event session videos have garnered more than 17,000 views.</p>
 
 					<p><a href="https://www.youtube.com/playlist?list=PLj6h78yzYM2MCEgkd8zH0vJWF7jdQ-GRR" title="View the YouTube Playlist">View the YouTube playlist</a>.</p>
 
