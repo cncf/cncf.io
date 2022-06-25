@@ -799,7 +799,7 @@ General Manager, CNCF</p>
 
 		<section class="section-05">
 
-			<p class="sub-header">Year on Year Growth - Europe Events</p>
+			<p class="sub-header">Year on Year Growth - European Events</p>
 
 			<div class="graph">
 				<div class="graph__image">
@@ -1367,7 +1367,7 @@ General Manager, CNCF</p>
 						<div class="wp-block-button"><a
 								href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/colocated-events/#hosts"
 								title="Sponsor KubeCon + CloudNativeCon North America 2022"
-								class="wp-block-button__link">Co-Lo Events
+								class="wp-block-button__link">Co-Located Events
 								Packages</a>
 						</div>
 					</div>
