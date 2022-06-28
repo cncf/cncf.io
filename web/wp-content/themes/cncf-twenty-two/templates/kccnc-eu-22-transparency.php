@@ -816,12 +816,6 @@ General Manager, CNCF</p>
 							Virtual
 						</div>
 
-						<div class="legend__wrapper"><i
-								class="legend__key legend__orange-700"></i>
-							Hybrid
-						</div>
-
-
 					</div>
 
 					<img loading="lazy" width="802" height="480" src="
@@ -2029,11 +2023,6 @@ Computing Engineer</p>
 					<p><a href="https://www.lemondeinformatique.fr/actualites/lire-kubecon-2022%C2%A0-la-cncf-installe-kubernetes-dans-les-telecoms-86848.html">LeMondeInformatique</a> - KubeCon 2022 : La CNCF installe Kubernetes dans les télécoms</p>
 					<p><a href="https://rcrwireless.com/20220519/telco-cloud/simplifying-kubernetes-for-telcos-and-cloud-app-developers">RCRWireless</a> - CNCF makes inroads on efforts at KubeCon + CloudNativeCon Europe 2022</p>
 					<p><a href="https://www.computing.co.uk/analysis/4049933/telcos-profitability-tackle">Computing</a> - Telcos' profitability problems - and how they might tackle them</p>
-
-					<!-- https://www.lemagit.fr/actualites/252518363/KubeCON-Kubernetes-part-a-la-conquete-des-telecoms
-https://siliconangle.com/2022/05/20/cncf-developer-ecosystem-expands-amid-cloud-native-adoption-kubecon/
-https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-urges-corporate-open-source-contributions -->
-
 				</div>
 			</div>
 
@@ -2549,7 +2538,7 @@ https://www.techtarget.com/searchitoperations/news/252518485/Cisco-CNCF-leader-u
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
 					<div class="wp-block-lf-youtube-lite">
-						<lite-youtube videoid="SqesB4xcAUY" videotitle="Highlights from KubeCon + CloudNativeCon Europe 2022" webpStatus="0" sdthumbStatus="1" title="Play Highlights">
+						<lite-youtube videoid="SqesB4xcAUY" videotitle="Highlights from KubeCon + CloudNativeCon Europe 2022" webpStatus="1" sdthumbStatus="0" title="Play Highlights">
 						</lite-youtube>
 					</div>
 				</div>

@@ -1478,7 +1478,7 @@ html {
 					flex-grow: 1;
 				}
 				@media (min-width: 1200px) {
-					bottom: -65px;
+					bottom: -70px;
 				}
 			}
 			&__image-key {
@@ -1502,6 +1502,7 @@ html {
 				}
 				@media (min-width: 1200px) {
 					max-width: 380px;
+					margin-left: 30px;
 					padding: 22px 36px 40px 36px;
 				}
 			}
