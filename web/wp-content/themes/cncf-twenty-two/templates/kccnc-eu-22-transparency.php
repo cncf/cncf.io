@@ -818,27 +818,10 @@ General Manager, CNCF</p>
 
 					</div>
 
-					<img loading="lazy" width="802" height="480" src="
+					<img loading="lazy" width="1200" height="730" src="
 							<?php LF_Utils::get_svg( $report_folder . 'attendees-yoy-growth.svg', true ); ?>
 							" alt="Chart showing year on year attendee growth">
 				</div>
-				<div class="graph__explainer">
-					<span class="graph__number">140%</span>
-
-					<div class="graph__divider"></div>
-
-					<p
-						class="graph__text">From the last in-person KubeCon + CloudNativeCon in Barcelona, 2019, to 2022's event in Valencia, we saw a 140% increase in total attendees.</p>
-
-					<div class="wp-block-button hero__button"><a
-							href="<?php echo esc_url( $event_link ); ?>"
-							title="<?php echo esc_html( $event_text ); ?>"
-							class="wp-block-button__link has-black-background-color has-background">Register
-							for North America</a>
-					</div>
-
-				</div>
-
 			</div>
 
 			<div class="shadow-hr"></div>
