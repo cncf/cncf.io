@@ -455,8 +455,12 @@ html {
 		display: flex;
 		align-items: center;
 		.icon {
-			width: 100px;
-			height: 100px;
+			width: 76px;
+			height: 76px;
+			@media (min-width: 500px) {
+				width: 100px;
+				height: 100px;
+			}
 			flex-grow: 0;
 			flex-shrink: 0;
 			img {
@@ -1014,8 +1018,8 @@ html {
 		width: 100%;
 
 		display: grid;
-		grid-row-gap: 15px;
-		grid-column-gap: 15px;
+		row-gap: 15px;
+		column-gap: 15px;
 		grid-template-columns: 1fr 1fr;
 
 		font-weight: 700;
@@ -1027,7 +1031,7 @@ html {
 			font-size: 13px;
 		}
 		@media (min-width: 800px) {
-			grid-column-gap: 30px;
+			column-gap: 30px;
 			grid-template-columns: 1fr 1fr 1fr;
 			font-size: 14px;
 		}
@@ -1110,8 +1114,8 @@ html {
 	.lf-grid {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-column-gap: 3%;
-		grid-row-gap: 50px;
+		column-gap: 3%;
+		row-gap: 50px;
 	}
 
 	.section-01 {
@@ -2243,6 +2247,10 @@ html {
 
 	.section-17 {
 		.precautions {
+			row-gap: 30px;
+			@media (min-width: 1000px) {
+				row-gap: 50px;
+			}
 			&__col1,
 			&__col2,
 			&__col3 {
