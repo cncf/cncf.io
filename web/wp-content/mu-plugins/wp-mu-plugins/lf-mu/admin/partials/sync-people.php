@@ -106,6 +106,8 @@ $github_images_url = 'https://raw.githubusercontent.com/cncf/people/main/images/
 				}
 				if ( property_exists( $p, 'category' ) ) {
 					wp_set_object_terms( $newid, $p->category, 'lf-person-category', false );
+				} else {
+					wp_set_object_terms( $newid, array(), 'lf-person-category', false );
 				}
 				if ( property_exists( $p, 'location' ) ) {
 					$country_arr = explode( ',', $params['meta_input']['lf_person_location'] );
