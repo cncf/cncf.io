@@ -455,8 +455,12 @@ html {
 		display: flex;
 		align-items: center;
 		.icon {
-			width: 100px;
-			height: 100px;
+			width: 76px;
+			height: 76px;
+			@media (min-width: 500px) {
+				width: 100px;
+				height: 100px;
+			}
 			flex-grow: 0;
 			flex-shrink: 0;
 			img {
@@ -1014,8 +1018,8 @@ html {
 		width: 100%;
 
 		display: grid;
-		grid-row-gap: 15px;
-		grid-column-gap: 15px;
+		row-gap: 15px;
+		column-gap: 15px;
 		grid-template-columns: 1fr 1fr;
 
 		font-weight: 700;
@@ -1027,7 +1031,7 @@ html {
 			font-size: 13px;
 		}
 		@media (min-width: 800px) {
-			grid-column-gap: 30px;
+			column-gap: 30px;
 			grid-template-columns: 1fr 1fr 1fr;
 			font-size: 14px;
 		}
@@ -1077,9 +1081,7 @@ html {
 			display: flex;
 			align-items: center;
 			line-height: 1;
-			text-transform: uppercase;
-			font-weight: 700;
-			font-size: 14px;
+			font-size: 12px;
 			margin-right: 30px;
 		}
 		&__key {
@@ -1087,7 +1089,7 @@ html {
 			width: 15px;
 			height: 15px;
 			border-radius: 50%;
-			margin-right: 15px;
+			margin-right: 10px;
 		}
 		&__orange-400 {
 			background-color: $kccnc-eu-22-orange-400;
@@ -1112,8 +1114,8 @@ html {
 	.lf-grid {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-column-gap: 3%;
-		grid-row-gap: 50px;
+		column-gap: 3%;
+		row-gap: 50px;
 	}
 
 	.section-01 {
@@ -1804,7 +1806,7 @@ html {
 		color: $kccnc-eu-22-white;
 		&__title {
 			font-weight: 700;
-			font-size: 28px;
+			font-size: 26px;
 			@media (min-width: 1000px) {
 				font-size: 34px;
 			}
@@ -1821,7 +1823,7 @@ html {
 			width: 100%;
 			height: 1px;
 			background-color: $kccnc-eu-22-white;
-			margin-top: 10px;
+			margin-top: 25px;
 			margin-bottom: 30px;
 			@media (min-width: 1000px) {
 				margin-top: 30px;
@@ -1833,6 +1835,21 @@ html {
 			margin-top: 30px;
 			@media (min-width: 1000px) {
 				margin-top: 60px;
+			}
+			.wp-block-button__link {
+				font-size: 13px;
+				padding-left: 10px;
+				padding-right: 10px;
+				@media (min-width: 412px) {
+					font-size: 14px;
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+				@media (min-width: 1200px) {
+					font-size: 16px;
+					padding-left: 40px;
+					padding-right: 40px;
+				}
 			}
 		}
 	}
@@ -2230,6 +2247,10 @@ html {
 
 	.section-17 {
 		.precautions {
+			row-gap: 30px;
+			@media (min-width: 1000px) {
+				row-gap: 50px;
+			}
 			&__col1,
 			&__col2,
 			&__col3 {

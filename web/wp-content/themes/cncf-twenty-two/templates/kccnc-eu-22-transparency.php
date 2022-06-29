@@ -1234,13 +1234,6 @@ General Manager, CNCF</p>
 					<div class="colocated__col1">
 						<p class="sub-header">CNCF-Hosted Co-Located Events</p>
 					</div>
-					<div class="colocated__col2">
-
-						<div class="legend__wrapper"><i
-								class="legend__key legend__orange-700"></i>
-							In-Person Registrants</div>
-
-					</div>
 				</div>
 
 				<div aria-hidden="true" style="height: 40px"></div>
