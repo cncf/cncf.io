@@ -217,11 +217,13 @@ h3,
 	}
 
 	h3 {
+		font-size: 22px;
 		margin-top: 40px;
 		margin-bottom: 30px;
 		@media (min-width: 1200px) {
 			margin-top: 60px;
 			margin-bottom: 35px;
+			font-size: 26px;
 		}
 	}
 
@@ -233,6 +235,29 @@ h3,
 		@media (min-width: 1200px) {
 			margin-top: 40px;
 			margin-bottom: 25px;
+		}
+	}
+
+	h4,
+	.h4 {
+		font-size: 18px;
+		@media (min-width: 768px) {
+			font-size: 20px;
+		}
+	}
+	h5,
+	.h5 {
+		font-size: 16px;
+		@media (min-width: 768px) {
+			font-size: 18px;
+		}
+	}
+
+	h6,
+	.h6 {
+		font-size: 14px;
+		@media (min-width: 768px) {
+			font-size: 16px;
 		}
 	}
 
@@ -303,7 +328,7 @@ h3,
 }
 // end of post content
 
-// case studies, reports.
+// case studies, reports (not custom, not PDF only).
 .page-content {
 	p,
 	h2,
@@ -375,6 +400,22 @@ h3,
 			margin-top: 60px;
 			margin-bottom: 60px;
 		}
+	}
+
+	// remove margins from images if inside a column.
+	.wp-block-column {
+		.wp-block-image {
+			margin-top: 0;
+			margin-bottom: 0;
+			@media (min-width: 1000px) {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	p + .wp-block-columns {
+		margin-top: 50px;
 	}
 }
 // end of page content.
