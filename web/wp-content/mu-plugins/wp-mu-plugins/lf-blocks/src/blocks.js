@@ -36,6 +36,9 @@ import './landscape/block.js';
 // Newsroom Block.
 import './newsroom/block.js';
 
+// Stats Block.
+import './stats/block.js';
+
 // Tab Container Block.
 import './tab-container-block/block.js';
 
