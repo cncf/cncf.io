@@ -1,26 +1,12 @@
 // Backend Alignment Only.
 
-// // Fixing alignment for blocks in editor.
-// .wp-block {
-// 	// max-width: calc(100% - 80px - 80px);
-// 	max-width: 1200px;
-// }
-
-// // Width of "full-wide" blocks.
-// .wp-block[data-align='full'] {
-// 	max-width: none;
-// }
-
-// unset margins, so they don't center.
-// .block-editor-block-list__layout .wp-block:not(.wp-block-button) {
-// 	margin-left: unset;
-// 	margin-right: unset;
-// }
-
 // aligns content in groups a little better
 .wp-block-group,
 .wp-block-group.has-background {
-	padding: 1.25em 2em;
+	padding: 1.25rem 2rem;
+	> .wp-block-group {
+		padding: 1rem;
+	}
 }
 
 // added to stop known WP issue where buttons lose margin in columns.
@@ -29,18 +15,8 @@
 	margin-right: 0.5em;
 }
 
-// Constrict groups in Editor.
+// Constrict content in Editor.
 .wp-block[data-align='full'] > .wp-block-group {
-	// .wp-block-group {
-	// 	margin-left: auto;
-	// 	margin-right: auto;
-	// 	max-width: 1200px;
-	// }
-	// > *:not(.wp-block-group):not(.wp-block-columns) {
-	// 	max-width: $content-width;
-	// 	margin-left: auto;
-	// 	margin-right: auto;
-	// }
 	> * {
 		max-width: $content-width;
 		margin-left: auto;
