@@ -1,0 +1,26 @@
+main {
+	.wp-block-image,
+	.wp-block-table,
+	.wp-block-video,
+	.wp-block-audio,
+	.wp-block-embed {
+		figcaption {
+			color: $gray-900;
+			font-size: 13px;
+			text-align: left;
+		}
+	}
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+	background: transparent;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 0;
+	max-height: unset;
+	padding: 0 8px 8px;
+	color: $gray-900;
+	font-size: 13px;
+	text-align: left;
+	position: unset;
+}
