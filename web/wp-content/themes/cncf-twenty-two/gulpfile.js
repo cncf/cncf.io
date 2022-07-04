@@ -45,7 +45,7 @@ const gulp = require( 'gulp' ),
 
 	/** CSS plugins */
 	sass         = require( 'gulp-sass' )( require( 'sass' ) ),
-	mmq          = require( 'gulp-merge-media-queries' ),
+	mmq          = require( 'gulp-join-media-queries' ),
 	cssnano      = require( 'cssnano' ),
 	plumber      = require( 'gulp-plumber' ),
 	autoprefixer = require( 'autoprefixer' ),
@@ -54,7 +54,7 @@ const gulp = require( 'gulp' ),
 	/** JS plugins */
 	concat = require( 'gulp-concat' ),
 	terser = require( 'gulp-terser' ),
-	include = require('gulp-include')
+	include = require( 'gulp-include' ),
 
 	/** Utility plugins */
 	lineec     = require( 'gulp-line-ending-corrector' ),
