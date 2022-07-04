@@ -1,0 +1,29 @@
+.wp-block-lf-stats-block {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	&__container {
+		display: grid;
+		gap: 30px;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-auto-rows: 1fr;
+		text-transform: lowercase;
+		@media (min-width: 1200px) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+		> div {
+			text-align: center;
+			color: black;
+		}
+	}
+	&__stat {
+		font-size: 4em;
+		font-weight: 600;
+		display: block;
+		text-transform: uppercase;
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+	}
+	span:not(.wp-block-lf-stats-block__stat) {
+		line-height: 1;
+	}
+}
