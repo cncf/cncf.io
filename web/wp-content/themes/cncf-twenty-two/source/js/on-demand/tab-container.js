@@ -206,7 +206,7 @@ jQuery( document ).ready(
 			if ( winW > 799 && currentItem.length ) {
 				currentItem[ 0 ].scrollIntoView(
 					{
-						behavior: 'instant', block: 'center'
+						behavior: 'instant', block: 'end'
 					}
 				);
 			}
