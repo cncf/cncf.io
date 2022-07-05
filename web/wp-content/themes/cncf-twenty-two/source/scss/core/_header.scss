@@ -63,7 +63,7 @@
 	.search-form {
 		@media (min-width: 1000px) {
 			width: 430px;
-			display: flex;
+			display: grid;
 		}
 		.search-input {
 			font-size: 16px;
