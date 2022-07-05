@@ -26,7 +26,13 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 	<div class="home-hero__video-wrapper">
 		<video class="home-hero__video" loop muted playsinline width="100%"
-			preload="none">
+			preload="none" style="width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;">
 			<source
 				src="<?php echo esc_url( get_template_directory_uri() . '/source/videos/hero.mp4' ); ?>"
 				type="video/mp4">
@@ -43,15 +49,18 @@ $metrics = LF_Utils::get_homepage_metrics();
 				<span>UBIQUITOUS</span>
 			</h1>
 
-			<h2 class="home-hero__description">CNCF is the open source, vendor-neutral
+			<h2 class="home-hero__description">CNCF is the open source,
+				vendor-neutral
 				hub of <strong>cloud native computing</strong>, hosting
-				projects like Kubernetes and Prometheus to make cloud native universal and sustainable.</h2>
+				projects like Kubernetes and Prometheus to make cloud native
+				universal and sustainable.</h2>
 
 			<div class="horizontal-rule"></div>
 
 			<ul class="home-hero__metric_wrapper">
 				<li class="show-over-800"><a href="/about/who-we-are/"
-						class="wp-block-button__link" title="Learn more about CNCF">About CNCF</a>
+						class="wp-block-button__link"
+						title="Learn more about CNCF">About CNCF</a>
 				</li>
 				<li><?php echo esc_html( $metrics['projects'] ); ?>
 					<span>Projects</span>
