@@ -28,6 +28,7 @@
 		@import 'blocks/stats';
 		@import 'blocks/figcaption';
 
+		// Reset weird Block Editor margins by default.
 		h1,
 		h2,
 		h3,
@@ -38,15 +39,7 @@
 			margin-bottom: 0;
 			margin-left: unset !important;
 		}
-	}
-}
 
-// Editor only styles.
-@import 'editor/outlines';
-@import 'editor/alignment';
-
-#editor {
-	.editor-styles-wrapper {
 		color: $body-text-color;
 
 		p {
@@ -59,16 +52,112 @@
 			text-decoration: none;
 		}
 
-		[class*='is-style-max-width'],
-		.wp-block-quote {
-			margin-left: unset !important;
-		}
-
 		ul,
 		ol {
 			li {
 				margin-bottom: 10px;
 				line-height: 1.5;
+			}
+		}
+
+		// Unset margin on max width styles so they left align.
+		[class*='is-style-max-width'],
+		.wp-block-quote {
+			margin-left: unset !important;
+		}
+	}
+}
+
+// Editor only styles.
+@import 'editor/outlines';
+@import 'editor/alignment';
+
+// Blog Post font weights.
+.post-type-post {
+	.edit-post-visual-editor__post-title-wrapper .editor-post-title {
+		font-family: $font-primary;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+
+	#editor {
+		.editor-styles-wrapper {
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-weight: 400 !important;
+			}
+
+			h2,
+			h3,
+			h4 {
+				margin-top: 50px !important;
+			}
+		}
+	}
+}
+
+// Custom spacing for some Post Types.
+.post-type-lf_report,
+.post-type-lf_case_study,
+.post-type-lf_case_study_cn {
+	#editor {
+		.editor-styles-wrapper {
+			h2,
+			h3,
+			h4 {
+				margin-top: 50px !important;
+			}
+			h4 {
+				font-size: 1.125em;
+			}
+
+			h5,
+			h6 {
+				margin-top: 30px;
+				margin-bottom: 20px;
+				font-size: 1rem;
+			}
+
+			h3,
+			h4,
+			h5,
+			h6 {
+				+ .wp-block-quote,
+				.wp-block-gallery {
+					margin-top: 0;
+				}
+			}
+
+			.wp-block-image,
+			.wp-block-quote,
+			.wp-block-gallery,
+			.wp-block-embed,
+			.wp-block-lf-youtube-lite {
+				margin-top: 40px;
+				margin-bottom: 40px;
+				@media (min-width: 1000px) {
+					margin-top: 60px;
+					margin-bottom: 60px;
+				}
+			}
+
+			// remove margins from images if inside a column.
+			.wp-block-column {
+				.wp-block-image {
+					margin-top: 0;
+					margin-bottom: 0;
+					@media (min-width: 1000px) {
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			p + .wp-block-columns {
+				margin-top: 50px;
 			}
 		}
 	}
@@ -92,12 +181,6 @@
 	font-style: inherit;
 }
 
-// Make SVGs fill containers unless resized (Safe SVG related).
-.wp-block-image:not(.is-resized) img[src$='.svg'] {
-	width: 100%;
-	height: auto;
-}
-
 // allows for transparent images to be visible in Sidebar Metabox.
 #pmc-lf_event-logo .pmc-image-container {
 	background-color: $gray-200;
@@ -106,87 +189,4 @@
 // make placeholder text easier to see in sidebar.
 body.wp-admin div.pmc-sidebar ::placeholder {
 	color: #c4c4c4;
-}
-
-// Blog Post font weights.
-.post-type-post {
-	.edit-post-visual-editor__post-title-wrapper .editor-post-title {
-		font-family: $font-primary;
-		font-weight: 400;
-		line-height: 1.4;
-	}
-
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-weight: 400 !important;
-	}
-
-	h2,
-	h3,
-	h4 {
-		margin-top: 50px !important;
-	}
-}
-
-// Custom spacing for some Post Types (mostly taken from page-content)
-.post-type-lf_report,
-.post-type-lf_case_study,
-.post-type-lf_case_study_cn {
-	h2,
-	h3,
-	h4 {
-		margin-top: 50px !important;
-	}
-	h4 {
-		font-size: 1.125em;
-	}
-
-	h5,
-	h6 {
-		margin-top: 30px;
-		margin-bottom: 20px;
-		font-size: 1rem;
-	}
-
-	h3,
-	h4,
-	h5,
-	h6 {
-		+ .wp-block-quote,
-		.wp-block-gallery {
-			margin-top: 0;
-		}
-	}
-
-	.wp-block-image,
-	.wp-block-quote,
-	.wp-block-gallery,
-	.wp-block-embed,
-	.wp-block-lf-youtube-lite {
-		margin-top: 40px;
-		margin-bottom: 40px;
-		@media (min-width: 1000px) {
-			margin-top: 60px;
-			margin-bottom: 60px;
-		}
-	}
-
-	// remove margins from images if inside a column.
-	.wp-block-column {
-		.wp-block-image {
-			margin-top: 0;
-			margin-bottom: 0;
-			@media (min-width: 1000px) {
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-		}
-	}
-
-	p + .wp-block-columns {
-		margin-top: 50px;
-	}
 }
