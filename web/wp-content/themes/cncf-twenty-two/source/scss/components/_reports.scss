@@ -1,10 +1,7 @@
 .report-item {
 	background-color: $white;
-	filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
-
-	&__link {
-	}
 	&__image {
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
