@@ -66,11 +66,11 @@
 		@media (min-width: 800px) {
 			overflow-y: scroll;
 			// shadow overflow.
-			background: linear-gradient(#ffffff 33%, rgba(255, 255, 255, 0)),
-				linear-gradient(rgba(255, 255, 255, 0), #ffffff 66%) 0 100%,
-				radial-gradient(farthest-side at 50% 0, rgba(70, 70, 70, 0.5), rgba(0, 0, 0, 0)),
-				radial-gradient(farthest-side at 50% 100%, rgba(70, 70, 70, 0.5), rgba(0, 0, 0, 0)) 0 100%;
-			background-color: #ffffff;
+			background: linear-gradient(#fdfdfd 33%, rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 0), #fdfdfd 66%) 0 100%,
+				radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)),
+				radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)) 0 100%;
+			background-color: #fdfdfd;
 			background-repeat: no-repeat;
 			background-attachment: local, local, scroll, scroll;
 			background-size: 100% 57px, 100% 57px, 100% 19px, 100% 19px;
