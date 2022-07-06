@@ -71,9 +71,7 @@ project maturity level.
 				} elseif ( $stage ) {
 					?>
 				<p class="projects-single-box__accepted">
-					<?php the_title(); ?>
-is at the
-<strong><?php echo esc_html( $stage ); ?></strong>
+					<?php the_title(); ?>&nbsp;is at the <strong><?php echo esc_html( $stage ); ?></strong>
 project maturity level.
 </p>
 					<?php
@@ -129,7 +127,7 @@ endif;
 
 						<?php if ( $mail ) : ?>
 						<a title="<?php the_title_attribute(); ?> Discussion Group"
-							href="<?php echo esc_html( $mail ); ?>"><?php LF_utils::get_svg( '/social/boxed-email.svg' ); ?></a>
+							href="<?php echo esc_html( $mail ); ?>"><?php LF_utils::get_svg( '/social/boxed-discussion.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $slack ) : ?>
