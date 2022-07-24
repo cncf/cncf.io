@@ -2,7 +2,7 @@
 
 # CNCF.io Developer Instructions
 
-CNCF.io infrastructure builds in a similar way to  [LFEvents](https://github.com/LF-Engineering/lfevents).
+CNCF.io infrastructure builds in a similar way to [LFEvents](https://github.com/LF-Engineering/lfevents).
 
 -----
 
