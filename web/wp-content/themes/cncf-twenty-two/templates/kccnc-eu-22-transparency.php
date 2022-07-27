@@ -718,7 +718,7 @@ General Manager, CNCF</p>
 												<td>229</td>
 											</tr>
 											<tr>
-												<td>Finanacials</td>
+												<td>Financials</td>
 												<td>1645</td>
 											</tr>
 											<tr>
