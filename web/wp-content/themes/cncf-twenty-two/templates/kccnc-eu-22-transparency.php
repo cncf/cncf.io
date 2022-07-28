@@ -15,7 +15,7 @@ get_template_part( 'components/header' );
 get_template_part( 'components/skip-link-target' );
 
 // declare report PDF link to reference as variable.
-$pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/06/CNCF-KubeCon-CloudNativeCon-Europe-2022-Transparency-Report-v2.pdf';
+$pdf_link = 'https://www.cncf.io/wp-content/uploads/2022/07/CNCF-KubeCon-CloudNativeCon-Europe-2022-Transparency-Report-v3.pdf';
 // declare the next event link and alt as a variable.
 $event_link = 'https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/';
 $event_text = 'KubeCon + CloudNativeCon North America 2022 in Detroit from October 24th-28th';
