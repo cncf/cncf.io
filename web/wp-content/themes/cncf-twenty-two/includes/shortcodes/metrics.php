@@ -112,7 +112,7 @@ function add_cncf_metrics_shortcode() {
 			title="See CNCF Meetups">
 
 			<div class="metrics__image-wrapper">
-				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups.svg', true ); ?>"
+				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
 					width="125" height="110" class="metrics__image"
 					alt="Icon people at meetup" loading="lazy">
 			</div>

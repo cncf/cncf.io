@@ -193,7 +193,7 @@ function add_cncf_benefits_shortcode() {
 		<button class="js-modal button-reset" data-modal-prefix-class="generic"
 			data-modal-content-id="modal-engage" title="">
 			<div class="benefits__image-wrapper">
-				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups.svg', true ); ?>"
+				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
 					alt="Icon of meetup to imply community" width="124"
 					height="110" loading="lazy">
 			</div>
@@ -215,7 +215,7 @@ native community</p>
 			<div class="modal-content-wrapper">
 
 				<div class="benefits-col1">
-					<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups.svg', true ); ?>"
+					<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
 						alt="Icon of meetup to imply community" width="124"
 						height="110" loading="lazy">
 				</div>
