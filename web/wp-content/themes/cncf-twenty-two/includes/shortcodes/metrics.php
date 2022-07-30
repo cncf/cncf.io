@@ -106,32 +106,6 @@ function add_cncf_metrics_shortcode() {
 		</a>
 	</div>
 
-	<div class="metrics__column">
-
-		<a href="https://www.meetup.com/pro/cncf/" class="metrics__link has-animation-scale-2"
-			title="See CNCF Meetups">
-
-			<div class="metrics__image-wrapper">
-				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
-					width="125" height="110" class="metrics__image"
-					alt="Icon people at meetup" loading="lazy">
-			</div>
-
-			<div class="metrics__text-wrapper">
-
-				<h2 class="metrics__number has-extra-extra-large-font-size">
-					<span data-purecounter-end="163" data-purecounter-delay="10"
-						class="purecounter">
-						163
-					</span>K+
-				</h2>
-
-				<span class="metrics__description">CNCF Meetup
-					<br>Members</span>
-			</div>
-		</a>
-	</div>
-
 </section>
 	<?php
 	$block_content = ob_get_clean();
