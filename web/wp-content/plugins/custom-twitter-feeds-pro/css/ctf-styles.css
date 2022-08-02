@@ -19,8 +19,6 @@
 #ctf .ctf-item{
     position: relative;
     padding: 15px 5px;
-    border-top: 1px solid #ddd;
-    border-top: 1px solid rgba(0,0,0,0.1);
     overflow: hidden;
 
     box-sizing: border-box;
@@ -32,6 +30,9 @@
     -o-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+#ctf .ctf-item:last-of-type{
+    border-bottom: 0px!important
 }
 /* Transition items in */
 #ctf .ctf-item.ctf-transition{
@@ -56,6 +57,10 @@
     border: 1px solid rgba(0,0,0,0.1);
     text-decoration: none;
 }
+.ctf-carousel-2-row.ctf-boxed-style[data-ctf-rows="2"] .ctf-item{
+    margin-bottom: 15px!important;
+}
+
 
 /* Header */
 #ctf .ctf-header{
@@ -64,8 +69,6 @@
     padding: 5px 5px 15px 5px;
     line-height: 1.2;
     width: 100%;
-    border-bottom: 1px solid #ddd;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
     color: inherit;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -568,7 +571,7 @@
 }
 #ctf .ctf-tweet-actions .ctf-reply:hover,
 #ctf .ctf-tweet-actions .ctf-reply:focus{
-    color: #E34F0E !important;
+    color: #FE544F !important;
 }
 #ctf .ctf-tweet-actions .ctf-retweet:hover,
 #ctf .ctf-tweet-actions .ctf-retweet:focus{
@@ -979,6 +982,26 @@
     right: 0;
     top: 0;
 }
+[data-ctfimagecols="2"] .ctf-tweet-media,
+[data-ctfimagecols="3"] .ctf-tweet-media{
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 1%;
+}
+[data-ctfimagecols="3"] .ctf-tweet-media{
+    grid-template-columns: 33% 33% 33%;
+
+}
+[data-ctfimagecols="2"] .ctf-tweet-media a,
+[data-ctfimagecols="3"] .ctf-tweet-media a{
+    width: 100%!important;
+    max-width: 100%!important;
+    margin-bottom: 10px!important;
+}
+[data-ctfimagecols="2"] .ctf-tweet-media img,
+[data-ctfimagecols="3"] .ctf-tweet-media img{
+    height: 100%;
+}
 /** end **/
 
 
@@ -1000,8 +1023,6 @@
     margin: 0 5px 10px;
     padding: 10px;
     border: none;
-    border-bottom: 1px solid #ddd;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 #ctf.ctf-masonry.masonry-2-desktop .ctf-item{
     width: 46%;
@@ -2031,13 +2052,13 @@ body:after {
         opacity: 0; } }
 
 /*
- * 	Owl Carousel - Auto Height Plugin
+ *  Owl Carousel - Auto Height Plugin
  */
 .ctf-owl-height {
     transition: height 500ms ease-in-out; }
 
 /*
- * 	Owl Carousel - Lazy Load Plugin
+ *  Owl Carousel - Lazy Load Plugin
  */
 .ctf-carousel .ctf-owl-item .ctf-owl-lazy {
     opacity: 0;
@@ -2047,7 +2068,7 @@ body:after {
     transform-style: preserve-3d; }
 
 /*
- * 	Owl Carousel - Video Plugin
+ *  Owl Carousel - Video Plugin
  */
 .ctf-carousel .ctf-owl-video-wrapper {
     position: relative;
@@ -2233,4 +2254,130 @@ body:after {
 /* Out of Tweets */
 #ctf.ctf-carousel .ctf-out-of-tweets{
     margin-top: 10px;
+}
+
+/*Box Shadow*/
+.ctf.ctf-boxed-style[data-boxshadow="true"] .ctf-item{
+    box-shadow: 0 0 10px 0 rgba(0,0,0, 0.15);
+}
+
+/*Text Header*/
+[data-header-size="large"] .ctf-header-type-text{
+    font-size: 48px;
+}
+[data-header-size="medium"] .ctf-header-type-text{
+    font-size: 42px;
+}
+[data-header-size="small"] .ctf-header-type-text{
+    font-size: 36px;
+}
+
+
+.ctf-list.ctf-boxed-style .ctf-item{
+    margin-bottom: 25px;
+}
+
+.ctf-image > img,
+.ctf-media-link > img{
+    opacity: 0;
+}
+.ctf-image,
+.ctf-media-link{
+    background-size: cover;
+    background-position: center;
+}
+/*Color Palletes*/
+
+/***** LIGHT ****/
+/*Text COLOR*/
+#ctf.ctf_palette_light .ctf-author-name,
+#ctf.ctf_palette_light .ctf-tweet-text,
+#ctf.ctf_palette_light .ctf-header-name,
+#ctf.ctf_palette_light .ctf-header-type-text{
+    color: #444;
+}
+
+/*Text2 COLOR*/
+#ctf.ctf_palette_light .ctf-author-screenname,
+#ctf.ctf_palette_light .ctf-header-counts,
+#ctf.ctf_palette_light .ctf-header-bio{
+    color: #444;
+
+}
+/*Link COLOR*/
+#ctf.ctf_palette_light .ctf-tweet-text a{
+    color: inherit;
+}
+
+/*Background COLOR*/
+#ctf.ctf_palette_light .ctf-item{
+    background: transparent;
+}
+/*Accent COLOR*/
+#ctf.ctf_palette_light .ctf-corner-logo{
+    color: #1B95E0;
+}
+/*Accent2 COLOR*/
+#ctf.ctf_palette_light .ctf-verified{
+    color: #77C7F7;
+}
+/*Button  COLOR*/
+#ctf.ctf_palette_light .ctf-more{
+    background: rgba(0,0,0,0.5);
+    color: #444;
+}
+/*Actions  COLOR*/
+#ctf.ctf_palette_light .ctf-tweet-actions a{
+    color: #444;
+}
+
+
+
+/***** DARK ****/
+#ctf.ctf_palette_dark{
+    background: #20222C;
+}
+#ctf.ctf_palette_dark.ctf.ctf-boxed-style .ctf-item{
+    background: rgba(255,255,255,0.1)!important;
+}
+/*Text COLOR*/
+#ctf.ctf_palette_dark .ctf-author-name,
+#ctf.ctf_palette_dark .ctf-tweet-text,
+#ctf.ctf_palette_dark .ctf-header-name,
+#ctf.ctf_palette_dark .ctf-header-type-text{
+    color: #fff;
+}
+
+/*Text2 COLOR*/
+#ctf.ctf_palette_dark .ctf-author-screenname,
+#ctf.ctf_palette_dark .ctf-header-counts,
+#ctf.ctf_palette_dark .ctf-header-bio{
+    color: #fff;
+
+}
+/*Link COLOR*/
+#ctf.ctf_palette_dark .ctf-tweet-text a{
+    color: inherit;
+}
+
+/*Background COLOR*/
+#ctf.ctf_palette_dark .ctf-item{
+    background: transparent;
+}
+/*Accent COLOR*/
+#ctf.ctf_palette_dark .ctf-corner-logo{
+    color: #1B95E0;
+}
+/*Accent2 COLOR*/
+#ctf.ctf_palette_dark .ctf-verified{
+    color: #77C7F7;
+}
+/*Button  COLOR*/
+#ctf.ctf_palette_dark .ctf-more{
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+/*Actions  COLOR*/
+#ctf.ctf_palette_dark .ctf-tweet-actions a{
+    color: rgba(255,255,255,0.8);
 }

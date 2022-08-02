@@ -5,6 +5,7 @@
  * Simple, lightweight class to make a connection to the Twitter API
  * Supports home timeline, user timeline, and search endpoints
  */
+namespace TwitterFeed;
 
 // Don't load directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,6 +65,7 @@ class CtfOauthConnect
         $this->access_token = $request_settings['access_token'];
         $this->access_token_secret = $request_settings['access_token_secret'];
         $this->feed_type = $feed_type;
+
     }
 
     /**
@@ -80,6 +82,7 @@ class CtfOauthConnect
                 break;
             default:
                 $this->base_url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+                break;
         }
     }
 
@@ -94,8 +97,8 @@ class CtfOauthConnect
 	    $length = count( $get_fields );
 	    $j = 1;
 	    foreach ( $get_fields as $key => $value ) {
-		    $url_string .= rawurlencode( $key ) . '=' . rawurlencode( $value );
-		    if ( $j != $length ) {
+		    $url_string .= rawurlencode( $key ) . '=' . ($this->feed_type === 'userslookup' ? rawurlencode( str_replace('@','',$value) ) : rawurlencode( $value ));
+            if ( $j != $length ) {
 			    $url_string .= '&';
 		    }
 		    $j++;
@@ -132,7 +135,6 @@ class CtfOauthConnect
         foreach ( $oauth as $key => $value ) {
             $base_string[] = rawurlencode( $key ) . '=' . rawurlencode( $value );
         }
-
         // convert the array of values into a single encoded string and return
         return 'GET&' . rawurlencode( $this->base_url ) . '&' . rawurlencode( implode( '&', $base_string ) );
     }
@@ -253,23 +255,28 @@ class CtfOauthConnect
 	{
 		$args = array(
 			'headers' => $this->header,
-			'timeout' => 60,
-			'sslverify' => false
+			'timeout' => 60
 		);
 		$result = wp_remote_get( $url, $args );
 
 		if ( ! is_wp_error( $result ) ) {
 			// Check the response code
 			$response_code       = wp_remote_retrieve_response_code( $result );
-			if ( $response_code !== 200 ) {
+            if ( $response_code !== 200 ) {
 				$errors = get_option( 'ctf_errors', array() );
 				$errors['wp_http'] = date( 'm-d H:i:s' ) . ':' . esc_html( $result['body'] );
 				update_option( 'ctf_errors', $errors, false );
+
+				$data = ! empty( $result['body'] ) ? json_decode( $result['body'], true ) : false;
+				if ( $data && ! empty( $data['errors']['message'] ) ) {
+					$message = $data['errors']['message'];
+					$response_code = $data['errors']['code'];
+				}
 				$error_return =  array(
 					'errors' => array(
 						array(
 							'code' => $response_code,
-							'message' => __( 'Could not connect to the Twitter API. Your host may be blocking the connection.', 'custom-twitter-feeds' )
+							'message' => isset( $message ) ? wp_kses_post( $message ) : __( 'Could not connect to the Twitter API. Your host may be blocking the connection.', 'custom-twitter-feeds' )
 						)
 					)
 				);
@@ -321,7 +328,6 @@ class CtfOauthConnect
         $url = $this->base_url . $this->get_fields;
         $this->buildOauth();
         $this->encodeHeader();
-
         switch ( $this->request_method ) {
             case 'curl':
                 $this->json = $this->curlRequest( $url );

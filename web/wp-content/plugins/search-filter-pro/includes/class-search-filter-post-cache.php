@@ -288,9 +288,11 @@ class Search_Filter_Post_Cache
         $this->init_cache_options();
 
         ignore_user_abort( true ); //allow script to carry on running
-        @set_time_limit($this->process_exec_time);
+        // Some hosts disable (remove) this function.
+        if ( function_exists( 'set_time_limit' ) ) {
+            @set_time_limit($this->process_exec_time);
+        }
         ini_set('max_execution_time', $this->process_exec_time);
-
 
         if ($this->cache_options['run_method'] !== "manual") {
             if (($this->cache_options['status'] == "error") && ($this->cache_options['restart'] == false)) {//if status = error, then caching can only resume based on user initiated response

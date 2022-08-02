@@ -40,7 +40,7 @@ var CTFAdminNotifications = window.CTFAdminNotifications || ( function( document
 		 * @since 2.18
 		 */
 		init: function() {
-			el.$notifications.find( '.messages a').each(function() {
+      el.$notifications.find( '.messages a').each(function() {
 				if ($(this).attr('href').indexOf('dismiss=') > -1 ) {
 					$(this).addClass('button-dismiss');
 				}
@@ -122,11 +122,11 @@ var CTFAdminNotifications = window.CTFAdminNotifications || ( function( document
 			// AJAX call - update option.
 			var data = {
 				action: 'ctf_dashboard_notification_dismiss',
-				nonce: ctf_admin.nonce,
+				nonce: ctf.nonce,
 				id: messageId,
 			};
 
-			$.post( ctf_admin.ajax_url, data, function( res ) {
+			$.post( ctf.ajax_url, data, function( res ) {
 
 				if ( ! res.success ) {
 					//CTFAdmin.debug( res );

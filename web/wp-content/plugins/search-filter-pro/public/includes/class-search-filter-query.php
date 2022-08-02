@@ -90,9 +90,10 @@ class Search_Filter_Query {
 		}
 
 	}
-	public function disable_canonical_redirect( $query )
+	public function disable_canonical_redirect()
 	{
 		remove_filter( 'template_redirect', 'redirect_canonical' );
+		add_filter( 'redirect_canonical', '__return_false' );
 	}
 	public function do_main_query()
 	{
@@ -118,7 +119,7 @@ class Search_Filter_Query {
 		global $searchandfilter;
 		$searchform = $searchandfilter->get($this->sfid);
 
-		remove_filter( 'template_redirect', 'redirect_canonical' );
+		$this->disable_canonical_redirect();
 		$this->prep_query();
 
 		if(!$searchandfilter->has_pagination_init())
@@ -292,7 +293,7 @@ class Search_Filter_Query {
     {
         global $searchandfilter;
 
-        remove_filter( 'template_redirect', 'redirect_canonical' );
+        $this->disable_canonical_redirect();
         $this->prep_query();
 
         $force_is_search = $searchandfilter->get($this->sfid)->settings("force_is_search");

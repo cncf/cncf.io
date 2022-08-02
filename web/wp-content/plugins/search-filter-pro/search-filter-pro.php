@@ -11,7 +11,7 @@
  * Plugin Name:       Search & Filter Pro
  * Plugin URI:        https://searchandfilter.com
  * Description:       Search & Filtering for posts, products and custom posts. Allow your users to Search & Filter by categories, tags, taxonomies, custom fields, post meta, post dates, post types and authors.
- * Version:           2.5.12
+ * Version:           2.5.13
  * Author:            Code Amp
  * Author URI:        http://www.codeamp.com
  * Text Domain:       search-filter
@@ -33,7 +33,7 @@ if ( ! defined( 'SEARCH_FILTER_QUERY_DEBUG' ) ) {
 }
 
 if ( ! defined( 'SEARCH_FILTER_VERSION' ) ) {
-	define('SEARCH_FILTER_VERSION', "2.5.12");
+	define('SEARCH_FILTER_VERSION', "2.5.13");
 }
 
 if ( ! defined( 'SEARCH_FILTER_PRO_BASE_PATH' ) ) {

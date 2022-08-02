@@ -52,10 +52,22 @@ if ( ! $ctf_preserve_settings ) {
 	delete_option( 'ctf_usage_tracking' );
 
 	wp_clear_scheduled_hook( 'ctf_usage_tracking_cron' );
+	wp_clear_scheduled_hook( 'ctf_feed_update' );
 
 	delete_option( 'ctf_db_version' );
 	delete_option( 'ctf_ver' );
 	delete_option( 'ctf_welcome_seen' );
+	delete_option( 'ctf_rating_notice' );
+	delete_option( 'ctf_notifications' );
+	delete_option( 'ctf_newuser_notifications' );
+	delete_option( 'ctf_statuses' );
+	delete_option( 'ctf_cron_report' );
+	delete_option( 'ctf_legacy_feed_settings' );
+	delete_option( 'ctf_check_license_api_when_expires' );
+	delete_option( 'ctf_license_last_check_timestamp' );
+	delete_option( 'ctf_license_data' );
+	delete_option( 'ctf_license_key' );
+	delete_option( 'ctf_license_status' );
 
 
 	$upload = wp_upload_dir();
@@ -82,5 +94,12 @@ if ( ! $ctf_preserve_settings ) {
 	global $wp_filesystem;
 
 	$wp_filesystem->delete( trailingslashit( $upload['basedir'] ) . trailingslashit( 'sb-twitter-feed-images' ) , true );
+
+
+	$feed_caches_table_name = $wpdb->prefix . 'ctf_feed_caches';
+	$wpdb->query( "DROP TABLE IF EXISTS $feed_caches_table_name" );
+
+	$feeds_table_name = $wpdb->prefix . 'ctf_feeds';
+	$wpdb->query( "DROP TABLE IF EXISTS $feeds_table_name" );
 }
 

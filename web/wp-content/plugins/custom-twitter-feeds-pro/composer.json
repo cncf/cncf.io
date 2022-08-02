@@ -1,0 +1,11 @@
+{
+    "name": "smashballoon/custom-twitter-feeds-pro",
+    "autoload": {
+        "psr-4": {
+            "TwitterFeed\\": "inc/"
+        }
+    },
+    "require": {
+        "neitanod/forceutf8": "~2.0"
+    }
+}

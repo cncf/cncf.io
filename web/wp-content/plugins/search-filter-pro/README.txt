@@ -3,8 +3,8 @@ Contributors: DesignsAndCode, CodeAmp
 Donate link:
 Tags: posts, custom posts, products, category, filter, taxonomy, post meta, custom fields, search, wordpress, post type, post date, author
 Requires at least: 5.1
-Tested up to: 5.9
-Stable tag: 2.5.12
+Tested up to: 6.0
+Stable tag: 2.5.13
 
 Search and Filtering for posts, products and custom posts. Allow your users to Search & Filter by taxonomies, custom fields and more.
 
@@ -56,6 +56,11 @@ Great for searching in your online shop, tested with: WooCommerce and WP eCommer
 
 
 == Changelog ==
+
+= 2.5.13 =
+* Fix - an issue with infinite scroll triggering after pressing "back" in certain browsers.
+* Fix - an issue with canonical redirects being triggered when using Polylang Pro + WooCommerce.
+* Fix - remove replaceAll polyfill which was causing conflicts with other plugins.
 
 = 2.5.12 =
 * Fix - Support ajax in multiple results areas when using our third party integrations

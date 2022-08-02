@@ -2,9 +2,9 @@
 Author: Smash Balloon
 Contributors: smashballoon, craig-at-smash-balloon
 Support Website: http://smashballoon/custom-twitter-feeds/
-Requires at least: 3.4
-Tested up to: 5.9.2
-Stable tag: 1.14.2
+Tested up to: 6.0
+Requires PHP: 5.6
+Stable tag: 2.0.1
 License: Non-distributable, Not for resale
 
 Custom Twitter Feeds Pro allows you to display completely customizable Twitter feeds of your user timeline, home timeline, hashtag, and more on your website.
@@ -41,10 +41,28 @@ If you like the plugin then please consider leaving a [review](https://wordpress
 For simple step-by-step directions on how to set up Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/docs/ 'Custom Twitter Feeds setup guide').
 
 == Changelog ==
-= 1.14.2 =
-* Fix: Fixed PHP warning "required parameter follows optional parameter" that would occur in PHP 8.0+.
-* Fix: Fixed PHP warning "undefined index" when using a mixed feed.
-* Fix: Fixed PHP error when trying to load Twitter card information from a website that provided no HTML to parse.
+= 2.0.1 =
+* Fix: Added more workarounds for encoding issues in Twitter Cards.
+* Fix: Fixed the default date format showing differently in the customizer than it did on the front-end.
+* Fix: Fixed translations for date words not applying correctly.
+* Fix: Tablet columns were not working correctly for some layouts.
+
+= 2.0 =
+* Important: Minimum supported WordPress version has been raised from 3.5 to 4.1.
+* New: Our biggest update ever! We've completely redesigned the plugin settings from head to toe to make it easier to create, manage, and customize your Twitter feeds.
+* New: All your feeds are now displayed in one place on the "All Feeds" page. This shows a list of any existing (legacy) feeds and any new ones that you create. Note: If you updated from a version prior to v1.13 then you may need to view your feeds on your webpage so that the plugin can locate them and list them here.
+* New: Easily edit individual feed settings for new feeds instead of cumbersome shortcode options.
+* New: It's now much easier to create feeds. Just click "Add New", select your feed type, connect your account, and you're done!
+* New: Brand new feed customizer. We've completely redesigned feed customization from the ground up, reorganizing the settings to make them easier to find.
+* New: Live Feed Preview. You can now see changes you make to your feeds in real time, right in the settings page. Easily preview them on desktop, tablet, and mobile sizes.
+* New: We've added a new Feed Templates feature. You can now select a feed template when creating a feed to make it much quicker and easier to get started with the type of feed you want to display. Selecting a template preconfigures the feed customization settings to match that template, saving you time and effort.
+* New: Color Scheme option. It's now easier than ever to change colors across your feed without needing to adjust individual color settings. Just set a color scheme to effortlessly change colors across your entire feed.
+* New: You can now change the number of columns in your feed across desktop, tablet, and mobile.
+* New: Easily import and export feed settings to make it simple to move feeds across sites.
+* New: Added a Post Style setting which allows you to add a boxed style to your Tweets, with a background color, border radius, and box shadow.
+* New: Added a new custom text header option, so you can now add custom text to the header for your feed.
+* Fix: Fixed a PHP warning related to information for the header being empty.
+* Fix: Tweets with quoted media were causing HTML errors and the feed layout would be affected.
 
 = 1.14.1 =
 * Fix: Fixed several issues with GDPR Cookie Consent by Web Toffee integration.

@@ -206,6 +206,45 @@ jQuery(document).ready(function($){
         }
     });
 
+  /**
+   * Recheck the licensey key by sending AJAX request to the server
+   *
+   * @since 4.0
+   */
+  $(document).on('click', "#ctf-recheck-license-key", function() {
+    $(this).find('.spinner-icon').show();
+    let ctfLicenseNotice = $('#ctf-license-notice');
+    $.ajax({
+      url: ajaxurl,
+      data: {
+        action: 'ctf_check_license',
+        ctf_nonce: ctf.nonce
+      },
+      success: function(result){
+        $(this).find('.spinner-icon').hide();
+
+        if ( ctfLicenseNotice ) {
+          if ( result.success == true ) {
+            ctfLicenseNotice.removeClass('ctf-license-expired-notice').addClass('ctf-license-renewed-notice');
+          }
+          ctfLicenseNotice.html( result.data.content );
+        }
+      }
+    });
+  });
+
+  /**
+   * Dismiss the renewed license notice
+   *
+   * @since 4.0
+   */
+  $(document).on('click', "#ctf-hide-notice", function() {
+    let cffLicenseNotice = $('#ctf-license-notice');
+    let cffLicenseModal = $('.ctf-sb-modal');
+    cffLicenseNotice.remove();
+    cffLicenseModal.remove();
+  });
+
     //Mobile width
     var ctfWidthUnit = $('#ctf-admin #ctf_width_unit').val(),
         ctfWidth = $('#ctf-admin #ctf_width').val(),
@@ -454,7 +493,7 @@ jQuery(document).ready(function($){
     }
     ctfUpdateLayoutTypeOptionsDisplay();
     jQuery('.ctf_layout_type').on('change',ctfUpdateLayoutTypeOptionsDisplay);
-    
+
     //Selecting a post layout
     jQuery('.ctf_layout_cell').on('click',function(){
         var $self = jQuery(this);
@@ -494,4 +533,58 @@ jQuery(document).ready(function($){
         jQuery(this).closest('td').find('.ctf-condensed-wrap').hide();
         jQuery(this).remove();
     });
+
+
+
+  // Social Wall Menu Workaround
+  //toplevel_page_sbsw #adminmenu a[href="admin.php?page=sb-instagram-feed"]
+  $('.toplevel_page_sbsw a[href="admin.php?page=ctf-feed-builder"]').css('display','block').attr('href','admin.php?page=ctf-feed-builder');
+  $('a[href="admin.php?page=ctf-feed-builder"].menu-top').css('display','block').attr('href','admin.php?page=ctf-feed-builder');
+
+  jQuery('body').on('click', '#ctf_review_consent_yes', function(e) {
+    let reviewStep1 = jQuery('.ctf_review_notice_step_1, .ctf_review_step1_notice');
+    let reviewStep2 = jQuery('.ctf_notice.ctf_review_notice, .rn_step_2');
+
+    reviewStep1.hide();
+    reviewStep2.show();
+
+    $.ajax({
+      url : ctf.ajax_url,
+      type : 'post',
+      data : {
+        action : 'ctf_review_notice_consent_update',
+        consent : 'yes',
+        ctf_nonce: ctf.nonce
+      },
+      success : function(data) {
+      }
+    }); // ajax call
+
+  });
+
+  jQuery('body').on('click', '#ctf_review_consent_no', function(e) {
+    let reviewStep1 = jQuery('.ctf_review_notice_step_1, #ctf-notifications');
+    reviewStep1.hide();
+
+    $.ajax({
+      url : ctfA.ajax_url,
+      type : 'post',
+      data : {
+        action : 'ctf_review_notice_consent_update',
+        consent : 'no',
+        ctf_nonce: ctfA.ctf_nonce
+      },
+      success : function(data) {
+      }
+    }); // ajax call
+
+  });
+
+  $(document).on('click', '#renew-modal-btn', function() {
+    $('.ctf-sb-modal').show();
+  });
+
+  $(document).on('click', '#ctf-sb-close-modal', function() {
+    $('.ctf-sb-modal').hide();
+  });
 });

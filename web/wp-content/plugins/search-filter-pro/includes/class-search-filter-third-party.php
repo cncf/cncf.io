@@ -987,9 +987,6 @@ class Search_Filter_Third_Party
 									$variation_values[ $field_name ]           = array();
 									$variation_values[ $field_name ]['values'] = $values;
 									$variation_values[ $field_name ]['type']   = 'number';
-
-
-
 								}
 							}
 

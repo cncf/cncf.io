@@ -1586,7 +1586,7 @@ if(!ctf_js_exists) {
       "b:": "b9"
     }, i = {
       callback: function (q, p) {
-        return p ? '<a href="' + p + '" title="' + p + '" target="_blank">' + q + "</a>" : q
+        return p ? '<a href="' + p + '" title="' + p + '" target="_blank" rel="nofollow noopener">' + q + "</a>" : q
       }, punct_regexp: /(?:[!?.,:;'"]|(?:&|&amp;)(?:lt|gt|quot|apos|raquo|laquo|rsaquo|lsaquo);)$/
     };
     return function (u, z) {
@@ -1651,7 +1651,7 @@ if(!ctf_js_exists) {
     if (/^#[0-9A-F]{6}$/i.test(replacementString)) {
       return replacementString;
     } else {
-      return ' <a href="https://twitter.com/hashtag/' + replacementString.substring(1) + '" target="_blank" rel="nofollow">' + replacementString + '</a>';
+      return ' <a href="https://twitter.com/hashtag/' + replacementString.substring(1) + '" target="_blank" rel="nofollow noopener">' + replacementString + '</a>';
     }
   }
 
@@ -1659,7 +1659,7 @@ if(!ctf_js_exists) {
   function ctfReplaceTags(tag) {
     var replacementString = tag.replace('(','').trim(),
       slash = tag.indexOf('(') > -1 ? '(' : '';
-    return ' '+slash+'<a href="https://twitter.com/' + replacementString.substring(1) + '" target="_blank" rel="nofollow">' + replacementString + '</a>';
+    return ' '+slash+'<a href="https://twitter.com/' + replacementString.substring(1) + '" target="_blank" rel="nofollow noopener">' + replacementString + '</a>';
   }
 
   /* Font Awesome SVG implementation */
@@ -3766,7 +3766,7 @@ if(!ctf_js_exists) {
                 }
                 if (this.album[this.currentImageIndex].video === 'link'
                   && ! jQuery(".ctf_lb-container .ctf_gdpr_notice").length) {
-                  jQuery(".ctf_lb-container").prepend('<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'/status/'+this.album[this.currentImageIndex].id+'" target="_blank" rel="noopener noreferrer" class="ctf_gdpr_notice"><svg style="color: rgba(255,255,255,1)" class="svg-inline--fa fa-play fa-w-14 sbi_playbtn" aria-label="Play" aria-hidden="true" data-fa-processed="" data-prefix="fa" data-icon="play" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg></a>')
+                  jQuery(".ctf_lb-container").prepend('<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'/status/'+this.album[this.currentImageIndex].id+'" target="_blank" rel="nofollow noopener" class="ctf_gdpr_notice"><svg style="color: rgba(255,255,255,1)" class="svg-inline--fa fa-play fa-w-14 sbi_playbtn" aria-label="Play" aria-hidden="true" data-fa-processed="" data-prefix="fa" data-icon="play" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg></a>')
                 } else if (this.album[this.currentImageIndex].video !== 'link') {
                   jQuery('.ctf_gdpr_notice').remove();
                 }
@@ -3807,7 +3807,7 @@ if(!ctf_js_exists) {
                 jQuery('#ctf_lightbox #ctf_twitter_icon').attr('href', 'https://twitter.com/home?status='+this.album[this.currentImageIndex].url+' ' + this.album[this.currentImageIndex].title);
                 jQuery('#ctf_lightbox #ctf_linkedin_icon').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&url='+this.album[this.currentImageIndex].url+'&title='+this.album[this.currentImageIndex].title);
                 jQuery('#ctf_lightbox #ctf_pinterest_icon').attr('href', 'https://pinterest.com/pin/create/button/?url='+this.album[this.currentImageIndex].url+'&media='+this.album[this.currentImageIndex].link+'&description='+this.album[this.currentImageIndex].title);
-                jQuery('#ctf_lightbox #ctf_email_icon').attr('href', 'mailto:?subject=Instagram&body='+this.album[this.currentImageIndex].title+' '+this.album[this.currentImageIndex].url);
+                jQuery('#ctf_lightbox #ctf_email_icon').attr('href', 'mailto:?subject=Twitter&body='+this.album[this.currentImageIndex].title+' '+this.album[this.currentImageIndex].url);
 
                 //Add links to the caption
                 var ctfLightboxCaption = this.album[this.currentImageIndex].title,
@@ -3824,7 +3824,7 @@ if(!ctf_js_exists) {
                   if ( /^#[0-9A-F]{6}$/i.test( replacementString ) ){
                     return replacementString;
                   } else {
-                    return ' <a href="https://twitter.com/hashtag/'+ replacementString.substring(1) +'" target="_blank" rel="nofollow">' + replacementString + '</a>';
+                    return ' <a href="https://twitter.com/hashtag/'+ replacementString.substring(1) +'" target="_blank" rel="nofollow noopener">' + replacementString + '</a>';
                   }
                 }
                 ctfLightboxCaption = ctfLightboxCaption.replace( hashRegex , ctfReplaceHashtags );
@@ -3832,7 +3832,7 @@ if(!ctf_js_exists) {
                 //Link @tags
                 function ctfReplaceTags(tag){
                   var replacementString = tag.replace('(','').trim();
-                  return ' <a href="https://twitter.com/'+ replacementString.substring(1) +'" target="_blank" rel="nofollow">' + replacementString + '</a>';
+                  return ' <a href="https://twitter.com/'+ replacementString.substring(1) +'" target="_blank" rel="nofollow noopener">' + replacementString + '</a>';
                 }
                 ctfLightboxCaption = ctfLightboxCaption.replace( tagRegex , ctfReplaceTags );
                 var avatarClass = '';
@@ -3842,15 +3842,15 @@ if(!ctf_js_exists) {
                 //Create author and add caption to bottom of lightbox
                 "undefined" != typeof ctfLightboxCaption && "" !== ctfLightboxCaption && this.$lightbox.find(".ctf_lb-caption")
                   .html('<div class="ctf-author-box'+avatarClass+'">' +
-                    '<div class="ctf-author-box-link" target="_blank">' +
-                    '<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'" class="ctf-author-avatar" target="_blank" style="">' +
+                    '<div class="ctf-author-box-link" target="_blank" rel="nofollow noopener">' +
+                    '<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'" class="ctf-author-avatar" target="_blank" rel="nofollow noopener" style="">' +
                     '<img src="'+this.album[this.currentImageIndex].avatar+'" width="48" height="48">' +
                     '</a>' +
-                    '<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'" target="_blank" class="ctf-author-name">'+this.album[this.currentImageIndex].name+'</a>' +
-                    '<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'" class="ctf-author-screenname" target="_blank">@'+this.album[this.currentImageIndex].user+'</a>' +
+                    '<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'" target="_blank" rel="nofollow noopener" class="ctf-author-name">'+this.album[this.currentImageIndex].name+'</a>' +
+                    '<a href="https://twitter.com/'+this.album[this.currentImageIndex].user+'" class="ctf-author-screenname" target="_blank" rel="nofollow noopener">@'+this.album[this.currentImageIndex].user+'</a>' +
                     '<span class="ctf-screename-sep">·</span>' +
                     '<div class="ctf-tweet-meta">' +
-                    '<a href="https://twitter.com/statuses/'+this.album[this.currentImageIndex].id+'" class="ctf-tweet-date" target="_blank">'+this.album[this.currentImageIndex].date+'</a>' +
+                    '<a href="https://twitter.com/statuses/'+this.album[this.currentImageIndex].id+'" class="ctf-tweet-date" target="_blank" rel="nofollow noopener">'+this.album[this.currentImageIndex].date+'</a>' +
                     '</div>' +
                     '</div> <!-- end .ctf-author-box-link -->' +
                     '</div><div class="ctf-caption-text'+avatarClass+'">' + ctfLightboxCaption + '</div>')
@@ -3929,7 +3929,9 @@ if(!ctf_js_exists) {
         }).call(this);
       },
       createFeeds: function (args) {
-        window.ctf.createLightbox();
+        if(!$("#ctf-builder-app").length){
+          window.ctf.createLightbox();
+        }
         args.whenFeedsCreated(
           $('.ctf').each(function (index) {
             $(this).attr('data-ctf-index', index + 1);
@@ -3946,15 +3948,17 @@ if(!ctf_js_exists) {
                 carouselAuto !== false,
                 carouselAuto,
                 $self.attr('data-ctf-loop'),
-                1
+                $self.attr('data-ctf-rows')
               ];
             }
             var feedOptions = {
               cols : typeof $self.attr('data-ctf-cols') !== 'undefined' ? $self.attr('data-ctf-cols') : 3,
+              colstablet : typeof $self.attr('data-ctf-tabletcols') !== 'undefined' ? $self.attr('data-ctf-tabletcols') : 2,
               colsmobile : typeof $self.attr('data-ctf-mobilecols') !== 'undefined' ? $self.attr('data-ctf-mobilecols') : 1,
               imageCols : $self.attr('data-ctfimagecols'),
               maxMedia : parseInt($self.attr('data-ctfmaxmedia')),
               feedID : $self.attr('data-feedid'),
+              v2feed : typeof $self.attr( 'data-feed' ) !== 'undefind' ? $self.attr( 'data-feed' ) : '',
               postID : typeof $self.attr( 'data-postid' ) !== 'undefind' ? $self.attr( 'data-postid' ) : 'unknown',
               shortCodeAtts : $self.attr('data-ctfshortcode'),
               backgroundCheck : (flags.indexOf('background') > -1),
@@ -4065,7 +4069,8 @@ if(!ctf_js_exists) {
         var $self = $(this.el),
           feed = this,
           cols = feed.settings.general.cols,
-          colsmobile = feed.settings.general.colsmobile;
+          colstablet = feed.settings.colstablet,
+          colsmobile = feed.settings.colsmobile;
 
         var layout = 'list';
         feed.isInitialized = true;
@@ -4100,7 +4105,6 @@ if(!ctf_js_exists) {
         } else if (layout === 'carousel') {
           var cols = this.settings.cols,
             colsmobile = this.settings.colsmobile;
-
           $self.find('.ctf-tweet-items').append($self.find('.ctf-more'));
           var lastID = $self.find('.ctf-item').last().attr('id');
           $self.find('.ctf-more').attr('data-ctf-last', lastID);
@@ -4156,7 +4160,7 @@ if(!ctf_js_exists) {
             afterInit = function() {
 
               var $self = jQuery(feed.el);
-              $self.find('.ctf-tweet-items.ctf-carousel').fadeIn(400,function() {
+              $self.find('.ctf-tweet-items.ctf-carousel').fadeIn(10,function() {
                 if (height === 'clickexpand') {
                   ctfInitClickExpand($self, feed);
                 }
@@ -4164,7 +4168,7 @@ if(!ctf_js_exists) {
               setTimeout(function(){
                 $self.find('.ctf-tweet-items.ctf-carousel .ctf-info, .ctf-owl2row-item,.ctf-tweet-items.ctf-carousel').fadeIn();
 
-              }, 50);
+              }, 10);
               setTimeout(function(){
                 var $navElementsWrapper = $self.find('.ctf-owl-nav');
                 if (arrows === 'onhover') {
@@ -4194,7 +4198,7 @@ if(!ctf_js_exists) {
                 } else if (arrows === 'hide') {
                   $navElementsWrapper.addClass('hide').hide();
                 }
-              }, 100);
+              }, 10);
             };
           //Disable mobile layout
           if( $self.hasClass('ctf-mob-col-auto') ) {
@@ -4203,12 +4207,11 @@ if(!ctf_js_exists) {
             if( parseInt(cols) == 2 ) itemsMobile = 2; //If the cols are set to 2 then don't change to 1 col on mobile
           } else {
             itemsMobile = colsmobile;
+            itemsTabletSmall = colstablet;
           }
 
 
           // force single item for autoheight
-
-
           feed.carouselArgs = {
             items: cols,
             loop: loop,
@@ -4216,7 +4219,6 @@ if(!ctf_js_exists) {
             autoplay: autoplay,
             autoplayHoverPause: true,
             nav: true,
-            navText: ['<svg class="svg-inline--fa fa-chevron-left fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fa" data-icon="chevron-left" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>', '<svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fa" data-icon="chevron-right" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>'],
             dots: pagination,
             owl2row: has2rows,
             responsive: {
@@ -4233,6 +4235,14 @@ if(!ctf_js_exists) {
             onChange: onChange,
             onInitialize: afterInit
           };
+
+          var navarrows = $self.attr('data-ctf-navarrows');
+
+          if(navarrows ==  'true'){
+            feed.carouselArgs.navText = ['<svg class="svg-inline--fa fa-chevron-left fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fa" data-icon="chevron-left" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>', '<svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" data-fa-processed="" data-prefix="fa" data-icon="chevron-right" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>'];
+          }else{
+            feed.carouselArgs.nav = false;
+          }
           if (time) {
             feed.carouselArgs.autoplayTimeout = Math.max(time,2000);
           }
@@ -4260,8 +4270,11 @@ if(!ctf_js_exists) {
         if (layout === 'masonry') {
           feed.setMasonry();
           feed.smashotopeInit();
-          setTimeout(function(){ feed.setMasonry(); feed.smashotopeInit(); }, 500);
+          setTimeout(function(){ feed.setMasonry(); feed.smashotopeInit(); }, 10);
         }
+        jQuery('body').find('.ctf-tweet-media > video').bind('play',function(){
+          jQuery('body').find('.ctf-tweet-media > video').not(this).trigger('pause');
+        })
       },
       setResizedImages: function() {
         var feed = this;
@@ -4319,7 +4332,10 @@ if(!ctf_js_exists) {
           var feed = this;
           setTimeout(function() {
             feed.setMasonry(); feed.smashotopeInit();
-          },501);
+          },11);
+          setTimeout(function() {
+            feed.setMasonry(); feed.smashotopeInit();
+          },200);
         }
       },
       afterLoadMoreClicked: function($button) {
@@ -4347,7 +4363,7 @@ if(!ctf_js_exists) {
           $self.find('.ctf_btn_text').removeClass('ctf_hidden');
           feed.maybeRaiseImageResolution();
           feed.setImageHeight();
-        }, 500);
+        }, 10);
       },
       beforeNewImagesRevealed: function() {
         var feed = this;
@@ -4397,11 +4413,11 @@ if(!ctf_js_exists) {
             $self.trigger('mouseenter').trigger('mouseover');
           }
           $this.afterResize();
-        },1000);
+        },501);
         //Set slight delay otherwise it doesn't always resize in time
         setTimeout( function() {
           $this.afterResize();
-        },501);
+        },510);
       },
       processNewImage: function($item) {
         var feed = this;
@@ -4715,12 +4731,12 @@ if(!ctf_js_exists) {
           if(feed.layout === 'masonry'){
             feed.setMasonry(); feed.smashotopeInit();
           }
-        }, 1500);
+        }, 15);
         setTimeout(function() {
           if(feed.layout === 'masonry'){
             feed.setMasonry(); feed.smashotopeInit();
           }
-        }, 2000);
+        }, 20);
       },
       alignTweetActions: function($ctfItem) {
       },
@@ -4859,7 +4875,7 @@ if(!ctf_js_exists) {
 
                 setTimeout(function() {
                   feed.afterResize();
-                },500);
+                },50);
               }
 
 
@@ -4906,7 +4922,7 @@ if(!ctf_js_exists) {
 
             feed.ctfLoadTweets(lastIDData, shortcodeData , $ctf, $ctfMore, numNeeded, '', true);
           }
-        },500);
+        },50);
 
         $ctf.find('.ctf-more').on('click', function () {
 
@@ -4936,6 +4952,7 @@ if(!ctf_js_exists) {
             last_id_data: lastIDData,
             shortcode_data: shortcodeData,
             feed_id: feed.settings.feedID,
+            v2feed: feed.settings.v2feed,
             location: feed.locationGuess(),
             post_id: feed.settings.postID,
             num_needed: numNeeded,
@@ -5117,6 +5134,9 @@ if(!ctf_js_exists) {
 
                 }
                 if (!feed.settings.consentGiven) {
+                  if ($item.find('.ctf-lightbox-link[data-bg-image]').length) {
+                    $item.find('.ctf-lightbox-link[data-bg-image]').css('background-image', 'url("' + value + '")');
+                  }
                   $thisItem.attr('href',value)
                 }
               });
@@ -5265,7 +5285,7 @@ if(!ctf_js_exists) {
           this.setMasonry();
           this.smashotopeInit();
           feed = this;
-          setTimeout(function(){ feed.setMasonry(); feed.smashotopeInit(); }, 500);
+          setTimeout(function(){ feed.setMasonry(); feed.smashotopeInit(); }, 50);
         }
       },
       setImageSizeClass: function () {
@@ -5304,6 +5324,7 @@ if(!ctf_js_exists) {
       getColumnCount: function() {
         var $self = $(this.el),
           cols = this.settings.cols,
+          colstablet = this.settings.colstablet,
           colsmobile = this.settings.colsmobile,
           returnCols = cols,
           screenWidth = window.innerWidth;
@@ -5314,14 +5335,18 @@ if(!ctf_js_exists) {
           } else if (screenWidth <= 480) {
             returnCols = 1;
           }
-        } else if (screenWidth <= 480) {
-          returnCols = colsmobile;
+        } else if (screenWidth > 480 && screenWidth <= 980) {
+          returnCols = colstablet;
         }
-
-        if ($self.hasClass('ctf-masonry')
-          && screenWidth > 480 && screenWidth < 781) {
+        else if (screenWidth <= 480) {
           returnCols = colsmobile;
+        }else{
+          returnCols = cols;
         }
+        //if ($self.hasClass('ctf-masonry')
+        //  && screenWidth > 480 && screenWidth < 781) {
+        //  returnCols = colsmobile;
+        //}
 
         return parseInt(returnCols);
       },

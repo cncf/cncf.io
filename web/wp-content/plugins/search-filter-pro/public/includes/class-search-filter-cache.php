@@ -385,7 +385,6 @@ class Search_Filter_Cache
                 }
             }
         }
-
     }
 
 
@@ -394,7 +393,7 @@ class Search_Filter_Cache
         foreach ($filters as $filter_name) {
 
             $filter_terms_init = false;
-
+           
             if(isset($this->filters[$filter_name]['filter_terms']))
             {
                 $filter_terms_init = true;
@@ -404,7 +403,7 @@ class Search_Filter_Cache
 
                 /* TODO - this could be used to find min / max - but all searches are performed on active_terms */
                 if ($this->filters[$filter_name]['type'] == "choice") {
-
+                   
                     $filter_terms = array();
                     $filter_terms_trans = array();
                     $cache_key = 'filter_terms_' . $this->sfid . '_' . $filter_name;
@@ -492,7 +491,6 @@ class Search_Filter_Cache
                 }
 
                 foreach ($filter_terms as $filter_term) {
-
                     $this->init_filter_term($filter_term, $filter_name);
 
                 }
@@ -825,7 +823,6 @@ class Search_Filter_Cache
 
 			}
         }
-
 
         //if(!$already_init) {
         foreach ($this->filters as $filter_name => $filter) {
@@ -2097,7 +2094,13 @@ class Search_Filter_Cache
 
         global $wpdb;
 
+        // TODO - should use binary from the start.
+        $use_binary_columns = apply_filters( 'search_filter_cache_use_binary_terms', false );
+
         $field_col_select = "field_value";
+        if ( $use_binary_columns === true ) {
+            $field_col_select = "BINARY( field_value ) AS field_value";
+        }
         if($source=="taxonomy")
         {
             $field_col_select = "field_value_num as field_value";
