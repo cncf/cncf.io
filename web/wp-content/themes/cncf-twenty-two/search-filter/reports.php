@@ -41,11 +41,13 @@ if ( $query->have_posts() ) : ?>
 		// If end of a year, insert a closing div.
 		if ( $y !== $report_year ) {
 			if ( 0 !== $y ) {
-				echo '</div>';
+				?>
+				</div>
+				<div style="height:50px" aria-hidden="true" class="wp-block-spacer is-style-30-50"></div>
+				<?php
 			}
 			?>
-<div style="height:50px" aria-hidden="true"
-	class="wp-block-spacer is-style-30-50"></div>
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer is-style-30-50"></div>
 
 <h2><?php echo esc_html( $report_year ); ?></h2>
 
