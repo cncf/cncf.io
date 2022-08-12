@@ -63,9 +63,7 @@ $classes = LF_Utils::merge_classes(
 			aria-hidden="true" class="wp-block-spacer">
 		</div>
 		<?php
-		if ( 77337 !== $post->ID ) {
-			get_template_part( 'components/social-share' );
-		}
+		get_template_part( 'components/social-share' );
 		?>
 	</article>
 </main>
