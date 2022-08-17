@@ -30,7 +30,7 @@ get_template_part( 'components/header' );
 wp_enqueue_style( 'cto-summit-eu-22', get_template_directory_uri() . '/build/cto-summit-eu-22.min.css', array(), filemtime( get_template_directory() . '/build/cto-summit-eu-22.min.css' ), 'all' );
 
 // setup sharing icons data..
-$caption  = 'Read the CNCF KubeCon + CloudNativeCon Europe 2022 Transparency Report ';
+$caption  = 'Read the CTO Summit Report: Resiliency in Multi-Cloud ';
 $page_url = rawurlencode( get_permalink() );
 $caption  = htmlspecialchars( rawurlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
 $options  = get_option( 'lf-mu' );
