@@ -63,7 +63,7 @@ get_template_part( 'components/skip-link-target' );
 							alt="KubeCon + CloudNativeCon Europe 2022 Logo"
 							loading="eager">
 
-						<h1 class="hero__title uppercase">CTO Summit: Resiliency in Multi-Cloud
+						<h1 class="hero__title uppercase">CTO Summit <br/><span style="font-weight: 400">Resiliency in <br/>Multi-Cloud</span>
 						</h1>
 
 						<div class="hero__hr"></div>
@@ -1245,7 +1245,7 @@ Many services, such as DNS, CDNs, and artifact storage, can be instantiated in p
 						<a href="https://www.cncf.io"
 							title="Cloud Native Computing Foundation"><img
 								src="<?php LF_utils::get_svg( $report_folder . 'cncf-logo.svg', true ); ?>"
-								alt="CNCF" width="280" height="54"></a>
+								alt="CNCF" width="280" height="54" loading="lazy"></a>
 						<div aria-hidden="true" class="report-spacer-40"></div>
 						<p>The <a href="https://www.cncf.io" title="Cloud Native Computing Foundation">Cloud Native Computing Foundation</a> (CNCF) hosts critical components of the global technology infrastructure. It brings together the world's top developers, end users, and vendors and run the largest open source developer conferences. CNCF is the open source, vendor-neutral hub of cloud native computing, hosting projects like Kubernetes and Prometheus to make cloud native universal and sustainable. The CNCF is part of the <a href="https://linuxfoundation.org/" title="The Linux Foundation">Linux Foundation</a>.</p>
 					</div>
@@ -1253,7 +1253,7 @@ Many services, such as DNS, CDNs, and artifact storage, can be instantiated in p
 						<a href="https://www.linuxfoundation.org/research/" title="Linux Foundation Research"><img
 								src="<?php LF_utils::get_image( $report_folder . 'logo-lf-research.png' ); ?>"
 								alt="The Linux Foundation Research" width="269"
-								height="48"></a>
+								height="48" loading="lazy"></a>
 						<div aria-hidden="true" class="report-spacer-40"></div>
 						<p>Founded in 2021, <a href="https://www.linuxfoundation.org/research/" title="Linux Foundation Research">Linux Foundation Research</a> explores the growing scale of open source collaboration, providing insight into emerging technology trends, best practices, and the global impact of open source projects. Through leveraging project databases and networks, and a commitment to best practices in quantitative and qualitative methodologies, Linux Foundation Research is creating the go-to library for open source insights for the benefit of organizations the world over.</p>
 					</div>
@@ -1274,7 +1274,7 @@ Many services, such as DNS, CDNs, and artifact storage, can be instantiated in p
 						<a href="https://creativecommons.org/licenses/by-nd/2.0/"
 							title="Creative Commons">
 							<img src="<?php LF_utils::get_image( $report_folder . 'copyright.png' ); ?>"
-								alt="Attribution-NoDerivs 2.0 Generic (CC BY-ND 2.0)"
+								alt="Attribution-NoDerivs 2.0 Generic (CC BY-ND 2.0)" loading="lazy"
 								width="190" height="69">
 						</a>
 					</div>
