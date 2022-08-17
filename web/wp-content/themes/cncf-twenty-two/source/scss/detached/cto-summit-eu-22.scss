@@ -1,0 +1,847 @@
+// CTO Summit EU 2022 Transparency Report
+
+// Redeclare Fonts here, in case theme and font changes in the future.
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 200;
+	font-style: normal;
+	src: local('ClarityCity-Light'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 400;
+	font-style: normal;
+	src: local('ClarityCity-Regular'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 600;
+	font-style: normal;
+	src: local('ClarityCity-SemiBold'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 700;
+	font-style: normal;
+	src: local('ClarityCity-Bold'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 800;
+	font-style: normal;
+	src: local('ClarityCity-ExtraBold'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.ttf') format('ttf');
+}
+
+// Source Serif Pro - Italic 400
+@font-face {
+	font-display: fallback;
+	font-family: 'Source Serif Pro';
+	font-style: italic;
+	font-weight: 400;
+	src: local('SourceSerifPro-It'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.ttf') format('ttf');
+}
+
+// Source Serif Pro - Italic 700
+@font-face {
+	font-display: fallback;
+	font-family: 'Source Serif Pro';
+	font-style: italic;
+	font-weight: 700;
+	src: local('SourceSerifPro-BoldIt'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff2')
+			format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.ttf') format('ttf');
+}
+
+// font-stack.
+$font-cto-summit-eu-22: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+	Roboto, Ubuntu, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$font-cto-summit-eu-22-serif: 'Source Serif Pro', serif;
+
+$cto-summit-eu-22-black: #000000;
+$cto-summit-eu-22-white: #ffffff;
+
+$cto-summit-eu-22-gray-100: #fdfdfd;
+$cto-summit-eu-22-orange-700: #f36a11;
+
+html {
+	visibility: visible !important;
+}
+
+.cto-summit-eu-22 {
+	font-family: $font-cto-summit-eu-22;
+	color: $cto-summit-eu-22-black;
+	line-height: 180%;
+	padding-bottom: 100px;
+
+	/**
+	TYPOGRAPHY
+	**/
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 0;
+	}
+
+	p + p {
+		margin-top: 30px;
+	}
+
+	h1,
+	h2 {
+		line-height: 120%;
+	}
+
+	.uppercase {
+		text-transform: uppercase;
+	}
+
+	/**
+	HIDE/SHOW
+	**/
+
+	.show-over-1000 {
+		display: none;
+		@media (min-width: 1000px) {
+			display: block;
+		}
+	}
+
+	/**
+	TOOLS
+	**/
+
+	// Background image object fit.
+	.background-image-wrapper {
+		overflow: hidden;
+		position: relative;
+		&.section-break {
+			height: 300px;
+			@media (min-width: 1000px) {
+				height: 600px;
+			}
+		}
+	}
+
+	.background-image-figure {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+		}
+		&.darken-on-mobile {
+			@media (max-width: 999px) {
+				&:after {
+					background-color: $cto-summit-eu-22-black;
+					background-size: cover;
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 2;
+					opacity: 0.25;
+					mix-blend-mode: multiply;
+				}
+			}
+		}
+	}
+
+	.background-image-text-overlay {
+		position: relative;
+		z-index: 2;
+	}
+
+	.is-style-down-gradient {
+		background-image: url('/wp-content/themes/cncf-twenty-two/images/reports/cto-summit-eu-22/bg-gradient-gray-down.png'),
+			linear-gradient($cto-summit-eu-22-gray-100, $cto-summit-eu-22-gray-100);
+		background-repeat: repeat-x;
+		background-position: 0 top;
+		padding: 0; // reset.
+		padding-top: 80px;
+		@media (min-width: 1000px) {
+			padding-top: 120px;
+		}
+	}
+
+	.is-style-see-all {
+		@media (max-width: 999px) {
+			position: relative;
+			margin-bottom: 80px;
+			display: block;
+		}
+		@media (min-width: 1000px) {
+			.wp-block-columns > .wp-block-column:last-child {
+				text-align: right;
+			}
+		}
+
+		.is-style-link-cta {
+			font-size: 16px;
+			margin-top: 24px;
+			@media (max-width: 500px) {
+				white-space: nowrap;
+			}
+			@media (min-width: 710px) {
+				margin-top: auto;
+				align-self: flex-start;
+			}
+			@media (max-width: 999px) {
+				position: absolute;
+				bottom: 0 - 30px - 50px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			@media (min-width: 1000px) {
+				margin-bottom: 25px;
+			}
+		}
+	}
+
+	.section-title-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding-bottom: 35px;
+		margin-bottom: 60px;
+		border-bottom: 9px solid $cto-summit-eu-22-orange-700;
+		@media (min-width: 1000px) {
+			padding-bottom: 60px;
+			margin-bottom: 80px;
+		}
+	}
+
+	.section-header {
+		font-weight: 800;
+		line-height: 120%;
+		letter-spacing: 0.05em;
+		font-size: 28px;
+		text-transform: uppercase;
+		@media (min-width: 1200px) {
+			font-size: 50px;
+		}
+	}
+
+	.section-number {
+		font-family: $font-cto-summit-eu-22-serif;
+		font-style: italic;
+		font-size: 16px;
+		@media (min-width: 600px) {
+			font-size: 24px;
+		}
+		line-height: 120%;
+		letter-spacing: 0.05em;
+		@media (min-width: 1000px) {
+			font-size: 32px;
+		}
+	}
+
+	.sub-header {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 150%;
+		text-transform: uppercase;
+	}
+
+	.small-header {
+		font-weight: 700;
+		font-size: 20px;
+	}
+
+	.shadow-hr {
+		width: 100%;
+		height: 10px;
+		background: linear-gradient(180deg, #c4c4c4 0%, rgba(196, 196, 196, 0) 100%);
+		opacity: 0.15;
+		margin-top: 70px;
+		margin-bottom: 70px;
+		@media (min-width: 1200px) {
+			margin-top: 110px;
+			margin-bottom: 110px;
+		}
+	}
+
+	.paragraph-quote {
+		border-left: 8px solid $cto-summit-eu-22-orange-700;
+		padding-left: 20px;
+		@media (min-width: 1000px) {
+			padding-left: 35px;
+		}
+		margin-top: 30px;
+		margin-bottom: 30px;
+		&.larger {
+			line-height: 160%;
+			font-size: 22px;
+			font-style: italic;
+			@media (min-width: 1000px) {
+				font-size: 30px;
+			}
+		}
+	}
+
+	.quote-container {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		margin-bottom: 46px;
+		@media (max-width: 600px) {
+			width: calc(100% - 20px);
+			margin-left: 20px;
+		}
+		@media (min-width: 1000px) {
+			margin-bottom: 55px;
+		}
+		&:before {
+			background-image: url("data:image/svg+xml,%3Csvg width='78' height='56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.76 55.056c12.96-9.36 24.048-22.176 24.048-37.152C33.808 7.536 28.336.48 19.408.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352zm43.2 0c12.96-9.36 24.048-22.176 24.048-37.152C77.008 7.536 71.536.48 62.608.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352z' fill='%23F36A11' /%3E%3C/svg%3E");
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-repeat: no-repeat;
+			width: 64px;
+			height: 46px;
+			background-size: 64px 46px;
+			@media (min-width: 1000px) {
+				width: 74px;
+				height: 55px;
+				background-size: 74px 55px;
+			}
+		}
+		&__quote {
+			font-style: italic;
+			line-height: 160%;
+			font-size: 20px;
+			margin-bottom: 20px;
+			@media (min-width: 1200px) {
+				font-size: 30px;
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	@media (min-width: 600px) {
+		ul {
+			margin-left: 10px;
+		}
+	}
+
+	ol,
+	ul {
+		li {
+			margin-bottom: 6px;
+		}
+	}
+
+	ol {
+		list-style-position: inside;
+	}
+
+	.alpha {
+		list-style-type: lower-alpha;
+		list-style-position: inside;
+	}
+
+	.roman {
+		list-style-type: lower-roman;
+		list-style-position: inside;
+	}
+
+	.long-word {
+		word-break: break-all;
+		hyphens: auto;
+		-webkit-hyphens: auto;
+	}
+
+	.bold-number {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 1;
+		color: $cto-summit-eu-22-orange-700;
+		width: 20px;
+		margin-right: 25px;
+		margin-top: 5px;
+	}
+
+	.number-align {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		margin-bottom: 40px;
+		@media (min-width: 1000px) {
+			margin-bottom: 60px;
+		}
+	}
+
+	/**
+	* SOCIAL SHARE
+	**/
+	.social-share {
+		color: $cto-summit-eu-22-white;
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		&__title {
+			color: $cto-summit-eu-22-white;
+			margin-right: 20px;
+			line-height: 1;
+			font-size: 14px;
+			font-weight: 700;
+			margin-bottom: 0;
+			letter-spacing: 0.15em;
+			@media (min-width: 1000px) {
+				font-size: 16px;
+			}
+		}
+		&__wrapper {
+			display: flex;
+			> a {
+				display: block;
+				text-align: center;
+				margin-right: 20px;
+			}
+
+			svg {
+				color: $cto-summit-eu-22-white;
+				display: block;
+				max-width: 100%;
+				height: 24px;
+				width: auto;
+				@media (min-width: 412px) {
+					height: 30px;
+				}
+				&:hover {
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+
+	/**
+	SPACERS
+	**/
+
+	.report-spacer-20 {
+		height: 20px;
+	}
+
+	.report-spacer-40 {
+		height: 20px;
+		@media (min-width: 1000px) {
+			height: 35px;
+		}
+		@media (min-width: 1200px) {
+			height: 40px;
+		}
+	}
+
+	.report-spacer-60 {
+		height: 40px;
+		@media (min-width: 1000px) {
+			height: 50px;
+		}
+		@media (min-width: 1200px) {
+			height: 60px;
+		}
+	}
+
+	.report-spacer-120 {
+		height: 60px;
+		@media (min-width: 1000px) {
+			height: 100px;
+		}
+		@media (min-width: 1200px) {
+			height: 120px;
+		}
+	}
+
+	/**
+	HERO
+	**/
+	.hero {
+		color: $cto-summit-eu-22-white;
+		&__wrapper {
+			@media (min-width: 800px) {
+				width: 675px;
+			}
+		}
+		&__container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		@media (max-width: 600px) {
+			.background-image-figure img {
+				object-position: 40% center;
+			}
+		}
+		&__logo {
+			margin-top: 50px;
+			margin-bottom: 20px;
+			max-width: 54%;
+			@media (min-width: 1200px) {
+				margin-top: 85px;
+				margin-bottom: 40px;
+			}
+		}
+		&__title {
+			line-height: 1.3;
+			letter-spacing: 0.15em;
+			margin-bottom: 30px;
+			font-weight: 800;
+			font-size: 25px;
+			@media (min-width: 372px) {
+				font-size: 28px;
+			}
+			@media (min-width: 412px) {
+				font-size: 32px;
+			}
+			@media (min-width: 550px) {
+				font-size: 40px;
+			}
+			@media (min-width: 1000px) {
+				font-size: 50px;
+			}
+			@media (min-width: 1200px) {
+				font-size: 60px;
+				margin-bottom: 35px;
+			}
+		}
+		&__hr {
+			width: 100%;
+			height: 1px;
+			background-color: $cto-summit-eu-22-white;
+			margin-bottom: 35px;
+			@media (min-width: 412px) {
+				margin-bottom: 40px;
+			}
+			@media (min-width: 1000px) {
+				margin-bottom: 55px;
+			}
+		}
+		&__button-share-align {
+			margin-bottom: 40px;
+			display: flex;
+			flex-direction: column-reverse;
+			@media (min-width: 1000px) {
+				margin-bottom: 80px;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			> div {
+				margin-bottom: 30px;
+				@media (min-width: 412px) {
+					margin-bottom: 35px;
+				}
+				@media (min-width: 1000px) {
+					margin-bottom: 0;
+				}
+			}
+			.hero__button {
+				.wp-block-button__link {
+					max-width: max-content;
+					min-width: max-content;
+				}
+			}
+		}
+	}
+
+	/**
+	* GRIDS
+	*/
+	.lf-grid {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		column-gap: 3%;
+		row-gap: 50px;
+	}
+
+	.restrictive-column {
+		grid-column: span 12;
+		@media (min-width: 600px) {
+			grid-column: span 9;
+		}
+	}
+
+	.section-01 {
+		margin-top: 80px;
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+			margin-bottom: 120px;
+		}
+		&__title {
+			grid-column: span 12;
+			margin-bottom: 30px;
+			@media (min-width: 1000px) {
+				grid-column: span 6;
+				font-size: 50px;
+				margin-bottom: 40px;
+			}
+		}
+		&__grid {
+			&-col1 {
+				line-height: 160%;
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 9;
+				}
+				@media (min-width: 1000px) {
+					grid-column: span 7;
+				}
+				@media (min-width: 1200px) {
+					padding-right: 40px;
+				}
+			}
+			&-col2 {
+				display: grid;
+				grid-column: span 12;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto;
+				gap: 0;
+				@media (min-width: 600px) {
+					grid-column: span 12;
+				}
+				@media (min-width: 1000px) {
+					// From column 9 to the end.
+					grid-column: 9 / -1;
+					align-content: flex-start;
+				}
+				@media (min-width: 1200px) and (min-height: 950px) {
+					&-inner {
+						position: sticky;
+						top: calc(80px + 20px);
+					}
+				}
+				.sub-header {
+					margin-bottom: 20px;
+				}
+				&-commitee-wrapper {
+					display: grid;
+					grid-template-columns: 1fr;
+					@media (min-width: 600px) {
+						grid-template-columns: 1fr 1fr;
+						gap: 0px 60px;
+					}
+					@media (min-width: 1000px) {
+						grid-template-columns: 1fr;
+					}
+				}
+				.commitee {
+					display: flex;
+					align-items: flex-start;
+					font-family: $font-cto-summit-eu-22-serif;
+					font-style: italic;
+					font-weight: 700;
+					font-size: 20px;
+					margin-top: 40px;
+					padding-bottom: 50px;
+					border-bottom: 1px solid #d0d0d0;
+					&__image {
+						width: 100px;
+						border-radius: 50%;
+						margin-right: 20px;
+						@media (min-width: 800px) {
+							margin-right: 30px;
+						}
+					}
+					&__logo {
+						max-width: 180px;
+						max-height: 38px;
+						object-fit: contain;
+						object-position: left;
+					}
+					&__text {
+						display: flex;
+						flex-direction: column;
+						p {
+							margin-bottom: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.section-02 {
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+	}
+
+	.section-03 {
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+	}
+
+	.section-05 {
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+	}
+
+	.section-07 {
+		margin-top: 80px;
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-top: 120px;
+			margin-bottom: 120px;
+		}
+	}
+
+	.section-09 {
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+	}
+
+	.section-10 {
+		// Include allowance for See All.
+		margin-bottom: calc(70px + 80px);
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+		&__slider {
+			margin-top: 50px;
+			@media (min-width: 800px) {
+				.slick-list {
+					padding-right: 25%;
+				}
+			}
+			.slick-track {
+				display: flex !important;
+			}
+			.slick-slide {
+				max-height: 500px;
+				height: inherit !important;
+				@media (min-width: 800px) {
+					margin-right: 20px;
+				}
+				> div {
+					height: 100%;
+					> div {
+						height: 100%;
+					}
+				}
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+		&__controls {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 20px;
+		}
+		&__prev {
+			margin-right: 25px;
+		}
+	}
+
+	.section-11 {
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+		.disclaimer {
+			font-size: 12px;
+		}
+	}
+
+	// Thank you.
+	.section-12 {
+		.social-share {
+			color: $cto-summit-eu-22-black;
+			&__title {
+				color: $cto-summit-eu-22-black;
+			}
+			svg {
+				color: $cto-summit-eu-22-black;
+			}
+		}
+		.authors {
+			row-gap: 100px;
+			max-width: 100%;
+			@media (min-width: 1000px) {
+				column-gap: 80px;
+			}
+			&__col1,
+			&__col2 {
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 9;
+				}
+				@media (min-width: 1000px) {
+					grid-column: span 6;
+				}
+			}
+		}
+		.copyright {
+			row-gap: 50px;
+			@media (min-width: 1000px) {
+				column-gap: 80px;
+			}
+			&__col1 {
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 9;
+				}
+			}
+			&__col2 {
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 4;
+				}
+				@media (min-width: 1000px) {
+					grid-column: 10 / -1;
+				}
+			}
+		}
+	}
+	//
+	// end.
+}
