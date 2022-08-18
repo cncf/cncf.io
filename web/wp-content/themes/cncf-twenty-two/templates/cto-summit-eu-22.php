@@ -51,7 +51,7 @@ get_template_part( 'components/skip-link-target' );
 		<section class="hero alignfull background-image-wrapper">
 
 			<figure class="background-image-figure darken-on-mobile">
-				<?php LF_Utils::display_responsive_images( 77933, 'full', '1440px', false, 'eager', 'CTO Summit EU 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 78067, 'full', '1440px', false, 'eager', 'Priyanka and Taylor on stahe at the CTO Summit EU 2022' ); ?>
 			</figure>
 			<div class="background-image-text-overlay">
 				<div class="container wrap hero__container">
@@ -283,8 +283,7 @@ get_template_part( 'components/skip-link-target' );
 								regardless of the industry sector, business
 								model, or technological maturity.</li>
 							<li>Multi-cloud architecture requires new thinking
-								models, workflows, and cloud native projects.
-							</li>
+								models, workflows, and cloud native projects.</li>
 							<li>Implementing a resilient Multi-Cloud solution is
 								where we will see the most diversity in adoption
 								and maintenance. </li>
@@ -466,7 +465,7 @@ get_template_part( 'components/skip-link-target' );
 				<div class="lf-grid">
 					<div class="restrictive-column">
 
-						<h2 class="sub-header">1) Managing the Cloud Native
+						<h2 class="sub-header"><span class="orange-text">1.</span> Managing the Cloud Native
 							Ecosystem</h2>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
@@ -678,7 +677,7 @@ get_template_part( 'components/skip-link-target' );
 			<div class="lf-grid">
 				<div class="restrictive-column">
 
-					<h2 class="sub-header">2) Multi-Cloud Availability</h2>
+					<h2 class="sub-header"><span class="orange-text">2.</span> Multi-Cloud Availability</h2>
 
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -904,7 +903,7 @@ get_template_part( 'components/skip-link-target' );
 					<div class="section-number">5/6</div>
 				</div>
 
-				<h2 class="sub-header">Appendix A: Summit Process</h2>
+				<h2 class="sub-header"><span class="orange-text">Appendix A:</span> Summit Process</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -946,7 +945,7 @@ get_template_part( 'components/skip-link-target' );
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="sub-header">Appendix B: Sub-topics</h2>
+				<h2 class="sub-header"><span class="orange-text">Appendix B:</span> Sub-topics</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -965,7 +964,7 @@ get_template_part( 'components/skip-link-target' );
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="sub-header">Appendix C: Discussion Framework</h2>
+				<h2 class="sub-header"><span class="orange-text">Appendix C:</span> Discussion Framework</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1031,7 +1030,7 @@ get_template_part( 'components/skip-link-target' );
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="sub-header">Appendix D: Glossary</h2>
+				<h2 class="sub-header"><span class="orange-text">Appendix D:</span> Glossary</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
