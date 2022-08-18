@@ -117,16 +117,12 @@ endif;
 												$query->the_post();
 
 												get_template_part( 'components/main-menu-item' );
-
-	endwhile;
+									endwhile;
 									endif;
 									endif;
 									wp_reset_postdata();
-
-
 									get_template_part( 'components/next-event' );
 									?>
-
 							</div>
 						</div>
 						</div>
