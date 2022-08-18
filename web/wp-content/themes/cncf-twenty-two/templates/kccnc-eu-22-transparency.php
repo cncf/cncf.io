@@ -325,9 +325,9 @@ General Manager, CNCF</p>
 							<path
 								d="M10.4131 17.627L2.41309 9.62695L10.4131 1.62695"
 								stroke="black" stroke-width="3" />
+							</svg>
 							<span class="screen-reader-text">Previous
 								Photo</span>
-						</svg>
 					</button>
 					<button class="button-reset section-02__next"><svg
 							width="12" height="19" viewBox="0 0 12 19"
@@ -335,8 +335,8 @@ General Manager, CNCF</p>
 							<path
 								d="M1.41309 1.62695L9.41309 9.62695L1.41309 17.627"
 								stroke="black" stroke-width="3" />
+							</svg>
 							<span class="screen-reader-text">Next Photo</span>
-						</svg>
 					</button>
 				</div>
 
