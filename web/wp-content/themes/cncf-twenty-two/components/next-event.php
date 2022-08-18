@@ -44,7 +44,7 @@ if ( $event_logo_id && $event_cta_text && $event_cta_link ) :
 		<div class="next-event__col2">
 			<figure class="next-event__figure">
 				<?php
-				Lf_Utils::display_responsive_images( $event_background_image_id, 'full', '600px', 'next-event__bg-image' );
+				Lf_Utils::display_responsive_images( $event_background_image_id, 'full', '600px', 'next-event__bg-image', 'lazy', 'The next event from CNCF' );
 				?>
 			</figure>
 		</div>

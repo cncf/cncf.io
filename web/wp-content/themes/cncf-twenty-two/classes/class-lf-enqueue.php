@@ -47,8 +47,8 @@ class LF_Enqueue {
 			wp_enqueue_style( 'main', get_template_directory_uri() . '/build/styles.min.css', array(), filemtime( get_template_directory() . '/build/styles.min.css' ), 'all' );
 		}
 
-		// Annual report 21 optimisations.
-		if ( is_front_page() || is_page_template( 'templates/annual-report-2021.php' ) ) {
+		// Report optimisations.
+		if ( is_front_page() || is_singular( 'lf_report' ) ) {
 			wp_dequeue_style( 'search-filter-plugin-styles' );
 			wp_dequeue_style( 'ctf_styles' );
 		}
