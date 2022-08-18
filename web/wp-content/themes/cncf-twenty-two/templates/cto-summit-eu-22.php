@@ -63,7 +63,9 @@ get_template_part( 'components/skip-link-target' );
 							alt="KubeCon + CloudNativeCon Europe 2022 Logo"
 							loading="eager">
 
-						<h1 class="hero__title uppercase">CTO Summit <br/><span style="font-weight: 400">Resiliency in <br/>Multi-Cloud</span>
+						<h1 class="hero__title uppercase">CTO Summit <br /><span
+								style="font-weight: 400">Resiliency in
+								<br />Multi-Cloud</span>
 						</h1>
 
 						<div class="hero__hr"></div>
@@ -194,10 +196,13 @@ get_template_part( 'components/skip-link-target' );
 									height="100">
 								<div class="commitee__text">
 									<p><strong>Ricardo Torres</strong></p>
-									<img class="commitee__logo" loading="lazy"
-										src="<?php LF_utils::get_svg( $report_folder . 'logo-boeing.svg', true ); ?>"
-										alt="Boeing Logo" width="180"
-										height="38">
+									<a href="https://www.boeing.com/"
+										title="Visit Boeing">
+										<img class="commitee__logo"
+											loading="lazy"
+											src="<?php LF_utils::get_svg( $report_folder . 'logo-boeing.svg', true ); ?>"
+											alt="Boeing Logo" width="180"
+											height="38"></a>
 								</div>
 							</div>
 							<div class="commitee">
@@ -207,16 +212,13 @@ get_template_part( 'components/skip-link-target' );
 									height="100">
 								<div class="commitee__text">
 									<p><strong>Pratik Wadher</strong></p>
-									<a href="https://www.boeing.com/"
-										title="Visit Boeing">
-										<a href="https://www.intuit.com/"
-											title="Visit Intuit">
-											<img class="commitee__logo"
-												loading="lazy"
-												src="<?php LF_utils::get_svg( $report_folder . 'logo-intuit.svg', true ); ?>"
-												alt="Intuit Logo" width="180"
-												height="38">
-										</a>
+									<a href="https://www.intuit.com/"
+										title="Visit Intuit">
+										<img class="commitee__logo"
+											loading="lazy"
+											src="<?php LF_utils::get_svg( $report_folder . 'logo-intuit.svg', true ); ?>"
+											alt="Intuit Logo" width="180"
+											height="38">
 									</a>
 								</div>
 							</div>
@@ -408,20 +410,20 @@ get_template_part( 'components/skip-link-target' );
 			</div>
 		</section>
 
-		<section
+		<div
 			class="section-04 alignfull background-image-wrapper section-break">
 			<figure class="background-image-figure">
 				<?php LF_Utils::display_responsive_images( 77932, 'full', '1440px', false, 'lazy', 'Conference attendees relaxing' ); ?>
 			</figure>
-		</section>
+		</div>
 
 		<section class="section-05 is-style-down-gradient alignfull">
 
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Breakout <br />
-						Sessions</h2>
+					<h2 class="section-header">Discussion <br />
+						Topics</h2>
 					<div class="section-number">3/6</div>
 				</div>
 
@@ -513,8 +515,7 @@ get_template_part( 'components/skip-link-target' );
 								right choice today might not be the best
 								tomorrow. The solution to the business problem
 								should be the driver and not a particular
-								technical interest. Eliminate the "Not Invented
-								Here" mindset.
+								technical interest.
 							</li>
 							<li><strong>Embrace regulatory reality</strong>. We
 								all exist in regulated industries, as the
@@ -665,12 +666,12 @@ get_template_part( 'components/skip-link-target' );
 			</div>
 		</section>
 
-		<section
+		<div
 			class="section-06 alignfull background-image-wrapper section-break">
 			<figure class="background-image-figure">
 				<?php LF_Utils::display_responsive_images( 77930, 'full', '1440px', false, 'lazy', 'Attendees at KubeCon+CloudNativeCon Europe 2022' ); ?>
 			</figure>
-		</section>
+		</div>
 
 		<section class="section-07">
 
@@ -722,8 +723,8 @@ get_template_part( 'components/skip-link-target' );
 					<ul>
 						<li>Recognize that data is both easy and complicated.
 							Using Multi-Cloud to duplicate your data on
-							different clouds is a positive and so-called "easy
-							win." The current pricing model supports that.
+							different clouds is a positive and so-called easy
+							win. The current pricing model supports that.
 							However, you should carefully review the ingress and
 							egress costs for your use case. The data location
 							policy is more complicated. Due to a missing
@@ -774,6 +775,7 @@ get_template_part( 'components/skip-link-target' );
 					</ul>
 
 					<div aria-hidden="true" class="report-spacer-20"></div>
+
 					<div class="quote-container">
 						<p
 							class="quote-container__quote">Understand the new rules.</p>
@@ -785,6 +787,7 @@ get_template_part( 'components/skip-link-target' );
 			<div class="shadow-hr"></div>
 
 			<h3 class="small-header">Gaps to be closed</h3>
+
 			<div aria-hidden="true" class="report-spacer-20"></div>
 
 			<div class="lf-grid">
@@ -798,12 +801,14 @@ get_template_part( 'components/skip-link-target' );
 							service, which was not replicated or distributed as
 							expected. As a result, the failure of a single AZ
 							resulted in an outage of the applications on the
-							other AZs. The information about missing replication
+							other zones. The information about missing
+							replication
 							or distribution was at the CSP side and not known by
 							the organization of the participant reporting the
 							issue.</li>
 					</ul>
 					<div aria-hidden="true" class="report-spacer-20"></div>
+
 					<div class="quote-container">
 						<p
 							class="quote-container__quote">AZs are not really AZs.</p>
@@ -839,16 +844,14 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 			</div>
 
-			</div>
-			</div>
 		</section>
 
-		<section
+		<div
 			class="section-08 alignfull background-image-wrapper section-break">
 			<figure class="background-image-figure">
 				<?php LF_Utils::display_responsive_images( 77931, 'full', '1440px', false, 'lazy', 'Conference attendee catching up on some work' ); ?>
 			</figure>
-		</section>
+		</div>
 
 		<section class="section-09 is-style-down-gradient alignfull">
 
@@ -875,7 +878,8 @@ get_template_part( 'components/skip-link-target' );
 							<li>Have a framework to easily contact peers or
 								knowledgeable persons on Multi-Cloud topics</li>
 							<li>Repeat the CTO summit with a new topic <a
-									href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/apply-cto-summit/" title="CTO Summit at KubeCon+CloudNativeCon North America 2022">
+									href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/apply-cto-summit/"
+									title="CTO Summit at KubeCon+CloudNativeCon North America 2022">
 									at the
 									next conference
 								</a></li>
@@ -949,22 +953,13 @@ get_template_part( 'components/skip-link-target' );
 				<div class="lf-grid">
 					<div class="restrictive-column">
 
-						<p><strong>Multi-Cloud management</strong><br/>
-Multi-Cloud is inevitable. It creeps in through best-of-breed services, company acquisitions, and just plain sprawl. In such a world, managing Kubernetes clusters, computing, and applications across multiple clouds require a unique set of tools and comprehensive workflows. Using strategies like GitOps and declarative infrastructure creates consistent environments, which are essential for operating systems at scale. This discussion aims to understand which kinds of workflow teams should implement to allow for massive infrastructure scaling without massively scaling team sizes or budgets.
-</p>
+						<p><strong>Multi-Cloud management</strong><br/>Multi-Cloud is inevitable. It creeps in through best-of-breed services, company acquisitions, and just plain sprawl. In such a world, managing Kubernetes clusters, computing, and applications across multiple clouds require a unique set of tools and comprehensive workflows. Using strategies like GitOps and declarative infrastructure creates consistent environments, which are essential for operating systems at scale. This discussion aims to understand which kinds of workflow teams should implement to allow for massive infrastructure scaling without massively scaling team sizes or budgets.</p>
 
-						<p><strong>Managing the cloud native ecosystem in your organization</strong><br/>
-Do you use a CNCF project by itself? There are unique challenges when running and configuring a project directly rather than through a managed service. The cloud native ecosystem has a vibrant community of particular interest, working, and technical action groups that create boundless updates across the ecosystem that can be difficult to keep up with. During this session, we will cover the practices that high-performance teams implement to stay up to date on project updates without wasting their time.
-</p>
+						<p><strong>Managing the cloud native ecosystem in your organization</strong><br/>Do you use a CNCF project by itself? There are unique challenges when running and configuring a project directly rather than through a managed service. The cloud native ecosystem has a vibrant community of particular interest, working, and technical action groups that create boundless updates across the ecosystem that can be difficult to keep up with. During this session, we will cover the practices that high-performance teams implement to stay up to date on project updates without wasting their time.</p>
 
-						<p><strong>What tenets of Multi-Cloud are essential for business?</strong><br/>
-Although cloud native technologies can help to support workload, workflow, data, and traffic portability, which tenants of Multi-Cloud are the most beneficial? Do you care about workflows that allow a consistent experience building applications, computing, networks, and storage? Maybe you'd like to write an application consistently and have the platform be dynamically configurable to meet your needs. In this session, we will discover which approaches are most beneficial to teams that operate at a Multi-Cloud scale, including examples of success that have been shared by our program committee from Boeing, Fidelity, Intel, and Intuit.
-</p>
+						<p><strong>What tenets of Multi-Cloud are essential for business?</strong><br/>Although cloud native technologies can help to support workload, workflow, data, and traffic portability, which tenants of Multi-Cloud are the most beneficial? Do you care about workflows that allow a consistent experience building applications, computing, networks, and storage? Maybe you'd like to write an application consistently and have the platform be dynamically configurable to meet your needs. In this session, we will discover which approaches are most beneficial to teams that operate at a Multi-Cloud scale, including examples of success that have been shared by our program committee from Boeing, Fidelity, Intel, and Intuit.</p>
 
-						<p><strong>Multi-Cloud availability</strong><br/>
-Many services, such as DNS, CDNs, and artifact storage, can be instantiated in public or private clouds. Despite many of these services being offered in major public clouds, relying on managed services does not always make sense when resiliency is the end goal. Which services make the most sense to run as managed services or federate between your various cloud offerings? This session will cover which services are requirements for achieving a resilient Multi-Cloud platform that promotes regular iteration and improvement.
-</p>
-
+						<p><strong>Multi-Cloud availability</strong><br/>Many services, such as DNS, CDNs, and artifact storage, can be instantiated in public or private clouds. Despite many of these services being offered in major public clouds, relying on managed services does not always make sense when resiliency is the end goal. Which services make the most sense to run as managed services or federate between your various cloud offerings? This session will cover which services are requirements for achieving a resilient Multi-Cloud platform that promotes regular iteration and improvement.</p>
 					</div>
 				</div>
 
@@ -1129,19 +1124,20 @@ Many services, such as DNS, CDNs, and artifact storage, can be instantiated in p
 								<path
 									d="M10.4131 17.627L2.41309 9.62695L10.4131 1.62695"
 									stroke="black" stroke-width="3" />
+								</svg>
 								<span class="screen-reader-text">Previous
 									Photo</span>
-							</svg>
 						</button>
-						<button class="button-reset section-10__next"><svg
+						<button class="button-reset section-10__next">
+							<svg
 								width="12" height="19" viewBox="0 0 12 19"
 								fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M1.41309 1.62695L9.41309 9.62695L1.41309 17.627"
 									stroke="black" stroke-width="3" />
+								</svg>
 								<span class="screen-reader-text">Next
 									Photo</span>
-							</svg>
 						</button>
 					</div>
 				</div>
@@ -1245,12 +1241,14 @@ Many services, such as DNS, CDNs, and artifact storage, can be instantiated in p
 						<a href="https://www.cncf.io"
 							title="Cloud Native Computing Foundation"><img
 								src="<?php LF_utils::get_svg( $report_folder . 'cncf-logo.svg', true ); ?>"
-								alt="CNCF" width="280" height="54" loading="lazy"></a>
+								alt="CNCF" width="280" height="54"
+								loading="lazy"></a>
 						<div aria-hidden="true" class="report-spacer-40"></div>
 						<p>The <a href="https://www.cncf.io" title="Cloud Native Computing Foundation">Cloud Native Computing Foundation</a> (CNCF) hosts critical components of the global technology infrastructure. It brings together the world's top developers, end users, and vendors and run the largest open source developer conferences. CNCF is the open source, vendor-neutral hub of cloud native computing, hosting projects like Kubernetes and Prometheus to make cloud native universal and sustainable. The CNCF is part of the <a href="https://linuxfoundation.org/" title="The Linux Foundation">Linux Foundation</a>.</p>
 					</div>
 					<div class="authors__col2">
-						<a href="https://www.linuxfoundation.org/research/" title="Linux Foundation Research"><img
+						<a href="https://www.linuxfoundation.org/research/"
+							title="Linux Foundation Research"><img
 								src="<?php LF_utils::get_image( $report_folder . 'logo-lf-research.png' ); ?>"
 								alt="The Linux Foundation Research" width="269"
 								height="48" loading="lazy"></a>
@@ -1274,8 +1272,8 @@ Many services, such as DNS, CDNs, and artifact storage, can be instantiated in p
 						<a href="https://creativecommons.org/licenses/by-nd/2.0/"
 							title="Creative Commons">
 							<img src="<?php LF_utils::get_image( $report_folder . 'copyright.png' ); ?>"
-								alt="Attribution-NoDerivs 2.0 Generic (CC BY-ND 2.0)" loading="lazy"
-								width="190" height="69">
+								alt="Attribution-NoDerivs 2.0 Generic (CC BY-ND 2.0)"
+								loading="lazy" width="190" height="69">
 						</a>
 					</div>
 				</div>
@@ -1283,8 +1281,6 @@ Many services, such as DNS, CDNs, and artifact storage, can be instantiated in p
 			</div>
 
 		</section>
-
-
 	</article>
 </main>
 <?php
