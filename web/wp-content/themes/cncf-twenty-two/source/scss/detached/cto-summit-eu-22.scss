@@ -794,6 +794,19 @@ html {
 		.disclaimer {
 			font-size: 12px;
 		}
+		.author {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-top: 30px;
+			&__image {
+				width: 100px;
+				height: auto;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-right: 30px;
+			}
+		}
 	}
 
 	// Thank you.

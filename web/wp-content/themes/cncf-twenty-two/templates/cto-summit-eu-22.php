@@ -1164,7 +1164,11 @@ get_template_part( 'components/skip-link-target' );
 
 						<p>Finally, thanks go to Priyanka Sharma (executive director of the CNCF) and the more than 20 participants of the CTO summit. Where Priyanka's leadership and vision had set the tone and the spirit for the event, the participant's discussions and insights helped craft a rich foundation for this report. </p>
 
-						<p><strong>Dr. Udo Seidel </strong><br/>Report author</p>
+						<div class="author">
+							<img src="<?php LF_utils::get_image( $report_folder . 'dr-udo-seidel.jpg' ); ?>" alt="Dr. Udo Seidel" width="200" height="200" loading="lazy" class="author__image">
+							<p><strong>Dr. Udo Seidel </strong><br/>Report author</p>
+						</div>
+
 
 					</div>
 				</div>
@@ -1211,7 +1215,6 @@ get_template_part( 'components/skip-link-target' );
 							title="Share on Twitter"
 							href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-twitter.svg' ); ?></a>
 						<?php endif; ?>
-
 
 						<!-- sendto email -->
 						<?php if ( $mailto_url ) : ?>
