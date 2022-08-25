@@ -1158,7 +1158,7 @@ get_template_part( 'components/skip-link-target' );
 
 						<p>Many thanks to the content committee members Pratik Wadher from Intuit, Ricardo Torres from Boeing, and Amr Abdelhalem from Fidelity, who steered the development of the discussion topics for this and future summits. Additional thanks go to Arun Gupta from Intel, who as the governing board chair, was involved in the preparation and execution of the event. Thanks also go to the facilitators Pratik Wadher and Henrik Blixt from Intuit and Ricardo Torres from Boeing, who managed to inspire a discussion on trending cloud native topics while giving participants plenty of room to explore the issues. In addition, this distinguished group of people was instrumental in reviewing this report and raising it to the needed and desired quality.</p>
 
-						<p>Special thanks to Orca Security and Tigera for generously sponsoring the reception and dinner that followed the May 18 Summit. </p>
+						<p>Special thanks to <a href="https://orca.security" title="Visit Orca Security">Orca Security</a> and <a href="https://www.tigera.io" title="Visit Tigera">Tigera</a> for generously sponsoring the reception and dinner that followed the May 18 Summit. </p>
 
 						<p>Thanks to the Linux Foundation and CNCF team members Taylor Dolezal, Paige O'Connor, and Kristi Tan for their contributions to the summit and to the events team, who took care of the logistics before, during, and after the event, in particular Vanessa Heric and Wendi West. Thanks also go to Hilary Carter, Linux Foundation Vice President of Research, for her work as the internal and external facilitator—not only related to the event but also for the management and production of this report.</p>
 
