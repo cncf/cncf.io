@@ -31,7 +31,7 @@ wp_enqueue_style( 'cto-summit-eu-22', get_template_directory_uri() . '/build/cto
 
 // setup sharing icons data..
 $caption  = 'Read the CTO Summit Report: Resiliency in Multi-Cloud ';
-$page_url = rawurlencode( get_permalink() );
+$page_url = rawurlencode( 'https://www.cncf.io/get-cto-summit-report/' );
 $caption  = htmlspecialchars( rawurlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
 $options  = get_option( 'lf-mu' );
 $options && $options['social_twitter_handle'] ? $twitter = $options['social_twitter_handle'] : $twitter = '';
