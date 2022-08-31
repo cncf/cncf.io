@@ -242,16 +242,16 @@
         },
         {
             "name": "pantheon-systems/wordpress-composer",
-            "version": "6.0.1",
+            "version": "6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "807cb404018da456edaa9de985d59e2c6304b0cd"
+                "reference": "330f97b92f5f636f09f83bf054c24976da9db9d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/807cb404018da456edaa9de985d59e2c6304b0cd",
-                "reference": "807cb404018da456edaa9de985d59e2c6304b0cd",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/330f97b92f5f636f09f83bf054c24976da9db9d3",
+                "reference": "330f97b92f5f636f09f83bf054c24976da9db9d3",
                 "shasum": ""
             },
             "require": {
@@ -269,10 +269,10 @@
             ],
             "description": "WordPress for Pantheon with a composer.json file.",
             "support": {
-                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.0.1",
+                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.0.2",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2022-07-12T21:06:58+00:00"
+            "time": "2022-08-30T19:11:30+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -699,15 +699,15 @@
         },
         {
             "name": "wpackagist-plugin/flying-pages",
-            "version": "2.4.3",
+            "version": "2.4.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/flying-pages/",
-                "reference": "trunk"
+                "reference": "tags/2.4.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/flying-pages.zip?timestamp=1659441375"
+                "url": "https://downloads.wordpress.org/plugin/flying-pages.2.4.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -717,15 +717,15 @@
         },
         {
             "name": "wpackagist-plugin/flying-scripts",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/flying-scripts/",
-                "reference": "tags/1.2.2"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/flying-scripts.1.2.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/flying-scripts.zip?timestamp=1659501864"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -735,7 +735,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "8.15.76",
+            "version": "8.16.28",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -743,7 +743,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1658736136"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1661163714"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -825,15 +825,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.3.1",
+            "version": "5.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.3.1"
+                "reference": "tags/5.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -861,15 +861,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "5.0.7",
+            "version": "5.0.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/5.0.7"
+                "reference": "tags/5.0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.5.0.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.5.0.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -897,15 +897,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "3.5.1",
+            "version": "3.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/3.5.1"
+                "reference": "tags/3.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.5.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -939,18 +939,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "83594c26a26f66af6e5322b9011b2e243a5509e8"
+                "reference": "9d7e96adfd22365735b812e6366393efe9b00bce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/83594c26a26f66af6e5322b9011b2e243a5509e8",
-                "reference": "83594c26a26f66af6e5322b9011b2e243a5509e8",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9d7e96adfd22365735b812e6366393efe9b00bce",
+                "reference": "9d7e96adfd22365735b812e6366393efe9b00bce",
                 "shasum": ""
             },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "admidio/admidio": "<4.1.9",
                 "adodb/adodb-php": "<=5.20.20|>=5.21,<=5.21.3",
+                "aheinze/cockpit": "<=2.2.1",
                 "akaunting/akaunting": "<2.1.13",
                 "alextselegidis/easyappointments": "<=1.4.3",
                 "alterphp/easyadmin-extension-bundle": ">=1.2,<1.2.11|>=1.3,<1.3.1",
@@ -994,6 +995,7 @@
                 "codeception/codeception": "<3.1.3|>=4,<4.1.22",
                 "codeigniter/framework": "<=3.0.6",
                 "codeigniter4/framework": "<4.1.9",
+                "codeigniter4/shield": "= 1.0.0-beta",
                 "codiad/codiad": "<=2.8.4",
                 "composer/composer": "<1.10.26|>=2-alpha.1,<2.2.12|>=2.3,<2.3.5",
                 "concrete5/concrete5": "<9",
@@ -1062,6 +1064,7 @@
                 "flarum/sticky": ">=0.1-beta.14,<=0.1-beta.15",
                 "flarum/tags": "<=0.1-beta.13",
                 "fluidtypo3/vhs": "<5.1.1",
+                "fof/byobu": ">=0.3-beta.2,<1.1.7",
                 "fof/upload": "<1.2.3",
                 "fooman/tcpdf": "<6.2.22",
                 "forkcms/forkcms": "<5.11.1",
@@ -1077,8 +1080,9 @@
                 "gaoming13/wechat-php-sdk": "<=1.10.2",
                 "genix/cms": "<=1.1.11",
                 "getgrav/grav": "<1.7.34",
-                "getkirby/cms": "<3.5.8",
+                "getkirby/cms": "<3.5.8.1|>=3.6,<3.6.6.1|>=3.7,<3.7.4",
                 "getkirby/panel": "<2.5.14",
+                "getkirby/starterkit": "<=3.7.0.2",
                 "gilacms/gila": "<=1.11.4",
                 "globalpayments/php-sdk": "<2",
                 "google/protobuf": "<3.15",
@@ -1129,7 +1133,6 @@
                 "laminas/laminas-http": "<2.14.2",
                 "laravel/fortify": "<1.11.1",
                 "laravel/framework": "<6.20.42|>=7,<7.30.6|>=8,<8.75",
-                "laravel/laravel": "<=9.1.8",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "latte/latte": "<2.10.8",
                 "lavalite/cms": "<=5.8",
@@ -1153,7 +1156,7 @@
                 "mautic/core": "<4.3|= 2.13.1",
                 "mediawiki/core": ">=1.27,<1.27.6|>=1.29,<1.29.3|>=1.30,<1.30.2|>=1.31,<1.31.9|>=1.32,<1.32.6|>=1.32.99,<1.33.3|>=1.33.99,<1.34.3|>=1.34.99,<1.35",
                 "mezzio/mezzio-swoole": "<3.7|>=4,<4.3",
-                "microweber/microweber": "<1.3",
+                "microweber/microweber": "<1.3.1",
                 "miniorange/miniorange-saml": "<1.4.3",
                 "mittwald/typo3_forum": "<1.2.1",
                 "modx/revolution": "<= 2.8.3-pl|<2.8",
@@ -1172,6 +1175,7 @@
                 "nette/application": ">=2,<2.0.19|>=2.1,<2.1.13|>=2.2,<2.2.10|>=2.3,<2.3.14|>=2.4,<2.4.16|>=3,<3.0.6",
                 "nette/nette": ">=2,<2.0.19|>=2.1,<2.1.13",
                 "nilsteampassnet/teampass": "<=2.1.27.36",
+                "notrinos/notrinos-erp": "<=0.7",
                 "noumo/easyii": "<=0.9",
                 "nukeviet/nukeviet": "<4.5.2",
                 "nystudio107/craft-seomatic": "<3.4.12",
@@ -1217,7 +1221,7 @@
                 "pimcore/data-hub": "<1.2.4",
                 "pimcore/pimcore": "<10.4.4",
                 "pocketmine/bedrock-protocol": "<8.0.2",
-                "pocketmine/pocketmine-mp": ">= 4.0.0-BETA5, < 4.4.2|<4.2.10",
+                "pocketmine/pocketmine-mp": "<4.7.2|>= 4.0.0-BETA5, < 4.4.2",
                 "pressbooks/pressbooks": "<5.18",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
                 "prestashop/blockwishlist": ">=2,<2.1.1",
@@ -1275,7 +1279,7 @@
                 "simplito/elliptic-php": "<1.0.6",
                 "slim/slim": "<2.6",
                 "smarty/smarty": "<3.1.45|>=4,<4.1.1",
-                "snipe/snipe-it": "<=6.0.2|>= 6.0.0-RC-1, <= 6.0.0-RC-5",
+                "snipe/snipe-it": "<6.0.10|>= 6.0.0-RC-1, <= 6.0.0-RC-5",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "socialiteproviders/steam": "<1.1",
                 "spipu/html2pdf": "<5.2.4",
@@ -1445,7 +1449,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-29T23:04:14+00:00"
+            "time": "2022-08-30T21:04:17+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
