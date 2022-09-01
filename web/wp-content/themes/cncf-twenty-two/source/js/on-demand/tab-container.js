@@ -14,6 +14,17 @@ jQuery( document ).ready(
 	function( $ ) {
 		// Setup Sticky.
 		let setSticky;
+		let stickyMenu = $( '.sticky__nav' );
+		// Set default animation speed.
+		let animationSpeed = 500;
+		// Get matchMedia setting.
+		let prefersReducedMotionSetting = window.matchMedia( '(prefers-reduced-motion)' );
+		let prefersReducedMotionQuery   = window.matchMedia( '(prefers-reduced-motion: reduce)' );
+		let prefersReducedMotion        = ! prefersReducedMotionQuery || prefersReducedMotionQuery.matches;
+
+		/**
+		 * Apply Sticky
+		 */
 		( setSticky = function() {
 			sticky = new Sticky(
 				'.sticky__element',
@@ -25,16 +36,8 @@ jQuery( document ).ready(
 			);
 		} )();
 
-		// Set default animation speed.
-		let animationSpeed = 500;
-
-		// Get matchMedia setting.
-		let prefersReducedMotionSetting = window.matchMedia( '(prefers-reduced-motion)' );
-		let prefersReducedMotionQuery = window.matchMedia( '(prefers-reduced-motion: reduce)' );
-		let prefersReducedMotion = ! prefersReducedMotionQuery || prefersReducedMotionQuery.matches;
-
 		/**
-		 * Sets animation speed based on preferences.
+		 Sets animation speed based on preferences.
 		 */
 		function getMotionMatch() {
 			if (prefersReducedMotion) {
@@ -43,121 +46,13 @@ jQuery( document ).ready(
 				animationSpeed = 500
 			}
 		}
-		// Watches for change event to reload based on prefs.
-		if (prefersReducedMotionSetting.addEventListener) {
-			prefersReducedMotionSetting.addEventListener( 'change', getMotionMatch );
-		}
-		// runs on first load.
 		getMotionMatch();
 
-		// If page loads with hash, go to it nicely after 1s.
-		if ( window.location.hash ) {
-			// smooth scroll to the anchor id if exists after 1s.
-			if ( $( window.location.hash ).length ) {
-				let theHash   = $( window.location.hash );
-				let offsetNew = theHash === '#' ? 0 : theHash.offset().top - getSpacing();
-				setTimeout(
-					function() {
-						$( 'html, body' )
-							.animate(
-								{
-									scrollTop: offsetNew,
-								},
-								animationSpeed
-							);
-					},
-					1000
-				);
-			}
-		}
-
-		// create array of elements from nav links.
-		let topMenu = $( '.sticky__nav' );
-		if ( topMenu.length > 0 ) {
-			let lastId;
-			let menuItems   = topMenu.find( 'a' );
-			let scrollItems = menuItems.map(
-				function() {
-					let item = $( $( this ).attr( 'href' ) );
-					if ( item.length ) {
-						return item;
-					}
-				}
-			);
-
-			// Check nav items are in view as user scrolls.
-			$( window ).on( 'scroll', window.utils.isThrottled( navInView, 200, true ) );
-
-			// Update nav and hash as user scrolls.
-			$( window ).on( 'scroll', window.utils.isThrottled( navUpdate, 200, true ) );
-
-			// Update Sticky on resize.
-			$( window ).on( 'resize', window.utils.isThrottled( setSticky, 200, true ) );
-
-			// Click handler for menu items so we can get a fancy scroll animation.
-			menuItems.click(
-				function( e ) {
-					let href      = $( this ).attr( 'href' );
-					let offsetTop = href === '#' ? 0 : $( href ).offset()
-						.top - getSpacing();
-					$( 'html, body' )
-						.stop()
-						.animate(
-							{
-								scrollTop: offsetTop,
-							},
-							animationSpeed
-						);
-					e.preventDefault();
-				}
-			);
-
-			// Function to update nav and hash as user scrolls.
-			function navUpdate() {
-				let fromTop = $( this ).scrollTop();
-
-				// Get id of current scroll item, add 20 for padding from header.
-				let cur = scrollItems.map(
-					function() {
-						if ( $( this ).offset().top < fromTop + getSpacing() + 60 ) {
-							return this;
-						}
-					}
-				);
-
-				// Get the id of the current element.
-				cur    = cur[ cur.length - 1 ];
-				let id = cur && cur.length ? cur[ 0 ].id : '';
-
-				if ( lastId !== id ) {
-					lastId = id;
-					// Set/remove active class.
-					menuItems
-						.parent()
-						.removeClass( 'is-active' )
-						.end()
-						.filter( "[href='#" + id + "']" )
-						.parent()
-						.addClass( 'is-active' );
-					if ( id ) {
-						if ( history.pushState ) {
-							window.history.replaceState(
-								null,
-								null,
-								'#' + id
-							);
-						} else {
-							// IE9, IE8, etc.
-							window.location.hash = '#!' + id;
-						}
-					} else {
-						removeHash();
-					}
-				}
-			}
-		}
-
-		// Get spacing required from top of window for content.
+		/**
+		 * Get spacing required from top of window for content.
+		 *
+		 * @returns integer
+		 */
 		function getSpacing() {
 			let spacingTotal = 0;
 			let winH         = $( window ).height();
@@ -177,6 +72,103 @@ jQuery( document ).ready(
 			return spacingTotal;
 		}
 
+		if ( stickyMenu.length > 0 ) {
+			// Get all the links in the sticky nav.
+			let menuItems = stickyMenu.find( 'a' );
+			// Use the links to confirm matching page sections.
+			let pageSections = menuItems.map(
+				function() {
+					let item = $( $( this ).attr( 'href' ) );
+					if ( item.length ) {
+						return item;
+					}
+				}
+			);
+
+			/**
+			 * Listen for clicks on menu items then fancy scroll to page section.
+			 */
+			menuItems.click(
+				function( e ) {
+					e.preventDefault();
+					let href      = $( this ).attr( 'href' );
+					let offsetTop = href === '#' ? 0 : $( href ).offset().top - getSpacing();
+					$( 'html, body' )
+					.stop()
+					.animate(
+						{
+							scrollTop: offsetTop,
+						},
+						animationSpeed
+					);
+					menuItems
+						.parent()
+						.removeClass( 'is-active' );
+					$( this ).parent().addClass( 'is-active' );
+				}
+			);
+
+			/**
+			 * Update Nav, Hash as user scrolls.
+			 */
+			function navUpdate() {
+				let fromTop    = $( this ).scrollTop();
+				let headerSize = getSpacing();
+				// Get all the page sections passed by scrolling.
+				let currentItemElements = pageSections.map(
+					function() {
+						// If true, return the section name(s).
+						if ( $( this ).offset().top < fromTop + headerSize ) {
+							// console.log($( this ).offset().top)
+							// console.log(fromTop + headerSize)
+							return this;
+						}
+					}
+				);
+
+				// Get the ID of the last section seen.
+				let currentItemId = currentItemElements[ currentItemElements.length - 1 ];
+
+				// if neither exist we're outside sections so removeHash.
+				if (currentItemElements.length == 0 && ! currentItemId ) {
+					removeHash();
+					menuItems
+						.parent()
+						.removeClass( 'is-active' )
+				}
+
+				if ( ! currentItemId ) {
+					return;
+				}
+
+				// Get the precise anchor ID to use.
+				let id = currentItemId && currentItemId.length ? currentItemId[ 0 ].id : '';
+
+				if ( id  ) {
+						// Set/remove active class.
+						menuItems
+						.parent()
+						.removeClass( 'is-active' )
+						.end()
+						.filter( "[href='#" + id + "']" )
+						.parent()
+						.addClass( 'is-active' );
+
+						// Set hash.
+					if ( history.pushState ) {
+						window.history.replaceState(
+							null,
+							null,
+							'#' + id
+						);
+					} else {
+						// IE9, IE8, etc.
+						window.location.hash = '#!' + id;
+					}
+				}
+			}
+		}
+
 		// Remove hash from URL.
 		function removeHash() {
 			let scrollV;
@@ -187,11 +179,9 @@ jQuery( document ).ready(
 				history.pushState( '', document.title, loc.pathname + loc.search );
 			} else {
 				// Prevent scrolling by storing the page's current scroll offset.
-				scrollV = document.body.scrollTop;
-				scrollH = document.body.scrollLeft;
-
+				scrollV  = document.body.scrollTop;
+				scrollH  = document.body.scrollLeft;
 				loc.hash = '';
-
 				// Restore the scroll offset, should be flicker free.
 				document.body.scrollTop  = scrollV;
 				document.body.scrollLeft = scrollH;
@@ -199,15 +189,55 @@ jQuery( document ).ready(
 		}
 
 		// Looks for nav item and checks its in view.
+		// TODO: This fucks up initial scrolling. Should only activate if the nav is sticky!!!
 		function navInView() {
+
 			let currentItem = $( '.sticky__nav-item.is-active' );
 			let winW        = $( window ).width();
 
-			if ( winW > 799 && currentItem.length ) {
+			if ( winW > 799 && currentItem.length > 0 ) {
+				console.log( 'Update scroll in to view' )
 				currentItem[ 0 ].scrollIntoView(
 					{
-						behavior: 'instant', block: 'end'
+						behavior: 'instant',
+						block: 'end',
+						// inline: 'start'
 					}
+				);
+			}
+		}
+
+		// Check nav items are in view as user scrolls.
+		// $( window ).on( 'scroll', window.utils.isThrottled( navInView, 200, true ) );
+
+		// Update nav and hash as user scrolls.
+		$( window ).on( 'scroll', window.utils.isThrottled( navUpdate, 200, true ) );
+
+		// Update Sticky on resize.
+		$( window ).on( 'resize', window.utils.isThrottled( setSticky, 200, true ) );
+
+		// Watches for change event to reload based on prefs.
+		if (prefersReducedMotionSetting.addEventListener) {
+			prefersReducedMotionSetting.addEventListener( 'change', getMotionMatch );
+		}
+
+		// If page loads with hash, go to it nicely after 1s.
+		if ( window.location.hash ) {
+			// smooth scroll to the anchor id if exists after 1s.
+			if ( $( window.location.hash ).length ) {
+				let theHash   = $( window.location.hash );
+				let offsetNew = theHash === '#' ? 0 : theHash.offset().top - getSpacing();
+				setTimeout(
+					function() {
+						$( 'html, body' )
+						.animate(
+							{
+								scrollTop: offsetNew,
+							},
+							animationSpeed
+						);
+					},
+					1000
 				);
 			}
 		}
