@@ -23,33 +23,38 @@ wp.data.dispatch( 'core/edit-post' ).removeEditorPanel( 'taxonomy-panel-post_tag
 
 // Unregister unsupported unstyled Blocks.
 wp.blocks.unregisterBlockType( 'core/archives' );
+wp.blocks.unregisterBlockType( 'core/avatar' );
 wp.blocks.unregisterBlockType( 'core/calendar' );
+wp.blocks.unregisterBlockType( 'core/comments-query-loop' );
 wp.blocks.unregisterBlockType( 'core/latest-comments' );
-wp.blocks.unregisterBlockType( 'core/nextpage' );
-wp.blocks.unregisterBlockType( 'core/pullquote' );
-wp.blocks.unregisterBlockType( 'core/social-links' );
-wp.blocks.unregisterBlockType( 'core/tag-cloud' );
-wp.blocks.unregisterBlockType( 'core/verse' );
 wp.blocks.unregisterBlockType( 'core/loginout' );
+wp.blocks.unregisterBlockType( 'core/more' );
+wp.blocks.unregisterBlockType( 'core/navigation' );
+wp.blocks.unregisterBlockType( 'core/nextpage' );
+wp.blocks.unregisterBlockType( 'core/page-list' );
+wp.blocks.unregisterBlockType( 'core/post-author-biography' );
+wp.blocks.unregisterBlockType( 'core/post-author' );
+wp.blocks.unregisterBlockType( 'core/post-comments-form' );
+wp.blocks.unregisterBlockType( 'core/post-comments' );
+wp.blocks.unregisterBlockType( 'core/post-content' );
+wp.blocks.unregisterBlockType( 'core/post-date' );
+wp.blocks.unregisterBlockType( 'core/post-excerpt' );
+wp.blocks.unregisterBlockType( 'core/post-featured-image' );
+wp.blocks.unregisterBlockType( 'core/post-navigation-link' );
+wp.blocks.unregisterBlockType( 'core/post-terms' );
+wp.blocks.unregisterBlockType( 'core/post-title' );
+wp.blocks.unregisterBlockType( 'core/pullquote' );
+wp.blocks.unregisterBlockType( 'core/query-title' );
+wp.blocks.unregisterBlockType( 'core/query' );
+wp.blocks.unregisterBlockType( 'core/read-more' );
+wp.blocks.unregisterBlockType( 'core/search' );
 wp.blocks.unregisterBlockType( 'core/site-logo' );
 wp.blocks.unregisterBlockType( 'core/site-tagline' );
 wp.blocks.unregisterBlockType( 'core/site-title' );
-
-// Unregister unsupported Theme blocks.
-wp.blocks.unregisterBlockType( 'core/navigation' );
-wp.blocks.unregisterBlockType( 'core/query' );
-wp.blocks.unregisterBlockType( 'core/page-list' );
-wp.blocks.unregisterBlockType( 'core/post-title' );
-wp.blocks.unregisterBlockType( 'core/post-excerpt' );
-wp.blocks.unregisterBlockType( 'core/post-featured-image' );
-wp.blocks.unregisterBlockType( 'core/post-content' );
-wp.blocks.unregisterBlockType( 'core/post-author' );
-wp.blocks.unregisterBlockType( 'core/post-date' );
-wp.blocks.unregisterBlockType( 'core/post-terms' );
-wp.blocks.unregisterBlockType( 'core/post-comments' );
-wp.blocks.unregisterBlockType( 'core/post-navigation-link' );
+wp.blocks.unregisterBlockType( 'core/social-links' );
+wp.blocks.unregisterBlockType( 'core/tag-cloud' );
 wp.blocks.unregisterBlockType( 'core/term-description' );
-wp.blocks.unregisterBlockType( 'core/query-title' );
+wp.blocks.unregisterBlockType( 'core/verse' );
 
 // Removed specific block styles.
 wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
@@ -293,7 +298,7 @@ wp.blocks.registerBlockStyle(
 			name: '30-60',
 		},
 		{
-	label: '60px (40px mobile)',
+			label: '60px (40px mobile)',
 			name: '40-60',
 		},
 		{
