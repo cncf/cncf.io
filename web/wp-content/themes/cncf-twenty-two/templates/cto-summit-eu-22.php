@@ -222,6 +222,40 @@ get_template_part( 'components/skip-link-target' );
 									</a>
 								</div>
 							</div>
+							<div class="commitee">
+								<img class="commitee__image" loading="lazy"
+									src="<?php LF_utils::get_image( $report_folder . 'Priyanka-Sharma.jpg' ); ?>"
+									alt="Priyanka Sharma" width="100"
+									height="100">
+								<div class="commitee__text">
+									<p><strong>Priyanka Sharma</strong></p>
+									<a href="https://cncf.io/"
+										title="Visit CNCF">
+										<img class="commitee__logo"
+											loading="lazy"
+											src="<?php LF_utils::get_svg( $report_folder . 'cncf-logo.svg', true ); ?>"
+											alt="CNCF Logo" width="180"
+											height="38">
+									</a>
+								</div>
+							</div>
+							<div class="commitee">
+								<img class="commitee__image" loading="lazy"
+									src="<?php LF_utils::get_image( $report_folder . 'Hilary-Carter.jpg' ); ?>"
+									alt="Hilary Carter" width="100"
+									height="100">
+								<div class="commitee__text">
+									<p><strong>Hilary Carter</strong></p>
+									<a href="https://www.linuxfoundation.org/research/"
+										title="Visit Linux Foundation Research">
+										<img class="commitee__logo"
+											loading="lazy"
+											src="<?php LF_utils::get_image( $report_folder . 'logo-lf-research.png' ); ?>"
+											alt="Linux Foundation Logo" width="180"
+											height="38">
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
