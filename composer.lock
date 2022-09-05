@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04bf0719f7b59ca518f2e5370db00423",
+    "content-hash": "52536b7f81b4abe56baf347692bfb3b5",
     "packages": [
         {
             "name": "composer/installers",
@@ -246,12 +246,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "330f97b92f5f636f09f83bf054c24976da9db9d3"
+                "reference": "d24015fad19234077923e7821c6b955d6707cd84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/330f97b92f5f636f09f83bf054c24976da9db9d3",
-                "reference": "330f97b92f5f636f09f83bf054c24976da9db9d3",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/d24015fad19234077923e7821c6b955d6707cd84",
+                "reference": "d24015fad19234077923e7821c6b955d6707cd84",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
                 "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.0.2",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2022-08-30T19:11:30+00:00"
+            "time": "2022-08-30T19:11:33+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -735,7 +735,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "8.16.28",
+            "version": "9.0.35",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -743,7 +743,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1661163714"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1662020565"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -843,15 +843,15 @@
         },
         {
             "name": "wpackagist-plugin/safe-svg",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-svg/",
-                "reference": "tags/2.0.2"
+                "reference": "tags/2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -939,12 +939,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9d7e96adfd22365735b812e6366393efe9b00bce"
+                "reference": "6d260392fad173d6ee6e3a93c875d9327db1109b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9d7e96adfd22365735b812e6366393efe9b00bce",
-                "reference": "9d7e96adfd22365735b812e6366393efe9b00bce",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6d260392fad173d6ee6e3a93c875d9327db1109b",
+                "reference": "6d260392fad173d6ee6e3a93c875d9327db1109b",
                 "shasum": ""
             },
             "conflict": {
@@ -1228,7 +1228,7 @@
                 "prestashop/contactform": ">1.0.1,<4.3",
                 "prestashop/gamification": "<2.3.2",
                 "prestashop/prestashop": ">=1.6.0.10,<1.7.8.7",
-                "prestashop/productcomments": ">=4,<4.2.1",
+                "prestashop/productcomments": "<5.0.2",
                 "prestashop/ps_emailsubscription": "<2.6.1",
                 "prestashop/ps_facetedsearch": "<3.4.1",
                 "prestashop/ps_linklist": "<3.1",
@@ -1449,7 +1449,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-30T21:04:17+00:00"
+            "time": "2022-08-31T22:04:18+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
