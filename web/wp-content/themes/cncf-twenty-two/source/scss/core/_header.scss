@@ -358,6 +358,8 @@
 			right: 0;
 			background-color: rgba(#222222, 0.85);
 			transition: opacity 0.15s ease-in;
+			padding-top: 32px;
+			padding-bottom: 32px;
 			&.is-active {
 				opacity: 1;
 				visibility: visible;
@@ -377,9 +379,7 @@
 				padding-left: 0px;
 				padding-right: 0px;
 			}
-			height: 80px;
 			display: flex;
-			width: 100%;
 			align-items: center;
 			justify-content: flex-end;
 		}
