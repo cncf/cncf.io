@@ -3,6 +3,13 @@
 	@media (min-width: 1000px) {
 		margin-top: 100px;
 	}
+	.home & {
+		margin-top: 0;
+		.footer_container {
+			position: relative;
+			z-index: 1;
+		}
+	}
 	color: $white;
 	background-color: $black;
 	font-size: 10px;
@@ -98,5 +105,43 @@
 		margin-top: 18px;
 		margin-bottom: 18px;
 		opacity: 0.25;
+	}
+}
+
+.phippy-footer {
+	// overflow: hidden;
+	background-color: #fdfdfd;
+	&__container {
+		background-color: $black;
+		position: relative;
+		padding-bottom: 70px;
+		@media (min-width: 1200px) {
+			padding-bottom: 130px;
+		}
+	}
+	&__inner {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 100%;
+		@media (min-width: 1200px) {
+			max-width: $content-width;
+		}
+	}
+	&__image {
+		width: 100%;
+		position: relative;
+		pointer-events: none;
+		// z-index: 1;
+		height: auto;
+		display: block;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 100%;
+		max-width: 100%;
+		margin-bottom: -28%;
+		@media (min-width: 1200px) {
+			max-width: $content-width;
+			margin-bottom: -33%;
+		}
 	}
 }
