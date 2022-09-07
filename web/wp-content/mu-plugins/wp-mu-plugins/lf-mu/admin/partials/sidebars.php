@@ -642,3 +642,35 @@ $sidebar    = array(
 	),
 );
 $sidebars[] = $sidebar;
+
+$sidebar    = array(
+	'id'              => 'lf-sidebar-human',
+	'id_prefix'       => 'lf_',
+	'label'           => __( 'Post Settings' ),
+	'post_type'       => 'lf_human',
+	'data_key_prefix' => 'lf_human_',
+	'icon_dashicon'   => 'admin-settings',
+	'tabs'            => array(
+		array(
+			'label'  => __( 'Tab label' ),
+			'panels' => array(
+				array(
+					'label'        => __( 'General' ),
+					'initial_open' => true,
+					'settings'     => array(
+						array(
+							'type'          => 'image',
+							'data_type'     => 'meta',
+							'data_key'      => 'image',
+							'label'         => __( 'Headshot' ),
+							'help'          => __( 'Image should be at least 800x800px with face centered.' ),
+							'ui_border_top' => false,
+							'register_meta' => true,
+						),
+					),
+				),
+			),
+		),
+	),
+);
+$sidebars[] = $sidebar;
