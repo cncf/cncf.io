@@ -39,9 +39,6 @@ function add_end_user_pricing_shortcode() {
 					Training coupons </li>
 				<li>End User Recruiting Booth at
 					KubeCon ($7k instead of $21k)</li>
-				<li>Exclusive <a
-						href="/blog/2021/04/22/introducing-the-cncf-end-user-lounge-exclusive-live-streams-for-end-user-organizations">CNCF
-						End User Lounge</a> live streams</li>
 			</ul>
 		</div>
 
