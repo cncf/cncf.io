@@ -10,24 +10,15 @@
 document.addEventListener(
 	"DOMContentLoaded",
 	function() {
-
 		let calculatePhippyPadding;
 		let phippyImage         = document.getElementById( 'phippy-footer' );
 		let phippySpacer        = document.getElementById( 'phippy-spacer' );
 		let footerContainer     = document.getElementById( 'inner-footer-container' );
 		(calculatePhippyPadding = function() {
-			let phippyImageHeight = phippyImage.clientHeight;
-			let extraPaddingInPx  = 50;
-			let viewportWidthInPx = window.innerWidth;
-			if (viewportWidthInPx > 999) {
-				extraPaddingInPx = 115;
-			}
-			let calculatedSpacingInPx = (phippyImageHeight - extraPaddingInPx);
-
-			footerContainer.style.marginTop = (Math.abs( calculatedSpacingInPx / 3 ) * -1) + 'px';
-			phippySpacer.style.height       = calculatedSpacingInPx + 'px';
+			let phippyImageHeight           = phippyImage.clientHeight;
+			footerContainer.style.marginTop = (Math.abs( phippyImageHeight / 4 ) * -1) + 'px';
+			phippySpacer.style.height       = Math.abs( (phippyImageHeight / 2 ) + 20 ) + 'px';
 		} )();
 		window.addEventListener( "resize", calculatePhippyPadding );
-
 	}
 	);
