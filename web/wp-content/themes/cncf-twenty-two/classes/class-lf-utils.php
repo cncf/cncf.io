@@ -530,10 +530,16 @@ class LF_Utils {
 			$metrics['cncf-members']         = 630;
 			$metrics['community-members']    = 630;
 
-			$api_key = 'f3f3dcc9909df551121e89215f2764af5f4ad9d4';
+			$options         = get_option( 'lf-mu' );
+			$community_api_key = $options['community_api_key'] ?? '';
+
+			if ( ! $community_api_key ) {
+				return $metrics;
+			}
+
 			$args = array(
 				'headers' => array(
-					'Authorization' => 'Token ' . $api_key,
+					'Authorization' => 'Token ' . $community_api_key,
 				),
 			);
 			$data = wp_remote_get( 'https://community.cncf.io/api/user/counts', $args );

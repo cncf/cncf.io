@@ -90,6 +90,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$youtube_api_key = ( isset( $options['youtube_api_key'] ) && ! empty( $options['youtube_api_key'] ) ) ? esc_attr( $options['youtube_api_key'] ) : '';
 
+		$community_api_key = ( isset( $options['community_api_key'] ) && ! empty( $options['community_api_key'] ) ) ? esc_attr( $options['community_api_key'] ) : '';
+
 		$gtm_id = ( isset( $options['gtm_id'] ) && ! empty( $options['gtm_id'] ) ) ? esc_attr( $options['gtm_id'] ) : '';
 
 		$promotion_image_id = ( isset( $options['promotion_image_id'] ) && ! empty( $options['promotion_image_id'] ) ) ? absint( $options['promotion_image_id'] ) : '';
@@ -837,6 +839,17 @@ if ( ! defined( 'WPINC' ) ) {
 							value="<?php echo esc_attr( $youtube_api_key ); ?>" />
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><label for="community_api_key">Community Site API
+							key</label>
+					</th>
+					<td>
+						<input type="text" class="community_api_key regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-community_api_key"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[community_api_key]"
+							value="<?php echo esc_attr( $community_api_key ); ?>" />
+					</td>
+				</tr>				
 				<tr>
 					<th scope="row"><label for="gtm_id">Google Tag Manager
 							ID</label>
