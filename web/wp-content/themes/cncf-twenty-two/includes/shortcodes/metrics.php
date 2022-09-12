@@ -32,9 +32,9 @@ function add_cncf_metrics_shortcode() {
 				title="See CNCF Projects">
 
 				<div class="metrics__image-wrapper">
-					<img src="<?php LF_utils::get_svg( 'cncf-icon-computer.svg', true ); ?>"
-						width="130" height="80" class="metrics__image"
-						alt="Icon of computer" loading="lazy">
+				<img src="<?php LF_utils::get_svg( 'cncf-icon-kubernetes-distributions.svg', true ); ?>"
+					width="130" height="110" class="metrics__image"
+					alt="Icon of Kubernetes against app outline" loading="lazy">
 				</div>
 
 				<div class="metrics__text-wrapper">
@@ -44,7 +44,7 @@ function add_cncf_metrics_shortcode() {
 							data-purecounter-end="<?php echo esc_html( round( $metrics['projects'] ) ); ?>"
 							data-purecounter-delay="15" class="purecounter">
 							<?php echo esc_html( round( $metrics['projects'] ) ); ?>
-						</span>K+
+						</span>
 					</h2>
 
 					<span class="metrics__description">CNCF Projects</span>
@@ -58,9 +58,9 @@ function add_cncf_metrics_shortcode() {
 			title="Contribute to CNCF projects">
 
 			<div class="metrics__image-wrapper">
-				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
-					width="125" height="110" class="metrics__image"
-					alt="Icon people discussing code" loading="lazy">
+					<img src="<?php LF_utils::get_svg( 'cncf-icon-computer.svg', true ); ?>"
+						width="130" height="80" class="metrics__image"
+						alt="Icon of computer" loading="lazy">
 			</div>
 
 			<div class="metrics__text-wrapper">
@@ -107,27 +107,26 @@ function add_cncf_metrics_shortcode() {
 
 	<div class="metrics__column">
 
-		<a href="/certification/software-conformance/" class="metrics__link has-animation-scale-2"
-			title="See Certified Kubernetes Distributions & Platforms">
+		<a href="https://community.cncf.io/" class="metrics__link has-animation-scale-2"
+			title="Explore Cloud Native Community Groups">
 
 			<div class="metrics__image-wrapper">
-				<img src="<?php LF_utils::get_svg( 'cncf-icon-kubernetes-distributions.svg', true ); ?>"
-					width="130" height="110" class="metrics__image"
-					alt="Icon of Kubernetes against app outline" loading="lazy">
+				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
+					width="125" height="110" class="metrics__image"
+					alt="Icon people discussing code" loading="lazy">
 			</div>
 
 			<div class="metrics__text-wrapper">
 
 				<h2 class="metrics__number has-extra-extra-large-font-size">
 					<span
-						data-purecounter-end="<?php echo esc_html( $metrics['certified-kubernetes'] ); ?>"
+						data-purecounter-end="<?php echo esc_html( round( $metrics['community-members'] / 1000 ) ); ?>"
 						data-purecounter-delay="20" class="purecounter">
-						<?php echo esc_html( $metrics['certified-kubernetes'] ); ?>
-					</span>
+						<?php echo esc_html( round( $metrics['community-members'] / 1000 ) ); ?>
+					</span>K+
 				</h2>
 
-				<span class="metrics__description">Certified Kubernetes
-					<br>Distributions &amp; Platforms</span>
+				<span class="metrics__description">Cloud Native Community Members</span>
 			</div>
 		</a>
 	</div>

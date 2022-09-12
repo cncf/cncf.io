@@ -527,17 +527,21 @@ class LF_Utils {
 
 		if ( false === $metrics ) {
 			$metrics                         = self::get_homepage_metrics();
-			$metrics['certified-kubernetes'] = 103;
 			$metrics['cncf-members']         = 630;
+			$metrics['community-members']    = 630;
 
-			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/certified-kubernetes.json' );
-
+			$api_key = 'f3f3dcc9909df551121e89215f2764af5f4ad9d4';
+			$args = array(
+				'headers' => array(
+					'Authorization' => 'Token ' . $api_key,
+				),
+			);
+			$data = wp_remote_get( 'https://community.cncf.io/api/user/counts', $args );
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
 				return $metrics;
 			}
-
 			$remote_body                     = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['certified-kubernetes'] = count( $remote_body );
+			$metrics['community-members']    = $remote_body->User; //phpcs:ignore.
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/cncf-members.json' );
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
