@@ -54,8 +54,8 @@ function add_cncf_metrics_shortcode() {
 
 		<div class="metrics__column">
 
-		<a href="/humans-of-cloud-native/" class="metrics__link has-animation-scale-2"
-			title="See the the Humans of Cloud Native">
+		<a href="https://contribute.cncf.io/" class="metrics__link has-animation-scale-2"
+			title="Contribute to CNCF projects">
 
 			<div class="metrics__image-wrapper">
 				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
