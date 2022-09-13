@@ -290,7 +290,7 @@ get_template_part( 'components/skip-link-target' );
 					</div>
 					<div class="thin-hr hr-for-mobile"></div>
 					<div class="section-02__grid-col2">
-						<h3 class="uppercase">Top 3 Countries</h3>
+						<h3 class="uppercase orange-text">Top 3 Countries</h3>
 						<div aria-hidden="true" style="height: 30px"></div>
 
 						<div class="lf-grid countries-grid">
