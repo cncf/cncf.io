@@ -136,7 +136,7 @@ get_template_part( 'components/skip-link-target' );
 
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
-					<p>Jesse Suen made the <a href="https://github.com/argoproj/argo-workflows/commit/3ed1dfeb073829d3c4f92b95c9a74118caaec1b4" title="Argo first commit on GitHub">first commit to Argo's GitHub repo</a> on October 17, 2017. After years of multi-vendor and multi-end user development, Argo donated all four projects and was <a href="https://www.cncf.io/blog/2020/04/07/toc-welcomes-argo-into-the-cncf-incubator/" titl="Blog post about Argo joining the CNCF as an incubating project">welcomed into the CNCF</a> as an incubating project on April 7, 2020.</p>
+					<p>Jesse Suen made the <a href="https://github.com/argoproj/argo-workflows/commit/3ed1dfeb073829d3c4f92b95c9a74118caaec1b4" title="Argo first commit on GitHub">first commit to Argo's GitHub repo</a> on October 17, 2017. After years of multi-vendor and multi-end user development, Argo donated all four projects and was <a href="https://www.cncf.io/blog/2020/04/07/toc-welcomes-argo-into-the-cncf-incubator/" title="Blog post about Argo joining the CNCF as an incubating project">welcomed into the CNCF</a> as an incubating project on April 7, 2020.</p>
 
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -298,20 +298,23 @@ get_template_part( 'components/skip-link-target' );
 
 								<img loading="lazy"
 									src="<?php LF_Utils::get_image( $report_folder . 'flag-usa.png' ); ?>"
-									alt="Flag of United States">
+									alt="Flag of United States" width="45"
+									height="45">
 								<span class="large-number-text">United
 									States</span>
 							</div>
 							<div class="countries-grid__col2">
 								<img loading="lazy"
 									src="<?php LF_Utils::get_image( $report_folder . 'flag-de.png' ); ?>"
-									alt="Flag of Germany">
+									alt="Flag of Germany" width="45"
+									height="45">
 								<span class="large-number-text">Germany</span>
 							</div>
 							<div class="countries-grid__col3">
 								<img loading="lazy"
 									src="<?php LF_Utils::get_image( $report_folder . 'flag-uk.png' ); ?>"
-									alt="Flag of United Kingdom">
+									alt="Flag of United Kingdom" width="45"
+									height="45">
 								<span class="large-number-text">United
 									Kingdom</span>
 							</div>
@@ -347,7 +350,7 @@ get_template_part( 'components/skip-link-target' );
 
 				<div class="lf-grid">
 					<p
-						class="restrictive-9-col">The diversity of company contributors, and the healthy balance of vendor<->end user input, continues to fuel growth and give users confidence in choosing Argo tools for accelerating their Kubernetes workflows.</p>
+						class="restrictive-9-col">The diversity of company contributors, and the healthy balance of vendor&lt;-&gt;end user input, continues to fuel growth and give users confidence in choosing Argo tools for accelerating their Kubernetes workflows.</p>
 				</div>
 
 				<div class="shadow-hr"></div>
@@ -394,7 +397,6 @@ get_template_part( 'components/skip-link-target' );
 
 				<?php LF_Utils::display_responsive_images( 78920, 'full', '1440px', 'remove-bg', 'lazy', 'Cumulative growth in contributors Q3 2017 - Q3 2022' ); ?>
 
-			</div>
 			</div>
 		</section>
 
@@ -501,7 +503,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<a href="https://events.linuxfoundation.org/argocon/">
-				<?php LF_Utils::display_responsive_images( 78915, 'full', '1440px', null, 'lazy', 'ArgoCon 2022 event artwork' ); ?></a>
+					<?php LF_Utils::display_responsive_images( 78915, 'full', '1440px', null, 'lazy', 'ArgoCon 2022 event artwork' ); ?></a>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
