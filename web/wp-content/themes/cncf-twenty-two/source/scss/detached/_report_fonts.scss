@@ -1,0 +1,83 @@
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 200;
+	font-style: normal;
+	src: local('ClarityCity-Light'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 400;
+	font-style: normal;
+	src: local('ClarityCity-Regular'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 600;
+	font-style: normal;
+	src: local('ClarityCity-SemiBold'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 700;
+	font-style: normal;
+	src: local('ClarityCity-Bold'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.ttf') format('ttf');
+}
+
+@font-face {
+	font-display: optional;
+	font-family: 'Clarity City';
+	font-weight: 800;
+	font-style: normal;
+	src: local('ClarityCity-ExtraBold'), local('Clarity City'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.ttf') format('ttf');
+}
+
+// Source Serif Pro - Italic 400
+@font-face {
+	font-display: fallback;
+	font-family: 'Source Serif Pro';
+	font-style: italic;
+	font-weight: 400;
+	src: local('SourceSerifPro-It'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff2') format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.ttf') format('ttf');
+}
+
+// Source Serif Pro - Italic 700
+@font-face {
+	font-display: fallback;
+	font-family: 'Source Serif Pro';
+	font-style: italic;
+	font-weight: 700;
+	src: local('SourceSerifPro-BoldIt'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff2')
+			format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.ttf') format('ttf');
+}
+
+html {
+	visibility: visible !important;
+}

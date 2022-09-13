@@ -1,0 +1,26 @@
+// Argo PJR 2022
+
+@import 'report_fonts';
+
+// font-stack.
+$font-argo-22: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, Roboto,
+	Ubuntu, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$font-argo-22-serif: 'Source Serif Pro', serif;
+
+$argo-22-black: #000000;
+$argo-22-white: #ffffff;
+$argo-22-gray-100: #fdfdfd;
+$argo-22-orange-400: #ef7b4d;
+$argo-22-orange-700: #f36811;
+
+.argo-pjr-22 {
+	font-family: $font-argo-22;
+	color: $argo-22-black;
+	line-height: 180%;
+	padding-bottom: 100px;
+
+	@import 'report_core';
+	//
+	// End.
+}
