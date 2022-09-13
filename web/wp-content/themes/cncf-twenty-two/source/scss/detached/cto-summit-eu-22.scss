@@ -1,85 +1,6 @@
 // CTO Summit EU 2022 Transparency Report
 
-// Redeclare Fonts here, in case theme and font changes in the future.
-@font-face {
-	font-display: optional;
-	font-family: 'Clarity City';
-	font-weight: 200;
-	font-style: normal;
-	src: local('ClarityCity-Light'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-200.ttf') format('ttf');
-}
-
-@font-face {
-	font-display: optional;
-	font-family: 'Clarity City';
-	font-weight: 400;
-	font-style: normal;
-	src: local('ClarityCity-Regular'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-400.ttf') format('ttf');
-}
-
-@font-face {
-	font-display: optional;
-	font-family: 'Clarity City';
-	font-weight: 600;
-	font-style: normal;
-	src: local('ClarityCity-SemiBold'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-600.ttf') format('ttf');
-}
-
-@font-face {
-	font-display: optional;
-	font-family: 'Clarity City';
-	font-weight: 700;
-	font-style: normal;
-	src: local('ClarityCity-Bold'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-700.ttf') format('ttf');
-}
-
-@font-face {
-	font-display: optional;
-	font-family: 'Clarity City';
-	font-weight: 800;
-	font-style: normal;
-	src: local('ClarityCity-ExtraBold'), local('Clarity City'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.ttf') format('ttf');
-}
-
-// Source Serif Pro - Italic 400
-@font-face {
-	font-display: fallback;
-	font-family: 'Source Serif Pro';
-	font-style: italic;
-	font-weight: 400;
-	src: local('SourceSerifPro-It'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff2') format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.ttf') format('ttf');
-}
-
-// Source Serif Pro - Italic 700
-@font-face {
-	font-display: fallback;
-	font-family: 'Source Serif Pro';
-	font-style: italic;
-	font-weight: 700;
-	src: local('SourceSerifPro-BoldIt'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff2')
-			format('woff2'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff') format('woff'),
-		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.ttf') format('ttf');
-}
+@import 'report_fonts';
 
 // font-stack.
 $font-cto-summit-eu-22: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
@@ -89,13 +10,8 @@ $font-cto-summit-eu-22-serif: 'Source Serif Pro', serif;
 
 $cto-summit-eu-22-black: #000000;
 $cto-summit-eu-22-white: #ffffff;
-
 $cto-summit-eu-22-gray-100: #fdfdfd;
 $cto-summit-eu-22-orange-700: #f36a11;
-
-html {
-	visibility: visible !important;
-}
 
 .cto-summit-eu-22 {
 	font-family: $font-cto-summit-eu-22;
@@ -103,50 +19,9 @@ html {
 	line-height: 180%;
 	padding-bottom: 100px;
 
-	/**
-	TYPOGRAPHY
-	**/
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-bottom: 0;
-	}
+	@import 'report_core';
 
-	p + p {
-		margin-top: 30px;
-	}
-
-	h1,
-	h2 {
-		line-height: 120%;
-	}
-
-	.uppercase {
-		text-transform: uppercase;
-	}
-
-	/**
-	HIDE/SHOW
-	**/
-
-	.show-over-1000 {
-		display: none;
-		@media (min-width: 1000px) {
-			display: block;
-		}
-	}
-
-	/**
-	TOOLS
-	**/
-
-	// Background image object fit.
 	.background-image-wrapper {
-		overflow: hidden;
-		position: relative;
 		&.section-break {
 			height: 300px;
 			@media (min-width: 1000px) {
@@ -156,15 +31,6 @@ html {
 	}
 
 	.background-image-figure {
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			position: absolute;
-			z-index: 1;
-			top: 0;
-			left: 0;
-		}
 		&.darken-on-mobile {
 			@media (max-width: 999px) {
 				&:after {
@@ -185,95 +51,6 @@ html {
 		}
 	}
 
-	.background-image-text-overlay {
-		position: relative;
-		z-index: 2;
-	}
-
-	.is-style-down-gradient {
-		background-image: url('/wp-content/themes/cncf-twenty-two/images/reports/cto-summit-eu-22/bg-gradient-gray-down.png'),
-			linear-gradient($cto-summit-eu-22-gray-100, $cto-summit-eu-22-gray-100);
-		background-repeat: repeat-x;
-		background-position: 0 top;
-		padding: 0; // reset.
-		padding-top: 80px;
-		@media (min-width: 1000px) {
-			padding-top: 120px;
-		}
-	}
-
-	.is-style-see-all {
-		@media (max-width: 999px) {
-			position: relative;
-			margin-bottom: 80px;
-			display: block;
-		}
-		@media (min-width: 1000px) {
-			.wp-block-columns > .wp-block-column:last-child {
-				text-align: right;
-			}
-		}
-
-		.is-style-link-cta {
-			font-size: 16px;
-			margin-top: 24px;
-			@media (max-width: 500px) {
-				white-space: nowrap;
-			}
-			@media (min-width: 710px) {
-				margin-top: auto;
-				align-self: flex-start;
-			}
-			@media (max-width: 999px) {
-				position: absolute;
-				bottom: 0 - 30px - 50px;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-			@media (min-width: 1000px) {
-				margin-bottom: 25px;
-			}
-		}
-	}
-
-	.section-title-wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		padding-bottom: 35px;
-		margin-bottom: 60px;
-		border-bottom: 9px solid $cto-summit-eu-22-orange-700;
-		@media (min-width: 1000px) {
-			padding-bottom: 60px;
-			margin-bottom: 80px;
-		}
-	}
-
-	.section-header {
-		font-weight: 800;
-		line-height: 120%;
-		letter-spacing: 0.05em;
-		font-size: 28px;
-		text-transform: uppercase;
-		@media (min-width: 1200px) {
-			font-size: 50px;
-		}
-	}
-
-	.section-number {
-		font-family: $font-cto-summit-eu-22-serif;
-		font-style: italic;
-		font-size: 16px;
-		@media (min-width: 600px) {
-			font-size: 24px;
-		}
-		line-height: 120%;
-		letter-spacing: 0.05em;
-		@media (min-width: 1000px) {
-			font-size: 32px;
-		}
-	}
-
 	.sub-header {
 		font-weight: 700;
 		font-size: 20px;
@@ -284,19 +61,6 @@ html {
 	.small-header {
 		font-weight: 700;
 		font-size: 20px;
-	}
-
-	.shadow-hr {
-		width: 100%;
-		height: 10px;
-		background: linear-gradient(180deg, #c4c4c4 0%, rgba(196, 196, 196, 0) 100%);
-		opacity: 0.15;
-		margin-top: 70px;
-		margin-bottom: 70px;
-		@media (min-width: 1200px) {
-			margin-top: 110px;
-			margin-bottom: 110px;
-		}
 	}
 
 	.paragraph-quote {
@@ -313,46 +77,6 @@ html {
 			font-style: italic;
 			@media (min-width: 1000px) {
 				font-size: 30px;
-			}
-		}
-	}
-
-	.quote-container {
-		width: 100%;
-		display: inline-block;
-		position: relative;
-		margin-bottom: 46px;
-		@media (max-width: 600px) {
-			width: calc(100% - 20px);
-			margin-left: 20px;
-		}
-		@media (min-width: 1000px) {
-			margin-bottom: 55px;
-		}
-		&:before {
-			background-image: url("data:image/svg+xml,%3Csvg width='78' height='56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.76 55.056c12.96-9.36 24.048-22.176 24.048-37.152C33.808 7.536 28.336.48 19.408.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352zm43.2 0c12.96-9.36 24.048-22.176 24.048-37.152C77.008 7.536 71.536.48 62.608.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352z' fill='%23F36A11' /%3E%3C/svg%3E");
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 0;
-			background-repeat: no-repeat;
-			width: 64px;
-			height: 46px;
-			background-size: 64px 46px;
-			@media (min-width: 1000px) {
-				width: 74px;
-				height: 55px;
-				background-size: 74px 55px;
-			}
-		}
-		&__quote {
-			font-style: italic;
-			line-height: 160%;
-			font-size: 20px;
-			margin-bottom: 20px;
-			@media (min-width: 1200px) {
-				font-size: 30px;
-				margin-bottom: 40px;
 			}
 		}
 	}
@@ -411,88 +135,6 @@ html {
 		margin-bottom: 40px;
 		@media (min-width: 1000px) {
 			margin-bottom: 60px;
-		}
-	}
-
-	/**
-	* SOCIAL SHARE
-	**/
-	.social-share {
-		color: $cto-summit-eu-22-white;
-		text-transform: uppercase;
-		display: flex;
-		align-items: center;
-		&__title {
-			color: $cto-summit-eu-22-white;
-			margin-right: 20px;
-			line-height: 1;
-			font-size: 14px;
-			font-weight: 700;
-			margin-bottom: 0;
-			letter-spacing: 0.15em;
-			@media (min-width: 1000px) {
-				font-size: 16px;
-			}
-		}
-		&__wrapper {
-			display: flex;
-			> a {
-				display: block;
-				text-align: center;
-				margin-right: 20px;
-			}
-
-			svg {
-				color: $cto-summit-eu-22-white;
-				display: block;
-				max-width: 100%;
-				height: 24px;
-				width: auto;
-				@media (min-width: 412px) {
-					height: 30px;
-				}
-				&:hover {
-					opacity: 0.5;
-				}
-			}
-		}
-	}
-
-	/**
-	SPACERS
-	**/
-
-	.report-spacer-20 {
-		height: 20px;
-	}
-
-	.report-spacer-40 {
-		height: 20px;
-		@media (min-width: 1000px) {
-			height: 35px;
-		}
-		@media (min-width: 1200px) {
-			height: 40px;
-		}
-	}
-
-	.report-spacer-60 {
-		height: 40px;
-		@media (min-width: 1000px) {
-			height: 50px;
-		}
-		@media (min-width: 1200px) {
-			height: 60px;
-		}
-	}
-
-	.report-spacer-120 {
-		height: 60px;
-		@media (min-width: 1000px) {
-			height: 100px;
-		}
-		@media (min-width: 1200px) {
-			height: 120px;
 		}
 	}
 
@@ -590,13 +232,6 @@ html {
 	/**
 	* GRIDS
 	*/
-	.lf-grid {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		column-gap: 3%;
-		row-gap: 50px;
-	}
-
 	.restrictive-column {
 		grid-column: span 12;
 		@media (min-width: 600px) {
