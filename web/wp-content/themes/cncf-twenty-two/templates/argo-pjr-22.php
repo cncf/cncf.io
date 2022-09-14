@@ -502,7 +502,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<a href="https://events.linuxfoundation.org/argocon/">
-					<?php LF_Utils::display_responsive_images( 78940, 'full', '1440px', null, 'lazy', 'ArgoCon 2022 event artwork' ); ?></a>
+					<?php LF_Utils::display_responsive_images( 78915, 'full', '1440px', null, 'lazy', 'ArgoCon 2022 event artwork' ); ?></a>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
