@@ -24,11 +24,18 @@ $argo-22-orange-400: #ef7b4d;
 		}
 	}
 
-	@media (min-width: 1000px) {
-		.restrict-image-width {
+	.full-width-image {
+		width: 100% !important;
+	}
+
+	.restrict-image-width {
+		width: 100%;
+		@media (min-width: 1000px) {
 			max-width: 950px;
 		}
+	}
 
+	@media (min-width: 1000px) {
 		.image-center {
 			margin: auto;
 			display: block;
