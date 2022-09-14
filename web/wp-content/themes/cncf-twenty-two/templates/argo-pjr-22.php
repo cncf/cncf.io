@@ -372,7 +372,7 @@ get_template_part( 'components/skip-link-target' );
 					<span>Contributions by company from Q3 2017 - Q3 2022</span>
 				</h2>
 
-				<?php LF_Utils::display_responsive_images( 78916, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward cumulative growth of Argo Contributions by company from Q3 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 79054, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward cumulative growth of Argo Contributions by company from Q3 2017 - Q3 2022' ); ?>
 
 				<div class="shadow-hr"></div>
 
@@ -380,14 +380,14 @@ get_template_part( 'components/skip-link-target' );
 					<span>Contributions by company from Q3 2017 - Q3 2022</span>
 				</h2>
 
-				<?php LF_Utils::display_responsive_images( 78917, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward Percentage breakdown of Argo Contributions by company from Q3 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 79055, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward Percentage breakdown of Argo Contributions by company from Q3 2017 - Q3 2022' ); ?>
 
 				<div class="shadow-hr"></div>
 
 				<h2 class="sub-header">Cumulative number of companies <span>Q3
 						2017 - Q3 2022</span> </h2>
 
-				<?php LF_Utils::display_responsive_images( 78918, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward cumulative number of companies Q3 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 79055, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward cumulative number of companies Q3 2017 - Q3 2022' ); ?>
 
 				<div class="shadow-hr"></div>
 
@@ -395,7 +395,7 @@ get_template_part( 'components/skip-link-target' );
 					<span>Q3 2017 - Q3 2022</span>
 				</h2>
 
-				<?php LF_Utils::display_responsive_images( 78920, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Cumulative growth in contributors Q3 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 79057, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Cumulative growth in contributors Q3 2017 - Q3 2022' ); ?>
 
 			</div>
 		</section>
@@ -420,7 +420,7 @@ get_template_part( 'components/skip-link-target' );
 					<span>Contributions by company from Q3 2017 - Q3 2022</span>
 				</h2>
 
-				<?php LF_Utils::display_responsive_images( 78921, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing Percentage breakdown of Argo Contributions by company from Q3 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 79058, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing Percentage breakdown of Argo Contributions by company from Q3 2017 - Q3 2022' ); ?>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
@@ -449,7 +449,7 @@ get_template_part( 'components/skip-link-target' );
 
 				<h2 class="sub-header">Monthly velocity of Argo</h2>
 
-				<?php LF_Utils::display_responsive_images( 78922, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward monthly velocity of Argo project' ); ?>
+				<?php LF_Utils::display_responsive_images( 79059, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward monthly velocity of Argo project' ); ?>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -465,7 +465,7 @@ get_template_part( 'components/skip-link-target' );
 				<h2 class="sub-header">Growth of Argo <span>pull requests, code
 						commits, issues, and authors over time</span></h2>
 
-				<?php LF_Utils::display_responsive_images( 78923, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward growth of Argo pull requests, code commits, issues, and authors over time' ); ?>
+				<?php LF_Utils::display_responsive_images( 79060, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward growth of Argo pull requests, code commits, issues, and authors over time' ); ?>
 
 			</div>
 		</section>
@@ -503,7 +503,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<a href="https://events.linuxfoundation.org/argocon/">
-					<?php LF_Utils::display_responsive_images( 78915, 'full', '1440px', null, 'lazy', 'ArgoCon 2022 event artwork' ); ?></a>
+					<?php LF_Utils::display_responsive_images( 78940, 'full', '1440px', null, 'lazy', 'ArgoCon 2022 event artwork' ); ?></a>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
@@ -640,7 +640,7 @@ get_template_part( 'components/skip-link-target' );
 				<h3 class="sub-header">Growth in participation in Argo project
 					documentation <span>(Q1 2017 - Q3 2022)</span></h3>
 
-				<?php LF_Utils::display_responsive_images( 78924, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward growth in participation in Argo project documentation from Q1 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 79061, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward growth in participation in Argo project documentation from Q1 2017 - Q3 2022' ); ?>
 
 				<div class="shadow-hr"></div>
 
@@ -649,7 +649,7 @@ get_template_part( 'components/skip-link-target' );
 					<span>(Q1 2017 - Q3 2022)</span>
 				</h3>
 
-				<?php LF_Utils::display_responsive_images( 78925, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward cumulative growth of Argo project documentation commits  from Q1 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 79062, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward cumulative growth of Argo project documentation commits  from Q1 2017 - Q3 2022' ); ?>
 			</div>
 
 		</section>
