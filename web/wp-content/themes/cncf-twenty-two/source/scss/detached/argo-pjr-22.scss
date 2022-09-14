@@ -24,6 +24,17 @@ $argo-22-orange-400: #ef7b4d;
 		}
 	}
 
+	@media (min-width: 1000px) {
+		.restrict-image-width {
+			max-width: 950px;
+		}
+
+		.image-center {
+			margin: auto;
+			display: block;
+		}
+	}
+
 	.orange-text {
 		color: $argo-22-orange-400;
 	}

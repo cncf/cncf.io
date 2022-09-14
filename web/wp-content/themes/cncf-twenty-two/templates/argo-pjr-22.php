@@ -387,7 +387,7 @@ get_template_part( 'components/skip-link-target' );
 				<h2 class="sub-header">Cumulative number of companies <span>Q3
 						2017 - Q3 2022</span> </h2>
 
-				<?php LF_Utils::display_responsive_images( 78918, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward cumulative number of companies Q3 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 78918, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward cumulative number of companies Q3 2017 - Q3 2022' ); ?>
 
 				<div class="shadow-hr"></div>
 
@@ -395,7 +395,7 @@ get_template_part( 'components/skip-link-target' );
 					<span>Q3 2017 - Q3 2022</span>
 				</h2>
 
-				<?php LF_Utils::display_responsive_images( 78920, 'full', '1440px', 'remove-bg', 'lazy', 'Cumulative growth in contributors Q3 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 78920, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Cumulative growth in contributors Q3 2017 - Q3 2022' ); ?>
 
 			</div>
 		</section>
@@ -412,7 +412,7 @@ get_template_part( 'components/skip-link-target' );
 
 				<h2 class="sub-header-upper">Top contributing Countries</h2>
 
-				<?php LF_Utils::display_responsive_images( 78919, 'full', '1440px', null, 'lazy', 'World map showing top contributing countries to Argo' ); ?>
+				<?php LF_Utils::display_responsive_images( 78919, 'full', '1000px', 'restrict-image-width image-center', 'lazy', 'World map showing top contributing countries to Argo' ); ?>
 
 				<div class="shadow-hr"></div>
 
@@ -449,7 +449,7 @@ get_template_part( 'components/skip-link-target' );
 
 				<h2 class="sub-header">Monthly velocity of Argo</h2>
 
-				<?php LF_Utils::display_responsive_images( 78922, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward monthly velocity of Argo project' ); ?>
+				<?php LF_Utils::display_responsive_images( 78922, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward monthly velocity of Argo project' ); ?>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -465,7 +465,7 @@ get_template_part( 'components/skip-link-target' );
 				<h2 class="sub-header">Growth of Argo <span>pull requests, code
 						commits, issues, and authors over time</span></h2>
 
-				<?php LF_Utils::display_responsive_images( 78923, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward growth of Argo pull requests, code commits, issues, and authors over time' ); ?>
+				<?php LF_Utils::display_responsive_images( 78923, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward growth of Argo pull requests, code commits, issues, and authors over time' ); ?>
 
 			</div>
 		</section>
@@ -640,7 +640,7 @@ get_template_part( 'components/skip-link-target' );
 				<h3 class="sub-header">Growth in participation in Argo project
 					documentation <span>(Q1 2017 - Q3 2022)</span></h3>
 
-				<?php LF_Utils::display_responsive_images( 78924, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward growth in participation in Argo project documentation from Q1 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 78924, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward growth in participation in Argo project documentation from Q1 2017 - Q3 2022' ); ?>
 
 				<div class="shadow-hr"></div>
 
@@ -649,7 +649,7 @@ get_template_part( 'components/skip-link-target' );
 					<span>(Q1 2017 - Q3 2022)</span>
 				</h3>
 
-				<?php LF_Utils::display_responsive_images( 78925, 'full', '1440px', 'remove-bg', 'lazy', 'Chart showing upward cumulative growth of Argo project documentation commits  from Q1 2017 - Q3 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 78925, 'full', '1440px', 'remove-bg restrict-image-width', 'lazy', 'Chart showing upward cumulative growth of Argo project documentation commits  from Q1 2017 - Q3 2022' ); ?>
 			</div>
 
 		</section>
