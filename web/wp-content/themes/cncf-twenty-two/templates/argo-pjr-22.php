@@ -416,7 +416,8 @@ get_template_part( 'components/skip-link-target' );
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="sub-header">Percentage Contributors to Argo <span>by Country</span>
+				<h2 class="sub-header">Percentage Contributors to Argo <span>by
+						Country</span>
 				</h2>
 
 				<?php LF_Utils::display_responsive_images( 79070, 'full', '1440px', 'remove-bg full-width-image', 'lazy', 'Chart showing Percentage breakdown of Argo Contributions by country' ); ?>
@@ -496,13 +497,21 @@ get_template_part( 'components/skip-link-target' );
 				<h2 class="sub-header-upper">ArgoCon 2022</h2>
 				<div class="lf-grid">
 					<p
-						class="restrictive-9-col"><a href="https://events.linuxfoundation.org/argocon/">ArgoCon 2022</a> (September 19-21, 2022), in Mountain View, California has dozens of breakout sessions for roadmap updates, hands-on workshops, lightning talks, use case walkthroughs, and more. The sponsorship slate is already full, with major support from Adobe, Akuity, Intuit, Red Hat, OpsMx, and many more.</p>
+						class="restrictive-9-col"><a href="https://events.linuxfoundation.org/argocon/">ArgoCon 2022</a> (September 19-21, 2022), in Mountain View, California has dozens of breakout sessions for roadmap updates, hands-on workshops, lightning talks, use case walkthroughs, and more. The sponsorship slate is already full, with major support from Adobe, Akuity, Codefresh, Harness, Intuit, Red Hat, and many more.</p>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<a href="https://events.linuxfoundation.org/argocon/">
-					<?php LF_Utils::display_responsive_images( 78915, 'full', '1440px', null, 'lazy', 'ArgoCon 2022 event artwork' ); ?></a>
+				<a href="https://events.linuxfoundation.org/argocon/"
+					title="ArgoCon Event">
+					<picture>
+						<source media="(max-width: 499px)"
+							srcset="<?php echo esc_url( wp_get_attachment_image_url( 79107, 'full', false ) ); ?>">
+						<source media="(min-width: 500px)"
+							srcset="<?php echo esc_url( wp_get_attachment_image_url( 79108, 'full', false ) ); ?>">
+						<?php LF_Utils::display_responsive_images( 79108, 'full', '1440px', 'argocon-banner', 'lazy', 'ArgoCon 2022 event artwork' ); ?>
+					</picture>
+				</a>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
