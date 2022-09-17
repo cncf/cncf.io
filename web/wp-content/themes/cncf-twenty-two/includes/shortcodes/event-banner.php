@@ -43,7 +43,7 @@ function get_event_ad_for_menu() {
 		}
 		echo '</ul>';
 	} else {
-		// just grab the next event.
+		// there being no kubecon, just grab the next event.
 		$the_query = new WP_Query(
 			array(
 				'post_type' => 'lf_event',
@@ -66,7 +66,7 @@ function get_event_ad_for_menu() {
 				$the_query->the_post();
 				$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
 				echo '<li>' . get_the_title() . ' ' . $end_date . '</li>';
-				}
+			}
 			echo '</ul>';
 		}
 	}
@@ -76,10 +76,41 @@ function get_event_ad_for_menu() {
 }
 
 /**
- * Returns banner info for inclusion in homepage
+ * Returns banner info for inclusion in homepage.
+ * Grabs all upcoming events with a desktop image.
  */
 function get_event_banner_info() {
+	$the_query = new WP_Query(
+		array(
+			'post_type' => 'lf_event',
+			'posts_per_page' => -1,
+			'orderby' => 'meta_value',
+			'meta_key'  => 'lf_event_date_end',
+			'order' => 'ASC',
+			'meta_query' => array(
+				'relation' => 'AND',
+				array(
+					'key'     => 'lf_event_date_end',
+					'value'   => gmdate( 'Y-m-d' ),
+					'compare' => '>=',
+				),
+				array(
+					'key' => 'lf_event_desktop_banner',
+					'compare' => 'EXISTS',
+				),
+			),
+		),
+	);
 
+	if ( $the_query->have_posts() ) {
+		echo '<ul>';
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
+			echo '<li>' . get_the_title() . ' ' . $end_date . '</li>';
+		}
+		echo '</ul>';
+	}
 }
 
 /**
@@ -88,7 +119,7 @@ function get_event_banner_info() {
 function add_event_banner_shortcode() {
 
 	ob_start();
-	get_event_ad_for_menu();
+	get_event_banner_info();
 	$block_content = ob_get_clean();
 	return $block_content;
 }
