@@ -101,6 +101,7 @@ require_once 'includes/shortcodes/radars.php';
 require_once 'includes/shortcodes/selected-people.php';
 require_once 'includes/shortcodes/upcoming-webinars.php';
 require_once 'includes/shortcodes/youtube-playlist.php';
+require_once 'includes/shortcodes/event-banner.php';
 
 /**
  * Make all JS defer onload apart from files specified.
