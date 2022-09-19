@@ -16,23 +16,24 @@
  */
 function get_event_ad_for_menu() {
 	// find the next kubecon event.
-	$the_query = new WP_Query(
-		array(
-			'post_type' => 'lf_event',
-			'posts_per_page' => 1,
-			's' => 'kubecon',
-			'orderby' => 'meta_value',
-			'meta_key'  => 'lf_event_date_end',
-			'order' => 'ASC',
-			'meta_query' => array(
-				array(
-					'key'     => 'lf_event_date_end',
-					'value'   => gmdate( 'Y-m-d' ),
-					'compare' => '>=',
-				),
+
+	$args = array(
+		'post_type' => 'lf_event',
+		'posts_per_page' => 1,
+		's' => 'kubecon',
+		'orderby' => 'meta_value',
+		'meta_key'  => 'lf_event_date_end',
+		'order' => 'ASC',
+		'meta_query' => array(
+			array(
+				'key'     => 'lf_event_date_end',
+				'value'   => gmdate( 'Y-m-d' ),
+				'compare' => '>=',
 			),
 		),
 	);
+
+	$the_query = new WP_Query( $args );
 
 	if ( $the_query->have_posts() ) {
 		echo '<ul>';
@@ -44,22 +45,9 @@ function get_event_ad_for_menu() {
 		echo '</ul>';
 	} else {
 		// there being no kubecon, just grab the next event.
-		$the_query = new WP_Query(
-			array(
-				'post_type' => 'lf_event',
-				'posts_per_page' => 1,
-				'orderby' => 'meta_value',
-				'meta_key'  => 'lf_event_date_end',
-				'order' => 'ASC',
-				'meta_query' => array(
-					array(
-						'key'     => 'lf_event_date_end',
-						'value'   => gmdate( 'Y-m-d' ),
-						'compare' => '>=',
-					),
-				),
-			),
-		);
+		unset( $args['s'] );
+		$the_query = new WP_Query( $args );
+
 		if ( $the_query->have_posts() ) {
 			echo '<ul>';
 			while ( $the_query->have_posts() ) {
@@ -77,13 +65,13 @@ function get_event_ad_for_menu() {
 
 /**
  * Returns banner info for inclusion in homepage.
- * Grabs all upcoming events with a desktop image.
+ * Grabs max of 5 upcoming events with a desktop image.
  */
 function get_event_banner_info() {
 	$the_query = new WP_Query(
 		array(
 			'post_type' => 'lf_event',
-			'posts_per_page' => -1,
+			'posts_per_page' => 5,
 			'orderby' => 'meta_value',
 			'meta_key'  => 'lf_event_date_end',
 			'order' => 'ASC',
@@ -96,6 +84,10 @@ function get_event_banner_info() {
 				),
 				array(
 					'key' => 'lf_event_desktop_banner',
+					'compare' => 'EXISTS',
+				),
+				array(
+					'key' => 'lf_event_mobile_banner',
 					'compare' => 'EXISTS',
 				),
 			),
