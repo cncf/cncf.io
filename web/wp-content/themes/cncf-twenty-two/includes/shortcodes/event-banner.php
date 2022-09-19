@@ -14,7 +14,7 @@
  * Returns the banner info for inclusion in megamenu.
  * It grabs the next Kubecon event, if there is one, otherwise returns the next event.
  */
-function get_event_ad_for_menu() {
+function show_event_for_menu() {
 	// find the next kubecon event.
 
 	$args = array(
@@ -40,7 +40,7 @@ function get_event_ad_for_menu() {
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 			$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
-			echo '<li>' . get_the_title() . ' ' . $end_date . '</li>';
+			echo '<li>' . get_the_title() . ' ' . $end_date . '</li>'; //TODO: to be changed to correct HTML.
 		}
 		echo '</ul>';
 	} else {
@@ -53,7 +53,7 @@ function get_event_ad_for_menu() {
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
 				$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
-				echo '<li>' . get_the_title() . ' ' . $end_date . '</li>';
+				echo '<li>' . get_the_title() . ' ' . $end_date . '</li>'; //TODO: to be changed to correct HTML.
 			}
 			echo '</ul>';
 		}
@@ -67,7 +67,7 @@ function get_event_ad_for_menu() {
  * Returns banner info for inclusion in homepage.
  * Grabs max of 5 upcoming events with a desktop image.
  */
-function get_event_banner_info() {
+function show_event_banner() {
 	$the_query = new WP_Query(
 		array(
 			'post_type' => 'lf_event',
@@ -99,7 +99,7 @@ function get_event_banner_info() {
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 			$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
-			echo '<li>' . get_the_title() . ' ' . $end_date . '</li>';
+			echo '<li>' . get_the_title() . ' ' . $end_date . '</li>'; //TODO: to be changed to correct HTML.
 		}
 		echo '</ul>';
 	}
@@ -111,7 +111,7 @@ function get_event_banner_info() {
 function add_event_banner_shortcode() {
 
 	ob_start();
-	get_event_banner_info();
+	show_event_banner();
 	$block_content = ob_get_clean();
 	return $block_content;
 }
