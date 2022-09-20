@@ -1,9 +1,11 @@
 // Front page banner.
 .event-banner {
 	width: 100%;
-	border-radius: 5px;
 	overflow: hidden;
 	a {
 		display: block;
+	}
+	img {
+		border-radius: 5px;
 	}
 }
