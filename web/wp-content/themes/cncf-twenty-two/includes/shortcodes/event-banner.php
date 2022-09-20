@@ -78,6 +78,7 @@ function show_event_banner() {
 			'meta_key'       => 'lf_event_date_end',
 			'order'          => 'ASC',
 			'meta_query'     => array(
+				'relation' => 'AND',
 				array(
 					'key'     => 'lf_event_date_end',
 					'value'   => gmdate( 'Y-m-d' ),
