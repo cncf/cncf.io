@@ -60,7 +60,6 @@ function show_event_in_menu() {
 			}
 		}
 	}
-
 	/* Restore original Post Data */
 	wp_reset_postdata();
 }
@@ -93,7 +92,7 @@ function show_event_banner() {
 					'compare' => 'EXISTS',
 				),
 			),
-		),
+		)
 	);
 
 	if ( $the_query->have_posts() ) {
