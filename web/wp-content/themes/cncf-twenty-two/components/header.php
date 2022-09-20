@@ -115,13 +115,13 @@ endif;
 										if ( $query->have_posts() ) :
 											while ( $query->have_posts() ) :
 												$query->the_post();
-
 												get_template_part( 'components/main-menu-item' );
 									endwhile;
 									endif;
 									endif;
 									wp_reset_postdata();
-									get_template_part( 'components/next-event' );
+
+									show_event_in_menu();
 									?>
 							</div>
 						</div>

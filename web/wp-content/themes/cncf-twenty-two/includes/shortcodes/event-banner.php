@@ -14,21 +14,28 @@
  * Returns the banner info for inclusion in megamenu.
  * It grabs the next Kubecon event, if there is one, otherwise returns the next event.
  */
-function show_event_for_menu() {
-	// find the next kubecon event.
-
+function show_event_in_menu() {
+	// find the next kubecon event with logo and background color.
 	$args = array(
-		'post_type' => 'lf_event',
+		'post_type'      => 'lf_event',
 		'posts_per_page' => 1,
-		's' => 'kubecon',
-		'orderby' => 'meta_value',
-		'meta_key'  => 'lf_event_date_end',
-		'order' => 'ASC',
-		'meta_query' => array(
+		's'              => 'kubecon',
+		'orderby'        => 'meta_value',
+		'meta_key'       => 'lf_event_date_end',
+		'order'          => 'ASC',
+		'meta_query'     => array(
 			array(
 				'key'     => 'lf_event_date_end',
 				'value'   => gmdate( 'Y-m-d' ),
 				'compare' => '>=',
+			),
+			array(
+				'key'     => 'lf_event_logo',
+				'compare' => 'EXISTS',
+			),
+			array(
+				'key'     => 'lf_event_background',
+				'compare' => 'EXISTS',
 			),
 		),
 	);
@@ -36,26 +43,21 @@ function show_event_for_menu() {
 	$the_query = new WP_Query( $args );
 
 	if ( $the_query->have_posts() ) {
-		echo '<ul>';
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
-			$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
-			echo '<li>' . get_the_title() . ' ' . $end_date . '</li>'; //TODO: to be changed to correct HTML.
+			get_template_part( 'components/event-mega-menu' );
 		}
-		echo '</ul>';
 	} else {
+
 		// there being no kubecon, just grab the next event.
 		unset( $args['s'] );
 		$the_query = new WP_Query( $args );
 
 		if ( $the_query->have_posts() ) {
-			echo '<ul>';
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
-				$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
-				echo '<li>' . get_the_title() . ' ' . $end_date . '</li>'; //TODO: to be changed to correct HTML.
+				get_template_part( 'components/event-mega-menu' );
 			}
-			echo '</ul>';
 		}
 	}
 
@@ -65,29 +67,28 @@ function show_event_for_menu() {
 
 /**
  * Returns banner info for inclusion in homepage.
- * Grabs max of 5 upcoming events with a desktop image.
+ * Grabs max of 1 upcoming events with a desktop image.
  */
 function show_event_banner() {
 	$the_query = new WP_Query(
 		array(
-			'post_type' => 'lf_event',
-			'posts_per_page' => 5,
-			'orderby' => 'meta_value',
-			'meta_key'  => 'lf_event_date_end',
-			'order' => 'ASC',
-			'meta_query' => array(
-				'relation' => 'AND',
+			'post_type'      => 'lf_event',
+			'posts_per_page' => 1,
+			'orderby'        => 'meta_value',
+			'meta_key'       => 'lf_event_date_end',
+			'order'          => 'ASC',
+			'meta_query'     => array(
 				array(
 					'key'     => 'lf_event_date_end',
 					'value'   => gmdate( 'Y-m-d' ),
 					'compare' => '>=',
 				),
 				array(
-					'key' => 'lf_event_desktop_banner',
+					'key'     => 'lf_event_desktop_banner',
 					'compare' => 'EXISTS',
 				),
 				array(
-					'key' => 'lf_event_mobile_banner',
+					'key'     => 'lf_event_mobile_banner',
 					'compare' => 'EXISTS',
 				),
 			),
@@ -95,13 +96,10 @@ function show_event_banner() {
 	);
 
 	if ( $the_query->have_posts() ) {
-		echo '<ul>';
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
-			$end_date = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
-			echo '<li>' . get_the_title() . ' ' . $end_date . '</li>'; //TODO: to be changed to correct HTML.
+			get_template_part( 'components/event-banner' );
 		}
-		echo '</ul>';
 	}
 }
 
@@ -109,7 +107,6 @@ function show_event_banner() {
  * Event Banner shortcode.
  */
 function add_event_banner_shortcode() {
-
 	ob_start();
 	show_event_banner();
 	$block_content = ob_get_clean();
