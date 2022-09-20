@@ -54,7 +54,7 @@ $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 
 			$category_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-report-type', true );
 
-			$parent_link = get_home_url() . '/lf-report-type/' . $category_slug . '/';
+			$parent_link = get_home_url() . '/reports/?_sft_lf-report-type=' . $category_slug;
 
 			$type_of_post = 'Report';
 
