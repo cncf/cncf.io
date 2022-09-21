@@ -444,7 +444,6 @@ class Lf_Mu_Admin {
 	 * Removes dashboard widgets.
 	 */
 	public function remove_dashboard_widgets() {
-		remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
 		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
 		remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
 		remove_meta_box( 'wp_mail_smtp_reports_widget_lite', 'dashboard', 'normal' );
@@ -507,10 +506,12 @@ class Lf_Mu_Admin {
 		$date = $columns['date'];
 		unset( $columns['date'] );
 
-		$columns['lf_event_date_start'] = 'Start Date';
-		$columns['lf_event_logo']       = 'Logo';
-		$columns['lf_event_background'] = 'Background';
-		$columns['date']                = $date;
+		$columns['lf_event_date_start']     = 'Start Date';
+		$columns['lf_event_logo']           = 'Logo';
+		$columns['lf_event_background']     = 'Background';
+		$columns['lf_event_mobile_banner']  = 'Mobile';
+		$columns['lf_event_desktop_banner'] = 'Desktop';
+		$columns['date']                    = $date;
 
 		return $columns;
 	}
@@ -533,14 +534,26 @@ class Lf_Mu_Admin {
 				}
 				break;
 
+			// $yes = '<span class="dashicons dashicons-yes-alt">c</span>';
+
 			// displays if logo is present.
 			case 'lf_event_logo':
-				echo get_post_meta( $post_id, 'lf_event_logo', true ) ? 'Yes' : 'No';
+				echo get_post_meta( $post_id, 'lf_event_logo', true ) ? '<span class="dashicons dashicons-yes-alt" style="color:green"></span>' : '<span class="dashicons dashicons-no-alt" style="color:red"></span>';
 				break;
 
 			// displays if background is present.
 			case 'lf_event_background':
-				echo get_post_meta( $post_id, 'lf_event_background', true ) ? 'Yes' : 'No';
+				echo get_post_meta( $post_id, 'lf_event_background', true ) ? '<span class="dashicons dashicons-yes-alt" style="color:green"></span>' : '<span class="dashicons dashicons-no-alt" style="color:red"></span>';
+				break;
+
+			// displays if mobile banner is present.
+			case 'lf_event_mobile_banner':
+				echo get_post_meta( $post_id, 'lf_event_mobile_banner', true ) ? '<span class="dashicons dashicons-yes-alt" style="color:green"></span>' : '<span class="dashicons dashicons-no-alt" style="color:red"></span>';
+				break;
+
+			// displays if desktop banner is present.
+			case 'lf_event_desktop_banner':
+				echo get_post_meta( $post_id, 'lf_event_desktop_banner', true ) ? '<span class="dashicons dashicons-yes-alt" style="color:green"></span>' : '<span class="dashicons dashicons-no-alt" style="color:red"></span>';
 				break;
 		}
 	}

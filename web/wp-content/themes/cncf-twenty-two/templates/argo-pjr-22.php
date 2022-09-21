@@ -145,8 +145,7 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 
 				<div class="section-01__grid-col2">
-					<h3 class="sub-header">Since joining, the Argo team and
-						community have added:</h3>
+					<h3 class="sub-header">The Argo project and community by the numbers:</h3>
 
 					<div class="section-01__icon-col">
 						<!-- Icon 1  -->
@@ -157,7 +156,7 @@ get_template_part( 'components/skip-link-target' );
 " alt="Badge icon">
 							</div>
 							<div class="text">
-								<span>7,134+</span><br />
+								<span>7K+</span><br />
 								Contributors
 							</div>
 						</div>
@@ -170,7 +169,7 @@ get_template_part( 'components/skip-link-target' );
 " alt="Code icon">
 							</div>
 							<div class="text">
-								<span>16,288+</span><br />
+								<span>16K+</span><br />
 								Code commits
 							</div>
 						</div>
@@ -183,7 +182,7 @@ get_template_part( 'components/skip-link-target' );
 " alt="Commit icon">
 							</div>
 							<div class="text">
-								<span>11,557+</span><br />
+								<span>11K+</span><br />
 								Pull requests
 							</div>
 						</div>
@@ -196,7 +195,7 @@ get_template_part( 'components/skip-link-target' );
 " alt="Command line icon">
 							</div>
 							<div class="text">
-								<span>370,000+</span><br />
+								<span>370K+</span><br />
 								Contributions
 							</div>
 						</div>
@@ -209,7 +208,7 @@ get_template_part( 'components/skip-link-target' );
 " alt="Building icon">
 							</div>
 							<div class="text">
-								<span>1,931+</span><br />
+								<span>1.9K+</span><br />
 								Contributing companies
 							</div>
 						</div>
