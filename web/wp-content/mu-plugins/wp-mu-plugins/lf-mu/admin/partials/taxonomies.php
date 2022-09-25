@@ -52,7 +52,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_spotlight', 'lf_person' ), $args );
+register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_spotlight', 'lf_person', 'lf_human' ), $args );
 
 $labels = array(
 	'name'          => __( 'Author Category', 'lf-mu' ),
@@ -173,7 +173,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study', 'lf_ktp', 'lf_person' ), $args );
+register_taxonomy( 'lf-country', array( 'lf_event', 'lf_case_study', 'lf_ktp', 'lf_person', 'lf_human' ), $args );
 
 $labels = array(
 	'name'              => __( 'Country', 'lf-mu' ),

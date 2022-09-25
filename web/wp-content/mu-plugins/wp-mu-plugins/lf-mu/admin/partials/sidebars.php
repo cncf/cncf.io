@@ -372,6 +372,24 @@ $sidebar    = array(
 							'alpha_control' => true,
 							'palette'       => $palette,
 						),
+						array(
+							'type'          => 'image',
+							'data_type'     => 'meta',
+							'data_key'      => 'desktop_banner',
+							'label'         => __( 'Desktop Ad Image' ),
+							'help'          => __( 'An image used for the homepage banner ad. Recommended size 2400 x 840px.' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+						),
+						array(
+							'type'          => 'image',
+							'data_type'     => 'meta',
+							'data_key'      => 'mobile_banner',
+							'label'         => __( 'Mobile Ad Image' ),
+							'help'          => __( 'An image used for the homepage banner ad. Recommended size 900 x 1100px.' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+						),
 					),
 				),
 			),
@@ -634,6 +652,38 @@ $sidebar    = array(
 							'ui_border_top' => true,
 							'default_value' => '',
 							'placeholder'   => 'https://www.cncf.io/wp-content/uploads/2021/11/KubeCon_NA_21_Report.pdf',
+						),
+					),
+				),
+			),
+		),
+	),
+);
+$sidebars[] = $sidebar;
+
+$sidebar    = array(
+	'id'              => 'lf-sidebar-human',
+	'id_prefix'       => 'lf_',
+	'label'           => __( 'Post Settings' ),
+	'post_type'       => 'lf_human',
+	'data_key_prefix' => 'lf_human_',
+	'icon_dashicon'   => 'admin-settings',
+	'tabs'            => array(
+		array(
+			'label'  => __( 'Tab label' ),
+			'panels' => array(
+				array(
+					'label'        => __( 'General' ),
+					'initial_open' => true,
+					'settings'     => array(
+						array(
+							'type'          => 'image',
+							'data_type'     => 'meta',
+							'data_key'      => 'image',
+							'label'         => __( 'Headshot' ),
+							'help'          => __( 'Image should be at least 800x800px with face centered.' ),
+							'ui_border_top' => false,
+							'register_meta' => true,
 						),
 					),
 				),

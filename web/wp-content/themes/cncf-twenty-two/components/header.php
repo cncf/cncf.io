@@ -70,6 +70,7 @@ endif;
 										'post_type'      => 'lf_report',
 										'post_status'    => array( 'publish' ),
 										'posts_per_page' => 1,
+										's'              => '"CNCF Annual Report"',
 										'orderby'        => 'date',
 										'order'          => 'DESC',
 										'tax_query'      => array(
@@ -88,17 +89,14 @@ endif;
 										'posts_per_page' => 1,
 										'orderby'        => 'date',
 										'order'          => 'DESC',
-										'tax_query'      => array(
-											array(
-												'taxonomy' => 'lf-report-type',
-												'field'    => 'slug',
-												'terms'    => 'survey',
-											),
-										),
 									);
 
 									$annual_report_query = get_posts( $annual_report );
-									$survey_query        = get_posts( $survey );
+									if ( $annual_report_query ) {
+										$survey['post__not_in'] = $annual_report_query;
+									}
+									$survey_query = get_posts( $survey );
+
 									// Merge the two results.
 									$post_ids = array_merge( $annual_report_query, $survey_query );
 
@@ -115,13 +113,13 @@ endif;
 										if ( $query->have_posts() ) :
 											while ( $query->have_posts() ) :
 												$query->the_post();
-
 												get_template_part( 'components/main-menu-item' );
 									endwhile;
 									endif;
 									endif;
 									wp_reset_postdata();
-									get_template_part( 'components/next-event' );
+
+									show_event_in_menu();
 									?>
 							</div>
 						</div>

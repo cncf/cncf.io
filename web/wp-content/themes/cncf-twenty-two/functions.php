@@ -1,4 +1,4 @@
-<?php // phpcs:ignoreFile
+<?php
 /**
  * Theme Functions
  *
@@ -84,14 +84,14 @@ require_once 'includes/gutenberg-options.php';
 // Post excerpts.
 require_once 'includes/excerpts.php';
 
-// Shortcodes
+// Shortcodes.
 require_once 'includes/shortcodes/benefits.php';
+require_once 'includes/shortcodes/event-banner.php';
 require_once 'includes/shortcodes/home.php';
 require_once 'includes/shortcodes/kubeweeklys.php';
 require_once 'includes/shortcodes/latest-news.php';
 require_once 'includes/shortcodes/members.php';
 require_once 'includes/shortcodes/metrics.php';
-require_once 'includes/shortcodes/next-event.php';
 require_once 'includes/shortcodes/people.php';
 require_once 'includes/shortcodes/price-table-cloud-credits.php';
 require_once 'includes/shortcodes/price-table-end-users.php';
@@ -120,13 +120,13 @@ function lf_defer_parsing_of_js( $url ) {
 	}
 	// List of scripts that should not be deferred.
 	$do_not_defer_scripts = array( 'jquery' );
-	if ( ! is_front_page() && count($do_not_defer_scripts) > 0 ) {
- 	foreach( $do_not_defer_scripts as $script ){
-		if ( strpos( $url, $script ) ) {
-			return $url;
+	if ( ! is_front_page() && count( $do_not_defer_scripts ) > 0 ) {
+		foreach ( $do_not_defer_scripts as $script ) {
+			if ( strpos( $url, $script ) ) {
+				return $url;
+			}
 		}
 	}
-}
 	return str_replace( ' src', ' defer src', $url );
 }
 add_filter( 'script_loader_tag', 'lf_defer_parsing_of_js', 10, 3 );

@@ -11,16 +11,7 @@
 
 <main class="human">
 	<article class="container wrap post-content">
-
-<div style="height:30px" aria-hidden="true"
-			class="wp-block-spacer">
-		</div>
-
 		<?php
-
-		if ( has_post_thumbnail() ) {
-			Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-post-width', '900px', 'human__image', 'eager', get_the_title() );
-		}
 
 		if ( have_posts() ) :
 			while ( have_posts() ) :
