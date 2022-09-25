@@ -34,7 +34,7 @@ $site_options = get_option( 'lf-mu' );
 					" media="(min-width: 700px)" type="image/webp">
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-800x319.webp', true );
+					Lf_Utils::get_image( 'phippy-family-footer-900x360.webp', true );
 				?>
 					" type="image/webp">
 					<source srcset="
@@ -44,14 +44,14 @@ $site_options = get_option( 'lf-mu' );
 					" media="(min-width: 700px)" type="image/png">
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-800x319.png', true );
+					Lf_Utils::get_image( 'phippy-family-footer-900x360.png', true );
 				?>
 					" type="image/png">
 					<img src="
 				<?php
 					Lf_Utils::get_image( 'phippy-family-footer.png', true );
 				?>
-					" alt="Characters from Phippy family" width="1904" height="760"
+					" alt="Characters from Phippy family" width="1900" height="760"
 						class="phippy-footer__image" id="phippy-footer"
 						loading="lazy" decoding="async">
 				</picture>
