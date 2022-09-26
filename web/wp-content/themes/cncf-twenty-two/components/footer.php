@@ -17,8 +17,8 @@ $site_options = get_option( 'lf-mu' );
 
 	<?php
 	if ( is_front_page() ) :
+		// Start Phippy footer.
 		?>
-	<!-- Start of phippy  -->
 	<div class="phippy-footer">
 
 		<div style="height:100px" aria-hidden="true" class="wp-block-spacer"
@@ -34,7 +34,7 @@ $site_options = get_option( 'lf-mu' );
 					" media="(min-width: 700px)" type="image/webp">
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-900x360.webp', true );
+					Lf_Utils::get_image( 'phippy-family-footer-900x380.webp', true );
 				?>
 					" type="image/webp">
 					<source srcset="
@@ -44,23 +44,23 @@ $site_options = get_option( 'lf-mu' );
 					" media="(min-width: 700px)" type="image/png">
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-900x360.png', true );
+					Lf_Utils::get_image( 'phippy-family-footer-900x380.png', true );
 				?>
 					" type="image/png">
 					<img src="
 				<?php
 					Lf_Utils::get_image( 'phippy-family-footer.png', true );
 				?>
-					" alt="Characters from Phippy family" width="1900" height="760"
+					" alt="Characters from Phippy family" width="1800" height="760"
 						class="phippy-footer__image" id="phippy-footer"
 						loading="lazy" decoding="async">
 				</picture>
 			</div>
 		</div>
 	</div>
-	<!-- end of phippy  -->
 		<?php
 		wp_enqueue_script( 'home-phippy', get_template_directory_uri() . '/source/js/on-demand/home-phippy.js', null, filemtime( get_template_directory() . '/source/js/on-demand/home-phippy.js' ), true );
+		// End of Phippy footer.
 	endif;
 	?>
 

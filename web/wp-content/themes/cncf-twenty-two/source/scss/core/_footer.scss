@@ -109,12 +109,17 @@
 }
 
 .phippy-footer {
-	// overflow: hidden;
-	background-color: #fdfdfd;
+	background-color: $gray-050;
+	@media (min-width: 1200px) {
+		margin-top: 20px;
+	}
 	&__container {
 		background-color: $black;
 		position: relative;
-		padding-bottom: 70px;
+		padding-bottom: 50px;
+		@media (min-width: 800px) {
+			padding-bottom: 80px;
+		}
 		@media (min-width: 1200px) {
 			padding-bottom: 130px;
 		}
@@ -126,12 +131,14 @@
 		@media (min-width: 1200px) {
 			max-width: $content-width;
 		}
+		@media (min-width: 1400px) {
+			max-width: calc(#{$content-width} + 100px);
+		}
 	}
 	&__image {
 		width: 100%;
 		position: relative;
 		pointer-events: none;
-		// z-index: 1;
 		height: auto;
 		display: block;
 		left: 50%;
