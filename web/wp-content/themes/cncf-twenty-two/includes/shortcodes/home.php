@@ -172,7 +172,7 @@ function add_home_ambassadors_shortcode() {
 			class="wp-block-spacer is-style-20-40"></div>
 
 		<p
-			class="home-ambassadors__text">CNCF is deeply committed to the success of our community and ensure individuals carve their own path in the cloud native ecosystem, no matter their background or future goals. </p>
+			class="home-ambassadors__text">CNCF is deeply committed to the success of our community, from <a href="/people/ambassadors/">our ambassadors</a> to maintainers to first-time contributors. No matter your goals, we support your cloud native journey. </p>
 	</div>
 
 	<!-- Heptagon Clip Path  -->
@@ -325,7 +325,7 @@ endif;
 
 	<div class="home-ambassadors__cta">
 		<p
-			class="is-style-link-cta"><a href="/people/ambassadors/">CNCF Ambassadors</a></p>
+			class="is-style-link-cta"><a href="/humans-of-cloud-native/">Humans of Cloud Native</a></p>
 	</div>
 </div>
 
