@@ -74,6 +74,9 @@ if ( WP_DEBUG === true ) {
 // LF utils.
 require_once 'classes/class-lf-utils.php';
 
+// Advanced Custom Fields.
+require_once 'includes/acf.php';
+
 // WP REST API cache control.
 require_once 'includes/rest-api-cache-control.php';
 

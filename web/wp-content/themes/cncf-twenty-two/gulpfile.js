@@ -29,6 +29,7 @@ var jsEditorDestination = PROJECT_FOLDER + '/build/';
 var jsEditorFile        = 'editor-scripts';
 
 var styleWatchFiles        = PROJECT_FOLDER + '/source/scss/**/*.scss';
+var acfStyleWatchFiles        = PROJECT_FOLDER + '/blocks/**/*.scss';
 var styleWatchDetachedStyles = PROJECT_FOLDER + '/source/scss/detached/*.scss';
 var editorJSWatchFiles     = PROJECT_FOLDER + '/source/js/editor/**/*.js';
 var globalJSWatchFiles     = PROJECT_FOLDER + '/source/js/globals/**/*.js';
@@ -89,6 +90,7 @@ function watch() {
 	gulp.watch( projectHTMLWatchFiles ).on( 'change',reload );
 	gulp.watch( styleWatchFiles,gulp.series( [styles] ) );
 	gulp.watch( styleWatchDetachedStyles,gulp.series( [detachedStyles] ) );
+	gulp.watch( acfStyleWatchFiles,gulp.series( [acfBlockStyles] ) );
 	gulp.watch( thirdpartyJSWatchFiles,gulp.series( [reload] ) );
 	gulp.watch( editorJSWatchFiles,gulp.series( [editorJS,reload] ) );
 	gulp.watch( globalJSWatchFiles,gulp.series( [globalJS,reload] ) );
@@ -340,9 +342,49 @@ function editorJS() {
 	);
 }
 
-exports.default    = gulp.series( styles,globalJS,editorJS,watch );
-exports.watch      = gulp.series( styles,globalJS,editorJS,watch );
-exports.detached   = gulp.series( styles,detachedStyles,globalJS,editorJS,watch );
-exports.build      = gulp.series( styles,detachedStyles,globalJS,editorJS );
-exports.production = gulp.series( styles,detachedStyles,globalJS,editorJS );
-exports.prod       = gulp.series( styles,detachedStyles,globalJS,editorJS );
+
+function acfBlockStyles() {
+	return gulp
+		.src( PROJECT_FOLDER + '/blocks/**/*.scss' )
+		.pipe( plumber( {errorHandler: notify.onError( 'Error: <%= error.message %>' )} ) )
+		.pipe(
+			sass(
+				{
+					errLogToConsole: true,
+					outputStyle: 'compressed',
+					precision: 10
+				}
+			)
+		)
+		.pipe(
+			postcss(
+				[
+				autoprefixer(
+					{
+						cascade: false
+					}
+				),
+				cssnano
+				]
+			)
+		)
+		.pipe( lineec() )
+		.pipe( plumber.stop() )
+		.pipe(
+			gulp.dest(
+				function(file) {
+					return file.base;
+				}
+			)
+		)
+		.pipe( filter( '**/*.css' ) )
+		.pipe( browserSync.stream() )
+		.pipe( touch() );
+}
+
+exports.default    = gulp.series( styles,globalJS,editorJS,acfBlockStyles,watch );
+exports.watch      = gulp.series( styles,globalJS,editorJS,acfBlockStyles,watch );
+exports.detached   = gulp.series( styles,acfBlockStyles,detachedStyles,globalJS,editorJS,watch );
+exports.build      = gulp.series( styles,detachedStyles,acfBlockStyles,globalJS,editorJS );
+exports.production = gulp.series( styles,detachedStyles,acfBlockStyles,globalJS,editorJS );
+exports.prod       = gulp.series( styles,detachedStyles,acfBlockStyles,globalJS,editorJS );
