@@ -1,6 +1,6 @@
 <?php
 /**
- * Event Banner
+ * Event Banner - Singular Data
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -11,9 +11,7 @@ $mobile_image_id  = get_post_meta( get_the_ID(), 'lf_event_mobile_banner', true 
 $desktop_image_id = get_post_meta( get_the_ID(), 'lf_event_desktop_banner', true );
 $external_url     = get_post_meta( get_the_ID(), 'lf_event_external_url', true );
 
-if ( $desktop_image_id && $mobile_image_id ) :
-	?>
-<div class="event-banner has-animation-scale-2" role="banner">
+?>
 	<a href="<?php echo esc_url( $external_url ); ?>" title="<?php the_title_attribute( get_the_ID() ); ?>">
 		<picture>
 			<source media="(max-width: 499px)"
@@ -37,9 +35,3 @@ if ( $desktop_image_id && $mobile_image_id ) :
 			?>
 		</picture>
 	</a>
-</div>
-	<?php // Keep this spacer as its conditionally needed based on an event being displayed. ?>
-<div style="height:100px" aria-hidden="true"
-	class="wp-block-spacer is-style-60-100"></div>
-	<?php
-endif;

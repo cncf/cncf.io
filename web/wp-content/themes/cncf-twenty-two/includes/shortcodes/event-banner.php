@@ -66,13 +66,13 @@ function show_event_in_menu() {
 
 /**
  * Returns banner info for inclusion in homepage.
- * Grabs max of 1 upcoming events with a desktop image.
+ * Grabs max of 10 upcoming events with a desktop image.
  */
 function show_event_banner() {
 	$the_query = new WP_Query(
 		array(
 			'post_type'      => 'lf_event',
-			'posts_per_page' => 1,
+			'posts_per_page' => 10,
 			'orderby'        => 'meta_value',
 			'meta_key'       => 'lf_event_date_end',
 			'order'          => 'ASC',
@@ -85,20 +85,24 @@ function show_event_banner() {
 				),
 				array(
 					'key'     => 'lf_event_desktop_banner',
-					'compare' => 'EXISTS',
+					'value'   => '0',
+					'compare' => '!=',
 				),
 				array(
 					'key'     => 'lf_event_mobile_banner',
-					'compare' => 'EXISTS',
+					'value'   => '0',
+					'compare' => '!=',
 				),
 			),
 		)
 	);
 
 	if ( $the_query->have_posts() ) {
-		while ( $the_query->have_posts() ) {
+		if ( 1 === $the_query->post_count ) {
 			$the_query->the_post();
-			get_template_part( 'components/event-banner' );
+			get_template_part( 'components/event-single-banner' );
+		} else {
+			get_template_part( 'components/event-multiple-banner', null, array( 'the_query' => $the_query ) );
 		}
 	}
 }
