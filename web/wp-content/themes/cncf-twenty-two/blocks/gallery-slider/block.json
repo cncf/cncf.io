@@ -1,0 +1,29 @@
+{
+    "name": "lf/gallery-slider",
+    "title": "Gallery Slider",
+    "description": "Images in a slider format",
+    "icon": "images-alt",
+    "style": "file:./gallery-slider.css",
+    "category": "lf",
+    "apiVersion": 2,
+    "keywords": [
+        "gallery",
+        "slider",
+        "images"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "gallery-slider.php",
+        "postTypes": [ "page" ]
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": false,
+        "alignText": false,
+        "spacing": false,
+        "typography": false,
+        "fullHeight": false
+    }
+}

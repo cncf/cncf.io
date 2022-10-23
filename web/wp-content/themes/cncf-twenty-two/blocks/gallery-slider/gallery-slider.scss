@@ -1,0 +1,40 @@
+.wp-block-acf-gallery-slider {
+	// Slider.
+	&__wrapper {
+		@media (min-width: 800px) {
+			.slick-list {
+				padding-right: 25%;
+			}
+		}
+		.slick-track {
+			display: flex !important;
+		}
+		.slick-slide {
+			max-height: 500px;
+			height: inherit !important;
+			@media (min-width: 800px) {
+				margin-right: 20px;
+			}
+			> div {
+				height: 100%;
+				> div {
+					height: 100%;
+				}
+			}
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__controls {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 20px;
+		&-next {
+			margin-left: 25px !important;
+		}
+	}
+}
