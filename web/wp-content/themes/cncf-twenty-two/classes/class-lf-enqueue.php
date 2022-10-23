@@ -105,3 +105,5 @@ class LF_Enqueue {
 	}
 
 }
+
+new LF_Enqueue();

@@ -6,12 +6,9 @@
 	padding: 0;
 	cursor: pointer;
 	display: block;
-	// margin-left: auto;
-	// margin-right: auto;
 	margin-left: initial;
 	margin-right: initial;
 	width: unset;
-	// width: 100%;
 	&:active {
 		color: inherit;
 	}
@@ -34,7 +31,6 @@
 	letter-spacing: 0.02em;
 	text-align: center;
 	text-decoration: none;
-
 	// defaults
 	width: 100%;
 	max-width: 100%;
@@ -42,16 +38,13 @@
 	color: $white;
 	text-transform: uppercase;
 	transition: all 0.25s ease-out;
-
 	// 18px line-height + 11px + 11px makes buttons 40px.
 	padding-top: 11px;
 	padding-bottom: 11px;
 	padding-left: 40px;
 	padding-right: 40px;
-	// white-space: nowrap;
 
 	&:hover {
-		// &:hover:not(.has-text-color) {
 		color: $white;
 		background-color: $link-hover;
 		text-decoration: none;
@@ -102,11 +95,6 @@
 		&.has-#{$name}-color {
 			color: $color !important;
 		}
-
-		// &.has-#{$name}-color:hover,
-		// &.has-#{$name}-color:focus {
-		// 	color: $color !important;
-		// }
 
 		&.has-#{$name}-background-color:hover,
 		&.has-#{$name}-background-color:focus {

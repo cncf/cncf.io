@@ -5,7 +5,6 @@
 	top: 0;
 	line-height: 1;
 	font-size: 10px;
-	// transform: translateY(-100%);
 }
 
 // Group.
@@ -62,7 +61,7 @@
 	}
 }
 
-// Style the spacer block (for Editor)
+// Style the spacer block (for Editor).
 .block-library-spacer__resize-container {
 	border: 1px solid #757ba2;
 	color: #d8d8d8;
@@ -70,7 +69,6 @@
 	&:after {
 		content: 'SPACER BLOCK';
 		@extend %outline;
-		// color: #d8d8d8;
 		position: absolute;
 		left: 50%;
 		top: 50%;

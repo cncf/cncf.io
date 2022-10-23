@@ -102,7 +102,6 @@ html {
 	}
 
 	p + p {
-		// Check this isn't needed.
 		margin-top: unset;
 	}
 
@@ -185,7 +184,7 @@ html {
 			@media (min-width: 1000px) {
 				min-height: 600px;
 			}
-			// used on cheryl.
+			// used on image featuring cheryl.
 			.black-gradient:after {
 				background: linear-gradient(90deg, rgba(#000000, 0.75) 0 50%, rgba(#000000, 0.3) 100%);
 				@media (min-width: 1000px) {
@@ -241,7 +240,6 @@ html {
 				min-height: 600px;
 			}
 			@media (min-width: 1200px) {
-				// min-height: unset;
 				padding-top: 80px;
 				padding-bottom: 80px;
 			}
