@@ -116,15 +116,14 @@ Thumbs.db
 .sass-cache
 
 # Allowing premium plugins
-!web/wp-content/plugins/search-filter-pro
+!web/wp-content/plugins/advanced-custom-fields-pro
 !web/wp-content/plugins/custom-twitter-feeds-pro
-
+!web/wp-content/plugins/search-filter-pro
 
 # Allowing custom plugins
 !web/wp-content/plugins/tab-container-block
 web/wp-content/plugins/tab-container-block/node_modules
 web/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/node_modules
-web/wp-content/mu-plugins/wp-mu-plugins/lf-pre-publish/node_modules
 
 # Ignore local VS code settings
 web/wp-content/themes/cncf-twenty-two/.vscode
