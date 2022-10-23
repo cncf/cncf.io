@@ -45,3 +45,13 @@
 		margin-left: unset;
 	}
 }
+
+// Used for event banner only? Not a selectable style.
+.wp-block-separator {
+	&.is-style-thin-line {
+		width: 100% !important;
+		height: 1px !important;
+		border-bottom: 1px solid rgba(#828282, 0.3);
+		margin-left: unset;
+	}
+}

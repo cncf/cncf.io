@@ -55,3 +55,25 @@
 		display: block;
 	}
 }
+
+.header-lines {
+	display: flex;
+	align-items: center;
+	color: $black;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	&:before,
+	&:after {
+		flex: 1;
+		height: 1px;
+		content: '';
+		background-color: rgba(#828282, 0.3);
+	}
+	&::before {
+		margin-right: 18px;
+	}
+	&::after {
+		margin-left: 18px;
+	}
+}
