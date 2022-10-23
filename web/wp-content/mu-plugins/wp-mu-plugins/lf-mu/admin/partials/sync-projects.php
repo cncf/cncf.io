@@ -14,9 +14,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$projects_url = 'https://landscape.cncf.io/api/items?project=hosted';
-		$items_url    = 'https://landscape.cncf.io/data/items.json';
-		$logos_url    = 'https://landscape.cncf.io/';
+$projects_url      = 'https://landscape.cncf.io/api/items?project=hosted';
+		$items_url = 'https://landscape.cncf.io/data/items.json';
+		$logos_url = 'https://landscape.cncf.io/';
 
 		$args = array(
 			'timeout'   => 100,
@@ -33,7 +33,7 @@ $projects_url = 'https://landscape.cncf.io/api/items?project=hosted';
 		if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 			return;
 		}
-		$items = json_decode( wp_remote_retrieve_body( $data ) );
+		$items     = json_decode( wp_remote_retrieve_body( $data ) );
 		$id_column = array_column( $items, 'id' );
 
 		foreach ( $projects as $level ) {
@@ -46,14 +46,14 @@ $projects_url = 'https://landscape.cncf.io/api/items?project=hosted';
 				$p = $items[ $key ];
 
 				$params = array(
-					'post_type' => 'lf_project',
-					'post_title' => $p->name,
+					'post_type'   => 'lf_project',
+					'post_title'  => $p->name,
 					'post_status' => 'publish',
-					'meta_input' => array(
+					'meta_input'  => array(
 						'lf_project_external_url' => $p->homepage_url,
-						'lf_project_twitter' => $p->twitter,
-						'lf_project_logo' => $logos_url . $p->href,
-						'lf_project_category' => explode( ' / ', $p->path )[1],
+						'lf_project_twitter'      => $p->twitter ?? '',
+						'lf_project_logo'         => $logos_url . $p->href,
+						'lf_project_category'     => explode( ' / ', $p->path )[1],
 					),
 				);
 
