@@ -102,7 +102,6 @@
 		}
 
 		// all other links except direct descendents.
-		// * a {
 		.menu * a {
 			display: block;
 			font-weight: bold;
@@ -453,7 +452,6 @@
 			visibility: hidden;
 			overflow: hidden;
 			height: 0;
-
 			// style.
 			background-color: $white;
 			// fake shadow inside menu.
@@ -501,7 +499,7 @@
 		width: 100%;
 		max-width: $content-width;
 		margin: auto;
-		// replicate wrap.
+		// fake wrap.
 		padding-left: 25px;
 		padding-right: 25px;
 		@media (min-width: 1250px) {
@@ -513,7 +511,6 @@
 		grid-template-columns: repeat(24, 1fr);
 		grid-column-gap: calc($grid-column-gap / 2);
 		grid-row-gap: $grid-row-gap;
-
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.75s ease;

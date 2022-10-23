@@ -85,11 +85,6 @@ dialog {
 		max-width: 1000px;
 		padding: 60px 30px;
 	}
-
-	// &__wrapper {
-	// 	height: 100%;
-	// }
-
 	&-close__wrapper {
 		@media (max-width: 767px) {
 			position: sticky;

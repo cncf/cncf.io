@@ -64,8 +64,7 @@ add_action( 'after_setup_theme', 'lf_theme_support_setup' );
 /**
  * Includes (enable as appropriate)
  */
-require 'classes/class-lf-enqueue.php';
-$enqueue = new LF_Enqueue();
+require_once 'classes/class-lf-enqueue.php';
 
 // development.
 if ( WP_DEBUG === true ) {

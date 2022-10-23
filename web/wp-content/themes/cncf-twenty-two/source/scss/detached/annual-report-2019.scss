@@ -144,12 +144,6 @@ p.has-text-color a {
 	div.clear {
 		padding-bottom: 24px;
 	}
-
-	// .col {
-	//     display: block;
-	//     float: left;
-	//     width: 100%
-	// }
 }
 
 .col.col_last,
@@ -1290,11 +1284,6 @@ a.bg-info:hover {
 	margin-left: auto;
 }
 
-// .row {
-//     margin-right: -15px;
-//     margin-left: -15px
-// }
-
 .col-lg-1,
 .col-lg-10,
 .col-lg-11,
@@ -2226,18 +2215,6 @@ body #header-outer-bg-only {
 	height: auto;
 }
 
-// .row .col img:not([srcset]) {
-//     width: auto
-// }
-
-// body[data-hhun="1"] #header-outer:not(.parallax-contained) {
-//     position: absolute
-// }
-
-// body[data-hhun="1"] #header-outer.transparent.at-top {
-//     transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease
-// }
-
 .project-additional {
 	margin-left: 0 !important;
 	color: #999;
@@ -3053,36 +3030,6 @@ body .wpb_text_column h3:last-child {
 	overflow: hidden;
 }
 
-// .img-with-aniamtion-wrap[data-border-radius="3px"] .img-with-animation,
-// .wpb_column[data-border-radius="3px"],
-// .wpb_column[data-border-radius="3px"]:before {
-//     border-radius: 3px
-// }
-
-// .img-with-aniamtion-wrap[data-border-radius="5px"] .img-with-animation,
-// .wpb_column[data-border-radius="5px"],
-// .wpb_column[data-border-radius="5px"]:before {
-//     border-radius: 5px
-// }
-
-// .img-with-aniamtion-wrap[data-border-radius="10px"] .img-with-animation,
-// .wpb_column[data-border-radius="10px"],
-// .wpb_column[data-border-radius="10px"]:before {
-//     border-radius: 10px
-// }
-
-// .img-with-aniamtion-wrap[data-border-radius="15px"] .img-with-animation,
-// .wpb_column[data-border-radius="15px"],
-// .wpb_column[data-border-radius="15px"]:before {
-//     border-radius: 15px
-// }
-
-// .img-with-aniamtion-wrap[data-border-radius="20px"] .img-with-animation,
-// .wpb_column[data-border-radius="20px"],
-// .wpb_column[data-border-radius="20px"]:before {
-//     border-radius: 20px
-// }
-
 .wpb_column[data-border-width*='px'][data-border-radius*='px']:before {
 	border-radius: 0;
 }
@@ -3582,42 +3529,6 @@ body .nectar-button.see-through {
 .nectar-button.see-through-3 {
 	border: 2px solid rgba(255, 255, 255, 1);
 }
-
-// body[data-button-style^=rounded] #to-top,
-// body[data-button-style^=rounded] .nectar-button,
-// body[data-button-style^=rounded] .nectar-button.see-through,
-// body[data-button-style^=rounded] .nectar-button.see-through-2,
-// body[data-button-style^=rounded] .nectar-button.see-through-3,
-// body[data-button-style^=rounded] button,
-// body[data-button-style^=rounded] button[type=submit] {
-//     border-radius: 200px !important;
-//     -webkit-border-radius: 200px !important;
-//     -o-border-radius: 200px !important;
-//     -ms-transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1), border-color .45s cubic-bezier(.25, 1, .33, 1), color .45s cubic-bezier(.25, 1, .33, 1), background-color .45s cubic-bezier(.25, 1, .33, 1), box-shadow .45s cubic-bezier(.25, 1, .33, 1);
-//     -webkit-transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1), border-color .45s cubic-bezier(.25, 1, .33, 1), color .45s cubic-bezier(.25, 1, .33, 1), background-color .45s cubic-bezier(.25, 1, .33, 1), box-shadow .45s cubic-bezier(.25, 1, .33, 1);
-//     transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1), border-color .45s cubic-bezier(.25, 1, .33, 1), color .45s cubic-bezier(.25, 1, .33, 1), background-color .45s cubic-bezier(.25, 1, .33, 1), box-shadow .45s cubic-bezier(.25, 1, .33, 1)
-// }
-
-// body[data-button-style*=slightly_rounded] #page-header-bg[data-post-hs=default_minimal] .inner-wrap>a,
-// body[data-button-style*=slightly_rounded] .nectar-button,
-// body[data-button-style*=slightly_rounded] .nectar-button.see-through,
-// body[data-button-style*=slightly_rounded] .nectar-button.see-through-2,
-// body[data-button-style*=slightly_rounded] .nectar-button.see-through-3,
-// body[data-button-style*=slightly_rounded] button,
-// body[data-button-style*=slightly_rounded] button[type=submit] {
-//     border-radius: 4px !important;
-//     -webkit-border-radius: 4px !important;
-//     -o-border-radius: 4px !important;
-//     -ms-transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1), border-color .45s cubic-bezier(.25, 1, .33, 1), color .45s cubic-bezier(.25, 1, .33, 1), background-color .45s cubic-bezier(.25, 1, .33, 1), box-shadow .45s cubic-bezier(.25, 1, .33, 1);
-//     -webkit-transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1), border-color .45s cubic-bezier(.25, 1, .33, 1), color .45s cubic-bezier(.25, 1, .33, 1), background-color .45s cubic-bezier(.25, 1, .33, 1), box-shadow .45s cubic-bezier(.25, 1, .33, 1);
-//     transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1), border-color .45s cubic-bezier(.25, 1, .33, 1), color .45s cubic-bezier(.25, 1, .33, 1), background-color .45s cubic-bezier(.25, 1, .33, 1), box-shadow .45s cubic-bezier(.25, 1, .33, 1)
-// }
-
-// body[data-button-style*=slightly_rounded] #to-top {
-//     border-radius: 200px !important;
-//     -webkit-border-radius: 200px !important;
-//     -o-border-radius: 200px !important
-// }
 
 body[data-button-style^='rounded'] .nectar-button.medium:not(.see-through):not(.see-through-2):not(.see-through-3) {
 	padding: 12px 18px;
@@ -5173,10 +5084,6 @@ img.img-with-animation[data-animation='fade-in-from-right'] {
 	max-width: 100% !important;
 }
 
-// .full-width-content {
-//     visibility: hidden
-// }
-
 .full-width-section
 	> .span_12
 	.col
@@ -5306,15 +5213,6 @@ body[data-form-submit='regular'] .container-wrap button[type='submit'],
 body[data-form-submit='see-through'] .container-wrap button[type='submit'] {
 	padding: 15px 22px 22px !important;
 }
-
-// body[data-form-submit=see-through] button[type=submit] {
-//     background-color: transparent !important;
-//     border: 2px solid #000
-// }
-
-// body[data-form-submit=see-through] button[type=submit]:hover {
-//     color: #fff !important
-// }
 
 body[data-form-style='minimal'] .widget_search .search-form .search-submit {
 	top: 30px;
@@ -8902,16 +8800,6 @@ div#at4-share {
 }
 
 @media only screen and (max-width: 1000px) and(min-width:690px) {
-	// body {
-	//     font-size: 16px;
-	//     line-height: 22px
-	// }
-
-	// body h1 {
-	//     font-size: 33.6px;
-	//     line-height: 42px
-	// }
-
 	.col h2 {
 		font-size: 28.8px;
 		line-height: 38.4px;

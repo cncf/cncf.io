@@ -41,7 +41,6 @@
 		z-index: 1;
 		top: 0;
 		left: 0;
-		// filter: grayscale(100%);
 		border-radius: 10px;
 	}
 	&__content {
@@ -104,9 +103,7 @@
 		color: $tertiary-400;
 	}
 	&__stat-larger {
-		// font-size: 40px;
 		font-size: 30px;
-		// line-height: 40px;
 		line-height: 36px;
 		font-weight: 700;
 	}
@@ -321,7 +318,6 @@
 		border: 1px solid $gray-300;
 		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 		border-radius: 10px;
-		// grid columns-three
 		grid-row-gap: 0;
 		grid-column-gap: 0;
 		@media (min-width: 600px) {

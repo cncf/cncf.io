@@ -7,8 +7,6 @@
  * @since 1.0.0
  */
 
- // phpcs:ignoreFile
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -19,7 +17,7 @@ get_template_part( 'components/skip-link-target' );
 
 if ( is_404() ) {
 	get_template_part( 'components/404' );
-} else if ( is_search() ) {
+} elseif ( is_search() ) {
 	get_template_part( 'components/search' );
 } else {
 	// default archive view.

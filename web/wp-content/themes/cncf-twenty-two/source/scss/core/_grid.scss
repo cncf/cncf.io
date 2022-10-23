@@ -21,7 +21,6 @@
 	grid-row-gap: $grid-row-gap;
 	grid-template-columns: 1fr;
 	@media (min-width: 800px) {
-		// grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
 		grid-template-columns: 1fr 1fr;
 	}
 }
