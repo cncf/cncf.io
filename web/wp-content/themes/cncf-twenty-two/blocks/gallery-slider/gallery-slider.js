@@ -52,11 +52,3 @@ jQuery( document ).ready(
 			getMotionMatch();
 	}
 );
-
-
-
-
-
-function gallerySlider($) {
-
-}
