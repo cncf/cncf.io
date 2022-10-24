@@ -64,11 +64,9 @@ jQuery( document ).ready(
 			if (prefersReducedMotion) {
 				jQuery( ".home-projects-slider-item-1" ).slick( 'slickPause' );
 				jQuery( ".home-projects-slider-item-2" ).slick( 'slickPause' );
-				jQuery( ".home-events-slider" ).slick( 'slickPause' );
 			} else {
 				jQuery( ".home-projects-slider-item-1" ).slick( 'slickPlay' );
 				jQuery( ".home-projects-slider-item-2" ).slick( 'slickPlay' );
-				jQuery( ".home-events-slider" ).slick( 'slickPlay' );
 			}
 		}
 			// Watches for change event to reload based on prefs.
