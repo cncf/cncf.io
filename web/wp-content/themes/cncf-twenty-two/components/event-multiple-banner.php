@@ -20,7 +20,7 @@ $the_query = $args['the_query'];
 
 ?>
 
-<h3 class="has-normal-font-size header-lines">Forthcoming Events</h3>
+<h3 class="has-normal-font-size header-lines">Upcoming Events</h3>
 
 <div class="home-events-slider">
 	<?php

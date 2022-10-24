@@ -41,3 +41,15 @@ function lf_register_all_our_blocks() {
 	}
 }
 add_action( 'init', 'lf_register_all_our_blocks' );
+
+/**
+ * Remove ACF Shortcode option (for security)
+ *
+ * See https://www.advancedcustomfields.com/blog/acf-6-0-3-release-security-changes-to-the-acf-shortcode-and-ui-improvements/
+ *
+ * @return void
+ */
+function lf_set_acf_settings() {
+	acf_update_setting( 'enable_shortcode', false );
+}
+add_action( 'acf/init', 'lf_set_acf_settings' );
