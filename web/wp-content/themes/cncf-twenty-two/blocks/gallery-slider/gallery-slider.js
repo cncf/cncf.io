@@ -16,6 +16,7 @@ jQuery( document ).ready(
 
 		slider.slick(
 			{
+				infinite: true,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				swipeToSlide: true,
