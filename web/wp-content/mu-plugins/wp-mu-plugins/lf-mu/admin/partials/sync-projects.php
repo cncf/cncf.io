@@ -78,6 +78,15 @@ $projects_url      = 'https://landscape.cncf.io/api/items?project=hosted';
 					if ( property_exists( $p->extra, 'accepted' ) ) {
 						$params['meta_input']['lf_project_date_accepted'] = $p->extra->accepted;
 					}
+					if ( property_exists( $p->extra, 'incubating' ) ) {
+						$params['meta_input']['lf_project_date_incubating'] = $p->extra->incubating;
+					}
+					if ( property_exists( $p->extra, 'graduated' ) ) {
+						$params['meta_input']['lf_project_date_graduated'] = $p->extra->graduated;
+					}
+					if ( property_exists( $p->extra, 'archived' ) ) {
+						$params['meta_input']['lf_project_date_archived'] = $p->extra->archived;
+					}
 					if ( property_exists( $p->extra, 'blog_url' ) ) {
 						$params['meta_input']['lf_project_blog'] = $p->extra->blog_url;
 					}
