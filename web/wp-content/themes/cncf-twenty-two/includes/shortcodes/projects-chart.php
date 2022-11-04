@@ -103,7 +103,7 @@ function add_projects_chart_shortcode( $atts ) {
 	}
 
 	ob_start();
-	// var_dump( $sandbox );
+	// var_dump( $chart_data );
 	// var_dump( $maturity_data );
 
 	// chart js.
@@ -122,7 +122,7 @@ function add_projects_chart_shortcode( $atts ) {
 		filemtime( get_template_directory() . '/source/js/on-demand/projects-chart.js' ),
 		true
 	);
-?>
+	?>
 
 <canvas id="projectsChart"></canvas>
 <script>
@@ -134,7 +134,7 @@ function add_projects_chart_shortcode( $atts ) {
 
 </script>
 
-<?php
+	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
 }

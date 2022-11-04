@@ -79,6 +79,7 @@ function relentlessCharts() {
         axis: 'x',
         intersect: false
       },
+      pointRadius: 0,
       scales: {
         y: {
           stacked: true,
