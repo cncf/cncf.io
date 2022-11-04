@@ -35,7 +35,7 @@ function get_maturity_data() {
 			$graduated  = get_post_meta( get_the_ID(), 'lf_project_date_graduated', true );
 			$archived   = get_post_meta( get_the_ID(), 'lf_project_date_archived', true );
 
-			$maturity_data[$name] = array( 
+			$maturity_data[ $name ] = array(
 				'accepted'   => $accepted,
 				'incubating' => $incubating,
 				'graduated'  => $graduated,
@@ -51,31 +51,31 @@ function get_maturity_data() {
 /**
  * Returns maturity data ready for plotting on stacked line chart
  *
- * @param array $maturity_data CNCF project maturity data
+ * @param array $maturity_data CNCF project maturity data.
  */
 function get_chart_data( $maturity_data ) {
 	$chart_data = array();
 	$this_date  = '2016-01-01';
 
-	while ( $this_date < date( 'Y-m-d' ) ) {
-		$chart_data[$this_date] = array(
+	while ( $this_date < gmdate( 'Y-m-d' ) ) {
+		$chart_data[ $this_date ] = array(
 			'archived'   => 0,
 			'sandbox'    => 0,
 			'graduated'  => 0,
 			'incubating' => 0,
 		);
-		foreach( $maturity_data as $d ) {
+		foreach ( $maturity_data as $d ) {
 			if ( $d['archived'] < $this_date && (int) $d['archived'] > 0 ) {
-				$chart_data[$this_date]['archived'] += 1;
+				$chart_data[ $this_date ]['archived'] += 1;
 			} elseif ( $d['graduated'] < $this_date && (int) $d['graduated'] > 0 ) {
-				$chart_data[$this_date]['graduated'] += 1;
+				$chart_data[ $this_date ]['graduated'] += 1;
 			} elseif ( $d['incubating'] < $this_date && (int) $d['incubating'] > 0 ) {
-				$chart_data[$this_date]['incubating'] += 1;
+				$chart_data[ $this_date ]['incubating'] += 1;
 			} elseif ( $d['accepted'] < $this_date && (int) $d['accepted'] > 0 ) {
-				$chart_data[$this_date]['sandbox'] += 1;
+				$chart_data[ $this_date ]['sandbox'] += 1;
 			}
 		}
-		$this_date = date('Y-m-d', strtotime( $this_date . ' + 1 month' ) );
+		$this_date = gmdate( 'Y-m-d', strtotime( $this_date . ' + 1 month' ) );
 	}
 	return $chart_data;
 }
@@ -95,7 +95,7 @@ function add_projects_chart_shortcode( $atts ) {
 	$graduated      = array();
 	$archived       = array();
 
-	foreach( $chart_data as $cd ) {
+	foreach ( $chart_data as $cd ) {
 		$sandbox[]    = $cd['sandbox'];
 		$incubating[] = $cd['incubating'];
 		$graduated[]  = $cd['graduated'];
@@ -103,8 +103,6 @@ function add_projects_chart_shortcode( $atts ) {
 	}
 
 	ob_start();
-	// var_dump( $chart_data );
-	// var_dump( $maturity_data );
 
 	// chart js.
 	wp_enqueue_script(
