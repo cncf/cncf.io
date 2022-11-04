@@ -85,7 +85,7 @@ function relentlessCharts() {
           stacked: true,
           title: {
             display: true,
-            text: 'Project Count'
+            text: 'CNCF Project Count'
           }
         }
       }
