@@ -55,7 +55,7 @@ function get_maturity_data() {
  */
 function get_chart_data( $maturity_data ) {
 	$chart_data = array();
-	$this_date  = '2015-01-01';
+	$this_date  = '2016-01-01';
 
 	while ( $this_date < date( 'Y-m-d' ) ) {
 		$chart_data[$this_date] = array(
@@ -87,12 +87,54 @@ function get_chart_data( $maturity_data ) {
  */
 function add_projects_chart_shortcode( $atts ) {
 
-	$maturity_data = get_maturity_data();
-	$chart_data    = get_chart_data( $maturity_data ); 
+	$maturity_data  = get_maturity_data();
+	$chart_data     = get_chart_data( $maturity_data );
+	$project_months = array_keys( $chart_data );
+	$sandbox        = array();
+	$incubating     = array();
+	$graduated      = array();
+	$archived       = array();
+
+	foreach( $chart_data as $cd ) {
+		$sandbox[]    = $cd['sandbox'];
+		$incubating[] = $cd['incubating'];
+		$graduated[]  = $cd['graduated'];
+		$archived[]   = $cd['archived'];
+	}
 
 	ob_start();
-	// var_dump( $chart_data );
+	// var_dump( $sandbox );
 	// var_dump( $maturity_data );
+
+	// chart js.
+	wp_enqueue_script(
+		'chart-js',
+		get_template_directory_uri() . '/source/js/libraries/chart-3.9.1.min.js',
+		null,
+		filemtime( get_template_directory() . '/source/js/libraries/chart-3.9.1.min.js' ),
+		true
+	);
+	// custom scripts.
+	wp_enqueue_script(
+		'projects-chart',
+		get_template_directory_uri() . '/source/js/on-demand/projects-chart.js',
+		array( 'jquery', 'chart-js' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/projects-chart.js' ),
+		true
+	);
+?>
+
+<canvas id="projectsChart"></canvas>
+<script>
+	const project_months     = <?php echo json_encode( $project_months ); ?>;
+	const project_sandbox    = <?php echo json_encode( $sandbox ); ?>;
+	const project_incubating = <?php echo json_encode( $incubating ); ?>;
+	const project_graduated  = <?php echo json_encode( $graduated ); ?>;
+	const project_archived   = <?php echo json_encode( $archived ); ?>;
+
+</script>
+
+<?php
 	$block_content = ob_get_clean();
 	return $block_content;
 }
