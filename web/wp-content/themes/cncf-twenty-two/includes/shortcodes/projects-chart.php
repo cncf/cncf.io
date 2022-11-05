@@ -11,7 +11,7 @@
  */
 
 /**
- * Get maturity data
+ * Get project maturity data.
  */
 function get_maturity_data() {
 	$maturity_data = get_transient( 'cncf_project_maturity_data' );
@@ -49,13 +49,13 @@ function get_maturity_data() {
 }
 
 /**
- * Returns maturity data ready for plotting on stacked line chart
+ * Processes maturity data to be ready for plotting on stacked line chart.
  *
  * @param array $maturity_data CNCF project maturity data.
  */
 function get_chart_data( $maturity_data ) {
 	$chart_data = array();
-	$this_date  = '2016-01-01';
+	$this_date  = '2016-01-01'; // sets the start date for the chart.
 
 	while ( $this_date < gmdate( 'Y-m-d' ) ) {
 		$chart_data[ $this_date ] = array(
@@ -129,7 +129,6 @@ function add_projects_chart_shortcode( $atts ) {
 	const project_incubating = <?php echo json_encode( $incubating ); ?>;
 	const project_graduated  = <?php echo json_encode( $graduated ); ?>;
 	const project_archived   = <?php echo json_encode( $archived ); ?>;
-
 </script>
 
 	<?php

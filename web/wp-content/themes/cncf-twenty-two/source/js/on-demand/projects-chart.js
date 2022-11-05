@@ -26,9 +26,6 @@ function relentlessCharts() {
 
   const ctx = document.getElementById('projectsChart').getContext('2d');
 
-  const DATA_COUNT = 7;
-  const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
-  
   const labels = project_months;
   const data = {
     labels: labels,
