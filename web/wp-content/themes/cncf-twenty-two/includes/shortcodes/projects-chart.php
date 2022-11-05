@@ -121,8 +121,9 @@ function add_projects_chart_shortcode( $atts ) {
 		true
 	);
 	?>
-
+<div class="chart-container" style="position: relative; height:70vh; width:80vw; margin: auto; text-align:center">
 <canvas id="projectsChart"></canvas>
+</div>
 <script>
 	const project_months     = <?php echo json_encode( $project_months ); ?>;
 	const project_sandbox    = <?php echo json_encode( $sandbox ); ?>;

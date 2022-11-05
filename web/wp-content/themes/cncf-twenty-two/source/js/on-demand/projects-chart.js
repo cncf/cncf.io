@@ -66,6 +66,7 @@ function relentlessCharts() {
     data: data,
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         tooltip: {
           mode: 'index'
