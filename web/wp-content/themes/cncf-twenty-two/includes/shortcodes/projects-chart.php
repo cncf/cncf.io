@@ -55,7 +55,8 @@ function get_maturity_data() {
  */
 function get_chart_data( $maturity_data ) {
 	$chart_data = array();
-	$this_date  = '2016-01-01'; // sets the start date for the chart.
+	$start_date = '2016-01-01';
+	$this_date  = $start_date;
 
 	while ( $this_date < gmdate( 'Y-m-d' ) ) {
 		$chart_data[ $this_date ] = array(
