@@ -54,12 +54,15 @@ function relentlessCharts() {
       {
         label: 'Archived',
         data: project_archived,
-        borderColor: 'rgb(201, 203, 207)',
-        backgroundColor: 'rgb(201, 203, 207)',
+        borderColor: '#747474',
+        backgroundColor: '#747474',
         fill: true
       }
     ]
   };
+
+  Chart.defaults.font.size = 16;
+  Chart.defaults.font.family = 'Clarity City';
 
   const config = {
     type: 'line',
@@ -68,6 +71,9 @@ function relentlessCharts() {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        legend: {
+          position: 'top'
+        },
         tooltip: {
           mode: 'index'
         },
@@ -85,11 +91,16 @@ function relentlessCharts() {
             display: true,
             text: 'CNCF Project Count'
           }
+        },
+        x: {
+          grid: {
+            display: false
+          }
         }
       }
     }
   };
 
   const myChart = new Chart(ctx, config);
-
+  
 }
