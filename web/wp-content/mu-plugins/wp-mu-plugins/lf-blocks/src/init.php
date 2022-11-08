@@ -336,17 +336,20 @@ function add_lf_block_categories( $categories ) {
 }
 add_filter( 'block_categories_all', 'add_lf_block_categories' );
 
-
-
+/**
+ * LF Register Meta
+ *
+ * @return void
+ */
 function lf_register_meta() {
-    register_post_meta(
-        'lf_case_study',
-        'lf_case_study_long_title',
-        [
-            'show_in_rest' => true,
-            'single'       => true,
-            'type'         => 'string',
-        ]
-    );
+	register_post_meta(
+		'lf_case_study',
+		'lf_case_study_long_title',
+		array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		)
+	);
 }
-add_action( 'init', 'lf_register_meta');
+add_action( 'init', 'lf_register_meta' );

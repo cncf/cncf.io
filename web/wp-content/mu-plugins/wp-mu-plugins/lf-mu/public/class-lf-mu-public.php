@@ -205,6 +205,9 @@ class Lf_Mu_Public {
 
 		// stop xmlrpc.
 		add_filter( 'xmlrpc_enabled', '__return_false' );
+
+		// remove application passwords.
+		add_filter( 'wp_is_application_passwords_available', '__return_false' );
 	}
 
 	/**

@@ -79,6 +79,14 @@ function add_people_shortcode( $atts ) {
 
 	if ( $persons_query->have_posts() ) {
 
+		wp_enqueue_script(
+			'modal',
+			get_template_directory_uri() . '/source/js/on-demand/modal.js',
+			array( 'jquery' ),
+			filemtime( get_template_directory() . '/source/js/on-demand/modal.js' ),
+			true
+		);
+
 		ob_start();
 		?>
 <div class="people-wrapper">

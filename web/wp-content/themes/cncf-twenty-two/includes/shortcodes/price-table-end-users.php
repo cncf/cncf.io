@@ -14,6 +14,15 @@
  * End Users Pricing Table shortcode.
  */
 function add_end_user_pricing_shortcode() {
+
+	wp_enqueue_script(
+		'modal',
+		get_template_directory_uri() . '/source/js/on-demand/modal.js',
+		array( 'jquery' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/modal.js' ),
+		true
+	);
+
 	ob_start();
 	?>
 
@@ -69,9 +78,9 @@ function add_end_user_pricing_shortcode() {
 				</li>
 				<li>A total of 10 KubeCon
 					in-person tickets</li>
-				<li>15-seat annual Linux Foundation Training subscription (worth $7.5k) OR 
-					10 Linux Foundation Training coupons. Additional terms apply.  
-					(Cannot be combined with any other membership training benefits.) 
+				<li>15-seat annual Linux Foundation Training subscription (worth $7.5k) OR
+					10 Linux Foundation Training coupons. Additional terms apply.
+					(Cannot be combined with any other membership training benefits.)
 				</li>
 				<li>Access to the <a
 						href="https://todogroup.org/">TODO Group</a> to meet
@@ -114,9 +123,9 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 				<li>4 online programs a quarter
 					(on-demand, YouTube, live streams) to build thought
 					leadership</li>
-				<li>50-seat annual Linux Foundation Training subscription OR 
-					10 Linux Foundation Training coupons.  Additional terms apply.  
-					(Cannot be combined with any other membership training benefits.) 
+				<li>50-seat annual Linux Foundation Training subscription OR
+					10 Linux Foundation Training coupons.  Additional terms apply.
+					(Cannot be combined with any other membership training benefits.)
 				</li>
 
 			</ul>

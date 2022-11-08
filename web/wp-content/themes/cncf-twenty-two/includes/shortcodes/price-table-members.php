@@ -14,6 +14,15 @@
  * Members (Join) Pricing Table shortcode.
  */
 function add_members_pricing_shortcode() {
+
+	wp_enqueue_script(
+		'modal',
+		get_template_directory_uri() . '/source/js/on-demand/modal.js',
+		array( 'jquery' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/modal.js' ),
+		true
+	);
+
 	ob_start();
 	?>
 <div class="pricing-table members-table">
@@ -138,7 +147,7 @@ function add_members_pricing_shortcode() {
 				<li>Increased access to Linux
 					Foundation’s invitation-only Linux Foundation Member Summit
 				</li>
-				<li>50-seat annual Linux Foundation Training subscription OR 10 Linux Foundation Training coupons. 
+				<li>50-seat annual Linux Foundation Training subscription OR 10 Linux Foundation Training coupons.
 					Additional terms apply. (Cannot be combined with any other membership training benefits.)
 				</li>
 			</ul>

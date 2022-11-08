@@ -70,14 +70,6 @@ class LF_Enqueue {
 		} else {
 			wp_enqueue_script( 'global-scripts', get_template_directory_uri() . '/build/globals.min.js', null, filemtime( get_template_directory() . '/build/globals.min.js' ), true );
 		}
-
-		wp_enqueue_script(
-			'modal',
-			get_template_directory_uri() . '/source/js/on-demand/modal.js',
-			array( 'jquery' ),
-			filemtime( get_template_directory() . '/source/js/on-demand/modal.js' ),
-			true
-		);
 	}
 
 	/**

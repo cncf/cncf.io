@@ -16,6 +16,15 @@
  * Benefits shortcode
  */
 function add_cncf_benefits_shortcode() {
+
+	wp_enqueue_script(
+		'modal',
+		get_template_directory_uri() . '/source/js/on-demand/modal.js',
+		array( 'jquery' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/modal.js' ),
+		true
+	);
+
 	ob_start();
 	?>
 <section class="benefits columns-three columns-two-on-mobile">
