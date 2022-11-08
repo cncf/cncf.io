@@ -68,11 +68,18 @@ function relentlessCharts() {
     type: 'line',
     data: data,
     options: {
+			layout: {
+				padding: {
+					top: 20,
+					bottom: 20
+				}
+			},
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          position: 'top'
+          position: 'top',
+					align: 'start'
         },
         tooltip: {
           mode: 'index'
@@ -88,8 +95,7 @@ function relentlessCharts() {
         y: {
           stacked: true,
           title: {
-            display: true,
-            text: 'CNCF Project Count'
+            display: false
           }
         },
         x: {
@@ -100,7 +106,5 @@ function relentlessCharts() {
       }
     }
   };
-
-  const myChart = new Chart(ctx, config);
-  
+  const myChart = new Chart(ctx, config );
 }

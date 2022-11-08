@@ -113,7 +113,7 @@ function add_projects_chart_shortcode( $atts ) {
 		filemtime( get_template_directory() . '/source/js/libraries/chart-3.9.1.min.js' ),
 		true
 	);
-	// custom scripts.
+	// custom script.
 	wp_enqueue_script(
 		'projects-chart',
 		get_template_directory_uri() . '/source/js/on-demand/projects-chart.js',
@@ -122,8 +122,8 @@ function add_projects_chart_shortcode( $atts ) {
 		true
 	);
 	?>
-<div class="chart-container" style="position: relative; height:70vh; width:80vw; margin: auto; text-align:center">
-<canvas id="projectsChart"></canvas>
+<div class="projects-chart-container">
+	<canvas id="projectsChart"></canvas>
 </div>
 <script>
 	const project_months     = <?php echo json_encode( $project_months ); ?>;

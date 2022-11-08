@@ -105,3 +105,16 @@
 		}
 	}
 }
+
+.projects-chart-container {
+	position: relative;
+	max-width: 100%;
+	min-height: 400px;
+	@media (min-width: 600px) {
+		min-height: 500px;
+	}
+	@media (min-width: 1000px) {
+		min-height: 600px;
+	}
+	// position: relative; height:70vh; width:80vw; margin: auto; text-align:center
+}
