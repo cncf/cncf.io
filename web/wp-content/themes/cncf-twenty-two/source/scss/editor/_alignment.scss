@@ -28,3 +28,37 @@
 .wp-block-columns {
 	padding-top: 1rem;
 }
+
+body {
+	&.post-type-post,
+	&.post-type-lf_case_study,
+	&.post-type-lf_case_study_cn {
+		.wp-block {
+			max-width: 900px !important;
+		}
+
+		/* Width of "wide" blocks */
+		.wp-block[data-align='wide'] {
+			max-width: 900px !important;
+		}
+
+		/* Width of "full-wide" blocks */
+		.wp-block[data-align='full'] {
+			max-width: 900px !important;
+		}
+
+		#editor {
+			.editor-styles-wrapper {
+				// Reset weird Block Editor margins by default.
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					margin-left: auto !important;
+				}
+			}
+		}
+	}
+}
