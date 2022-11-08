@@ -232,22 +232,6 @@ class Lf_Mu_Admin {
 
 		$options['promotion_cta_link_id'] = ( isset( $input['promotion_cta_link_id'] ) && ! empty( $input['promotion_cta_link_id'] ) ) ? absint( $input['promotion_cta_link_id'] ) : '';
 
-		$options['event_logo_id'] = ( isset( $input['event_logo_id'] ) && ! empty( $input['event_logo_id'] ) ) ? absint( $input['event_logo_id'] ) : '';
-
-		$options['event_background_image_id'] = ( isset( $input['event_background_image_id'] ) && ! empty( $input['event_background_image_id'] ) ) ? absint( $input['event_background_image_id'] ) : '';
-
-		$options['event_text'] = ( isset( $input['event_text'] ) && ! empty( $input['event_text'] ) ) ? esc_html( $input['event_text'] ) : '';
-
-		$options['event_text_color'] = ( isset( $input['event_text_color'] ) && ! empty( $input['event_text_color'] ) ) ? esc_html( $input['event_text_color'] ) : '';
-
-		$options['event_background_color'] = ( isset( $input['event_background_color'] ) && ! empty( $input['event_background_color'] ) ) ? esc_html( $input['event_background_color'] ) : '';
-
-		$options['event_cta_color'] = ( isset( $input['event_cta_color'] ) && ! empty( $input['event_cta_color'] ) ) ? esc_html( $input['event_cta_color'] ) : '';
-
-		$options['event_cta_text'] = ( isset( $input['event_cta_text'] ) && ! empty( $input['event_cta_text'] ) ) ? esc_html( $input['event_cta_text'] ) : '';
-
-		$options['event_cta_link'] = ( isset( $input['event_cta_link'] ) && ! empty( $input['event_cta_link'] ) ) ? esc_url( $input['event_cta_link'] ) : '';
-
 		return $options;
 	}
 

@@ -104,24 +104,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$promotion_cta_link_id = ( isset( $options['promotion_cta_link_id'] ) && ! empty( $options['promotion_cta_link_id'] ) ) ? absint( $options['promotion_cta_link_id'] ) : '';
 
-		$event_logo_id = ( isset( $options['event_logo_id'] ) && ! empty( $options['event_logo_id'] ) ) ? absint( $options['event_logo_id'] ) : '';
-
-		$event_background_image_id = ( isset( $options['event_background_image_id'] ) && ! empty( $options['event_background_image_id'] ) ) ? absint( $options['event_background_image_id'] ) : '';
-
-		$event_background_color = ( isset( $options['event_background_color'] ) && ! empty( $options['event_background_color'] ) ) ? esc_html( $options['event_background_color'] ) : '';
-
-		$event_text = ( isset( $options['event_text'] ) && ! empty( $options['event_text'] ) ) ? esc_html( $options['event_text'] ) : '';
-
-		$event_text_color = ( isset( $options['event_text_color'] ) && ! empty( $options['event_text_color'] ) ) ? esc_html( $options['event_text_color'] ) : '';
-
-		$event_cta_text = ( isset( $options['event_cta_text'] ) && ! empty( $options['event_cta_text'] ) ) ? esc_html( $options['event_cta_text'] ) : '';
-
-		$event_cta_color = ( isset( $options['event_cta_color'] ) && ! empty( $options['event_cta_color'] ) ) ? esc_html( $options['event_cta_color'] ) : '';
-
-		$event_cta_text = ( isset( $options['event_cta_text'] ) && ! empty( $options['event_cta_text'] ) ) ? esc_html( $options['event_cta_text'] ) : '';
-
-		$event_cta_link = ( isset( $options['event_cta_link'] ) && ! empty( $options['event_cta_link'] ) ) ? esc_url( $options['event_cta_link'] ) : '';
-
 		settings_fields( $this->plugin_name );
 
 		do_settings_sections( $this->plugin_name );
@@ -130,7 +112,6 @@ if ( ! defined( 'WPINC' ) ) {
 		<hr />
 		<a href="#hello">Hello Bar</a> | <a href="#header">Header</a> | <a
 			href="#footer">Footer</a> | <a href="#social">Social Media</a>
-		| <a href="#event">Event</a>
 		| <a href="#promotion">Promotion</a>
 		| <a href="#other">Other</a>
 		<hr />
@@ -538,129 +519,6 @@ if ( ! defined( 'WPINC' ) ) {
 			</tbody>
 		</table>
 		<hr />
-		<h2 id="event">Next Event</h2>
-		<table class="form-table" role="presentation">
-			<tbody>
-				<tr>
-					<th scope="row"><label for="event_logo_id">Event Logo</label>
-					</th>
-					<td colspan="3">
-						<div class='image-preview-wrapper'>
-							<img src='<?php echo esc_url( wp_get_attachment_url( $event_logo_id ) ); ?>'
-								class="image-preview thumbnail-margin-bottom"
-								data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id">
-						</div>
-						<input type="button"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
-							class="upload_image_button button"
-							value="Choose image" />
-						<input type="button"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
-							class="clear_upload_image_button button"
-							value="Remove image" />
-						<input type="hidden"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_logo_id"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_logo_id]"
-							value="<?php echo absint( $event_logo_id ); ?>" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="event_background_image_id">Event Background Image</label>
-					</th>
-					<td colspan="3">
-						<div class='image-preview-wrapper'>
-							<img src='<?php echo esc_url( wp_get_attachment_url( $event_background_image_id ) ); ?>'
-								class="image-preview thumbnail-margin-bottom"
-								data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id">
-						</div>
-						<input type="button"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
-							class="upload_image_button button"
-							value="Choose image" />
-						<input type="button"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
-							class="clear_upload_image_button button"
-							value="Remove image" />
-						<input type="hidden"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
-							data-id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_image_id"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_background_image_id]"
-							value="<?php echo absint( $event_background_image_id ); ?>" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="event_text">Event Text</label>
-					</th>
-					<td>
-						<input type="text"
-							class="event_text regular-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_text"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_text]"
-							value="<?php echo esc_html( $event_text ); ?>" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="event_text_color">Event Text Color</label>
-					</th>
-					<td>
-						<input type="text"
-							class="event_text_color regular-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_text_color"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_text_color]"
-							value="<?php echo esc_html( $event_text_color ); ?>" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="event_background_color">Event Background Color</label>
-					</th>
-					<td>
-						<input type="text"
-							class="event_background_color regular-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_background_color"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_background_color]"
-							value="<?php echo esc_html( $event_background_color ); ?>" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="event_cta_color">Event CTA Color</label>
-					</th>
-					<td>
-						<input type="text"
-							class="event_cta_color regular-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_cta_color"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_cta_color]"
-							value="<?php echo esc_url( $event_cta_color ); ?>" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="event_cta_text">Event
-							CTA Text</label>
-					</th>
-					<td>
-						<input type="text"
-							class="event_cta_text regular-small-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_cta_text"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_cta_text]"
-							value="<?php echo esc_html( $event_cta_text ); ?>"
-							placeholder="Register Now" maxlength="20" />
-					</td>
-					<th scope="row"><label for="event_cta_link">Event
-							CTA Link</label>
-					</th>
-					<td>
-						<input type="text"
-							class="event_cta_link regular-small-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-event_cta_link"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[event_cta_link]"
-							value="<?php echo esc_html( $event_cta_link ); ?>"
-							placeholder="https://domain.com" />
-					</td>
-				</tr>
-				</tbody>
-		</table>
-
-		<hr />
 		<h2 id="promotion">Promotion Banner</h2>
 		<table class="form-table" role="presentation">
 			<tbody>
@@ -849,7 +707,7 @@ if ( ! defined( 'WPINC' ) ) {
 							name="<?php echo esc_html( $this->plugin_name ); ?>[community_api_key]"
 							value="<?php echo esc_attr( $community_api_key ); ?>" />
 					</td>
-				</tr>				
+				</tr>
 				<tr>
 					<th scope="row"><label for="gtm_id">Google Tag Manager
 							ID</label>
