@@ -25,8 +25,10 @@ wp.data.dispatch( 'core/edit-post' ).removeEditorPanel( 'taxonomy-panel-post_tag
 wp.blocks.unregisterBlockType( 'core/archives' );
 wp.blocks.unregisterBlockType( 'core/avatar' );
 wp.blocks.unregisterBlockType( 'core/calendar' );
+wp.blocks.unregisterBlockType( 'core/categories' );
 wp.blocks.unregisterBlockType( 'core/comments-query-loop' );
 wp.blocks.unregisterBlockType( 'core/latest-comments' );
+wp.blocks.unregisterBlockType( 'core/latest-posts' );
 wp.blocks.unregisterBlockType( 'core/loginout' );
 wp.blocks.unregisterBlockType( 'core/more' );
 wp.blocks.unregisterBlockType( 'core/navigation' );
