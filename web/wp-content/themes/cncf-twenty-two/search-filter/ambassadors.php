@@ -9,6 +9,14 @@
  * @since      1.0.0
  */
 
+wp_enqueue_script(
+	'modal',
+	get_template_directory_uri() . '/source/js/on-demand/modal.js',
+	array( 'jquery' ),
+	filemtime( get_template_directory() . '/source/js/on-demand/modal.js' ),
+	true
+);
+
 if ( $query->have_posts() ) :
 	?>
 <p class="search-filter-results-count">
