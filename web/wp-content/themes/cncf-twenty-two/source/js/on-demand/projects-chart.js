@@ -79,7 +79,7 @@ function relentlessCharts() {
       plugins: {
         legend: {
           position: 'top',
-					align: 'start'
+					align: 'end'
         },
         tooltip: {
           mode: 'index'
@@ -95,7 +95,8 @@ function relentlessCharts() {
         y: {
           stacked: true,
           title: {
-            display: false
+            display: true,
+            text: 'CNCF Project Count'
           }
         },
         x: {
