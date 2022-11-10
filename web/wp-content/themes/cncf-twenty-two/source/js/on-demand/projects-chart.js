@@ -78,8 +78,7 @@ function relentlessCharts() {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          position: 'top',
-					align: 'end'
+          position: 'top'
         },
         tooltip: {
           mode: 'index'
