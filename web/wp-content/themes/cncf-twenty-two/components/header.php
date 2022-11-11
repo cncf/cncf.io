@@ -24,7 +24,8 @@ endif;
 		<?php if ( isset( $site_options['header_image_id'] ) && $site_options['header_image_id'] ) { ?>
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
-				<img loading="eager" src="<?php echo esc_url( wp_get_attachment_url( $site_options['header_image_id'] ) ); ?>"
+				<img loading="eager"
+					src="<?php echo esc_url( wp_get_attachment_url( $site_options['header_image_id'] ) ); ?>"
 					width="210" height="40"
 					alt="<?php echo bloginfo( 'name' ); ?>">
 			</a>
@@ -121,8 +122,8 @@ endif;
 
 									show_event_in_menu();
 									?>
+								</div>
 							</div>
-						</div>
 						</div>
 					</div>
 				</li>
@@ -156,63 +157,71 @@ endif;
 									</li>
 								</ul>
 
-<?php
-// Get all radars.
-$tech_radars_all = LF_utils::get_tech_radars();
-// Limit to latest 3 items.
-$tech_radars = array_slice( $tech_radars_all, 0, 3 );
+								<?php
+								// Get all radars.
+								$tech_radars_all = LF_utils::get_tech_radars();
+								// Limit to latest 3 items.
+								$tech_radars = array_slice( $tech_radars_all, 0, 3 );
 
-if ( is_array( $tech_radars ) ) :
-	?>
-<div class="columns-one">
-	<?php
-	foreach ( $tech_radars as $tech_radar ) :
+								if ( is_array( $tech_radars ) ) :
+									?>
+								<div class="columns-one">
+									<?php
+									foreach ( $tech_radars as $tech_radar ) :
 
-		$url         = 'https://radar.cncf.io/' . $tech_radar->key;
-		$radar_title = $tech_radar->name;
-		$date        = $tech_radar->date;
-		$image       = $tech_radar->image;
-		?>
+										$url         = 'https://radar.cncf.io/' . $tech_radar->key;
+										$radar_title = $tech_radar->name;
+										$date        = $tech_radar->date;
+										$image       = $tech_radar->image;
+										?>
 
-<div class="main-menu-item radar-menu-item">
-	<div
-		class="main-menu-item__image-wrapper">
+									<div class="main-menu-item radar-menu-item">
+										<div
+											class="main-menu-item__image-wrapper">
 
-		<a href="<?php echo esc_url( $url ); ?>"
-			title="<?php echo esc_html( $radar_title ); ?>" class="main-menu-item__link">
+											<a href="<?php echo esc_url( $url ); ?>"
+												title="<?php echo esc_html( $radar_title ); ?>"
+												class="main-menu-item__link">
 
-			<?php
-			if ( $image ) {
-				?>
-<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_html( $radar_title ); ?>" class="main-menu-item__image" loading="lazy">
-				<?php
-			} else {
-				// show generic.
-				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-388', '400px', 'main-menu-item__image' );
-			}
-			?>
-		</a>
-	</div>
-	<div class="main-menu-item__text-wrapper">
+												<?php
+												if ( $image ) {
+													?>
+												<img src="<?php echo esc_url( $image ); ?>"
+													alt="<?php echo esc_html( $radar_title ); ?>"
+													class="main-menu-item__image"
+													loading="lazy">
+													<?php
+												} else {
+													// show generic.
+													Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-388', '400px', 'main-menu-item__image' );
+												}
+												?>
+											</a>
+										</div>
+										<div
+											class="main-menu-item__text-wrapper">
 
-		<a class="author-category" title="See more tech radars" href="https://radar.cncf.io/">Tech Radar</a>
+											<a class="author-category"
+												title="See more tech radars"
+												href="https://radar.cncf.io/">Tech
+												Radar</a>
 
-		<span class="main-menu-item__title">
-			<a href="<?php echo esc_url( $url ); ?>"
-				title="<?php echo esc_html( $radar_title ); ?>"><?php echo esc_html( $radar_title ); ?></a>
-		</span>
-		<span
-			class="main-menu-item__date"><?php echo esc_html( $date ); ?></span>
-	</div>
-</div>
-		<?php
-endforeach;
-	?>
-</div>
-	<?php
-endif;
-?>
+											<span class="main-menu-item__title">
+												<a href="<?php echo esc_url( $url ); ?>"
+													title="<?php echo esc_html( $radar_title ); ?>"><?php echo esc_html( $radar_title ); ?></a>
+											</span>
+											<span
+												class="main-menu-item__date"><?php echo esc_html( $date ); ?></span>
+										</div>
+									</div>
+										<?php
+								endforeach;
+									?>
 								</div>
+																<?php
+endif;
+								?>
+							</div>
 						</div>
 					</div>
 				</li>
@@ -248,9 +257,9 @@ endif;
 
 								<div class="columns-one">
 
-								<?php
+									<?php
 									get_template_part( 'components/promotion' );
-								?>
+									?>
 								</div>
 
 							</div>
@@ -364,14 +373,17 @@ endif;
 				</li>
 			</ul>
 
-			<div style="height:60px;" aria-hidden="true" class="wp-block-spacer show-upto-1000">
+			<div style="height:60px;" aria-hidden="true"
+				class="wp-block-spacer show-upto-1000">
 			</div>
 
 			<?php if ( isset( $site_options['header_cta_text'] ) && isset( $site_options['header_cta_link'] ) && $site_options['header_cta_text'] && $site_options['header_cta_link'] ) : ?>
 
 			<div class="header-cta">
-				<a href="<?php echo esc_url( get_permalink( $site_options['header_cta_link'] ) ); ?>"
-					class="wp-block-button__link"><?php echo esc_html( $site_options['header_cta_text'] ); ?></a>
+				<div class="wp-block-button">
+					<a href="<?php echo esc_url( get_permalink( $site_options['header_cta_link'] ) ); ?>"
+						class="wp-block-button__link"><?php echo esc_html( $site_options['header_cta_text'] ); ?></a>
+				</div>
 			</div>
 
 			<div style="height:20px" aria-hidden="true"
@@ -399,11 +411,9 @@ endif;
 							id="search-bar"
 							value="<?php echo esc_attr( get_search_query() ); ?>"
 							name="s" placeholder="I'm looking for..."
-							title="Search CNCF site"
-							autocapitalize="off"
+							title="Search CNCF site" autocapitalize="off"
 							spellcheck="false" maxlength="98" required>
-						<input
-							class="wp-block-button__link has-no-padding"
+						<input class="wp-block-button__link has-no-padding"
 							type="submit" value="Search" />
 					</form>
 

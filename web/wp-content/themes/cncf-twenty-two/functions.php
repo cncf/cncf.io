@@ -165,3 +165,5 @@ function lf_update_styles_with_filemtime( $styles ) {
 	$styles->default_version = filemtime( get_template_directory() . '/style.css' );
 }
 add_action( 'wp_default_styles', 'lf_update_styles_with_filemtime' );
+
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
