@@ -154,7 +154,7 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 
 	for ( $this_year = $start_year; $this_year <= (int) gmdate( 'Y' ); $this_year++ ) {
 		$accepted[ $this_year ] = 0;
-		if ( $this_year == (int) gmdate( 'Y' ) ) {
+		if ( (int) gmdate( 'Y' ) == $this_year ) {
 			$background[] = 'rgb(0, 134, 255, 0.4)';
 		} else {
 			$background[] = 'rgb(0, 134, 255)';
