@@ -154,9 +154,9 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	for ( $this_year = $start_year; $this_year < (int) gmdate( 'Y' ); $this_year++ ) {
 		$accepted[ $this_year ] = 0;
 	}
-	
+
 	foreach ( $maturity_data as $md ) {
-		$md_year = (int) explode( '-', $md[ 'accepted' ] )[0];
+		$md_year = (int) explode( '-', $md['accepted'] )[0];
 		if ( 2016 <= $md_year && $md_year < (int) gmdate( 'Y' ) ) {
 			$accepted[ $md_year ] += 1;
 		}
