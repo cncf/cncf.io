@@ -56,7 +56,7 @@ function relentlessCharts2() {
           position: 'none'
         },
         tooltip: {
-          mode: 'none'
+          mode: 'index'
         },
       },
       scales: {
