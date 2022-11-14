@@ -30,8 +30,7 @@ function relentlessCharts2() {
     datasets: [
       {
         data: accepted_values,
-        borderColor: 'rgb(0, 134, 255)',
-        backgroundColor: 'rgb(0, 134, 255)',
+        backgroundColor: background_colors
       }
     ]
   };

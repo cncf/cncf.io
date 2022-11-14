@@ -148,16 +148,22 @@ add_shortcode( 'projects-chart', 'add_projects_chart_shortcode' );
 function add_projects_accepted_chart_shortcode( $atts ) {
 
 	$maturity_data  = get_maturity_data();
-	$start_year = 2016;
-	$accepted = array();
+	$start_year     = 2016;
+	$accepted       = array();
+	$background     = array();
 
-	for ( $this_year = $start_year; $this_year < (int) gmdate( 'Y' ); $this_year++ ) {
+	for ( $this_year = $start_year; $this_year <= (int) gmdate( 'Y' ); $this_year++ ) {
 		$accepted[ $this_year ] = 0;
+		if ( $this_year == (int) gmdate( 'Y' ) ) {
+			$background[] = 'rgb(0, 134, 255, 0.4)';
+		} else {
+			$background[] = 'rgb(0, 134, 255)';
+		}
 	}
 
 	foreach ( $maturity_data as $md ) {
 		$md_year = (int) explode( '-', $md['accepted'] )[0];
-		if ( 2016 <= $md_year && $md_year < (int) gmdate( 'Y' ) ) {
+		if ( 2016 <= $md_year && $md_year <= (int) gmdate( 'Y' ) ) {
 			$accepted[ $md_year ] += 1;
 		}
 	}
@@ -185,7 +191,8 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	<canvas id="projectsAcceptedChart"></canvas>
 </div>
 <script>
-	const accepted_values = <?php echo json_encode( $accepted ); ?>;
+	const accepted_values   = <?php echo json_encode( $accepted ); ?>;
+	const background_colors = <?php echo json_encode( $background ); ?>;
 </script>
 
 	<?php
