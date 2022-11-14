@@ -82,11 +82,11 @@ function get_project_chart_data( $maturity_data ) {
 }
 
 /**
- * Add Projects Chart shortcode.
+ * Add Projects Maturity Chart shortcode.
  *
  * @param array $atts Attributes.
  */
-function add_projects_chart_shortcode( $atts ) {
+function add_projects_maturity_chart_shortcode( $atts ) {
 
 	$maturity_data  = get_maturity_data();
 	$chart_data     = get_project_chart_data( $maturity_data );
@@ -137,7 +137,7 @@ function add_projects_chart_shortcode( $atts ) {
 	$block_content = ob_get_clean();
 	return $block_content;
 }
-add_shortcode( 'projects-chart', 'add_projects_chart_shortcode' );
+add_shortcode( 'projects-maturity-chart', 'add_projects_maturity_chart_shortcode' );
 
 
 /**
