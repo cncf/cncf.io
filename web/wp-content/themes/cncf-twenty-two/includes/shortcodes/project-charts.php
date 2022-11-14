@@ -53,7 +53,7 @@ function get_maturity_data() {
  *
  * @param array $maturity_data CNCF project maturity data.
  */
-function get_chart_data( $maturity_data ) {
+function get_project_chart_data( $maturity_data ) {
 	$chart_data = array();
 	$start_date = '2016-01-01';
 	$this_date  = $start_date;
@@ -89,7 +89,7 @@ function get_chart_data( $maturity_data ) {
 function add_projects_chart_shortcode( $atts ) {
 
 	$maturity_data  = get_maturity_data();
-	$chart_data     = get_chart_data( $maturity_data );
+	$chart_data     = get_project_chart_data( $maturity_data );
 	$project_months = array_keys( $chart_data );
 	$sandbox        = array();
 	$incubating     = array();
@@ -148,18 +148,18 @@ add_shortcode( 'projects-chart', 'add_projects_chart_shortcode' );
 function add_projects_accepted_chart_shortcode( $atts ) {
 
 	$maturity_data  = get_maturity_data();
-	$chart_data     = get_chart_data( $maturity_data );
-	$project_months = array_keys( $chart_data );
-	$sandbox        = array();
-	$incubating     = array();
-	$graduated      = array();
-	$archived       = array();
+	$start_year = 2016;
+	$accepted = array();
 
-	foreach ( $chart_data as $cd ) {
-		$sandbox[]    = $cd['sandbox'];
-		$incubating[] = $cd['incubating'];
-		$graduated[]  = $cd['graduated'];
-		$archived[]   = $cd['archived'];
+	for ( $this_year = $start_year; $this_year < (int) gmdate( 'Y' ); $this_year++ ) {
+		$accepted[ $this_year ] = 0;
+	}
+	
+	foreach ( $maturity_data as $md ) {
+		$md_year = (int) explode( '-', $md[ 'accepted' ] )[0];
+		if ( 2016 <= $md_year && $md_year < (int) gmdate( 'Y' ) ) {
+			$accepted[ $md_year ] += 1;
+		}
 	}
 
 	ob_start();
@@ -174,22 +174,18 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	);
 	// custom script.
 	wp_enqueue_script(
-		'projects-chart',
-		get_template_directory_uri() . '/source/js/on-demand/projects-chart.js',
+		'projects-accepted-chart',
+		get_template_directory_uri() . '/source/js/on-demand/projects-accepted-chart.js',
 		array( 'jquery', 'chart-js' ),
-		filemtime( get_template_directory() . '/source/js/on-demand/projects-chart.js' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/projects-accepted-chart.js' ),
 		true
 	);
 	?>
 <div class="projects-chart-container">
-	<canvas id="projectsChart"></canvas>
+	<canvas id="projectsAcceptedChart"></canvas>
 </div>
 <script>
-	const project_months     = <?php echo json_encode( $project_months ); ?>;
-	const project_sandbox    = <?php echo json_encode( $sandbox ); ?>;
-	const project_incubating = <?php echo json_encode( $incubating ); ?>;
-	const project_graduated  = <?php echo json_encode( $graduated ); ?>;
-	const project_archived   = <?php echo json_encode( $archived ); ?>;
+	const accepted_values = <?php echo json_encode( $accepted ); ?>;
 </script>
 
 	<?php
