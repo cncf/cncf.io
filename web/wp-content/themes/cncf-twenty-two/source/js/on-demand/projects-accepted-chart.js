@@ -63,7 +63,7 @@ function relentlessCharts2() {
         y: {
           title: {
             display: true,
-            text: 'Projects Accepted'
+            text: 'Projects Accepted in to CNCF'
           }
         },
         x: {
