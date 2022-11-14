@@ -19,12 +19,12 @@ function ready( fn ) {
 }
 
 ready( function () {
-  relentlessCharts();
+  projctsMaturityChart();
 } );
 
-function relentlessCharts() {
+function projctsMaturityChart() {
 
-  const ctx = document.getElementById('projectsChart').getContext('2d');
+  const ctx = document.getElementById('projctsMaturityChart').getContext('2d');
 
   const labels = project_months;
   const data = {

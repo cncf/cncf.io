@@ -19,18 +19,18 @@ function ready( fn ) {
 }
 
 ready( function () {
-  relentlessCharts2();
+  projectsAcceptedChart();
 } );
 
-function relentlessCharts2() {
+function projectsAcceptedChart() {
 
   const ctx = document.getElementById('projectsAcceptedChart').getContext('2d');
 
   const data = {
     datasets: [
       {
-        data: accepted_values,
-        backgroundColor: background_colors
+        data: project_accepted_dates,
+        backgroundColor: chart_background_colors
       }
     ]
   };

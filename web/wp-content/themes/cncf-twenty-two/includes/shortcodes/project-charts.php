@@ -123,7 +123,7 @@ function add_projects_chart_shortcode( $atts ) {
 	);
 	?>
 <div class="projects-chart-container">
-	<canvas id="projectsChart"></canvas>
+	<canvas id="projctsMaturityChart"></canvas>
 </div>
 <script>
 	const project_months     = <?php echo json_encode( $project_months ); ?>;
@@ -191,8 +191,8 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	<canvas id="projectsAcceptedChart"></canvas>
 </div>
 <script>
-	const accepted_values   = <?php echo json_encode( $accepted ); ?>;
-	const background_colors = <?php echo json_encode( $background ); ?>;
+	const project_accepted_dates   = <?php echo json_encode( $accepted ); ?>;
+	const chart_background_colors = <?php echo json_encode( $background ); ?>;
 </script>
 
 	<?php
