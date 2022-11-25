@@ -595,14 +595,14 @@ class LF_Utils {
 	 * Array contains [url to image of person, url to link to person] for each entry.
 	 * Phippy characters inserted for fun at position [0] and [6].
 	 */
-	public static function get_ambassadors() {
+	public static function get_teamcloudnative() {
 		global $post;
 
 		$ambassadors = array();
 
 		$args  = array(
 			'post_type'      => 'lf_person',
-			'posts_per_page' => 10,
+			'posts_per_page' => 15,
 			'no_found_rows'  => true,
 			'orderby'        => 'rand',
 			'post_status'    => array( 'publish' ),
