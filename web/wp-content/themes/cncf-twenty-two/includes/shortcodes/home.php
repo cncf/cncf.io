@@ -197,12 +197,12 @@ function add_home_ambassadors_shortcode() {
 	</svg>
 
 	<?php
-	$ambassadors = LF_utils::get_ambassadors();
+	$teamcloudnative = LF_utils::get_teamcloudnative();
 
-	if ( $ambassadors && count( $ambassadors ) > 0 ) :
+	if ( $teamcloudnative && count( $teamcloudnative ) > 0 ) :
 
 		// Grab first 4 for initial load.
-		$initial_ambassadors = array_slice( $ambassadors, 0, 4 );
+		$initial_ambassadors = array_slice( $teamcloudnative, 0, 4 );
 		?>
 	<div class="home-ambassadors-heptagons">
 		<?php
@@ -261,7 +261,7 @@ function add_home_ambassadors_shortcode() {
 
 				// get the array of new elements.
 				let ambassadors =
-					<?php echo wp_json_encode( $ambassadors ); ?>;
+					<?php echo wp_json_encode( $teamcloudnative ); ?>;
 
 				// Get matchMedia setting.
 				let prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
