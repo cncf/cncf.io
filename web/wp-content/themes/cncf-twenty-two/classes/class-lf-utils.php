@@ -589,19 +589,20 @@ class LF_Utils {
 	}
 
 	/**
-	 * Get Ambassadors
+	 * Get Ambassadors and HOCN profiles
 	 *
-	 * Returns random array of Ambassadors.
+	 * Returns random array of Ambassadors and HOCN people.
 	 * Array contains [url to image of person, url to link to person] for each entry.
 	 * Phippy characters inserted for fun at position [0] and [6].
 	 */
 	public static function get_ambassadors() {
+		global $post;
 
-		$people = array();
+		$ambassadors = array();
 
 		$args  = array(
 			'post_type'      => 'lf_person',
-			'posts_per_page' => 32,
+			'posts_per_page' => 10,
 			'no_found_rows'  => true,
 			'orderby'        => 'rand',
 			'post_status'    => array( 'publish' ),
@@ -614,18 +615,46 @@ class LF_Utils {
 			),
 		);
 		$query = new WP_Query( $args );
+		$ambassador_url = home_url( 'people/ambassadors' );
 		while ( $query->have_posts() ) {
 
 			$query->the_post();
-			global $post;
-			$person_id           = get_the_ID();
 			$person_title        = $post->post_title;
 			$person_slug         = $post->post_name;
 			$person_image_url    = get_post_meta( get_the_ID(), 'lf_person_image', true );
-			$ambassador_url      = home_url( 'people/ambassadors' );
 			$person_profile_link = $ambassador_url . '/?p=' . $person_slug;
 
-			$people[] = array(
+			$ambassadors[] = array(
+				'title' => $person_title,
+				'image' => $person_image_url,
+				'link'  => $person_profile_link,
+			);
+		}
+
+		$hocn_people = array();
+
+		$args  = array(
+			'post_type'      => 'lf_human',
+			'posts_per_page' => 10,
+			'no_found_rows'  => true,
+			'orderby'        => 'rand',
+			'post_status'    => array( 'publish' ),
+			'meta_query' => array(
+				array(
+					'key'     => 'lf_human_image',
+					'value'   => '0',
+					'compare' => '>',
+				),
+			),
+		);
+		$query = new WP_Query( $args );
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$person_title        = $post->post_title;
+			$person_image_url    = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'lf_human_image', true ) )[0];
+			$person_profile_link = get_permalink();
+
+			$hocn_people[] = array(
 				'title' => $person_title,
 				'image' => $person_image_url,
 				'link'  => $person_profile_link,
@@ -644,13 +673,16 @@ class LF_Utils {
 			'link'  => home_url( 'phippy' ),
 		);
 
+		// Add Ambassadors to end of HOCN people.
+		$hocn_people = array_merge( $hocn_people, $ambassadors );
+
 		// Insert Phippy at 4th spot (for initial display).
-		array_splice( $people, 3, 0, array( $phippy ) );
+		array_splice( $hocn_people, 3, 0, array( $phippy ) );
 
 		// Add Tiago to array.
-		array_push( $people, $tiago );
+		array_push( $hocn_people, $tiago );
 
-		return $people;
+		return $hocn_people;
 	}
 
 	/**
