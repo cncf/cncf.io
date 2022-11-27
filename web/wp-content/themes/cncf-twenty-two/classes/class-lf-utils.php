@@ -674,15 +674,15 @@ class LF_Utils {
 		);
 
 		// Add Ambassadors to end of HOCN people.
-		$hocn_people = array_merge( $hocn_people, $ambassadors );
+		$people = array_merge( $hocn_people, $ambassadors );
 
 		// Insert Phippy at 4th spot (for initial display).
-		array_splice( $hocn_people, 3, 0, array( $phippy ) );
+		array_splice( $people, 3, 0, array( $phippy ) );
 
 		// Add Tiago to array.
-		array_push( $hocn_people, $tiago );
+		array_push( $people, $tiago );
 
-		return $hocn_people;
+		return $people;
 	}
 
 	/**
