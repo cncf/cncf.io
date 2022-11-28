@@ -56,6 +56,16 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 			if ( 'nextarch' === $json->repository->name && 'closed' === $json->action && true === $json->pull_request->merged ) {
 				// sync people.
 				wp_schedule_single_event( time(), 'lf_sync_people' );
+
+				pantheon_wp_clear_edge_paths(
+					array(
+						'/people/staff',
+						'/people/technical-oversight-committee',
+						'/people/governing-board',
+						'/people/ambassadors'
+					),
+				);
+
 				return new WP_REST_Response( array( 'Success. People synched.' ), 200 );
 			}
 		}
