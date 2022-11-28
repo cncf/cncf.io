@@ -589,22 +589,11 @@ class Lf_Mu_Admin {
 	}
 
 	/**
-	 * Listen out for web hooks.
+	 * Registers REST routes.
 	 */
-	public function webhook_listener() {
-		if ( '/sync_people' === $_SERVER[REQUEST_URI] ) {
-
-			// Let's get the input 
-			$input = @file_get_contents( 'php://input' ); 
-			$json  = json_decode( $input ); 
-
-			if ( !isset( $json->hook_id ) ) {
-				return;
-			}
-
-			var_dump( $json->hook_id );
-
-			
-		}
+	public function register_my_rest_routes() {
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-lf-mu-sync-people-route.php';
+		$controller = new LF_Mu_Sync_People_Route();
+		$controller->register_routes();
 	}
 }
