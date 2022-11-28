@@ -165,6 +165,7 @@ class Lf_Mu {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'wp_head', $plugin_admin, 'change_adminbar_colors' );
+		$this->loader->add_action( 'init', $plugin_admin, 'webhook_listener' );
 
 		// Hook to save year in a meta fields for filtering.
 		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );

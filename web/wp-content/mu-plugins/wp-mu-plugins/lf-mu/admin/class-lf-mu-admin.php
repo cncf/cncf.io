@@ -587,4 +587,24 @@ class Lf_Mu_Admin {
 	public function unregister_tags_for_posts() {
 		unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 	}
+
+	/**
+	 * Listen out for web hooks.
+	 */
+	public function webhook_listener() {
+		if ( '/sync_people' === $_SERVER[REQUEST_URI] ) {
+
+			// Let's get the input 
+			$input = @file_get_contents( 'php://input' ); 
+			$json  = json_decode( $input ); 
+
+			if ( !isset( $json->hook_id ) ) {
+				return;
+			}
+
+			var_dump( $json->hook_id );
+
+			
+		}
+	}
 }
