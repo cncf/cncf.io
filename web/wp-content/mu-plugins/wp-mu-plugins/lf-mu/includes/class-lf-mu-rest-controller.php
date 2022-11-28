@@ -45,13 +45,16 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 	 * @return WP_Error|WP_REST_Response
 	 */
 	public function sync_people( $request ) {
-		
+	
 		if ( ! is_object( $request ) ) {
 			return new WP_Error( 'error', esc_html__( 'Error with the request object.' ), array( 'status' => 500 ) );
 		}
-		
+
 		$json = json_decode( $request->get_body() );
 
+		var_dump( $json->repository->name );
+		var_dump( $json->action );
+		var_dump( $json->pull_request->merged );
 		if ( is_object( $json ) && property_exists( $json, 'repository' ) && property_exists( $json, 'action' ) && property_exists( $json, 'pull_request' ) ) {
 			if ( 'nextarch' === $json->repository->name && 'closed' === $json->action && true === $json->pull_request->merged ) {
 				// sync people.
