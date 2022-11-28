@@ -56,10 +56,11 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 			if ( 'nextarch' === $json->repository->name && 'closed' === $json->action && true === $json->pull_request->merged ) {
 				// sync people.
 				include plugin_dir_path( __FILE__ ) . '../admin/partials/sync-people.php';
+				return new WP_REST_Response( array( 'Success. People synched.' ), 200 );
 			}
 		}
 
-		return new WP_REST_Response( array( 'success' ), 200 );
+		return new WP_REST_Response( array( 'Success' ), 200 );
 	}
 
 }
