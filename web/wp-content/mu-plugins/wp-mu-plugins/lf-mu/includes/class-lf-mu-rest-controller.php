@@ -52,11 +52,10 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 
 		$json = json_decode( $request->get_body() );
 
-		var_dump( $json);
 		if ( is_object( $json ) && property_exists( $json, 'repository' ) && property_exists( $json, 'action' ) && property_exists( $json, 'pull_request' ) ) {
 			if ( 'nextarch' === $json->repository->name && 'closed' === $json->action && true === $json->pull_request->merged ) {
 				// sync people.
-				include plugin_dir_path( __FILE__ ) . '../admin/partials/sync-people.php';
+				wp_schedule_single_event( time(), 'lf_sync_people' );
 				return new WP_REST_Response( array( 'Success. People synched.' ), 200 );
 			}
 		}
