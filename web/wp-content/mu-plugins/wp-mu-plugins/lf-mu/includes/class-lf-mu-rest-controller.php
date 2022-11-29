@@ -54,10 +54,10 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 
 		if ( is_object( $json ) && property_exists( $json, 'repository' ) && property_exists( $json, 'action' ) && property_exists( $json, 'pull_request' ) ) {
 			if ( 'nextarch' === $json->repository->name && 'closed' === $json->action && true === $json->pull_request->merged ) {
-				// sync people.
-				wp_schedule_single_event( time(), 'lf_sync_people' );
-				pantheon_wp_clear_edge_all();
-				return new WP_REST_Response( array( 'Success. People synched.' ), 200 );
+				// sync people after 6 minutes.
+				// This delay is required in order for GitHub to update its raw files with the people data.
+				wp_schedule_single_event( time()+360, 'lf_sync_people' );
+				return new WP_REST_Response( array( 'Success. People synced.' ), 200 );
 			}
 		}
 
