@@ -591,7 +591,7 @@ class Lf_Mu_Admin {
 	/**
 	 * Registers REST routes.
 	 */
-	public function register_my_rest_routes() {
+	public function register_lf_rest_routes() {
 		require_once plugin_dir_path( __FILE__ ) . '../includes/class-lf-mu-rest-controller.php';
 		$controller = new LF_MU_REST_Controller();
 		$controller->register_routes();
