@@ -204,9 +204,6 @@ class Lf_Mu {
 
 		// Sync people with https://github.com/cncf/people.
 		$this->loader->add_action( 'lf_sync_people', $plugin_admin, 'sync_people' );
-		if ( ! wp_next_scheduled( 'lf_sync_people' ) ) {
-			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
-		}
 
 		// Example of how to run a sync locally on demand.
 		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
