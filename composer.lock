@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83ab47eabb6a1dedcaf878573cc1c592",
+    "content-hash": "6250f50f598fbe259e20c1b68570c048",
     "packages": [
         {
             "name": "composer/installers",
@@ -735,7 +735,7 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "9.0.417",
+            "version": "9.0.500",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
@@ -743,7 +743,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1668590295"
+                "url": "https://downloads.wordpress.org/plugin/leadin.zip?timestamp=1669624660"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -771,15 +771,15 @@
         },
         {
             "name": "wpackagist-plugin/pantheon-advanced-page-cache",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pantheon-advanced-page-cache/",
-                "reference": "tags/1.1.1"
+                "reference": "tags/1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pantheon-advanced-page-cache.1.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/pantheon-advanced-page-cache.1.2.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -879,15 +879,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "5.1.3",
+            "version": "5.1.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/5.1.3"
+                "reference": "tags/5.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.5.1.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.5.1.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -914,6 +914,24 @@
             "homepage": "https://wordpress.org/plugins/svg-autocrop/"
         },
         {
+            "name": "wpackagist-plugin/wp-crontrol",
+            "version": "1.15.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
+                "reference": "tags/1.15.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.15.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-crontrol/"
+        },
+        {
             "name": "wpackagist-plugin/wp-mail-smtp",
             "version": "3.6.1",
             "source": {
@@ -933,15 +951,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-native-php-sessions",
-            "version": "1.2.5",
+            "version": "1.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-native-php-sessions/",
-                "reference": "tags/1.2.5"
+                "reference": "tags/1.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-native-php-sessions.1.2.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-native-php-sessions.1.3.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -957,12 +975,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "d76dc6accbe3d8bb82c6015d53879485f8228952"
+                "reference": "c4ccfdab77bd92444c6a2f7813bc20f29dbb9d13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d76dc6accbe3d8bb82c6015d53879485f8228952",
-                "reference": "d76dc6accbe3d8bb82c6015d53879485f8228952",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/c4ccfdab77bd92444c6a2f7813bc20f29dbb9d13",
+                "reference": "c4ccfdab77bd92444c6a2f7813bc20f29dbb9d13",
                 "shasum": ""
             },
             "conflict": {
@@ -986,12 +1004,13 @@
                 "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
                 "awesome-support/awesome-support": "<=6.0.7",
                 "aws/aws-sdk-php": ">=3,<3.2.1",
+                "backdrop/backdrop": "<=1.23",
                 "badaso/core": "<2.6.1",
                 "bagisto/bagisto": "<0.1.5",
                 "barrelstrength/sprout-base-email": "<1.2.7",
                 "barrelstrength/sprout-forms": "<3.9",
                 "barryvdh/laravel-translation-manager": "<0.6.2",
-                "baserproject/basercms": "<4.5.4",
+                "baserproject/basercms": "<=4.7.1",
                 "billz/raspap-webgui": "<=2.6.6",
                 "bk2k/bootstrap-package": ">=7.1,<7.1.2|>=8,<8.0.8|>=9,<9.0.4|>=9.1,<9.1.3|>=10,<10.0.10|>=11,<11.0.3",
                 "bmarshall511/wordpress_zero_spam": "<5.2.13",
@@ -1019,7 +1038,7 @@
                 "codeigniter4/shield": "= 1.0.0-beta",
                 "codiad/codiad": "<=2.8.4",
                 "composer/composer": "<1.10.26|>=2-alpha.1,<2.2.12|>=2.3,<2.3.5",
-                "concrete5/concrete5": ">= 9.0.0RC1, < 9.1.3|<9",
+                "concrete5/concrete5": "<9.1.3|>= 9.0.0RC1, < 9.1.3",
                 "concrete5/core": "<8.5.8|>=9,<9.1",
                 "contao-components/mediaelement": ">=2.14.2,<2.21.1",
                 "contao/contao": ">=4,<4.4.56|>=4.5,<4.9.18|>=4.10,<4.11.7|>=4.13,<4.13.3",
@@ -1045,7 +1064,7 @@
                 "doctrine/mongodb-odm": ">=1,<1.0.2",
                 "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1|>=2.8.3,<2.8.4",
-                "dolibarr/dolibarr": "<16|= 12.0.5|>= 3.3.beta1, < 13.0.2",
+                "dolibarr/dolibarr": "<16|>=16.0.1,<16.0.3|= 12.0.5|>= 3.3.beta1, < 13.0.2",
                 "dompdf/dompdf": "<2.0.1",
                 "drupal/core": ">=7,<7.91|>=8,<9.3.19|>=9.4,<9.4.3",
                 "drupal/drupal": ">=7,<7.80|>=8,<8.9.16|>=9,<9.1.12|>=9.2,<9.2.4",
@@ -1084,7 +1103,7 @@
                 "fenom/fenom": "<=2.12.1",
                 "filegator/filegator": "<7.8",
                 "firebase/php-jwt": "<2",
-                "flarum/core": ">=1,<=1.0.1",
+                "flarum/core": ">=1,<=1.0.1|>=1.5,<1.6.2",
                 "flarum/sticky": ">=0.1-beta.14,<=0.1-beta.15",
                 "flarum/tags": "<=0.1-beta.13",
                 "fluidtypo3/vhs": "<5.1.1",
@@ -1140,6 +1159,7 @@
                 "ivankristianto/phpwhois": "<=4.3",
                 "jackalope/jackalope-doctrine-dbal": "<1.7.4",
                 "james-heinrich/getid3": "<1.9.21",
+                "jasig/phpcas": "<1.3.3",
                 "joomla/archive": "<1.1.12|>=2,<2.0.1",
                 "joomla/filesystem": "<1.6.2|>=2,<2.0.1",
                 "joomla/filter": "<1.4.4|>=2,<2.0.1",
@@ -1167,7 +1187,7 @@
                 "league/commonmark": "<0.18.3",
                 "league/flysystem": "<1.1.4|>=2,<2.1.1",
                 "lexik/jwt-authentication-bundle": "<2.10.7|>=2.11,<2.11.3",
-                "librenms/librenms": "<=22.8",
+                "librenms/librenms": "<22.10",
                 "limesurvey/limesurvey": "<3.27.19",
                 "livehelperchat/livehelperchat": "<=3.91",
                 "livewire/livewire": ">2.2.4,<2.2.6",
@@ -1192,7 +1212,7 @@
                 "modx/revolution": "<= 2.8.3-pl|<2.8",
                 "mojo42/jirafeau": "<4.4",
                 "monolog/monolog": ">=1.8,<1.12",
-                "moodle/moodle": "<4.0.1",
+                "moodle/moodle": "<4.0.5",
                 "mustache/mustache": ">=2,<2.14.1",
                 "namshi/jose": "<2.2",
                 "neoan3-apps/template": "<1.1.1",
@@ -1249,6 +1269,7 @@
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
+                "phpxmlrpc/phpxmlrpc": "<4.9",
                 "pimcore/data-hub": "<1.2.4",
                 "pimcore/pimcore": "<10.5.9",
                 "pocketmine/bedrock-protocol": "<8.0.2",
@@ -1317,6 +1338,7 @@
                 "snipe/snipe-it": "<6.0.11|>= 6.0.0-RC-1, <= 6.0.0-RC-5",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "socialiteproviders/steam": "<1.1",
+                "spatie/browsershot": "<3.57.3",
                 "spipu/html2pdf": "<5.2.4",
                 "spoonity/tcpdf": "<6.2.22",
                 "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
@@ -1381,7 +1403,7 @@
                 "topthink/framework": "<=6.0.13",
                 "topthink/think": "<=6.0.9",
                 "topthink/thinkphp": "<=3.2.3",
-                "tribalsystems/zenario": "<9.2.55826",
+                "tribalsystems/zenario": "<=9.3.57186",
                 "truckersmp/phpwhois": "<=4.3.1",
                 "twig/twig": "<1.44.7|>=2,<2.15.3|>=3,<3.4.3",
                 "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.32|>=8,<8.7.38|>=9,<9.5.29|>=10,<10.4.32|>=11,<11.5.16",
@@ -1417,7 +1439,7 @@
                 "yetiforce/yetiforce-crm": "<=6.4",
                 "yidashi/yii2cmf": "<=2",
                 "yii2mod/yii2-cms": "<1.9.2",
-                "yiisoft/yii": ">=1.1.14,<1.1.15",
+                "yiisoft/yii": "<1.1.27",
                 "yiisoft/yii2": "<2.0.38",
                 "yiisoft/yii2-bootstrap": "<2.0.4",
                 "yiisoft/yii2-dev": "<2.0.43",
@@ -1487,7 +1509,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-21T10:04:37+00:00"
+            "time": "2022-11-30T22:04:13+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
