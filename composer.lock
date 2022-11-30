@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6250f50f598fbe259e20c1b68570c048",
+    "content-hash": "83ab47eabb6a1dedcaf878573cc1c592",
     "packages": [
         {
             "name": "composer/installers",
@@ -912,24 +912,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/svg-autocrop/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-crontrol",
-            "version": "1.15.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
-                "reference": "tags/1.15.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.15.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-crontrol/"
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
