@@ -165,6 +165,7 @@ class Lf_Mu {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'wp_head', $plugin_admin, 'change_adminbar_colors' );
+		$this->loader->add_action( 'rest_api_init', $plugin_admin, 'register_lf_rest_routes' );
 
 		// Hook to save year in a meta fields for filtering.
 		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
@@ -203,9 +204,6 @@ class Lf_Mu {
 
 		// Sync people with https://github.com/cncf/people.
 		$this->loader->add_action( 'lf_sync_people', $plugin_admin, 'sync_people' );
-		if ( ! wp_next_scheduled( 'lf_sync_people' ) ) {
-			wp_schedule_event( time(), 'twicedaily', 'lf_sync_people' );
-		}
 
 		// Example of how to run a sync locally on demand.
 		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Projects Chart Shortcode
+ * Project Chart Shortcodes
  *
  * Usage:
  * [projects stage="graduated|incubating|sandbox"]
@@ -53,7 +53,7 @@ function get_maturity_data() {
  *
  * @param array $maturity_data CNCF project maturity data.
  */
-function get_chart_data( $maturity_data ) {
+function get_project_chart_data( $maturity_data ) {
 	$chart_data = array();
 	$start_date = '2016-01-01';
 	$this_date  = $start_date;
@@ -82,14 +82,14 @@ function get_chart_data( $maturity_data ) {
 }
 
 /**
- * Add Projects shortcode.
+ * Add Projects Maturity Chart shortcode.
  *
  * @param array $atts Attributes.
  */
-function add_projects_chart_shortcode( $atts ) {
+function add_projects_maturity_chart_shortcode( $atts ) {
 
 	$maturity_data  = get_maturity_data();
-	$chart_data     = get_chart_data( $maturity_data );
+	$chart_data     = get_project_chart_data( $maturity_data );
 	$project_months = array_keys( $chart_data );
 	$sandbox        = array();
 	$incubating     = array();
@@ -123,7 +123,7 @@ function add_projects_chart_shortcode( $atts ) {
 	);
 	?>
 <div class="projects-chart-container">
-	<canvas id="projectsChart"></canvas>
+	<canvas id="projctsMaturityChart"></canvas>
 </div>
 <script>
 	const project_months     = <?php echo json_encode( $project_months ); ?>;
@@ -137,4 +137,66 @@ function add_projects_chart_shortcode( $atts ) {
 	$block_content = ob_get_clean();
 	return $block_content;
 }
-add_shortcode( 'projects-chart', 'add_projects_chart_shortcode' );
+add_shortcode( 'projects-maturity-chart', 'add_projects_maturity_chart_shortcode' );
+
+
+/**
+ * Add Projects Accepted Chart shortcode.
+ *
+ * @param array $atts Attributes.
+ */
+function add_projects_accepted_chart_shortcode( $atts ) {
+
+	$maturity_data  = get_maturity_data();
+	$start_year     = 2016;
+	$accepted       = array();
+	$background     = array();
+
+	for ( $this_year = $start_year; $this_year <= (int) gmdate( 'Y' ); $this_year++ ) {
+		$accepted[ $this_year ] = 0;
+		if ( (int) gmdate( 'Y' ) == $this_year ) {
+			$background[] = 'rgb(0, 134, 255, 0.4)';
+		} else {
+			$background[] = 'rgb(0, 134, 255)';
+		}
+	}
+
+	foreach ( $maturity_data as $md ) {
+		$md_year = (int) explode( '-', $md['accepted'] )[0];
+		if ( 2016 <= $md_year && $md_year <= (int) gmdate( 'Y' ) ) {
+			$accepted[ $md_year ] += 1;
+		}
+	}
+
+	ob_start();
+
+	// chart js.
+	wp_enqueue_script(
+		'chart-js',
+		get_template_directory_uri() . '/source/js/libraries/chart-3.9.1.min.js',
+		null,
+		filemtime( get_template_directory() . '/source/js/libraries/chart-3.9.1.min.js' ),
+		true
+	);
+	// custom script.
+	wp_enqueue_script(
+		'projects-accepted-chart',
+		get_template_directory_uri() . '/source/js/on-demand/projects-accepted-chart.js',
+		array( 'jquery', 'chart-js' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/projects-accepted-chart.js' ),
+		true
+	);
+	?>
+<div class="projects-chart-container">
+	<canvas id="projectsAcceptedChart"></canvas>
+</div>
+<script>
+	const project_accepted_dates   = <?php echo json_encode( $accepted ); ?>;
+	const chart_background_colors = <?php echo json_encode( $background ); ?>;
+</script>
+
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+add_shortcode( 'projects-accepted-chart', 'add_projects_accepted_chart_shortcode' );

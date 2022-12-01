@@ -16,8 +16,9 @@ web/*
 web/wp-content/*
 
 # ignore Pantheon MU plugin
-web/wp-content/mu-plugins/pantheon/
-web/wp-content/mu-plugins/pantheon.php
+web/wp-content/mu-plugins/loader.php
+web/wp-content/mu-plugins/pantheon-mu-plugin/
+
 
 !web/wp-content/mu-plugins/
 
