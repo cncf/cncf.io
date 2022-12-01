@@ -26,7 +26,7 @@ $cookies_link        = 'https://www.linuxfoundation.org/cookies/';
 	<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
 
 	<button id="cookie-banner-button"
-		class="wp-block-button__link has-black-background-color has-background has-icon" tabindex="0">
+		class="wp-block-button__link cookie-banner-button has-black-background-color has-background" tabindex="0">
 		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 			viewBox="0 0 24 24" fill="#FFF">
 			<path

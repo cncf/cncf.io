@@ -65,6 +65,9 @@
 			width: 430px;
 			display: grid;
 		}
+		@media (min-width: 1200px) {
+			width: 535px;
+		}
 		.search-input {
 			font-size: 16px;
 			&::placeholder {
@@ -84,6 +87,21 @@
 
 // applies at all responsive sizes.
 .main-menu {
+	// replicate wrap.
+	padding-left: 12px;
+	padding-right: 12px;
+	@media (min-width: 375px) {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	@media (min-width: 550px) {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	@media (min-width: 1000px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	.menu-item-has-children {
 		a:hover {
 			text-decoration: none;
@@ -198,6 +216,12 @@
 		}
 	}
 
+	.header-cta {
+		.wp-block-button {
+			display: flex;
+		}
+	}
+
 	.main-menu {
 		background-color: $white;
 		&__wrapper {
@@ -210,20 +234,7 @@
 		z-index: 5;
 		width: 100%;
 		height: 100%;
-
 		overflow-y: scroll;
-		// replicate wrap.
-		padding-left: 12px;
-		padding-right: 12px;
-		@media (min-width: 375px) {
-			padding-left: 24px;
-			padding-right: 24px;
-		}
-
-		@media (min-width: 550px) {
-			padding-left: 25px;
-			padding-right: 25px;
-		}
 		transition: top 0.5s ease-in-out;
 		@media (prefers-reduced-motion: reduce) {
 			transition: none;
@@ -321,20 +332,43 @@
 	.header {
 		background-color: rgba($gray-050, 0.98);
 		// Both Buttons in Header.
-		.wp-block-button__link {
-			padding: 6px 0px;
-			margin-left: 20px;
-			min-width: 100px;
-			flex-shrink: 0;
-			border-radius: 4px;
-			width: min-content;
-			@media (min-width: 1250px) {
-				min-width: 134px;
-			}
-		}
+		// .wp-block-button__link {
+		// 	padding: 6px 0px;
+		// 	margin-left: 20px;
+		// 	min-width: 100px;
+		// 	flex-shrink: 0;
+		// 	border-radius: 4px;
+		// 	width: min-content;
+		// 	@media (min-width: 1250px) {
+		// 		min-width: 134px;
+		// 	}
+		// }
 		// Join CTA Button.
 		.header-cta .wp-block-button__link {
 			text-transform: capitalize;
+			white-space: nowrap;
+			border-radius: 4px;
+			margin-left: 20px;
+			padding-top: 6px;
+			padding-bottom: 6px;
+			padding-left: 32px;
+			padding-right: 32px;
+			@media (min-width: 1200px) {
+				padding-left: 45px;
+				padding-right: 45px;
+			}
+		}
+		.search-input-button {
+			white-space: nowrap;
+			border-radius: 4px;
+			padding-top: 6px;
+			padding-bottom: 6px;
+			padding-left: 0;
+			padding-right: 0;
+			// @media (min-width: 1200px) {
+			// 	padding-left: 45px;
+			// 	padding-right: 45px;
+			// }
 		}
 		.search-toggle.button-reset {
 			margin-left: 20px;
@@ -346,7 +380,6 @@
 				margin-left: 40px;
 			}
 		}
-
 		&__search_wrapper {
 			opacity: 0;
 			visibility: hidden;
@@ -365,7 +398,6 @@
 				transition: opacity 0.15s ease-in;
 			}
 		}
-
 		&__search_container {
 			// replicate container.
 			width: 100%;
@@ -652,6 +684,7 @@
 			line-height: 1.2;
 			font-weight: 700;
 			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+			color: $white;
 		}
 	}
 }

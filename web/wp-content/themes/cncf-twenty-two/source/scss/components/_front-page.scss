@@ -46,6 +46,7 @@
 		color: $white;
 	}
 	&__title {
+		color: $white;
 		margin-top: min(36%, 140px);
 		// Macbook 12"
 		@media (min-width: 1200px) and (min-height: 660px) and (max-height: 900px) {
@@ -70,6 +71,7 @@
 		}
 	}
 	&__description {
+		color: $white;
 		margin-top: min(8%, 40px);
 		margin-bottom: min(8%, 40px);
 		@media (min-width: 412px) {

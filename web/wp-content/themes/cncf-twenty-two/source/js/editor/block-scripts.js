@@ -102,38 +102,6 @@ wp.blocks.registerBlockStyle(
 ]
 );
 
-wp.blocks.registerBlockStyle(
-	'core/paragraph',
-	[
-		{
-			label: 'Opening Paragraph',
-			name: 'opening-paragraph',
-		},
-		{
-			label: 'Link CTA',
-			name: 'link-cta',
-		},
-		{
-			label: 'Boxed Uppercase',
-			name: 'boxed-uppercase',
-		}
-]
-);
-
-wp.blocks.registerBlockStyle(
-	'core/heading',
-	[
-		{
-		label: 'Page Title',
-		name: 'page-title',
-	},
-	{
-		label: 'Section Heading',
-		name: 'section-heading',
-	}
-]
-);
-
 let blocksToStyle = [
 	'core/heading',
 	'core/paragraph',
@@ -167,6 +135,38 @@ blocksToStyle.forEach( ( block ) => {
 		]
 	);
 } );
+
+wp.blocks.registerBlockStyle(
+	'core/paragraph',
+	[
+		{
+			label: 'Opening Paragraph',
+			name: 'opening-paragraph',
+		},
+		{
+			label: 'Link CTA',
+			name: 'link-cta',
+		},
+		{
+			label: 'Boxed Uppercase',
+			name: 'boxed-uppercase',
+		}
+]
+);
+
+wp.blocks.registerBlockStyle(
+	'core/heading',
+	[
+		{
+		label: 'Page Title',
+		name: 'page-title',
+	},
+	{
+		label: 'Section Heading',
+		name: 'section-heading',
+	}
+]
+);
 
 wp.blocks.registerBlockStyle(
 	'core/image',

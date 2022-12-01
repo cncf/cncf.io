@@ -48,6 +48,7 @@
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		h3 {
+			color: $white;
 			font-size: 20px;
 			@media (min-width: 1000px) {
 				font-size: 16px;
@@ -101,6 +102,9 @@
 		@media (min-width: 1200px) {
 			height: 100px;
 			line-height: 150%;
+		}
+		h4 {
+			color: $white;
 		}
 		.button-reset {
 			width: 100%;
@@ -210,5 +214,10 @@
 		&__col2 {
 			grid-column: span 3;
 		}
+	}
+	.wp-block-button__link {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
 	}
 }

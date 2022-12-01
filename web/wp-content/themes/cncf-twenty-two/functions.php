@@ -55,9 +55,26 @@ function lf_theme_support_setup() {
 	// include custom image sizes.
 	require_once 'includes/image-sizes.php';
 
-	// include gutenberg setup.
-	require_once 'includes/gutenberg-setup.php';
+	// Adds default styles to blocks.
+	add_theme_support( 'wp-block-styles' );
 
+	// Support Template Parts.
+	add_theme_support( 'block-template-parts' );
+
+	// Changes embeds to fit aspect ratio.
+	add_theme_support( 'responsive-embeds' );
+
+	// Disable core block patterns.
+	remove_theme_support( 'core-block-patterns' );
+
+	// Disable new gutenberg widget screen.
+	remove_theme_support( 'widgets-block-editor' );
+
+	// Remove duotone SVG filter injection.
+	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+
+	// Load core block styles seperately.
+	add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 }
 add_action( 'after_setup_theme', 'lf_theme_support_setup' );
 
@@ -165,5 +182,3 @@ function lf_update_styles_with_filemtime( $styles ) {
 	$styles->default_version = filemtime( get_template_directory() . '/style.css' );
 }
 add_action( 'wp_default_styles', 'lf_update_styles_with_filemtime' );
-
-add_filter( 'should_load_separate_core_block_assets', '__return_true' );

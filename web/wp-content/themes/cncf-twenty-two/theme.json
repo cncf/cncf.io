@@ -65,6 +65,11 @@
                     "color": "#fcfcfc",
                     "name": "Gray 100"
                 },
+				{
+                    "slug": "gray-050",
+                    "color": "#fdfdfd",
+                    "name": "Gray 50"
+                },
                 {
                     "slug": "white",
                     "color": "#FFFFFF",
@@ -81,7 +86,7 @@
             "contentSize": "1200px"
         },
 		"spacing": {
-			"blockGap": false,
+			"blockGap": null,
 			"margin": true,
 			"padding": true,
 			"units": [ "px", "rem", "vh", "vw", "%" ]
@@ -95,14 +100,7 @@
 			"letterSpacing": false,
             "textDecoration": false,
 			"textTransform": true,
-            "fontFamilies": [
-                {
-                    "fontFamily": "Clarity City,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Roboto,Ubuntu,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                    "slug": "primary",
-                    "name": "Primary"
-                }
-            ],
-            "fontSizes": [
+			"fontSizes": [
                 {
                     "slug": "extra-small",
                     "size": "10px",
@@ -143,6 +141,13 @@
                     "size": "46px",
                     "name": "Extra Extra large"
                 }
+            ],
+            "fontFamilies": [
+                {
+                    "fontFamily": "Clarity City,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Roboto,Ubuntu,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                    "slug": "primary",
+                    "name": "Primary"
+                }
             ]
         },
         "blocks": {
@@ -166,11 +171,16 @@
                     ]
                 },
 				"typography": {
+					"customFontSize": false,
+					"dropCap": false,
+					"fontFamilies": [],
+					"fontSizes": [],
 					"fontStyle": false,
-					"textTransform": false,
 					"fontWeight": false,
+					"letterSpacing": false,
 					"lineHeight": false,
-					"textDecoration": false
+					"textDecoration": false,
+					"textTransform": false
 				}
             }
         }
@@ -178,7 +188,7 @@
 	"styles": {
 		"color": {
 			"text": "var(--wp--preset--color--black)",
-            "background": "var(--wp--preset--color--white)"
+            "background": "var(--wp--preset--color--gray-050)"
         },
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--primary)",
@@ -191,30 +201,11 @@
 					"blockGap": "30px"
 				}
 			},
-            "core/button": {
-				"border": {
-					"radius": "5px"
-				},
-				"color": {
-					"background": "var(--wp--preset--color--pink-400)",
-					"text": "var(--wp--preset--color--white)"
-				},
+			"core/columns": {
 				"spacing": {
-					"padding": {
-						"top": "11px",
-						"right": "40px",
-						"bottom": "11px",
-						"left": "40px"
-					}
-				},
-				"typography": {
-					"fontWeight": "700",
-					"lineHeight": "18px",
-					"fontSize": "16px",
-					"textTransform": "uppercase",
-					"textDecoration": "none"
+					"blockGap": "39px"
 				}
-            }
+			}
         },
 		"elements": {
 			"heading": {
@@ -244,7 +235,9 @@
 				"typography": {
 					"fontWeight": "700",
 					"lineHeight": "18px",
-					"fontSize": "16px"
+					"fontSize": "16px",
+					"textTransform": "uppercase",
+					"textDecoration": "none"
 				}
 			},
 			"link": {

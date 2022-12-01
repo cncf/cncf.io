@@ -29,6 +29,10 @@
 
 	</article>
 </main>
-<?php
-get_template_part( 'components/case-study-cta' );
-?>
+<aside class="case-study-cta">
+	<div class="container wrap">
+		<?php
+		block_template_part( 'case-study-cta' );
+		?>
+	</div>
+</aside>

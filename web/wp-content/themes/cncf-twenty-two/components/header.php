@@ -382,7 +382,7 @@ endif;
 			<div class="header-cta">
 				<div class="wp-block-button">
 					<a href="<?php echo esc_url( get_permalink( $site_options['header_cta_link'] ) ); ?>"
-						class="wp-block-button__link"><?php echo esc_html( $site_options['header_cta_text'] ); ?></a>
+						class="wp-block-button__link wp-element-button"><?php echo esc_html( $site_options['header_cta_text'] ); ?></a>
 				</div>
 			</div>
 
@@ -413,7 +413,7 @@ endif;
 							name="s" placeholder="I'm looking for..."
 							title="Search CNCF site" autocapitalize="off"
 							spellcheck="false" maxlength="98" required>
-						<input class="wp-block-button__link has-no-padding"
+						<input class="search-input-button wp-block-button__link has-no-padding"
 							type="submit" value="Search" />
 					</form>
 

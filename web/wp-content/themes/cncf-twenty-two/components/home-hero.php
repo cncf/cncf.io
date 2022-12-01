@@ -58,9 +58,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 			<div class="horizontal-rule"></div>
 
 			<ul class="home-hero__metric_wrapper">
-				<li class="show-over-800"><a href="/about/who-we-are/"
-						class="wp-block-button__link"
-						title="Learn more about CNCF">About CNCF</a>
+				<li class="show-over-800">
+					<div class="wp-block-button"><a href="/about/who-we-are/" class="wp-block-button__link wp-element-button" title="Learn more about CNCF">About CNCF</a></div>
 				</li>
 				<li><?php echo esc_html( $metrics['projects'] ); ?>
 					<span>Projects</span>

@@ -14,36 +14,38 @@
 	}
 }
 
+.hs-button {
+	border: 0; // reset.
+	padding: 0; // reset.
+	margin: 0; // reset.
+	box-shadow: none; // reset.
+	box-sizing: border-box;
+	border-radius: 5px;
+	font-family: $font-primary;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 18px;
+	text-decoration: none;
+	background-color: $link-color;
+	color: $white;
+	text-transform: uppercase;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
 .hs-button,
+.wp-block-button .wp-block-button__link,
 .wp-block-button__link {
-	// border: 0; // reset.
-	// padding: 0; // reset.
-	// margin: 0; // reset.
-	// box-shadow: none; // reset.
 	cursor: pointer;
 	word-break: break-word;
-	box-sizing: border-box;
-	// border-radius: 5px;
-	// font-family: $font-primary;
-	// font-size: 16px;
-	// font-weight: 700;
-	// line-height: 18px;
 	letter-spacing: 0.02em;
 	text-align: center;
-	// text-decoration: none;
-	// defaults
+	white-space: nowrap;
 	width: 100%;
 	max-width: 100%;
-	// background-color: $link-color;
-	// color: $white;
-	// text-transform: uppercase;
-	transition: all 0.25s ease-out;
-	// 18px line-height + 11px + 11px makes buttons 40px.
-	// padding-top: 11px;
-	// padding-bottom: 11px;
-	// padding-left: 40px;
-	// padding-right: 40px;
-
+	transition: background-color 0.25s ease-out;
 	&:hover {
 		color: $white;
 		background-color: $link-hover;
@@ -54,15 +56,6 @@
 	&:visited {
 		color: $white;
 		text-decoration: none;
-	}
-
-	&.has-icon {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		svg {
-			margin-right: 5px;
-		}
 	}
 
 	&.has-no-padding {
@@ -85,25 +78,6 @@
 			// 16px line-height + 10px makes buttons 36px.
 			padding-top: 10px;
 			padding-bottom: 10px;
-		}
-	}
-}
-
-// setup all possible button combinations using color.scss variables inside button for specificity.
-.wp-block-button__link {
-	@each $name, $color in $colors {
-		&.has-#{$name}-color {
-			color: $color !important;
-		}
-
-		&.has-#{$name}-background-color:hover,
-		&.has-#{$name}-background-color:focus {
-			color: map_get($text_color, $name) !important;
-			background-color: map_get($color_hover, $name) !important;
-		}
-
-		&.has-#{$name}-background-color:not(.has-text-color) {
-			color: map_get($text_color, $name) !important;
 		}
 	}
 }
