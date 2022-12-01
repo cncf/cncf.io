@@ -331,18 +331,6 @@
 @media (min-width: 1000px) {
 	.header {
 		background-color: rgba($gray-050, 0.98);
-		// Both Buttons in Header.
-		// .wp-block-button__link {
-		// 	padding: 6px 0px;
-		// 	margin-left: 20px;
-		// 	min-width: 100px;
-		// 	flex-shrink: 0;
-		// 	border-radius: 4px;
-		// 	width: min-content;
-		// 	@media (min-width: 1250px) {
-		// 		min-width: 134px;
-		// 	}
-		// }
 		// Join CTA Button.
 		.header-cta .wp-block-button__link {
 			text-transform: capitalize;
@@ -365,10 +353,6 @@
 			padding-bottom: 6px;
 			padding-left: 0;
 			padding-right: 0;
-			// @media (min-width: 1200px) {
-			// 	padding-left: 45px;
-			// 	padding-right: 45px;
-			// }
 		}
 		.search-toggle.button-reset {
 			margin-left: 20px;
