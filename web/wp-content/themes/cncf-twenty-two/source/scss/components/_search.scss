@@ -66,6 +66,10 @@
 		@media (min-width: 500px) {
 			grid-column: span 3;
 		}
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
 	}
 }
 

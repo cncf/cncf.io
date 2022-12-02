@@ -7,6 +7,10 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-group' );
+wp_enqueue_style( 'wp-block-column' );
+wp_enqueue_style( 'wp-block-columns' );
+
 $pdf_url = get_post_meta( get_the_ID(), 'lf_report_pdf_url', true );
 
 // Merge classes.

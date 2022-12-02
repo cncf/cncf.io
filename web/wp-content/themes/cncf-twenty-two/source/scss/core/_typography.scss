@@ -1,20 +1,37 @@
-article {
-	p {
-		line-height: $line-height;
+// Responsively resize fonts specified in theme.json.
+.has-large-font-size {
+	@media (max-width: 999px) {
+		--wp--preset--font-size--large: 18px;
 	}
-
-	p + p {
-		margin-top: 20px;
-	}
+	// "size": "20px"
 }
 
-a {
-	font-weight: 700;
-	color: $primary-color;
-	text-decoration: none;
-	&:hover {
-		text-decoration: underline;
+.has-larger-font-size {
+	@media (max-width: 999px) {
+		--wp--preset--font-size--larger: 18px;
 	}
+	// "size": "24px"
+}
+
+.has-extra-large-font-size {
+	@media (max-width: 999px) {
+		--wp--preset--font-size--extra-large: 24px;
+	}
+	// "size": "36px"
+}
+
+.has-extra-extra-large-font-size {
+	line-height: 140%;
+	@media (max-width: 389px) {
+		--wp--preset--font-size--extra-extra-large: 28px;
+	}
+	@media (min-width: 390px) and (max-width: 599px) {
+		--wp--preset--font-size--extra-extra-large: 30px;
+	}
+	@media (min-width: 600px) and (max-width: 999px) {
+		--wp--preset--font-size--extra-extra-large: 36px;
+	}
+	// "size": "46px"
 }
 
 h2,
@@ -137,37 +154,22 @@ h3,
 	max-width: 90%;
 }
 
-// Responsively resize fonts inline with designs to match block.json font sizes.
-.has-large-font-size {
-	// 20px
-	@media (max-width: 999px) {
-		font-size: 18px !important;
+a {
+	font-weight: 700;
+	color: $primary-color;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
 	}
 }
-.has-larger-font-size {
-	// 24px
-	@media (max-width: 999px) {
-		font-size: 16px !important;
+
+article {
+	p {
+		line-height: $line-height;
 	}
-}
-.has-extra-large-font-size {
-	// 36px
-	// Phippy page.
-	@media (max-width: 999px) {
-		font-size: 24px !important;
-	}
-}
-.has-extra-extra-large-font-size {
-	// 46px
-	line-height: 140%;
-	@media (max-width: 389px) {
-		font-size: 28px !important;
-	}
-	@media (min-width: 390px) and (max-width: 599px) {
-		font-size: 30px !important;
-	}
-	@media (min-width: 600px) and (max-width: 999px) {
-		font-size: 36px !important;
+
+	p + p {
+		margin-top: 20px;
 	}
 }
 
@@ -419,3 +421,7 @@ h3,
 	}
 }
 // end of page content.
+
+.nowrap {
+	white-space: nowrap;
+}

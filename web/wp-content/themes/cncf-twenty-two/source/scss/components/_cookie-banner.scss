@@ -22,6 +22,16 @@
 		border-radius: 5px;
 		text-align: left;
 	}
+
+	.cookie-banner-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		svg {
+			margin-right: 5px;
+		}
+	}
 }
 
 .cookie-title {
@@ -37,14 +47,4 @@
 .cookie-link {
 	color: $black;
 	text-decoration: underline;
-}
-
-.cookie-banner-button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	svg {
-		margin-right: 5px;
-	}
 }

@@ -16,7 +16,7 @@ body .wp-block-columns {
 		row-gap: 0px !important;
 	}
 	@media (min-width: 782px) {
-		column-gap: 30px !important;
+		gap: 0px 30px;
 	}
 }
 

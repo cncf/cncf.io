@@ -147,6 +147,11 @@
                     "fontFamily": "Clarity City,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Roboto,Ubuntu,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
                     "slug": "primary",
                     "name": "Primary"
+                },
+				{
+                    "fontFamily": "Source Serif Pro, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif",
+                    "slug": "serif",
+                    "name": "Serif"
                 }
             ]
         },
@@ -205,6 +210,45 @@
 				"spacing": {
 					"blockGap": "39px"
 				}
+			},
+			"core/quote": {
+				"border": {
+					"width": "0",
+					"style": "none"
+				},
+				"spacing": {
+					"padding": {
+						"left": "0"
+					},
+					"margin": {
+						"bottom": "50px",
+						"left": "0",
+						"right": "0",
+						"top": "0"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serif)",
+					"fontStyle": "italic",
+					"lineHeight": "175%",
+					"letterSpacing": "0.02em",
+					"fontWeight": "400"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"fontSize": "18px"
+						},
+						"spacing": {
+							"margin": {
+								"top": "20px"
+							}
+						},
+						"color": {
+							"text": "var(--wp--preset--color--gray-700)"
+						}
+					}
+				}
 			}
         },
 		"elements": {
@@ -237,7 +281,25 @@
 					"lineHeight": "18px",
 					"fontSize": "16px",
 					"textTransform": "uppercase",
-					"textDecoration": "none"
+					"textDecoration": "none",
+					"letterSpacing": "0.02em"
+				},
+				":hover": {
+					"color": {
+						"background": "#c53490",
+						"text": "var(--wp--preset--color--white)"
+					},
+					"typography": {
+						"textDecoration": "none"
+					}
+				},
+				":visited": {
+					"color": {
+						"text": "var(--wp--preset--color--white)"
+					},
+					"typography": {
+						"textDecoration": "none"
+					}
 				}
 			},
 			"link": {

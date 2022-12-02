@@ -9,6 +9,8 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-table' );
+
 ?>
 
 <!-- Modal -->

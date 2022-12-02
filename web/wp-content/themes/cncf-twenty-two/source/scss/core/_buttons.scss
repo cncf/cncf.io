@@ -14,6 +14,7 @@
 	}
 }
 
+// Recreate our buttons for forms.
 .hs-button {
 	border: 0; // reset.
 	padding: 0; // reset.
@@ -33,27 +34,35 @@
 	padding-bottom: 11px;
 	padding-left: 40px;
 	padding-right: 40px;
-}
 
-.hs-button,
-.wp-block-button .wp-block-button__link,
-.wp-block-button__link {
 	cursor: pointer;
 	word-break: break-word;
 	letter-spacing: 0.02em;
 	text-align: center;
-	white-space: nowrap;
 	width: 100%;
 	max-width: 100%;
 	transition: background-color 0.25s ease-out;
-	&:hover {
-		color: $white;
-		background-color: $link-hover;
-		text-decoration: none;
-	}
+}
 
-	&:link,
-	&:visited {
+// .hs-button,
+// .wp-block-button .wp-block-button__link,
+.wp-block-button__link {
+	cursor: pointer;
+	word-break: break-word;
+	// letter-spacing: 0.02em;
+	text-align: center;
+	// white-space: nowrap;
+	width: 100%;
+	max-width: 100%;
+	transition: background-color 0.25s ease-out;
+	// &:hover {
+	// 	color: $white;
+	// 	background-color: $link-hover;
+	// 	text-decoration: none;
+	// }
+
+	// &:visited
+	&:link {
 		color: $white;
 		text-decoration: none;
 	}
@@ -69,6 +78,7 @@
 }
 
 // parent container, styles are attached here.
+// Visit project website on project single
 .wp-block-button {
 	&.is-style-reduced-height {
 		.wp-block-button__link {

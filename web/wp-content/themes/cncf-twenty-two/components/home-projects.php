@@ -9,6 +9,10 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-group' );
+wp_enqueue_style( 'wp-block-column' );
+wp_enqueue_style( 'wp-block-columns' );
+
 ?>
 
 <section class="home-projects">
@@ -51,7 +55,7 @@
 										data-purecounter-delay="75"
 										data-purecounter-pulse="false"
 										class="purecounter number"><?php echo esc_html( $project_metrics['graduated_count'] ); ?></span>
-									<span class="project">Graduated
+									<span class="project"><span class="nowrap">Graduated</span>
 										<br>Projects</span>
 								</a>
 							</div>
@@ -62,7 +66,7 @@
 										data-purecounter-end="<?php echo esc_html( $project_metrics['incubating_count'] ); ?>"
 										data-purecounter-delay="20"
 										class="purecounter number"><?php echo esc_html( $project_metrics['incubating_count'] ); ?></span>
-									<span class="project">Incubating
+									<span class="project"><span class="nowrap">Incubating</span>
 										<br>Projects</span>
 								</a>
 							</div>
@@ -72,7 +76,7 @@
 									data-purecounter-start="0"
 										data-purecounter-end="<?php echo esc_html( $project_metrics['sandbox_count'] ); ?>"
 										class="purecounter number"><?php echo esc_html( $project_metrics['sandbox_count'] ); ?></span>
-									<span class="project">Sandbox
+									<span class="project"><span class="nowrap">Sandbox</span>
 										<br>Projects</span>
 								</a>
 							</div>
@@ -142,4 +146,3 @@ endforeach;
 	</div>
 </section>
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer show-upto-800"></div>
-

@@ -15,6 +15,11 @@ get_template_part( 'components/skip-link-target' );
 // declare report PDF link to reference as variable.
 $pdf_link = '/cncf-annual-report-2020-pdf';
 
+wp_enqueue_style( 'wp-block-separator' );
+wp_enqueue_style( 'wp-block-image' );
+wp_enqueue_style( 'wp-block-column' );
+wp_enqueue_style( 'wp-block-columns' );
+
 ?>
 
 <link rel="prefetch"

@@ -170,6 +170,7 @@
 	text-align: center;
 	@media (min-width: 782px) {
 		text-align: left;
+		column-gap: 30px;
 	}
 	&__graduated,
 	&__incubating,
