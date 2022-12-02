@@ -1,15 +1,6 @@
-.wp-block-quote {
-	border-left: 0;
-	padding-left: 0;
-	margin-bottom: 50px;
-	font-family: $font-serif;
-	font-style: italic;
+blockquote.wp-block-quote {
 	max-width: 900px;
 	p {
-		font-style: italic;
-		font-weight: 400;
-		line-height: 175%;
-		letter-spacing: 0.02em;
 		font-size: 22px;
 		@media (min-width: 1200px) {
 			font-size: 36px;
@@ -18,9 +9,6 @@
 	}
 	cite {
 		display: block;
-		font-size: 18px;
-		margin-top: 20px;
-		color: $gray-700;
 		max-width: min(80%, 800px);
 	}
 	&[class*='has-'] {

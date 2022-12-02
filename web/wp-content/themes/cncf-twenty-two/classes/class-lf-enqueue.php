@@ -47,6 +47,12 @@ class LF_Enqueue {
 			wp_enqueue_style( 'main', get_template_directory_uri() . '/build/styles.min.css', array(), filemtime( get_template_directory() . '/build/styles.min.css' ), 'all' );
 		}
 
+		wp_dequeue_style( 'global-styles' );
+
+		// Used on every page.
+		wp_enqueue_style( 'wp-block-button' );
+		wp_enqueue_style( 'wp-block-buttons' );
+
 		// Report optimisations.
 		if ( is_front_page() || is_singular( 'lf_report' ) ) {
 			wp_dequeue_style( 'search-filter-plugin-styles' );

@@ -7,6 +7,10 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-group' );
+wp_enqueue_style( 'wp-block-column' );
+wp_enqueue_style( 'wp-block-columns' );
+
 $logo = get_post_meta( get_the_ID(), 'lf_project_logo', true );
 
 $stage            = Lf_Utils::get_term_names( get_the_ID(), 'lf-project-stage', true );

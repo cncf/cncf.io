@@ -1,5 +1,4 @@
 @import 'core/variables';
-@import 'core/colors';
 @import 'core/normalize';
 @import 'core/reset';
 @import 'core/global';
@@ -45,7 +44,6 @@
 @import 'components/webinars';
 @import 'components/youtube-playlist';
 
-@import 'blocks/has-color';
 @import 'blocks/alignment';
 @import 'blocks/block-quote';
 @import 'blocks/code-block';
@@ -61,6 +59,3 @@
 @import 'blocks/stats';
 @import 'blocks/tables';
 @import 'blocks/video';
-
-// Print styles (load last).
-// @import "core/print";

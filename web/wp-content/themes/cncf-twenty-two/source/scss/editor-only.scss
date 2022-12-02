@@ -15,11 +15,9 @@
 // import styles over the top of editor styles defaults.
 #editor {
 	.editor-styles-wrapper {
-		@import 'core/colors';
 		@import 'core/buttons';
 		@import 'core/typography';
 		@import 'components/case-studies';
-		@import 'blocks/has-color';
 		@import 'blocks/block-quote';
 		@import 'blocks/images';
 		@import 'blocks/separator';

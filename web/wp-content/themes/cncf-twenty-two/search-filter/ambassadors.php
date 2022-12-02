@@ -17,6 +17,8 @@ wp_enqueue_script(
 	true
 );
 
+wp_enqueue_style( 'wp-block-separator' );
+
 if ( $query->have_posts() ) :
 	?>
 <p class="search-filter-results-count">
