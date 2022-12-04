@@ -70,6 +70,8 @@ foreach ( $people as $p ) {
 	}
 	if ( property_exists( $p, 'priority' ) ) {
 		$params['meta_input']['lf_person_is_priority'] = $p->priority;
+	} else {
+		$params['meta_input']['lf_person_is_priority'] = 0;
 	}
 	if ( property_exists( $p, 'image' ) ) {
 		if ( strpos( $p->image, 'http' ) !== false ) {

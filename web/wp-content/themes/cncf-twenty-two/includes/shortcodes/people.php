@@ -36,8 +36,6 @@ function add_people_shortcode( $atts ) {
 		return;
 	}
 
-	$meta_key = 'lf_person_is_priority';
-
 	$query_args = array(
 		'post_type'      => 'lf_person',
 		'post_status'    => array( 'publish' ),
@@ -49,26 +47,7 @@ function add_people_shortcode( $atts ) {
 				'terms'    => $chosen_taxonomy,
 			),
 		),
-
-		'meta_query'     => array(
-			'relation' => 'OR',
-			array(
-				'key'     => $meta_key,
-				'compare' => 'NOT EXISTS',
-			),
-			array(
-				'relation' => 'OR',
-				array(
-					'key'   => $meta_key,
-					'value' => 'on',
-				),
-				array(
-					'key'     => $meta_key,
-					'value'   => 'on',
-					'compare' => '!=',
-				),
-			),
-		),
+		'meta_key'       => 'lf_person_is_priority',
 		'orderby'        => array(
 			'meta_value_num' => 'DESC',
 			'title'          => 'ASC',
