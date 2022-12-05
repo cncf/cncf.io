@@ -25,6 +25,9 @@ function add_cncf_benefits_shortcode() {
 		true
 	);
 
+	wp_enqueue_style( 'wp-block-paragraph' );
+	wp_enqueue_style( 'wp-block-heading' );
+
 	ob_start();
 	?>
 <section class="benefits columns-three columns-two-on-mobile">

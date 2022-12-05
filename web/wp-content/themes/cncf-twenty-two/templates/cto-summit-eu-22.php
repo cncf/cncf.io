@@ -10,6 +10,10 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-column' );
+wp_enqueue_style( 'wp-block-columns' );
+wp_enqueue_style( 'wp-block-group' );
+
 // Make use of the PDF report link in the editor.
 // This way do not need to make a new commit just to update PDF link.
 $pdf_url = get_post_meta( get_the_ID(), 'lf_report_pdf_url', true );

@@ -7,6 +7,8 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-embed' );
+
 // Get date and time now.
 $dat_now = new DateTime( '', new DateTimeZone( 'America/Los_Angeles' ) );
 

@@ -6,24 +6,19 @@ html {
 }
 
 body {
-	height: auto;
-	background-color: $gray-050;
 	font-family: $font-primary;
 	font-size: 0.875em; // 14px.
 	@media (min-width: 768px) {
 		font-size: 1em; // 16px.
 	}
-	color: $body-text-color;
-	font-weight: 400;
+	height: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
 	// fixes menu off bottom of screen.
 	overscroll-behavior: none;
 	max-width: 100%;
 	// hacky fix to stop overflow on screens with scrollbar.
 	overflow-x: hidden;
-
 	&.has-menu-active {
 		// Stops bg moving when menu open.
 		overflow: hidden;

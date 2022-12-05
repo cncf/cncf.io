@@ -9,7 +9,10 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-separator' );
+
 if ( $query->have_posts() ) : ?>
+
 <p class="search-filter-results-count">
 	<?php
 	// get total list of webinars.

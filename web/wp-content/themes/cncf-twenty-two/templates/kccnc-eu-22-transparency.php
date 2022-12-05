@@ -10,6 +10,10 @@
  * @since 1.0.0
  */
 
+wp_enqueue_style( 'wp-block-column' );
+wp_enqueue_style( 'wp-block-columns' );
+wp_enqueue_style( 'wp-block-group' );
+
 get_template_part( 'components/header' );
 
 get_template_part( 'components/skip-link-target' );

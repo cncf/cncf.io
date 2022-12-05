@@ -12,9 +12,11 @@
 body .wp-block-columns {
 	// Overrides terrible WordPress default bottom margin.
 	margin-bottom: 0;
-	//
 	@media (max-width: 781px) {
 		row-gap: 0px !important;
+	}
+	@media (min-width: 782px) {
+		gap: 0px 30px;
 	}
 }
 
