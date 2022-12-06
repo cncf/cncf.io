@@ -55,7 +55,7 @@ get_template_part( 'components/skip-link-target' );
 		<section class="hero alignfull background-image-wrapper">
 
 			<figure class="background-image-figure darken-on-mobile">
-				<?php LF_Utils::display_responsive_images( 78067, 'full', '1440px', false, 'eager', 'Priyanka and Taylor on stahe at the CTO Summit EU 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 78067, 'full', '1440px', false, 'eager', 'Priyanka and Taylor on stage at the CTO Summit EU 2022' ); ?>
 			</figure>
 			<div class="background-image-text-overlay">
 				<div class="container wrap hero__container">
