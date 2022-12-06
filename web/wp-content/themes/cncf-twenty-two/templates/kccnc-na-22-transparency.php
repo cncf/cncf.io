@@ -11,8 +11,8 @@
  */
 
 // declare the next event link and alt as a variable.
-$event_link = 'https://google.com';
-$event_text = 'KubeCon + CloudNativeCon Europe 2023 from XXXX';
+$event_link = 'https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/';
+$event_text = 'KubeCon + CloudNativeCon Europe 2023 from 17th-21st April';
 
 // Report folder in images/ folder.
 $report_folder = 'reports/kccnc-na-22/';
@@ -2512,17 +2512,11 @@ Lf_Utils::get_image( $report_folder . 'motif.png' );
 							class="thanks__comments">Your comments and feedback are welcome at <a href="mailto:events@cncf.io">events@cncf.io</a></p>
 					</div>
 					<div class="thanks__col2">
-						<a href="<?php echo esc_url( $pdf_link ); ?>">
-							<?php LF_Utils::display_responsive_images( 73895, 'full', '380px', '', 'lazy', 'Transparency Report for KubeCon + CloudNativeCon Europe 2022' ); ?>
-						</a>
+
 					</div>
 					<div class="thanks__col3">
 
-						<div class="wp-block-button"><a
-								href="<?php echo esc_url( $pdf_link ); ?>"
-								title="Download this report in PDF format"
-								class="wp-block-button__link">Download PDF</a>
-						</div>
+
 
 					</div>
 					<div class="thanks__col4">
