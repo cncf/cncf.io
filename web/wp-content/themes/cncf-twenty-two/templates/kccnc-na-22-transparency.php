@@ -10,113 +10,79 @@
  * @since 1.0.0
  */
 
+// declare the next event link and alt as a variable.
+$event_link = 'https://google.com';
+$event_text = 'KubeCon + CloudNativeCon Europe 2023 from XXXX';
+
+// Report folder in images/ folder.
+$report_folder = 'reports/kccnc-na-22/';
+
 get_template_part( 'components/header' );
 
 get_template_part( 'components/skip-link-target' );
 
-// declare the next event link and alt as a variable.
-$event_link = 'https://google.com';
-$event_text = 'KubeCon + CloudNativeCon Europe 2023 XXXXX from XXXX';
-// Report folder in images/ folder.
-$report_folder = 'reports/kccnc-na-22/'
+wp_enqueue_style( 'kccnc-na-22', get_template_directory_uri() . '/build/kccnc-na-22-transparency.min.css', array(), filemtime( get_template_directory() . '/build/kccnc-na-22-transparency.min.css' ), 'all' );
 
+// setup social share icons + data.
+$caption      = 'Read the CNCF KubeCon + CloudNativeCon North America 2022 Transparency Report ';
+$page_url     = rawurlencode( get_permalink() );
+$caption      = htmlspecialchars( rawurlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
+$options      = get_option( 'lf-mu' );
+$twitter      = $options && $options['social_twitter_handle'] ? $options['social_twitter_handle'] : null;
+$twitter_url  = 'https://twitter.com/intent/tweet?text=' . $caption . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $twitter . '';
+$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $caption;
+$mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' . $page_url;
 ?>
 
 <link rel="prefetch"
 	href="<?php echo esc_url( get_template_directory_uri() . '/build/kccnc-na-22-transparency.min.css' ); ?>"
 	as="style" crossorigin="anonymous" />
 
-<?php wp_enqueue_style( 'kccnc-na-22', get_template_directory_uri() . '/build/kccnc-na-22-transparency.min.css', array(), filemtime( get_template_directory() . '/build/kccnc-na-22-transparency.min.css' ), 'all' ); ?>
-
-<?php
-// setup social share icons + data.
-$caption  = 'Read the CNCF KubeCon + CloudNativeCon North America 2022 Transparency Report ';
-$page_url = rawurlencode( get_permalink() );
-$caption  = htmlspecialchars( rawurlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
-$options = get_option( 'lf-mu' );
-$twitter = $options && $options['social_twitter_handle'] ? $options['social_twitter_handle'] : null;
-$twitter_url  = 'https://twitter.com/intent/tweet?text=' . $caption . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $twitter . '';
-$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $caption;
-$mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' . $page_url;
-?>
-
 <main class="kccnc-na-22">
 	<article class="container wrap">
 
 		<section class="hero alignfull">
-			<div class="container wrap hero__wrap">
-				<div class="hero__text-overlay">
-					<div class="container hero__container">
+			<div class="container wrap hero__container">
+				<img class="hero__logo"
+					src="<?php LF_Utils::get_svg( $report_folder . 'kccnc-na-22-logo.svg', true ); ?>"
+					width="309" height="132"
+					alt="KubeCon + CloudNativeCon North America 2022 Logo"
+					loading="eager">
 
-						<div class="hero__wrapper">
-							<img class="hero__logo"
-								src="<?php LF_Utils::get_svg( $report_folder . 'kubecon-eu-2022-logo.svg', true ); ?>"
-								width="309" height="135"
-								alt="KubeCon + CloudNativeCon Europe 2022 Logo"
-								loading="eager">
+				<h1 class="hero__title">Transparency <br />Report</h1>
 
-							<h1 class="hero__title uppercase">Transparency
-								<br />Report
-							</h1>
+				<div class="hero__hr"></div>
 
-							<div class="hero__hr"></div>
+				<div class="social-share">
+					<p class="social-share__title">Share</p>
 
-							<div class="hero__button-share-align">
+					<div class="social-share__wrapper">
+						<!-- twitter -->
+						<?php if ( $twitter_url ) : ?>
+						<a aria-label="Share on Twitter"
+							title="Share on Twitter"
+							href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-twitter.svg' ); ?></a>
+						<?php endif; ?>
 
-								<div class="wp-block-button hero__button"><a
-										href="<?php echo esc_url( $pdf_link ); ?>"
-										class="wp-block-button__link"
-										title="Download this report as a PDF">Download
-										PDF</a>
-								</div>
+						<!-- linkedin -->
+						<?php if ( $linkedin_url ) : ?>
+						<a aria-label="Share on Linkedin"
+							title="Share on Linkedin"
+							href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-linkedin.svg' ); ?></a>
+						<?php endif; ?>
 
-								<div class="social-share">
-									<p class="social-share__title">Share</p>
-
-									<div class="social-share__wrapper">
-										<!-- twitter -->
-										<?php if ( $twitter_url ) : ?>
-										<a aria-label="Share on Twitter"
-											title="Share on Twitter"
-											href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-twitter.svg' ); ?></a>
-										<?php endif; ?>
-
-										<!-- linkedin -->
-										<?php if ( $linkedin_url ) : ?>
-										<a aria-label="Share on Linkedin"
-											title="Share on Linkedin"
-											href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-linkedin.svg' ); ?></a>
-										<?php endif; ?>
-
-										<!-- sendto email -->
-										<?php if ( $mailto_url ) : ?>
-										<a aria-label="Share by Email"
-											title="Share by Email"
-											href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-mail.svg' ); ?></a>
-										<?php endif; ?>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="hero__jump">Jump to section:</div>
+						<!-- sendto email -->
+						<?php if ( $mailto_url ) : ?>
+						<a aria-label="Share by Email" title="Share by Email"
+							href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-mail.svg' ); ?></a>
+						<?php endif; ?>
 					</div>
 				</div>
 
-				<figure class="hero__bg-shape">
-					<img width="1000" height="1070" loading="eager" src="
-<?php
-Lf_Utils::get_image( $report_folder . 'motif.png' );
-?>
-" alt="Background flower">
-				</figure>
-			</div>
-			<figure class="hero__bg-gradient"></figure>
-
+				<div class="hero__jump">Jump to section:</div>
 		</section>
-
-		<!-- Navigation  -->
-		<section style="position: relative;">
+		<section>
+			<!-- Navigation  -->
 			<div class="nav-el">
 
 				<div class="nav-el__box">
@@ -124,23 +90,15 @@ Lf_Utils::get_image( $report_folder . 'motif.png' );
 						title="Jump to Attendee Overview section"
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-bar-chart.svg', true ); ?>
-" alt="Bar chart icon">Attendees Overview
-				</div>
-
-				<div class="nav-el__box">
-					<a href="#endusers" title="Jump to End Users section"
-						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-user.svg', true ); ?>
-" alt="User icon">End Users
+<?php LF_Utils::get_svg( $report_folder . 'icon-attendees.svg', true ); ?>
+" alt="Attendees icon">Attendees Overview
 				</div>
 
 				<div class="nav-el__box">
 					<a href="#colocated" title="Jump to Co-located Events"
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-pin.svg', true ); ?>
+<?php LF_Utils::get_svg( $report_folder . 'icon-colo.svg', true ); ?>
 " alt="Map pin icon">Co-located Events
 				</div>
 
@@ -148,9 +106,26 @@ Lf_Utils::get_image( $report_folder . 'motif.png' );
 					<a href="#content" title="Jump to Content section"
 						class="box-link"></a>
 					<img loading="lazy" width="36" height="36" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-megaphone.svg', true ); ?>
-" alt="Megaphone icon">
+<?php LF_Utils::get_svg( $report_folder . 'icon-content.svg', true ); ?>
+" alt="Content icon">
 					Content
+				</div>
+
+				<div class="nav-el__box">
+					<a href="#endusers" title="Jump to End Users section"
+						class="box-link"></a>
+					<img loading="lazy" width="36" height="36" src="
+<?php LF_Utils::get_svg( $report_folder . 'icon-users.svg', true ); ?>
+" alt="User icon">End Users
+				</div>
+
+				<div class="nav-el__box">
+					<a href="#covid" title="Jump to Health & Safety section"
+						class="box-link"></a>
+					<img loading="lazy" width="36" height="36"
+						src="<?php LF_Utils::get_svg( $report_folder . 'icon-mask.svg', true ); ?>"
+						alt="Mask icon">
+					Health & Safety
 				</div>
 
 				<div class="nav-el__box">
@@ -161,17 +136,19 @@ Lf_Utils::get_image( $report_folder . 'motif.png' );
 " alt="Media icon">
 					Media Coverage
 				</div>
-
-				<div class="nav-el__box">
-					<a href="#covid" title="Jump to COVID safety section"
-						class="box-link"></a>
-					<img loading="lazy" width="36" height="36"
-						src="<?php LF_Utils::get_svg( $report_folder . 'icon-mask.svg', true ); ?>"
-						alt="Mask icon">
-					COVID Safety
-				</div>
 			</div>
 		</section>
+
+
+
+
+
+
+
+
+
+
+
 
 		<!-- Intro  -->
 		<section class="section-01">
@@ -318,9 +295,9 @@ General Manager, CNCF</p>
 							<path
 								d="M10.4131 17.627L2.41309 9.62695L10.4131 1.62695"
 								stroke="black" stroke-width="3" />
-							</svg>
-							<span class="screen-reader-text">Previous
-								Photo</span>
+						</svg>
+						<span class="screen-reader-text">Previous
+							Photo</span>
 					</button>
 					<button class="button-reset section-02__next"><svg
 							width="12" height="19" viewBox="0 0 12 19"
@@ -328,8 +305,8 @@ General Manager, CNCF</p>
 							<path
 								d="M1.41309 1.62695L9.41309 9.62695L1.41309 17.627"
 								stroke="black" stroke-width="3" />
-							</svg>
-							<span class="screen-reader-text">Next Photo</span>
+						</svg>
+						<span class="screen-reader-text">Next Photo</span>
 					</button>
 				</div>
 
@@ -347,7 +324,7 @@ General Manager, CNCF</p>
 				</div>
 
 				<p class="opening-paragraph max-w-1100">
-				KubeCon + CloudNativeCon Valencia was our first European in-person event since Barcelona in 2019 and <strong>we more than doubled the number of folks who joined us</strong>, both in Valencia and virtually. Our European community accounted for the largest number of attendees, but it was wonderful to see folks coming from as far as Africa, Australia and South America to be with us.</p>
+KubeCon + CloudNativeCon Valencia was our first European in-person event since Barcelona in 2019 and <strong>we more than doubled the number of folks who joined us</strong>, both in Valencia and virtually. Our European community accounted for the largest number of attendees, but it was wonderful to see folks coming from as far as Africa, Australia and South America to be with us.</p>
 
 				<p class="sub-header">Demographics</p>
 
@@ -355,25 +332,25 @@ General Manager, CNCF</p>
 
 				<figure class="floating-flowers floating-flowers-01">
 					<img width="708" height="821" loading="lazy" src="
-					<?php
-					Lf_Utils::get_image( $report_folder . 'motif.png' );
-					?>
-					" alt="Background flower">
+<?php
+Lf_Utils::get_image( $report_folder . 'motif.png' );
+?>
+" alt="Background flower">
 				</figure>
 
 				<img width="500" height="481" src="
-				<?php
-				Lf_Utils::get_svg( $report_folder . 'attendees-mobile.svg', true );
-				?>
-				" alt="Showing 18,550 Registered attendees of which 45.2% were men, 6.5% women, 0.4% non-binary/other, and 47.9% preferred not to answer. Of the attendees 7.084 (38%) were in person, 11,466 (62%) were virtual. 65% of visitors were first timers."
+<?php
+Lf_Utils::get_svg( $report_folder . 'attendees-mobile.svg', true );
+?>
+" alt="Showing 18,550 Registered attendees of which 45.2% were men, 6.5% women, 0.4% non-binary/other, and 47.9% preferred not to answer. Of the attendees 7.084 (38%) were in person, 11,466 (62%) were virtual. 65% of visitors were first timers."
 					class="show-upto-500 section-03__demo-mobile"
 					loading="lazy">
 
 				<img width="1100" height="364" src="
-				<?php
-				Lf_Utils::get_svg( $report_folder . 'attendees-desktop.svg', true );
-				?>
-				" alt="Showing 18,550 Registered attendees of which 45.2% were men, 6.5% women, 0.4% non-binary/other, and 47.9% preferred not to answer. Of the attendees 7.084 (38%) were in person, 11,466 (62%) were virtual. 65% of visitors were first timers."
+<?php
+Lf_Utils::get_svg( $report_folder . 'attendees-desktop.svg', true );
+?>
+" alt="Showing 18,550 Registered attendees of which 45.2% were men, 6.5% women, 0.4% non-binary/other, and 47.9% preferred not to answer. Of the attendees 7.084 (38%) were in person, 11,466 (62%) were virtual. 65% of visitors were first timers."
 					class="show-over-500 section-03__demo-desktop"
 					loading="lazy">
 
@@ -384,16 +361,16 @@ General Manager, CNCF</p>
 				<div aria-hidden="true" class="report-spacer-75"></div>
 
 				<img width="500" height="305" src="
-				<?php
-				Lf_Utils::get_svg( $report_folder . 'attendee-geography-map-mobile.svg', true );
-				?>
-				" alt="Map of attendee geography" class="show-upto-500" loading="lazy">
+<?php
+Lf_Utils::get_svg( $report_folder . 'attendee-geography-map-mobile.svg', true );
+?>
+" alt="Map of attendee geography" class="show-upto-500" loading="lazy">
 
 				<img width="1027" height="516" src="
-				<?php
-				Lf_Utils::get_svg( $report_folder . 'attendee-geography-map-desktop.svg', true );
-				?>
-				" alt="Map of attendee geography" class="show-over-500 section-03__map"
+<?php
+Lf_Utils::get_svg( $report_folder . 'attendee-geography-map-desktop.svg', true );
+?>
+" alt="Map of attendee geography" class="show-over-500 section-03__map"
 					loading="lazy">
 
 				<div class="section-03__attendees">
@@ -812,8 +789,8 @@ General Manager, CNCF</p>
 					</div>
 
 					<img loading="lazy" width="1200" height="730" src="
-							<?php LF_Utils::get_svg( $report_folder . 'attendees-yoy-growth.svg', true ); ?>
-							" alt="Chart showing year on year attendee growth">
+<?php LF_Utils::get_svg( $report_folder . 'attendees-yoy-growth.svg', true ); ?>
+" alt="Chart showing year on year attendee growth">
 				</div>
 			</div>
 
@@ -943,10 +920,10 @@ General Manager, CNCF</p>
 				<div class="dei__col-2">
 					<p class="sub-header">Gold CHAOSS D&I Event Badge</p>
 					<img width="291" height="70" src="
-					<?php
-					Lf_Utils::get_image( $report_folder . 'dandigold.png' );
-					?>
-					" alt="Gold CHAOSS D&I Event Badge" loading="lazy">
+<?php
+Lf_Utils::get_image( $report_folder . 'dandigold.png' );
+?>
+" alt="Gold CHAOSS D&I Event Badge" loading="lazy">
 					<p>Awarded to events in the open source community that foster healthy D&I practices. KubeCon + CloudNativeCon achieved this award for our DEI work in Valencia.</p>
 				</div>
 			</div>
@@ -1034,7 +1011,7 @@ General Manager, CNCF</p>
 				</div>
 
 				<p class="opening-paragraph max-w-900">
-	End users are an important part of #TeamCloudNative and played a significant role in Valencia by driving new initiatives and sharing valuable experiences in presentations.</p>
+End users are an important part of #TeamCloudNative and played a significant role in Valencia by driving new initiatives and sharing valuable experiences in presentations.</p>
 
 				<p class="sub-header">Key Stats</p>
 
@@ -1047,7 +1024,7 @@ General Manager, CNCF</p>
 						<div class="icon-box-3">
 							<div class="icon">
 								<img loading="lazy" width="58" height="58" src="<?php LF_Utils::get_svg( $report_folder . 'icon-share-o.svg', true ); ?>
-							" alt="Share icon">
+" alt="Share icon">
 							</div>
 							<div class="text">
 								<span class="number">7,847</span><br />
@@ -1064,7 +1041,7 @@ General Manager, CNCF</p>
 						<div class="icon-box-3">
 							<div class="icon">
 								<img loading="lazy" width="50" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-building-o.svg', true ); ?>
-							" alt="Building icon">
+" alt="Building icon">
 							</div>
 							<div class="text">
 								<span class="number">4,132</span><br />
@@ -1081,7 +1058,7 @@ General Manager, CNCF</p>
 						<div class="icon-box-3">
 							<div class="icon">
 								<img loading="lazy" width="103" height="58" src="<?php LF_Utils::get_svg( $report_folder . 'icon-users-o.svg', true ); ?>
-							" alt="Users icon">
+" alt="Users icon">
 							</div>
 							<div class="text">
 								<span class="number">137</span><br />
@@ -1207,10 +1184,10 @@ General Manager, CNCF</p>
 
 				<figure class="floating-flowers floating-flowers-02">
 					<img width="708" height="821" loading="lazy" src="
-					<?php
-					Lf_Utils::get_image( $report_folder . 'motif.png' );
-					?>
-					" alt="Background flower">
+<?php
+Lf_Utils::get_image( $report_folder . 'motif.png' );
+?>
+" alt="Background flower">
 				</figure>
 
 				<div class="section-title-wrapper">
@@ -1219,7 +1196,8 @@ General Manager, CNCF</p>
 					<div class="section-number">3/6</div>
 				</div>
 
-				<p class="opening-paragraph max-w-1000 z-index-fix">Valencia played host to the inaugural <a href="https://events.linuxfoundation.org/cloud-native-telco-day-europe/" title="Cloud Native Telco Day">Cloud Native Telco Day</a> featuring speakers from major telco service providers like Deutsche Telekom, Bell Canada, Orange, and Swisscom.</p>
+				<p
+					class="opening-paragraph max-w-1000 z-index-fix">Valencia played host to the inaugural <a href="https://events.linuxfoundation.org/cloud-native-telco-day-europe/" title="Cloud Native Telco Day">Cloud Native Telco Day</a> featuring speakers from major telco service providers like Deutsche Telekom, Bell Canada, Orange, and Swisscom.</p>
 				<p
 					class="opening-paragraph max-w-1000">Co-located events feature industry experts covering topics like security, web assembly, AI, GitOps, edge, and more.</p>
 
@@ -1353,7 +1331,7 @@ General Manager, CNCF</p>
 				</div>
 
 				<p class="opening-paragraph max-w-1000">
-				We enjoyed 222 sessions in Valencia, from technical deep dives like <a href="https://kccnceu2022.sched.com/event/ytlM" title="Effective disaster recovery: The day we deleted production">Effective disaster recovery: The day we deleted production</a>, to thought provoking emotional topics like <a href="https://kccnceu2022.sched.com/event/ytmK" title="Been there, done that: Tales of burnout from the open source world">Been there, done that: Tales of burnout from the open source world</a>.</p>
+We enjoyed 222 sessions in Valencia, from technical deep dives like <a href="https://kccnceu2022.sched.com/event/ytlM" title="Effective disaster recovery: The day we deleted production">Effective disaster recovery: The day we deleted production</a>, to thought provoking emotional topics like <a href="https://kccnceu2022.sched.com/event/ytmK" title="Been there, done that: Tales of burnout from the open source world">Been there, done that: Tales of burnout from the open source world</a>.</p>
 
 				<div class="kccnc-table-container">
 					<table class="kccnc-table">
@@ -1400,24 +1378,24 @@ General Manager, CNCF</p>
 					<div class="chairs__col1">
 						<?php LF_Utils::display_responsive_images( 73887, 'full', '200px', 'chairs__image', 'lazy', 'Jasmine James' ); ?>
 						<p>
-							<span class="chairs__name">Jasmine James
+<span class="chairs__name">Jasmine James
 </span><span
-								class="chairs__title">Twitter<br/>Senior Engineering
+class="chairs__title">Twitter<br/>Senior Engineering
 Manager</span>
-						</p>
+</p>
 					</div>
 					<div class="chairs__col2">
 						<?php LF_Utils::display_responsive_images( 73886, 'full', '200px', 'chairs__image', 'lazy', 'Emily Fox' ); ?>
 						<p>
-							<span class="chairs__name">Emily Fox</span><span
-							class="chairs__title">Apple <br/>
+<span class="chairs__name">Emily Fox</span><span
+class="chairs__title">Apple <br/>
 Security Engineer</span></p>
 					</div>
 					<div class="chairs__col3">
 						<?php LF_Utils::display_responsive_images( 73888, 'full', '200px', 'chairs__image', 'lazy', 'Ricardo Rocha' ); ?>
 						<p>
-							<span class="chairs__name">Ricardo Rocha</span><span
-							class="chairs__title"></span>CERN <br/>
+<span class="chairs__name">Ricardo Rocha</span><span
+class="chairs__title"></span>CERN <br/>
 Computing Engineer</p>
 					</div>
 				</div>
@@ -1454,7 +1432,7 @@ Computing Engineer</p>
 								<div class="icon">
 									<img loading="lazy" width="60" height="50"
 										src="<?php LF_Utils::get_svg( $report_folder . 'icon-inbox.svg', true ); ?>
-							" alt="Inbox icon">
+" alt="Inbox icon">
 								</div>
 								<div class="text">
 									<span class="number">1,187</span><br />
@@ -1468,7 +1446,7 @@ Computing Engineer</p>
 								<div class="icon">
 									<img loading="lazy" width="37" height="51"
 										src="<?php LF_Utils::get_svg( $report_folder . 'icon-mic.svg', true ); ?>
-							" alt="Microphone icon">
+" alt="Microphone icon">
 								</div>
 								<div class="text">
 									<span class="number">243</span><br />
@@ -1481,7 +1459,7 @@ Computing Engineer</p>
 								<div class="icon">
 									<img loading="lazy" width="36" height="48"
 										src="<?php LF_Utils::get_svg( $report_folder . 'icon-person.svg', true ); ?>
-							" alt="Person icon">
+" alt="Person icon">
 								</div>
 								<div class="text">
 									<span class="number">109</span><br />
@@ -1691,7 +1669,7 @@ Computing Engineer</p>
 						<div class="icon-box-3">
 							<div class="icon">
 								<img loading="lazy" width="58" height="58" src="<?php LF_Utils::get_svg( $report_folder . 'icon-share-o.svg', true ); ?>
-							" alt="Share icon">
+" alt="Share icon">
 							</div>
 							<div class="text">
 								<span class="number">250%</span><br />
@@ -1708,7 +1686,7 @@ Computing Engineer</p>
 						<div class="icon-box-3">
 							<div class="icon">
 								<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-bell-o.svg', true ); ?>
-							" alt="Bell icon">
+" alt="Bell icon">
 							</div>
 							<div class="text">
 								<span class="number">2,490</span><br />
@@ -1724,7 +1702,7 @@ Computing Engineer</p>
 						<div class="icon-box-3">
 							<div class="icon">
 								<img loading="lazy" width="58" height="42" src="<?php LF_Utils::get_svg( $report_folder . 'icon-youtube-o.svg', true ); ?>
-							" alt="YouTube icon">
+" alt="YouTube icon">
 							</div>
 							<div class="text">
 								<span class="number">159</span><br />
@@ -1804,8 +1782,8 @@ Computing Engineer</p>
 					<p class="reach__title">Twitter Impressions</p>
 
 					<p class="reach__impressions"><span>35.4K </span>@CloudNativeFdn clicks<br />
-					<span>376 </span>@CloudNativeFdn retweets<br />
-					<span>6K </span>@CloudNativeFdn likes</p>
+<span>376 </span>@CloudNativeFdn retweets<br />
+<span>6K </span>@CloudNativeFdn likes</p>
 				</div>
 				<div class="reach__col2">
 
@@ -1820,8 +1798,8 @@ Computing Engineer</p>
 					<p class="reach__title">Twitter Moments</p>
 
 					<p>May 18 - <a href="https://twitter.com/i/events/1526963880869744650" title="Twitter Hightlights from Day One">Highlights from Day One</a><br/>
-					May 19 - <a href="https://twitter.com/i/events/1527295881937989635" title="Twitter Hightlights from Day Two">Highlights from Day Two</a><br/>
-					May 20 - <a href="https://twitter.com/i/events/1527652550983434240" title="Twitter Hightlights from Day Three">Highlights from Day Three</a></p>
+May 19 - <a href="https://twitter.com/i/events/1527295881937989635" title="Twitter Hightlights from Day Two">Highlights from Day Two</a><br/>
+May 20 - <a href="https://twitter.com/i/events/1527652550983434240" title="Twitter Hightlights from Day Three">Highlights from Day Three</a></p>
 
 				</div>
 				<div class="reach__col3">
@@ -2010,7 +1988,7 @@ Computing Engineer</p>
 				</div>
 
 				<p class="opening-paragraph max-w-900">
-				We care deeply about our community. This is why we want to be honest and open about our COVID-19 policies at KubeCon + CloudNativeCon Europe, the measures that were put in place, and how these may have affected the attendee experience.</p>
+We care deeply about our community. This is why we want to be honest and open about our COVID-19 policies at KubeCon + CloudNativeCon Europe, the measures that were put in place, and how these may have affected the attendee experience.</p>
 
 				<p
 					class="sub-header max-w-550">Kubecon + CloudNativeCon implemented the following safety precautions:</p>
@@ -2173,10 +2151,10 @@ Computing Engineer</p>
 
 				<figure class="floating-flowers floating-flowers-03">
 					<img width="708" height="821" loading="lazy" src="
-					<?php
-					Lf_Utils::get_image( $report_folder . 'motif.png' );
-					?>
-					" alt="Background flower">
+<?php
+Lf_Utils::get_image( $report_folder . 'motif.png' );
+?>
+" alt="Background flower">
 				</figure>
 
 				<div class="section-title-wrapper">
@@ -2507,7 +2485,10 @@ Computing Engineer</p>
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
 					<div class="wp-block-lf-youtube-lite">
-						<lite-youtube videoid="SqesB4xcAUY" videotitle="Highlights from KubeCon + CloudNativeCon Europe 2022" webpStatus="1" sdthumbStatus="0" title="Play Highlights">
+						<lite-youtube videoid="SqesB4xcAUY"
+							videotitle="Highlights from KubeCon + CloudNativeCon Europe 2022"
+							webpStatus="1" sdthumbStatus="0"
+							title="Play Highlights">
 						</lite-youtube>
 					</div>
 				</div>
@@ -2538,7 +2519,8 @@ Computing Engineer</p>
 					<div class="thanks__col3">
 
 						<div class="wp-block-button"><a
-								href="<?php echo esc_url( $pdf_link ); ?>" title="Download this report in PDF format"
+								href="<?php echo esc_url( $pdf_link ); ?>"
+								title="Download this report in PDF format"
 								class="wp-block-button__link">Download PDF</a>
 						</div>
 
