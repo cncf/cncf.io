@@ -51,13 +51,6 @@ $cto-summit-eu-22-orange-700: #f36a11;
 		}
 	}
 
-	.sub-header {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 150%;
-		text-transform: uppercase;
-	}
-
 	.small-header {
 		font-weight: 700;
 		font-size: 20px;
@@ -233,13 +226,6 @@ $cto-summit-eu-22-orange-700: #f36a11;
 	/**
 	* GRIDS
 	*/
-	.restrictive-column {
-		grid-column: span 12;
-		@media (min-width: 600px) {
-			grid-column: span 9;
-		}
-	}
-
 	.section-01 {
 		margin-top: 80px;
 		margin-bottom: 80px;

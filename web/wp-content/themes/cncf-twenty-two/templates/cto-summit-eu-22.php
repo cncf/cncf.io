@@ -277,7 +277,7 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<p>Today, Multi-Cloud is a reality for many companies and organizations and will become more so as cloud native architectures mature. The rise of Multi-Cloud is driven by several factors, including mergers and acquisitions that bring different clouds together into one entity and the desire to avoid widespread outages by spreading the workload and risk across multiple clouds.</p>
 
@@ -310,7 +310,7 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<h2 class="sub-header">Multi-Cloud is here to stay</h2>
 
@@ -352,7 +352,7 @@ get_template_part( 'components/skip-link-target' );
 				<div class="shadow-hr"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<h2 class="sub-header">People and processes are crucial
 							for success</h2>
@@ -399,7 +399,7 @@ get_template_part( 'components/skip-link-target' );
 				<div class="shadow-hr"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<h2 class="sub-header">There are gaps to be closed</h2>
 
@@ -465,7 +465,7 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 						<p>The Summit participants chose to focus on the following two primary topics:</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
@@ -501,7 +501,7 @@ get_template_part( 'components/skip-link-target' );
 				<div class="shadow-hr"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<h2 class="sub-header"><span class="orange-text">1.</span> Managing the Cloud Native
 							Ecosystem</h2>
@@ -519,7 +519,7 @@ get_template_part( 'components/skip-link-target' );
 				<div class="shadow-hr"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<h2 class="sub-header">Best Practices</h2>
 
@@ -583,7 +583,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-20"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 						<ul>
 							<li><strong>People make the difference</strong>.
 								Technology
@@ -667,7 +667,7 @@ get_template_part( 'components/skip-link-target' );
 				<h3 class="small-header">Gaps to be closed</h3>
 				<div aria-hidden="true" class="report-spacer-20"></div>
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 						<ul>
 							<li><strong>Who owns the intellectual property that
 									was
@@ -713,7 +713,7 @@ get_template_part( 'components/skip-link-target' );
 		<section class="section-07">
 
 			<div class="lf-grid">
-				<div class="restrictive-column">
+				<div class="restrictive-9-col">
 
 					<h2 class="sub-header"><span class="orange-text">2.</span> Multi-Cloud Availability</h2>
 
@@ -734,7 +734,7 @@ get_template_part( 'components/skip-link-target' );
 			<div aria-hidden="true" class="report-spacer-60"></div>
 
 			<div class="lf-grid">
-				<div class="restrictive-column">
+				<div class="restrictive-9-col">
 
 					<h3 class="small-header">Technologies</h3>
 					<div aria-hidden="true" class="report-spacer-20"></div>
@@ -791,7 +791,7 @@ get_template_part( 'components/skip-link-target' );
 			<div class="shadow-hr"></div>
 
 			<div class="lf-grid">
-				<div class="restrictive-column">
+				<div class="restrictive-9-col">
 
 					<h3 class="small-header">People and Processes</h3>
 					<div aria-hidden="true" class="report-spacer-20"></div>
@@ -828,7 +828,7 @@ get_template_part( 'components/skip-link-target' );
 			<div aria-hidden="true" class="report-spacer-20"></div>
 
 			<div class="lf-grid">
-				<div class="restrictive-column">
+				<div class="restrictive-9-col">
 
 					<ul>
 						<li><strong>Review your availability zone (AZ) setup and
@@ -901,7 +901,7 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 						<p>As the Summit participants noted, Multi-Cloud resiliency is only attainable with changes to the legacy processes, technologies, mindsets, and skillsets. Although it will be a long journey to true resiliency, early results show that the effort will be worth it in terms of an enhanced time to market, faster development cycles, and enhanced capabilities.</p>
 
 						<p><strong>Multi-Cloud and its different aspects are still mostly undiscovered territory</strong>. Over time, we will be able to go deeper in our multi-cloud resiliency skills as we develop our expertise in a collaborative, global environment. Participants left the CTO Summit inspired with fresh perspectives and ideas to bring back to their organizations.</p>
@@ -946,7 +946,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<p>The participants received a brief introduction to the Multi-Cloud topic in general and several core elements in particular. This introduction synchronized the expectations of the Summit and served to broaden the understanding of the subject. Additionally, the participants were allowed to vote on which particular aspects of Multi-Cloud to discuss in breakout sessions.</p>
 
@@ -988,7 +988,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<p><strong>Multi-Cloud management</strong><br/>Multi-Cloud is inevitable. It creeps in through best-of-breed services, company acquisitions, and just plain sprawl. In such a world, managing Kubernetes clusters, computing, and applications across multiple clouds require a unique set of tools and comprehensive workflows. Using strategies like GitOps and declarative infrastructure creates consistent environments, which are essential for operating systems at scale. This discussion aims to understand which kinds of workflow teams should implement to allow for massive infrastructure scaling without massively scaling team sizes or budgets.</p>
 
@@ -1007,7 +1007,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<p>To encourage a standard structure and flow for the breakout discussions and guide participants to share intelligence on how existing tactics are implemented either currently or in the future, the participants were asked to address the following points as they relate to each subtopic. This would enable the different discussion groups to be compared.</p>
 
@@ -1073,7 +1073,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 						<ul>
 							<li><strong>AWS</strong> - Amazon Web Services</li>
 							<li><strong>AZ</strong> - Availability Zone</li>
@@ -1191,7 +1191,7 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 						<p>Thanks to the CNCF for creating an opportunity for leading end-user experts to convene at KubeCon+CloudNativeCon Europe to collectively discuss the struggles, opportunities, and new architectures for crafting a resilient Multi-Cloud strategy. </p>
 
 						<p>Many thanks to the content committee members Pratik Wadher from Intuit, Ricardo Torres from Boeing, and Amr Abdelhalem from Fidelity, who steered the development of the discussion topics for this and future summits. Additional thanks go to Arun Gupta from Intel, who as the governing board chair, was involved in the preparation and execution of the event. Thanks also go to the facilitators Pratik Wadher and Henrik Blixt from Intuit and Ricardo Torres from Boeing, who managed to inspire a discussion on trending cloud native topics while giving participants plenty of room to explore the issues. In addition, this distinguished group of people was instrumental in reviewing this report and raising it to the needed and desired quality.</p>
@@ -1214,7 +1214,7 @@ get_template_part( 'components/skip-link-target' );
 				<div class="shadow-hr"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 
 						<h2 class="sub-header">About the Author</h2>
 
@@ -1269,7 +1269,7 @@ get_template_part( 'components/skip-link-target' );
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-column">
+					<div class="restrictive-9-col">
 						<p>If you have any questions or comments about this report,<br class="show-over-1000">you can get in touch with us at <a href="mailto:cto-summit@cncf.io" title="Send an email to cto-summit@cncf.io">cto-summit@cncf.io</a></p>
 					</div>
 				</div>
