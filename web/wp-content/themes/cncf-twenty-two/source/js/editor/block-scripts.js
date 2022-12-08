@@ -182,6 +182,10 @@ wp.blocks.registerBlockStyle(
 		{
 			label: 'No Margin',
 			name: 'no-margin',
+		},
+		{
+			label: 'Drop Shadow',
+			name: 'drop-shadow',
 		}
 ]
 );
