@@ -65,3 +65,21 @@ body .wp-block-columns {
 		}
 	}
 }
+
+body {
+	main {
+		.wp-block-columns {
+			&.is-style-2-column-mobile {
+				gap: 20px 20px !important;
+				.wp-block-column {
+					flex-basis: 45% !important;
+				}
+				> .wp-block-column:not(:only-child) {
+					@media (min-width: 600px) and (max-width: 781px) {
+						flex-basis: 45% !important;
+					}
+				}
+			}
+		}
+	}
+}

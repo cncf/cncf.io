@@ -250,6 +250,10 @@ wp.blocks.registerBlockStyle(
 	{
 		label: '70px Gap',
 		name: '70px-gap',
+	},
+	{
+		label: '2 Column on Mobile',
+		name: '2-column-mobile',
 	}
 ]
 );

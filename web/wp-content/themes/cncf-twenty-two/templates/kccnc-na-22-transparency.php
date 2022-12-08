@@ -12,7 +12,7 @@
 
 // declare the next event link and alt as a variable.
 $event_link = 'https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/';
-$event_text = 'KubeCon + CloudNativeCon North Amercia 2023 from 17th-21st April';
+$event_text = 'KubeCon + CloudNativeCon Europe 2023 from 17th-21st April';
 
 // Report folder in images/ folder.
 $report_folder = 'reports/kccnc-na-22/';
