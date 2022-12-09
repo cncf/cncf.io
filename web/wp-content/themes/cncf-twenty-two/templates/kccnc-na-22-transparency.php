@@ -94,6 +94,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 					<div class="hero__jump">Jump to section:</div>
 				</div>
+			</div>
 		</section>
 		<section>
 			<!-- Navigation  -->
@@ -340,11 +341,11 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 						<span class="screen-reader-text">Next Photo</span>
 					</button>
 				</div>
+			</div>
 		</section>
 
 
-		<section id="attendees"
-			class="section-03 is-style-down-gradient alignfull">
+		<section id="attendees" class="section-03 is-style-down-gradient alignfull">
 
 			<div class="container wrap">
 
@@ -478,9 +479,9 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 							<div class="icon">
 								<img loading="lazy" width="45" height="45" src="
 								<?php
-								 LF_Utils::get_svg( $report_folder . 'icon-flag-canada.svg', true );
+								LF_Utils::get_svg( $report_folder . 'icon-flag-canada.svg', true );
 								?>
-" alt="Canadian Flag">
+								" alt="Canadian Flag">
 							</div>
 							<div class="text">
 								<span class="country">Canada</span><br />
@@ -879,14 +880,16 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 							src="
 						<?php LF_Utils::get_svg( $report_folder . 'attendees-110-percent.svg', true ); ?>"
 							class="section-05__chart-key-image"
-							alt="110% increase"></span>
+							alt="110% increase">
 
 						<div class="thin-hr section-05__chart-key-hr"></div>
 
 						<p
 							class="section-05__chart-key-text">From KubeCon + CloudNativeCon 2021 in Los Angeles to the event in Detroit, we saw a 110% increase in in-person attendees.</p>
 
-						<div class="wp-block-button"><a href="<?php echo esc_url( $event_link ); ?>" title="<?php echo esc_attr( $event_text ); ?>"
+						<div class="wp-block-button"><a
+								href="<?php echo esc_url( $event_link ); ?>"
+								title="<?php echo esc_attr( $event_text ); ?>"
 								class="wp-block-button__link">Register for
 								Europe 2023</a>
 						</div>
@@ -1271,7 +1274,9 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="wp-block-button"><a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2022-cncf-hosted-co-located-events-transparency-reports/" title="Browse all co-located event reports"
+				<div class="wp-block-button"><a
+						href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2022-cncf-hosted-co-located-events-transparency-reports/"
+						title="Browse all co-located event reports"
 						class="wp-block-button__link">Browse all co-lo
 						reports</a>
 				</div>
@@ -1301,26 +1306,22 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 							<p>Co-Located events are solely available to level sponsors and packages will launch shortly.</p>
 
-							<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/sponsor/#additional-opportunities" title="Learn more about hosting a co-located event"
+							<div class="wp-block-button"><a
+									href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/sponsor/#additional-opportunities"
+									title="Learn more about hosting a co-located event"
 									class="wp-block-button__link">Co-located
 									Event Options</a>
 							</div>
 
 						</div>
 					</div>
-
-
-					<div aria-hidden="true" class="report-spacer-120"></div>
-
 				</div>
 			</div>
 		</section>
 
-		<section class="section-08
-		is-style-down-gradient alignfull" id="content">
+		<section class="section-08 is-style-down-gradient alignfull" id="content">
 
 			<div class="container wrap">
-
 
 				<div class="section-title-wrapper">
 					<h2 class="section-header">Content</h2>
@@ -1554,7 +1555,6 @@ Manager</span>
 			</div>
 			<div aria-hidden="true" class="report-spacer-120"></div>
 		</section>
-
 
 		<section id="endusers"
 			class="section-11 is-style-down-gradient alignfull">
@@ -1870,7 +1870,8 @@ Manager</span>
 					<div class="banner__text-wrapper">
 						<h3 class="banner__text">Apply for a scholarship to join
 							us at KubeCon + CloudNativeCon Europe 2023</h3>
-						<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/diversity-inclusion/#general"
+						<div class="wp-block-button"><a
+								href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/diversity-inclusion/#general"
 								title="Apply for scholarship at KubeCon + CloudNativeCon Europe 2023"
 								class="wp-block-button__link">Apply</a>
 						</div>
@@ -2023,22 +2024,18 @@ Manager</span>
 
 						<ol>
 							<li>Minecraft Modding</li>
-							<li>Gotta Catch ‘em All! Raspberry Pi And Java
+							<li>Gotta Catch 'em All! Raspberry Pi And Java
 								Pokemon Training</li>
 						</ol>
 
 						<p>We'll host Kid's Day again at <a href="<?php echo esc_url( $event_link ); ?>">KubeCon + CloudNativeCon Europe in Amsterdam</a> this coming April, for all children (ages 8-14) who are interested in technology, coding, and STEAM fields.</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
-
-						<div class="wp-block-button" style="displa:none"><a href="#" title=""
-								class="wp-block-button__link">See Gallery</a>
-						</div>
 					</div>
 					<div class="section-13__kids-col2">
-							<?php
+						<?php
 							LF_Utils::display_responsive_images( 82007, 'newsroom-post-width', '600px', null, 'lazy', 'Kids Day' );
-							?>
+						?>
 					</div>
 				</div>
 
@@ -2102,8 +2099,8 @@ Manager</span>
 							" alt="Mask icon">
 							</div>
 							<div class="text">
-								<span class="description">Masks <br
-										class="show-over-1000">mandatory</span>
+								<span class="description">Mandatory <br
+										class="show-over-1000">Masks</span>
 								<span class="addendum">Required usage of masks
 									indoors</span>
 							</div>
@@ -2260,7 +2257,9 @@ Manager</span>
 						<ul>
 							<li>CNCF and sponsor companies donated left-over
 								conference swag, office supplies, furniture and
-								more to <a href="https://huntingtonplace.production.carbonhouse.com/assets/doc/2022-Local-Agency-Network-4d576a74c1.pdf">local organizations</a> for reuse and
+								more to <a
+									href="https://huntingtonplace.production.carbonhouse.com/assets/doc/2022-Local-Agency-Network-4d576a74c1.pdf">local
+									organizations</a> for reuse and
 								upcycling.</li>
 							<li>Huntington Place is a LEED Gold Certified
 								Facility.</li>
@@ -2281,7 +2280,7 @@ Manager</span>
 
 						<?php LF_Utils::display_responsive_images( 82047, 'newsroom-post-width', '500px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
 
-						<div aria-hidden="true" class="report-spacer-40"></div>
+						<div aria-hidden="true" class="report-spacer-20"></div>
 
 						<?php LF_Utils::display_responsive_images( 82048, 'newsroom-post-width', '500px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
 
@@ -2372,7 +2371,8 @@ Manager</span>
 							<span class="number">11.3M</span><br />
 							<span class="description">Twitter Handle <br
 									class="show-over-1000">Impressions</span>
-							<span class="addendum">Visit <a href="https://twitter.com/CloudNativeFdn"
+							<span class="addendum">Visit <a
+									href="https://twitter.com/CloudNativeFdn"
 									title="CNCF on Twitter">@CloudNativeFdn</a></span>
 						</div>
 					</div>
@@ -2594,7 +2594,8 @@ Manager</span>
 					<div class="logo-grid__box">
 						<img loading="lazy"
 							src="<?php LF_Utils::get_image( $report_folder . 'media-logo-sed.png' ); ?>"
-							alt="Logo for Software Engineering Daily" class="logo-grid__image">
+							alt="Logo for Software Engineering Daily"
+							class="logo-grid__image">
 					</div>
 
 					<div class="logo-grid__box">
@@ -2622,7 +2623,8 @@ Manager</span>
 					<!-- Quote 1 -->
 					<div class="quote-with-name-container">
 
-						<a href="https://siliconangle.com/2022/10/31/security-enterprise-support-and-collaboration-emerge-as-major-themes-during-kubecon-na-kubecon/">
+						<a
+							href="https://siliconangle.com/2022/10/31/security-enterprise-support-and-collaboration-emerge-as-major-themes-during-kubecon-na-kubecon/">
 							<img loading="lazy" width="140" height="80"
 								src="<?php LF_Utils::get_image( $report_folder . 'media-logo-silicon-angle.png' ); ?>"
 								alt="Logo for SiliconANGLE"
@@ -2645,7 +2647,8 @@ Manager</span>
 					<!-- Slider 2 -->
 					<div class="quote-with-name-container">
 
-						<a href="https://www.techtarget.com/searchitoperations/opinion/Looking-back-on-KubeCon-CloudNativeCon">
+						<a
+							href="https://www.techtarget.com/searchitoperations/opinion/Looking-back-on-KubeCon-CloudNativeCon">
 							<img loading="lazy" width="140" height="80"
 								src="<?php LF_Utils::get_image( $report_folder . 'media-logo-techtarget.png' ); ?>"
 								alt="Logo for Tech Target"
@@ -2668,7 +2671,8 @@ Manager</span>
 					<!-- Slider 3 -->
 					<div class="quote-with-name-container">
 
-						<a href="https://siliconangle.com/2022/10/28/industrializing-kubernetes-platform-kubecon-2022/">
+						<a
+							href="https://siliconangle.com/2022/10/28/industrializing-kubernetes-platform-kubecon-2022/">
 							<img loading="lazy" width="140" height="80"
 								src="<?php LF_Utils::get_image( $report_folder . 'media-logo-silicon-angle.png' ); ?>"
 								alt="Logo for SiliconANGLE"
@@ -2690,7 +2694,8 @@ Manager</span>
 					<!-- Slider 4 -->
 					<div class="quote-with-name-container">
 
-						<a href="https://www.sdxcentral.com/articles/news/open-source-maintainers-key-to-healthy-cloud-native-ecosystem/2022/10/">
+						<a
+							href="https://www.sdxcentral.com/articles/news/open-source-maintainers-key-to-healthy-cloud-native-ecosystem/2022/10/">
 							<img loading="lazy" width="140" height="80"
 								src="<?php LF_Utils::get_svg( $report_folder . 'media-logo-sdx-central.svg', true ); ?>"
 								alt="Logo for SDX Central"
@@ -2713,7 +2718,8 @@ Manager</span>
 					<!-- Slider 5 -->
 					<div class="quote-with-name-container">
 
-						<a href="https://www.techtarget.com/searchitoperations/opinion/Looking-back-on-KubeCon-CloudNativeCon">
+						<a
+							href="https://www.techtarget.com/searchitoperations/opinion/Looking-back-on-KubeCon-CloudNativeCon">
 							<img loading="lazy" width="140" height="80"
 								src="<?php LF_Utils::get_image( $report_folder . 'media-logo-techtarget.png' ); ?>"
 								alt="Logo for Tech Target"
@@ -3236,7 +3242,59 @@ Manager</span>
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<!-- Start of diamond sponsors  -->
-				<div class="sponsors-logos largest even orphan-by-5"><div class="sponsors-logo-item"><a href="https://aws.amazon.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/amazon-web-services-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="http://eti.cisco.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/Cisco_ETI_ProgramID-1-01.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/overview.html" style="-webkit-transform: scale(0.7); -ms-transform: scale(0.7); transform: scale(0.7);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="338" height="139" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/intel-01.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.kasten.io/" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/Kasten-logo-2022.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.paloaltonetworks.com/prisma/cloud" style="-webkit-transform: scale(1.15); -ms-transform: scale(1.15); transform: scale(1.15);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2021/12/Palo_Alto_Prisma_Cloud_logo_RGB_Horizontal.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.vmware.com" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/vmware-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div></div>
+				<div class="sponsors-logos largest even orphan-by-5">
+					<div class="sponsors-logo-item"><a
+							href="https://aws.amazon.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/amazon-web-services-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="http://eti.cisco.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/Cisco_ETI_ProgramID-1-01.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/overview.html"
+							style="-webkit-transform: scale(0.7); -ms-transform: scale(0.7); transform: scale(0.7);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="338" height="139"
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/intel-01.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.kasten.io/"
+							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/Kasten-logo-2022.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.paloaltonetworks.com/prisma/cloud"
+							style="-webkit-transform: scale(1.15); -ms-transform: scale(1.15); transform: scale(1.15);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2021/12/Palo_Alto_Prisma_Cloud_logo_RGB_Horizontal.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.vmware.com" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/vmware-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+				</div>
 				<!-- End of diamond sponsors  -->
 
 				<div class="shadow-hr"></div>
@@ -3245,13 +3303,252 @@ Manager</span>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="sponsors-logos larger even orphan-by-3"><div class="sponsors-logo-item"><a href="https://www.aquasec.com/" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Aqua-Logo-Color-RGB-2022.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://ubuntu.com/" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2021/08/Canonical-Ubuntulogo-2021_RGB.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://circleci.com/" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="290" height="242" src="https://events.linuxfoundation.org/wp-content/uploads/2020/02/circle-ci.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.cockroachlabs.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Cockroach-Labs-01.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.datadoghq.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/datadog-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.datastax.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="407" height="74" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/DataStax-01.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.delltechnologies.com/" style="-webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/dell-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.dynatrace.com/technologies/kubernetes-monitoring/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/dynatrace-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://about.gitlab.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/gitlab-logo-rgb.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://cloud.google.com/" style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/06/lockup_GoogleCloud_FullColor_rgb_2900x512px.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.ibm.com/us-en/" style="-webkit-transform: scale(0.8); -ms-transform: scale(0.8); transform: scale(0.8);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/IBM_logo┬_pos_blue60_CMYK.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://jfrog.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/jfrog-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="http://www.eggplantsoftware.com" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/Keysight-Horizontal-Logo-RGB-Color-1.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://lightstep.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Lightstep.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/microsoft-azure-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.nginx.com/" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/NGINX-Part-of-F5-horiz-black-type-rgb-1.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://developer.oracle.com/?source=:ex:sn:::::RC_WWMK220606P00116:KubeConNASite&amp;SC=:ex:sn:::::RC_WWMK220606P00116:KubeConNASite&amp;pcode=WWMK220606P00116" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2022/08/OCI_RED_Horizontal_rgb_C74634.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://portworx.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="406" height="158" src="https://events.linuxfoundation.org/wp-content/uploads/2020/10/portworx-by-purestorage-01.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.suse.com/products/suse-rancher/" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/rancher-suse-logo-horizontal_horizontal-color.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.redhat.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/RedHat-new.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.replicated.com" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/replicated-logo-red-22.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://snyk.io/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/Snyk-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.splunk.com/en_us/devops.html" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/splunk-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://sysdig.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/sysdig-spn.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://goteleport.com/" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/teleport-kcsp.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.trilio.io/" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img width="396" height="114" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Trilio-2020.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="https://www.wiz.io/" style="-webkit-transform: scale(0.65); -ms-transform: scale(0.65); transform: scale(0.65);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2022/05/New_Logo_Blue-1.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div><div class="sponsors-logo-item"><a href="http://wso2.com" style="-webkit-transform: scale(0.75); -ms-transform: scale(0.75); transform: scale(0.75);" target="_blank" rel="noopener" data-feathr-click-track="true" data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img src="https://events.linuxfoundation.org/wp-content/uploads/2022/06/wso2-logo.svg" class="logo wp-post-image" alt="" decoding="async" loading="lazy"></a></div></div>
+				<div class="sponsors-logos larger even orphan-by-3">
+					<div class="sponsors-logo-item"><a
+							href="https://www.aquasec.com/"
+							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Aqua-Logo-Color-RGB-2022.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://ubuntu.com/"
+							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2021/08/Canonical-Ubuntulogo-2021_RGB.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://circleci.com/"
+							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="290" height="242"
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/02/circle-ci.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.cockroachlabs.com/"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Cockroach-Labs-01.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.datadoghq.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/datadog-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.datastax.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="407" height="74"
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/DataStax-01.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.delltechnologies.com/"
+							style="-webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/dell-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.dynatrace.com/technologies/kubernetes-monitoring/"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/dynatrace-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://about.gitlab.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/gitlab-logo-rgb.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://cloud.google.com/"
+							style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/06/lockup_GoogleCloud_FullColor_rgb_2900x512px.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.ibm.com/us-en/"
+							style="-webkit-transform: scale(0.8); -ms-transform: scale(0.8); transform: scale(0.8);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/IBM_logo┬_pos_blue60_CMYK.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://jfrog.com/"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/jfrog-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="http://www.eggplantsoftware.com"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/Keysight-Horizontal-Logo-RGB-Color-1.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://lightstep.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Lightstep.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/microsoft-azure-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.nginx.com/"
+							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/NGINX-Part-of-F5-horiz-black-type-rgb-1.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://developer.oracle.com/?source=:ex:sn:::::RC_WWMK220606P00116:KubeConNASite&amp;SC=:ex:sn:::::RC_WWMK220606P00116:KubeConNASite&amp;pcode=WWMK220606P00116"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2022/08/OCI_RED_Horizontal_rgb_C74634.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://portworx.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="406" height="158"
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/10/portworx-by-purestorage-01.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.suse.com/products/suse-rancher/"
+							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/rancher-suse-logo-horizontal_horizontal-color.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.redhat.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/RedHat-new.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.replicated.com" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/replicated-logo-red-22.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://snyk.io/"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/Snyk-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.splunk.com/en_us/devops.html"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/splunk-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://sysdig.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="400" height="245"
+								src="https://events.linuxfoundation.org/wp-content/uploads/sysdig-spn.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://goteleport.com/" target="_blank"
+							rel="noopener" data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/teleport-kcsp.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.trilio.io/"
+							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								width="396" height="114"
+								src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Trilio-2020.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a
+							href="https://www.wiz.io/"
+							style="-webkit-transform: scale(0.65); -ms-transform: scale(0.65); transform: scale(0.65);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2022/05/New_Logo_Blue-1.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="http://wso2.com"
+							style="-webkit-transform: scale(0.75); -ms-transform: scale(0.75); transform: scale(0.75);"
+							target="_blank" rel="noopener"
+							data-feathr-click-track="true"
+							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+								src="https://events.linuxfoundation.org/wp-content/uploads/2022/06/wso2-logo.svg"
+								class="logo wp-post-image" alt=""
+								decoding="async" loading="lazy"></a></div>
+				</div>
 
 				<div class="shadow-hr"></div>
 
-				<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/sponsor-list/" title="See all Sponsors &
-						Partners"
-						class="wp-block-button__link">See all Sponsors &
+				<div class="wp-block-button"><a
+						href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/sponsor-list/"
+						title="See all Sponsors &
+						Partners" class="wp-block-button__link">See all Sponsors &
 						Partners</a>
 				</div>
 
@@ -3290,19 +3587,20 @@ Manager</span>
 
 						<p
 							class="thanks__opening">We hope you enjoyed reflecting on a great event in Detroit - let's do it again in Amsterdam!</p>
+
+						<div aria-hidden="true" class="report-spacer-60"></div>
+
 						<p
 							class="thanks__comments">Your comments and feedback are welcome at <a href="mailto:events@cncf.io">events@cncf.io</a></p>
 
-						<div aria-hidden="true" class="report-spacer-60"></div>
+						<div aria-hidden="true" class="report-spacer-80"></div>
 
 						<p>Check out our <a href="https://community.cncf.io" title="Community Events">calendar for community events</a> near you and don't forget to <a href="<?php echo esc_url( $event_link ); ?>" title="Register for KubeCon+CloudNativeCon North America">register</a> for KubeCon+CloudNativeCon Europe in Amsterdam, April 2023.</p>
 					</div>
 					<div class="thanks__col2">
-						<a href="<?php echo esc_url( $pdf_link ); ?>">
-							<?php
+						<?php
 							LF_Utils::display_responsive_images( 82035, 'full', '300px', '', 'lazy', 'CNCF Mascot' );
-							?>
-						</a>
+						?>
 					</div>
 				</div>
 
