@@ -3594,7 +3594,7 @@ Manager</span>
 
 						<div aria-hidden="true" class="report-spacer-80"></div>
 
-						<p>Check out our <a href="https://community.cncf.io" title="Community Events">calendar for community events</a> near you and don't forget to <a href="<?php echo esc_url( $event_link ); ?>" title="Register for KubeCon+CloudNativeCon North America">register</a> for KubeCon+CloudNativeCon Europe in Amsterdam, April 2023.</p>
+						<p>Check out our <a href="https://community.cncf.io" title="Community Events">calendar for community events</a> near you and don't forget to <a href="<?php echo esc_url( $event_link ); ?>register" title="Register for KubeCon+CloudNativeCon North America">register</a> for KubeCon+CloudNativeCon Europe in Amsterdam, April 2023.</p>
 					</div>
 					<div class="thanks__col2">
 						<?php
