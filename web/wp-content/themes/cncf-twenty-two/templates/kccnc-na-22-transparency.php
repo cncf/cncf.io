@@ -1304,8 +1304,6 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 							<div class="thin-hr"></div>
 
-							<p>Co-Located events are solely available to level sponsors and packages will launch shortly.</p>
-
 							<div class="wp-block-button"><a
 									href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/sponsor/#additional-opportunities"
 									title="Learn more about hosting a co-located event"
@@ -1532,8 +1530,8 @@ Manager</span>
 						<tr>
 							<td>Speakers - women + gender non-conforming
 								(keynotes)</td>
-							<td>66</td>
-							<td>23%</td>
+							<td>8</td>
+							<td>44%</td>
 						</tr>
 						<tr>
 							<td>Speakers - men (breakouts)</td>
