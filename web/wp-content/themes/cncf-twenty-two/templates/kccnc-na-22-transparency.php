@@ -3552,7 +3552,7 @@ Manager</span>
 						Partners</a>
 				</div>
 
-				<div style="display:none">
+				<div style="">
 
 					<div class="shadow-hr"></div>
 
@@ -3561,7 +3561,7 @@ Manager</span>
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
 					<div class="wp-block-lf-youtube-lite">
-						<lite-youtube videoid="Oi4ckvfF0w0"
+						<lite-youtube videoid="Q1cA0iGw84g"
 							videotitle="Highlights from KubeCon + CloudNativeCon Europe 2022"
 							webpStatus="0" sdthumbStatus="1"
 							title="Play Highlights">
