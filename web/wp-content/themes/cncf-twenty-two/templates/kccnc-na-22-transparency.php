@@ -1312,6 +1312,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 									class="wp-block-button__link">Co-located
 									Event Options</a>
 							</div>
+							<div aria-hidden="true" class="report-spacer-120"></div>
 
 						</div>
 					</div>
@@ -1433,7 +1434,7 @@ Manager</span>
 					</div>
 					<div class="breakdown__col2">
 						<div class="breakdown__text">
-							<p>The schedule was curated by conference co-chairs, Richardo Rocha of CERN, Emily Fox of Apple, and Frederick Kautz of Doc.ai, who led a program committee of 93 experts and 34 track chairs, including project maintainers, active community members, and highly rated presenters from past events.<br><br>Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/scoring-guidelines/#general-info">CFP scoring guidelines</a>, and specifically about the <a href="https://www.cncf.io/blog/2022/08/03/inside-the-numbers-the-kubecon-cloudnativecon-selection-process-for-north-america-2022/">North America selection process</a>.
+							<p>The schedule was curated by conference co-chairs, Richardo Rocha of CERN, Emily Fox of Apple, and Frederick Kautz of Doc.ai, who led a program committee of 93 experts and 34 track chairs, including project maintainers, active community members, and highly rated presenters from past events.<br><br>Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/scoring-guidelines/">CFP scoring guidelines</a>, and specifically about the <a href="https://www.cncf.io/blog/2022/08/03/inside-the-numbers-the-kubecon-cloudnativecon-selection-process-for-north-america-2022/">North America selection process</a>.
 						</p>
 						</div>
 					</div>
@@ -1871,7 +1872,7 @@ Manager</span>
 						<h3 class="banner__text">Apply for a scholarship to join
 							us at KubeCon + CloudNativeCon Europe 2023</h3>
 						<div class="wp-block-button"><a
-								href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/diversity-inclusion/#general"
+								href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/diversity-inclusion/"
 								title="Apply for scholarship at KubeCon + CloudNativeCon Europe 2023"
 								class="wp-block-button__link">Apply</a>
 						</div>
