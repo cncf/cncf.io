@@ -1744,7 +1744,7 @@ Manager</span>
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
 						<p
-							class="opening-paragraph">More than <strong>3,500</strong> people joined us for KubeCon + CloudNativeCon North America thanks to the Dan Kohn Scholarship Fund, including diversity, need-based, and student scholarship opportunities.</p>
+							class="opening-paragraph">More than <strong>3,400</strong> people joined us for KubeCon + CloudNativeCon North America thanks to the Dan Kohn Scholarship Fund, including diversity, need-based, and student scholarship opportunities.</p>
 					</div>
 				</div>
 
