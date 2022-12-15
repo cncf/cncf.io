@@ -658,9 +658,9 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 			<picture>
 				<source media="(max-width: 599px)"
-					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82218', 'full', false ) ); ?>">
+					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82170', 'full', false ) ); ?>">
 				<source media="(min-width: 600px)"
-					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82167', 'full', false ) ); ?>">
+					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82218', 'full', false ) ); ?>">
 				<?php
 				LF_Utils::display_responsive_images(
 					'82218',
@@ -752,12 +752,8 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 			</div>
 		</section>
 
-
-
 		<section class="section-10">
 
-			<!-- TODO -->
-			<!-- New web and brand section here -->
 			<p class="sub-header">The new CNCF.io</p>
 
 			<div aria-hidden="true" class="report-spacer-60"></div>
@@ -768,7 +764,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 				</div>
 			</div>
 
-			<div aria-hidden="true" class="report-spacer-100"></div>
+			<div aria-hidden="true" class="report-spacer-60"></div>
 
 			<div class="lf-grid">
 				<div class="restrictive-9-col">
@@ -964,9 +960,8 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 									href="https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/">Inclusive Open Source Community
 									Orientation</a>. The new terms are as
 								follows:
-								<div aria-hidden="true"
-									class="report-spacer-20"></div>
-								<ul style="margin-left: 20px;">
+
+								<ul style="margin-left: 20px; margin-top: 20px; margin-bottom: 20px;">
 									<li>Agree to ensure the final program
 										schedule is diverse (e.g., not all
 										speakers of one gender, one culture, or
@@ -980,8 +975,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 										lineup is diverse in terms of companies
 										represented. </li>
 								</ul>
-								<div aria-hidden="true"
-									class="report-spacer-20"></div>
+
 							</li>
 							<li>We encourage KCD organizers to consider and
 								include talks that are non-technical and
@@ -3067,7 +3061,7 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 <?php
 Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 ?>
-" alt="TODO" loading="lazy">
+" alt="Seven new translations of the CNCF Glossary were donated this year" loading="lazy">
 				</picture>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -3344,7 +3338,6 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 							href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-twitter.svg' ); ?></a>
 						<?php endif; ?>
 
-
 						<!-- sendto email -->
 						<?php if ( $mailto_url ) : ?>
 						<a aria-label="Share by Email" title="Share by Email"
@@ -3355,8 +3348,6 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 
 			</div>
 		</section>
-
-		<!-- END -->
 	</article>
 </main>
 <?php

@@ -362,6 +362,8 @@ html {
 		margin-top: 20px;
 		display: flex;
 		align-items: center;
+		gap: 20px;
+		flex-wrap: wrap;
 	}
 
 	.legend-grid {
@@ -382,9 +384,6 @@ html {
 			@media (min-width: 1200px) {
 				grid-column: span 2;
 			}
-			+ .legend-item {
-				margin-left: 0;
-			}
 		}
 	}
 
@@ -392,9 +391,6 @@ html {
 		display: flex;
 		align-items: center;
 		font-size: 14px;
-		+ .legend-item {
-			margin-left: 25px;
-		}
 		span {
 			display: block;
 		}
@@ -829,7 +825,9 @@ html {
 				}
 			}
 			.legend-wrapper {
-				justify-content: flex-end;
+				@media (min-width: 800px) {
+					justify-content: flex-end;
+				}
 			}
 		}
 	}
@@ -878,6 +876,9 @@ html {
 		background-color: #f9f9f9;
 		&__growth {
 			column-gap: 0;
+			@media (max-width: 799px) {
+				row-gap: 10px;
+			}
 			&-col1 {
 				grid-column: span 12;
 				@media (min-width: 800px) {
@@ -1139,19 +1140,13 @@ html {
 		}
 		&__stats {
 			&-col1 {
-				grid-column: span 12;
-				@media (min-width: 600px) {
-					grid-column: span 6;
-				}
+				grid-column: span 6;
 				@media (min-width: 800px) {
 					grid-column: span 3;
 				}
 			}
 			&-col2 {
-				grid-column: span 12;
-				@media (min-width: 600px) {
-					grid-column: span 6;
-				}
+				grid-column: span 6;
 				@media (min-width: 800px) {
 					grid-column: 5 / -1;
 				}
@@ -1281,8 +1276,13 @@ html {
 					margin-top: 5px;
 				}
 				&__hr {
-					margin-top: 30px;
-					margin-bottom: 30px;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					@media (min-width: 1000px) {
+						margin-top: 30px;
+						margin-bottom: 30px;
+					}
+
 					background-color: rgba($ar-22-black, $alpha: 0.25);
 				}
 				&__description {
@@ -1351,9 +1351,11 @@ html {
 			margin-bottom: 120px;
 		}
 		&__characters {
-			grid-column: span 12;
-			@media (min-width: 500px) {
-				grid-column: 2 / 11;
+			img {
+				grid-column: span 12;
+				@media (min-width: 500px) {
+					grid-column: 2 / 11;
+				}
 			}
 		}
 		&__banner {
@@ -1372,7 +1374,10 @@ html {
 				gap: 80px;
 			}
 			&-title {
-				font-size: 32px;
+				font-size: 20px;
+				@media (min-width: 1000px) {
+					font-size: 32px;
+				}
 				line-height: 160%;
 				font-weight: 700;
 				color: $ar-22-white;
@@ -1449,7 +1454,7 @@ html {
 		&__person-align {
 			display: flex;
 			flex-wrap: wrap;
-			column-gap: 30px;
+			gap: 30px;
 			@media (min-width: 1200px) {
 				column-gap: 50px;
 			}
@@ -1565,17 +1570,21 @@ html {
 			&-col3,
 			&-col4 {
 				grid-column: span 12;
+				gap: 20px;
 				@media (min-width: 600px) {
 					grid-column: span 6;
+					gap: 50px;
 				}
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				gap: 20px;
-				@media (min-width: 600px) {
-					gap: 50px;
-				}
+				max-width: 100%;
 				img {
+					max-width: 100%;
+					@media (max-width: 500px) {
+						max-width: 200px;
+						height: auto;
+					}
 				}
 			}
 		}
@@ -1620,7 +1629,7 @@ html {
 			}
 		}
 		&__expenses {
-			row-gap: 30px;
+			row-gap: 50px;
 			@media (min-width: 600px) {
 				column-gap: 30px;
 			}
