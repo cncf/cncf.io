@@ -1952,7 +1952,10 @@ CTO, CNCF</p>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>CNCF conducted a number of <a href="https://www.cncf.io/blog/2022/08/08/improving-cncf-security-posture-with-independent-security-audits/">open source security audits</a> throughout 2022, in strategic partnership with the <strong>Open Source Technology Improvement Fund (OSTIF)</strong>. A number of projects completed security audits, resulting in 132 security fixes and improvements, <strong>45 CVE's fixed</strong>, and <strong>51 security tools built</strong>. We also announced the inaugural <a href="https://events.linuxfoundation.org/cloud-native-securitycon-north-america/">CloudNative SecurityCon</a>, which will launch in 2023, and bring application developers and modern security experts not just propose solutions that incrementally improve what has come before, but to give room to cutting edge projects and advances in modern security approaches.</p>
+						<p>CNCF conducted a number of <a href="https://www.cncf.io/blog/2022/08/08/improving-cncf-security-posture-with-independent-security-audits/">open source security audits</a> throughout 2022, in strategic partnership with the <strong>Open Source Technology Improvement Fund (OSTIF)</strong>. A number of projects completed security audits, resulting in 132 security fixes and improvements, <strong>45 CVE's fixed</strong>, and <strong>51 security tools built</strong>. We also announced the inaugural <a href="https://events.linuxfoundation.org/cloud-native-securitycon-north-america/">CloudNative SecurityCon</a>, which will launch in 2023, and bring application developers and modern security experts not just propose solutions that incrementally improve what has come before, but to give room to cutting edge projects and advances in modern security approaches.
+
+						<br><br>Furthermore, <a href="https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/">CNCF funded fuzzing audits</a> for a variety of projects that have resulted in hundreds of bugs being found.</p>
+
 					</div>
 				</div>
 
@@ -1960,10 +1963,6 @@ CTO, CNCF</p>
 
 				<p
 					class="sub-header">The following CNCF projects have completed security audits or associated work</p>
-
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
-				<p>Furthermore, <a href="https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/">CNCF funded fuzzing audits</a> for a variety of projects that have resulted in hundreds of bugs being found.</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
