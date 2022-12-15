@@ -189,7 +189,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 						" alt="Badge icon">
 						</div>
 						<div class="text">
-							<span>64%</span><br />
+							<span>61%</span><br />
 							First-time attendees
 						</div>
 					</div>
@@ -3561,7 +3561,7 @@ Manager</span>
 
 					<div class="wp-block-lf-youtube-lite">
 						<lite-youtube videoid="Q1cA0iGw84g"
-							videotitle="Highlights from KubeCon + CloudNativeCon Europe 2022"
+							videotitle="Highlights from KubeCon + CloudNativeCon North America 2022"
 							webpStatus="0" sdthumbStatus="1"
 							title="Play Highlights">
 						</lite-youtube>
