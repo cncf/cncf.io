@@ -360,7 +360,7 @@ Executive Director, CNCF</p>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>CNCF is an open source software foundation dedicated to making cloud native computing ubiquitous. Since we were founded in 2015, we've pioneered cloud native technologies - <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing" title="See a CNCF overview">hosting and growing some of the world's most successful open source projects</a> including Kubernetes, Prometheus, Envoy, ContainerD, and <a href="https://www.cncf.io/projects/" title="See all Graduated & Incubating Projects">many others</a>.<br><br>Today we are a powerhouse for visionary projects and people, hosting <strong>141+ projects</strong> with over <strong>178,000 contributors</strong> representing <strong>189 countries</strong>, and there are no signs of this growth slowing down.</p>
+						<p>CNCF is an open source software foundation dedicated to making cloud native computing ubiquitous. Since we were founded in 2015, we've pioneered cloud native technologies - <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing" title="See a CNCF overview">hosting and growing some of the world's most successful open source projects</a> including Kubernetes, Prometheus, Envoy, ContainerD, and <a href="https://www.cncf.io/projects/" title="See all Graduated & Incubating Projects">many others</a>.<br><br>Today we are a powerhouse for visionary projects and people, hosting <strong>157 projects</strong> with over <strong>178,000 contributors</strong> representing <strong>189 countries</strong>, and there are no signs of this growth slowing down.</p>
 					</div>
 				</div>
 
@@ -973,7 +973,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 										publication.</li>
 									<li>Organizers will ensure the speaker
 										lineup is diverse in terms of companies
-										represented. </li>
+										represented.</li>
 								</ul>
 
 							</li>
@@ -1767,7 +1767,7 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 
 				<div class="lf-grid">
 					<p
-						class="restrictive-10-col"><a href="https://github.com/cncf/velocity">Consistently looking into CNCF project's velocity</a> and the top open source projects give us a very good indication of trends that are resonating with developers and end users. As a result, we can get insight into platforms that will likely be successful:</p>
+						class="restrictive-10-col"><a href="https://github.com/cncf/velocity">Consistently looking into CNCF project's velocity</a> and the top open source projects gives us a very good indication of trends that are resonating with developers and end users. As a result, we can get insight into platforms that will likely be successful:</p>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -1961,6 +1961,10 @@ CTO, CNCF</p>
 				<p
 					class="sub-header">The following CNCF projects have completed security audits or associated work</p>
 
+				<div aria-hidden="true" class="report-spacer-40"></div>
+
+				<p>Furthermore, <a href="https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/">CNCF funded fuzzing audits</a> for a variety of projects that have resulted in hundreds of bugs being found.</p>
+
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="logo-grid smaller">
@@ -2087,11 +2091,6 @@ CTO, CNCF</p>
 					</div>
 				</div>
 
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<p>Furthermore, <a href="https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/">CNCF funded fuzzing audits</a> for a variety of projects that have resulted in hundreds of bugs being found.</p>
-
 				<div class="shadow-hr"></div>
 
 				<p class="sub-header">Improvements At A Glance</p>
@@ -2184,7 +2183,7 @@ LF_Utils::get_svg( $report_folder . 'icon-checklist.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>CNCF's footprint in the Telecom domain increased throughout 2022. In May, <a href="https://www.cncf.io/certification/cnf/">Cloud Native Network Function (CNF) Certification Program (beta)</a> was announced to help Communication Service Providers (CSPs) validate how well their vendors' products follow cloud native principles, and to advise vendors on following cloud native best practices. This is supported by CSPs like Vodafone, Deutsche Telekom and DISH Wireless, and guided by best practices from the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> and runs certification tests on the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a>.</p>
+						<p>CNCF's footprint in the Telecom domain increased throughout 2022. In May, the <a href="https://www.cncf.io/certification/cnf/">Cloud Native Network Function (CNF) Certification Program (beta)</a> was announced to help Communication Service Providers (CSPs) validate how well their vendors' products follow cloud native principles, and to advise vendors on following cloud native best practices. This is supported by CSPs like Vodafone, Deutsche Telekom and DISH Wireless, and guided by best practices from the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> and runs certification tests on the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a>.</p>
 					</div>
 				</div>
 
@@ -2270,8 +2269,10 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-8-col">
-						<p>At the same time 26 endpoints have been identified as being ineligible for conformance testing and <a href="https://apisnoop.cncf.io/conformance-progress/ineligible-endpoints">move to the ineligible endpoints list</a>. By the end of 2022 only <a href="https://apisnoop.cncf.io/conformance-progress/endpoints/1.26.0/?filter=untested">10 endpoints</a> (2.5%) remain untested. The team at ii anticipate cleaning up the last <a href="https://apisnoop.cncf.io/conformance-progress">technical debt</a> by Kubecon + CloudNativeCon Europe 2023.<br><br>The automation for CNCF Kubernetes Conformance Certification repo has been updated for an <a href="https://www.cncf.io/blog/2022/10/19/kubernetes-conformance-updates-for-october-2022/">enhanced user experience</a> with improved functionality under the hood. The CNCF-CI bot also gives more detailed explanations of requirements when a submission fails and supporting documentation has also been improved. These changes help to reduce the complexity of reviewing and approving Kubernetes conformance submissions.</p>
+					<div class="restrictive-9-col">
+						<p>At the same time 26 endpoints have been identified as being ineligible for conformance testing and <a href="https://apisnoop.cncf.io/conformance-progress/ineligible-endpoints">move to the ineligible endpoints list</a>. By the end of 2022 only <a href="https://apisnoop.cncf.io/conformance-progress/endpoints/1.26.0/?filter=untested">10 endpoints</a> (2.5%) remain untested. We anticipate cleaning up the last <a href="https://apisnoop.cncf.io/conformance-progress">technical debt</a> by Kubecon + CloudNativeCon Europe 2023.
+
+						<br><br>The automation for CNCF Kubernetes Conformance Certification repo has been updated for an <a href="https://www.cncf.io/blog/2022/10/19/kubernetes-conformance-updates-for-october-2022/">enhanced user experience</a> with improved functionality under the hood. The CNCF-CI bot also gives more detailed explanations of requirements when a submission fails and supporting documentation has also been improved. These changes help to reduce the complexity of reviewing and approving Kubernetes conformance submissions.</p>
 					</div>
 				</div>
 
@@ -3063,7 +3064,7 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 				<div class="section-20__banner">
 					<p
 						class="section-20__banner-text">The Glossary is a community-driven effort and everyone is welcome to contribute new terms, update current ones, or help translate into different languages.</p>
-					<div class="wp-block-button"><a href="https://github.com/cncf/glossary"
+					<div class="wp-block-button"><a href="https://glossary.cncf.io/contribute/"
 							title="Contribute to the Glossary"
 							class="wp-block-button__link fit-content"
 							style="white-space: nowrap;">Contribute</a>
@@ -3078,7 +3079,7 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
-						<p>CNCF proudly supported more than 100 individuals through various <a href="https://github.com/cncf/mentoring">mentoring and internship opportunities</a> in 2022, including the <a href="https://lfx.linuxfoundation.org/">LFX mentorship platform</a>, <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>, <a href="https://developers.google.com/season-of-docs">Google Summer of Docs (GSoD)</a> program, and <a href="https://www.outreachy.org/">Outreachy</a>. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.<br><br>
+						<p>CNCF proudly supported more than 100 individuals through various <a href="https://github.com/cncf/mentoring">mentoring and internship opportunities</a> in 2022, including the <a href="https://lfx.linuxfoundation.org/tools/mentorship">LFX mentorship platform</a>, <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>, <a href="https://developers.google.com/season-of-docs">Google Summer of Docs (GSoD)</a> program, and <a href="https://www.outreachy.org/">Outreachy</a>. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.<br><br>
 						In August, the TAG Contributor Strategy approved a Mentoring Working Group. The primary goals of this Working Group are to have the community administer CNCF mentorship initiatives and, by doing so, to help provide the capacity needed to grow and add new mentorship programs.
 					</p>
 					</div>
