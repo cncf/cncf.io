@@ -986,13 +986,9 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 								August's topic was “How to Curate a Diverse
 								Lineup.” This meeting featured resources and
 								recommendations for organizers on how to build
-								and recruit diversity within their schedules. <a href="https://docs.google.com/presentation/d/1fzT_BdavVKh3mnxxU-PBWyJq9JUfasKwHqekkbYVbw8/edit#slide=id.g56245ab439_0_106">
-									We
-									provide slides
-								</a>, as well as <a href="https://www.youtube.com/watch?v=E46lH_eJwRM&feature=youtu.be">
-									recording the
-									session
-								</a>.</li>
+								and recruit diversity within their schedules. <a href="https://docs.google.com/presentation/d/1fzT_BdavVKh3mnxxU-PBWyJq9JUfasKwHqekkbYVbw8/edit#slide=id.g56245ab439_0_106">We
+									provide slides</a>, as well as <a href="https://www.youtube.com/watch?v=E46lH_eJwRM&feature=youtu.be">recording the
+									session</a>.</li>
 						</ul>
 					</div>
 				</div>
@@ -1369,8 +1365,6 @@ transparency report</p>
 
 				<p class="sub-header">Attendee Demographics</p>
 
-				<div aria-hidden="true" class="report-spacer-20"></div>
-
 				<picture>
 					<source media="(max-width: 499px)"
 						srcset="<?php echo esc_url( wp_get_attachment_image_url( '82038', 'full', false ) ); ?>">
@@ -1617,7 +1611,7 @@ transparency report</p>
 				<div class="wp-block-lf-youtube-lite">
 					<lite-youtube videoid="Q1cA0iGw84g"
 						videotitle="Highlights from KubeCon + CloudNativeCon North America 2022"
-						webpStatus="0" sdthumbStatus="1"
+						webpStatus="1" sdthumbStatus="0"
 						title="Play Highlights">
 					</lite-youtube>
 				</div>
@@ -1678,7 +1672,7 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 						<span class="course-box__text">Increase</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/training/">Kubernetes Massively Open Online Course (MOOC)</a> hit 290,000 enrollments</p>
+							class="course-box__description"><a href="https://www.cncf.io/certification/training/#introduction">Kubernetes Massively Open Online Course (MOOC)</a> hit 290,000 enrollments</p>
 					</div>
 
 					<div class="course-box">
@@ -1723,7 +1717,7 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 						<span class="course-box__text">Increase</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/training/">Kubernetes Training Partner (KTP)</a> program grew to 57 certified companies</p>
+							class="course-box__description"><a href="https://cncf.io/certification/kubernetes-training-partners/">Kubernetes Training Partner (KTP)</a> program grew to 57 certified companies</p>
 					</div>
 					<div class="course-box">
 						<span class="course-box__number">8.5%</span>
@@ -1773,7 +1767,7 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 
 				<div class="lf-grid">
 					<p
-						class="restrictive-10-col">Consistently looking into CNCF project's velocity and the top open source projects give us a very good indication of trends that are resonating with developers and end users. As a result, we can get insight into platforms that will likely be successful:</p>
+						class="restrictive-10-col"><a href="https://github.com/cncf/velocity">Consistently looking into CNCF project's velocity</a> and the top open source projects give us a very good indication of trends that are resonating with developers and end users. As a result, we can get insight into platforms that will likely be successful:</p>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
