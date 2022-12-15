@@ -857,11 +857,11 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 			<div class="legend">
 				<div class="legend__wrapper"><i
-						class="legend__key legend__purple-700"></i> Virtual
+						class="legend__key legend__purple-700"></i> In-Person
 				</div>
 
 				<div class="legend__wrapper"><i
-						class="legend__key legend__green-700"></i> In-Person
+						class="legend__key legend__green-700"></i> Virtual
 				</div>
 			</div>
 
