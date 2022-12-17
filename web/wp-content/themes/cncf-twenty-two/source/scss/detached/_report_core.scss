@@ -44,6 +44,12 @@ HIDE/SHOW
 	}
 }
 
+@media (min-width: 1000px) {
+	.show-upto-1000 {
+		display: none;
+	}
+}
+
 /**
 TOOLS
 **/
