@@ -20,7 +20,7 @@
     "pantheon-systems/wordpress-composer": "*",
     "roots/wp-password-bcrypt": "^1.0.0",
     "rvtraveller/qs-composer-installer": "^1.1",
-    "vlucas/phpdotenv": "^3.1.0",
+    "vlucas/phpdotenv": "^5.5.0",
     "wpackagist-plugin/autodescription": "^4.0.1",
     "wpackagist-plugin/china-video-block": "^0.2.0",
     "wpackagist-plugin/code-syntax-block": "*",
