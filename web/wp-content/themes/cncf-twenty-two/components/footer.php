@@ -29,29 +29,29 @@ $site_options = get_option( 'lf-mu' );
 				<picture>
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer.webp', true );
+					Lf_Utils::get_image( 'phippy-family-footer-xmas.webp', true );
 				?>
 					" media="(min-width: 700px)" type="image/webp">
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-900x380.webp', true );
+					Lf_Utils::get_image( 'phippy-family-footer-xmas-900.webp', true );
 				?>
 					" type="image/webp">
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer.png', true );
+					Lf_Utils::get_image( 'phippy-family-footer-xmas.png', true );
 				?>
 					" media="(min-width: 700px)" type="image/png">
 					<source srcset="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-900x380.png', true );
+					Lf_Utils::get_image( 'phippy-family-footer-xmas-900.png', true );
 				?>
 					" type="image/png">
 					<img src="
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer.png', true );
+					Lf_Utils::get_image( 'phippy-family-footer-xmas.png', true );
 				?>
-					" alt="Characters from Phippy family" width="1800" height="760"
+					" alt="Characters from Phippy family" width="1800" height="830"
 						class="phippy-footer__image" id="phippy-footer"
 						loading="lazy" decoding="async">
 				</picture>
