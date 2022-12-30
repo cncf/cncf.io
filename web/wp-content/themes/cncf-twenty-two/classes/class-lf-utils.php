@@ -33,6 +33,8 @@ class LF_Utils {
 			$video_id = substr( $url, 32, 11 );
 		} elseif ( false !== stripos( $url, 'https://youtu.be/' ) ) {
 			$video_id = substr( $url, 17, 11 );
+		} elseif ( false !== stripos( $url, 'https://youtube.com/live/' ) ) {
+			$video_id = substr( $url, 25, 11 );
 		}
 
 		return isset( $video_id ) ? $video_id : false;
