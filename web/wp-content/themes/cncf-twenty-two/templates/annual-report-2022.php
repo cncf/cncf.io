@@ -658,17 +658,17 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 			<picture>
 				<source media="(max-width: 599px)"
-					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82170', 'full', false ) ); ?>">
+					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82815', 'full', false ) ); ?>">
 				<source media="(min-width: 600px)"
-					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82218', 'full', false ) ); ?>">
+					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82814', 'full', false ) ); ?>">
 				<?php
 				LF_Utils::display_responsive_images(
-					'82218',
+					'82814',
 					'full',
 					'1200px',
-					'ds',
+					null,
 					'lazy',
-					'We were thrilled to grant Mercedes-Benz and Intuit our Top End User Awards this year, in recognition of their notable contributions to the cloud native ecosystem.'
+					'We were thrilled to grant Intuit our Top End User Award this year in recognition of their notable contributions to the cloud native ecosystem.'
 				);
 				?>
 			</picture>
