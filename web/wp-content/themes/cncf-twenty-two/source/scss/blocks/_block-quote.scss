@@ -1,5 +1,6 @@
-blockquote.wp-block-quote {
+.wp-block-quote {
 	max-width: 900px;
+	border-left: 0 !important;
 	p {
 		font-size: 22px;
 		@media (min-width: 1200px) {

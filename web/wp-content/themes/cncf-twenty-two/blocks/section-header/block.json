@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/section-header",
+	"title": "Section Header",
+	"description": "Report section header including section number",
+	"style": "file:./section-header.css",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "common",
+	"icon": "welcome-widgets-menus",
+	"keywords": [
+		"",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "section-header.php"
+	},
+	"supports": {
+		"mode": false,
+		"align": [
+			"wide",
+			"full",
+			"left",
+			"center",
+			"right"
+		],
+		"alignWide": true,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"attributes": {
+		"variable": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {}
+}

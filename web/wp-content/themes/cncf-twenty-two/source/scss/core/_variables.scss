@@ -112,7 +112,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/ClarityCity-800.ttf') format('ttf');
 }
 
-// Source Serif Pro - Italic
+// Source Serif Pro - Italic 400
 @font-face {
 	font-display: fallback;
 	font-family: 'Source Serif Pro';
@@ -122,4 +122,17 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff2') format('woff2'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.woff') format('woff'),
 		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v11-latin-italic.ttf') format('ttf');
+}
+
+// Source Serif Pro - Italic 700
+@font-face {
+	font-display: fallback;
+	font-family: 'Source Serif Pro';
+	font-style: italic;
+	font-weight: 700;
+	src: local('SourceSerifPro-BoldIt'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff2')
+			format('woff2'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.woff') format('woff'),
+		url('/wp-content/themes/cncf-twenty-two/source/fonts/source-serif-pro-v15-latin-700italic.ttf') format('ttf');
 }
