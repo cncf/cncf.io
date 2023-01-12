@@ -70,7 +70,7 @@ class LF_Enqueue {
 	public function scripts() {
 
 		// osano cookie consent policy.
-		wp_enqueue_script( 'osano', 'https://cmp.osano.com/16A0DbT9yDNIaQkvZ/c3494b1e-ff3a-436f-978d-842e9a0bed27/osano.js' );
+		wp_enqueue_script( 'osano', 'https://cmp.osano.com/16A0DbT9yDNIaQkvZ/c3494b1e-ff3a-436f-978d-842e9a0bed27/osano.js', null, 1 );
 
 		if ( WP_DEBUG === true ) {
 			// Use un-minified versions.
