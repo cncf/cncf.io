@@ -17,6 +17,15 @@
     border-radius: 5px;
 }
 
+.osano-cm-button:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+.osano-cm-link:focus-visible {
+    outline-offset: 1px;
+	outline: -webkit-focus-ring-color auto 1px;
+}
+
 .osano-cm-header {
 	font-weight: 700;
 }
@@ -30,10 +39,15 @@
     text-decoration: none;
 }
 
-.osano-cm-link:hover {
+.osano-cm-link:hover, .osano-cm-link:active, .osano-cm-link:focus {
 	color: var(--wp--preset--color--pink-400);
 }
 
 .osano-cm-powered-by__link {
 	display: none;
+}
+
+.osano-cm-content__message {
+    margin-bottom: 0.2em;
+    padding-bottom: 1em;
 }
