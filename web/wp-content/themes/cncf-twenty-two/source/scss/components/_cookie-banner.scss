@@ -20,3 +20,20 @@
 .osano-cm-header {
 	font-weight: 700;
 }
+
+.osano-cm-dialog__list {
+    margin: 1em 0 ;
+}
+
+.osano-cm-link {
+	color: var(--wp--preset--color--pink-400);
+    text-decoration: none;
+}
+
+.osano-cm-link:hover {
+	color: var(--wp--preset--color--pink-400);
+}
+
+.osano-cm-powered-by__link {
+	display: none;
+}
