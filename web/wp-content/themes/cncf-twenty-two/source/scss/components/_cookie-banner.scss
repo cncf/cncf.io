@@ -25,11 +25,11 @@
 
 .osano-cm-button {
 	border: none;
-    border-radius: 0;
+    border-radius: 2px;
 	text-transform: uppercase;
 	font-size: 14px;
     line-height: 1.5;
-	margin: 5px;
+	margin: 0 10px 0 0;
 }
 
 .osano-cm-button:focus-visible {
@@ -56,6 +56,7 @@
 .osano-cm-link {
 	color: var(--wp--preset--color--pink-400);
     text-decoration: none;
+	font-size: 13px;
 }
 
 .osano-cm-link:hover, .osano-cm-link:active, .osano-cm-link:focus {
@@ -73,4 +74,8 @@
 
 .osano-cm-view__button {
     font-size: 1em;
+}
+
+.osano-cm-close, .osano-cm-close:focus, .osano-cm-close:hover {
+	stroke-width: 3px;
 }
