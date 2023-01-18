@@ -16,29 +16,26 @@
 	@media (min-width: 600px) {
 		font-size: 16px;
 	}
-
 }
 
 .osano-cm-dialog--type_box {
 	max-width: 27.5em;
 }
 
+.osano-cm-buttons {
+	gap: 10px;
+}
+
 .osano-cm-button {
 	border: none;
-    border-radius: 4px;
+	border-radius: 5px;
 	text-transform: uppercase;
 	font-size: 14px;
-    line-height: 1.5;
-	margin: 0 10px 10px 0;
-}
-
-.osano-cm-button:focus-visible {
-    outline: -webkit-focus-ring-color auto 1px;
-}
-
-.osano-cm-link:focus-visible {
-    outline-offset: 1px;
-	outline: -webkit-focus-ring-color auto 1px;
+	line-height: 1;
+	padding: 9px 17px;
+	&:focus-visible {
+		outline: -webkit-focus-ring-color auto 1px;
+	}
 }
 
 .osano-cm-header {
@@ -46,21 +43,34 @@
 }
 
 .osano-cm-dialog__list {
-    margin: 1em 0 ;
+	margin: 1em 0;
 }
 
 .osano-cm-toggle {
 	margin-top: 1em;
 }
 
-.osano-cm-link {
-	color: var(--wp--preset--color--pink-400);
-    text-decoration: none;
-	font-size: 13px;
+.osano-cm-dialog__close {
+	&:focus {
+		background-color: transparent;
+		border-color: transparent;
+		stroke: #000;
+	}
 }
 
-.osano-cm-link:hover, .osano-cm-link:active, .osano-cm-link:focus {
+.osano-cm-link {
 	color: var(--wp--preset--color--pink-400);
+	text-decoration: none;
+	font-size: 13px;
+	&:focus-visible {
+		outline-offset: 1px;
+		outline: -webkit-focus-ring-color auto 1px;
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		color: var(--wp--preset--color--pink-400);
+	}
 }
 
 .osano-cm-powered-by__link {
@@ -68,23 +78,38 @@
 }
 
 .osano-cm-content__message {
-    margin-bottom: 0.2em;
-    padding-bottom: 1em;
+	margin-bottom: 0.2em;
+	padding-bottom: 1em;
 }
 
 .osano-cm-view__button {
-    font-size: 1em;
+	font-size: 1em;
 }
 
-.osano-cm-close, .osano-cm-close:focus, .osano-cm-close:hover {
+.osano-cm-close,
+.osano-cm-close:focus,
+.osano-cm-close:hover {
 	stroke-width: 3px;
 }
 
-.osano-cm-widget__outline {
-    fill: #fff;
-    stroke: #000;
+.osano-cm-widget {
+	&__outline {
+		fill: #fff;
+		stroke: #000;
+	}
+	&__dot {
+		fill: #c136cf;
+	}
 }
 
-.osano-cm-widget__dot {
-    fill: #C136CF;
+.osano-cm-accept-all {
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 20px;
+		width: 20px;
+		margin-right: 8px;
+		background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23fff'/%3E%3Cpath d='m5.709 10.443 2.565 2.565 6.016-6.016' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	}
 }
