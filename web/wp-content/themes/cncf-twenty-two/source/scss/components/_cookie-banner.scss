@@ -79,10 +79,13 @@
 }
 
 .osano-cm-dialog__close, .osano-cm-info-dialog-header__close {
-	&:focus, &:focus:hover {
-		background-color: transparent;
-		border-color: transparent;
-		stroke: #000;
+	background-color: #000000;
+	border-color: #000000;
+	stroke: #fff;
+	&:hover, &:focus, &:focus:hover {
+		background-color: #000000;
+		border-color: #000000;
+		stroke: #fff;
 		transform: rotate(90deg);
 	}
 }
@@ -91,6 +94,7 @@
 .osano-cm-close:focus,
 .osano-cm-close:hover {
 	stroke-width: 3px;
+	border-width: 4px;
 }
 
 .osano-cm-widget {
