@@ -23,7 +23,7 @@
 }
 
 .osano-cm-buttons {
-	gap: 10px;
+	gap: 8px;
 }
 
 .osano-cm-button {
@@ -48,14 +48,6 @@
 
 .osano-cm-toggle {
 	margin-top: 1em;
-}
-
-.osano-cm-dialog__close {
-	&:focus {
-		background-color: transparent;
-		border-color: transparent;
-		stroke: #000;
-	}
 }
 
 .osano-cm-link {
@@ -84,6 +76,15 @@
 
 .osano-cm-view__button {
 	font-size: 1em;
+}
+
+.osano-cm-dialog__close, .osano-cm-info-dialog-header__close {
+	&:focus, &:focus:hover {
+		background-color: transparent;
+		border-color: transparent;
+		stroke: #000;
+		transform: rotate(90deg);
+	}
 }
 
 .osano-cm-close,
