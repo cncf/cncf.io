@@ -43,7 +43,7 @@
 }
 
 .osano-cm-dialog__list {
-	margin: 1em 0;
+	margin: .6em 0px .8em;
 }
 
 .osano-cm-toggle {
@@ -99,7 +99,7 @@
 		stroke: #000;
 	}
 	&__dot {
-		fill: #c136cf;
+		fill: #D222D6;
 	}
 }
 
@@ -113,4 +113,12 @@
 		margin-right: 8px;
 		background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23fff'/%3E%3Cpath d='m5.709 10.443 2.565 2.565 6.016-6.016' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 	}
+}
+
+[dir=ltr] .osano-cm-dialog__list .osano-cm-label {
+    margin-left: 0.8em;
+}
+
+.osano-cm-toggle__switch {
+	border-width: 3px;
 }
