@@ -1,5 +1,6 @@
 .osano-cm-info {
 	font-family: $font-primary;
+	box-shadow: none;
 }
 
 .osano-cm-window__dialog {
@@ -47,9 +48,13 @@
 
 .osano-cm-description {
 	font-weight: 400;
-	font-size: 10px;
+	font-size: 11px;
 	line-height: 170%;
 	letter-spacing: 0.02em;
+	@media (min-width: 600px) {
+		font-size: 10px;
+	}
+
 }
 
 .osano-cm-dialog__list {
