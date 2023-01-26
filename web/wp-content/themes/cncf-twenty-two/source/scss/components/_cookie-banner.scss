@@ -155,7 +155,10 @@ div.osano-cm-disclosure__toggle {
 	min-width: 14px;
 	height: 14px;
 	width: 14px;
-	margin: 25px;
+	margin: 15px 25px;
+	@media (min-width: 600px) {
+		margin: 25px;
+	}
 	svg {
 		height: 14px;
 		width: 14px;
