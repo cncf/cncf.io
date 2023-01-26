@@ -13,7 +13,10 @@
 	letter-spacing: 0.02em;
 	font-size: 13px;
 	font-family: $font-primary;
-	padding: 2.5em 1.5em 1.5em;
+	padding-top: 35px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
 	@media (min-width: 600px) {
 		font-size: 16px;
 	}
@@ -21,6 +24,9 @@
 
 .osano-cm-dialog--type_box {
 	max-width: 27.5em;
+	@media (min-width: 1400px) {
+		max-width: 480px;
+	}
 }
 
 .osano-cm-buttons {
@@ -54,11 +60,10 @@
 	@media (min-width: 600px) {
 		font-size: 10px;
 	}
-
 }
 
 .osano-cm-dialog__list {
-	margin: .6em 0px .8em;
+	margin: 0.6em 0px 0.8em;
 }
 
 .osano-cm-label {
@@ -112,17 +117,24 @@ div.osano-cm-disclosure__toggle {
 .osano-cm-content__message {
 	margin-bottom: 0.2em;
 	padding-bottom: 1em;
+	margin-top: 10px;
+	@media (min-width: 1400px) {
+		max-width: 90%;
+	}
 }
 
 .osano-cm-view__button {
 	font-size: 1em;
 }
 
-.osano-cm-dialog__close, .osano-cm-info-dialog-header__close {
+.osano-cm-dialog__close,
+.osano-cm-info-dialog-header__close {
 	background-color: #000000;
 	border-color: #000000;
 	stroke: #fff;
-	&:hover, &:focus, &:focus:hover {
+	&:hover,
+	&:focus,
+	&:focus:hover {
 		background-color: #000000;
 		border-color: #000000;
 		stroke: #fff;
@@ -137,13 +149,26 @@ div.osano-cm-disclosure__toggle {
 	border-width: 4px;
 }
 
+// FYI 14px is the smallest it can go for the maths of the circle to work.
+.osano-cm-close {
+	min-height: 14px;
+	min-width: 14px;
+	height: 14px;
+	width: 14px;
+	margin: 25px;
+	svg {
+		height: 14px;
+		width: 14px;
+	}
+}
+
 .osano-cm-widget {
 	&__outline {
 		fill: #fff;
 		stroke: #000;
 	}
 	&__dot {
-		fill: #D222D6;
+		fill: #d222d6;
 	}
 }
 
@@ -159,8 +184,8 @@ div.osano-cm-disclosure__toggle {
 	}
 }
 
-[dir=ltr] .osano-cm-dialog__list .osano-cm-label {
-    margin-left: 0.8em;
+[dir='ltr'] .osano-cm-dialog__list .osano-cm-label {
+	margin-left: 0.8em;
 }
 
 .osano-cm-toggle__switch {
