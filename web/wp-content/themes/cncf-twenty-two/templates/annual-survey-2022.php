@@ -36,7 +36,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 <link rel="prefetch"
 	href="<?php echo esc_url( get_template_directory_uri() . '/build/annual-survey-2022.min.css' ); ?>"
-	as="style" crossorigin="anonymous" />
+	as="style" crossorigin="anonymous">
 
 <main class="as22">
 	<article class="container wrap">
@@ -1221,35 +1221,35 @@ Lf_Utils::get_svg( $report_folder . 'sec-com-status-desktop.svg', true );
 
 			<div class="logo-grid">
 				<div class="logo-grid__box">
-					<img loading="lazy" src="
+					<img loading="lazy" width="100" height="80" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-falco.svg', true );
 						?>
 						" alt="Falco Logo" class="logo-grid__image">
 				</div>
 				<div class="logo-grid__box">
-					<img loading="lazy" src="
+					<img loading="lazy" width="100" height="80"  src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-in-toto.svg', true );
 						?>
 						" alt="In-Toto Logo" class="logo-grid__image">
 				</div>
 				<div class="logo-grid__box">
-					<img loading="lazy" src="
+					<img loading="lazy" width="100" height="80"  src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-notary.svg', true );
 						?>
 						" alt="Notary Logo" class="logo-grid__image">
 				</div>
 				<div class="logo-grid__box">
-					<img loading="lazy" src="
+					<img loading="lazy" width="100" height="80"  src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-opa.svg', true );
 						?>
 						" alt="Open Policy Agent Logo" class="logo-grid__image">
 				</div>
 				<div class="logo-grid__box">
-					<img loading="lazy" src="
+					<img loading="lazy" width="100" height="80"  src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-tuf.svg', true );
 						?>
