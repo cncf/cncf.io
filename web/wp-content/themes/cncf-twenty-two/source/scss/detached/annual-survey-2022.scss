@@ -7,13 +7,9 @@ $font-as22: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helve
 
 $font-as22-serif: 'Source Serif Pro', serif;
 
-$as22-black: #000;
 $as22-white: #ffffff;
-
 $as22-navy-700: #0f0b47;
-$as22-pink-700: #c94777;
 $as22-purple-700: #5c2cff;
-$as22-green-700: #6dd4c0;
 
 // 42px size of menu element mobile
 // 160px size of total menu mobile
@@ -393,6 +389,9 @@ html {
 				font-size: 50px;
 				margin-bottom: 40px;
 			}
+			span {
+				color: $as22-purple-700;
+			}
 		}
 	}
 
@@ -476,7 +475,7 @@ html {
 				font-size: 80px;
 				line-height: 1;
 				text-align: center;
-				color: #5c2cff;
+				color: $as22-purple-700;
 			}
 		}
 	}

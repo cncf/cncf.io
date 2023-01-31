@@ -146,7 +146,7 @@ LF_Utils::get_svg( $report_folder . 'icon-inspect.svg', true );
 		</section>
 
 		<section class="section-01">
-			<h2 class="section-01__title">2022. <br>The year cloud native <br
+			<h2 class="section-01__title"><span>2022</span> <br>The year cloud native <br
 					class="show-over-1000">became the new normal</h2>
 
 			<div class="lf-grid">
