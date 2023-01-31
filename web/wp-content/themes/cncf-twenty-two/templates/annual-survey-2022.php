@@ -197,6 +197,8 @@ LF_Utils::get_svg( $report_folder . 'icon-inspect.svg', true );
 
 						<div class="thin-hr"></div>
 
+						<p class="sub-header">With Support From</p>
+
 						<a href="https://buoyant.io"
 							title="Visit Buoyant website">
 							<img loading="lazy" width="209" height="57" src="
@@ -567,17 +569,17 @@ Lf_Utils::get_svg( $report_folder . 'organizations-release-cycles-desktop.svg', 
 				<picture>
 					<source media="(max-width: 599px)" srcset="
 <?php
-Lf_Utils::get_svg( $report_folder . 'k8s-production-clusters-mobile.svg', true );
+Lf_Utils::get_svg( $report_folder . 'kubernetes-production-clusters-mobile.svg', true );
 ?>
 ">
 					<source media="(min-width: 600px)" srcset="
 <?php
-Lf_Utils::get_svg( $report_folder . 'k8s-production-clusters-desktop.svg', true );
+Lf_Utils::get_svg( $report_folder . 'kubernetes-production-clusters-desktop.svg', true );
 ?>
 ">
 					<img width="1200" height="367" src="
 <?php
-Lf_Utils::get_svg( $report_folder . 'k8s-production-clusters-desktop.svg', true );
+Lf_Utils::get_svg( $report_folder . 'kubernetes-production-clusters-desktop.svg', true );
 ?>
 " alt="50% of end users have more than 10 clusters." loading="lazy">
 				</picture>
