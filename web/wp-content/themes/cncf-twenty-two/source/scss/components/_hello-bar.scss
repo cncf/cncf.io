@@ -27,6 +27,6 @@
 // hide hello bar when mobile menu is open.
 .has-menu-active {
 	.hello-bar {
-		height: 0;
+		display: none;
 	}
 }
