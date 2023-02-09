@@ -78,12 +78,9 @@ div.osano-cm-disclosure__toggle {
 	font-size: 10px;
 	line-height: 150%;
 	letter-spacing: 0.02em;
-	color: var(--wp--preset--color--pink-400);
 	margin-top: 0;
-	&:hover,
-	&:active,
-	&:focus {
-		color: var(--wp--preset--color--pink-400);
+	&:hover {
+		text-decoration: underline;
 	}
 }
 
@@ -96,17 +93,14 @@ div.osano-cm-disclosure__toggle {
 }
 
 .osano-cm-link {
-	color: var(--wp--preset--color--pink-400);
 	text-decoration: none;
 	font-size: 13px;
 	&:focus-visible {
 		outline-offset: 1px;
 		outline: -webkit-focus-ring-color auto 1px;
 	}
-	&:hover,
-	&:active,
-	&:focus {
-		color: var(--wp--preset--color--pink-400);
+	&:hover {
+		text-decoration: underline;
 	}
 }
 
