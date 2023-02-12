@@ -78,9 +78,10 @@ div.osano-cm-disclosure__toggle {
 	font-size: 10px;
 	line-height: 150%;
 	letter-spacing: 0.02em;
+	text-decoration: underline;
 	margin-top: 0;
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 }
 
@@ -93,14 +94,14 @@ div.osano-cm-disclosure__toggle {
 }
 
 .osano-cm-link {
-	text-decoration: none;
+	text-decoration: underline;
 	font-size: 13px;
 	&:focus-visible {
 		outline-offset: 1px;
 		outline: -webkit-focus-ring-color auto 1px;
 	}
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 }
 
