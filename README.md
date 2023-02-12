@@ -50,6 +50,8 @@ services:
 tooling:
   npm:
     service: node
+  npx:
+    service: node
   node:
     service: node
   phpcs:
@@ -75,7 +77,7 @@ tooling:
 
 ```
 
-If you are running an M1 Mac, you need to specify the database type, inserted after node in services.
+If you are running a Silicon Mac (M1 / M2), you need to specify the database type, inserted after node in services.
 
 ```yml
 
