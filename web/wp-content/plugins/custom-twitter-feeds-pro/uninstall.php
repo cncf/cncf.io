@@ -64,6 +64,7 @@ if ( ! $ctf_preserve_settings ) {
 	delete_option( 'ctf_cron_report' );
 	delete_option( 'ctf_legacy_feed_settings' );
 	delete_option( 'ctf_check_license_api_when_expires' );
+	delete_option( 'ctf_check_license_api_post_grace_period' );
 	delete_option( 'ctf_license_last_check_timestamp' );
 	delete_option( 'ctf_license_data' );
 	delete_option( 'ctf_license_key' );

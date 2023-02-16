@@ -114,12 +114,18 @@ abstract class SB_Controls_Base{
 		<div class="sb-control-elem-label" v-if="(control.heading == undefined && control.description == undefined) ? false : true &&  control.type != 'customview'">
 			<div class="sb-control-elem-label-title ctf-fb-fs">
 				<div v-if="control.icon != undefined" class="sb-control-elem-icon" v-html="svgIcons[control.icon]"></div>
-				<div class="sb-control-elem-heading sb-small-p sb-dark-text" :data-underline="control.underline" :class="control.enableViewAction != undefined && control.enableViewAction != false ? 'sb-cursor-pointer' : ''" v-html="control.heading" @click.prevent.default="control.enableViewAction != undefined && control.enableViewAction != false ? switchNestedSection(control.enableViewAction, null ) : false"></div>
+				<div class="sb-control-elem-heading sb-small-p sb-dark-text" :data-underline="control.underline" :class="control.enableViewAction != undefined && control.enableViewAction != false ? 'sb-cursor-pointer' : ''" @click.prevent.default="control.enableViewAction != undefined && control.enableViewAction != false ? switchNestedSection(control.enableViewAction, null ) : false">
+					<span v-html="control.heading"></span>
+					<span v-if="control.proLabel != undefined && control.proLabel" class="sb-breadcrumb-pro-label">PRO</span>
+				</div>
 				<div class="sb-control-elem-tltp" v-if="control.tooltip != undefined" @mouseover.prevent.default="toggleElementTooltip(control.tooltip, 'show', control.tooltipAlign ? control.tooltipAlign : 'center' )" @mouseleave.prevent.default="toggleElementTooltip('', 'hide')">
 					<div class="sb-control-elem-tltp-icon" v-html="svgIcons['info']"></div>
 				</div>
 			</div>
-			<div class="sb-control-elem-description" v-if="control.descriptionPosition != 'bottom'" v-html="control.description"></div>
+			<div class="sb-control-elem-description" v-if="control.descriptionPosition != 'bottom'">
+				<span v-html="control.description"></span>
+				<a v-if="control.checkExtensionPopupLearnMore != undefined" @click.prevent.default="control.utmLink != undefined ? window.open(control.utmLink, '_blank') : viewsActive.extensionsPopupElement = control.checkExtensionPopupLearnMore">{{genericText.learnMore}}</a>
+			</div>
 		</div>
 		<div class="sb-control-elem-output">
 			<?php $this->get_control_output($controlEditingTypeModel); ?>

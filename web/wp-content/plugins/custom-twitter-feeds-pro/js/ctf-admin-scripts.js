@@ -534,7 +534,27 @@ jQuery(document).ready(function($){
         jQuery(this).remove();
     });
 
+    // Focus the license section on click license expired notice button 
+	jQuery('#sbFocusLicenseSection').on('click', function() {
+		jQuery('.sb-tab-box.sb-license-box').addClass('sb-focus-box-section');
 
+		setTimeout(function() {
+			jQuery('.sb-tab-box.sb-license-box').removeClass('sb-focus-box-section');
+		}, 2000);
+	});
+
+	// Get the URL parameters
+	const urlSearchParams = new URLSearchParams(window.location.search);
+	const params = Object.fromEntries(urlSearchParams.entries());
+
+	// Check if the URL has license section to focus
+	if ( params.focus === "license" ) {
+		jQuery('.sb-tab-box.sb-license-box').addClass('sb-focus-box-section');
+
+		setTimeout(function() {
+		jQuery('.sb-tab-box.sb-license-box').removeClass('sb-focus-box-section');
+		}, 2000);
+	}
 
   // Social Wall Menu Workaround
   //toplevel_page_sbsw #adminmenu a[href="admin.php?page=sb-instagram-feed"]

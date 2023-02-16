@@ -3640,7 +3640,7 @@ if(!ctf_js_exists) {
                   return b.end(), !1
                 }), jQuery(document).on('click', function(event, b, c) {
                   //Fade out the lightbox if click anywhere outside of the two elements defined below
-                  if (!jQuery(event.target).closest('.ctf_lb-outerContainer').length) {
+                  if ( !jQuery(event.target).is("a") && !jQuery(event.target).closest('.ctf_lb-outerContainer').length) {
                     if (!jQuery(event.target).closest('.ctf_lb-dataContainer').length) {
                       //Fade out lightbox
                       lbBuilder.afterSlideChange();
@@ -5138,20 +5138,29 @@ if(!ctf_js_exists) {
                     $item.find('.ctf-lightbox-link[data-bg-image]').css('background-image', 'url("' + value + '")');
                   }
                   $thisItem.attr('href',value)
+                } else if (feed.settings.consentGiven && feed.settings.gdpr) {
+                  if ($item.find('.ctf-lightbox-link[data-bg-image]').length === 1) {
+                    $item.find('.ctf-lightbox-link[data-bg-image]').css('background-image', 'url("' + value + '")');
+                  }
                 }
               });
             }
 
 
-            if (newUrl !== currentUrl) {
+            if (typeof newUrl !== 'undefined' && newUrl !== currentUrl) {
               if (feed.settings.debugEnabled) {
                 var reason = currentUrl === feed.placeholderURL ? 'was placeholder' : 'too small';
                 console.log('rais res for ' + currentUrl, reason);
               }
               $img.attr('data-current',currentRes);
 
-              if (newUrl !== currentUrl) {
+              if (typeof newUrl !== 'undefined' && newUrl !== currentUrl) {
                 $img.attr('src', newUrl);
+                if (feed.settings.consentGiven) {
+                  if ($img.closest('.ctf-lightbox-link[data-bg-image]').length) {
+                    $img.closest('.ctf-lightbox-link[data-bg-image]').css('background-image', 'url("' + newUrl + '")');
+                  }
+                }
                 //if ($mediaItem.hasClass('ctf_imgLiquid_ready')) {
                 //$mediaItem.css('background-image', 'url("' + newUrl + '")');
                 //}
@@ -5410,6 +5419,8 @@ if(!ctf_js_exists) {
 
             this.settings.consentGiven = (val === 'true');
           }
+        } else if (typeof window.complianz !== 'undefined') { // Complianz by Really Simple Plugins
+          this.settings.consentGiven = ctfCmplzGetCookie('cmplz_marketing') === 'allow';
         } else if (typeof window.cookieconsent !== 'undefined') { // Complianz by Really Simple Plugins
           this.settings.consentGiven = ( ctfCmplzGetCookie('cmplz_consent_status') === 'allow' || jQuery('body').hasClass('cmplz-status-marketing') );
         } else if (typeof window.Cookiebot !== "undefined") { // Cookiebot by Cybot A/S
@@ -5455,7 +5466,26 @@ if(!ctf_js_exists) {
             $(this).replaceWith('<video '+$(this).attr('data-video-atts')+' src="'+$(this).attr('data-video-src')+'" type="video/mp4" poster="'+$(this).attr('data-video-poster')+'">');
           }
         });
+
+        $(feed.el).find('.ctf-tc-image').each(function() {
+          if ($(this).find('img').attr('src') !== $(this).attr('data-bg')) {
+            $(this).find('img').attr('src',$(this).attr('data-bg'));
+          }
+        })
+
+        $(feed.el).find('.ctf-tweet-media').each(function() {
+          if ($(this).find('img').length && $(this).find('img').attr('src').indexOf('img/placeholder.png') > -1 && typeof $(this).find('img').first().attr('data-full-image') !== 'undefined') {
+            var newUrl = $(this).find('img').first().attr('data-full-image');
+            $(this).find('img').first().attr('src',newUrl);
+            $(this).find('a').first().css('background-image', 'url("' + newUrl + '")').attr('data-bg',newUrl);
+          }
+
+          if ($(this).find('video').length && $(this).find('video').attr('src') === '' && typeof $(this).find('video').attr('data-src') !== 'undefined') {
+            $(this).find('video').attr('src',$(this).find('video').attr('data-src'));
+          }
+        });
         $(feed.el).find('.ctf-no-consent').removeClass('ctf-no-consent');
+
 
         this.afterResize();
       },
@@ -5913,30 +5943,52 @@ if(!ctf_js_exists) {
     });
 
     // Complianz by Really Simple Plugins
-    $(document).on('cmplzEnableScripts', function (event) {
-      if ( event.detail === 'marketing' ) {
-        $.each(window.ctf.feeds,function(index){
-          window.ctf.feeds[ index ].settings.consentGiven = true;
-          window.ctf.feeds[ index ].afterConsentToggled();
-        });
+    $('.cmplz-btn').on('click', function() {
+      if ( typeof cmplz_accepted_categories === 'function' ) {
+        setTimeout(function() {
+          var accepted = cmplz_accepted_categories();
+          if ( accepted.indexOf('marketing') > -1 ) {
+            $.each(window.ctf.feeds,function(index){
+              window.ctf.feeds[ index ].settings.consentGiven = true;
+              window.ctf.feeds[ index ].afterConsentToggled();
+            });
+          }
+        },1000);
       }
     });
 
-    // Complianz by Really Simple Plugins
-    $(document).on('cmplzFireCategories', function (event) {
+    $(document).on('cmplzAcceptAll', function (event) {
+      $.each(window.ctf.feeds,function(index){
+        window.ctf.feeds[ index ].settings.consentGiven = true;
+        window.ctf.feeds[ index ].afterConsentToggled();
+      });
+    });
 
-      if ( event.detail.category==='marketing' ) {
-        $.each(window.ctf.feeds,function(index){
-          window.ctf.feeds[ index ].settings.consentGiven = true;
-          window.ctf.feeds[ index ].afterConsentToggled();
-        });
-      }
+
+    // hide notice on click and send ajax request to backend
+    $('#ctf-frce-hide-license-error').on('click',function() {
+      $('#ctf-fr-ce-license-error').slideUp();
+      jQuery.ajax({
+        url: ctfOptions.ajax_url,
+        type: 'post',
+        data: {
+          action: 'ctf_hide_frontend_license_error',
+          nonce: ctfOptions.nonce
+        },
+        success: function(msg){
+          console.log(msg);
+        }
+      });
     });
 
     // Borlabs Cookie by Borlabs
     $(document).on('borlabs-cookie-consent-saved', function (event) {
+      var consentGiven = false;
+      if (typeof window.BorlabsCookie !== 'undefined') { // Borlabs Cookie by Borlabs
+        consentGiven = window.BorlabsCookie.checkCookieConsent('twitter');
+      }
       $.each(window.ctf.feeds,function(index){
-        window.ctf.feeds[ index ].settings.consentGiven = true;
+        window.ctf.feeds[ index ].settings.consentGiven = consentGiven;
         window.ctf.feeds[ index ].afterConsentToggled();
       });
     });

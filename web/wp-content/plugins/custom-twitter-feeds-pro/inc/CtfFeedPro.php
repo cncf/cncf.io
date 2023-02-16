@@ -92,12 +92,12 @@ class CtfFeedPro extends CtfFeed {
         $this->feed_options['screenname'] = isset( $this->atts['screenname'] ) ? $this->atts['screenname'] : ( isset( $this->db_options['usertimeline_text'] ) ? $this->db_options['usertimeline_text'] : '' );
 
         if ( isset( $this->atts['home'] ) && $this->atts['home'] == 'true' ) {
-            $this->feed_options['feed_types_and_terms'][] = array( 'hometimeline', '' );
+            $this->feed_options['feed_types_and_terms'][] = array( 'hometimeline', 'hometimeline' );
             $this->feed_options['feed_types_and_terms_display'][] = 'hometimeline';
         }
 
         if ( isset( $this->atts['mentions'] ) && $this->atts['mentions'] == 'true' ) {
-            $this->feed_options['feed_types_and_terms'][] = array( 'mentionstimeline', '' );
+            $this->feed_options['feed_types_and_terms'][] = array( 'mentionstimeline', 'mentionstimeline' );
             $this->feed_options['feed_types_and_terms_display'][] = 'mentionstimeline';
 
         }
@@ -121,12 +121,13 @@ class CtfFeedPro extends CtfFeed {
                 foreach ( $searches as $search ) {
                     $this->feed_options['feed_types_and_terms'][] = array( 'search', str_replace( "'", '"', $search ) );
                     $this->feed_options['feed_types_and_terms_display'][] = str_replace( "'", '"', $search );
-
+					if ( ! empty( $search ) ) {
+						$this->check_for_duplicates = true;
+					}
                 }
 
             }
 
-            $this->check_for_duplicates = true;
         }
 
         if ( isset( $this->atts['hashtag'] ) ) {
@@ -135,6 +136,9 @@ class CtfFeedPro extends CtfFeed {
             $hashtag_list = explode( ',', $hashtags );
             foreach ( $hashtag_list as $hashtag ) {
                 $this->feed_options['feed_types_and_terms_display'][] = str_replace( "'", '"', $hashtag );
+	            if ( ! empty( $hashtag ) ) {
+		            $this->check_for_duplicates = true;
+	            }
             }
             $hashtags = str_replace( ',', ' OR ', $hashtags );
             if ( strlen( $hashtags < 45 ) ) {
@@ -144,7 +148,6 @@ class CtfFeedPro extends CtfFeed {
                 $this->feed_options['feed_types_and_terms'][] = array( 'hashtag', $hashtags );
             }
 
-            $this->check_for_duplicates = true;
         }
 
         if ( isset( $this->atts['lists'] ) ) {
@@ -154,15 +157,13 @@ class CtfFeedPro extends CtfFeed {
                 $this->feed_options['feed_types_and_terms'][] = array( 'lists', $list );
                 $this->feed_options['feed_types_and_terms_display'][] = $list;
             }
-        }
+        } else if ( isset( $this->atts['lists_id'] ) ) {
+	        $lists = explode( ',', $this->atts['lists_id'] );
 
-        if ( isset( $this->atts['list'] ) ) {
-            $lists = explode( ',', $this->atts['list'] );
-
-            foreach ( $lists as $list ) {
-                $this->feed_options['feed_types_and_terms'][] = array( 'lists', $list );
-                $this->feed_options['feed_types_and_terms_display'][] = $list;
-            }
+	        foreach ( $lists as $list ) {
+		        $this->feed_options['feed_types_and_terms'][] = array( 'lists', $list );
+		        $this->feed_options['feed_types_and_terms_display'][] = $list;
+	        }
         }
 
         // if there is only one feed type and term, just use the single feed creation method
@@ -509,7 +510,8 @@ class CtfFeedPro extends CtfFeed {
             ' '
         ) , '', $this->feed_options['excludewords']) , 0, 5) : '';
         $feedID = (!empty($this->atts['feedid'])) ? $this->atts['feedid'] . '_' : '';
-        $cache_name = substr('ctf_!_' . $feedID . $this->feed_options['feed_term'] . $includewords . $excludewords, 0, 45);
+		$feed_term = ! empty( $this->feed_options['feed_term'] ) ? $this->feed_options['feed_term'] : '';
+        $cache_name = substr('ctf_!_' . $feedID . $feed_term . $includewords . $excludewords, 0, 45);
         if ($this->feed_options['type'] === 'hashtag') {
             $cache_name = str_replace(' -filter:retweets', '', $cache_name);
         }
@@ -531,7 +533,7 @@ class CtfFeedPro extends CtfFeed {
         elseif ($existing_cache) {
             // use "since-id" to look for more in an api request
             $since_id = $existing_cache[0]['id_str'];
-            $api_obj = $this->getTweetsSinceID($since_id, 'search', $this->feed_options['feed_term'], $this->feed_options['count']);
+            $api_obj = $this->getTweetsSinceID($since_id, 'search', $feed_term, $this->feed_options['count']);
             // add any new tweets to the cache
             $tweet_set = json_decode($api_obj->json, $assoc = true);
 
@@ -563,10 +565,12 @@ class CtfFeedPro extends CtfFeed {
 
         }
         else {
-            // make a request for last 200 tweets
-            $api_obj = $this->apiConnectionResponse('search', $this->feed_options['feed_term']);
-            // cache them in a regular option
-            $this->tweet_set = json_decode($api_obj->json, $assoc = true);
+	        // make a request for last 200 tweets
+	        if ( ! empty( $this->feed_options['feed_term'] ) ) {
+		        $api_obj = $this->apiConnectionResponse('search', $this->feed_options['feed_term']);
+		        // cache them in a regular option
+		        $this->tweet_set = json_decode($api_obj->json, $assoc = true);
+	        }
             // check for errors/tweets present
             if (isset($this->tweet_set['errors'][0])) {
                 if (empty($this->api_obj)) {
@@ -996,6 +1000,7 @@ class CtfFeedPro extends CtfFeed {
                 $this->tweet_set = false;
                 return;
             }
+
             $api_obj = $this->apiConnectionResponse($this->feed_options['type'], $feed_term);
 
             $this->tweet_set = json_decode($api_obj->json, $assoc = true);
@@ -1042,7 +1047,12 @@ class CtfFeedPro extends CtfFeed {
         }
         else {
             $working_tweet_set = array();
+
             foreach ($this->feed_options['feed_types_and_terms'] as $feed_type_and_term) {
+				if ( $feed_type_and_term[1] === " -filter:retweets" || empty( $feed_type_and_term[1] ) ) {
+					continue;
+				}
+
                 $api_obj = $this->apiConnectionResponse($feed_type_and_term[0], $feed_type_and_term[1]);
                 $tweet_set_to_merge = json_decode($api_obj->json, $assoc = true);
 
@@ -1068,7 +1078,7 @@ class CtfFeedPro extends CtfFeed {
             if (!isset($working_tweet_set['errors'][0]) && $num_tweets < $this->feed_options['count']) {
 
                 $value = array_values(array_slice($working_tweet_set, -1));
-                $last_tweet_id = $value[0]['id_str'];
+                $last_tweet_id = ! empty( $value[0]['id_str'] ) ? $value[0]['id_str'] : '';
                 if ($last_tweet_id === $this->last_id_data) {
                     array_pop($working_tweet_set);
                 }
@@ -1076,6 +1086,9 @@ class CtfFeedPro extends CtfFeed {
                 $this->feed_options['count'] = 200;
                 //last_id_data
                 foreach ($this->feed_options['feed_types_and_terms'] as $feed_type_and_term) {
+	                if ( $feed_type_and_term[1] === " -filter:retweets" || empty( $feed_type_and_term[1] ) ) {
+		                continue;
+	                }
                     $api_obj = $this->apiConnectionResponse($feed_type_and_term[0], $feed_type_and_term[1]);
                     $tweet_set_to_merge = json_decode($api_obj->json, $assoc = true);
 

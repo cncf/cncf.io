@@ -1,4 +1,4 @@
-<div id="ctf-builder-app" class="ctf-fb-fs ctf-builder-app" :data-app-loaded="appLoaded ? 'true' : 'false'">
+<div id="ctf-builder-app" class="ctf-fb-fs ctf-builder-app" :data-app-loaded="appLoaded ? 'true' : 'false'" :data-disable-pro="shouldDisableProFeatures ? 'true' : 'false'" :class="shouldDisableProFeatures == true && iscustomizerScreen ? 'ctf-builder-app-lite-dismiss' : '' ">
 	<?php
 		$icons = TwitterFeed\Builder\CTF_Feed_Builder::builder_svg_icons();
 		include_once CTF_BUILDER_DIR . 'templates/sections/header.php';

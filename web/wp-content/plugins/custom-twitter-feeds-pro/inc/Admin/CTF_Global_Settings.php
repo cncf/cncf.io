@@ -73,7 +73,7 @@ class CTF_Global_Settings {
 	 * @return CTF_Response
 	 */
 	public function ctf_save_settings() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -201,7 +201,7 @@ class CTF_Global_Settings {
 	 * @return CTF_Response
 	 */
 	public function ctf_activate_license() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -218,13 +218,16 @@ class CTF_Global_Settings {
 		$ctf_license_data = $this->get_license_data( $license_key, 'activate_license', CTF_PRODUCT_NAME );
 
 		// update the license data
-		if( !empty( $ctf_license_data ) ) {
+		if( !empty( $ctf_license_data ) && $ctf_license_data['license'] == 'valid' ) {
 			update_option( 'ctf_license_data', $ctf_license_data );
+			// update the licnese key only when the license status is activated
+			update_option( 'ctf_license_key', $license_key );
+			// update the license status
+			update_option( 'ctf_license_status', $ctf_license_data['license'] );
 		}
-		// update the licnese key only when the license status is activated
-		update_option( 'ctf_license_key', $license_key );
-		// update the license status
-		update_option( 'ctf_license_status', $ctf_license_data['license'] );
+		// make license check_api true so next time it expires it checks again
+		update_option( 'ctf_check_license_api_when_expires', 'true' );
+		update_option( 'ctf_check_license_api_post_grace_period', 'true' );
 
 		// Check if there is any error in the license key then handle it
 		$ctf_license_data = $this->get_license_error_message( $ctf_license_data );
@@ -235,7 +238,10 @@ class CTF_Global_Settings {
 			'licenseStatus' => $ctf_license_data['license'],
 			'licenseData' => $ctf_license_data
 		);
-		new CTF_Response( true, $data );
+		new CTF_Response( 
+			$ctf_license_data['license'] == 'valid' ? true : false, 
+			$data 
+		);
 	}
 
 	/**
@@ -246,7 +252,7 @@ class CTF_Global_Settings {
 	 * @return CTF_Response
 	 */
 	public function ctf_deactivate_license() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -279,7 +285,7 @@ class CTF_Global_Settings {
 	 * @return CTF_Response
 	 */
 	public function ctf_test_connection() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -299,7 +305,6 @@ class CTF_Global_Settings {
 		// Make the remote API request
 		$request = CTF_HTTP_Request::request( 'GET', $url, $args );
 		if ( CTF_HTTP_Request::is_error( $request ) ) {
-			ray($request);
 			new CTF_Response( false, array(
 				'hasError' => true
 			) );
@@ -318,7 +323,7 @@ class CTF_Global_Settings {
 	 * @return CTF_Response
 	 */
 	public function ctf_recheck_connection() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -326,7 +331,7 @@ class CTF_Global_Settings {
 
 		// Do the form validation
 		$license_key = isset( $_POST['license_key'] ) ? sanitize_text_field( $_POST['license_key'] ) : '';
-		$item_name = isset( $_POST['item_name'] ) ? sanitize_text_field( $_POST['item_name'] ) : '';
+		$item_name = isset( $_POST['item_name'] ) ? sanitize_text_field( $_POST['item_name'] ) : CTF_PRODUCT_NAME;
 		$option_name = isset( $_POST['option_name'] ) ? sanitize_text_field( $_POST['option_name'] ) : '';
 		if ( empty( $license_key ) || empty( $item_name ) ) {
 			new CTF_Response( false, array() );
@@ -361,8 +366,11 @@ class CTF_Global_Settings {
 		// if we are updating plugin's license data
 		if ( CTF_PRODUCT_NAME == $item_name ) {
 			// compare the old stored license status with new license status
-			if ( get_option( 'ctf_license_status' ) != $license_data['license'] ) {
+			if ( get_option( 'ctf_license_status' ) != $license_data['license'] && isset( $license_data['license'] ) && $license_data['license'] == 'valid' ) {
 				$license_changed = true;
+				// make license check_api true so next time it expires it checks again
+				update_option( 'ctf_check_license_api_when_expires', 'true' );
+				update_option( 'ctf_check_license_api_post_grace_period', 'true' );
 			}
 			update_option( 'ctf_license_data', $license_data );
 			update_option( 'ctf_license_status', $license_data['license'] );
@@ -371,7 +379,7 @@ class CTF_Global_Settings {
 		// If we are updating extensions license data
 		if ( CTF_PRODUCT_NAME != $item_name ) {
 			// compare the old stored license status with new license status
-			if ( get_option( 'ctf_license_status_' . $option_name ) != $license_data['license'] ) {
+			if ( get_option( 'ctf_license_status_' . $option_name ) != $license_data['license'] && $license_data['license'] == 'valid'  ) {
 				$license_changed = true;
 			}
 			update_option( 'ctf_license_status_' . $option_name, $license_data['license'] );
@@ -393,7 +401,7 @@ class CTF_Global_Settings {
 	 * @return CTF_Response
 	 */
 	public function ctf_import_settings_json() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -461,7 +469,7 @@ class CTF_Global_Settings {
 	 * @since 2.0
 	 */
 	public function ctf_clear_cache_settings() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -525,7 +533,7 @@ class CTF_Global_Settings {
 	 * @since 2.0
 	 */
 	public function ctf_clear_image_resize_cache() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
 		}
@@ -540,7 +548,7 @@ class CTF_Global_Settings {
 	 * @since 2.0
 	 */
 	public function ctf_clear_persistent_cache() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -557,7 +565,7 @@ class CTF_Global_Settings {
 	 * @since 2.0
 	 */
 	public function ctf_clear_twittercard_cache() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -577,7 +585,7 @@ class CTF_Global_Settings {
 	 * @since 2.0
 	 */
 	public function ctf_dpa_reset() {
-		check_ajax_referer( 'ctf_admin_nonce', 'nonce' );
+		check_ajax_referer( 'ctf-admin', 'nonce' );
 
 		if ( ! ctf_current_user_can( 'manage_twitter_feed_options' ) ) {
 			wp_send_json_error(); // This auto-dies.
@@ -776,8 +784,8 @@ class CTF_Global_Settings {
 		);
 
 		$license_key = null;
-		if ( get_option('ctf_license_key') ) {
-			$license_key = get_option('ctf_license_key');
+		if ( ctf_license_handler()->get_license_key ) {
+			$license_key = ctf_license_handler()->get_license_key;
 		}
 
 		$has_license_error = false;
@@ -798,10 +806,12 @@ class CTF_Global_Settings {
 		$ctf_settings = array(
 			'admin_url' 		=> admin_url(),
 			'ajax_handler'		=> admin_url( 'admin-ajax.php' ),
-			'nonce'             => wp_create_nonce( 'ctf_admin_nonce' ),
+			'nonce'             => wp_create_nonce( 'ctf-admin' ),
 			'supportPageUrl'    => admin_url( 'admin.php?page=ctf-support' ),
 			'builderUrl'		=> admin_url( 'admin.php?page=ctf-feed-builder' ),
 			'links'				=> $this->get_links_with_utm(),
+			'ctfLicenseInactiveState' => ctf_license_inactive_state() ? true : false,
+			'ctfLicenseNoticeActive' =>  ctf_license_notice_active() ? true : false,
 			'pluginItemName'	=> CTF_PRODUCT_NAME,
 			'licenseType'		=> 'pro',
 			'licenseKey'		=> $license_key,

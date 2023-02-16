@@ -2,9 +2,9 @@
 Author: Smash Balloon
 Contributors: smashballoon, craig-at-smash-balloon
 Support Website: http://smashballoon/custom-twitter-feeds/
-Tested up to: 6.0
+Tested up to: 6.1
 Requires PHP: 5.6
-Stable tag: 2.0.1
+Stable tag: 2.0.6
 License: Non-distributable, Not for resale
 
 Custom Twitter Feeds Pro allows you to display completely customizable Twitter feeds of your user timeline, home timeline, hashtag, and more on your website.
@@ -41,6 +41,32 @@ If you like the plugin then please consider leaving a [review](https://wordpress
 For simple step-by-step directions on how to set up Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/docs/ 'Custom Twitter Feeds setup guide').
 
 == Changelog ==
+= 2.0.6 =
+* Tweak: API calls are prevented in the event that the Twitter API returns an error.
+* Fix: The feature for using your own Twitter App credentials was not working.
+
+= 2.0.5 =
+* Fix: Home timeline feeds were not working if legacy feeds were not also enabled.
+* Fix: Fixed an issue with our integration with Borlabs GDPR consent plugin to apply changes to the feed only when consent is given.
+
+= 2.0.4 =
+* Fix: Updated our integration with Complianz GDPR consent plugin to apply changes to the feed when consent is given.
+* Fix: In some circumstances GIFs and some images in the feed were being served from Twitter's CDN when GDPR features were active.
+* Fix: User Timeline feeds would not show retweets even when enabled. This is also fixed for the Social Wall integration.
+
+= 2.0.3 =
+* Fix: Feeds showing a single Twitter list of tweets would not work under some circumstances.
+* Fix: Disabling the "author" element in the customizer would not remove the author element from the shortcode feed unless the author avatar was also disabled.
+* Fix: Fixed empty API requests being made in some circumstances.
+* Fix: Fixed multiple PHP warnings that would occur when certain settings were not configured as expected.
+* Fix: When using the masonry layout, the last tweet would not show a dividing line underneath even if the dividing line was enabled in settings.
+* Fix: If a custom date format was entered for a feed, it would be used even if the date format was not set to "custom".
+
+= 2.0.2 =
+* Fix: Browser loading animation would not work on pages with a Twitter Feed.
+* Fix: For GDPR plugins that Custom Twitter Feeds integrates with, other plugins that also integrate with those GDPR plugins would not work properly when Custom Twitter Feeds was active.
+* Fix: Images would not always appear after GDPR consent given.
+
 = 2.0.1 =
 * Fix: Added more workarounds for encoding issues in Twitter Cards.
 * Fix: Fixed the default date format showing differently in the customizer than it did on the front-end.

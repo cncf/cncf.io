@@ -98,7 +98,12 @@ var settings_data = {
         connectAccountStep : 'step_1',
         accountDetailsActive : false,
         appDetailsActive : false,
+        whyRenewLicense : false,
+        licenseLearnMore : false,
     },
+    ctfLicenseNoticeActive: (ctf_settings.ctfLicenseNoticeActive === '1'),
+    ctfLicenseInactiveState: (ctf_settings.ctfLicenseInactiveState === '1'),
+    licenseBtnClicked : false,
     //Add New Source
     newSourceData        : ctf_settings.newSourceData ? ctf_settings.newSourceData : null,
     sourceConnectionURLs : ctf_settings.sourceConnectionURLs,
@@ -123,12 +128,6 @@ var settings_data = {
     previewLoaded : false,
     loadingBar : true,
     loadingAjax : false,
-
-    notificationElement : {
-        type : 'success', // success, error, warning, message
-        text : '',
-        shown : null
-    }
 };
 
 // The tab component
@@ -229,6 +228,15 @@ var ctfSettings = new Vue({
             this.hasError = false;
             this.loading = true;
             this.pressedBtnName = 'ctf';
+            this.licenseBtnClicked = true;
+
+            if ( !this.licenseKey ) {
+                this.licenseBtnClicked = false;
+                this.processNotification("licenseKeyEmpty");
+                this.loading = false;
+                this.hasError = false;
+                return;
+            }
 
             let data = new FormData();
             data.append( 'action', 'ctf_activate_license' );
@@ -241,13 +249,16 @@ var ctfSettings = new Vue({
             })
             .then(response => response.json())
             .then(data => {
+                this.licenseBtnClicked = false;
                 if ( data.success == false ) {
+					this.processNotification("licenseError");
                     this.licenseStatus = 'inactive';
                     this.hasError = true;
                     this.loading = false;
                     return;
                 }
                 if ( data.success == true ) {
+					this.processNotification("licenseActivated");
                     let licenseData = data.data.licenseData;
                     this.licenseStatus = data.data.licenseStatus;
                     this.loading = false;
@@ -1155,6 +1166,26 @@ var ctfSettings = new Vue({
                 });
             }
         },
+
+
+		/**
+		 * Loading Bar & Notification
+		 *
+		 * @since 4.0
+		 */
+         processNotification : function( notificationType ){
+			var self = this,
+				notification = self.genericText.notification[ notificationType ];
+			self.loadingBar = false;
+			self.notificationElement =  {
+				type : notification.type,
+				text : notification.text,
+				shown : "shown"
+			};
+			setTimeout(function(){
+				self.notificationElement.shown =  "hidden";
+			}, 5000);
+		},
 
     }
 });

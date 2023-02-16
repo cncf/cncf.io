@@ -717,7 +717,7 @@ class CTF_Feed_Saver_Manager {
 	 * @since 2.0
 	*/
 	public static function delete_account(){
-		if ( ! check_ajax_referer( 'ctf_admin_nonce', 'nonce', false ) && ! check_ajax_referer( 'ctf-admin', 'nonce', false ) ) {
+		if ( ! check_ajax_referer( 'ctf-admin', 'nonce', false ) && ! check_ajax_referer( 'ctf-admin', 'nonce', false ) ) {
 			wp_send_json_error();
 		}
 		$cap = current_user_can( 'manage_twitter_feed_options' ) ? 'manage_twitter_feed_options' : 'manage_options';
@@ -757,7 +757,7 @@ class CTF_Feed_Saver_Manager {
 	 * @since 2.0
 	*/
 	public static function connect_manual_account() {
-		if ( ! check_ajax_referer( 'ctf_admin_nonce', 'nonce', false ) && ! check_ajax_referer( 'ctf-admin', 'nonce', false ) ) {
+		if ( ! check_ajax_referer( 'ctf-admin', 'nonce', false ) && ! check_ajax_referer( 'ctf-admin', 'nonce', false ) ) {
 			wp_send_json_error();
 		}
 
@@ -1001,7 +1001,7 @@ class CTF_Feed_Saver_Manager {
 	 * @since 2.0
 	*/
 	public static function activate_social_wall() {
-		if ( ! check_ajax_referer( 'ctf_admin_nonce', 'nonce', false ) && ! check_ajax_referer( 'ctf-admin', 'nonce', false ) ) {
+		if ( ! check_ajax_referer( 'ctf-admin', 'nonce', false ) && ! check_ajax_referer( 'ctf-admin', 'nonce', false ) ) {
 			wp_send_json_error();
 		}
 

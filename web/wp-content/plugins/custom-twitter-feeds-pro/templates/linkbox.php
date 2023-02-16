@@ -8,6 +8,8 @@
  */
 use TwitterFeed\Pro\CTF_Parse_Pro;
 use TwitterFeed\Pro\CTF_Display_Elements_Pro;
+use TwitterFeed\CTF_GDPR_Integrations;
+
 // Don't load directly
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
@@ -26,7 +28,7 @@ $quoted_screen_name = CTF_Parse_Pro::get_quoted_screen_name( $quoted );
 $quoted_text = apply_filters( 'ctf_quoted_tweet_text', $quoted['text'], $feed_options, $quoted );
 
 $linkbox_attr = CTF_Display_Elements_Pro::get_element_attribute( 'linkbox', $feed_options );
-
+$poster = CTF_GDPR_Integrations::doing_gdpr( $dbsettings ) ? trailingslashit( CTF_PLUGIN_URL ) . 'img/placeholder.png' : $ctf_lightbox_image;
 
 if ( $quoted_media && ( $quoted_media[0]['type'] == 'video' || $quoted_media[0]['type'] == 'animated_gif') ) :
 ?>
@@ -43,10 +45,13 @@ if ( $quoted_media && ( $quoted_media[0]['type'] == 'video' || $quoted_media[0][
         <?php endif; ?>
             <?php echo ctf_get_fa_el( 'ctf_playbtn' ); ?>
 
-            <?php if( $disablelightbox || $medium['type'] == 'animated_gif' ) : ?>
-                <video <?php echo esc_attr( $medium['video_atts'] ) ?> src="<?php echo esc_url( $medium['url'] ) ?>" type="video/mp4" poster="<?php echo esc_url( $ctf_lightbox_image ) ?>">
+            <?php if( $disablelightbox || $medium['type'] == 'animated_gif' ) :
+			$medium_url_gdpr = CTF_GDPR_Integrations::doing_gdpr( $dbsettings ) ? '' : $medium['url'];
+
+			?>
+                <video <?php echo esc_attr( $medium['video_atts'] ) ?> src="<?php echo esc_url( $medium_url_gdpr ) ?>" data-src="<?php echo esc_url( $medium['url'] ) ?>" type="video/mp4" poster="<?php echo esc_url( $poster ) ?>">
             <?php endif; ?>
-                    <img src="<?php echo esc_url( $ctf_lightbox_image ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>" />
+                    <img src="<?php echo esc_url( $poster ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>" />
             <?php if( $disablelightbox || $medium['type'] == 'animated_gif' ) : ?>
                 </video>
                 <span class="ctf-screenreader"><?php esc_html_e( 'Twitter feed video.', 'custom-twitter-feeds' ); ?></span>
@@ -78,7 +83,7 @@ if ( $quoted_media && ( $quoted_media[0]['type'] == 'video' || $quoted_media[0][
                 isset($medium['poster']) ? $ctf_lightbox_image = $medium['poster'] : $ctf_lightbox_image = $medium['url'];
                 isset($post['text']) ? $ctf_alt_text = htmlspecialchars($post['text']) : $ctf_alt_text = 'View on Twitter';
             ?>
-                <div class="ctf-tc-image" data-bg="<?php echo esc_url( $ctf_lightbox_image ) ?>"><img src="<?php echo esc_url( $ctf_lightbox_image ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>"></div>
+                <div class="ctf-tc-image" data-bg="<?php echo esc_url( $ctf_lightbox_image ) ?>"><img src="<?php echo esc_url( $poster ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>"></div>
             <?php endforeach;// end foreach ?>
         </div>
 

@@ -9,9 +9,13 @@
         <div>
             <div class="ctf-fb-extpp-top ctf-fb-fs">
                 <div class="ctf-fb-extpp-info">
+                    <div class="ctf-extpp-license-notice ctf-fb-fs" v-if="ctfLicenseNoticeActive">
+                        <span v-html="genericText.licenseInactive" v-if="ctfLicenseInactiveState"></span>
+                        <span v-html="genericText.licenseExpired"  v-if="!ctfLicenseInactiveState"></span>
+                    </div>
                     <div class="ctf-fb-extpp-head ctf-fb-fs"><h2 v-html="extensionsPopup[viewsActive.extensionsPopupElement].heading"></h2></div>
                     <div class="ctf-fb-extpp-desc ctf-fb-fs sb-caption" v-html="extensionsPopup[viewsActive.extensionsPopupElement].description"></div>
-                    <div v-if="extensionsPopup[viewsActive.extensionsPopupElement].popupContentBtn" v-html="extensionsPopup[viewsActive.extensionsPopupElement].popupContentBtn"></div>
+                    <div v-if="extensionsPopup[viewsActive.extensionsPopupElement].popupContentBtn && !ctfLicenseNoticeActive" v-html="extensionsPopup[viewsActive.extensionsPopupElement].popupContentBtn"></div>
                 </div>
                 <div class="ctf-fb-extpp-img" v-html="extensionsPopup[viewsActive.extensionsPopupElement].img">
                 </div>
@@ -30,7 +34,9 @@
                 </div>
                 <div class="ctf-fb-extpp-btns ctf-fb-fs">
 
-                    <a class="ctf-fb-extpp-get-btn ctf-btn-orange" v-if="viewsActive.extensionsPopupElement !== 'socialwall'" :href="extensionsPopup[viewsActive.extensionsPopupElement].buyUrl" target="_blank" class="ctf-fb-fs-link">{{genericText.upgrade}}</a>
+                    <a class="ctf-fb-extpp-get-btn ctf-btn-orange" v-if="viewsActive.extensionsPopupElement !== 'socialwall'" :href="extensionsPopup[viewsActive.extensionsPopupElement].buyUrl" target="_blank" class="ctf-fb-fs-link">
+                        {{ ctfLicenseInactiveState ? genericText.activateLicense : ctfLicenseNoticeActive ? genericText.renew : genericText.upgrade}}
+                    </a>
                     <a class="ctf-fb-extpp-get-btn" :class="'ctf-btn-'+socialWallLinkOutput('color')"
                         v-if="viewsActive.extensionsPopupElement === 'socialwall'"
                         @click.prevent.default="socialWallLinkClick"

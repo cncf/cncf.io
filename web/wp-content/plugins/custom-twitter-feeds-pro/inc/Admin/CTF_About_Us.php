@@ -171,6 +171,11 @@ class CTF_About_Us {
             $is_youtube_installed = true;
         }
 
+        $license_key = null;
+		if ( ctf_license_handler()->get_license_key ) {
+			$license_key = ctf_license_handler()->get_license_key;
+		}
+
         $return = array(
 			'admin_url' 		=> admin_url(),
             'supportPageUrl'    => admin_url( 'admin.php?page=ctf-support' ),
@@ -179,12 +184,33 @@ class CTF_About_Us {
 			'nonce'		        =>  wp_create_nonce( 'ctf-admin' ),
 			'socialWallLinks'   => \TwitterFeed\Builder\CTF_Feed_Builder::get_social_wall_links(),
 			'socialWallActivated' => is_plugin_active( 'social-wall/social-wall.php' ),
+			'licenseKey'		=> $license_key,
+			'ctfLicenseInactiveState' => ctf_license_inactive_state() ? true : false,
+			'ctfLicenseNoticeActive' =>  ctf_license_notice_active() ? true : false,
+			'svgIcons' => \TwitterFeed\Builder\CTF_Feed_Builder::builder_svg_icons(),
 			'genericText'       => array(
 				'help' => __( 'Help', 'custom-twitter-feeds' ),
 				'title' => __( 'About Us', 'custom-twitter-feeds' ),
 				'title2' => __( 'Our Other Social Media Feed Plugins', 'custom-twitter-feeds' ),
 				'title3' => __( 'Plugins we recommend', 'custom-twitter-feeds' ),
 				'description2' => __( 'We’re more than just an Instagram plugin! Check out our other plugins and add more content to your site.', 'custom-twitter-feeds' ),
+				'recheckLicense' => __( 'Recheck license', 'custom-twitter-feeds' ),
+				'licenseValid' => __( 'License valid', 'custom-twitter-feeds' ),
+				'licenseExpired' => __( 'License expired', 'custom-twitter-feeds' ),
+                'notification' => array(
+                    'licenseActivated'   => array(
+                        'type' => 'success',
+                        'text' => __( 'License Successfully Activated', 'custom-twitter-feeds' ),
+                    ),
+                    'licenseError'   => array(
+                        'type' => 'error',
+                        'text' => __( 'Couldn\'t Activate License', 'custom-twitter-feeds' ),
+                    ),
+                    'licenseKeyEmpty'   => array(
+                        'type' => 'error',
+                        'text' => __( 'Please enter a license key', 'custom-twitter-feeds' ),
+                    ),
+                )
             ),
             'aboutBox'      => array(
                 'atSmashBalloon' => __( 'At Smash Balloon, we build software that helps you create beautiful responsive social media feeds for your website in minutes.', 'custom-twitter-feeds' ),
