@@ -17,16 +17,19 @@ CNCF.io infrastructure builds in a similar way to [LFEvents](https://github.com/
 * Get a GitHub [personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) to use in place of a password for performing Git operations over HTTPS.
 
 ### Lando Setup
+
 (these steps were derived from [instructions provided by Pantheon](https://github.com/pantheon-systems/example-wordpress-composer#working-locally-with-lando))
 
 1. Clone this repository with HTTPS (not SSH): `git clone https://github.com/cncf/cncf.io.git`
-  * Note that the repo does not contain all of WordPress, 3rd-party themes and plugins. They will be pulled in via [composer](https://getcomposer.org/) in step 4.
+
+* Note that the repo does not contain all of WordPress, 3rd-party themes and plugins. They will be pulled in via [composer](https://getcomposer.org/) in step 4.
 
 2. Run `lando init` and use the following values when prompted:
-  * `From where should we get your app's codebase?` > `current working directory`
-  * `What recipe do you want to use?` > `pantheon`
-  * `Enter a Pantheon machine token` > `[enter the Pantheon token you got above]`
-  * `Which site?` > `cncfci`
+
+* `From where should we get your app's codebase?` > `current working directory`
+* `What recipe do you want to use?` > `pantheon`
+* `Enter a Pantheon machine token` > `[enter the Pantheon token you got above]`
+* `Which site?` > `cncfci`
 
 3. Open the .lando.yml file and add the following to the file.
 
@@ -95,8 +98,9 @@ services:
 5. Run `lando composer install --no-ansi --no-interaction --optimize-autoloader --no-progress` to download dependencies
 
 6. Run `lando pull --code=none` and follow the prompts to download the media files and database from Pantheon:
-  * `Pull database from?` >  `dev`
-  * `Pull files from?` >  `dev`
+
+* `Pull database from?` >  `dev`
+* `Pull files from?` >  `dev`
 
   (Note: The files could be over 10Gb in size. It may be better to select 'none' and then load the images from the remote server.)
 
@@ -150,6 +154,7 @@ To access  phpcs or phpcbf on the command line to run your own commands, you can
 ```
 lando phpcs -i
 ```
+
 -----
 
 ## Upgrading WordPress core, themes and plugins
