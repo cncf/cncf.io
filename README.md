@@ -1,10 +1,12 @@
 [![CircleCI](https://circleci.com/gh/cncf/cncf.io.svg?style=svg)](https://circleci.com/gh/cncf/cncf.io)
 
+# Contributing to CNCF.io
+
+Everyone is welcome to contribute to this project. We've created a document that describes guidelines for [contributing to the CNCF.io git repository](/CONTRIBUTING.md).
+
 # CNCF.io Developer Instructions
 
-CNCF.io infrastructure builds in a similar way to [LFEvents](https://github.com/LF-Engineering/lfevents).
-
------
+These instructions are based on you having access to the CNCF.io Pantheon account (and the CNCF.io WordPress database).
 
 ## Install Local Instance
 
@@ -109,7 +111,7 @@ services:
 
 9. In the admin you will need to edit the [Search & Filter](https://cncfci.lndo.site/wp/wp-admin/edit.php?post_type=search-filter-widget) settings.  The full url to the result pages are hardcoded in the "Display Results" of each filter.  These will need to be set to the correpsonding local instance url.
 
-10. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you having to keep bypassing the privacy warning in your browser.  On MacOS Catalina, I also had to manually go into Keychain Access and set the *.lndo.site certificate to “Always Trust”. See [screenshot](/docs/ca-screenshot.png).
+10. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you having to keep bypassing the privacy warning in your browser.  On MacOS, you may also need to manually go into Keychain Access and set the ```*.lndo.site``` certificate to “Always Trust”. See [screenshot](/ca-screenshot.png).
 
 ### Notes
 
@@ -154,7 +156,7 @@ lando phpcs -i
 
 ## Upgrading WordPress core, themes and plugins
 
-The dependencies of this project are managed by [Composer](https://getcomposer.org/). All dependencies of the project are set in [composer.json](https://github.com/cncf/cncf.io/blob/master/composer.json) and are pulled in at deploy time according to what is set in [composer.lock](https://github.com/cncf/cncf.io/blob/master/composer.lock).
+The dependencies of this project are managed by [Composer](https://getcomposer.org/). All dependencies of the project are set in [composer.json](https://github.com/cncf/cncf.io/blob/main/composer.json) and are pulled in at deploy time according to what is set in [composer.lock](https://github.com/cncf/cncf.io/blob/main/composer.lock).
 
 composer.lock is generated from composer.json only when explicitly calling the `lando composer update` function. Any additional themes or plugins can be added first to composer.json and then `lando composer update` is run to update composer.lock and pull in the new files.  Dependencies are pegged to a version according to the composer [versioning rules](https://getcomposer.org/doc/articles/versions.md).
 
