@@ -36,6 +36,31 @@ if ( is_admin() ) {
 	$admin = new CtfAdmin();
 }
 
+function ctf_should_disable_pro() {
+    return ctf_license_handler()->should_disable_pro_features;
+}
+
+function ctf_license_inactive_state() {
+    return empty( ctf_license_handler()->get_license_key );
+}
+
+function ctf_license_notice_active() {
+    return empty( ctf_license_handler()->get_license_key ) || ctf_license_handler()->expiredLicenseWithGracePeriodEnded;
+}
+
+/**
+ * Check the user access permission capability 
+ * 
+ * @since 2.0.3
+ * 
+ * @return $cap string
+ */
+function ctf_capablity_check() {
+	$cap = current_user_can( 'manage_twitter_feed_options' ) ? 'manage_twitter_feed_options' : 'manage_options';
+	$cap = apply_filters( 'ctf_settings_pages_capability', $cap );
+	return $cap;
+}
+
 /**
  * May include support for templates in theme folders in the future
  *
@@ -156,6 +181,8 @@ function ctf_init( $atts, $preview_settings = false ) {
 		if ( ! $twitter_feed->tweet_set || $twitter_feed->missing_credentials || ! isset( $twitter_feed->tweet_set[0]['created_at'] ) ) {
 			if ( ! empty( $twitter_feed->tweet_set['errors'] ) ) {
 				$twitter_feed->maybeCacheTweets();
+			} else {
+				$twitter_feed->maybeCacheTweets(true);
 			}
 			return $twitter_feed->getErrorHtml();
 		} else {
@@ -422,9 +449,13 @@ function ctf_get_formatted_date( $raw_date, $feed_options, $utc_offset ) {
 		$utc_offset = $date_obj->getOffset();
 	}
 	$tz_offset_timestamp = $date_obj->getTimestamp() + $utc_offset;
+	$use_custom = ! empty( $feed_options['datecustom'] );
+	if ( ! empty( $feed_options['feed'] ) && intval( $feed_options['feed'] ) > 0 ) {
+		$use_custom = ! empty( $feed_options['datecustom'] ) && $feed_options['dateformat'] === 'custom';
+	}
 
 	// use the custom date format if set, otherwise use from the selected defaults
-	if ( ! empty( $feed_options['datecustom'] ) ) {
+	if ( $use_custom ) {
 		$date_str = date_i18n( $feed_options['datecustom'], $tz_offset_timestamp );
 	} else {
 

@@ -1,4 +1,5 @@
 <div class="ctf-fb-full-wrapper ctf-fb-fs">
+    <div class="ctf-sb-container">
     <?php
         /**
          * SBI Admin Notices
@@ -7,7 +8,6 @@
          */
         do_action('ctf_admin_notices');
     ?>
-    <div class="ctf-sb-container">
         <div class="ctf-section-header">
             <h2>{{genericText.title}}</h2>
             <div class="ctf-search-doc">

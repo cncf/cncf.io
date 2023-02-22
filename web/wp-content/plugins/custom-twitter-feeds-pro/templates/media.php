@@ -35,7 +35,11 @@ foreach ( $media as $medium ) : ?>
     $medium_type = CTF_Parse_Pro::get_medium_type( $medium );
     $medium_video_atts = CTF_Parse_Pro::get_medium_video_atts( $medium );
     $medium_url = CTF_Parse_Pro::get_medium_url( $medium );
-    ?>
+
+	$poster = CTF_GDPR_Integrations::doing_gdpr( $dbsettings ) ? trailingslashit( CTF_PLUGIN_URL ) . 'img/placeholder.png' : $ctf_lightbox_image;
+	$img_gdpr_source = CTF_GDPR_Integrations::doing_gdpr( $dbsettings ) ? trailingslashit( CTF_PLUGIN_URL ) . 'img/placeholder.png' : $img_source;
+	$medium_url_gdpr = CTF_GDPR_Integrations::doing_gdpr( $dbsettings ) ? '' : $medium_url;
+	?>
 
     <?php if ( $medium_type === 'iframe' ) : ?>
         <div class="ctf-<?php echo esc_attr( $medium_type ); ?>-wrap<?php echo esc_attr( $wrap_classes ); ?>">
@@ -51,9 +55,11 @@ foreach ( $media as $medium ) : ?>
                 <?php if ( $medium_type == 'video' || $medium_type == 'animated_gif' ) : ?>
 
                 <?php if( $disablelightbox || $medium_type == 'animated_gif' ) : ?>
-                <video <?php echo esc_attr( $medium_video_atts ) ?> src="<?php echo esc_url( $medium_url ) ?>" type="video/mp4" poster="<?php echo esc_url( $ctf_lightbox_image ) ?>">
-                    <img src="<?php echo esc_url( $img_source ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>" />
-                </video>
+
+					<video <?php echo esc_attr( $medium_video_atts ) ?> src="<?php echo esc_url( $medium_url_gdpr ) ?>" data-src="<?php echo esc_url( $medium_url ) ?>" type="video/mp4" poster="<?php echo esc_url( $poster ) ?>">
+						<img src="<?php echo esc_url( $img_source ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>" />
+					</video>
+
                 <?php else: ?>
                     <img src="<?php echo esc_url( $img_source ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>" />
                 <?php endif; ?>
@@ -65,7 +71,7 @@ foreach ( $media as $medium ) : ?>
                     <iframe src="<?php echo esc_url( $medium_url ) ?>" type="text/html" allowfullscreen frameborder="0" title="<?php esc_attr_e( 'Twitter Feed Media', 'custom-twitter-feeds' ); ?>" webkitAllowFullScreen mozallowfullscreen></iframe>
 			        <?php endif; ?>
                 <?php else : ?>
-                    <img src="<?php echo esc_url( $img_source ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>" <?php echo $media_element_atts; ?> data-full-image="<?php echo esc_url( $medium_url ) ?>">
+                    <img src="<?php echo esc_url( $img_gdpr_source ) ?>" alt="<?php echo esc_attr( $ctf_alt_text ) ?>" <?php echo $media_element_atts; ?> data-full-image="<?php echo esc_url( $medium_url ) ?>">
                 <?php endif; ?>
 
                 <?php echo CTF_Display_Elements_Pro::media_screenreader_text( $medium ); ?>

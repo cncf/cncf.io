@@ -337,12 +337,14 @@ TOOLS
 	}
 	&__wrapper {
 		display: flex;
+		gap: 20px;
 		> a {
 			display: block;
 			text-align: center;
-			margin-right: 20px;
 		}
-
+		a:not(:last-child) {
+			margin-right: 0;
+		}
 		svg {
 			color: #ffffff;
 			display: block;
@@ -360,8 +362,8 @@ TOOLS
 }
 
 /**
-	SPACERS
-	**/
+SPACERS
+**/
 
 .report-spacer-20 {
 	height: 20px;
@@ -427,6 +429,13 @@ TOOLS
 	row-gap: 50px;
 }
 
+.restrictive-7-col {
+	grid-column: span 12;
+	@media (min-width: 600px) {
+		grid-column: span 7;
+	}
+}
+
 .restrictive-8-col {
 	grid-column: span 12;
 	@media (min-width: 600px) {
@@ -453,4 +462,8 @@ TOOLS
 	@media (min-width: 600px) {
 		grid-column: span 11;
 	}
+}
+
+.fit-content {
+	max-width: fit-content;
 }

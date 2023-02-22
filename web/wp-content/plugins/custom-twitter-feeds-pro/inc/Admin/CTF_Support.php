@@ -143,6 +143,11 @@ class CTF_Support {
             );
         }
 
+        $license_key = null;
+		if ( ctf_license_handler()->get_license_key ) {
+			$license_key = ctf_license_handler()->get_license_key;
+		}
+
         $return = array(
             'admin_url'         => admin_url(),
             'ajax_handler'      => admin_url( 'admin-ajax.php' ),
@@ -157,6 +162,9 @@ class CTF_Support {
             'svgIcons'          => CTF_Feed_Builder::builder_svg_icons(),
             'socialWallLinks'   => \TwitterFeed\Builder\CTF_Feed_Builder::get_social_wall_links(),
             'socialWallActivated' => is_plugin_active( 'social-wall/social-wall.php' ),
+			'licenseKey'		=> $license_key,
+			'ctfLicenseInactiveState' => ctf_license_inactive_state() ? true : false,
+			'ctfLicenseNoticeActive' =>  ctf_license_notice_active() ? true : false,
             'genericText'       => array(
                 'help' => __( 'Help', 'custom-twitter-feeds' ),
                 'title' => __( 'Support', 'custom-twitter-feeds' ),
@@ -172,6 +180,23 @@ class CTF_Support {
                 'exportSettings' => __( 'Export Settings', 'custom-twitter-feeds' ),
                 'shareYour' => __( 'Share your plugin settings easily with Support', 'custom-twitter-feeds' ),
                 'copiedToClipboard' => __( 'Copied to clipboard', 'custom-twitter-feeds' ),
+				'recheckLicense' => __( 'Recheck license', 'custom-twitter-feeds' ),
+				'licenseValid' => __( 'License valid', 'custom-twitter-feeds' ),
+				'licenseExpired' => __( 'License expired', 'custom-twitter-feeds' ),
+                'notification' => array(
+                    'licenseActivated'   => array(
+                        'type' => 'success',
+                        'text' => __( 'License Successfully Activated', 'custom-twitter-feeds' ),
+                    ),
+                    'licenseError'   => array(
+                        'type' => 'error',
+                        'text' => __( 'Couldn\'t Activate License', 'custom-twitter-feeds' ),
+                    ),
+                    'licenseKeyEmpty'   => array(
+                        'type' => 'error',
+                        'text' => __( 'Please enter a license key', 'custom-twitter-feeds' ),
+                    ),
+                )
             ),
             'buttons'          => array(
                 'searchDoc' => __( 'Search Documentation', 'custom-twitter-feeds' ),

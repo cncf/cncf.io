@@ -33,7 +33,6 @@
     "wpackagist-plugin/redirection": "^5",
     "wpackagist-plugin/safe-svg": "*",
     "wpackagist-plugin/shortpixel-image-optimiser": "*",
-    "wpackagist-plugin/simple-history":"^3.3.1",
     "wpackagist-plugin/svg-autocrop": "^0.1.0",
     "wpackagist-plugin/wp-mail-smtp": "^3.0.3",
     "wpackagist-plugin/leadin":"*",

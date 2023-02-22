@@ -205,7 +205,7 @@ Buttons
     letter-spacing: 0;
 }
 
-#ctf-builder-app h4:not(#sb_instagram h5) {
+#ctf-builder-app h4 {
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -418,7 +418,7 @@ Social Links
     outline: none;
 }
 #wpcontent,
-.facebook-feed_page_ctf-feed-builder #wpcontent{
+.twitter-feed_page_ctf-feed-builder #wpcontent{
     padding-left: 0px;
 }
 #wpfooter{
@@ -1035,7 +1035,6 @@ Welcome Screen Empty State
     background: #f3f4f5;
     border: 3px solid #f3f4f5;
     border-right: 1px solid #fff;
-    margin-right: 30px;
 }
 .ctf-fb-type-el[data-active="true"] .ctf-fb-type-el-img{
     border: 1px solid #F1F1F1;
@@ -1047,19 +1046,41 @@ Welcome Screen Empty State
 .ctf-fb-adv-types .ctf-fb-type-el-img{
     background: #FCF4EF;
 }
-.ctf-fb-type-el-info{
+.ctf-fb-type-el-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     flex: 1 1 auto;
-    padding: 0 20px;
-    padding-right: 50px;
+    padding: 0px 20px 0 40px;
+    height: 100%;
+    justify-content: center;
+}
+[data-disable-pro="true"] .ctf-fb-types-list .ctf-fb-type-el[data-type="search"],
+[data-disable-pro="true"] .ctf-fb-types-list .ctf-fb-type-el[data-type="mentionstimeline"],
+[data-disable-pro="true"] .ctf-fb-types-list .ctf-fb-type-el[data-type="lists"],
+[data-disable-pro="true"] .ctf-fb-types-list .ctf-fb-type-el[data-type="socialwall"] {
+    background: #d8d9dc;
+    opacity: .8;
 }
 .ctf-fb-type-el-link{
     font-size: 13px;
     font-weight: 400;
     margin-bottom: 5px;
+}
+.sb-breadcrumb-pro-label {
+    color: #fff !important;
+    display: inline-block;
+    background: var(--cl-orange);
+    padding: 5px 8px;
+    font-size: 11px;
+    line-height: 1em !important;
+    border-radius: 4px;
+    -webkit-transform: translateX(5px) translateY(-4px);
+    transform: translateX(8px) translateY(-2px);
+}
+.sb-control-elem-description a {
+    cursor: pointer;
 }
 .ctf-fb-type-el-info .sb-caption{
     font-size: 13px!important;
@@ -1974,8 +1995,22 @@ Source Screen
     bottom: 0;
     z-index: 1;
 }
-.ctf-fb-extensions-popup{
-
+.ctf-fb-extpp-info .ctf-extpp-license-notice {
+    margin-bottom: 7px;
+}
+.ctf-fb-extpp-info .ctf-fb-extpp-head{
+    margin-bottom: 8px;
+}
+.ctf-fb-extpp-info .ctf-extpp-license-notice span {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #D72C2C;
+    border-radius: 2px;
+    padding: 2px 5px;
 }
 .ctf-fb-extpp-top{
     display: flex;
@@ -3025,7 +3060,7 @@ Controls Style
 	position: absolute!important;
 	left: 0!important;
 	top: 0!important;
-	z-index: 3!important;
+	z-index: 9!important;
     background: rgba(255,255,255,0.4)!important;
 }
 #ctf-builder-app .sb-control-elem-ctn[data-type="heading"] .sb-small-p{
@@ -5472,4 +5507,227 @@ color: #fff!important;
 }
 [data-preview-device="mobile"] [data-header-size="small"] .ctf-header-type-text{
     font-size: 28px!important;
+}
+
+/* Expired License Why Renew Popup */
+.ctf-license-why-renew .ctf-license-popup {
+    width: 1166px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.ctf-license-why-renew .ctf-license-popup .sb-llm-header p {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 160%;
+	color: #434960;
+	margin-top: 0;
+}
+.ctf-license-why-renew .ctf-license-popup .sb-why-renew-list-parent {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.ctf-license-why-renew .ctf-license-popup .sb-why-renew-list {
+    width: calc((100% / 2) - 0px);
+    box-sizing: border-box;
+    padding-left: 50px;
+    position: relative;
+    margin-bottom: 49px;
+    padding-right: 40px;
+}
+.ctf-license-why-renew .sb-why-renew-list .sb-icon {
+    position: absolute;
+    left: 0px;
+}
+#ctf-builder-app .ctf-license-why-renew .sb-why-renew-list .sb-list-item h4{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: #141B38;
+    margin: 0px;
+    text-align: left;
+}
+#ctf-builder-app .ctf-license-why-renew .sb-why-renew-list .sb-list-item p {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 3px 0 0;
+    text-align: left;
+    color: #676c80;
+}
+#ctf-builder-app .ctf-license-why-renew .sb-why-renew-list .sb-list-item h4 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: #141B38;
+    margin: 0px;
+    text-align: left;
+}
+/* End Expired License Why Renew Popup */
+
+/* Learn More Modal for License DRM */
+.ctf-license-learn-more {
+    backdrop-filter: blur(2px);
+}
+.ctf-license-learn-more .ctf-license-popup {
+	border-top: 5px solid #D72C2C;
+	width: 1166px;
+	padding: 55px 50px;
+	box-sizing: border-box;
+	background-color: #fff;
+	position: relative;
+}
+.ctf-license-learn-more .ctf-license-popup .sb-llm-header h2 {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 125%;
+	margin: 2px 0px;
+}
+.ctf-license-learn-more .ctf-license-popup .sb-llm-header p {
+	font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    margin-top: 8px;
+}
+.ctf-license-learn-more .ctf-license-popup .sb-llm-upgrade-benefits {
+	display: flex;
+	gap: 10px;
+	margin-top: 22px;
+}
+.ctf-license-learn-more .ctf-license-popup .sb-llm-upgrade-benefits .sb-benefits-block {
+	padding: 16px 24px 20px 70px;
+	border: 1px solid #E8E8EB;
+	border-radius: 8px;
+	position: relative;
+}
+.ctf-license-learn-more .ctf-license-popup .sb-llm-upgrade-benefits .sb-benefits-block h4 {
+	font-size: 14px !important;
+	line-height: 160% !important;
+	margin: 4px 0 !important;
+}
+.ctf-license-learn-more .ctf-license-popup .sb-llm-upgrade-benefits .sb-benefits-block .sb-icon {
+	position: absolute;
+	left: 19px;
+}
+.ctf-license-learn-more .ctf-license-popup .sb-llm-upgrade-benefits .sb-benefits-block p {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 160%;
+    color: #434960;
+    margin-top: 0px;
+}
+.ctf-license-learn-more .sb-llm-license-key-block .sb-license-checker-form {
+	background: #F9F9FA;
+	border-bottom: 1px solid #DCDDE1;
+	border-radius: 6px;
+	padding: 33px 32px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+}
+.ctf-license-learn-more .sb-llm-license-key-block .sb-license-checker-form h3 {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 120%;
+	margin: 0px;
+}
+.ctf-license-learn-more .sb-llm-license-key-block .sb-license-checker-form p {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 160%;
+	color: #434960;
+	margin-top: 0;
+}
+.ctf-license-learn-more .sb-license-checker-form .sb-input {
+	padding: 9px 16px;
+	width: 483px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 1px solid #D0D1D7;
+	border-radius: 1px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 160%;
+	color: #8C8F9A;
+}
+.ctf-license-learn-more .sb-license-checker-form .sb-modal-license-key-form{
+	display: flex;
+}
+.ctf-license-learn-more .sb-license-checker-form .sb-input::placeholder {
+	color: #8C8F9A;
+}
+.ctf-license-learn-more .sb-license-checker-form .sb-btn-license-activate {
+    background: #0068A0;
+    border-radius: 2px;
+    padding: 11px 24px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 160%;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+}
+.ctf-license-learn-more .sb-license-checker-form .sb-btn-license-activate span {
+	margin-right: 4px;
+	height: 20px;
+	display: inline;
+}
+.ctf-license-learn-more .sb-llm-license-key-block {
+	background: #FFFFFF;
+	border: 1px solid #DCDDE1;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), 0px 4px 5px rgba(0, 0, 0, 0.05);
+	border-radius: 6px;
+	margin-top: 15px;
+}
+.ctf-license-learn-more .sb-llm-lk-footer {
+	text-align: center;
+}
+.ctf-license-learn-more .sb-llm-lk-footer p {
+	margin: 0px;
+	font-size: 14px;
+	line-height: 160%;
+	color: #141B38;
+	padding: 6px 0;
+}
+.ctf-license-learn-more .sb-llm-lk-footer a {
+	font-weight: 600;
+	color: #0068A0;
+	margin-left: 12px;
+	text-decoration: none;
+}
+.ctf-license-learn-more .sb-llm-lk-footer a:focus {
+	outline: none;
+}
+/* End Learn More Modal for License DRM */
+.ctf-builder-app-lite-dismiss #ctf-license-expired-agp {
+    position: fixed!important;
+    top: 32px;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+}
+.ctf-builder-app-lite-dismiss .ctf-fb-header {
+    top: 64px;
+}
+.ctf-builder-app-lite-dismiss .sb-customizer-sidebar {
+    top: 128px;
+}
+.ctf-builder-app-lite-dismiss .sb-customizer-preview {
+    margin-top: 100px;
+}
+.sb-control-elem-ctn[data-disabled="true"] .sb-control-checkbox {
+    background: #D0D1D7!important;
+    border-color: #c1c1c1!important;
+}
+.sb-control-elem-ctn[data-disabled="true"] .sb-control-checkboxsection-btn {
+    display: none;
+}
+.sb-customizer-sidebar-intro a {
+    cursor: pointer;
+}
+.sb-customizer-sidebar-intro {
+    margin-bottom: 10px;
+    display: block;
+    line-height: 1.5em !important;
 }

@@ -12,6 +12,7 @@ if(!defined('ABSPATH'))	exit;
 
 class CTF_Settings_Tab{
 
+	public static $should_disable_pro_features = false;
 
 	/**
 	 * Get Customize Tab Sections
@@ -23,6 +24,8 @@ class CTF_Settings_Tab{
 	 * @return array
 	*/
 	static function get_sections(){
+		self::$should_disable_pro_features = ctf_license_handler()->should_disable_pro_features;
+
 		return [
 			'settings_feedtype_sources' => [
 				'heading' 	=> __( 'Sources', 'custom-twitter-feeds' ),
@@ -33,6 +36,9 @@ class CTF_Settings_Tab{
 				'heading' 	=> __( 'Filters', 'custom-twitter-feeds' ),
 				'icon' 		=> 'filter',
 				'separator'	=> 'none',
+				'description' 	=> !self::$should_disable_pro_features ? null : __( 'Upgrade to Pro to show or hide tweets that meet a specific criteria, or are specified by an ID.', 'custom-twitter-feeds' ),
+				'proLabel'		=> !self::$should_disable_pro_features ? null : true,
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
 				'controls'	=> self::get_settings_filters_controls()
 			],
 			'empty_sections' => [
@@ -81,7 +87,9 @@ class CTF_Settings_Tab{
 				'id' 				=> 'includereplies',
 				'label' 			=> __( 'Include Replies', 'custom-twitter-feeds' ),
 				'ajaxAction'    => 'feedFlyPreview',
-
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'reverse'			=> 'true',
 				'stacked'			=> 'true',
 				'labelStrong'		=> 'true',
@@ -100,7 +108,9 @@ class CTF_Settings_Tab{
 				'id' 				=> 'includeretweets',
 				'label' 			=> __( 'Include Retweets', 'custom-twitter-feeds' ),
 				'ajaxAction'    => 'feedFlyPreview',
-
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'reverse'			=> 'true',
 				'stacked'			=> 'true',
 				'labelStrong'		=> 'true',
@@ -121,6 +131,9 @@ class CTF_Settings_Tab{
 				'heading' 			=> __( 'Allowed Words', 'custom-twitter-feed' ),
 				'placeholder' 			=> __( 'Add words here to only show tweets containing these words', 'custom-twitter-feed' ),
 				'tooltip' 			=> __( 'Allowed Words', 'custom-twitter-feed' ),
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'ajaxAction'    => 'feedFlyPreview',
 				'labelStrong'		=> 'true',
 				'stacked'			=> 'true'
@@ -132,6 +145,9 @@ class CTF_Settings_Tab{
 				'heading' 			=> __( 'Blocked Words', 'custom-twitter-feed' ),
 				'placeholder' 			=> __( 'Add words here to only show tweets containing these words', 'custom-twitter-feed' ),
 				'tooltip' 			=> __( 'Blocked Words', 'custom-twitter-feed' ),
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'labelStrong'		=> 'true',
 				'stacked'			=> 'true'
 			],
@@ -142,6 +158,9 @@ class CTF_Settings_Tab{
 				'stacked'			=> 'true',
 				'ajaxAction'    => 'feedFlyPreview',
 				'heading' 			=> __( 'Show tweets that contain', 'custom-twitter-feeds' ),
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'options'			=> [
 					'any' => __( 'Any of the "Allowed words"', 'custom-twitter-feeds' ),
 					'all' => __( 'All of the "Allowed words"', 'custom-twitter-feeds' ),
@@ -156,6 +175,9 @@ class CTF_Settings_Tab{
 				'reverse'			=> 'true',
 				'ajaxAction'    => 'feedFlyPreview',
 				'heading' 			=> __( 'do&nbsp;not&nbsp;contain', 'custom-twitter-feeds' ),
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'options'			=> [
 					'and' => __( 'and', 'custom-twitter-feeds' ),
 					'or' => __( 'or', 'custom-twitter-feeds' ),
@@ -167,6 +189,9 @@ class CTF_Settings_Tab{
 				'strongHeading'		=> 'false',
 				'stacked'			=> 'true',
 				'ajaxAction'    => 'feedFlyPreview',
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'options'			=> [
 					'any' => __( 'Any of the "Blocked words"', 'custom-twitter-feeds' ),
 					'all' => __( 'All of the "Blocked words"', 'custom-twitter-feeds' ),
@@ -181,6 +206,9 @@ class CTF_Settings_Tab{
 				'type' 				=> 'textarea',
 				'id' 				=> 'remove_by_id',
 				'ajaxAction'    => 'feedFlyPreview',
+				'checkExtensionDimmed'	=> !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'checkExtensionPopup' => !self::$should_disable_pro_features ? null : 'advancedFilters',
+				'disabledInput'		=> !self::$should_disable_pro_features ? null : true,
 				'heading' 			=> __( 'Hide specific tweets', 'custom-twitter-feed' ),
 				'tooltip' 			=> __( 'Hide specific tweets', 'custom-twitter-feed' ),
 				'labelStrong'		=> 'true',

@@ -50,6 +50,7 @@ ctfBuilder = new Vue({
 		translatedText : ctf_builder.translatedText,
 		socialShareLink : ctf_builder.socialShareLink,
 		pluginsInfo : ctf_builder.pluginsInfo,
+		shouldDisableProFeatures: ctf_builder.shouldDisableProFeatures,
 
 		welcomeScreen	 : ctf_builder.welcomeScreen,
 		allFeedsScreen 	 : ctf_builder.allFeedsScreen,
@@ -65,6 +66,7 @@ ctfBuilder = new Vue({
  		selectFeedTemplateScreen 	: ctf_builder.selectFeedTemplateScreen,
 		accountDetails : ctf_builder.accountDetails,
 		dummyLightBoxData 		: ctf_builder.dummyLightBoxData,
+		recheckLicenseStatus: null,
 
 		svgIcons 		: ctf_builder.svgIcons,
 		feedsList 	: ctf_builder.feeds,
@@ -78,7 +80,7 @@ ctfBuilder = new Vue({
 
 		links : ctf_builder.links,
 		legacyFeedsList   : ctf_builder.legacyFeeds,
-
+		activeExtensions : ctf_builder.activeExtensions,
    		dummyLightBoxScreen 	: false,
 
 		//Selected Feed type => User Hashtag Tagged
@@ -161,8 +163,16 @@ ctfBuilder = new Vue({
 
 			// plugin install popup
 			installPluginPopup : false,
-			installPluginModal: 'facebook'
+			installPluginModal: 'facebook',
+
+			whyRenewLicense : false,
+			licenseLearnMore : false,
         },
+
+		licenseKey: ctf_builder.licenseKey,
+		ctfLicenseNoticeActive: (ctf_builder.ctfLicenseNoticeActive === '1'),
+		ctfLicenseInactiveState: (ctf_builder.ctfLicenseInactiveState === '1'),
+		licenseBtnClicked : false,
 
         //Feeds Pagination
         feedPagination : {
@@ -473,6 +483,86 @@ ctfBuilder = new Vue({
 			});
 		},
 
+        /**
+         * Activate License
+         *
+         * @since 2.1.0
+        */
+		 activateLicense: function() {
+            this.licenseBtnClicked = true;
+
+            if ( !this.licenseKey ) {
+                this.licenseBtnClicked = false;
+                this.processNotification("licenseKeyEmpty");
+                return;
+            }
+
+            let data = new FormData();
+            data.append( 'action', 'ctf_activate_license' );
+            data.append( 'license_key', this.licenseKey );
+            data.append( 'nonce', this.nonce );
+            fetch(this.ajaxHandler, {
+                method: "POST",
+                credentials: 'same-origin',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.licenseBtnClicked = false;
+                if ( data.success == false ) {
+					this.processNotification("licenseError");
+                    return;
+                }
+                if ( data.success == true ) {
+					this.processNotification("licenseActivated");
+                }
+                return;
+            });
+        },
+
+        recheckLicense: function( optionName  ) {
+			this.recheckLicenseStatus = 'loading';
+			let licenseNoticeWrapper = document.querySelector('.sb-license-notice');
+
+            let data = new FormData();
+            data.append( 'action', 'ctf_recheck_connection' );
+            data.append( 'license_key', this.licenseKey );
+            data.append( 'nonce', this.nonce );
+            fetch(this.ajaxHandler, {
+                method: "POST",
+                credentials: 'same-origin',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+				console.log(data);
+				if ( data.data.license == 'valid' ) {
+					this.recheckLicenseStatus = 'success';
+				}
+				if ( data.data.license != 'valid' ) {
+					this.recheckLicenseStatus = 'error';
+				}
+
+				setTimeout(function() {
+					self.recheckLicenseStatus = null;
+					if ( data.data.license == 'valid' ) {
+						licenseNoticeWrapper.remove();
+					}
+				}.bind(this), 3000);
+                return;
+            });
+        },
+        recheckBtnText: function( btnName ) {
+            if ( this.recheckLicenseStatus == null ) {
+                return this.genericText.recheckLicense;
+            } else if ( this.recheckLicenseStatus == 'loading'  ) {
+                return this.svgIcons.loaderSVG;
+            } else if ( this.recheckLicenseStatus == 'success' ) {
+                return this.svgIcons.checkmark + ' ' + this.genericText.licenseValid;
+            } else if ( this.recheckLicenseStatus == 'error' ) {
+                return this.svgIcons.times2SVG + ' ' + this.genericText.licenseExpired;
+            }
+        },
 		/**
 		 * Show & Hide View
 		 *
@@ -691,6 +781,10 @@ ctfBuilder = new Vue({
 		chooseFeedType : function(feedTypeEl, iscustomizerPopup = false){
 			var self = this;
 			if(feedTypeEl.type != 'socialwall'){
+				if ( (feedTypeEl.type == 'search' || feedTypeEl.type == 'mentionstimeline' || feedTypeEl.type == 'lists') && self.shouldDisableProFeatures ) {
+					self.viewsActive.extensionsPopupElement = feedTypeEl.type;
+					return;
+				}
 				if(self.selectedFeed.includes(feedTypeEl.type)){
 					if(self.selectedFeed.length != 1){
 						self.selectedFeed.splice(self.selectedFeed.indexOf(feedTypeEl.type), 1);
@@ -1066,7 +1160,11 @@ ctfBuilder = new Vue({
 				break;
 				case 'selectSource':
 					if( self.creationProcessCheckAppCredentials() ){
-						self.switchScreen('selectedFeedSection', 'selectTemplate');
+						if ( !self.shouldDisableProFeatures ) {
+							self.switchScreen('selectedFeedSection', 'selectTemplate');
+						} else {
+							self.isCreateProcessGood = true;
+						}
 					}
 				break;
 				case 'selectTemplate':
@@ -1706,6 +1804,10 @@ ctfBuilder = new Vue({
 
 		changeSettingValue : function(settingID, value, doProcess = true, ajaxAction = false) {
 			var self = this;
+			if ( settingID == 'layout' && (value == 'carousel' || value == 'masonry') && ( !self.checkExtensionActive('carousel') || !self.checkExtensionActive('masonry') ) && self.shouldDisableProFeatures ) {
+				self.viewsActive.extensionsPopupElement = 'feedLayout';
+				return;
+			}
 			if(doProcess){
 				self.customizerFeedData.settings[settingID] = value;
 			}
@@ -2869,8 +2971,15 @@ ctfBuilder = new Vue({
 
 		chooseFeedTemplate: function( feedTemplate, iscustomizerPopup = false ) {
 			var self = this;
+			if ( self.shouldDisableProFeatures ) {
+				self.viewsActive.extensionsPopupElement = 'feedTemplates';
+				if ( self.viewsActive.feedtemplatesPopup ) {
+					self.viewsActive.feedtemplatesPopup = false;
+				}
+				return;
+			}
 			self.selectedFeedTemplate = feedTemplate.type;
-			if( iscustomizerPopup ){
+			if( iscustomizerPopup ) {
 				self.viewsActive.feedTemplateElement = feedTemplate.type;
 			}
 			ctfBuilder.$forceUpdate();

@@ -13,6 +13,7 @@ var support_data = {
     siteSearchUrl: ctf_support.siteSearchUrl,
     siteSearchUrlWithArgs: null,
     searchKeywords: null,
+    recheckLicenseStatus: null,
     buttons: ctf_support.buttons,
     links: ctf_support.links,
     supportPageUrl: ctf_support.supportPageUrl,
@@ -23,11 +24,19 @@ var support_data = {
     icons: ctf_support.icons,
     images: ctf_support.images,
     svgIcons : ctf_support.svgIcons,
+    licenseKey: ctf_support.licenseKey,
+    viewsActive : {
+        whyRenewLicense : false,
+        licenseLearnMore : false,
+    },
+    ctfLicenseNoticeActive: (ctf_support.ctfLicenseNoticeActive === '1'),
+    ctfLicenseInactiveState: (ctf_support.ctfLicenseInactiveState === '1'),
+    licenseBtnClicked : false,
     notificationElement : {
         type : 'success', // success, error, warning, message
         text : '',
         shown : null
-    }
+    },
 }
 
 var ctfsupport = new Vue({
@@ -38,6 +47,72 @@ var ctfsupport = new Vue({
     },
     data: support_data,
     methods: {
+        /**
+         * Activate View
+         *
+         * @since 2.1.0
+        */
+        activateView : function(viewName){
+            var self = this;
+            self.viewsActive[viewName] = (self.viewsActive[viewName] == false ) ? true : false;
+        },
+
+        /**
+         * Activate License
+         *
+         * @since 2.1.0
+        */
+        activateLicense: function() {
+            this.licenseBtnClicked = true;
+
+            if ( !this.licenseKey ) {
+                this.licenseBtnClicked = false;
+                this.processNotification("licenseKeyEmpty");
+                return;
+            }
+
+            let data = new FormData();
+            data.append( 'action', 'ctf_activate_license' );
+            data.append( 'license_key', this.licenseKey );
+            data.append( 'nonce', this.nonce );
+            fetch(this.ajax_handler, {
+                method: "POST",
+                credentials: 'same-origin',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.licenseBtnClicked = false;
+                if ( data.success == false ) {
+					this.processNotification("licenseError");
+                    return;
+                }
+                if ( data.success == true ) {
+					this.processNotification("licenseActivated");
+                }
+                return;
+            });
+        },
+
+		/**
+		 * Loading Bar & Notification
+		 *
+		 * @since 2.1.0
+		 */
+         processNotification : function( notificationType ){
+			var self = this,
+				notification = self.genericText.notification[ notificationType ];
+			self.loadingBar = false;
+			self.notificationElement =  {
+				type : notification.type,
+				text : notification.text,
+				shown : "shown"
+			};
+			setTimeout(function(){
+				self.notificationElement.shown =  "hidden";
+			}, 5000);
+		},
+
         copySystemInfo: function() {
             let self = this;
             const el = document.createElement('textarea');
@@ -108,6 +183,51 @@ var ctfsupport = new Vue({
         goToSearchDocumentation: function() {
             if ( this.searchKeywords !== null && this.siteSearchUrlWithArgs !== null ) {
                 window.open( this.siteSearchUrlWithArgs, '_blank');
+            }
+        },
+
+        recheckLicense: function( optionName = null ) {
+            this.recheckLicenseStatus = 'loading';
+			let licenseNoticeWrapper = document.querySelector('.sb-license-notice');
+
+            let data = new FormData();
+            data.append( 'action', 'ctf_recheck_connection' );
+            data.append( 'license_key', this.licenseKey );
+            data.append( 'nonce', this.nonce );
+            fetch(this.ajax_handler, {
+                method: "POST",
+                credentials: 'same-origin',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                if ( data.success == true ) {
+                    if ( data.data.license == 'valid' ) {
+                        this.recheckLicenseStatus = 'success';
+                    }
+                    if ( data.data.license != 'valid' ) {
+                        this.recheckLicenseStatus = 'error';
+                    }
+
+                    setTimeout(function() {
+                        self.recheckLicenseStatus = null;
+                        if ( data.data.license == 'valid' ) {
+                            licenseNoticeWrapper.remove();
+                        }
+                    }.bind(this), 3000);
+                }
+                return;
+            });
+        },
+        recheckBtnText: function( btnName ) {
+            if ( this.recheckLicenseStatus == null ) {
+                return this.genericText.recheckLicense;
+            } else if ( this.recheckLicenseStatus == 'loading' ) {
+                return this.svgIcons.loaderSVG;
+            } else if ( this.recheckLicenseStatus == 'success' ) {
+                return this.svgIcons.checkmark + ' ' + this.genericText.licenseValid;
+            } else if ( this.recheckLicenseStatus == 'error' ) {
+                return this.svgIcons.times2SVG + ' ' + this.genericText.licenseExpired;
             }
         },
         /**

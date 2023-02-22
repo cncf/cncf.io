@@ -47,8 +47,10 @@
                         </svg>Elements
                     </a>
 				</div>
-				<h3>{{customizerScreens.activeSectionData.heading}}</h3>
-				<span v-html="customizerScreens.activeSectionData.description"></span>
+				<h3>{{customizerScreens.activeSectionData.heading}} <span v-if="customizerScreens.activeSectionData.proLabel != undefined && customizerScreens.activeSectionData.proLabel" class="sb-breadcrumb-pro-label">PRO</span></h3>
+				<span class="sb-customizer-sidebar-intro">
+					<span v-html="customizerScreens.activeSectionData.description "></span> <a v-if="customizerScreens.activeSectionData.checkExtensionPopup != undefined" @click.prevent.default="viewsActive.extensionsPopupElement = customizerScreens.activeSectionData.checkExtensionPopup">{{genericText.learnMore}}</a>
+				</span>
 			</div>
 			<div class="sb-customizer-sidebar-controls-ctn ctf-fb-fs">
 				<div class="sb-control-ctn ctf-fb-fs" v-for="(control, ctlIndex) in customizerScreens.activeSectionData.controls">

@@ -1,3 +1,11 @@
+<?php
+    /**
+     * Twitter Admin Header Notices
+     *
+     * @since 2.1.0
+     */
+    do_action('ctf_admin_header_notices');
+?>
 <div class="ctf-fb-header ctf-fb-fs" v-if="!iscustomizerScreen">
     <div class="ctf-fb-header-left">
         <div class="ctf-fb-hd-logo">

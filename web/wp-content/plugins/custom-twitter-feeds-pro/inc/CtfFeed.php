@@ -189,28 +189,31 @@ class CtfFeed {
      * uses the feed options to set the the tweets in the feed by using
      * an existing set in a cache or by retrieving them from Twitter
      */
-    protected function setTweetSet() {
-        $this->setTransientName();
-        if ( ! empty( $this->feed_options['feed'] ) ) {
-         $feed_id = $this->feed_options['feed'];
-     } else {
-         $feed_id = 'legacy';
-     }
-     if ( ! empty( $this->last_id_data ) ) {
-      $page = $this->last_id_data;
-  } else {
-      $page = '';
-  }
-  $this->cache = new CtfCache( $feed_id, $this->feed_options['cache_time'], $page );
+	protected function setTweetSet() {
+		$this->setTransientName();
+		if ( ! empty( $this->feed_options['feed'] ) ) {
+			$feed_id = $this->feed_options['feed'];
+		} else {
+			$feed_id = 'legacy';
+		}
+		if ( ! empty( $this->last_id_data ) ) {
+			$page = $this->last_id_data;
+		} else {
+			$page = '';
+		}
+		if ( empty( $this->feed_options['feed_term'] ) ) {
+			$this->feed_options['feed_term'] = '';
+		}
+		$this->cache = new CtfCache( $feed_id, $this->feed_options['cache_time'], $page );
 
-  $success = $this->maybeSetTweetsFromCache();
+		$success = $this->maybeSetTweetsFromCache();
 
-  if (!$success) {
-    $this->maybeSetTweetsFromTwitter();
-}
+		if (!$success) {
+			$this->maybeSetTweetsFromTwitter();
+		}
 
-$this->num_tweets_needed = $this->numTweetsNeeded();
-}
+		$this->num_tweets_needed = $this->numTweetsNeeded();
+	}
 
     /**
      * the access token and secret must be set in order for the feed to work
@@ -240,14 +243,13 @@ $this->num_tweets_needed = $this->numTweetsNeeded();
      * processes the consumer key and secret options
      */
     protected function setConsumerKeyAndSecretOptions() {
-        if (isset($this->feed_options['have_own_tokens']) && $this->feed_options['have_own_tokens']) {
-            $this->feed_options['consumer_key'] = isset($this->db_options['consumer_key']) && strlen($this->db_options['consumer_key']) > 15 ? $this->db_options['consumer_key'] : 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
-            $this->feed_options['consumer_secret'] = isset($this->db_options['consumer_secret']) && strlen($this->db_options['consumer_secret']) > 30 ? $this->db_options['consumer_secret'] : 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
-        }
-        else {
-            $this->feed_options['consumer_key'] = 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
-            $this->feed_options['consumer_secret'] = 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
-        }
+	    if (! empty( $this->db_options['consumer_key'] ) && ! empty($this->db_options['consumer_secret'] )) {
+		    $this->feed_options['consumer_key']    = isset($this->db_options['consumer_key']) && strlen($this->db_options['consumer_key']) > 15 ? $this->db_options['consumer_key'] : 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
+		    $this->feed_options['consumer_secret'] = isset($this->db_options['consumer_secret']) && strlen($this->db_options['consumer_secret']) > 30 ? $this->db_options['consumer_secret'] : 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
+	    } else {
+		    $this->feed_options['consumer_key']    = 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
+		    $this->feed_options['consumer_secret'] = 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
+	    }
     }
 
     /**
@@ -516,6 +518,10 @@ $this->num_tweets_needed = $this->numTweetsNeeded();
         }
         // validate the transient data
         if ($this->transient_data) {
+	        if ( is_array( $this->transient_data ) && ! empty( $this->transient_data[0] ) && $this->transient_data[0] === 'error' ) {
+		        $this->tweet_set = array();
+		        return true;
+	        }
             $this->errors['cache_status'] = $this->validateCache();
             if ($this->errors['cache_status'] === false) {
                 return $this->tweet_set = $this->transient_data;
@@ -710,11 +716,17 @@ $this->num_tweets_needed = $this->numTweetsNeeded();
     /**
      * will create a transient with the tweet cache if one doesn't exist, the data seems valid, and caching is active
      */
-    public function maybeCacheTweets() {
-        if ((!$this->transient_data || $this->errors['cache_status']) && $this->feed_options['cache_time'] > 0) {
-            $cache = json_encode($this->tweet_set);
-            $this->cache->set_transient($this->transient_name, $cache, $this->feed_options['cache_time']);
-        }
+    public function maybeCacheTweets( $error = false ) {
+	    if ( $error ) {
+		    $cache = json_encode(array('error'));
+		    $this->cache->set_transient($this->transient_name, $cache, $this->feed_options['cache_time']);
+	    } else {
+		    if ((!$this->transient_data || $this->errors['cache_status']) && $this->feed_options['cache_time'] > 0) {
+			    $cache = json_encode($this->tweet_set);
+			    $this->cache->set_transient($this->transient_name, $cache, $this->feed_options['cache_time']);
+		    }
+	    }
+
     }
 
     /**

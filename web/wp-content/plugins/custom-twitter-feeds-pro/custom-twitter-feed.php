@@ -3,13 +3,13 @@
 Plugin Name: Custom Twitter Feeds Pro Personal
 Plugin URI: https://smashballoon.com/custom-twitter-feeds/
 Description: Customizable Twitter feeds for your website
-Version: 2.0.1
+Version: 2.0.6
 Author: Smash Balloon
 Author URI: https://smashballoon.com/
 Text Domain: custom-twitter-feeds
 */
 /*
-Copyright 2022 Smash Balloon LLC (email: hey@smashballoon.com)
+Copyright 2023 Smash Balloon LLC (email: hey@smashballoon.com)
 This program is paid software; you may not redistribute it under any
 circumstances without the expressed written consent of the plugin author.
 This program is distributed in the hope that it will be useful,
@@ -20,7 +20,7 @@ if ( ! defined( 'CTF_URL' ) ) {
     //Update info
     define( 'CTF_PRODUCT_NAME', 'Custom Twitter Feeds Personal' );
     define( 'CTF_PRODUCT_ID', '177805' ); //177805, 188603, 188605
-    define( 'CTF_VERSION', '2.0.1' );
+    define( 'CTF_VERSION', '2.0.6' );
 	define( 'CTF_DBVERSION', '1.4' );
 
 	//
@@ -109,6 +109,11 @@ if ( function_exists('ctf_init') ){
 	}
 } else {
 	require CTF_PLUGIN_DIR . 'vendor/autoload.php';
+	function ctf_license_handler() {
+		return \TwitterFeed\CTF_License_Service::instance();
+	}
+	ctf_license_handler();
+
     include CTF_URL .'/inc/ctf-pro-functions.php';
     include CTF_PLUGIN_DIR . '/inc/Builder/CTF_Feed_Builder.php';
 }
@@ -263,6 +268,7 @@ function ctf_scripts_and_styles_pro( $enqueue = false ) {
 
 	wp_localize_script( 'ctf_scripts', 'ctfOptions', array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'nonce' => wp_create_nonce( 'ctf_nonce' ),
 			'font_method' => 'svg',
 			'placeholder' => trailingslashit( CTF_PLUGIN_URL ) . 'img/placeholder.png',
 			'resized_url' => ctf_get_resized_uploads_url(),

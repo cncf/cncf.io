@@ -425,3 +425,7 @@ article {
 .nowrap {
 	white-space: nowrap;
 }
+
+code {
+	word-wrap: break-word;
+}

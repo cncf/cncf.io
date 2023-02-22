@@ -34,6 +34,7 @@ class CTF_Admin_Notices
 		add_action( 'in_admin_header', [ $this, 'remove_admin_notices' ] );
 		add_action( 'ctf_admin_notices', [ $this, 'ctf_license_notices' ] );
 		add_action( 'admin_notices', [ $this, 'ctf_license_notices' ] );
+		add_action( 'ctf_admin_header_notices', array( $this, 'ctf_license_header_notices' ) );
 		add_action( 'wp_ajax_ctf_check_license', [ $this, 'ctf_check_license' ] );
 		add_action( 'wp_ajax_ctf_dismiss_license_notice', [ $this, 'ctf_dismiss_license_notice' ] );
 	}
@@ -136,168 +137,87 @@ class CTF_Admin_Notices
      * @since 2.0
      */
     public function ctf_license_notices() {
-        global $current_user;
-        $current_screen = get_current_screen();
+        $capability_check = ctf_capablity_check();
+        $current_screen  = ctf_license_handler()->is_current_screen_allowed();
 
-	    $allowed_screens = array(
-            'dashboard',
-            'twitter-feed_page_ctf-feed-builder',
-            'twitter-feed_page_ctf-settings',
-            'twitter-feed_page_ctf-oembeds-manager',
-            'twitter-feed_page_ctf-extensions-manager',
-            'twitter-feed_page_ctf-about-us',
-            'twitter-feed_page_ctf-support',
-        );
-        $cap = current_user_can( 'manage_twitter_feed_options' ) ? 'manage_twitter_feed_options' : 'manage_options';
-        $cap = apply_filters( 'ctf_settings_pages_capability', $cap );
         //Only display notice to admins
-
-	    if( !current_user_can( $cap ) ) return;
-
-        $user_id = $current_user->ID;
-        $ignored_on_dashboard_page = get_user_meta( $user_id, 'ctf_ignore_dashboard_license_notice', true );
-
+		if ( ! current_user_can( $capability_check ) ) {
+			return;
+		}
         // We will display the license notice only on those allowed screens
-        if ( !in_array( $current_screen->base, $allowed_screens )  ) {
+        if ( isset( $current_screen['is_allowed'] ) && $current_screen['is_allowed'] === false ) {
             return;
         }
-        // Return if we are on dashboard page and user ignored notice
-        if ( $current_screen->base == 'dashboard' && $ignored_on_dashboard_page ) {
-            return;
-        }
-        $ctf_license = trim( get_option( 'ctf_license_key' ) );
-
-
+        // get the license key
+        $cff_license = ctf_license_handler()->get_license_key;
         /* Check that the license exists and the user hasn't already clicked to ignore the message */
-        if( empty( $ctf_license ) || !isset( $ctf_license ) ) {
-            return;
+        if( empty( $cff_license ) || !isset( $cff_license ) ) {
+            if ( $current_screen['base'] !== 'twitter-feed_page_ctf-feed-builder' ) {
+                echo $this->get_inactive_license_notice_content( $current_screen['base'] );
+			}
+			return;
         }
-
-        //Is there already license data in the db?
-        if( get_option( 'ctf_license_data' ) ){
-            //Yes
-            //Get license data from the db and convert the object to an array
-            $ctf_license_data = (array) get_option( 'ctf_license_data' );
-        } else {
-            //No
-            // data to send in our API request
-            $ctf_api_params = array(
-                'edd_action'=> 'check_license',
-                'license'   => $ctf_license,
-                'item_name' => urlencode( CTF_PLUGIN_NAME ) // the name of our product in EDD
-            );
-            $api_url = add_query_arg( $ctf_api_params, CTF_STORE_URL );
-            $args = array(
-                'timeout' => 60,
-                'sslverify' => false
-            );
-            // Call the custom API.
-            $request = CTF_HTTP_Request::request( 'GET', $api_url, $args );
-            if ( CTF_HTTP_Request::is_error( $request ) ) {
-                return;
-            }
-            // decode the license data
-            $ctf_license_data = (array) CTF_HTTP_Request::data( $request );
-            //Store license data in db
-            update_option( 'ctf_license_data', $ctf_license_data );
-        }
-
-        //Number of days until license expires
-        //If expires param isn't set yet then set it to be a date to avoid PHP notice
-        $ctf_license_expires_date = isset( $ctf_license_data['expires'] ) ? $ctf_license_data['expires'] : '2036-12-31 23:59:59';
-        if ( $ctf_license_expires_date == 'lifetime' ) {
-            $ctf_license_expires_date = '2036-12-31 23:59:59';
-        }
-
-	    $ctf_todays_date = date('Y-m-d');
-        //-1 day to make sure auto-renewal has run before showing expired
-        $ctf_interval = round( abs( strtotime( $ctf_todays_date  . ' -1 day') - strtotime( $ctf_license_expires_date ) ) / 86400 );
-        //Is license expired?
-        if( $ctf_interval == 0 || strtotime( $ctf_license_expires_date ) < strtotime( $ctf_todays_date ) ) {
-	        update_option( 'ctf_check_license_api_when_expires', 'false' );
-			//If we haven't checked the API again one last time before displaying the expired notice then check it to make sure the license hasn't been renewed
-            if ( get_option( 'ctf_check_license_api_when_expires' ) !== 'false' ) {
-                $ctf_api_params = array(
-                    'edd_action'=> 'check_license',
-                    'license'   => $ctf_license,
-                    'item_name' => urlencode( CTF_PLUGIN_NAME ) // the name of our product in EDD
-                );
-                $api_url = add_query_arg( $ctf_api_params, CTF_STORE_URL );
-                $args = array(
-                    'timeout' => 60,
-                    'sslverify' => false
-                );
-
-                // Call the custom API.
-                $request = CTF_HTTP_Request::request( 'GET', $api_url, $args );
-                if ( CTF_HTTP_Request::is_error( $request ) ) {
-                    return;
-                }
-                // Decode the license data
-                $ctf_license_data = (array) CTF_HTTP_Request::data( $request );
-
-                //Check whether it's active
-                if( $ctf_license_data['license'] !== 'expired' && ( strtotime( $ctf_license_data['expires'] ) > strtotime( $ctf_todays_date ) ) ){
-                    $ctf_license_expired = false;
-                } else {
-                    $ctf_license_expired = true;
-                    //Set a flag so it doesn't check the API again until the next time it expires
-                    update_option( 'ctf_check_license_api_when_expires', 'false' );
-                }
-                // Update license data
-                update_option( 'ctf_license_data', $ctf_license_data );
-            } else {
-                $ctf_license_expired = true;
-            }
-        } else {
-            $ctf_license_expired = false;
-            //License is not expired so change the check_api setting to be true so the next time it expires it checks again
-            update_option( 'ctf_check_license_api_when_expires', 'true' );
-        }
-
-        $ctf_license_expires_date_arr = str_split($ctf_license_expires_date);
-        // If expired date is returned as 1970 (or any other 20th century year) then it means that the correct expired date was not returned and so don't show the renewal notice
-        if( $ctf_license_expires_date_arr[0] == '1' ) $ctf_license_expired = false;
-
-        // If there's no expired date then don't show the expired notification
-        if( empty($ctf_license_expires_date) || !isset($ctf_license_expires_date) ) {
-            $ctf_license_expired = false;
-        }
-
-        // Is license missing - ie. on very first check
-        if ( isset( $ctf_license_data['error'] ) ) {
-            if ( $ctf_license_data['error'] == 'missing' ) {
-                $ctf_license_expired = false;
-            }
-        }
-
-        //If license expires in less than 30 days and it isn't currently expired then show the expire countdown instead of the expiration notice
-        if( $ctf_interval < 30 && !$ctf_license_expired ) {
-            $ctf_expire_countdown = true;
-        } else {
-            $ctf_expire_countdown = false;
-        }
-
-        //Check whether it was purchased after subscriptions were introduced
-        if( isset($ctf_license_data['payment_id']) && intval($ctf_license_data['payment_id']) > 762729 ){
-            //Is likely to be renewed on a subscription so don't show countdown
-            $ctf_expire_countdown = false;
-        }
-
+        
+        $cff_license_expired = ctf_license_handler()->is_license_expired;
+        
         // If license not expired then return;
-        if ( !$ctf_license_expired ) {
+        if ( !$cff_license_expired ) {
             return;
         }
+        // Grace period ended?
+		if ( ctf_license_handler()->is_license_grace_period_ended ) {
+            return;
+		}
 
-        // So, license has expired.
-        // Lets display the error notice
-        echo '<div class="ctf-admin-notices ctf-license-expired-notice" id="ctf-license-notice">';
-        echo $this->get_expired_license_notice_content();
-        echo '</div>';
-
-        // Output the modal that will trigger by "Why Renew" button
-        echo $this->get_modal_content();
+		// So, license has expired and grace period active
+		// Lets display the error notice
+        if ( $current_screen['base'] == 'twitter-feed_page_ctf-feed-builder' ) {
+            echo $this->get_expired_license_notice_content();
+        }
     }
+
+
+	/**
+	 * Display post 2 weeks license expired notice at the top of header
+	 * 
+	 * @since 4.4
+	 */
+	public function ctf_license_header_notices() {
+        $capability_check = ctf_capablity_check();
+        $current_screen  = ctf_license_handler()->is_current_screen_allowed();
+
+        //Only display notice to admins
+		if ( ! current_user_can( $capability_check ) ) {
+			return;
+		}
+		// We will display the license notice only on those allowed screens
+		if ( isset( $current_screen['is_allowed'] ) && $current_screen['is_allowed'] === false ) {
+			return;
+		}
+		// get the license key
+		$sbi_license_key= ctf_license_handler()->get_license_key;
+		/* Check that the license exists and */
+		if ( empty( $sbi_license_key) || ! isset( $sbi_license_key) ) {
+			if ( $current_screen['base'] == 'twitter-feed_page_ctf-feed-builder' ) {
+				echo $this->get_post_grace_period_header_notice( 'ctf-license-inactive-state' );
+			}
+			return;
+		}
+		//Number of days until license expires
+		$cff_license_expired = ctf_license_handler()->is_license_expired;
+		if ( ! $cff_license_expired ) {
+            return;
+		}
+		// Grace period ended?
+		if ( ctf_license_handler()->is_license_grace_period_ended( true ) ) {
+            if ( get_option( 'ctf_check_license_api_post_grace_period' ) !== 'false' ) {
+                $cff_license_expired = ctf_license_handler()->ctf_check_license( ctf_license_handler()->get_license_key, true, true );
+			}
+			if ( $cff_license_expired ) {
+				echo $this->get_post_grace_period_header_notice();
+			}
+		}
+	}
 
     /**
      * Get content for expired license notice
@@ -306,7 +226,7 @@ class CTF_Admin_Notices
      *
      * @return string $output
      */
-    public function get_expired_license_notice_content() {
+    public function get_old_expired_license_notice_content() {
         global $current_user;
         $current_screen = get_current_screen();
 
@@ -369,6 +289,73 @@ class CTF_Admin_Notices
 
         return $output;
     }
+
+    /**
+	 * Get content for expired license notice
+	 *
+	 * @since 4.0
+	 *
+	 * @return string $output
+	 */
+	public function get_expired_license_notice_content() {
+		$output = '<div class="sb-license-notice">
+				<h4>Your license key has expired</h4>
+				<p>You are no longer receiving updates that protect you against upcoming Twitter changes. There’s a <strong>14 day</strong> grace period before access to some Pro features in the plugin will be limited.</p>
+				<div class="sb-notice-buttons">
+                    <a href="'. $this->get_renew_url() .'" class="sb-btn sb-btn-blue" target="_blank">Renew License</a>
+					<a href="#" class="sb-btn" @click.prevent.default="activateView(\'whyRenewLicense\')">Why Renew?</a>
+                    <a class="recheck-license-status sb-btn" @click="recheckLicense(\'ctf\')" v-html="recheckBtnText()" :class="recheckLicenseStatus"></a>
+				</div>
+				<svg class="sb-notice-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V13H11V15ZM11 11H9V5H11V11Z" fill="#D72C2C"/></svg>
+			</div>';
+
+		return $output;
+	}
+
+	/**
+	 * Get post grace period header notice content
+	 * 
+	 * @since 2.1.0
+	 */
+	public function get_post_grace_period_header_notice( $license_status = 'expired' ) {
+		$notice_text = 'Your Twitter Feed Pro License has expired. Renew to keep using PRO features.';
+		if ( $license_status == 'ctf-license-inactive-state' ) {
+			$notice_text = 'Your license key is inactive. Please add license key to enable PRO features.';
+		}
+		return '<div id="ctf-license-expired-agp" class="ctf-license-expired-agp sbi-le-flow-1 '. $license_status .'">
+			<span class="ctf-license-expired-agp-message">'. $notice_text .' <span @click.prevent.default="activateView(\'licenseLearnMore\')">Learn More</span></span>
+			<button type="button" id="sbi-dismiss-header-notice" title="Dismiss this message" data-page="overview" class="sbi-dismiss">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15.8327 5.34175L14.6577 4.16675L9.99935 8.82508L5.34102 4.16675L4.16602 5.34175L8.82435 10.0001L4.16602 14.6584L5.34102 15.8334L9.99935 11.1751L14.6577 15.8334L15.8327 14.6584L11.1744 10.0001L15.8327 5.34175Z" fill="white"></path>
+				</svg>
+			</button>
+		</div>';
+	}
+
+
+	public function get_inactive_license_notice_content( $screen ) {
+		$output = '<div id="ctf-license-inactive-agp" class="ctf-license-inactive-agp ctf-le-flow-1">
+				<div class="sb-left">
+					<div class="sb-left-content">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V13H11V15ZM11 11H9V5H11V11Z" fill="#D72C2C"></path>
+						</svg>
+						<h4>Your license key is inactive</h4>
+						<p>No license key detected. Please activate your license key to enable Pro features.</p>
+					</div>
+				</div>
+				<div class="sb-right">
+					<div class="ctf-buttons">';
+					if ( $screen == 'twitter-feed_page_ctf-settings' ) {
+						$output .= '<a class="sb-btn sb-btn-blue"  id="sbFocusLicenseSection">Activate License Key</a>';
+					} else {
+						$output .= '<a href="'. admin_url('admin.php?page=ctf-settings&focus=license').'" class="ctf-buttons"><span class="sb-btn sb-btn-blue">Activate License Key</span></a>';
+					}
+					$output .= '<a class="sb-btn sb-btn-grey" @click.prevent.default="activateView(\'licenseLearnMore\')">Learn More</a>
+					</div></div>
+			</div>';
+		return $output;
+	}
 
     /**
      * Get modal content that will trigger by "Why Renew" button

@@ -64,7 +64,7 @@ class CTF_Settings_Pro {
 			'shorturls'
 		);
 		$feed->setStandardBoolOptions( $bool_false, false );
-		$feed->setStandardBoolOptions( array( 'persistentcache', 'includeretweets', 'autores' ), true );
+		$feed->setStandardBoolOptions( array( 'persistentcache', 'autores' ), true );
 		$feed->setStandardTextOptions( 'carouselarrows', 'onhover' );
 		$feed->setStandardTextOptions( 'carouselheight', 'tallest' );
 		$feed->setStandardTextOptions( 'carouselcols', 1 );
@@ -83,6 +83,7 @@ class CTF_Settings_Pro {
 		$feed->setStandardTextOptions( 'filterandor', 'and' );
 
 		$feed->setDatabaseOnlyOptions( 'remove_by_id' );
+
 
 		$this->settings = $feed->feed_options;
 	}
