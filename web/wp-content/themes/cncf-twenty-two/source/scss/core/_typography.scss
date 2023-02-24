@@ -161,6 +161,28 @@ h3,
 	max-width: 90%;
 }
 
+// Page Title Style
+.is-style-page-title {
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 140%;
+	font-size: 28px;
+	@media (min-width: 1000px) {
+		font-size: 40px;
+	}
+}
+
+// Blog Post Style
+.is-style-post-title {
+	font-weight: 400;
+	max-width: 800px;
+	line-height: 150%;
+	font-size: 30px;
+	@media (min-width: 1200px) {
+		font-size: 50px;
+	}
+}
+
 a {
 	font-weight: 700;
 	color: $primary-color;

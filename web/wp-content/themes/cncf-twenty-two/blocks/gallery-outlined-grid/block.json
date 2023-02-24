@@ -5,7 +5,6 @@
 	"title": "Gallery Outlined Grid",
 	"description": "A gallery of images with each image in an outliner box, typically used for logo display",
 	"style": "file:./gallery-outlined-grid.css",
-	"editorStyle": "file:./editor.css",
 	"editorScript": [],
 	"category": "lf",
 	"icon": "format-gallery",

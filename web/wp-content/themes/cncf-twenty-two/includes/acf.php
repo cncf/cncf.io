@@ -22,7 +22,7 @@ function lf_register_all_our_blocks() {
 	register_block_type( $block_directory . '/quote-with-quote-mark/block.json' );
 	register_block_type( $block_directory . '/gallery-outlined-grid/block.json' );
 	register_block_type( $block_directory . '/icon-text-stat/block.json' );
-	// register_block_type( $block_directory . '/section-header/block.json' );
+	register_block_type( $block_directory . '/post-breadcrumb/block.json' );
 }
 add_action( 'init', 'lf_register_all_our_blocks' );
 

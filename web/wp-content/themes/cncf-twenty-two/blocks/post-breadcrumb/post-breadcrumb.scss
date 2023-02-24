@@ -1,0 +1,25 @@
+.wp-block-lf-post-breadcrumb {
+	.author-category,
+	.space-slash,
+	.parent-link {
+		color: #747474 !important;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: inline-block;
+		letter-spacing: 0.15em;
+		line-height: 150%;
+		font-size: 14px;
+		@media (min-width: 375px) {
+			font-size: 15px;
+		}
+		@media (min-width: 390px) {
+			font-size: 16px;
+		}
+	}
+
+	.parent-link-align {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+	}
+}

@@ -1,27 +1,26 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "lf/icon-text-stat",
-	"title": "Icon Text Stat",
-	"description": "Displays an icon (optional), large number and smaller description",
-	"style": "file:./icon-text-stat.css",
-	"editorScript": [],
-	"category": "lf",
-	"icon": "admin-settings",
+	"name": "lf/post-breadcrumb",
+	"title": "Post Breadcrumb",
+	"description": "Displays the taxonomy for the current post, commonly used on reports",
+	"style": "file:./post-breadcrumb.css",
+	"category": "common",
+	"icon": "admin-links",
 	"keywords": [
-		"large",
-		"heading",
-		"icon"
+		"breadcrumb",
+		"navigation",
+		"links"
 	],
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "icon-text-stat.php",
+		"renderTemplate": "post-breadcrumb.php",
 		"postTypes": [ "lf_report" ]
 	},
 	"supports": {
 		"mode": false,
 		"align": false,
-		"alignWide": true,
+		"alignWide": false,
 		"alignContent": false,
 		"alignText": false,
 		"anchor": true,

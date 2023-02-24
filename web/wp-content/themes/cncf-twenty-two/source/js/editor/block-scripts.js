@@ -168,6 +168,10 @@ wp.blocks.registerBlockStyle(
 	{
 		label: 'Reports Sub-Header',
 		name: 'sub-header',
+	},
+	{
+		label: 'Post Title',
+		name: 'post-title',
 	}
 ]
 );
