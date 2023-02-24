@@ -169,6 +169,16 @@
 	}
 }
 
+.post-type-lf_report {
+	#editor {
+		.editor-styles-wrapper {
+			.is-style-post-title {
+				max-width: unset;
+			}
+		}
+	}
+}
+
 // Editor Post Title.
 .edit-post-visual-editor__post-title-wrapper .editor-post-title {
 	font-family: $font-primary;
