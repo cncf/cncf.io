@@ -451,6 +451,13 @@ article {
 }
 // end of page content.
 
+// LF Report + No Page Title Template
+.lf_report-template-no-page-title {
+	.is-style-post-title {
+		max-width: unset;
+	}
+}
+
 .nowrap {
 	white-space: nowrap;
 }
