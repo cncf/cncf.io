@@ -1,36 +1,36 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "lf/quote-with-quote-mark",
-	"title": "Quote with Quote Mark",
-	"description": "A quote with two lined citation alongside a large singular quote mark",
-	"style": "file:./quote-with-quote-mark.css",
+	"name": "lf/icon-text-stat",
+	"title": "Icon Text Stat",
+	"description": "Displays an icon (optional), large number and smaller description",
+	"style": "file:./icon-text-stat.css",
 	"editorStyle": "file:./editor.css",
 	"editorScript": [],
 	"category": "lf",
-	"icon": "format-quote",
+	"icon": "admin-settings",
 	"keywords": [
-		"",
-		"",
-		""
+		"large",
+		"heading",
+		"icon"
 	],
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "quote-with-quote-mark.php",
+		"renderTemplate": "icon-text-stat.php",
 		"postTypes": [ "lf_report" ]
 	},
 	"supports": {
 		"mode": false,
 		"align": false,
-		"alignWide": false,
+		"alignWide": true,
 		"alignContent": false,
 		"alignText": false,
-		"anchor": false,
+		"anchor": true,
 		"color": {
 			"background": false,
 			"gradients": false,
 			"link": false,
-			"text": true
+			"text": false
 		},
 		"spacing": {
 			"margin": false,

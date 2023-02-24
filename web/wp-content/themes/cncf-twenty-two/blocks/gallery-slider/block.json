@@ -14,7 +14,7 @@
     "acf": {
         "mode": "edit",
         "renderTemplate": "gallery-slider.php",
-        "postTypes": [ "page" ]
+        "postTypes": [ "page", "lf_report" ]
     },
     "supports": {
         "align": false,

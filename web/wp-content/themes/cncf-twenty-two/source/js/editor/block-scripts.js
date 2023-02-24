@@ -164,6 +164,10 @@ wp.blocks.registerBlockStyle(
 	{
 		label: 'Section Heading',
 		name: 'section-heading',
+	},
+	{
+		label: 'Reports Sub-Header',
+		name: 'sub-header',
 	}
 ]
 );

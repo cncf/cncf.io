@@ -45,9 +45,17 @@
 		}
 
 		// style links same as frontend.
-		a {
+		a:not(.acf-button) {
 			color: $primary-color;
 			text-decoration: none;
+		}
+
+		a.acf-button {
+			color: #2271b1;
+			border-color: #2271b1;
+			background: #f6f7f7;
+			vertical-align: top;
+			font-weight: 400;
 		}
 
 		ul,

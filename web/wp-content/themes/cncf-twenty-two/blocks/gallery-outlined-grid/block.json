@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "lf/section-header",
-	"title": "Section Header",
-	"description": "Report section header including section number",
-	"style": "file:./section-header.css",
+	"name": "lf/gallery-outlined-grid",
+	"title": "Gallery Outlined Grid",
+	"description": "A gallery of images with each image in an outliner box, typically used for logo display",
+	"style": "file:./gallery-outlined-grid.css",
 	"editorStyle": "file:./editor.css",
 	"editorScript": [],
-	"category": "common",
-	"icon": "welcome-widgets-menus",
+	"category": "lf",
+	"icon": "format-gallery",
 	"keywords": [
 		"",
 		"",
@@ -16,16 +16,13 @@
 	],
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "section-header.php"
+		"renderTemplate": "gallery-outlined-grid.php",
+		"postTypes": [ "lf_report" ]
 	},
 	"supports": {
 		"mode": false,
 		"align": [
-			"wide",
-			"full",
-			"left",
-			"center",
-			"right"
+			"center"
 		],
 		"alignWide": true,
 		"alignContent": false,
@@ -46,12 +43,6 @@
 			"lineHeight": false
 		},
 		"fullHeight": false
-	},
-	"attributes": {
-		"variable": {
-			"type": "string",
-			"default": ""
-		}
 	},
 	"example": {}
 }
