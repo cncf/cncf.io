@@ -5,13 +5,11 @@
 	"title": "Gallery Outlined Grid",
 	"description": "A gallery of images with each image in an outliner box, typically used for logo display",
 	"style": "file:./gallery-outlined-grid.css",
-	"editorScript": [],
 	"category": "lf",
 	"icon": "format-gallery",
 	"keywords": [
-		"",
-		"",
-		""
+		"gallery",
+		"logos"
 	],
 	"acf": {
 		"mode": "preview",
@@ -23,7 +21,7 @@
 		"align": [
 			"center"
 		],
-		"alignWide": true,
+		"alignWide": false,
 		"alignContent": false,
 		"alignText": false,
 		"anchor": true,

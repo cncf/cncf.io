@@ -47,6 +47,10 @@ $all_classes = array(
 
 $classes = implode( ' ', $all_classes );
 
+if ( is_admin() && empty( get_field( 'gallery_outlined_grid_image_array' ) ) ) :
+	echo '<div style="grid-column: 1 / -1; border: 1px solid black;"><p><strong>Gallery Outlined Grid Block</strong>.<br><br>Select this block and then add images in the sidebar to create a gallery. →</p></div>';
+endif;
+
 if ( $gallery_outlined_grid_image_array ) :
 	?>
 
@@ -68,8 +72,4 @@ if ( $gallery_outlined_grid_image_array ) :
 	</div>
 </div>
 	<?php
-else :
-	if ( is_admin() ) {
-		echo '<div style="grid-column: 1 / -1; border: 1px solid black;"><p><strong>Gallery Outlined Grid Block</strong>.<br><br>Select this block and then add images in the sidebar to create a gallery.</p></div>';
-	}
 endif;
