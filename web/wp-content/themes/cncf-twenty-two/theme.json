@@ -232,7 +232,8 @@
 					"fontStyle": "italic",
 					"lineHeight": "175%",
 					"letterSpacing": "0.02em",
-					"fontWeight": "400"
+					"fontWeight": "400",
+					"fontSize": "36px"
 				},
 				"elements": {
 					"cite": {

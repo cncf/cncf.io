@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/icon-text-stat",
+	"title": "Icon Text Stat",
+	"description": "Displays an icon (optional), large number and smaller description",
+	"style": "file:./icon-text-stat.css",
+	"editorScript": [],
+	"category": "lf",
+	"icon": "admin-settings",
+	"keywords": [
+		"large",
+		"heading",
+		"icon"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "icon-text-stat.php",
+		"postTypes": [ "lf_report" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": true,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"example": {}
+}

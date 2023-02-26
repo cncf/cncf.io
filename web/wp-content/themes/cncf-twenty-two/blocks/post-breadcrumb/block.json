@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/post-breadcrumb",
+	"title": "Post Breadcrumb",
+	"description": "Displays the taxonomy for the current post, commonly used on reports",
+	"style": "file:./post-breadcrumb.css",
+	"category": "common",
+	"icon": "admin-links",
+	"keywords": [
+		"breadcrumb",
+		"navigation",
+		"links"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "post-breadcrumb.php",
+		"postTypes": [ "lf_report" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"example": {}
+}

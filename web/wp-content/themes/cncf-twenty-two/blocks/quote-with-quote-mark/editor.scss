@@ -1,0 +1,14 @@
+.wp-block.wp-block-lf-quote-with-quote-mark {
+	border: 1px solid #757ba2;
+
+	&:before {
+		content: 'Quote with Large Quote Mark';
+		color: #757ba2;
+		position: absolute;
+		left: 1px;
+		top: 0;
+		line-height: 1;
+		font-size: 10px;
+		font-style: normal;
+	}
+}

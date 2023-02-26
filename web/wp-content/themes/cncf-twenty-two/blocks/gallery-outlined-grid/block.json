@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/gallery-outlined-grid",
+	"title": "Gallery Outlined Grid",
+	"description": "A gallery of images with each image in an outliner box, typically used for logo display",
+	"style": "file:./gallery-outlined-grid.css",
+	"category": "lf",
+	"icon": "format-gallery",
+	"keywords": [
+		"gallery",
+		"logos"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "gallery-outlined-grid.php",
+		"postTypes": [ "lf_report" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": [
+			"center"
+		],
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"example": {}
+}

@@ -15,12 +15,29 @@
 	margin-right: 0.5em;
 }
 
+.editor-styles-wrapper.block-editor-writing-flow {
+	margin-left: 1rem;
+}
+
 // Constrict content in Editor.
 .wp-block[data-align='full'] > .wp-block-group {
 	> * {
 		max-width: $content-width;
-		margin-left: auto;
-		margin-right: auto;
+		// margin-left: unset !important;
+		// margin-right: unset !important;
+	}
+}
+
+// Experimental unset centering.
+html {
+	.editor-styles-wrapper
+		.edit-post-visual-editor__post-title-wrapper
+		> :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+	.editor-styles-wrapper
+		.block-editor-block-list__layout.is-root-container
+		> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+		margin-left: unset !important;
+		margin-right: unset !important;
 	}
 }
 
@@ -30,9 +47,7 @@
 }
 
 body {
-	&.post-type-post,
-	&.post-type-lf_case_study,
-	&.post-type-lf_case_study_cn {
+	&.post-type-post {
 		.wp-block {
 			max-width: 900px !important;
 		}
@@ -46,19 +61,24 @@ body {
 		.wp-block[data-align='full'] {
 			max-width: 900px !important;
 		}
+	}
+}
 
-		#editor {
-			.editor-styles-wrapper {
-				// Reset weird Block Editor margins by default.
-				h1,
-				h2,
-				h3,
-				h4,
-				h5,
-				h6 {
-					margin-left: auto !important;
-				}
-			}
+body {
+	&.post-type-lf_case_study,
+	&.post-type-lf_case_study_cn {
+		.wp-block {
+			max-width: 1000px !important;
+		}
+
+		/* Width of "wide" blocks */
+		.wp-block[data-align='wide'] {
+			max-width: 1000px !important;
+		}
+
+		/* Width of "full-wide" blocks */
+		.wp-block[data-align='full'] {
+			max-width: 1000px !important;
 		}
 	}
 }
