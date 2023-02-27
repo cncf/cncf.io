@@ -13,7 +13,7 @@ get_template_part( 'components/skip-link-target' );
 
 get_template_part( 'components/home-hero' );
 ?>
-hi
+hi!
 <article class="container wrap">
 	<?php
 	get_template_part( 'components/home-projects' );
