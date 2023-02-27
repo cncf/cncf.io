@@ -1,4 +1,7 @@
-@import '../../source/scss/core/variables';
+// Setup variables - take from theme - '../../source/scss/core/variables'
+
+$font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times',
+	'Source Serif Pro', serif;
 
 .wp-block-lf-quote-with-quote-mark {
 	font-style: italic;
