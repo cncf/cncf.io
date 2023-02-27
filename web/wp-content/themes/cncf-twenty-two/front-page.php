@@ -25,6 +25,6 @@ get_template_part( 'components/home-hero' );
 	endif;
 	?>
 </article>
+hi
 <?php
 get_template_part( 'components/footer' );
-hi
