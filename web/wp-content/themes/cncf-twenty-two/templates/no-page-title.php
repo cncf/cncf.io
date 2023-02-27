@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: No Page Title
- * Template Post Type: page
+ * Template Post Type: page, lf_report
  *
  * @package WordPress
  * @subpackage cncf-theme

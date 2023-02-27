@@ -138,6 +138,13 @@ h3,
 	padding: 2px 6px 0px 6px;
 }
 
+.is-style-sub-header {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 150%;
+	text-transform: uppercase;
+}
+
 .is-style-max-width-700 {
 	max-width: 700px;
 }
@@ -152,6 +159,28 @@ h3,
 
 .is-style-max-width-90 {
 	max-width: 90%;
+}
+
+// Page Title Style
+.is-style-page-title {
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 140%;
+	font-size: 28px;
+	@media (min-width: 1000px) {
+		font-size: 40px;
+	}
+}
+
+// Blog Post Style
+.is-style-post-title {
+	font-weight: 400;
+	max-width: 800px;
+	line-height: 150%;
+	font-size: 30px;
+	@media (min-width: 1200px) {
+		font-size: 50px;
+	}
 }
 
 a {
@@ -421,6 +450,13 @@ article {
 	}
 }
 // end of page content.
+
+// LF Report + No Page Title Template
+.lf_report-template-no-page-title {
+	.is-style-post-title {
+		max-width: unset;
+	}
+}
 
 .nowrap {
 	white-space: nowrap;

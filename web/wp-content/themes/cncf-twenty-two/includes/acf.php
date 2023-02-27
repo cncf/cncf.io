@@ -17,28 +17,12 @@ defined( 'ABSPATH' ) || exit;
  * @return void
  */
 function lf_register_all_our_blocks() {
-	// Return early if this function does not exist.
-	if ( ! function_exists( 'register_block_type' ) ) {
-		return;
-	}
-
-	$blocks_directory = new RecursiveDirectoryIterator( get_template_directory() . '/blocks/' );
-
-	$blocks_to_register = array();
-
-	foreach ( new RecursiveIteratorIterator( $blocks_directory ) as $files ) {
-		if ( $files->getFileName() === 'block.json' ) {
-			array_push( $blocks_to_register, $files->getPathname() );
-		}
-	}
-
-	$blocks_to_register = array_unique( $blocks_to_register );
-
-	if ( count( $blocks_to_register ) > 0 ) {
-		foreach ( $blocks_to_register as $block ) {
-			register_block_type( $block );
-		}
-	}
+	$block_directory = get_template_directory() . '/blocks';
+	register_block_type( $block_directory . '/gallery-slider/block.json' );
+	register_block_type( $block_directory . '/quote-with-quote-mark/block.json' );
+	register_block_type( $block_directory . '/gallery-outlined-grid/block.json' );
+	register_block_type( $block_directory . '/icon-text-stat/block.json' );
+	register_block_type( $block_directory . '/post-breadcrumb/block.json' );
 }
 add_action( 'init', 'lf_register_all_our_blocks' );
 

@@ -141,3 +141,6 @@ docker-compose.override.yml
 
 # Ignore Old Theme
 web/wp-content/themes/lf-theme/
+
+# ASDF
+.tool-versions

@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/quote-with-quote-mark",
+	"title": "Quote with Quote Mark",
+	"description": "A quote with two lined citation alongside a large singular quote mark",
+	"style": "file:./quote-with-quote-mark.css",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "lf",
+	"icon": "format-quote",
+	"keywords": [
+		"",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "quote-with-quote-mark.php",
+		"postTypes": [ "lf_report" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": true
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"example": {}
+}

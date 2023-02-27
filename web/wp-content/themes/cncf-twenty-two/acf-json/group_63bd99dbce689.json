@@ -1,0 +1,83 @@
+{
+    "key": "group_63bd99dbce689",
+    "title": "Block - Quote with Quote Mark",
+    "fields": [
+        {
+            "key": "field_63bd99dcc5cc1",
+            "label": "Large Quote Mark Color",
+            "name": "quote_large_quote_mark_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ef7b4d",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_63bd9a59c5cc2",
+            "label": "Cite Line 1",
+            "name": "quote_cite_line_1",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_63bd9a69c5cc3",
+            "label": "Cite Line 2",
+            "name": "quote_cite_line_2",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "lf\/quote-with-quote-mark"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1673370251
+}
