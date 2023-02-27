@@ -27,3 +27,4 @@ get_template_part( 'components/home-hero' );
 </article>
 <?php
 get_template_part( 'components/footer' );
+hi
