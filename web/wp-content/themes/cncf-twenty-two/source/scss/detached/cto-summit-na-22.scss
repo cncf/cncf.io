@@ -305,7 +305,7 @@ $cto-summit-na-22-pink: #D62293;
 		margin-bottom: 85px;
 
 		@media (min-width: 1200px) {
-			margin-bottom: 60px;
+			margin-bottom: 112px;
 		}
 		&__title {
 			grid-column: span 12;
@@ -333,7 +333,7 @@ $cto-summit-na-22-pink: #D62293;
 				line-height: 160%;
 				grid-column: span 12;
 				@media (min-width: 600px) {
-					grid-column: span 10;
+					grid-column: span 9;
 				}
 			}
 
@@ -429,8 +429,8 @@ $cto-summit-na-22-pink: #D62293;
 		padding-top: 80px;
 		margin-bottom: 80px;
 		@media (min-width: 1200px) {
-			padding-top: 108px;
-			margin-bottom: 160px;
+			padding-top: 146px;
+			margin-bottom: 146px;
 
 			&.is-style-down-gradient {
 				padding-top: 130px;
