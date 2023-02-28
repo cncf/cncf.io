@@ -10,10 +10,6 @@
  * @since 1.0.0
  */
 
-// declare the next event link and alt as a variable.
-$event_link = 'https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/';
-$event_text = 'KubeCon + CloudNativeCon Europe 2023 from 17th-21st April';
-
 // Report folder in images/ folder.
 $report_folder = 'reports/cnsc-na-23/';
 
@@ -28,7 +24,7 @@ wp_enqueue_style( 'wp-block-column' );
 wp_enqueue_style( 'wp-block-columns' );
 
 // setup social share icons + data.
-$caption      = 'Read the CNCF KubeCon + CloudNativeCon North America 2022 Transparency Report ';
+$caption      = 'Read the CloudNativeSecurityCon North America 2023 Transparency Report ';
 $page_url     = rawurlencode( get_permalink() );
 $caption      = htmlspecialchars( rawurlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
 $options      = get_option( 'lf-mu' );
@@ -48,16 +44,16 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 		<!-- Hero -->
 		<section class="hero alignfull background-image-wrapper">
 			<figure class="background-image-figure darken-on-mobile">
-				<?php LF_Utils::display_responsive_images( 84379, 'full', '1440px', false, 'eager', 'CTO Summit - Detroit 2022' ); ?>
+				<?php LF_Utils::display_responsive_images( 84379, 'full', '1440px', false, 'eager', 'CloudNativeSecurityCon North America 2023 Transparency Report' ); ?>
 			</figure>
 			<div class="background-image-text-overlay">
 				<div class="container wrap hero__container">
 
 					<div class="hero__wrapper">
 						<img class="hero__logo"
-							src="<?php LF_Utils::get_svg( $report_folder . 'CloudNativeCon-Icon.svg', true ); ?>"
+							src="<?php LF_Utils::get_svg( $report_folder . 'CloudNativeSecurityCon-Icon.svg', true ); ?>"
 							width="309" height="119"
-							alt="CloudNative Security Con North America 2022 Logo"
+							alt="CloudNativeSecurityCon North America 2023 Logo"
 							loading="eager">
 
 						<h1 class="hero__title">Transparency<br>Report</h1>
@@ -326,7 +322,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="wp-block-lf-youtube-lite">
 					<lite-youtube videoid="Q1cA0iGw84g"
-						videotitle="Highlights from KubeCon + CloudNativeCon North America 2022"
+						videotitle="Highlights from CloudNativeSecurityCon North America 2023"
 						webpStatus="0" sdthumbStatus="1"
 						title="Play Highlights">
 					</lite-youtube>
@@ -421,7 +417,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="wp-block-button"><a
 						href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/"
-						title="See all Sponsors and Partners of CloudNative Security Con North America 2022 Logo"
+						title="See all Sponsors and Partners of CloudNativeSecurityCon North America 2023 Logo"
 						class="wp-block-button__link">See
 						all Sponsors and Partners</a>
 				</div>
@@ -440,7 +436,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/">
 					<figure>
-						<?php LF_Utils::display_responsive_images( 84378, 'full', '1200px', false, 'lazy', '' ); ?>
+						<?php LF_Utils::display_responsive_images( 84378, 'full', '1200px', false, 'lazy', 'Kubecon + CloudNativeSecurityCon Europe 2023 - Amsterdam - April 18-21 - Register Now' ); ?>
 					</figure>
 				</a>
 
