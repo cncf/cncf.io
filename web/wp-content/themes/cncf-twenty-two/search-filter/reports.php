@@ -15,7 +15,13 @@ if ( $query->have_posts() ) : ?>
 
 <p class="search-filter-results-count">
 	<?php
-	$full_count = $wpdb->get_var( "select count(*) from wp_posts where wp_posts.post_type = 'lf_report' and wp_posts.post_status = 'publish' and id != 84410;" );
+	if ( isset( $query->query['post__not_in'] ) ) {
+		$post_not_in = " and id not in (" . implode( ',' , $query->query['post__not_in'] ) . ")";
+	} else {
+		$post_not_in = '';
+	}
+
+	$full_count = $wpdb->get_var( "select count(*) from wp_posts where wp_posts.post_type = 'lf_report' and wp_posts.post_status = 'publish'" . $post_not_in . " ;" );
 
 	// if filter matches all.
 	if ( $full_count == $query->found_posts ) {
