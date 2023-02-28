@@ -33,6 +33,12 @@ h2 {
 	display: block;
 }
 
+.long-word {
+	word-break: break-all;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+
 /**
 HIDE/SHOW
 **/
@@ -225,7 +231,6 @@ TOOLS
 	margin-bottom: 46px;
 	@media (max-width: 600px) {
 		width: calc(100% - 20px);
-		margin-left: 20px;
 	}
 	@media (min-width: 1000px) {
 		margin-bottom: 55px;
@@ -253,7 +258,7 @@ TOOLS
 		margin-bottom: 20px;
 		@media (min-width: 1200px) {
 			font-size: 30px;
-			margin-bottom: 40px;
+			margin-bottom: 25px;
 		}
 	}
 }
@@ -379,16 +384,6 @@ SPACERS
 	}
 }
 
-.report-spacer-50 {
-	height: 25px;
-	@media (min-width: 1000px) {
-		height: 40px;
-	}
-	@media (min-width: 1200px) {
-		height: 50px;
-	}
-}
-
 .report-spacer-60 {
 	height: 40px;
 	@media (min-width: 1000px) {
@@ -396,16 +391,6 @@ SPACERS
 	}
 	@media (min-width: 1200px) {
 		height: 60px;
-	}
-}
-
-.report-spacer-70 {
-	height: 50px;
-	@media (min-width: 1000px) {
-		height: 60px;
-	}
-	@media (min-width: 1200px) {
-		height: 70px;
 	}
 }
 
