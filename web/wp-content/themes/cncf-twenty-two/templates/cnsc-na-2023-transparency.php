@@ -293,7 +293,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 						<h4>Speakers</h4>
 					</div>
 					<div class="data">
-						<h3>109</h3>
+						<h3>26</h3>
 						<h4>Women, non binary & other speakers</h4>
 					</div>
 					<div class="data">
