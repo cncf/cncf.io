@@ -104,6 +104,14 @@ html {
 		}
 	}
 
+	.responsive-image {
+		img,
+		svg {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
 	/**
 	HERO
 	**/
@@ -375,12 +383,11 @@ html {
 
 		&__data-grid {
 			display: grid;
-  			gap: 16px 16px;
-  			grid-template-columns: repeat(1, 1fr);
+  			gap: 20px 32px;
+  			grid-template-columns: repeat(2, 1fr);
 
 			@media (min-width: 550px) {
 				gap: 50px 16px;
-  				grid-template-columns: repeat(2, 1fr);
 			}
 
 			@media (min-width: 1000px) {
@@ -422,7 +429,7 @@ html {
   			gap: 16px;
   			grid-template-columns: repeat(1, 1fr);
 
-			@media (min-width: 100px) {
+			@media (min-width: 1000px) {
 				gap: 103px;
   				grid-template-columns: repeat(2, 1fr);
 
@@ -517,6 +524,10 @@ html {
 				margin-right: 0.9375rem;
 				margin-left: 0.9375rem;
 			}
+		}
+
+		.logo--suse {
+			width: 112px !important;
 		}
 	}
 

@@ -253,7 +253,9 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<?php Lf_Utils::get_svg( $report_folder. '/CNSC-NA-23-demographics.svg' ); ?>
+				<div class="responsive-image">
+					<?php Lf_Utils::get_svg( $report_folder . '/CNSC-NA-23-demographics.svg' ); ?>
+				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
@@ -385,7 +387,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 					<div class="sponsors-logo-item"><a href="https://www.redhat.com/" target="_blank" rel="noopener"><img width="237" height="56" src="<?php LF_Utils::get_image( $report_folder . 'red-hat.svg', true ); ?>" class="logo wp-post-image" alt="Red Hat Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://www.suse.com/" target="_blank" rel="noopener"><img width="112" height="97" src="<?php LF_Utils::get_image( $report_folder . 'suse.svg', true ); ?>" class="logo wp-post-image" alt="Suse Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.suse.com/" target="_blank" rel="noopener"><img width="112" height="97" src="<?php LF_Utils::get_image( $report_folder . 'suse.svg', true ); ?>" class="logo wp-post-image logo--suse" alt="Suse Logo" decoding="async" loading="lazy"></a></div>
 
 					<div class="sponsors-logo-item"><a href="https://sysdig.com/" target="_blank" rel="noopener"><img width="202" height="72" src="<?php LF_Utils::get_image( $report_folder . 'sysdig.svg', true ); ?>" class="logo wp-post-image" alt="sysdig Logo" decoding="async" loading="lazy"></a></div>
 
@@ -436,7 +438,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<a href="#">
+				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/">
 					<figure>
 						<?php LF_Utils::display_responsive_images( 84378, 'full', '1200px', false, 'lazy', '' ); ?>
 					</figure>
