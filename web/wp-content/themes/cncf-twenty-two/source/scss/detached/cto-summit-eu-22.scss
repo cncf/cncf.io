@@ -101,12 +101,6 @@ $cto-summit-eu-22-orange-700: #f36a11;
 		list-style-position: inside;
 	}
 
-	.long-word {
-		word-break: break-all;
-		hyphens: auto;
-		-webkit-hyphens: auto;
-	}
-
 	.bold-number {
 		font-weight: 700;
 		font-size: 32px;
@@ -300,6 +294,14 @@ $cto-summit-eu-22-orange-700: #f36a11;
 					margin-top: 40px;
 					padding-bottom: 50px;
 					border-bottom: 1px solid #d0d0d0;
+					&:last-child {
+						@media (max-width: 599px) {
+							border-bottom: none;
+						}
+						@media (min-width: 1000px) {
+							border-bottom: none;
+						}
+					}
 					&__image {
 						width: 100px;
 						border-radius: 50%;
