@@ -106,10 +106,10 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 					<p>Security is people-powered, and we all benefit by collaborating together as a knowledgeable, vendor-neutral community to develop the tools and processes that are going to uplevel our security posture. The conversations we had and the lessons we learned together at CNSC helped us make great strides towards tackling security challenges within the cloud native ecosystem.</p>
 
-					<p>I hope you find this information valuable and look forward to seeing you in Amsterdam this April for <a href="#">KubeCon + CloudNativeCon Europe</a>.</p>
+					<p>I hope you find this information valuable and look forward to seeing you in Amsterdam this April for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" title="KubeCon + CloudNativeCon Europe event">KubeCon + CloudNativeCon Europe</a>.</p>
 
 					<div class="section-01__author">
-						<?php LF_Utils::display_responsive_images( 82008, 'full', '75px', null, 'lazy', 'Priyanka Sharma' ); ?>
+						<?php LF_Utils::display_responsive_images( 82008, 'full', '75px', null, 'lazy', 'Priyanka Sharma - Executive Director, CNCF' ); ?>
 						<p><strong>Priyanka Sharma</strong><br>
 						Executive Director, CNCF</p>
 					</div>
@@ -165,7 +165,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<div class="wp-block-column is-vertically-aligned-bottom"
 						style="flex-basis:20%">
 						<p
-							class="has-text-align-right is-style-link-cta"><a href="#" title="CNSC North America 2023 Photo Gallery">See more</a></p>
+							class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720305357520" title="CloudNativeSecurityCon 2023 Photo Gallery">See more</a></p>
 					</div>
 				</div>
 
@@ -259,10 +259,10 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<p
 						class="quote-with-name-container__quote">“I wrote about my excitement for CloudNativeSecurityCon when it was announced at KubeCon+CloudNativeCon 2022 because I believe these shows should be increasingly important for security teams and security vendors. CNSC has an opportunity to become a top security conference to help security teams support cloud native development.</p>
 					<div class="quote-with-name-container__marks">
+						<h3
+							class="quote-with-name-container__name">Melinda Marks</h3>
 						<p
-							class="quote-with-name-container__name">Melinda Marks</p>
-						<p
-							class="quote-with-name-container__position"><a href="https://www.techtarget.com/searchsecurity/opinion/Top-takeaways-from-first-CloudNativeSecurityCon">TechTarget</a></p>
+							class="quote-with-name-container__position"><a href="https://www.techtarget.com/searchsecurity/opinion/Top-takeaways-from-first-CloudNativeSecurityCon" title="Read more on TechTarget">TechTarget</a></p>
 					</div>
 				</div>
 			</div>
@@ -316,12 +316,12 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header text-center">Watch the sessions</p>
+				<h3 class="sub-header text-center">Watch the sessions</h3>
 
 				<div aria-hidden="true" class="report-spacer-70"></div>
 
 				<div class="wp-block-lf-youtube-lite">
-					<lite-youtube videoid="Q1cA0iGw84g"
+					<lite-youtube videoid="jXcYiiJ-BBg"
 						videotitle="Highlights from CloudNativeSecurityCon North America 2023"
 						webpStatus="0" sdthumbStatus="1"
 						title="Play Highlights">
@@ -334,10 +334,10 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<p
 						class="quote-with-name-container__quote">“One of the insights from the event was that the security community has come to realize it must focus more heavily on resolving vulnerabilities faster while taking a proactive approach toward thwarting breaches.</p>
 					<div class="quote-with-name-container__marks">
+						<h3
+							class="quote-with-name-container__name">Mark Albertson</h3>
 						<p
-							class="quote-with-name-container__name">Mark Albertson</p>
-						<p
-							class="quote-with-name-container__position"><a href="https://siliconangle.com/2023/02/06/first-ever-cloudnativesecuritycon-offers-insights-into-ongoing-challenge-of-protecting-vital-architectures-cnscon/">SiliconANGLE</a></p>
+							class="quote-with-name-container__position"><a href="https://siliconangle.com/2023/02/06/first-ever-cloudnativesecuritycon-offers-insights-into-ongoing-challenge-of-protecting-vital-architectures-cnscon/" title="Read more on SiliconANGLE">SiliconANGLE</a></p>
 					</div>
 				</div>
 
@@ -371,72 +371,71 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 			<div class="container wrap">
 				<h2 class="section-header text-center">Thank you to our sponsors</h2>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<p class="sub-header text-center">Diamond Sponsors</p>
+				<h3 class="sub-header text-center">Diamond Sponsors</h3>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<!-- Start of diamond sponsors  -->
 				<div class="sponsors-logos largest even orphan-by-5">
-					<div class="sponsors-logo-item"><a href="https://www.cisco.com/" target="_blank" rel="noopener"><img width="246" height="60" src="<?php LF_Utils::get_image( $report_folder . 'cisco.svg', true ); ?>" class="logo wp-post-image" alt="Cisco Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.cisco.com/" title="Cisco Website" target="_blank" rel="noopener"><img width="246" height="60" src="<?php LF_Utils::get_image( $report_folder . 'cisco.svg', true ); ?>" class="logo wp-post-image" alt="Cisco Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://www.redhat.com/" target="_blank" rel="noopener"><img width="237" height="56" src="<?php LF_Utils::get_image( $report_folder . 'red-hat.svg', true ); ?>" class="logo wp-post-image" alt="Red Hat Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.redhat.com/" title="Red Hat Website" target="_blank" rel="noopener"><img width="237" height="56" src="<?php LF_Utils::get_image( $report_folder . 'red-hat.svg', true ); ?>" class="logo wp-post-image" alt="Red Hat Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://www.suse.com/" target="_blank" rel="noopener"><img width="112" height="97" src="<?php LF_Utils::get_image( $report_folder . 'suse.svg', true ); ?>" class="logo wp-post-image logo--suse" alt="Suse Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.suse.com/" title="SUSE Website" target="_blank" rel="noopener"><img width="112" height="97" src="<?php LF_Utils::get_image( $report_folder . 'suse.svg', true ); ?>" class="logo wp-post-image logo--suse" alt="SUSE Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://sysdig.com/" target="_blank" rel="noopener"><img width="202" height="72" src="<?php LF_Utils::get_image( $report_folder . 'sysdig.svg', true ); ?>" class="logo wp-post-image" alt="sysdig Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://sysdig.com/" title="sysdig Website" target="_blank" rel="noopener"><img width="202" height="72" src="<?php LF_Utils::get_image( $report_folder . 'sysdig.svg', true ); ?>" class="logo wp-post-image" alt="sysdig Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://tetrate.io/" target="_blank" rel="noopener"><img width="217" height="50" src="<?php LF_Utils::get_image( $report_folder . 'tetrate.svg', true ); ?>" class="logo wp-post-image" alt="tetrate Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://tetrate.io/" title="tetrate Website" target="_blank" rel="noopener"><img width="217" height="50" src="<?php LF_Utils::get_image( $report_folder . 'tetrate.svg', true ); ?>" class="logo wp-post-image" alt="tetrate Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://www.uptycs.com/" target="_blank" rel="noopener"><img width="185" height="56" src="<?php LF_Utils::get_image( $report_folder . 'uptycs.svg', true ); ?>" class="logo wp-post-image" alt="uptycs Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.uptycs.com/" title="uptycs Website" target="_blank" rel="noopener"><img width="185" height="56" src="<?php LF_Utils::get_image( $report_folder . 'uptycs.svg', true ); ?>" class="logo wp-post-image" alt="uptycs Logo" decoding="async" loading="lazy"></a></div>
 				</div>
 				<!-- End of diamond sponsors  -->
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header text-center">Platinum sponsors</p>
+				<h3 class="sub-header text-center">Platinum sponsors</h3>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<!-- Start of platinum sponsors  -->
 				<div class="sponsors-logos larger odd orphan-by-4 orphan-by-8">
-					<div class="sponsors-logo-item"><a href="https://www.checkpoint.com/" target="_blank" rel="noopener"><img width="219" height="46" src="<?php LF_Utils::get_image( $report_folder . 'check-point.svg', true ); ?>" class="logo wp-post-image" alt="Check Point Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.checkpoint.com/" title="CHECK POINT Website" target="_blank" rel="noopener"><img width="219" height="46" src="<?php LF_Utils::get_image( $report_folder . 'check-point.svg', true ); ?>" class="logo wp-post-image" alt="Check Point Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://about.gitlab.com/" target="_blank" rel="noopener"><img width="215" height="46" src="<?php LF_Utils::get_image( $report_folder . 'gitlab.svg', true ); ?>" class="logo wp-post-image" alt="Gitlab Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://about.gitlab.com/" title="GitLab Website" target="_blank" rel="noopener"><img width="215" height="46" src="<?php LF_Utils::get_image( $report_folder . 'gitlab.svg', true ); ?>" class="logo wp-post-image" alt="GitLab Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://opensearch.org/" target="_blank" rel="noopener"><img width="250" height="47" src="<?php LF_Utils::get_image( $report_folder . 'opensearch.svg', true ); ?>" class="logo wp-post-image" alt="Open Search Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://opensearch.org/" title="OpenSearch Website" target="_blank" rel="noopener"><img width="250" height="47" src="<?php LF_Utils::get_image( $report_folder . 'opensearch.svg', true ); ?>" class="logo wp-post-image" alt="OpenSearch Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://openssf.org/" target="_blank" rel="noopener"><img width="200" height="75" src="<?php LF_Utils::get_image( $report_folder . 'openssf.svg', true ); ?>" class="logo wp-post-image" alt="Open SSF Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://openssf.org/" title="OpenSSF Website"  target="_blank" rel="noopener"><img width="200" height="75" src="<?php LF_Utils::get_image( $report_folder . 'openssf.svg', true ); ?>" class="logo wp-post-image" alt="OpenSSF Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://www.sonatype.com/" target="_blank" rel="noopener"><img width="214" height="37" src="<?php LF_Utils::get_image( $report_folder . 'sonatype.svg', true ); ?>" class="logo wp-post-image" alt="Sonatype Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.sonatype.com/" title="sonatype Website" target="_blank" rel="noopener"><img width="214" height="37" src="<?php LF_Utils::get_image( $report_folder . 'sonatype.svg', true ); ?>" class="logo wp-post-image" alt="sonatype Logo" decoding="async" loading="lazy"></a></div>
 
-					<div class="sponsors-logo-item"><a href="https://www.vmware.com/" target="_blank" rel="noopener"><img width="220" height="35" src="<?php LF_Utils::get_image( $report_folder . 'vmware.svg', true ); ?>" class="logo wp-post-image" alt="vmware Logo" decoding="async" loading="lazy"></a></div>
+					<div class="sponsors-logo-item"><a href="https://www.vmware.com/" title="vmware Website" target="_blank" rel="noopener"><img width="220" height="35" src="<?php LF_Utils::get_image( $report_folder . 'vmware.svg', true ); ?>" class="logo wp-post-image" alt="vmware Logo" decoding="async" loading="lazy"></a></div>
 				</div>
 				<!-- End of platinum sponsors -->
 
 				<div class="wp-block-button"><a
-						href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/"
+						href="https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/"
 						title="See all Sponsors and Partners of CloudNativeSecurityCon North America 2023 Logo"
-						class="wp-block-button__link">See
-						all Sponsors and Partners</a>
+						class="wp-block-button__link">See all Sponsors and Partners</a>
 				</div>
 
 				<div class="shadow-hr"></div>
 
 				<div class="lf-grid">
 					<div class="restrictive-7-col">
-						<p class="sub-header">KubeCon + CloudNativeCon Europe 2023</p>
+						<h3 class="sub-header">KubeCon + CloudNativeCon Europe 2023</h3>
 
-						<p>Join adopters and technologists from leading open source and cloud native communities, alongside maintainers of <a href="https://www.cncf.io/projects/">CNCF Projects</a> for four days dedicated to advancing cloud native computing through practitioner-led education and collaboration.</p>
+						<p>Join adopters and technologists from leading open source and cloud native communities, alongside maintainers of <a href="https://www.cncf.io/projects/" title="Read more about CNCF Project">CNCF Projects</a> for four days dedicated to advancing cloud native computing through practitioner-led education and collaboration.</p>
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/">
+				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/" title="CloudNativeSecurityCon Europe 2023 - Amsterdam - April 18-21 - Register Now">
 					<figure>
-						<?php LF_Utils::display_responsive_images( 84378, 'full', '1200px', false, 'lazy', 'Kubecon + CloudNativeSecurityCon Europe 2023 - Amsterdam - April 18-21 - Register Now' ); ?>
+						<?php LF_Utils::display_responsive_images( 84378, 'full', '1200px', false, 'lazy', 'Banner image of Kubecon + CloudNativeSecurityCon Europe 2023' ); ?>
 					</figure>
 				</a>
 
