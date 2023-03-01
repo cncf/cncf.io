@@ -417,7 +417,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="wp-block-button"><a
 						href="https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/"
-						title="See all Sponsors and Partners of CloudNativeSecurityCon North America 2023 Logo"
+						title="See all Sponsors and Partners of CloudNativeSecurityCon North America 2023"
 						class="wp-block-button__link">See all Sponsors and Partners</a>
 				</div>
 
