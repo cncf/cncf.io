@@ -14,10 +14,6 @@ wp_enqueue_style( 'wp-block-column' );
 wp_enqueue_style( 'wp-block-columns' );
 wp_enqueue_style( 'wp-block-group' );
 
-// Make use of the PDF report link in the editor.
-// This way do not need to make a new commit just to update PDF link.
-$pdf_url = get_post_meta( get_the_ID(), 'lf_report_pdf_url', true );
-
 // Report folder in images/ folder.
 $report_folder = 'reports/cto-summit-na-22/';
 
@@ -33,7 +29,7 @@ get_template_part( 'components/header' );
 wp_enqueue_style( 'cto-summit-na-22', get_template_directory_uri() . '/build/cto-summit-na-22.min.css', array(), filemtime( get_template_directory() . '/build/cto-summit-na-22.min.css' ), 'all' );
 
 // setup sharing icons data..
-$caption  = 'Read the CTO Summit Report: Resiliency in Multi-Cloud ';
+$caption  = 'Read the CTO Summit Report: Exploring The Foundations Of Cloud Native Maturity ';
 $page_url = rawurlencode( get_permalink() );
 $caption  = htmlspecialchars( rawurlencode( html_entity_decode( $caption, ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
 $options  = get_option( 'lf-mu' );
@@ -41,12 +37,8 @@ $options && $options['social_twitter_handle'] ? $twitter = $options['social_twit
 $twitter_url  = 'https://twitter.com/intent/tweet?text=' . $caption . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $twitter . '';
 $linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $caption;
 $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' . $page_url;
-?>
-
-<?php
 
 get_template_part( 'components/skip-link-target' );
-
 ?>
 
 <main class="cto-summit-na-22">
@@ -981,6 +973,8 @@ get_template_part( 'components/skip-link-target' );
 
 				<div aria-hidden="true" class="report-spacer-200"></div>
 
+				<!-- section-09__slider  -->
+
 				<div
 					class="wp-block-group is-style-no-padding is-style-see-all">
 					<div
@@ -995,18 +989,98 @@ get_template_part( 'components/skip-link-target' );
 								class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720303164393" title="KubeCon + CloudNativeCon North America 2022 Photo Gallery">See more</a></p>
 						</div>
 					</div>
-					<div style="height:40px" aria-hidden="true"
-						class="report-spacer-40"></div>
-					<div class="columns-two columns-two--images">
-						<figure class="">
-							<?php LF_Utils::display_responsive_images( 84203, 'large', '685px', false, 'lazy', 'The Detroit People Mover' ); ?>
-						</figure>
-						<figure class="">
-							<?php LF_Utils::display_responsive_images( 84204, 'large', '503px', false, 'lazy', 'Two people hugging on stage at the Detroit 2022 CTO Summit' ); ?>
-						</figure>
+					<div aria-hidden="true" class="report-spacer-40"></div>
+					<div class="section-09__slider">
+						<div>
+							<?php LF_Utils::display_responsive_images( 81986, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81987, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81988, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81989, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81990, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81991, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81992, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81993, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81994, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81995, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81996, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81997, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81998, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 81999, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 82000, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 82001, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 82002, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 82003, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 82004, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 82005, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+						<div>
+							<?php LF_Utils::display_responsive_images( 82006, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from KubeCon + CloudNativeCon North America 2022' ); ?>
+						</div>
+
+					</div>
+					<div class="section-09__controls">
+						<button class="button-reset  section-09__prev"><svg
+								width="12" height="19" viewBox="0 0 12 19"
+								fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M10.4131 17.627L2.41309 9.62695L10.4131 1.62695"
+									stroke="black" stroke-width="3" />
+							</svg>
+							<span class="screen-reader-text">Previous
+								Photo</span>
+						</button>
+						<button class="button-reset section-09__next"><svg
+								width="12" height="19" viewBox="0 0 12 19"
+								fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M1.41309 1.62695L9.41309 9.62695L1.41309 17.627"
+									stroke="black" stroke-width="3" />
+							</svg>
+							<span class="screen-reader-text">Next Photo</span>
+						</button>
 					</div>
 				</div>
 
+
+				<!-- end   -->
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
 			</div>
@@ -1071,17 +1145,21 @@ get_template_part( 'components/skip-link-target' );
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="columns-three">
+				<div class="section-11__grid lf-grid">
+					<div class="section-11__grid-col1">
 					<a href="https://www.linuxfoundation.org/research/"
 						title="Linux Foundation Research"><img
 							src="<?php LF_utils::get_svg( $report_folder . 'logo-lf-research.svg', true ); ?>"
 							alt="The Linux Foundation Research" width="269"
 							height="48" loading="lazy"></a>
+							</div>
+					<div class="section-11__grid-col2">
 					<a href="https://www.cncf.io"
 						title="Cloud Native Computing Foundation"><img
 							src="<?php LF_utils::get_svg( $report_folder . 'cncf-logo.svg', true ); ?>"
 							alt="CNCF" width="290" height="48"
 							loading="lazy"></a>
+					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -1090,14 +1168,12 @@ get_template_part( 'components/skip-link-target' );
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="columns-one">
-					<a href="https://www.uptycs.com"
+				<a href="https://www.uptycs.com"
 						title="Go to Uptycs Website">
 						<img src="<?php LF_utils::get_svg( $report_folder . 'logo-uptycs.svg', true ); ?>"
 							alt="uptycs logo" width="280" height="84"
 							loading="lazy">
 					</a>
-				</div>
 
 				<div class="shadow-hr"></div>
 
@@ -1161,4 +1237,20 @@ get_template_part( 'components/skip-link-target' );
 	</article>
 </main>
 <?php
+
+// load slick css.
+wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/build/slick.min.css', array(), filemtime( get_template_directory() . '/build/slick.min.css' ), 'all' );
+
+// load main slick.
+wp_enqueue_script( 'slick', get_template_directory_uri() . '/source/js/libraries/slick.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/source/js/libraries/slick.min.js' ), true );
+
+// custom scripts.
+wp_enqueue_script(
+	'cto-summit-na-22-report',
+	get_template_directory_uri() . '/source/js/on-demand/cto-summit-na-22-report.js',
+	array( 'jquery', 'slick' ),
+	filemtime( get_template_directory() . '/source/js/on-demand/cto-summit-na-22-report.js' ),
+	true
+);
+
 get_template_part( 'components/footer' );

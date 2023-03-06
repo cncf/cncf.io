@@ -1,4 +1,4 @@
-// CTO Summit NA 2023 Transparency Report
+// CTO Summit NA 2022 Transparency Report
 
 @import 'report_fonts';
 
@@ -433,12 +433,8 @@ $cto-summit-na-22-pink: #d62293;
 		padding-top: 80px;
 		margin-bottom: 80px;
 		@media (min-width: 1200px) {
-			padding-top: 146px;
-			margin-bottom: 146px;
-
-			// &.is-style-down-gradient {
-			// 	padding-top: 130px;
-			// }
+			padding-top: 120px;
+			margin-bottom: 120px;
 		}
 	}
 
@@ -447,15 +443,15 @@ $cto-summit-na-22-pink: #d62293;
 		margin-bottom: 80px;
 		@media (min-width: 1200px) {
 			margin-top: 120px;
-			margin-bottom: 166px;
+			margin-bottom: 120px;
 		}
 	}
 
 	.section-08 {
 		margin-bottom: 80px;
 		@media (min-width: 1200px) {
-			padding-top: 110px;
-			margin-bottom: 166px;
+			padding-top: 120px;
+			margin-bottom: 120px;
 		}
 	}
 
@@ -469,24 +465,42 @@ $cto-summit-na-22-pink: #d62293;
 	}
 
 	.section-09 {
-		.columns-two--images {
-			grid-template-columns: 1fr;
-
+		&__slider {
+			margin-top: 30px;
 			@media (min-width: 800px) {
-				grid-template-columns: 1fr 0.7fr;
-			}
-
-			figure {
-				position: relative;
-				width: 100%;
-				height: 100%;
-
-				img {
-					object-fit: cover;
-					height: 100%;
-					width: 100%;
+				.slick-list {
+					padding-right: 25%;
 				}
 			}
+			.slick-track {
+				display: flex !important;
+			}
+			.slick-slide {
+				max-height: 500px;
+				height: inherit !important;
+				@media (min-width: 800px) {
+					margin-right: 20px;
+				}
+				> div {
+					height: 100%;
+					> div {
+						height: 100%;
+					}
+				}
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+		&__controls {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 20px;
+		}
+		&__prev {
+			margin-right: 25px;
 		}
 	}
 
@@ -500,6 +514,26 @@ $cto-summit-na-22-pink: #d62293;
 
 	// Thank you.
 	.section-11 {
+		&__grid {
+			&-col1 {
+				grid-column: span 12;
+				@media (min-width: 800px) {
+					grid-column: span 6;
+				}
+				@media (min-width: 1000px) {
+					grid-column: span 4;
+				}
+			}
+			&-col2 {
+				grid-column: span 12;
+				@media (min-width: 800px) {
+					grid-column: span 6;
+				}
+				@media (min-width: 1000px) {
+					grid-column: 5 / 8;
+				}
+			}
+		}
 		.social-share {
 			color: $cto-summit-na-22-black;
 			&__title {
