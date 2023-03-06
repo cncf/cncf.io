@@ -653,7 +653,7 @@ class LF_Utils {
 		while ( $query->have_posts() ) {
 			$query->the_post();
 			$person_title        = $post->post_title;
-			$person_image_url    = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'lf_human_image', true ) , 'newsroom-post-width' )[0];
+			$person_image_url    = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'lf_human_image', true ), 'newsroom-post-width' )[0];
 			$person_profile_link = get_permalink();
 
 			$hocn_people[] = array(
