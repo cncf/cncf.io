@@ -34,7 +34,7 @@ $linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_u
 $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' . $page_url;
 ?>
 
-<link rel="prefetch"
+<link rel="preload"
 	href="<?php echo esc_url( get_template_directory_uri() . '/build/cnsc-na-23-transparency.min.css' ); ?>"
 	as="style" crossorigin="anonymous" />
 
@@ -165,7 +165,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<div class="wp-block-column is-vertically-aligned-bottom"
 						style="flex-basis:20%">
 						<p
-							class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720305357520" title="CloudNativeSecurityCon 2023 Photo Gallery">See more</a></p>
+							class="has-text-align-right is-style-link-cta"><a href="https://flic.kr/s/aHBqjAoMLU" title="CloudNativeSecurityCon 2023 Photo Gallery">See more</a></p>
 					</div>
 				</div>
 
@@ -353,11 +353,13 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<div>
 						<h3 class="sub-header">Gold chaoss D&I event badge</h3>
 
-						<img class="hero__logo"
-							src="<?php LF_Utils::get_image( $report_folder . 'dandigold.jpg', true ); ?>"
+						<img class=""
+							src="<?php LF_Utils::get_image( $report_folder . 'D&I-Gold.svg', true ); ?>"
 							width="291" height="70"
 							alt="D&I Gold logo"
 							loading="lazy">
+
+						<div aria-hidden="true" class="report-spacer-40"></div>
 
 						<p>Awarded to events in the open source community that foster healthy D&I practices</p>
 					</div>
@@ -426,6 +428,8 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 				<div class="lf-grid">
 					<div class="restrictive-7-col">
 						<h3 class="sub-header">KubeCon + CloudNativeCon Europe 2023</h3>
+
+						<div aria-hidden="true" class="report-spacer-40"></div>
 
 						<p>Join adopters and technologists from leading open source and cloud native communities, alongside maintainers of <a href="https://www.cncf.io/projects/" title="Read more about CNCF Project">CNCF Projects</a> for four days dedicated to advancing cloud native computing through practitioner-led education and collaboration.</p>
 					</div>
