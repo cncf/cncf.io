@@ -52,7 +52,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<div class="hero__wrapper">
 						<img class="hero__logo"
 							src="<?php LF_Utils::get_svg( $report_folder . 'CloudNativeSecurityCon-Icon.svg', true ); ?>"
-							width="309" height="119"
+							width="309" height="120"
 							alt="CloudNativeSecurityCon North America 2023 Logo"
 							loading="eager">
 
@@ -316,7 +316,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="shadow-hr"></div>
 
-				<h3 class="sub-header text-center">Watch the sessions</h3>
+				<h3 class="larger-sub-header text-center">Watch the sessions</h3>
 
 				<div aria-hidden="true" class="report-spacer-70"></div>
 
