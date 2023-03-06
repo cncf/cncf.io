@@ -467,15 +467,19 @@ html {
 
 		&__grid-col2 {
 			display: grid;
-  			gap: 16px;
+  			gap: 32px;
   			grid-template-columns: repeat(1, 1fr);
 
 			@media (min-width: 1000px) {
 				gap: 100px;
   				grid-template-columns: repeat(2, 1fr);
+			}
 
-				.sub-header {
-					margin-bottom: 50px;
+			.sub-header {
+				margin-bottom: 20px;
+
+				@media (min-width: 1000px) {
+					margin-bottom: 60px;
 				}
 			}
 		}
@@ -493,89 +497,91 @@ html {
 			text-align: center;
 			letter-spacing: normal;
 		}
-	}
 
-	// Copied from LFE.
-	// We use largest and larger size.
-	.sponsors-logos {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
+		// Copied from LFE.
+		// We use largest and larger size.
+		.sponsors-logos {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
 
-		> .sponsors-logo-item {
-			width: calc(100% - 1.25rem);
-			margin-right: 0.625rem;
-			margin-left: 0.625rem;
-		}
+			> .sponsors-logo-item {
+				width: calc(100% - 1.25rem);
+				margin-right: 0.625rem;
+				margin-left: 0.625rem;
+			}
 
-		.sponsors-logo-item {
-			position: relative;
-			text-align: center;
+			.sponsors-logo-item {
+				position: relative;
+				text-align: center;
 
-			&:not(:last-of-type) {
-				.logo {
-					margin-bottom: 20px;
+				&:not(:last-of-type) {
+					.logo {
+						margin-bottom: 20px;
+					}
 				}
 			}
-		}
 
-		.sponsors-logo-item a img {
-			transform-origin: 50% 50%;
-			transition: transform 0.2s;
-			transition: transform 0.2s;
-			&:hover {
-				transform: scale(1.1);
+			.sponsors-logo-item a img {
+				transform-origin: 50% 50%;
+				transition: transform 0.2s;
+				transition: transform 0.2s;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+
+			&.largest .logo {
+				height: 9rem;
+				width: 12rem;
+				margin: 0; // reset.
+			}
+			&.larger .logo {
+				height: 9rem;
+				width: 12rem;
+				margin: 0; // reset.
+			}
+
+			@media (min-width: 412px) {
+				&.largest > .sponsors-logo-item {
+					width: calc(50% - 1.875rem);
+					margin-right: 0.9375rem;
+					margin-left: 0.9375rem;
+				}
+
+				&.larger > .sponsors-logo-item {
+					width: calc(50% - 2rem);
+					margin-right: 0.9375rem;
+					margin-left: 0.9375rem;
+				}
+			}
+
+			@media (min-width: 1000px) {
+				&.largest > .sponsors-logo-item {
+					width: calc(33.33333% - 1.875rem);
+					margin-right: 0.9375rem;
+					margin-left: 0.9375rem;
+				}
+
+				&.larger > .sponsors-logo-item {
+					width: calc(25% - 2rem);
+					margin-right: 0.9375rem;
+					margin-left: 0.9375rem;
+				}
+			}
+
+			.logo--suse {
+				width: 112px !important;
 			}
 		}
 
-		&.largest .logo {
-			height: 9rem;
-			width: 12rem;
-			margin: 0; // reset.
-		}
-		&.larger .logo {
-			height: 9rem;
-			width: 12rem;
-			margin: 0; // reset.
-		}
-
-		@media (min-width: 412px) {
-			&.largest > .sponsors-logo-item {
-				width: calc(50% - 1.875rem);
-				margin-right: 0.9375rem;
-				margin-left: 0.9375rem;
-			}
-
-			&.larger > .sponsors-logo-item {
-				width: calc(50% - 2rem);
-				margin-right: 0.9375rem;
-				margin-left: 0.9375rem;
+		.wp-block-button {
+			margin: 0 auto;
+			text-align: center;
+			@media (min-width: 1000px) {
+				max-width: max-content;
+				min-width: max-content;
 			}
 		}
-
-		@media (min-width: 1000px) {
-			&.largest > .sponsors-logo-item {
-				width: calc(33.33333% - 1.875rem);
-				margin-right: 0.9375rem;
-				margin-left: 0.9375rem;
-			}
-
-			&.larger > .sponsors-logo-item {
-				width: calc(25% - 2rem);
-				margin-right: 0.9375rem;
-				margin-left: 0.9375rem;
-			}
-		}
-
-		.logo--suse {
-			width: 112px !important;
-		}
-	}
-
-	.wp-block-button {
-		margin: 0 auto;
-		text-align: center;
-		max-width: max-content;
-		min-width: max-content;
 	}
 }
