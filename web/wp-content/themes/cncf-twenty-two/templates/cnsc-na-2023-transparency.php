@@ -349,14 +349,14 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="shadow-hr"></div>
 
-				<div class="lf-grid section-04__grid-col2">
-					<div>
+				<div class="lf-grid section-04__grid">
+					<div class="section-04__grid-col1">
 						<h3 class="sub-header">Diversity, Equity & Inclusivity</h3>
 
 						<p>CNCF strived to ensure that everyone who participated in CloudNativeSecurityCon felt welcome, regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. The Dan Kohn Scholarship Fund provided funding for 26 people to attend, and 13 speakers received travel funding. As part of our deep commitment to diversity, equity and inclusivity, we hosted workshops and networking opportunities to help connect individuals to opportunities within tech, such as the EmpowerUs Cloud Native Security Lunch.</p>
 					</div>
 
-					<div>
+					<div class="section-04__grid-col2">
 						<h3 class="sub-header">Gold CHAOSS D&I event badge</h3>
 
 						<img
