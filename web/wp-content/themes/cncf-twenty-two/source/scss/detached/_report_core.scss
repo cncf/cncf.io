@@ -384,16 +384,6 @@ SPACERS
 	}
 }
 
-.report-spacer-50 {
-	height: 25px;
-	@media (min-width: 1000px) {
-		height: 40px;
-	}
-	@media (min-width: 1200px) {
-		height: 50px;
-	}
-}
-
 .report-spacer-60 {
 	height: 40px;
 	@media (min-width: 1000px) {
@@ -401,16 +391,6 @@ SPACERS
 	}
 	@media (min-width: 1200px) {
 		height: 60px;
-	}
-}
-
-.report-spacer-70 {
-	height: 50px;
-	@media (min-width: 1000px) {
-		height: 60px;
-	}
-	@media (min-width: 1200px) {
-		height: 70px;
 	}
 }
 
