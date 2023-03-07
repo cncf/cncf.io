@@ -10,11 +10,11 @@ $font-cnsc-na-23-serif: 'Source Serif Pro', serif;
 $cnsc-na-23-black: #000;
 $cnsc-na-23-white: #ffffff;
 
-$cnsc-na-23-blue-800: #1C1C54;
-$cnsc-na-23-blue-900: #1E1D40;
+$cnsc-na-23-blue-800: #1c1c54;
+$cnsc-na-23-blue-900: #1e1d40;
 
-$cnsc-na-23-sky-500: #A6CCE5;
-$cnsc-na-23-sky-900: #4271B6;
+$cnsc-na-23-sky-500: #a6cce5;
+$cnsc-na-23-sky-900: #4271b6;
 
 html {
 	visibility: visible !important;
@@ -31,21 +31,17 @@ html {
 	/**
 	Elements
 	**/
-
 	h1,
 	h2,
 	h3 {
 		color: $cnsc-na-23-blue-900;
-		text-transform: uppercase;
 	}
 
 	.section-title-wrapper {
 		border-bottom-color: $cnsc-na-23-sky-500;
 	}
 
-	.icon-box-1 ,
-	.icon-box-2 ,
-	.icon-box-3 {
+	.icon-box-1 {
 		display: flex;
 		align-items: center;
 		width: 100%;
@@ -98,15 +94,7 @@ html {
 		}
 	}
 
-	.shadow-hr {
-		@media (min-width: 1200px) {
-			margin-top: 100px;
-			margin-bottom: 100px;
-		}
-	}
-
 	.quote-with-name-container {
-
 		@media (min-width: 1000px) {
 			max-width: 904px;
 		}
@@ -123,11 +111,6 @@ html {
 				width: 70px;
 			}
 		}
-
-		&__position a {
-			color: $cnsc-na-23-blue-900;
-			font-weight: 400;
-		}
 	}
 
 	.social-share {
@@ -141,14 +124,6 @@ html {
 			svg {
 				color: $cnsc-na-23-blue-800;
 			}
-		}
-	}
-
-	.responsive-image {
-		img,
-		svg {
-			max-width: 100%;
-			height: auto;
 		}
 	}
 
@@ -167,6 +142,11 @@ html {
 		}
 
 		&__wrapper {
+			@media (max-width: 500px) {
+				img {
+					object-position: right;
+				}
+			}
 			@media (min-width: 800px) {
 				width: 620px;
 			}
@@ -180,7 +160,11 @@ html {
 
 		&__logo {
 			margin-bottom: 40px;
-			max-width: 447px;
+			max-width: 80%;
+
+			@media (min-width: 600px) {
+				max-width: 447px;
+			}
 
 			@media (min-width: 1200px) {
 				margin-bottom: 60px;
@@ -419,8 +403,8 @@ html {
 
 		&__data-grid {
 			display: grid;
-  			gap: 20px 32px;
-  			grid-template-columns: repeat(2, 1fr);
+			gap: 40px 32px;
+			grid-template-columns: repeat(2, 1fr);
 
 			@media (min-width: 550px) {
 				gap: 50px 16px;
@@ -428,7 +412,7 @@ html {
 
 			@media (min-width: 1000px) {
 				gap: 100px 16px;
-  				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(3, 1fr);
 			}
 
 			.data {
@@ -467,12 +451,12 @@ html {
 
 		&__grid-col2 {
 			display: grid;
-  			gap: 32px;
-  			grid-template-columns: repeat(1, 1fr);
+			gap: 32px;
+			grid-template-columns: repeat(1, 1fr);
 
 			@media (min-width: 1000px) {
 				gap: 100px;
-  				grid-template-columns: repeat(2, 1fr);
+				grid-template-columns: repeat(2, 1fr);
 			}
 
 			.sub-header {

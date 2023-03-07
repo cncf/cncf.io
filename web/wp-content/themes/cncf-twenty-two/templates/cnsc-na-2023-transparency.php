@@ -44,7 +44,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 		<!-- Hero -->
 		<section class="hero alignfull background-image-wrapper">
 			<figure class="background-image-figure darken-on-mobile">
-				<?php LF_Utils::display_responsive_images( 84379, 'full', '1440px', false, 'eager', 'CloudNativeSecurityCon North America 2023 Transparency Report' ); ?>
+				<?php LF_Utils::display_responsive_images( 84676, 'full', '1440px', false, 'eager', 'CloudNativeSecurityCon North America 2023 Transparency Report' ); ?>
 			</figure>
 			<div class="background-image-text-overlay">
 				<div class="container wrap hero__container">
@@ -102,11 +102,11 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 			<div class="lf-grid section-01__grid">
 				<div class="section-01__grid-col1">
 
-					<p>What started as a co-located event alongside KubeCon + CloudNativeCon has officially grown into a major industry convention – in fact, the first cloud native security event of its kind. The inaugural CloudNativeSecurityCon drew almost 800 experts and practitioners from across the world to share insights and experiences on the unique security challenges faced by cloud native technology.</p>
+					<p>What started as a co-located event alongside KubeCon + CloudNativeCon has officially grown into a major industry convention - in fact, the first cloud native security event of its kind. The inaugural CloudNativeSecurityCon drew almost 800 experts and practitioners from across the world to share insights and experiences on the unique security challenges faced by cloud native technology.</p>
 
 					<p>Security is people-powered, and we all benefit by collaborating together as a knowledgeable, vendor-neutral community to develop the tools and processes that are going to uplevel our security posture. The conversations we had and the lessons we learned together at CNSC helped us make great strides towards tackling security challenges within the cloud native ecosystem.</p>
 
-					<p>I hope you find this information valuable and look forward to seeing you in Amsterdam this April for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" title="KubeCon + CloudNativeCon Europe event">KubeCon + CloudNativeCon Europe</a>.</p>
+					<p>I hope you find this information valuable and look forward to seeing you in Amsterdam this April for <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" title="See the KubeCon + CloudNativeCon Europe event">KubeCon + CloudNativeCon Europe</a>.</p>
 
 					<div class="section-01__author">
 						<?php LF_Utils::display_responsive_images( 82008, 'full', '75px', null, 'lazy', 'Priyanka Sharma - Executive Director, CNCF' ); ?>
@@ -247,11 +247,9 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="responsive-image">
-					<?php Lf_Utils::get_svg( $report_folder . '/CNSC-NA-23-demographics.svg' ); ?>
-				</div>
+				<img width="1200" height="750" src="<?php Lf_Utils::get_svg( $report_folder . '/CNSC-NA-23-demographics.svg', true ); ?>" alt="778 Attendees - 43% men, 12% woman, 1% other, 44% prefer not to answer.">
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
@@ -318,14 +316,22 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<h3 class="larger-sub-header text-center">Watch the sessions</h3>
 
-				<div aria-hidden="true" class="report-spacer-70"></div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="wp-block-lf-youtube-lite">
 					<lite-youtube videoid="jXcYiiJ-BBg"
 						videotitle="Highlights from CloudNativeSecurityCon North America 2023"
-						webpStatus="0" sdthumbStatus="1"
+						webpStatus="1" sdthumbStatus="0"
 						title="Play Highlights">
 					</lite-youtube>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-80"></div>
+
+				<div class="wp-block-button aligncenter"><a
+						href="https://www.youtube.com/watch?v=jXcYiiJ-BBg&list=PLj6h78yzYM2NQ-Zi_k5qVmZyxSmLBzM6V"
+						title="Watch the CloudNativeSecurityCon North America 2023 YouTube Playlist"
+						class="wp-block-button__link fit-content">View Sessions Playlist</a>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
@@ -351,10 +357,10 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					</div>
 
 					<div>
-						<h3 class="sub-header">Gold chaoss D&I event badge</h3>
+						<h3 class="sub-header">Gold CHAOSS D&I event badge</h3>
 
 						<img class=""
-							src="<?php LF_Utils::get_image( $report_folder . 'D&I-Gold.svg', true ); ?>"
+							src="<?php LF_Utils::get_image( $report_folder . 'logo-d&i-gold.svg', true ); ?>"
 							width="291" height="70"
 							alt="D&I Gold logo"
 							loading="lazy">
@@ -377,7 +383,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<h3 class="sub-header text-center">Diamond Sponsors</h3>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div aria-hidden="true" class="report-spacer-80"></div>
 
 				<!-- Start of diamond sponsors  -->
 				<div class="sponsors-logos largest even orphan-by-5">
@@ -399,7 +405,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<h3 class="sub-header text-center">Platinum sponsors</h3>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div aria-hidden="true" class="report-spacer-80"></div>
 
 				<!-- Start of platinum sponsors  -->
 				<div class="sponsors-logos larger odd orphan-by-4 orphan-by-8">
@@ -417,6 +423,8 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 				</div>
 				<!-- End of platinum sponsors -->
 
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
 				<div class="wp-block-button"><a
 						href="https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/"
 						title="See all Sponsors and Partners of CloudNativeSecurityCon North America 2023"
@@ -429,17 +437,15 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<div class="restrictive-7-col">
 						<h3 class="sub-header">KubeCon + CloudNativeCon Europe 2023</h3>
 
-						<div aria-hidden="true" class="report-spacer-40"></div>
-
-						<p>Join adopters and technologists from leading open source and cloud native communities, alongside maintainers of <a href="https://www.cncf.io/projects/" title="Read more about CNCF Project">CNCF Projects</a> for four days dedicated to advancing cloud native computing through practitioner-led education and collaboration.</p>
+						<p>Join adopters and technologists from leading open source and cloud native communities, alongside maintainers of <a href="https://www.cncf.io/projects/" title="Read more about CNCF Projects">CNCF Projects</a> for four days dedicated to advancing cloud native computing through practitioner-led education and collaboration.</p>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/" title="CloudNativeSecurityCon Europe 2023 - Amsterdam - April 18-21 - Register Now">
+				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/" title="KubeCon + CloudNativeCon Europe 2023 - Amsterdam - April 18-21 - Register Now">
 					<figure>
-						<?php LF_Utils::display_responsive_images( 84378, 'full', '1200px', false, 'lazy', 'Banner image of Kubecon + CloudNativeSecurityCon Europe 2023' ); ?>
+						<?php LF_Utils::display_responsive_images( 84378, 'full', '1200px', false, 'lazy', 'Banner promoting KubeCon + CloudNativeCon Europe 2023' ); ?>
 					</figure>
 				</a>
 
