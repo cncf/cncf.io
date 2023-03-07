@@ -43,7 +43,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 		<!-- Hero -->
 		<section class="hero alignfull background-image-wrapper">
-			<figure class="background-image-figure darken-on-mobile">
+			<figure class="background-image-figure">
 				<?php LF_Utils::display_responsive_images( 84676, 'full', '1440px', false, 'eager', 'CloudNativeSecurityCon North America 2023 Transparency Report' ); ?>
 			</figure>
 			<div class="background-image-text-overlay">
@@ -349,7 +349,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="shadow-hr"></div>
 
-				<div class="section-04__grid-col2">
+				<div class="lf-grid section-04__grid-col2">
 					<div>
 						<h3 class="sub-header">Diversity, Equity & Inclusivity</h3>
 
@@ -359,7 +359,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 					<div>
 						<h3 class="sub-header">Gold CHAOSS D&I event badge</h3>
 
-						<img class=""
+						<img
 							src="<?php LF_Utils::get_image( $report_folder . 'logo-d&i-gold.svg', true ); ?>"
 							width="291" height="70"
 							alt="D&I Gold logo"
@@ -428,7 +428,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 				<div class="wp-block-button"><a
 						href="https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/"
 						title="See all Sponsors and Partners of CloudNativeSecurityCon North America 2023"
-						class="wp-block-button__link">See all Sponsors and Partners</a>
+						class="wp-block-button__link">See all Sponsors & Partners</a>
 				</div>
 
 				<div class="shadow-hr"></div>

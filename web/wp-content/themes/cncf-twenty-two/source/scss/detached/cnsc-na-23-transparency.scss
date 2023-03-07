@@ -136,19 +136,25 @@ html {
 		padding-top: 40px;
 		padding-bottom: 40px;
 
+		@media (min-width: 372px) {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+
 		@media (min-width: 1000px) {
 			padding-top: 120px;
 			padding-bottom: 120px;
 		}
 
 		&__wrapper {
-			@media (max-width: 500px) {
-				img {
-					object-position: right;
-				}
-			}
 			@media (min-width: 800px) {
 				width: 620px;
+			}
+		}
+
+		.background-image-figure img {
+			@media (max-width: 500px) {
+				object-position: right;
 			}
 		}
 
@@ -450,12 +456,9 @@ html {
 		}
 
 		&__grid-col2 {
-			display: grid;
-			gap: 32px;
 			grid-template-columns: repeat(1, 1fr);
 
 			@media (min-width: 1000px) {
-				gap: 100px;
 				grid-template-columns: repeat(2, 1fr);
 			}
 
