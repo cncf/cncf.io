@@ -12,7 +12,7 @@ $event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
 $event_end_date   = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
 $city             = get_post_meta( get_the_ID(), 'lf_event_city', true );
 $country          = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
-$logo             = get_post_meta( get_the_ID(), 'lf_event_logo', true );
+$logo_id          = get_post_meta( get_the_ID(), 'lf_event_logo', true );
 $background       = get_post_meta( get_the_ID(), 'lf_event_background', true );
 $color            = get_post_meta( get_the_ID(), 'lf_event_overlay_color', true );
 
@@ -50,7 +50,7 @@ if ( ! $city && ! $country ) {
 			<div class="main-menu-item__event-content">
 				<div>
 						<?php
-						LF_Utils::display_responsive_images( $logo, 'medium', '300px', 'main-menu-item__event-logo', 'lazy', get_the_title() );
+						LF_Utils::display_responsive_images( $logo_id, 'medium', '300px', 'main-menu-item__event-logo', 'lazy', get_the_title() );
 						?>
 					<h4><span
 							class="main-menu-item__event-city"><?php echo esc_html( $location ); ?></span>
