@@ -255,7 +255,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="quote-with-name-container">
 					<p
-						class="quote-with-name-container__quote">“I wrote about my excitement for CloudNativeSecurityCon when it was announced at KubeCon + CloudNativeCon 2022 because I believe these shows should be increasingly important for security teams and security vendors. CNSC has an opportunity to become a top security conference to help security teams support cloud native development.</p>
+						class="quote-with-name-container__quote">I wrote about my excitement for CloudNativeSecurityCon when it was announced at KubeCon + CloudNativeCon 2022 because I believe these shows should be increasingly important for security teams and security vendors. CNSC has an opportunity to become a top security conference to help security teams support cloud native development.</p>
 					<div class="quote-with-name-container__marks">
 						<h3
 							class="quote-with-name-container__name">Melinda Marks</h3>
@@ -338,7 +338,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="quote-with-name-container">
 					<p
-						class="quote-with-name-container__quote">“One of the insights from the event was that the security community has come to realize it must focus more heavily on resolving vulnerabilities faster while taking a proactive approach toward thwarting breaches.</p>
+						class="quote-with-name-container__quote">One of the insights from the event was that the security community has come to realize it must focus more heavily on resolving vulnerabilities faster while taking a proactive approach toward thwarting breaches.</p>
 					<div class="quote-with-name-container__marks">
 						<h3
 							class="quote-with-name-container__name">Mark Albertson</h3>
