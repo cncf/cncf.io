@@ -171,40 +171,40 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div class="section-02__slider">
 					<div>
-						<?php LF_Utils::display_responsive_images( 84381, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84677, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84382, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84688, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84383, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84679, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84384, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84680, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84385, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84681, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84386, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84682, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84387, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84683, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84388, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84684, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84389, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84685, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84390, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84686, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84391, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84687, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 84392, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
+						<?php LF_Utils::display_responsive_images( 84678, 'newsroom-post-width', '700px', null, 'lazy', 'Photos from CNSC North America 2023 Photo Gallery' ); ?>
 					</div>
 				</div>
 				<div class="section-02__controls">
@@ -249,13 +249,13 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<img width="1200" height="750" src="<?php Lf_Utils::get_svg( $report_folder . '/CNSC-NA-23-demographics.svg', true ); ?>" alt="778 Attendees - 43% men, 12% woman, 1% other, 44% prefer not to answer.">
+				<img loading="lazy" width="1200" height="750" src="<?php Lf_Utils::get_svg( $report_folder . '/CNSC-NA-23-demographics.svg', true ); ?>" alt="778 Attendees - 43% men, 12% woman, 1% other, 44% prefer not to answer.">
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
 				<div class="quote-with-name-container">
 					<p
-						class="quote-with-name-container__quote">“I wrote about my excitement for CloudNativeSecurityCon when it was announced at KubeCon+CloudNativeCon 2022 because I believe these shows should be increasingly important for security teams and security vendors. CNSC has an opportunity to become a top security conference to help security teams support cloud native development.</p>
+						class="quote-with-name-container__quote">“I wrote about my excitement for CloudNativeSecurityCon when it was announced at KubeCon + CloudNativeCon 2022 because I believe these shows should be increasingly important for security teams and security vendors. CNSC has an opportunity to become a top security conference to help security teams support cloud native development.</p>
 					<div class="quote-with-name-container__marks">
 						<h3
 							class="quote-with-name-container__name">Melinda Marks</h3>

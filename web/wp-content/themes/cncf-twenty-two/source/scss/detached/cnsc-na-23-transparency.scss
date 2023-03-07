@@ -133,15 +133,10 @@ html {
 	.hero {
 		background-color: rgba(255, 255, 255, 0.28);
 		color: $cnsc-na-23-blue-800;
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-top: 60px;
+		padding-bottom: 60px;
 
 		@media (min-width: 372px) {
-			padding-top: 80px;
-			padding-bottom: 80px;
-		}
-
-		@media (min-width: 1000px) {
 			padding-top: 120px;
 			padding-bottom: 120px;
 		}
