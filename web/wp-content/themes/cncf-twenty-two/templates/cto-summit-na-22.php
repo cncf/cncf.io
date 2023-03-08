@@ -1194,7 +1194,7 @@ get_template_part( 'components/skip-link-target' );
 								loading="lazy" width="190" height="69">
 						</a>
 
-						<p>October 2022<br>Copyright 2022<br>The Linux Foundation</p>
+						<p>March 2023<br>Copyright 2023<br>The Linux Foundation</p>
 					</div>
 				</div>
 
