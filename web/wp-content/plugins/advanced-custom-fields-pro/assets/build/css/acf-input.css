@@ -835,7 +835,7 @@ html[dir=rtl] .select2-container.-acf .select2-choice .select2-arrow {
   white-space: normal;
 }
 
-.select2-dropdown {
+.acf-admin-single-field-group .select2-dropdown {
   border-color: #6BB5D8 !important;
   margin-top: -5px;
   overflow: hidden;
@@ -846,15 +846,15 @@ html[dir=rtl] .select2-container.-acf .select2-choice .select2-arrow {
   margin-top: 0;
 }
 
-.select2-container--default .select2-results__option[aria-selected=true] {
+.acf-admin-single-field-group .select2-container--default .select2-results__option[aria-selected=true] {
   background-color: #F9FAFB !important;
   color: #667085;
 }
-.select2-container--default .select2-results__option[aria-selected=true]:hover {
+.acf-admin-single-field-group .select2-container--default .select2-results__option[aria-selected=true]:hover {
   color: #399CCB;
 }
 
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
+.acf-admin-single-field-group .select2-container--default .select2-results__option--highlighted[aria-selected] {
   color: #fff !important;
   background-color: #0783BE !important;
 }
@@ -2880,7 +2880,7 @@ p.submit .acf-spinner {
     /* field */
   }
   .media-modal .setting span,
-.media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
     width: 98%;
     float: none;
     text-align: left;
@@ -2888,8 +2888,8 @@ p.submit .acf-spinner {
     padding: 0;
   }
   .media-modal .setting input,
-.media-modal .setting textarea,
-.media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
+  .media-modal .setting textarea,
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
     float: none;
     height: auto;
     max-width: none;
