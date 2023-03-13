@@ -220,7 +220,7 @@ get_template_part( 'components/skip-link-target' );
 										title="Visit Intuit">
 										<img class="commitee__logo"
 											loading="lazy"
-											src="<?php LF_utils::get_svg( $report_folder . 'logo-intuit.svg', true ); ?>"
+											src="<?php LF_utils::get_svg( $report_folder . 'logo-intuit-2.svg', true ); ?>"
 											alt="Intuit Logo" width="180"
 											height="38">
 									</a>
