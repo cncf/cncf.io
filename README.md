@@ -66,11 +66,11 @@ tooling:
     description: 'Run PHPCBF commands'
   sniff:
     service: appserver
-    cmd: /app/vendor/bin/phpcs -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/
+    cmd: /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs && /app/vendor/bin/phpcs -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/ /app/web/wp-content/mu-plugins/wp-mu-plugins/
     description: 'Run the recommended code sniffs'
   fix:
     service: appserver
-    cmd: /app/vendor/bin/phpcbf -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/
+    cmd: /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs && /app/vendor/bin/phpcbf -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/ /app/web/wp-content/mu-plugins/wp-mu-plugins/
     description: 'Run the recommended code sniffs and fix'
   debug:
     service: appserver
