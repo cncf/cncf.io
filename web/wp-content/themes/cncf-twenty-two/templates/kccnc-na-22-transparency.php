@@ -3455,7 +3455,7 @@ Manager</span>
 							<img width="128" height="128" loading="lazy"
 								decoding="async" src="
 							<?php
-								LF_Utils::get_svg( $report_folder . 'lightstep.svg', true );
+								LF_Utils::get_svg( $report_folder . 'Lightstep.svg', true );
 							?>
 							" alt="Logo for Lightstep" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
