@@ -20,7 +20,7 @@
 	grid-row-gap: $grid-row-gap;
 	grid-template-columns: repeat(5, minmax(0, 1fr));
 	@media (min-width: 1000px) {
-		grid-template-columns: repeat(9, minmax(0, 1fr));
+		grid-template-columns: repeat(10, minmax(0, 1fr));
 	}
 
 	li {
