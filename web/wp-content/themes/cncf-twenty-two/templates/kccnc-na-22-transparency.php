@@ -345,7 +345,8 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 		</section>
 
 
-		<section id="attendees" class="section-03 is-style-down-gradient alignfull">
+		<section id="attendees"
+			class="section-03 is-style-down-gradient alignfull">
 
 			<div class="container wrap">
 
@@ -1310,7 +1311,8 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 									class="wp-block-button__link">Co-located
 									Event Options</a>
 							</div>
-							<div aria-hidden="true" class="report-spacer-120"></div>
+							<div aria-hidden="true" class="report-spacer-120">
+							</div>
 
 						</div>
 					</div>
@@ -1318,7 +1320,8 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 			</div>
 		</section>
 
-		<section class="section-08 is-style-down-gradient alignfull" id="content">
+		<section class="section-08 is-style-down-gradient alignfull"
+			id="content">
 
 			<div class="container wrap">
 
@@ -3243,20 +3246,21 @@ Manager</span>
 				<!-- Start of diamond sponsors  -->
 				<div class="sponsors-logos largest even orphan-by-5">
 					<div class="sponsors-logo-item">
-						<a
-							href="https://aws.amazon.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Amazon AWS website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+						<a href="https://aws.amazon.com/" target="_blank"
+							rel="noopener" title="Visit the Amazon AWS website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'amazon-web-services-spn.svg', true );
 							?>
-							" alt="Logo for Amazon" class="logo wp-post-image"></a></div>
+							" alt="Logo for Amazon" class="logo wp-post-image"></a>
+					</div>
 					<div class="sponsors-logo-item"><a
 							href="http://eti.cisco.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Cisco: Emerging Tech and Incubation website">
-							<img width="192" height="144" loading="lazy" decoding="async" src="
+							rel="noopener"
+							title="Visit the Cisco: Emerging Tech and Incubation website">
+							<img width="192" height="144" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Cisco_ETI_ProgramID-1-01.svg', true );
 							?>
@@ -3265,9 +3269,9 @@ Manager</span>
 							href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/overview.html"
 							style="-webkit-transform: scale(0.7); -ms-transform: scale(0.7); transform: scale(0.7);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Intel website">
-							<img width="338" height="139" loading="lazy" decoding="async" src="
+							title="Visit the Intel website">
+							<img width="338" height="139" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'intel-01.svg', true );
 							?>
@@ -3276,9 +3280,9 @@ Manager</span>
 							href="https://www.kasten.io/"
 							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Kasten website">
-							<img width="192" height="144" loading="lazy" decoding="async" src="
+							title="Visit the Kasten website">
+							<img width="192" height="144" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Kasten-logo-2022.svg', true );
 							?>
@@ -3287,18 +3291,18 @@ Manager</span>
 							href="https://www.paloaltonetworks.com/prisma/cloud"
 							style="-webkit-transform: scale(1.15); -ms-transform: scale(1.15); transform: scale(1.15);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Prisma Cloud website">
-							<img width="192" height="144" loading="lazy" decoding="async" src="
+							title="Visit the Prisma Cloud website">
+							<img width="192" height="144" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Palo_Alto_Prisma_Cloud_logo_RGB_Horizontal.svg', true );
 							?>
 							" alt="Logo for Prisma Cloud" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://www.vmware.com" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the VMware website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the VMware website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'vmware-spn.svg', true );
 							?>
@@ -3317,9 +3321,9 @@ Manager</span>
 							href="https://www.aquasec.com/"
 							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Aqua website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the Aqua website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Aqua-Logo-Color-RGB-2022.svg', true );
 							?>
@@ -3328,9 +3332,9 @@ Manager</span>
 							href="https://ubuntu.com/"
 							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Ubuntu website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the Ubuntu website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Canonical-Ubuntulogo-2021_RGB.svg', true );
 							?>
@@ -3339,9 +3343,9 @@ Manager</span>
 							href="https://circleci.com/"
 							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the CircleCI website">
-							<img width="290" height="242" loading="lazy" decoding="async" src="
+							title="Visit the CircleCI website">
+							<img width="290" height="242" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'circle-ci.svg', true );
 							?>
@@ -3349,38 +3353,38 @@ Manager</span>
 					<div class="sponsors-logo-item"><a
 							href="https://www.cockroachlabs.com/"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Cockroach Labs website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							title="Visit the Cockroach Labs website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Cockroach-Labs-01.svg', true );
 							?>
 							" alt="Logo for Cockroach Labs" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://www.datadoghq.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Datadog website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the Datadog website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'datadog-spn.svg', true );
 							?>
 							" alt="Logo for Datadog" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://www.datastax.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the DataStax website">
-							<img width="407" height="74" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the DataStax website">
+							<img width="407" height="74" loading="lazy"
+								decoding="async" src="
 							<?php
-								LF_Utils::get_svg( $report_folder . 'datastax-01.svg', true );
+								LF_Utils::get_svg( $report_folder . 'datastax-logo.svg', true );
 							?>
 							" alt="Logo for DataStax" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://www.delltechnologies.com/"
 							style="-webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Dell Technologies website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							title="Visit the Dell Technologies website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'dell-spn.svg', true );
 							?>
@@ -3388,18 +3392,18 @@ Manager</span>
 					<div class="sponsors-logo-item"><a
 							href="https://www.dynatrace.com/technologies/kubernetes-monitoring/"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Dynatrace website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							title="Visit the Dynatrace website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'dynatrace-spn.svg', true );
 							?>
 							" alt="Logo for Dynatrace" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://about.gitlab.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the GitLab website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the GitLab website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'gitlab-logo-rgb.svg', true );
 							?>
@@ -3408,9 +3412,9 @@ Manager</span>
 							href="https://cloud.google.com/"
 							style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Google Cloud website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the Google Cloud website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'lockup_GoogleCloud_FullColor_rgb_2900x512px.svg', true );
 							?>
@@ -3419,18 +3423,18 @@ Manager</span>
 							href="https://www.ibm.com/us-en/"
 							style="-webkit-transform: scale(0.8); -ms-transform: scale(0.8); transform: scale(0.8);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the IBM website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the IBM website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'IBM_logo.svg', true );
 							?>
 							" alt="Logo for IBM" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a href="https://jfrog.com/"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the jFrog website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							title="Visit the jFrog website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'jfrog-spn.svg', true );
 							?>
@@ -3438,18 +3442,18 @@ Manager</span>
 					<div class="sponsors-logo-item"><a
 							href="http://www.eggplantsoftware.com"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Keysight website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the Keysight website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Keysight-Horizontal-Logo-RGB-Color-1.svg', true );
 							?>
 							" alt="Logo for Keysight" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://lightstep.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Lightstep website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the Lightstep website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'lightstep.svg', true );
 							?>
@@ -3457,9 +3461,9 @@ Manager</span>
 					<div class="sponsors-logo-item"><a
 							href="https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Microsoft Azure website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							title="Visit the Microsoft Azure website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'microsoft-azure-spn.svg', true );
 							?>
@@ -3468,28 +3472,28 @@ Manager</span>
 							href="https://www.nginx.com/"
 							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the NGINX website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the NGINX website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
-								LF_Utils::get_svg( $report_folder . 'NGINX-Part-of-F5-horiz-black-type-rgb-1.svg', true );
+							LF_Utils::get_svg( $report_folder . 'NGINX-Part-of-F5-horiz-black-type-rgb-1.svg', true );
 							?>
 							" alt="Logo for NGINX" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://developer.oracle.com/?source=:ex:sn:::::RC_WWMK220606P00116:KubeConNASite&amp;SC=:ex:sn:::::RC_WWMK220606P00116:KubeConNASite&amp;pcode=WWMK220606P00116"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Oracle for Developers website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the Oracle for Developers website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'OCI_RED_Horizontal_rgb_C74634.svg', true );
 							?>
 							" alt="Logo for Oracle Cloud" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://portworx.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Portworx website">
-							<img width="406" height="158" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the Portworx website">
+							<img width="406" height="158" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'portworx-by-purestorage-01.svg', true );
 							?>
@@ -3498,36 +3502,36 @@ Manager</span>
 							href="https://www.suse.com/products/suse-rancher/"
 							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Rancher website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the Rancher website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'rancher-suse-logo-horizontal_horizontal-color.svg', true );
 							?>
 							" alt="Logo for Rancher" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://www.redhat.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Red Hat website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the Red Hat website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'RedHat-new.svg', true );
 							?>
 							" alt="Logo for Red Hat" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://www.replicated.com" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Replicated website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the Replicated website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'replicated-logo-red-22.svg', true );
 							?>
 							" alt="Logo for Replicated" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a href="https://snyk.io/"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Snyk website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							title="Visit the Snyk website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Snyk-spn.svg', true );
 							?>
@@ -3535,27 +3539,27 @@ Manager</span>
 					<div class="sponsors-logo-item"><a
 							href="https://www.splunk.com/en_us/devops.html"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Splunk website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							title="Visit the Splunk website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'splunk-spn.svg', true );
 							?>
 							" alt="Logo for Splunk" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://sysdig.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Sysdig website">
-							<img width="400" height="245" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the Sysdig website">
+							<img width="400" height="245" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'sysdig-spn.svg', true );
 							?>
 							" alt="Logo for Sysdig" class="logo wp-post-image"></a></div>
 					<div class="sponsors-logo-item"><a
 							href="https://goteleport.com/" target="_blank"
-							rel="noopener" data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Teleport website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							rel="noopener" title="Visit the Teleport website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'teleport-kcsp.svg', true );
 							?>
@@ -3564,9 +3568,9 @@ Manager</span>
 							href="https://www.trilio.io/"
 							style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Trilio website">
-							<img width="396" height="114" loading="lazy" decoding="async" src="
+							title="Visit the Trilio website">
+							<img width="396" height="114" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'Trilio-2020.svg', true );
 							?>
@@ -3575,9 +3579,9 @@ Manager</span>
 							href="https://www.wiz.io/"
 							style="-webkit-transform: scale(0.65); -ms-transform: scale(0.65); transform: scale(0.65);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the Wiz website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the Wiz website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'New_Logo_Blue-1.svg', true );
 							?>
@@ -3585,9 +3589,9 @@ Manager</span>
 					<div class="sponsors-logo-item"><a href="http://wso2.com"
 							style="-webkit-transform: scale(0.75); -ms-transform: scale(0.75); transform: scale(0.75);"
 							target="_blank" rel="noopener"
-							data-feathr-click-track="true"
-							data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]" title="Visit the WSO2 website">
-							<img width="128" height="128" loading="lazy" decoding="async" src="
+							title="Visit the WSO2 website">
+							<img width="128" height="128" loading="lazy"
+								decoding="async" src="
 							<?php
 								LF_Utils::get_svg( $report_folder . 'wso2-logo.svg', true );
 							?>
@@ -3603,7 +3607,7 @@ Manager</span>
 						Partners</a>
 				</div>
 
-				<div style="">
+				<div>
 
 					<div class="shadow-hr"></div>
 
@@ -3614,7 +3618,7 @@ Manager</span>
 					<div class="wp-block-lf-youtube-lite">
 						<lite-youtube videoid="Q1cA0iGw84g"
 							videotitle="Highlights from KubeCon + CloudNativeCon North America 2022"
-							webpStatus="0" sdthumbStatus="1"
+							webpStatus="1" sdthumbStatus="0"
 							title="Play Highlights">
 						</lite-youtube>
 					</div>
@@ -3650,7 +3654,7 @@ Manager</span>
 					</div>
 					<div class="thanks__col2">
 						<?php
-							LF_Utils::display_responsive_images( 82035, 'full', '300px', '', 'lazy', 'CNCF Mascot' );
+							LF_Utils::display_responsive_images( 82035, 'full', '300px', null, 'lazy', 'CNCF Mascot' );
 						?>
 					</div>
 				</div>
@@ -3696,7 +3700,6 @@ Manager</span>
 							title="Share on Twitter"
 							href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-twitter.svg' ); ?></a>
 						<?php endif; ?>
-
 
 						<!-- sendto email -->
 						<?php if ( $mailto_url ) : ?>
