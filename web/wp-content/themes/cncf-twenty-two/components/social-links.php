@@ -29,6 +29,11 @@ $site_options = get_option( 'lf-mu' );
 			href="<?php echo esc_url( $site_options['social_linkedin'] ); ?>"><?php LF_Utils::get_svg( 'social/linkedin-black.svg' ); ?></a></li>
 	<?php endif; ?>
 
+	<?php if ( isset( $site_options['social_instagram'] ) && $site_options['social_instagram'] ) : ?>
+	<li class="social-instagram"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on Instagram'; ?>"
+			href="<?php echo esc_url( $site_options['social_instagram'] ); ?>"><?php LF_Utils::get_svg( 'social/instagram.svg' ); ?></a></li>
+	<?php endif; ?>
+
 	<?php if ( isset( $site_options['social_wechat'] ) && $site_options['social_wechat'] ) : ?>
 	<li class="social-wechat"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on WeChat'; ?>"
 			href="<?php echo esc_url( $site_options['social_wechat'] ); ?>"><?php LF_Utils::get_svg( 'social/wechat.svg' ); ?></a></li>
