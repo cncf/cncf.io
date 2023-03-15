@@ -203,8 +203,20 @@ class Lf_Mu_Public {
 		// WP version.
 		remove_action( 'wp_head', 'wp_generator' );
 
-		// stop xmlrpc.
+		// controls whether XML-RPC methods requiring authentication are enabled.
 		add_filter( 'xmlrpc_enabled', '__return_false' );
+
+		// Unregister the whole XML-RPC method space.
+		add_filter( 'xmlrpc_methods', fn( $methods ) => array() );
+
+		// deactivate x-pingback HTTP header.
+		add_filter(
+			'wp_headers',
+			function( $headers ) {
+				unset( $headers['X-Pingback'] );
+				return $headers;
+			}
+		);
 
 		// remove application passwords.
 		add_filter( 'wp_is_application_passwords_available', '__return_false' );
