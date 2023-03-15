@@ -8,10 +8,7 @@
         "watch": "gulp",
         "detached": "gulp detached",
         "build": "gulp build",
-        "prod": "gulp build",
-        "standards": "gulp standards",
-        "phpcs": "gulp phpcs",
-        "phpcbf": "gulp phpcbf"
+        "prod": "gulp build"
     },
     "repository": {
         "type": "git",
