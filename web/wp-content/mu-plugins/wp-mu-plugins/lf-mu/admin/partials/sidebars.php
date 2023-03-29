@@ -561,39 +561,6 @@ $sidebar    = array(
 $sidebars[] = $sidebar;
 
 $sidebar    = array(
-	'id'              => 'lf-sidebar-spotlight',
-	'id_prefix'       => 'lf_',
-	'label'           => __( 'Spotlight Settings' ),
-	'post_type'       => 'lf_spotlight',
-	'data_key_prefix' => 'lf_spotlight_',
-	'icon_dashicon'   => 'admin-settings',
-	'tabs'            => array(
-		array(
-			'label'  => __( 'Tab label' ),
-			'panels' => array(
-				array(
-					'label'        => __( 'General' ),
-					'initial_open' => true,
-					'settings'     => array(
-						array(
-							'type'          => 'textarea',
-							'data_type'     => 'meta',
-							'data_key'      => 'subtitle',
-							'label'         => __( 'Subtitle' ),
-							'register_meta' => true,
-							'ui_border_top' => true,
-							'default_value' => '',
-							'placeholder'   => 'The incubating project recently completed a security audit with Jepsen',
-						),
-					),
-				),
-			),
-		),
-	),
-);
-$sidebars[] = $sidebar;
-
-$sidebar    = array(
 	'id'              => 'lf-sidebar-kubeweekly',
 	'id_prefix'       => 'lf_',
 	'label'           => __( 'Kubeweekly Settings' ),

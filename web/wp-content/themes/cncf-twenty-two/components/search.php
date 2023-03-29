@@ -82,10 +82,6 @@ get_template_part( 'components/title' );
 				$content_type_singular = 'Case Study';
 				$content_type_plural   = 'Case Studies';
 				$content_type_url      = '/case-studies-cn/';
-			} elseif ( 'lf_spotlight' == get_post_type() ) {
-				$content_type_singular = 'Spotlight';
-				$content_type_plural   = 'Spotlights';
-				$content_type_url      = '/spotlights/';
 			} elseif ( 'lf_human' == get_post_type() ) {
 				$content_type_singular = 'Humans of Cloud Native';
 				$content_type_plural   = 'Humans of Cloud Native';

@@ -18,27 +18,6 @@ if ( is_singular( 'lf_webinar' ) ) :
 </div>
 
 	<?php
-elseif ( is_singular( 'lf_spotlight' ) ) :
-	?>
-<div class="parent-link-align">
-	<a class="parent-link"
-		href="<?php echo esc_url( get_home_url() ); ?>/spotlights/"
-		title="Go to Spotlights">Spotlight</a>
-	<?php
-	// get spotlight type.
-	$spotlight_type      = Lf_Utils::get_term_names( get_the_ID(), 'lf-spotlight-type', true );
-	$spotlight_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-spotlight-type', true );
-	$spotlight_type_link = '/spotlights/?_sft_lf-spotlight-type=' . $spotlight_type_slug;
-
-	?>
-	<div class="space-slash">&nbsp;/&nbsp;</div>
-	<span><a class="author-category"
-			title="See <?php echo esc_attr( $spotlight_type ); ?> posts"
-			href="<?php echo esc_url( $spotlight_type_link ); ?>">
-			<?php echo esc_html( $spotlight_type ); ?>
-		</a></span>
-</div>
-	<?php
 elseif ( is_singular( 'lf_human' ) ) :
 	?>
 <div class="parent-link-align">

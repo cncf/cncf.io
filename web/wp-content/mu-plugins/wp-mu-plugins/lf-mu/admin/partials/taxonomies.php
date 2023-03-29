@@ -52,7 +52,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_spotlight', 'lf_person', 'lf_human' ), $args );
+register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_person', 'lf_human' ), $args );
 
 $labels = array(
 	'name'          => __( 'Author Category', 'lf-mu' ),
@@ -376,26 +376,6 @@ $args   = array(
 	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-event-host', array( 'lf_event' ), $args );
-
-$labels = array(
-	'name'          => __( 'Spotlight Type', 'lf-mu' ),
-	'singular_name' => __( 'Spotlight Type', 'lf-mu' ),
-	'search_items'  => __( 'Search Spotlight Types', 'lf-mu' ),
-	'all_items'     => __( 'All Spotlight Types', 'lf-mu' ),
-	'edit_item'     => __( 'Edit Type', 'lf-mu' ),
-	'update_item'   => __( 'Update Type', 'lf-mu' ),
-	'add_new_item'  => __( 'Add New Spotlight Type', 'lf-mu' ),
-	'new_item_name' => __( 'New Type Name', 'lf-mu' ),
-	'menu_name'     => __( 'Spotlight Types', 'lf-mu' ),
-);
-$args   = array(
-	'labels'            => $labels,
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'show_in_nav_menus' => false,
-	'show_admin_column' => true,
-);
-register_taxonomy( 'lf-spotlight-type', array( 'lf_spotlight' ), $args );
 
 $labels = array(
 	'name'          => __( 'Certification', 'lf-mu' ),

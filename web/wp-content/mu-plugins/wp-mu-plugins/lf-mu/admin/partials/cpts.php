@@ -174,23 +174,6 @@ register_post_type( 'lf_webinar', $opts );
 
 $opts = array(
 	'labels'            => array(
-		'name'          => __( 'Spotlights' ),
-		'singular_name' => __( 'Spotlight' ),
-		'all_items'     => __( 'All Spotlights' ),
-	),
-	'public'            => true,
-	'has_archive'       => false,
-	'show_in_nav_menus' => false,
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'menu_icon'         => 'dashicons-universal-access-alt',
-	'rewrite'           => array( 'slug' => 'spotlights' ),
-	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
-);
-register_post_type( 'lf_spotlight', $opts );
-
-$opts = array(
-	'labels'            => array(
 		'name'          => __( 'Humans' ),
 		'singular_name' => __( 'Human' ),
 		'all_items'     => __( 'All Humans' ),

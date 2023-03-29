@@ -396,7 +396,7 @@ class Lf_Mu_Admin {
 	 * @param int $items Number.
 	 */
 	public function custom_glance_items( $items = array() ) {
-		$post_types = array( 'lf_webinar', 'lf_event', 'lf_case_study', 'lf_case_study_cn', 'lf_kubeweekly', 'lf_spotlight', 'lf_report' );
+		$post_types = array( 'lf_webinar', 'lf_event', 'lf_case_study', 'lf_case_study_cn', 'lf_kubeweekly', 'lf_report' );
 
 		foreach ( $post_types as $type ) {
 
