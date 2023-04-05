@@ -595,6 +595,40 @@ $sidebar    = array(
 $sidebars[] = $sidebar;
 
 $sidebar    = array(
+	'id'              => 'lf-sidebar-eu-newsletter',
+	'id_prefix'       => 'lf_',
+	'label'           => __( 'EU Newsletter Settings' ),
+	'post_type'       => 'lf_eu_newsletter',
+	'data_key_prefix' => 'lf_eu_newsletter_',
+	'icon_dashicon'   => 'admin-settings',
+	'tabs'            => array(
+		array(
+			'label'  => __( 'Tab label' ),
+			'panels' => array(
+				array(
+					'label'        => __( 'General' ),
+					'initial_open' => true,
+					'settings'     => array(
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'external_url',
+							'label'         => __( 'External URL' ),
+							'help'          => __( 'This url is used to link to the web version of the email.' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+							'default_value' => '',
+							'placeholder'   => 'https://email.linuxfoundation.org/linux-foundation-events-snapshot-march-2021',
+						),
+					),
+				),
+			),
+		),
+	),
+);
+$sidebars[] = $sidebar;
+
+$sidebar    = array(
 	'id'              => 'lf-sidebar-report',
 	'id_prefix'       => 'lf_',
 	'label'           => __( 'Report Settings' ),
