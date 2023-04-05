@@ -33,7 +33,7 @@ function add_eu_newsletters_shortcode() {
 			while ( $eu_newsletter_query->have_posts() ) :
 				$eu_newsletter_query->the_post();
 
-				$link_url = get_post_meta( get_the_ID(), 'lf_kubeweekly_external_url', true );
+				$link_url = get_post_meta( get_the_ID(), 'lf_eu_newsletter_external_url', true );
 
 				if ( ! $link_url ) {
 					$link_url = get_the_permalink();
