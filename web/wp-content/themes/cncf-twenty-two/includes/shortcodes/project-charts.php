@@ -170,7 +170,7 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	}
 
 	// remove current year if project count is 0.
-	if ( $accepted[ $current_year ] == 0 ) {
+	if ( 0 == $accepted[ $current_year ] ) {
 		unset( $accepted[ $current_year ] );
 	}
 
