@@ -96,6 +96,9 @@ foreach ( $people as $p ) {
 		if ( property_exists( $p, 'languages' ) ) {
 			wp_set_object_terms( $newid, $p->languages, 'lf-language', false );
 		}
+		if ( property_exists( $p, 'expertise' ) ) {
+			wp_set_object_terms( $newid, $p->expertise, 'lf-expertise', false );
+		}
 		$projects_to_add = array();
 		if ( property_exists( $p, 'projects' ) ) {
 			foreach ( $p->projects as $proj ) {

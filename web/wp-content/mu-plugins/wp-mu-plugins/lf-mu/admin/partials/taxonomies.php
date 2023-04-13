@@ -35,6 +35,26 @@ $args   = array(
 register_taxonomy( 'lf-language', array( 'lf_webinar', 'lf_person' ), $args );
 
 $labels = array(
+	'name'          => __( 'Expertise', 'lf-mu' ),
+	'singular_name' => __( 'Expertise', 'lf-mu' ),
+	'search_items'  => __( 'Search Expertise', 'lf-mu' ),
+	'all_items'     => __( 'All Expertise', 'lf-mu' ),
+	'edit_item'     => __( 'Edit Expertise', 'lf-mu' ),
+	'update_item'   => __( 'Update Expertise', 'lf-mu' ),
+	'add_new_item'  => __( 'Add New Expertise', 'lf-mu' ),
+	'new_item_name' => __( 'New Expertise', 'lf-mu' ),
+	'menu_name'     => __( 'Expertise', 'lf-mu' ),
+);
+$args   = array(
+	'labels'            => $labels,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
+);
+register_taxonomy( 'lf-expertise', array( 'lf_person' ), $args );
+
+$labels = array(
 	'name'          => __( 'Projects', 'lf-mu' ),
 	'singular_name' => __( 'Project', 'lf-mu' ),
 	'search_items'  => __( 'Search Projects', 'lf-mu' ),
