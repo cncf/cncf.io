@@ -60,6 +60,9 @@ registerBlockType(
 			category: {
 				type: 'string',
 			},
+			authorCategory: {
+				type: 'string',
+			},
 		},
 		html: false,
 		edit: Edit,
