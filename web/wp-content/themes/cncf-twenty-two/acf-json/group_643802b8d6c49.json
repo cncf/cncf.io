@@ -1,0 +1,125 @@
+{
+    "key": "group_643802b8d6c49",
+    "title": "Settings - Phippy",
+    "fields": [
+        {
+            "key": "field_643802b96d446",
+            "label": "Desktop - WebP",
+            "name": "phippy_desktop_webp",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Displayed at a max 1200px wide. Recommended 1.5x resolution minimum, so 1800px wide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "newsroom-post-width"
+        },
+        {
+            "key": "field_643802e13d3c9",
+            "label": "Desktop - PNG",
+            "name": "phippy_desktop_png",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Displayed at a max 1200px wide. Recommended 1.5x resolution minimum, so 1800px wide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "newsroom-post-width"
+        },
+        {
+            "key": "field_643803f347894",
+            "label": "Mobile - WebP",
+            "name": "phippy_mobile_webp",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Displayed at a max 700px wide. Recommended approx 2x resolution, so 900px wide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_643803b4378ac",
+            "label": "Mobile - PNG",
+            "name": "phippy_mobile_png",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Displayed at a max 700px wide. Recommended approx 2x resolution, so 900px wide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-phippy"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1681397797
+}

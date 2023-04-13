@@ -11,7 +11,7 @@ document.addEventListener(
 	"DOMContentLoaded",
 	function() {
 		let calculatePhippyPadding;
-		let phippyImage         = document.getElementById( 'phippy-footer' );
+		let phippyImage         = document.querySelector( '.phippy-footer__image' );
 		let phippySpacer        = document.getElementById( 'phippy-spacer' );
 		let footerContainer     = document.getElementById( 'inner-footer-container' );
 		(calculatePhippyPadding = function() {

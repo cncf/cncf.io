@@ -37,3 +37,23 @@ function lf_set_acf_settings() {
 	acf_update_setting( 'enable_shortcode', false );
 }
 add_action( 'acf/init', 'lf_set_acf_settings' );
+
+/**
+ * Create new settings page using ACF
+ *
+ * @return void
+ */
+function lf_custom_settings_pages() {
+
+	if ( function_exists( 'acf_add_options_page' ) ) {
+
+		acf_add_options_sub_page(
+			array(
+				'page_title'  => 'Phippy',
+				'menu_title'  => 'Phippy',
+				'parent_slug' => 'lf-mu',
+			)
+		);
+	}
+}
+add_action( 'acf/init', 'lf_custom_settings_pages' );
