@@ -27,6 +27,9 @@ $site_options = get_option( 'lf-mu' );
 		<div style="height:100px" aria-hidden="true" class="wp-block-spacer"
 			id="phippy-spacer"></div>
 
+		<?php
+		if ( $phippy_desktop_png_id ) {
+			?>
 		<div class="phippy-footer__container">
 			<div class="phippy-footer__inner">
 
@@ -41,6 +44,9 @@ $site_options = get_option( 'lf-mu' );
 				</picture>
 			</div>
 		</div>
+			<?php
+		}
+		?>
 	</div>
 		<?php
 		wp_enqueue_script( 'home-phippy', get_template_directory_uri() . '/source/js/on-demand/home-phippy.js', null, filemtime( get_template_directory() . '/source/js/on-demand/home-phippy.js' ), true );
@@ -50,7 +56,7 @@ $site_options = get_option( 'lf-mu' );
 
 	<div class="container wrap footer_container" id="inner-footer-container">
 
-		<?php if ( ! is_front_page() ) : ?>
+		<?php if ( ! is_front_page() || ! $phippy_desktop_png_id ) : ?>
 		<div style="height:70px" aria-hidden="true"
 			class="wp-block-spacer is-style-70-100"></div>
 		<?php endif; ?>
