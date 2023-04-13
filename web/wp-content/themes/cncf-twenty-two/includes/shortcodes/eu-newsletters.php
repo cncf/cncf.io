@@ -86,9 +86,8 @@ function add_eu_newsletter_form_shortcode( $atts ) {
 	ob_start();
 	?>
 <div class="wp-block-group is-style-box-shadow has-white-background-color has-background kubeweekly-newsletter">
-<div style="height:15px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 <h3 class="is-style-spaced-uppercase">SIGN UP FOR THE END USER NEWSLETTER</h3>
-<div style="height:15px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
+<div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
 	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=7a123838-7748-4322-81eb-622045285f52]' ); ?>
 	<div style="height:15px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 <p class="has-small-font-size margin-top">By submitting this form, you acknowledge that your information is subject to The Linux Foundation’s <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a>.</p>
