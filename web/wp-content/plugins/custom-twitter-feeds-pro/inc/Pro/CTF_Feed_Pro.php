@@ -556,12 +556,14 @@ class CTF_Feed_Pro
 		foreach ( $tweets as $tweet ) {
 
 			$trimmed_tweet = array();
-
 			$trimmed_tweet['user']['name']                    = $tweet['user']['name'];
 			$trimmed_tweet['user']['screen_name']             = $tweet['user']['screen_name'];
 			$trimmed_tweet['user']['verified']                = $tweet['user']['verified'];
 			$trimmed_tweet['user']['profile_image_url_https'] = $tweet['user']['profile_image_url_https'];
 			$trimmed_tweet['user']['utc_offset']              = $tweet['user']['utc_offset'];
+			$trimmed_tweet['user']['statuses_count']          = $tweet['user']['statuses_count'];
+			$trimmed_tweet['user']['followers_count']         = $tweet['user']['followers_count'];
+			$trimmed_tweet['user']['description']             = $tweet['user']['description'];
 			$trimmed_tweet['text']                            = isset( $tweet['text'] ) ? $tweet['text'] : $tweet['full_text'];
 			$trimmed_tweet['id_str']                          = $tweet['id_str'];
 			$trimmed_tweet['created_at']                      = $tweet['created_at'];

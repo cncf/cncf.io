@@ -2,9 +2,9 @@
 Author: Smash Balloon
 Contributors: smashballoon, craig-at-smash-balloon
 Support Website: http://smashballoon/custom-twitter-feeds/
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 2.0.6
+Stable tag: 2.1
 License: Non-distributable, Not for resale
 
 Custom Twitter Feeds Pro allows you to display completely customizable Twitter feeds of your user timeline, home timeline, hashtag, and more on your website.
@@ -41,6 +41,9 @@ If you like the plugin then please consider leaving a [review](https://wordpress
 For simple step-by-step directions on how to set up Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/docs/ 'Custom Twitter Feeds setup guide').
 
 == Changelog ==
+= 2.1 =
+* New: Added our new solution for updating feeds! This version limits updates to one feed once a day. We plan on increasing this limit in the future. Read details [here](https://smashballoon.com/doc/smash-balloon-twitter-changes/?twitter).
+
 = 2.0.6 =
 * Tweak: API calls are prevented in the event that the Twitter API returns an error.
 * Fix: The feature for using your own Twitter App credentials was not working.

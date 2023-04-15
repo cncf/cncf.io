@@ -5731,3 +5731,67 @@ color: #fff!important;
     display: block;
     line-height: 1.5em !important;
 }
+
+
+/* Social Wall feed link bar styles */
+.ctf-sw-feed-link-bar {
+    background: #434960;
+    text-align: center;
+    padding: 3px;
+}
+.ctf-sw-feed-link-bar .ctf-sw-feed-link-bar-message {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: #FFFFFF;
+}
+.ctf-sw-feed-link-bar  a {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    margin-left: 20px;
+    transition: all .2s ease;
+}
+.ctf-sw-feed-link-bar  a:hover {
+    color: #D0D1D7;
+}
+
+/* Social wall feed link bar styles for the customizer */
+.sw-feed-link-bar-present.ctf-customizer-screen:not(.ctf-builder-app-lite-dismiss) .ctf-sw-feed-link-bar{
+    background: #468737;
+    position: fixed;
+    top: 32px;
+    width: calc(100% - 160px);
+    right: 0;
+    z-index: 99;
+}
+.sw-feed-link-bar-present.ctf-customizer-screen:not(.ctf-builder-app-lite-dismiss) .ctf-fb-header {
+    top: 60px;
+}
+.sw-feed-link-bar-present.ctf-customizer-screen:not(.ctf-builder-app-lite-dismiss) .sb-customizer-sidebar {
+    top: 125px;
+}
+.sw-feed-link-bar-present.ctf-customizer-screen:not(.ctf-builder-app-lite-dismiss) .sb-customizer-preview {
+    margin-top: 92px;
+}
+
+/* Social Wall feed link bar styles for the customizer also when lite app dismiss or upgrade to pro bar present at the same time*/
+.ctf-builder-app-lite-dismiss.sw-feed-link-bar-present.ctf-customizer-screen .ctf-sw-feed-link-bar{
+    background: #468737;
+    position: fixed;
+    top: 64px;
+    width: calc(100% - 160px);
+    right: 0;
+    z-index: 99;
+}
+.ctf-builder-app-lite-dismiss.sw-feed-link-bar-present.ctf-customizer-screen .ctf-fb-header {
+    top: 92px;
+}
+.ctf-builder-app-lite-dismiss.sw-feed-link-bar-present.ctf-customizer-screen .sb-customizer-sidebar {
+    top: 156px;
+}
+.ctf-builder-app-lite-dismiss.sw-feed-link-bar-present.ctf-customizer-screen .sb-customizer-preview {
+    margin-top: 128px;
+}

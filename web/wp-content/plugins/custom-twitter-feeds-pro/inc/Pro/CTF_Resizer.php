@@ -88,6 +88,7 @@ class CTF_Resizer {
 			$twitter_api_id = CTF_Parse_Pro::get_tweet_id( $post );
 
 			$in_resizing_array = in_array( $twitter_api_id, $this->post_ids_need_resizing, true );
+
 			if ( $in_resizing_array
 				&& $posts_iterated_through < 60
 				&& $number_resized < 30) {
@@ -98,11 +99,16 @@ class CTF_Resizer {
 					if ( CTF_Resizer::max_total_records_reached() ) {
 						CTF_Resizer::delete_least_used_image();
 					}
+
 					$single_post->save_new_record();
 					$single_post->resize_and_save_image( $this->image_sizes, $this->upload_dir );
 
 					$number_resized++;
 				} else {
+					if ( ! $single_post->images_done_resizing() ) {
+						$single_post->resize_and_save_image( $this->image_sizes, $this->upload_dir );
+					}
+
 					if ( ! $single_post->exists_in_feeds_posts_table() ) {
 						$single_post->insert_ctf_feeds_posts();
 					}
