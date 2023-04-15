@@ -5,7 +5,6 @@
 	"title": "Phippy Group",
 	"description": "Displays the Phippy family group image in a page, using the same image as in the home page footer",
 	"style": "file:./phippy-group.css",
-	"editorStyle": "file:./editor.css",
 	"editorScript": [],
 	"category": "common",
 	"icon": "drumstick",
