@@ -33,6 +33,12 @@ h2 {
 	display: block;
 }
 
+.long-word {
+	word-break: break-all;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+
 /**
 HIDE/SHOW
 **/
@@ -206,8 +212,8 @@ TOOLS
 	margin-top: 70px;
 	margin-bottom: 70px;
 	@media (min-width: 1200px) {
-		margin-top: 110px;
-		margin-bottom: 110px;
+		margin-top: 100px;
+		margin-bottom: 100px;
 	}
 }
 
@@ -225,7 +231,6 @@ TOOLS
 	margin-bottom: 46px;
 	@media (max-width: 600px) {
 		width: calc(100% - 20px);
-		margin-left: 20px;
 	}
 	@media (min-width: 1000px) {
 		margin-bottom: 55px;
@@ -253,7 +258,7 @@ TOOLS
 		margin-bottom: 20px;
 		@media (min-width: 1200px) {
 			font-size: 30px;
-			margin-bottom: 40px;
+			margin-bottom: 25px;
 		}
 	}
 }
@@ -416,6 +421,16 @@ SPACERS
 	}
 	@media (min-width: 1200px) {
 		height: 120px;
+	}
+}
+
+.report-spacer-200 {
+	height: 100px;
+	@media (min-width: 1000px) {
+		height: 175px;
+	}
+	@media (min-width: 1200px) {
+		height: 200px;
 	}
 }
 

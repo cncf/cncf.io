@@ -210,15 +210,10 @@
                     {{generalTab.manageAccount.button}}
                 </button>
             </div>
-            <div class="d-flex ctf-manage-account-inputs" v-else>
-                 <button type="button" class="ctf-newaccount-btn ctf-btn sb-btn-lg sb-btn-blue export-btn" @click.prevent.default="activateView('connectAccountPopup')">
-                    <span class="icon" v-html="svgIcons['twitter']"></span>
-                    {{generalTab.manageAccount.buttonConnect}}
-                </button>
-            </div>
         </div>
         <div class="ctf-add-account ctf-fs">
-            <div class="ctf-add-account-btn ctf-fs"  v-if="!checkAppData()" @click.prevent.default="activateView('connectAccountPopup');switchScreen('connectAccountStep','step_2');">
+            <!--<div class="ctf-add-account-btn ctf-fs"  v-if="!checkAppData()" @click.prevent.default="activateView('connectAccountPopup');switchScreen('connectAccountStep','step_2');">-->
+            <div class="ctf-add-account-btn ctf-fs">
                 <div v-html="svgIcons['linkIcon']"></div>
                 {{generalTab.manageAccount.buttonConnectOwnApp}}
             </div>

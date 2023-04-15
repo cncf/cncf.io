@@ -27,15 +27,18 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 		$version = '1';
 		$namespace = 'lf/v' . $version;
 		$base = 'sync_people';
-		register_rest_route( $namespace, '/' . $base, array(
+		register_rest_route(
+			$namespace,
+			'/' . $base,
 			array(
-			'methods'             => WP_REST_Server::ALLMETHODS,
-			'callback'            => array( $this, 'sync_people' ),
-			'permission_callback' => '__return_true',
-			'args'                => array(
-			),
-			),
-		) );
+				array(
+					'methods'             => WP_REST_Server::ALLMETHODS,
+					'callback'            => array( $this, 'sync_people' ),
+					'permission_callback' => '__return_true',
+					'args'                => array(),
+				),
+			)
+		);
 	}
 
 	/**
@@ -45,7 +48,7 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 	 * @return WP_Error|WP_REST_Response
 	 */
 	public function sync_people( $request ) {
-	
+
 		if ( ! is_object( $request ) ) {
 			return new WP_Error( 'error', esc_html__( 'Error with the request object.' ), array( 'status' => 500 ) );
 		}
@@ -56,7 +59,7 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 			if ( 'people' === $json->repository->name && 'closed' === $json->action && true === $json->pull_request->merged ) {
 				// sync people after 6 minutes.
 				// This delay is required in order for GitHub to update its raw files with the people data.
-				wp_schedule_single_event( time()+360, 'lf_sync_people' );
+				wp_schedule_single_event( time() + 360, 'lf_sync_people' );
 				return new WP_REST_Response( array( 'Success. People synced.' ), 200 );
 			}
 		}

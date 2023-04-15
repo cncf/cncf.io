@@ -138,6 +138,24 @@ register_post_type( 'lf_kubeweekly', $opts );
 
 $opts = array(
 	'labels'              => array(
+		'name'          => __( 'EU Newsletters' ),
+		'singular_name' => __( 'EU Newsletter' ),
+		'all_items'     => __( 'All EU Newsletters' ),
+	),
+	'public'              => true,
+	'has_archive'         => false,
+	'show_in_nav_menus'   => false,
+	'show_in_rest'        => true,
+	'hierarchical'        => false,
+	'exclude_from_search' => true,
+	'menu_icon'           => 'dashicons-email-alt',
+	'rewrite'             => array( 'slug' => 'eu_newsletter' ),
+	'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+);
+register_post_type( 'lf_eu_newsletter', $opts );
+
+$opts = array(
+	'labels'              => array(
 		'name'          => __( 'People' ),
 		'singular_name' => __( 'Person' ),
 		'all_items'     => __( 'All People' ),
@@ -171,23 +189,6 @@ $opts = array(
 	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 );
 register_post_type( 'lf_webinar', $opts );
-
-$opts = array(
-	'labels'            => array(
-		'name'          => __( 'Spotlights' ),
-		'singular_name' => __( 'Spotlight' ),
-		'all_items'     => __( 'All Spotlights' ),
-	),
-	'public'            => true,
-	'has_archive'       => false,
-	'show_in_nav_menus' => false,
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'menu_icon'         => 'dashicons-universal-access-alt',
-	'rewrite'           => array( 'slug' => 'spotlights' ),
-	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
-);
-register_post_type( 'lf_spotlight', $opts );
 
 $opts = array(
 	'labels'            => array(

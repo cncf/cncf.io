@@ -483,13 +483,14 @@ class CTF_Support {
 		$consumer_key = ! empty( $options['consumer_key'] ) && ! empty( $options['have_own_tokens'] ) ? $options['consumer_key'] : 'FPYSYWIdyUIQ76Yz5hdYo5r7y';
 		$consumer_secret = ! empty( $options['consumer_secret'] ) && ! empty( $options['have_own_tokens'] ) ? $options['consumer_secret'] : 'GqPj9BPgJXjRKIGXCULJljocGPC62wN2eeMSnmZpVelWreFk9z';
 		$request_settings = array(
-			'consumer_key' => $consumer_key,
-			'consumer_secret' => $consumer_secret,
-			'access_token' => $options['access_token'],
-			'access_token_secret' => $options['access_token_secret']
+			//'consumer_key' => $consumer_key,
+			//'consumer_secret' => $consumer_secret,
+			//'access_token' => $options['access_token'],
+			//'access_token_secret' => $options['access_token_secret']
 		);
 		$output = '';
-		if ( isset( $options['request_method'] ) ) {
+		$broken_so_false = false;
+		if ( $broken_so_false && isset( $options['request_method'] ) ) {
 			$request_method = isset( $options['request_method'] ) ? $options['request_method'] : 'auto';
 
 			$twitter_api = new \TwitterFeed\CtfOauthConnect( $request_settings, 'usertimeline' );
@@ -518,6 +519,26 @@ class CTF_Support {
 			}
 
 		} //End isset check
+
+		$api_call_log = get_option( 'ctf_api_call_log', array() );
+		$output .= '## API CALL LOG: ## <br>';
+		$api_call_log = array_slice( $api_call_log, 0, 10 );
+		foreach ( $api_call_log as $api_call ) {
+			foreach ( $api_call as $key => $value ) {
+				$value = $key === 'time' ? date( 'Y-m-d H:i:s', $value ) : $value;
+				$output .= $key . ': ' . $value . '<br>';
+			}
+			$output .= '<br><br>';
+		}
+		$output .= '<br>';
+
+		$output .= '## UPDATE NOTES: ## <br>';
+
+
+		$ctf_statuses_option = get_option( 'ctf_statuses', array() );
+		if ( ! empty( $ctf_statuses_option['first_cron_update'] ) ) {
+			$output .= 'First Cron Update: '. date( 'Y-m-d H:i:s', $ctf_statuses_option['first_cron_update'] ) .' ' . ($ctf_statuses_option['first_cron_update'] - time()) / HOUR_IN_SECONDS . ' hours<br>';
+		}
 
 		$output .= "</br>";
 

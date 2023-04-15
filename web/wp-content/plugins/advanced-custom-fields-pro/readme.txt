@@ -2,9 +2,9 @@
 Contributors: elliotcondon
 Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
-Tested up to: 6.0.3
+Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 6.0.3
+Stable tag: 6.0.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,62 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.0.7 =
+*Release Date 18th January 2023*
+
+* Improvement - Removed unnecessary “Layout” prefix for Flexible Content field layouts
+* Fix - Dragging and dropping fields containing settings rendered as radio button groups no longer removes the selected value
+* Fix - Using the WordPress `default_page_template_title` filter with two parameters no longer causes a fatal error
+* Fix - Select2 inputs in the content editor are no longer receiving styles from the ACF 6 admin UI
+* Fix - `acf_add_local_field_group()` now works with field group titles containing non-ASCII characters
+* Fix - Flexible Content field no longer has a missing icon for the “Duplicate” button
+* Fix - Clicking the “Add Field” button in a Flexible Content layout no longer adds an invalid field if there are other Flexible Content fields in the layout
+* Fix - Edit buttons for ACF blocks now behave correctly inside reusable blocks 
+* Fix - Field settings rendered as a select2 field now correctly reinitialize when changing between field types
+
+= 6.0.6 =
+*Release Date 13th December 2022*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-0-6-release-flexible-content-field-layout-improvement/)
+* New - Flexible Content field now has a new admin user experience when editing layouts
+* New - Tabs for field settings in the field group editor can now be disabled via a new “Field Settings Tabs” screen option or with the new [`acf/field_group/disable_field_settings_tabs`](https://www.advancedcustomfields.com/resources/acf-field_group-disable_field_settings_tabs) filter
+* Improvement - General field settings tab now selected by default when a field is opened
+* Fix - Sub fields are no longer initialized by their parent, resolving performance issues when field groups contain many nested sub fields
+* Fix - Frontend forms now disable the submit button after click to prevent multiple submissions
+* Fix - Unknown field types no longer display broken HTML in the field group editor
+* Fix - Returning an empty string via the `acf/blocks/no_fields_assigned_message` filter will no longer result in blocks without fields assigned having an extra wrapping div
+* Fix - Sites with WPML enabled no longer experience failed ACF updates due to license errors
+* Fix - Buttons featuring icons no longer have display issues when using RTL languages
+
+= 6.0.5 =
+*Release Date 18th November 2022*
+
+* Fix - Uploading multiple files nested in a subfield no longer causes a fatal error when using basic uploader (props @JoKolov)
+
+= 6.0.4 =
+*Release Date 8th November 2022*
+
+* Improvement - JavaScript initialization performance while editing large field groups has been improved, especially in Safari
+* Improvement - Tooltips for field settings are now shown as inline instructions
+* Improvement - Saving a field group is now disabled until a field group title has been entered
+* Improvement - Additional sanitization across various internal parts of the plugin
+* Fix - Dragging and dropping a field in no longer opens the field settings in Firefox
+* Fix - Copying the field name or key to the clipboard now works as expected for new or reordered fields, and subfields
+* Fix - Saving a field group will now temporarily disable the "Save Changes" button while saving
+* Fix - Block templates that include html comments as the first DOM element no longer crash the block editor on edit
+* Fix - Block templates that include InnerBlocks on the DOM’s first level no longer trigger JS warnings
+* Fix - Block templates that render other blocks now correctly render their InnerBlocks
+* Fix - Legacy block attribute values are no longer overwritten by blank defaults of new versions
+* Fix - Paginated Repeater fields now work with non-paginated Repeaters as subfields
+* Fix - Repeater pagination is now properly disabled while inside blocks
+* Fix - REST API no longer causes a PHP warning if `$_SERVER['REQUEST_METHOD']` is not defined
+* Fix - REST API now supports integer keys for the Select field
+* Fix - REST API now supports passing `null` to Image and File fields
+* Fix - Invalid ACF meta keys no longer cause a fatal error when retrieved with `get_fields()`
+* a11y - The Relationship field is now fully accessible for keyboard navigation
+* i18n - Select dropdown arrow is now aligned correctly in RTL languages
+* i18n - Radio buttons are now aligned correctly in RTL languages
 
 = 6.0.3 =
 *Release Date 18th October 2022*

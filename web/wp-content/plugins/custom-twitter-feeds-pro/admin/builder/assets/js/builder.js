@@ -289,7 +289,8 @@ ctfBuilder = new Vue({
 		loadingAjax : false,
     	loading: false,
 
-
+		sw_feed: false,
+		sw_feed_id: false
 	},
 	watch : {
 		feedPreviewOutput : function(){
@@ -322,6 +323,10 @@ ctfBuilder = new Vue({
 	},
 	created: function(){
 		var self = this;
+		const urlParams = new URLSearchParams(window.location.search);
+		// get the socail wall link feed url params
+		self.sw_feed = urlParams.get('sw-feed');
+		self.sw_feed_id = urlParams.get('sw-feed-id');
 		this.$parent = self;
 		if( self.customizerFeedData ){
 			self.template = String("<div>"+self.template+"</div>");
@@ -1099,6 +1104,7 @@ ctfBuilder = new Vue({
 
 		//Check Feed Creation Process Sources & Hashtags
 		creationProcessCheckAppCredentials : function(){
+			return true;
 			var self = this;
 			return self.checkNotEmpty( self.appCredentials.access_token ) && self.checkNotEmpty( self.appCredentials.access_token_secret );
 		},
@@ -1123,6 +1129,7 @@ ctfBuilder = new Vue({
 			Feed Creation Process
 		*/
 		creationProcessCheckAction : function(){
+			return true;
 			var self = this, checkBtnNext = false;
 			switch (self.viewsActive.selectedFeedSection) {
 				case 'feedsType':
@@ -1329,11 +1336,32 @@ ctfBuilder = new Vue({
 			self.ajaxPost(newFeedData, function(_ref){
 				var data = _ref.data;
 				if(data.feed_id && data.success){
-					window.location = self.builderUrl + '&feed_id=' + data.feed_id;
+					window.location = self.builderUrl + '&feed_id=' + data.feed_id + self.sw_feed_params();
 				}
 			});
 		},
 
+		sw_feed_params: function() {
+			let sw_feed_param = '';
+			if ( this.sw_feed ) {
+				sw_feed_param += '&sw-feed=true';
+			}
+			if ( this.sw_feed_id ) {
+				sw_feed_param += '&sw-feed-id=' + this.sw_feed_id;
+			}
+			return sw_feed_param;
+		},
+
+		swfeedReturnUrl: function() {
+			var self = this;
+			if ( self.sw_feed ) {
+				sw_return_url = 'admin.php?page=sbsw#/create-feed'
+			}
+			if ( self.sw_feed_id ) {
+				sw_return_url = 'admin.php?page=sbsw&feed_id=' + self.sw_feed_id
+			}
+			return sw_return_url;
+		},
 
 		//Open Add Source List Popup
 		openSourceListPopup : function( feedTypeID ){

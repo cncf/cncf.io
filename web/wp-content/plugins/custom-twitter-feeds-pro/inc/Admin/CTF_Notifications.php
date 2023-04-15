@@ -7,6 +7,9 @@
 namespace TwitterFeed\Admin;
 
 // Exit if accessed directly
+
+use TwitterFeed\Builder\CTF_Feed_Builder;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -333,6 +336,57 @@ class CTF_Notifications {
 
 		$option = $this->get_option();
 
+		$feeds = CTF_Feed_Builder::get_feed_list();
+
+		if ( count( $feeds ) > 1 ) {
+			$updatable_feeds = array_slice($feeds, 0, 1 );
+		} else {
+			$updatable_feeds = $feeds;
+			$remaining = count( $updatable_feeds ) - 1;
+
+			if ( ! empty( $remaining ) ) {
+				$builder = new CTF_Feed_Builder();
+				$legacy_feeds = $builder->get_legacy_feed_list();
+				$legacy_feeds_updatable = array_slice( $legacy_feeds, 0, $remaining );
+				$updatable_feeds = array_merge( $updatable_feeds, $legacy_feeds_updatable );
+			}
+		}
+		$additional_message = '';
+		if (! empty( $updatable_feeds )) {
+            $updatable_feed_id = ! empty( $updatable_feeds[0]['id'] ) ? $updatable_feeds[0]['id'] : 'legacy';
+
+            $additional_message = '<br><br>The following feed will be updated once a day: <a href="' .admin_url( 'admin.php?page=ctf-feed-builder&feed_id=' . $updatable_feed_id ). '">feed=' . $updatable_feed_id .'</a>';
+		}
+
+		$special_notice_dismissed = false;
+		if ( ! empty( $option['dismissed'] ) && in_array( 'smashtwitter', $option['dismissed'] ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+			$special_notice_dismissed = true;
+		}
+		if ( ! $special_notice_dismissed ) {
+			$notifications = array(
+				array(
+					'title' => 'Twitter API Changes',
+					'content' => "Due to the abrupt ending of our plugin's access to Twitter's API, we have launched our new solution for updating feeds. It comes with limitations." . $additional_message . '<br><br>Please click the link below to find out more.',
+					'image' => 'balloon',
+					'type' => array( 'pro' ),
+					'id' => 'smashtwitter',
+					"btns"=> array(
+						'primary' => array(
+							'url' => 'https://smashballoon.com/doc/smash-balloon-twitter-changes/?twitter',
+							'text' => 'Learn More',
+							'attr' => array(
+								'targetblank'
+							)
+						)
+					),
+					'start' => '2022-02-08 00:00:00',
+					'end' => '2024-02-08 00:00:00',
+
+				)
+			);
+			return $notifications;
+		}
+
 		// Update notifications using async task.
 		if ( empty( $option['update'] ) || ctf_get_current_time() > $option['update'] + DAY_IN_SECONDS ) {
 			$this->update();
@@ -519,6 +573,7 @@ class CTF_Notifications {
 			'span'   => array(
 				'style' => array(),
 			),
+			'br' => array(),
 			'a'      => array(
 				'href'   => array(),
 				'target' => array(),

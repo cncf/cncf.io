@@ -40,14 +40,12 @@ function add_end_user_pricing_shortcode() {
 			<ul>
 				<li>Private mailing list and
 					calls to meet other cloud native end users</li>
-				<li>Unlimited Virtual KubeCon
+				<li>Unlimited Virtual KubeCon + CloudNativeCon
 					tickets</li>
-				<li>5 KubeCon in-person tickets
-					(2 tickets for organization with &lt;300 employees)</li>
+				<li>5 KubeCon + CloudNativeCon in-person tickets per year (2 tickets for organizations with &lt;300 employees)</li>
 				<li>5 Linux Foundation
 					Training coupons </li>
-				<li>End User Recruiting Booth at
-					KubeCon ($7k instead of $21k)</li>
+				<li>End User Recruiting Booth at KubeCon + CloudNativeCon at Startup Level pricing.</li>
 			</ul>
 		</div>
 
@@ -76,8 +74,7 @@ function add_end_user_pricing_shortcode() {
 				<li>2 online programs a quarter to
 					build thought leadership (on-demand, YouTube, live streams)
 				</li>
-				<li>A total of 10 KubeCon
-					in-person tickets</li>
+				<li>A total of 10 KubeCon + CloudNativeCon in-person tickets per year.</li>
 				<li>15-seat annual Linux Foundation Training subscription (worth $7.5k) OR
 					10 Linux Foundation Training coupons. Additional terms apply.
 					(Cannot be combined with any other membership training benefits.)
@@ -114,20 +111,15 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 		<div class="tbody">
 			<p>Everything included in Silver, plus:</p>
 			<ul>
-				<li>KubeCon keynote mention upon
-					joining </li>
-				<li>Personalized press release
-					upon joining</li>
-				<li>Quarterly executive
-					engagement with CNCF leadership team</li>
-				<li>4 online programs a quarter
-					(on-demand, YouTube, live streams) to build thought
+				<li>KubeCon + CloudNativeCon keynote mention upon joining </li>
+				<li>Personalized press release upon joining</li>
+				<li>Quarterly executive engagement with CNCF leadership team</li>
+				<li>4 online programs a quarter (on-demand, YouTube, live streams) to build thought
 					leadership</li>
 				<li>50-seat annual Linux Foundation Training subscription OR
 					10 Linux Foundation Training coupons.  Additional terms apply.
 					(Cannot be combined with any other membership training benefits.)
 				</li>
-
 			</ul>
 		</div>
 
@@ -150,24 +142,15 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 		</div>
 
 		<div class="tbody">
-			<p>Everything included
-					in Gold, plus:</p>
+			<p>Everything included in Gold, plus:</p>
 			<ul>
-				<li>Board seat on CNCF
-					Governing Board</li>
-				<li>Exec invite to join a KubeCon
-					keynote upon joining</li>
-				<li>Personalized executive
-					engagement from CNCF leadership team</li>
-				<li>Guidance on open
-					source strategy - e.g. donating a project, running an open
-					source program office</li>
-				<li>Recruiting recommendations
-					and DE&I guidance</li>
-				<li>Personalized executive
-					engagement from LF leadership team</li>
-				<li>Exclusive live webinars with
-					CNCF online programs</li>
+				<li>Board seat on CNCF Governing Board</li>
+				<li>Exec invite to join a KubeCon + CloudNativeCon keynote upon joining</li>
+				<li>Personalized executive engagement from CNCF leadership team</li>
+				<li>Guidance on open source strategy - e.g. donating a project, running an open source program office</li>
+				<li>Recruiting recommendations and DE&I guidance</li>
+				<li>Personalized executive engagement from LF leadership team</li>
+				<li>Exclusive live webinars with CNCF online programs</li>
 			</ul>
 		</div>
 

@@ -15,6 +15,7 @@ use TwitterFeed\Admin\CTF_HTTP_Request;
 use TwitterFeed\CTF_GDPR_Integrations;
 use TwitterFeed\Pro\CTF_Resizer;
 use TwitterFeed\SB_Twitter_Cron_Updater_Pro;
+use TwitterFeed\SmashTwitter\AuthRoutine;
 
 class CTF_Global_Settings {
 	//use CTF_Settings;
@@ -214,8 +215,17 @@ class CTF_Global_Settings {
 			) );
 		}
 		$license_key = sanitize_text_field( $_POST[ 'license_key' ] );
+		update_option( 'ctf_license_key', $license_key );
+
+		$auth_routine = new AuthRoutine();
+		$result_token = $auth_routine->run_register();
+		$results = $auth_routine->run_license_activation( $result_token );
+		if ( ! empty( $results['data']['api_data'] ) ) {
+			$ctf_license_data = $results['data']['api_data'];
+			update_option( 'ctf_license_data', $results['data']['api_data'] );
+		}
 		// make the remote api call and get license data
-		$ctf_license_data = $this->get_license_data( $license_key, 'activate_license', CTF_PRODUCT_NAME );
+		//$ctf_license_data = $this->get_license_data( $license_key, 'activate_license', CTF_PRODUCT_NAME );
 
 		// update the license data
 		if( !empty( $ctf_license_data ) && $ctf_license_data['license'] == 'valid' ) {
@@ -238,9 +248,9 @@ class CTF_Global_Settings {
 			'licenseStatus' => $ctf_license_data['license'],
 			'licenseData' => $ctf_license_data
 		);
-		new CTF_Response( 
-			$ctf_license_data['license'] == 'valid' ? true : false, 
-			$data 
+		new CTF_Response(
+			$ctf_license_data['license'] == 'valid' ? true : false,
+			$data
 		);
 	}
 
@@ -342,6 +352,9 @@ class CTF_Global_Settings {
 
 		// update options data
 		$license_changed = $this->update_recheck_license_data( $ctf_license_data, $item_name, $option_name );
+
+		// Get the token for consuming the API again if the License key was rechecked.
+		( new AuthRoutine() )->run_register();
 
 		// send AJAX response back
 		new CTF_Response( true, array(
@@ -856,11 +869,12 @@ class CTF_Global_Settings {
 					'activate' => __( 'Activate', 'custom-twitter-feeds' ),
 				),
 				'manageAccount'	=> array(
-					'title'	=> __( 'Connected Twitter Account', 'custom-twitter-feeds' ),
-					'description'	=> __( 'This account is used to display home timeline, or fetch data from Twitter API for other timeline.<br/>Changing this will not affect Hashtag, Search or List Timelines, but will change Home and Mentions timelines.', 'custom-twitter-feeds' ),
+					'title'	=> __( 'Twitter Integration', 'custom-twitter-feeds' ),
+					'description'	=> sprintf(__( 'Your feeds are automatically populated once per day. <br />Read more %shere%s about Twitter latest changes and how they affect our product.', 'custom-twitter-feeds' ), '<a href="https://smashballoon.com/doc/smash-balloon-twitter-changes/?twitter" target="_blank">', '</a>' ),
+
 					'button'	=> __( 'Change', 'custom-twitter-feeds' ),
 					'buttonConnect'	=> __( 'Connect new Account', 'custom-twitter-feeds' ),
-					'buttonConnectOwnApp'	=> __( 'Connect your Own App', 'custom-twitter-feeds' ),
+					'buttonConnectOwnApp'	=> __( 'Connect your Own App (coming soon)', 'custom-twitter-feeds' ),
 					'titleApp'	=> __( 'Connected Twitter App', 'custom-twitter-feeds' ),
 					'cKey'		=> __( 'Consumer Key', 'custom-twitter-feeds' ),
 					'cSecret'	=> __( 'Consumer Secret', 'custom-twitter-feeds' ),

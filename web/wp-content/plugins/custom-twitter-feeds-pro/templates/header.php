@@ -14,7 +14,7 @@ use TwitterFeed\Pro\CTF_Parse_Pro;
 use TwitterFeed\Pro\CTF_Display_Elements_Pro;
 
 $header_no_bio = ( !$feed_options['showbio'] || empty( $header_info['description'] ) ) ? $header_no_bio = ' ctf-no-bio' : $header_no_bio = "";
-$header_info = CTF_Parse_Pro::get_user_header_json( $feed_options );
+$header_info = CTF_Parse_Pro::get_user_header_json( $feed_options, $tweet_set );
 
 $header_text = CTF_Parse_Pro::get_header_text( $header_info, $feed_options );
 $header_description = CTF_Parse_Pro::get_header_description( $header_info );

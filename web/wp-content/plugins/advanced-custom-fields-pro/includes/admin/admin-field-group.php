@@ -306,28 +306,29 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 
 		}
 
-
 		/**
-		 *  Screen settings html output
+		 * Screen settings html output
 		 *
-		 *  @since   3.6.0
+		 * @since   3.6.0
 		 *
-		 *  @param   string $html Current screen settings HTML.
-		 *  @return  string $html
+		 * @param string $html Current screen settings HTML.
+		 * @return string $html
 		 */
 		public function screen_settings( $html ) {
+			$show_field_keys          = acf_get_user_setting( 'show_field_keys' ) ? 'checked="checked"' : '';
+			$show_field_settings_tabs = acf_get_user_setting( 'show_field_settings_tabs', true ) ? 'checked="checked"' : '';
+			$hide_field_settings_tabs = apply_filters( 'acf/field_group/disable_field_settings_tabs', false );
 
-			// vars.
-			$checked = acf_get_user_setting( 'show_field_keys' ) ? 'checked="checked"' : '';
-
-			// append.
 			$html .= '<div id="acf-append-show-on-screen" class="acf-hidden">';
-			$html .= '<label for="acf-field-key-hide"><input id="acf-field-key-hide" type="checkbox" value="1" name="show_field_keys" ' . $checked . ' /> ' . __( 'Field Keys', 'acf' ) . '</label>';
+			$html .= '<label for="acf-field-key-hide"><input id="acf-field-key-hide" type="checkbox" value="1" name="show_field_keys" ' . $show_field_keys . ' /> ' . __( 'Field Keys', 'acf' ) . '</label>';
+
+			if ( ! $hide_field_settings_tabs ) {
+				$html .= '<label for="acf-field-settings-tabs"><input id="acf-field-settings-tabs" type="checkbox" value="1" name="show_field_settings_tabs" ' . $show_field_settings_tabs . ' />' . __( 'Field Settings Tabs', 'acf' ) . '</label>';
+			}
+
 			$html .= '</div>';
 
-			// return.
 			return $html;
-
 		}
 
 		/**
@@ -406,7 +407,7 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			if ( ! empty( $_POST['acf_fields'] ) ) {
 
 				// loop.
-				foreach ( $_POST['acf_fields'] as $field ) {
+				foreach ( $_POST['acf_fields'] as $field ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized when saved.
 
 					if ( ! isset( $field['key'] ) ) {
 						continue;
@@ -435,10 +436,10 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			}
 
 			// delete fields.
-			if ( $_POST['_acf_delete_fields'] ) {
+			if ( $_POST['_acf_delete_fields'] ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized below.
 
 				// clean.
-				$ids = explode( '|', $_POST['_acf_delete_fields'] );
+				$ids = explode( '|', $_POST['_acf_delete_fields'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized below.
 				$ids = array_map( 'intval', $ids );
 
 				// loop.
@@ -456,19 +457,20 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			}
 
 			// add args.
-			$_POST['acf_field_group']['ID']    = $post_id;
+			$_POST['acf_field_group']['ID'] = $post_id;
+			// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized when saved.
 			$_POST['acf_field_group']['title'] = $_POST['post_title'];
 
 			// save field group.
 			acf_update_field_group( $_POST['acf_field_group'] );
+			// phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
-			// return.
 			return $post_id;
 		}
 
 
 		/**
-		 *  This function will render the HTML for the medtabox 'acf-field-group-fields'
+		 *  This function will render the HTML for the metabox 'acf-field-group-fields'
 		 *
 		 *  @since   5.0.0
 		 *
@@ -549,7 +551,7 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			}
 
 			// validate rule.
-			$rule = acf_validate_location_rule( $_POST['rule'] );
+			$rule = acf_validate_location_rule( acf_sanitize_request_args( $_POST['rule'] ) );
 
 			// view.
 			acf_get_view(

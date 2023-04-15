@@ -20,6 +20,7 @@ function lf_newsroom_render_callback( $attributes ) {
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	// get the category to display.
 	$category = isset( $attributes['category'] ) && (int) $attributes['category'] ? $attributes['category'] : '230';
+	$author_category = isset( $attributes['authorCategory'] ) && (int) $attributes['authorCategory'] ? $attributes['authorCategory'] : null;
 	// order of posts.
 	$order = isset( $attributes['order'] ) ? $attributes['order'] : 'DESC';
 
@@ -65,6 +66,7 @@ function lf_newsroom_render_callback( $attributes ) {
 		'orderby'             => 'date',
 		'no_found_rows'       => true,
 		'tax_query'           => array(
+			'relation' => 'AND',
 			array(
 				'taxonomy' => 'category',
 				'field'    => 'term_id',
@@ -72,6 +74,14 @@ function lf_newsroom_render_callback( $attributes ) {
 			),
 		),
 	);
+
+	if ( $author_category ) {
+		$args['tax_query'][] = array(
+			'taxonomy' => 'lf-author-category',
+			'field'    => 'term_id',
+			'terms'    => $author_category,
+		);
+	}
 
 	$query = new WP_Query( $args );
 

@@ -151,10 +151,11 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	$start_year     = 2016;
 	$accepted       = array();
 	$background     = array();
+	$current_year   = (int) gmdate( 'Y' );
 
-	for ( $this_year = $start_year; $this_year <= (int) gmdate( 'Y' ); $this_year++ ) {
+	for ( $this_year = $start_year; $this_year <= $current_year; $this_year++ ) {
 		$accepted[ $this_year ] = 0;
-		if ( (int) gmdate( 'Y' ) == $this_year ) {
+		if ( $current_year == $this_year ) {
 			$background[] = 'rgb(0, 134, 255, 0.4)';
 		} else {
 			$background[] = 'rgb(0, 134, 255)';
@@ -163,9 +164,14 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 
 	foreach ( $maturity_data as $md ) {
 		$md_year = (int) explode( '-', $md['accepted'] )[0];
-		if ( 2016 <= $md_year && $md_year <= (int) gmdate( 'Y' ) ) {
+		if ( 2016 <= $md_year && $md_year <= $current_year ) {
 			$accepted[ $md_year ] += 1;
 		}
+	}
+
+	// remove current year if project count is 0.
+	if ( 0 == $accepted[ $current_year ] ) {
+		unset( $accepted[ $current_year ] );
 	}
 
 	ob_start();

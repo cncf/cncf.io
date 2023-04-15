@@ -2,7 +2,7 @@
 /**
  * Search & Filter Pro
  *
- * Spotlights
+ * Humans
  *
  * @package WordPress
  * @subpackage cncf-theme

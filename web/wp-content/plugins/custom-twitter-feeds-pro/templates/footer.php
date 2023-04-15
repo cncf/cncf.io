@@ -13,8 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 $loadmore_attr = CTF_Display_Elements_Pro::get_element_attribute( 'loadmore', $feed_options );
+
+// TODO: remove after Twitter fix.
+$force_disable_load_more_button = true;
 ?>
-<?php if ( ( filter_var($feed_options['showbutton'], FILTER_VALIDATE_BOOLEAN) == true) || ctf_doing_customizer( $feed_options ) ) : ?>
+<?php if ( !$force_disable_load_more_button && ( filter_var($feed_options['showbutton'], FILTER_VALIDATE_BOOLEAN) == true) || ctf_doing_customizer( $feed_options ) ) : ?>
     <a href="javascript:void(0);" id="ctf-more" class="ctf-more" <?php echo $loadmore_attr ?>><span><?php echo esc_html( $feed_options['buttontext'] ) ?></span></a>
 <?php endif; ?>
 

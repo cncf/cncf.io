@@ -47,7 +47,7 @@ Study</a>
 elseif ( is_singular( 'lf_case_study_cn' ) ) :
 	?>
 <a class="parent-link has-text-color has-white-text" href="/case-studies-cn/" title="最终用户案例研究">最终用户案例研究</a>
-<?php
+	<?php
 endif;
 ?>
 </span>

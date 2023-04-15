@@ -18,10 +18,6 @@ elseif ( is_singular( 'lf_webinar' ) ) :
 	get_template_part( 'components/title' );
 	get_template_part( 'components/webinar-single' );
 
-elseif ( is_singular( 'lf_spotlight' ) ) :
-	get_template_part( 'components/title' );
-	get_template_part( 'components/spotlight-single' );
-
 elseif ( is_singular( 'lf_human' ) ) :
 	get_template_part( 'components/title' );
 	get_template_part( 'components/human-single' );

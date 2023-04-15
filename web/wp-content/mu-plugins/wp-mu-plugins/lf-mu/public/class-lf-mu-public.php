@@ -203,8 +203,20 @@ class Lf_Mu_Public {
 		// WP version.
 		remove_action( 'wp_head', 'wp_generator' );
 
-		// stop xmlrpc.
+		// controls whether XML-RPC methods requiring authentication are enabled.
 		add_filter( 'xmlrpc_enabled', '__return_false' );
+
+		// Unregister the whole XML-RPC method space.
+		add_filter( 'xmlrpc_methods', fn( $methods ) => array() );
+
+		// deactivate x-pingback HTTP header.
+		add_filter(
+			'wp_headers',
+			function( $headers ) {
+				unset( $headers['X-Pingback'] );
+				return $headers;
+			}
+		);
 
 		// remove application passwords.
 		add_filter( 'wp_is_application_passwords_available', '__return_false' );
@@ -303,12 +315,12 @@ class Lf_Mu_Public {
 	}
 
 	/**
-	 * Remove the Kubeweekly archive from the SEO Framework sitemap.
+	 * Remove the Newsletter archives from the SEO Framework sitemap.
 	 *
 	 * @param array $post_types Query args.
 	 */
-	public function remove_kubeweekly_from_sitemap( $post_types ) {
-		$to_exclude = array( 'lf_kubeweekly' );
+	public function remove_newsletters_from_sitemap( $post_types ) {
+		$to_exclude = array( 'lf_kubeweekly', 'lf_eu_newsletter' );
 		return array_diff( $post_types, $to_exclude );
 	}
 

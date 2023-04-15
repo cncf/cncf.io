@@ -271,8 +271,8 @@ class LF_Utils {
 
 		if ( ! $image_srcset ) {
 
-			$width  = $size[1] ?? '';
-			$height = $size[2] ?? '';
+			$width  = (int) $size[1] ?? '';
+			$height = (int) $size[2] ?? '';
 
 			$img           = '<img width="' . $width . '" height="' . $height . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . $alt_text . '">';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
@@ -528,11 +528,11 @@ class LF_Utils {
 		$metrics = get_transient( 'cncf_whoweare_metrics' );
 
 		if ( false === $metrics ) {
-			$metrics                         = self::get_homepage_metrics();
-			$metrics['cncf-members']         = 630;
-			$metrics['community-members']    = 630;
+			$metrics                      = self::get_homepage_metrics();
+			$metrics['cncf-members']      = 630;
+			$metrics['community-members'] = 630;
 
-			$options         = get_option( 'lf-mu' );
+			$options           = get_option( 'lf-mu' );
 			$community_api_key = $options['community_api_key'] ?? '';
 
 			if ( ! $community_api_key ) {
@@ -548,7 +548,7 @@ class LF_Utils {
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
 				return $metrics;
 			}
-			$remote_body                     = json_decode( wp_remote_retrieve_body( $data ) );
+			$remote_body                  = json_decode( wp_remote_retrieve_body( $data ) );
 			$metrics['community-members']    = $remote_body->User; //phpcs:ignore.
 
 			$data = wp_remote_get( 'https://landscape.cncf.io/data/exports/cncf-members.json' );
@@ -577,7 +577,7 @@ class LF_Utils {
 
 			$request = wp_remote_get( 'https://radar.cncf.io/radars.json' );
 
-			if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) != 200 ) ) {
+			if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) !== 200 ) ) {
 				return;
 			}
 			$tech_radars = wp_remote_retrieve_body( $request );
@@ -602,7 +602,7 @@ class LF_Utils {
 
 		$ambassadors = array();
 
-		$args  = array(
+		$args           = array(
 			'post_type'      => 'lf_person',
 			'posts_per_page' => 15,
 			'no_found_rows'  => true,
@@ -616,7 +616,7 @@ class LF_Utils {
 				),
 			),
 		);
-		$query = new WP_Query( $args );
+		$query          = new WP_Query( $args );
 		$ambassador_url = home_url( 'people/ambassadors' );
 		while ( $query->have_posts() ) {
 
@@ -641,7 +641,7 @@ class LF_Utils {
 			'no_found_rows'  => true,
 			'orderby'        => 'rand',
 			'post_status'    => array( 'publish' ),
-			'meta_query' => array(
+			'meta_query'     => array(
 				array(
 					'key'     => 'lf_human_image',
 					'value'   => '0',
@@ -653,7 +653,7 @@ class LF_Utils {
 		while ( $query->have_posts() ) {
 			$query->the_post();
 			$person_title        = $post->post_title;
-			$person_image_url    = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'lf_human_image', true ) )[0];
+			$person_image_url    = wp_get_attachment_image_src( get_post_meta( get_the_ID(), 'lf_human_image', true ), 'newsroom-post-width' )[0];
 			$person_profile_link = get_permalink();
 
 			$hocn_people[] = array(

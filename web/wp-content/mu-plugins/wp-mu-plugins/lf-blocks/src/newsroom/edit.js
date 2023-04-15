@@ -38,14 +38,22 @@ class Newsroom extends Component {
 	}
 
 renderControl = () => {
-	const { attributes, setAttributes, categories } = this.props;
-	const { category, numberposts, order } = attributes;
+	const { attributes, setAttributes, categories, authorCategories } = this.props;
+	const { category, authorCategory, numberposts, order } = attributes;
 
 	// get the list of categories to select.
-	const menuOptions = [
+	const categoryMenuOptions = [
 		{ value: ' ', label: __( 'All Posts' ) },
 		...categories.map( x => ( { value: x.id, label: x.name } ) ),
 	];
+
+	let authorCategoryMenuOptions = [];
+	if (authorCategories) {
+	authorCategoryMenuOptions = [
+			{ value: ' ', label: __( 'All Posts' ) },
+			...authorCategories.map( x => ( { value: x.id, label: x.name } ) ),
+		];
+	}
 
 	return (
 		<InspectorControls key="lf-newsroom-block-panel">
@@ -54,9 +62,17 @@ renderControl = () => {
 				<SelectControl
 					label={ __( 'Category' ) }
 					value={ category }
-					options={ menuOptions }
+					options={ categoryMenuOptions }
 					onChange={ value =>
 						setAttributes( { category: '' !== value ? value : '' } )
+					}
+				/>
+				<SelectControl
+					label={ __( 'Author Category' ) }
+					value={ authorCategory }
+					options={ authorCategoryMenuOptions }
+					onChange={ value =>
+						setAttributes( { authorCategory: '' !== value ? value : '' } )
 					}
 				/>
 				<RangeControl
@@ -91,6 +107,7 @@ renderList = () => {
 		attributes: { numberposts },
 		posts,
 	} = this.props;
+
 	const data = posts.map( p => ( { ...p, meta: mapValues( p.meta, head ) } ) ).slice( 0, numberposts );
 
 	return (
@@ -131,22 +148,20 @@ render() {
 	);
 }
 }
-
 export default withSelect(
-	( select, props ) => {
-		const { getEntityRecords } = select( 'core' );
-		const { category, order, numberposts } = props.attributes;
-		const latestPostsQuery = pickBy(
-			{
-				categories: category,
-				order,
-				per_page: numberposts,
-			},
-			( value ) => ! isUndefined( value )
-		);
+  ( select, props ) => {
+    const { getEntityRecords } = select( 'core' );
+    const { category, authorCategory, numberposts, order } = props.attributes;
 		return {
-			posts: getEntityRecords( 'postType', 'post', latestPostsQuery ),
-			categories: getEntityRecords( 'taxonomy', 'category' ) || [],
-		};
-	}
+        posts: getEntityRecords('postType', 'post', {
+					categories: category,
+					'lf-author-category': authorCategory,
+					per_page: numberposts,
+					order,
+				}),
+        categories: getEntityRecords('taxonomy', 'category') || [],
+        authorCategories: getEntityRecords('taxonomy', 'lf-author-category') || [],
+      };
+
+  }
 )( Newsroom );

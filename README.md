@@ -66,11 +66,11 @@ tooling:
     description: 'Run PHPCBF commands'
   sniff:
     service: appserver
-    cmd: /app/vendor/bin/phpcs -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/
+    cmd: /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs && /app/vendor/bin/phpcs -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/ /app/web/wp-content/mu-plugins/wp-mu-plugins/
     description: 'Run the recommended code sniffs'
   fix:
     service: appserver
-    cmd: /app/vendor/bin/phpcbf -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/
+    cmd: /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs && /app/vendor/bin/phpcbf -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/ /app/web/wp-content/mu-plugins/wp-mu-plugins/
     description: 'Run the recommended code sniffs and fix'
   debug:
     service: appserver
@@ -111,7 +111,7 @@ services:
 
 9. In the admin you will need to edit the [Search & Filter](https://cncfci.lndo.site/wp/wp-admin/edit.php?post_type=search-filter-widget) settings.  The full url to the result pages are hardcoded in the "Display Results" of each filter.  These will need to be set to the correpsonding local instance url.
 
-10. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you having to keep bypassing the privacy warning in your browser.  On MacOS, you may also need to manually go into Keychain Access and set the ```*.lndo.site``` certificate to “Always Trust”. See [screenshot](/ca-screenshot.png).
+10. Get your browser to trust the Lando SSL certificate by following [these instructions](https://docs.lando.dev/config/security.html#trusting-the-ca).  This step isn't essential but will stop you having to keep bypassing the privacy warning in your browser.
 
 ### Notes
 

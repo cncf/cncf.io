@@ -2,6 +2,7 @@
 require_once CTF_URL . '/inc/widget.php';
 require_once CTF_URL . '/inc/admin-pro-hooks.php';
 
+use TwitterFeed\Builder\CTF_Feed_Builder;
 use TwitterFeed\CtfAdmin;
 use TwitterFeed\CtfFeedPro;
 use TwitterFeed\CTF_Tracking;
@@ -49,10 +50,10 @@ function ctf_license_notice_active() {
 }
 
 /**
- * Check the user access permission capability 
- * 
+ * Check the user access permission capability
+ *
  * @since 2.0.3
- * 
+ *
  * @return $cap string
  */
 function ctf_capablity_check() {
@@ -178,7 +179,7 @@ function ctf_init( $atts, $preview_settings = false ) {
 			return "<span id='ctf-no-id'>" . sprintf( __( 'No feed found with the ID %1$s. Go to the %2$sAll Feeds page%3$s and select an ID from an existing feed.', 'custom-twitter-feeds' ), esc_html( $twitter_feed->feed_options['feed'] ), '<a href="' . esc_url( admin_url( 'admin.php?page=ctf-feed-builder' ) ) . '">', '</a>' ) . '</span><br /><br />';
 	} else {
 		// if there is an error, display the error html, otherwise the feed
-		if ( ! $twitter_feed->tweet_set || $twitter_feed->missing_credentials || ! isset( $twitter_feed->tweet_set[0]['created_at'] ) ) {
+		if ( ! $twitter_feed->tweet_set || ($twitter_feed->missing_credentials && ! CTF_DOING_SMASH_TWITTER) || ! isset( $twitter_feed->tweet_set[0]['created_at'] ) ) {
 			if ( ! empty( $twitter_feed->tweet_set['errors'] ) ) {
 				$twitter_feed->maybeCacheTweets();
 			} else {
@@ -368,9 +369,14 @@ function ctf_show( $part, $feed_options ) {
 }
 
 function ctf_get_database_settings() {
+
 	$options = get_option( 'ctf_options', array() );
 	$options = set_global_default_settings( $options );
-	return $options;
+	if ( CTF_DOING_SMASH_TWITTER ) {
+        $options['ctf_caching_type'] = 'background';
+	}
+
+    return $options;
 }
 
 function set_global_default_settings( $options ) {
@@ -1366,6 +1372,29 @@ function ctf_check_for_db_updates() {
 		}
 	}
 
+	// For Smash Twitter
+	if ( version_compare( $db_ver, '1.5', '<' ) ) {
+		global $wpdb;
+
+		$table_name = $wpdb->prefix . CTF_FEEDS_POSTS_TABLE;
+
+		$wpdb->query( "ALTER TABLE $table_name ADD COLUMN type VARCHAR(1000) DEFAULT '' NOT NULL" );
+		$wpdb->query( "ALTER TABLE $table_name ADD COLUMN term VARCHAR(1000) DEFAULT '' NOT NULL" );
+		$wpdb->query( "ALTER TABLE $table_name ADD INDEX type_term (term(140),type(51))" );
+
+		\TwitterFeed\SmashTwitter\CronUpdaterManager::schedule_cron_job();
+
+		$ctf_statuses_option = get_option( 'ctf_statuses', array() );
+        // to space out the API requests, we have the initial cron update scheduled a day + random number of hours.
+		$ctf_statuses_option['first_cron_update'] = mt_rand(0,23) * 3600 + time() + DAY_IN_SECONDS;
+		update_option( 'ctf_statuses', $ctf_statuses_option, false );
+
+		update_option( 'ctf_db_version', CTF_DBVERSION );
+
+	}
+
+    // Make sure to include the Cron Update Manager.
+	new \TwitterFeed\SmashTwitter\CronUpdaterManager();
 }
 add_action( 'wp_loaded', 'ctf_check_for_db_updates' );
 
@@ -1526,6 +1555,9 @@ function ctf_doing_customizer( $settings ) {
  * @since 2.0
  */
 function ctf_cron_updater() {
+	if ( CTF_DOING_SMASH_TWITTER ) {
+        return;
+	}
 	$settings = ctf_get_database_settings();
 	if ( ! empty( $settings['ctf_caching_type'] ) && $settings['ctf_caching_type'] === 'page' ) {
 		return;

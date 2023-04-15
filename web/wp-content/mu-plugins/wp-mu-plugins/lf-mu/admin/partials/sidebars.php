@@ -561,11 +561,11 @@ $sidebar    = array(
 $sidebars[] = $sidebar;
 
 $sidebar    = array(
-	'id'              => 'lf-sidebar-spotlight',
+	'id'              => 'lf-sidebar-kubeweekly',
 	'id_prefix'       => 'lf_',
-	'label'           => __( 'Spotlight Settings' ),
-	'post_type'       => 'lf_spotlight',
-	'data_key_prefix' => 'lf_spotlight_',
+	'label'           => __( 'Kubeweekly Settings' ),
+	'post_type'       => 'lf_kubeweekly',
+	'data_key_prefix' => 'lf_kubeweekly_',
 	'icon_dashicon'   => 'admin-settings',
 	'tabs'            => array(
 		array(
@@ -576,14 +576,15 @@ $sidebar    = array(
 					'initial_open' => true,
 					'settings'     => array(
 						array(
-							'type'          => 'textarea',
+							'type'          => 'text',
 							'data_type'     => 'meta',
-							'data_key'      => 'subtitle',
-							'label'         => __( 'Subtitle' ),
+							'data_key'      => 'external_url',
+							'label'         => __( 'External URL' ),
+							'help'          => __( 'This url is used to link to the web version of the email.' ),
 							'register_meta' => true,
 							'ui_border_top' => true,
 							'default_value' => '',
-							'placeholder'   => 'The incubating project recently completed a security audit with Jepsen',
+							'placeholder'   => 'https://email.linuxfoundation.org/linux-foundation-events-snapshot-march-2021',
 						),
 					),
 				),
@@ -594,11 +595,11 @@ $sidebar    = array(
 $sidebars[] = $sidebar;
 
 $sidebar    = array(
-	'id'              => 'lf-sidebar-kubeweekly',
+	'id'              => 'lf-sidebar-eu-newsletter',
 	'id_prefix'       => 'lf_',
-	'label'           => __( 'Kubeweekly Settings' ),
-	'post_type'       => 'lf_kubeweekly',
-	'data_key_prefix' => 'lf_kubeweekly_',
+	'label'           => __( 'EU Newsletter Settings' ),
+	'post_type'       => 'lf_eu_newsletter',
+	'data_key_prefix' => 'lf_eu_newsletter_',
 	'icon_dashicon'   => 'admin-settings',
 	'tabs'            => array(
 		array(

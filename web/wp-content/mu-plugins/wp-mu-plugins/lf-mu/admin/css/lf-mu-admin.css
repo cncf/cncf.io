@@ -27,6 +27,10 @@
 #dashboard_right_now span.lf_kubeweekly-count:before {
 	content: '\f466';
 }
+#dashboard_right_now a.lf_eu_newsletter-count:before,
+#dashboard_right_now span.lf_eu_newsletter-count:before {
+	content: '\f466';
+}
 #dashboard_right_now a.lf_report-count:before,
 #dashboard_right_now span.lf_report-count:before {
 	content: '\f478';
