@@ -1,0 +1,45 @@
+.wp-block-lf-phippy-group {
+	&__spacer {
+		height: 100px;
+		@media (min-width: 700px) {
+			height: 200px;
+		}
+	}
+	&__container {
+		// background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAACnCAYAAAAosM2NAAADHklEQVR4Ac2YUc7cNgyEZ4z/cL3/cy7RvgVo9RULyRhQjlbebfNjBSTWKvTMkBJJxf7514+/dQ4keZqP56Gb4yvv7w3bXUQK4ozvlxFRk+9SI73sjIlEcXVG3ng0DHeDO167UA/+8mPhjBdgnIbeheeNnaHQ0tnsKmGP6Cng/10joeaKOSlngehgFWrWhFuNa8RwEsTxe4PoBeL/nteqOncFAFlWjD1WCDVrLDFrpJDneaF2fSFGa0REnsmZJuQ9NfH6DrWV4GjnzIzC8lAEZbOFK6P3EG0JhLxC9Lsl5alGJF4+uORhvjdn9og5ZUlrf5hG57FoSMRgXZvf0Mi+abZ1nf2EvX7/JuUyzy9mRBbzDWLmeo7IGnHv9e8LOKmnS0RftWY9iGuH+CWi7yN6NkMEsb5e9O4vcezjWBDnikvSORzvIK6beWbc3Wu/nlwJ9fsF4PMrxcfc9j5GI33BHx5HX5JB7ojeCmCrsSLG9D5iglgnO2r24SmGFZEnDYk5PJxz2QhLopdmJLxEDP0xNG7//MoZMiVeWyK8IoWV7Pr+eh3n5v/P8LxfI/nqNfl7QrQAmb5iy0GPxjTWIGaQY+ZZY0b22vFwMSjdlc7LYQtxRRxLWMv2yRd309USWudD8H/++eOPN272R9nRb6o9lcqzT0EE6TgkmG/3nIZmJxO4p9F2NDopnGH2XkfeC1+5/FocYeCtEyEaoweEjPvSWGcUqXbIJqGeDpt7xbUFCv2ilnIppBXt2hUsi/4YFiBhhIKIhAOy7jOLS+hUKVBzNsxPugKcu28kYo58BnIgpu7g6vhJZS+/pczWX5JbnxpmjXBpmpihxrX+uXz5SIjlULr7aZHkAq6HFdYHt4TSssciZxzjsHPFx1FK10htX9fcIgVgyH+SXKhdvQh0+XDuwe9Cmnj5YeieXIEbiD3srSIqWLv6OGhhFCFXT85qVjrcoEV58kC0DWLabNdiavSF6Igo/8ZcpJ1+0RrIAmAEEiwGDwfQZLV/Gs12a9AEzagh9bndjvPth6VtGkKPuTxKTV8/GBStqVKTWmGZQzfHv9CUfMePDU+MAAAAAElFTkSuQmCC');
+		background-repeat: repeat-x;
+		position: relative;
+		right: 50%;
+		left: 50%;
+		margin-right: -50vw;
+		margin-left: -50vw;
+		width: 100vw;
+	}
+	&__inner {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 100%;
+		@media (min-width: 1200px) {
+			max-width: 1200px;
+		}
+		@media (min-width: 1400px) {
+			max-width: calc(1200px + 100px);
+		}
+	}
+	&__image {
+		width: 100%;
+		position: relative;
+		pointer-events: none;
+		height: auto;
+		display: block;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 100%;
+		max-width: 100%;
+		margin-bottom: -20%;
+		@media (min-width: 1200px) {
+			max-width: 1200px;
+			margin-bottom: -25%;
+		}
+	}
+}

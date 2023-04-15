@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/phippy-family",
+	"title": "Phippy Family",
+	"description": "Displays the Phippy family members with name, bio and headshot photo",
+	"style": "file:./phippy-family.css",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "common",
+	"icon": "star-filled",
+	"keywords": [
+		"",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "phippy-family.php",
+		"postTypes": [ "page" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"attributes": {
+		"variable": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {}
+}

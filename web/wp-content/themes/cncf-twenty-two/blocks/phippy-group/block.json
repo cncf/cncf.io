@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/phippy-group",
+	"title": "Phippy Group",
+	"description": "Displays the Phippy family group image in a page, using the same image as in the home page footer",
+	"style": "file:./phippy-group.css",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "common",
+	"icon": "drumstick",
+	"keywords": [
+		"",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "phippy-group.php",
+		"postTypes": [ "page" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": [
+			"full"
+		],
+		"alignWide": true,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	},
+	"example": {}
+}
