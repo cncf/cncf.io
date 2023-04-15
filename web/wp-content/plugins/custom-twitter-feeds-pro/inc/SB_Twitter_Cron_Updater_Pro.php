@@ -61,27 +61,38 @@ class SB_Twitter_Cron_Updater_Pro {
 	public static function do_single_feed_cron_update( $feed_id ) {
 		$atts         = array( 'feed' => $feed_id );
 		$atts['doingcronupdate'] = true;
-		$twitter_feed = CtfFeedPro::init( $atts, null, 0, array(), 1, false );
+		$return = array();
+		if ( CTF_DOING_SMASH_TWITTER ) {
+			$twitter_feed = CtfFeedPro::init( $atts, null, 0, array(), 1, false );
+			$twitter_feed->feed_options['cache_time'] = 5;
 
-		// if there is an error, display the error html, otherwise the feed
-		if ( ! $twitter_feed->tweet_set || $twitter_feed->missing_credentials || ! isset( $twitter_feed->tweet_set[0]['created_at'] ) ) {
-			if ( ! empty( $twitter_feed->tweet_set['errors'] ) ) {
-				$twitter_feed->maybeCacheTweets();
+			$twitter_feed->maybeCacheTweets();
+			$return[] = $twitter_feed->feed_options['feed_types_and_terms'];
+		} else {
+			$twitter_feed = CtfFeedPro::init( $atts, null, 0, array(), 1, false );
+
+			// if there is an error, display the error html, otherwise the feed
+			if ( ! $twitter_feed->tweet_set || $twitter_feed->missing_credentials || ! isset( $twitter_feed->tweet_set[0]['created_at'] ) ) {
+				if ( ! empty( $twitter_feed->tweet_set['errors'] ) ) {
+					$twitter_feed->maybeCacheTweets();
+				}
+
+				return array(
+					'success' => false,
+					'error'   => $twitter_feed->tweet_set['errors'],
+				);
 			}
 
-			return array(
-				'success' => false,
-				'error'   => $twitter_feed->tweet_set['errors'],
-			);
+			if ( ! $twitter_feed->feed_options['persistentcache'] ) {
+				$twitter_feed->maybeCacheTweets();
+			}
 		}
 
-		if ( ! $twitter_feed->feed_options['persistentcache'] ) {
-			$twitter_feed->maybeCacheTweets();
-		}
 		do_action( 'ctf_after_single_feed_cron_update', $twitter_feed->transient_name );
 
 		return array(
 			'success' => true,
+			'data' => $return
 		);
 	}
 

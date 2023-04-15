@@ -3,7 +3,7 @@
 Plugin Name: Custom Twitter Feeds Pro Personal
 Plugin URI: https://smashballoon.com/custom-twitter-feeds/
 Description: Customizable Twitter feeds for your website
-Version: 2.0.6
+Version: 2.1
 Author: Smash Balloon
 Author URI: https://smashballoon.com/
 Text Domain: custom-twitter-feeds
@@ -20,9 +20,9 @@ if ( ! defined( 'CTF_URL' ) ) {
     //Update info
     define( 'CTF_PRODUCT_NAME', 'Custom Twitter Feeds Personal' );
     define( 'CTF_PRODUCT_ID', '177805' ); //177805, 188603, 188605
-    define( 'CTF_VERSION', '2.0.6' );
-	define( 'CTF_DBVERSION', '1.4' );
-
+    define( 'CTF_VERSION', '2.1' );
+	define( 'CTF_DBVERSION', '1.5' );
+    define( 'CTF_DOING_SMASH_TWITTER', true );
 	//
     define( 'CTF_URL', plugin_dir_path( __FILE__ )  );
     define( 'CTF_JS_URL', plugins_url( '/js/ctf-scripts.min.js?ver=' . CTF_VERSION , __FILE__ ) );
@@ -31,6 +31,10 @@ if ( ! defined( 'CTF_URL' ) ) {
 	define( 'CTF_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	define( 'CTF_TC_LIMIT', 225 );
 
+	define( 'SMASH_TWITTER_URL', 'https://ctf.smashballoon.com/api/' );
+	define( 'SMASH_TWITTER_TIMELINE_PATH', '1.1/timeline' );
+	define( 'SMASH_TWITTER_SEARCH_PATH', '1.1/search/tweets' );
+	define( 'SMASH_TWITTER_URL_EXTRA_GET_PARAMS', '' );
 }
 // Plugin Folder Path.
 if ( ! defined( 'CTF_PLUGIN_DIR' ) ) {

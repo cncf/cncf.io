@@ -9,6 +9,7 @@ namespace TwitterFeed;
 use TwitterFeed\Pro\CTF_Settings_Pro;
 use TwitterFeed\Pro\CTF_Parse_Pro;
 use TwitterFeed\Builder\CTF_Feed_Builder;
+use TwitterFeed\SmashTwitter\SettingsFilter;
 
 // Don't load directly
 if (!defined('ABSPATH')) {
@@ -95,6 +96,10 @@ class CtfFeed {
      */
     public $is_legacy;
 
+	/**
+	 * @var SettingsFilter
+	 */
+	public $settings_filter;
 
     /**
      * retrieves and sets options that apply to the feed
@@ -109,7 +114,7 @@ class CtfFeed {
 
         $this->last_id_data = $last_id_data;
         $this->num_needed_input = $num_needed_input;
-        $this->db_options = get_option('ctf_options', array());
+        $this->db_options = ctf_get_database_settings();
 
         if ( ! empty( $atts['feed'] ) && $atts['feed'] !== 'legacy' ) {
             $this->feed_id = $this->atts['feed'];
@@ -168,7 +173,8 @@ class CtfFeed {
      * creates all of the feed options with shortcode settings having the highest priority
      */
     public function setFeedOptions() {
-        $this->feed_options['num'] = isset($this->feed_options['num']) && !empty($this->feed_options['num']) ? $this->feed_options['num'] : 1;
+		$this->settings_filter = new SettingsFilter();
+	    $this->feed_options['num'] = isset($this->feed_options['num']) && !empty($this->feed_options['num']) ? $this->feed_options['num'] : 1;
         $this->setFeedTypeAndTermOptions();
 
         $this->setAccessTokenAndSecretOptions();
@@ -183,6 +189,16 @@ class CtfFeed {
         //$this->setDimensionOptions();
         $this->setCacheTimeOptions();
         $this->setIncludeExcludeOptions();
+
+	    if ( CTF_DOING_SMASH_TWITTER ) {
+		    $this->settings_filter->set_settings( $this->feed_options );
+		    $this->settings_filter->set_feed_type_and_terms( $this->feed_options['feed_types_and_terms'] );
+
+		    $this->settings_filter->filter_feed_type_and_terms();
+
+		    $this->feed_options = $this->settings_filter->get_settings();
+		    $this->feed_options['feed_types_and_terms'] = $this->settings_filter->get_feed_type_and_terms();
+	    }
     }
 
     /**
@@ -206,9 +222,9 @@ class CtfFeed {
 		}
 		$this->cache = new CtfCache( $feed_id, $this->feed_options['cache_time'], $page );
 
-		$success = $this->maybeSetTweetsFromCache();
 
-		if (!$success) {
+		$success = $this->maybeSetTweetsFromCache();
+		if (!$success || ! empty($this->raw_shortcode_atts['doingcronupdate'])) {
 			$this->maybeSetTweetsFromTwitter();
 		}
 
@@ -491,19 +507,22 @@ class CtfFeed {
         }
     }
 
-    /**
-     * checks the data available in the cache to make sure it seems to be valid
-     *
-     * @return bool|string  false if the cache is valid, error otherwise
-     */
-    protected function validateCache() {
-     if (isset($this->transient_data[0]) || isset($this->transient_data['errors']) ) {
-        return false;
-    }
-    else {
-        return 'invalid cache';
-    }
-}
+	/**
+	 * checks the data available in the cache to make sure it seems to be valid
+	 *
+	 * @return bool|string  false if the cache is valid, error otherwise
+	 */
+	protected function validateCache() {
+		if ( isset( $this->transient_data[0] ) && ( $this->transient_data[0] === 'error' ) ) {
+			return 'invalid cache';
+		}
+
+		if ( isset( $this->transient_data[0] ) || isset( $this->transient_data['errors'] ) ) {
+			return false;
+		} else {
+			return 'invalid cache';
+		}
+	}
 
     /**
      * will use the cached data in the feed if data seems to be valid and user
@@ -540,10 +559,23 @@ class CtfFeed {
      *  will attempt to connect to the api to retrieve current tweets
      */
     public function maybeSetTweetsFromTwitter() {
-        $this->setTweetsToRetrieve();
-        $this->api_obj = $this->apiConnect($this->feed_options['type'], $this->feed_options['feed_term']);
-        $this->tweet_set = json_decode($this
-            ->api_obj->json, $assoc = true);
+
+	    $this->setTweetsToRetrieve();
+		if ( CTF_DOING_SMASH_TWITTER ) {
+			$feed_id = $this->raw_shortcode_atts['feed'];
+
+			$cache_time = DAY_IN_SECONDS;
+			$page = 1;
+			$endpoint = $this->feed_options['feed_types_and_terms'][0][0];
+			$term = $this->feed_options['feed_types_and_terms'][0][1];
+			$repository = new \TwitterFeed\SmashTwitter\TweetRepository( $endpoint, $term, new \TwitterFeed\SmashTwitter\TweetAggregator(), new \TwitterFeed\CtfCache( $feed_id, $cache_time, $page ) );
+			$repository->get_set_cache();
+			$this->tweet_set = $repository->get_tweets();
+		} else {
+			$this->api_obj = $this->apiConnect($this->feed_options['type'], $this->feed_options['feed_term']);
+			$this->tweet_set = json_decode($this->api_obj->json, $assoc = true);
+		}
+
 
         // check for errors/tweets present
         if (isset($this->tweet_set['errors'][0])) {
@@ -1170,7 +1202,7 @@ class CtfFeed {
             $error_html .= '<p><b>This message is only visible to admins:</b><br />';
             $error_html .= 'An error has occurred with your feed.<br />';
             if ($this->missing_credentials) {
-                $error_html .= 'There is a problem with your access token, access token secret, consumer token, or consumer secret<br />';
+                $error_html .= 'Something has gone wrong! You were unable to retrieve any tweets due to a problem or a limitation with our new solution.<br />';
             }
             if (isset($this->errors['error_message'])) {
                 $error_html .= $this->errors['error_message'] . '<br />';
@@ -1190,7 +1222,7 @@ class CtfFeed {
             $error_html .= 'Message: ' . $this
             ->api_obj->api_error_message . '</code>';
         }
-        $error_html .= '<a href="https://smashballoon.com/custom-twitter-feeds/docs/errors/" target="_blank" rel="nofollow noopener">Click here to troubleshoot</a></p>';
+        $error_html .= '<a href="https://smashballoon.com/doc/smash-balloon-twitter-changes/?twitter" target="_blank" rel="nofollow noopener">Click here to see details</a></p>';
         $error_html .= '</div>';
     }
         $error_html .= '</div>'; // end .ctf-error

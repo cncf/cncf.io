@@ -363,6 +363,7 @@ class CTF_Display_Elements_Pro {
 
     public static function header_type( $feed_options ) {
 	    $header_template = 'header-generic';
+
 	    if ( $feed_options['type'] === 'usertimeline' || $feed_options['type'] === 'mentionstimeline' || $feed_options['type'] === 'hometimeline' ) {
 		    $header_template = 'header';
 	    }
@@ -640,7 +641,7 @@ class CTF_Display_Elements_Pro {
 	 *
 	 * @since 2.0
 	 */
-	public static function display_header( $feed_options ){
+	public static function display_header( $feed_options, $tweet_set = array() ){
 		if( ctf_doing_customizer( $feed_options ) ){
 			$header_template = 'header-generic';
 		    if ( $feed_options['type'] === 'usertimeline' || $feed_options['type'] === 'mentionstimeline' || $feed_options['type'] === 'hometimeline' ) {
@@ -649,6 +650,7 @@ class CTF_Display_Elements_Pro {
         	include ctf_get_feed_template_part( $header_template, $feed_options );
         	include ctf_get_feed_template_part( 'header-text', $feed_options );
 		}else{
+
         	include ctf_get_feed_template_part( CTF_Display_Elements_Pro::header_type( $feed_options ), $feed_options );
 		}
 	}

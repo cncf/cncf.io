@@ -6,6 +6,11 @@
      */
     do_action('ctf_admin_header_notices');
 ?>
+<div id="ctf-sw-feed-link-bar" class="ctf-sw-feed-link-bar ctf-le-flow-1 ctf-license-inactive-state" v-if="sw_feed">
+  <span class="ctf-sw-feed-link-bar-message" v-if="iscustomizerScreen">{{genericText.cttFeedCreated}}</span>
+  <span class="ctf-sw-feed-link-bar-message" v-if="!iscustomizerScreen">{{genericText.onceDoneSWFeed}}</span>
+  <a :href="swfeedReturnUrl()" title="Go to Social Wall">{{genericText.goToSocialWall}}</a>
+</div>
 <div class="ctf-fb-header ctf-fb-fs" v-if="!iscustomizerScreen">
     <div class="ctf-fb-header-left">
         <div class="ctf-fb-hd-logo">

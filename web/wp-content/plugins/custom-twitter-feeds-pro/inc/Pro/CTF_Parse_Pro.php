@@ -231,9 +231,10 @@ class CTF_Parse_Pro
 	}
 
 	public static function get_avatar( $data ) {
-		if ( isset( $data['retweeted_status'] ) ) {
+		// Make sure to check deep for the data as it might not be there.
+		if ( isset( $data['retweeted_status']['user']['profile_image_url_https'] ) ) {
 			return $data['retweeted_status']['user']['profile_image_url_https'];
-		} elseif ( isset( $data['user'] ) ) {
+		} elseif ( isset( $data['user']['profile_image_url_https'] ) ) {
 			return $data['user']['profile_image_url_https'];
 		} elseif ( isset( $data['profile_image_url_https'] ) ) {
 			return $data['profile_image_url_https'];
@@ -571,8 +572,17 @@ class CTF_Parse_Pro
         return $data['description'];
     }
 
-    public static function get_user_header_json( $data ) {
-        $transient = $data['type'] === 'usertimeline' ? 'ctf_header_' . $data['screenname'] : 'ctf_hometimeline_header';
+    public static function get_user_header_json( $data, $post_info = array() ) {
+
+		$type = ! empty( $data['type'] ) ? $data['type'] : 'usertimeline';
+
+		if ( $type === 'usertimeline' ) {
+			if ( ! empty( $post_info[0]['user'] ) ) {
+				return $post_info[0]['user'];
+			}
+
+		}
+        $transient = $type === 'usertimeline' ? 'ctf_header_' . $data['screenname'] : 'ctf_hometimeline_header';
 
         $header_json = get_transient( $transient );
 		$header_array = json_decode( $header_json, true );

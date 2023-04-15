@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- Custom Twitter Feeds by Smash Balloon -->
 <div id="ctf" <?php echo $ctf_feed_classes ?> data-ctfshortcode="<?php echo $this->getShortCodeJSON() ?>" <?php echo $ctf_main_atts ?> data-ctfneeded="<?php echo esc_attr( $ctf_data_needed ) ?>">
     <?php if ( $feed_options['showheader'] || ctf_doing_customizer($feed_options) ) :
-        CTF_Display_Elements_Pro::display_header( $feed_options );
+        CTF_Display_Elements_Pro::display_header( $feed_options, $tweet_set );
     endif; ?>
 
     <div class="ctf-tweet-items">

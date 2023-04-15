@@ -1072,6 +1072,9 @@ class CTF_Feed_Builder {
 				'description' =>  __( 'You will be redirected to our app so you can connect your account in 5 seconds', 'custom-twitter-feeds' ),
 			),
 			'goSocialWall' => __( 'Create Social Wall Feed', 'custom-twitter-feeds' ),
+			'cttFeedCreated' => __( 'Twitter feed successfully created!', 'custom-twitter-feeds' ),
+			'onceDoneSWFeed' => __( 'Once you are done creating the Twitter feed, you can go back to Social plugin', 'custom-twitter-feeds' ),
+			'goToSocialWall' => __( 'Go to Social Wall', 'custom-twitter-feeds' ),
 		);
 	}
 
