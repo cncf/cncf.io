@@ -1,0 +1,6 @@
+.wp-block-lf-phippy-family__grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 3%;
+	row-gap: 50px;
+}

@@ -10,53 +10,43 @@
  */
 
 $site_options = get_option( 'lf-mu' );
-
 ?>
 
 <footer class="footer">
-
 	<?php
 	if ( is_front_page() ) :
 		// Start Phippy footer.
+		$phippy_desktop_webp_id = get_field( 'phippy_desktop_webp', 'option' ) ?? null;
+		$phippy_mobile_webp_id  = get_field( 'phippy_mobile_webp', 'option' ) ?? null;
+		$phippy_desktop_png_id  = get_field( 'phippy_desktop_png', 'option' ) ?? null;
+		$phippy_mobile_png_id   = get_field( 'phippy_mobile_png', 'option' ) ?? null;
+
 		?>
 	<div class="phippy-footer">
 
 		<div style="height:100px" aria-hidden="true" class="wp-block-spacer"
 			id="phippy-spacer"></div>
 
+		<?php
+		if ( $phippy_desktop_png_id ) {
+			?>
 		<div class="phippy-footer__container">
 			<div class="phippy-footer__inner">
-				<picture>
-					<source srcset="
+
+			<picture>
+				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_desktop_webp_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_desktop_webp_id, 'full' ) ); ?>" media="(min-width: 700px)" type="image/webp">
+				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_mobile_webp_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_mobile_webp_id, 'full' ) ); ?>" type="image/webp">
+				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_desktop_png_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_desktop_png_id, 'full' ) ); ?>" media="(min-width: 700px)" type="image/png">
+				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_mobile_png_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_mobile_png_id, 'full' ) ); ?>" type="image/png">
 				<?php
-					Lf_Utils::get_image( 'phippy-family-footer.webp', true );
+					LF_Utils::display_responsive_images( $phippy_desktop_png_id, 'full', '1200px', 'phippy-footer__image', 'lazy', 'Characters from the Phippy family' );
 				?>
-					" media="(min-width: 700px)" type="image/webp">
-					<source srcset="
-				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-900x380.webp', true );
-				?>
-					" type="image/webp">
-					<source srcset="
-				<?php
-					Lf_Utils::get_image( 'phippy-family-footer.png', true );
-				?>
-					" media="(min-width: 700px)" type="image/png">
-					<source srcset="
-				<?php
-					Lf_Utils::get_image( 'phippy-family-footer-900x380.png', true );
-				?>
-					" type="image/png">
-					<img src="
-				<?php
-					Lf_Utils::get_image( 'phippy-family-footer.png', true );
-				?>
-					" alt="Characters from Phippy family" width="1800" height="760"
-						class="phippy-footer__image" id="phippy-footer"
-						loading="lazy" decoding="async">
 				</picture>
 			</div>
 		</div>
+			<?php
+		}
+		?>
 	</div>
 		<?php
 		wp_enqueue_script( 'home-phippy', get_template_directory_uri() . '/source/js/on-demand/home-phippy.js', null, filemtime( get_template_directory() . '/source/js/on-demand/home-phippy.js' ), true );
@@ -66,7 +56,7 @@ $site_options = get_option( 'lf-mu' );
 
 	<div class="container wrap footer_container" id="inner-footer-container">
 
-		<?php if ( ! is_front_page() ) : ?>
+		<?php if ( ! is_front_page() || ! $phippy_desktop_png_id ) : ?>
 		<div style="height:70px" aria-hidden="true"
 			class="wp-block-spacer is-style-70-100"></div>
 		<?php endif; ?>

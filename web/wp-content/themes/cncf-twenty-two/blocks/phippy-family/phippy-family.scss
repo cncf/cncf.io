@@ -1,0 +1,48 @@
+.wp-block-lf-phippy-family {
+	&__grid {
+		&-col {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+			grid-column: span 12;
+			@media (min-width: 412px) {
+				grid-column: span 6;
+			}
+			@media (min-width: 800px) {
+				grid-column: span 4;
+			}
+			@media (min-width: 1000px) {
+				grid-column: span 3;
+			}
+		}
+	}
+	&__image {
+		max-width: 100%;
+		width: min(80%, 192px);
+	}
+	&__name {
+		margin-top: 10px;
+	}
+	&__text {
+		max-width: 80%;
+		@media (min-width: 800px) {
+			max-width: 70%;
+		}
+		text-align: center;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+		@media (min-width: 1000px) {
+			margin-bottom: 80px;
+		}
+	}
+}
+
+// Not added as a selectable style in block editor.
+.is-style-rounded-border {
+	border-radius: 100%;
+	border: white 7px solid;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
