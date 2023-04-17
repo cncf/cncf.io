@@ -72,10 +72,19 @@
 }
 
 // footer.
+.is-style-30-80 {
+	height: 30px !important;
+
+	@media (min-width: 1000px) {
+		height: 80px !important;
+	}
+}
+
+// webinars.
 .is-style-40-80 {
 	height: 40px !important;
 
-	@media (min-width: 600px) {
+	@media (min-width: 1000px) {
 		height: 80px !important;
 	}
 }
