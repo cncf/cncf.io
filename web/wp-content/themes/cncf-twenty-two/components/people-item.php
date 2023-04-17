@@ -196,12 +196,12 @@ endif;
 
 						if ( $projects ) {
 							?>
-						<li><strong>Specialties:</strong>
+						<li><strong>Project Experience:</strong>
 							<?php
 							$comma = '';
 							$out   = '';
 							foreach ( $projects as $project ) {
-								$out  .= esc_html( $comma ) . '<a title="See more Ambassadors who specialize in ' . esc_html( $project->name ) . '" href="' . $current_url . '/?_sft_lf-project=' . $project->slug . '">' . esc_html( $project->name ) . '</a>';
+								$out  .= esc_html( $comma ) . '<a title="See more Ambassadors who have experience in ' . esc_html( $project->name ) . '" href="' . $current_url . '/?_sft_lf-project=' . $project->slug . '">' . esc_html( $project->name ) . '</a>';
 								$comma = ', ';
 							}
 						echo $out; //phpcs:ignore
