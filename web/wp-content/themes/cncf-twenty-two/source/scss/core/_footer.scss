@@ -122,9 +122,13 @@
 			background-color: unset;
 			padding-top: 11px;
 			padding-bottom: 11px;
+			transition: all 0.25s ease-out;
 			@media (min-width: 1000px) {
 				padding-top: 9px;
 				padding-bottom: 9px;
+			}
+			&:hover {
+				border: 1px solid $link-hover;
 			}
 		}
 	}
