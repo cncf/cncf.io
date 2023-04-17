@@ -92,9 +92,40 @@
 		}
 	}
 
-	@media (min-width: 1000px) {
-		.logo {
+	&__logo-and-hub {
+		grid-column: span 12;
+		@media (min-width: 600px) {
+			grid-column: span 8;
+		}
+		@media (min-width: 1000px) {
+			display: flex;
 			grid-column: span 6;
+		}
+	}
+
+	&__logo {
+		@media (min-width: 1000px) {
+			margin-right: 32px;
+		}
+	}
+
+	&__hub {
+		.wp-block-button {
+			width: 100%;
+		}
+		.wp-block-button__link {
+			font-size: 16px;
+			line-height: 16px;
+			border-radius: 3px;
+			border: 1px solid $white;
+			text-transform: none;
+			background-color: unset;
+			padding-top: 11px;
+			padding-bottom: 11px;
+			@media (min-width: 1000px) {
+				padding-top: 9px;
+				padding-bottom: 9px;
+			}
 		}
 	}
 

@@ -33,14 +33,26 @@ $site_options = get_option( 'lf-mu' );
 		<div class="phippy-footer__container">
 			<div class="phippy-footer__inner">
 
-			<picture>
-				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_desktop_webp_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_desktop_webp_id, 'full' ) ); ?>" media="(min-width: 700px)" type="image/webp">
-				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_mobile_webp_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_mobile_webp_id, 'full' ) ); ?>" type="image/webp">
-				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_desktop_png_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_desktop_png_id, 'full' ) ); ?>" media="(min-width: 700px)" type="image/png">
-				<source srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_mobile_png_id, 'full' ) ); ?>" sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_mobile_png_id, 'full' ) ); ?>" type="image/png">
-				<?php
+				<picture>
+					<source
+						srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_desktop_webp_id, 'full' ) ); ?>"
+						sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_desktop_webp_id, 'full' ) ); ?>"
+						media="(min-width: 700px)" type="image/webp">
+					<source
+						srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_mobile_webp_id, 'full' ) ); ?>"
+						sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_mobile_webp_id, 'full' ) ); ?>"
+						type="image/webp">
+					<source
+						srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_desktop_png_id, 'full' ) ); ?>"
+						sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_desktop_png_id, 'full' ) ); ?>"
+						media="(min-width: 700px)" type="image/png">
+					<source
+						srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $phippy_mobile_png_id, 'full' ) ); ?>"
+						sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $phippy_mobile_png_id, 'full' ) ); ?>"
+						type="image/png">
+					<?php
 					LF_Utils::display_responsive_images( $phippy_desktop_png_id, 'full', '1200px', 'phippy-footer__image', 'lazy', 'Characters from the Phippy family' );
-				?>
+					?>
 				</picture>
 			</div>
 		</div>
@@ -111,37 +123,45 @@ $site_options = get_option( 'lf-mu' );
 			<?php endif; ?>
 		</div>
 		<div style="height:80px" aria-hidden="true"
-			class="wp-block-spacer is-style-40-80"></div>
+			class="wp-block-spacer is-style-30-80"></div>
 
 		<div class="lf-grid">
 
-			<?php
-			// Only on desktop.
-			if ( isset( $site_options['footer_image_id'] ) && $site_options['footer_image_id'] ) {
-				?>
-			<div class="logo show-over-1000">
-				<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
+			<div class="footer__logo-and-hub">
+				<?php
+				// Only on desktop.
+				if ( isset( $site_options['footer_image_id'] ) && $site_options['footer_image_id'] ) {
+					?>
+
+				<a class="footer__logo show-over-1000" href="/"
+					title="<?php echo bloginfo( 'name' ); ?>">
 					<img src="<?php echo esc_url( wp_get_attachment_url( $site_options['footer_image_id'] ) ); ?>"
 						loading="lazy" width="210" height="40"
 						alt="<?php echo bloginfo( 'name' ); ?>">
 				</a>
-			</div>
+					<?php
+				}
+				?>
 
-				<?php
-			}
-			?>
+				<!-- All CNCF button  -->
+				<div class="footer__hub wp-block-buttons">
+					<div class="wp-block-button"><a
+							href="https://www.cncf.io/all-cncf/"
+							class="wp-block-button__link wp-element-button">All
+							CNCF Sites</a></div>
+				</div>
+
+			</div>
 
 			<?php get_template_part( 'components/social-links' ); ?>
 
 		</div>
 
-		<div style="height:20px" aria-hidden="true"
-			class="wp-block-spacer show-over-1000"></div>
+		<div style="height:40px" aria-hidden="true" class="wp-block-spacer show-over-1000"></div>
 
 		<div class="horizontal-rule show-over-1000"></div>
 
-		<div style="height:40px" aria-hidden="true" class="wp-block-spacer">
-		</div>
+		<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 
 		<?php get_template_part( 'components/copyright' ); ?>
 
