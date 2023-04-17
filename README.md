@@ -2,6 +2,7 @@
 
 # Contributing to CNCF.io
 
+
 Everyone is welcome to contribute to this project. We've created a document that describes guidelines for [contributing to the CNCF.io git repository](/CONTRIBUTING.md).
 
 # CNCF.io Developer Instructions
