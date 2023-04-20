@@ -15,3 +15,4 @@ debug.log
 *.sql
 .wpress
 .vscode
+*.code-workspace
