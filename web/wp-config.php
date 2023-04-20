@@ -7,6 +7,9 @@
  * @since 1.0.0
  */
 
+//Add ShortPixel debug
+define( 'SHORTPIXEL_DEBUG', 4 );
+
 /*
  * Don't show deprecations
  */
@@ -40,8 +43,8 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( $root_path . '/.en
 /**
  * Disallow on server file edits
  */
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISALLOW_FILE_MODS', true );
+//define( 'DISALLOW_FILE_EDIT', true );
+//define( 'DISALLOW_FILE_MODS', true );
 
 /**
  * Force SSL
