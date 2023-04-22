@@ -130,6 +130,7 @@
 		a:hover {
 			text-decoration: none;
 			color: rgba(0, 0, 0, 0.7);
+
 			@media (prefers-reduced-motion: reduce) {
 				transition: none;
 			}
@@ -156,6 +157,9 @@
 			margin-bottom: 6px;
 			&:hover {
 				color: rgba(0, 0, 0, 0.7);
+				.lf-external-link:after {
+					filter: invert(23%) sepia(54%) saturate(0%) hue-rotate(152deg) brightness(91%) contrast(75%);
+				}
 			}
 
 			.lf-menu-description {
@@ -164,6 +168,17 @@
 				font-size: 11px;
 				line-height: 160%;
 				padding-top: 8px;
+			}
+
+			.lf-external-link:after {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				height: 10px;
+				width: 10px;
+				margin-left: 6px;
+				margin-bottom: 6px;
+				background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='transparent' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 8.778 6.667-6.666M1 1h8v8' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 			}
 		}
 
@@ -443,19 +458,19 @@
 				background-color: transparent;
 			}
 		}
-		&:nth-child(1).is-open span:after {
+		&:nth-child(1).is-open > a span:after {
 			background-color: $shade-01;
 		}
-		&:nth-child(2).is-open span:after {
+		&:nth-child(2).is-open > a span:after {
 			background-color: $shade-02;
 		}
-		&:nth-child(3).is-open span:after {
+		&:nth-child(3).is-open > a span:after {
 			background-color: $shade-03;
 		}
-		&:nth-child(4).is-open span:after {
+		&:nth-child(4).is-open > a span:after {
 			background-color: $shade-04;
 		}
-		&:nth-child(5).is-open span:after {
+		&:nth-child(5).is-open > a span:after {
 			background-color: $shade-05;
 		}
 
