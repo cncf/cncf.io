@@ -85,6 +85,12 @@ class LF_Navigation_Tools {
 	 */
 	public function lf_add_descriptions_to_specified_menus( $item_output, $item, $depth, $args ) {
 
+		$internal_domains = array(
+			'www.cncf.io',
+			'pantheonsite.io',
+			'lndo.site'
+		);
+
 		$selected_menus = array(
 			'about_01',
 			'about_02',
@@ -98,13 +104,28 @@ class LF_Navigation_Tools {
 			'blog_02',
 		);
 
+		// Compare URLs with $internal_domains, add external link class if no match.
+		if (isset($item->url)) {
+			$matches_internal_domains = true;
+
+			foreach ($internal_domains as $internal_domain) {
+				if (strpos($item->url, $internal_domain) !== false) {
+					$matches_internal_domains = false;
+					break;
+				}
+			}
+
+			if ($matches_internal_domains && substr($item->url, 0, 1) !== '/') {
+				$item_output = preg_replace('/(<a[^>]*>)(.*?)(<\/a>)/', '$1<span class="lf-external-link">$2</span>$3', $item_output);
+			}
+		}
+
 		// if menu matches selected, top level and has a description.
 		if ( in_array( $args->theme_location, $selected_menus, true ) && ! $depth && $item->description ) {
+
 			$item_output = str_replace( '</a>', '<span class="lf-menu-description">' . $item->description . '</span></a>', $item_output );
 		}
 		return $item_output;
-
 	}
 }
-
 new LF_Navigation_Tools();
