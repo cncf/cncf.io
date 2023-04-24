@@ -207,7 +207,7 @@ get_template_part( 'components/skip-link-target' );
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="378" width="1105" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/welcome-02.svg" alt="">
 																</div>
@@ -284,7 +284,7 @@ get_template_part( 'components/skip-link-target' );
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="440" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/who-01.svg" alt="">
 																</div>
@@ -346,7 +346,7 @@ get_template_part( 'components/skip-link-target' );
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" height="409" width="1920" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-01-scaled.jpg" alt="">
 											</div>
@@ -422,7 +422,7 @@ A basic premise behind CNCF, our conferences (including
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="647" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-02.svg" alt="">
 																</div>
@@ -509,7 +509,7 @@ Kubernetes as the “future” of computing and the “next big thing in cloud c
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="890" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-02-scaled.jpg" alt="">
 											</div>
@@ -582,7 +582,7 @@ respondents described the End User Community as a “healthy community that faci
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1713" width="1268" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-03.png" alt="">
 											</div>
@@ -645,7 +645,7 @@ site.
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="393" width="800" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/logos5-01.png" alt="">
 											</div>
@@ -687,7 +687,7 @@ site.
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="623" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-03.svg" alt="">
 																</div>
@@ -747,7 +747,7 @@ so you can participate in this influential group and provide your insights both 
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1669" width="1975" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images2-05.svg" alt="">
 											</div>
@@ -802,7 +802,7 @@ so you can participate in this influential group and provide your insights both 
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="384" width="1098" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-06.svg" alt="">
 											</div>
@@ -820,7 +820,7 @@ so you can participate in this influential group and provide your insights both 
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="384" width="1098" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-07.svg" alt="">
 											</div>
@@ -874,7 +874,7 @@ North America was the world’s largest open source developer conference in 2019
 </p>
 											</div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="897" width="1768" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-08.svg" alt="">
 											</div>
@@ -903,7 +903,7 @@ are also available for 2019. The overall satisfaction score for all CNCF events 
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1948" width="1397" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-09.png" alt="">
 											</div>
@@ -925,7 +925,7 @@ are also available for 2019. The overall satisfaction score for all CNCF events 
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="1379" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-10-scaled.jpg" alt="">
 											</div>
@@ -988,7 +988,7 @@ to have an onsite booth for attendees. A full list of activities and additional 
 										<div class="divider-wrap" data-alignment="default">
 											<div style="height: 35px;" class="divider"></div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="1417" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-11-scaled.jpg" alt="">
 											</div>
@@ -1022,7 +1022,7 @@ to have an onsite booth for attendees. A full list of activities and additional 
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="977" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-04.svg" alt="">
 																</div>
@@ -1139,7 +1139,7 @@ that hit 425 registrations in 2019.
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="314" width="804" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-2019-images-01.png" style="padding-top: 50px; padding-bottom: 0px; margin-top: 2rem; display: block" alt="">
 											</div>
@@ -1181,7 +1181,7 @@ that hit 425 registrations in 2019.
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="1237" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-05.svg" alt="">
 																</div>
@@ -1278,7 +1278,7 @@ in order to become an accepted CNCF project. Full details are listed in
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="635" width="1768" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-13.png" alt="" style="display: block;">
 											</div>
@@ -1318,7 +1318,7 @@ in order to become an accepted CNCF project. Full details are listed in
 												</div>
 											</div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="501" width="1768" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-14.png" alt="">
 											</div>
@@ -1376,7 +1376,7 @@ in order to become an accepted CNCF project. Full details are listed in
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="464" width="1768" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images2-15.svg" alt="">
 											</div>
@@ -1432,7 +1432,7 @@ in order to become an accepted CNCF project. Full details are listed in
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="426" width="934" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-17.svg" alt="">
 											</div>
@@ -1455,7 +1455,7 @@ was released in December 2019. New functionality included cloud provider labels 
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="426" width="934" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-19.svg" alt="">
 											</div>
@@ -1475,7 +1475,7 @@ debuted as the latest major release of the package manager, building on the succ
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="426" width="934" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-16.svg" alt="">
 											</div>
@@ -1505,7 +1505,7 @@ issued its first post-graduation release, which included many plugins and enhanc
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="426" width="934" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-20.svg" alt="">
 											</div>
@@ -1528,7 +1528,7 @@ issued its first post-graduation release, which included many plugins and enhanc
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="426" width="934" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-18.svg" alt="">
 											</div>
@@ -1549,7 +1549,7 @@ to trace 100 million transactions per day in 2019.
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="426" width="934" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-21.svg" alt="">
 											</div>
@@ -1692,7 +1692,7 @@ to our projects to help make them more successful and sustainable.
 										<div class="divider-wrap" data-alignment="default">
 											<div style="height: 25px;" class="divider"></div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="1416" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-22-scaled.jpg" alt="">
 											</div>
@@ -1704,7 +1704,7 @@ to our projects to help make them more successful and sustainable.
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="1416" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-23-scaled.jpg" alt="">
 											</div>
@@ -2082,7 +2082,7 @@ to request support.
 										<div class="divider-wrap" data-alignment="default">
 											<div style="height: 5px;" class="divider"></div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="842" width="1768" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-24.svg" alt="">
 											</div>
@@ -2104,7 +2104,7 @@ to request support.
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="100" width="100" data-animation="none" src="" alt="">
 											</div>
@@ -2146,7 +2146,7 @@ to request support.
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="885" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-06.svg" alt="">
 																</div>
@@ -2231,7 +2231,7 @@ Scholarship recipients received priority signup for professional headshots (prio
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="362" width="1768" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/google-cloud-01.svg" alt="" style="display: block; margin-top: 2rem;">
 											</div>
@@ -2356,7 +2356,7 @@ and
 										<div class="divider-wrap" data-alignment="default">
 											<div style="height: 25px;" class="divider"></div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" height="1025" width="1528" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-27-scaled.jpg" alt="">
 											</div>
@@ -2402,7 +2402,7 @@ and
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="514" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-07.svg" alt="">
 																</div>
@@ -2456,7 +2456,7 @@ and
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="336" width="1498" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-28-1.svg" alt="">
 																</div>
@@ -2481,7 +2481,7 @@ and
 										<div class="divider-wrap" data-alignment="default">
 											<div style="height: 25px;" class="divider"></div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="161" width="495" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/charts2-reportnew-01.svg" alt="">
 											</div>
@@ -2553,7 +2553,7 @@ To date, more than 40 KCDs are planned for 2020 across the world, on five contin
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="983" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-30-scaled.jpg" alt="">
 											</div>
@@ -2627,7 +2627,7 @@ about them.
 												</h4>
 											</div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="786" width="1920" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/ambassadors-02-1-scaled.jpg" alt="">
 											</div>
@@ -2708,7 +2708,7 @@ in December 2019 that included nine interns participating in seven CNCF projects
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="759" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-31-scaled.jpg" alt="">
 											</div>
@@ -2750,7 +2750,7 @@ in December 2019 that included nine interns participating in seven CNCF projects
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="645" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-08.svg" alt="">
 																</div>
@@ -2887,7 +2887,7 @@ In 2019, DevStats moved from bare metal to Kubernetes. The tool now uses Kuberne
 </p>
 											</div>
 										</div>
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="1288" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-32-scaled.jpg" alt="">
 											</div>
@@ -2970,7 +2970,7 @@ information.
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="1822" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/landscape2-scaled.jpg" alt="">
 																</div>
@@ -2983,7 +2983,7 @@ information.
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="885" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF_TrailMap_latest.jpg" alt="">
 																</div>
@@ -3126,7 +3126,7 @@ By open sourcing security audits and processes, the working group hopes to inspi
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="612" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles-09.svg" alt="">
 																</div>
@@ -3208,7 +3208,7 @@ in Shanghai July 28-30, 2020.
 								<div class="column-bg-overlay"></div>
 								<div class="vc_column-inner">
 									<div class="wpb_wrapper">
-										<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+										<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 											<div class="inner">
 												<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="1025" width="741" data-animation="none" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/CNCF-Annual-Report-images-33.png" alt="">
 											</div>
@@ -3250,7 +3250,7 @@ in Shanghai July 28-30, 2020.
 													</div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-															<div class="img-with-aniamtion-wrap " data-max-width="100%" data-border-radius="none">
+															<div class="img-with-animation-wrap " data-max-width="100%" data-border-radius="none">
 																<div class="inner">
 																	<img loading="lazy" data-shadow="none" data-shadow-direction="middle" data-delay="0" height="91" width="939" data-animation="fade-in" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2019/titles2-10.svg" alt="">
 																</div>

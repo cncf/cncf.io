@@ -1830,9 +1830,9 @@ Computing Engineer</p>
 					</div>
 					<p class="reach__title">Twitter Moments</p>
 
-					<p>May 18 - <a href="https://twitter.com/i/events/1526963880869744650" title="Twitter Hightlights from Day One">Highlights from Day One</a><br/>
-					May 19 - <a href="https://twitter.com/i/events/1527295881937989635" title="Twitter Hightlights from Day Two">Highlights from Day Two</a><br/>
-					May 20 - <a href="https://twitter.com/i/events/1527652550983434240" title="Twitter Hightlights from Day Three">Highlights from Day Three</a></p>
+					<p>May 18 - <a href="https://twitter.com/i/events/1526963880869744650" title="Twitter Highlights from Day One">Highlights from Day One</a><br/>
+					May 19 - <a href="https://twitter.com/i/events/1527295881937989635" title="Twitter Highlights from Day Two">Highlights from Day Two</a><br/>
+					May 20 - <a href="https://twitter.com/i/events/1527652550983434240" title="Twitter Highlights from Day Three">Highlights from Day Three</a></p>
 
 				</div>
 				<div class="reach__col3">
@@ -2143,7 +2143,7 @@ Computing Engineer</p>
 				<p
 					class="max-w-900">As many are aware we ran into some issues onsite related to COVID-19 and the mask mandate, one of which was a general local staffing issue which is being felt on a global scale. This was reflected in a reduced number of taxis available, in the number of vendor staff working catering, and in many other places around the city and the event. This was exacerbated by a Spanish law that no Spanish employer could require an employee to wear a mask.</p>
 				<p
-					class="max-w-900">When Spain dropped its mask mandate on April 7 and put this law into effect (which we discovered would affect large groups on April 20) it resulted in a further reduction in local staffing for the event. Our vendors were only able to secure folx who would voluntarily wear a mask. This resulted in even lower staffing levels onsite which we know affected the attendee experience. With all of this taking place in the several weeks prior to the event, it was difficult to produce the event as our community expects. </p>
+					class="max-w-900">When Spain dropped its mask mandate on April 7 and put this law into effect (which we discovered would affect large groups on April 20) it resulted in a further reduction in local staffing for the event. Our vendors were only able to secure folks who would voluntarily wear a mask. This resulted in even lower staffing levels onsite which we know affected the attendee experience. With all of this taking place in the several weeks prior to the event, it was difficult to produce the event as our community expects. </p>
 				<p
 					class="max-w-900">Vendors were not the only challenge. A greater number of attendees were reluctant to comply with the mask mandate than we saw at our North America event last October. Events staff did their best to maintain enforcement, despite reduced staff, changing laws, and general mask fatigue.</p>
 				<p

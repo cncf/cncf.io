@@ -1083,7 +1083,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="border-outline">
 
 					<p
-						class="secondary-sub-section">Breakdown of particpating companies</p>
+						class="secondary-sub-section">Breakdown of participating companies</p>
 
 					<div class="section-grid-06">
 						<div class="icon-callout-3">
@@ -1264,7 +1264,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div aria-hidden="true" class="ar-spacer-100"></div>
 
 				<p
-					class="secondary-sub-section">Breakdown of parcticpating companies</p>
+					class="secondary-sub-section">Breakdown of participating companies</p>
 
 				<div class="section-grid-06">
 
@@ -1363,7 +1363,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 					<p>CNCF has a long-standing relationship with <a href="https://www.futurehealth.live/bio">Dr. Joel Selanikio</a>, a physician, former CDC epidemiologist and outbreak investigator, and consultant epidemiologist to the DC Department of Health and to FEMA for the COVID-19 response over 2020-21.</p>
 
-					<p>Thanks to Dr. Selanikio's continuous council, we have been able to take educated and well-thought out steps to ensure the safety of our community members as we navigate COVID-19. </p>
+					<p>Thanks to Dr. Selanikio's continuous counsel, we have been able to take educated and well-thought out steps to ensure the safety of our community members as we navigate COVID-19. </p>
 
 				</div>
 
@@ -1504,7 +1504,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 			<h2 class="section-intro max-w-1000">CNCF doubled down on our
 				commitment to #TeamCloudNative in 2021 by expanding our globally
 				recognized certifications, boosting employment opportunities,
-				and helping more folx to upskill their practical application of
+				and helping more folks to upskill their practical application of
 				cloud native technologies. </h2>
 
 			<div class="section-grid-10">
@@ -1923,7 +1923,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 				<div class="phippy-align">
 					<p
-						class="secondary-sub-section">From a humble PHP app, Phippy has gone on to help thousands of folx take their first steps to understanding cloud native computing — from containerization to automation. Today, Phippy and Friends' mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging, and easy-to-understand manner.</p>
+						class="secondary-sub-section">From a humble PHP app, Phippy has gone on to help thousands of folks take their first steps to understanding cloud native computing — from containerization to automation. Today, Phippy and Friends' mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging, and easy-to-understand manner.</p>
 
 
 					<img loading="lazy" width="250" height="400"
@@ -2017,7 +2017,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 				<div class="book-group">
 					<div>
-						<a title="Download Admiral Bash's Island Adventur"
+						<a title="Download Admiral Bash's Island Adventure"
 							href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">
 							<?php
 							Lf_Utils::display_responsive_images( 66485, 'large', '600px', '', 'lazy' );
@@ -2627,7 +2627,7 @@ In Italian, thanks to SparkFabrik</p>
 				class="secondary-sub-section max-w-800">The Cloud Native Computing Foundation (CNCF) is an open source software foundation dedicated to making cloud native computing universal and sustainable. </p>
 
 			<p
-				class="max-w-700">Presently folx on our staff and governing board self-identify as she/her or he/him. We welcome all individuals and encourage applications for future opportunities on the <a href="https://jobs.cncf.io">CNCF Job board</a>.</p>
+				class="max-w-700">Presently folks on our staff and governing board self-identify as she/her or he/him. We welcome all individuals and encourage applications for future opportunities on the <a href="https://jobs.cncf.io">CNCF Job board</a>.</p>
 
 			<div aria-hidden="true" class="ar-spacer-60"></div>
 

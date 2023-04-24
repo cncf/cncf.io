@@ -359,7 +359,7 @@ $mailto_url   = 'mailto:?subject=' . $caption . '&body=' . $caption . '&nbsp;' .
 				<div class="lf-grid">
 					<div class="restrictive-11-col">
 						<p
-							class="opening-paragraph">This year's <strong>KubeCon + CloudNativeCon</strong> in Detroit was our first time hosting #TeamCloudNative's flagship event in the Midwest, and we were thrilled to see so many of you there.<br><br>It's no surprise that our US community accounted for the largest number of attendees, but it was wonderful to see so many folx coming from Canada and Israel to join us in person, and from as far afield as India and even New Zealand to be with us both in person and virtually.</p>
+							class="opening-paragraph">This year's <strong>KubeCon + CloudNativeCon</strong> in Detroit was our first time hosting #TeamCloudNative's flagship event in the Midwest, and we were thrilled to see so many of you there.<br><br>It's no surprise that our US community accounted for the largest number of attendees, but it was wonderful to see so many folks coming from Canada and Israel to join us in person, and from as far afield as India and even New Zealand to be with us both in person and virtually.</p>
 					</div>
 				</div>
 

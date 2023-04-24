@@ -2161,7 +2161,7 @@ LF_Utils::get_svg( $report_folder . 'icon-tools.svg', true );
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-checklist.svg', true );
 ?>
-" alt="Checlist icon">
+" alt="Checklist icon">
 							</div>
 							<div class="text">
 								<span class="number small">Denial of service,
@@ -2458,7 +2458,7 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>From a humble PHP app, Phippy has gone on to help thousands of folx take their first steps to understanding cloud native computing - from containerisation to automation. Today, Phippy and Friends' mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging and easy-to-understand manner.</p>
+						<p>From a humble PHP app, Phippy has gone on to help thousands of folks take their first steps to understanding cloud native computing - from containerisation to automation. Today, Phippy and Friends' mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging and easy-to-understand manner.</p>
 					</div>
 				</div>
 				<div aria-hidden="true" class="report-spacer-100"></div>

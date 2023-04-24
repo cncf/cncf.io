@@ -1788,7 +1788,7 @@ body[data-bg-header='true'] .container-wrap {
 	margin-bottom: 24px;
 }
 
-.row .wpb_wrapper > .img-with-aniamtion-wrap:last-child img,
+.row .wpb_wrapper > .img-with-animation-wrap:last-child img,
 .row .wpb_wrapper > img:last-child,
 .wpb_wrapper > div:last-child {
 	margin-bottom: 0;
@@ -4858,7 +4858,7 @@ img.img-with-animation[data-animation='fade-in-from-right'] {
 	margin: 0 auto;
 }
 
-.img-with-aniamtion-wrap {
+.img-with-animation-wrap {
 	line-height: 0;
 	margin-bottom: 0 !important;
 }
@@ -4868,29 +4868,29 @@ img.img-with-animation[data-animation='fade-in-from-right'] {
 	display: block;
 }
 
-.right.img-with-aniamtion-wrap {
+.right.img-with-animation-wrap {
 	text-align: right;
 }
 
-.right.img-with-aniamtion-wrap img {
+.right.img-with-animation-wrap img {
 	display: inline-block;
 }
 
-.right.img-with-aniamtion-wrap[data-max-width='125%'] img,
-.right.img-with-aniamtion-wrap[data-max-width='150%'] img,
-.right.img-with-aniamtion-wrap[data-max-width='175%'] img,
-.right.img-with-aniamtion-wrap[data-max-width='200%'] img,
-.right.img-with-aniamtion-wrap[data-max-width='225%'] img,
-.right.img-with-aniamtion-wrap[data-max-width='250%'] img {
+.right.img-with-animation-wrap[data-max-width='125%'] img,
+.right.img-with-animation-wrap[data-max-width='150%'] img,
+.right.img-with-animation-wrap[data-max-width='175%'] img,
+.right.img-with-animation-wrap[data-max-width='200%'] img,
+.right.img-with-animation-wrap[data-max-width='225%'] img,
+.right.img-with-animation-wrap[data-max-width='250%'] img {
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='125%']:not(.right) img,
-.img-with-aniamtion-wrap[data-max-width='150%']:not(.right) img,
-.img-with-aniamtion-wrap[data-max-width='175%']:not(.right) img,
-.img-with-aniamtion-wrap[data-max-width='200%']:not(.right) img,
-.img-with-aniamtion-wrap[data-max-width='225%']:not(.right) img,
-.img-with-aniamtion-wrap[data-max-width='250%']:not(.right) img {
+.img-with-animation-wrap[data-max-width='125%']:not(.right) img,
+.img-with-animation-wrap[data-max-width='150%']:not(.right) img,
+.img-with-animation-wrap[data-max-width='175%']:not(.right) img,
+.img-with-animation-wrap[data-max-width='200%']:not(.right) img,
+.img-with-animation-wrap[data-max-width='225%']:not(.right) img,
+.img-with-animation-wrap[data-max-width='250%']:not(.right) img {
 	backface-visibility: hidden;
 }
 
@@ -4905,103 +4905,103 @@ img.img-with-animation[data-animation='fade-in-from-right'] {
 	max-width: 100%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='125%'] .inner {
+.img-with-animation-wrap[data-max-width='125%'] .inner {
 	width: 125%;
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='150%'] .inner {
+.img-with-animation-wrap[data-max-width='150%'] .inner {
 	width: 150%;
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='165%'] .inner {
+.img-with-animation-wrap[data-max-width='165%'] .inner {
 	width: 165%;
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='175%'] .inner {
+.img-with-animation-wrap[data-max-width='175%'] .inner {
 	width: 175%;
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='200%'] .inner {
+.img-with-animation-wrap[data-max-width='200%'] .inner {
 	width: 200%;
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='225%'] .inner {
+.img-with-animation-wrap[data-max-width='225%'] .inner {
 	width: 225%;
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='250%'] .inner {
+.img-with-animation-wrap[data-max-width='250%'] .inner {
 	width: 250%;
 	display: block;
 }
 
-.img-with-aniamtion-wrap[data-max-width='125%'].center .inner {
+.img-with-animation-wrap[data-max-width='125%'].center .inner {
 	margin-left: -12.5%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='150%'].center .inner {
+.img-with-animation-wrap[data-max-width='150%'].center .inner {
 	margin-left: -25%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='165%'].center .inner {
+.img-with-animation-wrap[data-max-width='165%'].center .inner {
 	margin-left: -32.5%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='175%'].center .inner {
+.img-with-animation-wrap[data-max-width='175%'].center .inner {
 	margin-left: -37.5%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='200%'].center .inner {
+.img-with-animation-wrap[data-max-width='200%'].center .inner {
 	margin-left: -50%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='225%'].center .inner {
+.img-with-animation-wrap[data-max-width='225%'].center .inner {
 	margin-left: -62.5%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='250%'].center .inner {
+.img-with-animation-wrap[data-max-width='250%'].center .inner {
 	margin-left: -75%;
 }
 
-.img-with-aniamtion-wrap.right[data-max-width='125%'] .inner {
+.img-with-animation-wrap.right[data-max-width='125%'] .inner {
 	margin-left: -25%;
 }
 
-.img-with-aniamtion-wrap.right[data-max-width='150%'] .inner {
+.img-with-animation-wrap.right[data-max-width='150%'] .inner {
 	margin-left: -50%;
 }
 
-.img-with-aniamtion-wrap.right[data-max-width='165%'] .inner {
+.img-with-animation-wrap.right[data-max-width='165%'] .inner {
 	margin-left: -65%;
 }
 
-.img-with-aniamtion-wrap.right[data-max-width='175%'] .inner {
+.img-with-animation-wrap.right[data-max-width='175%'] .inner {
 	margin-left: -75%;
 }
 
-.img-with-aniamtion-wrap.right[data-max-width='200%'] .inner {
+.img-with-animation-wrap.right[data-max-width='200%'] .inner {
 	margin-left: -100%;
 }
 
-.img-with-aniamtion-wrap.right[data-max-width='225%'] .inner {
+.img-with-animation-wrap.right[data-max-width='225%'] .inner {
 	margin-left: -125%;
 }
 
-.img-with-aniamtion-wrap.right[data-max-width='250%'] .inner {
+.img-with-animation-wrap.right[data-max-width='250%'] .inner {
 	margin-left: -150%;
 }
 
-.img-with-aniamtion-wrap[data-max-width='125%'] img,
-.img-with-aniamtion-wrap[data-max-width='150%'] img,
-.img-with-aniamtion-wrap[data-max-width='175%'] img,
-.img-with-aniamtion-wrap[data-max-width='200%'] img,
-.img-with-aniamtion-wrap[data-max-width='225%'] img,
-.img-with-aniamtion-wrap[data-max-width='250%'] img {
+.img-with-animation-wrap[data-max-width='125%'] img,
+.img-with-animation-wrap[data-max-width='150%'] img,
+.img-with-animation-wrap[data-max-width='175%'] img,
+.img-with-animation-wrap[data-max-width='200%'] img,
+.img-with-animation-wrap[data-max-width='225%'] img,
+.img-with-animation-wrap[data-max-width='250%'] img {
 	max-width: 100%;
 	width: auto;
 }
@@ -5077,7 +5077,7 @@ img.img-with-animation[data-animation='fade-in-from-right'] {
 }
 
 .wpb_row.full-width-content,
-.wpb_row.full-width-content .img-with-aniamtion-wrap,
+.wpb_row.full-width-content .img-with-animation-wrap,
 .wpb_row.full-width-content img,
 .wpb_row.full-width-section {
 	margin-bottom: 0;
@@ -6794,27 +6794,27 @@ div#at4-share {
 		transform: none !important;
 	}
 
-	.img-with-aniamtion-wrap .inner {
+	.img-with-animation-wrap .inner {
 		margin: 0 0 !important;
 	}
 
-	.img-with-aniamtion-wrap img,
-	.img-with-aniamtion-wrap[data-max-width='110%'] .inner,
-	.img-with-aniamtion-wrap[data-max-width='125%'] .inner,
-	.img-with-aniamtion-wrap[data-max-width='150%'] .inner,
-	.img-with-aniamtion-wrap[data-max-width='165%'] .inner,
-	.img-with-aniamtion-wrap[data-max-width='175%'] .inner,
-	.img-with-aniamtion-wrap[data-max-width='200%'] .inner,
-	.img-with-aniamtion-wrap[data-max-width='225%'] .inner,
-	.img-with-aniamtion-wrap[data-max-width='250%'] .inner {
+	.img-with-animation-wrap img,
+	.img-with-animation-wrap[data-max-width='110%'] .inner,
+	.img-with-animation-wrap[data-max-width='125%'] .inner,
+	.img-with-animation-wrap[data-max-width='150%'] .inner,
+	.img-with-animation-wrap[data-max-width='165%'] .inner,
+	.img-with-animation-wrap[data-max-width='175%'] .inner,
+	.img-with-animation-wrap[data-max-width='200%'] .inner,
+	.img-with-animation-wrap[data-max-width='225%'] .inner,
+	.img-with-animation-wrap[data-max-width='250%'] .inner {
 		max-width: 100% !important;
 	}
 
-	.img-with-aniamtion-wrap[data-max-width='75%'] img {
+	.img-with-animation-wrap[data-max-width='75%'] img {
 		max-width: 75% !important;
 	}
 
-	.img-with-aniamtion-wrap[data-max-width='50%'] img {
+	.img-with-animation-wrap[data-max-width='50%'] img {
 		max-width: 50% !important;
 	}
 
