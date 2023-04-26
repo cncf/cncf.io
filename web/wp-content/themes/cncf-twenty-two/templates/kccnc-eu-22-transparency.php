@@ -1830,9 +1830,9 @@ Computing Engineer</p>
 					</div>
 					<p class="reach__title">Twitter Moments</p>
 
-					<p>May 18 - <a href="https://twitter.com/i/events/1526963880869744650" title="Twitter Hightlights from Day One">Highlights from Day One</a><br/>
-					May 19 - <a href="https://twitter.com/i/events/1527295881937989635" title="Twitter Hightlights from Day Two">Highlights from Day Two</a><br/>
-					May 20 - <a href="https://twitter.com/i/events/1527652550983434240" title="Twitter Hightlights from Day Three">Highlights from Day Three</a></p>
+					<p>May 18 - <a href="https://twitter.com/i/events/1526963880869744650" title="Twitter Highlights from Day One">Highlights from Day One</a><br/>
+					May 19 - <a href="https://twitter.com/i/events/1527295881937989635" title="Twitter Highlights from Day Two">Highlights from Day Two</a><br/>
+					May 20 - <a href="https://twitter.com/i/events/1527652550983434240" title="Twitter Highlights from Day Three">Highlights from Day Three</a></p>
 
 				</div>
 				<div class="reach__col3">

@@ -1083,7 +1083,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div class="border-outline">
 
 					<p
-						class="secondary-sub-section">Breakdown of particpating companies</p>
+						class="secondary-sub-section">Breakdown of participating companies</p>
 
 					<div class="section-grid-06">
 						<div class="icon-callout-3">
@@ -1264,7 +1264,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 				<div aria-hidden="true" class="ar-spacer-100"></div>
 
 				<p
-					class="secondary-sub-section">Breakdown of parcticpating companies</p>
+					class="secondary-sub-section">Breakdown of participating companies</p>
 
 				<div class="section-grid-06">
 
@@ -1363,7 +1363,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 					<p>CNCF has a long-standing relationship with <a href="https://www.futurehealth.live/bio">Dr. Joel Selanikio</a>, a physician, former CDC epidemiologist and outbreak investigator, and consultant epidemiologist to the DC Department of Health and to FEMA for the COVID-19 response over 2020-21.</p>
 
-					<p>Thanks to Dr. Selanikio's continuous council, we have been able to take educated and well-thought out steps to ensure the safety of our community members as we navigate COVID-19. </p>
+					<p>Thanks to Dr. Selanikio's continuous counsel, we have been able to take educated and well-thought out steps to ensure the safety of our community members as we navigate COVID-19. </p>
 
 				</div>
 
@@ -2017,7 +2017,7 @@ Delivers effective strategies for creating inclusive open source communities and
 
 				<div class="book-group">
 					<div>
-						<a title="Download Admiral Bash's Island Adventur"
+						<a title="Download Admiral Bash's Island Adventure"
 							href="/wp-content/uploads/2021/10/Admiral-Bash.pdf">
 							<?php
 							Lf_Utils::display_responsive_images( 66485, 'large', '600px', '', 'lazy' );

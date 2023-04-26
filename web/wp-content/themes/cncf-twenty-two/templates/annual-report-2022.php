@@ -2161,7 +2161,7 @@ LF_Utils::get_svg( $report_folder . 'icon-tools.svg', true );
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-checklist.svg', true );
 ?>
-" alt="Checlist icon">
+" alt="Checklist icon">
 							</div>
 							<div class="text">
 								<span class="number small">Denial of service,
