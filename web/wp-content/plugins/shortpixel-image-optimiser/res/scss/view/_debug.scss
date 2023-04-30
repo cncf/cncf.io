@@ -1,0 +1,110 @@
+
+
+body.debug-model-active {
+	 overflow: hidden;
+}
+
+.debugInfo .content.wrapper
+{
+	display: none;
+	li strong {
+		margin-right: 15px;
+	}
+	ul
+	{
+		margin: 25px 0;
+	}
+}
+
+
+.debug-modal {
+	display: none;
+	width: 75%;
+	max-width: 90%;
+	height: auto;
+	max-height: 90vh;
+	overflow: hidden;
+  border-radius: 4px;
+  box-shadow: -3px -3px 10px rgba(0, 0, 0, 0.5);
+
+	position: fixed;
+	left: 20%;
+	top: 10%;
+	//overflow-y: auto;
+	z-index: 10020; // just trying to stay on top, don't blame me.
+
+
+	display: none;
+	background: #ffffff;
+
+	&.success {
+			//borer: solgreen;
+			border: 4px solid green;
+
+		}
+	&.error {
+			border: 4px solid red;
+			h3 { background-color: #ff0000;}
+		}
+
+	.content-area {
+			background-color: #fff;
+
+		}
+
+	.modal_header {
+		text-align: center;
+		font-size: 16px;
+		font-weight: 700;
+		background-color: #f3f3f3;
+		border-bottom: 1px solid #ccc;
+		padding: 8px 5px;
+		cursor: move;
+
+		h3 {
+			margin: 0;
+			color: #444;
+			font-weight: 400;
+			padding: 0;
+			text-align: center;
+			text-shadow: none;
+			font-size: 16px;
+		}
+
+		.modal_close {
+			position: absolute;
+			right: 5px;
+			top: 8px;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+			color: #444;
+			&:hover {
+				cursor: pointer;
+				color: #111;
+			}
+		}
+	}
+	.content, .modal_content {
+		padding: 5px 15px 10px;
+		//display: inline-block;
+		//height: 100%;
+		//margin-top: -40px;
+		overflow-y: auto;
+	}
+
+}
+
+.debugModal_overlay
+{
+  background: #000;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	height: 100%;
+	position: fixed;
+	opacity : 0.7;
+	z-index: 10000;
+	display: none;
+}

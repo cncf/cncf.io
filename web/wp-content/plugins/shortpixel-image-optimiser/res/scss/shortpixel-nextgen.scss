@@ -1,0 +1,26 @@
+
+#ngg_page_content .sp-column-info
+{
+		position: relative;
+
+    .button-smaller {
+        min-width: 150px;
+        margin-bottom: 5px;
+    }
+		.sp-column-actions {
+			 float: right;
+			 position: absolute;
+			 right: 10px;
+			 top: 0;
+		}
+		.button {
+			background-color: black;
+		}
+		.dashicons::before // reinstate what is removed by nextgen
+		{
+			 font-family: dashicons;
+			 width: 20px;
+			 height: 20px;
+			 font-size: 16px;
+		}
+}

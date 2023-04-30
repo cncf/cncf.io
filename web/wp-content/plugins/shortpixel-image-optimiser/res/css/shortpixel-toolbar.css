@@ -1,0 +1,181 @@
+/**
+CSS for features that are displayed on all Admin page, like the bar status icon and some alerts.
+ */
+#wpadminbar li.shortpixel-toolbar-processing {
+  position: relative;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-hide {
+  display: none;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div {
+  height: 33px;
+  width: 33px;
+  padding: 0;
+  margin-top: -1px;
+  padding: 0 3px;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div img {
+  margin-right: 2px;
+  margin-top: 6px;
+  vertical-align: top;
+  opacity: 1;
+  transition: all 1s linear;
+  position: absolute;
+  top: 0;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div span.shp-alert {
+  display: none;
+  margin-left: -8px;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div .stats {
+  left: -1px;
+  top: 3px;
+  right: 0;
+  position: absolute;
+  z-index: 10;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 50%;
+  padding: 5px 0 0 0px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div .controls {
+  position: absolute;
+  top: 0;
+  height: 32px;
+  background: rgba(35, 40, 45, 0.5);
+  box-sizing: border-box;
+  transition: all 1s linear;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div .controls .play, #wpadminbar li.shortpixel-toolbar-processing .ab-item > div .controls .pause {
+  font-family: dashicons;
+  font-size: 32px;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  line-height: 1;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div .controls .play.hidden, #wpadminbar li.shortpixel-toolbar-processing .ab-item > div .controls .pause.hidden {
+  display: none;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div .cssload-container {
+  width: 100%;
+  height: 24px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div .cssload-speeding-wheel {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  margin: 0 auto;
+  border: 4px solid #1cbfcb;
+  border-radius: 50%;
+  border-left-color: transparent;
+  animation: cssload-spin 2000ms infinite linear;
+  -o-animation: cssload-spin 2000ms infinite linear;
+  -ms-animation: cssload-spin 2000ms infinite linear;
+  -webkit-animation: cssload-spin 2000ms infinite linear;
+  -moz-animation: cssload-spin 2000ms infinite linear;
+}
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes cssload-spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes cssload-spin {
+  100% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes cssload-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes cssload-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div:hover img:hover, #wpadminbar li.shortpixel-toolbar-processing .ab-item > div:hover .stats {
+  opacity: 0;
+  visibility: hidden;
+}
+#wpadminbar li.shortpixel-toolbar-processing .ab-item > div:hover .controls {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-paused .ab-item > div .cssload-speeding-wheel {
+  animation: none;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-paused .ab-item > div .controls {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-paused .ab-item > div .stats {
+  opacity: 0;
+  z-index: 0;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-alert .ab-item > div span.shp-alert {
+  display: inline;
+  font-size: 26px;
+  line-height: 26px;
+  color: red;
+  font-weight: bold;
+  vertical-align: middle;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-alert .ab-item > div .controls {
+  display: none;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-quota-exceeded .ab-item > div .cssload-container {
+  display: none;
+}
+#wpadminbar li.shortpixel-toolbar-processing.shortpixel-quota-exceeded .ab-item > div:hover img:hover {
+  opacity: 1;
+  visibility: visible;
+}
+#wpadminbar li.shortpixel-toolbar-processing .toolbar-notice-wrapper {
+  position: absolute;
+  left: 0px;
+  top: 30px;
+}
+#wpadminbar li.shortpixel-toolbar-processing .toolbar-notice-wrapper .toolbar-notice {
+  border: 1px solid #1cbfcb;
+  background: #fff;
+  color: #000;
+  padding: 4px 14px;
+  white-space: nowrap;
+  transition: opacity 5s;
+  opacity: 1;
+  margin: 4px;
+  min-width: 300px;
+}
+
+/*# sourceMappingURL=shortpixel-toolbar.css.map */

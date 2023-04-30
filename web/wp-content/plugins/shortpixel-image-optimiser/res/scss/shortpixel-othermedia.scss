@@ -1,0 +1,235 @@
+@media(max-width: 1250px)
+{
+  #shortpixel-hs-blind, #shortpixel-hs-tools, #botbutton, #beacon-container
+  {
+    display: none !important;
+  }
+}
+
+.shortpixel-other-media
+{
+  margin-bottom: 120px; // leave space for the helpscout widget.
+  .search-form
+  {
+    float: right;
+    label
+    {
+      margin-right: 8px;
+    }
+  }
+  .pagination
+  {
+     margin: 25px 0;
+    @media(max-width: 782px) // wp breakpoint.
+    {
+        .pagination-links
+        {
+           float: right;
+           margin: 8px 0;
+        }
+        .displaying-num
+        {
+          display: none;
+        }
+    }
+  }
+
+   .list-overview
+   {
+      width: 100%;
+      background: #fff;
+      border: 1px solid #ccd0d4;
+      box-shadow: 0 1px 1px rgba(0,0,0,.04);
+      clear: both;
+      display: table;
+
+      .heading, .item
+      {
+        display: table-row;
+
+        > span
+        {
+          display: table-cell;
+          padding: 8px 10px;
+          line-height: 1.5em;
+          vertical-align: top;
+        }
+      }
+      .heading
+      {
+        border-bottom: 1px solid #ccc;
+        font-size: 14px;
+        a {
+          text-decoration: none;
+          display: inline-block;
+          width: 100%;
+          .sorted::before
+          {
+            visibility: visible;
+          }
+          .sorted.desc::before
+          {
+             content: "\f140";
+          }
+          &:hover
+          {
+            .sorting-indicator::before
+            {
+              content: "\f142";
+              visibility: visible;
+            }
+            .sorting-indicator.asc::before
+            {
+              content: "\f140";
+            }
+          }
+
+        }
+        span.heading span
+        {
+          float: left;
+          cursor: pointer;
+        }
+      }
+      .item
+      {
+         &:nth-child(odd) {
+            background-color: #f9f9f9;
+         }
+				 span:last-child
+				 {
+					  min-width: 400px;
+						max-width: 400px;
+				 }
+         &:hover
+         {
+           .row-actions
+           {
+             left: 0;
+             color: #bbb;
+             a
+             {
+            //   margin-right: 4px;
+               text-decoration: none;
+               padding-right: 4px;
+               padding-left: 4px;
+               &:first-child{
+                  padding-left: 0;
+               }
+             }
+           }
+         }
+         .filename
+         {
+           font-size: 14px;
+					 min-width: 150px;
+         }
+         .thumb
+         {
+           min-width: 60px;
+           min-height: 60px;
+           display: inline-block;
+           border: 1px solid #ccc;
+           background-size: cover;
+           background-position: center;
+
+           img {
+             max-width: 60px;
+             max-height: 60px;
+             border: 1px solid #ccc;
+             background: #eee;
+           }
+         }
+         .actions
+         {
+           min-width: 105px;
+
+           div
+           {
+            //float: right;
+           }
+         }
+         .single-action
+         {
+           text-align: left;
+           a
+           {
+             color: #fff;
+             text-decoration: none;
+             text-align: center;
+
+           }
+           .button-smaller
+           {
+             width: 110px;
+           }
+         }
+
+         .multi-action-wrapper
+         {
+           display: flex;
+           flex-direction: column;
+           .single-action
+           {
+             display: inline-block;
+             margin: 8px 0;
+             a
+             {
+               display: block;
+
+             }
+           }
+
+         }
+         .sp-column-info {
+         //  max-width: 400px;
+					 width: 100%;
+           min-width: 250px;
+           display: inline-block;
+					 position: relative;
+
+           @media(max-width: 1550px) {
+               width: auto;
+           }
+					 .sp-column-actions
+					 {
+						  position: absolute;
+							right: 15px;
+							top: 0;
+					 }
+         }
+      }
+      @media(max-width: 1250px)
+      {
+         .heading
+         {
+          .type { display: none; }
+         }
+         .item {
+           .mediatype { display: none; }
+           .filename, .folderpath { max-width: 250px; overflow: hidden; text-overflow: ellipsis; }
+         }
+
+      }
+      @media(max-width: 1200px)
+      {
+        .heading
+        {
+         .date { display: none; }
+        }
+
+         .item
+         {
+           .date { display: none; }
+         }
+      }
+      .no-items
+      {
+        padding: 10px;
+        p {
+          font-size: 14px;
+        }
+      }
+   }
+
+} // list

@@ -1,0 +1,425 @@
+
+// in our own scope.
+.settings_page_wp-shortpixel-settings
+{
+	@import '../elements/colors';
+	@import '../elements/breakpoints';
+
+	a {
+		color: $color-darkest;
+
+	}
+	p {
+		font-size: 14px;
+	}
+	.button, button:focus
+	{
+		color: $color-darkest;
+		border-color: $color-darkest;
+	}
+	.button-primary, .button-primary:focus {
+		background-color: $color-darkest;
+		border-color: $color-darkest;
+		color: #fff;
+
+		&:hover
+		{
+			background-color: $color-dark;
+			border-color: $color-darkest;
+
+		}
+	}
+	.submit {
+		.button {
+			min-height: 44px;
+		}
+	}
+  .top-menu
+  {
+      font-size: 18px;
+	  display: flex;
+	  width: 100%;
+	  min-height: 50px;
+	  align-items: center;
+	  margin: 15px 0;
+	  position: relative;
+	  @include breakpoint(0, 1200px)
+	  {
+		  margin-bottom: 50px;
+	  }
+
+		.links
+		{
+
+	    	a { font-size: 18px; margin-right: 8px; white-space: nowrap; line-height: 26px;}
+			padding-right: 195px;
+			flex: 12 4 auto;
+		}
+		.quota-remaining
+		{
+			 //float: right;
+			font-size: 13px;
+		}
+	    .spio-status-box {
+			text-align: center;
+			position: absolute;
+			top: -49px;
+			right: 0;
+			padding: 5px 10px;
+			background: white;
+			box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+			z-index: 1;
+		}
+		.pie-wrapper
+		{
+			flex: 4 2 auto;
+			min-width: 100px;
+			display: inline-block;
+//			flex-grow: 2;
+		}
+		div.sp-bulk-summary {
+
+				z-index: 10;
+
+				.opt-circle-average {
+						width: 100px;
+						height: 100px;
+					 // margin-right: 35px;
+						.trail {
+							stroke: #ddd;
+						}
+						.path {
+							stroke: $color-dark;
+							stroke-linecap: round;
+							transition: stroke-dashoffset 0.5s ease 0s;
+						}
+						.text {
+
+							fill: #1FBEC9;
+							font-size: 28px;
+							font-weight: 700;
+							dominant-baseline: middle;
+							text-anchor: middle;
+						}
+
+				}
+				span {
+					margin: 0;
+					font-size: 12px;
+					padding: 4px 8px;
+					font-weight: 700;
+					border-radius: 3px;
+					white-space: nowrap;
+					color: #0f6a7d;
+				}
+				@include breakpoint(0,1500px)
+				{
+
+					.opt-circle-average {
+							width: 100px;
+							height: 100px;
+					}
+				}
+		} // optimized thing
+  } // top menu
+
+  .wp-shortpixel-tab-content
+  {
+    transition: all 1000ms linear;
+  }
+  .red {
+     color: #ff0000;
+  }
+
+	.option
+	{
+		 padding: 8px;
+		 display: inline-block;
+		 .button
+		 {
+
+		 }
+		 p {
+			 margin: 14px 0;
+		 }
+	}
+
+	.shortpixel-help-link span.dashicons
+	{
+	    text-decoration: none;
+	    margin-top: -1px;
+	}
+
+  //tabs
+  article.sp-tabs
+  {
+    section // inside the tab
+    {
+			p.settings-info {
+			    padding-top: 0px;
+			    color: #818181;
+			    font-size:13px !important;
+			}
+			p.settings-info.shortpixel-settings-error {
+			    color: #c32525;
+			}
+
+      .wp-shortpixel-tab-content
+      { opacity: 0; }
+      &.sel-tab .wp-shortpixel-tab-content
+      {
+        opacity: 1;
+      }
+
+
+			.option-content
+			{
+				 display: inline-block;
+			}
+			.suboption // if you are child of main option, indent left.
+			{
+				margin-left: 20px;
+			}
+
+
+				.toggleTarget
+				{
+					 display: none;
+					 opacity: 0;
+					 height: 0;
+					 overflow: hidden;
+					 transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
+				}
+
+				.modalTarget
+				{
+					 display: none;
+				}
+
+				.toggleTarget.is-visible
+				{
+					display: block;
+					opacity: 1;
+					height: auto;
+
+				}
+    }
+    section h2 {
+      position: absolute;
+      font-size: 1.3em;
+      font-weight: normal;
+      width: 180px;
+      height: 1.8em;
+      top: -1.8em;
+      left: 10px;
+      padding: 0;
+      margin: 0;
+      color: #999;
+      background-color: #ddd;
+		@include breakpoint(0, 991px)
+		{
+			width: 140px;
+		}
+      /* border-radius: 5px 5px 0 0; */
+      a {
+          display: block;
+          width: 100%;
+          line-height: 1.8em;
+          text-align: center;
+          text-decoration: none;
+          color: #23282d;
+          outline: 0 none;
+      }
+    }
+		section.sel-tab h2
+		{
+			color: #333;
+			background-color: #fff;
+			z-index: 2;
+		}
+  }
+
+  article.sp-tabs section:nth-of-type(2) h2 {
+      left: 192px;
+	  @include breakpoint(0, 991px)
+	  {
+		  left: 152px;
+	  }
+  }
+  article.sp-tabs section:nth-of-type(3) h2 {
+      left: 374px;
+	  @include breakpoint(0, 991px)
+	  {
+		  left: 294px;
+	  }
+  }
+  article.sp-tabs section:nth-of-type(4) h2 {
+      left: 556px;
+	  @include breakpoint(0, 991px)
+	  {
+		  left: 436px;
+	  }
+  }
+  article.sp-tabs section:nth-of-type(5) h2 {
+      left: 738px;
+	  @include breakpoint(0, 991px)
+	  {
+		  left: 578px;
+	  }
+  }
+  article.sp-tabs section:nth-of-type(6) h2 {
+      left: 920px;
+  }
+
+	//debug-tab is now after the other tabs, because of form issues.
+	article.sp-tabs section#tab-debug {
+
+	}
+  //article.sp-tabs section h2
+
+  section#tab-debug
+  {
+			h2 { left: 738px; }
+     .flex {
+       display: flex;
+     }
+     .env .flex {
+        flex-wrap: wrap;
+        max-width: 450px;
+        span {
+            width: 45%;
+            padding: 4px;
+        }
+     }
+     .table
+     {
+        display: table;
+        >div {
+            display: table-row;
+            >span {
+              display: table-cell;
+            }
+            &.head > span { font-weight: 700; }
+        }
+
+     }
+     .table.notices {
+        > div > span
+        {
+           width: 18%;
+           text-align: center;
+        }
+     }
+  }
+
+  section.banner
+  {
+     width: 100%;
+     background-color: #dcfdff;
+     display: flex;
+     align-items: center;
+     border: 1px solid #ccc;
+     margin-top: 35px;
+     margin-bottom: 45px;
+
+     position: relative;
+     opacity: 0;
+
+     span {
+       text-align: center;
+
+     }
+
+     .image { flex: 1; }
+     .line {
+        flex: 3;
+        h3 { color: #00d0e5 };
+
+     }
+     .button-wrap
+     {
+       flex: 2;
+       .button {
+          background: #ff0000;
+          padding: 8px;
+          font-weight: 700;
+          font-size: 20px;
+          margin: 8px;
+          color: #fff;
+          text-transform: uppercase;
+          //height: 45px;
+       }
+     }
+  }
+
+
+  /* In-view notice ( not on top, between the options ) - styled after WP notice */
+  .view-notice, .compression-notice
+  {
+
+    box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+    border: 4px solid #fff;
+
+    padding: 1px 12px;
+    p {
+      margin: 1em 0 !important;
+ 			//line-height: 12px;
+
+    }
+		h4 {
+			margin: 0;
+			font-size: 16px;
+		}
+    &.warning
+    {
+      border-left-color: #ffb900;
+    }
+  }
+	// lazy reposition.
+	.compression-notice
+	{
+		margin-top: -20px;
+	}
+
+  .view-notice-row
+  {
+    display: none;
+  }
+
+	// ####### SETTINGS TAB (GENERAL)
+	#tab-settings
+	{
+			.shortpixel-compression
+			{
+				  strong
+					{
+						 line-height: 22px;
+					}
+					.shortpixel-compression-options {
+	//		    	color: #999;
+						display: inline-block;
+				}
+				label {
+				    width:158px;
+				    margin: 0 -2px;
+				    background-color:$color-light;
+				    font-weight: bold;
+				    display: inline-block;
+						span {
+						    text-align:center;
+						    font-size: 16px;
+						    padding:8px 0px;
+						    display:block;
+						}
+						input {
+						    display: none;
+								&:checked + span {
+								    background-color:$color-darkest;
+								    color:#FFF;
+								}
+						}
+
+				}
+			}
+	} // tab-settings
+} // end of settings

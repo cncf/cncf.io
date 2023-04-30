@@ -1,0 +1,65 @@
+.shortpixel.shortpixel-notice {
+  min-height: 75px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 1px 12px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  border: 1px solid #c3c4c7;
+  margin: 15px 0;
+  border-left-width: 4px;
+  border-left-color: #72aee6;
+  position: relative;
+}
+.shortpixel.shortpixel-notice span {
+  vertical-align: middle;
+}
+.shortpixel.shortpixel-notice span.icon {
+  margin: 0 25px 0 0;
+  width: 80px;
+}
+.shortpixel.shortpixel-notice span.content {
+  padding: 8px 0;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.shortpixel.shortpixel-notice img {
+  display: inline-block;
+  margin: 0 25px 0 0;
+  max-height: 50px;
+}
+.shortpixel.shortpixel-notice .notice-dismiss {
+  margin-top: 6px;
+}
+.shortpixel.shortpixel-notice.notice-success {
+  border-left-color: #00a32a;
+}
+.shortpixel.shortpixel-notice.notice-warning {
+  border-left-color: #dba617;
+}
+.shortpixel.shortpixel-notice.notice-error {
+  border-left-color: #ff0000;
+}
+.shortpixel.shortpixel-notice.notice-info {
+  border-left-color: #72aee6;
+}
+
+/* In-view notice ( not on top, between the options ) - styled after WP notice */
+.view-notice {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  border: 4px solid #fff;
+  padding: 1px 12px;
+}
+.view-notice p {
+  margin: 1em 0 !important;
+}
+.view-notice.warning {
+  border-left-color: #ffb900;
+}
+
+.view-notice-row {
+  display: none;
+}
+
+/*# sourceMappingURL=notices.css.map */

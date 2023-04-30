@@ -1,0 +1,18 @@
+{
+    "name": "shortpixel/replacer",
+    "description": "Content Replacer",
+    "version": 1.1,
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bas",
+            "email": "bas@weblogmechanic.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": { "ShortPixel\\Replacer\\" : "src" }
+    }
+}

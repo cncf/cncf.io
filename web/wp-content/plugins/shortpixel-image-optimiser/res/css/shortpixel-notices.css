@@ -1,0 +1,98 @@
+.shortpixel.shortpixel-notice {
+  /*min-height: 75px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 1px 12px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+  border: 1px solid #c3c4c7;
+  margin: 15px 0;
+  border-left-width: 4px;
+  border-left-color: #72aee6;
+  position: relative; */
+  /*span
+   {
+     vertical-align: middle;
+     &.icon {
+       //float: left;
+       margin: 0 25px 0 0;
+  	 width: 80px;
+      // display: inline-block;
+     }
+   &.content
+   {
+  //	 width: 50%;
+  	 padding: 8px 0;
+  	 word-wrap: break-word;
+  	 overflow: hidden;
+   }
+   } */
+}
+.shortpixel.shortpixel-notice .details-wrapper {
+  margin: 8px 0 4px 0;
+}
+.shortpixel.shortpixel-notice .details-wrapper .detail-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+}
+.shortpixel.shortpixel-notice .details-wrapper .detail-content-wrapper .detail-content {
+  opacity: 0;
+  transition: opacity 750ms linear;
+}
+.shortpixel.shortpixel-notice .details-wrapper label {
+  opacity: 100;
+  transition: opacity 250ms ease-in;
+}
+.shortpixel.shortpixel-notice .details-wrapper label span {
+  cursor: pointer;
+  font-size: 14px;
+  color: #0085ba;
+  font-weight: 500;
+}
+.shortpixel.shortpixel-notice .details-wrapper input[name=detailhider] {
+  display: none;
+}
+.shortpixel.shortpixel-notice .details-wrapper input[name=detailhider]:checked ~ .detail-content-wrapper {
+  max-height: none;
+}
+.shortpixel.shortpixel-notice .details-wrapper input[name=detailhider]:checked ~ .detail-content-wrapper .detail-content {
+  opacity: 100;
+}
+.shortpixel.shortpixel-notice .details-wrapper input[name=detailhider]:checked ~ .show-details {
+  opacity: 0;
+  transition: opacity 50ms ease-out;
+}
+.shortpixel.shortpixel-notice .details-wrapper input[name=detailhider]:not(:checked) ~ .hide-details {
+  opacity: 0;
+  transition: opacity 50ms ease-out;
+}
+
+.shortpixel.shortpixel-notice .sp-conflict-plugins {
+  display: table;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+.shortpixel.shortpixel-notice .sp-conflict-plugins li {
+  display: table-row;
+}
+.shortpixel.shortpixel-notice .sp-conflict-plugins li > * {
+  display: table-cell;
+}
+.shortpixel.shortpixel-notice .content .button-primary {
+  background-color: #0f6a7d;
+  border-color: #0f6a7d;
+}
+.shortpixel.shortpixel-notice .content .button-primary:hover {
+  background-color: #1cbecb;
+}
+.shortpixel.shortpixel-notice li.sp-conflict-plugins-list {
+  line-height: 28px;
+  list-style: disc;
+  margin-left: 80px;
+}
+.shortpixel.shortpixel-notice li.sp-conflict-plugins-list a.button {
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=shortpixel-notices.css.map */

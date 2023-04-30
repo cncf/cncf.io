@@ -1,0 +1,84 @@
+@import 'elements/animation';
+
+
+@import 'view/edit-media';
+@import 'view/other-media';
+@import 'view/list-item';
+@import 'view/modal';
+@import 'view/debug';
+
+
+// General Styles ( mostly from style.css )
+
+// Used in modals around
+.shortpixel-hide {
+    display: none !important;
+}
+
+// Reserve some space for the processing text on bottom.
+.button-primary.optimize
+{
+	 margin-bottom: 16px;
+}
+
+.switch_button
+{
+//	margin-left: -5px;
+	line-height: 12px;
+	margin: 2px -5px 10px -5px ;
+	display: inline-block;
+
+	label{
+		padding: 8px 5px; // this padding to make clicking more flexible ( bigger hitbox )
+
+		&:focus {
+			outline: none;
+		}
+	}
+	input { display: none;
+		&:checked ~ .the_switch { background: #7cdce4; } // background of bar when active
+		&:checked ~ .the_switch:after {
+			left: 20px;
+			background: #1caecb; // color of circle when active
+		}
+		&:disabled ~ .the_switch{
+			background: #d5d5d5;
+			pointer-events: none;
+		}
+		&:disabled ~ .the_switch:after { background: #bcbdbc; }
+	}
+	.the_switch{
+		margin: 8px 15px 8px 0;
+		position: relative;
+		display: inline-block;
+		height: 10px;
+		width: 40px;
+		background: #cccccc; // color of bar when not active
+		border-radius: 100px;
+		cursor: pointer;
+		box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+
+		&:after {
+			position: absolute;
+			left: -2px;
+			top: -5px;
+			display: block;
+			width: 20px;
+			height: 20px;
+			border-radius: 100px;
+			background: #aaa;
+			box-shadow: 0px 1px 2px rgba(0,0,0,0.31);
+			content: '';
+
+			// bouncy effect
+			-webkit-transition : left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.5s ease, margin 0.5s ease !important;
+-o-transition      : left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.5s ease, margin 0.5s ease !important;
+transition         : left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.5s ease, margin 0.5s ease !important;
+		}
+		&:active:after { transform: scale(0.9, 0.85); }
+		&:focus {
+			outline: none;
+		}
+	}
+
+}

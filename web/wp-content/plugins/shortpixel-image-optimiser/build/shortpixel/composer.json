@@ -1,0 +1,1 @@
+{"name":"ShortPixel\/shortpixelmodules","description":"ShortPixel submodules","type":"function","autoload":{"psr-4":{"ShortPixel\\ShortPixelLogger":"log\/src","ShortPixel\\Notices":"notices\/src","ShortPixel\\Replacer":"replacer\/src","ShortPixel\\ShortQ":"shortq\/src"}}}

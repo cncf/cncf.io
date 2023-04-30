@@ -1,0 +1,83 @@
+
+.shortpixel.shortpixel-notice
+{
+
+	min-height: 75px;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	background: #fff;
+	padding: 1px 12px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+	border: 1px solid #c3c4c7;
+	margin: 15px 0;
+	border-left-width: 4px;
+	border-left-color: #72aee6;
+	position: relative;
+
+	span
+	{
+		vertical-align: middle;
+		&.icon {
+			margin: 0 25px 0 0;
+			width: 80px;
+		}
+		&.content
+		{
+			padding: 8px 0;
+			word-wrap: break-word;
+			overflow: hidden;
+			//display: flex; // magically fixes verticality issues
+		}
+	}
+
+   img
+   {
+     display:inline-block;
+     margin: 0 25px 0 0;
+     max-height: 50px;
+   }
+   .notice-dismiss
+   {
+     margin-top: 6px;
+   }
+
+	 &.notice-success
+	 {
+		 border-left-color: #00a32a;
+	 }
+	 &.notice-warning
+	 {
+		 border-left-color: #dba617;
+	 }
+	 &.notice-error
+	 {
+		 border-left-color: #ff0000;
+	 }
+	 &.notice-info
+	 {
+		  border-left-color: #72aee6;
+	 }
+}
+
+/* In-view notice ( not on top, between the options ) - styled after WP notice */
+.view-notice
+{
+
+  box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+  border: 4px solid #fff;
+
+  padding: 1px 12px;
+  p {
+    margin: 1em 0 !important;
+  }
+  &.warning
+  {
+    border-left-color: #ffb900;
+  }
+}
+
+.view-notice-row
+{
+  display: none;
+}

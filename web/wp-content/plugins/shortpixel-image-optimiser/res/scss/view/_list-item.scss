@@ -1,0 +1,117 @@
+
+.sp-column-info
+{
+  position: relative;
+
+  .thumbnails.optimized
+  {
+    position: relative;
+
+    .totals {
+
+    }
+    .thumb-wrapper
+    {
+         background: #fff;
+         padding: 8px;
+         border: 1px solid #ccc;
+         max-width: 360px;
+         position: absolute;
+         display: none;
+         z-index: 10;
+         transition: all 1s;
+				 box-sizing: border-box;
+         .thumb
+         {
+             position: relative;
+             width: 100%;
+
+						  .thumb-name {
+									overflow: hidden;
+									max-width: 200px;
+									white-space: nowrap;
+									display: inline-block;
+							}
+             .optimize-bar {
+                  float: right;
+                  margin-left: 8px;
+                  border-radius: 5px;
+                  overflow: hidden;
+                  height: 10px;
+                  margin-top: 4px;
+
+                   .point
+                   {
+                      width: 10px;
+                      height: 10px;
+
+                      display: inline-block;
+                      background: #d6d8d9;
+
+                      &.checked {
+                        background: #1abdca;
+                      }
+                   }
+              }
+							.cutoff {
+								 float:right;
+							}
+         }
+      } // wrapper
+      &:hover {
+        .thumb-wrapper{
+            display: block;
+        }
+      }
+
+  }
+  .sp-column-actions
+  {
+     position: absolute;
+     right: 10px;
+     top: 0;
+  }
+  .thumbs-todo
+  {
+     position: relative;
+     span {
+         display: none;
+        // border: 1px solid #ccc;
+
+      }
+     h4:hover ~ span { display: block; }
+  }
+
+  h4 { margin: 0; }
+  .shortpixel-image-error {
+      display: block;
+      border: 1px solid #ff0000;
+      padding: 12px;
+      margin: 14px 0;
+      font-size: 14px;
+      font-weight: 700;
+
+      .shortpixel-error-reset
+      {
+         font-weight: 500;
+         font-size: 12px;
+         display: block;
+      }
+  } //error
+} // sp-column-info
+
+// The whole column
+.column-wp-shortPixel
+{
+
+  .message
+  {
+     font-size: 14px;
+     font-weight: 700;
+		 margin: 12px 0;
+		 img {
+			  @include loadspinner;
+				vertical-align: top;
+		 }
+  }
+}

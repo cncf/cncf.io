@@ -1,0 +1,48 @@
+
+
+.cf_switch
+{
+
+  label {
+    width: 100%;
+  	margin: 0 -2px;
+  	background-color: #e2faff;
+  //	font-weight: 700;
+  	display: inline-block;
+  //  font-size: 13px;
+		//cursor: default;
+
+    span
+    {
+//text-align:center;
+    //  font-size: 18px;
+      padding:8px 0px 8px 15px;
+      display:block;
+      //font-size: 13px;
+
+    }
+    input {
+      display: none;
+    }
+    input:checked + span
+    {
+      background-color:#0085ba;
+      color:#F7F7F7;
+    }
+  }
+
+	&.global-hidden
+	{
+		label {
+			 cursor: default;
+		}
+	  input:checked + span
+		{
+			 background-color: #fff;
+			 color: #000;
+			 padding-left: 0;
+		}
+
+	}
+
+}

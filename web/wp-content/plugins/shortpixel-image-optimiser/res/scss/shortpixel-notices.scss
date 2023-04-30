@@ -1,0 +1,118 @@
+@import 'elements/colors';
+
+
+.shortpixel.shortpixel-notice
+{
+
+   //padding: 18px;
+   /*min-height: 75px;
+   padding: 8px;
+   display: flex;
+   align-items: center;
+   background: #fff;
+   padding: 1px 12px;
+   box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+   border: 1px solid #c3c4c7;
+   margin: 15px 0;
+   border-left-width: 4px;
+   border-left-color: #72aee6;
+   position: relative; */
+
+   /*span
+   {
+     vertical-align: middle;
+     &.icon {
+       //float: left;
+       margin: 0 25px 0 0;
+			 width: 80px;
+      // display: inline-block;
+     }
+		 &.content
+		 {
+		//	 width: 50%;
+			 padding: 8px 0;
+			 word-wrap: break-word;
+			 overflow: hidden;
+		 }
+   } */
+   .details-wrapper // open close mechanic.
+   {
+      margin: 8px 0 4px 0;
+      .detail-content-wrapper
+      {
+        max-height: 0;
+        overflow: hidden;
+
+        .detail-content {
+          opacity: 0;
+          transition: opacity 750ms linear;
+        }
+      }
+      label
+      {
+        opacity: 100;
+        transition: opacity 250ms ease-in;
+        span
+        {
+          cursor: pointer;
+          font-size: 14px;
+          color: #0085ba;
+          font-weight: 500;
+        }
+      }
+      input[name="detailhider"] { display: none; } // hidden checkbox
+      input[name="detailhider"]:checked ~ .detail-content-wrapper
+      {
+          max-height: none;
+      }
+      input[name="detailhider"]:checked ~ .detail-content-wrapper .detail-content
+      {
+          opacity: 100;
+
+      }
+      input[name="detailhider"]:checked ~ .show-details
+      {
+         opacity: 0;
+        transition: opacity 50ms ease-out;
+      }
+      input[name='detailhider']:not(:checked) ~ .hide-details
+      {
+         opacity: 0;
+         transition: opacity 50ms ease-out;
+      }
+   }
+}
+
+// compat list if.
+.shortpixel.shortpixel-notice
+{
+  .sp-conflict-plugins {
+      display: table;
+      border-spacing: 10px;
+      border-collapse: separate;
+      li {
+          display: table-row;
+      }
+      li > * {
+          display: table-cell;
+      }
+
+  }
+
+  .content .button-primary
+  { // gets overwritten in NGG.
+    background-color: $color-darkest;
+		border-color: $color-darkest;
+
+		&:hover { background-color: $color-dark; }
+  }
+
+  li.sp-conflict-plugins-list {
+      line-height: 28px;
+      list-style: disc;
+      margin-left: 80px;
+  }
+  li.sp-conflict-plugins-list a.button {
+      margin-left: 10px;
+  }
+}

@@ -1,0 +1,37 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  ##### TRY FIRST the file appended with .webp (ex. test.jpg.webp) #####
+  # Is the browser Chrome?
+  RewriteCond %{HTTP_USER_AGENT} Chrome [OR]
+  # OR Is request from Page Speed
+  RewriteCond %{HTTP_USER_AGENT} "Google Page Speed Insights" [OR]
+  # OR does this browser explicitly support webp
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  # AND is the request a jpg, png or gif?
+  RewriteCond %{REQUEST_URI} ^(.+)\.(?:jpe?g|png|gif)$
+  # AND does a .ext.webp image exist?
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.webp -f
+  # THEN send the webp image and set the env var webp
+  RewriteRule ^(.+)$ $1.webp [NC,T=image/webp,E=webp,L]
+
+  ##### IF NOT, try the file with replaced extension (test.webp) #####
+  RewriteCond %{HTTP_USER_AGENT} Chrome [OR]
+  RewriteCond %{HTTP_USER_AGENT} "Google Page Speed Insights" [OR]
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  # AND is the request a jpg, png or gif? (also grab the basepath %1 to match in the next rule)
+  RewriteCond %{REQUEST_URI} ^(.+)\.(?:jpe?g|png|gif)$
+  # AND does a .webp image exist?
+  RewriteCond %{DOCUMENT_ROOT}/%1.webp -f
+  # THEN send the webp image and set the env var webp
+  RewriteRule (.+)\.(?:jpe?g|png|gif)$ $1.webp [NC,T=image/webp,E=webp,L]
+
+</IfModule>
+<IfModule mod_headers.c>
+  # If REDIRECT_webp env var exists, append Accept to the Vary header
+  Header append Vary Accept env=REDIRECT_webp
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>

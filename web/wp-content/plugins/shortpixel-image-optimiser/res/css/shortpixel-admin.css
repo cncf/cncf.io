@@ -1,0 +1,474 @@
+.view-edit-media a.debugModal {
+  margin: 20px 0;
+  display: inline-block;
+}
+.view-edit-media .sp-column-stats {
+  position: relative;
+}
+.view-edit-media .sp-column-stats .sp-column-actions {
+  margin-right: 5px;
+  margin-top: 16px;
+}
+.view-edit-media .sp-column-stats .edit-media-stats li {
+  margin: 0;
+  line-height: 20px;
+}
+.view-edit-media .main-actions {
+  display: inline-block;
+  width: 100%;
+}
+.view-edit-media .main-actions .button.button-smaller {
+  padding: 6px 15px;
+  height: auto;
+  float: none;
+}
+
+.spio-message img {
+  animation: cssload-spin 5000ms infinite linear;
+  -o-animation: cssload-spin 5000ms infinite linear;
+  -ms-animation: cssload-spin 5000ms infinite linear;
+  -webkit-animation: cssload-spin 5000ms infinite linear;
+  -moz-animation: cssload-spin 5000ms infinite linear;
+  vertical-align: top;
+}
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loading-spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes loading-spin {
+  100% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loading-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes loading-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.shortpixel-modal-active .debug-modal.debugInfo ul li strong {
+  display: inline-block;
+  min-width: 200px;
+}
+.shortpixel-modal-active .debug-modal.debugInfo ul li img {
+  max-height: 150px;
+}
+.shortpixel-modal-active .debug-modal.debugInfo .green {
+  color: green;
+}
+.shortpixel-modal-active .debug-modal.debugInfo .red {
+  color: red;
+}
+
+.shortpixel-other-media .sp-column-info .sp-column-actions {
+  max-width: 140px;
+  float: right;
+  text-align: right;
+}
+.shortpixel-other-media .message {
+  font-weight: 700;
+  margin: 8px 0;
+}
+.shortpixel-other-media .message img {
+  animation: cssload-spin 5000ms infinite linear;
+  -o-animation: cssload-spin 5000ms infinite linear;
+  -ms-animation: cssload-spin 5000ms infinite linear;
+  -webkit-animation: cssload-spin 5000ms infinite linear;
+  -moz-animation: cssload-spin 5000ms infinite linear;
+  vertical-align: top;
+}
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loading-spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes loading-spin {
+  100% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loading-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes loading-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.sp-column-info {
+  position: relative;
+}
+.sp-column-info .thumbnails.optimized {
+  position: relative;
+}
+.sp-column-info .thumbnails.optimized .thumb-wrapper {
+  background: #fff;
+  padding: 8px;
+  border: 1px solid #ccc;
+  max-width: 360px;
+  position: absolute;
+  display: none;
+  z-index: 10;
+  transition: all 1s;
+  box-sizing: border-box;
+}
+.sp-column-info .thumbnails.optimized .thumb-wrapper .thumb {
+  position: relative;
+  width: 100%;
+}
+.sp-column-info .thumbnails.optimized .thumb-wrapper .thumb .thumb-name {
+  overflow: hidden;
+  max-width: 200px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.sp-column-info .thumbnails.optimized .thumb-wrapper .thumb .optimize-bar {
+  float: right;
+  margin-left: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 4px;
+}
+.sp-column-info .thumbnails.optimized .thumb-wrapper .thumb .optimize-bar .point {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: #d6d8d9;
+}
+.sp-column-info .thumbnails.optimized .thumb-wrapper .thumb .optimize-bar .point.checked {
+  background: #1abdca;
+}
+.sp-column-info .thumbnails.optimized .thumb-wrapper .thumb .cutoff {
+  float: right;
+}
+.sp-column-info .thumbnails.optimized:hover .thumb-wrapper {
+  display: block;
+}
+.sp-column-info .sp-column-actions {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.sp-column-info .thumbs-todo {
+  position: relative;
+}
+.sp-column-info .thumbs-todo span {
+  display: none;
+}
+.sp-column-info .thumbs-todo h4:hover ~ span {
+  display: block;
+}
+.sp-column-info h4 {
+  margin: 0;
+}
+.sp-column-info .shortpixel-image-error {
+  display: block;
+  border: 1px solid #ff0000;
+  padding: 12px;
+  margin: 14px 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.sp-column-info .shortpixel-image-error .shortpixel-error-reset {
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+}
+
+.column-wp-shortPixel .message {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 12px 0;
+}
+.column-wp-shortPixel .message img {
+  animation: cssload-spin 5000ms infinite linear;
+  -o-animation: cssload-spin 5000ms infinite linear;
+  -ms-animation: cssload-spin 5000ms infinite linear;
+  -webkit-animation: cssload-spin 5000ms infinite linear;
+  -moz-animation: cssload-spin 5000ms infinite linear;
+  vertical-align: top;
+}
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loading-spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes loading-spin {
+  100% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loading-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes loading-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+div.sp-modal-shade {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 10000;
+  /* Sit on top - blame WP-admin for the z-index battle . */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background: black;
+  /* Fallback color */
+  background: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  opacity: 0.4;
+}
+
+div.shortpixel-modal {
+  background-color: #fefefe;
+  /*margin: 8% auto;  15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  /* Could be more or less, depending on screen size */
+  min-width: 300px;
+  /* Could be more or less, depending on screen size */
+  z-index: 100001;
+  /* Proper z-index */
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  max-height: 90%;
+  overflow-y: auto;
+}
+div.shortpixel-modal .sp-close-button, div.shortpixel-modal button.sp-close-upgrade-button {
+  float: right;
+  margin-top: 0px;
+  background: transparent !important;
+  border: none;
+  font-size: 22px;
+  line-height: 10px;
+  cursor: pointer;
+}
+div.shortpixel-modal .sptw-modal-spinner {
+  background-image: url("../img/spinner2.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.sp-modal-title {
+  font-size: 22px;
+}
+
+div.sp-modal-body {
+  margin-top: 10px;
+}
+
+body.debug-model-active {
+  overflow: hidden;
+}
+
+.debugInfo .content.wrapper {
+  display: none;
+}
+.debugInfo .content.wrapper li strong {
+  margin-right: 15px;
+}
+.debugInfo .content.wrapper ul {
+  margin: 25px 0;
+}
+
+.debug-modal {
+  display: none;
+  width: 75%;
+  max-width: 90%;
+  height: auto;
+  max-height: 90vh;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: -3px -3px 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 20%;
+  top: 10%;
+  z-index: 10020;
+  display: none;
+  background: #ffffff;
+}
+.debug-modal.success {
+  border: 4px solid green;
+}
+.debug-modal.error {
+  border: 4px solid red;
+}
+.debug-modal.error h3 {
+  background-color: #ff0000;
+}
+.debug-modal .content-area {
+  background-color: #fff;
+}
+.debug-modal .modal_header {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 5px;
+  cursor: move;
+}
+.debug-modal .modal_header h3 {
+  margin: 0;
+  color: #444;
+  font-weight: 400;
+  padding: 0;
+  text-align: center;
+  text-shadow: none;
+  font-size: 16px;
+}
+.debug-modal .modal_header .modal_close {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: #444;
+}
+.debug-modal .modal_header .modal_close:hover {
+  cursor: pointer;
+  color: #111;
+}
+.debug-modal .content, .debug-modal .modal_content {
+  padding: 5px 15px 10px;
+  overflow-y: auto;
+}
+
+.debugModal_overlay {
+  background: #000;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  position: fixed;
+  opacity: 0.7;
+  z-index: 10000;
+  display: none;
+}
+
+.shortpixel-hide {
+  display: none !important;
+}
+
+.button-primary.optimize {
+  margin-bottom: 16px;
+}
+
+.switch_button {
+  line-height: 12px;
+  margin: 2px -5px 10px -5px;
+  display: inline-block;
+}
+.switch_button label {
+  padding: 8px 5px;
+}
+.switch_button label:focus {
+  outline: none;
+}
+.switch_button input {
+  display: none;
+}
+.switch_button input:checked ~ .the_switch {
+  background: #7cdce4;
+}
+.switch_button input:checked ~ .the_switch:after {
+  left: 20px;
+  background: #1caecb;
+}
+.switch_button input:disabled ~ .the_switch {
+  background: #d5d5d5;
+  pointer-events: none;
+}
+.switch_button input:disabled ~ .the_switch:after {
+  background: #bcbdbc;
+}
+.switch_button .the_switch {
+  margin: 8px 15px 8px 0;
+  position: relative;
+  display: inline-block;
+  height: 10px;
+  width: 40px;
+  background: #cccccc;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+}
+.switch_button .the_switch:after {
+  position: absolute;
+  left: -2px;
+  top: -5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  background: #aaa;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.31);
+  content: "";
+  -webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.5s ease, margin 0.5s ease !important;
+  -o-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.5s ease, margin 0.5s ease !important;
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.5s ease, margin 0.5s ease !important;
+}
+.switch_button .the_switch:active:after {
+  transform: scale(0.9, 0.85);
+}
+.switch_button .the_switch:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=shortpixel-admin.css.map */

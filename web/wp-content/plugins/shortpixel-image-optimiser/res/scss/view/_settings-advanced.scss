@@ -1,0 +1,76 @@
+/* Specific styles for advanced settings tab */
+
+#shortpixel-settings-tabs  #tab-adv-settings
+{
+
+  .addCustomFolder
+  {
+    margin: 10px 0;
+    .add-folder-text
+    {
+      margin-left: 5px;
+    }
+    input[type="text"]
+    {
+      width: 50em;
+      max-width: 70%;
+    }
+    input[name="saveAdv"]
+    {
+      margin-left: 8px;
+    }
+  }
+
+  // additional media table
+  .shortpixel-folders-list
+  {
+      display: table;
+      border-collapse: separate;
+
+      div.heading
+       {
+        width: auto;
+        display: table-header-group;
+        padding: 12px 16px 12px 12px;
+        span
+        {
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
+      div
+      {
+
+        display: table-row;
+        &> span
+        {
+          display: table-cell;
+          padding: 5px 10px;
+          vertical-align: middle;
+          background-color: #eee;
+          &.action { background-color: unset; }
+        }
+
+      }
+
+      .refresh-folder { text-decoration: none; }
+      .info-icon { cursor: pointer; }
+  }
+
+	.deliverWebpTypes, .deliverWebpAlteringTypes {
+    margin: 16px 0 16px 16px;
+}
+
+.avifNoticeDisabled
+{
+	 padding: 12px 12px;
+	 line-height: 26px;
+	 > .spio-inline-help {
+		  display: inline;
+			float: none;
+	 }
+}
+
+
+
+}

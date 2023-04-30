@@ -1,0 +1,51 @@
+div.sp-modal-shade {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top - blame WP-admin for the z-index battle . */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background: rgb(0,0,0); /* Fallback color */
+    background: rgba(0,0,0,0.4); /* Black w/ opacity */
+    opacity: 0.4; // doesn't work without this for some reason?
+}
+div.shortpixel-modal {
+    background-color: #fefefe;
+    /*margin: 8% auto;  15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+    min-width: 300px; /* Could be more or less, depending on screen size */
+    z-index: 100001; /* Proper z-index */
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    max-height: 90%;
+    overflow-y: auto;
+    .sp-close-button, button.sp-close-upgrade-button
+    {
+      float: right;
+      margin-top: 0px;
+      background: transparent !important;
+      border: none;
+      font-size: 22px;
+      line-height: 10px;
+      cursor: pointer;
+
+    }
+    .sptw-modal-spinner {
+        background-image: url("../img/spinner2.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+}
+
+div.sp-modal-title {
+    font-size: 22px;
+}
+div.sp-modal-body {
+    margin-top: 10px;
+}

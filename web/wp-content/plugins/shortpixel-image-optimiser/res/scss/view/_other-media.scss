@@ -1,0 +1,22 @@
+.shortpixel-other-media
+{
+	.sp-column-info
+	{
+			.sp-column-actions
+			{
+		    max-width: 140px;
+		    float: right;
+		    text-align: right;
+			}
+	}
+
+	.message
+	{
+		font-weight: 700;
+		margin: 8px 0;
+		img {
+			 @include loadspinner;
+			 vertical-align: top;
+		}
+	}
+}
