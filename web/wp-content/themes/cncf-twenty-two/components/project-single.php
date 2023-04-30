@@ -347,44 +347,5 @@ all news</a></p>
 endif;
 		?>
 
-		<?php
-		// TWITTER.
-		// Check if Twitter is present, parses username, checks if not CNCF account.
-		if ( $twitter && ( preg_match( '/^https?:\/\/(www\.)?twitter\.com\/(#!\/)?(?<name>[^\/]+)(\/\w+)*$/', $twitter, $matches ) ) && ( 'CloudNativeFdn' !== $matches['name'] ) ) :
-
-			// Only continue if some tweets are returned.
-			$out = do_shortcode( '[custom-twitter-feeds num=8 layout=masonry includeretweets=false showheader=true showbutton=false masonrycols=4 masonrymobilecols=1 screenname="' . esc_html( $matches['name'] ) . '"]' );
-			if ( ! strpos( $out, 'Unable to load Tweets' ) ) :
-				?>
-		<div class="wp-block-group is-style-no-padding is-style-see-all">
-			<div class="wp-block-columns are-vertically-aligned-bottom">
-				<div class="wp-block-column is-vertically-aligned-bottom"
-					style="flex-basis:80%">
-					<h3 class="is-style-section-heading">Latest tweets from
-						<?php the_title(); ?></h3>
-				</div>
-				<div class="wp-block-column is-vertically-aligned-bottom"
-					style="flex-basis:20%">
-					<p
-						class="has-text-align-right is-style-link-cta"><a href="<?php echo esc_url( $twitter ); ?>">See all tweets</a></p>
-				</div>
-			</div>
-			<div style="height:40px" aria-hidden="true"
-				class="wp-block-spacer is-style-20-40"></div>
-
-				<?php
-		echo $out; //phpcs:ignore
-				?>
-			<div style="height:40px" aria-hidden="true"
-				class="wp-block-spacer"></div>
-		</div>
-		<div style="height:100px" aria-hidden="true"
-				class="wp-block-spacer"></div>
-				<?php
-
-		endif;
-endif;
-		?>
-
 	</article>
 </main>
