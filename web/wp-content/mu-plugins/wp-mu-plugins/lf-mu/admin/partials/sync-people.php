@@ -29,8 +29,13 @@ function geocode_location( $id ) {
 	}
 
 	// geocode.
-	$api_key = 'AIzaSyCPZAE7CTYrY9EaDuwRBJwLGadVwPEeWeM';
-	$service_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode( $new_location ) . '&key=' . $api_key;
+	$google_maps_api_key = $options['google_maps_api_key'] ?? '';
+
+	if ( ! $google_maps_api_key ) {
+		return;
+	}
+
+	$service_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode( $new_location ) . '&key=' . $google_maps_api_key;
 
 	$curl = curl_init($service_url);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -48,6 +53,7 @@ function geocode_location( $id ) {
 		update_post_meta( $id, 'lf_person_location_geocoded', $new_location );
 	}
 }
+
 
 $people_url = 'https://raw.githubusercontent.com/cncf/people/main/people.json';
 $github_images_url = 'https://raw.githubusercontent.com/cncf/people/main/images/';
