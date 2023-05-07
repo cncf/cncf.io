@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Geocodes a person's location.
+ * Geocodes a person's location if the location has changed.
  *
  * @param int $id Person's ID.
  */
