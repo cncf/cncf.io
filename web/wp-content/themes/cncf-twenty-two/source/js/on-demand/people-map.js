@@ -15,26 +15,35 @@
 		let map;
 
 		async function initMap() {
-		// The location of Uluru
-		const position = { lat: -25.344, lng: 131.031 };
-		// Request needed libraries.
-		//@ts-ignore
-		const { Map } = await google.maps.importLibrary("maps");
-		const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+			// Request needed libraries.
+			//@ts-ignore
+			const { Map } = await google.maps.importLibrary("maps");
+			const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+			const infowindow = new google.maps.InfoWindow();
 
-		// The map, centered at Uluru
-		map = new Map(document.getElementById("map"), {
-			zoom: 2,
-			center: position,
-			mapId: "DEMO_MAP_ID",
-		});
+			map = new Map(document.getElementById("map"), {
+				zoom: 2,
+				center: new google.maps.LatLng(20.312269132769966, 6.947682816594525),
+				mapId: "DEMO_MAP_ID",
+			});
+			
+			const peopleObj = JSON.parse( people );
 
-		// The marker, positioned at Uluru
-		const marker = new AdvancedMarkerView({
-			map: map,
-			position: position,
-			title: "Uluru",
-		});
+			for (let i = 0; i < peopleObj.length; i++) {
+				const latLng = new google.maps.LatLng(peopleObj[i]['lat'], peopleObj[i]['lng']);
+				const marker = new google.maps.Marker({
+				  position: latLng,
+				  map: map,
+				});
+				marker.addListener("click", () => {
+					infowindow.close();
+					infowindow.setContent( peopleObj[i]['name'] );
+					infowindow.open({
+					  anchor: marker,
+					  map,
+					});
+				});
+			}
 		}
 
 		initMap();
