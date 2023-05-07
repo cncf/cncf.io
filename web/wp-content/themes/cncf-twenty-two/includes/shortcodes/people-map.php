@@ -41,7 +41,7 @@ function add_cncf_people_map_shortcode() {
 	);
 
 	global $post;
-	$people = Array();
+	$people = array();
 	$query = new WP_Query( $args );
 	while ( $query->have_posts() ) {
 		$query->the_post();
@@ -49,7 +49,7 @@ function add_cncf_people_map_shortcode() {
 		$lng = get_post_meta( $post->ID, 'lf_person_location_lng' );
 
 		if ( $lat && $lng ) {
-			$people[] = Array(
+			$people[] = array(
 				'lat' => $lat,
 				'lng' => $lng,
 				'name' => get_the_title(),
