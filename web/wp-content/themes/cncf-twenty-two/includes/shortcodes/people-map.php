@@ -22,6 +22,14 @@ function add_cncf_people_map_shortcode() {
 		true
 	);
 
+	$options = get_option( 'lf-mu' );
+	$google_maps_api_public_key = $options['google_maps_api_public_key'] ?? '';
+
+	if ( ! $google_maps_api_public_key ) {
+		echo '!!!';
+		return;
+	}
+
 	ob_start();
 	?>
 <section>
@@ -29,7 +37,7 @@ function add_cncf_people_map_shortcode() {
 </section>
 <!-- prettier-ignore -->
 <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-({key: "AIzaSyAKRvB7aiHpqc1twkN-TDNUcRmG4AnmL1o", v: "beta"});</script>
+({key: "<?php echo $google_maps_api_public_key ?>", v: "beta"});</script>
 
 	<?php
 	$args = array(

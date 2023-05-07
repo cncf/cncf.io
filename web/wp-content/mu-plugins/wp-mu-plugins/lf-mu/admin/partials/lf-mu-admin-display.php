@@ -92,6 +92,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$google_maps_api_key = ( isset( $options['google_maps_api_key'] ) && ! empty( $options['google_maps_api_key'] ) ) ? esc_attr( $options['google_maps_api_key'] ) : '';
 
+		$google_maps_api_public_key = ( isset( $options['google_maps_api_public_key'] ) && ! empty( $options['google_maps_api_public_key'] ) ) ? esc_attr( $options['google_maps_api_public_key'] ) : '';
+
 		$community_api_key = ( isset( $options['community_api_key'] ) && ! empty( $options['community_api_key'] ) ) ? esc_attr( $options['community_api_key'] ) : '';
 
 		$gtm_id = ( isset( $options['gtm_id'] ) && ! empty( $options['gtm_id'] ) ) ? esc_attr( $options['gtm_id'] ) : '';
@@ -701,13 +703,24 @@ if ( ! defined( 'WPINC' ) ) {
 				</tr>
 				<tr>
 					<th scope="row"><label for="google_maps_api_key">Google Maps API
-							key</label>
+							key for geocoding</label>
 					</th>
 					<td>
 						<input type="text" class="google_maps_api_key regular-text"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-google_maps_api_key"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[google_maps_api_key]"
 							value="<?php echo esc_attr( $google_maps_api_key ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="google_maps_api_public_key">Google Maps API
+							key for public map js</label>
+					</th>
+					<td>
+						<input type="text" class="google_maps_api_public_key regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-google_maps_api_public_key"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[google_maps_api_public_key]"
+							value="<?php echo esc_attr( $google_maps_api_public_key ); ?>" />
 					</td>
 				</tr>
 				<tr>
