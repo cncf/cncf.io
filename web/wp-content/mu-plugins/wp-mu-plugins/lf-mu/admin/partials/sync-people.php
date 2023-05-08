@@ -25,7 +25,7 @@ function geocode_location( $id ) {
 
 	if ( $new_location === $geocoded_location ) {
 		// no need to geocode here as location has not changed.
-		return;
+//		return;
 	}
 
 	$options             = get_option( 'lf-mu' );
