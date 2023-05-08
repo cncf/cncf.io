@@ -26,7 +26,6 @@ function add_cncf_people_map_shortcode() {
 	$google_maps_api_public_key = $options['google_maps_api_public_key'] ?? '';
 
 	if ( ! $google_maps_api_public_key ) {
-		echo '!!!';
 		return;
 	}
 
