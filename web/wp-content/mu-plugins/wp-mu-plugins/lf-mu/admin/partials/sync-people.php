@@ -20,7 +20,6 @@ if ( ! defined( 'WPINC' ) ) {
  * @param int $id Person's ID.
  */
 function geocode_location( $id ) {
-	echo '1';
 	$new_location      = get_post_meta( $id, 'lf_person_location', true );
 	$geocoded_location = get_post_meta( $id, 'lf_person_location_geocoded', true );
 
@@ -28,7 +27,6 @@ function geocode_location( $id ) {
 		// no need to geocode here as location has not changed.
 		return;
 	}
-	echo '2';
 
 	$options             = get_option( 'lf-mu' );
 	$google_maps_api_key = $options['google_maps_api_key'] ?? '';
@@ -38,7 +36,6 @@ function geocode_location( $id ) {
 	}
 
 	$service_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode( $new_location ) . '&key=' . $google_maps_api_key;
-	echo '3';
 
 	$curl = curl_init( $service_url );
 	curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
@@ -50,15 +47,12 @@ function geocode_location( $id ) {
 	}
 	curl_close( $curl );
 	$decoded = json_decode( $curl_response );
+
 	if ( isset( $decoded->results ) ) {
 		update_post_meta( $id, 'lf_person_location_lat', $decoded->results[0]->geometry->location->lat );
 		update_post_meta( $id, 'lf_person_location_lng', $decoded->results[0]->geometry->location->lng );
 		update_post_meta( $id, 'lf_person_location_geocoded', $new_location );
-		echo '4';
-
 	}
-	echo '5';
-
 }
 
 
