@@ -15,7 +15,7 @@
 function add_cncf_people_map_shortcode() {
 
 	wp_enqueue_script(
-		'modal',
+		'people-map',
 		get_template_directory_uri() . '/source/js/on-demand/people-map.js',
 		array( 'jquery' ),
 		filemtime( get_template_directory() . '/source/js/on-demand/people-map.js' ),
@@ -60,6 +60,7 @@ function add_cncf_people_map_shortcode() {
 				'lat' => $lat,
 				'lng' => $lng,
 				'name' => get_the_title(),
+				'slug' => $post->post_name,
 			);
 		}
 	}

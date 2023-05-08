@@ -31,19 +31,28 @@
 
 			const peopleObj = JSON.parse( people );
 			const peopleObjLen = peopleObj.length;
+			const min = .9999;
+			const max = 1.0001;
 			for (let i = 0; i < peopleObjLen; i++) {
-				const latLng = new google.maps.LatLng( peopleObj[i]['lat'], peopleObj[i]['lng'] );
+
+				// adds some randomness to the positioning so that markers on same city don't overlap.
+				let lat = peopleObj[i]['lat'] * (Math.random() * (max - min) + min);
+				let lng = peopleObj[i]['lng'] * (Math.random() * (max - min) + min);
+				
+				const latLng = new google.maps.LatLng( lat, lng );
+
 				const marker = new google.maps.Marker(
 					{
 						position: latLng,
 						map: map,
-				}
+					}
 					);
+				const popup = '<a href="/people/ambassadors/?p=' + peopleObj[i]['slug'] + '">' + peopleObj[i]['name'] + '</a>';
 				marker.addListener(
 					"click",
 					() => {
 						infowindow.close();
-						infowindow.setContent( peopleObj[i]['name'] );
+						infowindow.setContent( popup );
 						infowindow.open(
 						{
 							anchor: marker,
