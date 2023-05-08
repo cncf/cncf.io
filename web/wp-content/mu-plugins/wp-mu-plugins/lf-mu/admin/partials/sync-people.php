@@ -30,6 +30,7 @@ function geocode_location( $id ) {
 	}
 	echo '2';
 
+	$options             = get_option( 'lf-mu' );
 	$google_maps_api_key = $options['google_maps_api_key'] ?? '';
 
 	if ( ! $google_maps_api_key ) {
