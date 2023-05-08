@@ -31,8 +31,8 @@
 
 			const peopleObj = JSON.parse( people );
 			const peopleObjLen = peopleObj.length;
-			const min = .9999;
-			const max = 1.0001;
+			const min = .999;
+			const max = 1.001;
 			for (let i = 0; i < peopleObjLen; i++) {
 
 				// adds some randomness to the positioning so that markers on same city don't overlap.
@@ -45,6 +45,7 @@
 					{
 						position: latLng,
 						map: map,
+						icon: '/wp-content/themes/cncf-twenty-two/images/person.svg',
 					}
 					);
 				const popup = '<a href="/people/ambassadors/?p=' + peopleObj[i]['slug'] + '">' + peopleObj[i]['name'] + '</a>';
