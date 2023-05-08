@@ -33,6 +33,13 @@
 			const peopleObjLen = peopleObj.length;
 			const min = .999;
 			const max = 1.001;
+
+			const icons = [
+				'/wp-content/themes/cncf-twenty-two/images/person.svg',
+				'/wp-content/themes/cncf-twenty-two/images/person-red.svg',
+				'/wp-content/themes/cncf-twenty-two/images/person-blue.svg'
+			];
+
 			for (let i = 0; i < peopleObjLen; i++) {
 
 				// adds some randomness to the positioning so that markers on same city don't overlap.
@@ -45,11 +52,11 @@
 					{
 						position: latLng,
 						map: map,
-						icon: '/wp-content/themes/cncf-twenty-two/images/person.svg',
+						icon: icons[i % 3],
 					}
 					);
 
-				const popup = '<button data-modal-content-id="modal-' + peopleObj[i]['id'] + '" data-modal-slug="' + peopleObj[i]['slug'] + '" data-modal-prefix-class="person" class="js-modal button-reset map-button modal-' + peopleObj[i]['slug'] + '" aria-haspopup="dialog">' + peopleObj[i]['name'] + '</button>';
+				const popup = '<button data-modal-content-id="modal-' + peopleObj[i]['id'] + '" data-modal-slug="' + peopleObj[i]['slug'] + '" data-modal-prefix-class="person" class="js-modal button-reset map-button modal-' + peopleObj[i]['slug'] + '" aria-haspopup="dialog">' + peopleObj[i]['name'] + ' --></button>';
 				marker.addListener(
 					"click",
 					() => {

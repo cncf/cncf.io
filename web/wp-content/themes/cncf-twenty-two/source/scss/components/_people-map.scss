@@ -1,7 +1,10 @@
 #map {
 	height: 500px;
+
+	.map-button {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
-.map-button:hover {
-	text-decoration: underline;
-}
