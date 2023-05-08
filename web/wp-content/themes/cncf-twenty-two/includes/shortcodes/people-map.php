@@ -61,6 +61,7 @@ function add_cncf_people_map_shortcode() {
 				'lng' => $lng,
 				'name' => get_the_title(),
 				'slug' => $post->post_name,
+				'id'  => get_the_ID(),
 			);
 		}
 	}

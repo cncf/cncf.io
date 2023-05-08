@@ -48,7 +48,8 @@
 						icon: '/wp-content/themes/cncf-twenty-two/images/person.svg',
 					}
 					);
-				const popup = '<a href="/people/ambassadors/?p=' + peopleObj[i]['slug'] + '">' + peopleObj[i]['name'] + '</a>';
+
+				const popup = '<button data-modal-content-id="modal-' + peopleObj[i]['id'] + '" data-modal-slug="' + peopleObj[i]['slug'] + '" data-modal-prefix-class="person" class="js-modal button-reset map-button modal-' + peopleObj[i]['slug'] + '" aria-haspopup="dialog">' + peopleObj[i]['name'] + '</button>';
 				marker.addListener(
 					"click",
 					() => {
