@@ -35,9 +35,9 @@
 			const max = 1.001;
 
 			const icons = [
-				'/wp-content/themes/cncf-twenty-two/images/person.svg',
-				'/wp-content/themes/cncf-twenty-two/images/person-red.svg',
-				'/wp-content/themes/cncf-twenty-two/images/person-blue.svg'
+				'/wp-content/themes/cncf-twenty-two/images/ambassador-tropical.svg',
+				'/wp-content/themes/cncf-twenty-two/images/ambassador-lime.svg',
+				'/wp-content/themes/cncf-twenty-two/images/ambassador-purple.svg'
 			];
 
 			for (let i = 0; i < peopleObjLen; i++) {
