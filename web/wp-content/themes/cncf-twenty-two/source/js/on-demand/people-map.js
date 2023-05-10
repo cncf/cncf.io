@@ -34,12 +34,6 @@
 			const min = .999;
 			const max = 1.001;
 
-			const icons = [
-				'/wp-content/themes/cncf-twenty-two/images/ambassador-tropical.svg',
-				'/wp-content/themes/cncf-twenty-two/images/ambassador-lime.svg',
-				'/wp-content/themes/cncf-twenty-two/images/ambassador-purple.svg'
-			];
-
 			for (let i = 0; i < peopleObjLen; i++) {
 
 				// adds some randomness to the positioning so that markers on same city don't overlap.
@@ -52,7 +46,7 @@
 					{
 						position: latLng,
 						map: map,
-						icon: icons[i % 3],
+						icon: '/wp-content/themes/cncf-twenty-two/images/map-marker.svg',
 					}
 					);
 
