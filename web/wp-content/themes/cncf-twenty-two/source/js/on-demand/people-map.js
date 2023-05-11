@@ -33,6 +33,7 @@
 			const peopleObjLen = peopleObj.length;
 			const min = .999;
 			const max = 1.001;
+			const markers = [];
 
 			for (let i = 0; i < peopleObjLen; i++) {
 
@@ -45,10 +46,9 @@
 				const marker = new google.maps.Marker(
 					{
 						position: latLng,
-						map: map,
 						icon: '/wp-content/themes/cncf-twenty-two/images/map-marker.svg',
 					}
-					);
+				);
 
 				const popup = '<button data-modal-content-id="modal-' + peopleObj[i]['id'] + '" data-modal-slug="' + peopleObj[i]['slug'] + '" data-modal-prefix-class="person" class="js-modal button-reset map-button modal-' + peopleObj[i]['slug'] + '" aria-haspopup="dialog">' + peopleObj[i]['name'] + '</button>';
 				marker.addListener(
@@ -62,9 +62,13 @@
 							map,
 						}
 						);
-				}
-					);
+					}
+				);
+
+				markers.push( marker );
 			}
+
+			new markerClusterer.MarkerClusterer({ markers, map });
 		}
 
 		initMap();

@@ -21,6 +21,13 @@ function add_cncf_people_map_shortcode() {
 		filemtime( get_template_directory() . '/source/js/on-demand/people-map.js' ),
 		true
 	);
+	wp_enqueue_script(
+		'markerclusterer',
+		get_template_directory_uri() . '/source/js/libraries/markerclusterer.min.js',
+		array(),
+		filemtime( get_template_directory() . '/source/js/libraries/markerclusterer.min.js' ),
+		true
+	);
 
 	$options = get_option( 'lf-mu' );
 	$google_maps_api_public_key = $options['google_maps_api_public_key'] ?? '';
