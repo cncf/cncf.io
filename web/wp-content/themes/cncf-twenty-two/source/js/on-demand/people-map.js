@@ -26,7 +26,13 @@
 					zoom: 2,
 					center: new google.maps.LatLng( 20.312269132769966, 6.947682816594525 ),
 					mapId: "DEMO_MAP_ID",
-			}
+					zoomControl: true,
+					mapTypeControl: false,
+					scaleControl: false,
+					streetViewControl: false,
+					rotateControl: false,
+					fullscreenControl: false
+					}
 				);
 
 			const peopleObj = JSON.parse( people );
