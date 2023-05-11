@@ -35,6 +35,29 @@
 			const max = 1.001;
 			const markers = [];
 
+			const svg = window.btoa(`
+                <svg fill="#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+                <circle cx="120" cy="120" opacity="1" r="70" />
+                <circle cx="120" cy="120" opacity=".7" r="90" />
+                <circle cx="120" cy="120" opacity=".3" r="110" />
+                </svg>`);
+
+			const renderer = {
+				render: ({ count, position }) =>
+
+				new google.maps.Marker({
+					label: { text: String(count), color: "#fff", fontSize: "14px", fontWeight: "600" },
+					icon: {
+						url: `data:image/svg+xml;base64,${svg}`,
+						scaledSize: new google.maps.Size(45, 45),
+					},
+					position,
+					// adjust zIndex to be above other markers
+					zIndex: Number(google.maps.Marker.MAX_ZINDEX) + count,
+				})
+
+			};
+
 			for (let i = 0; i < peopleObjLen; i++) {
 
 				// adds some randomness to the positioning so that markers on same city don't overlap.
@@ -68,7 +91,7 @@
 				markers.push( marker );
 			}
 
-			new markerClusterer.MarkerClusterer({ markers, map });
+			new markerClusterer.MarkerClusterer({ markers, map, renderer });
 		}
 
 		initMap();
