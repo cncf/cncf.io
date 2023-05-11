@@ -46,7 +46,7 @@
 				render: ({ count, position }) =>
 
 				new google.maps.Marker({
-					label: { text: String(count), color: "#fff", fontSize: "14px", fontWeight: "600" },
+					label: { text: String(count), color: "#fff", fontSize: "14px", fontWeight: "600", fontFamily: "Clarity City" },
 					icon: {
 						url: `data:image/svg+xml;base64,${svg}`,
 						scaledSize: new google.maps.Size(45, 45),
