@@ -70,7 +70,7 @@ function add_playlist_shortcode( $atts ) {
 
 	if ( false === $composed_playlist || WP_DEBUG === true ) {
 
-		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=' . $count . '&playlistId=' . $playlist_id . '&key=' . $youtube_api_key );
+		$request = wp_remote_get( 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=20&playlistId=' . $playlist_id . '&key=' . $youtube_api_key );
 
 		if ( is_wp_error( $request ) || ( wp_remote_retrieve_response_code( $request ) !== 200 ) ) {
 			return;
@@ -89,9 +89,12 @@ function add_playlist_shortcode( $atts ) {
 	?>
 <section class="youtube-playlist columns-two">
 	<?php
-	for ( $i = 0; $i < $count; $i++ ) {
-		if ( array_key_exists( $i, $composed_playlist->items ) ) {
 
+	// we want to find the first $count non-private vids from the 20 we grabbed.
+	$j = 0;
+	for ( $i = 0; $i < 20; $i++ ) {
+		if ( array_key_exists( $i, $composed_playlist->items ) && property_exists( $composed_playlist->items[ $i ]->contentDetails, 'videoPublishedAt' ) ) {
+			// if videoPublishedAt exists then we know this is a public vid.
 			$pub_date = new DateTime( $composed_playlist->items[ $i ]->contentDetails->videoPublishedAt );
 
 			?>
@@ -112,6 +115,11 @@ function add_playlist_shortcode( $atts ) {
 		</div>
 	</div>
 			<?php
+			$j++;
+			if ( $count === $j ) {
+				// we got our $count public vids
+				break; 
+			}
 		}
 	}
 	?>
