@@ -41,18 +41,13 @@
 			const max = 1.001;
 			const markers = [];
 
-			const svg = window.btoa(`
-                <svg fill="#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-                <circle cx="120" cy="120" opacity=".7" r="110" />
-                </svg>`);
-
 			const renderer = {
 				render: ({ count, position }) =>
 
 				new google.maps.Marker({
 					label: { text: String(count), color: "#fff", fontSize: "14px", fontWeight: "600", fontFamily: "Clarity City" },
 					icon: {
-						url: `data:image/svg+xml;base64,${svg}`,
+						url: `data:image/svg+xml,%3Csvg fill='%23000' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Ccircle cx='120' cy='120' opacity='.7' r='110' /%3E%3C/svg%3E`,
 						scaledSize: new google.maps.Size(45, 45),
 					},
 					position,
