@@ -1,7 +1,5 @@
 /**
- * Modal window
- *
- * Based on https://a11y.nicolas-hoffmann.net/modal/.
+ * People Map JS
  *
  * @package WordPress
  * @since 1.0.0
@@ -10,7 +8,6 @@
 // @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
 // @phpcs:disable WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore
 // @phpcs:disable PEAR.Functions.FunctionCallSignature.Indent
-
 
 	jQuery( document ).ready(
 	function( $ ) {
@@ -97,7 +94,6 @@
 
 			new markerClusterer.MarkerClusterer( { markers, map, renderer } );
 		}
-
 		initMap();
 	}
 	);

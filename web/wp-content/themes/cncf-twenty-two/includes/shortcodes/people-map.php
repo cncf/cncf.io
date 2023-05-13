@@ -14,6 +14,13 @@
  */
 function add_cncf_people_map_shortcode() {
 
+	$options                    = get_option( 'lf-mu' );
+	$google_maps_api_public_key = $options['google_maps_api_public_key'] ?? null;
+
+	if ( ! $google_maps_api_public_key ) {
+		return;
+	}
+
 	wp_enqueue_script(
 		'people-map',
 		get_template_directory_uri() . '/source/js/on-demand/people-map.js',
@@ -29,13 +36,6 @@ function add_cncf_people_map_shortcode() {
 		true
 	);
 
-	$options = get_option( 'lf-mu' );
-	$google_maps_api_public_key = $options['google_maps_api_public_key'] ?? '';
-
-	if ( ! $google_maps_api_public_key ) {
-		return;
-	}
-
 	ob_start();
 	?>
 <section>
@@ -47,7 +47,7 @@ function add_cncf_people_map_shortcode() {
 
 	<?php
 	$args = array(
-		'posts_per_page'     => -1,
+		'posts_per_page'     => 200,
 		'post_type'          => array( 'lf_person' ),
 		'post_status'        => array( 'publish' ),
 		'no_found_rows'      => true,
@@ -56,7 +56,7 @@ function add_cncf_people_map_shortcode() {
 
 	global $post;
 	$people = array();
-	$query = new WP_Query( $args );
+	$query  = new WP_Query( $args );
 	while ( $query->have_posts() ) {
 		$query->the_post();
 		$lat = get_post_meta( $post->ID, 'lf_person_location_lat' );
@@ -64,18 +64,18 @@ function add_cncf_people_map_shortcode() {
 
 		if ( $lat && $lng ) {
 			$people[] = array(
-				'lat' => $lat,
-				'lng' => $lng,
+				'lat'  => $lat,
+				'lng'  => $lng,
 				'name' => get_the_title(),
 				'slug' => $post->post_name,
-				'id'  => get_the_ID(),
+				'id'   => get_the_ID(),
 			);
 		}
 	}
 	wp_reset_postdata();
 	?>
 <script>
-	let people = '<?php echo json_encode( $people ); ?>'
+	let people = '<?php echo wp_json_encode( $people ); ?>'
 </script>
 
 	<?php
