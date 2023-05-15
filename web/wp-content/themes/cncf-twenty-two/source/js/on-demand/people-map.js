@@ -18,10 +18,12 @@
 			// Request needed libraries.
 			const { Map } = await google.maps.importLibrary( "maps" );
 			const { AdvancedMarkerView } = await google.maps.importLibrary( "marker" );
-			const infoWindow = new google.maps.InfoWindow({
-				content: "",
-				disableAutoPan: true,
-			});
+			const infoWindow = new google.maps.InfoWindow(
+				{
+					content: "",
+					disableAutoPan: true,
+				}
+			);
 			map = new Map(
 				document.getElementById( "map" ),
 				{
