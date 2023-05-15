@@ -1,0 +1,21 @@
+#map {
+	height: 500px;
+
+	.map-button {
+		font-family: $font-primary;
+		font-weight: 800;
+		font-size: 14px;
+		line-height: 14px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.gm-style-iw-c {
+		border-radius: 5px;
+	}
+
+	.gm-ui-hover-effect > span {
+		width: 12px !important;
+	}
+}

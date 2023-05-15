@@ -14,6 +14,48 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+/**
+ * Geocodes a person's location if the location has changed.
+ *
+ * @param int $id Person's ID.
+ */
+function geocode_location( $id ) {
+	$new_location      = get_post_meta( $id, 'lf_person_location', true );
+	$geocoded_location = get_post_meta( $id, 'lf_person_location_geocoded', true );
+
+	if ( $new_location === $geocoded_location ) {
+		// no need to geocode here as location has not changed.
+		return;
+	}
+
+	$options             = get_option( 'lf-mu' );
+	$google_maps_api_key = $options['google_maps_api_key'] ?? '';
+
+	if ( ! $google_maps_api_key ) {
+		return;
+	}
+
+	$service_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode( $new_location ) . '&key=' . $google_maps_api_key;
+
+	$curl = curl_init( $service_url );
+	curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+	$curl_response = curl_exec( $curl );
+	if ( false === $curl_response ) {
+		$info = curl_getinfo( $curl );
+		curl_close( $curl );
+		return;
+	}
+	curl_close( $curl );
+	$decoded = json_decode( $curl_response );
+
+	if ( isset( $decoded->results ) && array_key_exists( 0, $decoded->results ) ) {
+		update_post_meta( $id, 'lf_person_location_lat', $decoded->results[0]->geometry->location->lat );
+		update_post_meta( $id, 'lf_person_location_lng', $decoded->results[0]->geometry->location->lng );
+		update_post_meta( $id, 'lf_person_location_geocoded', $new_location );
+	}
+}
+
+
 $people_url = 'https://raw.githubusercontent.com/cncf/people/main/people.json';
 $github_images_url = 'https://raw.githubusercontent.com/cncf/people/main/images/';
 
@@ -121,6 +163,7 @@ foreach ( $people as $p ) {
 			if ( $term_exists ) {
 				wp_set_object_terms( $newid, (int) $term_exists['term_id'], 'lf-country', false );
 			}
+			geocode_location( $newid );
 		}
 
 		$synced_ids[] = $newid;
