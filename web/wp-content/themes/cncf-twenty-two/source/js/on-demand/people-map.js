@@ -18,8 +18,10 @@
 			// Request needed libraries.
 			const { Map } = await google.maps.importLibrary( "maps" );
 			const { AdvancedMarkerView } = await google.maps.importLibrary( "marker" );
-			const infowindow = new google.maps.InfoWindow();
-
+			const infoWindow = new google.maps.InfoWindow({
+				content: "",
+				disableAutoPan: true,
+			});
 			map = new Map(
 				document.getElementById( "map" ),
 				{
@@ -78,9 +80,9 @@
 				marker.addListener(
 					"click",
 					() => {
-						infowindow.close();
-						infowindow.setContent( popup );
-						infowindow.open(
+						infoWindow.close();
+						infoWindow.setContent( popup );
+						infoWindow.open(
 						{
 							anchor: marker,
 							map,
