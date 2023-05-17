@@ -304,16 +304,16 @@
         },
         {
             "name": "pantheon-systems/wordpress-composer",
-            "version": "6.2",
+            "version": "6.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "b5803892e878e06359f61bc313527c08f6b68152"
+                "reference": "9be0d3b08f33a30f064038949e42105f75e7c7bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/b5803892e878e06359f61bc313527c08f6b68152",
-                "reference": "b5803892e878e06359f61bc313527c08f6b68152",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/9be0d3b08f33a30f064038949e42105f75e7c7bb",
+                "reference": "9be0d3b08f33a30f064038949e42105f75e7c7bb",
                 "shasum": ""
             },
             "require": {
@@ -331,10 +331,10 @@
             ],
             "description": "WordPress for Pantheon with a composer.json file.",
             "support": {
-                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.2",
+                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.2.1",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2023-03-29T21:11:20+00:00"
+            "time": "2023-05-16T22:11:06+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1140,7 +1140,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-autocrop.zip?timestamp=1600657410"
+                "url": "https://downloads.wordpress.org/plugin/svg-autocrop.zip?timestamp=1683968235"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
