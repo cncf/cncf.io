@@ -40,6 +40,7 @@
 	font-size: 14px;
 	line-height: 1;
 	padding: 9px 17px;
+	min-height: 38px;
 	&:focus-visible {
 		outline: -webkit-focus-ring-color auto 1px;
 	}
@@ -63,14 +64,17 @@
 }
 
 .osano-cm-dialog__list {
-	margin: 0.6em 0px 0.8em;
+	margin: 0.45em 0px 0.9em;
 }
 
 .osano-cm-label {
 	font-weight: 700;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 150%;
 	letter-spacing: 0.02em;
+	@media (min-width: 600px) {
+		font-size: 16px;
+	}
 }
 
 div.osano-cm-disclosure__toggle {
