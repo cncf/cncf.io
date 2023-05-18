@@ -64,7 +64,7 @@
 }
 
 .osano-cm-dialog__list {
-	margin: 0.45em 0px 0.9em;
+	margin: 0.47em 0px 0.9em;
 }
 
 .osano-cm-label {
@@ -162,8 +162,9 @@ div.osano-cm-disclosure__toggle {
 	min-width: 14px;
 	height: 14px;
 	width: 14px;
-	margin: 15px 25px;
+	margin: 15px 18px;
 	@media (min-width: 600px) {
+		margin: 15px 25px;
 		margin: 25px;
 	}
 	svg {
