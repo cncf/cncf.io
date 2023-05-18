@@ -94,14 +94,19 @@ div.osano-cm-disclosure__toggle {
 }
 
 .osano-cm-link {
-	text-decoration: underline;
-	font-size: 13px;
+	text-decoration: none;
+	font-size: 19px;
+	font-weight: 800;
+	color: $primary-400;
 	&:focus-visible {
+		font-weight: 800;
 		outline-offset: 1px;
 		outline: -webkit-focus-ring-color auto 1px;
+		color: $primary-400;
 	}
 	&:hover {
-		text-decoration: none;
+		color: $primary-400;
+		text-decoration: underline;
 	}
 }
 
