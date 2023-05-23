@@ -77,11 +77,11 @@ function add_eu_newsletters_shortcode() {
 add_shortcode( 'eu-newsletters', 'add_eu_newsletters_shortcode' );
 
 
- /**
-  * Add EU Newsletter form shortcode.
-  *
-  * @param array $atts Attributes.
-  */
+/**
+ * Add EU Newsletter form shortcode.
+ *
+ * @param array $atts Attributes.
+ */
 function add_eu_newsletter_form_shortcode( $atts ) {
 	ob_start();
 	?>

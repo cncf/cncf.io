@@ -108,6 +108,7 @@ require_once 'includes/shortcodes/benefits.php';
 require_once 'includes/shortcodes/event-banner.php';
 require_once 'includes/shortcodes/home.php';
 require_once 'includes/shortcodes/kubeweeklys.php';
+require_once 'includes/shortcodes/training.php';
 require_once 'includes/shortcodes/eu-newsletters.php';
 require_once 'includes/shortcodes/latest-news.php';
 require_once 'includes/shortcodes/members.php';
