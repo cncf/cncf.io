@@ -4,7 +4,7 @@
 }
 
 .osano-cm-window__dialog {
-	border-radius: 5px;
+	border-radius: 8px;
 	color: $cookie-banner-text;
 	background: $cookie-banner-bg;
 	filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.05));
@@ -64,7 +64,7 @@
 }
 
 .osano-cm-dialog__list {
-	margin: 0.47em 0px 1em;
+	margin: 0.87em 0px 1.4em;
 }
 
 .osano-cm-label {
@@ -122,7 +122,7 @@ div.osano-cm-disclosure__toggle {
 }
 
 .osano-cm-content__message {
-	margin-bottom: 0.3em;
+	margin-bottom: 0.7em;
 	padding-bottom: .7em;
 	margin-top: 10px;
 	@media (min-width: 1400px) {
