@@ -166,7 +166,6 @@ class Lf_Mu {
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'wp_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'rest_api_init', $plugin_admin, 'register_lf_rest_routes' );
-		$this->loader->add_action( 'send_headers', $plugin_admin, 'add_header_cache', 15 );
 
 		// Hook to save year in a meta fields for filtering.
 		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
@@ -251,6 +250,7 @@ class Lf_Mu {
 		$this->loader->add_filter( 'pre_get_posts', $plugin_public, 'remove_news_from_rss' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_nhpt_query_args', $plugin_public, 'remove_news_from_sitemap' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_newsletters_from_sitemap' );
+		$this->loader->add_action( 'send_headers', $plugin_public, 'add_header_cache', 15 );
 	}
 
 	/**

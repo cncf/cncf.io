@@ -600,11 +600,4 @@ class Lf_Mu_Admin {
 		$controller = new LF_MU_REST_Controller();
 		$controller->register_routes();
 	}
-
-	/**
-	 * Overrides the default cache headers.
-	 */
-	public function add_header_cache() {
-		header( 'Cache-Control: public, max-age=600, s-maxage=43200, stale-while-revalidate=86400, stale-if-error=604800' );
-	}
 }
