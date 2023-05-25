@@ -54,4 +54,16 @@
 			padding: 10px;
 		}
 	}
+
+	.legal-consent-container {
+		p {
+			font-size: var(--wp--preset--font-size--small);
+			margin-bottom: 1rem;
+
+		}
+	}
+
+	.hs_error_rollup {
+		display: none;
+	}
 }
