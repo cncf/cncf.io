@@ -101,6 +101,9 @@ foreach ( $people as $p ) {
 	if ( property_exists( $p, 'twitter' ) ) {
 		$params['meta_input']['lf_person_twitter'] = $p->twitter;
 	}
+	if ( property_exists( $p, 'mastodon' ) ) {
+		$params['meta_input']['lf_person_mastodon'] = $p->mastodon;
+	}
 	if ( property_exists( $p, 'github' ) ) {
 		$params['meta_input']['lf_person_github'] = $p->github;
 	}
