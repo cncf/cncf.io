@@ -16,6 +16,7 @@ $company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
 $pronouns    = ucwords( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ), $separators = " \t\r\n\f\v\\;/" );
 $linkedin    = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
 $twitter     = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
+$mastodon    = get_post_meta( get_the_ID(), 'lf_person_mastodon', true );
 $github      = get_post_meta( get_the_ID(), 'lf_person_github', true );
 $wechat      = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
 $website     = get_post_meta( get_the_ID(), 'lf_person_website', true );
@@ -88,7 +89,7 @@ endif;
 		<div class="person__social">
 			<?php
 			// Social Icons.
-			if ( $linkedin || $twitter || $github || $wechat || $website || $youtube ) :
+			if ( $linkedin || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
 				?>
 			<div class="person__social-margin">
 				<?php
@@ -102,6 +103,12 @@ endif;
 					?>
 				<a
 					href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-twitter.svg' ); ?></a>
+					<?php
+			endif;
+				if ( $mastodon ) :
+					?>
+				<a
+					href="<?php echo esc_url( $mastodon ); ?>"><?php LF_Utils::get_svg( 'social/boxed-mastodon.svg' ); ?></a>
 					<?php
 			endif;
 				if ( $github ) :
@@ -220,7 +227,7 @@ endif;
 					<div class="person__social">
 						<?php
 						// Social Icons.
-						if ( $linkedin || $twitter || $github || $wechat || $website || $youtube ) :
+						if ( $linkedin || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
 							?>
 						<div class="person__social-margin">
 							<?php
@@ -234,6 +241,12 @@ endif;
 								?>
 							<a
 								href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-twitter.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $mastodon ) :
+								?>
+							<a
+								href="<?php echo esc_url( $mastodon ); ?>"><?php LF_Utils::get_svg( 'social/boxed-mastodon.svg' ); ?></a>
 								<?php
 								endif;
 							if ( $github ) :
