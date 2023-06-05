@@ -78,6 +78,10 @@ wp.blocks.registerBlockStyle(
 		{
 			label: 'Shadow Line',
 			name: 'shadow-line',
+		},
+		{
+			label: 'Report Section Line',
+			name: 'report-section-line',
 		}
 ]
 );

@@ -75,6 +75,6 @@ $allowed_inner_blocks = array(
 	?>
 	<div class="wp-block-lf-quote-with-quote-mark__mark">
 		<p class="wp-block-lf-quote-with-quote-mark__name"><?php echo esc_html( $quote_cite_line_1 ); ?></p>
-		<p class="wp-block-lf-quote-with-quote-mark__position"><?php echo esc_html( $quote_cite_line_2 ); ?></p>
+		<p class="wp-block-lf-quote-with-quote-mark__position"><?php echo wp_kses_post( $quote_cite_line_2 ); ?></p>
 	</div>
 </div>

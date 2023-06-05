@@ -18,13 +18,15 @@ defined( 'ABSPATH' ) || exit;
  */
 function lf_register_all_our_blocks() {
 	$block_directory = get_template_directory() . '/blocks';
-	register_block_type( $block_directory . '/gallery-slider/block.json' );
-	register_block_type( $block_directory . '/quote-with-quote-mark/block.json' );
 	register_block_type( $block_directory . '/gallery-outlined-grid/block.json' );
+	register_block_type( $block_directory . '/gallery-slider/block.json' );
+	register_block_type( $block_directory . '/icon-and-text-column/block.json' );
 	register_block_type( $block_directory . '/icon-text-stat/block.json' );
-	register_block_type( $block_directory . '/post-breadcrumb/block.json' );
-	register_block_type( $block_directory . '/phippy-group/block.json' );
+	register_block_type( $block_directory . '/image-switcher/block.json' );
 	register_block_type( $block_directory . '/phippy-family/block.json' );
+	register_block_type( $block_directory . '/phippy-group/block.json' );
+	register_block_type( $block_directory . '/post-breadcrumb/block.json' );
+	register_block_type( $block_directory . '/quote-with-quote-mark/block.json' );
 }
 add_action( 'init', 'lf_register_all_our_blocks' );
 

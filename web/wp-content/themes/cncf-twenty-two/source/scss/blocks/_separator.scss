@@ -34,6 +34,10 @@
 		margin-top: 60px;
 		margin-bottom: 60px;
 	}
+	&.is-style-report-section-line {
+		width: 100% !important;
+		height: 9px !important;
+	}
 }
 
 // Used for case studies only? Not a selectable style.

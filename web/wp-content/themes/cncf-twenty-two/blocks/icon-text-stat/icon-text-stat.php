@@ -91,7 +91,7 @@ if ( $its_descriptive_text ) {
 <?php
 if ( $its_additional_text ) {
 	?>
-<div class="wp-block-lf-icon-text-stat__additional"><?php echo esc_html( $its_additional_text ); ?></div>
+<div class="wp-block-lf-icon-text-stat__additional"><?php echo wp_kses_post( $its_additional_text ); ?></div>
 	<?php
 }
 ?>

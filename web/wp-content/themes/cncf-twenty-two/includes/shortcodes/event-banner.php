@@ -67,8 +67,11 @@ function show_event_in_menu() {
 /**
  * Returns banner info for inclusion in homepage.
  * Grabs max of 10 upcoming events with a desktop image.
+ *
+ * @param bool $hide_title Hide Title.
+ * @return void
  */
-function show_event_banner() {
+function show_event_banner( $hide_title ) {
 	$the_query = new WP_Query(
 		array(
 			'post_type'      => 'lf_event',
@@ -100,19 +103,41 @@ function show_event_banner() {
 	if ( $the_query->have_posts() ) {
 		if ( 1 === $the_query->post_count ) {
 			$the_query->the_post();
-			get_template_part( 'components/event-single-banner' );
+			get_template_part( 'components/event-single-banner', null, array( 'hide_title' => $hide_title ) );
 		} else {
-			get_template_part( 'components/event-multiple-banner', null, array( 'the_query' => $the_query ) );
+			get_template_part(
+				'components/event-multiple-banner',
+				null,
+				array(
+					'the_query'  => $the_query,
+					'hide_title' => $hide_title,
+				)
+			);
 		}
 	}
 }
 
 /**
  * Event Banner shortcode.
+ *
+ * @param array $atts Atts.
+ * @return string $block_content Block Content.
  */
-function add_event_banner_shortcode() {
+function add_event_banner_shortcode( $atts ) {
+
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'hide_title' => false, // set default.
+		),
+		$atts,
+		'event_banner'
+	);
+
+	$hide_title = filter_var( $atts['hide_title'], FILTER_VALIDATE_BOOLEAN );
+
 	ob_start();
-	show_event_banner();
+	show_event_banner( $hide_title );
 	$block_content = ob_get_clean();
 	return $block_content;
 }
