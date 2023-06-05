@@ -107,7 +107,7 @@ endif;
 			endif;
 				if ( $mastodon ) :
 					?>
-				<a
+				<a  rel="me"
 					href="<?php echo esc_url( $mastodon ); ?>"><?php LF_Utils::get_svg( 'social/boxed-mastodon.svg' ); ?></a>
 					<?php
 			endif;
@@ -245,7 +245,7 @@ endif;
 								endif;
 							if ( $mastodon ) :
 								?>
-							<a
+							<a  rel="me"
 								href="<?php echo esc_url( $mastodon ); ?>"><?php LF_Utils::get_svg( 'social/boxed-mastodon.svg' ); ?></a>
 								<?php
 								endif;
