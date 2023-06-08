@@ -75,4 +75,9 @@
 		line-height: 125%;
 		margin-top: 10px;
 	}
+	&.is-style-32px-large-number {
+		.wp-block-lf-icon-text-stat__large {
+			font-size: 32px;
+		}
+	}
 }

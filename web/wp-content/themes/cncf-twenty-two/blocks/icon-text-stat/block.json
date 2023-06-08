@@ -41,5 +41,11 @@
 		},
 		"fullHeight": false
 	},
-	"example": {}
+	"example": {},
+	"styles": [
+		{
+		  "name": "32px-large-number",
+		  "label": "32px Large Number Size"
+		}
+	  ]
 }

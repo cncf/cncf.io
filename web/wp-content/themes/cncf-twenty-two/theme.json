@@ -187,7 +187,17 @@
 					"textDecoration": false,
 					"textTransform": false
 				}
-            }
+            },
+			"core/heading": {
+				"typography": {
+					"letterSpacing": true
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"letterSpacing": true
+				}
+			}
         }
     },
 	"styles": {

@@ -1,12 +1,11 @@
-// Setup variables - take from theme - '../../source/scss/core/variables'
-
 $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times',
 	'Source Serif Pro', serif;
 
 .wp-block-lf-quote-with-quote-mark {
 	font-style: italic;
-	@media (min-width: 1000px) {
-		max-width: 990px;
+	font-family: $font-serif;
+	@media (min-width: 1200px) {
+		max-width: 995px;
 	}
 	&__quote {
 		margin-bottom: 30px;
@@ -31,12 +30,12 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 		font-family: $font-serif;
 		font-size: 16px;
 		margin: 0;
-		margin-top: 2px;
+		margin-top: 2px !important; // Needed to override p+p
 	}
 	&__mark {
 		position: relative;
 		padding-left: calc(64px + 20px);
-		@media (min-width: 1000px) {
+		@media (min-width: 1200px) {
 			padding-left: calc(67px + 30px);
 		}
 		p {
