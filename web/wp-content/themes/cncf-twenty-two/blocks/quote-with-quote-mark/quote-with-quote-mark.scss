@@ -31,6 +31,7 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 		font-size: 16px;
 		margin: 0;
 		margin-top: 2px !important; // Needed to override p+p
+		line-height: 130%;
 	}
 	&__mark {
 		position: relative;
