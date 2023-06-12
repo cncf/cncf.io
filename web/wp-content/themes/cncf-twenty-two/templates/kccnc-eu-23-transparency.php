@@ -1388,8 +1388,6 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
 				<h2 class="section-header">Demographics</h2>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
