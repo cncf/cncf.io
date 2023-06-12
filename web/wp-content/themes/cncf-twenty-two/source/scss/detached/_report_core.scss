@@ -33,10 +33,19 @@ h2 {
 	display: block;
 }
 
+.nowrap {
+	white-space: nowrap;
+}
+
 .long-word {
 	word-break: break-all;
 	hyphens: auto;
 	-webkit-hyphens: auto;
+}
+
+.svg-image {
+	width: 100%;
+	height: auto;
 }
 
 /**
