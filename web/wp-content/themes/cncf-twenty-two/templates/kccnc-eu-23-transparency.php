@@ -60,8 +60,8 @@ $report_folder = 'reports/kccnc-eu-23/'
 					</div>
 				</div>
 				<figure class="hero__bg-shape">
-						<?php LF_Utils::display_responsive_images( 90407, 'full', '1000px', null, 'lazy', 'Hero' ); ?>
-					</figure>
+					<?php LF_Utils::display_responsive_images( 90407, 'full', '1000px', null, 'lazy', 'Hero' ); ?>
+				</figure>
 				<figure class="hero__bg-gradient"></figure>
 
 		</section>
@@ -323,8 +323,12 @@ Executive Director, CNCF</p>
 					<div class="section-number">1/6</div>
 				</div>
 
-				<p
-					class="opening-paragraph">We enjoyed the largest in-person European KubeCon + CouldNativeCon to-date, with more than 10,500 joining us in Amsterdam - a <strong>48%</strong> increase in in-person attendees from our 2022 European event.</p>
+				<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p
+							class="opening-paragraph">We enjoyed the largest in-person European KubeCon + CouldNativeCon to-date, with more than 10,500 joining us in Amsterdam - a <strong>48%</strong> increase in in-person attendees from our 2022 European event.</p>
+					</div>
+				</div>
 
 				<p class="sub-header">Demographics</p>
 
@@ -1322,8 +1326,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<div class="wp-block-lf-youtube-lite">
 							<lite-youtube videoid="eb0442K_zmY"
 								videotitle="From Community to Customers"
-								webpStatus="1" sdthumbStatus="0"
-								title="Play">
+								webpStatus="1" sdthumbStatus="0" title="Play">
 							</lite-youtube>
 						</div>
 					</div>
@@ -1346,8 +1349,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<div class="wp-block-lf-youtube-lite">
 							<lite-youtube videoid="XFtrxLiUjKw"
 								videotitle="Building a Successful Business in Cloud Native"
-								webpStatus="1" sdthumbStatus="0"
-								title="Play">
+								webpStatus="1" sdthumbStatus="0" title="Play">
 							</lite-youtube>
 						</div>
 					</div>
@@ -1644,7 +1646,8 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 
 				<div class="lf-grid slsa">
 					<div class="slsa__box">
-						<a href="https://github.com/argoproj/argoproj/blob/master/docs/software_supply_chain_slsa_assessment_chainguard_2023.pdf">
+						<a
+							href="https://github.com/argoproj/argoproj/blob/master/docs/software_supply_chain_slsa_assessment_chainguard_2023.pdf">
 							<p
 								class="slsa__title">ARGO SLSA <br>ASSESSMENT REPORT</p>
 							<div class="slsa__image-wrapper">
@@ -1654,7 +1657,8 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 					</div>
 
 					<div class="slsa__box">
-						<a href="https://prometheus.io/docs/operating/security/#external-audits">
+						<a
+							href="https://prometheus.io/docs/operating/security/#external-audits">
 							<p
 								class="slsa__title">PROMETHEUS SLSA <br>ASSESSMENT REPORT</p>
 							<div class="slsa__image-wrapper">
@@ -1740,17 +1744,21 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 							<li>CNCF and sponsors donated left over items,
 								including apparel, napkins, coffee cups, toys &
 								games, office supplies, cleaning/sanitizing
-								supplies, and other miscellaneous items to <a href="https://hvoquerido.nl/">
+								supplies, and other miscellaneous items to <a
+									href="https://hvoquerido.nl/">
 									HVO
 									Querido Amsterdam
 								</a></li>
 							<li>Conference lanyards were made from 100% recycled
 								materials</li>
-							<li>Learn more about the <a href="https://www.rai.nl/en/corporate-social-responsibility">
-								RAI's corporate social
+							<li>Learn more about the <a
+									href="https://www.rai.nl/en/corporate-social-responsibility">
+									RAI's corporate social
 									responsibility initiatives
-							</a></li>
-							<li>Learn more about <a href="https://acsaudiovisual.com/about/social-responsibility/">ACS</a>' (audio visual provider)
+								</a></li>
+							<li>Learn more about <a
+									href="https://acsaudiovisual.com/about/social-responsibility/">ACS</a>'
+								(audio visual provider)
 								corporate social responsibility initiatives</li>
 						</ul>
 
@@ -2797,7 +2805,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 
 			<div class="container wrap">
 
-			<div class="lf-grid thanks">
+				<div class="lf-grid thanks">
 					<div class="thanks__col1">
 						<h2 class="section-header">Thank You</h2>
 
