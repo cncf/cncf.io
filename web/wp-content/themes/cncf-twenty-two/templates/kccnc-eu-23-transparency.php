@@ -320,7 +320,7 @@ Executive Director, CNCF</p>
 				<div class="section-title-wrapper">
 					<h2 class="section-header">ATTENDEE <br />
 						OVERVIEW</h2>
-					<div class="section-number">1/6</div>
+					<div class="section-number">1/8</div>
 				</div>
 
 				<div class="lf-grid">
@@ -1310,7 +1310,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-80"></div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="shadow-outline-box">
 					<div>
@@ -1464,15 +1464,15 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<div class="lf-grid sub-grid">
 							<div class="sub-grid__col1">
 								<p>DevOps / SRE /<br> Sysadmin</p>
-								<h3 class="large">41%</h3>
+								<h3 class="large purple">41%</h3>
 							</div>
 							<div class="sub-grid__col2">
 								<p>Developer<br>&nbsp;</p>
-								<h3 class="large">19%</h3>
+								<h3 class="large purple">19%</h3>
 							</div>
 							<div class="sub-grid__col3">
 								<p>Architect<br>&nbsp;</p>
-								<h3 class="large">16%</h3>
+								<h3 class="large purple">16%</h3>
 							</div>
 						</div>
 					</div>
@@ -1482,13 +1482,13 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<div class="lf-grid sub-grid">
 							<div class="sub-grid__col1 two-cols">
 								<p>Total Onsite Leads<br>&nbsp;</p>
-								<h3 class="large">2,315</h3>
+								<h3 class="large purple">2,315</h3>
 							</div>
 							<div class="sub-grid__col2 two-cols">
 								<p>Average Onsite Leads <br>Per Sponsor</p>
-								<h3 class="large">178</h3>
+								<h3 class="large purple">178</h3>
 								<p
-									class="note"><span style="color: #FF85C1;">119%</span> increase from 2022</p>
+									class="note"><span style="color: #763FAB;">119%</span> increase from 2022</p>
 							</div>
 						</div>
 					</div>
@@ -1637,7 +1637,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-10-col">
+					<div class="restrictive-9-col">
 						<p>To continue efforts to improve the security of CNCF graduated and incubating projects, we worked with <a href="https://www.chainguard.dev/">Chainguard</a> to assess the software supply chain security practices of two graduated projects: Argo and Prometheus.</p>
 					</div>
 				</div>
@@ -1671,7 +1671,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-10-col">
+					<div class="restrictive-9-col">
 						<p>The assessments were based on <a href="https://slsa.dev/">Supply-chain Levels for Software Artifacts</a> (SLSA), which provides a framework for software supply chain integrity. SLSA is housed under the <a href="https://openssf.org/">Open Source Security Foundation</a> (OpenSSF) and details standards and technical controls that can be adopted to improve artifact integrity and build resilient systems.<br><br>These efforts build on the security work CNCF has been doing with <a href="https://www.cncf.io/blog/2022/08/08/improving-cncf-security-posture-with-independent-security-audits/">independent security audits with OSTIF</a> and <a href="https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/">fuzzing audits with ADA Logics</a> and address a crucial aspect of security health in the software supply chain.</p>
 					</div>
 				</div>
@@ -1899,6 +1899,10 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 				</div>
 
 				<div class="shadow-hr"></div>
+
+				<p class="sub-header">Incident Transparency Report</p>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid incidents">
 					<div class="incidents__col1">
@@ -2249,7 +2253,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header">Media Coverage Highlights</p>
+				<p class="sub-header">Industry Analyst Coverage Highlights</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 

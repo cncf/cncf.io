@@ -530,7 +530,10 @@ html {
 		text-transform: uppercase;
 		letter-spacing: 0.02em;
 		line-height: 115%;
-		font-size: 12px;
+		font-size: 10px;
+		@media (min-width: 350px) {
+			font-size: 11px;
+		}
 		@media (min-width: 374px) {
 			font-size: 13px;
 		}
@@ -931,7 +934,7 @@ html {
 				margin: 0;
 				margin-top: 50px;
 				padding-top: 50px;
-				padding-bottom: 50px;
+				padding-bottom: 20px;
 			}
 		}
 		&__jobs {
@@ -1380,6 +1383,9 @@ html {
 					@media (min-width: 1000px) {
 						font-size: 60px;
 					}
+					&.purple {
+						color: #763fab;
+					}
 				}
 				.note {
 					font-weight: 700;
@@ -1433,11 +1439,18 @@ html {
 			margin-bottom: 30px;
 		}
 		.slsa {
+			a {
+				display: flex;
+				flex-direction: column;
+			}
 			&__box {
 				padding: 20px;
-				grid-column: span 6;
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 6;
+				}
 				@media (min-width: 1000px) {
-					grid-column: span 3;
+					grid-column: span 4;
 				}
 				display: flex;
 				flex-direction: column;
@@ -1456,14 +1469,14 @@ html {
 				line-height: 140%;
 				text-align: center;
 				color: #1e0060;
+				margin-bottom: 20px;
 			}
 			&__image-wrapper {
-				padding: 10px 20px 20px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				align-content: center;
-				height: 100%;
+				min-height: 90px;
 			}
 			&__image {
 				max-width: 130px;
