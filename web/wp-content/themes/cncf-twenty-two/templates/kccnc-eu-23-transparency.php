@@ -1504,7 +1504,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<p>You can rewatch the session recordings via the <a href="https://www.youtube.com/playlist?list=PLj6h78yzYM2PyrvCoOii4rAopBswfz1p7">co-located events web page</a>.</p>
+				<p>You can rewatch the session recordings via the <a href="https://www.youtube.com/@cncf/playlists">co-located events web page</a>.</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
