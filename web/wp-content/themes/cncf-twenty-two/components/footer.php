@@ -168,7 +168,7 @@ $site_options = get_option( 'lf-mu' );
 		<?php
 		// This needs to be bigger to allow for cookie banner.
 		?>
-		<div style="height:70px" aria-hidden="true" class="wp-block-spacer">
+		<div style="height:90px" aria-hidden="true" class="wp-block-spacer">
 		</div>
 
 	</div>
