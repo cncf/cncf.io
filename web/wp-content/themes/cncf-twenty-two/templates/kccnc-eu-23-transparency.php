@@ -336,12 +336,12 @@ Executive Director, CNCF</p>
 
 				<picture>
 					<source media="(max-width: 499px)"
-						srcset="<?php echo esc_url( wp_get_attachment_image_url( 90409, 'full', false ) ); ?>">
+						srcset="<?php echo esc_url( wp_get_attachment_image_url( 90874, 'full', false ) ); ?>">
 					<source media="(min-width: 500px)"
-						srcset="<?php echo esc_url( wp_get_attachment_image_url( 90408, 'full', false ) ); ?>">
+						srcset="<?php echo esc_url( wp_get_attachment_image_url( 90873, 'full', false ) ); ?>">
 					<?php
 					LF_Utils::display_responsive_images(
-						90408,
+						90873,
 						'full',
 						'1200px',
 						'svg-image',
@@ -1174,14 +1174,15 @@ Security Enterprise Architect</p>
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-120"></div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 			</div>
 		</section>
+		<div class="shadow-hr"></div>
 
 		<section class="section-07 alignfull">
 			<div class="container wrap">
 
-				<div aria-hidden="true" class="report-spacer-120"></div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<h2 class="section-header">Content <br />Breakdown</h2>
 
@@ -1249,14 +1250,15 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<!-- End of Icon Box 3 -->
 					</div>
 				</div>
-				<div aria-hidden="true" class="report-spacer-120"></div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 			</div>
 		</section>
+		<div class="shadow-hr"></div>
 
 		<section class="section-08 alignfull">
 			<div class="container wrap">
 
-				<div aria-hidden="true" class="report-spacer-120"></div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<h2 class="section-header">Speaker Diversity</h2>
 
@@ -1423,7 +1425,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 							</div>
 						</div>
 						<p
-							class="section-09__demographics-note"><span style="color: #FF85C1;">41%</span> prefer not to answer</p>
+							class="section-09__demographics-note"><span style="color: #EA62A5;">41%</span> prefer not to answer</p>
 					</div>
 					<div class="section-09__demographics-col2">
 						<p
@@ -1509,23 +1511,23 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="masonry-grid">
-					<?php LF_Utils::display_responsive_images( 90410, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Argo co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90875, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Argo co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90411, 'full', '400px', 'masonry-item', 'lazy', 'Stats for CiliumCon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90876, 'full', '400px', 'masonry-item', 'lazy', 'Stats for CiliumCon co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90412, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native Telco Day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90877, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native Telco Day co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90413, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native WASM Day  co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90878, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native WASM Day  co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90414, 'full', '400px', 'masonry-item', 'lazy', 'Stats for ISTIO Day Europe co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90879, 'full', '400px', 'masonry-item', 'lazy', 'Stats for ISTIO Day Europe co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90415, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes Batch + HPC Day Europe co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90883, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes Batch + HPC Day Europe co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90418, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Observability Day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90880, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Observability Day co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90416, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes on Edge Day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90881, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes on Edge Day co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90417, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Linkerd Day Europe co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90882, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Linkerd Day Europe co-located event' ); ?>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
