@@ -11,7 +11,7 @@ $kccnc-eu-23-black: #000000;
 $kccnc-eu-23-white: #ffffff;
 $kccnc-eu-23-purple-400: #7340ae;
 $kccnc-eu-23-purple-700: #1e0060;
-$kccnc-eu-23-pink-200: #ff85c1;
+$kccnc-eu-23-pink-200: #EA62A5;
 $kccnc-eu-23-pink-400: #d62293;
 
 $kccnc-eu-23-gray-100: #fdfdfd;
@@ -604,7 +604,7 @@ html {
 			background-color: $kccnc-eu-23-purple-700;
 		}
 		&__blue-200 {
-			background-color: #75c6e3;
+			background-color: #0098CC;
 		}
 		&__blue-700 {
 			background-color: #052b92;
@@ -1242,7 +1242,6 @@ html {
 	}
 
 	.section-07 {
-		background-color: #f6f6f6;
 		.kccnc-table {
 			td:not(:first-child) {
 				font-weight: 700;
@@ -1262,7 +1261,7 @@ html {
 				}
 			}
 			.icon-box-3 .number {
-				color: #72cae8;
+				color: #0098CC;
 			}
 		}
 	}
@@ -1378,7 +1377,7 @@ html {
 				.large {
 					font-weight: 800;
 					line-height: 150%;
-					color: #ff85c1;
+					color: #EA62A5;
 					font-size: 30px;
 					@media (min-width: 1000px) {
 						font-size: 60px;
@@ -1610,7 +1609,7 @@ html {
 				font-weight: 700;
 				font-size: 72px;
 				line-height: 50px;
-				color: #75c6e3;
+				color: #0098CC;
 				display: block;
 			}
 			&__text {
@@ -1676,7 +1675,7 @@ html {
 					width: auto;
 				}
 				.number {
-					color: #75c6e3;
+					color: #0098CC;
 				}
 			}
 		}
