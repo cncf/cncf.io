@@ -63,7 +63,7 @@ $report_folder = 'reports/kccnc-eu-23/'
 					<?php LF_Utils::display_responsive_images( 90407, 'full', '1000px', null, 'lazy', 'Hero' ); ?>
 				</figure>
 				<figure class="hero__bg-gradient"></figure>
-
+			</div>
 		</section>
 
 		<!-- Navigation  -->
@@ -310,6 +310,7 @@ Executive Director, CNCF</p>
 						<span class="screen-reader-text">Next Photo</span>
 					</button>
 				</div>
+			</div>
 		</section>
 
 		<section id="attendees"
