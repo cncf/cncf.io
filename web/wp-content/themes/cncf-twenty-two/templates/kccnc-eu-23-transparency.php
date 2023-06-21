@@ -1511,23 +1511,23 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="masonry-grid">
-					<?php LF_Utils::display_responsive_images( 90875, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Argo co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90895, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Argo co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90876, 'full', '400px', 'masonry-item', 'lazy', 'Stats for CiliumCon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90896, 'full', '400px', 'masonry-item', 'lazy', 'Stats for CiliumCon co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90877, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native Telco Day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90897, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native Telco Day co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90878, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native WASM Day  co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90898, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native WASM Day  co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90879, 'full', '400px', 'masonry-item', 'lazy', 'Stats for ISTIO Day Europe co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90899, 'full', '400px', 'masonry-item', 'lazy', 'Stats for ISTIO Day Europe co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90883, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes Batch + HPC Day Europe co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90900, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes Batch + HPC Day Europe co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90880, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Observability Day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90901, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Observability Day co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90881, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes on Edge Day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90902, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes on Edge Day co-located event' ); ?>
 
-					<?php LF_Utils::display_responsive_images( 90882, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Linkerd Day Europe co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 90903, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Linkerd Day Europe co-located event' ); ?>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
