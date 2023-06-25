@@ -1,5 +1,5 @@
 /**
- * cdCon + GitOpsCon North America JS
+ * CdCon + GitOpsCon North America JS
  *
  * @package WordPress
  * @since 1.0.0
