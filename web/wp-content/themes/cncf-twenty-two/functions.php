@@ -121,6 +121,7 @@ require_once 'includes/shortcodes/price-table-members.php';
 require_once 'includes/shortcodes/projects.php';
 require_once 'includes/shortcodes/project-charts.php';
 require_once 'includes/shortcodes/radars.php';
+require_once 'includes/shortcodes/reports.php';
 require_once 'includes/shortcodes/selected-people.php';
 require_once 'includes/shortcodes/upcoming-webinars.php';
 require_once 'includes/shortcodes/youtube-playlist.php';
