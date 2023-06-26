@@ -21,9 +21,6 @@ import './case-study-highlights/block.js';
 // Case Study Overview Block.
 import './case-study-overview/block.js';
 
-// Events Block.
-import './events/block.js';
-
 // Hero Block.
 import './hero/block.js';
 
