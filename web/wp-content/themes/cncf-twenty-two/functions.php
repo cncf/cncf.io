@@ -119,6 +119,7 @@ require_once 'includes/shortcodes/price-table-cloud-credits.php';
 require_once 'includes/shortcodes/price-table-end-users.php';
 require_once 'includes/shortcodes/price-table-members.php';
 require_once 'includes/shortcodes/projects.php';
+require_once 'includes/shortcodes/events.php';
 require_once 'includes/shortcodes/project-charts.php';
 require_once 'includes/shortcodes/radars.php';
 require_once 'includes/shortcodes/reports.php';
