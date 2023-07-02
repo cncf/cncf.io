@@ -77,7 +77,7 @@ wp_enqueue_style( 'wp-block-columns' );
 										data-purecounter-end="<?php echo esc_html( $project_metrics['sandbox_count'] ); ?>"
 										class="purecounter number"><?php echo esc_html( $project_metrics['sandbox_count'] ); ?></span>
 									<span class="project"><span class="nowrap">Sandbox</span>
-										<br>Projects</span>
+										<br><span class="nowrap">Projects</span></span>
 								</a>
 							</div>
 						</div>
