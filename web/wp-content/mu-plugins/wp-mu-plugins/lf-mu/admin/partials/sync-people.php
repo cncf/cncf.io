@@ -95,6 +95,12 @@ foreach ( $people as $p ) {
 	if ( property_exists( $p, 'location' ) ) {
 		$params['meta_input']['lf_person_location'] = $p->location;
 	}
+	if ( property_exists( $p, 'toc_role' ) ) {
+		$params['meta_input']['lf_person_toc_role'] = $p->toc_role;
+	}
+	if ( property_exists( $p, 'gb_role' ) ) {
+		$params['meta_input']['lf_person_gb_role'] = $p->gb_role;
+	}
 	if ( property_exists( $p, 'linkedin' ) ) {
 		$params['meta_input']['lf_person_linkedin'] = $p->linkedin;
 	}

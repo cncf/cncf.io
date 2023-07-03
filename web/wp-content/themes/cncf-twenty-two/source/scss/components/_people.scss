@@ -72,7 +72,7 @@
 			}
 		}
 	}
-	&__company {
+	&__company, &__role {
 		margin-top: 10px;
 		@media (min-width: 1200px) {
 			margin-top: 16px;
@@ -80,6 +80,10 @@
 		font-size: 16px;
 		line-height: 140%;
 		color: $gray-700;
+	}
+
+	&__role {
+		font-style: italic;
 	}
 
 	&__social {

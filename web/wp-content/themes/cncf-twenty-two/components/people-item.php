@@ -14,6 +14,8 @@ $person_id   = get_the_ID();
 $person_slug = $post->post_name;
 $company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
 $pronouns    = ucwords( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ), $separators = " \t\r\n\f\v\\;/" );
+$gb_role     = get_post_meta( get_the_ID(), 'lf_person_gb_role', true );
+$toc_role    = get_post_meta( get_the_ID(), 'lf_person_toc_role', true );
 $linkedin    = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
 $twitter     = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
 $mastodon    = get_post_meta( get_the_ID(), 'lf_person_mastodon', true );
@@ -77,13 +79,25 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 		<?php
 		if ( $pronouns ) :
 			?>
-		<p class="person__pronouns">(<?php echo esc_html( $pronouns ); ?>)</p>
+			<p class="person__pronouns">(<?php echo esc_html( $pronouns ); ?>)</p>
 			<?php
-endif;
+		endif;
+
+		if ( $gb_role ) :
+			?>
+			<h4 class="person__role">GB <?php echo esc_html( $gb_role ); ?></h4>
+			<?php
+		endif;
+
+		if ( $toc_role ) :
+			?>
+			<h4 class="person__role">TOC <?php echo esc_html( $toc_role ); ?></h4>
+			<?php
+		endif;
 
 		if ( $company ) :
 			?>
-		<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
+			<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
 		<?php endif; ?>
 
 		<div class="person__social">
@@ -161,21 +175,35 @@ endif;
 						<?php
 						if ( $pronouns ) :
 							?>
-						<span
+							<span
 							class="person__pronouns">(<?php echo esc_html( $pronouns ); ?>)</span>
 							<?php
-		endif;
+						endif;
 						?>
 					</h3>
 
 					<?php
+					if ( $toc_role ) :
+						?>
+						<h4 class="person__company person__role">TOC <?php echo esc_html( $toc_role ); ?></h4>
+						<?php
+					endif;
+
+					if ( $gb_role ) :
+						?>
+						<h4 class="person__company person__role">GB <?php echo esc_html( $gb_role ); ?></h4>
+						<?php
+					endif;
+
 					if ( $company ) :
 						?>
-					<h4 class="person__company">
+						<h4 class="person__company">
 						<?php echo esc_html( $company ); ?></h4>
-					<?php endif; ?>
+						<?php
+					endif;
 
-					<?php if ( $location || $projects || $languages ) : ?>
+					if ( $location || $projects || $languages ) :
+						?>
 					<ul class="person__metadata">
 						<?php
 						if ( $location ) {
