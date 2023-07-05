@@ -11,6 +11,22 @@
  */
 
 /**
+ * Filter to add where clause to WP_Query to search by title.
+ *
+ * @param string $where Where clause.
+ * @param object $wp_query WP_Query object.
+ */
+function lf_title_filter( $where, &$wp_query ) {
+	global $wpdb;
+	$search_term = $wp_query->get( 'search_post_title' );
+	if ( $search_term ) {
+		$where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . $wpdb->esc_like( $search_term ) . '%\'';
+	}
+
+	return $where;
+}
+
+/**
  * Add Reports shortcode.
  *
  * @param array $atts Attributes.
@@ -47,14 +63,19 @@ function add_reports_shortcode( $atts ) {
 		'order'          => 'DESC',
 	);
 
-	if ( is_string( $search_term ) ) {
-		$query_args['s'] = $search_term;
-	}
 	if ( is_numeric( $limit ) ) {
 		$query_args['posts_per_page'] = $limit;
 	}
 
-	$report_query = new WP_Query( $query_args );
+	if ( is_string( $search_term ) ) {
+		add_filter( 'posts_where', 'lf_title_filter', 10, 2 );
+		$query_args['search_post_title'] = $search_term;
+		$report_query = new WP_Query( $query_args );
+		remove_filter( 'posts_where', 'lf_title_filter' );
+	} else {
+		$report_query = new WP_Query( $query_args );
+	}
+
 	ob_start();
 	if ( $report_query->have_posts() ) {
 		?>
