@@ -74,7 +74,7 @@
 				const marker = new google.maps.Marker(
 					{
 						position: latLng,
-						icon: '/wp-content/themes/cncf-twenty-two/images/map-marker.svg',
+						icon: '/wp-content/themes/cncf-twenty-two/images/map-markers/generic-event.svg',
 					}
 				);
 
