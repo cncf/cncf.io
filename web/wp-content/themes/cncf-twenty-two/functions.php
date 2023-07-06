@@ -114,6 +114,7 @@ require_once 'includes/shortcodes/latest-news.php';
 require_once 'includes/shortcodes/members.php';
 require_once 'includes/shortcodes/metrics.php';
 require_once 'includes/shortcodes/people-map.php';
+require_once 'includes/shortcodes/events-map.php';
 require_once 'includes/shortcodes/people.php';
 require_once 'includes/shortcodes/price-table-cloud-credits.php';
 require_once 'includes/shortcodes/price-table-end-users.php';

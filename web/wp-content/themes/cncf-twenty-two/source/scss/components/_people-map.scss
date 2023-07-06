@@ -3,14 +3,21 @@
 
 	.map-button {
 		font-family: $font-primary;
+		color: black;
 		font-weight: 800;
 		font-size: 14px;
-		line-height: 14px;
 
 		&:hover {
 			text-decoration: underline;
 		}
 	}
+
+	p.date {
+		font-family: $font-primary;
+		font-weight: 600;
+		font-size: 14px;
+	}
+
 	.gm-style-iw-c {
 		border-radius: 5px;
 	}
