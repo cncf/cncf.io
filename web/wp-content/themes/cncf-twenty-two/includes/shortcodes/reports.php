@@ -16,7 +16,7 @@
  * @param string $where Where clause.
  * @param object $wp_query WP_Query object.
  */
-function lf_title_filter( $where, &$wp_query ) {
+function lf_title_filter( $where, $wp_query ) {
 	global $wpdb;
 	$search_term = $wp_query->get( 'search_post_title' );
 	if ( $search_term ) {
