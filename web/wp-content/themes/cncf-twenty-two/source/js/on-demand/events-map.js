@@ -43,25 +43,6 @@
 			const eventsObjLen = eventsObj.length;
 			const min = .999;
 			const max = 1.001;
-			const markers = [];
-
-			const renderer = {
-				render: ( { count, position } ) =>
-
-				new google.maps.Marker(
-					{
-						label: { text: String( count ), color: "#fff", fontSize: "14px", fontWeight: "600", fontFamily: "Clarity City" },
-						icon: {
-							url: `data:image/svg+xml,%3Csvg fill='%23000' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Ccircle cx='120' cy='120' opacity='.7' r='110' /%3E%3C/svg%3E`,
-							scaledSize: new google.maps.Size( 45, 45 ),
-						},
-						position,
-						// adjust zIndex to be above other markers.
-						zIndex: Number( google.maps.Marker.MAX_ZINDEX ) + count,
-					}
-				)
-
-			};
 
 			for (let i = 0; i < eventsObjLen; i++) {
 
@@ -74,6 +55,7 @@
 				const marker = new google.maps.Marker(
 					{
 						position: latLng,
+						map,
 						icon: eventsObj[i]['icon'],
 					}
 				);
@@ -92,11 +74,7 @@
 						);
 					}
 				);
-
-				markers.push( marker );
 			}
-
-			new markerClusterer.MarkerClusterer( { markers, map, renderer } );
 		}
 		initMap();
 	}

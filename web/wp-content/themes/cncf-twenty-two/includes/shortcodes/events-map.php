@@ -86,13 +86,6 @@ function add_cncf_events_map_shortcode( $atts ) {
 		filemtime( get_template_directory() . '/source/js/on-demand/events-map.js' ),
 		true
 	);
-	wp_enqueue_script(
-		'markerclusterer',
-		get_template_directory_uri() . '/source/js/libraries/markerclusterer.min.js',
-		array(),
-		filemtime( get_template_directory() . '/source/js/libraries/markerclusterer.min.js' ),
-		true
-	);
 
 	ob_start();
 	?>
