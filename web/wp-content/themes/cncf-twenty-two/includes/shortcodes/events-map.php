@@ -144,6 +144,14 @@ function add_cncf_events_map_shortcode( $atts ) {
 			$lng = get_post_meta( $post->ID, 'lf_event_location_lng' );
 		}
 
+		if ( false !== strpos( get_the_title(), 'KCD' ) ) {
+			$icon = '/wp-content/themes/cncf-twenty-two/images/map-markers/kcd-event.svg';
+		} elseif ( false !== strpos( get_the_title(), 'KubeCon' ) ) {
+			$icon = '/wp-content/themes/cncf-twenty-two/images/map-markers/cncf-event.svg';
+		} else {
+			$icon = '/wp-content/themes/cncf-twenty-two/images/map-markers/generic-event.svg';
+		}
+
 		if ( $lat && $lng ) {
 			$events[] = array(
 				'lat'  => $lat,
@@ -151,6 +159,7 @@ function add_cncf_events_map_shortcode( $atts ) {
 				'name' => get_the_title(),
 				'url'  => esc_attr( $external_url ),
 				'id'   => get_the_ID(),
+				'icon' => $icon,
 				'date' => esc_html( Lf_Utils::display_event_date( $event_start_date, $event_end_date ) ),
 			);
 		}
