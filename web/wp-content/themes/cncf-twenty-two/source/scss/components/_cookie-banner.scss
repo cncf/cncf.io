@@ -11,15 +11,12 @@
 	font-weight: 700;
 	line-height: 1.5;
 	letter-spacing: 0.02em;
-	font-size: 13px;
+	font-size: 16px;
 	font-family: $font-primary;
 	padding-top: 35px;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-bottom: 25px;
-	@media (min-width: 600px) {
-		font-size: 16px;
-	}
 }
 
 .osano-cm-dialog--type_box {
@@ -99,12 +96,9 @@ div.osano-cm-disclosure__toggle {
 
 .osano-cm-link {
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 19px;
 	font-weight: 800;
 	color: $primary-400;
-	@media (min-width: 600px) {
-		font-size: 19px;
-	}
 	&:focus-visible {
 		font-weight: 800;
 		outline-offset: 1px;
