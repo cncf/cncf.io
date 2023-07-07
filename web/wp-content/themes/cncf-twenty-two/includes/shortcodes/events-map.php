@@ -125,9 +125,9 @@ function add_cncf_events_map_shortcode( $atts ) {
 	$query  = new WP_Query( $query_args );
 	while ( $query->have_posts() ) {
 		$query->the_post();
-		$lat          = get_post_meta( $post->ID, 'lf_event_location_lat' );
-		$lng          = get_post_meta( $post->ID, 'lf_event_location_lng' );
-		$external_url = get_post_meta( get_the_ID(), 'lf_event_external_url', true );
+		$lat              = get_post_meta( $post->ID, 'lf_event_location_lat' );
+		$lng              = get_post_meta( $post->ID, 'lf_event_location_lng' );
+		$external_url     = get_post_meta( get_the_ID(), 'lf_event_external_url', true );
 		$event_start_date = get_post_meta( get_the_ID(), 'lf_event_date_start', true );
 		$event_end_date   = get_post_meta( get_the_ID(), 'lf_event_date_end', true );
 
