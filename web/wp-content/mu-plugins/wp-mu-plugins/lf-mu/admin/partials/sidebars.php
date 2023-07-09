@@ -68,15 +68,14 @@ $sidebar    = array(
 					'initial_open' => true,
 					'settings'     => array(
 						array(
-							'type'              => 'date_single',
+							'type'              => 'text',
 							'data_type'         => 'meta',
-							'unavailable_dates' => array(),
 							'data_key'          => 'date',
 							'label'             => __( 'Date' ),
 							'register_meta'     => true,
 							'ui_border_top'     => true,
 							'default_value'     => '',
-							'format'            => 'YYYY-MM-DD',
+							'placeholder'       => 'YYYY/MM/DD',
 						),
 						array(
 							'type'          => 'select',
@@ -301,26 +300,24 @@ $sidebar    = array(
 					'initial_open' => true,
 					'settings'     => array(
 						array(
-							'type'              => 'date_single',
+							'type'              => 'text',
 							'data_type'         => 'meta',
-							'unavailable_dates' => array(),
 							'data_key'          => 'date_start',
 							'label'             => __( 'Start Date' ),
 							'register_meta'     => true,
 							'ui_border_top'     => true,
 							'default_value'     => '',
-							'format'            => 'YYYY-MM-DD',
+							'placeholder'       => 'YYYY/MM/DD',
 						),
 						array(
-							'type'              => 'date_single',
+							'type'              => 'text',
 							'data_type'         => 'meta',
-							'unavailable_dates' => array(),
 							'data_key'          => 'date_end',
 							'label'             => __( 'End Date' ),
 							'register_meta'     => true,
 							'ui_border_top'     => false,
 							'default_value'     => '',
-							'format'            => 'YYYY-MM-DD',
+							'placeholder'       => 'YYYY/MM/DD',
 							'help'              => __( 'Required. For single day events, enter the same date.' ),
 						),
 						array(
