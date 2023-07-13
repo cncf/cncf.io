@@ -66,7 +66,7 @@ function add_projects_shortcode( $atts ) {
 			title="<?php echo esc_html( the_title_attribute() . $date_accepted ); ?>"
 			class="project-item__link">
 
-			<img src="<?php echo esc_url( $logo ); ?>" loading="lazy"
+			<img width="100" height="100" src="<?php echo esc_url( $logo ); ?>" loading="lazy"
 				title="<?php echo esc_html( the_title_attribute() . $date_accepted ); ?>"
 				class="project-item__image">
 		</a>
