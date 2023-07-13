@@ -91,7 +91,7 @@ function add_cncf_members_latest_shortcode( $atts ) {
 <div class="members <?php echo esc_html( 'logo_' . $atts['size'] ); ?>">
 	<?php
 	for ( $i = 0; $i < $count; $i++ ) {
-		echo '<img loading="lazy" src="' . esc_url( $members_array[ $i ]->logo ) . '" alt="' . esc_attr( $members_array[ $i ]->name ) . '">';
+		echo '<img width="105" height="40" loading="lazy" src="' . esc_url( $members_array[ $i ]->logo ) . '" alt="' . esc_attr( $members_array[ $i ]->name ) . '">';
 	}
 	?>
 </div>
