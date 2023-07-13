@@ -1,3 +1,15 @@
+// Front page single banner.
+.event-banner {
+	width: 100%;
+	overflow: hidden;
+	a {
+		display: block;
+	}
+	img {
+		border-radius: 5px;
+	}
+}
+
 .event-item {
 	position: relative;
 	overflow: hidden;

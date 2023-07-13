@@ -857,3 +857,23 @@
 		}
 	}
 }
+
+.home-events-slider {
+	content-visibility: auto;
+	contain-intrinsic-size: auto 396px;
+	@media (min-width: 412px) {
+		contain-intrinsic-size: auto 455px;
+	}
+	@media (min-width: 500px) {
+		contain-intrinsic-size: auto 186px;
+	}
+	@media (min-width: 768px) {
+		contain-intrinsic-size: auto 258px;
+	}
+	@media (min-width: 1024px) {
+		contain-intrinsic-size: auto 348px;
+	}
+	@media (min-width: 1200px) {
+		contain-intrinsic-size: auto 427px;
+	}
+}
