@@ -91,7 +91,7 @@ else :
 
 			if ( has_post_thumbnail() && $is_featured ) {
 				// display large featured image.
-				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-776', '776px', 'post-archive__image', 'lazy', get_the_title() );
+				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-776', '776px', 'post-archive__image', 'eager', get_the_title() );
 
 			} elseif ( has_post_thumbnail() ) {
 				// display smaller news image.
