@@ -51,7 +51,7 @@ if ( have_rows( 'selected_slider_images' ) ) :
 		$slider_description = get_sub_field( 'slider_description' ) ?? 'CNCF Photo';
 		?>
 		<div>
-		<?php LF_Utils::display_responsive_images( $slider_image_id, 'newsroom-post-width', '700px', null, null, $slider_description ); ?>
+		<?php LF_Utils::display_responsive_images( $slider_image_id, 'newsroom-post-width', '700px', null, 'lazy', $slider_description ); ?>
 		</div>
 			<?php
 		endwhile;
