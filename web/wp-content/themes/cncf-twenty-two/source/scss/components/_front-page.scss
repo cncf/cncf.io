@@ -229,9 +229,12 @@
 }
 
 .home-projects-slider {
+	content-visibility: auto;
+	contain-intrinsic-size: auto 198px;
 	position: relative;
 	margin-top: 40px;
 	@media (min-width: 782px) {
+		contain-intrinsic-size: auto 278px;
 		margin-top: 80px;
 	}
 	.slick-initialized .slick-track {
