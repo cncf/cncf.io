@@ -53,10 +53,9 @@ class LF_Enqueue {
 		wp_enqueue_style( 'wp-block-button' );
 		wp_enqueue_style( 'wp-block-buttons' );
 
-		// Report optimisations.
-		if ( is_front_page() || is_singular( 'lf_report' ) ) {
+		// Style optimizations.
+		if ( is_front_page() || is_singular( 'lf_report' ) || is_singular( 'post' ) ) {
 			wp_dequeue_style( 'search-filter-plugin-styles' );
-			wp_dequeue_style( 'ctf_styles' );
 		}
 	}
 
