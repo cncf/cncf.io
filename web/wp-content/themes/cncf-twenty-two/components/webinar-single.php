@@ -94,7 +94,7 @@ if ( $dat_webinar_end > $dat_now ) {
 					<?php
 					if ( 'recorded' === $period_status ) {
 						?>
-							<img src="<?php LF_utils::get_svg( 'icon-camera.svg', true ); ?>" alt="Camera Icon" class="webinar-single__svg"> Recorded:
+							<img width="18" height="14" src="<?php LF_utils::get_svg( 'icon-camera.svg', true ); ?>" alt="Camera Icon" class="webinar-single__svg"> Recorded:
 						<?php
 					} else {
 						?>
@@ -111,7 +111,7 @@ if ( $dat_webinar_end > $dat_now ) {
 					?>
 			<div class="webinar-single__views">
 
-			<img src="<?php LF_utils::get_svg( 'icon-views.svg', true ); ?>" alt="Views Icon" class="webinar-single__svg">
+			<img width="18" height="14" src="<?php LF_utils::get_svg( 'icon-views.svg', true ); ?>" alt="Views Icon" class="webinar-single__svg">
 
 			Views: <?php echo esc_html( number_format( $webinar_views ) ); ?>
 			</div>
