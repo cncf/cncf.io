@@ -54,7 +54,12 @@ class LF_Enqueue {
 		wp_enqueue_style( 'wp-block-buttons' );
 
 		// Style optimizations.
-		if ( is_front_page() || is_singular( 'lf_report' ) || is_singular( 'post' ) || is_post_type_archive( 'post' ) ) {
+		if (
+			is_front_page() ||
+			is_singular( 'lf_report' ) ||
+			is_singular( 'post' ) ||
+			is_singular( 'lf_webinar' ) ||
+			is_post_type_archive( 'post' ) ) {
 			wp_dequeue_style( 'search-filter-plugin-styles' );
 		}
 	}
@@ -69,7 +74,7 @@ class LF_Enqueue {
 	public function scripts() {
 
 		// osano cookie consent policy.
-		wp_enqueue_script( 'osano', 'https://cmp.osano.com/16A0DbT9yDNIaQkvZ/c3494b1e-ff3a-436f-978d-842e9a0bed27/osano.js', null, 1 );
+		wp_enqueue_script( 'osano', 'https://cmp.osano.com/16A0DbT9yDNIaQkvZ/c3494b1e-ff3a-436f-978d-842e9a0bed27/osano.js', null, 1, false );
 
 		if ( WP_DEBUG === true ) {
 			// Use un-minified versions.
