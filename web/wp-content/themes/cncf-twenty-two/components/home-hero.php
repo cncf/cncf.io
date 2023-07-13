@@ -9,7 +9,7 @@
 
 ?>
 
-<link rel="preload" as="image"
+<link rel="preload" as="image" fetchpriority="high"
 	href="<?php echo esc_url( get_template_directory_uri() . '/images/home-hero-poster.jpg' ); ?>">
 
 <?php
