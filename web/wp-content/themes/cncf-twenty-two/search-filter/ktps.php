@@ -45,7 +45,6 @@ if ( $query->have_posts() ) : ?>
 		$logo         = get_post_meta( get_the_ID(), 'lf_ktp_logo', true );
 		$country      = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
 		$country_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-country' );
-
 		?>
 
 	<div class="ktp-item has-animation-scale-2">
@@ -54,7 +53,7 @@ if ( $query->have_posts() ) : ?>
 			title="<?php echo esc_attr( $name ); ?>"
 			class="ktp-item__image-link">
 
-			<img src="<?php echo esc_url( $logo ); ?>" loading="lazy"
+			<img width="200" height="95" src="<?php echo esc_url( $logo ); ?>" loading="lazy"
 				title="Visit <?php echo esc_html( $name ); ?>"
 				class="ktp-item__image">
 		</a>
