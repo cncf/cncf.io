@@ -119,8 +119,7 @@ if ( $dat_webinar_end > $dat_now ) {
 
 		</div>
 
-		<div style="height:90px" aria-hidden="true" class="wp-block-spacer is-style-70-90">
-		</div>
+		<div style="height:90px" aria-hidden="true" class="wp-block-spacer is-style-70-90"></div>
 
 			<?php
 			// Video.
@@ -128,19 +127,16 @@ if ( $dat_webinar_end > $dat_now ) {
 				?>
 		<figure
 			class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
-			<div class="wp-block-embed__wrapper">
-				<iframe
-					src="https://www.youtube-nocookie.com/embed/<?php echo esc_html( $video_id ); ?>"
-					title="Video of <?php the_title_attribute(); ?>" loading="lazy"
-					frameborder="0" width="500" height="281"
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-			</div>
+			<div class="wp-block-lf-youtube-lite">
+					<lite-youtube videoid="<?php echo esc_html( $video_id ); ?>"
+						videotitle="Video of <?php the_title_attribute(); ?>"
+						webpStatus="1" sdthumbStatus="0"
+						title="Play <?php the_title_attribute(); ?>">
+					</lite-youtube>
+				</div>
 		</figure>
 
-		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-40-80">
-		</div>
-
+		<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-40-80"></div>
 
 			<?php endif; ?>
 
@@ -180,3 +176,14 @@ endwhile;
 		?>
 </article>
 </main>
+
+<?php
+// youtube lite script.
+wp_enqueue_script(
+	'youtube-lite-js',
+	home_url() . '/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/src/youtube-lite/scripts/lite-youtube.js',
+	null,
+	filemtime( WPMU_PLUGIN_DIR . '/wp-mu-plugins/lf-blocks/dist/blocks.build.js' ),
+	true
+);
+?>
