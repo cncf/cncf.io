@@ -19,7 +19,7 @@ function add_training_newsletter_shortcode( $atts ) {
 	ob_start();
 	?>
 <div class="wp-block-group is-style-box-shadow has-white-background-color has-background kubeweekly-newsletter">
-<h3 class="is-style-spaced-uppercase">JOIN THE TRAINING MAILING LIST</h3>
+<p class="is-style-spaced-uppercase">Join The Training Mailing List</p>
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
 <p>Stay up-to-date on all things Training + Certification by signing up for our mailing list:</p>
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
