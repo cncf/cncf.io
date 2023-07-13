@@ -57,10 +57,11 @@
 						position: latLng,
 						map,
 						icon: eventsObj[i]['icon'],
+						title: 'Select ' + eventsObj[i]['name']
 					}
 				);
 
-				const popup = '<a class="map-button" href="' + eventsObj[i]['url'] + '">' + eventsObj[i]['name'] + '</a><p class="date">' + eventsObj[i]['date'] + '</p>';
+				const popup = '<a class="map-button" title="View ' + eventsObj[i]['name'] + '" href="' + eventsObj[i]['url'] + '">' + eventsObj[i]['name'] + '</a><p class="date">' + eventsObj[i]['date'] + '</p>';
 				marker.addListener(
 					"click",
 					() => {
