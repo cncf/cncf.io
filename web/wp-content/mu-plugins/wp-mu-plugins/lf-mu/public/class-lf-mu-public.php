@@ -332,4 +332,51 @@ class Lf_Mu_Public {
 			header( 'Cache-Control: public, max-age=60, s-maxage=43200, stale-while-revalidate=86400, stale-if-error=604800' );
 		}
 	}
+
+	/**
+	 * This is a temporary fix for the disappearing meta tags from TSF. See https://github.com/cncf/cncf.io/issues/642.
+	 *
+	 * @param bool $supported Input param
+	 */
+	public function tsf_meta_temp_fix( $supported ) {
+		// If it's already supported, we didn't encounter the bug; circle back:
+		if ( $supported )
+			return $supported;
+
+		$tsf = tsf();
+
+		switch ( true ) {
+			case is_feed():
+			case wp_doing_ajax():
+			case wp_doing_cron():
+			case defined( 'REST_REQUEST' ) && REST_REQUEST:
+				$supported = false;
+				break;
+
+			case $tsf->is_singular():
+				// This is the most likely scenario, but may collide with is_feed() et al.
+				$supported = $tsf->is_post_type_supported() && $tsf->get_the_real_id();
+				break;
+
+			case is_post_type_archive():
+				$supported = $tsf->is_post_type_archive_supported();
+				break;
+
+			case $tsf->is_term_meta_capable():
+				// When a term has no posts attached, it'll not return a post type, and it returns a 404 late in the loop.
+				// This is because get_post_type() tries to assert the first post in the loop here.
+				// Thus, we test for is_taxonomy_supported() instead.
+				$supported = $tsf->is_taxonomy_supported() && $tsf->get_the_real_id();
+				break;
+
+			default:
+				// Everything else: homepage, 404, search, edge-cases.
+				$supported = true;
+		}
+
+		if ( ! $supported && $tsf->is_query_exploited() )
+			$supported = true;
+
+		return $supported;
+	}
 }
