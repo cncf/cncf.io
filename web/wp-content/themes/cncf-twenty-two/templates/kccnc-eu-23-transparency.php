@@ -2828,7 +2828,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 
 						<div aria-hidden="true" class="report-spacer-80"></div>
 
-						<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/">register for KubeCon + CloudNativeCon + Open Source Summit China</a> in Shanghai, 26 - 28 September, 2023, and <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/">KubeCon + CloudNativeCon North America</a> in Chicago, 6 - 9 November 2023.</p>
+						<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/">register for KubeCon + CloudNativeCon + Open Source Summit China</a> in Shanghai, 26 - 28 September, 2023, and <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/">KubeCon + CloudNativeCon North America</a> in Chicago, 6 - 9 November 2023.</p>
 					</div>
 					<div class="thanks__col2">
 						<?php
