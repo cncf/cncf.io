@@ -46,9 +46,6 @@ services:
     type: 'node:14'
     ssl: true
     scanner: false
-  database:
-    type: mariadb:10.3
-    portforward: 52357
   appserver:
     run:
       - /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs
