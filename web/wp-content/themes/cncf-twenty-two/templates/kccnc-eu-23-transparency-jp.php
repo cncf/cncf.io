@@ -47,7 +47,11 @@ $report_folder = 'reports/kccnc-eu-23/'
 
 							<div class="hero__hr"></div>
 
-							<p align-text="left" vertical-align=""><font size ="4" color="#003B63"><b>日本語版翻訳協力：富田 明男（Akio Tomita）、富田 佑実（Yumi Tomita）</b></font></p>
+							<div>
+								<p align-text="left" vertical-align=""><b>日本語版翻訳協力：富田 明男（Akio Tomita）、富田 佑実（Yumi Tomita）</b></p>
+							</div>
+
+							<div aria-hidden="true" class="report-spacer-40"></div>
 
 							<div class="hero__button-share-align">
 
