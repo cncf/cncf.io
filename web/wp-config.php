@@ -217,6 +217,7 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 		define( 'WP_DEBUG_LOG', __DIR__ . '/wp-content/debug.log' ); // Moves log file to writable location.
 		define( 'SCRIPT_DEBUG', true );
 		define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
+		define( 'LOAD_MEDIA_FROM_PRODUCTION_URL', 'https://www.cncf.io' ); // Sets url for loading media files on dev instance.
 
 		define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
 

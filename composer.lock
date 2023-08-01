@@ -1114,15 +1114,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "5.3.0",
+            "version": "5.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/5.3.0"
+                "reference": "tags/5.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.5.3.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.5.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1895,12 +1895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thetwopct/load-media-from-production.git",
-                "reference": "9a71debe9b3b16d643255f48345bedd49bc4b0ad"
+                "reference": "6136249997cd89ef5053ef6e7f9b31aefd9a042b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thetwopct/load-media-from-production/zipball/9a71debe9b3b16d643255f48345bedd49bc4b0ad",
-                "reference": "9a71debe9b3b16d643255f48345bedd49bc4b0ad",
+                "url": "https://api.github.com/repos/thetwopct/load-media-from-production/zipball/6136249997cd89ef5053ef6e7f9b31aefd9a042b",
+                "reference": "6136249997cd89ef5053ef6e7f9b31aefd9a042b",
                 "shasum": ""
             },
             "require": {
@@ -1909,11 +1909,6 @@
             },
             "default-branch": true,
             "type": "wordpress-plugin",
-            "autoload": {
-                "files": [
-                    "load-media-from-production.php"
-                ]
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1929,7 +1924,7 @@
                 "source": "https://github.com/thetwopct/load-media-from-production/tree/main",
                 "issues": "https://github.com/thetwopct/load-media-from-production/issues"
             },
-            "time": "2023-08-01T14:18:45+00:00"
+            "time": "2023-08-01T17:34:34+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
