@@ -35,6 +35,8 @@ If you happen to get an error that looks like this `ERROR ==> Need to give this 
 3. Open the .lando.yml file and add the following to the file.
 
 ```yml
+keys:
+  - pantheon_rsa
 proxy:
   node:
     - bs.cncfci.lndo.site:3000
@@ -59,11 +61,11 @@ tooling:
     service: node
   phpcs:
     service: appserver
-    cmd: /app/vendor/bin/phpcs
+    cmd: /app/vendor/bin/phpcs --standard="WordPress"
     description: 'Run PHPCS commands'
   phpcbf:
     service: appserver
-    cmd: /app/vendor/bin/phpcbf
+    cmd: /app/vendor/bin/phpcbf --standard="WordPress"
     description: 'Run PHPCBF commands'
   sniff:
     service: appserver
