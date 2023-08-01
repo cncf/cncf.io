@@ -121,7 +121,7 @@ if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) :
 		define( 'WP_DEBUG_LOG', __DIR__ . '/wp-content/debug.log' ); // Moves log file to writable location.
 		define( 'SCRIPT_DEBUG', true );
 		define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // stops admin email sent.
-		define( 'BE_MEDIA_FROM_PRODUCTION_URL', 'https://www.cncf.io' );
+		define( 'LOAD_MEDIA_FROM_PRODUCTION_URL', 'https://www.cncf.io' ); // Sets url for loading media files on dev instance.
 
 		// fixes small problem with LH-HSTS
 		if ( ! isset( $_SERVER['HTTP_HOST'] ) ) {
