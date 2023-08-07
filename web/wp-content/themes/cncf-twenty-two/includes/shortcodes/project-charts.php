@@ -59,6 +59,13 @@ function get_project_chart_data( $maturity_data ) {
 	$this_date  = $start_date;
 
 	while ( $this_date < gmdate( 'Y-m-d' ) ) {
+		if ( gmdate( 'Y-m-d' ) < gmdate( 'Y-m-d', strtotime( $this_date . ' + 1 month' ) ) ) {
+			// use the current date if it's the last data point.
+			$this_date = gmdate( 'Y-m-d' );
+		} else {
+			// otherwise use the start of the next month.
+			$this_date = gmdate( 'Y-m-d', strtotime( $this_date . ' + 1 month' ) );
+		}
 		$chart_data[ $this_date ] = array(
 			'archived'   => 0,
 			'sandbox'    => 0,
@@ -76,7 +83,6 @@ function get_project_chart_data( $maturity_data ) {
 				$chart_data[ $this_date ]['sandbox'] += 1;
 			}
 		}
-		$this_date = gmdate( 'Y-m-d', strtotime( $this_date . ' + 1 month' ) );
 	}
 	return $chart_data;
 }
