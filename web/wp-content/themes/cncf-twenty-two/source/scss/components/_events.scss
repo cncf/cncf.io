@@ -55,17 +55,17 @@
 		font-size: 24px;
 		line-height: 30px;
 		margin-bottom: 25px;
-		a {
-			color: $white;
-		}
-		a:hover {
-			text-decoration: none;
-		}
 	}
 	&__date,
 	&__city {
 		color: $white;
 		display: block;
+	}
+	a, h3 {
+		color: $white;
+	}
+	a:hover {
+		text-decoration: none;
 	}
 }
 

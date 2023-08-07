@@ -47,20 +47,16 @@ $color ? $overlay_color = $color : $overlay_color = 'transparent';
 	</figure>
 	<?php endif; ?>
 
+	<a href="<?php echo esc_url( $external_url ); ?>"
+	title="<?php the_title_attribute(); ?>">
 	<div class="event-item__content">
-
 		<div>
 			<?php if ( $logo ) : ?>
-			<a href="<?php echo esc_url( $external_url ); ?>"
-				title="<?php the_title_attribute(); ?>">
 				<?php
 				LF_Utils::display_responsive_images( $logo, 'medium', '300px', 'event-item__logo', 'lazy', get_the_title() );
 				?>
-			</a>
 			<?php else : ?>
-			<h3 class="event-item__title"><a
-					href="<?php echo esc_url( $external_url ); ?>"
-					title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			<h3 class="event-item__title"><?php the_title(); ?>
 			</h3>
 			<?php endif; ?>
 
@@ -73,6 +69,6 @@ $color ? $overlay_color = $color : $overlay_color = 'transparent';
 					class="event-item__city"><?php echo esc_html( $location ); ?></span>
 			</h4>
 		</div>
-
 	</div>
+	</a>
 </div>
