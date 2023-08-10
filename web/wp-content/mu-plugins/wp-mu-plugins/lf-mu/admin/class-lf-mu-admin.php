@@ -578,6 +578,33 @@ class Lf_Mu_Admin {
 	}
 
 	/**
+	 * Add custom column headers to Humans.
+	 *
+	 * @param array $columns Admin columns.
+	 */
+	public function set_custom_edit_lf_human_columns( $columns ) {
+		$date = $columns['date'];
+		unset( $columns['date'] );
+
+		$columns['lf_human_image'] = 'Headshot';
+		$columns['date']           = $date;
+
+		return $columns;
+	}
+
+	/**
+	 * Add custom column data to Humans
+	 *
+	 * @param array $column Admin columns.
+	 * @param int   $post_id Post ID.
+	 */
+	public function custom_lf_human_column( $column, $post_id ) {
+		if ( 'lf_human_image' == $column ) {
+			echo get_post_meta( $post_id, 'lf_human_image', true ) ? '<span class="dashicons dashicons-yes-alt" style="color:green"></span>' : '<span class="dashicons dashicons-no-alt" style="color:red"></span>';
+		}
+	}
+
+	/**
 	 * Removes unneeded large image sizes default to WP.
 	 */
 	public function remove_image_sizes() {

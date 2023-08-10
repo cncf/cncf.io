@@ -212,15 +212,15 @@ class Lf_Mu {
 		$this->loader->add_filter( 'dashboard_glance_items', $plugin_admin, 'custom_glance_items', 10, 1 );
 
 		$this->loader->add_filter( 'manage_lf_webinar_posts_columns', $plugin_admin, 'set_custom_edit_lf_webinar_columns' );
-
 		$this->loader->add_action( 'manage_lf_webinar_posts_custom_column', $plugin_admin, 'custom_lf_webinar_column', 10, 2 );
 
 		$this->loader->add_filter( 'manage_lf_event_posts_columns', $plugin_admin, 'set_custom_edit_lf_event_columns' );
-
 		$this->loader->add_action( 'manage_lf_event_posts_custom_column', $plugin_admin, 'custom_lf_event_column', 10, 2 );
 
-		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_dashboard_widget_info' );
+		$this->loader->add_filter( 'manage_lf_human_posts_columns', $plugin_admin, 'set_custom_edit_lf_human_columns' );
+		$this->loader->add_action( 'manage_lf_human_posts_custom_column', $plugin_admin, 'custom_lf_human_column', 10, 2 );
 
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_dashboard_widget_info' );
 		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'remove_dashboard_widgets' );
 
 		$this->loader->add_filter( 'pre_get_posts', $plugin_admin, 'set_events_admin_order' );
