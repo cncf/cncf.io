@@ -1,0 +1,13 @@
+.wp-block.wp-block-lf-learning-journey-navigation {
+	border: 1px solid #757ba2;
+	padding: 1rem 0;
+	&:before {
+		content: 'Learning Journey Nav';
+		color: #757ba2;
+		position: absolute;
+		left: 1px;
+		top: 0;
+		line-height: 1;
+		font-size: 10px;
+	}
+}

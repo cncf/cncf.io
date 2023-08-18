@@ -1,0 +1,62 @@
+{
+    "key": "group_64de963e397f7",
+    "title": "Block - Learning Journey Item",
+    "fields": [
+        {
+            "key": "field_64de963ec5c38",
+            "label": "Title",
+            "name": "lji_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Title",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64de966dc5c39",
+            "label": "Link",
+            "name": "lji_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "lf\/learning-journey-item"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1692364254
+}

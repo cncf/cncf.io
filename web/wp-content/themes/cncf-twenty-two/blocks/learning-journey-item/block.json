@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lf/learning-journey-item",
+	"title": "Learning Journey Item",
+	"description": "A item within the Learning Journey",
+	"editorScript": [],
+	"category": "lf",
+	"icon": "editor-insertmore",
+	"parent": ["lf/learning-journey-section"],
+	"keywords": [
+		"learning journey",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "learning-journey-item.php",
+		"postTypes": [ "page" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": false,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"fullHeight": false,
+		"html": false,
+		"multiple": true,
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"layout": true
+	},
+	"example": {}
+}

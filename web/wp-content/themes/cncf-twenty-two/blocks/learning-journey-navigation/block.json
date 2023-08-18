@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lf/learning-journey-navigation",
+	"title": "Learning Journey Navigation",
+	"description": "Navigation block for the Learning Journey block",
+	"style": "file:./learning-journey-navigation.css",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "common",
+	"icon": "menu",
+	"keywords": [
+		"navigation",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "learning-journey-navigation.php"
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"className": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false,
+			"enableContrastChecker": false
+		},
+		"customClassName": false,
+		"defaultStylePicker": true,
+		"html": false,
+		"multiple": false,
+		"reusable": true,
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		}
+	},
+	"attributes": {
+		"variable": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {}
+}

@@ -1,0 +1,64 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lf/learning-journey",
+	"title": "Learning Journey",
+	"description": "The learning block that encapsulates the different sections and items of the Journey",
+	"style": "file:./learning-journey.css",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "lf",
+	"icon": "cover-image",
+	"keywords": [
+		"learning journey",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "learning-journey.php",
+		"postTypes": [ "page" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": [
+			"wide",
+			"full",
+			"left",
+			"center",
+			"right"
+		],
+		"alignWide": true,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
+		"className": true,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false,
+			"enableContrastChecker": false
+		},
+		"customClassName": false,
+		"defaultStylePicker": true,
+		"html": false,
+		"multiple": false,
+		"reusable": true,
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		}
+	},
+	"attributes": {
+		"variable": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {}
+}
