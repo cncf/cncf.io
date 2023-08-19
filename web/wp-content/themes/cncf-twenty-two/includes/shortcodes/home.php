@@ -135,7 +135,7 @@ function add_home_intro_boxes_shortcode() {
 	</div>
 
 	<div class="home-intro-box has-animation-scale-2">
-		<h3 class="home-intro-box__title">New to Cloud Native?</h3>
+		<h3 class="home-intro-box__title">New to cloud native?</h3>
 		<img class="home-intro-box__goldie" loading="lazy"
 			src="<?php LF_utils::get_image( 'home-goldie.png' ); ?>"
 			alt="Goldie">
