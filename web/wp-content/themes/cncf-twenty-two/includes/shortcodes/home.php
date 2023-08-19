@@ -135,13 +135,13 @@ function add_home_intro_boxes_shortcode() {
 	</div>
 
 	<div class="home-intro-box has-animation-scale-2">
-		<h3 class="home-intro-box__title">New to CNCF?</h3>
+		<h3 class="home-intro-box__title">New to Cloud Native?</h3>
 		<img class="home-intro-box__goldie" loading="lazy"
 			src="<?php LF_utils::get_image( 'home-goldie.png' ); ?>"
 			alt="Goldie">
 		<div class="home-intro-box__text-wrapper">
 			<p
-				class="is-style-link-cta"><a href="/about/who-we-are/" title="Learn more about CNCF">About CNCF</a></p>
+				class="is-style-link-cta"><a href="/cloud-native-learning-journey/" title="Learn about cloud native">Start your Journey</a></p>
 		</div>
 	</div>
 </div>

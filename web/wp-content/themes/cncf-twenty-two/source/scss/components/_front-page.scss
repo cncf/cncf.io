@@ -387,7 +387,8 @@
 			@media (min-width: 1000px) {
 				background-color: transparent;
 				padding: 22px 0px 22px 0px;
-				text-align: center;
+				text-align: left;
+				margin-left: 260px;
 			}
 		}
 		.home-intro-box__text-wrapper {
@@ -424,7 +425,6 @@
 			}
 			@media (min-width: 500px) {
 				max-height: 110px;
-				right: 50px;
 			}
 		}
 		@media (min-width: 710px) {
@@ -436,13 +436,13 @@
 		@media (min-width: 1000px) {
 			padding: 0; // reset.
 			position: absolute;
-			right: 19%;
+			right: 26%;
 			top: -10px;
 			bottom: -10px;
 		}
 		@media (min-width: 1200px) {
 			max-height: 118px;
-			right: 22%;
+			right: 30%;
 			top: -20px;
 			bottom: -20px;
 		}
