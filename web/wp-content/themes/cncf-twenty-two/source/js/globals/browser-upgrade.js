@@ -10,7 +10,17 @@
 
 /* eslint-disable no-unused-vars */
 
-var $buoop = {required:{e:-6,f:-6,o:-6,s:-4,c:-6},insecure:true,api:2023.08 };
+var $buoop = {
+	required:{
+		e:80,
+		f:106,
+		o:91,
+		s:12,
+		c:110
+	},
+	insecure:true,
+	api:2023.08
+};
 
 function $buo_f(){
 	var e = document.createElement( "script" );
@@ -18,7 +28,5 @@ function $buo_f(){
 	document.body.appendChild( e );
 };
 try {
-	document.addEventListener( "DOMContentLoaded", $buo_f,false )
-} catch (e) {
-	window.attachEvent( "onload", $buo_f )
-}
+	document.addEventListener( "DOMContentLoaded", $buo_f,false )} catch (e) {
+	window.attachEvent( "onload", $buo_f )}
