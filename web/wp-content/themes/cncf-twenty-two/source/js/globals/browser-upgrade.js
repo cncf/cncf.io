@@ -18,7 +18,6 @@ var $buoop = {
 		s:12,
 		c:110
 	},
-	insecure:true,
 	api:2023.08
 };
 
