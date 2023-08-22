@@ -336,12 +336,13 @@ class Lf_Mu_Public {
 	/**
 	 * This is a temporary fix for the disappearing meta tags from TSF. See https://github.com/cncf/cncf.io/issues/642.
 	 *
-	 * @param bool $supported Input param
+	 * @param bool $supported Input param.
 	 */
 	public function tsf_meta_temp_fix( $supported ) {
-		// If it's already supported, we didn't encounter the bug; circle back:
-		if ( $supported )
+		// If it's already supported, we didn't encounter the bug; circle back.
+		if ( $supported ) {
 			return $supported;
+		}
 
 		$tsf = tsf();
 
@@ -374,8 +375,9 @@ class Lf_Mu_Public {
 				$supported = true;
 		}
 
-		if ( ! $supported && $tsf->is_query_exploited() )
+		if ( ! $supported && $tsf->is_query_exploited() ) {
 			$supported = true;
+		}
 
 		return $supported;
 	}

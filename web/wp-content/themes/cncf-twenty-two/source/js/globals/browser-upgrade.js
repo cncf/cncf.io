@@ -10,19 +10,15 @@
 
 /* eslint-disable no-unused-vars */
 
-const $buoop = {
-	required: { e: 80, f: 88, o: 74, s: 12, c: 89 },
-	insecure: true,
-	api: 2022.02,
-	test: false,
-};
-function $buo_f() {
-	const e = document.createElement( 'script' );
-	e.src = '//browser-update.org/update.min.js';
+var $buoop = {required:{e:-6,f:-6,o:-6,s:-4,c:-6},insecure:true,api:2023.08 };
+
+function $buo_f(){
+	var e = document.createElement( "script" );
+	e.src = "//browser-update.org/update.min.js";
 	document.body.appendChild( e );
-}
+};
 try {
-	document.addEventListener( 'DOMContentLoaded', $buo_f, false );
-} catch ( e ) {
-	window.attachEvent( 'onload', $buo_f );
+	document.addEventListener( "DOMContentLoaded", $buo_f,false )
+} catch (e) {
+	window.attachEvent( "onload", $buo_f )
 }
