@@ -22,7 +22,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 	<img src="<?php echo esc_url( get_template_directory_uri() . '/images/home-hero-poster.jpg' ); ?>"
 		class="home-hero__poster" style="width: 100%; height: 100%;"
-		alt="Make cloud native ubiquitous">
+		alt="Make cloud native ubiquitous" decoding="async">
 
 	<div class="home-hero__video-wrapper">
 		<video class="home-hero__video" loop muted playsinline width="100%"
