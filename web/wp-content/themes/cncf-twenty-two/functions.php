@@ -133,6 +133,8 @@ require_once 'includes/shortcodes/youtube-playlist.php';
  *
  * Use strpos to exclude specific files.
  *
+ * Note: this could be reworked since 6.3 - https://make.wordpress.org/core/2023/07/14/registering-scripts-with-async-and-defer-attributes-in-wordpress-6-3/ but depends on 3rd party support.
+ *
  * @param string $url the URL.
  */
 function lf_defer_parsing_of_js( $url ) {
