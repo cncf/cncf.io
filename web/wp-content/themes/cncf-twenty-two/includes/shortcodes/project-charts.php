@@ -88,7 +88,7 @@ function get_project_chart_data( $maturity_data ) {
 }
 
 /**
- * Add Projects Maturity Chart shortcode.
+ * Add Project Count Over Time chart shortcode.
  *
  * @param array $atts Attributes.
  */
@@ -147,37 +147,53 @@ add_shortcode( 'projects-maturity-chart', 'add_projects_maturity_chart_shortcode
 
 
 /**
- * Add Projects Accepted Chart shortcode.
+ * Add Projects Accepted Each Year chart shortcode.
  *
  * @param array $atts Attributes.
  */
 function add_projects_accepted_chart_shortcode( $atts ) {
 
-	$maturity_data  = get_maturity_data();
-	$start_year     = 2016;
-	$accepted       = array();
-	$background     = array();
-	$current_year   = (int) gmdate( 'Y' );
+	$maturity_data       = get_maturity_data();
+	$start_year          = 2016;
+	$sanbox_accepted     = array();
+	$incubating_accepted = array();
+	$graduated_accepted  = array();
+	$background          = array();
+	$current_year        = (int) gmdate( 'Y' );
 
 	for ( $this_year = $start_year; $this_year <= $current_year; $this_year++ ) {
-		$accepted[ $this_year ] = 0;
+		$sandbox_accepted[ $this_year ]    = 0;
+		$incubating_accepted[ $this_year ] = 0;
+		$graduated_accepted[ $this_year ]  = 0;
 		if ( $current_year == $this_year ) {
-			$background[] = 'rgb(0, 134, 255, 0.4)';
+			$graduated_background[]    = 'rgb(188, 84, 217, .4)';
+			$incubating_background[] = 'rgb(240, 188, 0, .4)';
+			$sandbox_background[]  = 'rgb(10, 178, 178, .4)';
 		} else {
-			$background[] = 'rgb(0, 134, 255)';
+			$graduated_background[]    = 'rgb(188, 84, 217)';
+			$incubating_background[] = 'rgb(240, 188, 0)';
+			$sandbox_background[]  = 'rgb(10, 178, 178)';
 		}
 	}
 
 	foreach ( $maturity_data as $md ) {
 		$md_year = (int) explode( '-', $md['accepted'] )[0];
 		if ( 2016 <= $md_year && $md_year <= $current_year ) {
-			$accepted[ $md_year ] += 1;
+			if ( $md['graduated'] == $md['accepted'] ) {
+				$graduated_accepted[ $md_year ] += 1;
+			} elseif ( $md['incubating'] == $md['accepted'] ) {
+				$incubating_accepted[ $md_year ] += 1;
+			} else {
+				$sandbox_accepted[ $md_year ] += 1;
+			}
 		}
 	}
 
 	// remove current year if project count is 0.
-	if ( 0 == $accepted[ $current_year ] ) {
-		unset( $accepted[ $current_year ] );
+	if ( 0 == $sandbox_accepted[ $current_year ] && 0 == $incubating_accepted[ $current_year ] && 0 == $graduated_accepted[ $current_year ] ) {
+		unset( $sandbox_accepted[ $current_year ] );
+		unset( $incubating_accepted[ $current_year ] );
+		unset( $graduated_accepted[ $current_year ] );
 	}
 
 	ob_start();
@@ -203,8 +219,12 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	<canvas id="projectsAcceptedChart"></canvas>
 </div>
 <script>
-	const project_accepted_dates   = <?php echo json_encode( $accepted ); ?>;
-	const chart_background_colors = <?php echo json_encode( $background ); ?>;
+	const project_sandbox_accepted_dates     = <?php echo json_encode( $sandbox_accepted ); ?>;
+	const project_incubating_accepted_dates  = <?php echo json_encode( $incubating_accepted ); ?>;
+	const project_graduated_accepted_dates   = <?php echo json_encode( $graduated_accepted ); ?>;
+	const chart_sandbox_background_colors    = <?php echo json_encode( $sandbox_background ); ?>;
+	const chart_incubating_background_colors = <?php echo json_encode( $incubating_background ); ?>;
+	const chart_graduated_background_colors  = <?php echo json_encode( $graduated_background ); ?>;
 </script>
 
 	<?php

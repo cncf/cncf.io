@@ -29,9 +29,20 @@ function projectsAcceptedChart() {
   const data = {
     datasets: [
       {
-        data: project_accepted_dates,
-        backgroundColor: chart_background_colors
-      }
+        label: 'Sandbox',
+        data: project_sandbox_accepted_dates,
+        backgroundColor: chart_sandbox_background_colors
+      },
+      {
+        label: 'Incubating',
+        data: project_incubating_accepted_dates,
+        backgroundColor: chart_incubating_background_colors
+      },
+      {
+        label: 'Graduated',
+        data: project_graduated_accepted_dates,
+        backgroundColor: chart_graduated_background_colors
+      },
     ]
   };
 
@@ -52,7 +63,7 @@ function projectsAcceptedChart() {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          position: 'none'
+          position: 'top'
         },
         tooltip: {
           mode: 'index'
@@ -63,12 +74,14 @@ function projectsAcceptedChart() {
           title: {
             display: true,
             text: 'Projects Accepted in to CNCF'
-          }
+          },
+          stacked: true
         },
         x: {
           grid: {
             display: false
-          }
+          },
+          stacked: true
         }
       }
     }
