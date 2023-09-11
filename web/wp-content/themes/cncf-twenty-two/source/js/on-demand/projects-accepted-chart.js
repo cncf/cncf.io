@@ -73,7 +73,7 @@ function projectsAcceptedChart() {
         y: {
           title: {
             display: true,
-            text: 'Projects Accepted in to CNCF'
+            text: 'Projects Accepted into CNCF'
           },
           stacked: true
         },
