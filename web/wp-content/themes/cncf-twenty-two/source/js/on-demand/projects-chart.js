@@ -33,22 +33,22 @@ function projctsMaturityChart() {
       {
         label: 'Sandbox',
         data: project_sandbox,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(10 178 178)',
+        backgroundColor: 'rgb(10 178 178)',
         fill: true
       },
       {
         label: 'Incubating',
         data: project_incubating,
-        borderColor: 'rgb(255, 159, 64)',
-        backgroundColor: 'rgb(255, 159, 64)',
+        borderColor: 'rgb(240 188 0)',
+        backgroundColor: 'rgb(240 188 0)',
         fill: true
       },
       {
         label: 'Graduated',
         data: project_graduated,
-        borderColor: 'rgb(75, 192, 192)',
-        backgroundColor: 'rgb(75, 192, 192)',
+        borderColor: 'rgb(188 84 217)',
+        backgroundColor: 'rgb(188 84 217)',
         fill: true
       },
       {
