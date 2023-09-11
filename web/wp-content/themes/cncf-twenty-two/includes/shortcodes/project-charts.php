@@ -166,11 +166,11 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 		$incubating_accepted[ $this_year ] = 0;
 		$graduated_accepted[ $this_year ]  = 0;
 		if ( $current_year == $this_year ) {
-			$graduated_background[]    = 'rgb(188, 84, 217, .4)';
+			$graduated_background[]    = 'rgb(193, 96, 220, .4)';
 			$incubating_background[] = 'rgb(240, 188, 0, .4)';
 			$sandbox_background[]  = 'rgb(10, 178, 178, .4)';
 		} else {
-			$graduated_background[]    = 'rgb(188, 84, 217)';
+			$graduated_background[]    = 'rgb(193 96 220)';
 			$incubating_background[] = 'rgb(240, 188, 0)';
 			$sandbox_background[]  = 'rgb(10, 178, 178)';
 		}

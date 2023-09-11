@@ -47,8 +47,8 @@ function projctsMaturityChart() {
       {
         label: 'Graduated',
         data: project_graduated,
-        borderColor: 'rgb(188 84 217)',
-        backgroundColor: 'rgb(188 84 217)',
+        borderColor: 'rgb(193 96 220)',
+        backgroundColor: 'rgb(193 96 220)',
         fill: true
       },
       {
