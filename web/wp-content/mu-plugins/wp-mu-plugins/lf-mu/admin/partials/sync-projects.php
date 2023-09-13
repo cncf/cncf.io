@@ -45,6 +45,12 @@ foreach ( $projects as $level ) {
 
 		$p = $items[ $key ];
 
+		// skip projects in the Wasm or Serverless sub-landscapes.
+		$base_category = explode( ' / ', $p->path )[0];
+		if ( 'Wasm' == $base_category || 'Serverless' == $base_category ) {
+			continue;
+		}
+
 		$params = array(
 			'post_type'   => 'lf_project',
 			'post_title'  => $p->name,
