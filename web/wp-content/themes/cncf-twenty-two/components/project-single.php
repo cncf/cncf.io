@@ -18,9 +18,9 @@ $description      = get_post_meta( get_the_id(), 'lf_project_description', true 
 $project_category = get_post_meta( get_the_ID(), 'lf_project_category', true );
 $external_url     = get_post_meta( get_the_ID(), 'lf_project_external_url', true );
 
-$date_accepted   = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) : '';
-$date_incubating = get_post_meta( get_the_ID(), 'lf_project_date_incubating', true ) ? strtotime( get_post_meta( get_the_ID(), 'lf_project_date_incubating', true ) ) : '';
-$date_graduated  = get_post_meta( get_the_ID(), 'lf_project_date_graduated', true ) ? strtotime( get_post_meta( get_the_ID(), 'lf_project_date_graduated', true ) ) : '';
+$date_accepted   = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? gmdate( 'F j, Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) : '';
+$date_incubating = get_post_meta( get_the_ID(), 'lf_project_date_incubating', true ) ? gmdate( 'F j, Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_incubating', true ) ) ) : '';
+$date_graduated  = get_post_meta( get_the_ID(), 'lf_project_date_graduated', true ) ? gmdate( 'F j, Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_graduated', true ) ) ) : '';
 
 // Links for Project.
 $github         = get_post_meta( get_the_ID(), 'lf_project_github', true );
@@ -65,20 +65,19 @@ $project_slug = strtolower( get_the_title() );
 				}
 
 				if ( $date_accepted && $stage ) {
-					?>
-				<p class="projects-single-box__accepted">
-					Project accepted: <strong><?php echo esc_html( gmdate( 'F j, Y', $date_accepted ) ); ?></strong><br />
-					Project incubating: <strong><?php echo esc_html( gmdate( 'F j, Y', $date_incubating ) ); ?></strong><br />
-					Project graduated: <strong><?php echo esc_html( gmdate( 'F j, Y', $date_graduated ) ); ?></strong><br />
-					Current maturity level: <strong><?php echo esc_html( $stage ); ?></strong><br />
-					<?php
+					if ( 'sandbox' == strtolower( $stage ) ) {
+						echo esc_html( get_the_title() ) . ' was accepted to CNCF on ' . esc_html( $date_accepted ) . ' at the <strong>Sandbox</strong> maturity level.';
+					} elseif ( $date_accepted == $date_incubating && 'incubating' == strtolower( $stage ) ) {
+						echo esc_html( get_the_title() ) . ' was accepted to CNCF on ' . esc_html( $date_accepted ) . ' at the <strong>Incubating</strong> maturity level.';
+					} elseif ( $date_accepted == $date_incubating && 'graduated' == strtolower( $stage ) ) {
+						echo esc_html( get_the_title() ) . ' was accepted to CNCF on ' . esc_html( $date_accepted ) . ' at the <strong>Incubating</strong> maturity level and then moved to the <strong>Graduated</strong> maturity level on ' . esc_html( $date_graduated ) . '.';
+					} elseif ( $date_incubating && 'incubating' == strtolower( $stage ) ) {
+						echo esc_html( get_the_title() ) . ' was accepted to CNCF on ' . esc_html( $date_accepted ) . ' and moved to the <strong>Incubating</strong> maturity level on ' . esc_html( $date_incubating ) . '.';
+					} elseif ( $date_incubating && $date_graduated && 'graduated' == strtolower( $stage ) ) {
+						echo esc_html( get_the_title() ) . ' was accepted to CNCF on ' . esc_html( $date_accepted ) . ', moved to the <strong>Incubating</strong> maturity level on ' . esc_html( $date_incubating ) . ', and then moved to the <strong>Graduated</strong> maturity level on ' . esc_html( $date_graduated ) . '.';
+					}
 				} elseif ( $stage ) {
-					?>
-				<p class="projects-single-box__accepted">
-					<?php the_title(); ?>&nbsp;is at the <strong><?php echo esc_html( $stage ); ?></strong>
-project maturity level.
-</p>
-					<?php
+					echo esc_html( get_the_title() ) . ' is at the <strong>' . esc_html( $stage ) . '</strong> maturity level.';
 				}
 				?>
 
