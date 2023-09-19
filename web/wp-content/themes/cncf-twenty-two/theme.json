@@ -197,6 +197,11 @@
 				"typography": {
 					"letterSpacing": true
 				}
+			},
+			"core/separator": {
+				"color": {
+					"custom": true
+				}
 			}
         }
     },
