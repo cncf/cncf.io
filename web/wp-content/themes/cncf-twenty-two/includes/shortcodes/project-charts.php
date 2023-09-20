@@ -11,44 +11,6 @@
  */
 
 /**
- * Get project maturity data.
- */
-function get_maturity_data() {
-	$maturity_data = get_transient( 'cncf_project_maturity_data' );
-
-	if ( false === $maturity_data ) {
-		$maturity_data = array();
-
-		$query_args = array(
-			'post_type'      => 'lf_project',
-			'post_status'    => array( 'publish' ),
-			'posts_per_page' => 1000,
-		);
-
-		$project_query = new WP_Query( $query_args );
-
-		while ( $project_query->have_posts() ) {
-			$project_query->the_post();
-			$name       = get_the_title( get_the_ID() );
-			$accepted   = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true );
-			$incubating = get_post_meta( get_the_ID(), 'lf_project_date_incubating', true );
-			$graduated  = get_post_meta( get_the_ID(), 'lf_project_date_graduated', true );
-			$archived   = get_post_meta( get_the_ID(), 'lf_project_date_archived', true );
-
-			$maturity_data[ $name ] = array(
-				'accepted'   => $accepted,
-				'incubating' => $incubating,
-				'graduated'  => $graduated,
-				'archived'   => $archived,
-			);
-		}
-		wp_reset_postdata();
-		set_transient( 'cncf_project_maturity_data', $maturity_data, DAY_IN_SECONDS );
-	}
-	return $maturity_data;
-}
-
-/**
  * Processes maturity data to be ready for plotting on stacked line chart.
  *
  * @param array $maturity_data CNCF project maturity data.
@@ -94,7 +56,7 @@ function get_project_chart_data( $maturity_data ) {
  */
 function add_projects_maturity_chart_shortcode( $atts ) {
 
-	$maturity_data  = get_maturity_data();
+	$maturity_data  = get_projects_maturity_data();
 	$chart_data     = get_project_chart_data( $maturity_data );
 	$project_months = array_keys( $chart_data );
 	$sandbox        = array();
@@ -153,7 +115,7 @@ add_shortcode( 'projects-maturity-chart', 'add_projects_maturity_chart_shortcode
  */
 function add_projects_accepted_chart_shortcode( $atts ) {
 
-	$maturity_data       = get_maturity_data();
+	$maturity_data       = get_projects_maturity_data();
 	$start_year          = 2016;
 	$sanbox_accepted     = array();
 	$incubating_accepted = array();

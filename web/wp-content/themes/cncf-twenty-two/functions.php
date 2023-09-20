@@ -103,6 +103,8 @@ require_once 'includes/gutenberg-options.php';
 // Post excerpts.
 require_once 'includes/excerpts.php';
 
+require_once 'includes/projects-data.php';
+
 // Shortcodes.
 require_once 'includes/shortcodes/benefits.php';
 require_once 'includes/shortcodes/event-banner.php';
