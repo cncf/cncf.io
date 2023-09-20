@@ -64,7 +64,7 @@ $allowed_inner_blocks = array(
 ?>
 
 <style>
-	.wp-block-lf-quote-with-quote-mark__mark:before {
+	.wp-block-lf-quote-with-quote-mark .wp-block-lf-quote-with-quote-mark__mark:before {
 		background-image: url("data:image/svg+xml,%3Csvg width='78' height='56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.76 55.056c12.96-9.36 24.048-22.176 24.048-37.152C33.808 7.536 28.336.48 19.408.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352zm43.2 0c12.96-9.36 24.048-22.176 24.048-37.152C77.008 7.536 71.536.48 62.608.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352z' fill='<?php echo esc_html( rawurlencode( $quote_large_quote_mark_color ) ); ?>' /%3E%3C/svg%3E") !important;
 	}
 </style>
