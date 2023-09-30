@@ -62,6 +62,8 @@ function projctsMaturityChart() {
   };
 
   Chart.defaults.font.size = 16;
+  Chart.defaults.font.weight = 600;
+  Chart.defaults.color = '#000';
   Chart.defaults.font.family = 'Clarity City';
 
   const config = {
