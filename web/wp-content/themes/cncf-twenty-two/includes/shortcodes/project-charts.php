@@ -96,11 +96,23 @@ function add_projects_maturity_chart_shortcode( $atts ) {
 
 	$maturity_data  = get_maturity_data();
 	$chart_data     = get_project_chart_data( $maturity_data );
-	$project_months = array_keys( $chart_data );
+	$project_months = array();
 	$sandbox        = array();
 	$incubating     = array();
 	$graduated      = array();
 	$archived       = array();
+
+	$num_dates = count( array_keys( $chart_data ) );
+	$i = 1;
+	foreach ( array_keys( $chart_data ) as $m ) {
+		if ( $i != $num_dates ) {
+			$project_months[] = gmdate( 'M, Y', strtotime( $m ) );
+		} else {
+			// show the day for the last entry.
+			$project_months[] = gmdate( 'M d, Y', strtotime( $m ) );
+		}
+		$i++;
+	}
 
 	foreach ( $chart_data as $cd ) {
 		$sandbox[]    = $cd['sandbox'];
