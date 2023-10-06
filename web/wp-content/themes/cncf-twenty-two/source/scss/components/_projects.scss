@@ -83,6 +83,9 @@
 			@media (min-width: 1000px) {
 				flex-direction: row;
 				align-items: center;
+				.wp-block-button__link {
+					white-space: nowrap;
+				}
 			}
 		}
 		&__icons {
