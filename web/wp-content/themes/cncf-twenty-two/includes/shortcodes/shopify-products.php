@@ -51,10 +51,6 @@ function add_shopify_products_shortcode( $atts ) {
 	$title           = $atts['title'] ?? '';
 	$section_title   = $title ? $title : get_the_title();
 
-	if ( ! is_int( $count ) || ! $storefront_api_token ) {
-		return;
-	}
-
 	$args = array(
 		'headers' => array(
 			'Content-Type'                      => 'application/json',
