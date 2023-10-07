@@ -347,7 +347,7 @@ endif;
 		?>
 
 		<?php
-		echo do_shortcode( '[shopify_products project="' . $post->post_name . '"]' );
+		echo do_shortcode( '[shopify_products collection="' . $post->post_name . '"]' );
 		?>
 
 	</article>

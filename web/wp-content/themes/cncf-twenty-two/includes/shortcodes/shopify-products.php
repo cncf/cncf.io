@@ -6,7 +6,7 @@
  *
  * Usage:
  * [shopify_products]
- * [shopify_products project="tag-security" count=4]
+ * [shopify_products collection="tag-security" count=6]
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -23,9 +23,9 @@ function add_shopify_products_shortcode( $atts ) {
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
-			'count'   => 3, // set default.
-			'project' => 'cncf', // set default.
-			'title'   => '',
+			'count'      => 3, // set default.
+			'collection' => 'cncf', // set default.
+			'title'      => '',
 		),
 		$atts,
 		'shopify_products'
@@ -47,7 +47,7 @@ function add_shopify_products_shortcode( $atts ) {
 	}
 
 	$count           = intval( $atts['count'] );
-	$collection_slug = trim( $atts['project'] );
+	$collection_slug = trim( $atts['collection'] );
 	$title           = $atts['title'] ?? '';
 	$section_title   = $title ? $title : get_the_title();
 
@@ -124,6 +124,9 @@ function add_shopify_products_shortcode( $atts ) {
 		return;
 	}
 
+	$product_count = count( $actual_products );
+	$more_link = ( $product_count < $count ) ? $store_url : $store_url . '/collections/' . $collection_slug;
+
 	ob_start();
 	?>
 <section class="shopify-products">
@@ -135,7 +138,7 @@ function add_shopify_products_shortcode( $atts ) {
 			</div>
 			<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:30%">
 				<p
-					class="has-text-align-right is-style-link-cta"><a href="<?php echo esc_url( 'https://store.cncf.io/collections/' . $collection_slug ); ?>">More Products</a></p>
+					class="has-text-align-right is-style-link-cta"><a href="<?php echo esc_url( $more_link ); ?>">More Products</a></p>
 			</div>
 		</div>
 
