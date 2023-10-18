@@ -186,7 +186,7 @@ function lf_blocks_register_dynamic_blocks() {
 				),
 			),
 			'render_callback' => 'lf_landscape_render_callback',
-		),
+		)
 	);
 
 	// Newsroom Block.
@@ -276,7 +276,7 @@ function lf_blocks_register_dynamic_blocks() {
 					'type' => 'string',
 				),
 			),
-		),
+		)
 	);
 
 	// YouTube Lite block.
@@ -288,7 +288,7 @@ function lf_blocks_register_dynamic_blocks() {
 					'type' => 'string',
 				),
 			),
-		),
+		)
 	);
 }
 add_action( 'init', 'lf_blocks_register_dynamic_blocks' );
