@@ -3,8 +3,8 @@
 
 	<description>A custom set of rules to check for a WPized WordPress project</description>
 
-	<file>/app/web/wp-content/themes/</file>
-	<file>/app/web/wp-content/mu-plugins/wp-mu-plugins/lf-mu/</file>
+	<file>./web/wp-content/themes/</file>
+	<file>./web/wp-content/mu-plugins/wp-mu-plugins/lf-mu/</file>
 
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
