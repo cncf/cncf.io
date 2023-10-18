@@ -108,8 +108,9 @@
       "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "code-sniff": [
-		"./vendor/bin/phpcs -ns --standard=./phpcs.xml",
-		"./vendor/bin/phpcs -ns --standard=phpcs.xml"
+		"./vendor/bin/phpcs -i",
+		"./vendor/bin/phpcs --config-show",
+		"./vendor/bin/phpcs -ns --standard=phpcs.xml -vvv"
     ]
   }
 }
