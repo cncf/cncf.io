@@ -269,20 +269,34 @@ class LF_Utils {
 			$alt_text = self::get_img_alt( $image_id );
 		}
 
-		if ( ! $image_srcset ) {
-
-			$width  = (int) $size[1] ?? '';
-			$height = (int) $size[2] ?? '';
-
-			$img           = '<img width="' . $width . '" height="' . $height . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . $alt_text . '">';
-			$img_meta      = wp_get_attachment_metadata( $image_id );
-			$attachment_id = $image_id;
-			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
-
-		} else {
+		if ( $image_srcset ) {
 
 			$html = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" decoding="async" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '" alt="' . $alt_text . '">';
 
+		} else {
+
+			$attributes = array(
+				'loading="' . $loading . '"',
+				'class="' . $class_name . '"',
+				'src="' . $image_src . '"',
+				'alt="' . $alt_text . '"',
+			);
+
+			$width  = (int) $size[1] ?? null;
+			$height = (int) $size[2] ?? null;
+
+			if ( $width ) {
+				$attributes[] = 'width="' . $width . '"';
+			}
+
+			if ( $height ) {
+				$attributes[] = 'height="' . $height . '"';
+			}
+
+			$img = '<img ' . implode( ' ', $attributes ) . '>';
+			$img_meta      = wp_get_attachment_metadata( $image_id );
+			$attachment_id = $image_id;
+			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
 		}
 
 		echo wp_kses(
