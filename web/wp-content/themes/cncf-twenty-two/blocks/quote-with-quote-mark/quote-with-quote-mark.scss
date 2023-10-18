@@ -55,4 +55,12 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 			background-size: 64px 46px;
 		}
 	}
+	&.is-style-smaller {
+		.wp-block-lf-quote-with-quote-mark__quote {
+			font-size: 16px;
+			@media (min-width: 1200px) {
+				font-size: 20px;
+			}
+		}
+	}
 }

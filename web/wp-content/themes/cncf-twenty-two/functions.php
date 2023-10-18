@@ -75,6 +75,9 @@ function lf_theme_support_setup() {
 
 	// Load core block styles seperately.
 	add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
+	// Remove access to remote block patterns.
+	add_filter( 'should_load_remote_block_patterns', '__return_false' );
 }
 add_action( 'after_setup_theme', 'lf_theme_support_setup' );
 

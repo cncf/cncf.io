@@ -1,15 +1,15 @@
-body .wp-block-quote {
+body .wp-block-quote,
+#editor .wp-block-quote {
 	max-width: 900px;
 	border-left: 0 !important;
 	padding-left: 0;
-	p {
-		font-size: 22px;
-		@media (min-width: 1200px) {
-			font-size: 36px;
-			line-height: 160%;
-		}
+	line-height: 160%;
+	font-size: 22px;
+	@media (min-width: 1200px) {
+		font-size: 36px;
 	}
 	cite {
+		font-size: 16px;
 		display: block;
 		line-height: 1.5;
 		color: $gray-700;
@@ -27,31 +27,30 @@ body .wp-block-quote {
 		}
 	}
 	&.is-style-smaller-quote {
-		p {
-			line-height: 175%;
-			letter-spacing: 0.02em;
-			font-size: 18px;
-			@media (min-width: 1200px) {
-				font-size: 22px;
-				line-height: 160%;
-			}
+		line-height: 175%;
+		letter-spacing: 0.02em;
+		font-size: 18px;
+		@media (min-width: 1200px) {
+			font-size: 22px;
+			line-height: 160%;
 		}
 		cite {
 			font-size: 16px;
 		}
 	}
-	&.has-normal-font-size {
-		p {
-			line-height: 175%;
-			letter-spacing: 0.02em;
-			font-size: 16px;
-			@media (min-width: 1200px) {
-				font-size: 22px;
-				line-height: 160%;
-			}
-		}
-		cite {
-			font-size: 16px;
-		}
-	}
+	// Not sure where this is/was used?
+	// &.has-normal-font-size {
+	// 	p {
+	// 		line-height: 175%;
+	// 		letter-spacing: 0.02em;
+	// 		font-size: 16px;
+	// 		@media (min-width: 1200px) {
+	// 			font-size: 22px;
+	// 			line-height: 160%;
+	// 		}
+	// 	}
+	// 	cite {
+	// 		font-size: 16px;
+	// 	}
+	// }
 }

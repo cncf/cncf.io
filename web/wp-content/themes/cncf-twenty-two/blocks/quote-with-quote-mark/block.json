@@ -10,15 +10,18 @@
 	"category": "lf",
 	"icon": "format-quote",
 	"keywords": [
-		"",
-		"",
-		""
+		"testimonial",
+		"comment"
 	],
 	"acf": {
 		"mode": "preview",
 		"renderTemplate": "quote-with-quote-mark.php",
 		"postTypes": [ "lf_report" ]
 	},
+	"styles": [
+        { "name": "default", "label": "Default", "isDefault": true },
+        { "name": "smaller", "label": "Smaller" }
+    ],
 	"supports": {
 		"mode": false,
 		"align": false,
