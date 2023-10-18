@@ -110,7 +110,7 @@
     "code-sniff": [
 		"./vendor/bin/phpcs -i",
 		"./vendor/bin/phpcs --config-show",
-		"./vendor/bin/phpcs -ns --standard=phpcs.xml -vvv"
+		"./vendor/bin/phpcs -ns --standard=phpcs.xml -v"
     ]
   }
 }
