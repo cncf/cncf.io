@@ -61,24 +61,29 @@ tooling:
     service: node
   phpcs:
     service: appserver
-    cmd: /app/vendor/bin/phpcs --standard="WordPress"
-    description: 'Run PHPCS commands'
+    description: Run PHPCS commands
+    cmd: "/app/vendor/bin/phpcs --standard=phpcs.xml"
   phpcbf:
     service: appserver
-    cmd: /app/vendor/bin/phpcbf --standard="WordPress"
-    description: 'Run PHPCBF commands'
+    description: Run PHPCBF commands
+    cmd: "/app/vendor/bin/phpcbf --standard=phpcs.xml"
   sniff:
     service: appserver
-    cmd: /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs && /app/vendor/bin/phpcs -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/ /app/web/wp-content/mu-plugins/wp-mu-plugins/
-    description: 'Run the recommended code sniffs'
+    cmd: /app/vendor/bin/phpcs -ns --standard=phpcs.xml
   fix:
     service: appserver
-    cmd: /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs && /app/vendor/bin/phpcbf -n -s --ignore="*/build/*,*/dist/*,*/node_modules/*,*gulpfile*,*/uploads/*,*/plugins/*,*/scripts/*,*/vendor/*,*pantheon*,/build/globals.js" -d memory_limit=1024M --standard="WordPress" /app/web/wp-content/themes/ /app/web/wp-content/mu-plugins/wp-mu-plugins/
-    description: 'Run the recommended code sniffs and fix'
+    cmd: /app/vendor/bin/phpcbf -s --standard=phpcs.xml
+  warnings:
+    service: appserver
+    cmd: /app/vendor/bin/phpcs -s --standard=phpcs.xml
   debug:
     service: appserver
     cmd: 'touch /app/web/wp-content/debug.log && tail -f /app/web/wp-content/debug.log'
     description: 'Get real-time WP debug log output'
+  paths:
+    service: appserver
+    cmd: "/app/vendor/bin/phpcs -i"
+    description: "See sniff paths"
 
 ```
 
@@ -132,6 +137,12 @@ To run recommended tests:
 
 ```
 lando sniff
+```
+
+to include warnings which may give hints to improve code:
+
+```
+lando warnings
 ```
 
 To run recommended tests and fix issues automatically:
