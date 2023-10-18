@@ -110,7 +110,7 @@
     "code-sniff": [
 		"./vendor/bin/phpcs -i",
 		"./vendor/bin/phpcs --config-show",
-		"./vendor/bin/phpcs --config-set installed_paths ../../wp-coding-standards/wpcs",
+		"./vendor/bin/phpcs --config-set installed_paths ../../phpcsstandards/phpcsutils ../../wp-coding-standards/wpcs",
 		"./vendor/bin/phpcs -i",
 		"./vendor/bin/phpcs --standard=phpcs.xml -v"
     ]
