@@ -37,7 +37,7 @@ function lf_blocks_frontend_assets() {
 	if ( has_block( 'lf/youtube-lite' ) ) {
 		wp_enqueue_script(
 			'youtube-lite-js',
-			plugins_url( '/src/youtube-lite/scripts/lite-youtube.js', dirname( __FILE__ ) ),
+			plugins_url( '/src/youtube-lite/scripts/lite-youtube.js', __DIR__ ),
 			null,
 			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 			true
@@ -63,7 +63,7 @@ function lf_blocks_editor_assets() {
 	// Register block editor script for backend.
 	wp_enqueue_script(
 		'lf_blocks_script',
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
+		plugins_url( '/dist/blocks.build.js', __DIR__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 		true
@@ -72,11 +72,10 @@ function lf_blocks_editor_assets() {
 	// Register block editor styles for backend.
 	wp_enqueue_style(
 		'lf_blocks_editor_style',
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
+		plugins_url( 'dist/blocks.editor.build.css', __DIR__ ),
 		null,
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' )
 	);
-
 }
 add_action( 'enqueue_block_editor_assets', 'lf_blocks_editor_assets' );
 

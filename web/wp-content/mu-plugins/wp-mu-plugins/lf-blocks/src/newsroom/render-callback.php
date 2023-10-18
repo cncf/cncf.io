@@ -19,7 +19,7 @@ function lf_newsroom_render_callback( $attributes ) {
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 	// get the category to display.
-	$category = isset( $attributes['category'] ) && (int) $attributes['category'] ? $attributes['category'] : '230';
+	$category        = isset( $attributes['category'] ) && (int) $attributes['category'] ? $attributes['category'] : '230';
 	$author_category = isset( $attributes['authorCategory'] ) && (int) $attributes['authorCategory'] ? $attributes['authorCategory'] : null;
 	// order of posts.
 	$order = isset( $attributes['order'] ) ? $attributes['order'] : 'DESC';

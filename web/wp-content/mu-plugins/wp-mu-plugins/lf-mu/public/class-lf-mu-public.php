@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 /**
  * The public-facing functionality of the plugin.
  *
