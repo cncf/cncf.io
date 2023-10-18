@@ -104,7 +104,7 @@ jobs:
 
             - run:
                 name: check for WordPress coding standards
-                command: composer -n code-sniff
+                command: pwd && composer -n code-sniff
 
             - slack/status:
                 fail_only: true
