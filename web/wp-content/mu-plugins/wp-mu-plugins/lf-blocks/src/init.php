@@ -172,7 +172,7 @@ function lf_blocks_register_dynamic_blocks() {
 					'type' => 'string',
 				),
 			),
-		),
+		)
 	);
 
 	// Landscape block.
