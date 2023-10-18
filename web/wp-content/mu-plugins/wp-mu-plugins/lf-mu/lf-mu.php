@@ -70,6 +70,5 @@ function run_lf_mu() {
 
 	$plugin = new Lf_Mu();
 	$plugin->run();
-
 }
 run_lf_mu();

@@ -111,7 +111,7 @@ function add_projects_maturity_chart_shortcode( $atts ) {
 			// show the day for the last entry.
 			$project_months[] = gmdate( 'M d, Y', strtotime( $m ) );
 		}
-		$i++;
+		++$i;
 	}
 
 	foreach ( $chart_data as $cd ) {

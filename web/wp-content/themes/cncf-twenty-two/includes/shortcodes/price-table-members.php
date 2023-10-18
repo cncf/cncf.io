@@ -213,6 +213,5 @@ function add_members_pricing_shortcode() {
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'members_pricing', 'add_members_pricing_shortcode' );

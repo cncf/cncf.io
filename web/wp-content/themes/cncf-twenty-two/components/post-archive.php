@@ -9,7 +9,7 @@
 
 ?>
 
- <main class="post-archive">
+<main class="post-archive">
 	<div class="container wrap">
 
 <?php
@@ -60,7 +60,7 @@ if ( have_posts() ) :
 
 			$stickyquery->the_post();
 			$sticky_post_id = get_the_ID();
-			$count++;
+			++$count;
 			$is_featured = true;
 			$is_sticky   = true;
 
@@ -85,7 +85,7 @@ if ( have_posts() ) :
 		if ( isset( $sticky_post_id ) && get_the_ID() === $sticky_post_id ) {
 			continue;
 		}
-		$count++;
+		++$count;
 		// If page number 1, count 1, and in blog or announcement, make post featured.
 		// If count = 1 then there is no sticky.
 		$is_featured = ( 1 == $page_number && 1 == $count && ( $is_blog_category || $is_announcements_category ) );

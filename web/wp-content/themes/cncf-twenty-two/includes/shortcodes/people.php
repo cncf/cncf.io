@@ -84,6 +84,5 @@ function add_people_shortcode( $atts ) {
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'people', 'add_people_shortcode' );

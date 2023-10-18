@@ -37,15 +37,15 @@ get_template_part( 'components/skip-link-target' );
 				</div>
 			</div>
 
-		 <div class="container-wrap">
+		<div class="container-wrap">
 			<div class="container wrap" style="margin-top: 2rem">
-			   <div>
-				  <div class="wp-block-buttons aligncenter is-style-button-pdf">
-					 <div class="wp-block-button"><a class="wp-block-button__link" href="https://www.cncf.io/wp-content/uploads/2020/08/CNCF-Annual-Report-2019.pdf">DOWNLOAD THIS REPORT</a></div>
-				  </div>
-			   </div>
+				<div>
+					<div class="wp-block-buttons aligncenter is-style-button-pdf">
+					<div class="wp-block-button"><a class="wp-block-button__link" href="https://www.cncf.io/wp-content/uploads/2020/08/CNCF-Annual-Report-2019.pdf">DOWNLOAD THIS REPORT</a></div>
+					</div>
+				</div>
 			</div>
-		 </div>
+		</div>
 
 			<div class="container main-content">
 				<div class="row">

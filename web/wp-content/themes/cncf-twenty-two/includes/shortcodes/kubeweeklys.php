@@ -77,11 +77,11 @@ function add_kubeweeklys_shortcode() {
 add_shortcode( 'kubeweeklys', 'add_kubeweeklys_shortcode' );
 
 
- /**
-  * Add Kubeweekly Newsletter shortcode.
-  *
-  * @param array $atts Attributes.
-  */
+/**
+ * Add Kubeweekly Newsletter shortcode.
+ *
+ * @param array $atts Attributes.
+ */
 function add_kubeweekly_newsletter_shortcode( $atts ) {
 	ob_start();
 	?>

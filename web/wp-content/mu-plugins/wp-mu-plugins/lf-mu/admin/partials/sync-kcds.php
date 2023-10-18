@@ -79,7 +79,7 @@ foreach ( $events as $event ) {
 		if ( 4 == $background_color ) {
 			$background_color = 0;
 		} else {
-			$background_color++;
+			++$background_color;
 		}
 
 		$newid = wp_insert_post( $my_post );

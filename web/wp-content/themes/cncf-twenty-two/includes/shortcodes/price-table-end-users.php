@@ -202,6 +202,5 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'end_user_pricing', 'add_end_user_pricing_shortcode' );

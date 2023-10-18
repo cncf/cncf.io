@@ -66,5 +66,4 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 
 		return new WP_REST_Response( array( 'Success' ), 200 );
 	}
-
 }

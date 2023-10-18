@@ -97,7 +97,6 @@ class Lf_Mu_Public {
 
 	EOD;
 		echo $analytics_code; //phpcs:ignore
-
 	}
 
 	/**
@@ -118,7 +117,6 @@ class Lf_Mu_Public {
 
 	EOD;
 		echo $analytics_code; //phpcs:ignore
-
 	}
 
 	/**
@@ -212,7 +210,7 @@ class Lf_Mu_Public {
 		// deactivate x-pingback HTTP header.
 		add_filter(
 			'wp_headers',
-			function( $headers ) {
+			function ( $headers ) {
 				unset( $headers['X-Pingback'] );
 				return $headers;
 			}

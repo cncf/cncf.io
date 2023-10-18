@@ -109,6 +109,5 @@ function add_cloud_credits_pricing_shortcode() {
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'cloud_credits_pricing', 'add_cloud_credits_pricing_shortcode' );

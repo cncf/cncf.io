@@ -36,7 +36,7 @@ $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 				alt="<?php the_title_attribute(); ?>" class="webinar-recorded-item__image">
 
 <svg class="webinar-recorded-item__overlay" width="70" height="71">
- <use xlink:href="#play-button" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+<use xlink:href="#play-button" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
 </svg>
 
 			<?php

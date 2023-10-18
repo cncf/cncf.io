@@ -65,7 +65,7 @@ $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 		<a class="author-category" title="See more in <?php echo esc_attr( $category ); ?> category" href="<?php echo esc_url( $parent_link ); ?>"><?php echo esc_html( $category ); ?> <?php echo esc_html( $type_of_post ); ?></a>
 		<?php endif; ?>
 
-		 <span class="main-menu-item__title">
+		<span class="main-menu-item__title">
 			<a href="<?php the_permalink(); ?>"
 				title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 		</span>

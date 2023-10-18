@@ -112,7 +112,7 @@ $mailto_url   = 'mailto:?subject=CNCF Annual Report 2021&body=' . $caption . '&n
 							<?php
 							Lf_Utils::get_svg( 'annual-reports/2021/jp.svg' );
 							?>
-							 Japanese version</a></p>
+							Japanese version</a></p>
 
 						</div>
 
@@ -981,7 +981,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 
 					<div>
 						<a href="https://youtu.be/8hV-ml4WuVM"
-							 class="image-link"><img
+							class="image-link"><img
 								loading="lazy" width="525" height="324"
 								src="<?php Lf_Utils::get_image( 'annual-reports/2021/kubecon-macbook.png', true ); ?>"
 								alt="Laptop playing a video of keynote talk"></a>
@@ -1159,7 +1159,7 @@ At our heart, CNCF is driven by a welcoming foundation of doers at the leading e
 					<div>
 
 						<a href="https://youtu.be/VzuyyESy9oA"
-							 class="image-link"><img
+							class="image-link"><img
 								loading="lazy" width="525" height="432"
 								src="<?php Lf_Utils::get_image( 'annual-reports/2021/blob-speaker.png', true ); ?>"
 								alt="Robert Duffy speaking at conference"></a>
