@@ -293,7 +293,7 @@ class LF_Utils {
 				$attributes[] = 'height="' . $height . '"';
 			}
 
-			$img = '<img ' . implode( ' ', $attributes ) . '>';
+			$img           = '<img ' . implode( ' ', $attributes ) . '>';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
 			$attachment_id = $image_id;
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );

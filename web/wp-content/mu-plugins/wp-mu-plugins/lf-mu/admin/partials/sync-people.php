@@ -56,7 +56,7 @@ function geocode_location( $id ) {
 }
 
 
-$people_url = 'https://raw.githubusercontent.com/cncf/people/main/people.json';
+$people_url        = 'https://raw.githubusercontent.com/cncf/people/main/people.json';
 $github_images_url = 'https://raw.githubusercontent.com/cncf/people/main/images/';
 
 $args = array(
@@ -167,7 +167,7 @@ foreach ( $people as $p ) {
 		}
 		if ( property_exists( $p, 'location' ) ) {
 			$country_arr = explode( ',', $params['meta_input']['lf_person_location'] );
-			$country = trim( end( $country_arr ) );
+			$country     = trim( end( $country_arr ) );
 			$term_exists = term_exists( $country, 'lf-country' );
 			if ( $term_exists ) {
 				wp_set_object_terms( $newid, (int) $term_exists['term_id'], 'lf-country', false );
@@ -182,7 +182,7 @@ foreach ( $people as $p ) {
 // delete any People posts which aren't in $synced_ids.
 $query = new WP_Query(
 	array(
-		'post_type' => 'lf_person',
+		'post_type'    => 'lf_person',
 		'post__not_in' => $synced_ids,
 	)
 );

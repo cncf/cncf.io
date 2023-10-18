@@ -17,7 +17,7 @@ $recording_url = get_post_meta( get_the_ID(), 'lf_webinar_recording_url', true )
 $video_id = Lf_Utils::get_youtube_id_from_url( $recording_url );
 
 // get views.
-$webinar_views        = get_post_meta( get_the_ID(), 'lf_webinar_recording_views', true );
+$webinar_views = get_post_meta( get_the_ID(), 'lf_webinar_recording_views', true );
 
 // get companies (presented by).
 $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );

@@ -16,19 +16,19 @@ if ( ! defined( 'WPINC' ) ) {
 
 // Projects.
 $opts = array(
-	'labels'              => array(
+	'labels'            => array(
 		'name'          => __( 'Projects' ),
 		'singular_name' => __( 'Project' ),
 		'all_items'     => __( 'All Projects' ),
 	),
-	'public'              => true,
-	'has_archive'         => false,
-	'show_in_nav_menus'   => false,
-	'show_in_rest'        => true,
-	'show_ui'             => false,
-	'hierarchical'        => false,
-	'rewrite'             => array( 'slug' => 'projects' ),
-	'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+	'public'            => true,
+	'has_archive'       => false,
+	'show_in_nav_menus' => false,
+	'show_in_rest'      => true,
+	'show_ui'           => false,
+	'hierarchical'      => false,
+	'rewrite'           => array( 'slug' => 'projects' ),
+	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 );
 register_post_type( 'lf_project', $opts );
 
@@ -208,19 +208,19 @@ $opts = array(
 register_post_type( 'lf_human', $opts );
 
 $opts = array(
-	'labels'              => array(
+	'labels'            => array(
 		'name'          => __( 'KTPs' ),
 		'singular_name' => __( 'KTP' ),
 		'all_items'     => __( 'All KTPs' ),
 	),
-	'public'              => false,
-	'has_archive'         => false,
-	'show_in_nav_menus'   => false,
-	'show_in_rest'        => true,
-	'show_ui'             => false,
-	'hierarchical'        => false,
-	'rewrite'             => array( 'slug' => 'ktps' ),
-	'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+	'public'            => false,
+	'has_archive'       => false,
+	'show_in_nav_menus' => false,
+	'show_in_rest'      => true,
+	'show_ui'           => false,
+	'hierarchical'      => false,
+	'rewrite'           => array( 'slug' => 'ktps' ),
+	'supports'          => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
 );
 register_post_type( 'lf_ktp', $opts );
 

@@ -38,7 +38,7 @@ while ( $the_query->have_posts() ) {
 	wp_delete_post( get_the_ID(), true );
 }
 $background_colors = array( '#14496c', '#641e16', '#5e2d72', '#0b5329', '#1a267d' );
-$background_color = 0;
+$background_color  = 0;
 
 // insert events.
 foreach ( $events as $event ) {

@@ -17,8 +17,8 @@
  * @param int $id Events ID.
  */
 function lf_geocode_event( $id ) {
-	$city             = get_post_meta( get_the_ID(), 'lf_event_city', true );
-	$country          = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
+	$city    = get_post_meta( get_the_ID(), 'lf_event_city', true );
+	$country = Lf_Utils::get_term_names( get_the_ID(), 'lf-country', true );
 
 	if ( ! $city && ! $country ) {
 		return;
@@ -64,7 +64,7 @@ function lf_geocode_event( $id ) {
 function add_cncf_events_map_shortcode( $atts ) {
 
 	// Attributes.
-	$atts = shortcode_atts(
+	$atts                       = shortcode_atts(
 		array(
 			'search' => '', // set default.
 		),

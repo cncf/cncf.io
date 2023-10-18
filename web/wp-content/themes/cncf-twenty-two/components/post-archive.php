@@ -68,10 +68,10 @@ if ( have_posts() ) :
 				'components/news-item',
 				null,
 				array(
-					'is_featured' => $is_featured,
-					'is_sticky' => $is_sticky,
+					'is_featured'    => $is_featured,
+					'is_sticky'      => $is_sticky,
 					'is_in_the_news' => $is_in_the_news_category,
-					'is_blog' => $is_blog_category,
+					'is_blog'        => $is_blog_category,
 				)
 			);
 		}
@@ -94,10 +94,10 @@ if ( have_posts() ) :
 			'components/news-item',
 			null,
 			array(
-				'is_featured' => $is_featured,
-				'is_sticky' => null,
+				'is_featured'    => $is_featured,
+				'is_sticky'      => null,
 				'is_in_the_news' => $is_in_the_news_category,
-				'is_blog' => $is_blog_category,
+				'is_blog'        => $is_blog_category,
 			)
 		);
 	}

@@ -53,8 +53,8 @@ get_template_part( 'components/title' );
 
 			if ( in_category( 'blog' ) ) {
 				// Get the Category Author.
-				$category_author      = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
-				$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
+				$category_author       = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+				$category_author_slug  = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 				$content_type_singular = 'Blog Post';
 				$content_type_plural   = 'Blog Posts';
 				$content_type_url      = '/blog/';

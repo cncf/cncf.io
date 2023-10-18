@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-$args  = array(
+$args = array(
 	'post_type'           => 'post',
 	'post_status'         => array( 'publish' ),
 	'posts_per_page'      => 3,

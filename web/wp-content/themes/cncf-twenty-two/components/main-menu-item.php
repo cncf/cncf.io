@@ -31,7 +31,7 @@ $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 				Lf_Utils::display_responsive_images( get_post_thumbnail_id(), 'newsroom-194', '200px', 'main-menu-item__image', 'lazy', get_the_title() );
 			} else {
 				// show generic.
-				$site_options  = get_option( 'lf-mu' );
+				$site_options = get_option( 'lf-mu' );
 				Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-194', '200px', 'main-menu-item__image', 'lazy', get_the_title() );
 			}
 			?>
