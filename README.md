@@ -48,10 +48,6 @@ services:
     type: 'node:14'
     ssl: true
     scanner: false
-  appserver:
-    run:
-      - /app/vendor/bin/phpcs --config-set installed_paths /app/vendor/wp-coding-standards/wpcs
-      - /app/vendor/bin/phpcs -i
 tooling:
   npm:
     service: node
@@ -62,20 +58,20 @@ tooling:
   phpcs:
     service: appserver
     description: Run PHPCS commands
-    cmd: "/app/vendor/bin/phpcs --standard=phpcs.xml"
+    cmd: "/app/vendor/bin/phpcs"
   phpcbf:
     service: appserver
     description: Run PHPCBF commands
-    cmd: "/app/vendor/bin/phpcbf --standard=phpcs.xml"
+    cmd: "/app/vendor/bin/phpcbf"
   sniff:
     service: appserver
-    cmd: /app/vendor/bin/phpcs -ns --standard=phpcs.xml
+    cmd: /app/vendor/bin/phpcs -ns
   fix:
     service: appserver
-    cmd: /app/vendor/bin/phpcbf -s --standard=phpcs.xml
+    cmd: /app/vendor/bin/phpcbf -s
   warnings:
     service: appserver
-    cmd: /app/vendor/bin/phpcs -s --standard=phpcs.xml
+    cmd: /app/vendor/bin/phpcs -s
   debug:
     service: appserver
     cmd: 'touch /app/web/wp-content/debug.log && tail -f /app/web/wp-content/debug.log'
