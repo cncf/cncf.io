@@ -70,7 +70,7 @@ function add_reports_shortcode( $atts ) {
 	if ( is_string( $search_term ) ) {
 		add_filter( 'posts_where', 'lf_title_filter', 10, 2 );
 		$query_args['search_post_title'] = $search_term;
-		$report_query = new WP_Query( $query_args );
+		$report_query                    = new WP_Query( $query_args );
 		remove_filter( 'posts_where', 'lf_title_filter' );
 	} else {
 		$report_query = new WP_Query( $query_args );

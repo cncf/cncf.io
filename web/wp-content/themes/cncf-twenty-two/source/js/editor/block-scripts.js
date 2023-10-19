@@ -289,6 +289,10 @@ wp.blocks.registerBlockStyle(
 	{
 		label: 'Reduced Height',
 		name: 'reduced-height',
+	},
+	{
+		label: 'Jump Button',
+		name: 'jump-button',
 	}
 ]
 );

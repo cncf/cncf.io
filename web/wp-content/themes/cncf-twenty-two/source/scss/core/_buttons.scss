@@ -44,24 +44,13 @@
 	transition: background-color 0.25s ease-out;
 }
 
-// .hs-button,
-// .wp-block-button .wp-block-button__link,
 .wp-block-button__link {
 	cursor: pointer;
 	word-break: break-word;
-	// letter-spacing: 0.02em;
 	text-align: center;
-	// white-space: nowrap;
 	width: 100%;
 	max-width: 100%;
 	transition: background-color 0.25s ease-out;
-	// &:hover {
-	// 	color: $white;
-	// 	background-color: $link-hover;
-	// 	text-decoration: none;
-	// }
-
-	// &:visited
 	&:link {
 		color: $white;
 		text-decoration: none;
@@ -78,8 +67,8 @@
 }
 
 // parent container, styles are attached here.
-// Visit project website on project single
 .wp-block-button {
+	// Visit project website on project single
 	&.is-style-reduced-height {
 		.wp-block-button__link {
 			font-size: 14px;
@@ -90,9 +79,42 @@
 			padding-bottom: 10px;
 		}
 	}
+	&.is-style-jump-button {
+		.wp-block-button__link {
+			color: $black;
+			font-size: 14px;
+			@media (min-width: 768px) {
+				font-size: 16px;
+			}
+			font-weight: 700;
+			line-height: 20px;
+			letter-spacing: 0.32px;
+			text-transform: uppercase;
+			padding-top: 18px;
+			padding-bottom: 18px;
+			border-radius: 5px;
+			border: 1px solid #fff;
+			background-color: #f2f2f2;
+			box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.05);
+			&:before {
+				content: '';
+				background-image: url("data:image/svg+xml,%3Csvg width='20' height='8' viewBox='0 0 24 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m2 2 10 8 10-8' stroke='%23000' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+				background-repeat: no-repeat;
+				display: inline-block; // allows to control dimensions.
+				height: 8px;
+				width: 20px;
+				margin-right: 16px;
+			}
+			&:hover {
+				background-color: #eaeaea;
+				transition: all 0.3s;
+			}
+		}
+	}
 }
 
 // button on browser update panel.
-body #buorgig, body #buorgul {
+body #buorgig,
+body #buorgul {
 	color: black;
 }

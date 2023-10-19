@@ -9,7 +9,7 @@
  * @subpackage Lf_Mu/admin/partials
  */
 
- // If this file is called directly, abort.
+// If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -68,14 +68,14 @@ $sidebar    = array(
 					'initial_open' => true,
 					'settings'     => array(
 						array(
-							'type'              => 'text',
-							'data_type'         => 'meta',
-							'data_key'          => 'date',
-							'label'             => __( 'Date' ),
-							'register_meta'     => true,
-							'ui_border_top'     => true,
-							'default_value'     => '',
-							'placeholder'       => 'YYYY/MM/DD',
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'date',
+							'label'         => __( 'Date' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+							'default_value' => '',
+							'placeholder'   => 'YYYY/MM/DD',
 						),
 						array(
 							'type'          => 'select',
@@ -300,25 +300,25 @@ $sidebar    = array(
 					'initial_open' => true,
 					'settings'     => array(
 						array(
-							'type'              => 'text',
-							'data_type'         => 'meta',
-							'data_key'          => 'date_start',
-							'label'             => __( 'Start Date' ),
-							'register_meta'     => true,
-							'ui_border_top'     => true,
-							'default_value'     => '',
-							'placeholder'       => 'YYYY/MM/DD',
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'date_start',
+							'label'         => __( 'Start Date' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+							'default_value' => '',
+							'placeholder'   => 'YYYY/MM/DD',
 						),
 						array(
-							'type'              => 'text',
-							'data_type'         => 'meta',
-							'data_key'          => 'date_end',
-							'label'             => __( 'End Date' ),
-							'register_meta'     => true,
-							'ui_border_top'     => false,
-							'default_value'     => '',
-							'placeholder'       => 'YYYY/MM/DD',
-							'help'              => __( 'Required. For single day events, enter the same date.' ),
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'date_end',
+							'label'         => __( 'End Date' ),
+							'register_meta' => true,
+							'ui_border_top' => false,
+							'default_value' => '',
+							'placeholder'   => 'YYYY/MM/DD',
+							'help'          => __( 'Required. For single day events, enter the same date.' ),
 						),
 						array(
 							'type'          => 'text',

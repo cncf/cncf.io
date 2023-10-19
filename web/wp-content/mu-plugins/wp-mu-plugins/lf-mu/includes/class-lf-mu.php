@@ -77,7 +77,6 @@ class Lf_Mu {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -102,27 +101,26 @@ class Lf_Mu {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lf-mu-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-lf-mu-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-lf-mu-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-lf-mu-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-lf-mu-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-lf-mu-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-lf-mu-public.php';
+		require_once plugin_dir_path( __DIR__ ) . 'public/class-lf-mu-public.php';
 
 		$this->loader = new Lf_Mu_Loader();
-
 	}
 
 	/**
@@ -139,7 +137,6 @@ class Lf_Mu {
 		$plugin_i18n = new Lf_Mu_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -252,7 +249,6 @@ class Lf_Mu {
 		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_newsletters_from_sitemap' );
 		$this->loader->add_action( 'send_headers', $plugin_public, 'add_header_cache', 15 );
 		$this->loader->add_filter( 'the_seo_framework_query_supports_seo', $plugin_public, 'tsf_meta_temp_fix' );
-
 	}
 
 	/**
@@ -294,5 +290,4 @@ class Lf_Mu {
 	public function get_version() {
 		return $this->version;
 	}
-
 }

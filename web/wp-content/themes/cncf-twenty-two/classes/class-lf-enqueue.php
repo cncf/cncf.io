@@ -106,9 +106,7 @@ class LF_Enqueue {
 			wp_enqueue_style( 'editor-css', get_template_directory_uri() . '/build/editor-only.css', array( 'wp-edit-blocks' ), filemtime( get_template_directory() . '/build/editor-only.min.css' ), 'all' );
 
 		}
-
 	}
-
 }
 
 new LF_Enqueue();

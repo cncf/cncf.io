@@ -98,6 +98,5 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'cncf_members_latest', 'add_cncf_members_latest_shortcode' );

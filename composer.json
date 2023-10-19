@@ -47,10 +47,9 @@
   "require-dev": {
     "roave/security-advisories": "dev-master",
     "thetwopct/load-media-from-production": "dev-main",
-    "squizlabs/php_codesniffer": "^3.4.0",
-    "wp-coding-standards/wpcs": "^3",
-    "wpackagist-plugin/query-monitor":"^3.5.2",
-  	"wpackagist-plugin/debug-bar":"^1.0"
+    "wp-coding-standards/wpcs": "^3.0.1",
+    "wpackagist-plugin/debug-bar": "^1.0",
+    "wpackagist-plugin/query-monitor": "^3.5.2"
   },
   "config": {
     "vendor-dir": "vendor",
@@ -109,8 +108,9 @@
       "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "code-sniff": [
-      "./vendor/bin/phpcs --config-set installed_paths ~/example_wordpress_composer/vendor/wp-coding-standards/wpcs",
-      "./vendor/bin/phpcs -n -s --ignore=*gulpfile*,*plugins*,*twentytwenty*,*vendor*,*dist*,*scripts* --standard=WordPress ./web/wp-content"
+		"./vendor/bin/phpcs -i",
+		"./vendor/bin/phpcs --config-show",
+		"./vendor/bin/phpcs -nsv"
     ]
   }
 }

@@ -217,7 +217,7 @@ function add_home_ambassadors_shortcode() {
 				src="<?php echo esc_url( $ambassador['image'] ); ?>"
 				class="home-ambassadors-heptagons__image"></a>
 			<?php
-			$count++;
+			++$count;
 		}
 		?>
 		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg05"

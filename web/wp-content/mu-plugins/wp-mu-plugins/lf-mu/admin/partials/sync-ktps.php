@@ -33,7 +33,7 @@ $data = wp_remote_get( $items_url, $args );
 if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 	return;
 }
-$items = json_decode( wp_remote_retrieve_body( $data ) );
+$items     = json_decode( wp_remote_retrieve_body( $data ) );
 $id_column = array_column( $items, 'id' );
 
 $synced_ids = array();
@@ -47,12 +47,12 @@ foreach ( $ktps as $ktp ) {
 	$p = $items[ $key ];
 
 	$params = array(
-		'post_type' => 'lf_ktp',
-		'post_title' => $p->name,
+		'post_type'   => 'lf_ktp',
+		'post_title'  => $p->name,
 		'post_status' => 'publish',
-		'meta_input' => array(
+		'meta_input'  => array(
 			'lf_ktp_external_url' => $p->homepage_url,
-			'lf_ktp_logo' => $logos_url . $p->href,
+			'lf_ktp_logo'         => $logos_url . $p->href,
 		),
 	);
 
@@ -92,7 +92,7 @@ foreach ( $ktps as $ktp ) {
 // delete any KTP posts which aren't in $synced_ids.
 $query = new WP_Query(
 	array(
-		'post_type' => 'lf_ktp',
+		'post_type'    => 'lf_ktp',
 		'post__not_in' => $synced_ids,
 	)
 );

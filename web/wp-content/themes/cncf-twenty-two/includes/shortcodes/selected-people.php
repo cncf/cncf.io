@@ -60,6 +60,5 @@ function add_selected_people_shortcode( $atts ) {
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'selected_people', 'add_selected_people_shortcode' );

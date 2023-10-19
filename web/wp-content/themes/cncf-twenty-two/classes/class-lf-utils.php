@@ -174,17 +174,15 @@ class LF_Utils {
 		// If no end date, show start date in full.
 		if ( ! $event_date_end ) {
 			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
-		} elseif ( $event_date_start == $event_date_end ) {
 			// Start and end are same day.
+		} elseif ( $event_date_start == $event_date_end ) {
 			$date = esc_html( $event_date_start->format( 'F j, Y' ) );
-		} else {
 			// If start AND end month the same.
-			if ( $event_date_start->format( 'F' ) === $event_date_end->format( 'F' ) ) {
-				$date = esc_html( $event_date_start->format( 'F j' ) ) . '-' . esc_html( $event_date_end->format( 'j, Y' ) );
-			} else {
-				// Show both start and end month.
-				$date = esc_html( $event_date_start->format( 'M j' ) ) . ' - ' . esc_html( $event_date_end->format( 'M j, Y' ) );
-			}
+		} elseif ( $event_date_start->format( 'F' ) === $event_date_end->format( 'F' ) ) {
+			$date = esc_html( $event_date_start->format( 'F j' ) ) . '-' . esc_html( $event_date_end->format( 'j, Y' ) );
+			// Show both start and end month.
+		} else {
+			$date = esc_html( $event_date_start->format( 'M j' ) ) . ' - ' . esc_html( $event_date_end->format( 'M j, Y' ) );
 		}
 		return $date;
 	}
@@ -224,7 +222,6 @@ class LF_Utils {
 		$author_byline = 'By ' . $author;
 
 		return $author_byline;
-
 	}
 
 	/**
@@ -269,20 +266,34 @@ class LF_Utils {
 			$alt_text = self::get_img_alt( $image_id );
 		}
 
-		if ( ! $image_srcset ) {
-
-			$width  = (int) $size[1] ?? '';
-			$height = (int) $size[2] ?? '';
-
-			$img           = '<img width="' . $width . '" height="' . $height . '" loading="' . $loading . '" class="' . $class_name . '"  src="' . $image_src . '" alt="' . $alt_text . '">';
-			$img_meta      = wp_get_attachment_metadata( $image_id );
-			$attachment_id = $image_id;
-			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
-
-		} else {
+		if ( $image_srcset ) {
 
 			$html = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" decoding="async" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '" alt="' . $alt_text . '">';
 
+		} else {
+
+			$attributes = array(
+				'loading="' . $loading . '"',
+				'class="' . $class_name . '"',
+				'src="' . $image_src . '"',
+				'alt="' . $alt_text . '"',
+			);
+
+			$width  = (int) $size[1] ?? null;
+			$height = (int) $size[2] ?? null;
+
+			if ( $width ) {
+				$attributes[] = 'width="' . $width . '"';
+			}
+
+			if ( $height ) {
+				$attributes[] = 'height="' . $height . '"';
+			}
+
+			$img           = '<img ' . implode( ' ', $attributes ) . '>';
+			$img_meta      = wp_get_attachment_metadata( $image_id );
+			$attachment_id = $image_id;
+			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
 		}
 
 		echo wp_kses(
@@ -485,7 +496,7 @@ class LF_Utils {
 				$project_query->the_post();
 				$stacked_logo_url = get_post_meta( get_the_ID(), 'lf_project_logo', true );
 				if ( has_term( 'graduated', 'lf-project-stage', get_the_ID() ) ) {
-					$graduated_count++;
+					++$graduated_count;
 					if ( $stacked_logo_url ) {
 						$all_project_logos[] = array(
 							'title' => get_the_title(),
@@ -494,7 +505,7 @@ class LF_Utils {
 						);
 					}
 				} elseif ( has_term( 'incubating', 'lf-project-stage', get_the_ID() ) ) {
-					$incubating_count++;
+					++$incubating_count;
 					if ( $stacked_logo_url ) {
 						$all_project_logos[] = array(
 							'title' => get_the_title(),
@@ -503,7 +514,7 @@ class LF_Utils {
 						);
 					}
 				} elseif ( has_term( 'sandbox', 'lf-project-stage', get_the_ID() ) ) {
-					$sandbox_count++;
+					++$sandbox_count;
 				}
 			}
 		}
@@ -518,7 +529,6 @@ class LF_Utils {
 		wp_reset_postdata();
 
 		return $project_metrics;
-
 	}
 
 	/**
@@ -587,7 +597,6 @@ class LF_Utils {
 			}
 		}
 		return json_decode( $tech_radars );
-
 	}
 
 	/**

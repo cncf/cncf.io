@@ -44,7 +44,7 @@ elseif ( is_tag() || is_tax() ) :
 		title="See <?php echo esc_html( $category->name ); ?> posts"><?php echo esc_html( $category->name ); ?></a>
 </div>
 		<?php
-	};
+	}
 	?>
 	<?php
 elseif ( is_singular( 'lf_project' ) ) :

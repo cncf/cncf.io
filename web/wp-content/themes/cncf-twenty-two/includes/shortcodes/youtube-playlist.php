@@ -115,7 +115,7 @@ function add_playlist_shortcode( $atts ) {
 		</div>
 	</div>
 			<?php
-			$j++;
+			++$j;
 			if ( $count === $j ) {
 				// we got our $count public vids.
 				break;

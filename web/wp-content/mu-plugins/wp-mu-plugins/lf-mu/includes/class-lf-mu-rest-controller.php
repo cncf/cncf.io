@@ -24,9 +24,9 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 	 * Register the routes for the objects of the controller.
 	 */
 	public function register_routes() {
-		$version = '1';
+		$version   = '1';
 		$namespace = 'lf/v' . $version;
-		$base = 'sync_people';
+		$base      = 'sync_people';
 		register_rest_route(
 			$namespace,
 			'/' . $base,
@@ -66,5 +66,4 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 
 		return new WP_REST_Response( array( 'Success' ), 200 );
 	}
-
 }

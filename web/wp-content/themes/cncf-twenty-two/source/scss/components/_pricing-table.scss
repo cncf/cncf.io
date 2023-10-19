@@ -195,6 +195,9 @@
 			}
 		}
 		.tfoot {
+			h3 {
+				color: $white;
+			}
 			@media (min-width: 1200px) {
 				height: unset;
 			}

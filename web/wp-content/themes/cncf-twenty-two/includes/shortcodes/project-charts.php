@@ -103,7 +103,7 @@ function add_projects_maturity_chart_shortcode( $atts ) {
 	$archived       = array();
 
 	$num_dates = count( array_keys( $chart_data ) );
-	$i = 1;
+	$i         = 1;
 	foreach ( array_keys( $chart_data ) as $m ) {
 		if ( $i != $num_dates ) {
 			$project_months[] = gmdate( 'M, Y', strtotime( $m ) );
@@ -111,7 +111,7 @@ function add_projects_maturity_chart_shortcode( $atts ) {
 			// show the day for the last entry.
 			$project_months[] = gmdate( 'M d, Y', strtotime( $m ) );
 		}
-		$i++;
+		++$i;
 	}
 
 	foreach ( $chart_data as $cd ) {
@@ -178,13 +178,13 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 		$incubating_accepted[ $this_year ] = 0;
 		$graduated_accepted[ $this_year ]  = 0;
 		if ( $current_year == $this_year ) {
-			$graduated_background[]    = 'rgb(193, 96, 220, .4)';
+			$graduated_background[]  = 'rgb(193, 96, 220, .4)';
 			$incubating_background[] = 'rgb(240, 188, 0, .4)';
-			$sandbox_background[]  = 'rgb(10, 178, 178, .4)';
+			$sandbox_background[]    = 'rgb(10, 178, 178, .4)';
 		} else {
-			$graduated_background[]    = 'rgb(193 96 220)';
+			$graduated_background[]  = 'rgb(193 96 220)';
 			$incubating_background[] = 'rgb(240, 188, 0)';
-			$sandbox_background[]  = 'rgb(10, 178, 178)';
+			$sandbox_background[]    = 'rgb(10, 178, 178)';
 		}
 	}
 

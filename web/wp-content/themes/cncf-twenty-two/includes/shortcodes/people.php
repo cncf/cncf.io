@@ -40,7 +40,7 @@ function add_people_shortcode( $atts ) {
 		'post_type'      => 'lf_person',
 		'post_status'    => array( 'publish' ),
 		'posts_per_page' => 200,
-		'no_found_rows' => true,
+		'no_found_rows'  => true,
 		'tax_query'      => array(
 			array(
 				'taxonomy' => 'lf-person-category',
@@ -84,6 +84,5 @@ function add_people_shortcode( $atts ) {
 	<?php
 	$block_content = ob_get_clean();
 	return $block_content;
-
 }
 add_shortcode( 'people', 'add_people_shortcode' );

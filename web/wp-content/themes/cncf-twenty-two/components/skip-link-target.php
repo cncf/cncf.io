@@ -11,7 +11,7 @@
 
 ?>
 
- <?php
+<?php
 	// Insert this at the top of main content.
-	?>
+?>
 <div class="skip-link-target" id="maincontent"></div>

@@ -12,6 +12,7 @@
  * Description: Section header for reports.
  * Viewport Width: 1024
  * Inserter: yes
+ * Categories: lf/pjr
  */
 
 ?>
@@ -33,5 +34,15 @@
 
 <!-- wp:separator {"backgroundColor":"purple","className":"is-style-report-section-line"} -->
 <hr class="wp-block-separator has-text-color has-purple-color has-alpha-channel-opacity has-purple-background-color has-background is-style-report-section-line"/>
-<!-- /wp:separator --></div>
+<!-- /wp:separator -->
+
+<!-- wp:spacer {"height":"80px","className":"is-style-40-80"} -->
+<div style="height:80px" aria-hidden="true" class="wp-block-spacer is-style-40-80"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"893px","justifyContent":"left"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p>Start here</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->

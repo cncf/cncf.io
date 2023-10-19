@@ -13,10 +13,10 @@
 $company = Lf_Utils::get_term_names( get_the_ID(), 'lf-company' );
 
 // registration URL.
-$webinar_reg_url           = get_post_meta( get_the_ID(), 'lf_webinar_registration_url', true );
+$webinar_reg_url = get_post_meta( get_the_ID(), 'lf_webinar_registration_url', true );
 
 // get webinar date and time.
-$webinar_date = get_post_meta( get_the_ID(), 'lf_webinar_date', true );
+$webinar_date              = get_post_meta( get_the_ID(), 'lf_webinar_date', true );
 $webinar_start_time        = get_post_meta( get_the_ID(), 'lf_webinar_start_time', true );
 $webinar_start_time_period = get_post_meta( get_the_ID(), 'lf_webinar_start_time_period', true );
 $webinar_timezone          = get_post_meta( get_the_ID(), 'lf_webinar_timezone', true );

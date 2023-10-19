@@ -14,7 +14,7 @@ wp_enqueue_style( 'wp-block-separator' );
 if ( $query->have_posts() ) : ?>
 <p class="search-filter-results-count">
 	<?php
-	$dd = current_datetime();
+	$dd         = current_datetime();
 	$full_count = $wpdb->get_var( $wpdb->prepare( "select count(*) from wp_posts join wp_postmeta on wp_posts.ID = wp_postmeta.post_id where wp_posts.post_type = 'lf_event' and wp_posts.post_status = 'publish' and meta_key='lf_event_date_end' and meta_value >= %s;", $dd->format( 'Y-m-d' ) ) );
 
 	// if filter matches all.

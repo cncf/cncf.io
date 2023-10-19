@@ -111,7 +111,7 @@ wp_enqueue_style( 'wp-block-columns' );
 					<?php
 					$i = 0;
 					foreach ( $all_project_logos as $project_logos ) :
-						$i++;
+						++$i;
 					$direction = ( $i % 2 == 0 ) ? 'rtl' : 'ltr'; // phpcs:ignore
 
 						?>

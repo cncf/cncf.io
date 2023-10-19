@@ -114,28 +114,28 @@ get_template_part( 'components/skip-link-target' );
 								<div class="welcome_container white-links">
 									<h2>Welcome</h2>
 									<p>
-							  Welcome to the 2018 Cloud Native Computing Foundation annual report. Comments and feedback are welcome at
-							  <a href="mailto:info@cncf.io">info@cncf.io</a>
-						   </p>
+								Welcome to the 2018 Cloud Native Computing Foundation annual report. Comments and feedback are welcome at
+								<a href="mailto:info@cncf.io">info@cncf.io</a>
+							</p>
 								</div>
 							</section>
 							<section id="who-we-are" class="who-we-are-section white-links">
 								<h2>Who We Are</h2>
 								<div class="cols">
 									<p>
-							  <span style="font-weight: 400;">The Cloud Native Computing Foundation (CNCF) is an open source software foundation dedicated to making cloud native computing universal and sustainable. Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach. </span>
-						   </p>
+								<span style="font-weight: 400;">The Cloud Native Computing Foundation (CNCF) is an open source software foundation dedicated to making cloud native computing universal and sustainable. Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach. </span>
+							</p>
 									<p>
-							  <span style="font-weight: 400;">We are a community of open source projects, including Kubernetes, Prometheus, Envoy, and </span>
-							  <a href="https://www.cncf.io/projects/">
-							  <span style="font-weight: 400;">many others</span>
-							  </a>
-							  <span style="font-weight: 400;">. Kubernetes and other CNCF projects are some of the </span>
-							  <a href="https://www.cncf.io/blog/2017/06/05/30-highest-velocity-open-source-projects/">
-							  <span style="font-weight: 400;">highest velocity projects</span>
-							  </a>
-							  <span style="font-weight: 400;"> in the history of open source.</span>
-						   </p>
+								<span style="font-weight: 400;">We are a community of open source projects, including Kubernetes, Prometheus, Envoy, and </span>
+								<a href="https://www.cncf.io/projects/">
+								<span style="font-weight: 400;">many others</span>
+								</a>
+								<span style="font-weight: 400;">. Kubernetes and other CNCF projects are some of the </span>
+								<a href="https://www.cncf.io/blog/2017/06/05/30-highest-velocity-open-source-projects/">
+								<span style="font-weight: 400;">highest velocity projects</span>
+								</a>
+								<span style="font-weight: 400;"> in the history of open source.</span>
+							</p>
 								</div>
 								<ul class="items widthcol3">
 									<li>
@@ -182,10 +182,10 @@ get_template_part( 'components/skip-link-target' );
 									<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/diagram-revised-01.svg" alt="">
 									<div class="copy-wrp">
 										<p>
-								 A basic premise behind CNCF, our
-								 <a href="http://www.kubecon.io/">KubeCon + CloudNativeCon</a>
-								 conferences, and open source in general is that many interactions are positive sum – making everyone involved better off – rather than zero sum, where there would be winners and losers. There is not a fixed amount of investment, mindshare, or development contributions that gets allocated between projects. Just as open source development is based on the idea that collectively we are smarter than any one of us, open source foundations work to make the entire community better off.
-							  </p>
+								A basic premise behind CNCF, our
+								<a href="http://www.kubecon.io/">KubeCon + CloudNativeCon</a>
+								conferences, and open source in general is that many interactions are positive sum – making everyone involved better off – rather than zero sum, where there would be winners and losers. There is not a fixed amount of investment, mindshare, or development contributions that gets allocated between projects. Just as open source development is based on the idea that collectively we are smarter than any one of us, open source foundations work to make the entire community better off.
+								</p>
 										<p>CNCF is committed to building sustainable ecosystems by hosting great open source projects. Companies use those projects and build commercial products and services, creating value in the form of profits. They can then reinvest a portion of the profits in the projects by funding developers, which results in more code, more improvements, and better products. This creates a virtuous cycle of investment, innovation, and economic activity.</p>
 									</div>
 								</div>
@@ -210,9 +210,9 @@ get_template_part( 'components/skip-link-target' );
 												<div class="china-members-mockup">
 													<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/china-mockup.png" alt="">
 													<p>
-										  <strong>10%</strong>
-										  of the CNCF total membership
-									   </p>
+											<strong>10%</strong>
+											of the CNCF total membership
+										</p>
 												</div>
 											</div>
 										</div>
@@ -262,19 +262,19 @@ get_template_part( 'components/skip-link-target' );
 									<h2>End User Community</h2>
 									<div class="cols">
 										<p>
-								 <span style="font-weight: 400;">We offer multiple opportunities for end users to contribute and have their voices heard. Companies that use cloud native technologies internally, but do not sell any cloud native services externally, are eligible to join the </span>
-								 <a href="https://www.cncf.io/people/end-user-community/">
-								 <span style="font-weight: 400;">End User Community</span>
-								 </a>
-								 <span style="font-weight: 400;">. </span>
-							  </p>
+								<span style="font-weight: 400;">We offer multiple opportunities for end users to contribute and have their voices heard. Companies that use cloud native technologies internally, but do not sell any cloud native services externally, are eligible to join the </span>
+								<a href="https://www.cncf.io/people/end-user-community/">
+								<span style="font-weight: 400;">End User Community</span>
+								</a>
+								<span style="font-weight: 400;">. </span>
+								</p>
 										<p>
-								 <span style="font-weight: 400;">Our End User Community is growing. We finished 2018 with 69 top companies and startups, which is the largest end-user community of any open source foundation. We published </span>
-								 <a href="https://www.cncf.io/people/end-user-community/">
-								 <span style="font-weight: 400;">16 case studies</span>
-								 </a>
-								 <span style="font-weight: 400;"> last year about the learnings from end users committed to accelerating the adoption of cloud native technologies and improving the deployment experience.</span>
-							  </p>
+								<span style="font-weight: 400;">Our End User Community is growing. We finished 2018 with 69 top companies and startups, which is the largest end-user community of any open source foundation. We published </span>
+								<a href="https://www.cncf.io/people/end-user-community/">
+								<span style="font-weight: 400;">16 case studies</span>
+								</a>
+								<span style="font-weight: 400;"> last year about the learnings from end users committed to accelerating the adoption of cloud native technologies and improving the deployment experience.</span>
+								</p>
 									</div>
 									<h4>69 COMPANIES IN THE END USER COMMUNITY
 									</h4>
@@ -606,9 +606,9 @@ get_template_part( 'components/skip-link-target' );
 										<p class="text-larger">In May 2018, we were thrilled to grant our first Top End User Award to Bloomberg for their innovative use of cloud native technologies and unique contributions to the CNCF ecosystem.</p>
 										<p>The End User Community meets monthly and advises the CNCF Governing Board and Technical Oversight Committee (TOC) members on key challenges, emerging use cases, and areas of opportunity and new growth for cloud native technologies.</p>
 										<p class="margin-bottom">If you’re using CNCF projects in interesting ways, we urge you to join our official
-								 <a href="https://www.cncf.io/people/end-user-community/">End User Community</a>
-								 so you have an official voice, and more importantly, learn from other end users deploying CNCF projects.
-							  </p>
+								<a href="https://www.cncf.io/people/end-user-community/">End User Community</a>
+								so you have an official voice, and more importantly, learn from other end users deploying CNCF projects.
+								</p>
 									</div>
 									<div class="right-wrp">
 										<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/CNCF_Annual_Report_2018_diagram-17.svg" alt="">
@@ -620,21 +620,21 @@ get_template_part( 'components/skip-link-target' );
 									<div class="left-wrp">
 										<h2>Conferences and Events</h2>
 										<p>
-								 <a href="http://www.kubecon.io/">
-								 <span style="font-weight: 400;">KubeCon + CloudNativeCon</span>
-								 </a>
-								 <span style="font-weight: 400;"> has expanded from its start with 500 attendees in 2015 to become one of the largest and most successful open source conferences ever. The </span>
-								 <a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">
-								 <span style="font-weight: 400;">KubeCon + CloudNativeCon North America event in Seattle</span>
-								 </a>
-								 <span style="font-weight: 400;">, held December 10-13, 2018, was our biggest yet and was sold out several weeks ahead of time with 8,000 attendees.</span>
-							  </p>
+								<a href="http://www.kubecon.io/">
+								<span style="font-weight: 400;">KubeCon + CloudNativeCon</span>
+								</a>
+								<span style="font-weight: 400;"> has expanded from its start with 500 attendees in 2015 to become one of the largest and most successful open source conferences ever. The </span>
+								<a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">
+								<span style="font-weight: 400;">KubeCon + CloudNativeCon North America event in Seattle</span>
+								</a>
+								<span style="font-weight: 400;">, held December 10-13, 2018, was our biggest yet and was sold out several weeks ahead of time with 8,000 attendees.</span>
+								</p>
 										<p>
-								 <span style="font-weight: 400;">KubeCon + CloudNativeCon co-chair Liz Rice of Aqua Security gave a CNCF community update, alongside a number of our project maintainers, including a Helm update from Michelle Noorali of Microsoft and an Envoy update from Matt Klein of Lyft.</span>
-							  </p>
+								<span style="font-weight: 400;">KubeCon + CloudNativeCon co-chair Liz Rice of Aqua Security gave a CNCF community update, alongside a number of our project maintainers, including a Helm update from Michelle Noorali of Microsoft and an Envoy update from Matt Klein of Lyft.</span>
+								</p>
 										<p>
-								 <span style="font-weight: 400;">KubeCon + CloudNativeCon Seattle attendance increased 90% from last year’s KubeCon + CloudNativeCon North America event in Austin. And while the attendee numbers grew, the great developer conference experience remained the same.</span>
-							  </p>
+								<span style="font-weight: 400;">KubeCon + CloudNativeCon Seattle attendance increased 90% from last year’s KubeCon + CloudNativeCon North America event in Austin. And while the attendee numbers grew, the great developer conference experience remained the same.</span>
+								</p>
 										<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/event-chart-revised-01.svg" alt="">
 									</div>
 									<div class="right-wrp">
@@ -655,7 +655,7 @@ get_template_part( 'components/skip-link-target' );
 									The co-chairs select a program committee of around 80 experts, including project maintainers, active community members, and highly-rated presenters from past events, to review the CFP submissions. The keynote speakers are selected by the conference co-chairs from highly-rated CFP submissions, or in rare cases, by invitation from the co-chairs.
 									<a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">KubeCon + CloudNativeCon Seattle</a>
 									included 318 sessions: CFP tracks sessions, lightning talks, BoFs, tutorials, and maintainer track sessions, which were offered in ~10 rooms as well as ~90 maintainer sessions spread across ~5 rooms.
-								 </p>
+								</p>
 										</div>
 									</div>
 								</div>
@@ -665,27 +665,27 @@ get_template_part( 'components/skip-link-target' );
 									<h2>Training &amp; Certification</h2>
 									<div class="cols">
 										<p>
-								 <span style="font-weight: 400;">Adopting new technology can be challenging, especially when it’s hard to find qualified people. CNCF offers training and certification for key CNCF technologies such as Kubernetes to ensure that organizations can train their own employees or hire from a strong body of experienced talent. We offer the free </span>
-								 <a href="https://www.cncf.io/certification/training/">
-								 <span style="font-weight: 400;">Kubernetes Massively Open Online Course (MOOC)</span>
-								 </a>
-								 <span style="font-weight: 400;"> through our partnership with edX, as well as self-paced and instructor-led Kubernetes training. The official </span>
-								 <a href="https://www.cncf.io/certification/expert/">
-								 <span style="font-weight: 400;">Certified Kubernetes Administrator (CKA)</span>
-								 </a>
-								 <span style="font-weight: 400;"> certification ensures a high level of expertise in the ecosystem, and the </span>
-								 <a href="https://www.cncf.io/certification/kcsp/">
-								 <span style="font-weight: 400;">Kubernetes Certified Service Provider (KCSP)</span>
-								 </a>
-								 <span style="font-weight: 400;"> program is a pre-qualified tier of vetted service providers that offer Kubernetes support, consulting, and professional services for organizations embarking on their Kubernetes journey. </span>
-							  </p>
+								<span style="font-weight: 400;">Adopting new technology can be challenging, especially when it’s hard to find qualified people. CNCF offers training and certification for key CNCF technologies such as Kubernetes to ensure that organizations can train their own employees or hire from a strong body of experienced talent. We offer the free </span>
+								<a href="https://www.cncf.io/certification/training/">
+								<span style="font-weight: 400;">Kubernetes Massively Open Online Course (MOOC)</span>
+								</a>
+								<span style="font-weight: 400;"> through our partnership with edX, as well as self-paced and instructor-led Kubernetes training. The official </span>
+								<a href="https://www.cncf.io/certification/expert/">
+								<span style="font-weight: 400;">Certified Kubernetes Administrator (CKA)</span>
+								</a>
+								<span style="font-weight: 400;"> certification ensures a high level of expertise in the ecosystem, and the </span>
+								<a href="https://www.cncf.io/certification/kcsp/">
+								<span style="font-weight: 400;">Kubernetes Certified Service Provider (KCSP)</span>
+								</a>
+								<span style="font-weight: 400;"> program is a pre-qualified tier of vetted service providers that offer Kubernetes support, consulting, and professional services for organizations embarking on their Kubernetes journey. </span>
+								</p>
 										<p>
-								 <span style="font-weight: 400;">In May 2018, CNCF announced the availability of the </span>
-								 <a href="https://www.cncf.io/certification/training/">
-								 <span style="font-weight: 400;">Kubernetes Training Partner (KTP)</span>
-								 </a>
-								 <span style="font-weight: 400;"> program, which offers qualified training providers with deep experience in cloud native technology training.</span>
-							  </p>
+								<span style="font-weight: 400;">In May 2018, CNCF announced the availability of the </span>
+								<a href="https://www.cncf.io/certification/training/">
+								<span style="font-weight: 400;">Kubernetes Training Partner (KTP)</span>
+								</a>
+								<span style="font-weight: 400;"> program, which offers qualified training providers with deep experience in cloud native technology training.</span>
+								</p>
 									</div>
 									<h3>18 Kubernetes Training Partners (KTP)
 									</h3>
@@ -753,12 +753,12 @@ get_template_part( 'components/skip-link-target' );
 									<h2>Software Conformance</h2>
 									<div class="cols">
 										<p>
-								 It is unprecedented to get every cloud company, enterprise software provider, and startup in the industry to support a conformance program. CNCF has achieved this with the
-								 <a href="https://www.cncf.io/certification/software-conformance/">Certified Kubernetes Conformance Program</a>
-								 , which enables any Kubernetes implementation to demonstrate that it is conformant and interoperable. Nearly all of the world’s leading software vendors and cloud computing providers have
-								 <a href="https://www.cncf.io/certification/software-conformance/#logos">Certified Kubernetes</a>
-								 offerings.
-							  </p>
+								It is unprecedented to get every cloud company, enterprise software provider, and startup in the industry to support a conformance program. CNCF has achieved this with the
+								<a href="https://www.cncf.io/certification/software-conformance/">Certified Kubernetes Conformance Program</a>
+								, which enables any Kubernetes implementation to demonstrate that it is conformant and interoperable. Nearly all of the world’s leading software vendors and cloud computing providers have
+								<a href="https://www.cncf.io/certification/software-conformance/#logos">Certified Kubernetes</a>
+								offerings.
+								</p>
 										<p>It is an extraordinary accomplishment that there are no forks in our industry, which speaks to the commitment that companies of all sizes have made to be good partners in the community. CNCF has certified offerings from 76 vendors.</p>
 									</div>
 									<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/certified-kubernetes-03.svg" alt="">
@@ -1005,10 +1005,10 @@ get_template_part( 'components/skip-link-target' );
 								<h2>Project Updates &amp; Satisfaction</h2>
 								<div class="project-container">
 									<p>
-							  2018 was a very busy year for CNCF projects, including the graduations of Kubernetes, Prometheus, and Envoy. 7 CNCF projects were the winners out of the 13 awards in cloud computing in InfoWorld’s 2018 Best of Open Source Software (
-							  <a href="https://www.infoworld.com/article/3306843/open-source-tools/bossies-2018-the-best-of-open-source-software-awards.html">BOSSIE</a>
-							  )
-						   </p>
+								2018 was a very busy year for CNCF projects, including the graduations of Kubernetes, Prometheus, and Envoy. 7 CNCF projects were the winners out of the 13 awards in cloud computing in InfoWorld’s 2018 Best of Open Source Software (
+								<a href="https://www.infoworld.com/article/3306843/open-source-tools/bossies-2018-the-best-of-open-source-software-awards.html">BOSSIE</a>
+								)
+							</p>
 									<p>We are pleased to share the results from the maintainer surveys we do twice a year:</p>
 									<h3>CNCF Project Maintainer Survey Results
 									</h3>
@@ -1046,16 +1046,16 @@ get_template_part( 'components/skip-link-target' );
 								<div class="project-container">
 									<h3>CNCF Charter Revisions</h3>
 									<p>
-							  <span style="font-weight: 400;">The CNCF </span>
-							  <a href="https://github.com/cncf/foundation/blob/master/charter.md">
-							  <span style="font-weight: 400;">charter</span>
-							  </a>
-							  <span style="font-weight: 400;"> was revised in November 2018 to incorporate the </span>
-							  <a href="https://docs.google.com/document/d/1d9Ks3UvUV8sZj4ribAMwmq0MZwi1CwnOZWGtrCufOuk/edit">
-							  <span style="font-weight: 400;">Cloud Native definition</span>
-							  </a>
-							  <span style="font-weight: 400;"> developed by the TOC. </span>
-						   </p>
+								<span style="font-weight: 400;">The CNCF </span>
+								<a href="https://github.com/cncf/foundation/blob/master/charter.md">
+								<span style="font-weight: 400;">charter</span>
+								</a>
+								<span style="font-weight: 400;"> was revised in November 2018 to incorporate the </span>
+								<a href="https://docs.google.com/document/d/1d9Ks3UvUV8sZj4ribAMwmq0MZwi1CwnOZWGtrCufOuk/edit">
+								<span style="font-weight: 400;">Cloud Native definition</span>
+								</a>
+								<span style="font-weight: 400;"> developed by the TOC. </span>
+							</p>
 									<div class="project-maturity-levels">
 										<h3>Project Maturity Levels</h3>
 										<div class="copy-wrp">
@@ -1067,12 +1067,12 @@ get_template_part( 'components/skip-link-target' );
 									. Full details are listed in
 									<a href="https://github.com/cncf/toc/blob/master/process/graduation_criteria.adoc">Graduation Criteria v1.1</a>
 									.
-								 </p>
+								</p>
 											<p>
 									2018 highlights include the addition of 16 new projects by the
 									<a href="https://github.com/cncf/toc">CNCF TOC</a>
 									, listed in order of date accepted:
-								 </p>
+								</p>
 										</div>
 										<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/graphic-chasm-3-02-01.svg" alt="">
 									</div>
@@ -1153,7 +1153,7 @@ get_template_part( 'components/skip-link-target' );
 									was released in December 2018. New functionality included: simplified Kubernetes cluster management with kubeadm in GA and the
 									<a href="https://github.com/container-storage-interface/spec">Container Storage Interface (CSI)</a>
 									in GA.
-								 </p>
+								</p>
 										</figcaption>
 									</figure>
 									<figure>
@@ -1164,7 +1164,7 @@ get_template_part( 'components/skip-link-target' );
 											<p>
 									<a href="https://coredns.io/">CoreDNS</a>
 									replaced kube-dns as the default DNS server for Kubernetes.
-								 </p>
+								</p>
 										</figcaption>
 									</figure>
 									<figure>
@@ -1175,7 +1175,7 @@ get_template_part( 'components/skip-link-target' );
 											<p>
 									<a href="https://www.fluentd.org/">Fluentd</a>
 									, the open source data collector for unified logging, added additional support for Splunk and Amazon Kinesis.
-								 </p>
+								</p>
 										</figcaption>
 									</figure>
 									<figure>
@@ -1195,7 +1195,7 @@ get_template_part( 'components/skip-link-target' );
 									The
 									<a href="https://nats.io/">NATS</a>
 									project, a simple, highperformance open source messaging system for cloud native applications, saw the inclusion of secure multitenancy and network topology optimizations over the past year.
-								 </p>
+								</p>
 										</figcaption>
 									</figure>
 									<figure>
@@ -1214,7 +1214,7 @@ get_template_part( 'components/skip-link-target' );
 									, which included functionality such as
 									<a href="https://vitess.io/docs/reference/vitess-replication/">VReplication</a>
 									, Prometheus monitoring integration, and a series of performance enhancements.
-								 </p>
+								</p>
 										</figcaption>
 									</figure>
 									<figure>
@@ -1226,7 +1226,7 @@ get_template_part( 'components/skip-link-target' );
 									The Linkerd service mesh team released v2 (based on the previously
 									<a href="https://www.cncf.io/blog/2018/09/18/linkerd-2-0-in-general-availability/">released</a>
 									Conduit project), which enables execution in a service sidecar model.
-								 </p>
+								</p>
 										</figcaption>
 									</figure>
 									<figure>
@@ -1238,7 +1238,7 @@ get_template_part( 'components/skip-link-target' );
 									Most recently, the TOC voted to accept
 									<a href="https://github.com/coreos/etcd">etcd</a>
 									as an incubation-level hosted project. That’s important because etcd plays a huge role in the Kubernetes ecosystem, serving as the “brain” of Kubernetes clusters. It’s a distributed keyvalue store, first developed by CoreOS and designed for reliability and scalability in distributed cluster environments.
-								 </p>
+								</p>
 										</figcaption>
 									</figure>
 								</div>
@@ -1249,10 +1249,10 @@ get_template_part( 'components/skip-link-target' );
 									<h2>Services And Assistance For Projects
 									</h2>
 									<p>
-							  CNCF provided a variety of
-							  <a href="https://github.com/cncf/servicedesk">services</a>
-							  to our projects to help make them more successful.
-						   </p>
+								CNCF provided a variety of
+								<a href="https://github.com/cncf/servicedesk">services</a>
+								to our projects to help make them more successful.
+							</p>
 									<h3>Security Audits</h3>
 									<p>CNCF funded and orchestrated security audits for:</p>
 									<figure class="small">
@@ -1542,14 +1542,14 @@ get_template_part( 'components/skip-link-target' );
 											<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/burn-up-chart-02.svg" alt="">
 										</div>
 										<p>
-								 To improve access to the above type of activities and services for projects, the
-								 <a href="https://servicedesk.cncf.io/">CNCF Service Desk</a>
-								 serves as a single access point for all CNCF services. If you’re a CNCF project maintainer, all you have to do is visit
-								 <a href="https://servicedesk.cncf.io">https://servicedesk.cncf.io</a>
-								 or email
-								 <a href="mailto:servicedesk@cncf.io">servicedesk@cncf.io</a>
-								 to request support.
-							  </p>
+								To improve access to the above type of activities and services for projects, the
+								<a href="https://servicedesk.cncf.io/">CNCF Service Desk</a>
+								serves as a single access point for all CNCF services. If you’re a CNCF project maintainer, all you have to do is visit
+								<a href="https://servicedesk.cncf.io">https://servicedesk.cncf.io</a>
+								or email
+								<a href="mailto:servicedesk@cncf.io">servicedesk@cncf.io</a>
+								to request support.
+								</p>
 									</div>
 								</div>
 							</section>
@@ -1559,20 +1559,20 @@ get_template_part( 'components/skip-link-target' );
 									<div class="cols">
 										<p>Education, inclusion, and collaboration are vital to the future of the cloud native ecosystem.</p>
 										<p>
-								 Part of supporting the continued development of this amazing community is making sure that everyone who wants to participate feels welcome to do so regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. While having more female speakers at
-								 <a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">KubeCon + CloudNativeCon Seattle</a>
-								 was an important step forward, there were a number of other activities that brought together the diversity of the cloud native community: speed networking and mentoring, the diversity lunch, sessions on building a community through Meetups, and KubeCon + CloudNativeCon diversity scholarships.
-							  </p>
+								Part of supporting the continued development of this amazing community is making sure that everyone who wants to participate feels welcome to do so regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. While having more female speakers at
+								<a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">KubeCon + CloudNativeCon Seattle</a>
+								was an important step forward, there were a number of other activities that brought together the diversity of the cloud native community: speed networking and mentoring, the diversity lunch, sessions on building a community through Meetups, and KubeCon + CloudNativeCon diversity scholarships.
+								</p>
 										<p>
-								 CNCF’s diversity program offered scholarships to 147 recipients from traditionally underrepresented and/or marginalized groups to attend
-								 <a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">KubeCon + CloudNativeCon Seattle</a>
-								 . These scholarships cover both the cost of the ticket as well as airfare and lodging. The $300,000 for Seattle, the largest investment made by a conference in diversity, was mainly contributed by CNCF, along with donations from Aspen Mesh, MongoDB, Twistlock, Two Sigma, and VMware. Including Seattle, CNCF has to date offered more than 485 diversity scholarships to attend KubeCon + CloudNativeCon events.
-							  </p>
+								CNCF’s diversity program offered scholarships to 147 recipients from traditionally underrepresented and/or marginalized groups to attend
+								<a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">KubeCon + CloudNativeCon Seattle</a>
+								. These scholarships cover both the cost of the ticket as well as airfare and lodging. The $300,000 for Seattle, the largest investment made by a conference in diversity, was mainly contributed by CNCF, along with donations from Aspen Mesh, MongoDB, Twistlock, Two Sigma, and VMware. Including Seattle, CNCF has to date offered more than 485 diversity scholarships to attend KubeCon + CloudNativeCon events.
+								</p>
 										<p>
-								 CNCF collaborated with the Kubernetes mentoring program to offer networking opportunities for mentees at
-								 <a href="http://www.kubecon.io/">KubeCon + CloudNativeCon</a>
-								 . 66 mentors and 180 mentees participated in this program in Seattle.
-							  </p>
+								CNCF collaborated with the Kubernetes mentoring program to offer networking opportunities for mentees at
+								<a href="http://www.kubecon.io/">KubeCon + CloudNativeCon</a>
+								. 66 mentors and 180 mentees participated in this program in Seattle.
+								</p>
 									</div>
 									<div class="big-data">
 										<strong>147</strong>
@@ -1734,10 +1734,10 @@ get_template_part( 'components/skip-link-target' );
 								<h2>CNCF MEETUPS</h2>
 								<div class="meetup-container">
 									<p>
-							  CNCF supported more than 160
-							  <a href="https://meetups.cncf.io/">meetup</a>
-							  groups in 38 countries, which have hosted more than 1,600 events and include more than 80,000 members. In 2018, we experienced a 60% increase in CNCF meetup members.
-						   </p>
+								CNCF supported more than 160
+								<a href="https://meetups.cncf.io/">meetup</a>
+								groups in 38 countries, which have hosted more than 1,600 events and include more than 80,000 members. In 2018, we experienced a 60% increase in CNCF meetup members.
+							</p>
 									<div class="big-data">
 										<strong>160</strong>
 										<span>Meetup Groups</span>
@@ -1767,19 +1767,19 @@ get_template_part( 'components/skip-link-target' );
 									<h2>CNCF Ambassador Program</h2>
 									<div class="cols">
 										<p>
-								 The CNCF community spans the world through our contributors, members, meetups, and ambassadors. We boast more than
-								 <a href="https://all.devstats.cncf.io/d/8/dashboards?refresh=15m">45,000 contributors</a>
-								 to our CNCF projects, and we have 65
-								 <a href="https://www.cncf.io/people/ambassadors/">CNCF Ambassadors</a>
-								 worldwide educating the world on cloud native technologies and best practices.
-							  </p>
+								The CNCF community spans the world through our contributors, members, meetups, and ambassadors. We boast more than
+								<a href="https://all.devstats.cncf.io/d/8/dashboards?refresh=15m">45,000 contributors</a>
+								to our CNCF projects, and we have 65
+								<a href="https://www.cncf.io/people/ambassadors/">CNCF Ambassadors</a>
+								worldwide educating the world on cloud native technologies and best practices.
+								</p>
 										<p>
-								 We accepted 47 new CNCF ambassadors and provided financial support for ambassador-run meetups in 2018. Our vibrant community of successful ambassadors is comprised of developers, bloggers, influencers, and evangelists already engaged with a CNCF project in some way including contributing to development, online groups, and community events. We are excited to have this worldwide group of people with diverse interests, experiences, and technical backgrounds help drive local and global cloud native communities. Please check out the
-								 <a href="https://www.youtube.com/playlist?list=PLj6h78yzYM2OaNjjefJi5UnN9KQt8Q0qf">video interviews</a>
-								 with several of our CNCF ambassadors or
-								 <a href="https://www.cncf.io/blog/2018/09/07/meet-the-cncf-ambassadors/">read</a>
-								 about them.
-							  </p>
+								We accepted 47 new CNCF ambassadors and provided financial support for ambassador-run meetups in 2018. Our vibrant community of successful ambassadors is comprised of developers, bloggers, influencers, and evangelists already engaged with a CNCF project in some way including contributing to development, online groups, and community events. We are excited to have this worldwide group of people with diverse interests, experiences, and technical backgrounds help drive local and global cloud native communities. Please check out the
+								<a href="https://www.youtube.com/playlist?list=PLj6h78yzYM2OaNjjefJi5UnN9KQt8Q0qf">video interviews</a>
+								with several of our CNCF ambassadors or
+								<a href="https://www.cncf.io/blog/2018/09/07/meet-the-cncf-ambassadors/">read</a>
+								about them.
+								</p>
 									</div>
 									<div class="data-wrp">
 										<div class="big-data">
@@ -1805,25 +1805,25 @@ get_template_part( 'components/skip-link-target' );
 									</h2>
 									<div class="cols">
 										<p>
-								 In 2016,
-								 <a href="http://deis.io/">Deis</a>
-								 (now part of Microsoft) Platform Architect Matt Butcher was looking for a way to explain Kubernetes to technical and non-technical people alike. Inspired by his daughter’s prolific stuffed animal collection, he came up with the idea of
-								 <em>
-								 <a href="https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/">The Illustrated Children’s Guide to Kubernetes</a>
-								 </em>
-								 . Thus Phippy, the yellow giraffe and PHP application, along with her friends, were born.
-							  </p>
+								In 2016,
+								<a href="http://deis.io/">Deis</a>
+								(now part of Microsoft) Platform Architect Matt Butcher was looking for a way to explain Kubernetes to technical and non-technical people alike. Inspired by his daughter’s prolific stuffed animal collection, he came up with the idea of
+								<em>
+								<a href="https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/">The Illustrated Children’s Guide to Kubernetes</a>
+								</em>
+								. Thus Phippy, the yellow giraffe and PHP application, along with her friends, were born.
+								</p>
 										<p>
-								 On the keynote stage during Day 1 of the
-								 <a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">KubeCon + CloudNativeCon Seattle</a>
-								 conference, Matt and co-author Karen Chu announced
-								 <a href="https://www.cncf.io/blog/2018/12/11/phippy-comes-to-cncf/">Microsoft’s donation of Phippy to CNCF</a>
-								 and presented the official sequel in their live reading of
-								 <em>Phippy Goes to the Zoo: A Kubernetes Story</em>
-								 . As part of Microsoft’s donation of both books and the characters, CNCF has licensed all of this material under the Creative Commons Attribution License (CC-BY), is available to remix, transform, and build upon the material for any purpose, even commercially. See
-								 <a href="https://phippy.io/">phippy.io</a>
-								 for more information.
-							  </p>
+								On the keynote stage during Day 1 of the
+								<a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/">KubeCon + CloudNativeCon Seattle</a>
+								conference, Matt and co-author Karen Chu announced
+								<a href="https://www.cncf.io/blog/2018/12/11/phippy-comes-to-cncf/">Microsoft’s donation of Phippy to CNCF</a>
+								and presented the official sequel in their live reading of
+								<em>Phippy Goes to the Zoo: A Kubernetes Story</em>
+								. As part of Microsoft’s donation of both books and the characters, CNCF has licensed all of this material under the Creative Commons Attribution License (CC-BY), is available to remix, transform, and build upon the material for any purpose, even commercially. See
+								<a href="https://phippy.io/">phippy.io</a>
+								for more information.
+								</p>
 									</div>
 									<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/phippy-screenshot.png" alt="" class="screenshot">
 									<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/phippy-color-01.svg" alt="" class="illustration">
@@ -1834,18 +1834,18 @@ get_template_part( 'components/skip-link-target' );
 								<div class="ecosystem-container">
 									<h3>DEVSTATS</h3>
 									<p>
-							  CNCF developed
-							  <a href="https://k8s.devstats.cncf.io/">DevStats</a>
-							  starting in mid-2017 in response to requests from the Kubernetes Steering Committee and SIG-Contributor Experience to provide insight into how Kubernetes was dealing with nearly unprecedented growth. (It’s the second-largest community in open source, behind only Linux.) The tool, which is open source, downloads several terabytes of
-							  <a href="https://www.gharchive.org/">data</a>
-							  representing every public GitHub action of the last 5 years, throws out nearly all of it except for the ~100 repos of CNCF-hosted projects, processes the data and stores it in a
-							  <a href="https://www.postgresql.org/">Postgres</a>
-							  database, and then displays it using
-							  <a href="https://grafana.com/">Grafana</a>
-							  dashboards. DevStats now covers all CNCF-hosted projects and downloads updated data every hour. More recently, we have been iterating on several versions of a project status
-							  <a href="https://all.devstats.cncf.io/d/53/projects-health?orgId=1">dashboard</a>
-							  based on feedback from the TOC and project maintainers.
-						   </p>
+								CNCF developed
+								<a href="https://k8s.devstats.cncf.io/">DevStats</a>
+								starting in mid-2017 in response to requests from the Kubernetes Steering Committee and SIG-Contributor Experience to provide insight into how Kubernetes was dealing with nearly unprecedented growth. (It’s the second-largest community in open source, behind only Linux.) The tool, which is open source, downloads several terabytes of
+								<a href="https://www.gharchive.org/">data</a>
+								representing every public GitHub action of the last 5 years, throws out nearly all of it except for the ~100 repos of CNCF-hosted projects, processes the data and stores it in a
+								<a href="https://www.postgresql.org/">Postgres</a>
+								database, and then displays it using
+								<a href="https://grafana.com/">Grafana</a>
+								dashboards. DevStats now covers all CNCF-hosted projects and downloads updated data every hour. More recently, we have been iterating on several versions of a project status
+								<a href="https://all.devstats.cncf.io/d/53/projects-health?orgId=1">dashboard</a>
+								based on feedback from the TOC and project maintainers.
+							</p>
 									<div class="dev-stats-data">
 										<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/pastedImage0.png" alt="">
 										<p class="margin-top">DevStats is one of the most powerful visualization tools available for understanding contributions to open source software. It is also a testament to the power of open source development, as CNCF developer Lukasz Gryglicki remains very responsive to suggestions and pull requests that provide additional insights into the development of CNCF’s hosted projects.</p>
@@ -1859,21 +1859,21 @@ get_template_part( 'components/skip-link-target' );
 										Map
 									</h2>
 									<p>
-							  The CNCF Cloud Native
-							  <a href="https://landscape.cncf.io/">Landscape</a>
-							  is intended as a map through the previously uncharted terrain of cloud native technologies. The landscape started in November 2016 as a static image of fewer than 100 projects and products. It has grown through the power of collaborative editing to track more than 600 items and now includes a
-							  <a href="https://landscape.cncf.io/serverless">serverless</a>
-							  landscape. The project has more than 4,000 stars on GitHub.
-						   </p>
+								The CNCF Cloud Native
+								<a href="https://landscape.cncf.io/">Landscape</a>
+								is intended as a map through the previously uncharted terrain of cloud native technologies. The landscape started in November 2016 as a static image of fewer than 100 projects and products. It has grown through the power of collaborative editing to track more than 600 items and now includes a
+								<a href="https://landscape.cncf.io/serverless">serverless</a>
+								landscape. The project has more than 4,000 stars on GitHub.
+							</p>
 									<p>
-							  In March 2018, CNCF released the Cloud Native
-							  <a href="https://landscape.cncf.io/">Landscape</a>
-							  2.0, an interactive version that allows viewers to filter, obtain detailed information on a specific project or technology, and easily share via stateful URLs. The interactive landscape is open source with the data stored in a
-							  <a href="https://github.com/cncf/landscape/blob/master/landscape.yml">yaml</a>
-							  file. Every night, a server downloads updated GitHub data, financing information from Crunchbase, market cap data from Yahoo Finance, and CII
-							  <a href="https://bestpractices.coreinfrastructure.org/en">Best Practices</a>
-							  Badge information.
-						   </p>
+								In March 2018, CNCF released the Cloud Native
+								<a href="https://landscape.cncf.io/">Landscape</a>
+								2.0, an interactive version that allows viewers to filter, obtain detailed information on a specific project or technology, and easily share via stateful URLs. The interactive landscape is open source with the data stored in a
+								<a href="https://github.com/cncf/landscape/blob/master/landscape.yml">yaml</a>
+								file. Every night, a server downloads updated GitHub data, financing information from Crunchbase, market cap data from Yahoo Finance, and CII
+								<a href="https://bestpractices.coreinfrastructure.org/en">Best Practices</a>
+								Badge information.
+							</p>
 									<div class="landscape-image">
 										<a href="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/landscape.png">
 											<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/landscape.png" alt="" width="1719" height="1025"></a>
@@ -1887,7 +1887,7 @@ get_template_part( 'components/skip-link-target' );
 									In response to feedback that the landscape presents an overwhelming number of options, CNCF released the
 									<a href="https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png">Cloud Native Trail Map</a>
 									, which provides an overview for enterprises starting their cloud native journey. While there are innumerable routes for deploying a cloud native application, CNCF projects represent a particularly well-traveled, tested, and trusted path.
-								 </p>
+								</p>
 											<p>No matter the exact path each organization chooses to travel on its way to becoming cloud native, the goal of these new interactive and introductory guides is to help a company progress on its cloud native journey.</p>
 										</div>
 									</div>
@@ -1898,15 +1898,15 @@ get_template_part( 'components/skip-link-target' );
 								<div class="ecosystem-container">
 									<h2>Style Guide And Logos</h2>
 									<p>
-							  We are excited to share the
-							  <a href="https://github.com/cncf/foundation/blob/master/style-guide.md">CNCF Style Guide</a>
-							  with the community. We published the style guide last year to help establish a consistent format for writing about cloud native technologies.
-						   </p>
+								We are excited to share the
+								<a href="https://github.com/cncf/foundation/blob/master/style-guide.md">CNCF Style Guide</a>
+								with the community. We published the style guide last year to help establish a consistent format for writing about cloud native technologies.
+							</p>
 									<p>
-							  CNCF also maintains a
-							  <a href="https://github.com/cncf/artwork/">repository</a>
-							  of project logos in standard formats, shapes, and colors. There are 3 formats (PNG/SVG/AI), 3 layouts – horizontal (also known as landscape format), stacked (which is closer to square), and icon (which does not include the name and is square) – and 3 versions (color/black/white), which results in 27 versions of each logo.
-						   </p>
+								CNCF also maintains a
+								<a href="https://github.com/cncf/artwork/">repository</a>
+								of project logos in standard formats, shapes, and colors. There are 3 formats (PNG/SVG/AI), 3 layouts – horizontal (also known as landscape format), stacked (which is closer to square), and icon (which does not include the name and is square) – and 3 versions (color/black/white), which results in 27 versions of each logo.
+							</p>
 									<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/project-logos-04.svg" alt="">
 								</div>
 							</section>
@@ -1914,25 +1914,25 @@ get_template_part( 'components/skip-link-target' );
 								<h2>Test Conformance Projects</h2>
 								<div class="conformance-projects-container">
 									<p>
-							  The
-							  <a href="https://www.cncf.io/certification/software-conformance/">Certified Kubernetes</a>
-							  software conformance program relies on the open source conformance tests included in each version of Kubernetes. However, these tests are not as comprehensive as the community would like, as they don’t yet cover all stable APIs. CNCF has been investing in test development to add conformance tests, particularly for portions of the API that get heavily exercised by different Kubernetes implementations. Philosophically, CNCF generally avoids hiring engineers because we don’t want to compete with our members. We made an exception in this case to try to address some of the technical debt of having features in the stable API without corresponding conformance tests.
-						   </p>
+								The
+								<a href="https://www.cncf.io/certification/software-conformance/">Certified Kubernetes</a>
+								software conformance program relies on the open source conformance tests included in each version of Kubernetes. However, these tests are not as comprehensive as the community would like, as they don’t yet cover all stable APIs. CNCF has been investing in test development to add conformance tests, particularly for portions of the API that get heavily exercised by different Kubernetes implementations. Philosophically, CNCF generally avoids hiring engineers because we don’t want to compete with our members. We made an exception in this case to try to address some of the technical debt of having features in the stable API without corresponding conformance tests.
+							</p>
 									<p>
-							  In 2018, CNCF negotiated a software development contract with a well-regarded test development company, Globant, to have 2 engineers work full-time on conformance test development. All tests are submitted as PRs and approved through the normal SIG-Testing review process and with approval from SIG-Architecture. Additionally, after
-							  <a href="https://lists.cncf.io/g/cncf-k8s-conformance/message/358">consultation</a>
-							  with CNCF staff, SIGArchitecture promulgated a new
-							  <a href="https://github.com/kubernetes/community/pull/1806/files">requirement</a>
-							  that new features in Kubernetes require conformance tests before becoming part of the
-							  <a href="https://kubernetes.io/docs/reference/using-api/deprecation-policy/">stable API</a>
-							  . Thus, this test development is intended to focus on paying off the past technical debt rather than an indefinite, ongoing commitment of resources.
-						   </p>
+								In 2018, CNCF negotiated a software development contract with a well-regarded test development company, Globant, to have 2 engineers work full-time on conformance test development. All tests are submitted as PRs and approved through the normal SIG-Testing review process and with approval from SIG-Architecture. Additionally, after
+								<a href="https://lists.cncf.io/g/cncf-k8s-conformance/message/358">consultation</a>
+								with CNCF staff, SIGArchitecture promulgated a new
+								<a href="https://github.com/kubernetes/community/pull/1806/files">requirement</a>
+								that new features in Kubernetes require conformance tests before becoming part of the
+								<a href="https://kubernetes.io/docs/reference/using-api/deprecation-policy/">stable API</a>
+								. Thus, this test development is intended to focus on paying off the past technical debt rather than an indefinite, ongoing commitment of resources.
+							</p>
 									<div class="left-wrp">
 										<h3>Apisnoop</h3>
 										<p>
-								 <a href="https://apisnoop.cncf.io/">APISnoop</a>
-								 is being developed by CNCF-funded contractors to help measure the usage of the Kubernetes API by different applications. An initial goal is to provide a useful indicator as to which Kubernetes APIs are used the most and don’t yet have conformance tests. This ensures we are testing APIs that are relevant. The output below is one visualization of how API groups’ endpoints and verbs are used today.
-							  </p>
+								<a href="https://apisnoop.cncf.io/">APISnoop</a>
+								is being developed by CNCF-funded contractors to help measure the usage of the Kubernetes API by different applications. An initial goal is to provide a useful indicator as to which Kubernetes APIs are used the most and don’t yet have conformance tests. This ensures we are testing APIs that are relevant. The output below is one visualization of how API groups’ endpoints and verbs are used today.
+								</p>
 									</div>
 									<div class="right-wrp">
 										<img loading="lazy" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/diagram3-2-1.jpg" alt="">
@@ -1965,21 +1965,21 @@ get_template_part( 'components/skip-link-target' );
 									<div class="right-wrp">
 										<p>CNCF’s first ever conference in China, KubeCon + CloudNativeCon Shanghai in November 2018, exceeded our expectations for serving as a bridge between open source developers in China and the rest of the world. More than 17% of attendees were from outside China, enabling two-way communication about new development and best practices for cloud native computing.</p>
 										<p>
-								 Among Chinese contributors to CNCF-hosted projects, Huawei and PingCAP led the way with
-								 <a href="https://all.devstats.cncf.io/d/5/companies-summary?orgId=1">34,000 and 32,000</a>
-								 contributions, respectively, and are the fifth- and sixth-largest contributors overall. We also now host 3 CNCF projects that were born in China:
-								 <a href="https://github.com/dragonflyoss/Dragonfly">Dragonfly</a>
-								 (Alibaba),
-								 <a href="https://github.com/goharbor/harbor">Harbor</a>
-								 (VMware China), and
-								 <a href="https://github.com/tikv/tikv">TiKV</a>
-								 (PingCAP).
-							  </p>
+								Among Chinese contributors to CNCF-hosted projects, Huawei and PingCAP led the way with
+								<a href="https://all.devstats.cncf.io/d/5/companies-summary?orgId=1">34,000 and 32,000</a>
+								contributions, respectively, and are the fifth- and sixth-largest contributors overall. We also now host 3 CNCF projects that were born in China:
+								<a href="https://github.com/dragonflyoss/Dragonfly">Dragonfly</a>
+								(Alibaba),
+								<a href="https://github.com/goharbor/harbor">Harbor</a>
+								(VMware China), and
+								<a href="https://github.com/tikv/tikv">TiKV</a>
+								(PingCAP).
+								</p>
 										<p>
-								 We’re excited to build on this success by hosting
-								 <a href="https://www.cncf.io/community/kubecon-cloudnativecon-events/">KubeCon + CloudNativeCon + Open Source Summit</a>
-								 in Shanghai June 24-26, 2019.
-							  </p>
+								We’re excited to build on this success by hosting
+								<a href="https://www.cncf.io/community/kubecon-cloudnativecon-events/">KubeCon + CloudNativeCon + Open Source Summit</a>
+								in Shanghai June 24-26, 2019.
+								</p>
 									</div>
 								</div>
 							</section>
@@ -1995,67 +1995,67 @@ get_template_part( 'components/skip-link-target' );
 								<h2>Looking Forward To 2019</h2>
 								<div class="looking-forward-container">
 									<p class="forward-larger">Quite possibly, no software foundation has ever had a more successful year than CNCF did in 2018. The success of CNCF is directly attributable to the contributions and support of member companies,
-							  developer
-							  community, and end users. We are very grateful for that.
-						   </p>
+								developer
+								community, and end users. We are very grateful for that.
+							</p>
 									<p>
-							  CNCF is committed to
-							  <strong>fostering and sustaining an ecosystem</strong>
-							  of open source, vendor-neutral projects by democratizing state-of-the-art patterns to make technology accessible for everyone.
-						   </p>
+								CNCF is committed to
+								<strong>fostering and sustaining an ecosystem</strong>
+								of open source, vendor-neutral projects by democratizing state-of-the-art patterns to make technology accessible for everyone.
+							</p>
 									<p>
-							  Through initiatives like conformance test development, documentation improvements, and security audits, we are reinvesting the proceeds from membership and conferences into making the
-							  <strong>cloud native platform more reliable</strong>
-							  .
-						   </p>
+								Through initiatives like conformance test development, documentation improvements, and security audits, we are reinvesting the proceeds from membership and conferences into making the
+								<strong>cloud native platform more reliable</strong>
+								.
+							</p>
 									<p>
-							  Our core strategy in 2019 is to stay focused on the
-							  <strong>developer community</strong>
-							  who are the heart and soul of the
-							  cloud native
-							  ecosystem. We are eager to assist developers, particularly from
-							  end user
-							  organizations, progress into new roles like contributor and maintainer.
-						   </p>
+								Our core strategy in 2019 is to stay focused on the
+								<strong>developer community</strong>
+								who are the heart and soul of the
+								cloud native
+								ecosystem. We are eager to assist developers, particularly from
+								end user
+								organizations, progress into new roles like contributor and maintainer.
+							</p>
 									<p>
-							  In 2019, we will also focus on
-							  <strong>increased engagement</strong>
-							  with end users to ensure their voices are represented, their feedback is acted upon, and their organizations are set up for successfully adopting
-							  cloud native.
-						   </p>
+								In 2019, we will also focus on
+								<strong>increased engagement</strong>
+								with end users to ensure their voices are represented, their feedback is acted upon, and their organizations are set up for successfully adopting
+								cloud native.
+							</p>
 									<p>
-							  Our
-							  <strong>flagship events</strong>
-							  <a href="http://www.kubecon.io/">KubeCon + CloudNativeCon</a>
-							  will continue to bring together the community and create opportunities for collaboration. We expect our three events –
-							  <a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/">Barcelona </a>
-							  (May 20-23),
-							  <a href="https://events.linuxfoundation.cn/events/kubecon-cloudnativecon-china-2019/">Shanghai</a>
-							  (June 24-26), and
-							  <a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/">San Diego</a>
-							  (November 18-21) – to be the best yet. We will help CNCF projects accelerate to reach critical mass and achieve their maximum potential. We will also continue
-							  <strong>investing</strong>
-							  in new markets like
-							  <strong>China and India</strong>
-							  that are embracing cloud native and open source technologies at a phenomenal rate. Our first
-							  <a href="https://events.linuxfoundation.org/events/kubernetes-day-india-2019/">Kubernetes Day</a>
-							  event will be in Bengaluru on March 23.
-						   </p>
+								Our
+								<strong>flagship events</strong>
+								<a href="http://www.kubecon.io/">KubeCon + CloudNativeCon</a>
+								will continue to bring together the community and create opportunities for collaboration. We expect our three events –
+								<a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/">Barcelona </a>
+								(May 20-23),
+								<a href="https://events.linuxfoundation.cn/events/kubecon-cloudnativecon-china-2019/">Shanghai</a>
+								(June 24-26), and
+								<a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/">San Diego</a>
+								(November 18-21) – to be the best yet. We will help CNCF projects accelerate to reach critical mass and achieve their maximum potential. We will also continue
+								<strong>investing</strong>
+								in new markets like
+								<strong>China and India</strong>
+								that are embracing cloud native and open source technologies at a phenomenal rate. Our first
+								<a href="https://events.linuxfoundation.org/events/kubernetes-day-india-2019/">Kubernetes Day</a>
+								event will be in Bengaluru on March 23.
+							</p>
 									<p>
-							  Another major focus of 2019 will be helping expand
-							  cloud native
-							  technologies to telcos. We will be demonstrating how they can evolve their Virtual Network Functions (VNFs) architectures into Cloud Native Network Functions (CNFs) running on Kubernetes.
-						   </p>
+								Another major focus of 2019 will be helping expand
+								cloud native
+								technologies to telcos. We will be demonstrating how they can evolve their Virtual Network Functions (VNFs) architectures into Cloud Native Network Functions (CNFs) running on Kubernetes.
+							</p>
 									<p>
-							  2018 was a stellar year for CNCF. We are well-positioned both financially and organizationally to continue our
-							  <strong>mission</strong>
-							  to make
-							  <strong>cloud native computing ubiquitous</strong>
-							  . We look forward to having you join us on this journey as we plan for a blockbuster 2019.
-						   </p>
+								2018 was a stellar year for CNCF. We are well-positioned both financially and organizationally to continue our
+								<strong>mission</strong>
+								to make
+								<strong>cloud native computing ubiquitous</strong>
+								. We look forward to having you join us on this journey as we plan for a blockbuster 2019.
+							</p>
 									<p>
-							  <em>Dee Kumar, Vice President, Marketing, CNCF</em>
-						   </p>
+								<em>Dee Kumar, Vice President, Marketing, CNCF</em>
+							</p>
 								</div>
 							</section>
 							<section id="contact_us" class="contact_us-section" style="background-image: url('/wp-content/themes/cncf-twenty-two/images/annual-reports/2018/banner-home.jpg')">

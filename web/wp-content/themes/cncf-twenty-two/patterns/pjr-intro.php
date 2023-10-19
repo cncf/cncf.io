@@ -12,6 +12,7 @@
  * Description: The intro area for a project journey report.
  * Viewport Width: 1024
  * Inserter: yes
+ * Categories: lf/pjr
  */
 
 ?>
