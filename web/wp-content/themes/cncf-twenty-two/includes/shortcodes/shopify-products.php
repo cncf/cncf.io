@@ -114,7 +114,7 @@ function add_shopify_products_shortcode( $atts ) {
 
 	$actual_products = array_filter(
 		$products,
-		function( $product ) use ( $gift_card_title ) {
+		function ( $product ) use ( $gift_card_title ) {
 			return $product['node']['title'] !== $gift_card_title && $product['node']['availableForSale'];
 		}
 	);
@@ -125,7 +125,7 @@ function add_shopify_products_shortcode( $atts ) {
 	}
 
 	$product_count = count( $actual_products );
-	$more_link = ( $product_count < $count ) ? $store_url : $store_url . '/collections/' . $collection_slug;
+	$more_link     = ( $product_count < $count ) ? $store_url : $store_url . '/collections/' . $collection_slug;
 
 	ob_start();
 	?>
