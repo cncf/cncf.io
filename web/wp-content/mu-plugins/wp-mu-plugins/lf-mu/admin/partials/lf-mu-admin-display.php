@@ -96,6 +96,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$community_api_key = ( isset( $options['community_api_key'] ) && ! empty( $options['community_api_key'] ) ) ? esc_attr( $options['community_api_key'] ) : '';
 
+		$shopify_api_key = ( isset( $options['shopify_api_key'] ) && ! empty( $options['shopify_api_key'] ) ) ? esc_attr( $options['shopify_api_key'] ) : '';
+
 		$gtm_id = ( isset( $options['gtm_id'] ) && ! empty( $options['gtm_id'] ) ) ? esc_attr( $options['gtm_id'] ) : '';
 
 		$promotion_image_id = ( isset( $options['promotion_image_id'] ) && ! empty( $options['promotion_image_id'] ) ) ? absint( $options['promotion_image_id'] ) : '';
@@ -732,6 +734,17 @@ if ( ! defined( 'WPINC' ) ) {
 							id="<?php echo esc_html( $this->plugin_name ); ?>-community_api_key"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[community_api_key]"
 							value="<?php echo esc_attr( $community_api_key ); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="shopify_api_key">Shopify API
+							key</label>
+					</th>
+					<td>
+						<input type="text" class="shopify_api_key regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-shopify_api_key"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[shopify_api_key]"
+							value="<?php echo esc_attr( $shopify_api_key ); ?>" />
 					</td>
 				</tr>
 				<tr>

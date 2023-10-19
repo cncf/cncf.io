@@ -224,6 +224,8 @@ class Lf_Mu_Admin {
 
 		$options['community_api_key'] = ( isset( $input['community_api_key'] ) && ! empty( $input['community_api_key'] ) ) ? esc_attr( $input['community_api_key'] ) : '';
 
+		$options['shopify_api_key'] = ( isset( $input['shopify_api_key'] ) && ! empty( $input['shopify_api_key'] ) ) ? esc_attr( $input['shopify_api_key'] ) : '';
+
 		$options['gtm_id'] = ( isset( $input['gtm_id'] ) && ! empty( $input['gtm_id'] ) ) ? esc_html( $input['gtm_id'] ) : '';
 
 		$options['promotion_image_id'] = ( isset( $input['promotion_image_id'] ) && ! empty( $input['promotion_image_id'] ) ) ? absint( $input['promotion_image_id'] ) : '';
