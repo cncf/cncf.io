@@ -42,8 +42,8 @@ function add_shopify_products_shortcode( $atts ) {
 	} else {
 		if ( current_user_can( 'edit_posts' ) ) {
 			echo 'Requires Shopify API token to be set in Settings.';
-			return;
 		}
+		return;
 	}
 
 	$count           = intval( $atts['count'] );
