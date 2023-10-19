@@ -3,7 +3,7 @@ body .wp-block-quote,
 	max-width: 900px;
 	border-left: 0 !important;
 	padding-left: 0;
-	line-height: 160%;
+	line-height: 175%;
 	font-size: 22px;
 	@media (min-width: 1200px) {
 		font-size: 36px;
@@ -14,6 +14,7 @@ body .wp-block-quote,
 		line-height: 1.5;
 		color: $gray-700;
 		max-width: 95%;
+		letter-spacing: 0.02em;
 		@media (min-width: 500px) {
 			max-width: min(80%, 800px);
 		}
@@ -27,15 +28,9 @@ body .wp-block-quote,
 		}
 	}
 	&.is-style-smaller-quote {
-		line-height: 175%;
-		letter-spacing: 0.02em;
 		font-size: 18px;
 		@media (min-width: 1200px) {
 			font-size: 22px;
-			line-height: 160%;
-		}
-		cite {
-			font-size: 16px;
 		}
 	}
 	// Not sure where this is/was used?
