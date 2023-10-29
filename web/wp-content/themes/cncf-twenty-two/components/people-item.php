@@ -116,7 +116,7 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 				if ( $twitter ) :
 					?>
 				<a
-					href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-twitter.svg' ); ?></a>
+					href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-x.svg' ); ?></a>
 					<?php
 			endif;
 				if ( $mastodon ) :
@@ -268,7 +268,7 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 							if ( $twitter ) :
 								?>
 							<a
-								href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-twitter.svg' ); ?></a>
+								href="<?php echo esc_url( $twitter ); ?>"><?php LF_Utils::get_svg( 'social/boxed-x.svg' ); ?></a>
 								<?php
 								endif;
 							if ( $mastodon ) :

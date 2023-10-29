@@ -118,9 +118,9 @@ endif;
 							href="<?php echo esc_html( $stack_overflow ); ?>"><?php LF_utils::get_svg( '/social/boxed-stack-overflow.svg' ); ?></a>
 						<?php endif; ?>
 
-						<?php if ( $twitter && ( preg_match( '/^https?:\/\/(www\.)?twitter\.com\/(#!\/)?(?<name>[^\/]+)(\/\w+)*$/', $twitter, $matches ) ) && ( 'CloudNativeFdn' != $matches['name'] ) ) : ?>
-						<a title="<?php the_title_attribute(); ?> on Twitter"
-							href="<?php echo esc_html( $twitter ); ?>"><?php LF_utils::get_svg( '/social/boxed-twitter.svg' ); ?></a>
+						<?php if ( $twitter && ( preg_match( '/^https?:\/\/(www\.)?(twitter\.com|x\.com)\/(#!\/)?(?<name>[^\/]+)(\/\w+)*$/', $twitter, $matches ) ) && ( 'CloudNativeFdn' != $matches['name'] ) ) : ?>
+						<a title="<?php the_title_attribute(); ?> on X"
+							href="<?php echo esc_html( $twitter ); ?>"><?php LF_utils::get_svg( '/social/boxed-x.svg' ); ?></a>
 						<?php endif; ?>
 
 						<?php if ( $blog ) : ?>

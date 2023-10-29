@@ -14,8 +14,8 @@ $site_options = get_option( 'lf-mu' );
 
 <ul class="social-links">
 	<?php if ( isset( $site_options['social_twitter'] ) && $site_options['social_twitter'] ) : ?>
-	<li class="social-twitter"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on Twitter'; ?>"
-			href="<?php echo esc_url( $site_options['social_twitter'] ); ?>"><?php LF_Utils::get_svg( 'social/twitter.svg' ); ?>
+	<li class="social-twitter"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on X'; ?>"
+			href="<?php echo esc_url( $site_options['social_twitter'] ); ?>"><?php LF_Utils::get_svg( 'social/x.svg' ); ?>
 		</a></li>
 	<?php endif; ?>
 
