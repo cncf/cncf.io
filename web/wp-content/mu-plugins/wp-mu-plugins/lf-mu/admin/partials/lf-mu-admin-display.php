@@ -477,30 +477,6 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="social_twitter">Twitter</label>
-					</th>
-					<td>
-						<input type="text" class="social_twitter regular-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-social_twitter"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[social_twitter]"
-							value="<?php echo esc_url( $social_twitter ); ?>"
-							placeholder="https://twitter.com/handle" />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="social_twitter_handle">Twitter
-							Handle (used for social sharing)</label>
-					</th>
-					<td>
-						<input type="text"
-							class="social_twitter_handle regular-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-social_twitter_handle"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[social_twitter_handle]"
-							value="<?php echo esc_html( $social_twitter_handle ); ?>"
-							placeholder="@handle" />
-					</td>
-				</tr>
-				<tr>
 					<th scope="row"><label for="social_youtube">YouTube</label>
 					</th>
 					<td>
@@ -520,6 +496,30 @@ if ( ! defined( 'WPINC' ) ) {
 							name="<?php echo esc_html( $this->plugin_name ); ?>[social_wechat]"
 							value="<?php echo esc_url( $social_wechat ); ?>"
 							placeholder="https://www.cncf.io/wechat" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="social_twitter">X (formerly Twitter)</label>
+					</th>
+					<td>
+						<input type="text" class="social_twitter regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-social_twitter"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[social_twitter]"
+							value="<?php echo esc_url( $social_twitter ); ?>"
+							placeholder="https://x.com/handle" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="social_twitter_handle">X
+							Handle (used for social sharing)</label>
+					</th>
+					<td>
+						<input type="text"
+							class="social_twitter_handle regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-social_twitter_handle"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[social_twitter_handle]"
+							value="<?php echo esc_html( $social_twitter_handle ); ?>"
+							placeholder="@handle" />
 					</td>
 				</tr>
 			</tbody>

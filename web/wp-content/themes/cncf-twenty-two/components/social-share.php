@@ -23,14 +23,14 @@ $page_title = htmlspecialchars( rawurlencode( html_entity_decode( get_the_title(
  * Gets Twitter handle.
  */
 $site_options = get_option( 'lf-mu' );
-$site_options && $site_options['social_twitter_handle'] ? $twitter = $site_options['social_twitter_handle'] : $twitter = '';
+$site_options && $site_options['social_twitter_handle'] ? $x_handle = $site_options['social_twitter_handle'] : $x_handle = '';
 
 /**
  * Build the URLs.
  */
 $linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $page_title . '';
 
-$twitter_url = 'https://twitter.com/intent/tweet?text=' . $page_title . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $twitter . '';
+$x_url = 'https://x.com/intent/tweet?text=' . $page_title . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $x_handle . '';
 
 $facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url . '&t=' . $page_title;
 
@@ -55,11 +55,11 @@ $mailto_url = 'mailto:?subject=' . $page_title . '&body=' . $page_url . '';
 			href="<?php echo esc_url( $facebook_url ); ?>"><?php LF_utils::get_svg( 'social/facebook.svg' ); ?></a>
 		<?php endif; ?>
 
-		<!-- twitter -->
-		<?php if ( $twitter_url ) : ?>
-		<a aria-label="Share on Twitter"
-			title="Share on Twitter"
-			href="<?php echo esc_url( $twitter_url ); ?>"><?php LF_utils::get_svg( 'social/twitter.svg' ); ?></a>
+		<!-- x -->
+		<?php if ( $x_url ) : ?>
+		<a aria-label="Share on X"
+			title="Share on X"
+			href="<?php echo esc_url( $x_url ); ?>"><?php LF_utils::get_svg( 'social/x.svg' ); ?></a>
 		<?php endif; ?>
 
 		<!-- sendto email -->
