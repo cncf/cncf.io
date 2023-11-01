@@ -44,10 +44,19 @@ if ( is_tag() || is_tax() ) :
 	<span class="has-text-color has-primary-400-color"><?php echo esc_attr( get_search_query() ); ?></span></h2>
 		<?php
 		elseif ( ! ( is_404() ) && ( is_page() ) ) :
+			// PHIPPY SECTION.
 			if ( 38018 === wp_get_post_parent_id( $post ) ) {
 				?>
 	<div class="parent-link-align">
 				<a class="parent-link" href="/phippy/" title="Go to Phippy and friends">Phippy and friends</a>
+			</div>
+				<?php
+			}
+			// TRAINING SECTION.
+			if ( 8065 === wp_get_post_parent_id( $post ) ) {
+				?>
+	<div class="parent-link-align">
+				<a class="parent-link" href="/training/" title="Go to Training & Certification Overview">Training & Certification</a>
 			</div>
 				<?php
 			}
