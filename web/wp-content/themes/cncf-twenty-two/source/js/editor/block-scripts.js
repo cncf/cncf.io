@@ -37,6 +37,7 @@ wp.blocks.unregisterBlockType( 'core/navigation' );
 wp.blocks.unregisterBlockType( 'core/nextpage' );
 wp.blocks.unregisterBlockType( 'core/page-list' );
 wp.blocks.unregisterBlockType( 'core/post-author-biography' );
+wp.blocks.unregisterBlockType( 'core/post-author-name' );
 wp.blocks.unregisterBlockType( 'core/post-author' );
 wp.blocks.unregisterBlockType( 'core/post-comments-form' );
 wp.blocks.unregisterBlockType( 'core/post-content' );
