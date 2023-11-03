@@ -53,7 +53,8 @@ if ( is_tag() || is_tax() ) :
 				<?php
 			}
 			// TRAINING SECTION.
-			if ( 8065 === wp_get_post_parent_id( $post ) ) {
+			$training_parent_ids = array( 8065, 8132, 97026 );
+			if ( in_array( wp_get_post_parent_id( $post ), $training_parent_ids ) ) {
 				?>
 	<div class="parent-link-align">
 				<a class="parent-link" href="/training/" title="Go to Training & Certification Overview">Training & Certification</a>
