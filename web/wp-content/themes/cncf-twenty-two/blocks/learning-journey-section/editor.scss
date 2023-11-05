@@ -1,0 +1,13 @@
+.wp-block.wp-block-lf-learning-journey-section {
+	border: 1px solid #757ba2;
+	padding: 1rem;
+	&:before {
+		content: 'Learning Journey Section';
+		color: #757ba2;
+		position: absolute;
+		left: 1px;
+		top: 0;
+		line-height: 1;
+		font-size: 10px;
+	}
+}

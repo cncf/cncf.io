@@ -23,6 +23,10 @@ function lf_register_all_our_blocks() {
 	register_block_type( $block_directory . '/icon-and-text-column/block.json' );
 	register_block_type( $block_directory . '/icon-text-stat/block.json' );
 	register_block_type( $block_directory . '/image-switcher/block.json' );
+	register_block_type( $block_directory . '/learning-journey/block.json' );
+	register_block_type( $block_directory . '/learning-journey-section/block.json' );
+	register_block_type( $block_directory . '/learning-journey-item/block.json' );
+	register_block_type( $block_directory . '/learning-journey-navigation/block.json' );
 	register_block_type( $block_directory . '/phippy-family/block.json' );
 	register_block_type( $block_directory . '/phippy-group/block.json' );
 	register_block_type( $block_directory . '/post-breadcrumb/block.json' );

@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lf/learning-journey-section",
+	"title": "Learning Journey Section",
+	"description": "A section of the Learning Journey pathway",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "lf",
+	"icon": "welcome-widgets-menus",
+	"parent": ["lf/learning-journey"],
+	"keywords": [
+		"",
+		"",
+		""
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "learning-journey-section.php",
+		"postTypes": [ "page" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": false,
+		"className": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": false
+		},
+		"fullHeight": false,
+		"html": false,
+		"multiple": true,
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		}
+	},
+	"example": {}
+}
