@@ -110,9 +110,20 @@ foreach ( $projects as $level ) {
 			}
 		}
 
-		$pp = get_page_by_title( $p->name, OBJECT, 'lf_project' );
-		if ( $pp ) {
-			$params['ID'] = $pp->ID;
+		$pp = get_posts(
+			array(
+				'post_type'              => 'lf_project',
+				'title'                  => $p->name,
+				'post_status'            => 'all',
+				'numberposts'            => 1,
+				'update_post_term_cache' => false,
+				'update_post_meta_cache' => false,
+				'orderby'                => 'post_date ID',
+				'order'                  => 'ASC',
+			)
+		);
+		if ( ! empty( $pp ) ) {
+			$params['ID'] = $pp[0]->ID;
 		}
 
 		// adds term to taxonomy if it doesn't exist.

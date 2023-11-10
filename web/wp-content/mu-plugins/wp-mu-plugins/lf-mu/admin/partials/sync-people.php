@@ -136,9 +136,20 @@ foreach ( $people as $p ) {
 		$params['meta_input']['lf_person_website'] = $p->website;
 	}
 
-	$pp = get_page_by_title( $p->name, OBJECT, 'lf_person' );
-	if ( $pp ) {
-		$params['ID'] = $pp->ID;
+	$pp = get_posts(
+		array(
+			'post_type'              => 'lf_person',
+			'title'                  => $p->name,
+			'post_status'            => 'all',
+			'numberposts'            => 1,
+			'update_post_term_cache' => false,
+			'update_post_meta_cache' => false,
+			'orderby'                => 'post_date ID',
+			'order'                  => 'ASC',
+		)
+	);
+	if ( ! empty( $pp ) ) {
+		$params['ID'] = $pp[0]->ID;
 	}
 
 	$newid = wp_insert_post( $params ); // will insert or update the post as needed.
