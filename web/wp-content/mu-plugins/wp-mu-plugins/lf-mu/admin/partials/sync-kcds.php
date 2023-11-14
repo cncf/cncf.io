@@ -67,8 +67,8 @@ foreach ( $events as $event ) {
 			'meta_input'  => array(
 				'lf_event_external_url'  => $event->url,
 				'lf_event_bevy_import'   => true,
-				'lf_event_date_start'    => $dt_date_start->format( 'Y-m-d' ),
-				'lf_event_date_end'      => $dt_date_end->format( 'Y-m-d' ),
+				'lf_event_date_start'    => $dt_date_start->format( 'Y/m/d' ),
+				'lf_event_date_end'      => $dt_date_end->format( 'Y/m/d' ),
 				'lf_event_city'          => $venue_city,
 				'lf_event_event-logo'    => '',
 				'lf_event_background'    => 95014,
