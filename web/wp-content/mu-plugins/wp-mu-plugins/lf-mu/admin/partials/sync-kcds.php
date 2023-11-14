@@ -14,7 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$data = wp_remote_get( 'https://community.cncf.io/api/search/event?q=kcd' );
+$data = wp_remote_get( 'https://community.cncf.io/api/search/event?q=kcd&region_id=8' );
 
 if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 	return false;
