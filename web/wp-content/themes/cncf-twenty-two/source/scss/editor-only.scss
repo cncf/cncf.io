@@ -41,6 +41,8 @@
 
 		p {
 			line-height: 1.5;
+			margin-block-start: revert;
+			margin-block-end: revert;
 		}
 
 		// style links same as frontend.
