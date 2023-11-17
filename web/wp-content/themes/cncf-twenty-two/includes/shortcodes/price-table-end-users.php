@@ -40,8 +40,6 @@ function add_end_user_pricing_shortcode() {
 			<ul>
 				<li>Private mailing list and
 					calls to meet other cloud native end users</li>
-				<li>Unlimited Virtual KubeCon + CloudNativeCon
-					tickets</li>
 				<li>5 KubeCon + CloudNativeCon in-person tickets per year (2 tickets for organizations with &lt;300 employees)</li>
 				<li>5 Linux Foundation
 					Training coupons </li>
