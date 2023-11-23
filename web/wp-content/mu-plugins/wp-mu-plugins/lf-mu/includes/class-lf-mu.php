@@ -248,7 +248,6 @@ class Lf_Mu {
 		$this->loader->add_filter( 'the_seo_framework_sitemap_nhpt_query_args', $plugin_public, 'remove_news_from_sitemap' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_newsletters_from_sitemap' );
 		$this->loader->add_action( 'send_headers', $plugin_public, 'add_header_cache', 15 );
-		$this->loader->add_filter( 'the_seo_framework_query_supports_seo', $plugin_public, 'tsf_meta_temp_fix' );
 	}
 
 	/**
