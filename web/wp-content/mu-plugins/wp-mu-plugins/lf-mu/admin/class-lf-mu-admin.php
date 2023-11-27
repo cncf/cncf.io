@@ -238,6 +238,16 @@ class Lf_Mu_Admin {
 
 		$options['promotion_cta_link'] = ( isset( $input['promotion_cta_link'] ) && ! empty( $input['promotion_cta_link'] ) ) ? esc_url( $input['promotion_cta_link'] ) : '';
 
+		$options['promotion_image_id2'] = ( isset( $input['promotion_image_id2'] ) && ! empty( $input['promotion_image_id2'] ) ) ? absint( $input['promotion_image_id2'] ) : '';
+
+		$options['promotion_title_text2'] = ( isset( $input['promotion_title_text2'] ) && ! empty( $input['promotion_title_text2'] ) ) ? esc_html( $input['promotion_title_text2'] ) : '';
+
+		$options['promotion_body_text2'] = ( isset( $input['promotion_body_text2'] ) && ! empty( $input['promotion_body_text2'] ) ) ? esc_html( $input['promotion_body_text2'] ) : '';
+
+		$options['promotion_cta_text2'] = ( isset( $input['promotion_cta_text2'] ) && ! empty( $input['promotion_cta_text2'] ) ) ? esc_html( $input['promotion_cta_text2'] ) : '';
+
+		$options['promotion_cta_link2'] = ( isset( $input['promotion_cta_link2'] ) && ! empty( $input['promotion_cta_link2'] ) ) ? esc_url( $input['promotion_cta_link2'] ) : '';
+
 		return $options;
 	}
 
