@@ -110,6 +110,16 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$promotion_cta_link = ( isset( $options['promotion_cta_link'] ) && ! empty( $options['promotion_cta_link'] ) ) ? esc_url( $options['promotion_cta_link'] ) : '';
 
+		$promotion_image_id2 = ( isset( $options['promotion_image_id2'] ) && ! empty( $options['promotion_image_id2'] ) ) ? absint( $options['promotion_image_id2'] ) : '';
+
+		$promotion_title_text2 = ( isset( $options['promotion_title_text2'] ) && ! empty( $options['promotion_title_text2'] ) ) ? esc_html( $options['promotion_title_text2'] ) : '';
+
+		$promotion_body_text2 = ( isset( $options['promotion_body_text2'] ) && ! empty( $options['promotion_body_text2'] ) ) ? esc_html( $options['promotion_body_text2'] ) : '';
+
+		$promotion_cta_text2 = ( isset( $options['promotion_cta_text2'] ) && ! empty( $options['promotion_cta_text2'] ) ) ? esc_html( $options['promotion_cta_text2'] ) : '';
+
+		$promotion_cta_link2 = ( isset( $options['promotion_cta_link2'] ) && ! empty( $options['promotion_cta_link2'] ) ) ? esc_url( $options['promotion_cta_link2'] ) : '';
+
 		settings_fields( $this->plugin_name );
 
 		do_settings_sections( $this->plugin_name );
@@ -606,7 +616,88 @@ if ( ! defined( 'WPINC' ) ) {
 				</tr>
 			</tbody>
 		</table>
+		<hr />
+		<h2 id="promotion">Promotion Banner 2</h2>
+		<table class="form-table" role="presentation">
+			<tbody>
+				<tr>
+					<th scope="row"><label for="promotion_image_id2">Promo
+							Image</label>
+					</th>
+					<td colspan="3">
+						<div class='image-preview-wrapper'>
+							<img src='<?php echo esc_url( wp_get_attachment_url( $promotion_image_id2 ) ); ?>'
+								class="image-preview thumbnail-margin-bottom"
+								data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id2">
+						</div>
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id2"
+							class="upload_image_button button"
+							value="Choose image" />
+						<input type="button"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id2"
+							class="clear_upload_image_button button"
+							value="Remove image" />
+						<input type="hidden"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id2"
+							data-id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_image_id2"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_image_id2]"
+							value="<?php echo absint( $promotion_image_id2 ); ?>" />
+					</td>
+				</tr>
 
+				<tr>
+					<th scope="row"><label for="promotion_title_text2">Promotion
+							Title text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="promotion_title_text2 regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_title_text2"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_title_text2]"
+							value="<?php echo esc_html( $promotion_title_text2 ); ?>" />
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label for="promotion_body_text2">Promotion
+							Body text</label>
+					</th>
+					<td colspan="3">
+						<input type="text"
+							class="promotion_body_text2 regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_body_text2"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_body_text2]"
+							value="<?php echo esc_html( $promotion_body_text2 ); ?>" />
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label for="promotion_cta_text2">Promotion
+							CTA Text</label>
+					</th>
+					<td>
+						<input type="text"
+							class="promotion_cta_text2 regular-small-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_cta_text2"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_cta_text2]"
+							value="<?php echo esc_html( $promotion_cta_text2 ); ?>"
+							placeholder="Become End User" maxlength="20" />
+					</td>
+					<th scope="row"><label for="promotion_cta_link2">Promotion
+							CTA Link</label>
+					</th>
+					<td>
+					<input type="text"
+							class="promotion_cta_link2 regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_cta_link2"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_cta_link2]"
+							value="<?php echo esc_url( $promotion_cta_link2 ); ?>"
+							placeholder="https://training.linuxfoundation.org/cyber-monday-cncf-2023/" />						
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<hr />
 		<h2 id="other">Other</h2>
 		<table class="form-table" role="presentation">
