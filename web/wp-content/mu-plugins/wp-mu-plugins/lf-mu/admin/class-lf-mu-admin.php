@@ -236,7 +236,7 @@ class Lf_Mu_Admin {
 
 		$options['promotion_cta_text'] = ( isset( $input['promotion_cta_text'] ) && ! empty( $input['promotion_cta_text'] ) ) ? esc_html( $input['promotion_cta_text'] ) : '';
 
-		$options['promotion_cta_link_id'] = ( isset( $input['promotion_cta_link_id'] ) && ! empty( $input['promotion_cta_link_id'] ) ) ? absint( $input['promotion_cta_link_id'] ) : '';
+		$options['promotion_cta_link'] = ( isset( $input['promotion_cta_link'] ) && ! empty( $input['promotion_cta_link'] ) ) ? esc_url( $input['promotion_cta_link'] ) : '';
 
 		return $options;
 	}

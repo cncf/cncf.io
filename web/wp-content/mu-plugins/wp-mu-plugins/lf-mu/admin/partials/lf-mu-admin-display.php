@@ -108,7 +108,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$promotion_cta_text = ( isset( $options['promotion_cta_text'] ) && ! empty( $options['promotion_cta_text'] ) ) ? esc_html( $options['promotion_cta_text'] ) : '';
 
-		$promotion_cta_link_id = ( isset( $options['promotion_cta_link_id'] ) && ! empty( $options['promotion_cta_link_id'] ) ) ? absint( $options['promotion_cta_link_id'] ) : '';
+		$promotion_cta_link = ( isset( $options['promotion_cta_link'] ) && ! empty( $options['promotion_cta_link'] ) ) ? esc_url( $options['promotion_cta_link'] ) : '';
 
 		settings_fields( $this->plugin_name );
 
@@ -592,22 +592,16 @@ if ( ! defined( 'WPINC' ) ) {
 							value="<?php echo esc_html( $promotion_cta_text ); ?>"
 							placeholder="Become End User" maxlength="20" />
 					</td>
-					<th scope="row"><label for="promotion_cta_link_id">Promotion
+					<th scope="row"><label for="promotion_cta_link">Promotion
 							CTA Link</label>
 					</th>
 					<td>
-						<?php
-						$dropdown_args = array(
-							'selected'          => absint( $promotion_cta_link_id ), // grab post id if set.
-							'id'                => esc_html( $this->plugin_name ) . '-promotion_cta_link_id',
-							'name'              => esc_html( $this->plugin_name ) . '[promotion_cta_link_id]',
-							'class'             => 'regular-small-text',
-							'show_option_none'  => 'No Link',
-							'option_none_value' => '',
-							'echo'              => true,
-						);
-						wp_dropdown_pages( $dropdown_args ); // phpcs:ignore WordPress.Security.EscapeOutput
-						?>
+					<input type="text"
+							class="promotion_cta_link regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_cta_link"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_cta_link]"
+							value="<?php echo esc_url( $promotion_cta_link ); ?>"
+							placeholder="https://training.linuxfoundation.org/cyber-monday-cncf-2023/" />						
 					</td>
 				</tr>
 			</tbody>
