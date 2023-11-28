@@ -92,7 +92,7 @@ function add_members_pricing_shortcode() {
 				</li>
 				<li>Submit vendor neutral content to
 					CNCF blog, Kubernetes.io blog, & KubeWeekly</li>
-				<li>Receive access to quarterly
+				<li>Receive access to industry
 					analyst reports including Top Analysts by keyword, quotes,
 					and research highlights</li>
 				<li>Submit announcements to
