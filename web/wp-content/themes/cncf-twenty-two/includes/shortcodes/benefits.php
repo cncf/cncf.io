@@ -91,7 +91,7 @@ function add_cncf_benefits_shortcode() {
 								href="/kubeweekly">KubeWeekly</a>: Content by
 							the community, for the community.</li>
 						<li>Public Relations &amp; Analyst Relations Support:
-							CNCF provides quarterly analyst reports including
+							CNCF provides industry analyst reports including
 							Top Analysts by keyword, quotes, and research
 							highlights. </li>
 						<li><a
