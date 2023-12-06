@@ -35,7 +35,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 		<section class="hero alignfull background-image-wrapper">
 			<figure class="background-image-figure swirl">
 				<?php
-					LF_Utils::display_responsive_images( 98536, 'full', '1200px', null, null, 'Swirl illustration' );
+					LF_Utils::display_responsive_images( 98536, 'full', '1200px', null, 'eager', 'Swirl illustration' );
 				?>
 			</figure>
 			<figure class="background-image-figure skyline">
@@ -109,7 +109,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 					<p>There is much to unpack from this insightful event, and I've enjoyed looking back as we put this transparency report together for you. I hope you find this information valuable.</p>
 
 					<div class="author">
-						<?php LF_Utils::display_responsive_images( 98512, 'full', '75px', '', 'lazy', 'Chris Aniszczyk' ); ?>
+						<?php LF_Utils::display_responsive_images( 98512, 'full', '75px', null, 'lazy', 'Chris Aniszczyk' ); ?>
 						<p><strong>Chris Aniszczyk</strong><br>
 					CTO, CNCF</p>
 					</div>
