@@ -69,17 +69,13 @@ $report_folder = 'reports/kccnc-oss-23/'
 							>
 						<h1 class="hero__title uppercase">透明度报告</h1>
 
-						<div class="hero__hr"></div>
-
 						<div class="hero__button-share-align">
 
 							<div class="wp-block-button hero__button"><a
 									href="https://www.cncf.io/reports/kubecon-cloudnativecon-open-source-summit-china-2023/" class="wp-block-button__link"
-									title="Read the report in English">Read in English</a>
+									title="Read the report in English">English Version</a>
 							</div>
-
 						</div>
-
 					</div>
 				</div>
 			</div>
