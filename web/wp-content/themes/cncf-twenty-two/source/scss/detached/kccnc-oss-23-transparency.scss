@@ -398,6 +398,9 @@ html {
 				margin-bottom: 55px;
 			}
 		}
+		&__button {
+			width: 200px;
+		}
 		&__button-share-align {
 			display: flex;
 			flex-direction: column;
@@ -410,8 +413,6 @@ html {
 
 			@media (min-width: 1000px) {
 				margin-top: 45px;
-				flex-direction: row;
-				justify-content: space-between;
 			}
 		}
 	}
