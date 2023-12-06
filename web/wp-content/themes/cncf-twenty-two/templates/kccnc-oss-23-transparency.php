@@ -1208,7 +1208,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							<div class="text">
 								<span class="number">145</span><br />
 								<span class="addendum">mentions of CNCF in media
-									articles, press releases, and blogs.</span>
+									articles, press releases, and blogs</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1301,32 +1301,19 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 				<div class="logo-grid">
 
 					<div class="logo-grid__box">
-						<a href="https://www.gartner.com/document/4773031?ref=solrResearch&refval=381968834&"
-							class="logo-grid__link">
 							<img class="logo-grid__image" width="224"
 								height="55"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-gartner.svg', true ); ?>"
 								alt="Gartner Logo" loading="lazy" decoding="async">
-						</a>
 					</div>
+
 					<div class="logo-grid__box">
-						<a href="https://www.forrester.com/report/the-forrester-wave-tm-ai-ml-platforms-in-china-q4-2023/RES178518?ref_search=3540126_1697828200487"
-							class="logo-grid__link">
 							<img class="logo-grid__image" width="224"
 								height="55"
 								src="<?php LF_Utils::get_svg( $report_folder . 'logo-forrester.svg', true ); ?>"
 								alt="Forrester Logo" loading="lazy" decoding="async">
-						</a>
 					</div>
-					<div class="logo-grid__box">
-						<a href="https://www.gartner.com/document/4779931?ref=solrResearch&refval=381969332&"
-							class="logo-grid__link">
-							<img class="logo-grid__image" width="224"
-								height="55"
-								src="<?php LF_Utils::get_svg( $report_folder . 'logo-gartner.svg', true ); ?>"
-								alt="Gartner Logo" loading="lazy" decoding="async">
-						</a>
-					</div>
+
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
@@ -1429,7 +1416,8 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 					<table class="kccnc-table yoy-table">
 						<thead>
 							<tr>
-								<th>YOY SPONSORSHIP </th>
+								<th>YOY SPONSORSHIP
+									<span>&nbsp;</span></th>
 								<th>2018
 									<span>&nbsp;</span>
 								</th>
@@ -1551,7 +1539,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
-				<div class="sponsors-logos larger odd">
+				<div class="sponsors-logos largest odd">
 					<div class="sponsors-logo-item"><a
 							href="https://developer.aliyun.com/cloudnative/"
 							title="Go to Alibaba Cloud"
