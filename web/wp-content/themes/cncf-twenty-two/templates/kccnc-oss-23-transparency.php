@@ -701,7 +701,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						<p>The schedule was curated by conference co-chairs Fog Dong, Senior Engineer, BentoML; and Kevin Wang, Lead of Cloud Native Open Source, Huawei; who led a program committee of 69 experts, including project maintainers and CNCF Ambassadors.
 							<br>
 							<br>
-							Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="#">CFP scoring guidelines</a> and specifically about the <a href="#">selection process</a>.
+							Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/submission-reviewer-guidelines/">CFP scoring guidelines</a> and specifically about the <a href="https://www.cncf.io/blog/2021/03/08/a-look-inside-the-kubecon-cloudnativecon-schedule-selection-process/">selection process</a>.
 							<br>
 							<br>
 							For KubeCon + CloudNativeCon + Open Source Summit China, 568 submissions were received. Of those, we were able to accept 115 talks with 206 total speakers - an acceptance rate of 17%.</p>
