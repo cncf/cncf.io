@@ -78,6 +78,10 @@ $report_folder = 'reports/kccnc-oss-23/'
 							<?php
 							get_template_part( 'components/social-share' );
 							?>
+							<div class="wp-block-button hero__button"><a
+									href="https://www.cncf.io/reports/kubecon-cloudnativecon-open-source-summit-china-2023-cn/" class="wp-block-button__link"
+									title="中文版">中文版</a>
+							</div>
 
 						</div>
 
