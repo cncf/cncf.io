@@ -90,7 +90,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 		<section class="section-01">
 
 			<div class="lf-grid">
-				<h2 class="section-01__title">Shanghai!</h2>
+				<h2 class="section-01__title">Hello, Shanghai!</h2>
 			</div>
 
 			<div class="lf-grid section-01__grid">
