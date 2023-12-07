@@ -1598,7 +1598,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 						<div aria-hidden="true" class="report-spacer-80"></div>
 
-						<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://www.cncf.io/kubecon-cloudnativecon-events/">register for KubeCon + CloudNativeCon Europe in Paris, 19 - 22 March, 2024</a>.</p>
+						<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/">register for KubeCon + CloudNativeCon Europe in Paris, 19 - 22 March, 2024</a>.</p>
 					</div>
 					<div class="thanks__col2">
 
