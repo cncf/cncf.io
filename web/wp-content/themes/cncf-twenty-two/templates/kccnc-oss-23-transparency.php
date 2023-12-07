@@ -95,7 +95,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 		<section class="section-01">
 
 			<div class="lf-grid">
-				<h2 class="section-01__title">你好 Shanghai!</h2>
+				<h2 class="section-01__title">Shanghai!</h2>
 			</div>
 
 			<div class="lf-grid section-01__grid">
@@ -704,7 +704,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/submission-reviewer-guidelines/">CFP scoring guidelines</a> and specifically about the <a href="https://www.cncf.io/blog/2021/03/08/a-look-inside-the-kubecon-cloudnativecon-schedule-selection-process/">selection process</a>.
 							<br>
 							<br>
-							For KubeCon + CloudNativeCon + Open Source Summit China, 568 submissions were received. Of those, we were able to accept 115 talks with 206 total speakers - an acceptance rate of 17%.</p>
+							For KubeCon + CloudNativeCon + Open Source Summit China, 589 submissions were received. Of those, we were able to accept 115 talks with 206 total speakers - an acceptance rate of 17%.</p>
 					</div>
 				</div>
 
@@ -720,7 +720,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 						<div class="icon-box-6">
 							<div class="text">
-								<span class="number">568</span><br />
+								<span class="number">589</span><br />
 								<span class="description">CFP
 									<br>submissions</span>
 							</div>
