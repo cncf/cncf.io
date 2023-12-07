@@ -496,13 +496,13 @@ $report_folder = 'reports/kccnc-oss-23/'
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header">Year On Year registration</p>
+				<p class="sub-header">Year Over Year registration</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<img loading="lazy" decoding="async" width="1200" height="604" src="
 			<?php LF_Utils::get_svg( $report_folder . 'yoy-growth-chart.svg', true ); ?>
-			" alt="Chart showing year on year attendee growth">
+			" alt="Chart showing year over year attendee growth">
 			</div>
 		</section>
 
