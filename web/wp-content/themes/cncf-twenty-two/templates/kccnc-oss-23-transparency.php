@@ -1179,13 +1179,12 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 " alt="Graph up icon">
 							</div>
 							<div class="text">
-								<span class="number">2.5K+</span><br />
+								<span class="number">6.3K+</span><br />
 								<span class="description">Event Session
 									<br>YouTube Views</span>
-								<span class="addendum">As of October 25 (one
-									week after uploading), event session videos
+								<span class="addendum">As of December 7, event session videos
 									have garnered more than
-									<strong>2,500</strong> views</span>
+									<strong>6,300</strong> views</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1602,7 +1601,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 						<div aria-hidden="true" class="report-spacer-80"></div>
 
-						<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://www.cncf.io/kubecon-cloudnativecon-events/">register for KubeCon + CloudNativeCon Europe in Paris, 19 - 22 March, 2024</a>.</p>
+						<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/">register for KubeCon + CloudNativeCon Europe in Paris, 19 - 22 March, 2024</a>.</p>
 					</div>
 					<div class="thanks__col2">
 
