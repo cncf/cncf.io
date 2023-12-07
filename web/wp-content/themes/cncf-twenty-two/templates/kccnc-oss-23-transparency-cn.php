@@ -596,9 +596,9 @@ $report_folder = 'reports/kccnc-oss-23/'
 						<thead>
 							<tr>
 								<th>投稿內容</th>
-								<th>总人数</th>
+								<th><span class="nowrap">总人数</span></th>
 								<th><span class="nowrap">亲自参会人数</span></th>
-								<th>虚拟参会人数</th>
+								<th><span class="nowrap">虚拟参会人数</span></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -1370,7 +1370,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 									<span>&nbsp;</span>
 								</th>
 								<th>2021
-									<span>虚拟会议</span>
+									<span class="nowrap">虚拟会议</span>
 								</th>
 								<th>2023
 									<span>&nbsp;</span>
