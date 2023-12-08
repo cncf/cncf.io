@@ -622,7 +622,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 							</tr>
 							<tr>
 								<td>CFP acceptance rate</td>
-								<td>17%</td>
+								<td>14%</td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -703,7 +703,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/submission-reviewer-guidelines/">CFP scoring guidelines</a> and specifically about the <a href="https://www.cncf.io/blog/2021/03/08/a-look-inside-the-kubecon-cloudnativecon-schedule-selection-process/">selection process</a>.
 							<br>
 							<br>
-							For KubeCon + CloudNativeCon + Open Source Summit China, 589 submissions were received. Of those, we were able to accept 115 talks with 206 total speakers - an acceptance rate of 17%.</p>
+							For KubeCon + CloudNativeCon + Open Source Summit China, 589 submissions were received. Of those, we were able to accept 115 talks with 206 total speakers - an acceptance rate of 14%.</p>
 					</div>
 				</div>
 

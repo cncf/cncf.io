@@ -136,7 +136,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 						</div>
 						<div class="text">
 							<span>589</span><br />
-							提交了 589 份议题投稿 (CFP)
+							议题投稿
 						</div>
 					</div>
 
@@ -610,7 +610,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 							</tr>
 							<tr>
 								<td>议题投稿接受率</td>
-								<td>17%</td>
+								<td>14%</td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -691,7 +691,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 					演讲由项目委员会通过严格、无偏见的流程选出，并随机分配提交的材料以供其专业领域内的审查。您可以阅读我们的 <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/submission-reviewer-guidelines/">议题投稿评分指南</a>，特别是有关 <a href="https://www.cncf.io/blog/2021/03/08/a-look-inside-the-kubecon-cloudnativecon-schedule-selection-process/">挑选流程的详细信息</a>。
 					<br>
 					<br>
-					KubeCon + CloudNativeCon + Open Source Summit China 2023 共收到 568 份提交材料。其中，在共 206 名发言者中，我们接受了 115 场演讲，接受率为 17%。
+					KubeCon + CloudNativeCon + Open Source Summit China 2023 共收到 568 份提交材料。其中，在共 206 名发言者中，我们接受了 115 场演讲，接受率为 14%。
 					</p>
 					</div>
 				</div>
@@ -772,13 +772,12 @@ $report_folder = 'reports/kccnc-oss-23/'
 
 				<div class="lf-grid section-07__captioning">
 					<div class="section-07__captioning-col1"><span
-							class="large">200</span> 总计 200 小时现场使
-						<br>用字幕使用
+							class="large">200</span> 小时使 <br> 用现场字幕
 					</div>
 					<div class="section-07__captioning-col2"><span
-							class="large">214</span> 214 名参会者在其移动设备<br>上使用室内 AI 字幕</div>
+							class="large">214</span> 参会者在其移动设备上使用室内 AI 字幕</div>
 					<div class="section-07__captioning-col3"><span
-							class="large">356</span> 总计 356 小时
+							class="large">356</span> 在会议室使用移动AI字幕的小时数
 					</div>
 					<div class="section-07__captioning-col4"><span
 							class="large">2</span> 语言：中文和英文
@@ -901,7 +900,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 						</ul>
 					</div>
 					<div class="section-09__colo-col2">
-						<p class="sub-header">Key Stats</p>
+						<p class="sub-header">关键数据</p>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">1</span><br />
@@ -1142,7 +1141,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 							<div class="text">
 								<span class="number">6.3K+</span><br />
 								<span class="description">活动会议浏览</span>
-								<span class="addendum">截至 12 月 7 日（上传后一周），活动会议视频浏览量已超过 <strong>6,300</strong> 次
+								<span class="addendum">截至12月7日，活动会议视频已累积超过 <strong>6,300</strong> 次观看
 									</span>
 							</div>
 						</div>
@@ -1460,7 +1459,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 				<div class="shadow-hr"></div>
 
 				<p class="sub-header"
-					style="margin:auto; text-align:center">赞助商</p>
+					style="margin:auto; text-align:center">战略赞助商</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1480,7 +1479,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
 				<p class="sub-header"
-					style="margin:auto; text-align:center">赞助商</p>
+					style="margin:auto; text-align:center">钻石赞助商</p>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
@@ -1519,8 +1518,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 				<div class="wp-block-button"><a
 						href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/sponsor-list/"
 						title="See all Sponsors of KubeCon + CloudNativeCon + Open Source Summit China 2023"
-						class="wp-block-button__link">See
-						all Sponsors</a>
+						class="wp-block-button__link">查看所有赞助商</a>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
