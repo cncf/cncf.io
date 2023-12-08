@@ -71,9 +71,67 @@ $report_folder = 'reports/kccnc-oss-23/'
 
 						<div class="hero__button-share-align">
 							<?php
-							get_template_part( 'components/social-share' );
-							?>
+							/**
+							 * Gets the URL to share from current permalink.
+							 */
+							$page_url = rawurlencode( get_permalink() );
 
+							/**
+							 * Gets the title of the page from current page.
+							 */
+							$page_title = htmlspecialchars( rawurlencode( html_entity_decode( get_the_title(), ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
+
+							/**
+							 * Gets Twitter handle.
+							 */
+							$site_options = get_option( 'lf-mu' );
+							$site_options && $site_options['social_twitter_handle'] ? $x_handle = $site_options['social_twitter_handle'] : $x_handle = '';
+
+							/**
+							 * Build the URLs.
+							 */
+							$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $page_title . '';
+
+							$x_url = 'https://x.com/intent/tweet?text=' . $page_title . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $x_handle . '';
+
+							$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url . '&t=' . $page_title;
+
+							$mailto_url = 'mailto:?subject=' . $page_title . '&body=' . $page_url . '';
+							?>
+							
+							<div class="social-share">
+								<p class="social-share__title">分享</p>
+							
+								<div class="social-share__wrapper">
+									<!-- linkedin -->
+									<?php if ( $linkedin_url ) : ?>
+									<a aria-label="Share on Linkedin"
+										title="Share on Linkedin"
+										href="<?php echo esc_url( $linkedin_url ); ?>"><?php LF_utils::get_svg( 'social/linkedin-white.svg' ); ?></a>
+									<?php endif; ?>
+							
+									<!-- facebook -->
+									<?php if ( $facebook_url ) : ?>
+									<a aria-label="Share on Facebook"
+										title="Share on Facebook"
+										href="<?php echo esc_url( $facebook_url ); ?>"><?php LF_utils::get_svg( 'social/facebook.svg' ); ?></a>
+									<?php endif; ?>
+							
+									<!-- x -->
+									<?php if ( $x_url ) : ?>
+									<a aria-label="Share on X"
+										title="Share on X"
+										href="<?php echo esc_url( $x_url ); ?>"><?php LF_utils::get_svg( 'social/x.svg' ); ?></a>
+									<?php endif; ?>
+							
+									<!-- sendto email -->
+									<?php if ( $mailto_url ) : ?>
+									<a aria-label="Share by Email" title="Share by Email"
+										href="<?php echo esc_url( $mailto_url ); ?>"><?php LF_utils::get_svg( 'social/email.svg' ); ?></a>
+									<?php endif; ?>
+								</div>
+							</div>
+							
 							<div class="wp-block-button hero__button"><a
 									href="https://www.cncf.io/reports/kubecon-cloudnativecon-open-source-summit-china-2023/" class="nowrap wp-block-button__link"
 									title="Read the report in English">English Version</a>
