@@ -537,96 +537,96 @@ Executive Director, CNCF</p>
 											<tr>
 												<th>Attendee Job Function
 												</th>
-												<th>Total</th>
+												<th>%</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td>Architect</td>
-												<td>2,419</td>
+												<td>16%</td>
 											</tr>
 											<tr>
 												<td>Business Operations</td>
-												<td>169</td>
+												<td>2%</td>
 											</tr>
 											<tr>
 												<td>Developer</td>
-												<td>2,971</td>
+												<td>21%</td>
 											</tr>
-											<tr>
-												<td> - Data Scientist</td>
-												<td>136</td>
+											<tr class="indent">
+												<td>Data Scientist</td>
+												<td>4%</td>
 											</tr>
-											<tr>
-												<td> - Full Stack Developer</td>
-												<td>2,306</td>
+											<tr class="indent">
+												<td>Full Stack Developer</td>
+												<td>83%</td>
 											</tr>
-											<tr>
-												<td> - Machine Learning
+											<tr class="indent">
+												<td>Machine Learning
 													Specialist</td>
-												<td>86</td>
+												<td>4%</td>
 											</tr>
-											<tr>
-												<td> - Web Developer</td>
-												<td>418</td>
+											<tr class="indent">
+												<td>Web Developer</td>
+												<td>9%</td>
 											</tr>
-											<tr>
-												<td> - Mobile Developer</td>
-												<td>25</td>
+											<tr class="indent">
+												<td>Mobile Developer</td>
+												<td>1%</td>
 											</tr>
 											<tr>
 												<td>DevOps / SRE / SysAdmin</td>
-												<td>6,392</td>
+												<td>28%</td>
 											</tr>
 											<tr>
 												<td>Executive</td>
-												<td>670</td>
+												<td>7%</td>
 											</tr>
 											<tr>
 												<td>IT Operations</td>
-												<td>493</td>
+												<td>2%</td>
 											</tr>
-											<tr>
-												<td> - DevOps</td>
-												<td>205</td>
+											<tr class="indent">
+												<td>DevOps</td>
+												<td>28%</td>
 											</tr>
-											<tr>
-												<td> - Systems Admin</td>
-												<td>213</td>
+											<tr class="indent">
+												<td>Systems Admin</td>
+												<td>49%</td>
 											</tr>
-											<tr>
-												<td> - Site Reliability Engineer
+											<tr class="indent">
+												<td>Site Reliability Engineer
 												</td>
-												<td>63</td>
+												<td>13%</td>
 											</tr>
-											<tr>
-												<td> - Quality Assurance
+											<tr class="indent">
+												<td>Quality Assurance
 													Engineer</td>
-												<td>12</td>
+												<td>2%</td>
 											</tr>
 											<tr>
 												<td>Sales / Marketing</td>
-												<td>845</td>
+												<td>9%</td>
 											</tr>
 											<tr>
 												<td>Media / Analyst</td>
-												<td>161</td>
+												<td>1%</td>
 											</tr>
 											<tr>
 												<td>Student</td>
-												<td>482</td>
+												<td>2%</td>
 											</tr>
 											<tr>
 												<td>Product Manager</td>
-												<td>486</td>
+												<td>4%</td>
 											</tr>
 											<tr>
 												<td>Professor / Academic</td>
-												<td>68</td>
+												<td><1%</td>
 											</tr>
 											<tr>
 												<td>Other</td>
-												<td>911</td>
+												<td>7%</td>
 											</tr>
 										</tbody>
 									</table>
@@ -642,53 +642,53 @@ Executive Director, CNCF</p>
 											<tr>
 												<th>Attendee Industry
 												</th>
-												<th>Total</th>
+												<th>%</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td>Automotive</td>
-												<td>468</td>
+												<td>2%</td>
 											</tr>
 											<tr>
 												<td>Consumer Goods</td>
-												<td>481</td>
+												<td>3%</td>
 											</tr>
 											<tr>
 												<td>Energy</td>
-												<td>242</td>
+												<td>1%</td>
 											</tr>
 											<tr>
 												<td>Financials</td>
-												<td>1,521</td>
+												<td>12%</td>
 											</tr>
 											<tr>
 												<td>Health Care</td>
-												<td>203</td>
+												<td>3%</td>
 											</tr>
 											<tr>
 												<td>Industrials</td>
-												<td>253</td>
+												<td>2%</td>
 											</tr>
 											<tr>
 												<td>Information Technology</td>
-												<td>10,789</td>
+												<td>67%</td>
 											</tr>
 											<tr>
 												<td>Materials</td>
-												<td>44</td>
+												<td><1%</td>
 											</tr>
 											<tr>
 												<td>Non-Profit Organization</td>
-												<td>382</td>
+												<td>3%</td>
 											</tr>
 											<tr>
 												<td>Professional Services</td>
-												<td>698</td>
+												<td>4%</td>
 											</tr>
 											<tr>
 												<td>Telecommunications</td>
-												<td>595</td>
+												<td>3%</td>
 											</tr>
 										</tbody>
 									</table>
@@ -708,82 +708,10 @@ Executive Director, CNCF</p>
 					Close Full List
 				</button>
 
-				<div aria-hidden="true" class="report-spacer-120"></div>
-
-			</div>
-		</section>
-
-		<section class="section-04 alignfull background-image-wrapper">
-
-			<figure class="background-image-figure darken-on-mobile">
-				<?php LF_Utils::display_responsive_images( 90395, 'full', '1200px', null, 'lazy', 'Audience at Kubecon + CloudNativeCon North America 2023' ); ?>
-			</figure>
-
-			<div class="background-image-text-overlay">
-				<div class="container wrap">
-
-					<div class="quote-with-name-container">
-						<p
-							class="quote-with-name-container__quote">Cloud Native's popularity continues unabated; while there were around 7,000 visitors in Valencia, where the event took place last year, it was bursting at the seams with more than 10,000 visitors...</p>
-						<div class="quote-with-name-container__marks">
-							<p
-								class="quote-with-name-container__name">Ulrike Ostler</p>
-							<p
-								class="quote-with-name-container__position">DataCenter-Insider</p>
-						</div>
-					</div>
-				</div>
 			</div>
 		</section>
 
 		<section class="section-05">
-
-			<p class="sub-header">Year on Year Growth - North Americaan Events</p>
-
-			<div class="section-05__yoy">
-				<div class="legend__wrapper"><i
-						class="legend__key legend__blue-700"></i>
-					In-person
-				</div>
-
-				<div class="legend__wrapper"><i
-						class="legend__key legend__blue-200"></i>
-					Virtual
-				</div>
-			</div>
-
-			<div aria-hidden="true" class="report-spacer-40"></div>
-
-			<div class="lf-grid section-05__chart">
-				<div class="section-05__chart-col1">
-					<img loading="lazy" width="800" height="480" src="
-			<?php LF_Utils::get_svg( $report_folder . 'yoy-growth-North Americaan-events.svg', true ); ?>
-			" alt="Chart showing year on year attendee growth">
-				</div>
-
-				<div class="section-05__chart-col2">
-					<div class="section-05__chart-key">
-						<img loading="lazy" width="290" height="90"
-							src="
-						<?php LF_Utils::get_svg( $report_folder . 'yoy-growth-increase.svg', true ); ?>"
-							class="section-05__chart-key-image"
-							alt="48% increase">
-
-						<div class="thin-hr section-05__chart-key-hr"></div>
-
-						<p
-							class="section-05__chart-key-text">From KubeCon + CloudNativeCon 2022 in Valencia to the event in Amsterdam, we saw a 48% increase in in-person attendees.</p>
-
-						<div class="wp-block-button"><a
-								href="https://www.kubecon.io"
-								class="wp-block-button__link">JOIN THE NEXT
-								KUBECON + CLOUDNATIVE CON</a>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
 
 			<div class="shadow-hr"></div>
 
@@ -793,118 +721,130 @@ Executive Director, CNCF</p>
 						<tr>
 							<th>Ticket Type
 							</th>
+							<th>2016
+								<span>Seattle</span>
+							</th>
 							<th>2017
-								<span>Berlin</span>
+								<span>Austin</span>
 							</th>
 							<th>2018
-								<span>Copenhagen</span>
+								<span>Seattle</span>
 							</th>
 							<th>2019
-								<span>Barcelona</span>
+								<span>San Diego</span>
 							</th>
 							<th>2020
 								<span>Virtual</span>
 							</th>
 							<th>2021
-								<span>Virtual</span>
+								<span>LA</span>
 							</th>
 							<th>2022
-								<span>Valencia</span>
+								<span>Detroit</span>
 							</th>
 							<th>2023
-								<span>Amsterdam</span>
+								<span>Chicago</span>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>Total</td>
-							<td>1,535</td>
-							<td>4,300</td>
-							<td>7,700</td>
-							<td>18,682</td>
-							<td>26,648</td>
-							<td>18,550</td>
-							<td>16,092</td>
+							<td>1,139</td>
+							<td>4,212</td>
+							<td>8,000</td>
+							<td>11,981</td>
+							<td>22,816</td>
+							<td>22,164</td>
+							<td>16,986</td>
+							<td>13,666</td>
 						</tr>
 						<tr>
 							<td class="nowrap">In-person Corporate</td>
-							<td>58%</td>
-							<td>62%</td>
-							<td>63%</td>
+							<td>38%</td>
+							<td>64%</td>
+							<td>68%</td>
+							<td>67%</td>
 							<td>N/A</td>
-							<td>N/A</td>
-							<td>19%</td>
-							<td>33%</td>
+							<td>5%</td>
+							<td>17%</td>
+							<td>31%</td>
 						</tr>
 						<tr>
 							<td class="nowrap">In-person Individual
 							</td>
-							<td>12%</td>
-							<td>10%</td>
-							<td>13%</td>
-							<td>N/A</td>
-							<td>N/A</td>
+							<td>23%</td>
 							<td>7%</td>
-							<td>13%</td>
+							<td>6%</td>
+							<td>9%</td>
+							<td>N/A</td>
+							<td>1%</td>
+							<td>4%</td>
+							<td>7%</td>
 						</tr>
 						<tr>
 							<td>Virtual All Access Pass</td>
 							<td>N/A</td>
 							<td>N/A</td>
 							<td>N/A</td>
-							<td>71%</td>
+							<td>N/A</td>
 							<td>67%</td>
-							<td>50%</td>
-							<td>27%</td>
+							<td>68%</td>
+							<td>48%</td>
+							<td>28%</td>
 						</tr>
 						<tr>
 							<td>Virtual Keynote + Solutions Showcase Only</td>
 							<td>N/A</td>
 							<td>N/A</td>
 							<td>N/A</td>
-							<td>20%</td>
-							<td>27%</td>
-							<td>8%</td>
-							<td>8%</td>
+							<td>N/A</td>
+							<td>14%</td>
+							<td>18%</td>
+							<td>4.5%</td>
+							<td>6%</td>
 						</tr>
 						<tr>
 							<td>Speaker</td>
-							<td>9%</td>
-							<td>8%</td>
+							<td>11%</td>
 							<td>6%</td>
+							<td>5%</td>
+							<td>5%</td>
 							<td>2%</td>
 							<td>1%</td>
 							<td>3%</td>
-							<td>4%</td>
+							<td>5%</td>
 						</tr>
 						<tr>
 							<td>Sponsor</td>
 							<td>17%</td>
 							<td>16%</td>
-							<td>14%</td>
-							<td>6%</td>
-							<td>5%</td>
-							<td>12%</td>
-							<td>13%</td>
+							<td>17%</td>
+							<td>15%</td>
+							<td>17%</td>
+							<td>7%</td>
+							<td>12.5%</td>
+							<td>19%</td>
 						</tr>
 						<tr>
 							<td>Media</td>
-							<td>2%</td>
-							<td>2%</td>
+							<td>3%</td>
 							<td>1%</td>
-							<td>&lt;1%</td>
-							<td>0.6%</td>
+							<td>1%</td>
+							<td>1%</td>
+							<td><1%</td>
+							<td><1%</td>
 							<td>1%</td>
 							<td>1%</td>
 						</tr>
 						<tr>
 							<td>Academic</td>
+							<td>N/A</td>
+							<td>2%</td>
 							<td>2%</td>
 							<td>3%</td>
-							<td>3%</td>
 							<td>N/A</td>
-							<td>N/A</td>
+							<td><1%</td>
 							<td>1%</td>
 							<td>2%</td>
 						</tr>

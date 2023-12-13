@@ -12,6 +12,7 @@ $kccnc-na-23-red-pink: #C93566;
 $kccnc-na-23-pink: #CC4194;
 $kccnc-na-23-dark-blue-purple: #35255A;
 $kccnc-na-23-purple: #901E80;
+$kccnc-na-23-dark-beige: #8D7C73;
 
 
 $kccnc-eu-23-black: #000000;
@@ -864,7 +865,7 @@ html {
 			}
 			.large {
 				display: block;
-				color: $kccnc-eu-23-purple-400;
+				color: $kccnc-na-23-purple;
 				font-weight: 800;
 				font-size: 80px;
 				text-align: center;
@@ -948,11 +949,23 @@ html {
 				// Table specific spacing.
 				td:first-child {
 					width: 70%;
+					font-weight: 600;
 				}
 				td:nth-child(2) {
 					width: 30%;
 					font-weight: 700;
-					color: $kccnc-eu-23-purple-400;
+					color: $kccnc-na-23-purple;
+				}
+				tr.indent {
+					border-left: 3px solid $kccnc-na-23-dark-beige;
+					td:first-child {
+						padding-left: 20px;
+						font-weight: 400;
+					}
+					td:nth-child(2) {
+						color: $kccnc-na-23-dark-beige;
+						font-weight: 600;
+					}
 				}
 			}
 		}
@@ -980,9 +993,8 @@ html {
 	}
 
 	.section-05 {
-		padding-top: 80px;
+		padding-top: 0px;
 		@media (min-width: 1000px) {
-			padding-top: 120px;
 			padding-bottom: 20px;
 		}
 		&__yoy {
@@ -1057,7 +1069,7 @@ html {
 			}
 		}
 		.growth-table {
-			color: #1f0060;
+			color: $kccnc-na-23-dark-blue-purple;
 			td {
 				min-width: 90px;
 				&:first-child {
@@ -1095,7 +1107,7 @@ html {
 			tbody tr {
 				td:not(:first-child) {
 					font-weight: 700;
-					color: #052b92;
+					color: $kccnc-na-23-pink;
 				}
 			}
 		}
