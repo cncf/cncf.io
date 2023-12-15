@@ -319,7 +319,7 @@ Executive Director, CNCF</p>
 
 				<picture>
 					<source media="(max-width: 499px)"
-						srcset="<?php echo esc_url( wp_get_attachment_image_url( 90874, 'full', false ) ); ?>">
+						srcset="<?php echo esc_url( wp_get_attachment_image_url( 98882, 'full', false ) ); ?>">
 					<source media="(min-width: 500px)"
 						srcset="<?php echo esc_url( wp_get_attachment_image_url( 98820, 'full', false ) ); ?>">
 					<?php
@@ -852,444 +852,136 @@ Executive Director, CNCF</p>
 				</table>
 			</div>
 
-			<div class="shadow-hr"></div>
-
-			<p class="sub-header">Diversity, Equity & Inclusivity</p>
-			<div aria-hidden="true" class="report-spacer-60"></div>
-			<div class="lf-grid">
-				<div class="dei__intro">
-					<p>CNCF strives to ensure that everyone who participates in KubeCon + CloudNativeCon feels welcome, regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status.<br><br>Our commitment to cultivating a friendly, welcoming, and inclusive environment extends to the facilities and resources we provide at events. In Amsterdam, these included:</p>
-				</div>
-			</div>
-			<div aria-hidden="true" class="report-spacer-60"></div>
-			<div class="lf-grid dei__commitments">
-				<div class="dei__commitments-col1">
-					<div class="icon-box-5">
-						<div class="icon-box-5__icon"><img loading="lazy"
-								width="100" height="100"
-								src="<?php LF_Utils::get_svg( $report_folder . 'icon-prayer.svg', true ); ?>"
-								alt="Prayer icon">
-						</div>
-						<div class="icon-box-5__text">Prayer Room</div>
-					</div>
-					<div class="icon-box-5">
-						<div class="icon-box-5__icon"><img loading="lazy"
-								width="100" height="100"
-								src="<?php LF_Utils::get_svg( $report_folder . 'icon-sticky-note.svg', true ); ?>"
-								alt="Sticky note icon">
-						</div>
-						<div class="icon-box-5__text">Pronoun & Communication
-							Stickers</div>
-					</div>
-					<div class="icon-box-5">
-						<div class="icon-box-5__icon"><img loading="lazy"
-								width="100" height="100"
-								src="<?php LF_Utils::get_svg( $report_folder . 'icon-child-care.svg', true ); ?>"
-								alt="Child Care icon">
-						</div>
-						<div class="icon-box-5__text">Complimentary Onsite Child
-							Care</div>
-					</div>
-				</div>
-				<div class="dei__commitments-col2">
-					<div class="icon-box-5">
-						<div class="icon-box-5__icon"><img loading="lazy"
-								width="100" height="100"
-								src="<?php LF_Utils::get_svg( $report_folder . 'icon-mixed-gender.svg', true ); ?>"
-								alt="Mixed gender icon">
-						</div>
-						<div class="icon-box-5__text">All Gender Restrooms</div>
-					</div>
-					<div class="icon-box-5">
-						<div class="icon-box-5__icon"><img loading="lazy"
-								width="100" height="100"
-								src="<?php LF_Utils::get_svg( $report_folder . 'icon-pacifier.svg', true ); ?>"
-								alt="Pacifier icon">
-						</div>
-						<div class="icon-box-5__text">Baby Care & Nursing Rooms
-						</div>
-					</div>
-				</div>
-				<div class="dei__commitments-col3">
-					<div class="icon-box-5">
-						<div class="icon-box-5__icon"><img loading="lazy"
-								width="100" height="100"
-								src="<?php LF_Utils::get_svg( $report_folder . 'icon-mute.svg', true ); ?>"
-								alt="Mute icon">
-						</div>
-						<div class="icon-box-5__text">Quiet Rooms</div>
-					</div>
-					<div class="icon-box-5">
-						<div class="icon-box-5__icon"><img loading="lazy"
-								width="100" height="100"
-								src="<?php LF_Utils::get_svg( $report_folder . 'icon-closed-captions.svg', true ); ?>"
-								alt="Closed Captions icon">
-						</div>
-						<div class="icon-box-5__text">Captioning for all
-							attendees in 20+ languages through Wordly
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div aria-hidden="true" class="report-spacer-60"></div>
-
-			<div class="lf-grid">
-				<div class="dei__intro">
-					<p>As part of our deep commitment to diversity, equity and inclusivity, we hosted a number of popular onsite experiences to help connect individuals to opportunities within tech, including:</p>
-					<ul>
-						<li>EmpowerUs Breakfast</li>
-						<li>Diversity Lunch</li>
-						<li>Peer Group Networking</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="shadow-hr"></div>
-
-			<div class="lf-grid">
-				<div class="dei__col-1">
-					<p class="sub-header">Gold CHAOSS D&I Event Badge</p>
-					<div aria-hidden="true" class="report-spacer-40"></div>
-					<?php LF_Utils::display_responsive_images( 90434, 'full', '320px', 'svg-image badge', 'lazy', 'Gold CHAOSS D&I Event Badge' ); ?>
-					<div aria-hidden="true" class="report-spacer-40"></div>
-					<p>Awarded to events in the open source community that foster healthy D&I practices.</p>
-				</div>
-				<div class="dei__col-2">
-					<div class="kccnc-table-container">
-						<table class="kccnc-table dei__table">
-							<thead>
-								<tr>
-									<th>Diversity, Equity & Inclusivity Events
-										and
-										Mentoring
-									</th>
-									<th>Total</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Diversity Lunch participants</td>
-									<td>125</td>
-								</tr>
-								<tr>
-									<td>EmpowerUs participants</td>
-									<td>50</td>
-								</tr>
-								<tr>
-									<td>Peer Group Mentoring + Career Networking
-										<strong>mentors</strong>
-									</td>
-									<td>8</td>
-								</tr>
-								<tr>
-									<td>Peer Group Mentoring + Career Networking
-										<strong>mentees</strong>
-									</td>
-									<td>42</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-
 			<div aria-hidden="true" class="report-spacer-120"></div>
 
+			<div class="quote-with-name-container">
+					<p
+						class="quote-with-name-container__quote">I was most impressed by the personal connections that drive innovation in this ever-expanding space. There's a deep sense of involvement and genuine warmth among contributors and end users in the CNCF community, which is borne out of a culture of knowledge sharing and acceptance one wouldn't expect from an engineering-focused trade organization.</p>
+					<div class="quote-with-name-container__marks">
+						<p
+							class="quote-with-name-container__name">Jason English</p>
+						<p
+							class="quote-with-name-container__position">Silicon ANGLE </p>
+					</div>
+			</div>
+
+
+			<div aria-hidden="true" class="report-spacer-120"></div>
 			<p
 				class="sub-header has-lines">Our Next Kubecon + CloudNativeCon</p>
-
 			<div aria-hidden="true" class="report-spacer-80"></div>
-
 			<?php
 			echo do_shortcode( '[event_banner hide_title=true]' );
 			?>
+
+
 		</section>
 
-		<section id="content"
-			class="section-06 is-style-down-gradient alignfull">
+		<section id="dei"
+			class="is-style-down-gradient alignfull">
 
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Content</h2>
-					<div class="section-number">2/8</div>
+					<h2 class="section-header">DEI</h2>
+					<div class="section-number">2/6</div>
 				</div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p
-							class="opening-paragraph">With more than 300 sessions, KubeCon + CloudNativeCon North America featured a diverse line-up of topics ranging from introductory sessions through to technical deep-dives. Talks are available now on our <a href="https://www.youtube.com/playlist?list=PLj6h78yzYM2PyrvCoOii4rAopBswfz1p7">YouTube playlist</a>.</p>
+						<p class="opening-paragraph">CNCF strives to ensure that everyone who participates in KubeCon + CloudNativeCon feels welcome, regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. Just over 11% of attendees identified as a person of color, and more than 7% preferred not to answer. It is worth noting that these were optional questions on the registration form, therefore these data points represent only those that chose to respond.</p>
+						<p>As part of our deep commitment to diversity, equity and inclusivity, we hosted a number of workshops and networking opportunities to help connect individuals to opportunities within tech.</p>
 					</div>
 				</div>
 
-				<div class="kccnc-table-container">
-					<table class="kccnc-table">
-						<thead>
-							<tr>
-								<th>Sessions</th>
-								<th>Total</th>
-								<th><span class="nowrap">In-person</span></th>
-								<th>Virtual</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Keynotes (includes sponsored keynotes)</td>
-								<td>22</td>
-								<td>22</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>Total sessions (CFP & Maintainer)</td>
-								<td>308</td>
-								<td>287</td>
-								<td>21</td>
-							</tr>
-							<tr>
-								<td> - Breakouts</td>
-								<td>210</td>
-								<td>198</td>
-								<td>12</td>
-							</tr>
-							<tr>
-								<td> - Maintainer sessions</td>
-								<td>98</td>
-								<td>89</td>
-								<td>9</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
-				<p
-					class="sub-header">Thank you to our KubeCon + CloudNativeCon North America 2023 co-chairs</p>
-
-				<div class="lf-grid chairs">
-					<div class="chairs__col1">
-						<?php LF_Utils::display_responsive_images( 90376, 'full', '200px', 'chairs__image', 'lazy', 'Aparna Subramanian' ); ?>
-						<p>
-<span class="chairs__name">Aparna Subramanian
-</span><span
-	class="chairs__title">Shopify <br/>
-Director of Production Engineering</span>
-</p>
-					</div>
-					<div class="chairs__col2">
-						<?php LF_Utils::display_responsive_images( 90378, 'full', '200px', 'chairs__image', 'lazy', 'Emily Fox' ); ?>
-						<p>
-<span class="chairs__name">Emily Fox</span><span
-class="chairs__title">Apple <br/>
-Security Engineer</span></p>
-					</div>
-					<div class="chairs__col3">
-						<?php LF_Utils::display_responsive_images( 90379, 'full', '200px', 'chairs__image', 'lazy', 'Frederick Kautz' ); ?>
-						<p>
-<span class="chairs__name">Frederick Kautz</span><span
-class="chairs__title"></span>Computing Engineer Infra and <br/>
-Security Enterprise Architect</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-40"></div>
-			</div>
-		</section>
-		<div class="shadow-hr"></div>
-
-		<section class="section-07 alignfull">
-			<div class="container wrap">
-
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
-				<h2 class="section-header">Content <br />Breakdown</h2>
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-10-col">
-						<p>The schedule was curated by conference co-chairs, Aparna Subramanian of Shopify, Emily Fox of Apple, and independent consultant Frederick Kautz, who led a program committee of experts and track chairs, including project maintainers, active community members, and highly rated presenters from past events.<br><br>
-Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-North America/program/scoring-guidelines/#general-info">CFP scoring guidelines</a>, and specifically about the <a href="https://www.cncf.io/blog/2021/03/08/a-look-inside-the-kubecon-cloudnativecon-schedule-selection-process/">North America selection process</a>.<br><br>
-For KubeCon + CloudNativeCon North America, 1767 submissions were received from 2672 proposed speakers at 632 companies. Of those, we were able to accept 186 talks with 347 total speakers - an acceptance rate of 11%. You can <a href="https://www.cncf.io/blog/2023/02/08/inside-the-numbers-the-kubecon-cloudnativecon-selection-process-for-North America-2023/">read more in this announcement blog</a>.<br><br>
-In addition, we heard from 209 maintainer speakers, who ran maintainer sessions - which were not part of the CFP process.</p>
+					<div class="kccnc-table-container">
+						<p class="sub-header is-centered">Diversity, Equity & Inclusivity Events
+										and
+										Mentoring</p>
+						<div aria-hidden="true" class="report-spacer-40"></div>
+
+						<table class="kccnc-table dei__table">
+							<tbody>
+								<tr>
+									<td>Diversity Lunch participants</td>
+									<td>115</td>
+								</tr>
+								<tr>
+									<td>EmpowerUs participants</td>
+									<td>102</td>
+								</tr>
+								<tr>
+									<td>Peer Group Mentoring + Career Networking
+										<strong>mentors</strong> - in-person
+									</td>
+									<td>9</td>
+								</tr>
+								<tr>
+									<td>Peer Group Mentoring + Career Networking
+										<strong>mentees</strong> - in-person
+									</td>
+									<td>40</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col2">
+						<p class="sub-header is-centered">Sponsors</p>
+
+						<div class="sponsors-logos largest odd orphan-by-3 orphan-by-6">
+							<div class="sponsors-logo-item"><a
+									href="https://www.intel.com/"
+									title="Go to Intel"
+									rel="noopener" data-feathr-click-track="true"
+									data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+									width="141" height="245"
+										src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/intel-01.svg"
+										class="logo wp-post-image" alt="Intel logo"
+										decoding="async" loading="lazy"></a></div>
+							<div class="sponsors-logo-item"><a
+									href="https://www.google.com/" title="Go to Google"
+									rel="noopener"
+									data-feathr-click-track="true"
+									data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+										width="241" height="245"
+										src="https://events.linuxfoundation.org/wp-content/uploads/google-logo-web.svg"
+										class="logo wp-post-image" alt="Google logo"
+										decoding="async" loading="lazy"></a></div>
+						</div>
 					</div>
 				</div>
 
+				<div class="shadow-hr"></div>
+
+				<div class="lf-grid">
+					<div class="dei__col-1">
+						<p class="sub-header">Gold CHAOSS D&I Event Badge</p>
+						<p>Awarded to events in the open source community that foster healthy D&I practices.</p>
+					</div>
+					<div class="dei__col-2">
+						<?php LF_Utils::display_responsive_images( 90434, 'full', '320px', 'svg-image badge', 'lazy', 'Gold CHAOSS D&I Event Badge' ); ?>
+					</div>
+				</div>
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p class="sub-header">Key stats</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid section-07__content-breakdown">
-
-					<div class="section-07__content-breakdown-col1">
-						<!-- Icon Box 3  -->
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-inbox-b.svg', true ); ?>
-" alt="Bell icon">
-							</div>
-							<div class="text">
-								<span class="number">1,767</span><br />
-								<span class="description">CFP submissions</span>
-							</div>
-						</div>
-						<!-- End of Icon Box 3 -->
-					</div>
-					<div class="section-07__content-breakdown-col2">
-						<!-- Icon Box 3  -->
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-microphone-b.svg', true ); ?>
-" alt="Bell icon">
-							</div>
-							<div class="text">
-								<span class="number">556</span><br />
-								<span class="description">Speakers</span>
-
-							</div>
-						</div>
-						<!-- End of Icon Box 3 -->
-					</div>
-					<div class="section-07__content-breakdown-col3">
-						<!-- Icon Box 3  -->
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-person-b.svg', true ); ?>
-" alt="Bell icon">
-							</div>
-							<div class="text">
-								<span class="number">273</span><br />
-								<span class="description">first-time
-									speakers</span>
-							</div>
-						</div>
-						<!-- End of Icon Box 3 -->
-					</div>
-				</div>
-				<div aria-hidden="true" class="report-spacer-40"></div>
-			</div>
-		</section>
-		<div class="shadow-hr"></div>
-
-		<section class="section-08 alignfull">
-			<div class="container wrap">
-
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
-				<h2 class="section-header">Speaker Diversity</h2>
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<p>CNCF enforces guidelines on gender and diversity equality among our speakers, including not accepting all-male panels.</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="kccnc-table-container">
-					<table class="kccnc-table">
-						<thead>
-							<tr>
-								<th>Diversity
-								</th>
-								<th>Overall</th>
-								<th>Percent</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Speakers - women + gender non-conforming
-									(keynotes)</td>
-								<td>9</td>
-								<td>41%</td>
-							</tr>
-							<tr>
-								<td>Speakers - men (breakouts)</td>
-								<td>245</td>
-								<td>73%</td>
-							</tr>
-							<tr>
-								<td>Speakers - women + gender non-conforming
-									(breakouts)</td>
-								<td>90</td>
-								<td>27%</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Startup Track</h2>
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>New to KubeCon + CloudNativeCon North America this year was the Startup Track. Inspired by an idea from <a href="https://www.cncf.io/people/governing-board/?p=liz-rice">Liz Rice</a>, the Startup Track demonstrates how you can build a business based on open source and cloud native technologies as part of <a href="https://www.linkedin.com/feed/hashtag/teamcloudnative">#TeamCloudNative</a>.<br><br><strong>It featured two talks, hosted by cloud native veterans:</strong></p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="shadow-outline-box">
-					<div>
-						<p class="sub-header">From Community to Customers</p>
-
-						<p
-							class="shadow-outline-box__by">Kelsey Hightower, Distinguished Engineer, Google Cloud</p>
-
-						<p>An open discussion on building a business around open source projects, where Kelsey shared his learnings from Puppet Labs, CoreOS, Google, and advising startups behind some of the most successful open source projects in the Cloud Native space.</p>
-					</div>
-
-					<div class="shadow-outline-box__video">
-						<div class="wp-block-lf-youtube-lite">
-							<lite-youtube videoid="eb0442K_zmY"
-								videotitle="From Community to Customers"
-								webpStatus="1" sdthumbStatus="0" title="Play">
-							</lite-youtube>
-						</div>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<div class="shadow-outline-box">
-					<div>
-						<p
-							class="sub-header">Building a Successful Business <br class="show-over-1000">in Cloud Native</p>
-
-						<p
-							class="shadow-outline-box__by">Liz Rice, Chief Open Source Officer, Isovalent; Kelsey Hightower, Distinguished Engineer, Google Cloud; Guillermo Rauch, CEO and Founder, Vercel; Sheng Liang, Cofounder and CEO, Acorn Labs; Tom Manville, VP Engineering, Kasten by Veeam</p>
-
-						<p>This panel discussed how start-ups and smaller vendors can best take advantage of opportunities to succeed within the cloud native ecosystem, including how contributing to open source projects helps a business, how vendors can make their products appeal to a community centered around open source, and how the cloud native business environment differs from traditional markets.</p>
-					</div>
-
-					<div class="shadow-outline-box__video">
-						<div class="wp-block-lf-youtube-lite">
-							<lite-youtube videoid="XFtrxLiUjKw"
-								videotitle="Building a Successful Business in Cloud Native"
-								webpStatus="1" sdthumbStatus="0" title="Play">
-							</lite-youtube>
-						</div>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<div class="quote-with-name-container">
-					<p
-						class="quote-with-name-container__quote">With more than 52,000 community group members, 406 group chapters and 24 Kubernetes community days, it is obvious the interest is real. And given the conversations I had with CIOs, cloud-native modernization is top of mind -- if not the highest priority -- for many organizations.</p>
-					<div class="quote-with-name-container__marks">
-						<p
-							class="quote-with-name-container__name">Paul Nashawaty</p>
-						<p
-							class="quote-with-name-container__position">TechTarget</p>
-					</div>
-				</div>
+				<picture style="margin: auto;">
+					<?php
+					LF_Utils::display_responsive_images(
+						98898,
+						'full',
+						'1200px',
+						null,
+						'lazy',
+						'Group shot of people at a conference'
+					);
+					?>
+				</picture>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
+
 			</div>
 		</section>
 
@@ -1301,13 +993,13 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 				<div class="section-title-wrapper">
 					<h2 class="section-header">Co-Located <Br />
 						Events</h2>
-					<div class="section-number">3/8</div>
+					<div class="section-number">3/6</div>
 				</div>
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
 						<p
-							class="opening-paragraph">CNCF-hosted co-located events feature industry experts covering topics like observability, web assembly, telco, edge, and more. This year we took a fresh approach, offering all-access passes that allowed attendees to join any of the CNCF-hosted co-located events, and even switch between multiple events.</p>
+							class="opening-paragraph">Co-located events feature industry experts covering topics like AI, app development, edge, observability, web assembly, and more.</p>
 					</div>
 				</div>
 
@@ -1325,14 +1017,14 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'icon-male.svg', true ); ?>"
 									width="60" height="70" alt="Icon Male"
 									loading="lazy">
-								<h3 class="large">50%</h3>
+								<h3 class="large">49%</h3>
 							</div>
 							<div class="sub-grid__col2">
 								<p>Women</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'icon-female.svg', true ); ?>"
 									width="60" height="70" alt="Icon Woman"
 									loading="lazy">
-								<h3 class="large">8%</h3>
+								<h3 class="large">10%</h3>
 							</div>
 							<div class="sub-grid__col3">
 								<p>Non binary<br>/ other</p>
@@ -1344,7 +1036,7 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 							</div>
 						</div>
 						<p
-							class="section-09__demographics-note"><span style="color: #EA62A5;">41%</span> prefer not to answer</p>
+							class="section-09__demographics-note"><span style="color: #CC4194;">40%</span> prefer not to answer</p>
 					</div>
 					<div class="section-09__demographics-col2">
 						<p
@@ -1352,25 +1044,25 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<div aria-hidden="true" class="report-spacer-60"></div>
 						<div class="lf-grid sub-grid">
 							<div class="sub-grid__col1">
-								<p>Germany<br>&nbsp;</p>
-								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-germany.svg', true ); ?>"
-									width="70" height="70" alt="Icon Germany"
-									loading="lazy">
-								<h3 class="large">19%</h3>
-							</div>
-							<div class="sub-grid__col2">
 								<p>USA<br>&nbsp;</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>"
 									width="70" height="70" alt="Icon USA"
 									loading="lazy">
-								<h3 class="large">15%</h3>
+								<h3 class="large">72%</h3>
+							</div>
+							<div class="sub-grid__col2">
+								<p>Canada<br>&nbsp;</p>
+								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>"
+									width="70" height="70" alt="Icon Canada"
+									loading="lazy">
+								<h3 class="large">4%</h3>
 							</div>
 							<div class="sub-grid__col3">
-								<p>Netherlands<br>&nbsp;</p>
-								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-netherlands.svg', true ); ?>"
+								<p>United Kingdom<br>&nbsp;</p>
+								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-uk.svg', true ); ?>"
 									width="70" height="70"
-									alt="Icon Netherlands" loading="lazy">
-								<h3 class="large">9%</h3>
+									alt="Icon United Kingdom" loading="lazy">
+								<h3 class="large">2%</h3>
 							</div>
 						</div>
 					</div>
@@ -1385,15 +1077,15 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<div class="lf-grid sub-grid">
 							<div class="sub-grid__col1">
 								<p>DevOps / SRE /<br> Sysadmin</p>
-								<h3 class="large purple">41%</h3>
+								<h3 class="large purple">28%</h3>
 							</div>
 							<div class="sub-grid__col2">
 								<p>Developer<br>&nbsp;</p>
-								<h3 class="large purple">19%</h3>
+								<h3 class="large purple">23%</h3>
 							</div>
 							<div class="sub-grid__col3">
 								<p>Architect<br>&nbsp;</p>
-								<h3 class="large purple">16%</h3>
+								<h3 class="large purple">17%</h3>
 							</div>
 						</div>
 					</div>
@@ -1403,13 +1095,13 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 						<div class="lf-grid sub-grid">
 							<div class="sub-grid__col1 two-cols">
 								<p>Total Onsite Leads<br>&nbsp;</p>
-								<h3 class="large purple">2,315</h3>
+								<h3 class="large purple">4,229</h3>
 							</div>
 							<div class="sub-grid__col2 two-cols">
 								<p>Average Onsite Leads <br>Per Sponsor</p>
-								<h3 class="large purple">178</h3>
+								<h3 class="large purple">176</h3>
 								<p
-									class="note"><span style="color: #763FAB;">119%</span> increase from 2022</p>
+									class="note">(119% increase from 2022)</p>
 							</div>
 						</div>
 					</div>
@@ -1417,42 +1109,12 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<?php LF_Utils::display_responsive_images( 90487, 'full', '600px', 'section-09__banner', 'lazy', '3,650 people Registered for Co-Located Events - the largest audience ever' ); ?>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Reports</h2>
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<p>You can rewatch the session recordings via the <a href="https://www.youtube.com/@cncf/playlists">co-located events web page</a>.</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="masonry-grid">
-					<?php LF_Utils::display_responsive_images( 90895, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Argo co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90896, 'full', '400px', 'masonry-item', 'lazy', 'Stats for CiliumCon co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90897, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native Telco Day co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90898, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Cloud Native WASM Day  co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90899, 'full', '400px', 'masonry-item', 'lazy', 'Stats for ISTIO Day North America co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90900, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes Batch + HPC Day North America co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90901, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Observability Day co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90902, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes on Edge Day co-located event' ); ?>
-
-					<?php LF_Utils::display_responsive_images( 90903, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Linkerd Day North America co-located event' ); ?>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-120"></div>
+				<?php LF_Utils::display_responsive_images( 98899, 'full', '1200px', 'section-09__banner', 'lazy', '4,769 people Registered for Co-Located Events - the largest audience ever' ); ?>
+				<div aria-hidden="true" class="report-spacer-100"></div>
 
 			</div>
 		</section>
+
 
 		<section class="section-10 alignfull background-image-wrapper">
 
@@ -1467,34 +1129,401 @@ In addition, we heard from 209 maintainer speakers, who ran maintainer sessions 
 
 					<div class="section-10__container">
 
-						<h2 class="section-10__title">Interested in learning
-							more about hosting a co-located event alongside
-							future KubeCon + CloudNativeCons? We're launching
-							available packages at the end of June</h2>
+						<h2 class="section-10__title">Don’t miss out on the opportunity to position your thought-leadership to an engaged audience at the CNCF-hosted co-located events. Secure your sponsorship for CNCF-hosted co-located events in Europe 2024 today!</h2>
 					</div>
 
 					<div aria-hidden="true" class="report-spacer-120"></div>
 
 				</div>
 			</div>
+
 		</section>
 
-		<section id="security"
+		<section
+			class="section-09 is-style-down-gradient alignfull">
+			<div class="container wrap">
+
+				<h2 class="section-header">Reports</h2>
+
+				<div aria-hidden="true" class="report-spacer-100"></div>
+
+
+				<div class="masonry-grid">
+					<?php LF_Utils::display_responsive_images( 98911, 'full', '400px', 'masonry-item', 'lazy', 'Stats for ArgoCon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98901, 'full', '400px', 'masonry-item', 'lazy', 'Stats for appdevelopercon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98902, 'full', '400px', 'masonry-item', 'lazy', 'Stats for backstagecon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98903, 'full', '400px', 'masonry-item', 'lazy', 'Stats for cloud native startupfest co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98904, 'full', '400px', 'masonry-item', 'lazy', 'Stats for cloud-native telco day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98900, 'full', '400px', 'masonry-item', 'lazy', 'Stats for CiliumCon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98909, 'full', '400px', 'masonry-item', 'lazy', 'Stats for dok dok co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98905, 'full', '400px', 'masonry-item', 'lazy', 'Stats for dbaas co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98914, 'full', '400px', 'masonry-item', 'lazy', 'Stats for wasm-day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98907, 'full', '400px', 'masonry-item', 'lazy', 'Stats for istio-day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98908, 'full', '400px', 'masonry-item', 'lazy', 'Stats for kubernetes ai co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98912, 'full', '400px', 'masonry-item', 'lazy', 'Stats for multi-tenancycon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98913, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Observability Day co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98906, 'full', '400px', 'masonry-item', 'lazy', 'Stats for envoycon co-located event' ); ?>
+					<?php LF_Utils::display_responsive_images( 98910, 'full', '400px', 'masonry-item', 'lazy', 'Stats for Kubernetes on Edge Day co-located event' ); ?>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-100"></div>
+
+			</div>
+		</section>
+
+
+
+		<section id="content"
 			class="section-11 is-style-down-gradient alignfull">
 
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Security</h2>
-					<div class="section-number">4/8</div>
+					<h2 class="section-header">Content</h2>
+					<div class="section-number">4/6</div>
 				</div>
+
+
+				<div class="quote-with-name-container">
+					<p
+						class="quote-with-name-container__quote">KubeCon 2023 presented a vibrant tapestry of an evolving cloud native ecosystem, grappling with its growth pains while simultaneously pushing the boundaries of innovation and inclusivity.</p>
+					<div class="quote-with-name-container__marks">
+						<p
+							class="quote-with-name-container__name">Roy Chua</p>
+						<p
+							class="quote-with-name-container__position">Silverlinings</p>
+					</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
 						<p
-							class="opening-paragraph">Security is people-powered, and we all benefit by collaborating together as a knowledgeable, vendor-neutral community to develop tools and processes to uplevel our security posture.</p>
+							class="opening-paragraph">We enjoyed 359 sessions in Chicago, including 98 maintainer sessions and more than <strong>270</strong> breakouts.</p>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
+
+
+				<div class="kccnc-table-container">
+					<table class="kccnc-table">
+						<thead>
+							<tr>
+								<th>Sessions</th>
+								<th>Total</th>
+								<th><span class="nowrap">In-person</span></th>
+								<th>Virtual</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Keynotes (includes sponsored keynotes)</td>
+								<td>20</td>
+								<td>20</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Total sessions (CFP & Maintainer)</td>
+								<td>359</td>
+								<td>351</td>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>- Breakouts</td>
+								<td>271</td>
+								<td>266</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>- Maintainer sessions</td>
+								<td>88</td>
+								<td>85</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-40"></div>
+
+				<p class="sub-header">Captioning Usage</p>
+
+				<div class="lf-grid captioning">
+					<div class="captioning-col1">
+						<h3 class="large dark-purple">382 hours</h3>
+						<p class="large">Using Wordly Captioning on Accelevents virtual platform</p>
+						<h3 class="large dark-purple">Top languages</h3>
+						<p class="large">English -> German -> French -> Polish -> Italian</p>
+					</div>
+					<div class="captioning-col2">
+						<h3 class="large dark-purple">426 hrs and 8 min</h3>
+						<p class="large">Using in-room Wordly Captioning on personal mobile device</p>
+						<h3 class="large dark-purple">Top languages</h3>
+						<p class="large">English -> Spanish -> German -> Japanese -> French</p>
+					</div>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-100"></div>
+
+				<p class="sub-header">Thank you to our fabulous KubeCon + CloudNativeCon North America 2023 co-chairs Aparna Subramanian, Frederick Kautz, and Nikhita Raghunath.</p>
+
+				<div class="lf-grid chairs">
+					<div class="chairs__col1">
+						<?php LF_Utils::display_responsive_images( 98966, 'full', '200px', 'chairs__image', 'lazy', 'Fog Dong' ); ?>
+						<p>
+<span class="chairs__name">Aparna Subramanian
+</span><span
+	class="chairs__title">Shopify <br/>
+	Director of Production Engineering</span>
+</p>
+					</div>
+					<div class="chairs__col2">
+					<?php LF_Utils::display_responsive_images( 98968, 'full', '200px', 'chairs__image', 'lazy', 'Fog Dong' ); ?>
+						<p>
+<span class="chairs__name">Frederick Kautz
+</span><span
+	class="chairs__title">Computing Engineer Infra and <br/>
+	Security Enterprise Architect</span>
+</p>
+					</div>
+
+					<div class="chairs__col3">
+					<?php LF_Utils::display_responsive_images( 98969, 'full', '200px', 'chairs__image', 'lazy', 'Fog Dong' ); ?>
+						<p>
+<span class="chairs__name">Nikhita Raghunath
+</span><span
+	class="chairs__title">VMware <br/>
+	Software Engineer</span>
+</p>					</div>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-120"></div>
+			</div>
+		</section>
+
+		<section class="section-10 alignfull background-image-wrapper">
+
+					<figure class="background-image-figure">
+						<?php LF_Utils::display_responsive_images( 98970, 'full', '1200px', 'section-10__image', 'lazy', 'Woman at a conference' ); ?>
+					</figure>
+
+					<div class="background-image-text-overlay">
+						<div class="container wrap">
+
+							<div aria-hidden="true" class="report-spacer-120"></div>
+
+							<div class="quote-with-name-container">
+								<p
+									class="quote-with-name-container__quote">It was refreshing to see end users openly share information in keynotes and sessions about how they are addressing security. In the spirit of openness and community contribution, they shared their successes but also discussed challenges, breaches that they experienced, mistakes they made and lessons learned.</p>
+								<div class="quote-with-name-container__marks">
+									<p
+										class="quote-with-name-container__name">Melinda Marks</p>
+									<p
+										class="quote-with-name-container__position">Tech Target</p>
+								</div>
+							</div>
+							<div aria-hidden="true" class="report-spacer-120"></div>
+
+						</div>
+					</div>
+
+		</section>
+
+
+		<section
+			class="section-11 is-style-grey-background alignfull">
+
+			<div class="container wrap">
+
+			<div class="lf-grid breakdown">
+					<div class="breakdown__col1">
+
+						<h2 class="section-header">Content <br />Breakdown</h2>
+
+					</div>
+					<div class="breakdown__col2">
+						<div class="breakdown__text">
+							<p>The schedule was curated by conference co-chairs, Aparna Subramanian, Director of Production Engineering, Shopify; Frederick Kautz, Cloud Native Infra and Security Enterprise Architect; and Nikhita Raghunath, Software Engineer, VMware; who led a program committee of 120 experts and 22 track chairs, comprised of project maintainers and CNCF Ambassadors.</p>
+							<p>Talks are selected by the program committee through a rigorous, non-bias process where they are randomly assigned submissions to review within their area of expertise. You can read the details in our Submission Reviewer Guidelines, and specifically about the North America selection process.</p>
+						</div>
+					</div>
+					<div class="breakdown__col3">
+						<p class="sub-header">Key Stats</p>
+					</div>
+					<div class="breakdown__col4">
+						<div class="breakdown__icons">
+
+							<!-- Icon Box 3  -->
+							<div class="icon-box-3">
+								<div class="icon">
+									<img loading="lazy" width="60" height="50"
+										src="
+										<?php
+										LF_Utils::get_svg( $report_folder . 'icon-inbox.svg', true );
+										?>
+							" alt="Inbox icon">
+								</div>
+								<div class="text">
+									<span class="number">1,871</span><br />
+									<span class="description">CFP
+										Submissions</span>
+								</div>
+							</div>
+
+							<!-- Icon Box 3  -->
+							<div class="icon-box-3">
+								<div class="icon">
+									<img loading="lazy" width="37" height="51"
+										src="
+										<?php
+										LF_Utils::get_svg( $report_folder . 'icon-mic.svg', true );
+										?>
+										" alt="Microphone icon">
+								</div>
+								<div class="text">
+									<span class="number">554</span><br />
+									<span class="description">Speakers</span>
+								</div>
+							</div>
+
+							<!-- Icon Box 3  -->
+							<div class="icon-box-3">
+								<div class="icon">
+									<img loading="lazy" width="36" height="48"
+										src="
+										<?php
+										LF_Utils::get_svg( $report_folder . 'icon-person-b.svg', true );
+										?>
+										" alt="Person icon">
+								</div>
+								<div class="text">
+									<span class="number">120</span><br />
+									<span class="description">program committee members</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div aria-hidden="true" class="report-spacer-120"></div>
+			</div>
+		</section>
+
+		<section class="section-08 alignfull">
+			<div class="container wrap">
+
+				<div aria-hidden="true" class="report-spacer-120"></div>
+				<h2 class="section-header">Speaker Diversity</h2>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<p>CNCF enforces guidelines on gender and diversity equality among our speakers, including not accepting all-male panels.</p>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="kccnc-table-container">
+					<table class="kccnc-table">
+						<thead>
+							<tr>
+								<th> Diversity
+								</th>
+								<th>Percent</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Women + gender non-conforming
+									(keynotes)</td>
+								<td>45%</td>
+							</tr>
+							<tr>
+								<td>Men (keynotes)</td>
+								<td>55%</td>
+							</tr>
+							<tr>
+								<td>Women + gender non-conforming
+									(breakouts)</td>
+								<td>24%</td>
+							</tr>
+							<tr>
+								<td>Men (breakouts)</td>
+								<td>76%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="shadow-hr"></div>
+
+				<h2 class="section-header-small">Dan Kohn Scholarship Fund</h2>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<p>The Dan Kohn Scholarship Fund provided opportunities to <strong>86</strong> applicants, including diversity, needs-based, maintainers, and speakers, to attend in person.</p>
+
+				<div class="lf-grid section-08__scholarships">
+					<div class="section-08__scholarships-col1">
+						<p
+							class="table-header">Travel Funding <br>Scholarships</p>
+						<span class="large">27</span>
+					</div>
+					<div class="section-08__scholarships-col2">
+						<p
+							class="table-header">Registration <br>Scholarships</p>
+						<span class="large">39</span>
+					</div>
+					<div class="section-08__scholarships-col3">
+						<p class="table-header">Speaker <br>Scholarships</p>
+						<span class="large">20</span>
+					</div>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<p><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/scholarships/">Apply for a scholarship</a> to join us at KubeCon + CloudNativeCon Europe 2024.</p>
+
+				<div aria-hidden="true" class="report-spacer-120"></div>
+			</div>
+		</section>
+
+
+		<section class="section-10 alignfull background-image-wrapper">
+
+					<figure class="background-image-figure">
+						<?php LF_Utils::display_responsive_images( 98976, 'full', '1200px', 'section-10__image', 'lazy', 'Man writing on a white board' ); ?>
+					</figure>
+
+					<div class="background-image-text-overlay">
+						<div class="container wrap">
+
+							<div aria-hidden="true" class="report-spacer-120"></div>
+
+							<div class="quote-with-name-container">
+								<p
+									class="quote-with-name-container__quote">The resounding theme at KubeCon was clear — everyone wants more AI</p>
+								<div class="quote-with-name-container__marks">
+									<p
+										class="quote-with-name-container__name">Chad Wilson</p>
+									<p
+										class="quote-with-name-container__position">Silicon ANGLE</p>
+								</div>
+							</div>
+							<div aria-hidden="true" class="report-spacer-120"></div>
+
+						</div>
+					</div>
+
+		</section>
+
+
+		<section
+			class="section-11 is-style-down-gradient alignfull">
+
+			<div class="container wrap">
+
+
+
+
+
 
 				<div class="lf-grid">
 					<div class="restrictive-8-col">
