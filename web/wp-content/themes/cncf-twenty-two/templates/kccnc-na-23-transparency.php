@@ -1797,7 +1797,7 @@ Executive Director, CNCF</p>
 			<div class="restrictive-8-col">
 				<p>Incident Transparency Report:</p>
 				<ul>
-					<li>Four Code of Conduct report received onsite (involving an offsite incident and security response)</li>
+					<li>Four Code of Conduct reports received onsite (involving an offsite incident and security response)</li>
 					<li>Four attendees utilized on-site EMT services during the event.</li>
 					<li>We received notification of two COVID-19 cases.</li>
 				</ul>
