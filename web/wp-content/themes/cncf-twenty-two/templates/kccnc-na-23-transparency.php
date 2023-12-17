@@ -2186,32 +2186,56 @@ Executive Director, CNCF</p>
 					<table class="kccnc-table">
 						<tbody>
 							<tr>
-								<td>The New Stack</td>
-								<td>Meet SIG Cluster Lifecycle and Cluster API Maintainers at KubeConMeet SIG Cluster Lifecycle and Cluster API Maintainers at KubeCon</td>
-							</tr>
-							<tr>
-								<td>The New Stack</td>
-								<td>What Will Be Hot at KubeCon? Platform Engineering, of Course</td>
-							</tr>
-							<tr>
-								<td>Cloud Native Now</td>
-								<td>Cloud-Native AI Workloads: Scalability, Sustainability and Security</td>
-							</tr>
-							<tr>
-								<td>TechTarget</td>
-								<td>Emergent observability topics at KubeCon 2023</td>
-							</tr>
-							<tr>
-								<td>InfoWorld</td>
-								<td>KubeCon points to the future of enterprise IT</td>
+								<td>SiliconANGLE</td>
+								<td>The role of Kubernetes in shaping the cloud and AI landscape: theCUBE’s analysis, KubeCon Day 2 kickoff</td>
 							</tr>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>The new era of Kubernetes and AI: theCUBE kicks off day 1 at KubeCon</td>
+								<td>KubeCon Day 1 review: Dissecting trends around the changing cloud-native landscape</td>
+							</tr>
+							<tr>
+								<td>SiliconANGLE</td>
+								<td>Ford revs up cloud-native innovation, tackles Kubernetes challenges with Portworx partnership</td>
+							</tr>
+							<tr>
+								<td>SiliconANGLE</td>
+								<td>Evolving security solutions in the AI era: No ‘silver bullet’ for cloud-native security</td>
+							</tr>
+							<tr>
+								<td>SiliconANGLE</td>
+								<td>Medical research team relies on Kubernetes-based IBM solution for sharing critical data</td>
+							</tr>
+							<tr>
+								<td>The Register</td>
+								<td>The Cloud Native Computing Foundation leaps aboard the AI bandwagon</td>
+							</tr>
+							<tr>
+								<td>The New Stack</td>
+								<td>Don’t Rely on eBPF Alone for Kubernetes</td>
+							</tr>
+							<tr>
+								<td>SiliconANGLE</td>
+								<td>AI, Kubernetes and more: Decoding trends shaping CNCF’s future</td>
 							</tr>
 							<tr>
 								<td>Forbes</td>
-								<td>AI Speculation Dominates Cloud Native Conference</td>
+								<td>The Serious Money Has Arrived At KubeCon</td>
+							</tr>
+							<tr>
+								<td>Forbes</td>
+								<td>Backstage Project Takes Center Stage At KubeCon North America 2023</td>
+							</tr>
+							<tr>
+								<td>Sliverlinings</td>
+								<td>Industry Voices: Kubernetes reigns — Observations from KubeCon</td>
+							</tr>
+							<tr>
+								<td>InfoWorld</td>
+								<td>Everyone in cloud computing is scurrying to find a genAI strategy</td>
+							</tr>
+							<tr>
+								<td>SiliconANGLE</td>
+								<td>CNCF Deaf and Hard of Hearing Working Group promotes inclusivity in tech by offering a level playing field</td>
 							</tr>
 						</tbody>
 					</table>
@@ -2228,115 +2252,283 @@ Executive Director, CNCF</p>
 
 		<div class="shadow-hr"></div>
 
+
+		</div>
+
+</section>
+
+
+<section class="section-14c alignfull">
+
+	<div class="container wrap">
+
 		<p class="sub-header">Industry Analyst Coverage Highlights</p>
 
 		<div aria-hidden="true" class="report-spacer-60"></div>
 
-		<div class="quote-with-name-container">
-			<p
-				class="quote-with-name-container__quote">#kubecon2023 Omdia on the way back from two full days at a great non vendor event. The future of cloud native is now living up to its promise, the ecosystem has matured and the audience is now looking at more aspects of running K8s in production. The takeaway is that platform engineering is now the hot topic.</p>
-			<div class="quote-with-name-container__marks">
-				<p
-					class="quote-with-name-container__name">Roy Illsley</p>
-				<p class="quote-with-name-container__position">Omdia</p>
+		<div class="lf-grid">
+			<div class="restrictive-9-col">
+			<p>Analyst reports, blogs and articles published on topics related to Cloud Native ecosystem by attending KubeCon + CloudNativeCon North America analysts (as of November 10, 2022).</p>
 			</div>
 		</div>
 
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="quote-with-name-container">
-			<p
-				class="quote-with-name-container__quote">There is a lot more to say about this conference, but the key take-away for manufacturers is that Kubernetes and its ecosystem is no longer only about IT. It's about OT as well.</p>
+			<p class="quote-with-name-container__title">KubeCon Katchup: Managing Sprawl, Observability, And Cost</p>
+			<p class="quote-with-name-container__quote">CHICAGO – KubeCon – A few things stuck out here at the KubeCon conference for cloud tech pros. Cloud-native technology has clearly taken the world by storm – but the explosion of cloud native tools, technologies, and gizmos is a bit overwhelming, and we have probably entered a digestion phase.</p>
 			<div class="quote-with-name-container__marks">
-				<p
-					class="quote-with-name-container__name">Harry Forbes</p>
-				<p
-					class="quote-with-name-container__position">ARC Advisory Group</p>
+				<p class="quote-with-name-container__name">R. Scott Raynovich</p>
+				<p class="quote-with-name-container__position">Futuriom</p>
 			</div>
 		</div>
+		<div aria-hidden="true" class="report-spacer-80"></div>
 
-		<div class="shadow-hr"></div>
-		<div class="section-14__links">
-			<p>Michael Azoff, Omdia - <a href="https://omdia.tech.informa.com/OM030310/Kubernetes-maturity-and-other-highlights-at-KubeCon-Amsterdam-2023">Kubernetes maturity and other highlights at KubeCon Amsterdam 2023</a></p>
-			<p>Charlotte Dunlap, Global Data - <a href="https://itconnection.wordpress.com/2023/05/02/kubecon-eu-modernizing-it-operations-through-genai/">KubeCon EU: Modernizing IT Operations Through GenAI</a></p>
-			<p>William Fellows, 451 Research - <a href="https://clients.451research.com/reports/202306?searchTerms=kubecon">Solo.io's Gloo Fabric aims to offer a holistic approach to application networking</a></p>
-			<p>William Fellows, 451 Research - <a href="https://clients.451research.com/reports/202305?searchTerms=kubecon">Isovalent aggregates components, extends from Kubernetes to multicloud, bare metal</a></p>
-			<p>Al Gillen, IDC - <a href="https://www.idc.com/getdoc.jsp?containerId=lcUS50602023&pageType=PRINTFRIENDLY">KubeCon North America 2023 Highlights Linux Foundation's Expansion into North America</a></p>
-			<p>Krista Macomber, Futurum - <a href="https://futurumresearch.com/research-notes/open-versus-closed-source-what-is-the-state-of-kubernetes-protection">Open Versus Closed Source: What is the State of Kubernetes Protection?</a></p>
+		<div class="quote-with-name-container">
+			<p class="quote-with-name-container__title">Back from #KubeCon in Chicago. My notes</p>
+			<p class="quote-with-name-container__quote">Software supply chain security is big. The CNCF has conducted audits on Argo and Prometheus. Good to hear about the work of the Open Source Security Foundation at KubeCon.</p>
+			<div class="quote-with-name-container__marks">
+				<p class="quote-with-name-container__name">Mark O’Neill</p>
+				<p class="quote-with-name-container__position">Gartner</p>
+			</div>
 		</div>
+		<div aria-hidden="true" class="report-spacer-40"></div>
 
-		<button class="button-reset section-14__button"
+
+		<button class="button-reset section-14c__button"
 			data-id="js-hidden-section-trigger-open">
 			See Full List
 			<?php LF_Utils::get_svg( $report_folder . 'arrow-down.svg' ); ?>
 		</button>
 
-		<div class="section-14__hidden-section"
+		<div class="section-14c__hidden-section"
 			data-id="js-hidden-section">
 
-			<div class="section-14__hidden-section-content">
+			<div class="section-14c__hidden-section-content">
 
-				<p>Steven Dickens, Futurum - <a href="https://futurumresearch.com/research-notes/gitlab-and-oracle-partner-to-accelerate-ai-ml-development/">GitLab and Oracle Partner to Accelerate AI/ML Development</a></p>
-				<p>Steven Dickens, Futurum - <a href="https://futurumresearch.com/research-notes/vmware-doubles-down-on-cross-cloud-services/">VMware Doubles Down on Cross-Cloud Services</a></p>
-				<p>Camberley Bates, Futurum - <a href="https://d2iq.com/blog/kubecon-North America-2023-platform-engineering">KubeCon North America 2023 Highlights Kubernetes Explosion and Need for Instant Platform Engineering</a></p>
-				<p>Steven Dickens, Futurum - <a href="https://futurumresearch.com/research-notes/kubecon-2023-suse-launches-rancher-2-7-2-latest-version-of-rancher/">KubeCon 2023: SUSE Launches Rancher 2.7.2, Latest Version of Rancher</a></p>
-				<p>Jon Collins, GigaOm - <a href="https://gigaom.com/2023/05/03/touchpoints-coalescence-and-multi-platform-engineering-thoughts-from-kubecon-2023/">Touchpoints, coalescence and multi-platform engineering — thoughts from Kubecon 2023</a></p>
-				<p>Torsten Volk, EMA - <a href="https://faun.pub/opentelemetry-the-star-of-kubecon-2023-c1e2b504850d">OpenTelemetry: The Star of KubeCon 2023</a></p>
-				<p>Larry Carvalho, Robustcloud - <a href="https://robustcloud.com/embracing-the-future-generative-ai-and-wasm/">Embracing the Future: Generative AI and Web Assembly (Wasm) Innovations at KubeCon CloudNativeCon EU 2023</a></p>
-				<p>Sanjeev Mohan, SanjMo - <a href="https://www.youtube.com/watch?v=_txmAX5mTxA">It Depends: Gabriele Bartolini, EDB demystifies data on Kubernetes concepts</a></p>
-				<p>Sanjeev Mohan, SanjMo - <a href="https://www.youtube.com/watch?v=N1CHs7E6dkY">Sanjeev Mohan, Matt Butcher, Fermyon and Justin Cormack | KubeCon CloudNativeCon EU 2023</a></p>
-				<p>Jon Brown, ESG - <a href="https://www.techtarget.com/searchitoperations/opinion/At-KubeCon-2023-observability-and-FinOps-high-on-the-agenda">At KubeCon 2023, observability and FinOps high on the agenda</a></p>
-				<p>Paul Nashawaty, ESG - <a href="https://www.techtarget.com/searchitoperations/opinion/Takeaways-and-emerging-trends-from-KubeCon-North America-2023">Takeaways and emerging trends from KubeCon North America 2023</a></p>
-				<p>Brent Ellis, Andrew Cornwall, Forrester - <a href="https://www.forrester.com/blogs/what-is-wasm-and-why-it-matters-to-the-enterprise-part-1-2/?ref_search=0_1683585373775">What Is WASM, And Why Does It Matter To The Enterprise? (Part 1 Of 2)</a></p>
-				<p>Brent Ellis, Andrew Cornwall, Forrester - <a href="https://www.forrester.com/blogs/what-is-wasm-and-why-it-matters-to-the-enterprise-part-2-2/?ref_search=0_1683585373775">What Is WASM, And Why Does It Matter To The Enterprise? (Part 2 Of 2)</a></p>
-				<p>Brent Ellis,  Forrester - <a href="https://www.forrester.com/blogs/taking-webassembly-wasm-to-the-enterprise-and-beyond/?ref_search=0_1683585422060">Taking WebAssembly/WASM To The Enterprise And Beyond</a></p>
-				<p>Lee Sustar, Forrester - <a href="https://www.forrester.com/report/selecting-your-kubernetes-strategy/RES179211?ref_search=0_1683669328173">Selecting Your Kubernetes Strategy</a></p>
-				<p>Rob Strechay ESG - <a href="https://siliconangle.com/2023/05/02/reflections-kubecon-cloudnativecon-eu/">Reflections on Kubecon + CloudNativeCon EU</a></p>
-				<p>Ameer Gaili, Analysys Mason - <a href="https://www.analysysmason.com/research/content/articles/kubecon-cloud-automation-rma16-rma14-rma21/">KubeCon 2023: telcos increasingly turn to open-source solutions to unlock cloud-native network benefits</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://www.youtube.com/watch?v=QqXKC9-T6s8">KubeCon CloudNativeCon EU 2023 - Jason Bloomberg - YouTube</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://siliconangle.com/2023/04/22/plenty-gas-innovations-continue-apace-first-post-pandemic-kubecon/">Plenty of gas: Innovations continue apace at the first post-pandemic KubeCon</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/cloudfabrix-adding-an-observability-data-modernization-service/">CloudFabrix: Adding an Observability Data Modernization Service</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/direktiv-automating-infrastructure-integration-processes-with-knative/">Direktiv: Automating Infrastructure Integration Processes with Knative</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/observiq-observability-pipeline-built-for-opentelemetry-now-in-the-cloud/">ObservIQ: Observability Pipeline Built for OpenTelemetry, Now in the Cloud</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/perfectscale-right-sizing-kubernetes-clusters-for-governance-and-cost-savings/">PerfectScale: Right-Sizing Kubernetes Clusters for Governance and Cost Savings</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/traefik-cloud-native-api-management-and-service-mesh/">Traefik: Cloud Native API Management and Service Mesh</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/netris-virtual-private-cloud-across-multiple-clouds-on-prem-and-edge/">Netris: Virtual Private Cloud across Multiple Clouds, On-Prem, and Edge</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/ksoc-real-time-kubernetes-security-operations-center/">KSOC: Real-Time Kubernetes Security Operations Center</a></p>
-				<p>Jason Bloomberg, Intellyx - <a href="https://intellyx.com/2023/04/22/slim-ai-generating-sboms-when-slimming-containers/">Slim.ai: Generating SBOMs when Slimming Containers</a></p>
-
+			<div class="quote-with-name-container">
+			<p class="quote-with-name-container__title">KubeCon + CloudNativeCon 2023 cloud-native vendor highlights</p>
+			<p class="quote-with-name-container__quote">KubeCon + CloudNativeCon North America 2023 attendees were left with a lasting impression of the cloud native innovative advancements for today and in the future. The event served as a hub for new ideas, collaborations, and advancements in cloud native technologies, highlighting the collective dedication to shaping the future of the industry.</p>
+			<div class="quote-with-name-container__marks">
+				<p class="quote-with-name-container__name">Paul Nashawaty</p>
+				<p class="quote-with-name-container__position">ESG</p>
 			</div>
 		</div>
+		<div aria-hidden="true" class="report-spacer-80"></div>
+
+		<div class="quote-with-name-container">
+			<p class="quote-with-name-container__title">Insights from KubeCon + CloudNativeCon 2023</p>
+			<p class="quote-with-name-container__quote">YouTube video</p>
+			<div class="quote-with-name-container__marks">
+				<p class="quote-with-name-container__name">Paul Nashawaty,Melinda Marks, and Jon Brown</p>
+				<p class="quote-with-name-container__position">ESG</p>
+			</div>
+		</div>
+		<div aria-hidden="true" class="report-spacer-80"></div>
+
+		<div class="quote-with-name-container">
+			<p class="quote-with-name-container__title">Emergent observability topics at KubeCon 2023</p>
+			<p class="quote-with-name-container__quote">New use cases like cost management, sustainability and scalability will lead observability discussions in the North American KubeCon + CloudNativeCon 2023 conference.</p>
+			<div class="quote-with-name-container__marks">
+				<p class="quote-with-name-container__name">Jon Brown</p>
+				<p class="quote-with-name-container__position">ESG</p>
+			</div>
+		</div>
+		<div aria-hidden="true" class="report-spacer-80"></div>
+
+		<div class="quote-with-name-container">
+			<p class="quote-with-name-container__title">At KubeCon NA 2023, finding cloud independence on the edges of Kubernetes</p>
+			<p class="quote-with-name-container__quote">At KubeCon/CloudNativeCon North America 2023 this past week in Chicago, discussion turned from the ubiquity of the software container orchestrator Kubernetes as the heart of cloud native development to addressing a vast ecosystem of projects and vendors, which in turn are enabling applications and data to become more distributed and independent from any particular underlying cloud or on-premises infrastructure.</p>
+			<div class="quote-with-name-container__marks">
+				<p class="quote-with-name-container__name">Jason English</p>
+				<p class="quote-with-name-container__position">Intellyx</p>
+			</div>
+		</div>
+		<div aria-hidden="true" class="report-spacer-80"></div>
+
+		<div class="quote-with-name-container">
+			<p class="quote-with-name-container__title">eBPF and OpenTelemetry Rule At KubeCon 2023 in Chicago: Observability Is King</p>
+			<p class="quote-with-name-container__quote">While the Kubernetes platform constituted the overall ‘backdrop’ for KubeCon 2023, OpenTelemetry and eBPF (extended Berkeley Packet Filter) were the most discussed topics of the show. Both technologies aim to standardize, simplify, and automate observability, visibility, and monitoring of cloud native applications across data centers, private clouds, public clouds, and edge locations.</p>
+			<div class="quote-with-name-container__marks">
+				<p class="quote-with-name-container__name">Torsten Volk</p>
+				<p class="quote-with-name-container__position">EMA</p>
+			</div>
+		</div>
+		<div aria-hidden="true" class="report-spacer-80"></div>
+
+		<div class="quote-with-name-container">
+			<p class="quote-with-name-container__title">Three insights you might have missed from KubeCon + CloudNativeCon NA</p>
+			<p class="quote-with-name-container__quote">CNCF is known for providing open source and bringing this massive developer base into helping things out with the cloud, which they did a really good job [with]. If you look at all the projects that graduated, Kubernetes is right at the top.</p>
+			<div class="quote-with-name-container__marks">
+				<p class="quote-with-name-container__name">Andy Thurai</p>
+				<p class="quote-with-name-container__position">Constellation Research, Inc</p>
+			</div>
+		</div>
+		<div aria-hidden="true" class="report-spacer-40"></div>
+
+		</div></div>
 
 		<button
-			class="button-reset section-14__button section-14__button-close"
+			class="button-reset section-14c__button section-14c__button-close"
 			style="display: none;"
 			data-id="js-hidden-section-trigger-close">
 			<?php LF_Utils::get_svg( $report_folder . 'arrow-up.svg' ); ?>
 			Close Full List
 		</button>
 
-		<div aria-hidden="true" class="report-spacer-120"></div>
+		<div class="shadow-hr"></div>
+
 
 	</div>
 </section>
 
 <!-- SPONSORS 8/8  -->
 <section id="sponsors"
-	class="section-15 is-style-down-gradient alignfull">
+	class="section-15 alignfull">
 
 	<div class="container wrap">
 
-		<div class="section-title-wrapper">
-			<h2 class="section-header">Sponsor<br> Information</h2>
-			<div class="section-number">8/8</div>
-		</div>
+		<h2 class="section-header">Sponsor<br> Information</h2>
+		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="lf-grid">
 			<div class="restrictive-9-col">
 				<p
-					class="opening-paragraph">KubeCon + CloudNativeCon would not be possible without the support of our wonderful sponsors. And attendees agree - 89% visited the Solutions Showcase during the event. </p>
+					class="opening-paragraph">A huge thank you to our Sponsors!</p>
 			</div>
 		</div>
+
+
+		<div class="kccnc-table-container">
+			<table class="kccnc-table yoy-table">
+				<thead>
+					<tr>
+						<th>YOY SPONSORSHIP
+						</th>
+						<th>2016
+							<span>Seattle</span>
+						</th>
+						<th>2017
+							<span>Austin</span>
+						</th>
+						<th>2018
+							<span>Seattle</span>
+						</th>
+						<th>2019
+							<span>San Diego</span>
+						</th>
+						<th>2020
+							<span>Virtual</span>
+						</th>
+						<th>2021
+							<span>LA</span>
+						</th>
+						<th>2022
+							<span>Detroit</span>
+						</th>
+						<th>2023
+							<span>Chicago</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Diamond</td>
+						<td>8</td>
+						<td>5</td>
+						<td>6*</td>
+						<td>6*</td>
+						<td>6*</td>
+						<td>6*</td>
+						<td>6*</td>
+						<td>7*</td>
+					</tr>
+					<tr>
+						<td>Platinum</td>
+						<td>3</td>
+						<td>17</td>
+						<td>20</td>
+						<td>35</td>
+						<td>8</td>
+						<td>20</td>
+						<td>28</td>
+						<td>27</td>
+					</tr>
+					<tr>
+						<td>Gold</td>
+						<td>10</td>
+						<td>23</td>
+						<td>20</td>
+						<td>19</td>
+						<td>21</td>
+						<td>26</td>
+						<td>32</td>
+						<td>34</td>
+					</tr>
+					<tr>
+						<td>Silver</td>
+						<td>13</td>
+						<td>30</td>
+						<td>87</td>
+						<td>100</td>
+						<td>63</td>
+						<td>91</td>
+						<td>135</td>
+						<td>124</td>
+					</tr>
+					<tr>
+						<td class="nowrap">Start-up</td>
+						<td>N/A</td>
+						<td>30</td>
+						<td>50</td>
+						<td>73</td>
+						<td>38</td>
+						<td>76</td>
+						<td>93</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td class="nowrap">End User</td>
+						<td>N/A</td>
+						<td>N/A</td>
+						<td>5</td>
+						<td>10</td>
+						<td>2</td>
+						<td>7</td>
+						<td>6</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Marketing Opportunities</td>
+						<td>13</td>
+						<td>26</td>
+						<td>27</td>
+						<td>34</td>
+						<td>29</td>
+						<td>35</td>
+						<td>65</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>Total Unique</td>
+						<td>39</td>
+						<td>107</td>
+						<td>193</td>
+						<td>246</td>
+						<td>143</td>
+						<td>228</td>
+						<td>303</td>
+						<td>277</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div aria-hidden="true" class="report-spacer-20"></div>
+
+		<span>* Capped Maximum</span>
+
+		<div aria-hidden="true" class="report-spacer-100"></div>
 
 		<div class="kccnc-table-container">
 			<table class="kccnc-table booth">
@@ -2349,135 +2541,16 @@ Executive Director, CNCF</p>
 				<tbody>
 					<tr>
 						<td>Onsite leads total</td>
-						<td>94,587</td>
+						<td>90,975</td>
 					</tr>
 					<tr>
 						<td>Onsite leads average/booth</td>
-						<td>446</td>
+						<td>342</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 
-		<div aria-hidden="true" class="report-spacer-120"></div>
-
-		<div class="kccnc-table-container">
-			<table class="kccnc-table yoy-table">
-				<thead>
-					<tr>
-						<th>YOY SPONSORSHIP
-						</th>
-						<th>2017
-							<span>Berlin</span>
-						</th>
-						<th>2018
-							<span>Copenhagen</span>
-						</th>
-						<th>2019
-							<span>Barcelona</span>
-						</th>
-						<th>2020
-							<span>Virtual</span>
-						</th>
-						<th>2021
-							<span>Virtual</span>
-						</th>
-						<th>2022
-							<span>Valencia</span>
-						</th>
-						<th>2023
-							<span>Amsterdam</span>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Diamond</td>
-						<td>5</td>
-						<td>6*</td>
-						<td>6*</td>
-						<td>6*</td>
-						<td>6*</td>
-						<td>6*</td>
-						<td>7*</td>
-					</tr>
-					<tr>
-						<td>Platinum</td>
-						<td>4</td>
-						<td>7</td>
-						<td>15</td>
-						<td>7</td>
-						<td>8</td>
-						<td>17</td>
-						<td>18</td>
-					</tr>
-					<tr>
-						<td>Gold</td>
-						<td>7</td>
-						<td>7</td>
-						<td>14</td>
-						<td>8</td>
-						<td>12</td>
-						<td>18</td>
-						<td>18</td>
-					</tr>
-					<tr>
-						<td>Silver</td>
-						<td>15</td>
-						<td>51</td>
-						<td>55</td>
-						<td>35</td>
-						<td>46</td>
-						<td>95</td>
-						<td>111</td>
-					</tr>
-					<tr>
-						<td class="nowrap">Start-up</td>
-						<td>13</td>
-						<td>25</td>
-						<td>53</td>
-						<td>26</td>
-						<td>28</td>
-						<td>49</td>
-						<td>63</td>
-					</tr>
-					<tr>
-						<td class="nowrap">End User</td>
-						<td>N/A</td>
-						<td>N/A</td>
-						<td>3</td>
-						<td>3</td>
-						<td>2</td>
-						<td>2</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Marketing Opportunities</td>
-						<td>8</td>
-						<td>19</td>
-						<td>27</td>
-						<td>17</td>
-						<td>25</td>
-						<td>44</td>
-						<td>45</td>
-					</tr>
-					<tr>
-						<td>Total Unique</td>
-						<td>47</td>
-						<td>96</td>
-						<td>146</td>
-						<td>87</td>
-						<td>102</td>
-						<td>189</td>
-						<td>221</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-
-		<div aria-hidden="true" class="report-spacer-20"></div>
-
-		<span>* Capped Maximum</span>
 
 		<div class="shadow-hr"></div>
 
@@ -2486,295 +2559,62 @@ Executive Director, CNCF</p>
 
 		<div aria-hidden="true" class="report-spacer-60"></div>
 
+
 		<div class="sponsors-logos largest odd orphan-by-3 orphan-by-6">
-			<div class="sponsors-logo-item"><a
-					href="https://aws-kubecon-eu.splashthat.com/"
-					title="Go to aws-kceu23" target="_blank"
-					rel="noopener" data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/amazon-web-services-spn.svg"
-						class="logo wp-post-image" alt="aws-kceu23 logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.huawei.com/" title="Go to Huawei"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="241" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/02/Huawei.svg"
-						class="logo wp-post-image" alt="Huawei logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/"
-					title="Go to Microsoft_Azure_KubeCon"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/microsoft-azure-spn.svg"
-						class="logo wp-post-image"
-						alt="Microsoft_Azure_KubeCon logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://outshift.com/"
-					title="Go to Outshift by Cisco"
-					style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="765" height="332"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/outshift_bycisco.svg"
-						class="logo wp-post-image"
-						alt="Outshift by Cisco logo" decoding="async"
-						loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.suse.com/products/suse-rancher/"
-					title="Go to rancher by suse"
-					style="-webkit-transform: scale(0.99); -ms-transform: scale(0.99); transform: scale(0.99);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="146" height="35"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/rancher-suse-logo-horizontal_horizontal-color.svg"
-						class="logo wp-post-image"
-						alt="rancher by suse logo" decoding="async"
-						loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.redhat.com/"
-					title="Go to Red Hat Logo" target="_blank"
-					rel="noopener" data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/RedHat-new.svg"
-						class="logo wp-post-image"
-						alt="Red Hat Logo logo" decoding="async"
-						loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.veritas.com/"
-					title="Go to Veritas" target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="408" height="92"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/09/Veritas-01.svg"
-						class="logo wp-post-image" alt="Veritas logo"
-						decoding="async" loading="lazy"></a></div>
+			<div class="sponsors-logo-item"><a href="https://aws-kubecon-na-2023.splashthat.com/" title="Go to AWS" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/amazon-web-services-spn.svg" class="logo wp-post-image" alt="AWS logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://technology.discover.com/" title="Go to discover" target="_blank" rel="noopener"><img decoding="async" width="197" height="39" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/Discover-Primary-RGB-Black-1.svg" class="logo wp-post-image" alt="discover logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://azure.microsoft.com/en-us/overview/kubernetes-on-azure/" title="Go to Microsoft Azure" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/microsoft-azure-spn.svg" class="logo wp-post-image" alt="Microsoft Azure logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://developer.oracle.com/open-source.html?source=:ex:sn:::::RC_WWMK220606P00116:KubeCon_NA_Website&#038;SC=:ex:sn:::::RC_WWMK220606P00116:KubeCon_NA_Website&#038;pcode=WWMK220606P00116" title="Go to Oracle Logo" style="-webkit-transform: scale(0.8); -ms-transform: scale(0.8); transform: scale(0.8);" target="_blank" rel="noopener"><img decoding="async" width="231" height="112" src="https://events.linuxfoundation.org/wp-content/uploads/2022/08/Oracle_Cloud-Infrastructure_stacked_rgb-1.svg" class="logo wp-post-image" alt="Oracle Logo logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.suse.com/products/suse-rancher/" title="Go to rancher by suse" style="-webkit-transform: scale(0.99); -ms-transform: scale(0.99); transform: scale(0.99);" target="_blank" rel="noopener"><img decoding="async" width="146" height="35" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/rancher-suse-logo-horizontal_horizontal-color.svg" class="logo wp-post-image" alt="rancher by suse logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.redhat.com/" title="Go to Red Hat" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/RedHat-new.svg" class="logo wp-post-image" alt="Red Hat logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="http://www.veritas.com/solution/kubernetes" title="Go to Veritas KubeCon" target="_blank" rel="noopener"><img decoding="async" width="408" height="92" src="https://events.linuxfoundation.org/wp-content/uploads/2020/09/Veritas-01.svg" class="logo wp-post-image" alt="Veritas KubeCon logo" loading="lazy" /></a></div>
 		</div>
 
-		<div class="shadow-hr"></div>
+		<div aria-hidden="true" class="report-spacer-100"></div>
 
 		<p class="sub-header"
 			style="margin:auto; text-align:center">Platinum Sponsors</p>
 
 		<div aria-hidden="true" class="report-spacer-60"></div>
 
-		<div class="sponsors-logos larger even">
-			<div class="sponsors-logo-item"><a href="https://ubuntu.com"
-					title="Go to canonical" target="_blank"
-					rel="noopener" data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/canonical-spn.svg"
-						class="logo wp-post-image" alt="canonical logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.datadoghq.com/"
-					title="Go to datadog" target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/datadog-spn.svg"
-						class="logo wp-post-image" alt="datadog logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.delltechnologies.com/"
-					title="Go to dell"
-					style="-webkit-transform: scale(1.3); -ms-transform: scale(1.3); transform: scale(1.3);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/dell-spn.svg"
-						class="logo wp-post-image" alt="dell logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://about.gitlab.com/"
-					title="Go to gitlab" target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="721" height="177"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/gitlab-logo-rgb.svg"
-						class="logo wp-post-image" alt="gitlab logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://cloud.google.com/"
-					title="Go to Google Cloud"
-					style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="3016" height="626"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/06/lockup_GoogleCloud_FullColor_rgb_2900x512px.svg"
-						class="logo wp-post-image"
-						alt="Google Cloud logo" decoding="async"
-						loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.ibm.com/us-en/"
-					title="Go to ibm-horizontal-color"
-					style="-webkit-transform: scale(0.7); -ms-transform: scale(0.7); transform: scale(0.7);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="441" height="175"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/IBM_logo┬_pos_blue60_CMYK.svg"
-						class="logo wp-post-image"
-						alt="ibm-horizontal-color logo" decoding="async"
-						loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://incident.io/" title="Go to incident"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="1038" height="293"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2023/01/logo-colour-dark.svg"
-						class="logo wp-post-image" alt="incident logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/overview.html"
-					title="Go to intel"
-					style="-webkit-transform: scale(0.6); -ms-transform: scale(0.6); transform: scale(0.6);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="338" height="139"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/intel-01.svg"
-						class="logo wp-post-image" alt="intel logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a href="https://jfrog.com/"
-					title="Go to jfrog" target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/jfrog-spn.svg"
-						class="logo wp-post-image" alt="jfrog logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.kasten.io/"
-					title="Go to Kasten by Veeam - KubeCon"
-					style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="254" height="101"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/Kasten-logo-2022.svg"
-						class="logo wp-post-image"
-						alt="Kasten by Veeam - KubeCon logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://opensource.mercedes-benz.com/"
-					title="Go to Mercedes-Benz" target="_blank"
-					rel="noopener" data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="382" height="77"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2023/02/Mercedes-Benz-Logo.svg"
-						class="logo wp-post-image"
-						alt="Mercedes-Benz logo" decoding="async"
-						loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://opensearch.org/"
-					title="Go to OpenSearch" target="_blank"
-					rel="noopener" data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="386" height="85"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2022/03/SVG-Logo.svg"
-						class="logo wp-post-image" alt="OpenSearch logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://portworx.com/"
-					title="Go to Portworx by Pure Storage"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="406" height="158"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2020/10/portworx-by-purestorage-01.svg"
-						class="logo wp-post-image"
-						alt="Portworx by Pure Storage logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://www.paloaltonetworks.com/prisma/cloud"
-					title="Go to Prisma Cloud by Palo Alto Networks"
-					style="-webkit-transform: scale(1.25); -ms-transform: scale(1.25); transform: scale(1.25);"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="1626" height="262"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2021/12/Palo_Alto_Prisma_Cloud_logo_RGB_Horizontal.svg"
-						class="logo wp-post-image"
-						alt="Prisma Cloud by Palo Alto Networks logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a href="https://snyk.io/"
-					title="Go to snyk" target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/Snyk-spn.svg"
-						class="logo wp-post-image" alt="snyk logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://sysdig.com/" title="Go to sysdig"
-					target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/sysdig-spn.svg"
-						class="logo wp-post-image" alt="sysdig logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://goteleport.com/"
-					title="Go to Teleport" target="_blank"
-					rel="noopener" data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="187" height="45"
-						src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/teleport-kcsp.svg"
-						class="logo wp-post-image" alt="Teleport logo"
-						decoding="async" loading="lazy"></a></div>
-			<div class="sponsors-logo-item"><a
-					href="https://tanzu.vmware.com/"
-					title="Go to vmware" target="_blank" rel="noopener"
-					data-feathr-click-track="true"
-					data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
-						width="400" height="245"
-						src="https://events.linuxfoundation.org/wp-content/uploads/vmware-spn.svg"
-						class="logo wp-post-image" alt="vmware logo"
-						decoding="async" loading="lazy"></a></div>
+		<div class="sponsors-logos larger odd">
+			<div class="sponsors-logo-item"><a href="https://www.arm.com/" title="Go to arm" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/arm-spn-1.svg" class="logo wp-post-image" alt="arm logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://ubuntu.com/" title="Go to Canonical Ubuntu" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener"><img decoding="async" width="1381" height="452" src="https://events.linuxfoundation.org/wp-content/uploads/2021/08/canonical-logo.svg" class="logo wp-post-image" alt="Canonical Ubuntu logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="http://www.crowdstrike.com" title="Go to Crowdstrike Logo" style="-webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);" target="_blank" rel="noopener"><img decoding="async" width="425" height="89" src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/CS_Logos_2022_Inline_Red-Black_RGB_SVG.svg" class="logo wp-post-image" alt="Crowdstrike Logo logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.datadoghq.com/" title="Go to datadog" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/datadog-spn.svg" class="logo wp-post-image" alt="datadog logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.delltechnologies.com/" title="Go to Dell Stacked" style="-webkit-transform: scale(0.8); -ms-transform: scale(0.8); transform: scale(0.8);" target="_blank" rel="noopener"><img decoding="async" width="334" height="197" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/delltech-logo-stk-blue.svg" class="logo wp-post-image" alt="Dell Stacked logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.nginx.com/" title="Go to F5 NGINX" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener"><img decoding="async" width="156" height="65" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/NGINX-Part-of-F5-horiz-black-type-rgb-1.svg" class="logo wp-post-image" alt="F5 NGINX logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.fortinet.com/" title="Go to Fortinet" target="_blank" rel="noopener"><img decoding="async" width="406" height="60" src="https://events.linuxfoundation.org/wp-content/uploads/2021/07/Fortinet.svg" class="logo wp-post-image" alt="Fortinet logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://about.gitlab.com/" title="Go to GitLab" target="_blank" rel="noopener"><img decoding="async" width="721" height="177" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/gitlab-logo-rgb.svg" class="logo wp-post-image" alt="GitLab logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://cloud.google.com/" title="Go to Google Cloud" style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);" target="_blank" rel="noopener"><img decoding="async" width="3016" height="626" src="https://events.linuxfoundation.org/wp-content/uploads/2020/06/lockup_GoogleCloud_FullColor_rgb_2900x512px.svg" class="logo wp-post-image" alt="Google Cloud logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.ibm.com/us-en/" title="Go to IBM" style="-webkit-transform: scale(0.7); -ms-transform: scale(0.7); transform: scale(0.7);" target="_blank" rel="noopener"><img decoding="async" width="441" height="175" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/IBM_logo┬_pos_blue60_CMYK.svg" class="logo wp-post-image" alt="IBM logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="http://incident.io/" title="Go to incident.io " target="_blank" rel="noopener"><img decoding="async" width="1038" height="293" src="https://events.linuxfoundation.org/wp-content/uploads/2023/08/incident.io_.svg" class="logo wp-post-image" alt="incident.io  logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/overview.html" title="Go to Intel" style="-webkit-transform: scale(0.6); -ms-transform: scale(0.6); transform: scale(0.6);" target="_blank" rel="noopener"><img decoding="async" width="71" height="29" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/logo-classicblue-72px.svg" class="logo wp-post-image" alt="Intel logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://jfrog.com/" title="Go to jfrog" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/jfrog-spn.svg" class="logo wp-post-image" alt="jfrog logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.kasten.io/" title="Go to Kasten by Veeam" style="-webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9);" target="_blank" rel="noopener"><img decoding="async" width="254" height="101" src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/Kasten-logo-2022.svg" class="logo wp-post-image" alt="Kasten by Veeam logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://opensearch.org/" title="Go to OpenSearch" target="_blank" rel="noopener"><img decoding="async" width="386" height="85" src="https://events.linuxfoundation.org/wp-content/uploads/2022/03/SVG-Logo.svg" class="logo wp-post-image" alt="OpenSearch logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://outshift.com/" title="Go to Outshift by Cisco" style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);" target="_blank" rel="noopener"><img decoding="async" width="765" height="332" src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/outshift_bycisco.svg" class="logo wp-post-image" alt="Outshift by Cisco logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://portworx.com/" title="Go to Portworx by Pure Storage" target="_blank" rel="noopener"><img decoding="async" width="3161" height="1074" src="https://events.linuxfoundation.org/wp-content/uploads/2020/10/Portworx_Logo_Color.svg" class="logo wp-post-image" alt="Portworx by Pure Storage logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.paloaltonetworks.com/prisma/cloud" title="Go to Palo Alto Networks/Prisma Cloud Logo" style="-webkit-transform: scale(1.35); -ms-transform: scale(1.35); transform: scale(1.35);" target="_blank" rel="noopener"><img decoding="async" width="1008" height="141" src="https://events.linuxfoundation.org/wp-content/uploads/2021/12/Parent-with-GTM_PANW_Prisma_smallcut.svg" class="logo wp-post-image" alt="Palo Alto Networks/Prisma Cloud Logo logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://snyk.io/" title="Go to snyk" style="-webkit-transform: scale(1.01); -ms-transform: scale(1.01); transform: scale(1.01);" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/Snyk-spn.svg" class="logo wp-post-image" alt="snyk logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.sonatype.com/" title="Go to Sonatype" target="_blank" rel="noopener"><img decoding="async" width="265" height="54" src="https://events.linuxfoundation.org/wp-content/uploads/2021/07/Sonatype_logo_full_color.svg" class="logo wp-post-image" alt="Sonatype logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.sony-semicon.com/en/" title="Go to Sony" target="_blank" rel="noopener"><img decoding="async" width="693" height="143" src="https://events.linuxfoundation.org/wp-content/uploads/2021/09/Sony_GPVI_Logo_SonyBlue90_RGB-1.svg" class="logo wp-post-image" alt="Sony logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.splunk.com/en_us/devops.html" title="Go to splunk" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/splunk-spn.svg" class="logo wp-post-image" alt="splunk logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://sysdig.com/" title="Go to sysdig" target="_blank" rel="noopener"><img decoding="async" width="638" height="209" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/sysdig-logo-black.svg" class="logo wp-post-image" alt="sysdig logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://goteleport.com/" title="Go to Teleport" target="_blank" rel="noopener"><img decoding="async" width="187" height="45" src="https://events.linuxfoundation.org/wp-content/uploads/2021/03/teleport-kcsp.svg" class="logo wp-post-image" alt="Teleport logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.uptycs.com/" title="Go to Uptycs" target="_blank" rel="noopener"><img decoding="async" width="415" height="134" src="https://events.linuxfoundation.org/wp-content/uploads/2022/07/uptycs_logo_2C_on-light_rgb.svg" class="logo wp-post-image" alt="Uptycs logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://tanzu.vmware.com/tanzu" title="Go to vmware" style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);" target="_blank" rel="noopener"><img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/vmware-spn.svg" class="logo wp-post-image" alt="vmware logo" loading="lazy" /></a></div>
+			<div class="sponsors-logo-item"><a href="https://www.wiz.io/" title="Go to Wiz" style="-webkit-transform: scale(0.7); -ms-transform: scale(0.7); transform: scale(0.7);" target="_blank" rel="noopener"><img decoding="async" width="1472" height="736" src="https://events.linuxfoundation.org/wp-content/uploads/2022/05/wiz-autocropped.svg" class="logo wp-post-image" alt="Wiz logo" loading="lazy" /></a></div>
 		</div>
 
 		<div class="shadow-hr"></div>
 
 		<div class="wp-block-button"><a
-				href="https://events.linuxfoundation.org/kubecon-cloudnativecon-North America/sponsor-list/"
+				href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/sponsor-list/"
 				title="See all Sponsors and Partners of KubeCon + CloudNativeCon North America 2023"
 				class="wp-block-button__link">See
 				all Sponsors and Partners</a>
 		</div>
-
-		<div class="shadow-hr"></div>
-
-		<div class="video">
-			<h2 class="video__title">Video Highlights</h2>
-
-			<div aria-hidden="true" class="report-spacer-60">
-			</div>
-
-			<div class="wp-block-lf-youtube-lite">
-				<lite-youtube videoid="tBDK_AYGv-k"
-					videotitle="Highlights from KubeCon + CloudNativeCon North America 2023"
-					webpStatus="1" sdthumbStatus="0"
-					title="Play Highlights">
-				</lite-youtube>
-			</div>
-		</div>
-
 		<div aria-hidden="true" class="report-spacer-120"></div>
 
 	</div>
@@ -2791,7 +2631,7 @@ Executive Director, CNCF</p>
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<p
-					class="thanks__opening">We hope you enjoyed reflecting on a great event in Amsterdam - let's do it again soon!</p>
+					class="thanks__opening">We hope you enjoyed reflecting on a great event in Chicago - let's do it again in Paris!</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -2800,14 +2640,16 @@ Executive Director, CNCF</p>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/">register for KubeCon + CloudNativeCon + Open Source Summit China</a> in Shanghai, 26 - 28 September, 2023, and <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/">KubeCon + CloudNativeCon North America</a> in Chicago, 6 - 9 November 2023.</p>
+				<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/">register for KubeCon + CloudNativeCon Europe</a> in Paris, March, 2024.</p>
 			</div>
 			<div class="thanks__col2">
 				<?php
-					LF_Utils::display_responsive_images( 90431, 'full', '400px', null, 'lazy', 'CNCF Mascot' );
+					LF_Utils::display_responsive_images( 99036, 'full', '400px', null, 'lazy', 'CNCF Mascot' );
 				?>
 			</div>
 		</div>
+		<div aria-hidden="true" class="report-spacer-120"></div>
+
 		<?php
 			echo do_shortcode( '[event_banner hide_title=true]' );
 			?>

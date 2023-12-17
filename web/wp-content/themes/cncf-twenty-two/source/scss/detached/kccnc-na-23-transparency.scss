@@ -185,10 +185,33 @@ html {
 	.quote-with-name-container {
 		&__marks {
 			&:before {
-				filter: brightness(0) saturate(100%) invert(31%) sepia(18%) saturate(3624%) hue-rotate(265deg) 
-					brightness(80%) contrast(95%);
+				filter: saturate(101%) invert(51%) sepia(98%) hue-rotate(130deg) brightness(68%) contrast(95%);
 			}
 		}
+		&__title {
+			font-weight: 700;
+			font-style: normal;
+			font-size: 20px;
+		}
+		&__quote {
+			@media (min-width: 1200px) {
+				font-size: 24px;
+			}
+		}
+	}
+
+	.background-image-text-overlay .quote-with-name-container {
+		&__marks {
+			&:before {
+				filter: saturate(100%) invert(11%) sepia(7%) hue-rotate(293deg) brightness(80%) contrast(95%);
+			}
+		}
+		&__quote {
+			@media (min-width: 1200px) {
+				font-size: 30px;
+			}
+		}
+
 	}
 
 	// .icon-box-4 {
@@ -993,15 +1016,21 @@ html {
 			&__marks {
 				&:before {
 					// filter
-					filter: brightness(0) saturate(100%) invert(79%) sepia(28%) saturate(4176%) hue-rotate(291deg)
-						brightness(101%) contrast(104%);
-					// F36A11
+					filter: invert(79%) sepia(28%) saturate(4176%) hue-rotate(291deg) brightness(101%) contrast(104%);
 				}
 			}
 		}
 	}
 
 	.section-05 {
+		.quote-with-name-container {
+			&__marks {
+				&:before {
+					filter: brightness(0) saturate(100%) invert(31%) sepia(18%) saturate(3624%) hue-rotate(265deg) 
+					brightness(80%) contrast(95%);
+				}
+			}
+		}	
 		padding-top: 0px;
 		@media (min-width: 1000px) {
 			padding-bottom: 20px;
@@ -1855,7 +1884,8 @@ html {
 		}
 	}
 
-	.section-14b {
+	.section-14b,
+	.section-14c {
 		&__coverage {
 			&-col1,
 			&-col2,
@@ -1978,9 +2008,6 @@ html {
 				margin-top: 50px;
 				padding-top: 50px;
 				padding-bottom: 50px;
-				p + p {
-					margin-top: 5px;
-				}
 			}
 		}
 		.kccnc-table {
@@ -2001,13 +2028,13 @@ html {
 		.booth {
 			td:nth-child(2) {
 				font-weight: 700;
-				color: $kccnc-eu-23-purple-400;
+				color: $kccnc-na-23-pink;
 			}
 		}
 		.yoy-table {
 			td:not(:first-child) {
 				font-weight: 700;
-				color: $kccnc-eu-23-purple-400;
+				color: $kccnc-na-23-pink;
 			}
 			td:first-child {
 				width: 40%;
