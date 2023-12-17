@@ -1674,7 +1674,7 @@ Executive Director, CNCF</p>
 					</p>
 					<ol>
 						<li>Minecraft Modding</li>
-						<li>hippy and Friends Raspberry Pi Zoo Rescue</li>
+						<li>Phippy and Friends Raspberry Pi Zoo Rescue</li>
 						<li>Stories and Games with Scratch</li>
 						<li>Sonic Pi workshop for kids — Unleashing the magic of music through code</li>
 					</ol>
