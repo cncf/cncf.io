@@ -2652,7 +2652,7 @@ Executive Director, CNCF</p>
 
 		<?php
 			echo do_shortcode( '[event_banner hide_title=true]' );
-			?>
+		?>
 
 	</div>
 </section>
