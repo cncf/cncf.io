@@ -1152,9 +1152,6 @@ html {
 	}
 
 	#dei {
-		.lf-grid {
-		column-gap: 10%;
-		}
 		.kccnc-table-container {
 			grid-column: span 12;
 			@media (min-width: 800px) {
@@ -1242,7 +1239,6 @@ html {
 		}
 		.unconference {
 			font-size: 16px;
-			column-gap: 80px;
 			li {
 				margin-bottom: 10px;
 			}
@@ -1270,6 +1266,9 @@ html {
 				grid-column: span 12;
 				@media (min-width: 700px) {
 					grid-column: span 6;
+				}
+				ol {
+					font-size: 20px;
 				}
 			}
 			.opening-paragraph {
@@ -1372,7 +1371,6 @@ html {
 					margin-bottom: 25px;
 					margin-top: auto;
 					@media (min-width: 1000px) {
-						margin-bottom: 50px;
 						max-height: 70px;
 					}
 				}
@@ -1574,9 +1572,11 @@ html {
 		}
 		.captioning {
 			font-size: 24px;
-			column-gap: 80px;
 			p {
 				line-height: 125%;
+				@media (max-width: 700px) {
+					font-size: 16px;
+				}
 			}
 			h3 {
 				margin-top: 20px;
@@ -1644,7 +1644,6 @@ html {
 
 	.section-12 {
 		.intro {
-			column-gap: 70px;
 			&-col1 {
 				.opening-paragraph {
 					margin-bottom: 30px;

@@ -315,8 +315,6 @@ Executive Director, CNCF</p>
 
 				<p class="sub-header">Demographics</p>
 
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
 				<picture>
 					<source media="(max-width: 499px)"
 						srcset="<?php echo esc_url( wp_get_attachment_image_url( 98882, 'full', false ) ); ?>">
@@ -877,8 +875,10 @@ Executive Director, CNCF</p>
 
 		</section>
 
+
+
 		<section id="dei"
-			class="is-style-down-gradient alignfull">
+			class="section-03 is-style-down-gradient alignfull">
 
 			<div class="container wrap">
 
@@ -1688,7 +1688,7 @@ Executive Director, CNCF</p>
 
 
 
-		<section id="content"
+		<section id="sustainability"
 			class="section-12 is-style-down-gradient alignfull">
 
 			<div class="container wrap">
@@ -1978,7 +1978,7 @@ Executive Director, CNCF</p>
 
 		<h2 class="section-header">Coverage Overview</h2>
 
-		<div aria-hidden="true" class="report-spacer-80"></div>
+		<div aria-hidden="true" class="report-spacer-40"></div>
 
 		<div class="lf-grid">
 			<div class="restrictive-9-col">
