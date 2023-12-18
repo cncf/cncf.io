@@ -1270,7 +1270,7 @@ Executive Director, CNCF</p>
 
 				<div class="lf-grid chairs">
 					<div class="chairs__col1">
-						<?php LF_Utils::display_responsive_images( 98966, 'full', '200px', 'chairs__image', 'lazy', 'Fog Dong' ); ?>
+						<?php LF_Utils::display_responsive_images( 98966, 'full', '200px', 'chairs__image', 'lazy', 'Aparna Subramanian' ); ?>
 						<p>
 <span class="chairs__name">Aparna Subramanian
 </span><span
@@ -1279,7 +1279,7 @@ Executive Director, CNCF</p>
 </p>
 					</div>
 					<div class="chairs__col2">
-					<?php LF_Utils::display_responsive_images( 98968, 'full', '200px', 'chairs__image', 'lazy', 'Fog Dong' ); ?>
+					<?php LF_Utils::display_responsive_images( 98968, 'full', '200px', 'chairs__image', 'lazy', 'Frederick Kautz' ); ?>
 						<p>
 <span class="chairs__name">Frederick Kautz
 </span><span
@@ -1289,7 +1289,7 @@ Executive Director, CNCF</p>
 					</div>
 
 					<div class="chairs__col3">
-					<?php LF_Utils::display_responsive_images( 98969, 'full', '200px', 'chairs__image', 'lazy', 'Fog Dong' ); ?>
+					<?php LF_Utils::display_responsive_images( 98969, 'full', '200px', 'chairs__image', 'lazy', 'Nikhita Raghunath' ); ?>
 						<p>
 <span class="chairs__name">Nikhita Raghunath
 </span><span
