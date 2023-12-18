@@ -1973,7 +1973,7 @@ Executive Director, CNCF</p>
 		
 	</div>
 	</section>
-	<section id="media" class="section-14 is-style-down-gradient alignfull">
+	<section class="section-14 is-style-down-gradient alignfull">
 	<div class="container wrap">
 
 		<h2 class="section-header">Coverage Overview</h2>
