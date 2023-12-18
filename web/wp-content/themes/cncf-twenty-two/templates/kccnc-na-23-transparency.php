@@ -2145,7 +2145,7 @@ Executive Director, CNCF</p>
 			<table class="kccnc-table">
 				<tbody>
 					<tr>
-						<td>The New Stack</td>
+						<td class="nowrap">The New Stack</td>
 						<td><a href="https://thenewstack.io/meet-sig-cluster-lifecycle-and-cluster-api-maintainers-at-kubecon/">Meet SIG Cluster Lifecycle and Cluster API Maintainers at KubeConMeet SIG Cluster Lifecycle and Cluster API Maintainers at KubeCon</a></td>
 					</tr>
 					<tr>
@@ -2153,7 +2153,7 @@ Executive Director, CNCF</p>
 						<td><a href="https://thenewstack.io/what-will-be-hot-at-kubecon-platform-engineering-of-course/">What Will Be Hot at KubeCon? Platform Engineering, of Course</a></td>
 					</tr>
 					<tr>
-						<td>Cloud Native Now</td>
+						<td class="nowrap">Cloud Native Now</td>
 						<td><a href="https://cloudnativenow.com/features/cloud-native-ai-workloads-scalability-sustainability-and-security/">Cloud-Native AI Workloads: Scalability, Sustainability and Security</a></td>
 					</tr>
 					<tr>
@@ -2216,7 +2216,7 @@ Executive Director, CNCF</p>
 								<td><a href="https://www.theregister.com/2023/11/08/cncf_ai/">The Cloud Native Computing Foundation leaps aboard the AI bandwagon</a></td>
 							</tr>
 							<tr>
-								<td>The New Stack</td>
+								<td class="nowrap">The New Stack</td>
 								<td><a href="https://thenewstack.io/dont-rely-on-ebpf-alone-for-kubernetes/">Don’t Rely on eBPF Alone for Kubernetes</a></td>
 							</tr>
 							<tr>
