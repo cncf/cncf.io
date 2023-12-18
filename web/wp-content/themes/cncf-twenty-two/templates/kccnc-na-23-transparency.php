@@ -2000,14 +2000,13 @@ Executive Director, CNCF</p>
 		</div>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
-
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__quote">The road ahead is challenging but undeniably exciting, with Kubernetes still the helm of this transformative journey.</p>
-			<div class="quote-with-name-container__marks">
-				<p class="quote-with-name-container__name">Roy Chua</p>
-				<p class="quote-with-name-container__position">Silverlinings</p>
-			</div>
-		</div>
+					<p class="quote-with-name-container__quote">Operators have arrived at KubeCon, signaling Kubernetes’ transition to a mature and important platform for organizations that make money.</p>
+					<div class="quote-with-name-container__marks">
+						<p class="quote-with-name-container__name">Justin Warren</p>
+						<p class="quote-with-name-container__position">Forbes</p>
+					</div>
+				</div>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<button class="button-reset section-14__button"
@@ -2022,14 +2021,14 @@ Executive Director, CNCF</p>
 			<div class="section-14__hidden-section-content">
 
 				<div class="quote-with-name-container">
-					<p class="quote-with-name-container__quote">Operators have arrived at KubeCon, signaling Kubernetes’ transition to a mature and important platform for organizations that make money.</p>
+					<p class="quote-with-name-container__quote">The road ahead is challenging but undeniably exciting, with Kubernetes still the helm of this transformative journey.</p>
 					<div class="quote-with-name-container__marks">
-						<p class="quote-with-name-container__name">Justin Warren</p>
-						<p class="quote-with-name-container__position">Forbes</p>
-					</div>
+						<p class="quote-with-name-container__name">Roy Chua</p>
+						<p class="quote-with-name-container__position">Silverlinings</p>
+					</div>	
 				</div>
-
 				<div aria-hidden="true" class="report-spacer-80"></div>
+				
 				<div class="quote-with-name-container">
 					<p class="quote-with-name-container__quote">Kubernetes is no longer just a science experiment used by giddy developers testing out new ideas, most of which fail. It now supports successful initiatives that make real money for businesses large and small. With revenue and profits on the line, the people tasked with keeping infrastructure alive—the operators—have well and truly arrived at KubeCon.</p>
 					<div class="quote-with-name-container__marks">
