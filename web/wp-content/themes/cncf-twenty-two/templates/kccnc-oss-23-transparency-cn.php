@@ -70,9 +70,70 @@ $report_folder = 'reports/kccnc-oss-23/'
 						<h1 class="hero__title uppercase">透明度报告</h1>
 
 						<div class="hero__button-share-align">
+							<?php
+							/**
+							 * Gets the URL to share from current permalink.
+							 */
+							$page_url = rawurlencode( get_permalink() );
 
+							/**
+							 * Gets the title of the page from current page.
+							 */
+							$page_title = htmlspecialchars( rawurlencode( html_entity_decode( get_the_title(), ENT_COMPAT, 'UTF-8' ) ), ENT_COMPAT, 'UTF-8' );
+
+							/**
+							 * Gets Twitter handle.
+							 */
+							$site_options = get_option( 'lf-mu' );
+							$site_options && $site_options['social_twitter_handle'] ? $x_handle = $site_options['social_twitter_handle'] : $x_handle = '';
+
+							/**
+							 * Build the URLs.
+							 */
+							$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&summary=' . $page_title . '';
+
+							$x_url = 'https://x.com/intent/tweet?text=' . $page_title . '&amp;url=' . $page_url . '&amp;hashtags=cncf&amp;via=' . $x_handle . '';
+
+							$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url . '&t=' . $page_title;
+
+							$mailto_url = 'mailto:?subject=' . $page_title . '&body=' . $page_url . '';
+							?>
+							
+							<div class="social-share">
+								<p class="social-share__title">分享</p>
+							
+								<div class="social-share__wrapper">
+									<!-- linkedin -->
+									<?php if ( $linkedin_url ) : ?>
+									<a aria-label="Share on Linkedin"
+										title="Share on Linkedin"
+										href="<?php echo esc_url( $linkedin_url ); ?>"><?php LF_utils::get_svg( 'social/linkedin-white.svg' ); ?></a>
+									<?php endif; ?>
+							
+									<!-- facebook -->
+									<?php if ( $facebook_url ) : ?>
+									<a aria-label="Share on Facebook"
+										title="Share on Facebook"
+										href="<?php echo esc_url( $facebook_url ); ?>"><?php LF_utils::get_svg( 'social/facebook.svg' ); ?></a>
+									<?php endif; ?>
+							
+									<!-- x -->
+									<?php if ( $x_url ) : ?>
+									<a aria-label="Share on X"
+										title="Share on X"
+										href="<?php echo esc_url( $x_url ); ?>"><?php LF_utils::get_svg( 'social/x.svg' ); ?></a>
+									<?php endif; ?>
+							
+									<!-- sendto email -->
+									<?php if ( $mailto_url ) : ?>
+									<a aria-label="Share by Email" title="Share by Email"
+										href="<?php echo esc_url( $mailto_url ); ?>"><?php LF_utils::get_svg( 'social/email.svg' ); ?></a>
+									<?php endif; ?>
+								</div>
+							</div>
+							
 							<div class="wp-block-button hero__button"><a
-									href="https://www.cncf.io/reports/kubecon-cloudnativecon-open-source-summit-china-2023/" class="wp-block-button__link"
+									href="https://www.cncf.io/reports/kubecon-cloudnativecon-open-source-summit-china-2023/" class="nowrap wp-block-button__link"
 									title="Read the report in English">English Version</a>
 							</div>
 						</div>
@@ -85,29 +146,30 @@ $report_folder = 'reports/kccnc-oss-23/'
 		<section class="section-01">
 
 			<div class="lf-grid">
-				<h2 class="section-01__title">你好，上海！</h2>
+				<h2 class="section-01__title">您好，上海！</h2>
 			</div>
 
 			<div class="lf-grid section-01__grid">
 				<div class="section-01__grid-col1">
-					<p>It took a few years longer than we'd hoped, but it was fantastic to finally bring our China community together in Shanghai for KubeCon + CloudNativeCon + Open Source Summit China 2023. And it was important to us that we could make this happen, because China is a key player in the cloud native ecosystem. </p>
 
-					<p>China contributes more to CNCF projects than any other country apart from the USA - accounting for an incredible 9% of all contributions since the CNCF was founded in 2015. In fact, this year 12% of cloud native open source contributions to the CNCF came from China-based maintainers and organizations. Plus, 32 CNCF projects originated in China, including graduated projects like Harbor and TiKV.</p>
+				<p>我们花了比预期多几年的时间，但最终我们的中国社区齐聚上海参加 KubeCon + CloudNativeCon + Open Source Summit China 2023，真是太棒了。能够实现这一目标对我们来说很重要，因为中国是云原生生态系统的关键参与者。</p>
 
-					<p>For me personally, it was an opportunity to reconnect in person with maintainers and contributors who are shaping the future of cloud native technology. It was inspiring to learn about cloud native at China scale, and how the initiatives you are driving are changing the way that software is built - from powering AI workloads and accelerating AI applications, to large-scale, financial-grade engineering practices.</p>
+				<p>自 2015 年云原生计算基金会 (CNCF) 成立以来，中国对 CNCF 项目的贡献超过了除美国以外的任何其他国家/地区，占所有贡献的 9%，令人难以置信。事实上，今年对 CNCF 的云原生开源贡献中有 12% 来自中国的维护者和组织。此外，还有 32 个 CNCF 项目源自中国，其中包括 Harbour 和 TiKV 等分级项目。</p>
 
-					<p>There is much to unpack from this insightful event, and I've enjoyed looking back as we put this transparency report together for you. I hope you find this information valuable.</p>
+				<p>对我个人而言，这是一次与正在塑造云原生技术未来的维护者和贡献者重新建立联系的机会。了解中国的云原生以及您正在推动的举措如何改变软件构建方式（从为人工智能工作负载提供动力和加速人工智能应用，到大规模的金融级工程实践），这很令人鼓舞。</p>
+
+				<p>这次有深刻见解的的活动有很多信息值得挖掘，当我们为您整理这份透明度报告时，我很高兴回顾这一过程。希望您觉得这些信息很有价值。</p>
 
 					<div class="author">
 						<?php LF_Utils::display_responsive_images( 98512, 'full', '75px', null, 'lazy', 'Chris Aniszczyk' ); ?>
 						<p><strong>Chris Aniszczyk</strong><br>
-					CTO, CNCF</p>
+						首席技术官 – CNCF</p>
 					</div>
 				</div>
 
 				<div class="section-01__grid-col2">
 					<h3 class="sub-header">KubeCon + CloudNativeCon + Open
-						Source Summit China 一览</h3>
+						Source Summit China—览</h3>
 					<!-- Icon 1  -->
 					<div class="icon-box-1">
 						<div class="icon">
@@ -134,7 +196,8 @@ $report_folder = 'reports/kccnc-oss-23/'
 " alt="Heart icon">
 						</div>
 						<div class="text">
-						提交了 589 份议题投稿 (CFP)
+							<span>589</span><br />
+							议题投稿
 						</div>
 					</div>
 
@@ -147,7 +210,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 						</div>
 						<div class="text">
 							<span>86</span><br />
-							名参会者致谢 Dan Kohn 奖学金基金
+							名参会者获取Dan Kohn 奖学金基金
 						</div>
 					</div>
 
@@ -174,12 +237,12 @@ $report_folder = 'reports/kccnc-oss-23/'
 				<div class="wp-block-columns are-vertically-aligned-centered">
 					<div class="wp-block-column is-vertically-aligned-centered"
 						style="flex-basis:80%">
-						<h3 class="sub-header">Shanghai Photo Highlights</h3>
+						<h3 class="sub-header">照片精选</h3>
 					</div>
 					<div class="wp-block-column is-vertically-aligned-bottom"
 						style="flex-basis:20%">
 						<p
-							class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720311405294/" title="KubeCon + CloudNativeCon + Open Source Summit China 2023 Photo Gallery">See more</a></p>
+							class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720311405294/" title="KubeCon + CloudNativeCon + Open Source Summit China 2023 Photo Gallery">查看更多</a></p>
 					</div>
 				</div>
 
@@ -242,19 +305,18 @@ $report_folder = 'reports/kccnc-oss-23/'
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">ATTENDEE <br />
-						OVERVIEW</h2>
+					<h2 class="section-header">参会者概述</h2>
 					<div class="section-number">1/6</div>
 				</div>
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
 						<p
-							class="opening-paragraph">It was fantastic to bring our China community together in person, with more than <strong>1900</strong> people joining us in Shanghai, and a further <strong>139</strong> logging in online to view the Keynote Livestream.</p>
+							class="opening-paragraph">能够亲自让我们的中国社区聚集在一起，真是太棒了，有超过 <strong>1900</strong> 人到上海参加了我们的会议，另有 <strong>139</strong> 人在线登录观看了主题演讲直播。</p>
 					</div>
 				</div>
 
-				<p class="sub-header">Demographics</p>
+				<p class="sub-header">人口统计资料</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -270,7 +332,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header">Attendee Geography</p>
+				<p class="sub-header">与会者地区分布</p>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
@@ -279,26 +341,26 @@ $report_folder = 'reports/kccnc-oss-23/'
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header is-centered">Top Three Job Functions</p>
+				<p class="sub-header is-centered">前3个工作职能</p>
 
 				<div class="lf-grid section-03__top-jobs">
 					<div class="section-03__top-jobs-col1">
-						<p class="table-header">Developer</p>
+						<p class="table-header">开发人员</p>
 						<span class="large">607</span>
 					</div>
 					<div class="section-03__top-jobs-col2">
-						<p class="table-header">Architect</p>
+						<p class="table-header">架构师</p>
 						<span class="large">345</span>
 					</div>
 					<div class="section-03__top-jobs-col3">
-						<p class="table-header">DevOps / SRE / SysAdmin</p>
+						<p class="table-header">开发人员/SRE/系统管理员</p>
 						<span class="large">258</span>
 					</div>
 				</div>
 
 				<button class="button-reset section-03__button"
 					data-id="js-hidden-section-trigger-open">
-					See Full List
+					查看完整列表
 					<?php LF_Utils::get_svg( $report_folder . 'arrow-down.svg' ); ?>
 				</button>
 
@@ -314,97 +376,95 @@ $report_folder = 'reports/kccnc-oss-23/'
 									<table class="kccnc-table">
 										<thead>
 											<tr>
-												<th>Attendee Job Function
+												<th>参会者的工作职能情况
 												</th>
-												<th>Total</th>
+												<th>总人数</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td>Architect</td>
+												<td>架构师</td>
 												<td>345</td>
 											</tr>
 											<tr>
-												<td>Business Operations</td>
+												<td>业务运营</td>
 												<td>84</td>
 											</tr>
 											<tr>
-												<td>Developer</td>
+												<td>开发人员后援</td>
 												<td>607</td>
 											</tr>
 											<tr>
-												<td> - Data Scientist</td>
+												<td> - 数据科学家</td>
 												<td>31</td>
 											</tr>
 											<tr>
-												<td> - Full Stack Developer</td>
+												<td> - 全栈开发人员</td>
 												<td>185</td>
 											</tr>
 											<tr>
-												<td> - Machine Learning
-													Specialist</td>
+												<td> - 机器学习专家</td>
 												<td>25</td>
 											</tr>
 											<tr>
-												<td> - Web Developer</td>
+												<td> - 网络开发人员</td>
 												<td>7</td>
 											</tr>
 											<tr>
-												<td> - Mobile Developer</td>
+												<td> - 移动开发人员</td>
 												<td>42</td>
 											</tr>
 											<tr>
-												<td>DevOps / SRE / SysAdmin</td>
+												<td>开发运营/SRE/系统管理员</td>
 												<td>258</td>
 											</tr>
 											<tr>
-												<td>Executive</td>
+												<td>经理</td>
 												<td>149</td>
 											</tr>
 											<tr>
-												<td>IT Operations</td>
+												<td>IT 运营</td>
 												<td>46</td>
 											</tr>
 											<tr>
-												<td> - DevOps</td>
+												<td> - 开发运营</td>
 												<td>9</td>
 											</tr>
 											<tr>
-												<td> - Systems Admin</td>
+												<td> - 系统管理员</td>
 												<td>6</td>
 											</tr>
 											<tr>
-												<td> - Site Reliability Engineer
+												<td> - 网站可靠性工程师
 												</td>
 												<td>2</td>
 											</tr>
 											<tr>
-												<td> - Quality Assurance
-													Engineer</td>
+												<td> - 质量保证工程师</td>
 												<td>2</td>
 											</tr>
 											<tr>
-												<td>Sales / Marketing</td>
+												<td>销售/营销</td>
 												<td>80</td>
 											</tr>
 											<tr>
-												<td>Media / Analyst</td>
+												<td>媒体/分析师</td>
 												<td>60</td>
 											</tr>
 											<tr>
-												<td>Student</td>
+												<td>学生</td>
 												<td>69</td>
 											</tr>
 											<tr>
-												<td>Product Manager</td>
+												<td>产品经理</td>
 												<td>93</td>
 											</tr>
 											<tr>
-												<td>Professor / Academic</td>
+												<td>教授/学者</td>
 												<td>31</td>
 											</tr>
 											<tr>
-												<td>Other</td>
+												<td>其他</td>
 												<td>88</td>
 											</tr>
 										</tbody>
@@ -419,54 +479,54 @@ $report_folder = 'reports/kccnc-oss-23/'
 									<table class="kccnc-table">
 										<thead>
 											<tr>
-												<th>Attendee Industry
+												<th>参会者所在行业
 												</th>
-												<th>Total</th>
+												<th>总人数</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td>Automotive</td>
+												<td>汽车</td>
 												<td>85</td>
 											</tr>
 											<tr>
-												<td>Consumer Goods</td>
+												<td>消费品</td>
 												<td>31</td>
 											</tr>
 											<tr>
-												<td>Energy</td>
+												<td>能源</td>
 												<td>23</td>
 											</tr>
 											<tr>
-												<td>Financials</td>
+												<td>金融</td>
 												<td>104</td>
 											</tr>
 											<tr>
-												<td>Health Care</td>
+												<td>医疗保健</td>
 												<td>26</td>
 											</tr>
 											<tr>
-												<td>Industrials</td>
+												<td>工业</td>
 												<td>46</td>
 											</tr>
 											<tr>
-												<td>Information Technology</td>
+												<td>信息技术</td>
 												<td>1,338</td>
 											</tr>
 											<tr>
-												<td>Materials</td>
+												<td>材料</td>
 												<td>9</td>
 											</tr>
 											<tr>
-												<td>Non-Profit Organization</td>
+												<td>非营利组织</td>
 												<td>64</td>
 											</tr>
 											<tr>
-												<td>Professional Services</td>
+												<td>专业服务</td>
 												<td>110</td>
 											</tr>
 											<tr>
-												<td>Telecommunications</td>
+												<td>电信</td>
 												<td>74</td>
 											</tr>
 										</tbody>
@@ -484,18 +544,18 @@ $report_folder = 'reports/kccnc-oss-23/'
 					style="display: none;"
 					data-id="js-hidden-section-trigger-close">
 					<?php LF_Utils::get_svg( $report_folder . 'arrow-up.svg' ); ?>
-					Close Full List
+					隐藏完整列表
 				</button>
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header">Year On Year registration</p>
+				<p class="sub-header">年度同比注册</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<img loading="lazy" decoding="async" width="1200" height="604" src="
 			<?php LF_Utils::get_svg( $report_folder . 'yoy-growth-chart-cn.svg', true ); ?>
-			" alt="Chart showing year on year attendee growth">
+			" alt="Chart showing year over year attendee growth">
 			</div>
 		</section>
 
@@ -504,7 +564,7 @@ $report_folder = 'reports/kccnc-oss-23/'
 				<table class="kccnc-table growth-table">
 					<thead>
 						<tr>
-							<th>Ticket Type</th>
+							<th>类型</th>
 							<th>2018</th>
 							<th>2019</th>
 							<th>2021</th>
@@ -513,28 +573,28 @@ $report_folder = 'reports/kccnc-oss-23/'
 					</thead>
 					<tbody>
 						<tr>
-							<td>Total</td>
+							<td>总参会人数</td>
 							<td>2,500</td>
 							<td>3,500</td>
 							<td>7,160</td>
 							<td>1,910</td>
 						</tr>
 						<tr>
-							<td class="nowrap">All Access Attendee</td>
+							<td class="nowrap">全场通行票</td>
 							<td>63%</td>
 							<td>46%</td>
 							<td>78%</td>
 							<td>54%</td>
 						</tr>
 						<tr>
-							<td class="nowrap">All Access VIP</td>
+							<td class="nowrap">全场通行贵宾票</td>
 							<td>5%</td>
 							<td>5%</td>
 							<td>N/A</td>
 							<td>3%</td>
 						</tr>
 						<tr>
-							<td class="nowrap">All Access Individual or Academic
+							<td class="nowrap">个人或学术全场通行票
 							</td>
 							<td>5%</td>
 							<td>8%</td>
@@ -542,28 +602,28 @@ $report_folder = 'reports/kccnc-oss-23/'
 							<td>10%</td>
 						</tr>
 						<tr>
-							<td>Speaker</td>
+							<td>演讲者</td>
 							<td>8%</td>
 							<td>9%</td>
 							<td>2%</td>
 							<td>13%</td>
 						</tr>
 						<tr>
-							<td>Sponsor</td>
+							<td>赞助商</td>
 							<td>3%</td>
 							<td>22%</td>
 							<td>5%</td>
 							<td>11%</td>
 						</tr>
 						<tr>
-							<td>Media</td>
+							<td>媒体</td>
 							<td>10%</td>
 							<td>2%</td>
 							<td>&gt;1%</td>
 							<td>2%</td>
 						</tr>
 						<tr>
-							<td>Virtual Keynote</td>
+							<td>主论坛演讲虚拟参与者</td>
 							<td>N/A</td>
 							<td>N/A</td>
 							<td>17%</td>
@@ -581,14 +641,14 @@ $report_folder = 'reports/kccnc-oss-23/'
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Content</h2>
+					<h2 class="section-header">投稿內容</h2>
 					<div class="section-number">2/6</div>
 				</div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
 						<p
-							class="opening-paragraph">With 115 sessions, KubeCon + CloudNativeCon + Open Source Summit China featured a diverse line-up of topics ranging from introductory sessions through technical deep-dives. <a href="https://www.youtube.com/playlist?list=PLj6h78yzYM2OJcjIuAsbbhXAaDrAnuKRB" title="Talks from KubeCon + CloudNativeCon + Open Source Summit China 2023 on YouTube">Talks are available now on our YouTube playlist</a>.</p>
+							class="opening-paragraph">KubeCon + CloudNativeCon + Open Source Summit China 共有 115 场会议，从介绍性会议到技术深入探讨，主题多样。演讲现可在我们的 <a href="https://www.youtube.com/playlist?list=PLj6h78yzYM2OJcjIuAsbbhXAaDrAnuKRB" title="Talks from KubeCon + CloudNativeCon + Open Source Summit China 2023 on YouTube">YouTube 播放列表中找到</a>。</p>
 					</div>
 				</div>
 
@@ -596,45 +656,45 @@ $report_folder = 'reports/kccnc-oss-23/'
 					<table class="kccnc-table">
 						<thead>
 							<tr>
-								<th>Content</th>
-								<th>Total</th>
-								<th><span class="nowrap">In-person</span></th>
-								<th>Virtual</th>
+								<th>投稿內容</th>
+								<th><span class="nowrap">总人数</span></th>
+								<th><span class="nowrap">亲自参会人数</span></th>
+								<th><span class="nowrap">虚拟参会人数</span></th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>CFP submissions</td>
+								<td>议题投稿提交数量</td>
 								<td>589</td>
 								<td></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>CFP acceptance rate</td>
-								<td>17%</td>
+								<td>议题投稿接受率</td>
+								<td>14%</td>
 								<td></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>Keynotes (includes sponsored keynotes)</td>
+								<td>主论坛演讲场数（包括赞助商主题演讲）</td>
 								<td>13</td>
 								<td>13</td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>Breakouts</td>
+								<td>分组会议场数</td>
 								<td>85</td>
 								<td>85</td>
 								<td>0</td>
 							</tr>
 							<tr>
-								<td>Maintainer Track sessions</td>
+								<td>维护者专场场数</td>
 								<td>30</td>
 								<td>26</td>
 								<td>4</td>
 							</tr>
 							<tr>
-								<td>Total sessions (Breakout + Maintainer)</td>
+								<td>会议总场数 (分会和维护者专场)</td>
 								<td>115</td>
 								<td>111</td>
 								<td>4</td>
@@ -646,24 +706,24 @@ $report_folder = 'reports/kccnc-oss-23/'
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<p
-					class="sub-header">Thank you to our KubeCon + CloudNativeCon + Open Source Summit China 2023 co-chairs</p>
+					class="sub-header">感谢 KUBECON + CLOUDNATIVECON + OPEN SOURCE SUMMIT CHINA 2023 联合主席</p>
 
 				<div class="lf-grid chairs">
 					<div class="chairs__col1">
 						<?php LF_Utils::display_responsive_images( 98513, 'full', '200px', 'chairs__image', 'lazy', 'Fog Dong' ); ?>
 						<p>
 <span class="chairs__name">Fog Dong
-</span><span
-	class="chairs__title">Senior Engineer <br/>
-<strong>BentoML</strong></span>
+</span><strong>BentoML</strong><br/>
+<span class="chairs__title">高级工程师</span>
 </p>
 					</div>
 					<div class="chairs__col2">
 						<?php LF_Utils::display_responsive_images( 98514, 'full', '200px', 'chairs__image', 'lazy', 'Kevin Wang' ); ?>
 						<p>
-<span class="chairs__name">Kevin Wang</span><span
-class="chairs__title">Lead of Cloud Native Open Source <br/>
-<strong>Huawei</strong></span></p>
+<span class="chairs__name">Kevin Wang</span>
+<strong>Huawei</strong><br/>
+<span class="chairs__title">王泽峰</span>
+</p>
 					</div>
 
 					<div class="chairs__col3">
@@ -680,25 +740,26 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
-				<h2 class="section-header-small">Content Breakdown</h2>
+				<h2 class="section-header-small">投稿内容细分</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
-						<p>The schedule was curated by conference co-chairs Fog Dong, Senior Engineer, BentoML; and Kevin Wang, Lead of Cloud Native Open Source, Huawei; who led a program committee of 69 experts, including project maintainers and CNCF Ambassadors.
-							<br>
-							<br>
-							Talks are selected by the program committee through a rigorous, non-bias process, where they are randomly assigned submissions to review within their area of expertise. You can read the details in our <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/submission-reviewer-guidelines/">CFP scoring guidelines</a> and specifically about the <a href="https://www.cncf.io/blog/2021/03/08/a-look-inside-the-kubecon-cloudnativecon-schedule-selection-process/">selection process</a>.
-							<br>
-							<br>
-							For KubeCon + CloudNativeCon + Open Source Summit China, 568 submissions were received. Of those, we were able to accept 115 talks with 206 total speakers - an acceptance rate of 17%.</p>
+					<p>会议联合主席 Fog Dong（BentoML 高级工程师）以及华为云原生开源负责人 Kevin Wang（王泽峰）负责会议日程安排，他们领导了一个由 69 名专家组成的项目委员会，其中包括项目维护者和 CNCF 大使。
+					<br>
+					<br>
+					演讲由项目委员会通过严格、无偏见的流程选出，并随机分配提交的材料以供其专业领域内的审查。您可以阅读我们的 <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/submission-reviewer-guidelines/">议题投稿评分指南</a>，特别是有关 <a href="https://www.cncf.io/blog/2021/03/08/a-look-inside-the-kubecon-cloudnativecon-schedule-selection-process/">挑选流程的详细信息</a>。
+					<br>
+					<br>
+					KubeCon + CloudNativeCon + Open Source Summit China 2023 共收到 568 份提交材料。其中，在共 206 名发言者中，我们接受了 115 场演讲，接受率为 14%。
+					</p>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p class="sub-header">Key stats</p>
+				<p class="sub-header">关键数据</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -708,9 +769,8 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 						<div class="icon-box-6">
 							<div class="text">
-								<span class="number">568</span><br />
-								<span class="description">CFP
-									<br>submissions</span>
+								<span class="number">589</span><br />
+								<span class="description">议题投稿提交数量</span>
 							</div>
 						</div>
 					</div>
@@ -719,7 +779,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">206</span><br />
-								<span class="description">Speakers</span>
+								<span class="description">位发言者</span>
 							</div>
 						</div>
 					</div>
@@ -728,8 +788,8 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">24</span><br />
-								<span class="description">End User
-									<br>Talks</span>
+								<span class="description">终端用户发言人数
+									<br>（总计）</span>
 							</div>
 						</div>
 					</div>
@@ -738,8 +798,8 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">160</span><br />
-								<span class="description">Vendor <br>Speakers
-									<br>(Breakouts)</span>
+								<span class="description">供应商发言人数<br>（分组会议）
+									</span>
 							</div>
 						</div>
 					</div>
@@ -748,8 +808,8 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">41</span><br />
-								<span class="description">End User <br>Speakers
-									<br>(Breakouts)</span>
+								<span class="description">终端用户发言人数 <br>（分组会议）
+									</span>
 							</div>
 						</div>
 					</div>
@@ -758,8 +818,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">9.1</span><br />
-								<span class="description">Sched.com Session
-									Rating Out of 10</span>
+								<span class="description">SCHED.COM 会话评分（满分 10 分）</span>
 							</div>
 						</div>
 					</div>
@@ -768,25 +827,21 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
 
-				<p class="sub-header">Captioning Usage Data</p>
+				<p class="sub-header">字幕使用数据</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid section-07__captioning">
 					<div class="section-07__captioning-col1"><span
-							class="large">200</span> Hours using captioning
-						<br>in-person
+							class="large">200</span> 小时使 <br> 用现场字幕
 					</div>
 					<div class="section-07__captioning-col2"><span
-							class="large">214</span> Attendees using <br>in-room
-						captioning</div>
+							class="large">214</span> 参会者在其移动设备上使用室内 AI 字幕</div>
 					<div class="section-07__captioning-col3"><span
-							class="large">356</span> Hours using in-room AI
-						<br>Captioning on mobile
+							class="large">356</span> 在会议室使用移动AI字幕的小时数
 					</div>
 					<div class="section-07__captioning-col4"><span
-							class="large">2</span> Languages captioned:
-						<br>English & Chinese
+							class="large">2</span> 语言：中文和英文
 					</div>
 				</div>
 			</div>
@@ -797,11 +852,11 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 		<section class="section-08 alignfull">
 			<div class="container wrap">
 
-				<h2 class="section-header-small">Speaker Diversity</h2>
+				<h2 class="section-header-small">演讲者多样性</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<p>CNCF enforces guidelines on gender and diversity equality among our speakers, including not accepting all-male panels.</p>
+				<p>CNCF 在演讲者中执行性别和多样化平等准则，包括不接受全男性专题讨论小组。</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -809,32 +864,31 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 					<table class="kccnc-table">
 						<thead>
 							<tr>
-								<th>Speaker Diversity
+								<th>演讲者多样性
 								</th>
-								<th>Overall</th>
-								<th>Percent</th>
+								<th>总人数</th>
+								<th>总百分比</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Women + gender non-conforming
-									(keynotes)</td>
+								<td>女性 + 非常规性别者（主题演讲）</td>
 								<td>5</td>
 								<td>35%</td>
 							</tr>
 							<tr>
-								<td>Men (keynotes)</td>
+								<td>男性（主题演讲）</td>
 								<td>9</td>
 								<td>65%</td>
 							</tr>
 							<tr>
-								<td>Women + gender non-conforming
-									(breakouts)</td>
+								<td>女性 + 非常规性别者（分组会议）</td>
+	
 								<td>40</td>
 								<td>21%</td>
 							</tr>
 							<tr>
-								<td>Men (breakouts)</td>
+								<td>男性（分组会议）</td>
 								<td>153</td>
 								<td>79%</td>
 							</tr>
@@ -844,32 +898,32 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="section-header-small">Dan Kohn Scholarship Fund</h2>
+				<h2 class="section-header-small"> Dan Kohn 奖学金基金</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<p>The Dan Kohn Scholarship Fund provided opportunities to <strong>86</strong> applicants, including diversity, needs-based, maintainers, and speakers, to attend in person.</p>
+				<p>Dan Kohn 奖学金基金为 <strong>86</strong> 名申请人提供了亲自参会的机会，其中包括多元化、基于需求的维护者和演讲者。</p>
 
 				<div class="lf-grid section-08__scholarships">
 					<div class="section-08__scholarships-col1">
 						<p
-							class="table-header">Travel Funding <br>Scholarships</p>
+							class="table-header">出行资助奖学金人数</p>
 						<span class="large">27</span>
 					</div>
 					<div class="section-08__scholarships-col2">
 						<p
-							class="table-header">Registration <br>Scholarships</p>
+							class="table-header">注册奖学金人数</p>
 						<span class="large">39</span>
 					</div>
 					<div class="section-08__scholarships-col3">
-						<p class="table-header">Speaker <br>Scholarships</p>
+						<p class="table-header">演讲者奖学金人数</p>
 						<span class="large">20</span>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<p><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/scholarships/">Apply for a scholarship</a> to join us at KubeCon + CloudNativeCon Europe 2024.</p>
+				<p><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/scholarships/">申请奖学金</a> ，参加我们的 KubeCon + CloudNativeCon Europe 2024。</p>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 			</div>
@@ -881,40 +935,37 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Co-Located <Br />
-						Events</h2>
+					<h2 class="section-header">CNCF主办的同場活动</h2>
 					<div class="section-number">3/6</div>
 				</div>
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
 						<p
-							class="opening-paragraph">Co-located with KubeCon + CloudNativeCon + Open Source Summit China on September 26, CNCF hosted <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/co-located-events/istiocon/">IstioCon</a> - an event dedicated to the leading service mesh in the industry, offering a platform to explore insights drawn from real-world Istio deployments, interactive hands-on activities, and opportunities to connect with maintainers spanning the entire Istio ecosystem.</p>
+							class="opening-paragraph">9 月 26 日，CNCF 与 KubeCon + CloudNativeCon + Open Source Summit China 2023 共同举办了 <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/co-located-events/istiocon/">IstioCon</a> ，这是一场致力于行业领先服务网格的活动，提供了一个平台，从而探索从真实世界 Istio 部署、交互式实践活动中获得的见解，以及与整个 Istio 生态系统的维护者建立联系的机会。</p>
 					</div>
 				</div>
 
 				<div class="lf-grid section-09__colo">
 					<div class="section-09__colo-col1">
-						<p>Alongside, sponsors hosted four co-located events:</p>
+						<p>此外，赞助商还举办了四场同期活动：</p>
 
 						<ul>
-							<li>Cloud Native Open Day, hosted by Alibaba Cloud
+							<li>云原生开放日，阿里云主办
 							</li>
-							<li>GOSIM: Global Open Source Innovation Meetup
+							<li>GOSIM: 全球开源创新交流会
 							</li>
-							<li>ONE Summit Regional Day, hosted by LF Networking
-								and LF Edge</li>
-							<li>OpenJS World, hosted by the OpenJS Foundation
+							<li>ONE 峰会区域服务日，由 LF Networking 和 LF Edge 主办</li>
+							<li>OpenJS World，由 OpenJS 基金会主办
 							</li>
 						</ul>
 					</div>
 					<div class="section-09__colo-col2">
-						<p class="sub-header">Key Stats</p>
+						<p class="sub-header">关键数据</p>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">1</span><br />
-								<span class="description">CNCF-Hosted
-									<br>Co-Lo</span>
+								<span class="description">CNCF主办的同場活动</span>
 							</div>
 						</div>
 					</div>
@@ -923,8 +974,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						<div class="icon-box-6">
 							<div class="text">
 								<span class="number">4</span><br />
-								<span class="description">Sponsor-<br>
-									hosted Co-Los</span>
+								<span class="description">家赞助商主办的同場活动</span>
 							</div>
 						</div>
 					</div>
@@ -940,7 +990,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Diversity + Equity + Inclusion
+					<h2 class="section-header">多样性、公平性和包容性
 					</h2>
 					<div class="section-number">4/6</div>
 				</div>
@@ -948,13 +998,13 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
 						<p
-							class="opening-paragraph">CNCF strives to ensure that everyone who participates in KubeCon + CloudNativeCon feels welcome, regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status.</p>
+							class="opening-paragraph">CNCF 努力确保参加 KubeCon + CloudNativeCon 的每位参会者都感到受欢迎，无论性别、性别认同、性取向、残障、种族、族裔、年龄、宗教或经济状况如何。</p>
 					</div>
 				</div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>Our commitment to cultivating a friendly, welcoming, and inclusive environment extends to the facilities and resources we provide at events. In Shanghai, these included:</p>
+						<p>我们致力于营造一个友好、热情且包容的环境，这也体现在我们为活动提供的设施和资源上。在上海，这些设施和资源包括：</p>
 					</div>
 				</div>
 
@@ -968,7 +1018,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									src="<?php LF_Utils::get_svg( $report_folder . 'icon-mute.svg', true ); ?>"
 									alt="Mute icon">
 							</div>
-							<div class="icon-box-5__text">Quiet Rooms
+							<div class="icon-box-5__text">宁静室
 							</div>
 						</div>
 						<div class="icon-box-5">
@@ -977,7 +1027,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									src="<?php LF_Utils::get_svg( $report_folder . 'icon-mixed-gender.svg', true ); ?>"
 									alt="Mixed gender icon">
 							</div>
-							<div class="icon-box-5__text">All Gender Restrooms
+							<div class="icon-box-5__text">全性别洗手间
 							</div>
 						</div>
 					</div>
@@ -988,8 +1038,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									src="<?php LF_Utils::get_svg( $report_folder . 'icon-pacifier.svg', true ); ?>"
 									alt="Pacifier icon">
 							</div>
-							<div class="icon-box-5__text">Baby Care &amp;
-								<br>Nursing Rooms
+							<div class="icon-box-5__text">婴儿护理 + 哺乳室
 							</div>
 						</div>
 
@@ -999,8 +1048,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									src="<?php LF_Utils::get_svg( $report_folder . 'icon-sticky-note.svg', true ); ?>"
 									alt="Sticky note icon">
 							</div>
-							<div class="icon-box-5__text">Pronoun &
-								<br>Communication Stickers
+							<div class="icon-box-5__text">代词和沟通贴纸
 							</div>
 						</div>
 					</div>
@@ -1011,8 +1059,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									src="<?php LF_Utils::get_svg( $report_folder . 'icon-child-blocks.svg', true ); ?>"
 									alt="Toy blocks icon">
 							</div>
-							<div class="icon-box-5__text">Complimentary
-								<br>Onsite Child Care
+							<div class="icon-box-5__text">免费会议现场托儿服务
 							</div>
 						</div>
 
@@ -1022,8 +1069,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									src="<?php LF_Utils::get_svg( $report_folder . 'icon-closed-captions.svg', true ); ?>"
 									alt="Closed caption icon">
 							</div>
-							<div class="icon-box-5__text">Captioning available
-								<br>for keynote and <br>breakout sessions
+							<div class="icon-box-5__text">主题演讲和分会场次提供字幕服务
 							</div>
 						</div>
 					</div>
@@ -1033,7 +1079,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>As part of our deep commitment to diversity, equity and inclusivity, we also hosted EmpowerUs - a networking break for attendees who identify as women, non-binary individuals, or allies, to have open discussions with fellow attendees about challenges, leadership innovation, and empowerment in our fast-growing ecosystem.</p>
+						<p>作为我们对多样性、公平性和包容性的坚定承诺的一部分，我们还举办了 EmpowerUs 活动 – 这是为身份识别为女性、非二元性别者或同盟者举办的一次交流活动，与其他与会者就我们快速增长的生态系统中的挑战、领导力创新和赋权进行公开讨论。</p>
 					</div>
 				</div>
 
@@ -1045,38 +1091,34 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							<table class="kccnc-table dei__table">
 								<thead>
 									<tr>
-										<th>Diversity, Equity & Inclusivity
-											Events
-											and
-											Mentoring
+										<th>多样性、公平性和包容性活动与指导
 										</th>
-										<th>Total</th>
+										<th>总人数</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Attendees - identifies as a person
-											of color</td>
+										<td>参会者 - 自认为是有色</td>
 										<td>1,077</td>
 									</tr>
 									<tr>
-										<td>Attendees - age 0-19</td>
+										<td>参会者 - 年龄 0-19 岁</td>
 										<td>112</td>
 									</tr>
 									<tr>
-										<td>Travel funding scholarships</td>
+										<td>差旅资助奖学金人数</td>
 										<td>27</td>
 									</tr>
 									<tr>
-										<td>Registration scholarships</td>
+										<td>注册奖学金</td>
 										<td>39</td>
 									</tr>
 									<tr>
-										<td>Speaker scholarships</td>
+										<td>演讲者奖学金</td>
 										<td>20</td>
 									</tr>
 									<tr>
-										<td>EmpowerUs participants</td>
+										<td>EmpowerUs 参与者</td>
 										<td>15</td>
 									</tr>
 								</tbody>
@@ -1085,18 +1127,18 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 					</div>
 
 					<div class="dei__col-2">
-						<p class="sub-header">Gold CHAOSS D&I Event Badge</p>
+						<p class="sub-header">黄金级 CHAOSS D&I 活动徽章</p>
 						<div aria-hidden="true" class="report-spacer-40"></div>
 						<?php LF_Utils::display_responsive_images( 90434, 'full', '320px', 'svg-image badge', 'lazy', 'Gold CHAOSS D&I Event Badge' ); ?>
 						<div aria-hidden="true" class="report-spacer-40"></div>
-						<p>Awarded to events in the open source community that foster healthy D&I practices.</p>
+						<p>授予开源社区中促进健康 D&I 实践的活动</p>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
 				<p
-					class="sub-header has-lines">Our Next Kubecon + CloudNativeCon</p>
+					class="sub-header has-lines">我们的下一次 KubeCon + CloudNativeCon</p>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
@@ -1110,11 +1152,10 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Media & Analyst<br> Coverage</h2>
+					<h2 class="section-header">媒体 + 分析师报道</h2>
 					<div class="section-number">5/6</div>
 				</div>
 
-				<p class="sub-header">Key Stats</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1129,14 +1170,9 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							</div>
 							<div class="text">
 								<span class="number">29</span><br />
-								<span class="description">media & industry
-									analysts <br>in attendance</span>
-								<span class="addendum">25 media attended from
-									leading Chinese technology publications;
-									4 English-speaking media and analysts
-									attended from outside China, representing
-									organizations including InfoQ, Gartner, and
-									The Register</span>
+								<span class="description">位媒体+行业分析师亲临会议现场</span>
+								<span class="addendum">25 家来自中国领先科技刊物的媒体参会。 
+中国以外的 4 家英语媒体和分析师参会，代表组织包括 InfoQ、Gartner、The Register 等。</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1150,12 +1186,8 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							</div>
 							<div class="text">
 								<span class="number">184</span><br />
-								<span class="description">Mentions of <br>the
-									event</span>
-								<span class="addendum">Kubecon
-									+ Cloudnativecon + Open Source Summit was
-									mentioned in English-language media
-									articles, press releases, and blogs</span>
+								<span class="description">活动提及</span>
+								<span class="addendum">KubeCon + CloudNativeCon + Open Source Summit 在英语媒体文章、新闻稿和博客中被提及</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1168,13 +1200,10 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 " alt="Graph up icon">
 							</div>
 							<div class="text">
-								<span class="number">2.5K+</span><br />
-								<span class="description">Event Session
-									<br>YouTube Views</span>
-								<span class="addendum">As of October 25 (one
-									week after uploading), event session videos
-									have garnered more than
-									<strong>2,500</strong> views</span>
+								<span class="number">6.3K+</span><br />
+								<span class="description">活动会议浏览</span>
+								<span class="addendum">截至12月7日，活动会议视频已累积超过 <strong>6,300</strong> 次观看
+									</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1183,7 +1212,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header">Media + Analyst Results</p>
+				<p class="sub-header">媒体 + 分析师结果</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1195,8 +1224,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							<?php LF_Utils::display_responsive_images( 90433, 'full', '200px', 'svg-image', 'lazy', 'Logo' ); ?>
 							<div class="text">
 								<span class="number">145</span><br />
-								<span class="addendum">mentions of CNCF in media
-									articles, press releases, and blogs</span>
+								<span class="addendum">媒体文章、新闻稿和博客中对CNCF的提及</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1207,9 +1235,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							<?php LF_Utils::display_responsive_images( 90436, 'full', '200px', 'svg-image', 'lazy', 'Kubernetes Logo' ); ?>
 							<div class="text">
 								<span class="number">152</span><br />
-								<span class="addendum">mentions of Kubernetes in
-									media articles, press releases, and
-									blogs</span>
+								<span class="addendum">媒体文章、新闻稿和博客中对Kubernetes的提及</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1220,9 +1246,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 							<?php LF_Utils::display_responsive_images( 90435, 'full', '200px', 'svg-image', 'lazy', 'KubeCon + CloudNativeCon Logo' ); ?>
 							<div class="text">
 								<span class="number">184</span><br />
-								<span class="addendum">mentions of KubeCon +
-									CloudNativeCon in media articles, press
-									releases, and blogs</span>
+								<span class="addendum">媒体文章、新闻稿和博客中对KubeCon + CloudNativeCon的提及</span>
 							</div>
 						</div>
 						<!-- End of Icon Box 3 -->
@@ -1231,22 +1255,19 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="sub-header">Chinese Coverage Snapshot</h2>
+				<h2 class="sub-header">中文报道纵览</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>CSDN, this event's marketing promotion and PR partner, provided the following Chinese Coverage Snapshot:</p>
+						<p>CSDN，作为本次活动的市场推广和公关合作伙伴，提供了以下的中文报道快照：</p>
 						<ul>
-							<li>Published a total of 22 posts related to the
-								conference topic </li>
-							<li>Reached more than 60 communities</li>
-							<li>Produced 26 Weibo</li>
-							<li>Received more than 900,000 views across CSDN
-								accounts </li>
-							<li>Received more than 1,145,000 across external
-								media websites</li>
+							<li>发表与会议主题相关的帖子共 22 篇</li>
+							<li>覆盖 60 余个社区</li>
+							<li>制作了 26 条微博</li>
+							<li>CSDN 账号浏览量超过 900,000 万次</li>
+							<li>外部媒体网站浏览量超过 1,145,000 次</li>
 						</ul>
 
 					</div>
@@ -1254,7 +1275,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="sub-header">Coverage Highlights</h2>
+				<h2 class="sub-header">报道亮点</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1282,7 +1303,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<h2 class="sub-header">Industry Analyst Coverage Highlights</h2>
+				<h2 class="sub-header">行业分析师报道亮点</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1315,19 +1336,19 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">Sponsor<br> Information</h2>
+					<h2 class="section-header">赞助商信息</h2>
 					<div class="section-number">6/6</div>
 				</div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>KubeCon + CloudNativeCon + Open Source Summit China would not be possible without the support of our wonderful sponsors. And attendees agree, 81% visited the solutions showcase during the event. </p>
+						<p>KubeCon + CloudNativeCon + Open Source Summit China 的成功举办离不开优秀赞助商的支持。参会者一致认为 – 81% 的人在活动期间参观了解决方案展示会。</p>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<h2 class="sub-header">Overall Event Rating</h2>
+				<h2 class="sub-header">活动总体评价</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1341,9 +1362,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									alt="Growth icon" loading="lazy" decoding="async">
 							</div>
 							<span class="large">#1</span>
-							<span class="text">For career growth,
-								<br>advancement,
-								or training</span>
+							<span class="text">出于职业发展、晋升或培训目的</span>
 						</div>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
@@ -1355,8 +1374,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									alt="Networking icon" loading="lazy" decoding="async">
 							</div>
 							<span class="large">#2</span>
-							<span class="text">For networking + meeting
-								<br>others in the industry</span>
+							<span class="text">进行社交 + 结识行业内其他人士</span>
 						</div>
 
 					</div>
@@ -1369,8 +1387,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									alt="Showcase icon" loading="lazy" decoding="async">
 							</div>
 							<span class="large">81%</span>
-							<span class="text">of attendees visited <br>the
-								sponsor showcase</span>
+							<span class="text">的参会者参观了赞助商展示会</span>
 						</div>
 					</div>
 				</div>
@@ -1381,17 +1398,17 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 					<table class="kccnc-table booth">
 						<thead>
 							<tr>
-								<th>Booth Traffic</th>
-								<th>Total</th>
+								<th>展位客流量</th>
+								<th>总人数</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Onsite leads total</td>
+								<td>现场销售线索总数</td>
 								<td>4,595</td>
 							</tr>
 							<tr>
-								<td>Onsite leads average/booth</td>
+								<td>每个展位现场销售线索平均数</td>
 								<td>287</td>
 							</tr>
 						</tbody>
@@ -1404,7 +1421,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 					<table class="kccnc-table yoy-table">
 						<thead>
 							<tr>
-								<th>YOY SPONSORSHIP
+								<th>年度同比赞助
 									<span>&nbsp;</span></th>
 								<th>2018
 									<span>&nbsp;</span>
@@ -1413,7 +1430,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 									<span>&nbsp;</span>
 								</th>
 								<th>2021
-									<span>Virtual</span>
+									<span class="nowrap">虚拟会议</span>
 								</th>
 								<th>2023
 									<span>&nbsp;</span>
@@ -1422,7 +1439,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Strategic</td>
+								<td>战略级</td>
 								<td>N/A</td>
 								<td>1</td>
 								<td>1</td>
@@ -1430,7 +1447,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 							</tr>
 							<tr>
-								<td class="nowrap">Double Diamond</td>
+								<td class="nowrap">双钻级</td>
 								<td>N/A</td>
 								<td>1</td>
 								<td>N/A</td>
@@ -1438,21 +1455,21 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 							</tr>
 							<tr>
-								<td>Diamond</td>
+								<td>钻石级</td>
 								<td>4</td>
 								<td>2</td>
 								<td>2</td>
 								<td>2</td>
 							</tr>
 							<tr>
-								<td>Platinum</td>
+								<td>铂金级</td>
 								<td>8</td>
 								<td>2</td>
 								<td>0</td>
 								<td>0</td>
 							</tr>
 							<tr>
-								<td>Gold</td>
+								<td>黄金级</td>
 								<td>1</td>
 								<td>10</td>
 								<td>3</td>
@@ -1460,7 +1477,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 							</tr>
 							<tr>
-								<td>Silver</td>
+								<td>白银级</td>
 								<td>12</td>
 								<td>14</td>
 								<td>3</td>
@@ -1468,7 +1485,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 							</tr>
 							<tr>
-								<td class="nowrap">Start-up</td>
+								<td class="nowrap">初创企业</td>
 								<td>13</td>
 								<td>12</td>
 								<td>5</td>
@@ -1476,21 +1493,21 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 							</tr>
 							<tr>
-								<td class="nowrap">End User</td>
+								<td class="nowrap">终端用户</td>
 								<td>N/A</td>
 								<td>0</td>
 								<td>0</td>
 								<td>0</td>
 							</tr>
 							<tr>
-								<td class="nowrap">Marketing Opportunities</td>
+								<td class="nowrap">营销机会</td>
 								<td>4</td>
 								<td>12</td>
 								<td>2</td>
 								<td>1</td>
 							</tr>
 							<tr>
-								<td class="nowrap">Total Unique</td>
+								<td class="nowrap">唯一身份赞助商总数</td>
 								<td>38</td>
 								<td>42</td>
 								<td>14</td>
@@ -1503,7 +1520,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 				<div class="shadow-hr"></div>
 
 				<p class="sub-header"
-					style="margin:auto; text-align:center">Strategic Sponsor</p>
+					style="margin:auto; text-align:center">战略赞助商</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1523,7 +1540,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 				<div aria-hidden="true" class="report-spacer-120"></div>
 
 				<p class="sub-header"
-					style="margin:auto; text-align:center">Diamond Sponsors</p>
+					style="margin:auto; text-align:center">钻石赞助商</p>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
@@ -1562,8 +1579,7 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 				<div class="wp-block-button"><a
 						href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/sponsor-list/"
 						title="See all Sponsors of KubeCon + CloudNativeCon + Open Source Summit China 2023"
-						class="wp-block-button__link">See
-						all Sponsors</a>
+						class="wp-block-button__link">查看所有赞助商</a>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-120"></div>
@@ -1577,21 +1593,21 @@ class="chairs__title">Lead of Cloud Native Open Source <br/>
 
 				<div class="lf-grid thanks">
 					<div class="thanks__col1">
-						<h2 class="section-header">Thank You</h2>
+						<h2 class="section-header">致谢</h2>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
 						<p
-							class="thanks__opening">We hope you enjoyed reflecting on a great event in Shanghai - let's do it again in Paris!</p>
+							class="thanks__opening">我们希望您能够喜欢回顾这一次上海举办的盛事 – 让我们在巴黎再次相聚！</p>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
 						<p
-							class="thanks__comments">Your comments and feedback are welcome at <a href="mailto:events@cncf.io">events@cncf.io</a></p>
+							class="thanks__comments">欢迎您提出意见和反馈，可发送至 <a href="mailto:events@cncf.io">events@cncf.io</a></p>
 
 						<div aria-hidden="true" class="report-spacer-80"></div>
 
-						<p>Check out our <a href="https://community.cncf.io/">calendar for community events near you</a> and don't forget to <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/">register for KubeCon + CloudNativeCon Europe in Paris, 19 - 22 March, 2024</a>.</p>
+						<p>查看我们的<a href="https://community.cncf.io/">社区活动日程表</a>，了解您附近的社区活动，不要忘记注册参加 2024 年 3 月 19 日至 22 日将在巴黎举行的 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/">KubeCon + CloudNativeCon Europe</a>。</p>
 					</div>
 					<div class="thanks__col2">
 
