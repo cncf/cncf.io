@@ -936,8 +936,8 @@ Executive Director, CNCF</p>
 							<div class="sponsors-logo-item"><a
 									href="https://www.intel.com/"
 									title="Go to Intel"
-									rel="noopener" data-feathr-click-track="true"
-									data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+									rel="noopener"
+									><img
 									width="141" height="245"
 										src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/intel-01.svg"
 										class="logo wp-post-image" alt="Intel logo"
@@ -945,8 +945,7 @@ Executive Director, CNCF</p>
 							<div class="sponsors-logo-item"><a
 									href="https://www.google.com/" title="Go to Google"
 									rel="noopener"
-									data-feathr-click-track="true"
-									data-feathr-link-aids="[&quot;5e59d3cf27f56a08159cd952&quot;]"><img
+									><img
 										width="241" height="245"
 										src="https://events.linuxfoundation.org/wp-content/uploads/google-logo-web.svg"
 										class="logo wp-post-image" alt="Google logo"
