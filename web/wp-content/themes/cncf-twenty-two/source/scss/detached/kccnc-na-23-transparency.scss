@@ -1885,8 +1885,14 @@ html {
 
 	.section-14b,
 	.section-14c {
-		.section-tweet {
-			margin-top: 15px;
+		.youtube-grid {
+			margin-top: 25px;
+			&-col1 {
+				grid-column: span 1;
+			}
+			&-col2 {
+				grid-column: span 10;
+			}
 		}
 		&__coverage {
 			&-col1,
