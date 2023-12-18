@@ -2324,11 +2324,12 @@ Executive Director, CNCF</p>
 
 		<div class="quote-with-name-container">
 			<p class="quote-with-name-container__title"><a href="https://www.youtube.com/watch?v=0pFCOCi0D58&t=210s">Insights from KubeCon + CloudNativeCon 2023</a></p>
-			<p class="quote-with-name-container__quote">YouTube video</p>
-			<div class="quote-with-name-container__marks">
-				<p class="quote-with-name-container__name">Paul Nashawaty,Melinda Marks, and Jon Brown</p>
-				<p class="quote-with-name-container__position">ESG</p>
-			</div>
+
+			<section class="section-tweet">
+			<a href="https://www.youtube.com/watch?v=0pFCOCi0D58&t=210s">
+			<?php LF_Utils::display_responsive_images( 99078, 'full', '1200px', null, 'lazy', 'Tweet screenshot' ); ?>
+			</a>
+			</section>
 		</div>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
