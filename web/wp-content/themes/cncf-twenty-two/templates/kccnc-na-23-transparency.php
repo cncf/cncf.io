@@ -2084,7 +2084,7 @@ Executive Director, CNCF</p>
 		<?php LF_Utils::display_responsive_images( 99010, 'full', '600px', 'svg-image logo-grid__image', 'lazy', 'InformationWeek Logo' ); ?>
 	</div>
 	<div class="logo-grid__box">
-		<?php LF_Utils::display_responsive_images( 90423, 'full', '600px', 'svg-image logo-grid__image', 'lazy', 'Lemonde Logo' ); ?>
+		<?php LF_Utils::display_responsive_images( 99091, 'full', '600px', 'svg-image logo-grid__image', 'lazy', 'Lemonde Logo' ); ?>
 	</div>
 	<div class="logo-grid__box">
 		<?php LF_Utils::display_responsive_images( 99011, 'full', '600px', 'svg-image logo-grid__image', 'lazy', 'Protocol Logo' ); ?>
@@ -2102,7 +2102,7 @@ Executive Director, CNCF</p>
 		<?php LF_Utils::display_responsive_images( 90428, 'full', '600px', 'svg-image logo-grid__image', 'lazy', 'TechTarget Logo' ); ?>
 	</div>
 	<div class="logo-grid__box">
-		<?php LF_Utils::display_responsive_images( 90430, 'full', '600px', 'svg-image logo-grid__image', 'lazy', 'TFIR Logo' ); ?>
+		<?php LF_Utils::display_responsive_images( 99090, 'full', '600px', 'logo-grid__image', 'lazy', 'TFIR Logo' ); ?>
 	</div>
 	<div class="logo-grid__box">
 		<?php LF_Utils::display_responsive_images( 99013, 'full', '600px', 'svg-image logo-grid__image', 'lazy', 'The New Stack Logo' ); ?>
