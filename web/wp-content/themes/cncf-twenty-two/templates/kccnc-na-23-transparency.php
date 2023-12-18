@@ -57,6 +57,7 @@ $report_folder = 'reports/kccnc-na-23/'
 								src="<?php LF_Utils::get_svg( $report_folder . 'kccnc-na-logo-23-color.svg', true ); ?>"
 								width="295" height="128"
 								alt="KubeCon + CloudNativeCon North America 2023 Logo"
+								decoding="async"	
 								loading="eager">
 							<h1 class="hero__title uppercase">Transparency
 								<br />Report
@@ -87,7 +88,7 @@ $report_folder = 'reports/kccnc-na-23/'
 					<a href="#attendees"
 						title="Jump to Attendee Overview section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img decoding="async" loading="lazy" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'nav-icon-graph-up.svg', true ); ?>
 " alt="Bar chart icon">Attendee Overview
 				</div>
@@ -95,7 +96,7 @@ $report_folder = 'reports/kccnc-na-23/'
 				<div class="nav-el__box">
 					<a href="#dei" title="Jump to DEI section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img decoding="async" loading="lazy" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'nav-icon-people.svg', true ); ?>
 " alt="People icon">DEI
 				</div>
@@ -103,7 +104,7 @@ $report_folder = 'reports/kccnc-na-23/'
 				<div class="nav-el__box">
 					<a href="#colocated" title="Jump to Co-located Events"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img decoding="async" loading="lazy" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'nav-icon-location.svg', true ); ?>
 " alt="Map pin icon">Co-located Events
 				</div>
@@ -111,7 +112,7 @@ $report_folder = 'reports/kccnc-na-23/'
 				<div class="nav-el__box">
 					<a href="#content" title="Jump to Content section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img decoding="async" loading="lazy" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'nav-icon-movie.svg', true ); ?>
 " alt="Movie icon">
 					Content
@@ -121,7 +122,7 @@ $report_folder = 'reports/kccnc-na-23/'
 					<a href="#sustainability"
 						title="Jump to Sustainability section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img decoding="async" loading="lazy" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'nav-icon-leaf.svg', true ); ?>
 " alt="Leaf icon">
 					Sustainability
@@ -130,7 +131,7 @@ $report_folder = 'reports/kccnc-na-23/'
 				<div class="nav-el__box">
 					<a href="#media" title="Jump to Media Coverage section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36"
+					<img decoding="async" loading="lazy" width="36" height="36"
 						src="<?php LF_Utils::get_svg( $report_folder . 'nav-icon-megaphone.svg', true ); ?>"
 						alt="Megaphone icon">
 					Media Coverage
@@ -166,7 +167,7 @@ Executive Director, CNCF</p>
 					<!-- Icon 1  -->
 					<div class="icon-box-1">
 						<div class="icon">
-							<img loading="lazy" width="52" height="52" src="
+							<img decoding="async" loading="lazy" width="52" height="52" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-badge.svg', true ); ?>
 " alt="Badge icon">
 						</div>
@@ -179,7 +180,7 @@ Executive Director, CNCF</p>
 					<!-- Icon 2  -->
 					<div class="icon-box-1">
 						<div class="icon">
-							<img loading="lazy" width="45" height="40" src="
+							<img decoding="async" loading="lazy" width="45" height="40" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-heart.svg', true ); ?>
 " alt="Heart icon">
 						</div>
@@ -192,7 +193,7 @@ Executive Director, CNCF</p>
 					<!-- Icon 3  -->
 					<div class="icon-box-1">
 						<div class="icon">
-							<img loading="lazy" width="34" height="45" src="
+							<img decoding="async" loading="lazy" width="34" height="45" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-person.svg', true ); ?>
 " alt="People icon">
 						</div>
@@ -206,7 +207,7 @@ Executive Director, CNCF</p>
 					<!-- Icon 4  -->
 					<div class="icon-box-1">
 						<div class="icon">
-							<img loading="lazy" width="45" height="33" src="
+							<img decoding="async" loading="lazy" width="45" height="33" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-megaphone.svg', true ); ?>
 " alt="Megaphone icon">
 						</div>
@@ -377,7 +378,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>
 " alt="USA Flag">
 							</div>
 							<div class="text">
@@ -389,7 +390,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>
 " alt="Canada Flag">
 							</div>
 							<div class="text">
@@ -401,7 +402,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-india.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-india.svg', true ); ?>
 " alt="India Flag">
 							</div>
 							<div class="text">
@@ -416,7 +417,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>
 " alt="USA Flag">
 							</div>
 							<div class="text">
@@ -428,7 +429,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>
 " alt="Canada Flag">
 							</div>
 							<div class="text">
@@ -440,7 +441,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-uk.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-uk.svg', true ); ?>
 " alt="UK Flag">
 							</div>
 							<div class="text">
@@ -457,7 +458,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>
 " alt="USA Flag">
 							</div>
 							<div class="text">
@@ -469,7 +470,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-india.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-india.svg', true ); ?>
 " alt="India Flag">
 							</div>
 							<div class="text">
@@ -481,7 +482,7 @@ Executive Director, CNCF</p>
 						<!-- Icon 2 Start  -->
 						<div class="icon-box-2">
 							<div class="icon">
-								<img loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>
+								<img decoding="async" loading="lazy" width="52" height="52" src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>
 " alt="Canada Flag">
 							</div>
 							<div class="text">
@@ -1016,14 +1017,14 @@ Executive Director, CNCF</p>
 								<p>Men</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'icon-male.svg', true ); ?>"
 									width="60" height="70" alt="Icon Male"
-									loading="lazy">
+									loading="lazy" decoding="async">
 								<h3 class="large">49%</h3>
 							</div>
 							<div class="sub-grid__col2">
 								<p>Women</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'icon-female.svg', true ); ?>"
 									width="60" height="70" alt="Icon Woman"
-									loading="lazy">
+									loading="lazy" decoding="async">
 								<h3 class="large">10%</h3>
 							</div>
 							<div class="sub-grid__col3">
@@ -1031,7 +1032,7 @@ Executive Director, CNCF</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'icon-non-binary.svg', true ); ?>"
 									width="60" height="70"
 									alt="Icon Non-Gender Specific"
-									loading="lazy">
+									decoding="async" loading="lazy">
 								<h3 class="large">1%</h3>
 							</div>
 						</div>
@@ -1047,21 +1048,21 @@ Executive Director, CNCF</p>
 								<p>USA<br>&nbsp;</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-usa.svg', true ); ?>"
 									width="70" height="70" alt="Icon USA"
-									loading="lazy">
+									decoding="async" loading="lazy">
 								<h3 class="large">72%</h3>
 							</div>
 							<div class="sub-grid__col2">
 								<p>Canada<br>&nbsp;</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-canada.svg', true ); ?>"
 									width="70" height="70" alt="Icon Canada"
-									loading="lazy">
+									decoding="async" loading="lazy">
 								<h3 class="large">4%</h3>
 							</div>
 							<div class="sub-grid__col3">
 								<p>United Kingdom<br>&nbsp;</p>
 								<img src="<?php LF_Utils::get_svg( $report_folder . 'flag-uk.svg', true ); ?>"
 									width="70" height="70"
-									alt="Icon United Kingdom" loading="lazy">
+									alt="Icon United Kingdom" decoding="async" loading="lazy">
 								<h3 class="large">2%</h3>
 							</div>
 						</div>
@@ -1356,7 +1357,7 @@ Executive Director, CNCF</p>
 							<!-- Icon Box 3  -->
 							<div class="icon-box-3">
 								<div class="icon">
-									<img loading="lazy" width="60" height="50"
+									<img decoding="async" loading="lazy" width="60" height="50"
 										src="
 										<?php
 										LF_Utils::get_svg( $report_folder . 'icon-inbox.svg', true );
@@ -1373,7 +1374,7 @@ Executive Director, CNCF</p>
 							<!-- Icon Box 3  -->
 							<div class="icon-box-3">
 								<div class="icon">
-									<img loading="lazy" width="37" height="51"
+									<img decoding="async" loading="lazy" width="37" height="51"
 										src="
 										<?php
 										LF_Utils::get_svg( $report_folder . 'icon-mic.svg', true );
@@ -1389,7 +1390,7 @@ Executive Director, CNCF</p>
 							<!-- Icon Box 3  -->
 							<div class="icon-box-3">
 								<div class="icon">
-									<img loading="lazy" width="36" height="48"
+									<img decoding="async" loading="lazy" width="36" height="48"
 										src="
 										<?php
 										LF_Utils::get_svg( $report_folder . 'icon-person-b.svg', true );
@@ -1753,7 +1754,7 @@ Executive Director, CNCF</p>
 			<div class="threecols-col1">
 
 				<div class="icon-box-5">
-					<div class="icon-box-5__icon"><img loading="lazy"
+					<div class="icon-box-5__icon"><img decoding="async" loading="lazy"
 							width="100" height="100"
 							src="<?php LF_Utils::get_svg( $report_folder . 'icon-sanitisation.svg', true ); ?>"
 							alt="Sanitisation icon">
@@ -1766,7 +1767,7 @@ Executive Director, CNCF</p>
 			<div class="threecols-col2">
 
 				<div class="icon-box-5">
-					<div class="icon-box-5__icon"><img loading="lazy"
+					<div class="icon-box-5__icon"><img decoding="async" loading="lazy"
 							width="100" height="100"
 							src="<?php LF_Utils::get_svg( $report_folder . 'icon-health-mask.svg', true ); ?>"
 							alt="Health mask icon">
@@ -1779,7 +1780,7 @@ Executive Director, CNCF</p>
 			<div class="threecols-col3">
 
 				<div class="icon-box-5">
-					<div class="icon-box-5__icon"><img loading="lazy"
+					<div class="icon-box-5__icon"><img decoding="async" loading="lazy"
 							width="100" height="100"
 							src="<?php LF_Utils::get_svg( $report_folder . 'icon-health-band.svg', true ); ?>"
 							alt="Health mask icon">
@@ -1831,7 +1832,7 @@ Executive Director, CNCF</p>
 				<!-- Icon Box 3  -->
 				<div class="icon-box-3">
 					<div class="icon">
-						<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-bell.svg', true ); ?>" alt="Bell icon">
+						<img decoding="async" loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-bell.svg', true ); ?>" alt="Bell icon">
 					</div>
 					<div class="text">
 						<span class="number">5,763</span><br />
@@ -1844,11 +1845,11 @@ Executive Director, CNCF</p>
 				<!-- Icon Box 3  -->
 				<div class="icon-box-3">
 					<div class="icon">
-						<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-graph-b.svg', true ); ?>" alt="Graph icon">
+						<img decoding="async" loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-graph-b.svg', true ); ?>" alt="Graph icon">
 					</div>
 					<div class="text">
 						<span class="number">50%&nbsp;</span>
-						<img loading="lazy" width="40" height="24" src="<?php LF_Utils::get_svg( $report_folder . 'up-arrow.svg', true ); ?>" alt="Up arrow">
+						<img decoding="async" loading="lazy" width="40" height="24" src="<?php LF_Utils::get_svg( $report_folder . 'up-arrow.svg', true ); ?>" alt="Up arrow">
 						<br />
 						<span class="description">Increase from 2022<br/>North America event </span>
 
@@ -1860,7 +1861,7 @@ Executive Director, CNCF</p>
 				<!-- Icon Box 3  -->
 				<div class="icon-box-3">
 					<div class="icon">
-						<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-share-b.svg', true ); ?>" alt="Share icon">
+						<img decoding="async" loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-share-b.svg', true ); ?>" alt="Share icon">
 					</div>
 					<div class="text">
 						<span class="number">461k</span><br />
@@ -1883,7 +1884,7 @@ Executive Director, CNCF</p>
 				<!-- Icon Box 3  -->
 				<div class="icon-box-3">
 					<div class="icon">
-						<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-heart-b.svg', true ); ?>" alt="Heart icon">
+						<img decoding="async" loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-heart-b.svg', true ); ?>" alt="Heart icon">
 					</div>
 					<div class="text">
 						<span class="number">461K+</span><br />
@@ -1897,7 +1898,7 @@ Executive Director, CNCF</p>
 				<!-- Icon Box 3  -->
 				<div class="icon-box-3">
 					<div class="icon">
-						<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-click.svg', true ); ?>" alt="Click icon">
+						<img decoding="async" loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'icon-click.svg', true ); ?>" alt="Click icon">
 					</div>
 					<div class="text">
 						<span class="number">10.5K</span><br />
@@ -1911,7 +1912,7 @@ Executive Director, CNCF</p>
 				<!-- Icon Box 3  -->
 				<div class="icon-box-3">
 					<div class="icon">
-						<img loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'youtube.svg', true ); ?>" alt="Youtube icon">
+						<img decoding="async" loading="lazy" width="64" height="64" src="<?php LF_Utils::get_svg( $report_folder . 'youtube.svg', true ); ?>" alt="Youtube icon">
 					</div>
 					<div class="text">
 						<span class="number">6K+</span><br />
