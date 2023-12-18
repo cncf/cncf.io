@@ -1311,7 +1311,7 @@ Executive Director, CNCF</p>
 		<section class="section-10 alignfull background-image-wrapper">
 
 					<figure class="background-image-figure">
-						<?php LF_Utils::display_responsive_images( 98970, 'full', '1200px', 'section-10__image', 'lazy', 'Woman at a conference' ); ?>
+						<?php LF_Utils::display_responsive_images( 99089, 'full', '1200px', 'section-10__image', 'lazy', 'Woman at a conference' ); ?>
 					</figure>
 
 					<div class="background-image-text-overlay">
@@ -2327,7 +2327,7 @@ Executive Director, CNCF</p>
 
 			<section class="section-tweet">
 			<a href="https://www.youtube.com/watch?v=0pFCOCi0D58&t=210s">
-			<?php LF_Utils::display_responsive_images( 99078, 'full', '1200px', null, 'lazy', 'Tweet screenshot' ); ?>
+			<?php LF_Utils::display_responsive_images( 99078, 'full', '600px', null, 'lazy', 'YouTube video' ); ?>
 			</a>
 			</section>
 		</div>
