@@ -242,7 +242,7 @@ Executive Director, CNCF</p>
 					<div class="wp-block-column is-vertically-aligned-bottom"
 						style="flex-basis:20%">
 						<p
-							class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720312486917/" title="KubeCon + CloudNativeCon North America 2023 Photo Gallery">See more</a></p>
+							class="has-text-align-right is-style-link-cta"><a href="https://www.flickr.com/photos/143247548@N03/albums/72177720312486917/" title="KubeCon + CloudNativeCon North America 2023 Photo Gallery">More Photos</a></p>
 					</div>
 				</div>
 
