@@ -620,7 +620,7 @@ Executive Director, CNCF</p>
 											</tr>
 											<tr>
 												<td>Professor / Academic</td>
-												<td><1%</td>
+												<td>&lt;1%</td>
 											</tr>
 											<tr>
 												<td>Other</td>
@@ -674,7 +674,7 @@ Executive Director, CNCF</p>
 											</tr>
 											<tr>
 												<td>Materials</td>
-												<td><1%</td>
+												<td>&lt;1%</td>
 											</tr>
 											<tr>
 												<td>Non-Profit Organization</td>
@@ -830,8 +830,8 @@ Executive Director, CNCF</p>
 							<td>1%</td>
 							<td>1%</td>
 							<td>1%</td>
-							<td><1%</td>
-							<td><1%</td>
+							<td>&lt;1%</td>
+							<td>&lt;1%</td>
 							<td>1%</td>
 							<td>1%</td>
 						</tr>
@@ -842,7 +842,7 @@ Executive Director, CNCF</p>
 							<td>2%</td>
 							<td>3%</td>
 							<td>N/A</td>
-							<td><1%</td>
+							<td>&lt;1%</td>
 							<td>1%</td>
 							<td>2%</td>
 						</tr>
