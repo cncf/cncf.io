@@ -84,7 +84,7 @@ function add_upcoming_webinars_shortcode( $atts ) {
 			<div style="height:40px" aria-hidden="true"
 					class="wp-block-spacer"></div>
 
-			<p>But new online programs will be scehduled soon. <a href="#newsletter" title="Sign up for newsletter">Sign up for our newsletter to get the latest updated.</p>
+			<p>But new online programs will be scheduled soon. <a href="#newsletter" title="Sign up for newsletter">Sign up for our newsletter</a> to get the latest updates.</p>
 		</div>
 
 		<?php
