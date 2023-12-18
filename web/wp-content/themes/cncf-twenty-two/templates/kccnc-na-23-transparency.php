@@ -1130,6 +1130,13 @@ Executive Director, CNCF</p>
 					<div class="section-10__container">
 
 						<h2 class="section-10__title">Don’t miss out on the opportunity to position your thought-leadership to an engaged audience at the CNCF-hosted co-located events. Secure your sponsorship for CNCF-hosted co-located events in Europe 2024 today!</h2>
+						<div aria-hidden="true" class="report-spacer-40"></div>
+						<div class="wp-block-button"><a
+				href="http://cncf.io/sponsor"
+				title="Secure your sponsorship for CNCF-hosted co-located events"
+				class="wp-block-button__link fit-content">Sponsor</a>
+		</div>
+
 					</div>
 
 					<div aria-hidden="true" class="report-spacer-120"></div>
@@ -2139,31 +2146,31 @@ Executive Director, CNCF</p>
 				<tbody>
 					<tr>
 						<td>The New Stack</td>
-						<td>Meet SIG Cluster Lifecycle and Cluster API Maintainers at KubeConMeet SIG Cluster Lifecycle and Cluster API Maintainers at KubeCon</td>
+						<td><a href="https://thenewstack.io/meet-sig-cluster-lifecycle-and-cluster-api-maintainers-at-kubecon/">Meet SIG Cluster Lifecycle and Cluster API Maintainers at KubeConMeet SIG Cluster Lifecycle and Cluster API Maintainers at KubeCon</a></td>
 					</tr>
 					<tr>
 						<td>The New Stack</td>
-						<td>What Will Be Hot at KubeCon? Platform Engineering, of Course</td>
+						<td><a href="https://thenewstack.io/what-will-be-hot-at-kubecon-platform-engineering-of-course/">What Will Be Hot at KubeCon? Platform Engineering, of Course</a></td>
 					</tr>
 					<tr>
 						<td>Cloud Native Now</td>
-						<td>Cloud-Native AI Workloads: Scalability, Sustainability and Security</td>
+						<td><a href="https://cloudnativenow.com/features/cloud-native-ai-workloads-scalability-sustainability-and-security/">Cloud-Native AI Workloads: Scalability, Sustainability and Security</a></td>
 					</tr>
 					<tr>
 						<td>TechTarget</td>
-						<td>Emergent observability topics at KubeCon 2023</td>
+						<td><a href="https://www.techtarget.com/searchitoperations/opinion/Emergent-observability-topics-at-KubeCon-2023">Emergent observability topics at KubeCon 2023</a></td>
 					</tr>
 					<tr>
 						<td>InfoWorld</td>
-						<td>KubeCon points to the future of enterprise IT</td>
+						<td><a href="https://www.infoworld.com/article/3709930/kubecon-points-to-the-future-of-enterprise-it.html">KubeCon points to the future of enterprise IT</a></td>
 					</tr>
 					<tr>
 						<td>SiliconANGLE</td>
-						<td>The new era of Kubernetes and AI: theCUBE kicks off day 1 at KubeCon</td>
+						<td><a href="https://siliconangle.com/2023/11/07/new-era-kubernetes-ai-thecube-kicks-off-day-1-kubecon-kubeconna/">The new era of Kubernetes and AI: theCUBE kicks off day 1 at KubeCon</a></td>
 					</tr>
 					<tr>
 						<td>Forbes</td>
-						<td>AI Speculation Dominates Cloud Native Conference</td>
+						<td><a href="https://www.forbes.com/sites/justinwarren/2023/11/08/ai-speculation-dominates-cloud-native-conference/">AI Speculation Dominates Cloud Native Conference</a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -2186,55 +2193,55 @@ Executive Director, CNCF</p>
 						<tbody>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>The role of Kubernetes in shaping the cloud and AI landscape: theCUBE’s analysis, KubeCon Day 2 kickoff</td>
+								<td><a href="https://siliconangle.com/2023/11/08/role-kubernetes-shaping-cloud-ai-landscape-thecubes-analysis-kubecon-day-2-kickoff-kubeconna/">The role of Kubernetes in shaping the cloud and AI landscape: theCUBE’s analysis, KubeCon Day 2 kickoff</a></td>
 							</tr>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>KubeCon Day 1 review: Dissecting trends around the changing cloud-native landscape</td>
+								<td><a href="https://siliconangle.com/2023/11/08/kubecon-day-1-review-dissecting-trends-around-changing-cloud-native-landscape/">KubeCon Day 1 review: Dissecting trends around the changing cloud-native landscape</a></td>
 							</tr>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>Ford revs up cloud-native innovation, tackles Kubernetes challenges with Portworx partnership</td>
+								<td><a href="https://siliconangle.com/2023/11/08/ford-revs-cloud-native-innovation-tackles-kubernetes-challenges-portworx-partnership/">Ford revs up cloud-native innovation, tackles Kubernetes challenges with Portworx partnership</a></td>
 							</tr>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>Evolving security solutions in the AI era: No ‘silver bullet’ for cloud-native security</td>
+								<td><a href="https://siliconangle.com/2023/11/08/evolving-security-solutions-ai-era-no-silver-bullet-cloud-native-security-kubeconna/">Evolving security solutions in the AI era: No ‘silver bullet’ for cloud-native security</a></td>
 							</tr>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>Medical research team relies on Kubernetes-based IBM solution for sharing critical data</td>
+								<td><a href="https://siliconangle.com/2023/11/08/medical-research-team-relies-on-kubernetes-based-ibm-solution-for-sharing-critical-data-kubeconna/">Medical research team relies on Kubernetes-based IBM solution for sharing critical data</a></td>
 							</tr>
 							<tr>
 								<td>The Register</td>
-								<td>The Cloud Native Computing Foundation leaps aboard the AI bandwagon</td>
+								<td><a href="https://www.theregister.com/2023/11/08/cncf_ai/">The Cloud Native Computing Foundation leaps aboard the AI bandwagon</a></td>
 							</tr>
 							<tr>
 								<td>The New Stack</td>
-								<td>Don’t Rely on eBPF Alone for Kubernetes</td>
+								<td><a href="https://thenewstack.io/dont-rely-on-ebpf-alone-for-kubernetes/">Don’t Rely on eBPF Alone for Kubernetes</a></td>
 							</tr>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>AI, Kubernetes and more: Decoding trends shaping CNCF’s future</td>
+								<td><a href="https://siliconangle.com/2023/11/09/ai-kubernetes-decoding-trends-shaping-cncfs-future-kubeconna/">AI, Kubernetes and more: Decoding trends shaping CNCF’s future</a></td>
 							</tr>
 							<tr>
 								<td>Forbes</td>
-								<td>The Serious Money Has Arrived At KubeCon</td>
+								<td><a href="https://www.forbes.com/sites/justinwarren/2023/11/10/the-serious-money-has-arrived-at-kubecon/">The Serious Money Has Arrived At KubeCon</a></td>
 							</tr>
 							<tr>
 								<td>Forbes</td>
-								<td>Backstage Project Takes Center Stage At KubeCon North America 2023</td>
+								<td><a href="https://www.forbes.com/sites/janakirammsv/2023/11/14/backstage-project-takes-center-stage-at-kubecon-north-america-2023/?sh=752c70d66539">Backstage Project Takes Center Stage At KubeCon North America 2023</a></td>
 							</tr>
 							<tr>
 								<td>Sliverlinings</td>
-								<td>Industry Voices: Kubernetes reigns — Observations from KubeCon</td>
+								<td><a href="https://www.silverliningsinfo.com/apps-services/industry-voices-kubernetes-reigns-observations-kubecon">Industry Voices: Kubernetes reigns — Observations from KubeCon</a></td>
 							</tr>
 							<tr>
 								<td>InfoWorld</td>
-								<td>Everyone in cloud computing is scurrying to find a genAI strategy</td>
+								<td><a href="https://www.infoworld.com/article/3710450/everyone-in-cloud-computing-is-scurrying-to-find-a-genai-strategy.html">Everyone in cloud computing is scurrying to find a genAI strategy</a></td>
 							</tr>
 							<tr>
 								<td>SiliconANGLE</td>
-								<td>CNCF Deaf and Hard of Hearing Working Group promotes inclusivity in tech by offering a level playing field</td>
+								<td><a href="https://siliconangle.com/2023/11/10/cncf-deaf-and-hard-of-hearing-working-group-promotes-inclusivity-in-tech-by-offering-a-level-playing-field-kubeconna/">CNCF Deaf and Hard of Hearing Working Group promotes inclusivity in tech by offering a level playing field</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -2271,10 +2278,10 @@ Executive Director, CNCF</p>
 			</div>
 		</div>
 
-		<div aria-hidden="true" class="report-spacer-80"></div>
+		<div aria-hidden="true" class="report-spacer-60"></div>
 
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">KubeCon Katchup: Managing Sprawl, Observability, And Cost</p>
+			<p class="quote-with-name-container__title"><a href="https://www.futuriom.com/articles/news/kubecon-katchup-managing-sprawl-observability-and-cost/2023/11">KubeCon Katchup: Managing Sprawl, Observability, And Cost</a></p>
 			<p class="quote-with-name-container__quote">CHICAGO – KubeCon – A few things stuck out here at the KubeCon conference for cloud tech pros. Cloud-native technology has clearly taken the world by storm – but the explosion of cloud native tools, technologies, and gizmos is a bit overwhelming, and we have probably entered a digestion phase.</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">R. Scott Raynovich</p>
@@ -2284,7 +2291,7 @@ Executive Director, CNCF</p>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">Back from #KubeCon in Chicago. My notes</p>
+			<p class="quote-with-name-container__title"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7128785550886465536/">Back from #KubeCon in Chicago. My notes</a></p>
 			<p class="quote-with-name-container__quote">Software supply chain security is big. The CNCF has conducted audits on Argo and Prometheus. Good to hear about the work of the Open Source Security Foundation at KubeCon.</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">Mark O’Neill</p>
@@ -2306,7 +2313,7 @@ Executive Director, CNCF</p>
 			<div class="section-14c__hidden-section-content">
 
 			<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">KubeCon + CloudNativeCon 2023 cloud-native vendor highlights</p>
+			<p class="quote-with-name-container__title"><a href="https://www.techtarget.com/searchitoperations/opinion/KubeCon-CloudNativeCon-2023-cloud-native-vendor-highlights">KubeCon + CloudNativeCon 2023 cloud-native vendor highlights</a></p>
 			<p class="quote-with-name-container__quote">KubeCon + CloudNativeCon North America 2023 attendees were left with a lasting impression of the cloud native innovative advancements for today and in the future. The event served as a hub for new ideas, collaborations, and advancements in cloud native technologies, highlighting the collective dedication to shaping the future of the industry.</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">Paul Nashawaty</p>
@@ -2316,7 +2323,7 @@ Executive Director, CNCF</p>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">Insights from KubeCon + CloudNativeCon 2023</p>
+			<p class="quote-with-name-container__title"><a href="https://www.youtube.com/watch?v=0pFCOCi0D58&t=210s">Insights from KubeCon + CloudNativeCon 2023</a></p>
 			<p class="quote-with-name-container__quote">YouTube video</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">Paul Nashawaty,Melinda Marks, and Jon Brown</p>
@@ -2326,7 +2333,7 @@ Executive Director, CNCF</p>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">Emergent observability topics at KubeCon 2023</p>
+			<p class="quote-with-name-container__title"><a href="https://www.techtarget.com/searchitoperations/opinion/Emergent-observability-topics-at-KubeCon-2023">Emergent observability topics at KubeCon 2023</a></p>
 			<p class="quote-with-name-container__quote">New use cases like cost management, sustainability and scalability will lead observability discussions in the North American KubeCon + CloudNativeCon 2023 conference.</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">Jon Brown</p>
@@ -2336,7 +2343,7 @@ Executive Director, CNCF</p>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">At KubeCon NA 2023, finding cloud independence on the edges of Kubernetes</p>
+			<p class="quote-with-name-container__title"><a href="https://siliconangle.com/2023/11/11/kubecon-na-2023-finding-cloud-independence-edges-kubernetes/">At KubeCon NA 2023, finding cloud independence on the edges of Kubernetes</a></p>
 			<p class="quote-with-name-container__quote">At KubeCon/CloudNativeCon North America 2023 this past week in Chicago, discussion turned from the ubiquity of the software container orchestrator Kubernetes as the heart of cloud native development to addressing a vast ecosystem of projects and vendors, which in turn are enabling applications and data to become more distributed and independent from any particular underlying cloud or on-premises infrastructure.</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">Jason English</p>
@@ -2346,7 +2353,7 @@ Executive Director, CNCF</p>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">eBPF and OpenTelemetry Rule At KubeCon 2023 in Chicago: Observability Is King</p>
+			<p class="quote-with-name-container__title"><a href="https://torstenvolk.medium.com/ebpf-and-opentelemetry-rule-at-kubecon-2023-in-chicago-observability-is-king-596fb44995cc">eBPF and OpenTelemetry Rule At KubeCon 2023 in Chicago: Observability Is King</a></p>
 			<p class="quote-with-name-container__quote">While the Kubernetes platform constituted the overall ‘backdrop’ for KubeCon 2023, OpenTelemetry and eBPF (extended Berkeley Packet Filter) were the most discussed topics of the show. Both technologies aim to standardize, simplify, and automate observability, visibility, and monitoring of cloud native applications across data centers, private clouds, public clouds, and edge locations.</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">Torsten Volk</p>
@@ -2356,7 +2363,7 @@ Executive Director, CNCF</p>
 		<div aria-hidden="true" class="report-spacer-80"></div>
 
 		<div class="quote-with-name-container">
-			<p class="quote-with-name-container__title">Three insights you might have missed from KubeCon + CloudNativeCon NA</p>
+			<p class="quote-with-name-container__title"><a href="https://siliconangle.com/2023/11/13/three-insights-might-missed-kubecon-cloudnativecon-na-kubeconna/">Three insights you might have missed from KubeCon + CloudNativeCon NA</a></p>
 			<p class="quote-with-name-container__quote">CNCF is known for providing open source and bringing this massive developer base into helping things out with the cloud, which they did a really good job [with]. If you look at all the projects that graduated, Kubernetes is right at the top.</p>
 			<div class="quote-with-name-container__marks">
 				<p class="quote-with-name-container__name">Andy Thurai</p>
