@@ -16,6 +16,7 @@ $company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
 $pronouns    = ucwords( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ), $separators = " \t\r\n\f\v\\;/" );
 $gb_role     = get_post_meta( get_the_ID(), 'lf_person_gb_role', true );
 $toc_role    = get_post_meta( get_the_ID(), 'lf_person_toc_role', true );
+$tab_role    = get_post_meta( get_the_ID(), 'lf_person_tab_role', true );
 $linkedin    = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
 $twitter     = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
 $mastodon    = get_post_meta( get_the_ID(), 'lf_person_mastodon', true );
@@ -92,6 +93,12 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 		if ( $toc_role ) :
 			?>
 			<h4 class="person__role">TOC <?php echo esc_html( $toc_role ); ?></h4>
+			<?php
+		endif;
+
+		if ( $tab_role ) :
+			?>
+			<h4 class="person__role"><?php echo esc_html( $tab_role ); ?></h4>
 			<?php
 		endif;
 
