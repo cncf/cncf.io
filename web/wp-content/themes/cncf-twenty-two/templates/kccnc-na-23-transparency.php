@@ -932,7 +932,7 @@ Executive Director, CNCF</p>
 					<div class="col2">
 						<p class="sub-header is-centered">Sponsors</p>
 
-						<div class="sponsors-logos largest odd orphan-by-3 orphan-by-6">
+						<div class="sponsors-logos largest">
 							<div class="sponsors-logo-item"><a
 									href="https://www.intel.com/"
 									title="Go to Intel"
@@ -1496,7 +1496,7 @@ Executive Director, CNCF</p>
 							</tr>
 							<tr>
 								<td>Registration Scholarships</td>
-								<td>1,630</td>
+								<td>815</td>
 							</tr>
 							<tr>
 								<td>Speaker Scholarships</td>
@@ -1517,16 +1517,6 @@ Executive Director, CNCF</p>
 					<a href="https://www.apple.com/jobs/us/" title="Go to apple" 
 					style="-webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);">
 					<img decoding="async" width="400" height="245" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/apple-NEW2-01.svg" class="logo wp-post-image" alt="apple logo" loading="lazy" />
-				</a></div>
-				<div class="sponsors-logo-item">
-					<a href="https://cloud.google.com/" title="Go to Google Cloud" 
-					style="-webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);">
-					<img decoding="async" width="3016" height="626" src="https://events.linuxfoundation.org/wp-content/uploads/2020/06/lockup_GoogleCloud_FullColor_rgb_2900x512px.svg" class="logo wp-post-image" alt="Google Cloud logo" loading="lazy" />
-				</a></div>
-				<div class="sponsors-logo-item">
-					<a href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/overview.html" title="Go to Intel" 
-					style="-webkit-transform: scale(0.6); -ms-transform: scale(0.6); transform: scale(0.6);">
-					<img decoding="async" width="71" height="29" src="https://events.linuxfoundation.org/wp-content/uploads/2020/01/logo-classicblue-72px.svg" class="logo wp-post-image" alt="Intel logo" loading="lazy" />
 				</a></div>
 				<div class="sponsors-logo-item">
 					<a href="https://isovalent.com/" title="Go to Isovalent">
