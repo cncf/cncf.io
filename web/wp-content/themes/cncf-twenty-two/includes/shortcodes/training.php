@@ -23,7 +23,7 @@ function add_training_newsletter_shortcode( $atts ) {
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
 <p>Stay up-to-date on all things Training + Certification by signing up for our mailing list:</p>
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
-	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=4724da06-1f07-4ee1-af9a-2980a803766b]' ); ?>
+	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=d0e38e69-887b-42e6-af9f-923f5c0cf5f3]' ); ?>
 </div>
 	<?php
 	$block_content = ob_get_clean();
