@@ -259,7 +259,7 @@ html {
 		}
 		&__marks {
 			&:before {
-				background-image: url("data:image/svg+xml,%3Csvg width='78' height='56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.76 55.056c12.96-9.36 24.048-23.176 24.048-37.152C33.808 7.536 28.336.48 19.408.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352zm43.2 0c12.96-9.36 24.048-23.176 24.048-37.152C77.008 7.536 71.536.48 62.608.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352z' fill='%23d72190' /%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml,%3Csvg width='78' height='56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.76 55.056c12.96-9.36 24.048-23.176 24.048-37.152C33.808 7.536 28.336.48 19.408.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352zm43.2 0c12.96-9.36 24.048-23.176 24.048-37.152C77.008 7.536 71.536.48 62.608.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352z' fill='%23477076' /%3E%3C/svg%3E");
 			}
 		}
 	}
@@ -862,9 +862,6 @@ html {
 				@media (min-width: 800px) {
 					grid-column: 7 / -1;
 				}
-				@media (min-width: 1000px) {
-					grid-column: 8 / -1;
-				}
 				// orientate icon boxes.
 				display: grid;
 				grid-template-columns: 1fr;
@@ -1042,16 +1039,16 @@ html {
 					grid-column: span 9;
 				}
 				@media (min-width: 1000px) {
-					grid-column: span 6;
+					grid-column: span 8;
 				}
 			}
 			&-col2 {
-				grid-column: span 12;
+				grid-column: span 6;
 				@media (min-width: 800px) {
 					grid-column: 10 / -1;
 				}
 				@media (min-width: 1000px) {
-					grid-column: 8 / -1;
+					grid-column: 9 / -1;
 				}
 			}
 			&-hr {

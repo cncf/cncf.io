@@ -317,25 +317,16 @@ Executive Director, CNCF</p>
 					<div class="section-number">1/6</div>
 				</div>
 
-				<div class="quote-with-name-container">
+				<div class="lf-grid">
 					<p
-						class="quote-with-name-container__quote">The (KubeCon + CloudNativeCon) hallway track conversations are shifting towards adjusting to the enterprise. We had Ford on the show, Mass Mutual, ING and Home Depot. We are seeing all of these big companies that we know and love become software companies right before our eyes.</p>
-					<div class="quote-with-name-container__marks">
-						<p
-							class="quote-with-name-container__name">Lisa Martin</p>
-						<p
-							class="quote-with-name-container__position">SiliconANGLE</p>
-					</div>
+						class="opening-paragraph restrictive-10-col">CNCF is the open source software foundation dedicated to making cloud native computing ubiquitous. Since we were founded in 2015, we’ve pioneered <strong>cloud native technologies</strong> – hosting and growing some of the world’s <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit#slide=id.g39c264972c_182_212">most successful</a> open source projects including Kubernetes, Prometheus, Envoy, ContainerD, and <a href="https://www.cncf.io/projects/">many others</a>.</p>
 				</div>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>CNCF is an open source software foundation dedicated to making cloud native computing ubiquitous. Since we were founded in 2015, we've pioneered cloud native technologies - <a href="https://docs.google.com/presentation/d/1UGewu4MMYZobunfKr5sOGXsspcLOH_5XeCLyOHKh9LU/edit?usp=sharing" title="See a CNCF overview">hosting and growing some of the world's most successful open source projects</a> including Kubernetes, Prometheus, Envoy, ContainerD, and <a href="https://www.cncf.io/projects/" title="See all Graduated & Incubating Projects">many others</a>.<br><br>Today we are a powerhouse for visionary projects and people, hosting <strong>157 projects</strong> with over <strong>178,000 contributors</strong> representing <strong>189 countries</strong>, and there are no signs of this growth slowing down.</p>
+					<div class="restrictive-10-col">
+						<p>Today we are the powerhouse for visionary projects and people, hosting <strong>173 projects</strong>, driven by more than <strong>220,000 contributors</strong> representing <strong>190 countries</strong>, and there are no signs of this momentum slowing down.</p>
 					</div>
 				</div>
-
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<div class="lf-grid section-03__intro">
@@ -348,12 +339,6 @@ Executive Director, CNCF</p>
 <?php LF_Utils::get_svg( $report_folder . 'contributors-chart.svg', true ); ?>
 " alt="Chart showing upward trend of Contributors growth">
 
-						<div class="legend-wrapper">
-							<div class="legend-item">
-								<div class="legend-box"></div>Contributors
-							</div>
-						</div>
-
 					</div>
 					<div class="section-03__intro-col2">
 						<p
@@ -364,21 +349,6 @@ Executive Director, CNCF</p>
 <?php LF_Utils::get_svg( $report_folder . 'member-end-user-project-growth.svg', true ); ?>
 " alt="Chart showing upward trend of Members, End User and Project growth">
 
-						<div class="legend-wrapper">
-							<div class="legend-item">
-								<div class="legend-box"></div>Members
-							</div>
-							<div class="legend-item">
-								<div class="legend-box"
-									style="background-color: #d72190;"></div>End
-								Users
-							</div>
-							<div class="legend-item">
-								<div class="legend-box"
-									style="background-color: #87dfcf;"></div>
-								Projects
-							</div>
-						</div>
 					</div>
 
 				</div>
@@ -395,155 +365,66 @@ Executive Director, CNCF</p>
 
 				<div class="lf-grid section-04__membership">
 					<div class="section-04__membership-col1">
-						<p>The CNCF ecosystem continues to grow across vendor and end user memberships, making CNCF one of the most successful open source foundations ever. In fact, we welcomed more than 220 new members to CNCF this year.<br><br>Today, CNCF has over 850 participating organizations, including the world's largest public and private cloud companies, along with the world's most innovative software companies and end user organizations. Investment from these leading organizations signifies a strong dedication to the advancement and sustainability of cloud native computing for years to come.</p>
+						<p>The CNCF is supported by <strong>827 participating organizations</strong>, including the world’s largest public and private cloud companies, along with the innovative software companies and end user organizations. Despite the market slowdown, which saw industry mergers and acquisitions deals drop, on average, by 27.4% compared to 2022, CNCF has remained consistent in not only attracting new investment, but in retaining long-term relationships with key industry players. Investment from these leading organizations signifies a strong dedication to the advancement and sustainability of cloud native computing for years to come. </p>
 					</div>
 					<div class="section-04__membership-col2">
 
-						<div class="icon-box-1">
-							<div class="icon">
-								<img loading="lazy" width="74" height="43" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-members.svg', true ); ?>
-" alt="Members icon">
-							</div>
-							<div class="text">
-								<span>220+ new members</span><br />
-								19 new members from China
-							</div>
-						</div>
-
-						<div class="icon-box-1">
-							<div class="icon">
-								<img loading="lazy" width="51" height="64" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-building.svg', true ); ?>
-" alt="Building icon">
-							</div>
-							<div class="text">
-								<span>853 member <br>organizations</span><br />
-								15% growth from 2021
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</section>
-
-		<section class="section-05 alignfull">
-
-			<div class="container wrap">
-
-				<div aria-hidden="true" class="report-spacer-120"></div>
-
-				<p class="sub-header">CNCF Membership Growth</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid section-05__growth">
-					<div class="section-05__growth-col1">
-						<img loading="lazy" width="800" height="480" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'CNCF-Membership-Growth.svg', true );
-?>
-" alt="Chart showing CNCF Membership growth with a rising trend line.">
-					</div>
-					<div class="section-05__growth-col2">
-						<div class="section-05__growth-key">
-							<img loading="lazy" width="255" height="57" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'CNCF-Membership-Growth-increase.svg', true );
-?>
-" class="section-05__growth-key-image"
-								alt="A 15% increase of membership growth compared to 2021">
-
-							<div class="thin-hr section-05__growth-key-hr">
-							</div>
-
-							<p
-								class="section-05__growth-key-text">Organizations that sell cloud native technologies built on, or integrated with, CNCF projects are eligible to join as general members.</p>
-
-							<div class="wp-block-button"><a
-									href="https://cncf.io/about/join/" title="Become a CNCF
-Member" class="wp-block-button__link">Become a CNCF
-									Member</a>
-							</div>
-
-						</div>
+						<img loading="lazy" width="452" height="227" src="
+	<?php LF_Utils::get_svg( $report_folder . 'new_members.svg', true ); ?>
+	" alt="Members icon">
 
 					</div>
 				</div>
-
-				<div aria-hidden="true" class="report-spacer-120"></div>
 
 			</div>
 		</section>
 
 		<section class="section-06">
 
-			<p class="sub-header">Member Movers and Shakers</p>
-
-			<div aria-hidden="true" class="report-spacer-60"></div>
-
 			<div class="lf-grid section-06__members">
 				<div class="section-06__members-col1">
-					<p class="sub-header has-purple-text">New Gold Members</p>
+					<p class="sub-header ">New Gold Members</p>
 					<div aria-hidden="true" class="report-spacer-60"></div>
 					<div class="logo-grid smaller">
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="212" height="50" src="
+							<img loading="lazy" width="169" height="54" src="
 <?php
-LF_Utils::get_svg( $report_folder . 'member-logo-cecloud.svg', true );
+LF_Utils::get_svg( $report_folder . 'daocloud_logo.svg', true );
 ?>
-" alt="Cecloud Logo" class="logo-grid__image">
+" alt="DaoCloud Logo" class="logo-grid__image">
 						</div>
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="212" height="30" src="
+							<img loading="lazy" width="77" height="77" src="
 <?php
-LF_Utils::get_svg( $report_folder . 'member-logo-china-telecom.svg', true );
+LF_Utils::get_svg( $report_folder . 'ey_logo_2019.svg', true );
 ?>
-" alt="China Telecom Logo" class="logo-grid__image">
+" alt="EY Logo" class="logo-grid__image">
 						</div>
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="212" height="38" src="
+							<img loading="lazy" width="138" height="23" src="
 <?php
-LF_Utils::get_svg( $report_folder . 'member-logo-coinbase.svg', true );
+LF_Utils::get_svg( $report_folder . 'hitachi_logo.svg', true );
 ?>
-" alt="Coinbase Logo" class="logo-grid__image">
+" alt="Hitachi Logo" class="logo-grid__image">
 						</div>
-
-						<div class="logo-grid__box">
-							<img loading="lazy" width="210" height="50" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'member-logo-oppo.svg', true );
-?>
-" alt="Oppo Logo" class="logo-grid__image">
-						</div>
-
-						<div class="logo-grid__box">
-							<img loading="lazy" width="212" height="64" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'member-logo-isoftstone.svg', true );
-?>
-" alt="iSoftStone Logo" class="logo-grid__image">
-						</div>
-
 					</div>
 				</div>
 				<div class="section-06__members-col2">
 					<p
-						class="sub-header has-purple-text">New Platinum Members</p>
+						class="sub-header ">New Platinum Members</p>
 					<div aria-hidden="true" class="report-spacer-60"></div>
 
 					<div class="logo-grid">
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="290" height="66" src="
+							<img loading="lazy" width="133" height="24" src="
 <?php
-LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
+LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 ?>
-" alt="Boeing Logo" class="logo-grid__image">
+" alt="HCLTech Logo" class="logo-grid__image">
 						</div>
 
 					</div>
@@ -552,36 +433,13 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 			</div>
 
-		</section>
+			<div aria-hidden="true" class="report-spacer-100"></div>
+			<a href="https://www.cncf.io/about/join/">
+			<?php LF_Utils::display_responsive_images( 99538, 'full', '1200px', '', 'lazy', 'Join as CNCF Member' ); ?>
+			</a>
 
-		<section class="section-07 alignfull background-image-wrapper">
+			<div aria-hidden="true" class="report-spacer-60"></div>
 
-			<figure class="background-image-figure">
-				<?php
-				LF_Utils::display_responsive_images( 82112, 'full', '1200px', null, 'lazy', 'Audience at KubeCon + CloudNativeCon North America 2023' );
-				?>
-			</figure>
-
-			<div class="background-image-text-overlay">
-				<div class="container wrap">
-
-					<div aria-hidden="true" class="report-spacer-120"></div>
-
-					<div class="quote-with-name-container">
-						<p
-							class="quote-with-name-container__quote">The cloud native ecosystem is getting bigger and better; end users' trust in open source is steering it forward!</p>
-						<div class="quote-with-name-container__marks">
-							<p
-								class="quote-with-name-container__name">Aparna Subramanian</p>
-							<p
-								class="quote-with-name-container__position">Director of Production Engineering, Shopify</p>
-						</div>
-					</div>
-
-					<div aria-hidden="true" class="report-spacer-120"></div>
-
-				</div>
-			</div>
 		</section>
 
 		<section class="section-08">
@@ -590,194 +448,73 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 			<div aria-hidden="true" class="report-spacer-60"></div>
 
-			<div class="lf-grid section-08__grid">
-				<div class="section-08__grid-col1">
-					<p>End Users within the Cloud Native Computing Foundation (CNCF) are member companies that use cloud native technologies internally, do not sell any cloud native services externally, and aren't vendors, consultancies, training partners, or telecommunications companies.<br><br>Individuals within end user companies are passionate about solving problems using cloud native architectures and providing teams with self-service solutions which create a more inclusive, iterative process.</p>
-				</div>
-				<div class="section-08__grid-col2">
-
-					<div class="icon-box-1">
-						<div class="icon">
-							<img loading="lazy" width="53" height="54" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-like.svg', true ); ?>
-" alt="Like icon">
-						</div>
-						<div class="text">
-							<span>100%</span><br />
-							would recommend CNCF to other companies (<a href="https://github.com/cncf/surveys/tree/main/enduser/2023" title="See End User Sruvey results">
-								2023 End
-								User survey
-							</a>)
-						</div>
-					</div>
-
-					<div class="icon-box-1">
-						<div class="icon">
-							<img loading="lazy" width="74" height="43" src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-members.svg', true ); ?>
-" alt="Members icon">
-						</div>
-						<div class="text">
-							<span>170</span><br />
-							End User Members
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<div aria-hidden="true" class="report-spacer-120"></div>
-
-			<picture>
-				<source media="(max-width: 599px)"
-					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82815', 'full', false ) ); ?>">
-				<source media="(min-width: 600px)"
-					srcset="<?php echo esc_url( wp_get_attachment_image_url( '82814', 'full', false ) ); ?>">
-				<?php
-				LF_Utils::display_responsive_images(
-					'82814',
-					'full',
-					'1200px',
-					null,
-					'lazy',
-					'We were thrilled to grant Intuit our Top End User Award this year in recognition of their notable contributions to the cloud native ecosystem.'
-				);
-				?>
-			</picture>
-
-			<div aria-hidden="true" class="report-spacer-100"></div>
-
 			<div class="quote-with-name-container">
 				<p
-					class="quote-with-name-container__quote">CNCF has become an embodiment of the <strong>spirit of open source, the spirit of freedom</strong> and choice, and at the same time has become synonymous with <strong>high quality cloud software</strong>. Every time we have requirements to build software for our Cloud Infrastructure, <strong>the first thing we do is go to the CNCF landscape</strong> and evaluate the choices available.</p>
+					class="quote-with-name-container__quote">The essence of this community is more than technology adoption; it's about developing a culture of continuous learning, sharing, and improvement. The passion with which they engage with cloud-native tools and practices is instrumental in pushing the boundaries, setting new industry benchmarks, and driving the CNCF's mission forward. Through active participation, they contribute significantly to a vibrant, collaborative ecosystem that embodies the ethos of the Cloud Native Computing Foundation.</p>
 				<div class="quote-with-name-container__marks">
-					<p class="quote-with-name-container__name">Madhu CS</p>
-					<p class="quote-with-name-container__position">Robinhood</p>
+					<p class="quote-with-name-container__name">Taylor Dolezal</p>
+					<p class="quote-with-name-container__position">Head of Ecosystem, CNCF</p>
 				</div>
 			</div>
+
+			<div aria-hidden="true" class="report-spacer-80"></div>
+			<?php LF_Utils::display_responsive_images( 99539, 'full', '1200px', '', 'lazy', 'Panelists on stage at a conference' ); ?>
+			<div aria-hidden="true" class="report-spacer-60"></div>
+
+
+			<div class="lf-grid">
+				<div class="restrictive-10-col">
+					<p>The CNCF End User community is a group of innovative, forward-thinking organizations that constantly push the boundaries of cloud native technology. These organizations use cloud native architectures to power their operations and are not limited to the cloud native service industry. They are different from vendors, consultancies, training partners, or telecommunications companies because their primary goal is to <strong>harness the power of cloud native</strong> architectures to <strong>solve real-world problems</strong> rather than to sell cloud native services externally.</p>
+					<p>The people leading these efforts within the end user companies are tech-savvy and cloud native enthusiasts. They face challenges and opportunities presented by cloud native architectures with great enthusiasm and devise self-service solutions that promote inclusivity and an iterative process. This culture of self-service empowers teams, catalyzes innovation, and accelerates the iterative feedback loop, which is essential for agile and resilient operations.</p>
+				</div>
+			</div>
+
+
 		</section>
 
 		<section class="section-09 alignfull">
 
 			<div class="container wrap">
 
-				<div aria-hidden="true" class="report-spacer-120"></div>
+				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p class="sub-header">CTO Summit</p>
+				<p class="sub-header">END USER TAB</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid section-09__cto">
 					<div class="section-09__cto-col1">
-						<p>As teams adopt cloud native strategies, it's clear that there is no "one size fits all" solution to the challenges organizations face. That's why, in 2023, CNCF launched the CTO Summit. This Chatham House-governed summit convenes CTOs from end user enterprises to discuss how organizations can leverage people, processes, and technologies to improve resiliency in cloud native computing.</p>
+						<p>The creation of the <strong>CNCF End User Technical Advisory Board</strong> (TAB) in 2023 was a significant milestone emphasizing the importance of <strong>collaboration</strong> and putting users at the center of the <strong>CNCF ecosystem</strong>. The End User TAB aims to amplify the voice and insights of the End User community by keeping them at the forefront of CNCF's activities. This approach will enable a responsive and inclusive environment that prioritizes the needs of end users and, in turn, will help to create a dynamic and thriving ecosystem.</p>
+						<p><strong>The key responsibilities of the End User TAB include:</strong></p>
 
-						<div aria-hidden="true" class="report-spacer-40"></div>
-
-						<div class="quote-with-name-container">
-							<p
-								class="quote-with-name-container__quote">We've started this CTO Summit where end users, like Boeing, Fidelity, Intuit, and many others can come together and have a private conversation about how they are handling technical challenges in their organizations. Often the most impactful lessons come from our peers.</p>
-							<div class="quote-with-name-container__marks">
-								<p
-									class="quote-with-name-container__name">Priyanka Sharma</p>
-								<p
-									class="quote-with-name-container__position">Executive Director, CNCF</p>
-							</div>
-
-						</div>
+						<ul>
+							<li>Offering feedback on project usability, reliability, and performance.</li>
+							<li>Reviewing and authorizing the publication of reference architectures for cloud native technologies.</li>
+							<li>Providing End User input to the Governing Board and Technical Oversight Committee.</li>
+							<li>Elevating visibility around end user adoption of CNCF projects.</li>
+						</ul>
 					</div>
-
 					<div class="section-09__cto-col2">
-
-						<a href="https://www.cncf.io/reports/cto-summit-eu-2023/"
-							title="Read the CTO Summit report">
-							<?php
-							LF_Utils::display_responsive_images(
-								'78054',
-								'large',
-								'500px',
-								'ds',
-								'lazy',
-								'CTO Summit Report - KubeCon + CloudNativeCon Europe 2023'
-							);
-							?>
-						</a>
-
-						<div aria-hidden="true" class="report-spacer-40">
-						</div>
-
-						<div class="wp-block-button"><a
-								href="https://www.cncf.io/reports/cto-summit-eu-2023/"
-								title="Read the CTO Summit report"
-								class="wp-block-button__link fit-content">View
-								Report</a>
-						</div>
-
-						<div class="thin-hr section-09__cto-hr"></div>
-
-						<p><strong>Coming January 2023</strong><br>KubeCon + CloudNativeCon North America <br>CTO Summit Report</p>
-
+						<?php
+						LF_Utils::display_responsive_images(
+							'99540',
+							'large',
+							'500px',
+							'',
+							'lazy',
+							'Cartoon characters giving thumbs up'
+						);
+						?>
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-120"></div>
+				<div aria-hidden="true" class="report-spacer-80"></div>
 
 			</div>
 		</section>
 
 		<section class="section-10">
 
-			<p class="sub-header">The new CNCF.io</p>
-
-			<div aria-hidden="true" class="report-spacer-60"></div>
-
-			<div class="lf-grid">
-				<div class="restrictive-9-col">
-					<p>In May we launched the redesigned and rebuilt <a href="https://www.cncf.io">CNCF.io</a>. The site increases focus on representing the community in more effective, vibrant, and interactive ways. It provides additional areas to share CNCF and End User content, events, news, and blog articles. It also features improved UX and navigation, thanks to the dynamic mega menu and simplified navigation throughout. Importantly, we're doubling down on accessibility - following the <a href="https://www.cncf.io/accessibility-statement/">Web Content Accessibility Guidelines (WCAG) 2.1</a> and aiming for Level AA accessibility on CNCF.io. Throughout the year we rolled out the new design to CNCF subsites, including <a href="https://contribute.cncf.io">Contributors</a>, as well as applying WCAG guidelines to all of our sites. </p>
-				</div>
-			</div>
-
-			<div aria-hidden="true" class="report-spacer-60"></div>
-
-			<div class="lf-grid">
-				<div class="restrictive-9-col">
-					<?php
-					LF_Utils::display_responsive_images( 82217, 'full', '920px', null, 'lazy', 'The CNCF.io website on various websites' );
-					?>
-				</div>
-			</div>
-
-			<div class="shadow-hr"></div>
-
-			<p class="sub-header">Humans Of Cloud Native</p>
-
-			<div aria-hidden="true" class="report-spacer-60"></div>
-
-			<div class="lf-grid">
-				<div class="restrictive-9-col">
-					<p>At the heart of CNCF is our welcoming community of doers, working together to make cloud native ubiquitous. This year we launched the <a href="https://www.cncf.io/humans-of-cloud-native/" title="View Humans of Cloud Native">Humans of Cloud Native</a> project to tell the stories of amazing individuals and their contributions that make team cloud native such a vibrant, exciting and diverse space.</p>
-				</div>
-			</div>
-
-			<div aria-hidden="true" class="report-spacer-60"></div>
-
-			<div class="banner">
-				<?php
-				LF_Utils::display_responsive_images( 82169, 'full', '800px', 'banner__image', 'lazy', 'Attendees at KubeCon + CloudNativeCon North America 2023' );
-				?>
-				<div class="banner__title-wrapper">
-					<h2 class="banner__title">Join our amazing set of humans!
-					</h2>
-				</div>
-				<div class="banner__text-wrapper">
-					<p class="banner__text">Do you know somebody doing
-						incredible things in the cloud native ecosystem?<br><br>
-						<strong>Nominate them for the Humans of Cloud Native</strong></p>
-					<div class="wp-block-button"><a href="mailto:humans@cncf.io"
-							title="Send an email your nomination"
-							class="wp-block-button__link fit-content">Nominate</a>
-					</div>
-				</div>
-			</div>
 		</section>
 
 		<section id="events"
