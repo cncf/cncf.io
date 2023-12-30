@@ -165,13 +165,13 @@ LF_Utils::get_svg( $report_folder . 'icon-relationship.svg', true );
 			<div class="lf-grid section-01__grid">
 				<div class="section-01__grid-col1">
 
-					<p><strong>When I look back on 2022, it's with a deep sense of pride for what we have overcome and achieved together. Despite the collective challenges we've faced, and continue to tackle, the cloud native ecosystem has soared. We've welcomed new industries, projects, and swelled our community to 7.1 million cloud native developers, surpassing the population of Denmark!</strong></p>
+					<p><strong>This year was a game changer for cloud native. Six years ago at KubeCon + CloudNativeCon Berlin OpenAI gave a talk titled <a href="https://www.youtube.com/watch?v=v4N3Krzb8Eg">Building the Infrastructure that Powers the Future of AI – the future is now</a>. Today, cloud native is providing the infrastructure for the AI movement, and it was particularly exciting for me to watch Adobe’s Joseph Sandoval lead a panel discussion during my <a href="https://www.youtube.com/watch?v=NcLAVtQ5H4A">KubeCon + CloudNativeCon North America keynote</a>, discussing how we can ensure cloud native supports AI’s rapid growth, and how we can do this whilst developing a more sustainable, safe ecosystem.</strong></p>
 
-					<p>Cloud native has crossed the chasm and more organizations than ever before are becoming software companies. This was reflected at our KubeCon + CloudNativeCon events, where businesses like Mercedes Benz and Boeing headlined keynotes alongside well-known tech brands.</p>
+					<p>As Adobe exemplifies, end users are pivotal to the cloud native movement. This is why CNCF launched the End User Technical Advisory Board, which is instrumental in illuminating the path for adopting and operationalizing CNCF projects. Through their development and approval of reference architectures and showcasing of end user workflow patterns, the TAB provides critical clarity and guidance. These efforts support current use cases and lay the groundwork for a dynamic and thriving ecosystem that evolves with the changing landscape of cloud native technologies.</p>
 
-					<p>Of course, none of this would be possible without our truly global, welcoming community of doers - #TeamCloudNative. I want to personally thank each and every one of you, all 178,000, for your commitment and contributions, no matter how big or small, we're on this journey together.</p>
+					<p>CNCF’s Technical Advisory Groups continued to drive the evolution of impactful cloud native initiatives, from the maturity of platform engineering, to sustainability. On sustainability, it was amazing to see #TeamCloudNative gather throughout the world for the first Cloud Native Sustainability Week. Kudos to <a href="https://tag-env-sustainability.cncf.io/">TAG Environmental Sustainability</a> for your hard work.</p>
 
-					<p>I hope you enjoy reading about our milestones and reflecting back on the impressive progress we've achieved together this year.</p>
+					<p>Congratulations to you, #TeamCloudNative, on another stellar year. Wishing you all very happy holidays, and I’m looking forward to seeing what we will achieve in 2024.</p>
 
 					<div class="section-01__author">
 						<?php LF_Utils::display_responsive_images( 82008, 'full', '75px', null, 'lazy', 'Priyanka Sharma' ); ?>
@@ -190,7 +190,7 @@ Executive Director, CNCF</p>
 " alt="Projects icon">
 						</div>
 						<div class="text">
-							<span>157 Projects</span><br />
+							<span>173 Projects</span><br />
 							Driving worldwide <br>transformation
 						</div>
 					</div>
@@ -203,7 +203,7 @@ Executive Director, CNCF</p>
 " alt="Members icon">
 						</div>
 						<div class="text">
-							<span>853 Members</span><br />
+							<span>827 Members</span><br />
 							Across 6 continents
 						</div>
 					</div>
@@ -216,7 +216,7 @@ Executive Director, CNCF</p>
 " alt="Chapter icon">
 						</div>
 						<div class="text">
-							<span>178K Contributors</span><br />
+							<span>220K+ Contributors</span><br />
 							Fundamentally changing <br>computing
 						</div>
 					</div>
@@ -225,6 +225,14 @@ Executive Director, CNCF</p>
 			</div>
 		</section>
 
+		<!-- Tweet -->
+		<section class="section-tweet">
+			<a href="https://twitter.com/furrier/status/1722279020765872363?s=20">
+			<?php LF_Utils::display_responsive_images( 99526, 'full', '1200px', null, 'lazy', 'Tweet screenshot' ); ?>
+			</a>
+		</section>
+
+
 		<!-- Photo Highlights  -->
 		<section class="section-02">
 
@@ -232,7 +240,7 @@ Executive Director, CNCF</p>
 				<div class="wp-block-columns are-vertically-aligned-centered">
 					<div class="wp-block-column is-vertically-aligned-centered"
 						style="flex-basis:80%">
-						<h3 class="sub-header">2022 Photo Highlights</h3>
+						<h3 class="sub-header">2023 Photo Highlights</h3>
 					</div>
 					<div class="wp-block-column is-vertically-aligned-bottom"
 						style="flex-basis:20%">
@@ -243,70 +251,34 @@ Executive Director, CNCF</p>
 
 				<div class="section-02__slider">
 					<div>
-						<?php LF_Utils::display_responsive_images( 82129, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99515, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82130, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99516, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82131, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99517, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82132, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99518, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82133, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99519, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82134, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99520, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82135, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99521, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82136, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99522, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82137, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99523, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2023' ); ?>
 					</div>
 					<div>
-						<?php LF_Utils::display_responsive_images( 82138, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82139, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82140, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82141, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82142, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82143, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82144, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82145, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82146, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82147, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82148, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82149, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon Europe 2022' ); ?>
-					</div>
-					<div>
-						<?php LF_Utils::display_responsive_images( 82150, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2022' ); ?>
+						<?php LF_Utils::display_responsive_images( 99524, 'newsroom-post-width', '700px', null, 'lazy', 'Photo from KubeCon + CloudNativeCon North America 2023' ); ?>
 					</div>
 
 				</div>
@@ -340,7 +312,7 @@ Executive Director, CNCF</p>
 			<div class="container wrap">
 
 				<div class="section-title-wrapper">
-					<h2 class="section-header">2022 <br />
+					<h2 class="section-header">2023 <br />
 						Momentum</h2>
 					<div class="section-number">1/6</div>
 				</div>
@@ -586,7 +558,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 			<figure class="background-image-figure">
 				<?php
-				LF_Utils::display_responsive_images( 82112, 'full', '1200px', null, 'lazy', 'Audience at KubeCon + CloudNativeCon North America 2022' );
+				LF_Utils::display_responsive_images( 82112, 'full', '1200px', null, 'lazy', 'Audience at KubeCon + CloudNativeCon North America 2023' );
 				?>
 			</figure>
 
@@ -632,8 +604,8 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 						</div>
 						<div class="text">
 							<span>100%</span><br />
-							would recommend CNCF to other companies (<a href="https://github.com/cncf/surveys/tree/main/enduser/2022" title="See End User Sruvey results">
-								2022 End
+							would recommend CNCF to other companies (<a href="https://github.com/cncf/surveys/tree/main/enduser/2023" title="See End User Sruvey results">
+								2023 End
 								User survey
 							</a>)
 						</div>
@@ -697,7 +669,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 				<div class="lf-grid section-09__cto">
 					<div class="section-09__cto-col1">
-						<p>As teams adopt cloud native strategies, it's clear that there is no "one size fits all" solution to the challenges organizations face. That's why, in 2022, CNCF launched the CTO Summit. This Chatham House-governed summit convenes CTOs from end user enterprises to discuss how organizations can leverage people, processes, and technologies to improve resiliency in cloud native computing.</p>
+						<p>As teams adopt cloud native strategies, it's clear that there is no "one size fits all" solution to the challenges organizations face. That's why, in 2023, CNCF launched the CTO Summit. This Chatham House-governed summit convenes CTOs from end user enterprises to discuss how organizations can leverage people, processes, and technologies to improve resiliency in cloud native computing.</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
@@ -716,7 +688,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 					<div class="section-09__cto-col2">
 
-						<a href="https://www.cncf.io/reports/cto-summit-eu-2022/"
+						<a href="https://www.cncf.io/reports/cto-summit-eu-2023/"
 							title="Read the CTO Summit report">
 							<?php
 							LF_Utils::display_responsive_images(
@@ -725,7 +697,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 								'500px',
 								'ds',
 								'lazy',
-								'CTO Summit Report - KubeCon + CloudNativeCon Europe 2022'
+								'CTO Summit Report - KubeCon + CloudNativeCon Europe 2023'
 							);
 							?>
 						</a>
@@ -734,7 +706,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 						</div>
 
 						<div class="wp-block-button"><a
-								href="https://www.cncf.io/reports/cto-summit-eu-2022/"
+								href="https://www.cncf.io/reports/cto-summit-eu-2023/"
 								title="Read the CTO Summit report"
 								class="wp-block-button__link fit-content">View
 								Report</a>
@@ -790,7 +762,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 			<div class="banner">
 				<?php
-				LF_Utils::display_responsive_images( 82169, 'full', '800px', 'banner__image', 'lazy', 'Attendees at KubeCon + CloudNativeCon North America 2022' );
+				LF_Utils::display_responsive_images( 82169, 'full', '800px', 'banner__image', 'lazy', 'Attendees at KubeCon + CloudNativeCon North America 2023' );
 				?>
 				<div class="banner__title-wrapper">
 					<h2 class="banner__title">Join our amazing set of humans!
@@ -838,7 +810,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 					'1200px',
 					null,
 					'lazy',
-					'Some of the crowd at KubeCon + CloudNativeCon North America 2022'
+					'Some of the crowd at KubeCon + CloudNativeCon North America 2023'
 				);
 				?>
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -1007,7 +979,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 						<div aria-hidden="true" class="report-spacer-20"></div>
 
 						<ul>
-							<li>We launched a <a href="https://www.cncf.io/blog/2022/10/13/the-cncf-code-of-conduct-working-group-has-launched/">Code of Conduct
+							<li>We launched a <a href="https://www.cncf.io/blog/2023/10/13/the-cncf-code-of-conduct-working-group-has-launched/">Code of Conduct
 									Working Group</a> to develop an updated
 								structure and set of procedures. Their work is
 								ongoing, and anyone in the community is welcome
@@ -1017,7 +989,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 								participate, view progress, and learn more.</li>
 							<div aria-hidden="true" class="report-spacer-20">
 							</div>
-							<li>We also launched an <a href="https://www.cncf.io/blog/2022/06/23/cncfs-interim-cncf-code-of-conduct-committee-has-launched/">Interim Code of
+							<li>We also launched an <a href="https://www.cncf.io/blog/2023/06/23/cncfs-interim-cncf-code-of-conduct-committee-has-launched/">Interim Code of
 									Conduct Committee</a> - composed of both
 								community members and staff-to adjudicate
 								incidents while a more permanent structure is
@@ -1044,7 +1016,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>KubeCon + CloudNativeCon Valencia was the first time we'd gathered #TeamCloudNative in Europe for three years and the atmosphere felt electric. In fact, we had a lot of firsts in Valencia. Boeing joined us as a platinum member - the first aerospace organization to join CNCF. We hosted <a href="https://events.linuxfoundation.org/cloud-native-telco-day-europe/">Cloud Native Telco Day</a> for the first time, gathering huge players like Deutsche Telekom and Orange who are advancing the industry. Plus, we hosted our first <a href="https://www.cncf.io/reports/cto-summit-eu-2022/">CTO Summit</a> where we discussed how organizations achieve resiliency in multi-cloud strategies.</p>
+						<p>KubeCon + CloudNativeCon Valencia was the first time we'd gathered #TeamCloudNative in Europe for three years and the atmosphere felt electric. In fact, we had a lot of firsts in Valencia. Boeing joined us as a platinum member - the first aerospace organization to join CNCF. We hosted <a href="https://events.linuxfoundation.org/cloud-native-telco-day-europe/">Cloud Native Telco Day</a> for the first time, gathering huge players like Deutsche Telekom and Orange who are advancing the industry. Plus, we hosted our first <a href="https://www.cncf.io/reports/cto-summit-eu-2023/">CTO Summit</a> where we discussed how organizations achieve resiliency in multi-cloud strategies.</p>
 					</div>
 				</div>
 
@@ -1057,7 +1029,7 @@ LF_Utils::get_svg( $report_folder . 'member-logo-boeing.svg', true );
 					'1200px',
 					null,
 					'lazy',
-					'Welcome to KubeCon + CloudNativeCon Europe 2022'
+					'Welcome to KubeCon + CloudNativeCon Europe 2023'
 				);
 				?>
 
@@ -1299,17 +1271,17 @@ transparency report</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<div class="wp-block-button"><a href="https://www.cncf.io/reports/kubecon-cloudnativecon-europe-2022/"
-								title="Read the KubeCon + CloudNativeCon Europe 2022 Transparency Report"
+						<div class="wp-block-button"><a href="https://www.cncf.io/reports/kubecon-cloudnativecon-europe-2023/"
+								title="Read the KubeCon + CloudNativeCon Europe 2023 Transparency Report"
 								class="wp-block-button__link fit-content">View
 								Report</a>
 						</div>
 
 					</div>
 					<div class="section-12__report-col2">
-						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-europe-2022/">
+						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-europe-2023/">
 							<?php
-							LF_Utils::display_responsive_images( 73896, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon Europe 2022 Transparency Report' );
+							LF_Utils::display_responsive_images( 73896, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon Europe 2023 Transparency Report' );
 							?>
 						</a>
 					</div>
@@ -1323,7 +1295,7 @@ transparency report</p>
 
 				<div class="wp-block-lf-youtube-lite">
 					<lite-youtube videoid="SqesB4xcAUY"
-						videotitle="Highlights from KubeCon + CloudNativeCon Europe 2022"
+						videotitle="Highlights from KubeCon + CloudNativeCon Europe 2023"
 						webpStatus="1" sdthumbStatus="0"
 						title="Play Highlights">
 					</lite-youtube>
@@ -1357,7 +1329,7 @@ transparency report</p>
 					'1200px',
 					null,
 					'lazy',
-					'Presenters on stage at KubeCon + CloudNativeCon North America 2022'
+					'Presenters on stage at KubeCon + CloudNativeCon North America 2023'
 				);
 				?>
 
@@ -1585,8 +1557,8 @@ transparency report</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<div class="wp-block-button"><a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2022-transparency-report/"
-								title="Read the KubeCon + CloudNativeCon North America 2022 Transparency Report"
+						<div class="wp-block-button"><a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2023-transparency-report/"
+								title="Read the KubeCon + CloudNativeCon North America 2023 Transparency Report"
 								class="wp-block-button__link fit-content">View
 								Report</a>
 						</div>
@@ -1594,9 +1566,9 @@ transparency report</p>
 					</div>
 					<div class="section-12__report-col2">
 
-						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2022-transparency-report/">
+						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2023-transparency-report/">
 							<?php
-							LF_Utils::display_responsive_images( 81929, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon North America 2022 Transparency Report' );
+							LF_Utils::display_responsive_images( 81929, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon North America 2023 Transparency Report' );
 							?>
 						</a>
 					</div>
@@ -1610,7 +1582,7 @@ transparency report</p>
 
 				<div class="wp-block-lf-youtube-lite">
 					<lite-youtube videoid="Q1cA0iGw84g"
-						videotitle="Highlights from KubeCon + CloudNativeCon North America 2022"
+						videotitle="Highlights from KubeCon + CloudNativeCon North America 2023"
 						webpStatus="1" sdthumbStatus="0"
 						title="Play Highlights">
 					</lite-youtube>
@@ -1632,7 +1604,7 @@ transparency report</p>
 
 				<div class="lf-grid">
 					<p
-						class="opening-paragraph restrictive-10-col">CNCF strengthened our commitment to growing the cloud native ecosystem in 2022 - expanding our globally recognized certifications, boosting employment opportunities and helping more folks to upskill their practical application of cloud native technologies.</p>
+						class="opening-paragraph restrictive-10-col">CNCF strengthened our commitment to growing the cloud native ecosystem in 2023 - expanding our globally recognized certifications, boosting employment opportunities and helping more folks to upskill their practical application of cloud native technologies.</p>
 				</div>
 
 				<div class="lf-grid">
@@ -1643,14 +1615,14 @@ transparency report</p>
 
 				<div class="shadow-hr"></div>
 
-				<h2 class="section-header">2022 Training <br
+				<h2 class="section-header">2023 Training <br
 						class="show-over-1000">Courses</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid section-14__intro">
 					<div class="section-14__intro-col1">
-						<p>CNCF's training and certification program continued to grow. In 2022, these training courses and exams received considerable interest:</p>
+						<p>CNCF's training and certification program continued to grow. In 2023, these training courses and exams received considerable interest:</p>
 					</div>
 					<div class="section-14__intro-col2">
 						<img width="582" height="124" loading="lazy" src="
@@ -1710,7 +1682,7 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 						<span class="course-box__text">Registrations</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/pca/">Prometheus Certified Associate (PCA)</a> exam hit 280+ registrations (since its launch on September 8, 2022)</p>
+							class="course-box__description"><a href="https://www.cncf.io/certification/pca/">Prometheus Certified Associate (PCA)</a> exam hit 280+ registrations (since its launch on September 8, 2023)</p>
 					</div>
 					<div class="course-box">
 						<span class="course-box__number">14%</span>
@@ -1743,7 +1715,7 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 
 				<div class="lf-grid">
 					<p
-						class="opening-paragraph restrictive-10-col">Throughout 2022, CNCF underscored our commitment to making cloud native ubiquitous - hosting <a href="https://www.cncf.io/projects/">20 graduated projects</a>, <a href="https://www.cncf.io/projects/">35 incubating</a> and <a href="https://www.cncf.io/sandbox-projects/">102 sandbox projects</a>, driven by more than <strong>178,000 contributors</strong> representing <strong>189 countries</strong>.</p>
+						class="opening-paragraph restrictive-10-col">Throughout 2023, CNCF underscored our commitment to making cloud native ubiquitous - hosting <a href="https://www.cncf.io/projects/">20 graduated projects</a>, <a href="https://www.cncf.io/projects/">35 incubating</a> and <a href="https://www.cncf.io/sandbox-projects/">102 sandbox projects</a>, driven by more than <strong>178,000 contributors</strong> representing <strong>189 countries</strong>.</p>
 				</div>
 
 				<p class="sub-header">Projects Accepted Over Time</p>
@@ -1756,7 +1728,7 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 
 				<div class="lf-grid">
 					<p
-						class="restrictive-10-col">The <a href="https://www.cncf.io/people/technical-oversight-committee/">Technical Oversight Committee</a> doubled down on cloud native security in 2022, and approved the formation of a new Technical Advisory Group, TAG Environmental Sustainability focusing on carbon outputs around cloud native computing.</p>
+						class="restrictive-10-col">The <a href="https://www.cncf.io/people/technical-oversight-committee/">Technical Oversight Committee</a> doubled down on cloud native security in 2023, and approved the formation of a new Technical Advisory Group, TAG Environmental Sustainability focusing on carbon outputs around cloud native computing.</p>
 				</div>
 
 				<div class="shadow-hr"></div>
@@ -1952,9 +1924,9 @@ CTO, CNCF</p>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>CNCF conducted a number of <a href="https://www.cncf.io/blog/2022/08/08/improving-cncf-security-posture-with-independent-security-audits/">open source security audits</a> throughout 2022, in strategic partnership with the <strong>Open Source Technology Improvement Fund (OSTIF)</strong>. A number of projects completed security audits, resulting in 132 security fixes and improvements, <strong>45 CVE's fixed</strong>, and <strong>51 security tools built</strong>. We also announced the inaugural <a href="https://events.linuxfoundation.org/cloud-native-securitycon-north-america/">CloudNative SecurityCon</a>, which will launch in 2023, and bring application developers and modern security experts not just propose solutions that incrementally improve what has come before, but to give room to cutting edge projects and advances in modern security approaches.
+						<p>CNCF conducted a number of <a href="https://www.cncf.io/blog/2023/08/08/improving-cncf-security-posture-with-independent-security-audits/">open source security audits</a> throughout 2023, in strategic partnership with the <strong>Open Source Technology Improvement Fund (OSTIF)</strong>. A number of projects completed security audits, resulting in 132 security fixes and improvements, <strong>45 CVE's fixed</strong>, and <strong>51 security tools built</strong>. We also announced the inaugural <a href="https://events.linuxfoundation.org/cloud-native-securitycon-north-america/">CloudNative SecurityCon</a>, which will launch in 2023, and bring application developers and modern security experts not just propose solutions that incrementally improve what has come before, but to give room to cutting edge projects and advances in modern security approaches.
 
-						<br><br>Furthermore, <a href="https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/">CNCF funded fuzzing audits</a> for a variety of projects that have resulted in hundreds of bugs being found.</p>
+						<br><br>Furthermore, <a href="https://www.cncf.io/blog/2023/06/28/improving-security-by-fuzzing-the-cncf-landscape/">CNCF funded fuzzing audits</a> for a variety of projects that have resulted in hundreds of bugs being found.</p>
 
 					</div>
 				</div>
@@ -2182,7 +2154,7 @@ LF_Utils::get_svg( $report_folder . 'icon-checklist.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>CNCF's footprint in the Telecom domain increased throughout 2022. In May, the <a href="https://www.cncf.io/certification/cnf/">Cloud Native Network Function (CNF) Certification Program (beta)</a> was announced to help Communication Service Providers (CSPs) validate how well their vendors' products follow cloud native principles, and to advise vendors on following cloud native best practices. This is supported by CSPs like Vodafone, Deutsche Telekom and DISH Wireless, and guided by best practices from the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> and runs certification tests on the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a>.</p>
+						<p>CNCF's footprint in the Telecom domain increased throughout 2023. In May, the <a href="https://www.cncf.io/certification/cnf/">Cloud Native Network Function (CNF) Certification Program (beta)</a> was announced to help Communication Service Providers (CSPs) validate how well their vendors' products follow cloud native principles, and to advise vendors on following cloud native best practices. This is supported by CSPs like Vodafone, Deutsche Telekom and DISH Wireless, and guided by best practices from the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> and runs certification tests on the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a>.</p>
 					</div>
 				</div>
 
@@ -2240,13 +2212,13 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>Significant progress has been made in 2022 towards the goal of 100% conformance test coverage of the Kubernetes API, managed through <a href="https://apisnoop.cncf.io/about">APISnoop</a> - a community-driven project spearheaded by long-time CNCF contributor and community leader <a href="https://twitter.com/hippiehacker">Hippie Hacker</a>, which tracks the testing and conformance coverage of Kubernetes by analyzing the audit logs created by e2e test runs.</p>
+						<p>Significant progress has been made in 2023 towards the goal of 100% conformance test coverage of the Kubernetes API, managed through <a href="https://apisnoop.cncf.io/about">APISnoop</a> - a community-driven project spearheaded by long-time CNCF contributor and community leader <a href="https://twitter.com/hippiehacker">Hippie Hacker</a>, which tracks the testing and conformance coverage of Kubernetes by analyzing the audit logs created by e2e test runs.</p>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
-				<p>At the start of 2022 there were 85 untested endpoints remaining. </p>
+				<p>At the start of 2023 there were 85 untested endpoints remaining. </p>
 
 				<div aria-hidden="true" class="report-spacer-20"></div>
 
@@ -2269,9 +2241,9 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>At the same time 26 endpoints have been identified as being ineligible for conformance testing and <a href="https://apisnoop.cncf.io/conformance-progress/ineligible-endpoints">move to the ineligible endpoints list</a>. By the end of 2022 only <a href="https://apisnoop.cncf.io/conformance-progress/endpoints/1.26.0/?filter=untested">10 endpoints</a> (2.5%) remain untested. We anticipate cleaning up the last <a href="https://apisnoop.cncf.io/conformance-progress">technical debt</a> by Kubecon + CloudNativeCon Europe 2023.
+						<p>At the same time 26 endpoints have been identified as being ineligible for conformance testing and <a href="https://apisnoop.cncf.io/conformance-progress/ineligible-endpoints">move to the ineligible endpoints list</a>. By the end of 2023 only <a href="https://apisnoop.cncf.io/conformance-progress/endpoints/1.26.0/?filter=untested">10 endpoints</a> (2.5%) remain untested. We anticipate cleaning up the last <a href="https://apisnoop.cncf.io/conformance-progress">technical debt</a> by Kubecon + CloudNativeCon Europe 2023.
 
-						<br><br>The automation for CNCF Kubernetes Conformance Certification repo has been updated for an <a href="https://www.cncf.io/blog/2022/10/19/kubernetes-conformance-updates-for-october-2022/">enhanced user experience</a> with improved functionality under the hood. The CNCF-CI bot also gives more detailed explanations of requirements when a submission fails and supporting documentation has also been improved. These changes help to reduce the complexity of reviewing and approving Kubernetes conformance submissions.</p>
+						<br><br>The automation for CNCF Kubernetes Conformance Certification repo has been updated for an <a href="https://www.cncf.io/blog/2023/10/19/kubernetes-conformance-updates-for-october-2023/">enhanced user experience</a> with improved functionality under the hood. The CNCF-CI bot also gives more detailed explanations of requirements when a submission fails and supporting documentation has also been improved. These changes help to reduce the complexity of reviewing and approving Kubernetes conformance submissions.</p>
 					</div>
 				</div>
 
@@ -2285,13 +2257,13 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<p>In 2022, the <a href="https://github.com/cncf/toc">CNCF TOC</a> accepted 35 new projects:</p>
+				<p>In 2023, the <a href="https://github.com/cncf/toc">CNCF TOC</a> accepted 35 new projects:</p>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<img loading="lazy" width="1200" height="500" src="
-<?php LF_Utils::get_svg( $report_folder . 'projects-accepted-2022.svg', true ); ?>
-" alt="Chart showing projects accepted by year - 2022 had 35 new projects accepted">
+<?php LF_Utils::get_svg( $report_folder . 'projects-accepted-2023.svg', true ); ?>
+" alt="Chart showing projects accepted by year - 2023 had 35 new projects accepted">
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
@@ -2464,7 +2436,7 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<p
-					class="sub-header">In 2022, two projects donated characters</p>
+					class="sub-header">In 2023, two projects donated characters</p>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
@@ -2522,7 +2494,7 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
-						<p>This year CNCF helped launch two documentary films that supported our mission to humanize developers by telling their story of development in this dynamic medium. In January 2022,  <a href="https://youtu.be/BE77h7dmoQU">The Origins of Kubernetes</a> debuted on YouTube. The two part documentary has since garnered a combined 463,000 views and continues to attract viewers from across the world.</p>
+						<p>This year CNCF helped launch two documentary films that supported our mission to humanize developers by telling their story of development in this dynamic medium. In January 2023,  <a href="https://youtu.be/BE77h7dmoQU">The Origins of Kubernetes</a> debuted on YouTube. The two part documentary has since garnered a combined 463,000 views and continues to attract viewers from across the world.</p>
 					</div>
 				</div>
 
@@ -2540,7 +2512,7 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p><a href="https://youtu.be/rT4fJNbfe14">Inside Prometheus</a> debuted in October 2022 at Prometheus Day North America as part of KubeCon + CloudNativeCon NA and has so far garnered 59,000 views on YouTube. Both films succeed in giving a voice and face to the forward-looking engineers who tackled adversity and technical challenges in their quest to change the way we work and live today.</p>
+						<p><a href="https://youtu.be/rT4fJNbfe14">Inside Prometheus</a> debuted in October 2023 at Prometheus Day North America as part of KubeCon + CloudNativeCon NA and has so far garnered 59,000 views on YouTube. Both films succeed in giving a voice and face to the forward-looking engineers who tackled adversity and technical challenges in their quest to change the way we work and live today.</p>
 					</div>
 				</div>
 
@@ -2574,7 +2546,7 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid">
 					<p
-						class="restrictive-9-col">We doubled down on our commitment to #TeamCloudNative in 2022, investing in community-driven initiatives to fuel sustained momentum, expansion, growth and adoption. Importantly, we continued to sharpen focus on our DEI initiatives, ensuring that the ecosystem is a welcoming place where everybody can thrive.</p>
+						class="restrictive-9-col">We doubled down on our commitment to #TeamCloudNative in 2023, investing in community-driven initiatives to fuel sustained momentum, expansion, growth and adoption. Importantly, we continued to sharpen focus on our DEI initiatives, ensuring that the ecosystem is a welcoming place where everybody can thrive.</p>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -2591,7 +2563,7 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
 				<p
-					class="sub-header">Women And Gender Non-Conforming Speakers - 2022</p>
+					class="sub-header">Women And Gender Non-Conforming Speakers - 2023</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -2609,7 +2581,7 @@ LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
 								<span class="number">48%</span><br />
 								<span class="description">of Keynotes</span>
 								<span class="addendum">
-									at <a href="https://events.linuxfoundation.org/archive/2022/kubecon-cloudnativecon-europe/">KubeCon + CloudNativeCon
+									at <a href="https://events.linuxfoundation.org/archive/2023/kubecon-cloudnativecon-europe/">KubeCon + CloudNativeCon
 										Europe</a> </span>
 							</div>
 						</div>
@@ -2870,7 +2842,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 						<p class="sub-header">Chop Wood & Carry Water awards</p>
 						<div aria-hidden="true" class="report-spacer-20"></div>
 
-						<p>To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “<strong>Chop Wood and Carry Water</strong>” awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2022:</p>
+						<p>To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “<strong>Chop Wood and Carry Water</strong>” awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2023:</p>
 					</div>
 				</div>
 
@@ -2927,13 +2899,13 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>2022 saw the cloud native community switch from the Meetup platform to <a href="https://community.cncf.io/">Cloud Native Community Groups</a> and the new platform has taken off. It has become the singular place where meetups, online programs, project office hours, and community events are run. The platform now hosts over 31,500 unique chapter members and we are excited to see this platform continue to grow.</p>
+						<p>2023 saw the cloud native community switch from the Meetup platform to <a href="https://community.cncf.io/">Cloud Native Community Groups</a> and the new platform has taken off. It has become the singular place where meetups, online programs, project office hours, and community events are run. The platform now hosts over 31,500 unique chapter members and we are excited to see this platform continue to grow.</p>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p class="sub-header">Community Groups 2022</p>
+				<p class="sub-header">Community Groups 2023</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -3001,7 +2973,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chapters-g.svg', true );
 
 				<div class="lf-grid">
 					<p
-						class="opening-paragraph restrictive-10-col">CNCF worked closely in partnership with individual contributors and community groups throughout 2022, developing programs to navigate and manage the fast-growing ecosystem - rising to meet the growing global demand for cloud native technologies.</p>
+						class="opening-paragraph restrictive-10-col">CNCF worked closely in partnership with individual contributors and community groups throughout 2023, developing programs to navigate and manage the fast-growing ecosystem - rising to meet the growing global demand for cloud native technologies.</p>
 				</div>
 
 				<p class="sub-header">New End User Group</p>
@@ -3078,7 +3050,7 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 
 				<div class="lf-grid">
 					<div class="restrictive-10-col">
-						<p>CNCF proudly supported more than 100 individuals through various <a href="https://github.com/cncf/mentoring">mentoring and internship opportunities</a> in 2022, including the <a href="https://lfx.linuxfoundation.org/tools/mentorship">LFX mentorship platform</a>, <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>, <a href="https://developers.google.com/season-of-docs">Google Summer of Docs (GSoD)</a> program, and <a href="https://www.outreachy.org/">Outreachy</a>. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.<br><br>
+						<p>CNCF proudly supported more than 100 individuals through various <a href="https://github.com/cncf/mentoring">mentoring and internship opportunities</a> in 2023, including the <a href="https://lfx.linuxfoundation.org/tools/mentorship">LFX mentorship platform</a>, <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>, <a href="https://developers.google.com/season-of-docs">Google Summer of Docs (GSoD)</a> program, and <a href="https://www.outreachy.org/">Outreachy</a>. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.<br><br>
 						In August, the TAG Contributor Strategy approved a Mentoring Working Group. The primary goals of this Working Group are to have the community administer CNCF mentorship initiatives and, by doing so, to help provide the capacity needed to grow and add new mentorship programs.
 					</p>
 					</div>
@@ -3272,7 +3244,7 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
 						<p
-							class="thanks__opening">We hope you enjoyed reflecting on all the great things we accomplished together in 2022.</p>
+							class="thanks__opening">We hope you enjoyed reflecting on all the great things we accomplished together in 2023.</p>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
 

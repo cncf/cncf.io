@@ -14,8 +14,8 @@ $ar-23-gray-050: #fffafa;
 $ar-23-gray-100: #fafafa;
 $ar-23-gray-200: #f9f9f9;
 
-$ar-23-blue-700: #0f0b47;
-$ar-23-purple-700: #5c2cff;
+$ar-23-purple: #2D1762;
+$ar-23-burgundy: #9E008E;
 $ar-23-pink-700: #d62293;
 
 html {
@@ -25,12 +25,16 @@ html {
 
 .ar-2023 {
 	font-family: $ar-23-font;
-	color: $ar-23-blue-700;
+	color: $ar-23-purple;
 	line-height: 150%;
 	padding-bottom: 100px;
 	overflow-x: hidden; // because of hanging flowers.
 
 	@import 'report_core';
+
+	h2, h3, .is-style-link-cta a {
+		color: $ar-23-purple;
+	}
 
 	/**
 	HERO
@@ -119,6 +123,15 @@ html {
 				margin-bottom: 60px;
 			}
 		}
+	}
+
+	.section-tweet {
+		margin-top: 100px;
+		margin-bottom: 0px;
+		border-radius: 7.442px;
+		padding: 10px;
+		background: #FFF;
+		box-shadow: 0px 14.883px 29.767px 0px rgba(0, 0, 0, 0.10);
 	}
 
 	/**
@@ -237,7 +250,7 @@ html {
 	}
 
 	.section-title-wrapper {
-		border-bottom-color: $ar-23-purple-700;
+		border-bottom-color: $ar-23-burgundy;
 	}
 
 	.quote-with-name-container {
@@ -252,7 +265,7 @@ html {
 	}
 
 	.has-purple-text {
-		color: $ar-23-purple-700;
+		color: $ar-23-burgundy;
 	}
 
 	.banner {
@@ -324,7 +337,7 @@ html {
 		&__text {
 			font-size: 14px;
 			line-height: 150%;
-			color: $ar-23-blue-700;
+			color: $ar-23-purple;
 			text-align: center;
 			@media (min-width: 700px) {
 				text-align: left;
@@ -489,7 +502,7 @@ html {
 			justify-content: center;
 			background: $ar-23-white;
 			filter: drop-shadow(0px 1.56476px 3.9119px rgba(0, 0, 0, 0.05));
-			border: 1px solid rgba($ar-23-blue-700, 0.1);
+			border: 1px solid rgba($ar-23-purple, 0.1);
 			border-radius: 15px;
 			height: 80px;
 			@media (min-width: 800px) {
@@ -542,7 +555,7 @@ html {
 			span {
 				font-size: 22px;
 				font-weight: 700;
-				color: $ar-23-purple-700;
+				color: $ar-23-burgundy;
 				line-height: 125%;
 			}
 			@media (min-width: 375px) {
@@ -588,10 +601,10 @@ html {
 			}
 			.country {
 				font-weight: 700;
-				color: $ar-23-blue-700;
+				color: $ar-23-purple;
 			}
 			.number {
-				color: $ar-23-purple-700;
+				color: $ar-23-burgundy;
 				font-weight: 800;
 				font-size: 50px;
 				line-height: 1;
@@ -618,7 +631,7 @@ html {
 			margin-top: 20px;
 		}
 		.number {
-			color: $ar-23-purple-700;
+			color: $ar-23-burgundy;
 			line-height: 1;
 			font-weight: 700;
 			font-size: 30px;
@@ -896,7 +909,7 @@ html {
 				}
 			}
 			&-key {
-				background-color: $ar-23-blue-700;
+				background-color: $ar-23-purple;
 				color: $ar-23-gray-050;
 				display: flex;
 				flex-direction: column;
@@ -1248,7 +1261,7 @@ html {
 						font-size: 72px;
 					}
 					line-height: 1;
-					color: $ar-23-purple-700;
+					color: $ar-23-burgundy;
 					&:after {
 						background-image: url("data:image/svg+xml,%3Csvg width='53' height='70' viewBox='0 0 53 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.407 4.467 48.75 26.81M26.407 4.467v61m0-61L12.125 18.685 4 26.81' stroke='%23000' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 						content: '';
@@ -1540,7 +1553,7 @@ html {
 
 		&__mentoring {
 			&-number {
-				color: $ar-23-purple-700;
+				color: $ar-23-burgundy;
 				line-height: 1;
 				font-weight: 700;
 				font-size: 30px;
