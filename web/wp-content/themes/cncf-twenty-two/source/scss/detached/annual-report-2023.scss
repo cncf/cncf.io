@@ -1383,6 +1383,19 @@ html {
 						background-repeat: no-repeat;
 					}
 				}
+				&__number2 {
+					display: block;
+					font-weight: 700;
+					font-size: 42px;
+					@media (min-width: 500px) {
+						font-size: 50px;
+					}
+					@media (min-width: 1000px) {
+						font-size: 72px;
+					}
+					line-height: 1;
+					color: $ar-23-green;
+				}
 				&__text {
 					display: block;
 					font-weight: 700;

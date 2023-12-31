@@ -973,36 +973,28 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 					<div class="section-number">2/6</div>
 				</div>
 
-				<div class="quote-with-name-container">
+				<div class="lf-grid">
 					<p
-						class="quote-with-name-container__quote">Having seen what KubeCon has to offer, I'm sorry I missed every previous KubeCon since (they began in) 2015. For a veteran cloud blogger, this conference is a peek into the future of distributed development.</p>
-					<div class="quote-with-name-container__marks">
-						<p
-							class="quote-with-name-container__name">Ofir Nachmani</p>
-						<p
-							class="quote-with-name-container__position">IamOnDemand</p>
-					</div>
+						class="opening-paragraph restrictive-10-col">As a truly global community, events have always been important to us, providing opportunities to connect face-to-face, learn from peers, and drive the innovation that powers the cloud native ecosystem.</p>
 				</div>
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<?php
-				LF_Utils::display_responsive_images(
-					'82113',
-					'full',
-					'1200px',
-					null,
-					'lazy',
-					'Some of the crowd at KubeCon + CloudNativeCon North America 2023'
-				);
-				?>
-				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>This year we welcomed our community safely back to in-person events. At the same time, CNCF continued to double down on digital, offering virtual access to all our major events to provide opportunities for collaboration, learning, and networking from every corner of the globe.</p>
+					<div class="restrictive-10-col">
+						<p>As part of our commitment to the cloud native community, we invested heavily in events throughout 2023, introducing new opportunities for collaboration around security and WASM, and, excitingly for us, hosting KubeCon + CloudNativeCon in China after a three-year hiatus due to the pandemic.</p>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<?php
+					LF_Utils::display_responsive_images(
+						'99562',
+						'full',
+						'1200px',
+						null,
+						'lazy',
+						'Men cheering at a conference'
+					);
+					?>
 
 				<div class="shadow-hr"></div>
 
@@ -1011,13 +1003,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>In response to the cloud native community's evolving needs in different regions, CNCF strengthened the <a href="https://kubernetescommunitydays.org/">Kubernetes Community Days (KCD)</a> program this year. KCDs are community-organized events that gather adopters and technologists to learn, collaborate, and network, with a goal of furthering the adoption and improvement of Kubernetes and cloud native technologies around the world.</p>
-					</div>
-				</div>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div class="lf-grid">
+					<p
+						class="opening-paragraph restrictive-10-col">KCDs are community-organized events that gather adopters and technologists to learn, collaborate, and network, with a goal of furthering the adoption and improvement of Kubernetes and cloud native technologies around the world. In response to the KCD community’s evolving needs in different regions, CNCF strengthened the program this year.</p>
+				</div>
 
 				<div class="lf-grid section-11__kcd">
 					<div class="section-11__kcd-col1">
@@ -1028,32 +1018,38 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 								<div class="icon">
 									<img loading="lazy" width="57" height="63"
 										src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-lanyard-p.svg', true ); ?>
+<?php LF_Utils::get_svg( $report_folder . 'icon-lanyard-p2.svg', true ); ?>
 " alt="Lanyard icon">
 								</div>
 								<div class="text">
-									<span>16 KCDs</span><br />
+									<span>32 KCDs</span><br />
 									In-person, virtual and hybrid
-									<div class="text-smaller">An increase of
-										<strong>33%</strong> from 2021
+									<div class="text-smaller">100% year over year increase
 									</div>
 								</div>
 							</div>
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="57" height="44"
+									<img loading="lazy" width="63" height="63"
 										src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-megaphone-p.svg', true ); ?>
-" alt="Megaphone icon">
+<?php LF_Utils::get_svg( $report_folder . 'icon-globe-p.svg', true ); ?>
+" alt="Globe icon">
 								</div>
 								<div class="text">
-									<span>Presentations</span><br />
-									in multiple languages
-									<div class="text-smaller">(English, Slavic,
-										Chinese, Spanish, Italian, <br
-											class="show-over-1000">and
-										Indonesian)
-									</div>
+									<span>24 Countries</span><br />
+									Across the globe
+								</div>
+							</div>
+							<div class="icon-box-1">
+								<div class="icon">
+									<img loading="lazy" width="63" height="63"
+										src="
+<?php LF_Utils::get_svg( $report_folder . 'icon-non-male.svg', true ); ?>
+" alt="Non-male icon">
+								</div>
+								<div class="text">
+									<span>20% non male</span><br />
+									speaker average
 								</div>
 							</div>
 						</div>
@@ -1065,30 +1061,29 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="74" height="42"
+									<img loading="lazy" width="74" height="41"
 										src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-members-p.svg', true ); ?>
 " alt="Members icon">
 								</div>
 								<div class="text">
-									<span>6,500+ attendees</span><br />
-									An increase of <strong>85%</strong> from
-									2021
-									<div class="text-smaller">&nbsp;
+									<span>10,000+ attendees </span>
+									<div class="text-smaller">43% year over year increase
 									</div>
 								</div>
 							</div>
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="71" height="74"
+									<img loading="lazy" width="57" height="47"
 										src="
-<?php LF_Utils::get_svg( $report_folder . 'icon-globe-p.svg', true ); ?>
+<?php LF_Utils::get_svg( $report_folder . 'icon-megaphone-p.svg', true ); ?>
 " alt="Globe icon">
 								</div>
 								<div class="text">
-									<span>14 Countries</span><br />
-									Across the globe
-									<div class="text-smaller">&nbsp;
+									<span>Presentations</span><br />
+									in multiple languages
+									<div class="text-smaller">
+									(English, Slavic, Chinese, Spanish, Italian, and Indonesian)
 									</div>
 								</div>
 							</div>
@@ -1098,116 +1093,71 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 				<div class="shadow-hr"></div>
 
-				<p class="sub-header">KCD Evolution</p>
+				<p class="sub-header">Kube days</p>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>We also implemented additional measures to help support our KCD communities and organizers to ensure program success:</p>
-
+				<div class="lf-grid section-10__cto">
+					<div class="section-10__cto-col1">
+						<p>We’re driven by #TeamCloudNative, so when many of you asked for more regional events that connect cloud native experts and adopters, so you can share ideas, best practices, and strengthen your communities, we took action!</p>
+						<p>In late 2022 we launched the KubeDay event series, kicking off with <a href="https://www.cncf.io/reports/kubeday-japan-2022/">KubeDay Japan</a> in Yokohama in December. We followed up in 2023 with:</p>
 						<ul>
-							<li>
-								Our organizer terms and conditions in the KCD
-								GitHub repository were updated to include new
-								provisions in addition to the pre-existing
-								requirement of organizers to take the <a
-									href="https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/">Inclusive Open Source Community
-									Orientation</a>. The new terms are as
-								follows:
-
-								<ul style="margin-left: 20px; margin-top: 20px; margin-bottom: 20px;">
-									<li>Agree to ensure the final program
-										schedule is diverse (e.g., not all
-										speakers of one gender, one culture, or
-										age)</li>
-									<li>To assure a diverse lineup, you must
-										send a copy of your program to <a
-											href="mailto:kcd@cncf.io">kcd@cncf.io</a>
-										for review and approval before
-										publication.</li>
-									<li>Organizers will ensure the speaker
-										lineup is diverse in terms of companies
-										represented.</li>
-								</ul>
-
-							</li>
-							<li>We encourage KCD organizers to consider and
-								include talks that are non-technical and
-								non-code contributions.</li>
-							<li>In July, we started hosting a one-hour monthly
-								organizer meeting with topics to help guide
-								organizers during their planning process.
-								August's topic was “How to Curate a Diverse
-								Lineup.” This meeting featured resources and
-								recommendations for organizers on how to build
-								and recruit diversity within their schedules. <a href="https://docs.google.com/presentation/d/1fzT_BdavVKh3mnxxU-PBWyJq9JUfasKwHqekkbYVbw8/edit#slide=id.g56245ab439_0_106">We
-									provide slides</a>, as well as <a href="https://www.youtube.com/watch?v=E46lH_eJwRM&feature=youtu.be">recording the
-									session</a>.</li>
+							<li><strong>June: Tel Aviv, Israel</strong></li>
+							<li><strong>December: Bangalore, India</strong></li>
+							<li><strong>December: Singapore</strong></li>
 						</ul>
+
+					</div>
+					<div class="section-10__cto-col2">
+						<?php
+						LF_Utils::display_responsive_images( 99561, 'large', '500px', null, 'lazy', 'Man speaking on microphone' );
+						?>
 					</div>
 				</div>
 
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Code of Conduct <br
-						class="show-over-1000">Process Improvements</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>When we returned to having in-person events, both the number and severity of Code of Conduct incidents increased. Our increased focus on Code of Conduct highlighted the need to modernize our processes, which had previously been entirely foundation-managed, by including community representation and providing greater transparency. As a result, this year:</p>
-
-						<div aria-hidden="true" class="report-spacer-20"></div>
-
-						<ul>
-							<li>We launched a <a href="https://www.cncf.io/blog/2023/10/13/the-cncf-code-of-conduct-working-group-has-launched/">Code of Conduct
-									Working Group</a> to develop an updated
-								structure and set of procedures. Their work is
-								ongoing, and anyone in the community is welcome
-								to participate and contribute. <a
-									href="https://github.com/cncf/wg-coc">Visit
-									the working group's repository</a> to
-								participate, view progress, and learn more.</li>
-							<div aria-hidden="true" class="report-spacer-20">
-							</div>
-							<li>We also launched an <a href="https://www.cncf.io/blog/2023/06/23/cncfs-interim-cncf-code-of-conduct-committee-has-launched/">Interim Code of
-									Conduct Committee</a> - composed of both
-								community members and staff-to adjudicate
-								incidents while a more permanent structure is
-								under development by the working group. The <a
-									href="https://www.cncf.io/conduct/procedures/">Incident Resolution Procedures</a>
-								that the committee is operating under were
-								published earlier this year and finalized after
-								a public comment period.</li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
 		</section>
 
 		<section class="section-12 is-style-down-gradient alignfull">
 
 			<div class="container wrap">
 
+				<p class="sub-header">CloudNativeSecurityCon</p>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="lf-grid">
+					<p
+						class="restrictive-9-col">What started as a co-located event alongside KubeCon + CloudNativeCon officially grew into a major industry convention in 2023 – in fact, the first cloud native security event of its kind. The inaugural CloudNativeSecurityCon drew almost 800 experts and practitioners from across the world to share insights and experiences on the unique security challenges faced by cloud native technology. Read the full <a href="https://www.cncf.io/reports/cloudnativesecuritycon-north-america-2023-transparency-report/">transparency report</a> for more details.</p>
+				</div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<picture>
+					<source media="(max-width: 499px)"
+						srcset="<?php echo esc_url( wp_get_attachment_image_url( '99565', 'full', false ) ); ?>">
+					<source media="(min-width: 500px)"
+						srcset="<?php echo esc_url( wp_get_attachment_image_url( '99556', 'full', false ) ); ?>">
+					<?php
+					LF_Utils::display_responsive_images(
+						'99556',
+						'full',
+						'1200px',
+						null,
+						'lazy',
+						'CloudNativeSecurityCon attendee stats.'
+					);
+					?>
+				</picture>
+
+				<div class="shadow-hr"></div>
+
+
 				<h2 class="section-header">KubeCon + <br
 						class="show-over-1000">CloudNativeCon Europe</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>KubeCon + CloudNativeCon Valencia was the first time we'd gathered #TeamCloudNative in Europe for three years and the atmosphere felt electric. In fact, we had a lot of firsts in Valencia. Boeing joined us as a platinum member - the first aerospace organization to join CNCF. We hosted <a href="https://events.linuxfoundation.org/cloud-native-telco-day-europe/">Cloud Native Telco Day</a> for the first time, gathering huge players like Deutsche Telekom and Orange who are advancing the industry. Plus, we hosted our first <a href="https://www.cncf.io/reports/cto-summit-eu-2023/">CTO Summit</a> where we discussed how organizations achieve resiliency in multi-cloud strategies.</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
 				<?php
 				LF_Utils::display_responsive_images(
-					'82189',
+					'99563',
 					'full',
 					'1200px',
 					null,
@@ -1220,39 +1170,26 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 				<p class="sub-header">Attendee Demographics</p>
 
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<figure class="section-12__flowers">
-					<img width="708" height="821" loading="lazy" src="
-<?php
-Lf_Utils::get_image( $report_folder . 'motif.png' );
-?>
-" alt="Background flower">
-				</figure>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<picture>
 					<source media="(max-width: 599px)" srcset="
 <?php
-Lf_Utils::get_svg( $report_folder . 'eu-attendees-mobile.svg', true );
+Lf_Utils::get_svg( $report_folder . 'demographics-mobile-1.svg', true );
 ?>
 ">
 					<source media="(min-width: 600px)" srcset="
 <?php
-Lf_Utils::get_svg( $report_folder . 'eu-attendees-desktop.svg', true );
+Lf_Utils::get_svg( $report_folder . 'demographics-desktop-1.svg', true );
 ?>
 ">
-					<img width="1100" height="364" src="
+					<img width="1200" height="584" src="
 <?php
-Lf_Utils::get_svg( $report_folder . 'eu-attendees-desktop.svg', true );
+Lf_Utils::get_svg( $report_folder . 'demographics-desktop-1.svg', true );
 ?>
-" alt="Showing 18,550 Registered attendees of which 45.2% were men, 6.5% women, 0.4% non-binary/other, and 47.9% preferred not to answer. Of the attendees 7.084 (38%) were in person, 11,466 (62%) were virtual. 65% of visitors were first timers."
+" alt="Showing 16,092 Registered attendees of which 42% were men, 6% women, <1% non-binary/other, and 52% preferred not to answer. Of the attendees 65% were in person, 35% were virtual. 51% of visitors were first timers."
 						loading="lazy">
 				</picture>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<p class="sub-header">Content</p>
-
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<div class="lf-grid section-12__stats">
@@ -1266,8 +1203,8 @@ LF_Utils::get_svg( $report_folder . 'icon-download-pink.svg', true );
 " alt="Download icon">
 							</div>
 							<div class="text">
-								<span class="number">1,187</span><br />
-								<span class="description">Submissions</span>
+								<span class="number" style="color: #FF1E15;" >1,767</span><br />
+								<span class="description">CFP Submissions</span>
 							</div>
 						</div>
 
@@ -1282,166 +1219,11 @@ LF_Utils::get_svg( $report_folder . 'icon-megaphone-pink.svg', true );
 " alt="Megaphone icon">
 							</div>
 							<div class="text">
-								<span class="number">243</span><br />
+								<span class="number" style="color: #FF1E15;">556</span><br />
 								<span class="description">Speakers</span>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<p class="sub-header">Top Countries In Attendance</p>
-
-				<div class="lf-grid section-12__top-countries">
-					<div class="section-12__top-countries-col1">
-						<p class="section-12__header">Total</p>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-usa.svg', true );
-?>
-" alt="USA Flag">
-							</div>
-							<div class="text">
-								<span class="country">USA</span><br />
-								<span class="number">3.035</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-germany.svg', true );
-?>
-" alt="German Flag">
-							</div>
-							<div class="text">
-								<span class="country">Germany</span><br />
-								<span class="number">2,463</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-india.svg', true );
-?>
-" alt="Indian Flag">
-							</div>
-							<div class="text">
-								<span class="country">India</span><br />
-								<span class="number">1,798</span>
-							</div>
-						</div>
-
-					</div>
-					<div class="section-12__top-countries-col2">
-						<p class="section-12__header">In-person</p>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-usa.svg', true );
-?>
-" alt="USA Flag">
-							</div>
-							<div class="text">
-								<span class="country">USA</span><br />
-								<span class="number">1,309</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-germany.svg', true );
-?>
-" alt="German Flag">
-							</div>
-							<div class="text">
-								<span class="country">Germany</span><br />
-								<span class="number">1,060</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-uk.svg', true );
-?>
-" alt="UK Flag">
-							</div>
-							<div class="text">
-								<span class="country">United
-									Kingdom</span><br />
-								<span class="number">725</span>
-							</div>
-						</div>
-					</div>
-					<div class="section-12__top-countries-col3">
-						<p class="section-12__header">Virtual</p>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-usa.svg', true );
-?>
-" alt="USA Flag">
-							</div>
-							<div class="text">
-								<span class="country">USA</span><br />
-								<span class="number">1,725</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-india.svg', true );
-?>
-" alt="India Flag">
-							</div>
-							<div class="text">
-								<span class="country">India</span><br />
-								<span class="number">1,702</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag-germany.svg', true );
-?>
-" alt="German Flag">
-							</div>
-							<div class="text">
-								<span class="country">Germany</span><br />
-								<span class="number">1,403</span>
-							</div>
-						</div>
-
-					</div>
-
 				</div>
 
 				<div class="shadow-hr"></div>
@@ -1464,7 +1246,7 @@ transparency report</p>
 					<div class="section-12__report-col2">
 						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-europe-2023/">
 							<?php
-							LF_Utils::display_responsive_images( 73896, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon Europe 2023 Transparency Report' );
+							LF_Utils::display_responsive_images( 99568, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon Europe 2023 Transparency Report' );
 							?>
 						</a>
 					</div>
@@ -1477,7 +1259,7 @@ transparency report</p>
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<div class="wp-block-lf-youtube-lite">
-					<lite-youtube videoid="SqesB4xcAUY"
+					<lite-youtube videoid="tBDK_AYGv-k"
 						videotitle="Highlights from KubeCon + CloudNativeCon Europe 2023"
 						webpStatus="1" sdthumbStatus="0"
 						title="Play Highlights">
@@ -1492,55 +1274,53 @@ transparency report</p>
 
 			<div class="container wrap">
 
-				<h2 class="section-header">KubeCon + CloudNativeCon <br
+			<h2 class="section-header">KubeCon + CloudNativeCon <br
 						class="show-over-1000">North America</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>KubeCon + CloudNativeCon North America marked the first time we'd gathered in such big numbers in the Midwest, and Detroit was a wonderful host city. We launched a number of new initiatives, including <a href="https://community.cncf.io/cloud-native-security-slam/">Security Slam</a>, in partnership with <a href="https://www.sonatype.com/">Sonatype</a>. There were also some special surprises at KubeCon + CloudNativeCon, including welcoming our Senior Developer Advocate Ihor Dvoretskyi back in-person, who was granted short-term leave from serving in the Ukraine military.</p>
-					</div>
-				</div>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<?php
 				LF_Utils::display_responsive_images(
-					'82116',
+					'99564',
 					'full',
 					'1200px',
 					null,
 					'lazy',
-					'Presenters on stage at KubeCon + CloudNativeCon North America 2023'
+					'Welcome to KubeCon + CloudNativeCon North America 2023'
 				);
 				?>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="lf-grid">
+					<p
+						class="restrictive-9-col">KubeCon + CloudNativeCon North America marked the first time we’d gathered in such big numbers in the Midwest, and Detroit was a wonderful host city. We launched a number of new initiatives, including <strong>Security Slam</strong>, in partnership with <strong>Sonatype</strong>. There were also some special surprises at KubeCon + CloudNativeCon, including welcoming our Senior Developer Advocate Ihor Dvoretskyi back in-person, who was granted short-term leave from serving in the Ukraine military.</p>
+				</div>
+
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<p class="sub-header">Attendee Demographics</p>
 
+				<div aria-hidden="true" class="report-spacer-40"></div>
+
 				<picture>
-					<source media="(max-width: 499px)"
-						srcset="<?php echo esc_url( wp_get_attachment_image_url( '82038', 'full', false ) ); ?>">
-					<source media="(min-width: 500px)"
-						srcset="<?php echo esc_url( wp_get_attachment_image_url( '82037', 'full', false ) ); ?>">
-					<?php
-					LF_Utils::display_responsive_images(
-						'82037',
-						'full',
-						'1200px',
-						null,
-						'lazy',
-						'Showing 16,986 registered attendees. 7403 in person attendees. 64% of attendees were first timers.'
-					);
-					?>
+					<source media="(max-width: 599px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'demographics-mobile2.svg', true );
+?>
+">
+					<source media="(min-width: 600px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'demographics-desktop2.svg', true );
+?>
+">
+					<img width="1200" height="584" src="
+<?php
+Lf_Utils::get_svg( $report_folder . 'demographics-desktop2.svg', true );
+?>
+" alt="Showing 13,666 Registered attendees of which 40% were men, 8% women, <1% non-binary/other, and 52% preferred not to answer. Of the attendees 66% were in person, 34% were virtual. 54% of visitors were first timers."
+						loading="lazy">
 				</picture>
-
-				<div aria-hidden="true" class="report-spacer-140"></div>
-
-				<p class="sub-header">Content</p>
-
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<div class="lf-grid section-12__stats">
@@ -1549,13 +1329,13 @@ transparency report</p>
 							<div class="icon">
 								<img loading="lazy" width="62" height="62" src="
 <?php
-LF_Utils::get_svg( $report_folder . 'icon-download-pink.svg', true );
+LF_Utils::get_svg( $report_folder . 'icon-download-yellow.svg', true );
 ?>
 " alt="Download icon">
 							</div>
 							<div class="text">
-								<span class="number">1,551</span><br />
-								<span class="description">Submissions</span>
+								<span class="number" style="color: #C93566;" >1,871</span><br />
+								<span class="description">CFP Submissions</span>
 							</div>
 						</div>
 
@@ -1565,168 +1345,15 @@ LF_Utils::get_svg( $report_folder . 'icon-download-pink.svg', true );
 							<div class="icon">
 								<img loading="lazy" width="82" height="67" src="
 <?php
-LF_Utils::get_svg( $report_folder . 'icon-megaphone-pink.svg', true );
+LF_Utils::get_svg( $report_folder . 'icon-megaphone-yellow.svg', true );
 ?>
 " alt="Megaphone icon">
 							</div>
 							<div class="text">
-								<span class="number">531</span><br />
+								<span class="number" style="color: #C93566;">554</span><br />
 								<span class="description">Speakers</span>
 							</div>
 						</div>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<p class="sub-header">Top Countries In Attendance</p>
-
-				<div class="lf-grid section-12__top-countries">
-					<div class="section-12__top-countries-col1">
-						<p class="section-12__header">Total</p>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-usa.svg', true );
-								?>
-" alt="USA Flag">
-							</div>
-							<div class="text">
-								<span class="country">USA</span><br />
-								<span class="number">10,568</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-india.svg', true );
-								?>
-" alt="Indian Flag">
-							</div>
-							<div class="text">
-								<span class="country">India</span><br />
-								<span class="number">1,739</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-canada.svg', true );
-								?>
-								" alt="Canadian Flag">
-							</div>
-							<div class="text">
-								<span class="country">Canada</span><br />
-								<span class="number">748</span>
-							</div>
-						</div>
-
-					</div>
-					<div class="section-12__top-countries-col2">
-						<p class="section-12__header">In-person</p>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-usa.svg', true );
-								?>
-" alt="USA Flag">
-							</div>
-							<div class="text">
-								<span class="country">USA</span><br />
-								<span class="number">5,744</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-canada.svg', true );
-								?>
-" alt="Canadian Flag">
-							</div>
-							<div class="text">
-								<span class="country">Canada</span><br />
-								<span class="number">291</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-israel.svg', true );
-								?>
-" alt="Israel Flag">
-							</div>
-							<div class="text">
-								<span class="country">Israel</span><br />
-								<span class="number">184</span>
-							</div>
-						</div>
-					</div>
-					<div class="section-12__top-countries-col3">
-						<p class="section-12__header">Virtual</p>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-usa.svg', true );
-								?>
-" alt="USA Flag">
-							</div>
-							<div class="text">
-								<span class="country">USA</span><br />
-								<span class="number">4,824</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-india.svg', true );
-								?>
-" alt="India Flag">
-							</div>
-							<div class="text">
-								<span class="country">India</span><br />
-								<span class="number">1,664</span>
-							</div>
-						</div>
-
-						<!-- Icon 2 Start  -->
-						<div class="icon-box-2">
-							<div class="icon">
-								<img loading="lazy" width="45" height="45" src="
-								<?php
-								LF_Utils::get_svg( $report_folder . 'icon-flag-canada.svg', true );
-								?>
-" alt="Canada Flag">
-							</div>
-							<div class="text">
-								<span class="country">Canada</span><br />
-								<span class="number">457</span>
-							</div>
-						</div>
-
 					</div>
 				</div>
 
@@ -1740,7 +1367,7 @@ transparency report</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<div class="wp-block-button"><a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2023-transparency-report/"
+						<div class="wp-block-button"><a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2023/"
 								title="Read the KubeCon + CloudNativeCon North America 2023 Transparency Report"
 								class="wp-block-button__link fit-content">View
 								Report</a>
@@ -1748,10 +1375,9 @@ transparency report</p>
 
 					</div>
 					<div class="section-12__report-col2">
-
-						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2023-transparency-report/">
+						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2023/">
 							<?php
-							LF_Utils::display_responsive_images( 81929, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon North America 2023 Transparency Report' );
+							LF_Utils::display_responsive_images( 99569, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon North America 2023 Transparency Report' );
 							?>
 						</a>
 					</div>
@@ -1764,7 +1390,7 @@ transparency report</p>
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<div class="wp-block-lf-youtube-lite">
-					<lite-youtube videoid="Q1cA0iGw84g"
+					<lite-youtube videoid="SvgfGo-33G4"
 						videotitle="Highlights from KubeCon + CloudNativeCon North America 2023"
 						webpStatus="1" sdthumbStatus="0"
 						title="Play Highlights">
@@ -1787,14 +1413,38 @@ transparency report</p>
 
 				<div class="lf-grid">
 					<p
-						class="opening-paragraph restrictive-10-col">CNCF strengthened our commitment to growing the cloud native ecosystem in 2023 - expanding our globally recognized certifications, boosting employment opportunities and helping more folks to upskill their practical application of cloud native technologies.</p>
+						class="opening-paragraph restrictive-10-col">Education has always been one of the pillars of the CNCF. To ensure we are meeting the needs of our community, this year we conducted a microsurvey to outline the challenges and difficulties related to training and certifications.</p>
 				</div>
 
 				<div class="lf-grid">
-					<div class="restrictive-10-col">
-						<p>This year we launched the <a href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/">Prometheus Certified Associate (PCA)</a> - a certification that demonstrates and engineers foundational knowledge of observability and skills using Prometheus, the open source monitoring and alerting toolkit.<br><br>A new set of credentials were also launched this year: <a href="https://training.linuxfoundation.org/blog/skillcreds/">SkillCreds</a>. These allow learners to gain credentials on specific topics related to their experience. Two of the first SkillCreds include <a href="https://training.linuxfoundation.org/certification/helm/">Developing Helm Charts (SC104)</a> and <a href="https://training.linuxfoundation.org/certification/yaml/">Open Data Formats: YAML (SC101)</a>. These micro-credentials are short, topic-specific, and cost effective.<br><br>The importance of training and certifications, and the regard that CNCF courses are held in, was highlighted this year in China where foreign nations are able to <a href="https://training.linuxfoundation.cn/news/294">apply for visas for Beijing if they earn a CKA certification</a>. </p>
+					<div class="restrictive-9-col">
+						<p><strong>The benefits of achieving new training and certifications were clear:</strong></p>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
+
+				<div class="lf-grid section-14__courses">
+					<div class="course-box">
+						<span class="course-box__number2">~ 55%</span>
+						<p class="course-box__description">reported pursuing training and certifications helped them land a new job</p>
+					</div>
+					<div class="course-box">
+						<span class="course-box__number2">67%</span>
+						<p class="course-box__description">say it left them feeling more engaged and fulfilled in the their work</p>
+					</div>
+					<div class="course-box">
+						<span class="course-box__number2">36%</span>
+						<p class="course-box__description">received higher pay as a result of completing a new training or certification</p>
+					</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p>To better serve our community, CNCF launched <strong>seven</strong> new trainings in 2023. The number of certifications has also been dramatically improved, adding <strong>five</strong> new certifications in 2023.</p>
+					</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<div class="shadow-hr"></div>
 
@@ -2424,7 +2074,7 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>At the same time 26 endpoints have been identified as being ineligible for conformance testing and <a href="https://apisnoop.cncf.io/conformance-progress/ineligible-endpoints">move to the ineligible endpoints list</a>. By the end of 2023 only <a href="https://apisnoop.cncf.io/conformance-progress/endpoints/1.26.0/?filter=untested">10 endpoints</a> (2.5%) remain untested. We anticipate cleaning up the last <a href="https://apisnoop.cncf.io/conformance-progress">technical debt</a> by Kubecon + CloudNativeCon Europe 2023.
+						<p>At the same time 26 endpoints have been identified as being ineligible for conformance testing and <a href="https://apisnoop.cncf.io/conformance-progress/ineligible-endpoints">move to the ineligible endpoints list</a>. By the end of 2023 only <a href="https://apisnoop.cncf.io/conformance-progress/endpoints/1.26.0/?filter=untested">10 endpoints</a> (2.5%) remain untested. We anticipate cleaning up the last <a href="https://apisnoop.cncf.io/conformance-progress">technical debt</a> by Kubecon + CloudNativeCon North America 2023.
 
 						<br><br>The automation for CNCF Kubernetes Conformance Certification repo has been updated for an <a href="https://www.cncf.io/blog/2023/10/19/kubernetes-conformance-updates-for-october-2023/">enhanced user experience</a> with improved functionality under the hood. The CNCF-CI bot also gives more detailed explanations of requirements when a submission fails and supporting documentation has also been improved. These changes help to reduce the complexity of reviewing and approving Kubernetes conformance submissions.</p>
 					</div>
