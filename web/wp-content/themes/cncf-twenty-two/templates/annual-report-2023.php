@@ -1444,8 +1444,29 @@ transparency report</p>
 						<p>To better serve our community, CNCF launched <strong>seven</strong> new trainings in 2023. The number of certifications has also been dramatically improved, adding <strong>five</strong> new certifications in 2023.</p>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+				<p class="sub-header">NUMBERS OF CNCF CERTIFICATIONS AVAILABLE</p>
+
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
+				<picture>
+					<source media="(max-width: 599px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'certifications-mobile.svg', true );
+?>
+">
+					<source media="(min-width: 600px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'certifications-desktop.svg', true );
+?>
+">
+					<img width="1200" height="445" src="
+<?php
+Lf_Utils::get_svg( $report_folder . 'certifications-desktop.svg', true );
+?>
+" alt="Shows growing number of certifications each year."
+						loading="lazy">
+				</picture>
 				<div class="shadow-hr"></div>
 
 				<h2 class="section-header">2023 Training <br
@@ -1455,12 +1476,12 @@ transparency report</p>
 
 				<div class="lf-grid section-14__intro">
 					<div class="section-14__intro-col1">
-						<p>CNCF's training and certification program continued to grow. In 2023, these training courses and exams received considerable interest:</p>
+						<p>The evolution can also be seen within the participation numbers of training and certs</p>
 					</div>
 					<div class="section-14__intro-col2">
 						<img width="582" height="124" loading="lazy" src="
 <?php
-Lf_Utils::get_image( $report_folder . 'training-logos.png' );
+Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 ?>
 " alt="Cloud native training courses from LF">
 
@@ -1473,63 +1494,56 @@ Lf_Utils::get_image( $report_folder . 'training-logos.png' );
 				<div class="lf-grid section-14__courses">
 
 					<div class="course-box">
-						<span class="course-box__number">25%</span>
+						<span class="course-box__number">13%</span>
 						<span class="course-box__text">Increase</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/training/#introduction">Kubernetes Massively Open Online Course (MOOC)</a> hit 290,000 enrollments</p>
+							class="course-box__description">Kubernetes Massively Open Online Course (MOOC) hit <a href="https://www.cncf.io/certification/training/">345,00 enrollments</a></p>
 					</div>
 
 					<div class="course-box">
-						<span class="course-box__number">49%</span>
+						<span class="course-box__number">33%</span>
 						<span class="course-box__text">Increase</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/expert/">Certified Kubernetes Administrator (CKA)</a> exam hit 104,000 enrollments</p>
+							class="course-box__description">Certified Kubernetes Administrator (CKA) exam hit <a href="https://www.cncf.io/certification/expert/">176,000 enrollments</a></p>
 					</div>
 
 					<div class="course-box">
-						<span class="course-box__number">44%</span>
+						<span class="course-box__number">31%</span>
 						<span class="course-box__text">Increase</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/ckad/">Certified Kubernetes Application Developer (CKAD)</a> hit 49,000 exam registrations</p>
+							class="course-box__description">Certified Kubernetes Application Developer (CKAD) hit <a href="https://www.cncf.io/certification/ckad/">79,000 exam registrations</a></p>
 					</div>
 
 					<div class="course-box">
-						<span class="course-box__number">113%</span>
+						<span class="course-box__number">38%</span>
 						<span class="course-box__text">Increase</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/cks/">Certified Kubernetes Security Specialist (CKS)</a> exam hit 18,000 registrations</p>
+							class="course-box__description">Certified Kubernetes Security Specialist (CKS) exam hit <a href="https://www.cncf.io/certification/cks/">36,000 registrations</a></p>
 					</div>
 					<div class="course-box">
-						<span class="course-box__number">4,000</span>
+						<span class="course-box__number">43%</span>
+						<span class="course-box__text">Increase</span>
+						<div class="thin-hr course-box__hr"></div>
+						<p
+							class="course-box__description">Kubernetes and Cloud Native Associate (KCNA) exam <a href="https://www.cncf.io/certification/kcna/">hit 8,800 registrations</a> (since its launch in November 2021)</p>
+					</div>
+					<div class="course-box">
+						<span class="course-box__number">1,500+</span>
 						<span class="course-box__text">Registrations</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/kcna/">Kubernetes and Cloud Native Associate (KCNA)</a> exam hit 4,000 registrations (since its launch in November 2021)</p>
+							class="course-box__description">Prometheus Certified Associate (PCA) exam hit <a href="https://www.cncf.io/certification/pca/">1500+ registrations</a> (since its launch on September, 2022)</p>
 					</div>
 					<div class="course-box">
-						<span class="course-box__number">280+</span>
+						<span class="course-box__number">60+</span>
 						<span class="course-box__text">Registrations</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/pca/">Prometheus Certified Associate (PCA)</a> exam hit 280+ registrations (since its launch on September 8, 2023)</p>
-					</div>
-					<div class="course-box">
-						<span class="course-box__number">14%</span>
-						<span class="course-box__text">Increase</span>
-						<div class="thin-hr course-box__hr"></div>
-						<p
-							class="course-box__description"><a href="https://cncf.io/certification/kubernetes-training-partners/">Kubernetes Training Partner (KTP)</a> program grew to 57 certified companies</p>
-					</div>
-					<div class="course-box">
-						<span class="course-box__number">8.5%</span>
-						<span class="course-box__text">Increase</span>
-						<div class="thin-hr course-box__hr"></div>
-						<p
-							class="course-box__description"><a href="https://www.cncf.io/certification/kcsp/">Kubernetes Certified Service Provider (KCSP)</a> program grew to 254 companies</p>
+							class="course-box__description">Istio Certified Associate (ICA) exam hit 1500+ registrations (since its launch on September, 2023)</p>
 					</div>
 				</div>
 			</div>
