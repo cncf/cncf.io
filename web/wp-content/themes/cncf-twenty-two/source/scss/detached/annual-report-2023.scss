@@ -18,6 +18,9 @@ $ar-23-purple: #2D1762;
 $ar-23-burgundy: #9E008E;
 $ar-23-pink-700: #d62293;
 
+$ar-23-gold: #AB9B32;
+$ar-23-green: #477076;
+
 html {
 	visibility: visible !important;
 	scroll-padding-top: 80px;
@@ -1079,6 +1082,117 @@ html {
 			margin-bottom: 120px;
 			.restrictive-9-col {
 				padding-right: 20px;
+			}
+		}
+		&__cto {
+			&-col1 {
+				grid-column: span 12;
+				@media (min-width: 800px) {
+					grid-column: span 9;
+				}
+				@media (min-width: 1000px) {
+					grid-column: span 8;
+				}
+			}
+			&-col2 {
+				grid-column: span 6;
+				@media (min-width: 800px) {
+					grid-column: 10 / -1;
+				}
+				@media (min-width: 1000px) {
+					grid-column: 9 / -1;
+				}
+			}
+			&-hr {
+				margin-top: 25px;
+				margin-bottom: 25px;
+				@media (min-width: 1000px) {
+					margin-top: 40px;
+					margin-bottom: 40px;
+				}
+			}
+		}
+		&__groups {
+			&-col1 {
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 6;
+				}
+				@media (min-width: 800px) {
+					grid-column: 1 / 4;
+				}
+			}
+			&-col2 {
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 6;
+				}
+				@media (min-width: 800px) {
+					grid-column: 5 / 7;
+				}
+			}
+			&-col3 {
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 6;
+				}
+				@media (min-width: 800px) {
+					grid-column: 8 / 11;
+				}
+			}
+		}
+
+		@media (min-width: 500px) {
+			.logo-grid.smaller {
+				grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+			}
+		}
+		.logo-grid__box {
+			display: block;
+			padding: 10px;
+			height: unset;
+			.logo-grid__image {
+				text-align: center;
+				max-width: unset;
+				max-height: unset;
+				min-height: unset;
+				min-width: unset;
+				img {
+					height: 50px;
+				}
+			}
+			.logo-grid__number {
+				border-top: 1px #CCCCCC solid;
+				text-align: center;
+				width: 100%;
+				color: $ar-23-gold;
+				font-size: 32px;
+				font-weight: 800;
+				line-height: 30px; 
+				padding-top: 10px;
+			}
+			.logo-grid__number.green {
+				color: $ar-23-green;
+			}
+		}
+		&__vid.tophr {
+			border-top: 1px solid rgba($ar-23-black, 0.25);
+			padding-top: 40px;
+		}
+		&__vid {
+			padding: 20px 0;
+			margin: 20px 0;
+			&-col1 {
+				grid-column: span 12;
+				@media (min-width: 800px) {
+					grid-column: span 5;
+				}
+			}
+			&-col2 {
+				grid-column: span 12;
+				@media (min-width: 800px) {
+					grid-column: span 6/-1;
+				}
 			}
 		}
 	}

@@ -514,6 +514,452 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 		</section>
 
 		<section class="section-10">
+			<p class="sub-header">ZERO TO MERGE</p>
+
+			<div aria-hidden="true" class="report-spacer-60"></div>
+
+			<div class="lf-grid section-10__cto">
+				<div class="section-10__cto-col1">
+					<p>In 2023, we launched the groundbreaking <strong>Zero to Merge program</strong>, a four-week course designed to transform end users into effective contributors to CNCF projects. The program exceeded all expectations by attracting more than <strong>850 registrations</strong> from <strong>23 countries</strong>, ultimately accepting <strong>363 participants</strong>. The first meeting alone had <strong>197 attendees</strong>, showcasing the community's eagerness to engage in the cloud native ecosystem.</p>
+					<p>The program's success went beyond metrics by creating a tangible impact with participant contributions spanning multiple CNCF projects, creating a ripple effect of positive enhancements. Our next cohort is set to kick off in Spring 2024. Don't miss your chance to transform your cloud native contributions and <strong>apply for the next cohort</strong>.</p>
+					<div aria-hidden="true" class="report-spacer-40"></div>
+
+						<div class="lf-grid section-10__groups">
+						<div class="section-10__groups-col1">
+							<div class="icon-box-3">
+								<div class="icon">
+									<img loading="lazy" width="80" height="47" src="
+	<?php
+	LF_Utils::get_svg( $report_folder . 'icon-members-p.svg', true );
+	?>
+	" alt="Members icon">
+								</div>
+								<div class="text">
+									<span class="number">363</span>
+									<span class="description">Participants</span>
+								</div>
+							</div>
+						</div>
+						<div class="section-10__groups-col2">
+							<div class="icon-box-3">
+								<div class="icon">
+									<img loading="lazy" width="69" height="69" src="
+	<?php
+	LF_Utils::get_svg( $report_folder . 'icon-globe-p.svg', true );
+	?>
+	" alt="Globe icon">
+								</div>
+								<div class="text">
+									<span class="number">23</span>
+									<span class="description">Countries</span>
+								</div>
+							</div>
+						</div>
+						<div class="section-10__groups-col3">
+							<div class="icon-box-3">
+								<div class="icon">
+									<img loading="lazy" width="56" height="63" src="
+	<?php
+	LF_Utils::get_svg( $report_folder . 'icon-lanyard-p.svg', true );
+	?>
+	" alt="Registrations icon">
+								</div>
+								<div class="text">
+									<span class="number">850</span>
+									<span class="description">Registrations</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div aria-hidden="true" class="report-spacer-60"></div>
+
+					<div class="wp-block-button"><a href="https://project.linuxfoundation.org/cncf-zero-to-merge-application"
+							title="APPLY TO ZERO TO MERGE"
+							class="wp-block-button__link fit-content">APPLY TO ZERO TO MERGE</a>
+					</div>
+
+
+				</div>
+				<div class="section-10__cto-col2">
+					<?php
+					LF_Utils::display_responsive_images(
+						'99541',
+						'large',
+						'500px',
+						'',
+						'lazy',
+						'Zero to Merge badge'
+					);
+					?>
+				</div>
+			</div>
+
+			<div class="shadow-hr"></div>
+			<p class="sub-header">End User Activity</p>
+
+			<div aria-hidden="true" class="report-spacer-60"></div>
+
+			<div class="lf-grid section-10__cto">
+				<div class="section-10__cto-col1">
+
+					<div class="lf-grid">
+						<p
+							class="opening-paragraph restrictive-10-col">Join our End User Community to learn from your peers and add your voice to this influential group. </p>
+					</div>
+				</div>
+				<div class="section-10__cto-col2">
+					<div class="wp-block-button"><a href="https://www.cncf.io/enduser/"
+								title="Join CNCF"
+								class="wp-block-button__link fit-content">Join CNCF</a>
+					</div>
+					<div aria-hidden="true" class="report-spacer-80"></div>
+				</div>
+			</div>
+
+			<p class="sub-header">Top 10 CNCF Projects with Highest Contributions from End User Members </p>
+			<div aria-hidden="true" class="report-spacer-60"></div>
+
+			<div class="logo-grid smaller">
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'backstage.svg', true );
+						?>
+						" alt="Backstage Logo" >
+					</div>
+					<div class="logo-grid__number">
+						4,188
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'prometheus.svg', true );
+						?>
+						" alt="Prometheus Logo" >
+					</div>
+					<div class="logo-grid__number">
+						601
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'argo.svg', true );
+						?>
+						" alt="Argo Logo" >
+					</div>
+					<div class="logo-grid__number">
+						548
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'kubernetes.svg', true );
+						?>
+						" alt="Kubernetes Logo" >
+					</div>
+					<div class="logo-grid__number">
+						137
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'telepresence.svg', true );
+						?>
+						" alt="Telepresence Logo" >
+					</div>
+					<div class="logo-grid__number">
+						127
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'buildpacks.svg', true );
+						?>
+						" alt="buildpacks Logo" >
+					</div>
+					<div class="logo-grid__number">
+						77
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'tremor.svg', true );
+						?>
+						" alt="tremor Logo" >
+					</div>
+					<div class="logo-grid__number">
+						71
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'opentelemetry.svg', true );
+						?>
+						" alt="opentelemetry Logo" >
+					</div>
+					<div class="logo-grid__number">
+						70
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'envoy.svg', true );
+						?>
+						" alt="envoy Logo" >
+					</div>
+					<div class="logo-grid__number">
+						48
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'openfeature.svg', true );
+						?>
+						" alt="openfeature Logo" >
+					</div>
+					<div class="logo-grid__number">
+						36
+					</div>
+				</div>
+								
+			</div>
+
+			<div aria-hidden="true" class="report-spacer-80"></div>
+
+			<p class="sub-header">Top 10 Highest-Contributing CNCF End User Members </p>
+			<div aria-hidden="true" class="report-spacer-60"></div>
+
+			<div class="logo-grid smaller">
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'spotify.svg', true );
+						?>
+						" alt="spotify Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						4,125
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'bloomberg.svg', true );
+						?>
+						" alt="bloomberg Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						534
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'reddit.svg', true );
+						?>
+						" alt="reddit Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						372
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'intuit.svg', true );
+						?>
+						" alt="intuit Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						241
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'workday.svg', true );
+						?>
+						" alt="workday Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						136
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'thought-machine.svg', true );
+						?>
+						" alt="thought machine Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						129
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'shopify.svg', true );
+						?>
+						" alt="shopify Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						107
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'wayfair.svg', true );
+						?>
+						" alt="wayfair Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						88
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'swiss-post.svg', true );
+						?>
+						" alt="swiss post Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						56
+					</div>
+				</div>
+				<div class="logo-grid__box">
+					<div class="logo-grid__image">
+						<img loading="lazy" width="160" height="50" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'yahoo.svg', true );
+						?>
+						" alt="yahoo Logo" >
+					</div>
+					<div class="logo-grid__number green">
+						50
+					</div>
+				</div>
+								
+			</div>
+
+			<div class="shadow-hr"></div>
+			<p class="sub-header">End User Awards</p>
+			<div aria-hidden="true" class="report-spacer-60"></div>
+			<div class="lf-grid">
+				<p
+					class="opening-paragraph restrictive-10-col">We were thrilled to award Mercedes Benz Tech Innovation and Spotify with our Top End User Awards this year in recognition of their notable contributions to the cloud native ecosystem.</p>
+			</div>
+
+			<div class="lf-grid section-10__vid">
+				<div class="section-10__vid-col1">
+					<?php
+					LF_Utils::display_responsive_images(
+						'99544',
+						'full',
+						'600px',
+						null,
+						'lazy',
+						'Mercedes store'
+					);
+					?>
+				</div>
+				<div class="section-10__vid-col2">
+					<p class="sub-header">SPRING 2023 WINNER</p>
+					<div aria-hidden="true" class="report-spacer-20"></div>
+
+					<img loading="lazy" width="315" height="80" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'mercedes.svg', true );
+						?>
+						" alt="Merceds Logo" >
+					<div aria-hidden="true" class="report-spacer-20"></div>
+					<p>Mercedes Benz Tech Innovation GmbH is consistently one of the top end user companies that contributes to Kubernetes worldwide.</p>
+				</div>
+			</div>
+
+			<div class="lf-grid section-10__vid tophr">
+				<div class="section-10__vid-col1">
+					<?php
+					LF_Utils::display_responsive_images(
+						'99542',
+						'full',
+						'600px',
+						null,
+						'lazy',
+						'People cheering on a conference stage'
+					);
+					?>
+				</div>
+				<div class="section-10__vid-col2">
+					<p class="sub-header">AUTUMN 2023 WINNER</p>
+					<div aria-hidden="true" class="report-spacer-20"></div>
+
+					<img loading="lazy" width="243" height="80" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'spotify.svg', true );
+						?>
+						" alt="Spotify Logo" >
+					<div aria-hidden="true" class="report-spacer-20"></div>
+					<p>This is the second time Spotify were recognised for significant and continuous contributions to CNCF projects, with over 23,000 contributions in 2023 alone.</p>
+				</div>
+			</div>
+
+			<div class="lf-grid section-10__vid tophr">
+				<div class="section-10__vid-col1">
+					<?php
+					LF_Utils::display_responsive_images(
+						'99543',
+						'full',
+						'600px',
+						null,
+						'lazy',
+						'Intuit workplace'
+					);
+					?>
+				</div>
+				<div class="section-10__vid-col2">
+					<p class="sub-header">AUTUMN 2022 WINNER</p>
+					<div aria-hidden="true" class="report-spacer-20"></div>
+
+					<img loading="lazy" width="209" height="60" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'intuit.svg', true );
+						?>
+						" alt="intuit Logo" >
+					<div aria-hidden="true" class="report-spacer-20"></div>
+					<p>Intuit were named our Top End User in 2022, but we wanted to take the opportunity to share this fantastic video with you, detailing some of the great open source work going on behind the scenes.</p>
+				</div>
+			</div>
 
 		</section>
 
