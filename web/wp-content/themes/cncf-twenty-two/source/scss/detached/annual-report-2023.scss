@@ -412,6 +412,7 @@ html {
 		width: 20px;
 		height: 20px;
 		margin-right: 20px;
+		opacity: .8;
 	}
 
 	.kccnc-table-container {
@@ -673,6 +674,54 @@ html {
 			font-size: 16px;
 			line-height: 125%;
 			margin-top: 10px;
+		}
+	}
+
+	.icon-box-4 {
+		display: flex;
+		align-items: flex-start;
+		width: 100%;
+		padding-bottom: 45px;
+		height: max-content;
+		.icon {
+			display: flex;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			flex-shrink: 0;
+			width: 55px;
+			@media (min-width: 1000px) {
+				width: 75px;
+			}
+		}
+		.text {
+			margin-left: 20px;
+			font-size: 16px;
+			line-height: 125%;
+			text-transform: uppercase;
+			font-weight: 700;
+			span {
+				font-size: 40px;
+				font-weight: 700;
+				color: $ar-23-burgundy;
+				line-height: 125%;
+			}
+			@media (min-width: 375px) {
+				font-size: 20px;
+				span {
+					font-size: 50px;
+				}
+			}
+			@media (min-width: 1000px) {
+				margin-left: 25px;
+			}
+			@media (min-width: 1200px) {
+				margin-left: 45px;
+			}
+			.text-smaller {
+				font-size: 16px;
+				margin-top: 5px;
+			}
 		}
 	}
 
@@ -1430,6 +1479,27 @@ html {
 		margin-bottom: 80px;
 		@media (min-width: 1200px) {
 			margin-bottom: 120px;
+		}
+		&__projects {
+			&-col1 {
+				grid-column: span 12;
+				@media (min-width: 800px) {
+					grid-column: span 5;
+					padding-right: 30px;
+				}
+			}
+			&-col2 {
+				grid-column: span 6;
+				@media (min-width: 800px) {
+					grid-column: span 3;
+				}
+			}
+			&-col3 {
+				grid-column: span 6;
+				@media (min-width: 800px) {
+					grid-column: span 3;
+				}
+			}
 		}
 	}
 

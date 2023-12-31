@@ -1562,23 +1562,106 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 
 				<div class="lf-grid">
 					<p
-						class="opening-paragraph restrictive-10-col">Throughout 2023, CNCF underscored our commitment to making cloud native ubiquitous - hosting <a href="https://www.cncf.io/projects/">20 graduated projects</a>, <a href="https://www.cncf.io/projects/">35 incubating</a> and <a href="https://www.cncf.io/sandbox-projects/">102 sandbox projects</a>, driven by more than <strong>178,000 contributors</strong> representing <strong>189 countries</strong>.</p>
+						class="opening-paragraph restrictive-10-col">Throughout 2023, CNCF underscored our commitment to making cloud native ubiquitous - hosting <a href="https://www.cncf.io/projects/">24 graduated projects</a>, <a href="https://www.cncf.io/projects/">36 incubating</a> and <a href="https://www.cncf.io/sandbox-projects/">109 sandbox projects</a>.</p>
 				</div>
-
-				<p class="sub-header">Projects Accepted Over Time</p>
 
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<?php echo do_shortcode( '[projects-maturity-chart]' ); ?>
 
+				<div aria-hidden="true" class="report-spacer-80"></div>
+
+				<p class="sub-header">New Projects</p>
+
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
-				<div class="lf-grid">
-					<p
-						class="restrictive-10-col">The <a href="https://www.cncf.io/people/technical-oversight-committee/">Technical Oversight Committee</a> doubled down on cloud native security in 2023, and approved the formation of a new Technical Advisory Group, TAG Environmental Sustainability focusing on carbon outputs around cloud native computing.</p>
+				<div class="lf-grid section-15__projects">
+					<div class="section-15__projects-col1">
+
+						<p>In 2023, the <a href="/people/technical-oversight-committee/">Technical Oversight Committee</a> (TOC) accepted <strong>17 new projects</strong></p>
+
+					</div>
+					<div class="section-15__projects-col2">
+						<div class="icon-box-4">
+							<div class="icon">
+								<img loading="lazy" width="71" height="74" src="
+	<?php LF_Utils::get_svg( $report_folder . 'icon-projects.svg', true ); ?>
+	" alt="Projects icon">
+							</div>
+							<div class="text">
+								<span>2</span><br />
+								Incubating
+							</div>
+						</div>
+					</div>
+					<div class="section-15__projects-col3">
+						<div class="icon-box-4">
+							<div class="icon">
+								<img loading="lazy" width="61" height="62" src="
+	<?php LF_Utils::get_svg( $report_folder . 'icon-chapters-g.svg', true ); ?>
+	" alt="Sandbox icon">
+							</div>
+							<div class="text">
+								<span>15</span><br />
+								Sandbox
+							</div>
+						</div>
+
+					</div>
 				</div>
 
-				<div class="shadow-hr"></div>
+			</div>
+	</section>
+	<section class="section-15 is-style-down-gradient alignfull">
+
+			<div class="container wrap">
+
+				<h2 class="section-header">Project Moves</h2>
+
+				<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p>Projects increase their maturity level by demonstrating to the <a href="https://www.cncf.io/people/technical-oversight-committee/">TOC</a> that they have attained end user and vendor adoption, established a healthy rate of code commits and codebase changes, and attracted committers from multiple organizations. In 2023, four projects graduated, and five moved to the incubating level.</p>
+					</div>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<p class="sub-header">Graduations</p>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="logo-grid smaller">
+					<div class="logo-grid__box">
+						<img loading="lazy" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'logo-project-cilium.svg', true );
+						?>
+						" alt="Cilium Logo" class="logo-grid__image">
+					</div>
+					<div class="logo-grid__box">
+						<img loading="lazy" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'logo-project-cri-o.svg', true );
+						?>
+						" alt="cri-o Logo" class="logo-grid__image">
+					</div>
+					<div class="logo-grid__box">
+						<img loading="lazy" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'logo-project-istio.svg', true );
+						?>
+						" alt="Istio Logo" class="logo-grid__image">
+					</div>
+					<div class="logo-grid__box">
+						<img loading="lazy" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'logo-project-keda.svg', true );
+						?>
+						" alt="Keda Logo" class="logo-grid__image">
+					</div>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<p class="sub-header">CNCF Project Velocity</p>
 
@@ -1586,7 +1669,7 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 
 				<div class="lf-grid">
 					<p
-						class="restrictive-10-col"><a href="https://github.com/cncf/velocity">Consistently looking into CNCF project's velocity</a> and the top open source projects gives us a very good indication of trends that are resonating with developers and end users. As a result, we can get insight into platforms that will likely be successful:</p>
+						class="restrictive-10-col">Consistently looking into <a href="https://www.cncf.io/blog/2023/10/27/october-2023-where-we-are-with-velocity-of-cncf-lf-and-top-30-open-source-projects/">CNCF project’s velocity and the top open source projects</a> give us a very good indication of trends that are resonating with developers and end users. As a result, we can get insight into platforms that will likely be successful. This graph shows the 30 projects that experienced the most significant growth in 2023:</p>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -1595,136 +1678,195 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #feb95a"></div>
-						<span><strong>Argo</strong><br>Authors 814</span>
+							style="background-color: #4065C5"></div>
+						<span><strong>Kubernetes</strong><br>Authors 3662</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #68b86a">
-						</div><span><strong>Backstage</strong><br>Authors
-							580</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #853e81">
-						</div><span><strong>containerd</strong><br>Authors
-							255</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #da575f">
-						</div><span><strong>CoreDNS</strong><br>Authors
-							69</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #5fb9d6">
-						</div><span><strong>Envoy</strong><br>Authors 399</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #cb7070">
-						</div><span><strong>etcd</strong><br>Authors 115</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #e46991">
-						</div><span><strong>Fluentd</strong><br>Authors
-							275</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #b65f5f">
-						</div><span><strong>Flux</strong><br>Authors 258</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #a396b7">
-						</div><span><strong>Harbor</strong><br>Authors
-							126</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #35ab9b">
-						</div><span><strong>Helm</strong><br>Authors 160</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #bdb844">
-						</div><span><strong>Jaeger</strong><br>Authors
-							145</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #4e22c8">
-						</div><span><strong>Kubernetes</strong><br>Authors
-							3619</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #e0a343">
-						</div><span><strong>Linkerd</strong><br>Authors
-							122</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #be5ab9">
-						</div><span><strong>OPA</strong><br>Authors 259</span>
-					</div>
-					<div class="legend-item">
-						<div class="legend-box"
-							style="background-color: #e45f40">
+							style="background-color: #CB4727">
 						</div><span><strong>OpenTelemetry</strong><br>Authors
-							1133</span>
+						1419</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #9fc45a">
-						</div><span><strong>Prometheus</strong><br>Authors
-							424</span>
+							style="background-color: #F19E38">
+						</div><span><strong>Argo</strong><br>Authors
+						927</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #81925c">
-						</div><span><strong>Rook</strong><br>Authors 99</span>
+							style="background-color: #449431">
+						</div><span><strong>Backstage</strong><br>Authors
+						641</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #4dd957">
-						</div><span><strong>Spiffe</strong><br>Authors 44</span>
+							style="background-color: #8C1A94">
+						</div><span><strong>Prometheus</strong><br>Authors 457</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #e2e898">
-						</div><span><strong>Spire</strong><br>Authors 54</span>
+							style="background-color: #4397C2">
+						</div><span><strong>Cilium</strong><br>Authors 440</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #6181a8">
-						</div><span><strong>TiKV</strong><br>Authors 257</span>
+							style="background-color: #CC5077">
+						</div><span><strong>gRPC</strong><br>Authors
+						439</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #f2aa90">
-						</div><span><strong>TUF</strong><br>Authors 51</span>
+							style="background-color: #76A832">
+						</div><span><strong>Istio</strong><br>Authors 399</span>
 					</div>
 					<div class="legend-item">
 						<div class="legend-box"
-							style="background-color: #9e6399">
-						</div><span><strong>Vitess</strong><br>Authors
-							101</span>
+							style="background-color: #A93A35">
+						</div><span><strong>Envoy</strong><br>Authors
+						396</span>
 					</div>
-
-
-
-
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #3E6291">
+						</div><span><strong>Meshery</strong><br>Authors 325</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #8E4995">
+						</div><span><strong>Keycloak</strong><br>Authors
+						311</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #52A799">
+						</div><span><strong>Dapr</strong><br>Authors
+						296</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #AAAA39">
+						</div><span><strong>containerd</strong><br>Authors
+						295</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #5F36C4">
+						</div><span><strong>Fluentd</strong><br>Authors 274</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #D7792D">
+						</div><span><strong>NATS</strong><br>Authors
+						261</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #7F1A13">
+						</div><span><strong>Fluid</strong><br>Authors
+						252</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #5C1863">
+						</div><span><strong>Crossplane</strong><br>Authors 251</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #4F9066">
+						</div><span><strong>OPA</strong><br>Authors 228</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #5B73A2">
+						</div><span><strong>Knative</strong><br>Authors 210</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #3C3EA6">
+						</div><span><strong>KubeVirt</strong><br>Authors 208</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #AD7635">
+						</div><span><strong>Kubeflow</strong><br>Authors 199</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #63D346">
+						</div><span><strong>KEDA</strong><br>Authors
+						193</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #AA2980">
+						</div><span><strong>Falco</strong><br>Authors
+						190</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #E1489B">
+						</div><span><strong>Flux</strong><br>Authors
+						188</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #935C3C">
+						</div><span><strong>OpenCost</strong><br>Authors
+						185</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #AEC341">
+						</div><span><strong>Kyverno</strong><br>Authors
+						183</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #40758A">
+						</div><span><strong>Helm</strong><br>Authors
+						182</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #6E8C32">
+						</div><span><strong>etcd</strong><br>Authors
+						171</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #BAA539">
+						</div><span><strong>TiKV</strong><br>Authors
+						168</span>
+					</div>
+					<div class="legend-item">
+						<div class="legend-box"
+							style="background-color: #285829">
+						</div><span><strong>Harbor</strong><br>Authors
+						152</span>
+					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<img loading="lazy" width="1200" height="700" src="
-<?php LF_Utils::get_svg( $report_folder . 'cncf-project-velocity.svg', true ); ?>
-" alt="CNCF Project Velocity chart">
+				<picture>
+					<source media="(max-width: 599px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'project-chart-mobile.svg', true );
+?>
+">
+					<source media="(min-width: 600px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'project-chart-desktop.svg', true );
+?>
+">
+					<img width="1200" height="445" src="
+<?php
+Lf_Utils::get_svg( $report_folder . 'project-chart-desktop.svg', true );
+?>
+" alt="CNCF Project Velocity chart"
+						loading="lazy">
+				</picture>
 
 				<div class="shadow-hr"></div>
 
@@ -1734,22 +1876,13 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 
 				<div class="lf-grid">
 					<ul class="restrictive-10-col" style="margin-bottom: 0;">
-						<li>With the largest contributor base,
-							<strong>Kubernetes</strong> continues to mature
-						</li>
-						<li><strong>OpenTelemetry</strong> has become the second
-							highest velocity project in the CNCF ecosystem,
-							increasing its contributor base</li>
-						<li><strong>Backstage</strong> has seen one of the
-							fastest growth trajectories this year - solving an
-							important pain point around cloud native developer
-							experience</li>
-						<li><strong>GitOps</strong> remains an important
-							technique in the cloud native ecosystem, where
-							projects like <strong>Argo</strong> and
-							<strong>Flux</strong> continue to cultivate large
-							communities
-						</li>
+						<li><strong>Kubernetes</strong> continues to mature with the largest contributor base.</li>
+						<li><strong>OpenTelemetry</strong> continues to grow its contributor base and remains the second highest velocity project in the CNCF ecosystem.</li>
+						<li><strong>Backstage</strong> continues to grow, solving an important pain point around cloud native developer experience.</li>
+						<li><strong>GitOps</strong> continues to be important in the cloud native ecosystem, where projects like <strong>Argo</strong> and <strong>Flux</strong> continue to cultivate large communities.</li>
+						<li>The importance of cost management in tight economic times has resulted in <strong>OpenCost</strong> appearing in the top 30 CNCF project list for the first time. I expect to see OpenCost continue to grow along with the rise of the <strong>FinOps</strong> movement worldwide.</li>
+						<li>As <strong>Kubernetes</strong> matures, many organizations turn to service mesh technology and those projects in CNCF like Envoy, Cilium, and Istio continue to cultivate large contributor communities to meet the demand. <strong>Cilium</strong> recently graduated inside of CNCF and moved up a couple spots in the top 30 CNCF project list.</li>
+						<li>In many cases, CNCF projects underpin large scale AI infrastructure and we have <strong>Kubeflow</strong> appearing on the top 30 CNCF project list for the first time.</li>
 					</ul>
 				</div>
 
@@ -1771,144 +1904,89 @@ CTO, CNCF</p>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>CNCF conducted a number of <a href="https://www.cncf.io/blog/2023/08/08/improving-cncf-security-posture-with-independent-security-audits/">open source security audits</a> throughout 2023, in strategic partnership with the <strong>Open Source Technology Improvement Fund (OSTIF)</strong>. A number of projects completed security audits, resulting in 132 security fixes and improvements, <strong>45 CVE's fixed</strong>, and <strong>51 security tools built</strong>. We also announced the inaugural <a href="https://events.linuxfoundation.org/cloud-native-securitycon-north-america/">CloudNative SecurityCon</a>, which will launch in 2023, and bring application developers and modern security experts not just propose solutions that incrementally improve what has come before, but to give room to cutting edge projects and advances in modern security approaches.
-
-						<br><br>Furthermore, <a href="https://www.cncf.io/blog/2023/06/28/improving-security-by-fuzzing-the-cncf-landscape/">CNCF funded fuzzing audits</a> for a variety of projects that have resulted in hundreds of bugs being found.</p>
-
+						<p>CNCF conducted a number of <a href="https://www.cncf.io/blog/2022/08/08/improving-cncf-security-posture-with-independent-security-audits/">open source security audits</a> throughout 2023, in strategic partnership with the <strong>Open Source Technology Improvement Fund (OSTIF)</strong>.</p>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p
-					class="sub-header">The following CNCF projects have completed security audits or associated work</p>
+				<p class="sub-header">The following CNCF projects have completed security audits or associated work</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
+				<p class="sub-header">Fuzzing Audits</p>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<div class="logo-grid smaller">
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-argo.svg', true );
+						LF_Utils::get_svg( $report_folder . 'kyverno.svg', true );
 						?>
-						" alt="Argo Logo" class="logo-grid__image">
+						" alt="kyverno Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-backstage.svg', true );
+						LF_Utils::get_svg( $report_folder . 'dapr.svg', true );
 						?>
-						" alt="Backstage Logo" class="logo-grid__image">
+						" alt="dapr Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-cilium.svg', true );
+						LF_Utils::get_svg( $report_folder . 'knative.svg', true );
 						?>
-						" alt="Cilium Logo" class="logo-grid__image">
+						" alt="knative Logo" class="logo-grid__image">
 					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-cloudevents.svg', true );
-						?>
-						" alt="Cloud Events Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-containerd.svg', true );
-						?>
-						" alt="ContainerD Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-contour.svg', true );
-						?>
-						" alt="Contour Logo" class="logo-grid__image">
-					</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+				<p class="sub-header">Security Audits</p>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
+				<div class="logo-grid smaller">
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-crio.svg', true );
+						LF_Utils::get_svg( $report_folder . 'crossplane.svg', true );
 						?>
-						" alt="Crio Logo" class="logo-grid__image">
-					</div>
-
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-envoy.svg', true );
-						?>
-						" alt="Envoy Logo" class="logo-grid__image">
+						" alt="crossplane Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-falco.svg', true );
+						LF_Utils::get_svg( $report_folder . 'dapr.svg', true );
 						?>
-						" alt="Falco Logo" class="logo-grid__image">
+						" alt="dapr Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-flux.svg', true );
+						LF_Utils::get_svg( $report_folder . 'dragonfly.svg', true );
 						?>
-						" alt="Flux Logo" class="logo-grid__image">
+						" alt="dragonfly Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-istio.svg', true );
-						?>
-						" alt="Istio Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-keda.svg', true );
-						?>
-						" alt="Keda Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-kubeedge.svg', true );
-						?>
-						" alt="Kube Edge Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-kubernetes.svg', true );
+						LF_Utils::get_svg( $report_folder . 'kubernetes-stacked.svg', true );
 						?>
 						" alt="Kubernetes Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-linkerd.svg', true );
+						LF_Utils::get_svg( $report_folder . 'notary.svg', true );
 						?>
-						" alt="Linkerd Logo" class="logo-grid__image">
+						" alt="notary Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-tuf.svg', true );
+						LF_Utils::get_svg( $report_folder . 'vitess.svg', true );
 						?>
-						" alt="TUF Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-vitess.svg', true );
-						?>
-						" alt="Vitess Logo" class="logo-grid__image">
+						" alt="vitess Logo" class="logo-grid__image">
 					</div>
 				</div>
-
 				<div class="shadow-hr"></div>
 
 				<p class="sub-header">Improvements At A Glance</p>
