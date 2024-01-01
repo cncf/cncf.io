@@ -1563,17 +1563,6 @@ html {
 			background-color: #0c093a;
 			padding: 40px;
 			border-radius: 10px;
-			display: flex;
-			flex-direction: column;
-			gap: 40px;
-			@media (min-width: 1000px) {
-				flex-direction: row;
-				gap: 60px;
-				align-items: end;
-			}
-			@media (min-width: 1200px) {
-				gap: 80px;
-			}
 			&-title {
 				font-size: 20px;
 				@media (min-width: 1000px) {

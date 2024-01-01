@@ -463,7 +463,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 
 			<div class="lf-grid">
-				<div class="restrictive-10-col">
+				<div class="restrictive-9-col">
 					<p>The CNCF End User community is a group of innovative, forward-thinking organizations that constantly push the boundaries of cloud native technology. These organizations use cloud native architectures to power their operations and are not limited to the cloud native service industry. They are different from vendors, consultancies, training partners, or telecommunications companies because their primary goal is to <strong>harness the power of cloud native</strong> architectures to <strong>solve real-world problems</strong> rather than to sell cloud native services externally.</p>
 					<p>The people leading these efforts within the end user companies are tech-savvy and cloud native enthusiasts. They face challenges and opportunities presented by cloud native architectures with great enthusiasm and devise self-service solutions that promote inclusivity and an iterative process. This culture of self-service empowers teams, catalyzes innovation, and accelerates the iterative feedback loop, which is essential for agile and resilient operations.</p>
 				</div>
@@ -1617,6 +1617,7 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 			<div class="container wrap">
 
 				<h2 class="section-header">Project Moves</h2>
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
@@ -1987,359 +1988,16 @@ CTO, CNCF</p>
 						" alt="vitess Logo" class="logo-grid__image">
 					</div>
 				</div>
-				<div class="shadow-hr"></div>
-
-				<p class="sub-header">Improvements At A Glance</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid section-16__improvements">
-
-					<div class="section-16__improvements-col1">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="40" height="50" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-checkmark.svg', true );
-?>
-" alt="Checkmark icon">
-							</div>
-							<div class="text">
-								<span class="number">132</span><br />
-								<span class="description">Security Fixes and
-									Improvements</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="section-16__improvements-col2">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="25" height="50" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-flag.svg', true );
-?>
-" alt="Flag icon">
-							</div>
-							<div class="text">
-								<span class="number">45</span><br />
-								<span class="description">CVE's Reported and
-									Fixed</span>
-								<span class="addendum">
-									Includes 5 critical and 10 high severity
-									findings fixed
-								</span>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="section-16__improvements-col3">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="51" height="52" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-tools.svg', true );
-?>
-" alt="Tool icon">
-							</div>
-							<div class="text">
-								<span class="number">51</span><br />
-								<span class="description">Security Tools
-									Built</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="section-16__improvements-col4">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="62" height="62" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-checklist.svg', true );
-?>
-" alt="Checklist icon">
-							</div>
-							<div class="text">
-								<span class="number small">Denial of service,
-									XSS, Path Traversal, Privilege Escalation,
-									RCE</span><br />
-								<span class="description">Types of
-									Vulnerabilities Fixed</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Telcom Advances</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>CNCF's footprint in the Telecom domain increased throughout 2023. In May, the <a href="https://www.cncf.io/certification/cnf/">Cloud Native Network Function (CNF) Certification Program (beta)</a> was announced to help Communication Service Providers (CSPs) validate how well their vendors' products follow cloud native principles, and to advise vendors on following cloud native best practices. This is supported by CSPs like Vodafone, Deutsche Telekom and DISH Wireless, and guided by best practices from the <a href="https://github.com/cncf/cnf-wg">Cloud Native Network Function (CNF) Working Group</a> and runs certification tests on the <a href="https://github.com/cncf/cnf-testsuite">CNF Test Suite</a>.</p>
-					</div>
-				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p class="sub-header">Highlights</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid section-16__highlights">
-
-					<div class="section-16__highlights-col1">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="40" height="50" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-building-pink.svg', true );
-?>
-" alt="Building icon">
-							</div>
-							<div class="text">
-								<span class="number">4</span><br />
-								<span class="description">CNF vendor
-									organizations</span>
-								<span class="addendum">Earned "Certified CNF"
-									status - for <a
-										href="https://www.prnewswire.com/news-releases/cncf-announces-first-products-certified-under-cloud-native-network-function-certification-program-301657188.html">a total of 6 products</a></span>
-							</div>
-						</div>
-					</div>
-					<div class="section-16__highlights-col2">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="40" height="50" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
-?>
-" alt="Calendar icon">
-							</div>
-							<div class="text">
-								<span class="number">2</span><br />
-								<span class="description">Cloud Native Telco
-									Days</span>
-							</div>
-						</div>
-					</div>
+				<div class="quote-with-name-container">
+				<p
+					class="quote-with-name-container__quote">If we truly are moving to standardize cloud-native technologies, to lock them down and further secure them and to build an increasingly comprehensive set of standards and protocols, then we can feasibly also now turn our attention towards being more sustainable in our software application development and more sustainable in terms of how much of the planet's resources that software uses.</p>
+				<div class="quote-with-name-container__marks">
+					<p class="quote-with-name-container__name">Adrian Bridgwater</p>
+					<p class="quote-with-name-container__position">Forbes</p>
 				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Kubernetes API <br
-						class="show-over-1000">Endpoint Testing</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>Significant progress has been made in 2023 towards the goal of 100% conformance test coverage of the Kubernetes API, managed through <a href="https://apisnoop.cncf.io/about">APISnoop</a> - a community-driven project spearheaded by long-time CNCF contributor and community leader <a href="https://twitter.com/hippiehacker">Hippie Hacker</a>, which tracks the testing and conformance coverage of Kubernetes by analyzing the audit logs created by e2e test runs.</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
-				<p>At the start of 2023 there were 85 untested endpoints remaining. </p>
-
-				<div aria-hidden="true" class="report-spacer-20"></div>
-
-				<p><strong>Conformance test was added across the three release:</strong><br>
-1.24 - 16 endpoints tested<br>
-1.25 - 23 endpoints tested<br>
-1.26 - 10 endpoints tested</p>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<p class="sub-header">Endpoint testing results</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<img loading="lazy" width="1200" height="600" src="
-<?php LF_Utils::get_svg( $report_folder . 'endpoint-testing-results.svg', true ); ?>
-" alt="Endpoint testing results chart">
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>At the same time 26 endpoints have been identified as being ineligible for conformance testing and <a href="https://apisnoop.cncf.io/conformance-progress/ineligible-endpoints">move to the ineligible endpoints list</a>. By the end of 2023 only <a href="https://apisnoop.cncf.io/conformance-progress/endpoints/1.26.0/?filter=untested">10 endpoints</a> (2.5%) remain untested. We anticipate cleaning up the last <a href="https://apisnoop.cncf.io/conformance-progress">technical debt</a> by Kubecon + CloudNativeCon North America 2023.
-
-						<br><br>The automation for CNCF Kubernetes Conformance Certification repo has been updated for an <a href="https://www.cncf.io/blog/2023/10/19/kubernetes-conformance-updates-for-october-2023/">enhanced user experience</a> with improved functionality under the hood. The CNCF-CI bot also gives more detailed explanations of requirements when a submission fails and supporting documentation has also been improved. These changes help to reduce the complexity of reviewing and approving Kubernetes conformance submissions.</p>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Project Moves</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<p class="sub-header">CNCF PROJECTS ACCEPTED</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<p>In 2023, the <a href="https://github.com/cncf/toc">CNCF TOC</a> accepted 35 new projects:</p>
-
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
-				<img loading="lazy" width="1200" height="500" src="
-<?php LF_Utils::get_svg( $report_folder . 'projects-accepted-2023.svg', true ); ?>
-" alt="Chart showing projects accepted by year - 2023 had 35 new projects accepted">
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>Projects increase their maturity level by demonstrating to the <a href="https://www.cncf.io/people/technical-oversight-committee/">TOC</a> that they have attained end user and vendor adoption, established a healthy rate of code commits and codebase changes, and attracted committers from multiple organizations.
-							</p>
-
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<p class="sub-header">Graduations</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="logo-grid smaller">
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-argo.svg', true );
-						?>
-						" alt="Argo Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-flux.svg', true );
-						?>
-						" alt="Flux Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-spiffe.svg', true );
-						?>
-						" alt="Spiffe Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-						LF_Utils::get_svg( $report_folder . 'logo-project-spire.svg', true );
-						?>
-						" alt="Spire Logo" class="logo-grid__image">
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<p class="sub-header">Incubation Level</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<p>Joined at the Incubation level or moved from Sandbox to Incubation.</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="logo-grid smallest">
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-backstage.svg', true );
-	?>
-	" alt="Backstage Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-cert-manager.svg', true );
-	?>
-	" alt="Cert Manager Logo" class="logo-grid__image">
-					</div>
-
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-chaosmesh.svg', true );
-	?>
-	" alt="Chaos Mesh Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-cloud-custodian.svg', true );
-	?>
-	" alt="Cloud Custodian Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-cube-fs.svg', true );
-	?>
-	" alt="Cube FS Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-in-toto.svg', true );
-	?>
-	" alt="In Toto Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-istio.svg', true );
-	?>
-	" alt="Istio Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-litmus.svg', true );
-	?>
-	" alt="Litmus Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-knative.svg', true );
-	?>
-	" alt="Knative Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-kube-virt.svg', true );
-	?>
-	" alt="Kube Virt Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-kyverno.svg', true );
-	?>
-	" alt="Kyverno Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-open-metrics.svg', true );
-	?>
-	" alt="Open Metrics Logo" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-	<?php
-	LF_Utils::get_svg( $report_folder . 'logo-project-volcano.svg', true );
-	?>
-	" alt="Volcano Logo" class="logo-grid__image">
-					</div>
 				</div>
 			</div>
 		</section>
@@ -2348,14 +2006,13 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 			<div class="container wrap">
 
-				<h2 class="section-header">Phippy & Friends Explain <br
-						class="show-over-1000">Cloud Native Computing </h2>
+				<h2 class="section-header">Phippy & Friends</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>From a humble PHP app, Phippy has gone on to help thousands of folx take their first steps to understanding cloud native computing - from containerisation to automation. Today, Phippy and Friends' mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging and easy-to-understand manner.</p>
+						<p>From a humble PHP app, Phippy has gone on to help thousands of folx take their first steps to understanding cloud native computing - from containerisation to automation. Today, Phippy and Friends’ mission is to demystify cloud native computing and explain complicated concepts in a compelling, engaging and easy-to-understand manner.</p>
 					</div>
 				</div>
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -2367,22 +2024,32 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="lf-grid section-17__characters">
 					<?php
-						LF_Utils::display_responsive_images( 82207, 'full', '1000px', null, 'lazy', 'New Phippy characters, Owlina The Owl, donated by Open Policy Agent and Cappy The Turtle' );
+						LF_Utils::display_responsive_images( 99594, 'full', '1100px', null, 'lazy', 'New Phippy characters, Obee the Cilium Bee and Tai the TUF elephant' );
 					?>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p class="sub-header">Phippy and Friends got a 3D makeover</p>
+				<p class="sub-header">NEW PHIPPY BOOK</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="wp-block-lf-youtube-lite">
-					<lite-youtube videoid="-etekNAO2Xc"
-						videotitle="Phippy gets a 3D makeover" webpStatus="1"
-						sdthumbStatus="0" title="Play Phippy 3D">
-					</lite-youtube>
+				<div class="lf-grid section-10__cto">
+					<div class="section-10__cto-col1">
+						<p>We were also thrilled to see Phippy dive into new adventures in WASM in <strong>Phippy's Field Guide to Wasm</strong> Thanks to our friends at <strong>Fermyon!</strong></p>
+					</div>
+					<div class="section-10__cto-col2">
+						<div class="wp-block-button"><a href="https://drive.google.com/file/d/1M465JPam7rdi5uf5_WOaatayU5RRJ9hm/view"
+						title="Read now"
+						class="wp-block-button__link fit-content">Read now</a>
+						</div>
+					</div>
 				</div>
+						
+				<?php
+						LF_Utils::display_responsive_images( 99595, 'full', '1100px', null, 'lazy', 'Phippys Field Guide to Wasm book cover' );
+				?>
+
 				<div class="shadow-hr"></div>
 
 				<p class="sub-header">Join The Phippy & Friends Family!</p>
@@ -2391,68 +2058,34 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 
 				<div class="section-17__banner">
 					<div class="section-17__banner-wrapper">
-						<h2 class="section-17__banner-title">Are you a
-							maintainer on
-							a
-							graduated project?</h2>
-						<p
-							class="section-17__banner-text">Do you want to help others better understand the concepts of cloud native computing? Donate a character to the Phippy and Friends family.</p>
-					</div>
-					<div class="wp-block-button"><a href="https://github.com/cncf/foundation/blob/master/phippy-guidelines.md"
-							title="Donate a character"
-							class="wp-block-button__link fit-content">Donate a
-							character</a>
+						<div class="lf-grid section-10__cto">
+							<div class="section-10__cto-col1">
+								<h2 class="section-17__banner-title">Are you a
+									maintainer on
+									a
+									graduated project?</h2>
+								<p class="section-17__banner-text">Do you want to help others better understand the concepts of cloud native computing? Donate a character to the Phippy and Friends family.</p>
+
+								<div aria-hidden="true" class="report-spacer-40"></div>
+
+								<div class="wp-block-button"><a href="https://github.com/cncf/foundation/blob/master/phippy-guidelines.md"
+								title="Donate a character"
+								class="wp-block-button__link fit-content">Donate a
+								character</a>
+								</div>
+							</div>
+							<div class="section-10__cto-col2">
+								<?php
+								LF_Utils::display_responsive_images( 99596, 'large', '500px', null, 'lazy', 'Confused Goldie character' );
+								?>
+							</div>
+						</div>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
 			</div>
 		</section>
-
-		<section class="section-18 is-style-down-gradient alignfull">
-
-			<div class="container wrap">
-
-				<h2 class="section-header">Introducing: <br
-						class="show-over-1000">Documentaries</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-10-col">
-						<p>This year CNCF helped launch two documentary films that supported our mission to humanize developers by telling their story of development in this dynamic medium. In January 2023,  <a href="https://youtu.be/BE77h7dmoQU">The Origins of Kubernetes</a> debuted on YouTube. The two part documentary has since garnered a combined 463,000 views and continues to attract viewers from across the world.</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<div class="wp-block-lf-youtube-lite">
-					<lite-youtube videoid="BE77h7dmoQU"
-						videotitle="Kubernetes The Documentary" webpStatus="1"
-						sdthumbStatus="0"
-						title="Play Kubernetes The Documentary">
-					</lite-youtube>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p><a href="https://youtu.be/rT4fJNbfe14">Inside Prometheus</a> debuted in October 2023 at Prometheus Day North America as part of KubeCon + CloudNativeCon NA and has so far garnered 59,000 views on YouTube. Both films succeed in giving a voice and face to the forward-looking engineers who tackled adversity and technical challenges in their quest to change the way we work and live today.</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="wp-block-lf-youtube-lite">
-					<lite-youtube videoid="rT4fJNbfe14"
-						videotitle="Inside Prometheus" webpStatus="1"
-						sdthumbStatus="0" title="Play Inside Prometheus">
-					</lite-youtube>
-				</div>
-			</div>
-		</section>
-
-
 		<section id="community"
 			class="section-19 is-style-down-gradient alignfull">
 
@@ -2474,21 +2107,47 @@ LF_Utils::get_svg( $report_folder . 'icon-calendar-pink.svg', true );
 						class="restrictive-9-col">We doubled down on our commitment to #TeamCloudNative in 2023, investing in community-driven initiatives to fuel sustained momentum, expansion, growth and adoption. Importantly, we continued to sharpen focus on our DEI initiatives, ensuring that the ecosystem is a welcoming place where everybody can thrive.</p>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<p class="sub-header">Diversity, Equity, and Inclusivity</p>
-
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="lf-grid">
-					<p
-						class="restrictive-9-col">CNCF continues to support the development of this incredible cloud native community while also striving to ensure that everyone who participates feels welcome regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. To date, <strong>we've offered more than 5,000 diversity and need-based scholarships</strong>, through the Dan Kohn Scholarship Fund.</p>
+				<?php
+					LF_Utils::display_responsive_images( 99611, 'full', '1200px', null, 'lazy', 'Diversity group on stage cheering at Kubecon NA' );
+				?>
+				<div aria-hidden="true" class="report-spacer-100"></div>
+
+				<div class="lf-grid section-12__report">
+					<div class="section-12__report-col1">
+
+						<p class="sub-header">Deaf & HOH Working Group</p>
+
+						<div aria-hidden="true" class="report-spacer-40"></div>
+
+						<p>This year saw the launch of the <a href="https://contribute.cncf.io/about/deaf-and-hard-of-hearing/">CNCF Deaf and Hard of Hearing</a> (deaf/hoh) working group, which aims to empower and include individuals who are deaf or hard of hearing in the cloud native and open source communities. The group’s mission is to create a <strong>supportive</strong> and <strong>inclusive environment</strong> within the cloud native and open source community.</p>
+
+					</div>
+					<div class="section-12__report-col2">
+						<?php
+						LF_Utils::display_responsive_images( 99610, 'full', '600px', null, 'lazy', 'Laptop with CNBC article showing on it' );
+						?>
+					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<p
-					class="sub-header">Women And Gender Non-Conforming Speakers - 2023</p>
+
+				<p class="sub-header">DEI</p>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p>CNCF continues to support the development of this incredible cloud native community while also striving to ensure that everyone who participates feels welcome regardless of gender, gender identity, sexual orientation, disability, race, ethnicity, age, religion, or economic status. To date, we’ve offered more than <strong>6,000 diversity</strong> and need-based scholarships, through the <strong>Dan Kohn Scholarship Fund</strong>.</p>
+						<p>In 2023 we supported <strong>744 speakers</strong> and scholarship recipients with travel funding to attend CNCF events. The travel fund recipients are from traditionally underrepresented or marginalized groups; as well as active community members who would not otherwise have been able to attend due to financial reasons. Additionally, we offered 1,080 complimentary registration passes to those in need.</p>
+					</div>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-80"></div>
+
+				<p class="sub-header">Women And Gender Non-Conforming Speakers - 2023</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
