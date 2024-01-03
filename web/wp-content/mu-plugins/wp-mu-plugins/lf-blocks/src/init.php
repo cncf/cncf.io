@@ -26,8 +26,8 @@ function lf_blocks_frontend_assets() {
 
 	if ( has_block( 'lf/landscape' ) ) {
 		wp_enqueue_script(
-			'landscape-resize',
-			'//landscape.cncf.io/iframeResizer.js',
+			'landscape-resize2',
+			plugins_url( '/src/landscape/scripts/iframeResizer.min.js', __DIR__ ),
 			array( 'jquery' ),
 			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 			true
