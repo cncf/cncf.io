@@ -2487,180 +2487,48 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 				<div class="lf-grid">
 					<p
-						class="opening-paragraph restrictive-10-col">CNCF worked closely in partnership with individual contributors and community groups throughout 2023, developing programs to navigate and manage the fast-growing ecosystem - rising to meet the growing global demand for cloud native technologies.</p>
+						class="opening-paragraph restrictive-10-col">CNCF worked closely in <strong>partnership</strong> with individual contributors and community groups throughout 2023, developing programs to navigate and manage the <strong>fast-growing ecosystem</strong> - rising to meet the growing global demand for cloud native technologies.</p>
 				</div>
 
-				<p class="sub-header">New End User Group</p>
+				<?php LF_Utils::display_responsive_images( 99822, 'full', '1200px', '', 'lazy', 'Conference participants doing a selfie' ); ?>
+				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<img width="378" height="109" loading="lazy" src="
-<?php
-Lf_Utils::get_image( $report_folder . 'transportation-user-group.png' );
-?>
-" alt=" CNCF Transportation User Group logo">
-
+				<h2 class="section-header">Community Mentoring</h2>
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<p class="restrictive-9-col">The CNCF Transportation User Group's purpose is to function as a focal meeting point for the discussion and advancement of cloud native in transportation and logistics organizations. This includes enumerating current practices, identifying gaps, and directing efforts to help improve workflows.
-</p>
+					<p
+						class="opening-paragraph restrictive-10-col">CNCF proudly supported more than 140 individuals through various <a href="https://github.com/cncf/mentoring">mentoring and internship</a> opportunities in 2023, including the <a href="https://lfx.linuxfoundation.org/">LFX mentorship platform</a>, <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>, <a href="https://developers.google.com/season-of-docs">Google Summer of Docs (GSoD)</a> program, and <a href="https://www.outreachy.org/">Outreachy</a>. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.</p>
 				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">CNCF Glossary</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>The <a href="https://glossary.cncf.io/">Cloud Native Glossary</a> is a project led by the CNCF Business Value Subcommittee. Its goal is to explain cloud native concepts in clear and simple language without requiring any previous technical knowledge.</p>
+						<p>The TAG Contributor Strategy Mentoring Working Group recruited a community administrator for Google Summer of Code, and added a Technical Lead for data analytics to help measure the effectiveness of the program against the Working Group goals.</p>
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<p
-					class="sub-header">Seven new translations of the CNCF Glossary were donated this year</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<picture>
-					<source media="(max-width: 499px)" srcset="
-<?php
-Lf_Utils::get_image( $report_folder . 'glossary-banner-mobile.png' );
-?>
-">
-					<source media="(min-width: 500px)" srcset="
-<?php
-Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
-?>
-">
-					<img width="1200" height="200" src="
-<?php
-Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
-?>
-" alt="Seven new translations of the CNCF Glossary were donated this year" loading="lazy">
-				</picture>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<div class="section-20__banner">
-					<p
-						class="section-20__banner-text">The Glossary is a community-driven effort and everyone is welcome to contribute new terms, update current ones, or help translate into different languages.</p>
-					<div class="wp-block-button"><a href="https://glossary.cncf.io/contribute/"
-							title="Contribute to the Glossary"
-							class="wp-block-button__link fit-content"
-							style="white-space: nowrap;">Contribute</a>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Community Mentoring</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-10-col">
-						<p>CNCF proudly supported more than 100 individuals through various <a href="https://github.com/cncf/mentoring">mentoring and internship opportunities</a> in 2023, including the <a href="https://lfx.linuxfoundation.org/tools/mentorship">LFX mentorship platform</a>, <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>, <a href="https://developers.google.com/season-of-docs">Google Summer of Docs (GSoD)</a> program, and <a href="https://www.outreachy.org/">Outreachy</a>. These programs are important catalysts for internships to have an impact on future technologies that we all depend on.<br><br>
-						In August, the TAG Contributor Strategy approved a Mentoring Working Group. The primary goals of this Working Group are to have the community administer CNCF mentorship initiatives and, by doing so, to help provide the capacity needed to grow and add new mentorship programs.
-					</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<p
-					class="sub-header">We sponsored 106 students to work on 28 CNCF Projects</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid section-20__mentoring">
 
 					<div class="section-20__mentoring-col1">
-						<p class="section-20__mentoring-number">86</p>
-						<img loading="lazy" width="274" height="41" src="
-<?php LF_Utils::get_svg( $report_folder . 'logo-lfx-mentorship.svg', true ); ?>
-" alt="Logo of LFX Mentorship">
+					<p class="sub-header">We sponsored 132 students to work on 30 CNCF Projects</p>
+					<div aria-hidden="true" class="report-spacer-20"></div>
+						<img loading="lazy" width="308" height="276" src="
+<?php LF_Utils::get_svg( $report_folder . 'lf-mentorship-group.svg', true ); ?>
+" alt="Mentorship metrics">
 					</div>
 					<div class="section-20__mentoring-col2">
-						<p class="section-20__mentoring-number">3</p>
-						<img loading="lazy" width="280" height="72" src="
-<?php LF_Utils::get_image( $report_folder . 'logo-gsod.png' ); ?>
-" alt="Logo of Google Season of Docs">
-					</div>
-					<div class="section-20__mentoring-col3">
-						<p class="section-20__mentoring-number">16</p>
-						<img loading="lazy" width="287" height="80" src="
-<?php LF_Utils::get_svg( $report_folder . 'logo-gsoc.svg', true ); ?>
-" alt="Logo of Google Summer of Code">
-
-					</div>
-					<div class="section-20__mentoring-col4">
-						<p class="section-20__mentoring-number">1</p>
-						<img loading="lazy" width="260" height="60" src="
-<?php LF_Utils::get_svg( $report_folder . 'logo-outreachy.svg', true ); ?>
-" alt="Logo of Outreachy">
+					<p class="sub-header">And helped CNCF Projects participate in other open source mentoring opportunities:</p>
+					<div aria-hidden="true" class="report-spacer-20"></div>
+					<img loading="lazy" width="458" height="276" src="
+<?php LF_Utils::get_svg( $report_folder . 'mentoring-opps-group.svg', true ); ?>
+" alt="Mentoring opportunities metrics">
 					</div>
 
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="wp-block-button"><a href="https://github.com/cncf/mentoring" title="Get involved with mentoring"
-						class="wp-block-button__link fit-content"
-						style="white-space: nowrap;">Get involved</a>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Who we are</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>Internally, <a href="https://www.cncf.io/people/staff/" title="See CNCF staff">we employ 41 people from various backgrounds and locations</a>; 61% women, 39% men. CNCF's Governance Leadership, comprising the Governing Board and Technical Oversight Committee, is 20% women and 80% men.</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<div class="lf-grid section-20__staff">
-					<div class="section-20__staff-col1">
-						<p class="sub-header">Staff</p>
-
-						<div aria-hidden="true" class="report-spacer-60"></div>
-
-						<img loading="lazy" width="585" height="585" src="
-<?php LF_Utils::get_svg( $report_folder . 'staff-chart.svg', true ); ?>
-" alt="Chart of CNCF staff - showing 61% women, 39% men">
-
-					</div>
-					<div class="section-20__staff-col2">
-
-						<p class="sub-header">Governance Leadership</p>
-
-						<div aria-hidden="true" class="report-spacer-40"></div>
-
-						<img loading="lazy" width="389" height="214" src="
-<?php LF_Utils::get_svg( $report_folder . 'governance-chart.svg', true ); ?>
-" alt="Governance Leadership chart showing 20% women, 80% men">
-
-						<div aria-hidden="true" class="report-spacer-80"></div>
-
-						<p class="sub-header">Executive Leadership</p>
-
-						<div aria-hidden="true" class="report-spacer-40"></div>
-
-						<img loading="lazy" width="389" height="214" src="
-<?php LF_Utils::get_svg( $report_folder . 'executive-leadership-chart.svg', true ); ?>
-" alt="Chart of Executive Leadership - showing 62.5% women, 37.5% men">
-
-					</div>
-				</div>
 			</div>
 		</section>
 
@@ -2673,75 +2541,60 @@ Lf_Utils::get_image( $report_folder . 'glossary-banner-desktop.png' );
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-8-col">
-						<p>CNCF's revenue is derived from four primary fundraising sources, including membership, event sponsorship, event registration, and training.</p>
-					</div>
+					<p
+						class="opening-paragraph restrictive-10-col">CNCF’s revenue is derived from four primary fundraising sources, including membership, event sponsorship, event registration, and training.</p>
 				</div>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
 
 				<p class="sub-header">Four Funding Sources</p>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid section-21__funding">
-					<div class="section-21__funding-col1">
-						<img loading="lazy" width="585" height="276" src="
-<?php LF_Utils::get_svg( $report_folder . 'funding-1.svg', true ); ?>
-" alt="7.1% from training, 26.9% from Membership">
-					</div>
-					<div class="section-21__funding-col2">
-						<img loading="lazy" width="585" height="276" src="
-<?php LF_Utils::get_svg( $report_folder . 'funding-2.svg', true ); ?>
-" alt="27.9% from event registration, 38% from event sponorship">
-
-					</div>
-
-				</div>
+				<picture>
+						<source media="(max-width: 599px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'funding-mobile.svg', true );
+?>
+">
+						<source media="(min-width: 600px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'funding-desktop.svg', true );
+?>
+">
+						<img width="1098" height="502" src="
+<?php
+Lf_Utils::get_svg( $report_folder . 'funding-desktop.svg', true );
+?>
+" alt="CNCF Funding breakdown pie chart" loading="lazy">
+					</picture>
 
 				<div class="shadow-hr"></div>
 
 				<p class="sub-header">Expenditures</p>
 
-				<div aria-hidden="true" class="report-spacer-40"></div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<div class="lf-grid section-21__expenses">
+				<picture>
+						<source media="(max-width: 599px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'expenditures-mobile.svg', true );
+?>
+">
+						<source media="(min-width: 600px)" srcset="
+<?php
+Lf_Utils::get_svg( $report_folder . 'expenditures-desktop.svg', true );
+?>
+">
+						<img width="1200" height="700" src="
+<?php
+Lf_Utils::get_svg( $report_folder . 'expenditures-desktop.svg', true );
+?>
+" alt="expenditures breakdown" loading="lazy">
+					</picture>
 
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-1.svg', true ); ?>
-	" alt="6.6% for Marketing, Comms and Busiess Development">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-2.svg', true ); ?>
-	" alt="50.5% for Events">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-3.svg', true ); ?>
-	" alt="17.4% for Developer Collaboration & IT">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-4.svg', true ); ?>
-	" alt="1.9% for Training & Certification">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-5.svg', true ); ?>
-	" alt="1.2% for Legal">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-6.svg', true ); ?>
-	" alt="10.8% for Leadership & Coordination">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-7.svg', true ); ?>
-	" alt="1.0% for Operations">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-8.svg', true ); ?>
-	" alt="5.8% for LG General & Adminstrative">
-					<img loading="lazy" width="380" height="167" src="
-	<?php LF_Utils::get_svg( $report_folder . 'expenses-9.svg', true ); ?>
-	" alt="4.8% for Reserve">
+					<div aria-hidden="true" class="report-spacer-100"></div>
 
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-8-col">
-						<p>A basic premise behind CNCF, our conferences (including <a href="https://www.cncf.io/community/kubecon-cloudnativecon-events/">KubeCon + CloudNativeCon</a>), and open source, in general, is that interactions are positive-sum. There is no fixed amount of investment, mindshare, or development contribution allocated to specific projects. Equally important, a neutral home for a project and community fosters this type of positive-sum thinking and drives the growth and diversity that we believe are core elements of a successful open source project.</p>
+					<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p>A basic premise behind CNCF, our conferences (including <a href="https://www.cncf.io/kubecon-cloudnativecon-events/">KubeCon + CloudNativeCon</a>), and open source, in general, is that interactions are positive-sum. There is no fixed amount of investment, mindshare, or development contribution allocated to specific projects. Equally important, a neutral home for a project and community fosters this type of positive-sum thinking and drives the growth and diversity that we believe are core elements of a successful open source project.</p>
 					</div>
 				</div>
 			</div>

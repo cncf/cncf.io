@@ -1760,23 +1760,23 @@ html {
 			&-col3,
 			&-col4 {
 				grid-column: span 12;
-				gap: 20px;
 				@media (min-width: 600px) {
-					grid-column: span 6;
-					gap: 50px;
+					grid-column: span 5;
 				}
-				display: flex;
-				flex-direction: row;
 				align-items: center;
+				text-align: center;
 				max-width: 100%;
 				img {
 					max-width: 100%;
-					@media (max-width: 500px) {
-						max-width: 200px;
-						height: auto;
-					}
 				}
 			}
+
+			&-col2 {
+				@media (min-width: 600px) {
+					grid-column: 7 / -1;
+				}
+			}
+
 		}
 		&__staff {
 			&-col1 {
