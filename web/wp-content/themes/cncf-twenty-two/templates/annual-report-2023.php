@@ -882,9 +882,10 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 			<div class="lf-grid section-10__vid">
 				<div class="section-10__vid-col1">
+				<a href="https://www.youtube.com/watch?v=ZPZSRFUNhMY">
 					<?php
 					LF_Utils::display_responsive_images(
-						'99544',
+						'99798',
 						'full',
 						'600px',
 						null,
@@ -892,6 +893,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 						'Mercedes store'
 					);
 					?>
+				</a>
 				</div>
 				<div class="section-10__vid-col2">
 					<p class="sub-header">SPRING 2023 WINNER</p>
@@ -909,6 +911,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 			<div class="lf-grid section-10__vid tophr">
 				<div class="section-10__vid-col1">
+				<a href="https://www.cncf.io/reports/spotify-end-user-journey-report/">
 					<?php
 					LF_Utils::display_responsive_images(
 						'99542',
@@ -919,11 +922,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 						'People cheering on a conference stage'
 					);
 					?>
+					</a>
 				</div>
 				<div class="section-10__vid-col2">
 					<p class="sub-header">AUTUMN 2023 WINNER</p>
 					<div aria-hidden="true" class="report-spacer-20"></div>
-
 					<img loading="lazy" width="243" height="80" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'spotify.svg', true );
@@ -936,9 +939,10 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 			<div class="lf-grid section-10__vid tophr">
 				<div class="section-10__vid-col1">
+				<a href="https://www.youtube.com/watch?v=gkZCnpDrjTQ">
 					<?php
 					LF_Utils::display_responsive_images(
-						'99543',
+						'99797',
 						'full',
 						'600px',
 						null,
@@ -946,6 +950,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 						'Intuit workplace'
 					);
 					?>
+				</a>
 				</div>
 				<div class="section-10__vid-col2">
 					<p class="sub-header">AUTUMN 2022 WINNER</p>
@@ -1006,7 +1011,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 				<div class="lf-grid">
 					<p
-						class="opening-paragraph restrictive-10-col">KCDs are community-organized events that gather adopters and technologists to learn, collaborate, and network, with a goal of furthering the adoption and improvement of Kubernetes and cloud native technologies around the world. In response to the KCD community’s evolving needs in different regions, CNCF strengthened the program this year.</p>
+						class="opening-paragraph restrictive-10-col">KCDs are community-organized events that gather adopters and technologists to learn, collaborate, and network, with a goal of furthering the adoption and improvement of Kubernetes and cloud native technologies around the world. In response to the <a href="https://www.cncf.io/kcds/ ">KCD community's</a> evolving needs in different regions, CNCF strengthened the program this year.</p>
 				</div>
 
 				<div class="lf-grid section-11__kcd">
@@ -2131,7 +2136,7 @@ CTO, CNCF</p>
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-80"></div>
+				<div class="shadow-hr"></div>
 
 
 				<p class="sub-header">DEI</p>
@@ -2147,90 +2152,6 @@ CTO, CNCF</p>
 
 				<div aria-hidden="true" class="report-spacer-80"></div>
 
-				<p class="sub-header">Women And Gender Non-Conforming Speakers - 2023</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid section-19__dei">
-					<div class="section-19__dei-col1">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="95" height="61" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
-?>
-" alt="Female and Non Binary person icon">
-							</div>
-							<div class="text">
-								<span class="number">48%</span><br />
-								<span class="description">of Keynotes</span>
-								<span class="addendum">
-									at <a href="https://events.linuxfoundation.org/archive/2023/kubecon-cloudnativecon-europe/">KubeCon + CloudNativeCon
-										Europe</a> </span>
-							</div>
-						</div>
-
-					</div>
-					<div class="section-19__dei-col2">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="95" height="61" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
-?>
-" alt="Female and Non Binary person icon">
-							</div>
-							<div class="text">
-								<span class="number">44%</span><br />
-								<span class="description">of Keynotes</span>
-								<span class="addendum">
-									at <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/">KubeCon + CloudNativeCon North
-										America</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">Scholarships Offered</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<p class="sub-header">We offered scholarships to:</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-
-				<div class="lf-grid section-19__dei">
-					<div class="section-19__dei-col1">
-						<div class="icon-box-3">
-							<div class="text">
-								<span class="number">749</span><br />
-								<span class="description">Diversity
-									Applicants</span>
-								<span class="addendum">from traditionally
-									underrepresented and / or marginalized
-									groups</span>
-							</div>
-						</div>
-
-					</div>
-					<div class="section-19__dei-col2">
-						<div class="icon-box-3">
-							<div class="text">
-								<span class="number">726</span><br />
-								<span class="description">Need-Based
-									Applicants</span>
-								<span class="addendum">
-									attended KubeCon + CloudNativeCons and CNCF
-									hosted co-located events</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
 				<p
 					class="sub-header">Scholarships were funded by sponsorships from</p>
 
@@ -2241,16 +2162,16 @@ LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-apple.svg', true );
+							LF_Utils::get_svg( $report_folder . 'logo-adevinta.svg', true );
 						?>
-							" alt="Logo for Apple" class="logo-grid__image">
+							" alt="Logo for Adevinta" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-apptio.svg', true );
+							LF_Utils::get_svg( $report_folder . 'logo-apple.svg', true );
 						?>
-							" alt="Logo for Apptio" class="logo-grid__image">
+							" alt="Logo for Apple" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
@@ -2262,20 +2183,6 @@ LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-doppler.svg', true );
-						?>
-							" alt="Logo for Doppler" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-finops-foundation.svg', true );
-						?>
-							" alt="Logo for Fin Ops Foundation" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-form3.svg', true );
 						?>
 							" alt="Logo for Form 3" class="logo-grid__image">
@@ -2283,16 +2190,16 @@ LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-golden-solutions.svg', true );
+							LF_Utils::get_svg( $report_folder . 'logo-google.svg', true );
 						?>
-							" alt="Logo for Golden Solutions" class="logo-grid__image">
+							" alt="Logo for Google" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-grafana-labs.svg', true );
+							LF_Utils::get_svg( $report_folder . 'logo-honeycomb.svg', true );
 						?>
-							" alt="Logo for Grafana Labs" class="logo-grid__image">
+							" alt="Logo for Honeycomb" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
@@ -2304,42 +2211,69 @@ LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-section.svg', true );
+							LF_Utils::get_svg( $report_folder . 'logo-orcasio.svg', true );
 						?>
-							" alt="Logo for Section" class="logo-grid__image">
+							" alt="Logo for Orcasio" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-shopify.svg', true );
+							LF_Utils::get_svg( $report_folder . 'logo-strongdm.svg', true );
 						?>
-							" alt="Logo for Shopify" class="logo-grid__image">
+							" alt="Logo for Strong DM" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
 						<img loading="lazy" src="
 						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-styra.svg', true );
+							LF_Utils::get_svg( $report_folder . 'logo-tailscale.svg', true );
 						?>
-							" alt="Logo for Styra" class="logo-grid__image">
-					</div>
-					<div class="logo-grid__box">
-						<img loading="lazy" src="
-						<?php
-							LF_Utils::get_svg( $report_folder . 'logo-vmware.svg', true );
-						?>
-							" alt="Logo for VM Ware" class="logo-grid__image">
+							" alt="Logo for Tailscale" class="logo-grid__image">
 					</div>
 				</div>
 
 				<div class="shadow-hr"></div>
+
+				<p class="sub-header">Humans of Cloud Native</p>
+
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="lf-grid">
+					<p
+						class="opening-paragraph restrictive-10-col">At the heart of CNCF is our welcoming community of doers, working together to make cloud native ubiquitous. This year we were privileged to publish <a href="https://www.cncf.io/humans-of-cloud-native/">12 Humans of Cloud Native features</a>, telling the stories of amazing individuals and their contributions that make team cloud native such a vibrant, exciting and diverse space. We also held the first Humans of Cloud Native Panel at KubeCon + CloudNativeCon North America, moderated by Bart Farrel. </p>
+				</div>
+				<a href="https://www.cncf.io/humans-of-cloud-native/">
+				<picture>
+					<source media="(max-width: 499px)" srcset="
+					<?php
+					Lf_Utils::get_image( $report_folder . 'hocn-mobile.jpg' );
+					?>
+					">
+										<source media="(min-width: 500px)" srcset="
+					<?php
+					Lf_Utils::get_image( $report_folder . 'hocn-desktop.jpg' );
+					?>
+					">
+										<img width="1200" height="200" src="
+					<?php
+					Lf_Utils::get_image( $report_folder . 'hocn-desktop.jpg' );
+					?>
+					" alt="Collage of multiple HOCN" loading="lazy">
+				</picture>
+				</a>
+			</div>
+		</section>
+		<section
+			class="section-19 is-style-down-gradient alignfull">
+
+				<div class="container wrap">
 
 				<h2 class="section-header">Community Awards</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-10-col">
-						<p>Now in their sixth year, the <a href="https://www.cncf.io/announcements/2020/11/20/cloud-native-computing-foundation-announces-2020-community-awards-winners/">CNCF Community Awards</a> highlighted the most active ambassador and top contributor across all CNCF projects. The awards included:</p>
+					<div class="restrictive-9-col">
+						<p>Now in their sixth year, the <a href="https://www.cncf.io/announcements/2023/11/08/cloud-native-computing-foundation-announces-2023-community-awards-winners/">CNCF Community Awards</a> highlighted the most active ambassador and top contributor across all CNCF projects. The awards included:</p>
 					</div>
 				</div>
 
@@ -2364,11 +2298,11 @@ LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
 						<div class="section-19__person">
-							<?php LF_Utils::display_responsive_images( 82196, 'full', '175px', 'section-19__person-image', 'lazy', 'Carolyn Van Slyck' ); ?>
+							<?php LF_Utils::display_responsive_images( 99807, 'full', '175px', 'section-19__person-image', 'lazy', 'Akihiro Suda' ); ?>
 							<p class="section-19__person-text-wrapper">
-							<span class="section-19__person-name">Carolyn Van Slyck</span>
+							<span class="section-19__person-name">Akihiro Suda</span>
 							<span
-							class="section-19__person-title"><a href="https://www.twitter.com/carolynvs">@carolynvs</a></span></p>
+							class="section-19__person-title"><a href="https://www.twitter.com/_AkihiroSuda_">@_AkihiroSuda_</a></span></p>
 						</div>
 
 					</div>
@@ -2392,19 +2326,11 @@ LF_Utils::get_svg( $report_folder . 'icon-female-non-binary.svg', true );
 						<div class="section-19__person-align">
 
 							<div class="section-19__person">
-								<?php LF_Utils::display_responsive_images( 82199, 'full', '175px', 'section-19__person-image', 'lazy', 'Catherine Paganini' ); ?>
+								<?php LF_Utils::display_responsive_images( 99803, 'full', '175px', 'section-19__person-image', 'lazy', 'Divya Mohan' ); ?>
 								<p class="section-19__person-text-wrapper">
-							<span class="section-19__person-name">Catherine Paganini</span>
+							<span class="section-19__person-name">Divya Mohan</span>
 							<span
-							class="section-19__person-title"><a href="https://www.twitter.com/CathPaga">@CathPaga</a></span></p>
-							</div>
-
-							<div class="section-19__person">
-								<?php LF_Utils::display_responsive_images( 82198, 'full', '175px', 'section-19__person-image', 'lazy', 'Rey Lejano' ); ?>
-								<p class="section-19__person-text-wrapper">
-							<span class="section-19__person-name">Rey Lejano</span>
-							<span
-							class="section-19__person-title"><a href="https://www.twitter.com/reylejano">@reylejano</a></span></p>
+							class="section-19__person-title"><a href="https://twitter.com/divya_mohan02">@divya_mohan02</a></span></p>
 							</div>
 
 						</div>
@@ -2435,111 +2361,115 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 				<div class="section-19__person-align">
 
 					<div class="section-19__person">
-						<?php LF_Utils::display_responsive_images( 82194, 'full', '175px', 'section-19__person-image', 'lazy', 'Adolfo García Veytia' ); ?>
+						<?php LF_Utils::display_responsive_images( 99802, 'full', '175px', 'section-19__person-image', 'lazy', 'Kaslin Fields' ); ?>
 						<p class="section-19__person-text-wrapper">
-							<span class="section-19__person-name">Adolfo García Veytia</span>
+							<span class="section-19__person-name">Kaslin Fields</span>
 							<span
-							class="section-19__person-title"><a href="https://www.twitter.com/puerco">@puerco</a></span></p>
+							class="section-19__person-title"><a href="https://www.twitter.com/kaslinfields">@kaslinfields</a></span></p>
 					</div>
 
 					<div class="section-19__person">
-						<?php LF_Utils::display_responsive_images( 82195, 'full', '175px', 'section-19__person-image', 'lazy', 'Alex Chircop' ); ?>
+						<?php LF_Utils::display_responsive_images( 99805, 'full', '175px', 'section-19__person-image', 'lazy', 'Fassela k' ); ?>
 						<p class="section-19__person-text-wrapper">
-							<span class="section-19__person-name">Alex Chircop</span>
+							<span class="section-19__person-name">Fassela k</span>
 							<span
-							class="section-19__person-title"><a href="https://www.twitter.com/chira001">@chira001</a></span></p>
+							class="section-19__person-title"><a href="https://www.twitter.com/FaseelaDilshan">@FaseelaDilshan</a></span></p>
 					</div>
 
 					<div class="section-19__person">
-						<?php LF_Utils::display_responsive_images( 82199, 'full', '175px', 'section-19__person-image', 'lazy', 'Catherine Paganini' ); ?>
+						<?php LF_Utils::display_responsive_images( 99806, 'full', '175px', 'section-19__person-image', 'lazy', 'Arnaud Meukam' ); ?>
 						<p class="section-19__person-text-wrapper">
+							<span class="section-19__person-name">Arnaud Meukam</span>
+							<span
+							class="section-19__person-title"><a href="https://www.twitter.com/ameukam">@ameukam</a></span></p>
+					</div>
+
+					<div class="section-19__person">
+						<?php LF_Utils::display_responsive_images( 99804, 'full', '175px', 'section-19__person-image', 'lazy', 'Lin Sun' ); ?>
+						<p class="section-19__person-text-wrapper">
+							<span class="section-19__person-name">Lin Sun</span>
+							<span
+							class="section-19__person-title"><a href="https://www.twitter.com/linsun_unc">@linsun_unc</a></span></p>
+					</div>
+
+					<div class="section-19__person">
+						<?php LF_Utils::display_responsive_images( 99808, 'full', '175px', 'section-19__person-image', 'lazy', 'Rajas Kakodkar' ); ?>
+						<p class="section-19__person-text-wrapper">
+							<span class="section-19__person-name">Rajas Kakodkar</span>
+							<span
+							class="section-19__person-title"><a href="https://www.twitter.com/RajasKakodkar">@RajasKakodkar</a></span></p>
+					</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-120"></div>
+
+
+				<div class="lf-grid">
+					<p
+						class="opening-paragraph restrictive-10-col">In 2023, CNCF introduced two new awards to spotlight valuable work creating positive ripples throughout the ecosystem.</p>
+				</div>
+
+
+				<div class="lf-grid section-19__ca">
+					<div class="section-19__ca-col1">
+						<img loading="lazy" width="64" height="66" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'icon-first-place.svg', true );
+						?>
+						" alt="First place icon">
+
+						<div aria-hidden="true" class="report-spacer-40"></div>
+
+						<p class="sub-header">tHE TAGGIE</p>
+
+						<div aria-hidden="true" class="report-spacer-20"></div>
+
+						<p>Presented to the person who has done the most to advance CNCF’s <a href="https://github.com/cncf/toc/tree/main/tags">Technical Advisory Groups (TAGs)</a>. TAGs scale contributions by the CNCF technical and user community, while retaining integrity and increasing quality in support of CNCF’s mission of making cloud native ubiquitous. The very first recipient of this award was</p>
+
+						<div aria-hidden="true" class="report-spacer-60"></div>
+
+						<div class="section-19__person">
+							<?php LF_Utils::display_responsive_images( 82199, 'full', '175px', 'section-19__person-image', 'lazy', 'Catherine Paganini' ); ?>
+							<p class="section-19__person-text-wrapper">
 							<span class="section-19__person-name">Catherine Paganini</span>
 							<span
 							class="section-19__person-title"><a href="https://www.twitter.com/CathPaga">@CathPaga</a></span></p>
-					</div>
+						</div>
 
-					<div class="section-19__person">
-						<?php LF_Utils::display_responsive_images( 82193, 'full', '175px', 'section-19__person-image', 'lazy', 'Patrick Ohly' ); ?>
-						<p class="section-19__person-text-wrapper">
-							<span class="section-19__person-name">Patrick Ohly</span>
-							</p>
 					</div>
+					<div class="section-19__ca-col2">
+						<img loading="lazy" width="54" height="64" src="
+						<?php
+						LF_Utils::get_svg( $report_folder . 'icon-chapters-g.svg', true );
+						?>
+						" alt="Document with check icon">
 
-					<div class="section-19__person">
-						<?php LF_Utils::display_responsive_images( 82197, 'full', '175px', 'section-19__person-image', 'lazy', 'Xing Yang' ); ?>
-						<p class="section-19__person-text-wrapper">
-							<span class="section-19__person-name">Xing Yang</span>
+						<div aria-hidden="true" class="report-spacer-40"></div>
+
+						<p class="sub-header">small but mighty</p>
+
+						<div aria-hidden="true" class="report-spacer-20"></div>
+
+						<p>This award recognizes the company or organization in the community with the largest impact. CNCF is made up of hundreds of thousands of individuals and organizations, each providing valuable contributions, but this award is presented to an organization punching above its weight. CNCF is pleased to present this award to</p>
+
+						<div aria-hidden="true" class="report-spacer-60"></div>
+
+						<div class="section-19__person-align">
+
+							<div class="section-19__person">
+								<?php LF_Utils::display_responsive_images( 99809, 'full', '175px', 'section-19__person-image', 'lazy', 'Weaveworks' ); ?>
+								<p class="section-19__person-text-wrapper">
+							<span class="section-19__person-name">Weaveworks</span>
 							<span
-							class="section-19__person-title"><a href="https://www.twitter.com/2000xyang">@2000xyang</a></span></p>
-					</div>
-				</div>
+							class="section-19__person-title"><a href="https://twitter.com/Weaveworks">@Weaveworks</a></span></p>
+							</div>
 
-				<div class="shadow-hr"></div>
-
-				<h2 class="section-header">CNCF Meetups become <br
-						class="show-over-1000">Community Groups</h2>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>2023 saw the cloud native community switch from the Meetup platform to <a href="https://community.cncf.io/">Cloud Native Community Groups</a> and the new platform has taken off. It has become the singular place where meetups, online programs, project office hours, and community events are run. The platform now hosts over 31,500 unique chapter members and we are excited to see this platform continue to grow.</p>
+						</div>
 					</div>
 				</div>
 
 				<div aria-hidden="true" class="report-spacer-100"></div>
 
-				<p class="sub-header">Community Groups 2023</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
-
-				<div class="lf-grid section-19__groups">
-					<div class="section-19__groups-col1">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="103" height="57" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-attendees-g.svg', true );
-?>
-" alt="People icon">
-							</div>
-							<div class="text">
-								<span class="number">31,500+</span><br />
-								<span class="description">Attendees</span>
-							</div>
-						</div>
-					</div>
-					<div class="section-19__groups-col2">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="62" height="68" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-calendar-g.svg', true );
-?>
-" alt="Calendar icon">
-							</div>
-							<div class="text">
-								<span class="number">574</span><br />
-								<span class="description">Events</span>
-							</div>
-						</div>
-					</div>
-					<div class="section-19__groups-col3">
-						<div class="icon-box-3">
-							<div class="icon">
-								<img loading="lazy" width="62" height="62" src="
-<?php
-LF_Utils::get_svg( $report_folder . 'icon-chapters-g.svg', true );
-?>
-" alt="Chapters icon">
-							</div>
-							<div class="text">
-								<span class="number">335</span><br />
-								<span class="description">Chapters</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php LF_Utils::display_responsive_images( 99801, 'full', '1200px', '', 'lazy', 'All award recipients on a stage' ); ?>
 
 			</div>
 		</section>
