@@ -19,7 +19,7 @@ function lf_landscape_render_callback( $attributes ) {
 	// get iframe width.
 	$iframe_width = isset( $attributes['iframeWidth'] ) ? $attributes['iframeWidth'] : '1px';
 	// get iframe id if set.
-	$iframe_id = isset( $attributes['iframeId'] ) ? $attributes['iframeId'] : '';
+	$iframe_id = isset( $attributes['iframeId'] ) ? $attributes['iframeId'] : 'landscape';
 	// get the classes set from the block if any.
 	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
