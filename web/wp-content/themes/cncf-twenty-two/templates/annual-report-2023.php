@@ -2620,64 +2620,22 @@ Lf_Utils::get_svg( $report_folder . 'expenditures-desktop.svg', true );
 
 						<div aria-hidden="true" class="report-spacer-80"></div>
 
-						<p>Check out our <a href="https://community.cncf.io" title="Community Events">calendar for community events</a> near you and don't forget to <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/" title="Register for KubeCon+ CloudNativeCon North America">register</a> for KubeCon + CloudNativeCon Europe in Amsterdam, April 2023.</p>
+						<p>We’re looking forward to seeing you in 2024! Check out our calendar for community events near you and don’t forget to register for KubeCon+CloudNativeCon Europe in Paris in April.</p>
 					</div>
 					<div class="thanks__col2">
-						<?php
-							LF_Utils::display_responsive_images( 82121, 'full', '450px', '', 'lazy', 'CNCF Mascots' );
-						?>
+
+				<figure class="thanks__col2-bg-figure">
+					<?php
+					LF_Utils::display_responsive_images( 99525, 'full', '2400px', 'thanks__col2-bg-image', 'lazy', 'City architecture diagram' );
+					?>
+				</figure>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-120"></div>
 
-				<div class="shadow-hr"></div>
-
-				<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/"
-					title="Register for KubeCon+ CloudNativeCon North America">
-					<picture>
-						<source media="(max-width: 499px)"
-							srcset="<?php echo esc_url( wp_get_attachment_image_url( '80844', 'full', false ) ); ?>">
-						<source media="(min-width: 500px)"
-							srcset="<?php echo esc_url( wp_get_attachment_image_url( '80843', 'full', false ) ); ?>">
-						<?php
-						LF_Utils::display_responsive_images(
-							'80843',
-							'full',
-							'1200px',
-							null,
-							'lazy',
-							'Register for KubeCon+ CloudNativeCon North America'
-						);
-						?>
-					</picture>
-				</a>
-
-				<div class="shadow-hr"></div>
-
-				<div class="social-share">
-					<p class="social-share__title">Share this report</p>
-
-					<div class="social-share__wrapper">
-						<!-- linkedin -->
-						<?php if ( $linkedin_url ) : ?>
-						<a aria-label="Share on Linkedin"
-							title="Share on Linkedin"
-							href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-linkedin.svg' ); ?></a>
-						<?php endif; ?>
-
-						<!-- twitter -->
-						<?php if ( $twitter_url ) : ?>
-						<a aria-label="Share on Twitter"
-							title="Share on Twitter"
-							href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-twitter.svg' ); ?></a>
-						<?php endif; ?>
-
-						<!-- sendto email -->
-						<?php if ( $mailto_url ) : ?>
-						<a aria-label="Share by Email" title="Share by Email"
-							href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-mail.svg' ); ?></a>
-						<?php endif; ?>
-					</div>
-				</div>
+				<?php
+					echo do_shortcode( '[event_banner hide_title=true]' );
+				?>
 
 			</div>
 		</section>
