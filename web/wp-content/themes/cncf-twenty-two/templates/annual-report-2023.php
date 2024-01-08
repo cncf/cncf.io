@@ -2048,6 +2048,8 @@ CTO, CNCF</p>
 						title="Read now"
 						class="wp-block-button__link fit-content">Read now</a>
 						</div>
+						<div aria-hidden="true" class="report-spacer-40"></div>
+
 					</div>
 				</div>
 						
