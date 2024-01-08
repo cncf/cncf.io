@@ -1251,7 +1251,7 @@ transparency report</p>
 					<div class="section-12__report-col2">
 						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-europe-2023/">
 							<?php
-							LF_Utils::display_responsive_images( 99568, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon Europe 2023 Transparency Report' );
+							LF_Utils::display_responsive_images( 90445, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon Europe 2023 Transparency Report' );
 							?>
 						</a>
 					</div>
@@ -1382,7 +1382,7 @@ transparency report</p>
 					<div class="section-12__report-col2">
 						<a href="https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2023/">
 							<?php
-							LF_Utils::display_responsive_images( 99569, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon North America 2023 Transparency Report' );
+							LF_Utils::display_responsive_images( 98880, 'large', '500px', 'ds', 'lazy', 'Cover of the KubeCon + CloudNativeCon North America 2023 Transparency Report' );
 							?>
 						</a>
 					</div>
@@ -1888,7 +1888,7 @@ Lf_Utils::get_svg( $report_folder . 'project-chart-desktop.svg', true );
 						<li><strong>GitOps</strong> continues to be important in the cloud native ecosystem, where projects like <strong>Argo</strong> and <strong>Flux</strong> continue to cultivate large communities.</li>
 						<li>The importance of cost management in tight economic times has resulted in <strong>OpenCost</strong> appearing in the top 30 CNCF project list for the first time. I expect to see OpenCost continue to grow along with the rise of the <strong>FinOps</strong> movement worldwide.</li>
 						<li>As <strong>Kubernetes</strong> matures, many organizations turn to service mesh technology and those projects in CNCF like Envoy, Cilium, and Istio continue to cultivate large contributor communities to meet the demand. <strong>Cilium</strong> recently graduated inside of CNCF and moved up a couple spots in the top 30 CNCF project list.</li>
-						<li>In many cases, CNCF projects underpin large scale AI infrastructure and we have <strong>Kubeflow</strong> appearing on the top 30 CNCF project list for the first time.</li>
+						<li>In many cases, CNCF projects <a href="https://www.cncf.io/case-studies/openai/">underpin large scale AI infrastructure</a> and we have <strong>Kubeflow</strong> appearing on the top 30 CNCF project list for the first time.</li>
 					</ul>
 				</div>
 
@@ -2260,6 +2260,21 @@ CTO, CNCF</p>
 					" alt="Collage of multiple HOCN" loading="lazy">
 				</picture>
 				</a>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p><strong>Do you know somebody doing incredible things in the cloud native ecosystem?</strong>
+						<br/>Nominate them for the Humans of Cloud Native.</p>
+					</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-40"></div>
+
+				<div class="wp-block-button"><a href="mailto:humans@cncf.io"
+								title="Nominate"
+								class="wp-block-button__link fit-content">Nominate</a>
+								</div>
+
 			</div>
 		</section>
 		<section
@@ -2352,7 +2367,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 						<p class="sub-header">Chop Wood & Carry Water awards</p>
 						<div aria-hidden="true" class="report-spacer-20"></div>
 
-						<p>To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the “<strong>Chop Wood and Carry Water</strong>” awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2023:</p>
+						<p>To recognize contributors who spend countless hours completing often mundane tasks, CNCF created the <strong>"Chop Wood and Carry Water"</strong> awards. CNCF was proud to acknowledge the amazing efforts of five individuals for their outstanding contributions in 2023:</p>
 					</div>
 				</div>
 
@@ -2620,7 +2635,7 @@ Lf_Utils::get_svg( $report_folder . 'expenditures-desktop.svg', true );
 
 						<div aria-hidden="true" class="report-spacer-80"></div>
 
-						<p>We’re looking forward to seeing you in 2024! Check out our calendar for community events near you and don’t forget to register for KubeCon+CloudNativeCon Europe in Paris in April.</p>
+						<p>We’re looking forward to seeing you in 2024! Check out our <strong>calendar for community events</strong> near you and don’t forget to <strong>register</strong> for KubeCon+CloudNativeCon Europe in Paris in April.</p>
 					</div>
 					<div class="thanks__col2">
 

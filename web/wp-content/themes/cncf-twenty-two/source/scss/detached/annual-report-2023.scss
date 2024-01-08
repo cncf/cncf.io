@@ -1257,7 +1257,7 @@ html {
 			&-col1 {
 				grid-column: span 12;
 				@media (min-width: 800px) {
-					grid-column: span 6;
+					grid-column: span 5;
 				}
 			}
 			&-col2 {
@@ -1399,6 +1399,7 @@ html {
 				row-gap: 80px;
 			}
 			.course-box {
+				text-align: center;
 				grid-column: span 12;
 				@media (min-width: 412px) {
 					grid-column: span 6;
