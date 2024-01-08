@@ -1119,7 +1119,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 						?>
 					</div>
 				</div>
-
+			</div>
 		</section>
 
 		<section class="section-12 is-style-down-gradient alignfull">
