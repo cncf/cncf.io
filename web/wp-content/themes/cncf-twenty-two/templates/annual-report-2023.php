@@ -63,7 +63,7 @@ Lf_Utils::get_svg( $report_folder . 'hero-desktop.svg', true );
 <?php
 Lf_Utils::get_svg( $report_folder . 'hero-desktop.svg', true );
 ?>
-" alt="CNCF Annual Report 2023 - Architect the Future" loading="eager" class="hero__title">
+" alt="CNCF Annual Report 2023 - Architect the Future" loading="eager" decoding="async" class="hero__title">
 					</picture>
 
 
@@ -1306,8 +1306,6 @@ transparency report</p>
 
 				<p class="sub-header">Attendee Demographics</p>
 
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
 				<picture>
 					<source media="(max-width: 599px)" srcset="
 <?php
@@ -1911,14 +1909,12 @@ CTO, CNCF</p>
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
 						<p>CNCF conducted a number of <a href="https://www.cncf.io/blog/2022/08/08/improving-cncf-security-posture-with-independent-security-audits/">open source security audits</a> throughout 2023, in strategic partnership with the <strong>Open Source Technology Improvement Fund (OSTIF)</strong>.</p>
+						<p>The following CNCF projects have completed security audits or associated work:</p>
 					</div>
 				</div>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
-
-				<p class="sub-header">The following CNCF projects have completed security audits or associated work</p>
-
-				<div aria-hidden="true" class="report-spacer-60"></div>
+				<div aria-hidden="true" class="report-spacer-80"></div>
+				
 				<p class="sub-header">Fuzzing Audits</p>
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
@@ -2025,7 +2021,7 @@ CTO, CNCF</p>
 				<p
 					class="sub-header">In 2023, two projects donated characters</p>
 
-				<div aria-hidden="true" class="report-spacer-100"></div>
+				<div aria-hidden="true" class="report-spacer-80"></div>
 
 				<div class="lf-grid section-17__characters">
 					<?php
@@ -2053,9 +2049,12 @@ CTO, CNCF</p>
 					</div>
 				</div>
 						
-				<?php
+				<a href="https://drive.google.com/file/d/1M465JPam7rdi5uf5_WOaatayU5RRJ9hm/view"
+						title="Read now"
+						><?php
 						LF_Utils::display_responsive_images( 99595, 'full', '1100px', null, 'lazy', 'Phippys Field Guide to Wasm book cover' );
 				?>
+				</a>
 
 				<div class="shadow-hr"></div>
 
@@ -2428,7 +2427,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 				<div class="lf-grid section-19__ca">
 					<div class="section-19__ca-col1">
-						<img loading="lazy" decoding="async" width="64" height="66" src="
+						<img loading="lazy" decoding="async" width="64" height="67" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'icon-first-place.svg', true );
 						?>
@@ -2436,11 +2435,11 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<p class="sub-header">tHE TAGGIE</p>
+						<p class="sub-header">THE TAGGIE</p>
 
 						<div aria-hidden="true" class="report-spacer-20"></div>
 
-						<p>Presented to the person who has done the most to advance CNCF’s <a href="https://github.com/cncf/toc/tree/main/tags">Technical Advisory Groups (TAGs)</a>. TAGs scale contributions by the CNCF technical and user community, while retaining integrity and increasing quality in support of CNCF’s mission of making cloud native ubiquitous. The very first recipient of this award was</p>
+						<p>Presented to the person who has done the most to advance CNCF’s <a href="https://github.com/cncf/toc/tree/main/tags">Technical Advisory Groups (TAGs)</a>. TAGs scale contributions by the CNCF technical and user community, while retaining integrity and increasing quality in support of CNCF’s mission of making cloud native ubiquitous. The very first recipient of this award was:</p>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -2454,7 +2453,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 					</div>
 					<div class="section-19__ca-col2">
-						<img loading="lazy" decoding="async" width="54" height="64" src="
+						<img loading="lazy" decoding="async" width="67" height="67" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'icon-chapters-g.svg', true );
 						?>
@@ -2466,7 +2465,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 						<div aria-hidden="true" class="report-spacer-20"></div>
 
-						<p>This award recognizes the company or organization in the community with the largest impact. CNCF is made up of hundreds of thousands of individuals and organizations, each providing valuable contributions, but this award is presented to an organization punching above its weight. CNCF is pleased to present this award to</p>
+						<p>This award recognizes the company or organization in the community with the largest impact. CNCF is made up of hundreds of thousands of individuals and organizations, each providing valuable contributions, but this award is presented to an organization punching above its weight. CNCF is pleased to present this award to:<br><br></p>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
