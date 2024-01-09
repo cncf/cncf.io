@@ -203,7 +203,15 @@ Executive Director, CNCF</p>
 		<!-- Tweet -->
 		<section class="section-tweet">
 			<a href="https://twitter.com/furrier/status/1722279020765872363?s=20">
-			<?php LF_Utils::display_responsive_images( 99526, 'full', '1200px', null, 'lazy', 'Tweet screenshot' ); ?>
+			<picture>
+				<source media="(max-width: 499px)"
+					srcset="<?php echo esc_url( wp_get_attachment_image_url( '99929', 'full', false ) ); ?>">
+				<source media="(min-width: 500px)"
+					srcset="<?php echo esc_url( wp_get_attachment_image_url( '99526', 'full', false ) ); ?>">
+				<?php
+				LF_Utils::display_responsive_images( 99526, 'full', '1200px', null, 'lazy', 'Tweet screenshot' );
+				?>
+			</picture>
 			</a>
 		</section>
 
@@ -2024,10 +2032,9 @@ CTO, CNCF</p>
 					</div>
 				</div>
 						
-				<a href="https://drive.google.com/file/d/1M465JPam7rdi5uf5_WOaatayU5RRJ9hm/view"
-						title="Read now"
-						><?php
-						LF_Utils::display_responsive_images( 99595, 'full', '1100px', null, 'lazy', 'Phippys Field Guide to Wasm book cover' );
+				<a href="https://drive.google.com/file/d/1M465JPam7rdi5uf5_WOaatayU5RRJ9hm/view" title="Read now">
+				<?php
+					LF_Utils::display_responsive_images( 99595, 'full', '1100px', null, 'lazy', 'Phippys Field Guide to Wasm book cover' );
 				?>
 				</a>
 
