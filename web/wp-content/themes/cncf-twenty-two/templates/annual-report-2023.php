@@ -2248,16 +2248,9 @@ CTO, CNCF</p>
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
 						<p><strong>Do you know somebody doing incredible things in the cloud native ecosystem?</strong>
-						<br/>Nominate them for the Humans of Cloud Native.</p>
+						<br/>Nominate them for the Humans of Cloud Native by writing to <a href="mailto:humans@cncf.io">humans@cncf.io</a>.</p>
 					</div>
 				</div>
-				<div aria-hidden="true" class="report-spacer-40"></div>
-
-				<div class="wp-block-button"><a href="mailto:humans@cncf.io"
-								title="Nominate"
-								class="wp-block-button__link fit-content">Nominate</a>
-								</div>
-
 			</div>
 		</section>
 		<section
