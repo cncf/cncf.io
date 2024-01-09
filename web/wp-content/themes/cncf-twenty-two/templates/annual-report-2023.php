@@ -105,7 +105,7 @@ Lf_Utils::get_svg( $report_folder . 'hero-desktop.svg', true );
 				<div class="nav-el__box">
 					<a href="#momentum" title="Jump to Momentum section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img loading="lazy" decoding="async" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-upward-chart.svg', true ); ?>
 " alt="Upward trend chart icon">Momentum
 				</div>
@@ -113,7 +113,7 @@ Lf_Utils::get_svg( $report_folder . 'hero-desktop.svg', true );
 				<div class="nav-el__box">
 					<a href="#events" title="Jump to Events section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img loading="lazy" decoding="async" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-lanyard.svg', true ); ?>
 " alt="Lanyard icon">Events
 				</div>
@@ -121,7 +121,7 @@ Lf_Utils::get_svg( $report_folder . 'hero-desktop.svg', true );
 				<div class="nav-el__box">
 					<a href="#training" title="Jump to Training section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img loading="lazy" decoding="async" width="36" height="36" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-teacher.svg', true );
 ?>
@@ -131,7 +131,7 @@ LF_Utils::get_svg( $report_folder . 'icon-teacher.svg', true );
 				<div class="nav-el__box">
 					<a href="#projects" title="Jump to Projects section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img loading="lazy" decoding="async" width="36" height="36" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-shape.svg', true );
 ?>
@@ -141,7 +141,7 @@ LF_Utils::get_svg( $report_folder . 'icon-shape.svg', true );
 				<div class="nav-el__box">
 					<a href="#community" title="Jump to Community section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img loading="lazy" decoding="async" width="36" height="36" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-relationship.svg', true );
 ?>
@@ -151,7 +151,7 @@ LF_Utils::get_svg( $report_folder . 'icon-relationship.svg', true );
 				<div class="nav-el__box">
 					<a href="#ecosystem" title="Jump to Ecosystem section"
 						class="box-link"></a>
-					<img loading="lazy" width="36" height="36" src="
+					<img loading="lazy" decoding="async" width="36" height="36" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-ecosystem.svg', true ); ?>
 " alt="Ecosystem icon">Ecosystem
 				</div>
@@ -185,7 +185,7 @@ Executive Director, CNCF</p>
 					<!-- Icon 1  -->
 					<div class="icon-box-1">
 						<div class="icon">
-							<img loading="lazy" width="71" height="74" src="
+							<img loading="lazy" decoding="async" width="71" height="74" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-projects.svg', true ); ?>
 " alt="Projects icon">
 						</div>
@@ -198,7 +198,7 @@ Executive Director, CNCF</p>
 					<!-- Icon 2  -->
 					<div class="icon-box-1">
 						<div class="icon">
-							<img loading="lazy" width="74" height="43" src="
+							<img loading="lazy" decoding="async" width="74" height="43" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-members.svg', true ); ?>
 " alt="Members icon">
 						</div>
@@ -211,7 +211,7 @@ Executive Director, CNCF</p>
 					<!-- Icon 3  -->
 					<div class="icon-box-1">
 						<div class="icon">
-							<img loading="lazy" width="60" height="57" src="
+							<img loading="lazy" decoding="async" width="60" height="57" src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-chapter.svg', true ); ?>
 " alt="Chapter icon">
 						</div>
@@ -335,7 +335,7 @@ Executive Director, CNCF</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<img loading="lazy" width="561" height="400" src="
+						<img loading="lazy" decoding="async" width="561" height="400" src="
 <?php LF_Utils::get_svg( $report_folder . 'contributors-chart.svg', true ); ?>
 " alt="Chart showing upward trend of Contributors growth">
 
@@ -345,7 +345,7 @@ Executive Director, CNCF</p>
 							class="sub-header">Member, End User & Project Growth</p>
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<img loading="lazy" width="550" height="400" src="
+						<img loading="lazy" decoding="async" width="550" height="400" src="
 <?php LF_Utils::get_svg( $report_folder . 'member-end-user-project-growth.svg', true ); ?>
 " alt="Chart showing upward trend of Members, End User and Project growth">
 
@@ -369,7 +369,7 @@ Executive Director, CNCF</p>
 					</div>
 					<div class="section-04__membership-col2">
 
-						<img loading="lazy" width="452" height="227" src="
+						<img loading="lazy" decoding="async" width="452" height="227" src="
 	<?php LF_Utils::get_svg( $report_folder . 'new_members.svg', true ); ?>
 	" alt="Members icon">
 
@@ -388,7 +388,7 @@ Executive Director, CNCF</p>
 					<div class="logo-grid smaller">
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="169" height="54" src="
+							<img loading="lazy" decoding="async" width="169" height="54" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'daocloud_logo.svg', true );
 ?>
@@ -396,7 +396,7 @@ LF_Utils::get_svg( $report_folder . 'daocloud_logo.svg', true );
 						</div>
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="77" height="77" src="
+							<img loading="lazy" decoding="async" width="77" height="77" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'ey_logo_2019.svg', true );
 ?>
@@ -404,7 +404,7 @@ LF_Utils::get_svg( $report_folder . 'ey_logo_2019.svg', true );
 						</div>
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="138" height="23" src="
+							<img loading="lazy" decoding="async" width="138" height="23" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'hitachi_logo.svg', true );
 ?>
@@ -420,7 +420,7 @@ LF_Utils::get_svg( $report_folder . 'hitachi_logo.svg', true );
 					<div class="logo-grid">
 
 						<div class="logo-grid__box">
-							<img loading="lazy" width="133" height="24" src="
+							<img loading="lazy" decoding="async" width="133" height="24" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 ?>
@@ -528,7 +528,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 						<div class="section-10__groups-col1">
 							<div class="icon-box-3">
 								<div class="icon">
-									<img loading="lazy" width="80" height="47" src="
+									<img loading="lazy" decoding="async" width="80" height="47" src="
 	<?php
 	LF_Utils::get_svg( $report_folder . 'icon-members-p.svg', true );
 	?>
@@ -543,7 +543,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 						<div class="section-10__groups-col2">
 							<div class="icon-box-3">
 								<div class="icon">
-									<img loading="lazy" width="69" height="69" src="
+									<img loading="lazy" decoding="async" width="69" height="69" src="
 	<?php
 	LF_Utils::get_svg( $report_folder . 'icon-globe-p.svg', true );
 	?>
@@ -558,7 +558,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 						<div class="section-10__groups-col3">
 							<div class="icon-box-3">
 								<div class="icon">
-									<img loading="lazy" width="56" height="63" src="
+									<img loading="lazy" decoding="async" width="56" height="63" src="
 	<?php
 	LF_Utils::get_svg( $report_folder . 'icon-lanyard-p.svg', true );
 	?>
@@ -622,7 +622,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 			<div class="logo-grid smaller">
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'backstage.svg', true );
 						?>
@@ -634,7 +634,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'prometheus.svg', true );
 						?>
@@ -646,7 +646,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'argo.svg', true );
 						?>
@@ -658,7 +658,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'kubernetes.svg', true );
 						?>
@@ -670,7 +670,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'telepresence.svg', true );
 						?>
@@ -682,7 +682,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'buildpacks.svg', true );
 						?>
@@ -694,7 +694,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'tremor.svg', true );
 						?>
@@ -706,7 +706,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'opentelemetry.svg', true );
 						?>
@@ -718,7 +718,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'envoy.svg', true );
 						?>
@@ -730,7 +730,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'openfeature.svg', true );
 						?>
@@ -751,11 +751,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 			<div class="logo-grid smaller">
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'spotify.svg', true );
 						?>
-						" alt="spotify Logo" >
+						" alt="Spotify Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						4,125
@@ -763,11 +763,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'bloomberg.svg', true );
 						?>
-						" alt="bloomberg Logo" >
+						" alt="Bloomberg Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						534
@@ -775,11 +775,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'reddit.svg', true );
 						?>
-						" alt="reddit Logo" >
+						" alt="Reddit Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						372
@@ -787,11 +787,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'intuit.svg', true );
 						?>
-						" alt="intuit Logo" >
+						" alt="Intuit Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						241
@@ -799,11 +799,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'workday.svg', true );
 						?>
-						" alt="workday Logo" >
+						" alt="Workday Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						136
@@ -811,11 +811,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'thought-machine.svg', true );
 						?>
-						" alt="thought machine Logo" >
+						" alt="Thought Machine Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						129
@@ -823,11 +823,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'shopify.svg', true );
 						?>
-						" alt="shopify Logo" >
+						" alt="Shopify Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						107
@@ -835,11 +835,11 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'wayfair.svg', true );
 						?>
-						" alt="wayfair Logo" >
+						" alt="Wayfair Logo" >
 					</div>
 					<div class="logo-grid__number green">
 						88
@@ -847,7 +847,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'swiss-post.svg', true );
 						?>
@@ -859,7 +859,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				</div>
 				<div class="logo-grid__box">
 					<div class="logo-grid__image">
-						<img loading="lazy" width="160" height="50" src="
+						<img loading="lazy" decoding="async" width="160" height="50" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'yahoo.svg', true );
 						?>
@@ -899,7 +899,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 					<p class="sub-header">SPRING 2023 WINNER</p>
 					<div aria-hidden="true" class="report-spacer-20"></div>
 
-					<img loading="lazy" width="315" height="80" src="
+					<img loading="lazy" decoding="async" width="315" height="80" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'mercedes.svg', true );
 						?>
@@ -927,7 +927,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 				<div class="section-10__vid-col2">
 					<p class="sub-header">AUTUMN 2023 WINNER</p>
 					<div aria-hidden="true" class="report-spacer-20"></div>
-					<img loading="lazy" width="243" height="80" src="
+					<img loading="lazy" decoding="async" width="243" height="80" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'spotify.svg', true );
 						?>
@@ -956,7 +956,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 					<p class="sub-header">AUTUMN 2022 WINNER</p>
 					<div aria-hidden="true" class="report-spacer-20"></div>
 
-					<img loading="lazy" width="209" height="60" src="
+					<img loading="lazy" decoding="async" width="209" height="60" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'intuit.svg', true );
 						?>
@@ -1021,7 +1021,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="57" height="63"
+									<img loading="lazy" decoding="async" width="57" height="63"
 										src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-lanyard-p2.svg', true ); ?>
 " alt="Lanyard icon">
@@ -1035,7 +1035,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 							</div>
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="63" height="63"
+									<img loading="lazy" decoding="async" width="63" height="63"
 										src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-globe-p.svg', true ); ?>
 " alt="Globe icon">
@@ -1047,7 +1047,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 							</div>
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="63" height="63"
+									<img loading="lazy" decoding="async" width="63" height="63"
 										src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-non-male.svg', true ); ?>
 " alt="Non-male icon">
@@ -1066,7 +1066,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="74" height="41"
+									<img loading="lazy" decoding="async" width="74" height="41"
 										src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-members-p.svg', true ); ?>
 " alt="Members icon">
@@ -1079,7 +1079,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 							</div>
 							<div class="icon-box-1">
 								<div class="icon">
-									<img loading="lazy" width="57" height="47"
+									<img loading="lazy" decoding="async" width="57" height="47"
 										src="
 <?php LF_Utils::get_svg( $report_folder . 'icon-megaphone-p.svg', true ); ?>
 " alt="Globe icon">
@@ -1193,7 +1193,7 @@ Lf_Utils::get_svg( $report_folder . 'demographics-desktop-1.svg', true );
 Lf_Utils::get_svg( $report_folder . 'demographics-desktop-1.svg', true );
 ?>
 " alt="Showing 16,092 Registered attendees of which 42% were men, 6% women, <1% non-binary/other, and 52% preferred not to answer. Of the attendees 65% were in person, 35% were virtual. 51% of visitors were first timers."
-						loading="lazy">
+						loading="lazy" decoding="async">
 				</picture>
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
@@ -1201,7 +1201,7 @@ Lf_Utils::get_svg( $report_folder . 'demographics-desktop-1.svg', true );
 					<div class="section-12__stats-col1">
 						<div class="icon-box-3">
 							<div class="icon">
-								<img loading="lazy" width="62" height="62" src="
+								<img loading="lazy" decoding="async" width="62" height="62" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-download-pink.svg', true );
 ?>
@@ -1217,7 +1217,7 @@ LF_Utils::get_svg( $report_folder . 'icon-download-pink.svg', true );
 					<div class="section-12__stats-col2">
 						<div class="icon-box-3">
 							<div class="icon">
-								<img loading="lazy" width="82" height="67" src="
+								<img loading="lazy" decoding="async" width="82" height="67" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-megaphone-pink.svg', true );
 ?>
@@ -1324,7 +1324,7 @@ Lf_Utils::get_svg( $report_folder . 'demographics-desktop2.svg', true );
 Lf_Utils::get_svg( $report_folder . 'demographics-desktop2.svg', true );
 ?>
 " alt="Showing 13,666 Registered attendees of which 40% were men, 8% women, <1% non-binary/other, and 52% preferred not to answer. Of the attendees 66% were in person, 34% were virtual. 54% of visitors were first timers."
-						loading="lazy">
+						loading="lazy" decoding="async">
 				</picture>
 				<div aria-hidden="true" class="report-spacer-40"></div>
 
@@ -1332,7 +1332,7 @@ Lf_Utils::get_svg( $report_folder . 'demographics-desktop2.svg', true );
 					<div class="section-12__stats-col1">
 						<div class="icon-box-3">
 							<div class="icon">
-								<img loading="lazy" width="62" height="62" src="
+								<img loading="lazy" decoding="async" width="62" height="62" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-download-yellow.svg', true );
 ?>
@@ -1348,7 +1348,7 @@ LF_Utils::get_svg( $report_folder . 'icon-download-yellow.svg', true );
 					<div class="section-12__stats-col2">
 						<div class="icon-box-3">
 							<div class="icon">
-								<img loading="lazy" width="82" height="67" src="
+								<img loading="lazy" decoding="async" width="82" height="67" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-megaphone-yellow.svg', true );
 ?>
@@ -1470,7 +1470,7 @@ Lf_Utils::get_svg( $report_folder . 'certifications-desktop.svg', true );
 Lf_Utils::get_svg( $report_folder . 'certifications-desktop.svg', true );
 ?>
 " alt="Shows growing number of certifications each year."
-						loading="lazy">
+						loading="lazy" decoding="async">
 				</picture>
 				<div class="shadow-hr"></div>
 
@@ -1484,7 +1484,7 @@ Lf_Utils::get_svg( $report_folder . 'certifications-desktop.svg', true );
 						<p>The evolution can also be seen within the participation numbers of training and certs</p>
 					</div>
 					<div class="section-14__intro-col2">
-						<img width="582" height="124" loading="lazy" src="
+						<img width="582" height="124" loading="lazy" decoding="async" src="
 <?php
 Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 ?>
@@ -1589,7 +1589,7 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 					<div class="section-15__projects-col2">
 						<div class="icon-box-4">
 							<div class="icon">
-								<img loading="lazy" width="71" height="74" src="
+								<img loading="lazy" decoding="async" width="71" height="74" src="
 	<?php LF_Utils::get_svg( $report_folder . 'icon-projects.svg', true ); ?>
 	" alt="Projects icon">
 							</div>
@@ -1602,7 +1602,7 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 					<div class="section-15__projects-col3">
 						<div class="icon-box-4">
 							<div class="icon">
-								<img loading="lazy" width="61" height="62" src="
+								<img loading="lazy" decoding="async" width="61" height="62" src="
 	<?php LF_Utils::get_svg( $report_folder . 'icon-chapters-g.svg', true ); ?>
 	" alt="Sandbox icon">
 							</div>
@@ -1638,28 +1638,28 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 
 				<div class="logo-grid smaller">
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-cilium.svg', true );
 						?>
 						" alt="Cilium Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-cri-o.svg', true );
 						?>
 						" alt="cri-o Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-istio.svg', true );
 						?>
 						" alt="Istio Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'logo-project-keda.svg', true );
 						?>
@@ -1871,7 +1871,7 @@ Lf_Utils::get_svg( $report_folder . 'project-chart-desktop.svg', true );
 Lf_Utils::get_svg( $report_folder . 'project-chart-desktop.svg', true );
 ?>
 " alt="CNCF Project Velocity chart"
-						loading="lazy">
+						loading="lazy" decoding="async">
 				</picture>
 
 				<div class="shadow-hr"></div>
@@ -1924,21 +1924,21 @@ CTO, CNCF</p>
 
 				<div class="logo-grid smaller">
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'kyverno.svg', true );
 						?>
 						" alt="kyverno Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'dapr.svg', true );
 						?>
 						" alt="dapr Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'knative.svg', true );
 						?>
@@ -1951,42 +1951,42 @@ CTO, CNCF</p>
 
 				<div class="logo-grid smaller">
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'crossplane.svg', true );
 						?>
 						" alt="crossplane Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'dapr.svg', true );
 						?>
 						" alt="dapr Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'dragonfly.svg', true );
 						?>
 						" alt="dragonfly Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'kubernetes-stacked.svg', true );
 						?>
 						" alt="Kubernetes Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'notary.svg', true );
 						?>
 						" alt="notary Logo" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'vitess.svg', true );
 						?>
@@ -2162,70 +2162,70 @@ CTO, CNCF</p>
 				<div class="logo-grid smallest">
 
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-adevinta.svg', true );
 						?>
 							" alt="Logo for Adevinta" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-apple.svg', true );
 						?>
 							" alt="Logo for Apple" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-cncf.svg', true );
 						?>
 							" alt="Logo for CNCF" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-form3.svg', true );
 						?>
 							" alt="Logo for Form 3" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-google.svg', true );
 						?>
 							" alt="Logo for Google" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-honeycomb.svg', true );
 						?>
 							" alt="Logo for Honeycomb" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-isovalent.svg', true );
 						?>
 							" alt="Logo for Isovalent" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-orcasio.svg', true );
 						?>
 							" alt="Logo for Orcasio" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-strongdm.svg', true );
 						?>
 							" alt="Logo for Strong DM" class="logo-grid__image">
 					</div>
 					<div class="logo-grid__box">
-						<img loading="lazy" src="
+						<img loading="lazy" decoding="async" src="
 						<?php
 							LF_Utils::get_svg( $report_folder . 'logo-tailscale.svg', true );
 						?>
@@ -2259,7 +2259,7 @@ CTO, CNCF</p>
 					<?php
 					Lf_Utils::get_image( $report_folder . 'hocn-desktop.jpg' );
 					?>
-					" alt="Collage of multiple HOCN" loading="lazy">
+					" alt="Collage of multiple HOCN" loading="lazy" decoding="async">
 				</picture>
 				</a>
 				<div aria-hidden="true" class="report-spacer-60"></div>
@@ -2298,7 +2298,7 @@ CTO, CNCF</p>
 
 				<div class="lf-grid section-19__ca">
 					<div class="section-19__ca-col1">
-						<img loading="lazy" width="64" height="66" src="
+						<img loading="lazy" decoding="async" width="64" height="66" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'icon-first-place.svg', true );
 						?>
@@ -2324,7 +2324,7 @@ CTO, CNCF</p>
 
 					</div>
 					<div class="section-19__ca-col2">
-						<img loading="lazy" width="54" height="64" src="
+						<img loading="lazy" decoding="async" width="54" height="64" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'icon-doc-check.svg', true );
 						?>
@@ -2358,7 +2358,7 @@ CTO, CNCF</p>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<img loading="lazy" width="73" height="73" src="
+						<img loading="lazy" decoding="async" width="73" height="73" src="
 <?php
 LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 ?>
@@ -2428,7 +2428,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 				<div class="lf-grid section-19__ca">
 					<div class="section-19__ca-col1">
-						<img loading="lazy" width="64" height="66" src="
+						<img loading="lazy" decoding="async" width="64" height="66" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'icon-first-place.svg', true );
 						?>
@@ -2454,7 +2454,7 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 
 					</div>
 					<div class="section-19__ca-col2">
-						<img loading="lazy" width="54" height="64" src="
+						<img loading="lazy" decoding="async" width="54" height="64" src="
 						<?php
 						LF_Utils::get_svg( $report_folder . 'icon-chapters-g.svg', true );
 						?>
@@ -2532,14 +2532,14 @@ LF_Utils::get_svg( $report_folder . 'icon-chop.svg', true );
 					<div class="section-20__mentoring-col1">
 					<p class="sub-header">We sponsored 132 students to work on 30 CNCF Projects</p>
 					<div aria-hidden="true" class="report-spacer-20"></div>
-						<img loading="lazy" width="308" height="276" src="
+						<img loading="lazy" decoding="async" width="308" height="276" src="
 <?php LF_Utils::get_svg( $report_folder . 'lf-mentorship-group.svg', true ); ?>
 " alt="Mentorship metrics">
 					</div>
 					<div class="section-20__mentoring-col2">
 					<p class="sub-header">And helped CNCF Projects participate in other open source mentoring opportunities:</p>
 					<div aria-hidden="true" class="report-spacer-20"></div>
-					<img loading="lazy" width="458" height="276" src="
+					<img loading="lazy" decoding="async" width="458" height="276" src="
 <?php LF_Utils::get_svg( $report_folder . 'mentoring-opps-group.svg', true ); ?>
 " alt="Mentoring opportunities metrics">
 					</div>
@@ -2580,7 +2580,7 @@ Lf_Utils::get_svg( $report_folder . 'funding-desktop.svg', true );
 <?php
 Lf_Utils::get_svg( $report_folder . 'funding-desktop.svg', true );
 ?>
-" alt="CNCF Funding breakdown pie chart" loading="lazy">
+" alt="CNCF Funding breakdown pie chart" loading="lazy" decoding="async">
 					</picture>
 
 				<div class="shadow-hr"></div>
@@ -2604,7 +2604,7 @@ Lf_Utils::get_svg( $report_folder . 'expenditures-desktop.svg', true );
 <?php
 Lf_Utils::get_svg( $report_folder . 'expenditures-desktop.svg', true );
 ?>
-" alt="expenditures breakdown" loading="lazy">
+" alt="expenditures breakdown" loading="lazy" decoding="async">
 					</picture>
 
 					<div aria-hidden="true" class="report-spacer-100"></div>
