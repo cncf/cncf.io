@@ -65,36 +65,11 @@ Lf_Utils::get_svg( $report_folder . 'hero-desktop.svg', true );
 ?>
 " alt="CNCF Annual Report 2023 - Architect the Future" loading="eager" decoding="async" class="hero__title">
 					</picture>
-
-
-
-					<div class="social-share">
-						<p class="social-share__title">Share</p>
-
-						<div class="social-share__wrapper">
-							<!-- twitter -->
-							<?php if ( $twitter_url ) : ?>
-							<a aria-label="Share on Twitter"
-								title="Share on Twitter"
-								href="<?php echo esc_url( $twitter_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-twitter.svg' ); ?></a>
-							<?php endif; ?>
-
-							<!-- linkedin -->
-							<?php if ( $linkedin_url ) : ?>
-							<a aria-label="Share on Linkedin"
-								title="Share on Linkedin"
-								href="<?php echo esc_url( $linkedin_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-linkedin.svg' ); ?></a>
-							<?php endif; ?>
-
-							<!-- sendto email -->
-							<?php if ( $mailto_url ) : ?>
-							<a aria-label="Share by Email"
-								title="Share by Email"
-								href="<?php echo esc_url( $mailto_url ); ?>"><?php Lf_Utils::get_svg( 'reports/social-mail.svg' ); ?></a>
-							<?php endif; ?>
-						</div>
+					<div class="hero__button-share-align">
+						<?php
+						get_template_part( 'components/social-share' );
+						?>
 					</div>
-
 					<div class="hero__jump">Jump to section:</div>
 				</div>
 			</div>

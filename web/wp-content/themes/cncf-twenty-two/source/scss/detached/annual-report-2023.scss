@@ -116,13 +116,28 @@ html {
 				margin-bottom: calc(80px + 20px);
 			}
 		}
-		.social-share {
-			margin-bottom: 30px;
-			@media (min-width: 412px) {
-				margin-bottom: 35px;
+		&__button-share-align {
+			margin-bottom: 40px;
+			z-index: 2;
+			> div {
+				margin-bottom: 30px;
+				@media (min-width: 412px) {
+					margin-bottom: 35px;
+				}
+				@media (min-width: 1000px) {
+					margin-bottom: 0;
+				}
 			}
 			@media (min-width: 1000px) {
 				margin-bottom: 60px;
+				display: flex;
+				justify-content: space-between;
+			}
+			.hero__button {
+				.wp-block-button__link {
+					max-width: max-content;
+					min-width: max-content;
+				}
 			}
 		}
 	}
