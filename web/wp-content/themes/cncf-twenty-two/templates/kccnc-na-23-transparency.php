@@ -1257,16 +1257,16 @@ Executive Director, CNCF</p>
 
 				<div class="lf-grid captioning">
 					<div class="captioning-col1">
-						<h3 class="large dark-purple">382 hours</h3>
+						<h3 class="large dark-purple">240 hours</h3>
 						<p class="large">Using Wordly Captioning on Accelevents virtual platform</p>
 						<h3 class="large dark-purple">Top languages</h3>
-						<p class="large">English -> German -> French -> Polish -> Italian</p>
+						<p class="large">English -> Portuguese -> German -> Spanish -> French</p>
 					</div>
 					<div class="captioning-col2">
-						<h3 class="large dark-purple">426 hrs and 8 min</h3>
+						<h3 class="large dark-purple">334 hrs</h3>
 						<p class="large">Using in-room Wordly Captioning on personal mobile device</p>
 						<h3 class="large dark-purple">Top languages</h3>
-						<p class="large">English -> Spanish -> German -> Japanese -> French</p>
+						<p class="large">Japanese -> English -> Chinese -> Spanish -> Korean</p>
 					</div>
 				</div>
 
