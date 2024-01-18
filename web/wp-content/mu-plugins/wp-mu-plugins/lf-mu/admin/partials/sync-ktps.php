@@ -14,9 +14,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$ktps_url  = 'https://landscape.cncf.io/api/items?category=kubernetes-training-partner&grouping=no';
-$items_url = 'https://landscape.cncf.io/data/items.json';
-$logos_url = 'https://landscape.cncf.io/';
+$ktps_url  = 'https://landscape.netlify.app/api/items?category=kubernetes-training-partner&grouping=no';
+$items_url = 'https://landscape.netlify.app/data/items.json';
+$logos_url = 'https://landscape.netlify.app/';
 
 $args = array(
 	'timeout'   => 100,

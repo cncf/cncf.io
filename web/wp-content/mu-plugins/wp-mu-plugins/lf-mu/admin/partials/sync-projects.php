@@ -14,9 +14,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$projects_url = 'https://landscape.cncf.io/api/items?project=hosted';
-$items_url    = 'https://landscape.cncf.io/data/items.json';
-$logos_url    = 'https://landscape.cncf.io/';
+$projects_url = 'https://landscape.netlify.app/api/items?project=hosted';
+$items_url    = 'https://landscape.netlify.app/data/items.json';
+$logos_url    = 'https://landscape.netlify.app/';
 
 $args = array(
 	'timeout'   => 100,

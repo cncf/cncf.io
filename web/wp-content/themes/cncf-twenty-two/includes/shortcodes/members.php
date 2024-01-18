@@ -45,17 +45,17 @@ function add_cncf_members_latest_shortcode( $atts ) {
 
 	if ( 'endusers' === $atts['category'] ) {
 		$transient_name = 'cncf_latest_endusers';
-		$remote_url     = 'https://landscape.cncf.io/data/exports/end-users-reverse-chronological.json';
+		$remote_url     = 'https://landscape.netlify.app/data/exports/end-users-reverse-chronological.json';
 	}
 
 	if ( 'members' === $atts['category'] ) {
 		$transient_name = 'cncf_latest_members';
-		$remote_url     = 'https://landscape.cncf.io/data/exports/members-reverse-chronological.json';
+		$remote_url     = 'https://landscape.netlify.app/data/exports/members-reverse-chronological.json';
 	}
 
 	if ( 'platinum' === $atts['category'] ) {
 		$transient_name = 'cncf_platinum_members';
-		$remote_url     = 'https://landscape.cncf.io/data/exports/cncf-platinum-members.json';
+		$remote_url     = 'https://landscape.netlify.app/data/exports/cncf-platinum-members.json';
 	}
 
 	if ( ! $transient_name ) {
