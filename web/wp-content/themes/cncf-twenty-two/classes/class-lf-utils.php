@@ -494,7 +494,7 @@ class LF_Utils {
 		if ( $project_query->have_posts() ) {
 			while ( $project_query->have_posts() ) {
 				$project_query->the_post();
-				$stacked_logo_url = get_post_meta( get_the_ID(), 'lf_project_logo', true );
+				$stacked_logo_url = str_replace( 'https://landscape.cncf.io/logos/', '/wp-content/themes/cncf-twenty-two/images/landscape-logos/', get_post_meta( get_the_ID(), 'lf_project_logo', true ) );
 				if ( has_term( 'graduated', 'lf-project-stage', get_the_ID() ) ) {
 					++$graduated_count;
 					if ( $stacked_logo_url ) {
