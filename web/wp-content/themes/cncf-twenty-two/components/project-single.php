@@ -11,7 +11,7 @@ wp_enqueue_style( 'wp-block-group' );
 wp_enqueue_style( 'wp-block-column' );
 wp_enqueue_style( 'wp-block-columns' );
 
-$logo = str_replace( 'https://landscape.cncf.io/logos/', '/wp-content/themes/cncf-twenty-two/images/landscape-logos/', get_post_meta( get_the_ID(), 'lf_project_logo', true ) );
+$logo = get_post_meta( get_the_ID(), 'lf_project_logo', true );
 
 $stage            = Lf_Utils::get_term_names( get_the_ID(), 'lf-project-stage', true );
 $description      = get_post_meta( get_the_id(), 'lf_project_description', true );

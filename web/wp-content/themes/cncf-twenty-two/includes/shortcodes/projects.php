@@ -58,7 +58,7 @@ function add_projects_shortcode( $atts ) {
 			$project_query->the_post();
 			$date_accepted    = get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ? ' (accepted to CNCF on ' . gmdate( 'n/j/Y', strtotime( get_post_meta( get_the_ID(), 'lf_project_date_accepted', true ) ) ) . ')' : '';
 			$project_category = get_post_meta( get_the_ID(), 'lf_project_category', true );
-			$logo             = str_replace( 'https://landscape.cncf.io/logos/', '/wp-content/themes/cncf-twenty-two/images/landscape-logos/', get_post_meta( get_the_ID(), 'lf_project_logo', true ) );
+			$logo             = get_post_meta( get_the_ID(), 'lf_project_logo', true );
 
 			?>
 	<div class="project-item has-animation-scale-2">
