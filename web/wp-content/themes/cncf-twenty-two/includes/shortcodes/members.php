@@ -80,6 +80,10 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	}
 	$members_array = json_decode( $members_array );
 
+	if ( ! is_array( $members_array ) ) {
+		return;
+	}
+
 	// if the array is smaller than the count then use the array count for the loop.
 	$array_count = count( $members_array );
 	if ( $array_count < $count ) {
