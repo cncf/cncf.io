@@ -31,6 +31,14 @@ function add_selected_people_shortcode( $atts ) {
 		return;
 	}
 
+	wp_enqueue_script(
+		'modal',
+		get_template_directory_uri() . '/source/js/on-demand/modal.js',
+		array( 'jquery' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/modal.js' ),
+		true
+	);
+
 	$ids          = explode( ',', $atts['people_ids'] );
 	$show_profile = filter_var( $atts['profiles'], FILTER_VALIDATE_BOOLEAN );
 
