@@ -49,8 +49,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 				<span>MARCH 19-22</span>
 			</h1>
 
-			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon is the biggest event
-				in Europe for cloud native.</strong><br/>
+			<h2 class="home-hero__description">
+				<strong>KubeCon + CloudNativeCon is the biggest cloud native event in Europe.</strong><br/>
 				Buy before February 1st to save on tickets!
 			</h2>
 
