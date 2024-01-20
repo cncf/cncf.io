@@ -51,7 +51,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 			<h2 class="home-hero__description">
 				<strong>KubeCon + CloudNativeCon is the biggest cloud native event in Europe.</strong><br/>
-				Buy before February 1st to save on tickets!
+				Tickets are on sale now. Buy before February 1st to save!
 			</h2>
 
 			<div class="horizontal-rule"></div>
