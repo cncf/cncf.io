@@ -1098,7 +1098,7 @@ LF_Utils::get_svg( $report_folder . 'hcltech-logo.svg', true );
 					</div>
 					<div class="section-10__cto-col2">
 						<?php
-						LF_Utils::display_responsive_images( 99561, 'large', '500px', null, 'lazy', 'Man speaking on microphone' );
+						LF_Utils::display_responsive_images( 100789, 'large', '500px', null, 'lazy', 'Man speaking on microphone' );
 						?>
 					</div>
 				</div>
