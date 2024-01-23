@@ -140,13 +140,13 @@ LF_Utils::get_svg( $report_folder . 'icon-relationship.svg', true );
 			<div class="lf-grid section-01__grid">
 				<div class="section-01__grid-col1">
 
-					<p><strong>This year was a game changer for cloud native. Six years ago at KubeCon + CloudNativeCon Berlin OpenAI gave a talk titled <a href="https://www.youtube.com/watch?v=v4N3Krzb8Eg">Building the Infrastructure that Powers the Future of AI – the future is now</a>. Today, cloud native is providing the infrastructure for the AI movement, and it was particularly exciting for me to watch Adobe’s Joseph Sandoval lead a panel discussion during my <a href="https://www.youtube.com/watch?v=NcLAVtQ5H4A">KubeCon + CloudNativeCon North America keynote</a>, discussing how we can ensure cloud native supports AI’s rapid growth, and how we can do this whilst developing a more sustainable, safe ecosystem.</strong></p>
+					<p><strong>This year was a game changer for cloud native. Six years ago at KubeCon + CloudNativeCon Berlin OpenAI gave a talk titled <a href="https://www.youtube.com/watch?v=v4N3Krzb8Eg">Building the Infrastructure that Powers the Future of AI – the future is now</a>. Today, cloud native is providing the infrastructure for the AI movement. Therefore it was particularly exciting for me to watch Adobe’s Joseph Sandoval lead a panel discussion during my <a href="https://www.youtube.com/watch?v=NcLAVtQ5H4A">KubeCon + CloudNativeCon North America keynote</a>, discussing how we can ensure cloud native supports AI’s rapid growth, and how we can do this whilst developing a more sustainable, safe ecosystem.</strong></p>
 
 					<p>As Adobe exemplifies, end users are pivotal to the cloud native movement. This is why CNCF launched the End User Technical Advisory Board, which is instrumental in illuminating the path for adopting and operationalizing CNCF projects. Through their development and approval of reference architectures and showcasing of end user workflow patterns, the TAB provides critical clarity and guidance. These efforts support current use cases and lay the groundwork for a dynamic and thriving ecosystem that evolves with the changing landscape of cloud native technologies.</p>
 
 					<p>CNCF’s Technical Advisory Groups continued to drive the evolution of impactful cloud native initiatives, from the maturity of platform engineering, to sustainability. On sustainability, it was amazing to see #TeamCloudNative gather throughout the world for the first Cloud Native Sustainability Week. Kudos to <a href="https://tag-env-sustainability.cncf.io/">TAG Environmental Sustainability</a> for your hard work.</p>
 
-					<p>Congratulations to you, #TeamCloudNative, on another stellar year. Wishing you all very happy holidays, and I’m looking forward to seeing what we will achieve in 2024.</p>
+					<p>Congratulations to you, #TeamCloudNative, on another stellar year. I’m looking forward to seeing what we will achieve in 2024.</p>
 
 					<div class="section-01__author">
 						<?php LF_Utils::display_responsive_images( 82008, 'full', '75px', null, 'lazy', 'Priyanka Sharma' ); ?>
