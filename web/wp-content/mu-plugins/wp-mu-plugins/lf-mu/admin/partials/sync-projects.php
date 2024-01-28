@@ -14,7 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$projects_url = 'http://landscape.cncf.io/api/projects/all.json';
+$projects_url = 'https://landscape.cncf.io/api/projects/all.json';
 
 $args = array(
 	'timeout'   => 100,

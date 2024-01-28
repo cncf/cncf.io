@@ -44,7 +44,7 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	}
 
 	$transient_name = 'cncf_latest_endusers';
-	$remote_url     = 'http://landscape.cncf.io/api/members/end-users.json';
+	$remote_url     = 'https://landscape.cncf.io/api/members/end-users.json';
 	$members_array  = get_transient( $transient_name );
 
 	if ( false === $members_array ) {
