@@ -57,19 +57,19 @@ $metrics = LF_Utils::get_homepage_metrics();
 			<div class="horizontal-rule"></div>
 
 			<ul class="home-hero__metric_wrapper">
-				<li class="show-over-800">
+				<li>
 					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/?utm_source=www&utm_medium=homepage&utm_campaign=kubeconeu24&utm_content=hero" class="wp-block-button__link wp-element-button" title="Learn more about CNCF">Buy Tickets</a></div>
 				</li>
-				<li>10K+
+				<li class="show-over-600">10K+
 					<span>Attendees</span>
 				</li>
-				<li>200+
+				<li class="show-over-600">200+
 					<span>Sponsors</span>
 				</li>
-				<li>300+
+				<li class="show-over-600">300+
 					<span>Sessions</span>
 				</li>
-				<li class="show-over-600">
+				<li class="show-over-800">
 						∞
 					<span>Swag</span>
 				</li>
