@@ -47,9 +47,20 @@ foreach ( $projects as $p ) {
 		),
 	);
 
-	if ( property_exists( $p, 'url' ) ) {
-		$params['meta_input']['lf_project_github'] = $p->url;
+	if ( property_exists( $p, 'repositories' ) ) {
+		$repo_url = null;
+		foreach ( $p->repositories as $repo ) {
+			if ( property_exists( $repo, 'primary' ) && $repo->primary ) {
+				$repo_url = $repo->url;
+				break;
+			}
+		}
+
+		if ( $repo_url ) {
+			$params['meta_input']['lf_project_github'] = $repo_url;
+		}
 	}
+
 	if ( property_exists( $p, 'description' ) ) {
 		$params['meta_input']['lf_project_description'] = $p->description;
 	}
