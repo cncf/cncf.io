@@ -14,9 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$ktps_url  = 'https://landscape.netlify.app/api/items?category=kubernetes-training-partner&grouping=no';
-$items_url = 'https://landscape.netlify.app/data/items.json';
-$logos_url = 'https://landscape.netlify.app/';
+$ktps_url  = 'https://landscape.cncf.io/api/categories/special/kubernetes-training-partner/all.json';
 
 $args = array(
 	'timeout'   => 100,
@@ -29,41 +27,28 @@ if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 
 }
 $ktps = json_decode( wp_remote_retrieve_body( $data ) );
 
-$data = wp_remote_get( $items_url, $args );
-if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
-	return;
-}
-$items     = json_decode( wp_remote_retrieve_body( $data ) );
-$id_column = array_column( $items, 'id' );
-
 $synced_ids = array();
 
 foreach ( $ktps as $ktp ) {
-	$key = array_search( $ktp->id, $id_column );
-	if ( false === $key ) {
-		continue;
-	}
-
-	$p = $items[ $key ];
 
 	$params = array(
 		'post_type'   => 'lf_ktp',
-		'post_title'  => $p->name,
+		'post_title'  => $ktp->name,
 		'post_status' => 'publish',
 		'meta_input'  => array(
-			'lf_ktp_external_url' => $p->homepage_url,
-			'lf_ktp_logo'         => $logos_url . $p->href,
+			'lf_ktp_external_url' => $ktp->homepage_url,
+			'lf_ktp_logo'         => $ktp->logo_url,
 		),
 	);
 
-	if ( property_exists( $p, 'description' ) ) {
-		$params['meta_input']['lf_ktp_description'] = $p->description;
+	if ( property_exists( $ktp, 'description' ) ) {
+		$params['meta_input']['lf_ktp_description'] = $ktp->description;
 	}
 
 	$pp = get_posts(
 		array(
 			'post_type'              => 'lf_ktp',
-			'title'                  => $p->name,
+			'title'                  => $ktp->name,
 			'post_status'            => 'all',
 			'numberposts'            => 1,
 			'update_post_term_cache' => false,
@@ -78,22 +63,20 @@ foreach ( $ktps as $ktp ) {
 
 	$newid = wp_insert_post( $params ); // will insert or update the post as needed.
 	if ( $newid ) {
-		if ( property_exists( $p->crunchbaseData, 'country' ) ) { //phpcs:ignore
-			$country = $p->crunchbaseData->country; //phpcs:ignore
+		if ( property_exists( $ktp, 'country' ) ) { //phpcs:ignore
+			$country = $ktp->country; //phpcs:ignore
 			if ( 'The Netherlands' == $country ) {
 				$country = 'Netherlands';
 			}
 			wp_set_object_terms( $newid, $country, 'lf-country', false );
 		}
-		if ( property_exists( $p, 'extra' ) ) {
-			if ( property_exists( $p->extra, 'training_certifications' ) ) {
-				$certs = explode( ',', $p->extra->training_certifications );
-				wp_set_object_terms( $newid, $certs, 'lf-certification', false );
-			}
-			if ( property_exists( $p->extra, 'training_type' ) ) {
-				$types = explode( ',', $p->extra->training_type );
-				wp_set_object_terms( $newid, $types, 'lf-training-type', false );
-			}
+		if ( property_exists( $ktp, 'training_certifications' ) ) {
+			$certs = explode( ',', $ktp->training_certifications );
+			wp_set_object_terms( $newid, $certs, 'lf-certification', false );
+		}
+		if ( property_exists( $ktp, 'training_type' ) ) {
+			$types = explode( ',', $ktp->training_type );
+			wp_set_object_terms( $newid, $types, 'lf-training-type', false );
 		}
 	}
 

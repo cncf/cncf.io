@@ -559,15 +559,15 @@ class LF_Utils {
 				return $metrics;
 			}
 			$remote_body                  = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['community-members']    = $remote_body->User; //phpcs:ignore.
+			$metrics['community-members'] = $remote_body->User; //phpcs:ignore.
 
-			$data = wp_remote_get( 'https://landscape.netlify.app/data/exports/cncf-members.json' );
+			$data = wp_remote_get( 'https://landscape.cncf.io/api/members/count.json' );
 			if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
 				return $metrics;
 			}
 
 			$remote_body             = json_decode( wp_remote_retrieve_body( $data ) );
-			$metrics['cncf-members'] = count( $remote_body );
+			$metrics['cncf-members'] = $remote_body->count;
 
 			if ( WP_DEBUG === false ) {
 				set_transient( 'cncf_whoweare_metrics', $metrics, DAY_IN_SECONDS );

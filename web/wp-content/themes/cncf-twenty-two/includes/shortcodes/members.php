@@ -39,30 +39,13 @@ function add_cncf_members_latest_shortcode( $atts ) {
 	$atts['category'] = strtolower( $atts['category'] );
 	$atts['size']     = strtolower( $atts['size'] );
 
-	$transient_name = '';
-	$remote_url     = '';
-	$members_array  = '';
-
-	if ( 'endusers' === $atts['category'] ) {
-		$transient_name = 'cncf_latest_endusers';
-		$remote_url     = 'https://landscape.netlify.app/data/exports/end-users-reverse-chronological.json';
-	}
-
-	if ( 'members' === $atts['category'] ) {
-		$transient_name = 'cncf_latest_members';
-		$remote_url     = 'https://landscape.netlify.app/data/exports/members-reverse-chronological.json';
-	}
-
-	if ( 'platinum' === $atts['category'] ) {
-		$transient_name = 'cncf_platinum_members';
-		$remote_url     = 'https://landscape.netlify.app/data/exports/cncf-platinum-members.json';
-	}
-
-	if ( ! $transient_name ) {
+	if ( 'endusers' !== $atts['category'] ) {
 		return;
 	}
 
-	$members_array = get_transient( $transient_name );
+	$transient_name = 'cncf_latest_endusers';
+	$remote_url     = 'https://landscape.cncf.io/api/members/end-users.json';
+	$members_array  = get_transient( $transient_name );
 
 	if ( false === $members_array ) {
 
@@ -78,7 +61,15 @@ function add_cncf_members_latest_shortcode( $atts ) {
 			set_transient( $transient_name, $members_array, 6 * HOUR_IN_SECONDS );
 		}
 	}
+
 	$members_array = json_decode( $members_array );
+
+	usort(
+		$members_array,
+		function ( $a, $b ) {
+			return -strcmp( $a->joined_at, $b->joined_at );
+		}
+	);
 
 	if ( ! is_array( $members_array ) ) {
 		return;
@@ -95,7 +86,7 @@ function add_cncf_members_latest_shortcode( $atts ) {
 <div class="members <?php echo esc_html( 'logo_' . $atts['size'] ); ?>">
 	<?php
 	for ( $i = 0; $i < $count; $i++ ) {
-		echo '<img width="105" height="40" loading="lazy" src="' . esc_url( str_replace( 'landscape.cncf.io', 'landscape.netlify.app', $members_array[ $i ]->logo ) ) . '" alt="' . esc_attr( $members_array[ $i ]->name ) . '">';
+		echo '<img width="105" height="40" loading="lazy" src="' . esc_url( $members_array[ $i ]->logo_url ) . '" alt="' . esc_attr( $members_array[ $i ]->name ) . '">';
 	}
 	?>
 </div>
