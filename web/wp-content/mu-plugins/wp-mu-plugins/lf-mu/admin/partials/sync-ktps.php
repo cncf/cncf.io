@@ -14,7 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$ktps_url  = 'https://landscape.cncf.io/api/categories/special/kubernetes-training-partner/all.json';
+$ktps_url = 'https://landscape.cncf.io/api/categories/special/kubernetes-training-partner/all.json';
 
 $args = array(
 	'timeout'   => 100,

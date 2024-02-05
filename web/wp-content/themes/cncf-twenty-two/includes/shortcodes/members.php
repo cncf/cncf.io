@@ -64,6 +64,13 @@ function add_cncf_members_latest_shortcode( $atts ) {
 
 	$members_array = json_decode( $members_array );
 
+	// Loop through the array and remove non-object elements without "joined_at".
+	foreach ( $members_array as $key => $item ) {
+		if ( ! is_object( $item ) || ! property_exists( $item, 'joined_at' ) ) {
+			unset( $members_array[ $key ] );
+		}
+	}
+
 	usort(
 		$members_array,
 		function ( $a, $b ) {
