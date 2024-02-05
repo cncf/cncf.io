@@ -242,6 +242,10 @@ wp.blocks.registerBlockStyle(
 	{
 		label: 'Box Shadow',
 		name: 'box-shadow',
+	},
+	{
+		label: 'Border',
+		name: 'border',
 	}
 ]
 );
