@@ -124,7 +124,6 @@ wp_enqueue_style( 'wp-block-columns' );
 							<a title="View <?php echo esc_html( $project_logo['title'] ); ?>"
 								href="<?php echo esc_url( $project_logo['url'] ); ?>">
 								<img src="<?php echo esc_url( $project_logo['logo'] ); ?>"
-									loading="lazy"
 									alt="Logo of <?php echo esc_html( $project_logo['title'] ); ?>">
 							</a>
 						</div>
