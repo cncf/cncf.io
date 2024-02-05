@@ -1,0 +1,14 @@
+// for tiles that go 3-across on desktop.
+@mixin tiles3 {
+    background: $white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+// tiles that go 2-across on desktop need a larger radius.
+@mixin tiles2 {
+    background: $white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+

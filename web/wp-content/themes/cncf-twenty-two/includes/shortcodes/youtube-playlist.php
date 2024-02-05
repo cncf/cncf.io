@@ -98,7 +98,7 @@ function add_playlist_shortcode( $atts ) {
 			$pub_date = new DateTime( $composed_playlist->items[ $i ]->contentDetails->videoPublishedAt );
 
 			?>
-	<div class="youtube-playlist__item">
+	<div class="youtube-playlist__item has-animation-scale-2">
 		<div class="wp-block-lf-youtube-lite">
 			<lite-youtube
 				videoid="<?php echo esc_attr( $composed_playlist->items[ $i ]->snippet->resourceId->videoId ); ?>"

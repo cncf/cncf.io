@@ -37,7 +37,7 @@ if ( $cn ) {
 }
 ?>
 
-<div class="case-study-item">
+<div class="case-study-item has-animation-scale-2">
 
 	<div class="case-study-item__overlay"></div>
 
