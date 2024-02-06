@@ -343,10 +343,8 @@
 }
 
 .home-intro-box {
-	background: $white;
-	filter: drop-shadow (0px 2px 5px rgba(0, 0, 0, 0.1));
+	@include tiles3;
 	border: 1px solid $gray-300;
-	border-radius: 5px;
 	letter-spacing: 0.02em;
 	line-height: 150%;
 	height: 100%;
