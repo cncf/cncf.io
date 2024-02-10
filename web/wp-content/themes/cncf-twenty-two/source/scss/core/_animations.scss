@@ -14,4 +14,11 @@
 			transform: scale(1.013);
 		}
 	}
+	.has-animation-bump {
+		transition-property: transform;
+		transition-duration: 0.3s;
+		&:hover {
+			transform: translate3d(0, -8px, 0);
+		}
+	}
 }
