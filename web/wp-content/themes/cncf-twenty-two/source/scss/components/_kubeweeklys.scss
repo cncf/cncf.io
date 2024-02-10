@@ -17,11 +17,8 @@
 }
 
 .kubeweekly-item {
-	border: 1px solid $gray-300;
-	background-color: $white;
+	@include tiles3;
 	padding: 18px 24px;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-	border-radius: 5px;
 	&__link {
 		color: $black;
 	}

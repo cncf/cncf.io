@@ -85,7 +85,7 @@ add_shortcode( 'eu-newsletters', 'add_eu_newsletters_shortcode' );
 function add_eu_newsletter_form_shortcode( $atts ) {
 	ob_start();
 	?>
-<div class="wp-block-group is-style-box-shadow has-white-background-color has-background kubeweekly-newsletter">
+<div class="wp-block-group is-style-border has-white-background-color has-background kubeweekly-newsletter">
 <h3 class="is-style-spaced-uppercase">SIGN UP FOR THE END USER NEWSLETTER</h3>
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
 	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=4ee81a77-cfa3-4eb6-9a48-5a4eac4e57e4]' ); ?>

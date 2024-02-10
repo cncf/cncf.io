@@ -32,7 +32,7 @@ $classes = LF_Utils::merge_classes(
 		} else {
 			?>
 		<div
-			class="wp-block-group is-style-box-shadow has-white-background-color has-background">
+			class="wp-block-group is-style-border has-white-background-color has-background">
 			<div class="wp-block-columns is-style-70px-gap">
 				<div class="wp-block-column">
 					<?php if ( get_post_thumbnail_id() ) : ?>

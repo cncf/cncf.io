@@ -101,7 +101,7 @@ function add_home_intro_boxes_shortcode() {
 	?>
 <div class="home-intro-boxes columns-three">
 
-	<div class="home-intro-box has-animation-scale-2">
+	<div class="home-intro-box has-animation-bump">
 		<h3 class="home-intro-box__title">Members</h3>
 		<div class="home-intro-box__text-wrapper">
 			<p><strong>Building and selling cloud native tech?</strong></p>
@@ -112,7 +112,7 @@ function add_home_intro_boxes_shortcode() {
 		</div>
 	</div>
 
-	<div class="home-intro-box has-animation-scale-2">
+	<div class="home-intro-box has-animation-bump">
 		<h3 class="home-intro-box__title">Contributors</h3>
 		<div class="home-intro-box__text-wrapper">
 			<p><strong>Looking to get involved?</strong></p>
@@ -123,7 +123,7 @@ function add_home_intro_boxes_shortcode() {
 		</div>
 	</div>
 
-	<div class="home-intro-box has-animation-scale-2">
+	<div class="home-intro-box has-animation-bump">
 		<h3 class="home-intro-box__title">End Users</h3>
 		<div class="home-intro-box__text-wrapper">
 			<p><strong>Using cloud native technologies?</strong></p>
@@ -134,7 +134,7 @@ function add_home_intro_boxes_shortcode() {
 		</div>
 	</div>
 
-	<div class="home-intro-box has-animation-scale-2">
+	<div class="home-intro-box has-animation-bump">
 		<h3 class="home-intro-box__title">New to CNCF?</h3>
 		<img class="home-intro-box__goldie" loading="lazy"
 			src="<?php LF_utils::get_image( 'home-goldie.png' ); ?>"
