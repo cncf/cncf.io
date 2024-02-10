@@ -25,9 +25,9 @@
 .projects-single {
 	&-box {
 		width: 100%;
-		background-color: $white;
+		background-color: white;
 		filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
-		border: 1px solid $gray-400;
+		border: 1px solid $gray-300;
 		border-radius: 10px;
 		&__col1 {
 			grid-column: span 12;
