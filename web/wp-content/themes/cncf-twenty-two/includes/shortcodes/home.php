@@ -134,7 +134,7 @@ function add_home_intro_boxes_shortcode() {
 		</div>
 	</div>
 
-	<div class="home-intro-box has-animation-bump">
+	<div class="home-intro-box has-animation-scale-2">
 		<h3 class="home-intro-box__title">New to CNCF?</h3>
 		<img class="home-intro-box__goldie" loading="lazy"
 			src="<?php LF_utils::get_image( 'home-goldie.png' ); ?>"
