@@ -1,6 +1,7 @@
 api_version: 1
 web_docroot: true
 php_version: 8.1
+enforce_https: full+subdomains
 workflows:
   sync_code:
     after:

@@ -30,7 +30,6 @@
     "wpackagist-plugin/code-syntax-block": "*",
     "wpackagist-plugin/flying-pages": "^2.0.8",
     "wpackagist-plugin/flying-scripts": "^1.1.7",
-    "wpackagist-plugin/lh-hsts": "^1.24",
     "wpackagist-plugin/pantheon-advanced-page-cache": "^1.0.0",
     "wpackagist-plugin/publishpress-checklists":"^2.5.3",
     "wpackagist-plugin/post-meta-controls": "^1.3.3",
