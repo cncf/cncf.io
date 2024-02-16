@@ -394,7 +394,8 @@
 	}
 	&__logo-figure {
 		height: 100px;
-		margin-top: 70px;
+		margin-top: 35px;
+		margin-bottom: 25px;
 	}
 	&__logo {
 		width: max(70%, 320px);
@@ -412,7 +413,7 @@
 	}
 	&__description {
 		margin-top: 15px;
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 150%;
 		letter-spacing: 0.02em;
 		color: $white;
