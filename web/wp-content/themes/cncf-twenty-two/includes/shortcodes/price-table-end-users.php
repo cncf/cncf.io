@@ -28,47 +28,21 @@ function add_end_user_pricing_shortcode() {
 
 <div class="pricing-table end-user-table">
 
-	<!-- column 1 -->
-	<div class="column col1">
-
-		<div class="thead">
-			<h3>Supporter</h3>
-		</div>
-
-		<div class="tbody">
-			<p>Get started with CNCF as a supporting member:</p>
-			<ul>
-				<li>Private mailing list and
-					calls to meet other cloud native end users</li>
-				<li>5 KubeCon + CloudNativeCon in-person tickets per year (2 tickets for organizations with &lt;300 employees)</li>
-				<li>5 Linux Foundation
-					Training coupons </li>
-				<li>End User Recruiting Booth at KubeCon + CloudNativeCon at Startup Level pricing.</li>
-			</ul>
-		</div>
-
-		<div class="tfoot">
-			<h4>$4,500</h4>
-			<h4>$1,800 ( &lt; 300 employees)</h4>
-		</div>
-
-	</div>
-	<!-- column 1 ends -->
-
 	<!-- column 2 -->
 	<div class="column col2">
 		<div class="thead">
-			<h3>Silver</h3>
+			<h3>Silver Member</h3>
 		</div>
 
 		<div class="tbody">
-			<p>Everything included
-					in Supporter, plus:</p>
+			<p>Silver benefits include:</p>
 			<ul>
 				<li>Linux Foundation <a
 						href="https://www.linuxfoundation.org/join/#benefits">Silver
 						Membership</a></li>
+				<li>Private mailing list and access to end user-only calls, groups, and special events to connect with other cloud native end users</li>
 				<li>Run for Governing Board</li>
+				<li>Run for the End User Technical Advisory Board</li>
 				<li>2 online programs a quarter to
 					build thought leadership (on-demand, YouTube, live streams)
 				</li>
@@ -80,7 +54,7 @@ function add_end_user_pricing_shortcode() {
 				<li>Access to the <a
 						href="https://todogroup.org/">TODO Group</a> to meet
 					other open source organizations </li>
-
+				<li>End User Recruiting Booth at KubeCon + CloudNativeCon at Startup Level pricing</li>
 			</ul>
 		</div>
 
@@ -103,7 +77,7 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 	<div class="column col3">
 
 		<div class="thead">
-			<h3>Gold</h3>
+			<h3>Gold Member</h3>
 		</div>
 
 		<div class="tbody">
@@ -136,7 +110,7 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 	<div class="column col4">
 
 		<div class="thead">
-			<h3>Platinum</h3>
+			<h3>Platinum Member</h3>
 		</div>
 
 		<div class="tbody">
@@ -170,28 +144,6 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
 	</div>
 </div>
-	<!-- CTA Buttons  -->
-	<div class="pricing-table-cta">
-
-	<div class="pricing-table-cta__col1">
-		<div style="height:20px" aria-hidden="true"
-			class="wp-block-spacer"></div>
-
-		<a href="https://www.cncf.io/endusersupporter"
-			class="wp-block-button__link has-gray-700-background-color has-background has-no-padding">Join as Supporter</a>
-
-	</div>
-
-	<div class="pricing-table-cta__col2">
-
-		<div style="height:20px" aria-hidden="true"
-			class="wp-block-spacer"></div>
-
-		<a href="https://cncf.io/lfmembership" class="wp-block-button__link">Join as
-			CNCF Member</a>
-
-	</div>
-	</div>
 
 	<?php
 	get_template_part( 'components/silver-member-pricing-modal' );
