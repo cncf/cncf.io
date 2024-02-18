@@ -141,7 +141,7 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 	<div class="blank-cell"></div>
 
 	<div class="lf-membership lf-membership-style show-over-1000">
-		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
+		<p>Includes <a href="https://www.linuxfoundation.org/about/join">Linux Foundation Silver Membership</a></p>
 	</div>
 </div>
 
