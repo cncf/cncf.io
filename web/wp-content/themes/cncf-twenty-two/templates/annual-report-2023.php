@@ -1529,7 +1529,7 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 						<span class="course-box__text">Registrations</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description">Istio Certified Associate (ICA) exam hit 1500+ registrations (since its launch on September, 2023)</p>
+							class="course-box__description">Istio Certified Associate (ICA) exam hit 60+ registrations (since its launch on September, 2023)</p>
 					</div>
 				</div>
 			</div>
@@ -2264,7 +2264,7 @@ CTO, CNCF</p>
 
 				<div class="lf-grid">
 					<div class="restrictive-9-col">
-						<p>Now in their sixth year, the <a href="https://www.cncf.io/announcements/2023/11/08/cloud-native-computing-foundation-announces-2023-community-awards-winners/">CNCF Community Awards</a> highlighted the most active ambassador and top contributor across all CNCF projects. The awards included:</p>
+						<p>Now in their seventh year, the <a href="https://www.cncf.io/announcements/2023/11/08/cloud-native-computing-foundation-announces-2023-community-awards-winners/">CNCF Community Awards</a> highlighted the most active ambassador and top contributor across all CNCF projects. The awards included:</p>
 					</div>
 				</div>
 
