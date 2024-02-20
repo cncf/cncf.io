@@ -1484,7 +1484,7 @@ Lf_Utils::get_svg( $report_folder . 'training-logos.svg', true );
 						<span class="course-box__text">Increase</span>
 						<div class="thin-hr course-box__hr"></div>
 						<p
-							class="course-box__description">Kubernetes Massively Open Online Course (MOOC) hit <a href="https://www.cncf.io/certification/training/">345,00 enrollments</a></p>
+							class="course-box__description">Kubernetes Massively Open Online Course (MOOC) hit <a href="https://www.cncf.io/certification/training/">345,000 enrollments</a></p>
 					</div>
 
 					<div class="course-box">
