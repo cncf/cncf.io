@@ -154,6 +154,15 @@
 			}
 		}
 	}
+
+	&.end-user-table {
+		grid-template-columns: 1fr;
+		@media (min-width: 800px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	
+	}
+		
 	// Cloud Credits Table.
 	&.cloud-credits-table {
 		@media (min-width: 600px) {
