@@ -639,4 +639,11 @@ class Lf_Mu_Admin {
 		$controller = new LF_MU_REST_Controller();
 		$controller->register_routes();
 	}
+
+	/**
+	 * Sets the post preview link expiry to 7 days in place of the 48 hour default.
+	 */
+	public function set_post_preview_expiry() {
+		return 7 * DAY_IN_SECONDS;
+	}
 }

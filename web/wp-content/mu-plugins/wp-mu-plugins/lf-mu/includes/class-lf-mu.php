@@ -221,6 +221,8 @@ class Lf_Mu {
 		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'remove_dashboard_widgets' );
 
 		$this->loader->add_filter( 'pre_get_posts', $plugin_admin, 'set_events_admin_order' );
+
+		$this->loader->add_filter( 'ppp_nonce_life', $plugin_admin, 'set_post_preview_expiry' );
 	}
 
 	/**
