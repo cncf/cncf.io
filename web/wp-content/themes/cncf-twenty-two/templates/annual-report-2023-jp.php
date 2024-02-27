@@ -65,6 +65,11 @@ Lf_Utils::get_svg( $report_folder . 'hero-desktop.svg', true );
 ?>
 " alt="CNCF Annual Report 2023 - Architect the Future" loading="eager" decoding="async" class="hero__title">
 					</picture>
+					<div>
+						<p align-text="left" vertical-align=""><font size="4" color="#2D1762"><b> 翻訳協力：松本 央 (Hiroshi Matsumoto)</b></font></p>
+						<br>
+					</div>
+
 					<div class="hero__button-share-align">
 						<?php
 						get_template_part( 'components/social-share' );
@@ -138,7 +143,7 @@ LF_Utils::get_svg( $report_folder . 'icon-relationship.svg', true );
 			<div class="lf-grid section-01__grid">
 				<div class="section-01__grid-col1">
 
-					<p><strong>今年はクラウド ネイティブにとって大きな変革をもたらした年でした。 6年前にベルリンで行われたKubeCon + CloudNativeConで、OpenAIが<a href="https://www.youtube.com/watch?v=v4N3Krzb8Eg">AIの未来を推進するインフラストラクチャの構築-その未来が今</a>というタイトルで講演しました。現在、クラウド ネイティブはAIの動作を支えるインフラストラクチャを提供しています。そのため、私にとって<a href="https://www.youtube.com/watch?v=NcLAVtQ5H4A">北米で開かれたKubeCon + CloudNativeConの基調講演</a>でAdobeの Joseph Sandoval氏がパネルディスカッションを進行し、クラウド ネイティブがAIの急速な成長をどのようにサポートできるか、そしてより持続可能で安全なエコ システムを開発しながらどのように実現できるかについての議論は、特に刺激的なものでした。</strong></p>
+					<p><strong>今年はクラウド ネイティブにとって大きな変革をもたらした年でした。 6年前にKubeCon + CloudNativeCon Berlinで、OpenAIが<a href="https://www.youtube.com/watch?v=v4N3Krzb8Eg">AIの未来を推進するインフラストラクチャの構築-その未来が今</a>というタイトルで講演しました。現在、クラウド ネイティブはAIの動作を支えるインフラストラクチャを提供しています。そのため、私にとって<a href="https://www.youtube.com/watch?v=NcLAVtQ5H4A">KubeCon + CloudNativeCon North Americaの基調講演</a>でAdobeの Joseph Sandoval氏がパネルディスカッションを進行し、クラウド ネイティブがAIの急速な成長をどのようにサポートできるか、そしてより持続可能で安全なエコ システムを開発しながらどのように実現できるかについての議論は、特に刺激的なものでした。</strong></p>
 
 					<p>Adobeが示すように、クラウド ネイティブの動きにとってエンドユーザーは極めて重要です。これが、CNCFがエンドユーザー テクニカル アドバイザリ ボード(Technical Advisory Board:TAB)を立ち上げた理由です。これは、CNCFプロジェクトの採用と運用化の道筋を明らかにするのに役立ちます。TABは、リファレンス アーキテクチャの開発と承認、およびエンドユーザーのワークフロー パターンの紹介を通じて、重要であるそれらの明確さと導入のガイドを提供します。これらの取り組みは、現在のユースケースをサポートし、クラウド ネイティブ テクノロジーの状況の変化に合わせて進化する、活発で繁栄したエコシステムの基礎を築きます。
 					</p>
@@ -889,7 +894,7 @@ Executive Director, CNCF</p>
 				<div class="shadow-hr"></div>
 
 
-				<h2 class="section-header">KubeCon + <br class="show-over-1000">CloudNativeCon ヨーロッパ</h2>
+				<h2 class="section-header">KubeCon + <br class="show-over-1000">CloudNativeCon EUROPE</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1060,7 +1065,7 @@ Executive Director, CNCF</p>
 
 			<div class="container wrap">
 
-			<h2 class="section-header">KubeCon + CloudNativeCon <br class="show-over-1000">北米</h2>
+			<h2 class="section-header">KubeCon + CloudNativeCon <br class="show-over-1000">NORTH AMERICA</h2>
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
@@ -1773,11 +1778,11 @@ CTO, CNCF</p>
 				<div class="lf-grid section-12__report">
 					<div class="section-12__report-col1">
 
-						<p class="sub-header">Deaf &amp; HOHワーキング グループ</p>
+						<p class="sub-header">Deaf &amp; HOH Working Group</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<p>今年は、<a href="https://contribute.cncf.io/about/deaf-and-hard-of-hearing/">CNCF聴覚障がい者</a>(deaf/hoh)ワーキング グループが発足しました。このグループは、クラウド ネイティブおよびオープンソース コミュニティに聴覚障がいの方にも積極的に参加いただけるようにすることを目的としています。このグループの使命は、クラウド ネイティブおよびオープンソース コミュニティ内に<strong>協力的</strong>で<strong>包括的な環境</strong>を構築することです。</p>
+						<p>今年は、<a href="https://contribute.cncf.io/about/deaf-and-hard-of-hearing/">CNCF Deaf and Hard of Hearing</a>(deaf/hoh) Working Groupが発足しました。このグループは、クラウド ネイティブおよびオープンソース コミュニティに聴覚障がいの方にも積極的に参加いただけるようにすることを目的としています。このグループの使命は、クラウド ネイティブおよびオープンソース コミュニティ内に<strong>協力的</strong>で<strong>包括的な環境</strong>を構築することです。</p>
 					</div>
 					<div class="section-12__report-col2">
 						<img width="1250" height="814" loading="lazy" class="" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2023/graphic.jpg" srcset="https://www.cncf.io/wp-content/uploads/2024/01/graphic.jpg 1250w, https://www.cncf.io/wp-content/uploads/2024/01/graphic-300x195.jpg 300w, https://www.cncf.io/wp-content/uploads/2024/01/graphic-1024x667.jpg 1024w, https://www.cncf.io/wp-content/uploads/2024/01/graphic-768x500.jpg 768w, https://www.cncf.io/wp-content/uploads/2024/01/graphic-900x586.jpg 900w, https://www.cncf.io/wp-content/uploads/2024/01/graphic-307x200.jpg 307w, https://www.cncf.io/wp-content/uploads/2024/01/graphic-614x400.jpg 614w" sizes="(max-width: 600px) 100vw, 600px" alt="Laptop with CNBC article showing on it">					</div>
@@ -1988,7 +1993,7 @@ CTO, CNCF</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<p class="sub-header">ザ タギー</p>
+						<p class="sub-header">THE TAGGIE</p>
 
 						<div aria-hidden="true" class="report-spacer-20"></div>
 
@@ -2008,7 +2013,7 @@ CTO, CNCF</p>
 
 						<div aria-hidden="true" class="report-spacer-40"></div>
 
-						<p class="sub-header">小さくも強力</p>
+						<p class="sub-header">SMALL BUT MIGHTY</p>
 
 						<div aria-hidden="true" class="report-spacer-20"></div>
 
