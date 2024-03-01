@@ -177,7 +177,7 @@ Executive Director, CNCF</p>
 							<img loading="lazy" decoding="async" width="74" height="43" src="/wp-content/themes/cncf-twenty-two/images/annual-reports/2023/icon-members.svg" alt="Members icon">
 						</div>
 						<div class="text">
-							<span>827 人のメンバー</span><br>
+							<span>827のメンバー</span><br>
 							世界中6大陸から
 						</div>
 					</div>
