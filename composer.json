@@ -41,6 +41,7 @@
     "wpackagist-plugin/leadin":"*",
     "wpackagist-plugin/find-my-blocks":"^3.5.4",
     "wpackagist-plugin/public-post-preview":"^2",
+    "wpackagist-plugin/plausible-analytics":"^2.0.6",
     "wpackagist-plugin/wp-native-php-sessions": "^1.0.0"
   },
   "require-dev": {
