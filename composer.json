@@ -37,7 +37,7 @@
     "wpackagist-plugin/safe-svg": "*",
     "wpackagist-plugin/shortpixel-image-optimiser": "*",
     "wpackagist-plugin/svg-autocrop": "^0.1.0",
-    "wpackagist-plugin/wp-mail-smtp": "^3.0.3",
+    "wpackagist-plugin/wp-mail-smtp": "^4",
     "wpackagist-plugin/leadin":"*",
     "wpackagist-plugin/find-my-blocks":"^3.5.4",
     "wpackagist-plugin/public-post-preview":"^2",
