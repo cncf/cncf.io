@@ -709,7 +709,7 @@ $sidebar    = array(
 						array(
 							'type'          => 'checkbox',
 							'data_type'     => 'meta',
-							'data_key'      => 'hide_all_upcoming_link',
+							'data_key'      => 'free',
 							'register_meta' => true,
 							'ui_border_top' => false,
 							'default_value' => false,
