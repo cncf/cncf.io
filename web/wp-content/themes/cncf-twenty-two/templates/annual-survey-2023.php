@@ -1222,18 +1222,15 @@ Lf_Utils::get_svg( $report_folder . 'sec-com-status-desktop.svg', true );
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
 						<p
-							class="thanks__opening">A huge thank you to everyone who participated in our survey and the support we received from Buoyant, Datadog, and Dynatrace. As always, the full raw data from CNCF's survey is available on GitHub.</p>
+							class="thanks__opening">A huge thank you to everyone who participated in our survey.</p>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
 						<div class="wp-block-button hero__button"><a
 								href="https://github.com/cncf/surveys/tree/main/cloudnative"
 								class="wp-block-button__link"
-								title="View the full data on GitHub">
-								<?php
-								Lf_Utils::get_svg( $report_folder . 'icon-github.svg' );
-								?>
-								View the full data on GitHub</a>
+								title="View the full dataset">
+								View the full dataset</a>
 						</div>
 
 						<div aria-hidden="true" class="report-spacer-60"></div>
@@ -1243,69 +1240,14 @@ Lf_Utils::get_svg( $report_folder . 'sec-com-status-desktop.svg', true );
 					</div>
 					<div class="thanks__col2">
 						<?php
-							LF_Utils::display_responsive_images( 83148, 'full', '500px', '', 'lazy', 'Stacked box-like shapes meant to symbolise containers' );
+							LF_Utils::display_responsive_images( 103549, 'full', '1200px', '', 'lazy', 'Stacked box-like shapes meant to symbolise containers' );
 						?>
 					</div>
 				</div>
 
 				<div class="shadow-hr"></div>
 
-				<p
-					class="sub-header">Methodologies - contributed production data</p>
-
-				<div aria-hidden="true" class="report-spacer-80"></div>
-
-				<a href="https://buoyant.io" title="Visit Buoyant website">
-					<img loading="lazy" width="209" height="57" src="
-							<?php LF_Utils::get_svg( $report_folder . 'logo-buoyant.svg', true ); ?>
-							" alt="Buoyant Logo">
-				</a>
-
-				<div aria-hidden="true" class="report-spacer-20"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>Buoyant's contributions represent the normalized count unique Linkerd-enabled clusters in the full open source Linkerd community. Linkerd-enabled clusters younger than 30 days were excluded.</p>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<a href="https://www.datadoghq.com"
-					title="Visit Datadog website">
-					<img loading="lazy" width="85" height="85" src="
-							<?php LF_Utils::get_svg( $report_folder . 'logo-datadog.svg', true ); ?>
-							" alt="Datadog Logo">
-				</a>
-
-				<div aria-hidden="true" class="report-spacer-20"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>The 2023 Container Research was updated in November 2023 and builds on previous editions of the <a href="https://www.datadoghq.com/container-report-2021/">container usage report</a>, <a href="https://www.datadoghq.com/container-orchestration-2018/">container orchestration report</a>, and <a href="https://www.datadoghq.com/docker-adoption/">Docker research report</a>.<br>For this report, Datadog examined more than 1.5 billion containers run by tens of thousands of customers to understand the state of the container ecosystem.</p>
-					</div>
-				</div>
-
-				<div class="shadow-hr"></div>
-
-				<a href="https://www.dynatrace.com"
-					title="Vist Dynatrace website">
-					<img loading="lazy" width="187" height="33" src="
-							<?php LF_Utils::get_svg( $report_folder . 'logo-dynatrace.svg', true ); ?>
-							" alt="Dynatrace Logo">
-				</a>
-
-				<div aria-hidden="true" class="report-spacer-20"></div>
-
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p>Dynatrace analyzed how enterprises actually use Kubernetes in production. The <a href="https://www.dynatrace.com/news/blog/kubernetes-in-the-wild-2023/">Kubernetes in the Wild Report 2023</a> is based on available production data from 4.1 billion Kubernetes pods created by thousands of Dynatrace customers in all global regions (excluding all Kubernetes clusters Dynatrace uses internally or for hosting SaaS offerings). The data covered the period of January 2021 through September 2023. Dynatrace customers represent the world's largest 15,000 organizations from all major industries, including financial services, retail and e-commerce, technology, transportation, manufacturing, healthcare, and public sector organizations.</p>
-					</div>
-				</div>
-
-				<div aria-hidden="true" class="report-spacer-120"></div>
-
-				<p><strong>Copyright © 2023 The Linux Foundation</strong><br>This report is licensed under the Creative Commons Attribution-NoDerivatives 4.0 International Public License. <br>To reference the work, please cite “Cloud Native Computing Foundation Annual Survey 2023.”</p>
+				<p><strong>Copyright © 2024 The Linux Foundation</strong><br>This report is licensed under the Creative Commons Attribution-NoDerivatives 4.0 International Public License. <br class="show-over-1000">To reference the work, please cite “Cloud Native Computing Foundation Annual Survey 2023.”</p>
 
 
 			</div>
