@@ -72,7 +72,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-project', array( 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_person', 'lf_human' ), $args );
+register_taxonomy( 'lf-project', array( 'lf_course', 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_person', 'lf_human' ), $args );
 
 $labels = array(
 	'name'          => __( 'Author Category', 'lf-mu' ),
@@ -456,3 +456,22 @@ $args   = array(
 	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-report-type', array( 'lf_report' ), $args );
+
+$labels = array(
+	'name'          => __( 'Course Difficulty', 'lf-mu' ),
+	'singular_name' => __( 'Course Difficulty', 'lf-mu' ),
+	'search_items'  => __( 'Search Course Difficulties', 'lf-mu' ),
+	'all_items'     => __( 'All Course Difficulties', 'lf-mu' ),
+	'edit_item'     => __( 'Edit Course Difficulty', 'lf-mu' ),
+	'update_item'   => __( 'Update Course Difficulty', 'lf-mu' ),
+	'add_new_item'  => __( 'Add New Course Difficulty', 'lf-mu' ),
+	'new_item_name' => __( 'New Course Difficulty Name', 'lf-mu' ),
+	'menu_name'     => __( 'Course Difficulties', 'lf-mu' ),
+);
+$args   = array(
+	'labels'            => $labels,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'show_in_nav_menus' => false,
+);
+register_taxonomy( 'lf-course-difficulty', array( 'lf_course' ), $args );

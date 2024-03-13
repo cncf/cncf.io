@@ -319,7 +319,7 @@ class Lf_Mu_Public {
 	 * @param array $post_types Query args.
 	 */
 	public function remove_newsletters_from_sitemap( $post_types ) {
-		$to_exclude = array( 'lf_kubeweekly', 'lf_eu_newsletter' );
+		$to_exclude = array( 'lf_kubeweekly', 'lf_eu_newsletter', 'lf_course' );
 		return array_diff( $post_types, $to_exclude );
 	}
 

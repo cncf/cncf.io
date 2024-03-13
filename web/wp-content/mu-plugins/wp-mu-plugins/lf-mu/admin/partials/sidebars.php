@@ -690,3 +690,93 @@ $sidebar    = array(
 	),
 );
 $sidebars[] = $sidebar;
+
+$sidebar    = array(
+	'id'              => 'lf-sidebar-course',
+	'id_prefix'       => 'lf_',
+	'label'           => __( 'Course Settings' ),
+	'post_type'       => 'lf_course',
+	'data_key_prefix' => 'lf_course_',
+	'icon_dashicon'   => 'admin-settings',
+	'tabs'            => array(
+		array(
+			'label'  => __( 'Tab label' ),
+			'panels' => array(
+				array(
+					'label'        => __( 'General' ),
+					'initial_open' => true,
+					'settings'     => array(
+						array(
+							'type'          => 'checkbox',
+							'data_type'     => 'meta',
+							'data_key'      => 'hide_all_upcoming_link',
+							'register_meta' => true,
+							'ui_border_top' => false,
+							'default_value' => false,
+							'use_toggle'    => false,
+							'input_label'   => __( 'Free Course' ),
+						),
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'cost',
+							'label'         => __( 'Cost' ),
+							'register_meta' => true,
+							'ui_border_top' => false,
+							'default_value' => '',
+							'placeholder'   => '250',
+						),
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'ui_border_top' => false,
+							'data_key'      => 'cost_cn',
+							'label'         => __( 'Cost CN' ),
+							'register_meta' => true,
+							'default_value' => '',
+							'placeholder'   => '2088',
+						),
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'course_url',
+							'label'         => __( 'Course page URL' ),
+							'register_meta' => true,
+							'default_value' => '',
+							'placeholder'   => 'https://training.linuxfoundation.org/training/kubernetes-security-essentials-lfs260/',
+						),
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'course_url_cn',
+							'label'         => __( 'Course page CN URL' ),
+							'ui_border_top' => false,
+							'register_meta' => true,
+							'default_value' => '',
+							'placeholder'   => 'https://training.linuxfoundation.cn/courses/36',
+						),
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'length',
+							'label'         => __( 'Length' ),
+							'register_meta' => true,
+							'default_value' => '',
+							'placeholder'   => 'Online Self-Paced',
+						),
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'who',
+							'label'         => __( 'Who It’s For' ),
+							'register_meta' => true,
+							'default_value' => '',
+							'placeholder'   => 'DevOps Engineers, CI/CD Engineers, and Software Developers looking to effectively manage (CI/CD) workflows using the Tekton framework',
+						),
+					),
+				),
+			),
+		),
+	),
+);
+$sidebars[] = $sidebar;

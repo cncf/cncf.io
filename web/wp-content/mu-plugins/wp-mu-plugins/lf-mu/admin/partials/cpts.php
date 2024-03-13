@@ -66,6 +66,24 @@ $case_study_block_template = array(
 
 $opts = array(
 	'labels'            => array(
+		'name'          => __( 'Courses' ),
+		'singular_name' => __( 'Course' ),
+		'all_items'     => __( 'All Courses' ),
+	),
+	'public'            => true,
+	'has_archive'       => false,
+	'show_in_nav_menus' => false,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'menu_icon'         => 'dashicons-welcome-learn-more',
+	'rewrite'           => array( 'slug' => 'courses' ),
+	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+);
+register_post_type( 'lf_course', $opts );
+
+
+$opts = array(
+	'labels'            => array(
 		'name'          => __( 'Case Studies' ),
 		'singular_name' => __( 'Case Study' ),
 		'all_items'     => __( 'All Case Studies' ),
