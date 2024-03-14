@@ -70,14 +70,16 @@ $opts = array(
 		'singular_name' => __( 'Course' ),
 		'all_items'     => __( 'All Courses' ),
 	),
-	'public'            => true,
-	'has_archive'       => false,
-	'show_in_nav_menus' => false,
-	'show_in_rest'      => true,
-	'hierarchical'      => false,
-	'menu_icon'         => 'dashicons-welcome-learn-more',
-	'rewrite'           => array( 'slug' => 'courses' ),
-	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+	'public'              => true,
+	'has_archive'         => false,
+	'show_in_nav_menus'   => false,
+	'show_in_rest'        => true,
+	'hierarchical'        => false,
+	'exclude_from_search' => true, // to hide the singular pages on FE.
+	'publicly_queryable'  => false, // to hide the singular pages on FE.
+	'menu_icon'           => 'dashicons-welcome-learn-more',
+	'rewrite'             => array( 'slug' => 'courses' ),
+	'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 );
 register_post_type( 'lf_course', $opts );
 
