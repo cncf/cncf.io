@@ -31,6 +31,9 @@ if ( $query->have_posts() ) {
 		case 'lf_person':
 			get_template_part( 'search-filter/ambassadors' );
 			break;
+		case 'lf_course':
+			get_template_part( 'search-filter/courses' );
+			break;
 		case 'lf_report':
 			get_template_part( 'search-filter/reports' );
 			break;

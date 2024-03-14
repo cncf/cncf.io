@@ -1,0 +1,26 @@
+.course-item {
+	.wp-block-columns {
+		align-items: normal;
+		@media (min-width: 782px) {
+			flex-wrap: nowrap !important;
+		}
+	}
+
+	@media (max-width: 781px) {
+		.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+			flex-basis: 100% !important;
+		}
+	}
+
+	&__title {
+		line-height: 140%;
+		margin-bottom: 18px;
+		a {
+			color: $black;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+}
