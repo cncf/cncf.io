@@ -304,12 +304,12 @@ Lf_Utils::get_svg( $report_folder . 'end-users-technical-experience-desktop.svg'
 				</div>
 
 				<div class="lf-grid">
-					<div class="restrictive-7-col">
-						<p
-							class="larger-sub-header">Kubernetes solidifies its core technology status</p>
-
+					<div class="restrictive-10-col">
+						<p class="larger-sub-header">Kubernetes solidifies its core technology status</p>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-20"></div>
+
 				<div class="lf-grid as23__grid">
 					<div class="as23__grid-col1">
 						<p>In the 2021 CNCF Annual Survey, we stated that Kubernetes had crossed the adoption chasm to become a mainstream global technology. Today, the laggards are finally catching up.
@@ -391,6 +391,109 @@ Lf_Utils::get_svg( $report_folder . 'cproject-usage-trends-desktop.svg', true );
 
 				<div class="shadow-hr"></div>
 
+				<p class="question">Which of these graduated CNCF projects is your organization using in production or evaluating?</p>
+
+				<picture>
+					<source media="(max-width: 599px)" srcset="
+						<?php
+						Lf_Utils::get_svg( $report_folder . 'using-chart-mobile.svg', true );
+						?>
+						">
+											<source media="(min-width: 600px)" srcset="
+						<?php
+						Lf_Utils::get_svg( $report_folder . 'using-chart-desktop.svg', true );
+						?>
+						">
+											<img width="1200" height="341" src="
+						<?php
+						Lf_Utils::get_svg( $report_folder . 'using-chart-desktop.svg', true );
+						?>
+						" alt="Which of these graduated CNCF projects is your organization using in production or evaluating?"
+						loading="lazy">
+				</picture>
+
+				<div class="shadow-hr"></div>
+
+				<p class="question">Which of these incubating CNCF projects is your organization using in production or evaluating?</p>
+
+				<picture>
+					<source media="(max-width: 599px)" srcset="
+						<?php
+						Lf_Utils::get_svg( $report_folder . 'using-chart-incubating-mobile.svg', true );
+						?>
+						">
+											<source media="(min-width: 600px)" srcset="
+						<?php
+						Lf_Utils::get_svg( $report_folder . 'using-chart-incubating-desktop.svg', true );
+						?>
+						">
+											<img width="1200" height="341" src="
+						<?php
+						Lf_Utils::get_svg( $report_folder . 'using-chart-incubating-desktop.svg', true );
+						?>
+						" alt="Which of these incubating CNCF projects is your organization using in production or evaluating?"
+						loading="lazy">
+				</picture>
+
+				<div class="shadow-hr"></div>
+
+				<div class="lf-grid">
+					<div class="restrictive-10-col">
+						<p class="larger-sub-header">Public clouds widely adopted, with large organizations leaning towards hybrid solutions</p>
+					</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-20"></div>
+
+				<div class="lf-grid as23__grid">
+					<div class="as23__grid-col1">
+						<p>Public cloud use is the preferred path for organizations, thanks to its ease of adoption, robust security, and minimal vendor lock-in. In fact, regardless of how we segment the data, public cloud use comes out on top.</p>
+
+						<p>Organizations who are just beginning their cloud journey favor public clouds (58%) but steer away from hybrid clouds (29%). This is likely because public clouds have a lower barrier to entry and can remain a key component of a cloud strategy once implemented.</p>
+
+						<p>Large organizations are drawn to all cloud types (public, private, and hybrid) but are the primary consumers of hybrid clouds (56%) compared to medium (44%) and small (27%) organizations.</p>
+
+						<p>Multi Cloud solutions are now the norm. The use of only public clouds is a strategy used by 28% of organizations and the average number of unique public cloud service providers in use for an organization is 2.3. Multi Cloud solutions (hybrid and other cloud combinations) are used by 56% of organizations. Multi cloud solutions increase the average number of unique cloud services providers by one, and, occasionally, by two.</p>
+					</div>
+					<div class="as23__grid-col2">
+						<span class="sidebar-number">2.8</span>
+						Average number of unique cloud service providers.
+					</div>
+				</div>
+
+				<div aria-hidden="true" class="report-spacer-100"></div>
+
+
+				<p class="question">Which of the following combinations of data center and cloud architectures does your organization use?</p>
+				<p class="larger-sub-sub-header">Segmented by Adoption</p>
+
+!!!
+
+				<p class="question">Which of the following combinations of data center and cloud architectures does your organization use?</p>
+				<p class="larger-sub-sub-header">Segmented by Total Employees</p>
+
+!!!
+
+
+				<div class="shadow-hr"></div>
+
+				<p class="question">Which of the following combinations of data center and cloud architectures does your organization use?</p>
+
+!!!
+
+				<div class="shadow-hr"></div>
+
+				<p class="question">Which of the following combinations of data center and cloud architectures does your organization use?</p>
+
+!!!
+
+
+
+
+
+
+
+
+
 
 
 
@@ -470,8 +573,7 @@ Lf_Utils::get_svg( $report_folder . 'challenges-using-containers-desktop.svg', t
 
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
-				<p
-					class="question">To what extent has your organization adopted practices and tools that adhere to GitOps principles?</p>
+				<p class="question">To what extent has your organization adopted practices and tools that adhere to GitOps principles?</p>
 
 				<picture>
 					<source media="(max-width: 599px)" srcset="

@@ -392,6 +392,8 @@ html {
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: auto;
+			font-size: 20px;
+			line-height: 30px;
 			gap: 20px;
 			@media (min-width: 1000px) {
 				grid-column: 9 / -1;
