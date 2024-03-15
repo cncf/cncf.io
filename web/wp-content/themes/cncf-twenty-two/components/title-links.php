@@ -106,27 +106,28 @@ else :
 		// Only get the first item in the array.
 		$category = array_shift( $all_categories );
 		?>
-<div class="parent-link-align">
-	<a class="parent-link"
+		<div class="parent-link-align">
+		<a class="parent-link"
 		href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"
 		title="See <?php echo esc_html( $category->name ); ?> posts"><?php echo esc_html( $category->name ); ?></a>
 		<?php
-	}
-	// Get the Category Author.
-	$category_author      = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
-	$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
-	if ( $category_author ) {
-		$category_link = get_home_url() . '/lf-author-category/' . $category_author_slug . '/';
+
+		// Get the Category Author.
+		$category_author      = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
+		$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
+		if ( $category_author ) {
+			$category_link = get_home_url() . '/lf-author-category/' . $category_author_slug . '/';
+			?>
+		<div class="space-slash">&nbsp;/&nbsp;</div>
+		<span><a class="author-category"
+				title="See <?php echo esc_attr( $category_author ); ?> posts"
+				href="<?php echo esc_url( $category_link ); ?>">
+				<?php echo esc_html( $category_author ) . ' Post'; ?>
+			</a></span>
+			<?php
+		}
 		?>
-	<div class="space-slash">&nbsp;/&nbsp;</div>
-	<span><a class="author-category"
-			title="See <?php echo esc_attr( $category_author ); ?> posts"
-			href="<?php echo esc_url( $category_link ); ?>">
-			<?php echo esc_html( $category_author ) . ' Post'; ?>
-		</a></span>
+		</div>
 		<?php
 	}
-	?>
-</div>
-	<?php
 endif;
