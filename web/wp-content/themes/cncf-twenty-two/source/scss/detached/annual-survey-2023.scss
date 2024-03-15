@@ -299,7 +299,18 @@ html {
 		line-height: 130%;
 		text-transform: uppercase;
 		font-size: 24px;
+		margin-bottom: 10px;
+		@media (min-width: 1000px) {
+			font-size: 30px;
+		}
+	}
+
+	.larger-sub-sub-header {
+		font-weight: 300;
+		line-height: 130%;
+		font-size: 24px;
 		margin-bottom: 30px;
+		color: $as23-purple-700;
 		@media (min-width: 1000px) {
 			font-size: 30px;
 			margin-bottom: 50px;
@@ -363,6 +374,60 @@ html {
 			max-width: 80%;
 			max-height: 65%;
 		}
+	}
+
+	&__grid {
+		&-col1 {
+			line-height: 160%;
+			grid-column: span 12;
+			@media (min-width: 1000px) {
+				grid-column: span 7;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 8;
+			}
+		}
+		&-col2 {
+			grid-column: span 12;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			gap: 20px;
+			@media (min-width: 1000px) {
+				grid-column: 9 / -1;
+				align-content: flex-start;
+			}
+			@media (min-width: 1200px) {
+				grid-column: 10 / -1;
+			}
+			.thin-hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&__grid2 {
+		&-col1, &-col2 {
+			grid-column: span 12;
+			text-align: left;
+			img {
+				margin: 0 50px;
+				height: 90px;
+			}
+			@media (min-width: 1000px) {
+				margin-right: 50px;
+				grid-column: span 6;
+			}
+		}
+	}
+
+	.sidebar-number {
+		font-weight: 700;
+		font-size: 80px;
+		line-height: 1;
+		text-align: left;
+		color: $as23-purple-700;
 	}
 
 	// END of as23 wrapper.

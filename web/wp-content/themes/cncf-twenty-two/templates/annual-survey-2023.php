@@ -70,7 +70,7 @@ Lf_Utils::get_svg( $report_folder . 'cncf-annual-survey-2023-logo-desktop.svg', 
 					<div class="hero__button-share-align">
 
 						<div class="wp-block-button hero__button"><a
-								href="https://github.com/cncf/surveys/tree/main/cloudnative"
+								href="https://data.world/thelinuxfoundation"
 								class="wp-block-button__link"
 								title="View the full dataset">
 								View the full dataset</a>
@@ -125,7 +125,7 @@ LF_Utils::get_svg( $report_folder . 'icon-inspect.svg', true );
 			<div class="lf-grid">
 				<div class="restrictive-9-col">
 					<p>Since 2015, the Cloud Native Computing Foundation has used its unique position in the cloud native community to survey the landscape, understand the dynamics and better serve users of open source, cloud native technologies. For this, our eleventh iteration of the CNCF Annual Survey, we set out to create a comprehensive and in-depth report that reflects the diverse experiences of the cloud native community.</p>
-					<p>As always, we are happy to share our full dataset for the Annual Survey, available at data.world/thelinuxfoundation.</p>
+					<p>As always, we are happy to share our full dataset for the Annual Survey, available at <a href="https://data.world/thelinuxfoundation">data.world/thelinuxfoundation</a>.</p>
 				</div>
 			</div>
 		</section>
@@ -228,19 +228,19 @@ Lf_Utils::get_svg( $report_folder . 'attendee-geography-map-desktop.svg', true )
 				<div class="section-03__grid lf-grid">
 					<div class="section-03__grid-col1">
 						<p
-							class="jf__title">SOFTWARE DEVELOPER / <br>ENGINEER</p>
+							class="jf__title">SRE / <br/>DevOps ENGINEER</p>
 						<div class="thin-hr jf__hr"></div>
-						<span class="jf__number">26%</span>
+						<span class="jf__number">39%</span>
 					</div>
 					<div class="section-03__grid-col2">
-						<p class="jf__title">Manager / <br>Director / VP</p>
+						<p class="jf__title">SOFTWARE <br/>ARCHITECT</p>
 						<div class="thin-hr jf__hr"></div>
-						<span class="jf__number">24%</span>
+						<span class="jf__number">27%</span>
 					</div>
 					<div class="section-03__grid-col3">
-						<p class="jf__title">C-Suite <br>Executive</p>
+						<p class="jf__title">DEVOPS <br/>MANAGEMENT</p>
 						<div class="thin-hr jf__hr"></div>
-						<span class="jf__number">15%</span>
+						<span class="jf__number">20%</span>
 					</div>
 				</div>
 				<div class="shadow-hr"></div>
@@ -306,53 +306,99 @@ Lf_Utils::get_svg( $report_folder . 'end-users-technical-experience-desktop.svg'
 				<div class="lf-grid">
 					<div class="restrictive-7-col">
 						<p
-							class="larger-sub-header">Containers are the new normal, and WebAssembly is the future</p>
+							class="larger-sub-header">Kubernetes solidifies its core technology status</p>
 
 					</div>
 				</div>
-				<div class="lf-grid">
-					<div class="restrictive-9-col">
-						<p><a href="https://glossary.cncf.io/cloud-native-tech/">Cloud native technologies</a> empower organizations to build and run <a href="https://glossary.cncf.io/scalability/">scalable applications</a> in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative <a href="https://glossary.cncf.io/application-programming-interface/">APIs</a> exemplify this <a href="https://github.com/cncf/toc/blob/main/DEFINITION.md">cloud native approach</a>. These techniques enable <a href="https://glossary.cncf.io/loosely-coupled-architecture/">loosely coupled systems</a> that are resilient, manageable, and observable. Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.<br><br>
+				<div class="lf-grid as23__grid">
+					<div class="as23__grid-col1">
+						<p>In the 2021 CNCF Annual Survey, we stated that Kubernetes had crossed the adoption chasm to become a mainstream global technology. Today, the laggards are finally catching up.
 
-						<span class="quote-indent">With containers now mainstream, in 2023 the uptake of serverless architecture is setting the stage for WebAssembly, which was asked about for the first time in this survey. Overall, 37% of end user organizations have some experience deploying applications with WebAssembly. Although many are still just personally testing the waters, WasmEdge and WAMR are the top runtimes being used.</span>
-						<br><br>
-						44% of respondents are already using containers for nearly all applications and business segments and another 35% say containers are used for at least a few production applications. However, container adoption outpaces the maturity of cloud native techniques, suggesting organizations are still early in their cloud native journey - just 30% of our respondents' organizations have adopted cloud native approaches across nearly all development and deployment activities. Still, 62% of organizations that do not regularly use cloud native techniques have containers for pilot projects or limited production use cases, indicating there is room for growth
-						<br><br>
-						Datadog, in their 2023 Container Report, <a href="https://www.datadoghq.com/container-report/">9 Insights on Real-World Container Usage</a>, found that nearly half of all organizations using containers run <a href="https://glossary.cncf.io/kubernetes/">Kubernetes</a> to deploy and manage at least some of those containers. In addition, alongside the growing adoption of containers, organizations were more likely to adopt a multi-cloud approach as they grow in size.</p>
+						<p>This year’s analysis of cloud adoption, containers, and Kubernetes did not include organizations whose primary revenue stream was derived from offering cloud native products and services – mostly vendors. By focusing our research on organizations that are not in the cloud business, but had a potential or actual reason to consume cloud services, we sought to get a more accurate view into the adoption, benefits, and challenges of consuming cloud products and services. We expected that adoption rates would be less than the 2022 metrics because they included both consumers and providers of cloud services – so we did not do any direct comparisons between 2023 and prior years. However, in 2022, 58% percent of providers and consumers (the entire sample) were using Kubernetes in production and 23% (81% total) were actively evaluating it. In 2023, 66% of potential/actual consumers were using Kubernetes in production and 18% were evaluating it (84% total).</p>
+
+						<p>Compounding our findings, respondents reported that just 15% of organizations that consume cloud computing services have no plans to use Kubernetes. There is likely to be erosion to this number as the economics of cloud continues to improve and Kubernetes’ foundational role in the burgeoning AI movement solidifies the project’s status as a core technology, as intrinsic to the global technology ecosystem as the Linux Kernel.</p>
+					</div>
+					<div class="as23__grid-col2">
+						<p class="sub-header">USING OR <br/>EVALUATING <br/>KUBERNTES</p>
+
+						<span class="sidebar-number">84%</span>
+
+						Up from 81% in 2022.
 					</div>
 				</div>
+
 				<div aria-hidden="true" class="report-spacer-60"></div>
 
 				<p
-					class="question">How are containers used within your organization?</p>
+					class="question">To what extent has your organization adopted cloud native technologies?</p>
+					<img loading="lazy" width="1186" height="531" src="
+					<?php LF_Utils::get_svg( $report_folder . 'adoption-chart.svg', true ); ?>
+					" alt="To what extent has your organization adopted cloud native technologies?">
+
+				<div class="shadow-hr"></div>
+
+				<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p class="larger-sub-header">Project usage trends upwards across incubating and graduating projects</p>
+						<p class="larger-sub-sub-header">Largest usage gains (Growth in 2023) 2022 - 2023</p>
+					</div>
+				</div>
 				<picture>
 					<source media="(max-width: 599px)" srcset="
 <?php
-Lf_Utils::get_svg( $report_folder . 'containers-in-organization-mobile.svg', true );
+Lf_Utils::get_svg( $report_folder . 'project-usage-trends-mobile.svg', true );
 ?>
 ">
 					<source media="(min-width: 600px)" srcset="
 <?php
-Lf_Utils::get_svg( $report_folder . 'containers-in-organization-desktop.svg', true );
+Lf_Utils::get_svg( $report_folder . 'project-usage-trends-desktop.svg', true );
 ?>
 ">
-					<img width="1200" height="341" src="
+					<img width="1206" height="444" src="
 <?php
-Lf_Utils::get_svg( $report_folder . 'containers-in-organization-desktop.svg', true );
+Lf_Utils::get_svg( $report_folder . 'cproject-usage-trends-desktop.svg', true );
 ?>
-" alt="44% of respondents use containers for most or all production applications and business segments throughout the organization"
+" alt="Project usage trends upwards across incubating and graduating projects"
 						loading="lazy">
 				</picture>
 
 				<div class="shadow-hr"></div>
 
 				<div class="lf-grid">
-					<div class="restrictive-7-col">
-						<p
-							class="larger-sub-header">Container adoption outpaces the maturity of cloud native techniques</p>
+				<div class="restrictive-9-col">
+					<p>Use of CNCF projects didn’t just remain strong during the economic downturn – it grew. The technology sector was rocked with myriad layoffs in late 2022 and 2023. In fact, according to data compiled by Layoffs.fyi, more than 2,000 tech companies laid off around 428,000 staff during this time. However, a comparison of CNCF project involvement (combining production use and evaluation) showed unilateral gains across graduated and incubating projects, with gains for the top five growth leaders ranging between 17-35%.</p>
 
+					<p>These gains were largely realized by projects related to container orchestration, observability, industry standard container runtimes, and container networking. For projects such as Kubernetes, Helm, and Prometheus, there is still room for increased production growth and penetration.</p>
+
+					<p>However, there were project casualties from the economic downturn. Comparing responses from 2022 and 2023, we noticed decreased penetration rates for a variety of activities and products including service meshes (from 24% to 21%), service proxies (from 34% to 21%), and serverless architecture and/or functions as a service (from 22% to 13%).</p>
+
+					<p>It’s natural that organizations would rein in discretionary spending and investments during this time, and while many of the techniques identified here are important to future productivity and competitiveness, they are not a necessary spend.</p>
+					<p>As always, we are happy to share our full dataset for the Annual Survey, available at <a href="https://data.world/thelinuxfoundation">data.world/thelinuxfoundation</a>.</p>
+				</div>
+				</div>
+				<div aria-hidden="true" class="report-spacer-100"></div>
+
+				<div class="lf-grid">
+					<div class="restrictive-9-col">
+						<p class="larger-sub-header">Penetration of CNCF top ten graduated or incubating CNCF projects being used in production or evaluated from 2022 to 2023</p>
 					</div>
 				</div>
+				<div aria-hidden="true" class="report-spacer-60"></div>
+
+				<img loading="lazy" width="1170" height="835" src="
+					<?php LF_Utils::get_svg( $report_folder . 'project-pen.svg', true ); ?>
+					" alt="Penetration of CNCF top ten graduated or incubating CNCF projects being used in production or evaluated from 2022 to 2023">
+
+				<div class="shadow-hr"></div>
+
+
+
+
+
+
+
+
+				<div aria-hidden="true" class="report-spacer-40"></div>
 
 				<p><strong>Just 30% of our respondents' organizations</strong> have adopted cloud native <br class="show-over-1000">approaches across nearly all development and deployment activities.</p>
 
