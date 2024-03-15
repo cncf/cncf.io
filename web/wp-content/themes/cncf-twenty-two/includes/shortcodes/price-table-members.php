@@ -189,7 +189,7 @@ function add_members_pricing_shortcode() {
 
 		<div class="tfoot">
 			<h4>$370,000</h4>
-			<span class="has-small-font-size">Minimum 3-year commitment<br>
+			<span class="has-small-font-size">Minimum 3-year commitment</span>
 		</div>
 
 		<div class="lf-membership-style show-upto-1000">
