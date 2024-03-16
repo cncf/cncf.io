@@ -323,7 +323,7 @@ Lf_Utils::get_svg( $report_folder . 'end-users-technical-experience-desktop.svg'
 
 						<span class="sidebar-number">84%</span>
 
-						Up from 81% in 2022.
+						Up from 81% in 2022
 					</div>
 				</div>
 
@@ -373,7 +373,6 @@ Lf_Utils::get_svg( $report_folder . 'cproject-usage-trends-desktop.svg', true );
 					<p>However, there were project casualties from the economic downturn. Comparing responses from 2022 and 2023, we noticed decreased penetration rates for a variety of activities and products including service meshes (from 24% to 21%), service proxies (from 34% to 21%), and serverless architecture and/or functions as a service (from 22% to 13%).</p>
 
 					<p>It’s natural that organizations would rein in discretionary spending and investments during this time, and while many of the techniques identified here are important to future productivity and competitiveness, they are not a necessary spend.</p>
-					<p>As always, we are happy to share our full dataset for the Annual Survey, available at <a href="https://data.world/thelinuxfoundation">data.world/thelinuxfoundation</a>.</p>
 				</div>
 				</div>
 				<div aria-hidden="true" class="report-spacer-100"></div>
@@ -456,7 +455,7 @@ Lf_Utils::get_svg( $report_folder . 'cproject-usage-trends-desktop.svg', true );
 					</div>
 					<div class="as23__grid-col2">
 						<span class="sidebar-number">2.8</span>
-						Average number of unique cloud service providers.
+						Average number of unique cloud service providers
 					</div>
 				</div>
 
@@ -650,7 +649,7 @@ Lf_Utils::get_svg( $report_folder . 'cproject-usage-trends-desktop.svg', true );
 					</div>
 					<div class="as23__grid-col2">
 						<span class="sidebar-number">46%</span>
-						say lack of training is the biggest challenge facing organizations that have not started, or are just beginning, their cloud native journey.
+						say lack of training is the biggest challenge facing organizations that have not started, or are just beginning, their cloud native journey
 					</div>
 				</div>
 

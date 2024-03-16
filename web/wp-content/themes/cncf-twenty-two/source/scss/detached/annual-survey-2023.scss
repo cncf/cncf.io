@@ -310,6 +310,7 @@ html {
 		line-height: 130%;
 		font-size: 24px;
 		margin-bottom: 30px;
+		text-transform: capitalize;
 		color: $as23-purple-700;
 		@media (min-width: 1000px) {
 			font-size: 30px;
@@ -326,12 +327,13 @@ html {
 		font-size: 20px;
 		line-height: 120%;
 		margin-bottom: 30px;
+		text-transform: capitalize;
 		@media (min-width: 800px) {
 			font-size: 30px;
 			line-height: 133%;
 		}
 		@media (min-width: 1000px) {
-			margin-bottom: 60px;
+			margin-bottom: 40px;
 			max-width: 900px;
 		}
 	}
@@ -395,6 +397,7 @@ html {
 			font-size: 20px;
 			line-height: 30px;
 			gap: 20px;
+			margin-bottom: 40px;
 			@media (min-width: 1000px) {
 				grid-column: 9 / -1;
 				align-content: flex-start;
