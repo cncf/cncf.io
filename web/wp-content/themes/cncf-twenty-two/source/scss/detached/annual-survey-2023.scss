@@ -431,6 +431,23 @@ html {
 		text-align: left;
 		color: $as23-purple-700;
 	}
+	.sidebar-number-purple,
+	.sidebar-number-gold,
+	.sidebar-number-green
+	{
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 30px;
+		text-align: left;
+		color: $as23-purple-700;
+	}
+	.sidebar-number-gold {
+		color: #827626;
+	}
+	.sidebar-number-green {
+		color: #477076;
+	}
+
 
 	// END of as23 wrapper.
 }
