@@ -1,0 +1,626 @@
+// CNCF Annual Survey 2023 Report
+@import 'report_fonts';
+
+// font-stack.
+$font-as23: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, Roboto, Ubuntu,
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$font-as23-serif: 'Source Serif Pro', serif;
+
+$as23-white: #ffffff;
+$as23-purple-700: #9E008E;
+
+// 42px size of menu element mobile
+// 160px size of total menu mobile
+// 47px above 800px also height of menu
+// 53px above 1000px also height of menu
+
+html {
+	visibility: visible !important;
+	scroll-padding-top: 80px;
+}
+
+.as23 {
+	font-family: $font-as23;
+	line-height: 150%;
+	padding-bottom: 100px;
+
+	@import 'report_core';
+
+	/**
+	HERO
+	**/
+	.hero {
+		background: linear-gradient(90deg, rgba(189, 166, 255, 0.27) 15.4%, rgba(207, 155, 22, 0.09) 89.8%);
+		overflow: hidden;
+		&__container {
+			&-bg-figure {
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				height: auto;
+				position: absolute;
+			}
+			&-bg-image {
+				position: absolute;
+				left: 50%;
+				top: 320px;
+				width: 50%;
+				@media (min-width: 600px) {
+					top: 200px;
+				}
+				@media (min-width: 800px) {
+					top: 100px;
+					width: 40%;
+				}
+				@media (min-width: 1200px) {
+					top: 80px;
+					left: 640px;
+				}
+				@media (min-width: 1400px) {
+					left: 720px;
+					top: 35px;
+				}
+				@media (min-width: 1440px) {
+					left: 740px;
+				}
+				@media (min-width: 1650px) {
+					width: 25%;
+					left: 50%;
+				}
+			}
+		}
+		&__content {
+			z-index: 1;
+			position: relative;
+		}
+		&__title {
+			margin-top: 50px;
+			margin-bottom: 40px;
+			max-width: 80%;
+			@media (min-width: 800px) {
+				max-width: 588px;
+			}
+			@media (min-width: 1200px) {
+				margin-top: 120px;
+				margin-bottom: 40px;
+			}
+		}
+		&__button-share-align {
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 50px;
+			margin-bottom: 30px;
+			@media (min-width: 412px) {
+				margin-bottom: 35px;
+			}
+			@media (min-width: 800px) {
+				flex-direction: row;
+				gap: 0px;
+				justify-content: space-between;
+				max-width: 588px;
+			}
+			@media (min-width: 1000px) {
+				margin-bottom: 60px;
+			}
+		}
+		&__button {
+			&.wp-block-button {
+				.wp-block-button__link {
+					font-size: 12px;
+					padding-left: 15px;
+					padding-right: 15px;
+					@media (min-width: 412px) {
+						font-size: 14px;
+						padding-left: 20px;
+						padding-right: 20px;
+					}
+					line-height: 120%;
+					text-transform: uppercase;
+					display: flex;
+					align-items: center;
+					background-color: $as23-purple-700;
+					box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+					border-radius: 5px;
+					padding-top: 9px;
+					padding-bottom: 9px;
+
+					max-width: max-content;
+					svg {
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+		&__jump {
+			font-family: $font-as23-serif;
+			font-style: italic;
+			display: inline-block;
+			margin-top: auto;
+			// padding + size of menu.
+			margin-bottom: calc(0px + 160px);
+			@media (min-width: 800px) {
+				margin-bottom: 47px;
+				margin-top: 60px;
+			}
+			@media (min-width: 1000px) {
+				margin-bottom: 53px;
+				margin-top: 40px;
+			}
+		}
+	}
+
+	/**
+	NAV
+	**/
+	.nav-section {
+		// set this to get around issues with the menu.
+		height: 70px;
+		@media (min-width: 800px) {
+			height: 85px;
+		}
+	}
+	.nav-el {
+		// size of menu - half a menu item.
+		top: calc(-160px + 21px);
+		@media (min-width: 800px) {
+			top: calc(-47px + 21px);
+		}
+		@media (min-width: 1000px) {
+			top: calc(-53px + 21px);
+		}
+		position: relative;
+		z-index: 3;
+		width: 100%;
+		display: grid;
+		row-gap: 15px;
+		column-gap: 15px;
+		grid-template-columns: 1fr;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		line-height: 115%;
+		font-size: 12px;
+		@media (min-width: 374px) {
+			font-size: 13px;
+		}
+		@media (min-width: 800px) {
+			column-gap: 30px;
+			grid-template-columns: 1fr 1fr 1fr;
+			font-size: 14px;
+		}
+		@media (min-width: 1000px) {
+			font-size: 15px;
+		}
+		@media (min-width: 1200px) {
+			font-size: 16px;
+		}
+		&__box {
+			display: flex;
+			align-items: center;
+			background-color: #fafafa;
+			color: #1e1d40;
+			border-radius: 5px;
+			box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+			position: relative;
+			transition: all 0.3s;
+			border-radius: 5px;
+			border: 1px solid #fff;
+			padding: 8px 10px;
+			@media (min-width: 412px) {
+				padding: 10px 12px;
+			}
+			@media (min-width: 1000px) {
+				padding: 10px 16px;
+			}
+			@media (min-width: 1200px) {
+				padding: 10px 22px;
+			}
+			&:hover {
+				background-color: #f2f2f2;
+				transition: all 0.3s;
+			}
+			img {
+				margin-right: 10px;
+				width: 23px;
+				height: 23px;
+				@media (min-width: 375px) {
+					margin-right: 15px;
+					width: 25px;
+					height: 25px;
+				}
+				@media (min-width: 1000px) {
+					width: 28px;
+					height: 28px;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+
+	/**
+	MODIFIED FROM REPORT_CORE
+	**/
+	.social-share {
+		&__title {
+			color: #000;
+		}
+		&__wrapper {
+			svg {
+				color: #000;
+			}
+		}
+	}
+
+	.section-title-wrapper {
+		border-bottom-color: $as23-purple-700;
+	}
+
+	.quote-with-name-container {
+		@media (min-width: 1000px) {
+			max-width: 920px;
+		}
+		&__marks {
+			&:before {
+				background-image: url("data:image/svg+xml,%3Csvg width='78' height='56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.76 55.056c12.96-9.36 24.048-22.176 24.048-37.152C33.808 7.536 28.336.48 19.408.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352zm43.2 0c12.96-9.36 24.048-22.176 24.048-37.152C77.008 7.536 71.536.48 62.608.48c-9.072 0-18 8.64-18 18.576 0 8.208 5.76 13.68 13.104 13.68-3.168 4.752-8.064 10.08-13.824 13.968l9.072 8.352z' fill='%235C2CFF' /%3E%3C/svg%3E");
+			}
+		}
+	}
+
+	/**
+	UNIQUE REPEATED ELEMENTS
+	**/
+	.section-header-margin-bottom {
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+	}
+
+	.section-header-margins {
+		margin-bottom: 80px;
+		margin-top: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+			margin-top: 120px;
+		}
+	}
+
+	.quote-indent {
+		display: block;
+		font-weight: 700;
+		padding-left: 35px;
+		border-left: 8px solid #f1b5db;
+	}
+
+	.larger-sub-header {
+		font-weight: 700;
+		line-height: 130%;
+		text-transform: uppercase;
+		font-size: 24px;
+		margin-bottom: 10px;
+		@media (min-width: 1000px) {
+			font-size: 30px;
+		}
+	}
+
+	.larger-sub-sub-header {
+		font-weight: 300;
+		line-height: 130%;
+		font-size: 24px;
+		margin-bottom: 30px;
+		text-transform: capitalize;
+		color: $as23-purple-700;
+		@media (min-width: 1000px) {
+			font-size: 30px;
+			margin-bottom: 50px;
+		}
+	}
+
+	.no-max-width {
+		max-width: unset;
+	}
+
+	.question {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 120%;
+		margin-bottom: 30px;
+		text-transform: capitalize;
+		@media (min-width: 800px) {
+			font-size: 30px;
+			line-height: 133%;
+		}
+		@media (min-width: 1000px) {
+			margin-bottom: 40px;
+			max-width: 900px;
+		}
+	}
+
+	.random-larger-paragraphs {
+		line-height: 150%;
+		font-size: 22px;
+		@media (min-width: 412px) {
+			font-size: 24px;
+		}
+		@media (min-width: 1000px) {
+			font-size: 30px;
+		}
+	}
+
+	.logo-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: 15px;
+		@media (min-width: 500px) {
+			gap: 30px;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 175px));
+		}
+		&__box {
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+			background: $as23-white;
+			box-shadow: 0px 1.56476px 3.9119px rgba(0, 0, 0, 0.1);
+			border-radius: 15.6476px;
+			height: 80px;
+			@media (min-width: 800px) {
+				height: 120px;
+			}
+		}
+		&__image {
+			min-width: 60%;
+			min-height: 60%;
+			max-width: 80%;
+			max-height: 65%;
+		}
+	}
+
+	&__grid {
+		&-col1 {
+			line-height: 160%;
+			grid-column: span 12;
+			@media (min-width: 1000px) {
+				grid-column: span 7;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 8;
+			}
+		}
+		&-col2 {
+			grid-column: span 12;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			font-size: 20px;
+			line-height: 30px;
+			gap: 20px;
+			margin-bottom: 40px;
+			@media (min-width: 1000px) {
+				grid-column: 9 / -1;
+				align-content: flex-start;
+			}
+			@media (min-width: 1200px) {
+				grid-column: 10 / -1;
+			}
+			.thin-hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&__grid2 {
+		&-col1, &-col2 {
+			grid-column: span 12;
+			text-align: left;
+			img {
+				margin: 0 50px;
+				height: 90px;
+			}
+			@media (min-width: 1000px) {
+				margin-right: 50px;
+				grid-column: span 6;
+			}
+		}
+	}
+
+	.sidebar-number {
+		font-weight: 700;
+		font-size: 80px;
+		line-height: 1;
+		text-align: left;
+		color: $as23-purple-700;
+	}
+	.sidebar-number-purple,
+	.sidebar-number-gold,
+	.sidebar-number-green
+	{
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 30px;
+		text-align: left;
+		color: $as23-purple-700;
+	}
+	.sidebar-number-gold {
+		color: #827626;
+	}
+	.sidebar-number-green {
+		color: #477076;
+	}
+
+
+	// END of as23 wrapper.
+}
+
+// SECTIONS.
+.as23 {
+	.section-01 {
+		margin-bottom: 80px;
+		@media (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+		&__title {
+			margin-bottom: 30px;
+			@media (min-width: 1000px) {
+				font-size: 50px;
+				margin-bottom: 40px;
+			}
+			span {
+				color: $as23-purple-700;
+			}
+		}
+	}
+
+	.section-02 {
+		@extend .section-header-margin-bottom;
+		&__grid {
+			&-col1 {
+				line-height: 160%;
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 9;
+				}
+				@media (min-width: 1000px) {
+					grid-column: span 6;
+				}
+				@media (min-width: 1200px) {
+					grid-column: span 7;
+				}
+			}
+			&-col2 {
+				grid-column: span 12;
+				// orientate icon boxes.
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto;
+				gap: 54px;
+				@media (min-width: 600px) {
+					grid-column: span 12;
+				}
+				@media (min-width: 1000px) {
+					// From column 8 to the end.
+					grid-column: 8 / -1;
+					align-content: flex-start;
+				}
+				@media (min-width: 1200px) {
+					grid-column: 9 / -1;
+				}
+				.thin-hr {
+					margin-top: 20px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	.section-03 {
+		@extend .section-header-margin-bottom;
+		&__grid {
+			row-gap: 80px;
+			&-col1,
+			&-col2,
+			&-col3 {
+				grid-column: span 12;
+				text-align: center;
+				@media (min-width: 600px) {
+					grid-column: span 6;
+				}
+				@media (min-width: 1000px) {
+					grid-column: span 4;
+				}
+			}
+		}
+		.jf {
+			&__title {
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+			&__hr {
+				max-width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				@media (min-width: 1000px) {
+					max-width: calc(100% - 110px);
+					margin-top: 40px;
+					margin-bottom: 40px;
+				}
+			}
+			&__number {
+				font-weight: 800;
+				font-size: 80px;
+				line-height: 1;
+				text-align: center;
+				color: $as23-purple-700;
+			}
+		}
+	}
+
+	.section-04 {
+		@extend .section-header-margin-bottom;
+		&__k8s {
+			&-col1,
+			&-col2 {
+				grid-column: span 12;
+				@media (min-width: 600px) {
+					grid-column: span 8;
+				}
+				@media (min-width: 800px) {
+					grid-column: span 6;
+				}
+			}
+		}
+	}
+
+	.section-05 {
+		color: $as23-white;
+		.section-header {
+			color: $as23-white;
+		}
+	}
+
+	.section-06 {
+		@extend .section-header-margins;
+	}
+
+	.section-07 {
+		.thanks {
+			&__col1 {
+				grid-column: span 12;
+			}
+			&__col2 {
+				grid-column: span 10;
+				@media (min-width: 600px) {
+					grid-column: span 8;
+				}
+			}
+			@media (min-width: 800px) {
+				&__col1 {
+					order: 1;
+					grid-column: span 7;
+				}
+				&__col2 {
+					order: 2;
+					grid-column: 8 / -1;
+					margin-top: 80px;
+				}
+			}
+			&__opening {
+				font-family: $font-as23-serif;
+				font-style: italic;
+				font-weight: 400;
+				line-height: 160%;
+				color: #747474;
+				font-size: 30px;
+				@media (min-width: 1200px) {
+					font-size: 40px;
+					max-width: 612px;
+				}
+			}
+		}
+	}
+	// END of as23 wrapper.
+}
