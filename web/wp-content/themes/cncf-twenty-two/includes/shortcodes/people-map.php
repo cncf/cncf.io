@@ -11,9 +11,21 @@
 
 /**
  * People map shortcode
+ *
+ * @param array $atts Attributes.
  */
-function add_cncf_people_map_shortcode() {
+function add_cncf_people_map_shortcode( $atts ) {
 
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'category' => 'ambassadors', // set default.
+		),
+		$atts,
+		'people-map'
+	);
+
+	$chosen_category            = $atts['category'];
 	$options                    = get_option( 'lf-mu' );
 	$google_maps_api_public_key = $options['google_maps_api_public_key'] ?? null;
 
@@ -51,7 +63,7 @@ function add_cncf_people_map_shortcode() {
 		'post_type'          => array( 'lf_person' ),
 		'post_status'        => array( 'publish' ),
 		'no_found_rows'      => true,
-		'lf-person-category' => 'ambassadors',
+		'lf-person-category' => $chosen_category,
 	);
 
 	global $post;
