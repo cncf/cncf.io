@@ -206,3 +206,14 @@ function lf_always_lazyload_images() {
 	return 0;
 }
 add_filter( 'wp_omit_loading_attr_threshold', 'lf_always_lazyload_images', 10, 0 );
+
+/**
+ * Disable OpenVerse from Media
+ *
+ * @param array $settings Settings.
+ */
+function lf_disable_openverse_media_category( $settings ) {
+	$settings['enableOpenverseMediaCategory'] = false;
+	return $settings;
+}
+add_filter( 'block_editor_settings_all', 'lf_disable_openverse_media_category', 10 );

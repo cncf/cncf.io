@@ -1,11 +1,15 @@
 // Backend Alignment Only.
 
+.edit-post-visual-editor.has-inline-canvas {
+	background-color: white;
+}
+
 // aligns content in groups a little better
 .wp-block-group,
 .wp-block-group.has-background {
-	padding: 1.25rem 2rem;
+	padding: 1.25rem 0.5rem;
 	> .wp-block-group {
-		padding: 1rem;
+		padding: 1rem 0.25rem;
 	}
 }
 

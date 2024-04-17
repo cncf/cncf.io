@@ -91,6 +91,7 @@
 		font-family: $font-primary;
 		font-weight: 400;
 		line-height: 1.4;
+		font-size: 3rem;
 	}
 
 	#editor {
@@ -103,10 +104,33 @@
 				font-weight: 400 !important;
 			}
 
-			h2,
-			h3,
-			h4 {
-				margin-top: 50px !important;
+			h2 {
+				margin-top: 50px;
+				margin-bottom: 30px;
+				@media (min-width: 1200px) {
+					margin-top: 80px;
+					margin-bottom: 45px;
+				}
+			}
+
+			h3 {
+				margin-top: 40px;
+				margin-bottom: 30px;
+				@media (min-width: 1200px) {
+					margin-top: 60px;
+					margin-bottom: 35px;
+				}
+			}
+
+			h4,
+			h5,
+			h6 {
+				margin-top: 30px;
+				margin-bottom: 20px;
+				@media (min-width: 1200px) {
+					margin-top: 40px;
+					margin-bottom: 25px;
+				}
 			}
 		}
 	}
