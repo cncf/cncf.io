@@ -65,7 +65,7 @@ $case_study_block_template = array(
 );
 
 $opts = array(
-	'labels'            => array(
+	'labels'              => array(
 		'name'          => __( 'Courses' ),
 		'singular_name' => __( 'Course' ),
 		'all_items'     => __( 'All Courses' ),

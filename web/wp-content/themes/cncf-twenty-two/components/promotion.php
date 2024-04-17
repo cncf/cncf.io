@@ -9,11 +9,11 @@
 
 $site_options = get_option( 'lf-mu' );
 
-$promotion_image_id    = $site_options['promotion_image_id'] ?? '';
-$promotion_title_text  = $site_options['promotion_title_text'] ?? '';
-$promotion_body_text   = $site_options['promotion_body_text'] ?? '';
-$promotion_cta_text    = $site_options['promotion_cta_text'] ?? '';
-$promotion_cta_link    = $site_options['promotion_cta_link'] ?? '';
+$promotion_image_id   = $site_options['promotion_image_id'] ?? '';
+$promotion_title_text = $site_options['promotion_title_text'] ?? '';
+$promotion_body_text  = $site_options['promotion_body_text'] ?? '';
+$promotion_cta_text   = $site_options['promotion_cta_text'] ?? '';
+$promotion_cta_link   = $site_options['promotion_cta_link'] ?? '';
 
 if ( $promotion_image_id && $promotion_title_text && $promotion_cta_text && $promotion_cta_link ) :
 	?>
@@ -45,11 +45,11 @@ if ( $promotion_image_id && $promotion_title_text && $promotion_cta_text && $pro
 	<?php
 endif;
 
-$promotion_image_id2    = $site_options['promotion_image_id2'] ?? '';
-$promotion_title_text2  = $site_options['promotion_title_text2'] ?? '';
-$promotion_body_text2   = $site_options['promotion_body_text2'] ?? '';
-$promotion_cta_text2    = $site_options['promotion_cta_text2'] ?? '';
-$promotion_cta_link2    = $site_options['promotion_cta_link2'] ?? '';
+$promotion_image_id2   = $site_options['promotion_image_id2'] ?? '';
+$promotion_title_text2 = $site_options['promotion_title_text2'] ?? '';
+$promotion_body_text2  = $site_options['promotion_body_text2'] ?? '';
+$promotion_cta_text2   = $site_options['promotion_cta_text2'] ?? '';
+$promotion_cta_link2   = $site_options['promotion_cta_link2'] ?? '';
 
 if ( $promotion_image_id2 && $promotion_title_text2 && $promotion_cta_text2 && $promotion_cta_link2 ) :
 	?>
