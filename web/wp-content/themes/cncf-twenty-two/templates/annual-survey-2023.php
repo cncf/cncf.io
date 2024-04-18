@@ -319,7 +319,7 @@ Lf_Utils::get_svg( $report_folder . 'end-users-technical-experience-desktop.svg'
 						<p>Compounding our findings, respondents reported that just 15% of organizations that consume cloud computing services have no plans to use Kubernetes. There is likely to be erosion to this number as the economics of cloud continues to improve and Kubernetes’ foundational role in the burgeoning AI movement solidifies the project’s status as a core technology, as intrinsic to the global technology ecosystem as the Linux Kernel.</p>
 					</div>
 					<div class="as23__grid-col2">
-						<p class="sub-header">USING OR <br/>EVALUATING <br/>KUBERNTES</p>
+						<p class="sub-header">USING OR <br/>EVALUATING <br/>KUBERNETES</p>
 
 						<span class="sidebar-number">84%</span>
 
