@@ -727,7 +727,7 @@ Lf_Utils::get_svg( $report_folder . 'cproject-usage-trends-desktop.svg', true );
 						<div aria-hidden="true" class="report-spacer-60"></div>
 
 						<div class="wp-block-button hero__button"><a
-								href="https://github.com/cncf/surveys/tree/main/cloudnative"
+								href="https://data.world/thelinuxfoundation/2023-cncf-annual-survey"
 								class="wp-block-button__link"
 								title="View the full dataset">
 								View the full dataset</a>
