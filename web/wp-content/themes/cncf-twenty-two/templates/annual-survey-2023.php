@@ -70,7 +70,7 @@ Lf_Utils::get_svg( $report_folder . 'cncf-annual-survey-2023-logo-desktop.svg', 
 					<div class="hero__button-share-align">
 
 						<div class="wp-block-button hero__button"><a
-								href="https://data.world/thelinuxfoundation"
+								href="https://data.world/thelinuxfoundation/2023-cncf-annual-survey"
 								class="wp-block-button__link"
 								title="View the full dataset">
 								View the full dataset</a>
@@ -125,7 +125,7 @@ LF_Utils::get_svg( $report_folder . 'icon-inspect.svg', true );
 			<div class="lf-grid">
 				<div class="restrictive-9-col">
 					<p>Since 2015, the Cloud Native Computing Foundation has used its unique position in the cloud native community to survey the landscape, understand the dynamics and better serve users of open source, cloud native technologies. For this, our eleventh iteration of the CNCF Annual Survey, we set out to create a comprehensive and in-depth report that reflects the diverse experiences of the cloud native community.</p>
-					<p>As always, we are happy to share our full dataset for the Annual Survey, available at <a href="https://data.world/thelinuxfoundation">data.world/thelinuxfoundation</a>.</p>
+					<p>As always, we are happy to share our full dataset for the Annual Survey, available at <a href="https://data.world/thelinuxfoundation/2023-cncf-annual-survey">data.world/thelinuxfoundation</a>.</p>
 				</div>
 			</div>
 		</section>
