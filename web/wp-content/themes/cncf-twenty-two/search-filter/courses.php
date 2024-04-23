@@ -16,7 +16,7 @@ if ( $query->have_posts() ) : ?>
 	<?php
 	// get total list of case studies.
 	$count_course = wp_count_posts( 'lf_course' );
-	$full_count       = $count_course->publish;
+	$full_count   = $count_course->publish;
 	?>
 
 <p class="search-filter-results-count">
