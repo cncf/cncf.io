@@ -20,17 +20,23 @@ wp_enqueue_script(
 wp_enqueue_style( 'wp-block-separator' );
 
 if ( $query->have_posts() ) :
+	$query_term = $query->query['tax_query'][0]['terms'][0];
+	if ( 1513 == $query_term ) {
+		$query_cat = 'Kubestronauts';
+	} else {
+		$query_cat = 'Ambassadors';
+	}
 	?>
 <p class="search-filter-results-count">
 	<?php
-	$full_count = $wpdb->get_var( "select count(*) from wp_posts inner join wp_term_relationships on id = object_id where wp_posts.post_type = 'lf_person' and wp_posts.post_status = 'publish' and wp_term_relationships.term_taxonomy_id=235;" );
+	$full_count = $wpdb->get_var( $wpdb->prepare( "select count(*) from wp_posts inner join wp_term_relationships on id = object_id where wp_posts.post_type = 'lf_person' and wp_posts.post_status = 'publish' and wp_term_relationships.term_taxonomy_id=%d;", $query_term ) );
 
 	// if filter matches all.
 	if ( $full_count == $query->found_posts ) {
-		echo 'Found ' . esc_html( $query->found_posts ) . ' Ambassadors';
+		echo 'Found ' . esc_html( $query->found_posts ) . ' ' . esc_html( $query_cat );
 	} else {
 		// else show partial count.
-		echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' Ambassadors';
+		echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' ' . esc_html( $query_cat );
 	}
 	?>
 </p>
