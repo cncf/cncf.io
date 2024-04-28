@@ -260,3 +260,20 @@ $opts = array(
 	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 );
 register_post_type( 'lf_report', $opts );
+
+$opts = array(
+	'labels'            => array(
+		'name'          => __( 'Videos' ),
+		'singular_name' => __( 'Video' ),
+		'all_items'     => __( 'All Videos' ),
+	),
+	'public'            => true,
+	'has_archive'       => false,
+	'show_in_nav_menus' => false,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'menu_icon'         => 'dashicons-format-video',
+	'rewrite'           => array( 'slug' => 'reports' ),
+	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'excerpt' ),
+);
+register_post_type( 'lf_video', $opts );

@@ -32,7 +32,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-language', array( 'lf_webinar', 'lf_person' ), $args );
+register_taxonomy( 'lf-language', array( 'lf_webinar', 'lf_person', 'lf_video' ), $args );
 
 $labels = array(
 	'name'          => __( 'Expertise', 'lf-mu' ),
@@ -72,7 +72,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-project', array( 'lf_course', 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_person', 'lf_human' ), $args );
+register_taxonomy( 'lf-project', array( 'lf_course', 'lf_webinar', 'lf_case_study', 'lf_case_study_cn', 'lf_person', 'lf_human', 'lf_video' ), $args );
 
 $labels = array(
 	'name'          => __( 'Author Category', 'lf-mu' ),
@@ -131,7 +131,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-topic', array( 'lf_webinar' ), $args );
+register_taxonomy( 'lf-topic', array( 'lf_webinar', 'lf_video' ), $args );
 
 $labels = array(
 	'name'          => __( 'Category', 'lf-mu' ),

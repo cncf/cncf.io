@@ -780,3 +780,46 @@ $sidebar    = array(
 	),
 );
 $sidebars[] = $sidebar;
+
+$sidebar    = array(
+	'id'              => 'lf-sidebar-video',
+	'id_prefix'       => 'lf_',
+	'label'           => __( 'Video Settings' ),
+	'post_type'       => 'lf_video',
+	'data_key_prefix' => 'lf_video_',
+	'icon_dashicon'   => 'admin-settings',
+	'tabs'            => array(
+		array(
+			'label'  => __( 'Tab label' ),
+			'panels' => array(
+				array(
+					'label'        => __( 'General' ),
+					'initial_open' => true,
+					'settings'     => array(
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'url',
+							'label'         => __( 'URL' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+							'default_value' => '',
+							'placeholder'   => 'https://www.youtube.com/watch?v=95pkfWf8DgA',
+						),
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'summary',
+							'label'         => __( 'Summary' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+							'default_value' => '',
+							'help'          => 'Brief one-line summary of the video.',
+						),
+					),
+				),
+			),
+		),
+	),
+);
+$sidebars[] = $sidebar;
