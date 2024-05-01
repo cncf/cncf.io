@@ -22,7 +22,14 @@
 		border-radius: 5px;
 	}
 
+	.gm-ui-hover-effect {
+		height: 24px !important;
+		width: 27px !important;
+	}
+
 	.gm-ui-hover-effect > span {
 		width: 12px !important;
+		height: 12px !important;
+		margin: 8px !important;
 	}
 }
