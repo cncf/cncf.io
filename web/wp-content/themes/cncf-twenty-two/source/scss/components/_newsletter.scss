@@ -14,8 +14,11 @@
 		}
 	}
 
-	&__privacy a {
-		font-weight: 800;
+	&__privacy {
+		max-width: 900px;
+		a {
+			font-weight: 800;
+		}
 	}
 	// form container.
 	.hbspt-form {
