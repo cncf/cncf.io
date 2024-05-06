@@ -22,7 +22,7 @@
 		class="wp-block-spacer is-style-30-40"></div>
 
 	<p
-		class="newsletter__privacy">By submitting this form, I consent to receive marketing emails from the LF and its projects regarding their events, training, research, developments, and related announcements. I understand that I can unsubscribe at any time using the links in the footers of the emails you receive. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a>.</p>
+		class="newsletter__privacy">By submitting this form, I consent to receive marketing emails from the LF and its projects regarding their events, training, research, developments, and related announcements. I understand that I can unsubscribe at any time using the links in the footers of the emails I receive. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a>.</p>
 
 	<div style="height:60px" aria-hidden="true"
 		class="wp-block-spacer is-style-30-60"></div>
