@@ -110,21 +110,6 @@ if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 
 
 $remote_body = json_decode( wp_remote_retrieve_body( $data ) );
 $events      = $remote_body->results;
-
-// delete all existing imported KCD posts.
-$args      = array(
-	'post_type'      => 'lf_event',
-	'meta_key'       => 'lf_event_bevy_import',
-	'meta_value'     => true,
-	'no_found_rows'  => true,
-	'posts_per_page' => 500,
-	'post_status'    => 'any',
-);
-$the_query = new WP_Query( $args );
-while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	wp_delete_post( get_the_ID(), true );
-}
 $background_colors = array( '#14496c', '#641e16', '#5e2d72', '#0b5329', '#1a267d' );
 $background_color  = 0;
 
