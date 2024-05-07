@@ -141,7 +141,7 @@ foreach ( $events as $event ) {
 				'lf_event_date_end'      => $dt_date_end->format( 'Y/m/d' ),
 				'lf_event_city'          => $venue_city,
 				'lf_event_event-logo'    => '',
-				'lf_event_background'    => 106793,
+				'lf_event_background'    => 106897,
 				'lf_event_overlay_color' => $background_colors[ $background_color ],
 			),
 		);
