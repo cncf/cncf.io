@@ -30,8 +30,8 @@ $projects = json_decode( wp_remote_retrieve_body( $data ) );
 
 foreach ( $projects as $p ) {
 
-	// skip projects in the Wasm or Serverless sub-landscapes.
-	if ( 'Wasm' == $p->category || 'Serverless' == $p->category ) {
+	// skip projects in the sub-landscapes.
+	if ( 'Wasm' == $p->category || 'Serverless' == $p->category || 'CNAI' == $p->category ) {
 		continue;
 	}
 
