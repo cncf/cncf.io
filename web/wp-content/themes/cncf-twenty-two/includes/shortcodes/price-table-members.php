@@ -12,8 +12,19 @@
 
 /**
  * Members (Join) Pricing Table shortcode.
+ *
+ * @param array $atts Attributes.
  */
-function add_members_pricing_shortcode() {
+function add_members_pricing_shortcode( $atts ) {
+
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'no_prices' => false, // set default.
+		),
+		$atts,
+		'members_pricing'
+	);
 
 	wp_enqueue_script(
 		'modal',
@@ -69,9 +80,15 @@ function add_members_pricing_shortcode() {
 			</ul>
 		</div>
 
+		<?php
+		if ( ! $atts['no_prices'] ) {
+			?>
 		<div class="tfoot">
 			<h4>$1,000 / <br class="show-over-1000">$500 annually</h4>
 		</div>
+			<?php
+		}
+		?>
 
 	</div>
 	<!-- column 1 ends -->
@@ -111,12 +128,18 @@ function add_members_pricing_shortcode() {
 			</ul>
 		</div>
 
+		<?php
+		if ( ! $atts['no_prices'] ) {
+			?>
 		<div class="tfoot">
 			<h4><button class="js-modal button-reset"
 					data-modal-content-id="modal-silver"
 					data-modal-prefix-class="generic"
 					title="">See Silver <br class="show-over-1000">Pricing Scale</button></h4>
 		</div>
+			<?php
+		}
+		?>
 
 		<div class="lf-membership-style show-upto-1000">
 		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
@@ -153,9 +176,16 @@ function add_members_pricing_shortcode() {
 			</ul>
 		</div>
 
+		<?php
+		if ( ! $atts['no_prices'] ) {
+			?>
 		<div class="tfoot">
 			<h4>Up to $120,000 <br class="show-over-1000">annually</h4>
 		</div>
+			<?php
+		}
+		?>
+
 
 		<div class="lf-membership-style show-upto-1000">
 		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
@@ -187,10 +217,17 @@ function add_members_pricing_shortcode() {
 			</ul>
 		</div>
 
+		<?php
+		if ( ! $atts['no_prices'] ) {
+			?>
 		<div class="tfoot">
 			<h4>$370,000</h4>
 			<span class="has-small-font-size">Minimum 3-year commitment</span>
 		</div>
+			<?php
+		}
+		?>
+
 
 		<div class="lf-membership-style show-upto-1000">
 		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
