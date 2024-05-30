@@ -1,0 +1,37 @@
+#!/bin/bash
+TERMINUS_S=$1
+set -eo pipefail
+
+#
+# This script deploys the build artifact to Pantheon.
+# On the master branch the dev environment is used.
+# Otherwise a multidev environment is used.
+#
+
+# Authenticate with Terminus
+terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+
+# Prepare for Pantheon
+composer run prepare-for-pantheon
+
+if [[ $CI_BRANCH != $DEFAULT_BRANCH ]]
+then
+    # Create a new multidev environment (or push to an existing one)
+    terminus -n build:env:create "$TERMINUS_S.dev" "$TERMINUS_ENV" --yes
+else
+    # Push to the dev environment
+    terminus -n build:env:push "$TERMINUS_S.dev" --yes
+fi
+
+# Run update-db to ensure that the cloned database is updated for the new code.
+terminus -n wp $TERMINUS_S.$TERMINUS_ENV -- core update-db
+
+# Clear the site environment's cache
+terminus -n env:clear-cache "$TERMINUS_S.$TERMINUS_ENV"
+
+# Ensure secrets are set
+terminus -n secrets:set "$TERMINUS_S.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
+
+# Delete old multidev environments associated
+# with a PR that has been merged or closed.
+terminus -n build:env:delete:pr $TERMINUS_S --yes
