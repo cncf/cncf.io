@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/cncf/cncf.io.svg?style=svg)](https://circleci.com/gh/cncf/cncf.io)
-
 # Contributing to CNCF.io
 
 Everyone is welcome to contribute to this project. We've created a document that describes guidelines for [contributing to the CNCF.io git repository](/CONTRIBUTING.md).
@@ -125,7 +123,7 @@ To activate Browsersync to watch files, run `lando npm start` in the theme direc
 
 ## Code Sniffs
 
-The CircleCI process will sniff the code to make sure it complies with WordPress coding standards.  All Linux Foundation code should comply with [these guidelines](https://docs.google.com/document/d/1TYqCwG874i6PdJDf5UX9gnCZaarvf121G1GdNH7Vl5k/edit#heading=h.dz20heii56uf).
+The CI process will sniff the code to make sure it complies with WordPress coding standards.  All Linux Foundation code should comply with [these guidelines](https://docs.google.com/document/d/1TYqCwG874i6PdJDf5UX9gnCZaarvf121G1GdNH7Vl5k/edit#heading=h.dz20heii56uf).
 
 phpcs and the [WordPress Coding Standards for PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) come as part of the repo and are installed in the vendor directory by composer.
 

@@ -1,0 +1,207 @@
+name: Build, test and deploy
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+defaults:
+  run:
+    shell: bash
+env:
+  TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+  NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
+  TERM: dumb
+  GITHUB_TOKEN: ${{ github.token }}
+  TERMINUS_TOKEN: ${{ secrets.TERMINUS_TOKEN }}
+  TERMINUS_SITE: ${{ secrets.TERMINUS_SITE }}
+  BASH_ENV: "./bash_env.txt"
+  GITHUB_REF: ${{ github.ref }}
+  COMMIT_SHA: ${{ github.sha }}
+  CI_BUILD_NUMBER: ${{ github.run_number }}
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  GITHUB_OWNER: ${{ github.repository_owner }}
+  CI_PROJECT_NAME: ${{ github.repository }}
+  DEFAULT_BRANCH: "main"
+
+
+jobs:
+  configure_env_vars:
+    container:
+      image: quay.io/pantheon-public/build-tools-ci:6.x
+      options: --user root
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache bash_env.txt
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-bash-env
+        with:
+          path: bash_env.txt
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.run_number }}
+
+      - name: setup-environment-vars
+        run: |
+          if [[ "$GITHUB_REF" =~ ^refs/pull/([0-9]+)/merge$ ]]; then
+            export PR_NUMBER=${BASH_REMATCH[1]}
+
+            export CI_BRANCH=`curl -u "${GITHUB_OWNER}:${GITHUB_TOKEN}" \
+              -H "Accept: application/vnd.github.groot-preview+json" \
+              "https://api.github.com/repos/${CI_PROJECT_NAME}/pulls/${PR_NUMBER}" | \
+              python3 -c "import sys, json; print(json.load(sys.stdin)['head']['ref'])"`
+
+            export CI_PULL_REQUEST=`curl -u "${GITHUB_OWNER}:${GITHUB_TOKEN}" \
+              -H "Accept: application/vnd.github.groot-preview+json" \
+              "https://api.github.com/repos/${CI_PROJECT_NAME}/pulls/${PR_NUMBER}" | \
+              python3 -c "import sys, json; print(json.load(sys.stdin)['html_url'])"`
+
+          elif [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            export PR_NUMBER=`curl -u "${GITHUB_OWNER}:${GITHUB_TOKEN}" \
+              -H "Accept: application/vnd.github.groot-preview+json" \
+              "https://api.github.com/repos/${CI_PROJECT_NAME}/commits/${COMMIT_SHA}/pulls" | \
+              python3 -c "import sys, json; print(json.load(sys.stdin)[0]['number'])"`
+
+            export CI_BRANCH=`curl -u "${GITHUB_OWNER}:${GITHUB_TOKEN}" \
+              -H "Accept: application/vnd.github.groot-preview+json" \
+              "https://api.github.com/repos/${CI_PROJECT_NAME}/commits/${COMMIT_SHA}/pulls" | \
+              python3 -c "import sys, json; print(json.load(sys.stdin)[0]['head']['ref'])"`
+
+            export CI_PULL_REQUEST=`curl -u "${GITHUB_OWNER}:${GITHUB_TOKEN}" \
+              -H "Accept: application/vnd.github.groot-preview+json" \
+              "https://api.github.com/repos/${CI_PROJECT_NAME}/commits/${COMMIT_SHA}/pulls" | \
+              python3 -c "import sys, json; print(json.load(sys.stdin)[0]['html_url'])"`
+          else
+            export CI_BRANCH="main"
+          fi
+          export CI_PROJECT_REPONAME="${CI_PROJECT_NAME#*/}"
+          export CI_PROJECT_USERNAME=$GITHUB_REPOSITORY_OWNER
+          export GITHUB_WORKFLOW_URL=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+          ./.github/workflows/set-environment
+
+  build_site:
+    container:
+      image: quay.io/pantheon-public/build-tools-ci:6.x
+      options: --user root
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache composer cache
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-composer-cache
+        with:
+          path: ~/.composer/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('composer.lock') }}
+
+      - name: Cache vendor folder
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-vendor
+        with:
+          path: ./vendor
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('composer.lock') }}
+
+      - name: Cache web folder
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-web
+        with:
+          path: ./web
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.sha }}
+
+      - name: setup-environment-vars
+        run: ./.github/workflows/set-environment
+
+      - name: run PHP build step
+        run: composer -n build-assets
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '14.21.3'
+
+      - name: Compile css/js
+        run: cd ./web/wp-content/themes/cncf-twenty-two/; npm install; npm run build
+
+
+  code_sniff_unit_test:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/pantheon-public/build-tools-ci:6.x
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build dev dependencies
+        run: composer install --no-ansi --no-interaction --optimize-autoloader --no-progress
+
+      - name: Check code with WordPress coding standards
+        run: composer -n code-sniff
+
+  
+  deploy_to_pantheon:
+    container:
+      image: quay.io/pantheon-public/build-tools-ci:6.x
+      options: --user root
+    runs-on: ubuntu-latest
+    needs: [configure_env_vars, build_site]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cache bash_env.txt
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-bash-env
+        with:
+          path: bash_env.txt
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.run_number }}
+
+      - name: Cache composer cache
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-composer-cache
+        with:
+          path: ~/.composer/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('composer.lock') }}
+
+      - name: Cache vendor folder
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-vendor
+        with:
+          path: ./vendor
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('composer.lock') }}
+
+      - name: Cache web folder
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-web
+        with:
+          path: ./web
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.sha }}
+
+      - name: setup-environment-vars
+        run: ./.github/workflows/set-environment
+
+      # Rsync the build artifact pieces web directory
+      - name: sync build artifact
+        run: rsync -rz ./web ./vendor .
+
+      # Deploy to Pantheon
+      - name: deploy to Pantheon
+        run: |
+          echo "$SSH_PRIVATE_KEY" > ../private.key
+          chmod 600 ../private.key
+          eval `ssh-agent -s`
+          ssh-add ../private.key
+          source $BASH_ENV
+          ./.github/workflows/pantheon-deploy $TERMINUS_SITE
