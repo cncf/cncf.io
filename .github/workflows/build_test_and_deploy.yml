@@ -16,7 +16,6 @@ env:
   GITHUB_TOKEN: ${{ github.token }}
   TERMINUS_TOKEN: ${{ secrets.TERMINUS_TOKEN }}
   TERMINUS_SITE: ${{ secrets.TERMINUS_SITE }}
-  TERMINUS_SITE2: ${{ secrets.TERMINUS_SITE2 }}
   BASH_ENV: "./bash_env.txt"
   GITHUB_REF: ${{ github.ref }}
   COMMIT_SHA: ${{ github.sha }}
