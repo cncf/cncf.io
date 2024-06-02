@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65651c5d635a64c73667636f0bcddb5f",
+    "content-hash": "7feeda28a40d0f89ae6a523b40b1af3a",
     "packages": [
         {
             "name": "composer/installers",
@@ -907,15 +907,15 @@
         },
         {
             "name": "wpackagist-plugin/find-my-blocks",
-            "version": "3.5.5",
+            "version": "4.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/find-my-blocks/",
-                "reference": "tags/3.5.5"
+                "reference": "tags/4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/find-my-blocks.3.5.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/find-my-blocks.4.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -979,15 +979,15 @@
         },
         {
             "name": "wpackagist-plugin/pantheon-advanced-page-cache",
-            "version": "1.5.0",
+            "version": "2.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pantheon-advanced-page-cache/",
-                "reference": "tags/1.5.0"
+                "reference": "tags/2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pantheon-advanced-page-cache.1.5.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/pantheon-advanced-page-cache.2.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
