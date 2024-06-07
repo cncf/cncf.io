@@ -59,7 +59,7 @@ function add_cncf_people_map_shortcode( $atts ) {
 
 	<?php
 	$args = array(
-		'posts_per_page'     => 200,
+		'posts_per_page'     => 5000,
 		'post_type'          => array( 'lf_person' ),
 		'post_status'        => array( 'publish' ),
 		'no_found_rows'      => true,
