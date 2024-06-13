@@ -10,28 +10,28 @@
 // setup values.
 global $wp;
 global $post;
-$person_id   = get_the_ID();
-$person_slug = $post->post_name;
-$company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
-$company_logo_url = get_post_meta( get_the_ID(), 'lf_person_company_logo_url', true );
+$person_id             = get_the_ID();
+$person_slug           = $post->post_name;
+$company               = get_post_meta( get_the_ID(), 'lf_person_company', true );
+$company_logo_url      = get_post_meta( get_the_ID(), 'lf_person_company_logo_url', true );
 $company_landscape_url = get_post_meta( get_the_ID(), 'lf_person_company_landscape_url', true );
-$pronouns    = ucwords( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ), $separators = " \t\r\n\f\v\\;/" );
-$gb_role     = get_post_meta( get_the_ID(), 'lf_person_gb_role', true );
-$toc_role    = get_post_meta( get_the_ID(), 'lf_person_toc_role', true );
-$tab_role    = get_post_meta( get_the_ID(), 'lf_person_tab_role', true );
-$linkedin    = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
-$twitter     = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
-$mastodon    = get_post_meta( get_the_ID(), 'lf_person_mastodon', true );
-$github      = get_post_meta( get_the_ID(), 'lf_person_github', true );
-$wechat      = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
-$website     = get_post_meta( get_the_ID(), 'lf_person_website', true );
-$youtube     = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
-$image_url   = get_post_meta( get_the_ID(), 'lf_person_image', true );
-$location    = get_post_meta( get_the_ID(), 'lf_person_location', true );
-$languages   = get_the_terms( get_the_ID(), 'lf-language' );
-$projects    = get_the_terms( get_the_ID(), 'lf-project' );
-$content     = get_the_content();
-$current_url = home_url( 'people/ambassadors' );
+$pronouns              = ucwords( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ), $separators = " \t\r\n\f\v\\;/" );
+$gb_role               = get_post_meta( get_the_ID(), 'lf_person_gb_role', true );
+$toc_role              = get_post_meta( get_the_ID(), 'lf_person_toc_role', true );
+$tab_role              = get_post_meta( get_the_ID(), 'lf_person_tab_role', true );
+$linkedin              = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
+$twitter               = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
+$mastodon              = get_post_meta( get_the_ID(), 'lf_person_mastodon', true );
+$github                = get_post_meta( get_the_ID(), 'lf_person_github', true );
+$wechat                = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
+$website               = get_post_meta( get_the_ID(), 'lf_person_website', true );
+$youtube               = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
+$image_url             = get_post_meta( get_the_ID(), 'lf_person_image', true );
+$location              = get_post_meta( get_the_ID(), 'lf_person_location', true );
+$languages             = get_the_terms( get_the_ID(), 'lf-language' );
+$projects              = get_the_terms( get_the_ID(), 'lf-project' );
+$content               = get_the_content();
+$current_url           = home_url( 'people/ambassadors' );
 
 $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : false;
 
@@ -105,10 +105,13 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 		endif;
 
 		if ( $company ) {
+			?>
+<div class="person__company-container">
+			<?php
 			if ( $company_logo_url ) {
 				if ( $company_landscape_url ) {
 					?>
-					<a href="<?php echo esc_url( $company_landscape_url ); ?>">
+					<a class="person__company-logo-link" title="View <?php echo esc_html( $company ); ?> in the CNCF Landscape" href="<?php echo esc_url( $company_landscape_url ); ?>">
 						<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
 						alt="Logo of <?php echo esc_html( $company ); ?>">
 					</a>
@@ -124,6 +127,9 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 				<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
 				<?php
 			}
+			?>
+		</div>
+			<?php
 		}
 		?>
 

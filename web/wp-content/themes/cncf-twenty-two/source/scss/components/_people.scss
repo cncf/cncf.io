@@ -40,7 +40,6 @@
 			}
 		}
 	}
-
 	&__padding {
 		width: 100%;
 		height: 100%;
@@ -72,7 +71,32 @@
 			}
 		}
 	}
-	&__company, &__role {
+	&__company-container {
+		margin-top: 10px;
+		@media (min-width: 1200px) {
+			margin-top: 16px;
+		}
+
+		.person__company-logo,
+		.person__company-logo-link,
+		.person__company {
+			display: block;
+		}
+
+		.person__company-logo,
+		.person__company-logo-link img {
+			max-height: 80px;
+			width: auto;
+			max-width: 80%;
+		}
+	}
+	&__company {
+		font-size: 16px;
+		line-height: 140%;
+		color: $gray-700;
+	}
+	&__role {
+		font-style: italic;
 		margin-top: 10px;
 		@media (min-width: 1200px) {
 			margin-top: 16px;
@@ -81,14 +105,8 @@
 		line-height: 140%;
 		color: $gray-700;
 	}
-
-	&__role {
-		font-style: italic;
-	}
-
 	&__social {
 		margin-top: auto;
-
 		a {
 			display: inline-block;
 			&:hover {
@@ -97,13 +115,11 @@
 				}
 			}
 		}
-
 		svg {
 			height: 30px;
 			width: auto;
 			color: $black;
 		}
-
 		&-margin {
 			margin-top: 40px;
 			> *:not(:last-child) {
@@ -111,7 +127,6 @@
 			}
 		}
 	}
-
 	&__content {
 		margin-top: 30px;
 	}
