@@ -13,6 +13,8 @@ global $post;
 $person_id   = get_the_ID();
 $person_slug = $post->post_name;
 $company     = get_post_meta( get_the_ID(), 'lf_person_company', true );
+$company_logo_url = get_post_meta( get_the_ID(), 'lf_person_company_logo_url', true );
+$company_landscape_url = get_post_meta( get_the_ID(), 'lf_person_company_landscape_url', true );
 $pronouns    = ucwords( get_post_meta( get_the_ID(), 'lf_person_pronouns', true ), $separators = " \t\r\n\f\v\\;/" );
 $gb_role     = get_post_meta( get_the_ID(), 'lf_person_gb_role', true );
 $toc_role    = get_post_meta( get_the_ID(), 'lf_person_toc_role', true );
@@ -102,10 +104,28 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 			<?php
 		endif;
 
-		if ( $company ) :
-			?>
-			<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
-		<?php endif; ?>
+		if ( $company ) {
+			if ( $company_logo_url ) {
+				if ( $company_landscape_url ) {
+					?>
+					<a href="<?php echo esc_url( $company_landscape_url ); ?>">
+						<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
+						alt="Logo of <?php echo esc_html( $company ); ?>">
+					</a>
+					<?php
+				} else {
+					?>
+					<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
+						alt="Logo of <?php echo esc_html( $company ); ?>">
+					<?php
+				}
+			} else {
+				?>
+				<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
+				<?php
+			}
+		}
+		?>
 
 		<div class="person__social">
 			<?php
