@@ -108,20 +108,13 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 			?>
 <div class="person__company-container">
 			<?php
-			if ( $company_logo_url ) {
-				if ( $company_landscape_url ) {
-					?>
+			if ( $company_logo_url && $company_landscape_url ) {
+				?>
 					<a class="person__company-logo-link" title="View <?php echo esc_html( $company ); ?> in the CNCF Landscape" href="<?php echo esc_url( $company_landscape_url ); ?>">
 						<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
 						alt="Logo of <?php echo esc_html( $company ); ?>">
 					</a>
 					<?php
-				} else {
-					?>
-					<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
-						alt="Logo of <?php echo esc_html( $company ); ?>">
-					<?php
-				}
 			} else {
 				?>
 				<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>

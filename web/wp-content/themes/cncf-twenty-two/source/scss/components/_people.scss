@@ -81,11 +81,16 @@
 		.person__company {
 			display: block;
 		}
-		.person__company-logo,
-		.person__company-logo-link img {
-			max-height: 80px;
+		.person__company-logo-link {
+			display: inline-block;
+			cursor: pointer;
+		}
+		.person__company-logo {
+			height: 40px;
 			width: auto;
-			max-width: 80%;
+			max-width: 150px;
+			object-fit: contain;
+			object-position: 0%;
 		}
 	}
 	&__company {
