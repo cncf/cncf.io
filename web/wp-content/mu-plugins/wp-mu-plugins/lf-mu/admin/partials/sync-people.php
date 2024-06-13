@@ -89,6 +89,12 @@ foreach ( $people as $p ) {
 	if ( property_exists( $p, 'company' ) ) {
 		$params['meta_input']['lf_person_company'] = $p->company;
 	}
+	if ( property_exists( $p, 'company_logo_url' ) ) {
+		$params['meta_input']['lf_person_company_logo_url'] = $p->company_logo_url;
+	}
+	if ( property_exists( $p, 'company_landscape_url' ) ) {
+		$params['meta_input']['lf_person_company_landscape_url'] = $p->company_landscape_url;
+	}
 	if ( property_exists( $p, 'pronouns' ) ) {
 		$params['meta_input']['lf_person_pronouns'] = $p->pronouns;
 	}
