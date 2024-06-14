@@ -82,7 +82,7 @@ function add_people_shortcode( $atts ) {
 				null,
 				array(
 					'show_profile' => $show_profile,
-					'show_logos'  => $show_logos,
+					'show_logos'   => $show_logos,
 				)
 			);
 
