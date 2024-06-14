@@ -112,6 +112,11 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 						alt="Logo of <?php echo esc_html( $company ); ?>">
 					</a>
 					<?php
+			} elseif ( $show_logos && $company_logo_url ) {
+				?>
+				<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
+						alt="Logo of <?php echo esc_html( $company ); ?>">
+				<?php
 			} else {
 				?>
 				<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
@@ -235,6 +240,11 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 									alt="Logo of <?php echo esc_html( $company ); ?>">
 								</a>
 								<?php
+						} elseif ( $show_logos && $company_logo_url ) {
+							?>
+							<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
+									alt="Logo of <?php echo esc_html( $company ); ?>">
+							<?php
 						} else {
 							?>
 							<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
