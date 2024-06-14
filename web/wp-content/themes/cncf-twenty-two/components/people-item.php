@@ -33,8 +33,8 @@ $projects              = get_the_terms( get_the_ID(), 'lf-project' );
 $content               = get_the_content();
 $current_url           = home_url( 'people/ambassadors' );
 
-$show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : false;
-
+$show_modal = isset( $args['show_profile'] ) && ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : false;
+$show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false;
 ?>
 <div class="person has-animation-scale-2">
 	<?php
@@ -79,12 +79,15 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 		</button>
 		<?php endif; ?>
 
+		<p class="person__pronouns">
+	<?php if ( $pronouns ) : ?>
+		(<?php echo esc_html( $pronouns ); ?>)
+	<?php else : ?>
+		&nbsp;
+	<?php endif; ?>
+		</p>
+
 		<?php
-		if ( $pronouns ) :
-			?>
-			<p class="person__pronouns">(<?php echo esc_html( $pronouns ); ?>)</p>
-			<?php
-		endif;
 
 		if ( $gb_role ) :
 			?>
@@ -98,17 +101,11 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 			<?php
 		endif;
 
-		if ( $tab_role ) :
-			?>
-			<h4 class="person__role"><?php echo esc_html( $tab_role ); ?></h4>
-			<?php
-		endif;
-
 		if ( $company ) {
 			?>
 <div class="person__company-container">
 			<?php
-			if ( $company_logo_url && $company_landscape_url ) {
+			if ( $show_logos && $company_logo_url && $company_landscape_url ) {
 				?>
 					<a class="person__company-logo-link" title="View <?php echo esc_html( $company ); ?> in the CNCF Landscape" href="<?php echo esc_url( $company_landscape_url ); ?>">
 						<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
@@ -124,6 +121,12 @@ $show_modal = ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : fals
 		</div>
 			<?php
 		}
+
+		if ( $tab_role ) :
+			?>
+			<h4 class="person__role"><?php echo esc_html( $tab_role ); ?></h4>
+			<?php
+		endif;
 		?>
 
 		<div class="person__social">
