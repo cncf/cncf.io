@@ -224,12 +224,26 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 						<?php
 					endif;
 
-					if ( $company ) :
+					if ( $company ) {
 						?>
-						<h4 class="person__company">
-						<?php echo esc_html( $company ); ?></h4>
+			<div class="person__company-container">
 						<?php
-					endif;
+						if ( $show_logos && $company_logo_url && $company_landscape_url ) {
+							?>
+								<a class="person__company-logo-link" title="View <?php echo esc_html( $company ); ?> in the CNCF Landscape" href="<?php echo esc_url( $company_landscape_url ); ?>">
+									<img class="person__company-logo" src="<?php echo esc_attr( $company_logo_url ); ?>"
+									alt="Logo of <?php echo esc_html( $company ); ?>">
+								</a>
+								<?php
+						} else {
+							?>
+							<h4 class="person__company"><?php echo esc_html( $company ); ?></h4>
+							<?php
+						}
+						?>
+					</div>
+						<?php
+					}
 
 					if ( $location || $projects || $languages ) :
 						?>
