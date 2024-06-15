@@ -6,6 +6,7 @@
  * [people tax="staff"]
  * [people tax="technical-oversight-committee" profiles=true]
  * [people tax="toc-contributors" profiles=false]
+ * [people tax="end-user-tab" logos=true]
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -24,6 +25,7 @@ function add_people_shortcode( $atts ) {
 		array(
 			'tax'      => 'staff', // set default.
 			'profiles' => true, // set default.
+			'logos'    => false, // set default.
 		),
 		$atts,
 		'people'
@@ -31,6 +33,7 @@ function add_people_shortcode( $atts ) {
 
 	$chosen_taxonomy = $atts['tax'];
 	$show_profile    = filter_var( $atts['profiles'], FILTER_VALIDATE_BOOLEAN );
+	$show_logos      = filter_var( $atts['logos'], FILTER_VALIDATE_BOOLEAN );
 
 	if ( ! is_string( $chosen_taxonomy ) ) {
 		return;
@@ -39,16 +42,16 @@ function add_people_shortcode( $atts ) {
 	$query_args = array(
 		'post_type'      => 'lf_person',
 		'post_status'    => array( 'publish' ),
-		'posts_per_page' => 200,
+		'posts_per_page' => 200, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_posts_per_page
 		'no_found_rows'  => true,
-		'tax_query'      => array(
+		'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 			array(
 				'taxonomy' => 'lf-person-category',
 				'field'    => 'slug',
 				'terms'    => $chosen_taxonomy,
 			),
 		),
-		'meta_key'       => 'lf_person_is_priority',
+		'meta_key'       => 'lf_person_is_priority', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 		'orderby'        => array(
 			'meta_value_num' => 'DESC',
 			'title'          => 'ASC',
@@ -74,7 +77,14 @@ function add_people_shortcode( $atts ) {
 		while ( $persons_query->have_posts() ) :
 			$persons_query->the_post();
 
-			get_template_part( 'components/people-item', null, array( 'show_profile' => $show_profile ) );
+			get_template_part(
+				'components/people-item',
+				null,
+				array(
+					'show_profile' => $show_profile,
+					'show_logos'   => $show_logos,
+				)
+			);
 
 		endwhile;
 		wp_reset_postdata();

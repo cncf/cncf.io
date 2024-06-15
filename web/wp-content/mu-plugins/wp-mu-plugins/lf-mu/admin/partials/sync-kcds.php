@@ -108,8 +108,8 @@ if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 
 	return false;
 }
 
-$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
-$events      = $remote_body->results;
+$remote_body       = json_decode( wp_remote_retrieve_body( $data ) );
+$events            = $remote_body->results;
 $background_colors = array( '#14496c', '#641e16', '#5e2d72', '#0b5329', '#1a267d' );
 $background_color  = 0;
 

@@ -159,3 +159,55 @@ The dependencies of this project are managed by [Composer](https://getcomposer.o
 composer.lock is generated from composer.json only when explicitly calling the `lando composer update` function. Any additional themes or plugins can be added first to composer.json and then `lando composer update` is run to update composer.lock and pull in the new files.  Dependencies are pegged to a version according to the composer [versioning rules](https://getcomposer.org/doc/articles/versions.md).
 
 It's good practice to keep WordPress and all plugins set at their latest releases to inherit any security patches and upgraded functionality.  Upgrading to a new version, however, sometimes has unintended consequences so it's critical to run all tests before deploying live.
+
+## Refreshing external data
+
+The following cron jobs are programmed to pull in data from remote sources for use in the website.
+
+```
+lf_sync_projects
+lf_sync_ktps
+lf_sync_kcds
+```
+
+To trigger fresh data locally, you can run:
+
+```
+lando wp cron event run lf_sync_kcds
+```
+
+or for remote triggering on a specific environment:
+
+```
+lando terminus wp cncfci.live -- cron event run lf_sync_kcds
+```
+
+To trigget all cron jobs, for example:
+
+```
+lando terminus wp cncfci.dev -- cron event run --all
+```
+
+For other data we use transients to store data:
+
+```
+cncf_homepage_metrics
+cncf_whoweare_metrics
+cncf_latest_endusers
+tech_radars
+cncf_project_maturity_data
+cncf_eu_playlist
+cncf_member_playlist
+```
+
+These can be deleted locally using:
+
+```
+lando wp transient delete cncf_project_maturity_data
+```
+
+These can be delete remotely using:
+
+```
+lando terminus wp cncfci.dev transient delete cncf_homepage_metrics
+```
