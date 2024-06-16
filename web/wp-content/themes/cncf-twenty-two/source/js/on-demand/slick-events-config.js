@@ -34,8 +34,8 @@ function eventSlider($) {
 			lazyLoad: "ondemand",
 			pauseOnHover: true,
 			pauseOnFocus: false,
-			prevArrow: '<img alt="Previous" class="slick-prev" src="/wp-content/themes/cncf-twenty-two/images/slider-arrow-left.svg" />',
-			nextArrow: '<img alt="Next" class="slick-next" src="/wp-content/themes/cncf-twenty-two/images/slider-arrow-right.svg" />'
+			prevArrow: '<svg alt="Previous" class="slick-prev" fill="none" height="36" viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" fill="#fff" opacity=".7" r="18"/><path d="m21.125 25.5566-7-7 7-7" stroke="#15153b" stroke-width="2"/></svg>',
+			nextArrow: '<svg alt="Next" class="slick-next"  fill="none" height="36" viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" fill="#fff" opacity=".7" r="18"/><path d="m16 11.5566 7 7-7 7" stroke="#15153b" stroke-width="2"/></svg>'
 		 }
 	);
 }
