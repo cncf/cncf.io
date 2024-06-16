@@ -10,7 +10,7 @@
 ?>
 
 <link rel="preload" as="image" fetchpriority="high"
-	href="<?php echo esc_url( get_template_directory_uri() . '/images/home-hero-poster.jpg' ); ?>">
+	href="<?php echo esc_url( get_template_directory_uri() . '/images/home-hero-poster.webp' ); ?>">
 
 <?php
 wp_enqueue_script( 'home-hero', get_template_directory_uri() . '/source/js/on-demand/video.js', null, filemtime( get_template_directory() . '/source/js/on-demand/video.js' ), true );
