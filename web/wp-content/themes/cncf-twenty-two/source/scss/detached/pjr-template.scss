@@ -115,7 +115,7 @@
 				flex-direction: row;
 			}
 			@media (min-width: 1200px) {
-				gap: 80px;
+				gap: 60px;
 			}
 		}
 		.published,
@@ -135,6 +135,11 @@
 				@media (min-width: 412px) {
 					margin-right: 25px;
 				}
+			}
+		}
+		.project-website {
+			@media (min-width: 1000px) {
+				font-size: 20px;
 			}
 		}
 		.published {
