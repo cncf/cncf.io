@@ -26,6 +26,7 @@ function lf_register_all_our_blocks() {
 	register_block_type( $block_directory . '/phippy-family/block.json' );
 	register_block_type( $block_directory . '/phippy-group/block.json' );
 	register_block_type( $block_directory . '/post-breadcrumb/block.json' );
+	register_block_type( $block_directory . '/quote-with-image/block.json' );
 	register_block_type( $block_directory . '/quote-with-quote-mark/block.json' );
 }
 add_action( 'init', 'lf_register_all_our_blocks' );

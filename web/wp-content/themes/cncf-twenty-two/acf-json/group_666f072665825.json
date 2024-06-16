@@ -1,15 +1,93 @@
 {
-    "key": "group_646840fbbe94f",
-    "title": "Template - Project Journey Report",
+    "key": "group_666f072665825",
+    "title": "Block - Quote with Image",
     "fields": [
         {
-            "key": "field_646840fb0ebfa",
-            "label": "Project Logo",
-            "name": "pjr_project_logo",
+            "key": "field_666f07266800e",
+            "label": "Border Color",
+            "name": "quote_image_border_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ef7b4d",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_666f0726683bc",
+            "label": "Cite Line 1",
+            "name": "quote_image_cite_line_1",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_666f0726687b2",
+            "label": "Cite Line 2",
+            "name": "quote_image_cite_line_2",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_666f0758e51f4",
+            "label": "Cite Line 3",
+            "name": "quote_image_cite_line_3",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_666f0763e51f5",
+            "label": "Quote Image",
+            "name": "quote_image_id",
             "aria-label": "",
             "type": "image",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -26,107 +104,14 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
-        },
-        {
-            "key": "field_64789a7372d38",
-            "label": "Project Name",
-            "name": "pjr_project_name",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_646841e60ebfe",
-            "label": "Project URL",
-            "name": "pjr_project_url",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_646841b00ebfc",
-            "label": "Report Title",
-            "name": "pjr_report_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Project Journey Report",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6468413e0ebfb",
-            "label": "Show Social Share",
-            "name": "pjr_show_social_share",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_666f029568573",
-            "label": "Download Link",
-            "name": "pjr_download_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
         }
     ],
     "location": [
         [
             {
-                "param": "post_template",
+                "param": "block",
                 "operator": "==",
-                "value": "templates\/project-journey-report.php"
+                "value": "lf\/quote-with-image"
             }
         ]
     ],
@@ -139,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718551513
+    "modified": 1718553279
 }
