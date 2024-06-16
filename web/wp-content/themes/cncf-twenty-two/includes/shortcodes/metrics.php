@@ -34,7 +34,7 @@ function add_cncf_metrics_shortcode() {
 				<div class="metrics__image-wrapper">
 				<img src="<?php LF_utils::get_svg( 'cncf-icon-kubernetes-distributions.svg', true ); ?>"
 					width="130" height="110" class="metrics__image"
-					alt="Icon of Kubernetes against app outline" loading="lazy">
+					alt="Icon of Kubernetes against app outline" loading="lazy" decoding="async">
 				</div>
 
 				<div class="metrics__text-wrapper">
@@ -60,7 +60,7 @@ function add_cncf_metrics_shortcode() {
 			<div class="metrics__image-wrapper">
 					<img src="<?php LF_utils::get_svg( 'cncf-icon-computer.svg', true ); ?>"
 						width="130" height="80" class="metrics__image"
-						alt="Icon of computer" loading="lazy">
+						alt="Icon of computer" loading="lazy" decoding="async">
 			</div>
 
 			<div class="metrics__text-wrapper">
@@ -87,7 +87,7 @@ function add_cncf_metrics_shortcode() {
 			<div class="metrics__image-wrapper">
 				<img src="<?php LF_utils::get_svg( 'cncf-icon-corporations.svg', true ); ?>"
 					width="120" height="100" class="metrics__image"
-					alt="Icon of corporation building" loading="lazy">
+					alt="Icon of corporation building" loading="lazy" decoding="async">
 			</div>
 
 			<div class="metrics__text-wrapper">
@@ -113,7 +113,7 @@ function add_cncf_metrics_shortcode() {
 			<div class="metrics__image-wrapper">
 				<img src="<?php LF_utils::get_svg( 'cncf-icon-meetups1.svg', true ); ?>"
 					width="125" height="110" class="metrics__image"
-					alt="Icon people discussing code" loading="lazy">
+					alt="Icon people discussing code" loading="lazy" decoding="async">
 			</div>
 
 			<div class="metrics__text-wrapper">

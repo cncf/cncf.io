@@ -123,7 +123,7 @@ wp_enqueue_style( 'wp-block-columns' );
 						<div class="home-projects-slider-slide" dir="ltr">
 							<a title="View <?php echo esc_html( $project_logo['title'] ); ?>"
 								href="<?php echo esc_url( $project_logo['url'] ); ?>">
-								<img src="<?php echo esc_url( $project_logo['logo'] ); ?>"
+								<img src="<?php echo esc_url( $project_logo['logo'] ); ?>" decoding="async"
 									alt="Logo of <?php echo esc_html( $project_logo['title'] ); ?>">
 							</a>
 						</div>

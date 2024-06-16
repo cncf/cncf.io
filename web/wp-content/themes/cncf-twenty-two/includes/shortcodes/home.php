@@ -139,7 +139,7 @@ function add_home_intro_boxes_shortcode() {
 		<picture>
 			<source srcset="<?php LF_utils::get_image( 'home-goldie.webp' ); ?>"
 				type="image/webp">
-			<img class="home-intro-box__goldie" loading="lazy"
+			<img class="home-intro-box__goldie" loading="lazy" decoding="async"
 				src="<?php LF_utils::get_image( 'home-goldie.png' ); ?>"
 				alt="Goldie">
 		</picture>
@@ -217,7 +217,7 @@ function add_home_ambassadors_shortcode() {
 			title="<?php echo esc_html( 'View ' . $ambassador['title'] ); ?>"
 			href="<?php echo esc_url( $ambassador['link'] ); ?>">
 			<img alt="<?php echo esc_html( $ambassador['title'] ); ?>"
-				loading="lazy"
+				loading="lazy" decoding="async"
 				src="<?php echo esc_url( $ambassador['image'] ); ?>"
 				class="home-ambassadors-heptagons__image"></a>
 			<?php
@@ -227,7 +227,7 @@ function add_home_ambassadors_shortcode() {
 		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg05"
 			title="Join the Foundation of Doers - with Priyanka Sharma"
 			href="https://www.youtube.com/watch?v=u71aL6aVDPg">
-			<img alt="Priyanka Sharma" loading="lazy"
+			<img alt="Priyanka Sharma" loading="lazy" decoding="async"
 				src="<?php echo esc_url( get_template_directory_uri() . '/images/home-ambassador-priyanka.jpg' ); ?>"
 				class="home-ambassadors-heptagons__image"></a>
 
@@ -470,7 +470,7 @@ function add_home_terminal_shortcode() {
 				class="box-link" title="Download CNCF Theme for Terminal"></a>
 
 			<img class="home-terminal__download-image" width="35" height="23"
-				alt="" loading="lazy"
+				alt="" loading="lazy" decoding="async"
 				src="<?php LF_utils::get_svg( 'cncf-icon-download-w.svg', true ); ?>">
 			<p class="home-terminal__download-text">
 Download Theme
@@ -488,6 +488,7 @@ Download Theme
 				alt="Terminal displaying code examples for running Kubernetes cluster"
 				class="home-terminal__image home-terminal__replace"
 				loading="lazy"
+				decoding="async"
 				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
 				data-src="
 	<?php
