@@ -41,7 +41,7 @@
 			flex-direction: column;
 			align-items: flex-start;
 			@media (min-width: 1000px) {
-				margin-bottom: 15px;
+				margin-bottom: 20px;
 			}
 			&__title {
 				margin-bottom: 15px;
@@ -108,15 +108,18 @@
 		&__meta-align {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
 			gap: 40px;
 			@media (min-width: 1000px) {
 				gap: 50px;
+				align-items: center;
 				flex-direction: row;
 			}
 			@media (min-width: 1200px) {
 				gap: 60px;
 			}
+		}
+		.download-pdf {
+			max-width: 250px;
 		}
 		.published,
 		.project-website {
