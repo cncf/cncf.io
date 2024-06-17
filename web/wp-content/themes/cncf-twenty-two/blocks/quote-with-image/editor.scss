@@ -1,0 +1,21 @@
+.wp-block.wp-block-lf-quote-with-image {
+	border: 1px solid #757ba2;
+	padding-left: 0;
+
+	&:before {
+		content: 'Quote with Image';
+		color: #757ba2;
+		position: absolute;
+		left: 1px;
+		top: 0;
+		line-height: 1;
+		font-size: 10px;
+		font-style: normal;
+	}
+}
+
+#editor .wp-block .wp-block-lf-quote-with-image__cite p {
+	line-height: inherit;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}

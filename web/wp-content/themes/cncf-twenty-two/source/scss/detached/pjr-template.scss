@@ -2,8 +2,19 @@
 @import 'report_fonts';
 
 .pjr {
-	font-family: 'Clarity City', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, Roboto,
-		Ubuntu, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	font-family:
+		'Clarity City',
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Helvetica,
+		Arial,
+		sans-serif,
+		Roboto,
+		Ubuntu,
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		'Segoe UI Symbol';
 	color: #000000;
 	line-height: 180%;
 
@@ -29,6 +40,9 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
+			@media (min-width: 1000px) {
+				margin-bottom: 20px;
+			}
 			&__title {
 				margin-bottom: 15px;
 				color: #747474;
@@ -66,6 +80,9 @@
 		}
 
 		&__grid {
+			@media (min-width: 1000px) {
+				align-items: flex-end;
+			}
 			&-col1 {
 				grid-column: span 12;
 				@media (min-width: 600px) {
@@ -85,6 +102,25 @@
 				}
 			}
 		}
+		&__meta.hero__grid {
+			align-items: center;
+		}
+		&__meta-align {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			@media (min-width: 1000px) {
+				gap: 50px;
+				align-items: center;
+				flex-direction: row;
+			}
+			@media (min-width: 1200px) {
+				gap: 60px;
+			}
+		}
+		.download-pdf {
+			max-width: 250px;
+		}
 		.published,
 		.project-website {
 			font-weight: 700;
@@ -102,6 +138,11 @@
 				@media (min-width: 412px) {
 					margin-right: 25px;
 				}
+			}
+		}
+		.project-website {
+			@media (min-width: 1000px) {
+				font-size: 20px;
 			}
 		}
 		.published {

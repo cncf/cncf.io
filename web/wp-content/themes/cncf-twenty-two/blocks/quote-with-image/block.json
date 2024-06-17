@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lf/quote-with-image",
+	"title": "Quote with Image",
+	"description": "A quote with two lined citation alongside an image",
+	"style": "file:./quote-with-image.css",
+	"editorStyle": "file:./editor.css",
+	"editorScript": [],
+	"category": "lf",
+	"icon": "format-quote",
+	"keywords": [
+		"testimonial",
+		"comment"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "quote-with-image.php",
+		"postTypes": [ "lf_report" ]
+	},
+	"supports": {
+		"mode": false,
+		"align": false,
+		"alignWide": false,
+		"alignContent": false,
+		"alignText": false,
+		"anchor": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"link": false,
+			"text": true
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false
+		},
+		"fullHeight": false
+	},
+	"example": {}
+}

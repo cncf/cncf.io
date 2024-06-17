@@ -1,0 +1,44 @@
+$font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times',
+	'Source Serif Pro', serif;
+
+.wp-block-lf-quote-with-image {
+	font-style: italic;
+	padding-left: 40px;
+	@media (min-width: 700px) {
+		max-width: 643px;
+	}
+	&__quote {
+		margin-bottom: 32px;
+		font-size: 20px;
+		line-height: 160%;
+	}
+	&__align {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+	&__image {
+		border-radius: 50%;
+		width: 74px;
+		height: 74px;
+	}
+	&__cite {
+		font-family: $font-serif;
+	}
+	&__name {
+		font-weight: 700;
+		line-height: 130%;
+		margin: 0;
+		font-size: 18px;
+		@media (min-width: 1000px) {
+			font-size: 20px;
+		}
+	}
+	&__position,
+	&__additional {
+		font-size: 16px;
+		margin: 0;
+		margin-top: 2px !important; // Needed to override p+p
+		line-height: 160%;
+	}
+}
