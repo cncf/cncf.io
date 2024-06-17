@@ -11,12 +11,13 @@ $alt_text = 'CloudNativeSecurityCon North America 2024 in Seattle, Washington fr
 ?>
 
 <style>
-	.takeover-logo {
-		width: 180px;
-		margin-top: min(36%, 100px);
-	}
+.takeover-logo {
+	width: 180px;
+	margin-top: min(36%, 50px);
+}
+
 .home-hero__overlay.poster-has-loaded {
-	background-color: rgba(104, 64, 153, 0.75)
+	background-color: rgba(104, 64, 153, 0.75);
 }
 
 .home-hero__title {
@@ -30,6 +31,9 @@ $alt_text = 'CloudNativeSecurityCon North America 2024 in Seattle, Washington fr
 	}
 }
 
+.home-hero__metric_wrapper {
+    margin-bottom: min(20%, 70px);
+}
 </style>
 
 <link rel="preload" as="image" fetchpriority="high"
