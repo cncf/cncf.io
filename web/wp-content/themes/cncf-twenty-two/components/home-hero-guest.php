@@ -32,7 +32,7 @@ $alt_text = 'CloudNativeSecurityCon North America 2024 in Seattle, Washington fr
 }
 
 .home-hero__metric_wrapper {
-    margin-bottom: min(20%, 70px);
+	margin-bottom: min(20%, 70px);
 }
 </style>
 
