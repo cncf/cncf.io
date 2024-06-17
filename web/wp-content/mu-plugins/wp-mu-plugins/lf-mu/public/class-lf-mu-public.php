@@ -147,6 +147,9 @@ class Lf_Mu_Public {
 				'https://js.hs-analytics.net',
 				'https://js.hsforms.net',
 				'https://js.hs-scripts.com',
+				'https://landscape.cncf.io',
+				'https://cmp.osano.com',
+				'https://consent.api.osano.com',
 			);
 			// add crossorigin, remove protocol.
 			foreach ( $add_urls as $url ) {
