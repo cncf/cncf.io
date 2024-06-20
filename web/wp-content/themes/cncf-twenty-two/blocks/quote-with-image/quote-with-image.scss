@@ -3,14 +3,18 @@ $font-serif: 'Source Serif Pro', 'Apple Garamond', 'Baskerville', 'Times New Rom
 
 .wp-block-lf-quote-with-image {
 	font-style: italic;
-	padding-left: 40px;
+	padding-left: 20px;
 	@media (min-width: 700px) {
+		padding-left: 40px;
 		max-width: 643px;
 	}
 	&__quote {
 		margin-bottom: 32px;
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 160%;
+		@media (min-width: 700px) {
+			font-size: 20px;
+		}
 	}
 	&__align {
 		display: flex;
