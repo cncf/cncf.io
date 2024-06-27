@@ -64,7 +64,7 @@
 
 			input[type='text'],
 			input[type='email'] {
-				height: 60px;
+				height: 50px;
 				@media (min-width: 500px) {
 					height: 42px;
 				}
@@ -118,13 +118,13 @@
 				border-radius: 0;
 				box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0);
 				display: block;
-				height: 60px;
+				height: 50px;
 				@media (min-width: 500px) {
 					height: 42px;
 				}
 				margin: 0;
 				max-width: 100%;
-				padding: 0.5em 0 calc(0.5em + 1px) 5px;
+				padding: 0.25em 0 calc(0.25em + 1px) 5px;
 				transition: all 0.25s ease;
 				width: 100%;
 				color: $white;
