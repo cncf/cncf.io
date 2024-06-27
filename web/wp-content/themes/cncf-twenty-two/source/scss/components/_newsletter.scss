@@ -124,7 +124,7 @@
 				}
 				margin: 0;
 				max-width: 100%;
-				padding: 0.5em 0 calc(0.5em + 1px) 0;
+				padding: 0.5em 0 calc(0.5em + 1px) 5px;
 				transition: all 0.25s ease;
 				width: 100%;
 				color: $white;
@@ -195,16 +195,4 @@
 	.submitted-message p {
 		max-width: none;
 	}
-}
-
-// success formating for all forms (Kubeweekly and Contact)
-// success message.
-.submitted-message {
-	padding: 20px;
-	text-align: center;
-	border: 2px solid $black;
-	font-weight: 700;
-	font-size: 18px;
-	line-height: 24px;
-	max-width: 100%;
 }

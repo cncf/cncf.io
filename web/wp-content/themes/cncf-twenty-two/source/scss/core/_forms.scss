@@ -1,6 +1,7 @@
 input[type='text'],
 input[type='email'],
-input[type='search'] {
+input[type='search'],
+select {
 	height: 50px;
 	width: 100%;
 	border-radius: 3px;
@@ -8,6 +9,22 @@ input[type='search'] {
 	// makes border lighter.
 	border: 1px solid $gray-500;
 	padding-left: 5px;
+	&::placeholder {
+		color: $black;
+	}
+	&:focus {
+		&::placeholder {
+			transition: color 0.2s ease;
+			color: #747474;
+		}
+	}
+}
+
+select {
+	option {
+		font-weight: normal;
+		color: $black;
+	}
 }
 
 // Controls autocomplete styles.
@@ -43,4 +60,15 @@ input[type='search']::-webkit-search-cancel-button {
 // If page title is turned off then move password form down the page.
 .page-template-no-page-title form.post-password-form {
 	margin-top: 80px;
+}
+
+// success formatting for all forms (Kubeweekly and Contact).
+.submitted-message {
+	padding: 20px;
+	text-align: center;
+	border: 2px solid $black;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 24px;
+	max-width: 100%;
 }

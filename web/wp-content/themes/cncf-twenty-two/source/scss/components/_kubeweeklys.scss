@@ -30,11 +30,12 @@
 	}
 }
 
-// to stop hubspot form making box jump.
 .kubeweekly-newsletter {
-	min-height: 359px;
-	.hs-fieldtype-text {
-		margin-bottom: 24px;
+	min-height: 359px; // to stop hubspot form making box jump.
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
 	}
 
 	.no-list {
@@ -55,8 +56,6 @@
 	.legal-consent-container {
 		p {
 			font-size: var(--wp--preset--font-size--small);
-			margin-bottom: 1rem;
-
 		}
 	}
 
