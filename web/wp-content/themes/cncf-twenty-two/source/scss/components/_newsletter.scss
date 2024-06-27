@@ -53,9 +53,13 @@
 			}
 
 			@media (min-width: 950px) {
-				grid-template-columns: 1fr 1fr 1.75fr 1.2fr 1.2fr;
+				grid-template-columns: 1fr 1fr 1.3fr;
 				grid-row-gap: 1.5rem;
 				grid-column-gap: 1.5rem;
+			}
+
+			@media (min-width: 1000px) {
+				max-width: 940px;
 			}
 
 			input[type='text'],
