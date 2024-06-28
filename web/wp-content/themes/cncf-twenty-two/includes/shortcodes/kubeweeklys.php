@@ -88,7 +88,7 @@ function add_kubeweekly_newsletter_shortcode( $atts ) {
 <div class="wp-block-group is-style-border has-white-background-color has-background kubeweekly-newsletter">
 <h3 class="is-style-spaced-uppercase">JOIN THE KUBEWEEKLY MAILING LIST</h3>
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
-	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=8095ef7d-1275-43f3-b7b7-916056b40b3f]' ); ?>
+	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=9a8f2bb4-2f95-489c-a554-cd56c14b2d7b]' ); ?>
 	<div style="height:15px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 </div>
 	<?php
