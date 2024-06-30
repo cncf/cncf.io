@@ -53,14 +53,18 @@
 			}
 
 			@media (min-width: 950px) {
-				grid-template-columns: 1fr 1fr 1.75fr 1.2fr 1.2fr;
+				grid-template-columns: 1fr 1fr 1.3fr;
 				grid-row-gap: 1.5rem;
 				grid-column-gap: 1.5rem;
 			}
 
+			@media (min-width: 1000px) {
+				max-width: 940px;
+			}
+
 			input[type='text'],
 			input[type='email'] {
-				height: 60px;
+				height: 50px;
 				@media (min-width: 500px) {
 					height: 42px;
 				}
@@ -114,13 +118,13 @@
 				border-radius: 0;
 				box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0);
 				display: block;
-				height: 60px;
+				height: 50px;
 				@media (min-width: 500px) {
 					height: 42px;
 				}
 				margin: 0;
 				max-width: 100%;
-				padding: 0.5em 0 calc(0.5em + 1px) 0;
+				padding: 0.25em 0 calc(0.25em + 1px) 5px;
 				transition: all 0.25s ease;
 				width: 100%;
 				color: $white;
@@ -191,16 +195,4 @@
 	.submitted-message p {
 		max-width: none;
 	}
-}
-
-// success formating for all forms (Kubeweekly and Contact)
-// success message.
-.submitted-message {
-	padding: 20px;
-	text-align: center;
-	border: 2px solid $black;
-	font-weight: 700;
-	font-size: 18px;
-	line-height: 24px;
-	max-width: 100%;
 }

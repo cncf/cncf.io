@@ -160,10 +160,10 @@ endif;
 								<?php
 								// Get all radars.
 								$tech_radars_all = LF_utils::get_tech_radars();
-								// Limit to latest 3 items.
-								$tech_radars = array_slice( $tech_radars_all, 0, 3 );
 
-								if ( is_array( $tech_radars ) ) :
+								if ( is_array( $tech_radars_all ) ) :
+
+									$tech_radars = array_slice( $tech_radars_all, 0, 3 );
 									?>
 								<div class="columns-one">
 									<?php
