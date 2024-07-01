@@ -53,14 +53,6 @@ tooling:
     service: node
   node:
     service: node
-  phpcs:
-    service: appserver
-    description: Run PHPCS commands
-    cmd: "/app/vendor/bin/phpcs"
-  phpcbf:
-    service: appserver
-    description: Run PHPCBF commands
-    cmd: "/app/vendor/bin/phpcbf"
   sniff:
     service: appserver
     cmd: /app/vendor/bin/phpcs -ns
@@ -88,7 +80,7 @@ tooling:
 6. Run `lando pull --code=none --files=none` and follow the prompts to download the media files and database from Pantheon:
   * `Pull database from?` >  `dev`
 
-7. run this script to activate a dev plugin used to load media files from the production server instead of hosting them locally, in addition to other dev plugins, and deactivates some production plugins:
+7. Run this command to activate/deactivate multiple plugings that can help with local dev or are not needed for local dev. The Load Media Files from Production plugin will load media from the production server instead of needing to download them locally:
 
 ```
 lando wp plugin activate debug-bar && lando wp plugin activate query-monitor && lando wp plugin deactivate shortpixel-image-optimiser && lando wp plugin deactivate pantheon-advanced-page-cache && lando wp plugin activate load-media-from-production
@@ -127,29 +119,14 @@ The CI process will sniff the code to make sure it complies with WordPress codin
 
 phpcs and the [WordPress Coding Standards for PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) come as part of the repo and are installed in the vendor directory by composer.
 
-To run recommended tests:
+You can get a report of required fixes on your code by running `lando sniff` and you can automatically fix some required changes by running `lando fix`. You can see warnings by running `lando warnings`.
 
-```
-lando sniff
-```
+The commands are setup to use WordPress Coding Standards and to run on the `wp-content/themes/` directory as well as on custom plugins. This is controlled by the phpcs.xml file.
 
-to include warnings which may give hints to improve code:
+It's even more convenient to [install into your IDE](https://github.com/WordPress/WordPress-Coding-Standards/wiki).
 
-```
-lando warnings
-```
+Since the cncf.io repo includes phpcs via Composer, your IDE should use that version of the binary even though you may have phpcs installed system-wide.
 
-To run recommended tests and fix issues automatically:
-
-```
-lando fix
-```
-
-To access  phpcs or phpcbf on the command line to run your own commands, you can access them via Lando, for instance:
-
-```
-lando phpcs -i
-```
 -----
 
 ## Upgrading WordPress core, themes and plugins
@@ -206,7 +183,7 @@ These can be deleted locally using:
 lando wp transient delete cncf_project_maturity_data
 ```
 
-These can be delete remotely using:
+These can be deleted remotely using:
 
 ```
 lando terminus wp cncfci.dev transient delete cncf_homepage_metrics
