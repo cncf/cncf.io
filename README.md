@@ -1,8 +1,8 @@
-# Contributing to CNCF.io
-
-Everyone is welcome to contribute to this project. We've created a document that describes guidelines for [contributing to the CNCF.io git repository](/CONTRIBUTING.md).
+[![Build, test and deploy](https://github.com/cncf/cncf.io/actions/workflows/build_test_and_deploy.yml/badge.svg)](https://github.com/cncf/cncf.io/actions/workflows/build_test_and_deploy.yml)
 
 # CNCF.io Developer Instructions
+
+Everyone is welcome to contribute to this project. Please follow [these guidelines](/CONTRIBUTING.md).
 
 These instructions are based on you having access to the CNCF.io Pantheon account (and the CNCF.io WordPress database).
 
