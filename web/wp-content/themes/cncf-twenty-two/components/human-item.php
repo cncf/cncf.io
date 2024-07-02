@@ -7,10 +7,15 @@
  * @since 1.0.0
  */
 
+$post_url = get_post_meta( get_the_ID(), 'lf_human_post_url', true );
+
+if ( ! $post_url ) {
+	$post_url = get_permalink();
+}
 ?>
 
 <div class="human-item has-animation-scale-2">
-	<a href="<?php the_permalink(); ?>"
+	<a href="<?php echo esc_url( $post_url ); ?>"
 		title="<?php the_title_attribute(); ?>">
 		<?php
 		if ( has_post_thumbnail() ) {

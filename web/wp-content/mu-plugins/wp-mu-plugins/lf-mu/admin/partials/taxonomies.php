@@ -475,3 +475,23 @@ $args   = array(
 	'show_in_nav_menus' => false,
 );
 register_taxonomy( 'lf-course-difficulty', array( 'lf_course' ), $args );
+
+$labels = array(
+	'name'          => __( 'Human Type', 'lf-mu' ),
+	'singular_name' => __( 'Human Type', 'lf-mu' ),
+	'search_items'  => __( 'Search Human Types', 'lf-mu' ),
+	'all_items'     => __( 'All Human Types', 'lf-mu' ),
+	'edit_item'     => __( 'Edit Human Type', 'lf-mu' ),
+	'update_item'   => __( 'Update Human Type', 'lf-mu' ),
+	'add_new_item'  => __( 'Add New Human Type', 'lf-mu' ),
+	'new_item_name' => __( 'New Human Type', 'lf-mu' ),
+	'menu_name'     => __( 'Human Types', 'lf-mu' ),
+);
+$args   = array(
+	'labels'            => $labels,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
+);
+register_taxonomy( 'lf-human-type', 'lf_human', $args );
