@@ -149,7 +149,7 @@ foreach ( $people as $p ) {
 		array(
 			'post_type'              => 'lf_person',
 			'title'                  => $p->name,
-			'post_status'            => 'all',
+			'post_status'            => 'publish',
 			'numberposts'            => 1,
 			'update_post_term_cache' => false,
 			'update_post_meta_cache' => false,
