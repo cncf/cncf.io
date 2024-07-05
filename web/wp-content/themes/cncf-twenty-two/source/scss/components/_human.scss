@@ -24,16 +24,24 @@
 	&__title {
 		font-size: 20px;
 		line-height: 140%;
-		padding-top: 25px;
+		a {
+			color: $black;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+	&__text-wrapper {
+		padding-top: 20px;
 		padding-right: 25px;
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 		padding-left: 25px;
-	}
-	a {
-		color: $black;
-	}
-	a:hover {
-		text-decoration: none;
+		.author-category {
+			margin-bottom: 20px;
+		}
+		.author-category:hover {
+			text-decoration: none;
+		}
 	}
 	&__date {
 		font-size: 12px;

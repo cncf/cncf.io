@@ -8,10 +8,12 @@
  */
 
 $post_url = get_post_meta( get_the_ID(), 'lf_human_post_url', true );
-
 if ( ! $post_url ) {
 	$post_url = get_permalink();
 }
+$human_type      = Lf_Utils::get_term_names( get_the_ID(), 'lf-human-type', true );
+$human_type_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-human-type', true );
+
 ?>
 
 <div class="human-item has-animation-scale-2">
@@ -30,8 +32,26 @@ if ( ! $post_url ) {
 
 		}
 		?>
-		<h3 class="human-item__title"><?php the_title(); ?></h3>
 	</a>
+
+	<div class="human-item__text-wrapper">
+
+		<?php
+		if ( $human_type ) :
+			$human_type_link = '?_sft_lf-human-type=' . $human_type_slug . '';
+			?>
+			<a class="author-category"
+				title="See more <?php echo esc_attr( $human_type ); ?> humans of cloud native"
+				href="<?php echo esc_url( $human_type_link ); ?>">
+				<?php echo esc_html( $human_type ); ?></a>
+		<?php endif; ?>
+
+		<h3 class="human-item__title">
+			<a href="<?php echo esc_url( $post_url ); ?>">
+			<?php the_title(); ?>
+			</a>
+		</h3>
+	</div>
 
 	<span
 		class="human-item__date"><?php echo get_the_date( 'F j, Y' ); ?></span>
