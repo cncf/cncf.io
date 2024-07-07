@@ -613,7 +613,7 @@ class LF_Utils {
 
 		$args           = array(
 			'post_type'      => 'lf_person',
-			'posts_per_page' => 15,
+			'posts_per_page' => 5,
 			'no_found_rows'  => true,
 			'orderby'        => 'rand',
 			'post_status'    => array( 'publish' ),
@@ -646,7 +646,7 @@ class LF_Utils {
 
 		$args  = array(
 			'post_type'      => 'lf_human',
-			'posts_per_page' => 10,
+			'posts_per_page' => 15,
 			'no_found_rows'  => true,
 			'orderby'        => 'rand',
 			'post_status'    => array( 'publish' ),
