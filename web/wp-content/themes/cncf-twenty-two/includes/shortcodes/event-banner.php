@@ -116,6 +116,8 @@ function show_event_banner( $hide_title ) {
 			);
 		}
 	}
+	/* Restore original Post Data */
+	wp_reset_postdata();
 }
 
 /**
