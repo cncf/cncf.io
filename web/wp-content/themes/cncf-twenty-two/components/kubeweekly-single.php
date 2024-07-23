@@ -57,4 +57,10 @@
 		</div>
 
 	</article>
+
+	<aside class="container wrap">
+		<?php
+			echo do_shortcode( '[event_banner hide_title=true]' );
+		?>
+	</aside>
 </main>
