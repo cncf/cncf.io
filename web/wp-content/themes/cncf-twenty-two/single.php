@@ -29,6 +29,10 @@ elseif ( is_singular( 'lf_project' ) ) :
 elseif ( is_singular( 'lf_report' ) ) :
 	get_template_part( 'components/title' );
 	get_template_part( 'components/report-single' );
+
+elseif ( is_singular( 'lf_kubeweekly' ) ) :
+	get_template_part( 'components/kubeweekly-single' );
+
 	// Default.
 else :
 	get_template_part( 'components/title' );
