@@ -304,16 +304,16 @@
         },
         {
             "name": "pantheon-systems/wordpress-composer",
-            "version": "6.6",
+            "version": "6.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "da7cb216c4cf1bb96a5f67fa91705a1ed8b838c8"
+                "reference": "1727ac8b6a365b9e05aa9c1b9e1e93d35d1d61e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/da7cb216c4cf1bb96a5f67fa91705a1ed8b838c8",
-                "reference": "da7cb216c4cf1bb96a5f67fa91705a1ed8b838c8",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/1727ac8b6a365b9e05aa9c1b9e1e93d35d1d61e1",
+                "reference": "1727ac8b6a365b9e05aa9c1b9e1e93d35d1d61e1",
                 "shasum": ""
             },
             "require": {
@@ -331,10 +331,10 @@
             ],
             "description": "WordPress for Pantheon with a composer.json file.",
             "support": {
-                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.6",
+                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.6.1",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2024-07-16T19:25:59+00:00"
+            "time": "2024-07-23T23:20:16+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -961,15 +961,15 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "11.1.22",
+            "version": "11.1.34",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
-                "reference": "tags/11.1.22"
+                "reference": "tags/11.1.34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.11.1.22.zip"
+                "url": "https://downloads.wordpress.org/plugin/leadin.11.1.34.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1033,15 +1033,15 @@
         },
         {
             "name": "wpackagist-plugin/publishpress-checklists",
-            "version": "2.10.4",
+            "version": "2.11.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/publishpress-checklists/",
-                "reference": "tags/2.10.4"
+                "reference": "tags/2.11.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/publishpress-checklists.2.10.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/publishpress-checklists.2.11.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1409,12 +1409,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "80e489d7669e5f7a4c56ca250489a0450d3d3219"
+                "reference": "d8b471f69a97a8929180bbface097ac2b4e70d05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/80e489d7669e5f7a4c56ca250489a0450d3d3219",
-                "reference": "80e489d7669e5f7a4c56ca250489a0450d3d3219",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d8b471f69a97a8929180bbface097ac2b4e70d05",
+                "reference": "d8b471f69a97a8929180bbface097ac2b4e70d05",
                 "shasum": ""
             },
             "conflict": {
@@ -1452,7 +1452,7 @@
                 "athlon1600/php-proxy-app": "<=3",
                 "austintoddj/canvas": "<=3.4.2",
                 "auth0/wordpress": "<=4.6",
-                "automad/automad": "<=1.10.9",
+                "automad/automad": "<=2.0.0.0-alpha5",
                 "automattic/jetpack": "<9.8",
                 "awesome-support/awesome-support": "<=6.0.7",
                 "aws/aws-sdk-php": "<3.288.1",
@@ -1891,7 +1891,7 @@
                 "prestashop/ps_facetedsearch": "<3.4.1",
                 "prestashop/ps_linklist": "<3.1",
                 "privatebin/privatebin": "<1.4|>=1.5,<1.7.4",
-                "processwire/processwire": "<=3.0.210",
+                "processwire/processwire": "<=3.0.229",
                 "propel/propel": ">=2.0.0.0-alpha1,<=2.0.0.0-alpha7",
                 "propel/propel1": ">=1,<=1.7.1",
                 "pterodactyl/panel": "<1.11.6",
@@ -2211,20 +2211,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-18T00:16:06+00:00"
+            "time": "2024-07-19T23:04:29+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.10.1",
+            "version": "3.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "8f90f7a53ce271935282967f53d0894f8f1ff877"
+                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/8f90f7a53ce271935282967f53d0894f8f1ff877",
-                "reference": "8f90f7a53ce271935282967f53d0894f8f1ff877",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/86e5f5dd9a840c46810ebe5ff1885581c42a3017",
+                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017",
                 "shasum": ""
             },
             "require": {
@@ -2291,7 +2291,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-05-22T21:24:41+00:00"
+            "time": "2024-07-21T23:26:44+00:00"
         },
         {
             "name": "thetwopct/load-media-from-production",
