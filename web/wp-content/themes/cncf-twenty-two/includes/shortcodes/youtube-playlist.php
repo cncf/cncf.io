@@ -3,7 +3,7 @@
  * YouTube Playlist
  *
  * Usage:
- * [youtube_playlist playlist="members|endusers" count=4]
+ * [youtube_playlist playlist="members|endusers|kcds" count=4]
  *
  * @package WordPress
  * @subpackage cncf-theme
@@ -59,6 +59,10 @@ function add_playlist_shortcode( $atts ) {
 		case 'members':
 			$playlist_id    = 'PLj6h78yzYM2Mh0PGvD6jcn_MSNlvg4cWn';
 			$transient_name = 'cncf_member_playlist';
+			break;
+		case 'kcds':
+			$playlist_id    = 'PLj6h78yzYM2MX0nAAswpzJgGRyMZRbX_G';
+			$transient_name = 'cncf_kcd_playlist';
 			break;
 		default:
 			$playlist_id    = 'PLj6h78yzYM2MiFgpFi1ci4i94A50LeZ40';
