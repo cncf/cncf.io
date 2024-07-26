@@ -38,7 +38,7 @@ while ( have_posts() ) :
 		<?php
 			echo do_shortcode( '[event_banner hide_title=true]' );
 		?>
-		<h2>Other posts to check out</h2>
+		<h2>The latest from our blog</h2>
 		<div style="height:60px"
 			aria-hidden="true" class="wp-block-spacer">
 		</div>
