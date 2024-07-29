@@ -165,8 +165,8 @@
 	&-close__wrapper {
 		@media (max-width: 767px) {
 			position: sticky;
-			top: -14px;
-			width: calc(100% - 1em);
+			top: -16px;
+			width: calc(100% - .1em);
 			z-index: 99;
 			background-color: $white;
 			display: flex;
