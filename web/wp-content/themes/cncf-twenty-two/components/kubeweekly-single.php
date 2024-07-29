@@ -24,18 +24,14 @@
 		<div class="container wrap hero__text-overlay title-wrapper lf-grid">
 
 		<div class="col1">
-			<span>
-			<a class="parent-link has-text-color has-white-text" href="/kubeweekly/" title="Go to KubeWeeklys">KubeWeekly</a>
-			</span>
-
 			<h1 class="is-style-case-study-title"><?php the_title(); ?></h1>
-			<div style="height:20px"
+			<div style="height:30px"
 				aria-hidden="true" class="wp-block-spacer">
 			</div>
 			<p class="is-style-spaced-uppercase has-small-font-size">Published: <?php echo get_the_date(); ?></p>
 		</div>
 		<div class="col2">
-			<img width="210" src="/wp-content/themes/cncf-twenty-two/images/projects/kubernetes-icon-color.svg" alt="Kubernetes">
+			<img width="180" src="/wp-content/themes/cncf-twenty-two/images/projects/kubernetes-icon-color.svg" alt="Kubernetes">
 		</div>
 
 		</section>
