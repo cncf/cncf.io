@@ -28,6 +28,8 @@ function lf_landscape_render_callback( $attributes ) {
 		return;
 	}
 
+	wp_enqueue_script( 'landscape-embed-item', 'https://landscape.cncf.io/embed/embed-item.js' );
+
 	ob_start();
 
 	$iframe_styles = 'width: ' . $iframe_width . ' ; min-width: 100%;'; // phpcs:ignore.
@@ -66,6 +68,7 @@ scrolling="no"
 class="iframe-container <?php echo esc_html( $classes ); ?>"
 style="<?php echo $iframe_styles; // phpcs:ignore. ?>"
 ></iframe>
+<iframe id="embed-item" src="https://landscape.cncf.io/embed/embed-item.html" style="width:100%;height:100%;display:block;border:none;position:fixed;top:0;bottom:0;left:0;right:0;z-index:999999999;display:none;"></iframe>
 
 	<?php
 		$block_content = ob_get_clean();
