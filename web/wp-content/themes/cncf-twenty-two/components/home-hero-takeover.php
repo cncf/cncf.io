@@ -50,35 +50,34 @@ $metrics = LF_Utils::get_homepage_metrics();
 	<div class="home-hero__content">
 		<div class="container wrap">
 
-			<h1 class="home-hero__title">MAKE<br />
-				CLOUD NATIVE<br />
-				<span>UBIQUITOUS</span>
+			<h1 class="home-hero__title">JOIN US IN<br />
+				SALT LAKE CITY, UTAH<br />
+				<span>NOVEMBER 12-15</span>
 			</h1>
 
-			<h2 class="home-hero__description">CNCF is the open source,
-				vendor-neutral
-				hub of <strong>cloud native computing</strong>, hosting
-				projects like Kubernetes and Prometheus to make cloud native
-				universal and sustainable.</h2>
+			<h2 class="home-hero__description"><strong>The KubeCon + CloudNativeCon is the flagship conference
+				for cloud native.</strong><br/>
+				Buy before August 27 to save on tickets!
+			</h2>
 
 			<div class="horizontal-rule"></div>
 
 			<ul class="home-hero__metric_wrapper">
 				<li class="show-over-800">
-					<div class="wp-block-button"><a href="/about/who-we-are/" class="wp-block-button__link wp-element-button" title="Learn more about CNCF">About CNCF</a></div>
+					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-NA-2024&utm_content=hero" class="wp-block-button__link wp-element-button" title="Learn more about CNCF">Buy Tickets</a></div>
 				</li>
-				<li><?php echo esc_html( $metrics['projects'] ); ?>
-					<span>Projects</span>
+				<li>10K+
+					<span>Attendees</span>
 				</li>
-				<li><?php echo esc_html( round( $metrics['contributors'] / 1000 ) ); ?>K
-					<span>Contributors</span>
+				<li>200+
+					<span>Sponsors</span>
 				</li>
-				<li><?php echo esc_html( round( $metrics['contributions'] / 1000000, 1 ) ); ?>M
-					<span>Contributions</span>
+				<li>300+
+					<span>Sessions</span>
 				</li>
 				<li class="show-over-600">
-					<?php echo esc_html( $metrics['countries'] ); ?>
-					<span>Countries</span>
+						∞
+					<span>Swag</span>
 				</li>
 			</ul>
 		</div>
