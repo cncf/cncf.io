@@ -15,6 +15,8 @@ get_template_part( 'components/home-hero' );
 ?>
 <article class="container wrap">
 	<?php
+	get_template_part( 'components/home-cncf-about' );
+
 	get_template_part( 'components/home-projects' );
 
 	if ( have_posts() ) :

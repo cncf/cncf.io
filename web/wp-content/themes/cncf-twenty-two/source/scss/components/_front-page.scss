@@ -91,6 +91,7 @@
 		}
 	}
 	&__metric_wrapper {
+		list-style: none;
 		margin-top: min(8%, 30px);
 		@media (min-width: 600px) {
 			margin-top: min(8%, 50px);
@@ -344,9 +345,9 @@
 }
 
 .home-intro-box {
-    background: $white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
+	background: $white;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08);
+	border-radius: 10px;
 	border: 1px solid $gray-300;
 	letter-spacing: 0.02em;
 	line-height: 150%;
