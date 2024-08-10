@@ -55,17 +55,12 @@ $metrics = LF_Utils::get_homepage_metrics();
 				<span>NOVEMBER 12-15</span>
 			</h1>
 
-			<h2 class="home-hero__description"><strong>The KubeCon + CloudNativeCon is the flagship conference
-				for cloud native.</strong><br/>
+			<h2 class="home-hero__description">The <strong>KubeCon + CloudNativeCon</strong> is the flagship conference
+				for cloud native.<br/>
 				Buy before August 27 to save on tickets!
 			</h2>
 
-			<div class="horizontal-rule"></div>
-
-			<ul class="home-hero__metric_wrapper">
-				<li class="show-over-800">
-					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-NA-2024&utm_content=hero" class="wp-block-button__link wp-element-button" title="Learn more about CNCF">Buy Tickets</a></div>
-				</li>
+			<ul class="home-hero__metric_wrapper" style="margin-bottom: 40px;">
 				<li>10K+
 					<span>Attendees</span>
 				</li>
@@ -75,11 +70,19 @@ $metrics = LF_Utils::get_homepage_metrics();
 				<li>300+
 					<span>Sessions</span>
 				</li>
-				<li class="show-over-600">
+				<li>
 						∞
 					<span>Swag</span>
 				</li>
 			</ul>
+
+			<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-container-core-buttons-is-layout-2 wp-block-buttons-is-layout-flex">
+				<div class="wp-block-button show-over-600"><a class="wp-block-button__link has-text-align-center wp-element-button" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-NA-2024&utm_content=hero" title="Learn more about KubeCon + CloudNativeCon">Learn More</a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link has-text-align-center wp-element-button" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-NA-2024&utm_content=hero" title="Register for KubeCon + CloudNativeCon">Register</a></div>
+			</div>
+
+			<div style="height:70px;" aria-hidden="true" class="wp-block-spacer">
+			</div>
 		</div>
 	</div>
 </section>
