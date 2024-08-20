@@ -153,74 +153,38 @@ endif;
 							</div>
 							<div class="col3">
 								<ul class="menu">
-									<li class="lf-menu-title">Latest Tech Radars
+									<li class="lf-menu-title">Latest Project Journey Reports
 									</li>
 								</ul>
-
-								<?php
-								// Get all radars.
-								$tech_radars_all = LF_utils::get_tech_radars();
-
-								if ( is_array( $tech_radars_all ) ) :
-
-									$tech_radars = array_slice( $tech_radars_all, 0, 3 );
-									?>
 								<div class="columns-one">
 									<?php
-									foreach ( $tech_radars as $tech_radar ) :
+									$pj_reports = array(
+										'post_type'      => 'lf_report',
+										'post_status'    => array( 'publish' ),
+										'posts_per_page' => 3,
+										'orderby'        => 'date',
+										'order'          => 'DESC',
+										'tax_query'      => array(
+											array(
+												'taxonomy' => 'lf-report-type',
+												'field'    => 'slug',
+												'terms'    => 'project-journey',
+											),
+										),
+									);
 
-										$url         = 'https://radar.cncf.io/' . $tech_radar->key;
-										$radar_title = $tech_radar->name;
-										$date        = $tech_radar->date;
-										$image       = $tech_radar->image;
-										?>
+									$query = new WP_Query( $pj_reports );
 
-									<div class="main-menu-item radar-menu-item">
-										<div
-											class="main-menu-item__image-wrapper">
-
-											<a href="<?php echo esc_url( $url ); ?>"
-												title="<?php echo esc_html( $radar_title ); ?>"
-												class="main-menu-item__link">
-
-												<?php
-												if ( $image ) {
-													?>
-												<img src="<?php echo esc_url( $image ); ?>"
-													alt="<?php echo esc_html( $radar_title ); ?>"
-													class="main-menu-item__image"
-													loading="lazy">
-													<?php
-												} else {
-													// show generic.
-													Lf_Utils::display_responsive_images( $site_options['generic_thumb_id'], 'newsroom-388', '400px', 'main-menu-item__image' );
-												}
-												?>
-											</a>
-										</div>
-										<div
-											class="main-menu-item__text-wrapper">
-
-											<a class="author-category"
-												title="See more tech radars"
-												href="https://radar.cncf.io/">Tech
-												Radar</a>
-
-											<span class="main-menu-item__title">
-												<a href="<?php echo esc_url( $url ); ?>"
-													title="<?php echo esc_html( $radar_title ); ?>"><?php echo esc_html( $radar_title ); ?></a>
-											</span>
-											<span
-												class="main-menu-item__date"><?php echo esc_html( $date ); ?></span>
-										</div>
-									</div>
-										<?php
-								endforeach;
+									if ( $query->have_posts() ) :
+										while ( $query->have_posts() ) :
+											$query->the_post();
+											get_template_part( 'components/main-menu-item' );
+										endwhile;
+									endif;
+									wp_reset_postdata();
 									?>
 								</div>
-																<?php
-endif;
-								?>
+
 							</div>
 						</div>
 					</div>
