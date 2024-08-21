@@ -55,10 +55,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 				<span>NOVEMBER 12-15</span>
 			</h1>
 
-			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon</strong> is the flagship conference
-				for cloud native.<br/>
-				Buy before August 27 to save on tickets!
-			</h2>
+			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon</strong> is the flagship conference for cloud native.</h2>
 
 			<ul class="home-hero__metric_wrapper" style="margin-bottom: 40px;">
 				<li>10K+
