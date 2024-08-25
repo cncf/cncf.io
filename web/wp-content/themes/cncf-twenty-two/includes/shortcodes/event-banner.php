@@ -26,8 +26,9 @@ function show_event_in_menu() {
 		'meta_query'     => array(
 			array(
 				'key'     => 'lf_event_date_end',
-				'value'   => gmdate( 'Y-m-d' ),
+				'value'   => date_i18n( 'Y-m-d' ),
 				'compare' => '>=',
+				'type'    => 'DATETIME',
 			),
 			array(
 				'key'     => 'lf_event_logo',
