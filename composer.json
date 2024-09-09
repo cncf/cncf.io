@@ -26,7 +26,6 @@
     "rvtraveller/qs-composer-installer": "^1.1",
     "vlucas/phpdotenv": "^5.5.0",
     "wpackagist-plugin/autodescription": "^5",
-    "wpackagist-plugin/china-video-block": "^0.2.0",
     "wpackagist-plugin/code-syntax-block": "*",
     "wpackagist-plugin/flying-pages": "^2.0.8",
     "wpackagist-plugin/flying-scripts": "^1.1.7",
