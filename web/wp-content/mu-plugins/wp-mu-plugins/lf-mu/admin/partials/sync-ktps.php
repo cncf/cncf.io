@@ -88,6 +88,7 @@ $query = new WP_Query(
 	array(
 		'post_type'    => 'lf_ktp',
 		'post__not_in' => $synced_ids,
+		'posts_per_page'  => -1,
 	)
 );
 while ( $query->have_posts() ) {

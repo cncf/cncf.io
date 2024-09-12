@@ -29,7 +29,7 @@ $args      = array(
 	'meta_key'       => 'lf_event_bevy_import',
 	'meta_value'     => true,
 	'no_found_rows'  => true,
-	'posts_per_page' => 500,
+	'posts_per_page' => -1,
 	'post_status'    => 'any',
 );
 $the_query = new WP_Query( $args );
