@@ -145,18 +145,19 @@ foreach ( $people as $p ) {
 		$params['meta_input']['lf_person_website'] = $p->website;
 	}
 
-	$pp = get_posts(
-		array(
-			'post_type'              => 'lf_person',
-			'title'                  => $p->name,
-			'post_status'            => 'publish',
-			'numberposts'            => 1,
-			'update_post_term_cache' => false,
-			'update_post_meta_cache' => false,
-			'orderby'                => 'post_date ID',
-			'order'                  => 'ASC',
-		)
+	$args = array(
+		'post_type'              => 'lf_person',
+		'title'                  => $p->name,
+		'post_status'            => 'publish',
+		'numberposts'            => 1,
 	);
+
+	if ( $image_url ) {
+		$args['meta_value'] = $image_url;
+	}
+
+	$pp = get_posts( $args );
+
 	if ( ! empty( $pp ) ) {
 		$params['ID'] = $pp[0]->ID;
 	}
@@ -204,6 +205,7 @@ $query = new WP_Query(
 	array(
 		'post_type'    => 'lf_person',
 		'post__not_in' => $synced_ids,
+		'posts_per_page'  => -1,
 	)
 );
 while ( $query->have_posts() ) {
@@ -212,4 +214,6 @@ while ( $query->have_posts() ) {
 }
 
 // clear the site cache.
-pantheon_wp_clear_edge_all();
+if ( function_exists( 'pantheon_wp_clear_edge_all' ) ) {
+	pantheon_wp_clear_edge_all();
+}

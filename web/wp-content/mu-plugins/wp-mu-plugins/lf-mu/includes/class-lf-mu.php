@@ -204,7 +204,7 @@ class Lf_Mu {
 
 		// Example of how to run a sync locally on demand.
 		// $this->loader->add_action( 'init', $plugin_admin, 'sync_kcds' ); //phpcs:ignore.
-		// $this->loader->add_action( 'init', $plugin_admin, 'sync_projects' ); //phpcs:ignore.
+		// $this->loader->add_action( 'init', $plugin_admin, 'sync_people' ); //phpcs:ignore.
 
 		$this->loader->add_filter( 'dashboard_glance_items', $plugin_admin, 'custom_glance_items', 10, 1 );
 
