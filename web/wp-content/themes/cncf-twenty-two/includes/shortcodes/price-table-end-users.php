@@ -55,6 +55,9 @@ function add_end_user_pricing_shortcode() {
 						href="https://todogroup.org/">TODO Group</a> to meet
 					other open source organizations </li>
 				<li>End User Recruiting Booth at KubeCon + CloudNativeCon at Startup Level pricing</li>
+				<li>Programs for deterring patent trolls
+					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
+
 			</ul>
 		</div>
 
@@ -92,6 +95,9 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 					10 Linux Foundation Training coupons.  Additional terms apply.
 					(Cannot be combined with any other membership training benefits.)
 				</li>
+				<li>Additional programs for deterring patent trolls
+					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
+
 			</ul>
 		</div>
 
@@ -123,6 +129,9 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 				<li>Recruiting recommendations and DE&I guidance</li>
 				<li>Personalized executive engagement from LF leadership team</li>
 				<li>Exclusive live webinars with CNCF online programs</li>
+				<li>Additional programs for deterring patent trolls
+					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
+
 			</ul>
 		</div>
 

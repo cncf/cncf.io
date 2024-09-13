@@ -77,6 +77,8 @@ function add_members_pricing_shortcode( $atts ) {
 					quarterly CNCF New Member press release</li>
 				<li>Includes LF Associate
 					Membership</li>
+				<li>Programs for deterring patent trolls
+					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
 			</ul>
 		</div>
 
@@ -124,6 +126,8 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>Ten coupon codes good for any
 					eLearning, certification exam, or eLearning/exam bundle.
 					Additional terms apply. (Part of LF membership)</li>
+				<li>Additional programs for deterring patent trolls
+					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
 
 			</ul>
 		</div>
@@ -173,6 +177,8 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>50-seat annual Linux Foundation Training subscription OR 10 Linux Foundation Training coupons.
 					Additional terms apply. (Cannot be combined with any other membership training benefits.)
 				</li>
+				<li>Additional programs for deterring patent trolls
+					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
 			</ul>
 		</div>
 
@@ -214,6 +220,9 @@ function add_members_pricing_shortcode( $atts ) {
 					source program office</li>
 				<li>Exclusive live webinars with
 					CNCF online programs</li>
+				<li>Additional programs for deterring patent trolls
+					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
+
 			</ul>
 		</div>
 
