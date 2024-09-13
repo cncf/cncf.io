@@ -281,6 +281,10 @@ wp.blocks.registerBlockStyle(
 		label: 'Shaded',
 		name: 'shaded',
 	},
+	{
+		label: 'Shaded Full Width',
+		name: 'shaded-full',
+	},
 ]
 );
 
