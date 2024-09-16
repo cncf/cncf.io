@@ -26,14 +26,27 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 	public function register_routes() {
 		$version   = '1';
 		$namespace = 'lf/v' . $version;
-		$base      = 'sync_people';
+
 		register_rest_route(
 			$namespace,
-			'/' . $base,
+			'/sync_people',
 			array(
 				array(
 					'methods'             => WP_REST_Server::ALLMETHODS,
 					'callback'            => array( $this, 'sync_people' ),
+					'permission_callback' => '__return_true',
+					'args'                => array(),
+				),
+			)
+		);
+
+		register_rest_route(
+			$namespace,
+			'/get_hello',
+			array(
+				array(
+					'methods'             => WP_REST_Server::READABLE,
+					'callback'            => array( $this, 'get_hello' ),
 					'permission_callback' => '__return_true',
 					'args'                => array(),
 				),
@@ -65,5 +78,23 @@ class LF_MU_REST_Controller extends WP_REST_Controller {
 		}
 
 		return new WP_REST_Response( array( 'Success' ), 200 );
+	}
+
+	/**
+	 * Get hello bar data.
+	 *
+	 * @param WP_REST_Request $request Full data about the request.
+	 * @return WP_Error|WP_REST_Response
+	 */
+	public function get_hello( $request ) {
+		$items = array();
+
+		$options                    = get_option( 'lf-mu' );
+		$items['show_hello_bar']    = ( isset( $options['show_hello_bar'] ) && ! empty( $options['show_hello_bar'] ) ) ? 1 : 0;
+		$items['hello_bar_content'] = ( isset( $options['hello_bar_content'] ) && ! empty( $options['hello_bar_content'] ) ) ? $options['hello_bar_content'] : '';
+		$items['hello_bar_bg']      = ( isset( $options['hello_bar_bg'] ) && ! empty( $options['hello_bar_bg'] ) ) ? esc_attr( $options['hello_bar_bg'] ) : '';
+		$items['hello_bar_text']    = ( isset( $options['hello_bar_text'] ) && ! empty( $options['hello_bar_text'] ) ) ? esc_attr( $options['hello_bar_text'] ) : '';
+
+		return new WP_REST_Response( $items, 200 );
 	}
 }
