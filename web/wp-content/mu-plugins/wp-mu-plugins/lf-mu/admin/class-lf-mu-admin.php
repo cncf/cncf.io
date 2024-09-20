@@ -678,7 +678,10 @@ class Lf_Mu_Admin {
             z-index: 9999;
             transition: opacity 0.5s ease;
         ';
-        hB.innerHTML = `{$hello_bar_content}`;
+
+		const subdomain = window.location.hostname.split('.')[0];
+		const hbContent = `{$hello_bar_content}`;
+		hB.innerHTML = hbContent.replace(/utm_source=www/g, 'utm_source=' + subdomain );
 
         document.body.insertBefore(hB, document.body.firstChild);
 
