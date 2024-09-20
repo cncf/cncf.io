@@ -675,9 +675,50 @@ class Lf_Mu_Admin {
             letter-spacing: 0.24px;
             line-height: 1.15;
             opacity: 0;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
         ';
         hB.innerHTML = `{$hello_bar_content}`;
+
         document.body.insertBefore(hB, document.body.firstChild);
+
+        var fixedNav = document.querySelector('.td-navbar');
+
+        var isNavFixed = function() {
+            return window.getComputedStyle(fixedNav).position === 'fixed';
+        };
+
+        var updateNavPosition = function() {
+            if (!fixedNav) return;
+
+            if (isNavFixed()) {
+                var hBHeight = hB.offsetHeight;
+                fixedNav.style.top = hBHeight + 'px';
+                window.addEventListener('scroll', function() {
+                    if (isNavFixed()) {
+                        if (window.scrollY >= hBHeight) {
+                            fixedNav.style.top = '0';
+                        } else {
+                            fixedNav.style.top = hBHeight + 'px';
+                        }
+                    }
+                });
+            } else {
+                fixedNav.style.top = '0';
+            }
+        };
+
+        var resizeObserver = new ResizeObserver(function() {
+            updateNavPosition();
+        });
+
+        resizeObserver.observe(hB);
+
+        window.addEventListener('resize', function() {
+            updateNavPosition();
+        });
+
+        updateNavPosition();
 
         var style = document.createElement('style');
         style.innerHTML = `
@@ -688,16 +729,19 @@ class Lf_Mu_Admin {
                 text-underline-position: under;
                 transition: all 0.1s ease;
             }
-            .cncf-hello-bar a:hover {
+            .cncf-hello-bar a:hover, .cncf-hello-bar a:focus {
                 text-decoration: none;
                 text-underline-position: unset;
             }
         `;
         document.head.appendChild(style);
-		hB.style.opacity = '1';
-	});
+
+        setTimeout(function() {
+            hB.style.opacity = '1';
+        }, 5);
+    });
 })();
-		";
+";
 
 		$js_content = $this->minify_js( $js_content );
 
