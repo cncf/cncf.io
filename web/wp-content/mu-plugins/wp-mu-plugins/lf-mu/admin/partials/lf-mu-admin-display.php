@@ -209,7 +209,7 @@ if ( ! defined( 'WPINC' ) ) {
 							style="margin-bottom: 5px;">Use the below script on your websites to embed the Hello Bar.</p>
 						<input type="text" disabled style="width:100%;"
 							name="hello-bar-url"
-							value='<script src="<?php echo esc_attr( $hello_bar_js_file_url ); ?>"></script>' /> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>
+							value='<script defer src="<?php echo esc_attr( $hello_bar_js_file_url ); ?>"></script>' /> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>
 						<p
 							style="margin-top: 5px;">Note: A <i>change</i> to the Hello Bar settings is required to regenerate the JS file. To hide the Hello Bar on syndicated sites, choose to not Show the Hello Bar.</p>
 							<?php
