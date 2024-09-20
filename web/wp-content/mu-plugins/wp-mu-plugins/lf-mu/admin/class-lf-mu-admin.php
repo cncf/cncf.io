@@ -534,8 +534,6 @@ class Lf_Mu_Admin {
 				}
 				break;
 
-			// $yes = '<span class="dashicons dashicons-yes-alt">c</span>';
-
 			// displays if logo is present.
 			case 'lf_event_logo':
 				echo get_post_meta( $post_id, 'lf_event_logo', true ) ? '<span class="dashicons dashicons-yes-alt" style="color:green"></span>' : '<span class="dashicons dashicons-no-alt" style="color:red"></span>';
@@ -645,5 +643,87 @@ class Lf_Mu_Admin {
 	 */
 	public function set_post_preview_expiry() {
 		return 7 * DAY_IN_SECONDS;
+	}
+
+	/**
+	 * Generate Hello Bar JS for syndication.
+	 */
+	public function generate_hello_bar_js() {
+		$options           = get_option( 'lf-mu' );
+		$show_hello_bar    = ( isset( $options['show_hello_bar'] ) && ! empty( $options['show_hello_bar'] ) ) ? 1 : 0;
+		$hello_bar_content = isset( $options['hello_bar_content'] ) ? wp_kses_post( $options['hello_bar_content'] ) : '';
+		$hello_bar_text    = isset( $options['hello_bar_text'] ) ? esc_attr( $options['hello_bar_text'] ) : '#FFFFFF';
+		$hello_bar_bg      = isset( $options['hello_bar_bg'] ) ? esc_attr( $options['hello_bar_bg'] ) : '#0175e4';
+
+		$js_content = "
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        var hB = document.createElement('div');
+        hB.classList.add('cncf-hello-bar');
+        hB.style.cssText = '
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: {$hello_bar_bg};
+            color: {$hello_bar_text};
+            text-align: center;
+            padding: 6.4px;
+            font-family: Clarity City,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Roboto,Ubuntu,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+            font-weight: 400;
+            font-size: 14.4px;
+            letter-spacing: 0.24px;
+            line-height: 1.15;
+            opacity: 0;
+        ';
+        hB.innerHTML = `{$hello_bar_content}`;
+        document.body.insertBefore(hB, document.body.firstChild);
+
+        var style = document.createElement('style');
+        style.innerHTML = `
+            .cncf-hello-bar a {
+                color: inherit;
+                font-weight: 400;
+                text-decoration: underline;
+                text-underline-position: under;
+                transition: all 0.1s ease;
+            }
+            .cncf-hello-bar a:hover {
+                text-decoration: none;
+                text-underline-position: unset;
+            }
+        `;
+        document.head.appendChild(style);
+		hB.style.opacity = '1';
+	});
+})();
+		";
+
+		$js_content = $this->minify_js( $js_content );
+
+		// If we want to turn off the bar, remove all the content in it.
+		if ( ! $show_hello_bar ) {
+			$js_content = '';
+		}
+
+		$upload_dir = wp_upload_dir();
+		$file_path  = $upload_dir['basedir'] . '/hello-bar.js';
+
+		if ( file_put_contents( $file_path, $js_content ) === false ) {
+			error_log( 'Failed to write hello-bar.js' );
+		}
+	}
+
+	/**
+	 * Quick and dirty minify
+	 *
+	 * @param string $js Content.
+	 */
+	protected function minify_js( $js ) {
+		$js = preg_replace( '#/\*.*?\*/#s', '', $js );
+		$js = preg_replace( '#(?<!:)//.*#', '', $js );
+		$js = str_replace( array( "\n", "\r", "\t" ), '', $js );
+		$js = preg_replace( '/\s+/', ' ', $js );
+		return $js;
 	}
 }

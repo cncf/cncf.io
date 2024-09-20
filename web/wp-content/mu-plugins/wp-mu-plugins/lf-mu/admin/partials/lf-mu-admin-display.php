@@ -36,6 +36,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$hello_bar_text = ( isset( $options['hello_bar_text'] ) && ! empty( $options['hello_bar_text'] ) ) ? esc_attr( $options['hello_bar_text'] ) : '';
 
+		$upload_dir             = wp_upload_dir();
+		$hello_bar_js_file_path = $upload_dir['basedir'] . '/hello-bar.js';
+		$hello_bar_js_file_url  = $upload_dir['baseurl'] . '/hello-bar.js';
+
 		$header_image_id = ( isset( $options['header_image_id'] ) && ! empty( $options['header_image_id'] ) ) ? absint( $options['header_image_id'] ) : '';
 
 		$header_cta_text = ( isset( $options['header_cta_text'] ) && ! empty( $options['header_cta_text'] ) ) ? esc_attr( $options['header_cta_text'] ) : '';
@@ -189,6 +193,28 @@ if ( ! defined( 'WPINC' ) ) {
 								data-default-color="#0175E4"
 								value="<?php echo esc_attr( $hello_bar_bg ); ?>" />
 						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="hello_bar_syndication">Hello Bar
+							Syndication</label>
+					</th>
+					<td colspan="2">
+
+						<?php
+						if ( $hello_bar_js_file_path ) {
+							?>
+						<p
+							style="margin-bottom: 5px;">Use the below script on your websites to embed the Hello Bar.</p>
+						<input type="text" disabled style="width:100%;"
+							name="hello-bar-url"
+							value='<script src="<?php echo esc_attr( $hello_bar_js_file_url ); ?>"></script>' /> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>
+						<p
+							style="margin-top: 5px;">Note: A <i>change</i> to the Hello Bar settings is required to regenerate the JS file. To hide the Hello Bar on syndicated sites, choose to not Show the Hello Bar.</p>
+							<?php
+						}
+						?>
 					</td>
 				</tr>
 			</tbody>
@@ -509,7 +535,8 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="social_twitter">X (formerly Twitter)</label>
+					<th scope="row"><label for="social_twitter">X (formerly
+							Twitter)</label>
 					</th>
 					<td>
 						<input type="text" class="social_twitter regular-text"
@@ -606,12 +633,12 @@ if ( ! defined( 'WPINC' ) ) {
 							CTA Link</label>
 					</th>
 					<td>
-					<input type="text"
+						<input type="text"
 							class="promotion_cta_link regular-text"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_cta_link"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_cta_link]"
 							value="<?php echo esc_url( $promotion_cta_link ); ?>"
-							placeholder="https://training.linuxfoundation.org/cyber-monday-cncf-2023/" />						
+							placeholder="https://training.linuxfoundation.org/cyber-monday-cncf-2023/" />
 					</td>
 				</tr>
 			</tbody>
@@ -688,12 +715,12 @@ if ( ! defined( 'WPINC' ) ) {
 							CTA Link</label>
 					</th>
 					<td>
-					<input type="text"
+						<input type="text"
 							class="promotion_cta_link2 regular-text"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-promotion_cta_link2"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[promotion_cta_link2]"
 							value="<?php echo esc_url( $promotion_cta_link2 ); ?>"
-							placeholder="https://training.linuxfoundation.org/cyber-monday-cncf-2023/" />						
+							placeholder="https://training.linuxfoundation.org/cyber-monday-cncf-2023/" />
 					</td>
 				</tr>
 			</tbody>
@@ -789,33 +816,39 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="google_maps_api_key">Google Maps API
+					<th scope="row"><label for="google_maps_api_key">Google Maps
+							API
 							key for geocoding</label>
 					</th>
 					<td>
-						<input type="text" class="google_maps_api_key regular-text"
+						<input type="text"
+							class="google_maps_api_key regular-text"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-google_maps_api_key"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[google_maps_api_key]"
 							value="<?php echo esc_attr( $google_maps_api_key ); ?>" />
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="google_maps_api_public_key">Google Maps API
+					<th scope="row"><label
+							for="google_maps_api_public_key">Google Maps API
 							key for public map js</label>
 					</th>
 					<td>
-						<input type="text" class="google_maps_api_public_key regular-text"
+						<input type="text"
+							class="google_maps_api_public_key regular-text"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-google_maps_api_public_key"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[google_maps_api_public_key]"
 							value="<?php echo esc_attr( $google_maps_api_public_key ); ?>" />
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="community_api_key">Community Site API
+					<th scope="row"><label for="community_api_key">Community
+							Site API
 							key</label>
 					</th>
 					<td>
-						<input type="text" class="community_api_key regular-text"
+						<input type="text"
+							class="community_api_key regular-text"
 							id="<?php echo esc_html( $this->plugin_name ); ?>-community_api_key"
 							name="<?php echo esc_html( $this->plugin_name ); ?>[community_api_key]"
 							value="<?php echo esc_attr( $community_api_key ); ?>" />
