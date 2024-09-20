@@ -146,10 +146,10 @@ foreach ( $people as $p ) {
 	}
 
 	$args = array(
-		'post_type'              => 'lf_person',
-		'title'                  => $p->name,
-		'post_status'            => 'publish',
-		'numberposts'            => 1,
+		'post_type'   => 'lf_person',
+		'title'       => $p->name,
+		'post_status' => 'publish',
+		'numberposts' => 1,
 	);
 
 	if ( $image_url ) {
@@ -203,9 +203,9 @@ foreach ( $people as $p ) {
 // delete any People posts which aren't in $synced_ids.
 $query = new WP_Query(
 	array(
-		'post_type'    => 'lf_person',
-		'post__not_in' => $synced_ids,
-		'posts_per_page'  => -1,
+		'post_type'      => 'lf_person',
+		'post__not_in'   => $synced_ids,
+		'posts_per_page' => -1,
 	)
 );
 while ( $query->have_posts() ) {
