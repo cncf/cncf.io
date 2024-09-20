@@ -679,9 +679,9 @@ class Lf_Mu_Admin {
             transition: opacity 0.5s ease;
         ';
 
-		const subdomain = window.location.hostname.split('.')[0];
-		const hbContent = `{$hello_bar_content}`;
-		hB.innerHTML = hbContent.replace(/utm_source=www/g, 'utm_source=' + subdomain );
+        const subdomain = window.location.hostname.split('.')[0];
+        const hbContent = `{$hello_bar_content}`;
+        hB.innerHTML = hbContent.replace(/utm_source=www/g, 'utm_source=' + subdomain );
 
         document.body.insertBefore(hB, document.body.firstChild);
 
@@ -696,13 +696,13 @@ class Lf_Mu_Admin {
 
             if (isNavFixed()) {
                 var hBHeight = hB.offsetHeight;
-				if (window.scrollY > 0 && window.scrollY < hBHeight) {
-						fixedNav.style.top = hBHeight - window.scrollY + 'px';
-					} else if (window.scrollY > hBHeight) {
-						fixedNav.style.top = '0';
-					} else {
-					fixedNav.style.top = hBHeight + 'px';
-				}
+                if (window.scrollY > 0 && window.scrollY < hBHeight) {
+                        fixedNav.style.top = hBHeight - window.scrollY + 'px';
+                    } else if (window.scrollY > hBHeight) {
+                        fixedNav.style.top = '0';
+                    } else {
+                    fixedNav.style.top = hBHeight + 'px';
+                }
             } else {
                 fixedNav.style.top = '0';
             }
@@ -714,13 +714,8 @@ class Lf_Mu_Admin {
 
         resizeObserver.observe(hB);
 
-        window.addEventListener('resize', function() {
-            updateNavPosition();
-        });
-
-		window.addEventListener('scroll', function() {
-            updateNavPosition();
-        });
+        window.addEventListener('resize', () => updateNavPosition());
+        window.addEventListener('scroll', () => updateNavPosition());
 
         updateNavPosition();
 
