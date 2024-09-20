@@ -693,16 +693,13 @@ class Lf_Mu_Admin {
 
             if (isNavFixed()) {
                 var hBHeight = hB.offsetHeight;
-                fixedNav.style.top = hBHeight + 'px';
-                window.addEventListener('scroll', function() {
-                    if (isNavFixed()) {
-                        if (window.scrollY >= hBHeight) {
-                            fixedNav.style.top = '0';
-                        } else {
-                            fixedNav.style.top = hBHeight + 'px';
-                        }
-                    }
-                });
+				if (window.scrollY > 0 && window.scrollY < hBHeight) {
+						fixedNav.style.top = hBHeight - window.scrollY + 'px';
+					} else if (window.scrollY > hBHeight) {
+						fixedNav.style.top = '0';
+					} else {
+					fixedNav.style.top = hBHeight + 'px';
+				}
             } else {
                 fixedNav.style.top = '0';
             }
@@ -715,6 +712,10 @@ class Lf_Mu_Admin {
         resizeObserver.observe(hB);
 
         window.addEventListener('resize', function() {
+            updateNavPosition();
+        });
+
+		window.addEventListener('scroll', function() {
             updateNavPosition();
         });
 
