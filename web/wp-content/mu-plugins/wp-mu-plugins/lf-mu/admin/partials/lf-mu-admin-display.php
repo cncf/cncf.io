@@ -191,6 +191,21 @@ if ( ! defined( 'WPINC' ) ) {
 						</div>
 					</td>
 				</tr>
+
+				<tr>
+					<th scope="row">
+						<label for="hello_bar_syndication">Hello Bar
+							Syndication</label>
+					</th>
+					<td colspan="2">
+
+						<p
+							style="margin-bottom: 5px;">Use the below script on CNCF subsites to embed the Hello Bar.</p>
+						<input type="text" disabled style="width:100%;"
+							name="hello-bar-url"
+							value='<script defer src="https://www.cncf.io/wp-content/themes/cncf-twenty-two/source/js/on-demand/hello-bar-embed.js"></script>' /> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 		<hr />
