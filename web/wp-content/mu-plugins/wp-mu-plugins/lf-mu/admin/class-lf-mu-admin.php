@@ -257,10 +257,9 @@ class Lf_Mu_Admin {
 	 * Get all projects found in the content.
 	 *
 	 * @param string $content The content of the post.
+	 * @param array  $projects The projects to search for.
 	 */
-	private function get_project_tags( $content ) {
-		$projects = get_terms( 'lf-project' );
-
+	private function get_project_tags( $content, $projects ) {
 		$project_tags = array();
 		foreach ( $projects as $project ) {
 			if ( strpos( $content, $project->name ) !== false ) {
@@ -282,11 +281,17 @@ class Lf_Mu_Admin {
 				'category'       => 230,
 			)
 		);
+		$projects = get_terms( 'lf-project' );
 
 		foreach ( $myposts as $post ) {
-			$projects = $this->get_project_tags( $post->post_content );
+			if ( get_the_terms( $post->ID, 'lf-project' ) ) {
+				continue;
+			}
+
+			// only add projects if there are none already assigned.
+			$project_tags = $this->get_project_tags( $post->post_content, $projects );
 			if ( ! empty( $projects ) ) {
-				wp_set_post_terms( $post->ID, $projects, 'lf-project' );
+				wp_set_post_terms( $post->ID, $project_tags, 'lf-project' );
 			}
 		}
 		wp_reset_postdata();
