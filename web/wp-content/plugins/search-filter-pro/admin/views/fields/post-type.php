@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="widget" data-field-type="<?php echo $values['type']; ?>">
+<div class="widget" data-field-type="<?php echo esc_attr( $values['type'] ); ?>">
 	<div class="widget-top">
         <div class="widget-title-action">
             <a class="widget-control-edit hide-if-js">

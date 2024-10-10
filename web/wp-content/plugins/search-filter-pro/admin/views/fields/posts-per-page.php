@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="widget" data-field-type="<?php echo $values['type']; ?>">
+<div class="widget" data-field-type="<?php echo esc_attr( $values['type'] ); ?>">
 	
 	<div class="widget-top">
         <div class="widget-title-action">
@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<br class="clear" />
 		
-		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo $values['type']; ?>">
+		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo esc_attr( $values['type'] ); ?>">
 		
 		<div class="widget-control-actions">
 			<div class="alignleft">
