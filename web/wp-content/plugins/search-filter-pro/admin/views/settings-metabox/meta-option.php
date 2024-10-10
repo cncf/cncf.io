@@ -23,9 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							echo '<select class="meta_key" data-field-template-id="settings_post_meta[{0}][meta_key]" data-field-template-name="settings_post_meta[{0}][meta_key]">';
 							
 							foreach($all_meta_keys as $v){
-								//$data[] = $v->meta_key;
-								
-								echo '<option value="'.$v.'"'.$this->set_selected($values['meta_key'], $v, false).'>'.$v."</option>";
+								echo '<option value="'.esc_attr( $v ).'"'.$this->set_selected($values['meta_key'], $v, false).'>'.esc_html( $v )."</option>";
 							}
 							echo '</select>';
 						}

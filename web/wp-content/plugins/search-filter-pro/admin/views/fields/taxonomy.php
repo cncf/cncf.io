@@ -73,7 +73,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 											$first_tax_label = $taxonomy->label;
 										}
 										
-										echo '<option value="'.$taxonomy->name.'"'.$this->set_selected($values['taxonomy_name'], $taxonomy->name, false).'>'.$taxonomy->label." (".$taxonomy->name.")</option>";
+										echo '<option value="'.esc_attr( $taxonomy->name ).'"'.$this->set_selected($values['taxonomy_name'], $taxonomy->name, false).'>'.esc_html( $taxonomy->label )." (".esc_html( $taxonomy->name ).")</option>";
 										$i++;
 									}
 									

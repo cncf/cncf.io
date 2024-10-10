@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="clear"></div>
 		</div>
 		
-		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo $values['type']; ?>">
+		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo esc_attr( $values['type'] ); ?>">
 		
 		<br class="clear" />
 		

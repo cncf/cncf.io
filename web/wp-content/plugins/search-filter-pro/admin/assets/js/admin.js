@@ -168,11 +168,8 @@
 			
 			$rc_spinner.css("visibility", "hidden");
 			$rc_button.removeClass("disabled");
-						
 			if(data)
 			{
-				
-				//console.log(data);
 				if(data.status!="")
 				{
 					$cache_views.hide();
@@ -224,7 +221,6 @@
 						
 						if(((data.status == "inprogress")||(data.status == "termcache"))&& (!data.restart))
 						{
-							//console.log(data);
 							$('#cache-info .notice-rc-error').show();
 						}
 						else if((data.restart==true)&&(data.status!="ready"))
@@ -320,8 +316,6 @@
 				$.get(ajaxurl, {action: 'cache_progress_manual'}, function(data){
 
 					log_info("cache", "SF: Data received..");
-					console.log("cache", "SF: Data received..");
-					console.log(data);
 
 					var locked_str = "";
 					if(data.restart==true)
@@ -345,8 +339,6 @@
 				$.get(ajaxurl, {action: 'cache_restart_manual'}, function(data){
 
 					log_info("cache", "SF: Data received..");
-					console.log("cache", "SF: Data received..");
-					console.log(data);
 
 					var locked_str = "";
 					if(data.restart==true)
