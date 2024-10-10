@@ -254,7 +254,7 @@ class Lf_Mu_Admin {
 	}
 
 	/**
-	 * Get all projects found in the content.
+	 * Get all projects found more than once in the content.
 	 *
 	 * @param string $content The content of the post.
 	 * @param array  $projects The projects to search for.
@@ -262,7 +262,7 @@ class Lf_Mu_Admin {
 	private function get_project_tags( $content, $projects ) {
 		$project_tags = array();
 		foreach ( $projects as $project ) {
-			if ( strpos( $content, $project->name ) !== false ) {
+			if ( substr_count( $content, $project->name ) > 1 ) {
 				$project_tags[] = $project->name;
 			}
 		}
