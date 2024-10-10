@@ -38,7 +38,7 @@ if ( ! class_exists( 'ACF_Admin_UI_Options_Pages' ) ) :
 		/**
 		 * If this is a pro feature or not.
 		 *
-		 * @var bool
+		 * @var boolean
 		 */
 		public $is_pro_feature = true;
 
@@ -46,8 +46,6 @@ if ( ! class_exists( 'ACF_Admin_UI_Options_Pages' ) ) :
 		 * Constructor.
 		 *
 		 * @since   6.2
-		 *
-		 * @return  void
 		 */
 		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
@@ -58,8 +56,6 @@ if ( ! class_exists( 'ACF_Admin_UI_Options_Pages' ) ) :
 		 * Current screen actions for the post types list admin page.
 		 *
 		 * @since   6.1
-		 *
-		 * @return  void
 		 */
 		public function current_screen() {
 			// Bail early if not post types admin page.
@@ -116,10 +112,10 @@ if ( ! class_exists( 'ACF_Admin_UI_Options_Pages' ) ) :
 			}
 
 			$columns = array(
-				'cb'               => $_columns['cb'],
-				'title'            => $_columns['title'],
-				'acf-description'  => __( 'Description', 'acf' ),
-				'acf-key'          => __( 'Key', 'acf' ),
+				'cb'              => $_columns['cb'],
+				'title'           => $_columns['title'],
+				'acf-description' => __( 'Description', 'acf' ),
+				'acf-key'         => __( 'Key', 'acf' ),
 			);
 
 			if ( acf_get_local_json_files( $this->post_type ) ) {
@@ -148,7 +144,7 @@ if ( ! class_exists( 'ACF_Admin_UI_Options_Pages' ) ) :
 
 				// Description.
 				case 'acf-description':
-					if ( ! empty( $post['description'] ) && is_string( $post['description'] ) ) {
+					if ( ! empty( $post['description'] ) && ( is_string( $post['description'] ) || is_numeric( $post['description'] ) ) ) {
 						echo '<span class="acf-description">' . acf_esc_html( $post['description'] ) . '</span>';
 					} else {
 						echo '<span class="acf-emdash" aria-hidden="true">—</span>';
@@ -168,8 +164,8 @@ if ( ! class_exists( 'ACF_Admin_UI_Options_Pages' ) ) :
 		 *
 		 * @since 6.1
 		 *
-		 * @param string $action The action being performed.
-		 * @param int    $count  The number of items the action was performed on.
+		 * @param string  $action The action being performed.
+		 * @param integer $count  The number of items the action was performed on.
 		 * @return string
 		 */
 		public function get_action_notice_text( $action, $count = 1 ) {
@@ -209,10 +205,8 @@ if ( ! class_exists( 'ACF_Admin_UI_Options_Pages' ) ) :
 
 			return $text;
 		}
-
 	}
 
 	// Instantiate.
 	acf_new_instance( 'ACF_Admin_UI_Options_Pages' );
-
 endif; // Class exists check.

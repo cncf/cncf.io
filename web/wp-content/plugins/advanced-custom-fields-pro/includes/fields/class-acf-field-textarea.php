@@ -5,19 +5,16 @@ if ( ! class_exists( 'acf_field_textarea' ) ) :
 	class acf_field_textarea extends acf_field {
 
 
-		/*
-		*  initialize
-		*
-		*  This function will setup the field type data
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will setup the field type data
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
 		function initialize() {
 
 			// vars
@@ -33,22 +30,18 @@ if ( ! class_exists( 'acf_field_textarea' ) ) :
 				'placeholder'   => '',
 				'rows'          => '',
 			);
-
 		}
 
 
-		/*
-		*  render_field()
-		*
-		*  Create the HTML interface for your field
-		*
-		*  @param   $field - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
-
+		/**
+		 * Create the HTML interface for your field
+		 *
+		 * @param   $field - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 */
 		function render_field( $field ) {
 
 			// vars
@@ -80,22 +73,19 @@ if ( ! class_exists( 'acf_field_textarea' ) ) :
 
 			// return
 			acf_textarea_input( $atts );
-
 		}
 
 
-		/*
-		*  render_field_settings()
-		*
-		*  Create extra options for your field. This is rendered when editing a field.
-		*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-		*
-		*  @param   $field  - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
+		/**
+		 * Create extra options for your field. This is rendered when editing a field.
+		 * The value of $field['name'] can be used (like bellow) to save extra data to the $field
+		 *
+		 * @param   $field  - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 */
 		function render_field_settings( $field ) {
 			acf_render_field_setting(
 				$field,
@@ -175,40 +165,31 @@ if ( ! class_exists( 'acf_field_textarea' ) ) :
 			);
 		}
 
-		/*
-		*  format_value()
-		*
-		*  This filter is applied to the $value after it is loaded from the db and before it is returned to the template
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value (mixed) the value which was loaded from the database
-		*  @param   $post_id (mixed) the $post_id from which the value was loaded
-		*  @param   $field (array) the field array holding all the field options
-		*
-		*  @return  $value (mixed) the modified value
-		*/
-
+		/**
+		 * This filter is applied to the $value after it is loaded from the db and before it is returned to the template
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value (mixed) the value which was loaded from the database
+		 * @param   $post_id (mixed) the post_id from which the value was loaded
+		 * @param   $field (array) the field array holding all the field options
+		 *
+		 * @return  $value (mixed) the modified value
+		 */
 		function format_value( $value, $post_id, $field ) {
 
 			// bail early if no value or not for template
 			if ( empty( $value ) || ! is_string( $value ) ) {
-
 				return $value;
-
 			}
 
 			// new lines
 			if ( $field['new_lines'] == 'wpautop' ) {
-
 				$value = wpautop( $value );
-
 			} elseif ( $field['new_lines'] == 'br' ) {
-
 				$value = nl2br( $value );
-
 			}
 
 			// return
@@ -260,7 +241,4 @@ if ( ! class_exists( 'acf_field_textarea' ) ) :
 
 	// initialize
 	acf_register_field_type( 'acf_field_textarea' );
-
 endif; // class_exists check
-
-

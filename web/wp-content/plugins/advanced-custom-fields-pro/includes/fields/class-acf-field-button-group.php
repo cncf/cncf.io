@@ -6,17 +6,16 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 
 
 		/**
-		 *  initialize()
+		 * initialize()
 		 *
-		 *  This function will setup the field type data
+		 * This function will setup the field type data
 		 *
-		 *  @date    18/9/17
-		 *  @since   5.6.3
+		 * @date    18/9/17
+		 * @since   5.6.3
 		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @param   n/a
+		 * @return  n/a
 		 */
-
 		function initialize() {
 
 			// vars
@@ -33,23 +32,17 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 				'return_format' => 'value',
 				'layout'        => 'horizontal',
 			);
-
 		}
 
 
 		/**
-		 *  render_field()
+		 * Creates the field's input HTML
 		 *
-		 *  Creates the field's input HTML
+		 * @since   5.6.3
 		 *
-		 *  @date    18/9/17
-		 *  @since   5.6.3
-		 *
-		 *  @param   array $field The field settings array
-		 *  @return  n/a
+		 * @param   array $field The field settings array
 		 */
-
-		function render_field( $field ) {
+		public function render_field( $field ) {
 
 			// vars
 			$html     = '';
@@ -78,7 +71,6 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 					'label'   => $_label,
 					'checked' => $checked,
 				);
-
 			}
 
 			// maybe select initial value
@@ -100,7 +92,7 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 			$html .= acf_get_hidden_input( array( 'name' => $field['name'] ) );
 
 			// open
-			$html .= '<div ' . acf_esc_attr( $div ) . '>';
+			$html .= '<div ' . acf_esc_attrs( $div ) . '>';
 
 			// loop
 			foreach ( $buttons as $button ) {
@@ -114,28 +106,26 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 
 				// append
 				$html .= acf_get_radio_input( $button );
-
 			}
 
 			// close
 			$html .= '</div>';
 
 			// return
-			echo $html;
-
+			echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- safe HTML, escaped by input building functions.
 		}
 
 
 		/**
-		 *  render_field_settings()
+		 * render_field_settings()
 		 *
-		 *  Creates the field's settings HTML
+		 * Creates the field's settings HTML
 		 *
-		 *  @date    18/9/17
-		 *  @since   5.6.3
+		 * @date    18/9/17
+		 * @since   5.6.3
 		 *
-		 *  @param   array $field The field settings array
-		 *  @return  n/a
+		 * @param   array $field The field settings array
+		 * @return  n/a
 		 */
 		function render_field_settings( $field ) {
 			// Encode choices (convert from array).
@@ -176,7 +166,6 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 					),
 				)
 			);
-
 		}
 
 		/**
@@ -225,82 +214,67 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 			);
 		}
 
-		/*
-		*  update_field()
-		*
-		*  This filter is appied to the $field before it is saved to the database
-		*
-		*  @date    18/9/17
-		*  @since   5.6.3
-		*
-		*  @param   array $field The field array holding all the field options
-		*  @return  $field
-		*/
-
+		/**
+		 * This filter is appied to the $field before it is saved to the database
+		 *
+		 * @date    18/9/17
+		 * @since   5.6.3
+		 *
+		 * @param   array $field The field array holding all the field options
+		 * @return  $field
+		 */
 		function update_field( $field ) {
 
 			return acf_get_field_type( 'radio' )->update_field( $field );
 		}
 
 
-		/*
-		*  load_value()
-		*
-		*  This filter is appied to the $value after it is loaded from the db
-		*
-		*  @date    18/9/17
-		*  @since   5.6.3
-		*
-		*  @param   mixed   $value      The value found in the database
-		*  @param   mixed   $post_id    The post ID from which the value was loaded from
-		*  @param   array   $field      The field array holding all the field options
-		*  @return  $value
-		*/
-
+		/**
+		 * This filter is appied to the $value after it is loaded from the db
+		 *
+		 * @date    18/9/17
+		 * @since   5.6.3
+		 *
+		 * @param   mixed $value   The value found in the database
+		 * @param   mixed $post_id The post ID from which the value was loaded from
+		 * @param   array $field   The field array holding all the field options
+		 * @return  $value
+		 */
 		function load_value( $value, $post_id, $field ) {
 
 			return acf_get_field_type( 'radio' )->load_value( $value, $post_id, $field );
-
 		}
 
 
-		/*
-		*  translate_field
-		*
-		*  This function will translate field settings
-		*
-		*  @date    18/9/17
-		*  @since   5.6.3
-		*
-		*  @param   array $field The field array holding all the field options
-		*  @return  $field
-		*/
-
+		/**
+		 * This function will translate field settings
+		 *
+		 * @date    18/9/17
+		 * @since   5.6.3
+		 *
+		 * @param   array $field The field array holding all the field options
+		 * @return  $field
+		 */
 		function translate_field( $field ) {
 
 			return acf_get_field_type( 'radio' )->translate_field( $field );
-
 		}
 
 
-		/*
-		*  format_value()
-		*
-		*  This filter is appied to the $value after it is loaded from the db and before it is returned to the template
-		*
-		*  @date    18/9/17
-		*  @since   5.6.3
-		*
-		*  @param   mixed   $value      The value found in the database
-		*  @param   mixed   $post_id    The post ID from which the value was loaded from
-		*  @param   array   $field      The field array holding all the field options
-		*  @return  $value
-		*/
-
+		/**
+		 * This filter is appied to the $value after it is loaded from the db and before it is returned to the template
+		 *
+		 * @date    18/9/17
+		 * @since   5.6.3
+		 *
+		 * @param   mixed $value   The value found in the database
+		 * @param   mixed $post_id The post ID from which the value was loaded from
+		 * @param   array $field   The field array holding all the field options
+		 * @return  $value
+		 */
 		function format_value( $value, $post_id, $field ) {
 
 			return acf_get_field_type( 'radio' )->format_value( $value, $post_id, $field );
-
 		}
 
 		/**
@@ -326,13 +300,9 @@ if ( ! class_exists( 'acf_field_button_group' ) ) :
 
 			return $schema;
 		}
-
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_button_group' );
-
 endif; // class_exists check
-
-

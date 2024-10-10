@@ -11,8 +11,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 /**
  * Extends acf.models.Modal to create the field browser.
  *
@@ -104,7 +104,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       const iconName = fieldType.name.replaceAll('_', '-');
       return `
 			<a href="#" class="acf-field-type" data-field-type="${fieldType.name}">
-				${fieldType.pro && !acf.get('is_pro') ? '<span class="field-type-requires-pro"><i class="acf-icon acf-icon-lock"></i>PRO</span>' : fieldType.pro ? '<span class="field-type-requires-pro">PRO</span>' : ''}
+				${fieldType.pro && !acf.get('is_pro') ? '<span class="field-type-requires-pro not-pro"></span>' : fieldType.pro ? '<span class="field-type-requires-pro"></span>' : ''}
 				<i class="field-type-icon field-type-icon-${iconName}"></i>
 				<span class="field-type-label">${fieldType.label}</span>
 			</a>
@@ -142,9 +142,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         this.$el.find('.field-type-image').hide();
       }
       const isPro = acf.get('is_pro');
+      const isActive = acf.get('isLicenseActive');
       const $upgateToProButton = this.$el.find('.acf-btn-pro');
       const $upgradeToUnlockButton = this.$el.find('.field-type-upgrade-to-unlock');
-      if (args.pro && !isPro) {
+      if (args.pro && (!isPro || !isActive)) {
         $upgateToProButton.show();
         $upgateToProButton.attr('href', $upgateToProButton.data('urlBase') + fieldType);
         $upgradeToUnlockButton.show();
@@ -565,6 +566,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     $tabLabel: function () {
       return this.fieldObject.$el.find('.conditional-logic-badge');
     },
+    $conditionalValueSelect: function () {
+      return this.$('.condition-rule-value');
+    },
     open: function () {
       var $div = this.$control();
       $div.show();
@@ -704,51 +708,57 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       if (!this.ruleData('field') || !this.ruleData('operator')) {
         return;
       }
-
-      // vars
       var $select = this.$input('value');
       var $td = this.$td('value');
-      var val = $select.val();
+      var currentVal = $select.val();
+      var savedValue = this.$rule[0].getAttribute('data-value');
 
       // get selected field
       var $field = acf.findFieldObject(this.ruleData('field'));
       var field = acf.getFieldObject($field);
-
       // get selected field conditions
       var conditionTypes = acf.getConditionTypes({
         fieldType: field.getType(),
         operator: this.ruleData('operator')
       });
-
-      // html
       var conditionType = conditionTypes[0].prototype;
       var choices = conditionType.choices(field);
-
-      // create html: array
-      if (choices instanceof Array) {
-        var $newSelect = $('<select></select>');
+      let $newSelect;
+      if (choices instanceof jQuery && !!choices.data('acfSelect2Props')) {
+        $newSelect = $select.clone();
+        // If converting from a disabled input, we need to convert it to an active select.
+        if ($newSelect.is('input')) {
+          var classes = $select.attr('class');
+          const $rebuiltSelect = $('<select></select>').addClass(classes).val(savedValue);
+          $newSelect = $rebuiltSelect;
+        }
+        acf.addAction('acf_conditional_value_rendered', function () {
+          acf.newSelect2($newSelect, choices.data('acfSelect2Props'));
+        });
+      } else if (choices instanceof Array) {
+        this.$conditionalValueSelect().removeClass('select2-hidden-accessible');
+        $newSelect = $('<select></select>');
         acf.renderSelect($newSelect, choices);
-
-        // create html: string (<input />)
       } else {
-        var $newSelect = $(choices);
+        this.$conditionalValueSelect().removeClass('select2-hidden-accessible');
+        $newSelect = $(choices);
       }
 
       // append
       $select.detach();
       $td.html($newSelect);
 
-      // copy attrs
       // timeout needed to avoid browser bug where "disabled" attribute is not applied
       setTimeout(function () {
         ['class', 'name', 'id'].map(function (attr) {
           $newSelect.attr(attr, $select.attr(attr));
         });
+        $select.val(savedValue);
+        acf.doAction('acf_conditional_value_rendered');
       }, 0);
-
       // select existing value (if not a disabled input)
       if (!$newSelect.prop('disabled')) {
-        acf.val($newSelect, val, true);
+        acf.val($newSelect, currentVal, true);
       }
 
       // set
@@ -772,6 +782,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
       // remove all tr's except the first one
       $group2.find('tr').not(':first').remove();
+
+      // Find the remaining tr and render
+      var $tr = $group2.find('tr');
+      this.renderRule($tr);
 
       // save field
       this.fieldObject.save();
@@ -928,7 +942,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       // The menu order
       //menu_order: 0
     },
-
     setup: function ($field) {
       // set $el
       this.$el = $field;
@@ -1129,15 +1142,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         templateResult: function (selection) {
           if (selection.loading || selection.element && selection.element.nodeName === 'OPTGROUP') {
             var $selection = $('<span class="acf-selection"></span>');
-            $selection.html(acf.escHtml(selection.text));
+            $selection.html(acf.strEscape(selection.text));
           } else {
-            var $selection = $('<i class="field-type-icon field-type-icon-' + selection.id.replaceAll('_', '-') + '"></i><span class="acf-selection has-icon">' + acf.escHtml(selection.text) + '</span>');
+            var $selection = $('<i class="field-type-icon field-type-icon-' + selection.id.replaceAll('_', '-') + '"></i><span class="acf-selection has-icon">' + acf.strEscape(selection.text) + '</span>');
           }
           $selection.data('element', selection.element);
           return $selection;
         },
         templateSelection: function (selection) {
-          var $selection = $('<i class="field-type-icon field-type-icon-' + selection.id.replaceAll('_', '-') + '"></i><span class="acf-selection has-icon">' + acf.escHtml(selection.text) + '</span>');
+          var $selection = $('<i class="field-type-icon field-type-icon-' + selection.id.replaceAll('_', '-') + '"></i><span class="acf-selection has-icon">' + acf.strEscape(selection.text) + '</span>');
           $selection.data('element', selection.element);
           return $selection;
         }
@@ -1153,8 +1166,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       this.fieldTypeSelect2.$el.parent().on('keydown', '.select2-selection.select2-selection--single', this.onKeyDownSelect);
     },
     addProFields: function () {
-      // Make sure we're only running this on free version.
-      if (acf.get('is_pro')) {
+      // Don't run if we have a valid license.
+      if (acf.get('is_pro') && acf.get('isLicenseActive')) {
         return;
       }
 
@@ -1169,7 +1182,20 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       const $contentGroup = $fieldTypeSelect.find('optgroup option[value="image"]').parent();
       for (const [name, field] of Object.entries(PROFieldTypes)) {
         const $useGroup = field.category === 'content' ? $contentGroup : $layoutGroup;
-        $useGroup.append('<option value="null" disabled="disabled">' + field.label + ' (' + acf.__('PRO Only') + ')</option>');
+        const $existing = $useGroup.children('[value="' + name + '"]');
+        const label = `${acf.strEscape(field.label)} (${acf.strEscape(acf.__('PRO Only'))})`;
+        if ($existing.length) {
+          // Already added by pro, update existing option.
+          $existing.text(label);
+
+          // Don't disable if already selected (prevents re-save from overriding field type).
+          if ($fieldTypeSelect.val() !== name) {
+            $existing.attr('disabled', 'disabled');
+          }
+        } else {
+          // Append new disabled option.
+          $useGroup.append(`<option value="null" disabled="disabled">${label}</option>`);
+        }
       }
       $fieldTypeSelect.addClass('acf-free-field-type');
     },
@@ -1195,7 +1221,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       $handle.find('.li-field-label strong a').html(label);
 
       // update name
-      $handle.find('.li-field-name').html(this.makeCopyable(name));
+      $handle.find('.li-field-name').html(this.makeCopyable(acf.strSanitize(name)));
 
       // update type
       const iconName = acf.strSlugify(this.getType());
@@ -1216,17 +1242,32 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     },
     onClickCopy: function (e) {
       e.stopPropagation();
-      if (!navigator.clipboard) return;
-      navigator.clipboard.writeText($(e.target).text()).then(() => {
-        $(e.target).addClass('copied');
+      if (!navigator.clipboard || $(e.target).is('input')) return;
+
+      // Find the value to copy depending on input or text elements.
+      let copyValue;
+      if ($(e.target).hasClass('acf-input-wrap')) {
+        copyValue = $(e.target).find('input').first().val();
+      } else {
+        copyValue = $(e.target).text().trim();
+      }
+      navigator.clipboard.writeText(copyValue).then(() => {
+        $(e.target).closest('.copyable').addClass('copied');
         setTimeout(function () {
-          $(e.target).removeClass('copied');
+          $(e.target).closest('.copyable').removeClass('copied');
         }, 2000);
       });
     },
     onClickEdit: function (e) {
-      $target = $(e.target);
-      if ($target.parent().hasClass('row-options') && !$target.hasClass('edit-field')) return;
+      const $target = $(e.target);
+
+      // Bail out if a pro field without a license.
+      if (acf.get('is_pro') && !acf.get('isLicenseActive') && !acf.get('isLicenseExpired') && acf.get('PROFieldTypes').hasOwnProperty(this.getType())) {
+        return;
+      }
+      if ($target.parent().hasClass('row-options') && !$target.hasClass('edit-field')) {
+        return;
+      }
       this.isOpen() ? this.close() : this.open();
     },
     onChangeSettingsTab: function () {
@@ -1387,8 +1428,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     },
     onChangeLabel: function (e, $el) {
       // set
-      var label = $el.val();
-      this.set('label', label);
+      const label = $el.val();
+      const safeLabel = acf.encode(label);
+      this.set('label', safeLabel);
 
       // render name
       if (this.prop('name') == '') {
@@ -1397,12 +1439,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       }
     },
     onChangeName: function (e, $el) {
-      // set
-      var name = $el.val();
-      this.set('name', name);
-
-      // error
-      if (name.substr(0, 6) === 'field_') {
+      const sanitizedName = acf.strSanitize($el.val(), false);
+      $el.val(sanitizedName);
+      this.set('name', sanitizedName);
+      if (sanitizedName.startsWith('field_')) {
         alert(acf.__('The string "field_" may not be used at the start of a field name'));
       }
     },
@@ -2298,8 +2338,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       this.updateGroupsClass();
     },
     addProLocations: function () {
-      // Make sure we're only running this on free version.
-      if (acf.get('is_pro')) {
+      // Make sure we're only running if we don't have a valid license.
+      if (acf.get('is_pro') && acf.get('isLicenseActive')) {
         return;
       }
 
@@ -2307,8 +2347,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       const PROLocationTypes = acf.get('PROLocationTypes');
       if (typeof PROLocationTypes !== 'object') return;
       const $formsGroup = this.$el.find('select.refresh-location-rule').find('optgroup[label="Forms"]');
+      const proOnlyText = ` (${acf.__('PRO Only')})`;
       for (const [key, name] of Object.entries(PROLocationTypes)) {
-        $formsGroup.append('<option value="null" disabled="disabled">' + name + ' (' + acf.__('PRO Only') + ')</option>');
+        if (!acf.get('is_pro')) {
+          $formsGroup.append(`<option value="null" disabled="disabled">${acf.strEscape(name)}${acf.strEscape(proOnlyText)}</option>`);
+        } else {
+          $formsGroup.find('option[value=' + key + ']').not(':selected').prop('disabled', 'disabled').text(`${acf.strEscape(name)}${acf.strEscape(proOnlyText)}`);
+        }
+      }
+      const $addNewOptionsPage = this.$el.find('select.location-rule-value option[value=add_new_options_page]');
+      if ($addNewOptionsPage.length) {
+        $addNewOptionsPage.attr('disabled', 'disabled');
       }
     },
     onClickAddRule: function (e, $el) {
@@ -2353,6 +2402,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
       // temp disable
       acf.disable($rule.find('td.value'));
+      const self = this;
 
       // ajax
       $.ajax({
@@ -2363,6 +2413,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         success: function (html) {
           if (!html) return;
           $rule.replaceWith(html);
+          self.addProLocations();
         }
       });
     },
@@ -2722,8 +2773,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       acf.add_filter('select2_ajax_data', this.setBidirectionalSelect2AjaxDataArgs);
     },
     setBidirectionalSelect2Args: function (args, $select, settings, field, instance) {
-      if (field.data('key') !== 'bidirectional_target') return args;
+      var _field$data;
+      if ((field === null || field === void 0 || (_field$data = field.data) === null || _field$data === void 0 ? void 0 : _field$data.call(field, 'key')) !== 'bidirectional_target') return args;
       args.dropdownCssClass = 'field-type-select-results';
+
+      // Check for a full modern version of select2 like the one provided by ACF.
+      try {
+        $.fn.select2.amd.require('select2/compat/dropdownCss');
+      } catch (err) {
+        console.warn('ACF was not able to load the full version of select2 due to a conflicting version provided by another plugin or theme taking precedence. Skipping styling of bidirectional settings.');
+        delete args.dropdownCssClass;
+      }
       args.templateResult = function (selection) {
         if ('undefined' !== typeof selection.element) {
           return selection;
@@ -3000,20 +3060,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toPropertyKey.js */ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js");
 
-function _defineProperty(obj, key, value) {
-  key = (0,_toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__["default"])(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
+function _defineProperty(e, r, t) {
+  return (r = (0,_toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__["default"])(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
 }
+
 
 /***/ }),
 
@@ -3026,20 +3081,21 @@ function _defineProperty(obj, key, value) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _toPrimitive)
+/* harmony export */   "default": () => (/* binding */ toPrimitive)
 /* harmony export */ });
 /* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
 
-function _toPrimitive(input, hint) {
-  if ((0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if ((0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(res) !== "object") return res;
+function toPrimitive(t, r) {
+  if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (hint === "string" ? String : Number)(input);
+  return ("string" === r ? String : Number)(t);
 }
+
 
 /***/ }),
 
@@ -3052,16 +3108,17 @@ function _toPrimitive(input, hint) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _toPropertyKey)
+/* harmony export */   "default": () => (/* binding */ toPropertyKey)
 /* harmony export */ });
 /* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
 /* harmony import */ var _toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js");
 
 
-function _toPropertyKey(arg) {
-  var key = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(arg, "string");
-  return (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(key) === "symbol" ? key : String(key);
+function toPropertyKey(t) {
+  var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
+  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
 }
+
 
 /***/ }),
 
@@ -3076,15 +3133,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _typeof)
 /* harmony export */ });
-function _typeof(obj) {
+function _typeof(o) {
   "@babel/helpers - typeof";
 
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
-    return typeof obj;
-  } : function (obj) {
-    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-  }, _typeof(obj);
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
 }
+
 
 /***/ })
 

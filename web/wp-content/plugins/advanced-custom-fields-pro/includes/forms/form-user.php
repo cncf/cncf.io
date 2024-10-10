@@ -12,19 +12,16 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		var $view = '';
 
 
-		/*
-		*  __construct
-		*
-		*  This function will setup the class functionality
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will setup the class functionality
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
 		function __construct() {
 
 			// enqueue
@@ -47,17 +44,16 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 
 
 		/**
-		 *  admin_enqueue_scripts
+		 * admin_enqueue_scripts
 		 *
-		 *  Checks current screen and enqueues scripts
+		 * Checks current screen and enqueues scripts
 		 *
-		 *  @date    17/4/18
-		 *  @since   5.6.9
+		 * @date    17/4/18
+		 * @since   5.6.9
 		 *
-		 *  @param   void
-		 *  @return  void
+		 * @param   void
+		 * @return  void
 		 */
-
 		function admin_enqueue_scripts() {
 
 			// bail early if not valid screen
@@ -71,17 +67,16 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 
 
 		/**
-		 *  login_form_register
+		 * login_form_register
 		 *
-		 *  Customizes and enqueues scripts
+		 * Customizes and enqueues scripts
 		 *
-		 *  @date    17/4/18
-		 *  @since   5.6.9
+		 * @date    17/4/18
+		 * @since   5.6.9
 		 *
-		 *  @param   void
-		 *  @return  void
+		 * @param   void
+		 * @return  void
 		 */
-
 		function login_form_register() {
 
 			// customize action prefix so that "admin_head" = "login_head"
@@ -93,19 +88,16 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		}
 
 
-		/*
-		*  register_user
-		*
-		*  Called during the user register form
-		*
-		*  @type    function
-		*  @date    8/10/13
-		*  @since   5.0.0
-		*
-		*  @param   void
-		*  @return  void
-		*/
-
+		/**
+		 * Called during the user register form
+		 *
+		 * @type    function
+		 * @date    8/10/13
+		 * @since   5.0.0
+		 *
+		 * @param   void
+		 * @return  void
+		 */
 		function render_register() {
 
 			// render
@@ -119,19 +111,16 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		}
 
 
-		/*
-		*  render_edit
-		*
-		*  Called during the user edit form
-		*
-		*  @type    function
-		*  @date    8/10/13
-		*  @since   5.0.0
-		*
-		*  @param   void
-		*  @return  void
-		*/
-
+		/**
+		 * Called during the user edit form
+		 *
+		 * @type    function
+		 * @date    8/10/13
+		 * @since   5.0.0
+		 *
+		 * @param   void
+		 * @return  void
+		 */
 		function render_edit( $user ) {
 
 			// add compatibility with front-end user profile edit forms such as bbPress
@@ -150,19 +139,16 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		}
 
 
-		/*
-		*  user_new_form
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    8/10/13
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    8/10/13
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function render_new() {
 
 			// Multisite uses a different 'user-new.php' form. Don't render fields here
@@ -181,21 +167,17 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		}
 
 
-		/*
-		*  render
-		*
-		*  This function will render ACF fields for a given $post_id parameter
-		*
-		*  @type    function
-		*  @date    7/10/13
-		*  @since   5.0.0
-		*
-		*  @param   $user_id (int) this can be set to 0 for a new user
-		*  @param   $user_form (string) used for location rule matching. edit | add | register
-		*  @param   $el (string)
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will render ACF fields for a given $post_id parameter
+		 *
+		 * @type    function
+		 * @since   5.0.0
+		 *
+		 * @param   $user_id (int) this can be set to 0 for a new user
+		 * @param   $user_form (string) used for location rule matching. edit | add | register
+		 * @param   $el (string)
+		 * @return  n/a
+		 */
 		function render( $args = array() ) {
 
 			// Allow $_POST data to persist across form submission attempts.
@@ -243,7 +225,7 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 			$after  = '</tbody></table>';
 
 			if ( $args['el'] == 'div' ) {
-				$before = '<div class="acf-user-' . $args['view'] . '-fields acf-fields -clear">';
+				$before = '<div class="acf-user-' . esc_attr( $args['view'] ) . '-fields acf-fields -clear">';
 				$after  = '</div>';
 			}
 
@@ -255,13 +237,13 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 
 				// title
 				if ( $field_group['style'] === 'default' ) {
-					echo '<h2>' . $field_group['title'] . '</h2>';
+					echo '<h2>' . esc_html( $field_group['title'] ) . '</h2>';
 				}
 
 				// render
-				echo $before;
+				echo $before; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- safe HTML string.
 				acf_render_fields( $fields, $post_id, $args['el'], $field_group['instruction_placement'] );
-				echo $after;
+				echo $after; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- safe HTML string.
 			}
 
 			// actions
@@ -269,19 +251,16 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		}
 
 
-		/*
-		*  admin_footer
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    27/03/2015
-		*  @since   5.1.5
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    27/03/2015
+		 * @since   5.1.5
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function admin_footer() {
 
 			// script
@@ -290,7 +269,7 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 (function($) {
 	
 	// vars
-	var view = '<?php echo $this->view; ?>';
+	var view = '<?php echo esc_attr( $this->view ); ?>';
 	
 	// add missing spinners
 	var $submit = $('input.button-primary');
@@ -301,23 +280,19 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 })(jQuery);	
 </script>
 			<?php
-
 		}
 
 
-		/*
-		*  save_user
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    8/10/13
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    8/10/13
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function save_user( $user_id ) {
 
 			// verify nonce
@@ -339,9 +314,9 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		 * @date    12/7/19
 		 * @since   5.8.1
 		 *
-		 * @param   WP_Error $errors A WP_Error object containing any errors encountered during registration.
+		 * @param   WP_Error $errors               A WP_Error object containing any errors encountered during registration.
 		 * @param   string   $sanitized_user_login User's username after it has been sanitized.
-		 * @param   string   $user_email User's email.
+		 * @param   string   $user_email           User's email.
 		 * @return  WP_Error
 		 */
 		function filter_registration_errors( $errors, $sanitized_user_login, $user_email ) {
@@ -365,9 +340,9 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 		 * @date    12/7/19
 		 * @since   5.8.2
 		 *
-		 * @param   null         $null A null placeholder.
+		 * @param   null         $null    A null placeholder.
 		 * @param   (int|string) $post_id The post id.
-		 * @param   array        $field The field array.
+		 * @param   array        $field   The field array.
 		 * @return  mixed
 		 */
 		function filter_pre_load_value( $null, $post_id, $field ) {
@@ -383,7 +358,6 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 
 	// instantiate
 	acf_new_instance( 'ACF_Form_User' );
-
 endif; // class_exists check
 
 ?>

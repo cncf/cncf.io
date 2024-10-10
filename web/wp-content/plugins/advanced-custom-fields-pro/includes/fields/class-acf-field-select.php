@@ -5,19 +5,16 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 	class acf_field_select extends acf_field {
 
 
-		/*
-		*  __construct
-		*
-		*  This function will setup the field type data
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will setup the field type data
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
 		function initialize() {
 
 			// vars
@@ -41,80 +38,63 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			// ajax
 			add_action( 'wp_ajax_acf/fields/select/query', array( $this, 'ajax_query' ) );
 			add_action( 'wp_ajax_nopriv_acf/fields/select/query', array( $this, 'ajax_query' ) );
-
 		}
 
 
-		/*
-		*  input_admin_enqueue_scripts
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    16/12/2015
-		*  @since   5.3.2
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function input_admin_enqueue_scripts() {
-
-			// bail early if no enqueue
+		/**
+		 * Enqueues admin scripts for the Select field.
+		 *
+		 * @since 5.3.2
+		 *
+		 * @return void
+		 */
+		public function input_admin_enqueue_scripts() {
+			// Bail early if not enqueuing select2.
 			if ( ! acf_get_setting( 'enqueue_select2' ) ) {
 				return;
 			}
 
-			// globals
-			global $wp_scripts, $wp_styles;
+			global $wp_scripts;
 
-			// vars
-			$min     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-			$major   = acf_get_setting( 'select2_version' );
-			$version = '';
-			$script  = '';
-			$style   = '';
+			$min   = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			$major = acf_get_setting( 'select2_version' );
 
 			// attempt to find 3rd party Select2 version
-			// - avoid including v3 CSS when v4 JS is already enququed
+			// - avoid including v3 CSS when v4 JS is already enqueued.
 			if ( isset( $wp_scripts->registered['select2'] ) ) {
-
 				$major = (int) $wp_scripts->registered['select2']->ver;
-
 			}
 
-			// v4
-			if ( $major == 4 ) {
-
-				$version = '4.0.13';
-				$script  = acf_get_url( "assets/inc/select2/4/select2.full{$min}.js" );
-				$style   = acf_get_url( "assets/inc/select2/4/select2{$min}.css" );
-
-				// v3
-			} else {
-
+			if ( $major === 3 ) {
+				// Use v3 if necessary.
 				$version = '3.5.2';
 				$script  = acf_get_url( "assets/inc/select2/3/select2{$min}.js" );
 				$style   = acf_get_url( 'assets/inc/select2/3/select2.css' );
-
+			} else {
+				// Default to v4.
+				$version = '4.0.13';
+				$script  = acf_get_url( "assets/inc/select2/4/select2.full{$min}.js" );
+				$style   = acf_get_url( "assets/inc/select2/4/select2{$min}.css" );
 			}
 
-			// enqueue
 			wp_enqueue_script( 'select2', $script, array( 'jquery' ), $version );
 			wp_enqueue_style( 'select2', $style, '', $version );
 
-			// localize
 			acf_localize_data(
 				array(
 					'select2L10n' => array(
 						'matches_1'            => _x( 'One result is available, press enter to select it.', 'Select2 JS matches_1', 'acf' ),
+						/* translators: %d - number of results available in select field */
 						'matches_n'            => _x( '%d results are available, use up and down arrow keys to navigate.', 'Select2 JS matches_n', 'acf' ),
 						'matches_0'            => _x( 'No matches found', 'Select2 JS matches_0', 'acf' ),
 						'input_too_short_1'    => _x( 'Please enter 1 or more characters', 'Select2 JS input_too_short_1', 'acf' ),
+						/* translators: %d - number of characters to enter into select field input */
 						'input_too_short_n'    => _x( 'Please enter %d or more characters', 'Select2 JS input_too_short_n', 'acf' ),
 						'input_too_long_1'     => _x( 'Please delete 1 character', 'Select2 JS input_too_long_1', 'acf' ),
+						/* translators: %d - number of characters that should be removed from select field */
 						'input_too_long_n'     => _x( 'Please delete %d characters', 'Select2 JS input_too_long_n', 'acf' ),
 						'selection_too_long_1' => _x( 'You can only select 1 item', 'Select2 JS selection_too_long_1', 'acf' ),
+						/* translators: %d - maximum number of items that can be selected in the select field */
 						'selection_too_long_n' => _x( 'You can only select %d items', 'Select2 JS selection_too_long_n', 'acf' ),
 						'load_more'            => _x( 'Loading more results&hellip;', 'Select2 JS load_more', 'acf' ),
 						'searching'            => _x( 'Searching&hellip;', 'Select2 JS searching', 'acf' ),
@@ -124,35 +104,29 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			);
 		}
 
+		/**
+		 * AJAX handler for getting Select field choices.
+		 *
+		 * @since 5.0.0
+		 *
+		 * @return void
+		 */
+		public function ajax_query() {
+			$nonce = acf_request_arg( 'nonce', '' );
+			$key   = acf_request_arg( 'field_key', '' );
 
-		/*
-		*  ajax_query
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    24/10/13
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
+			// Back-compat for field settings.
+			if ( ! acf_is_field_key( $key ) ) {
+				$nonce = '';
+				$key   = '';
+			}
 
-		function ajax_query() {
-
-			// validate
-			if ( ! acf_verify_ajax() ) {
+			if ( ! acf_verify_ajax( $nonce, $key ) ) {
 				die();
 			}
 
-			// get choices
-			$response = $this->get_ajax_query( $_POST );
-
-			// return
-			acf_send_ajax_results( $response );
-
+			acf_send_ajax_results( $this->get_ajax_query( $_POST ) );
 		}
-
 
 		/**
 		 * This function will return an array of data formatted for use in a select2 AJAX response
@@ -200,7 +174,6 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 				// strip slashes (search may be integer)
 				$s = strval( $options['s'] );
 				$s = wp_unslash( $s );
-
 			}
 
 			foreach ( $field['choices'] as $k => $v ) {
@@ -218,7 +191,6 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 					'id'   => $k,
 					'text' => $v,
 				);
-
 			}
 
 			$response = array(
@@ -229,18 +201,15 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 		}
 
 
-		/*
-		*  render_field()
-		*
-		*  Create the HTML interface for your field
-		*
-		*  @param   $field - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
-
+		/**
+		 * Create the HTML interface for your field
+		 *
+		 * @param   $field - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 */
 		function render_field( $field ) {
 
 			// convert
@@ -287,13 +256,12 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 				'data-allow_null'  => $field['allow_null'],
 			);
 
-			if ( $field['aria-label'] ) {
+			if ( ! empty( $field['aria-label'] ) ) {
 				$select['aria-label'] = $field['aria-label'];
 			}
 
 			// multiple
 			if ( $field['multiple'] ) {
-
 				$select['multiple'] = 'multiple';
 				$select['size']     = 5;
 				$select['name']    .= '[]';
@@ -314,7 +282,12 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			if ( ! empty( $field['ajax_action'] ) ) {
 				$select['data-ajax_action'] = $field['ajax_action'];
 			}
-
+			if ( ! empty( $field['nonce'] ) ) {
+				$select['data-nonce'] = $field['nonce'];
+			}
+			if ( $field['ajax'] && empty( $field['nonce'] ) && acf_is_field_key( $field['key'] ) ) {
+				$select['data-nonce'] = wp_create_nonce( $field['key'] );
+			}
 			if ( ! empty( $field['hide_search'] ) ) {
 				$select['data-minimum-results-for-search'] = '-1';
 			}
@@ -329,33 +302,25 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 				);
 			}
 
-			if ( ! empty( $field['query_nonce'] ) ) {
-				$select['data-query-nonce'] = $field['query_nonce'];
-			}
-
 			// append
 			$select['value']   = $value;
 			$select['choices'] = $choices;
 
 			// render
 			acf_select_input( $select );
-
 		}
 
 
-		/*
-		*  render_field_settings()
-		*
-		*  Create extra options for your field. This is rendered when editing a field.
-		*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field  - an array holding all the field's data
-		*/
-
+		/**
+		 * Create extra options for your field. This is rendered when editing a field.
+		 * The value of $field['name'] can be used (like bellow) to save extra data to the $field
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field  - an array holding all the field's data
+		 */
 		function render_field_settings( $field ) {
 
 			// encode choices (convert from array)
@@ -411,7 +376,6 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 					'ui'           => 1,
 				)
 			);
-
 		}
 
 		/**
@@ -472,20 +436,18 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			);
 		}
 
-		/*
-		*  load_value()
-		*
-		*  This filter is applied to the $value after it is loaded from the db
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value (mixed) the value found in the database
-		*  @param   $post_id (mixed) the $post_id from which the value was loaded
-		*  @param   $field (array) the field array holding all the field options
-		*  @return  $value
-		*/
+		/**
+		 * This filter is applied to the $value after it is loaded from the db
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value (mixed) the value found in the database
+		 * @param   $post_id (mixed) the post_id from which the value was loaded
+		 * @param   $field (array) the field array holding all the field options
+		 * @return  $value
+		 */
 		function load_value( $value, $post_id, $field ) {
 
 			// Return an array when field is set for multiple.
@@ -501,21 +463,19 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 		}
 
 
-		/*
-		*  update_field()
-		*
-		*  This filter is appied to the $field before it is saved to the database
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field - the field array holding all the field options
-		*  @param   $post_id - the field group ID (post_type = acf)
-		*
-		*  @return  $field - the modified field
-		*/
-
+		/**
+		 *
+		 * This filter is appied to the $field before it is saved to the database
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field - the field array holding all the field options
+		 * @param   $post_id - the field group ID (post_type = acf)
+		 *
+		 * @return  $field - the modified field
+		 */
 		function update_field( $field ) {
 
 			// decode choices (convert to array)
@@ -532,22 +492,19 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 		}
 
 
-		/*
-		*  update_value()
-		*
-		*  This filter is appied to the $value before it is updated in the db
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value - the value which will be saved in the database
-		*  @param   $post_id - the $post_id of which the value will be saved
-		*  @param   $field - the field array holding all the field options
-		*
-		*  @return  $value - the modified value
-		*/
-
+		/**
+		 * This filter is appied to the $value before it is updated in the db
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value - the value which will be saved in the database
+		 * @param   $post_id - the post_id of which the value will be saved
+		 * @param   $field - the field array holding all the field options
+		 *
+		 * @return  $value - the modified value
+		 */
 		function update_value( $value, $post_id, $field ) {
 
 			// Bail early if no value.
@@ -566,19 +523,16 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 		}
 
 
-		/*
-		*  translate_field
-		*
-		*  This function will translate field settings
-		*
-		*  @type    function
-		*  @date    8/03/2016
-		*  @since   5.3.2
-		*
-		*  @param   $field (array)
-		*  @return  $field
-		*/
-
+		/**
+		 * This function will translate field settings
+		 *
+		 * @type    function
+		 * @date    8/03/2016
+		 * @since   5.3.2
+		 *
+		 * @param   $field (array)
+		 * @return  $field
+		 */
 		function translate_field( $field ) {
 
 			// translate
@@ -586,25 +540,22 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 
 			// return
 			return $field;
-
 		}
 
 
-		/*
-		*  format_value()
-		*
-		*  This filter is appied to the $value after it is loaded from the db and before it is returned to the template
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value (mixed) the value which was loaded from the database
-		*  @param   $post_id (mixed) the $post_id from which the value was loaded
-		*  @param   $field (array) the field array holding all the field options
-		*
-		*  @return  $value (mixed) the modified value
-		*/
+		/**
+		 * This filter is appied to the $value after it is loaded from the db and before it is returned to the template
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value (mixed) the value which was loaded from the database
+		 * @param   $post_id (mixed) the post_id from which the value was loaded
+		 * @param   $field (array) the field array holding all the field options
+		 *
+		 * @return  $value (mixed) the modified value
+		 */
 		function format_value( $value, $post_id, $field ) {
 			if ( is_array( $value ) ) {
 				foreach ( $value as $i => $val ) {
@@ -631,35 +582,29 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			if ( $field['return_format'] == 'value' ) {
 
 				// do nothing
-
 				// label
 			} elseif ( $field['return_format'] == 'label' ) {
-
 				$value = $label;
 
 				// array
 			} elseif ( $field['return_format'] == 'array' ) {
-
 				$value = array(
 					'value' => $value,
 					'label' => $label,
 				);
-
 			}
 
 			// return
 			return $value;
-
 		}
 
 		/**
 		 * Validates select fields updated via the REST API.
 		 *
-		 * @param bool  $valid
-		 * @param int   $value
-		 * @param array $field
-		 *
-		 * @return bool|WP_Error
+		 * @param  boolean $valid The current validity booleean
+		 * @param  integer $value The value of the field
+		 * @param  array   $field The field array
+		 * @return boolean|WP_Error
 		 */
 		public function validate_rest_value( $valid, $value, $field ) {
 			// rest_validate_request_arg() handles the other types, we just worry about strings.
@@ -756,13 +701,9 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 
 			return $schema;
 		}
-
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_select' );
-
 endif; // class_exists check
-
-

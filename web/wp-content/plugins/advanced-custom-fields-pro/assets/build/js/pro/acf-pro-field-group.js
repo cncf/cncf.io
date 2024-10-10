@@ -172,11 +172,13 @@
     name: 'fc_layout',
     events: {
       'blur .layout-label': 'onChangeLabel',
+      'blur .layout-name': 'onChangeName',
       'click .add-layout': 'onClickAdd',
       'click .acf-field-settings-fc_head': 'onClickEdit',
       'click .acf-field-setting-fc-duplicate': 'onClickDuplicate',
       'click .acf-field-setting-fc-delete': 'onClickDelete',
-      'changed:layoutLabel': 'updateLayoutTitles'
+      'changed:layoutLabel': 'updateLayoutTitles',
+      'changed:layoutName': 'updateLayoutTitles'
     },
     $input: function (name) {
       return $('#' + this.getInputId() + '-' + name);
@@ -193,7 +195,7 @@
         parent: this.$el
       });
     },
-    // get imediate children
+    // get immediate children
     getChildren: function () {
       return acf.getFieldObjects({
         list: this.$list()
@@ -202,6 +204,7 @@
     initialize: function () {
       // add sortable
       var $tbody = this.$el.parent();
+      $tbody.css('position', 'relative');
       if (!$tbody.hasClass('ui-sortable')) {
         $tbody.sortable({
           items: '> .acf-field-setting-fc_layout',
@@ -227,14 +230,22 @@
     },
     updateLayoutTitles: function () {
       const label = this.get('layoutLabel');
-      const parentLabel = this.$el.find('> .acf-label .acf-fc-layout-name');
+      const name = this.get('layoutName');
+      const $layoutHeaderLabelText = this.$el.find('> .acf-label .acf-fc-layout-label');
       if (label) {
-        parentLabel.html(label);
+        $layoutHeaderLabelText.text(acf.decode(label));
+      }
+      const $layoutHeaderNameText = this.$el.find('> .acf-label .acf-fc-layout-name span');
+      if (name) {
+        $layoutHeaderNameText.text(name);
+        $layoutHeaderNameText.parent().css('display', '');
+      } else {
+        $layoutHeaderNameText.parent().css('display', 'none');
       }
     },
     onClickEdit: function (e) {
       const $target = $(e.target);
-      if ($target.hasClass('acf-btn') || $target.parent().hasClass('acf-btn')) {
+      if ($target.hasClass('acf-btn') || $target.hasClass('copyable') || $target.parent().hasClass('acf-btn') || $target.parent().hasClass('copyable')) {
         return;
       }
       this.isOpen() ? this.close() : this.open();
@@ -244,6 +255,7 @@
       return $settings.hasClass('open');
     },
     open: function (element, isAddingLayout) {
+      const $header = element ? element.children('.acf-field-settings-fc_head') : this.$el.children('.acf-field-settings-fc_head');
       const $settings = element ? element.children('.acf-field-layout-settings') : this.$el.children('.acf-field-layout-settings');
       const toggle = element ? element.find('.toggle-indicator').first() : this.$el.find('.toggle-indicator').first();
 
@@ -265,8 +277,10 @@
         toggle.removeClass('closed');
       }
       $settings.addClass('open');
+      $header.addClass('open');
     },
     close: function () {
+      const $header = this.$el.children('.acf-field-settings-fc_head');
       const $settings = this.$el.children('.acf-field-layout-settings');
       const toggle = this.$el.find('.toggle-indicator').first();
 
@@ -274,6 +288,7 @@
       $settings.slideUp();
       $settings.removeClass('open');
       toggle.removeClass('open');
+      $header.removeClass('open');
       if (!toggle.hasClass('closed')) {
         toggle.addClass('closed');
       }
@@ -282,15 +297,23 @@
       acf.doAction('hide', $settings);
     },
     onChangeLabel: function (e, $el) {
-      var label = $el.val();
-      this.set('layoutLabel', label);
-      this.$el.attr('data-layout-label', label);
-      var $name = this.$input('name');
+      let label = $el.val();
+      const safeLabel = acf.encode(label);
+      this.set('layoutLabel', safeLabel);
+      this.$el.attr('data-layout-label', safeLabel);
+      let $name = this.$input('name');
 
       // render name
       if ($name.val() == '') {
         acf.val($name, acf.strSanitize(label));
+        this.$el.find('.layout-name').trigger('blur');
       }
+    },
+    onChangeName: function (e, $el) {
+      const sanitizedName = acf.strSanitize($el.val(), false);
+      $el.val(sanitizedName);
+      this.set('layoutName', sanitizedName);
+      this.$el.attr('data-layout-name', sanitizedName);
     },
     onClickAdd: function (e, $el) {
       e.preventDefault();
@@ -313,8 +336,9 @@
 
           // reset layout meta values
           $el2.attr('data-layout-label', '');
+          $el2.attr('data-layout-name', '');
           $el2.find('.acf-fc-meta input').val('');
-          $el2.find('.acf-fc-layout-name').html(acf.__('Layout'));
+          $el2.find('label.acf-fc-layout-label').html(acf.__('Layout'));
         }
       });
 
@@ -367,6 +391,41 @@
 
       // get layout
       var layout = acf.getFieldSetting($layout);
+
+      // get current label/names so we can prepare to append 'copy'
+      var label = layout.get('layoutLabel');
+      var name = layout.get('layoutName');
+      var end = name.split('_').pop();
+      var copy = acf.__('copy');
+
+      // increase suffix "1"
+      if (acf.isNumeric(end)) {
+        var i = end * 1 + 1;
+        label = label.replace(end, i);
+        name = name.replace(end, i);
+
+        // increase suffix "(copy1)"
+      } else if (end.indexOf(copy) === 0) {
+        var i = end.replace(copy, '') * 1;
+        i = i ? i + 1 : 2;
+
+        // replace
+        label = label.replace(end, copy + i);
+        name = name.replace(end, copy + i);
+
+        // add default "(copy)"
+      } else {
+        label += ' (' + copy + ')';
+        name += '_' + copy;
+      }
+
+      // update inputs and data attributes which will trigger header label updates too.
+      layout.$input('label').val(label);
+      layout.set('layoutLabel', label);
+      layout.$el.attr('data-layout-label', label);
+      layout.$input('name').val(name);
+      layout.set('layoutName', name);
+      layout.$el.attr('data-layout-name', name);
 
       // update hidden input
       layout.$input('key').val(newKey);

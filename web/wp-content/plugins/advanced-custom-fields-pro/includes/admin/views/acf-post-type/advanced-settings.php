@@ -11,6 +11,10 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 		)
 	);
 
+	$wrapper_class = str_replace( '_', '-', $tab_key );
+
+	echo '<div class="acf-post-type-advanced-settings acf-post-type-' . esc_attr( $wrapper_class ) . '-settings">';
+
 	switch ( $tab_key ) {
 		case 'general':
 			$acf_available_supports = array(
@@ -81,8 +85,8 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 			break;
 		case 'labels':
 			echo '<div class="acf-field acf-regenerate-labels-bar">';
-			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-regenerate-labels"><i class="acf-icon acf-icon-regenerate"></i>' . __( 'Regenerate', 'acf' ) . '</span>';
-			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-clear-labels"><i class="acf-icon acf-icon-trash"></i>' . __( 'Clear', 'acf' ) . '</span>';
+			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-regenerate-labels"><i class="acf-icon acf-icon-regenerate"></i>' . esc_html__( 'Regenerate', 'acf' ) . '</span>';
+			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-clear-labels"><i class="acf-icon acf-icon-trash"></i>' . esc_html__( 'Clear', 'acf' ) . '</span>';
 			echo '<span class="acf-tip acf-labels-tip"><i class="acf-icon acf-icon-help acf-js-tooltip" title="' . esc_attr__( 'Regenerate all labels using the Singular and Plural labels', 'acf' ) . '"></i></span>';
 			echo '</div>';
 
@@ -212,9 +216,14 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 					'key'          => 'add_new',
 					'prefix'       => 'acf_post_type[labels]',
 					'value'        => $acf_post_type['labels']['add_new'],
+					'data'         => array(
+						/* translators: %s Singular form of post type name */
+						'label'   => __( 'Add New %s', 'acf' ),
+						'replace' => 'singular',
+					),
 					'label'        => __( 'Add New', 'acf' ),
 					'instructions' => __( 'In the post type submenu in the admin dashboard.', 'acf' ),
-					'placeholder'  => __( 'Add New', 'acf' ),
+					'placeholder'  => __( 'Add New Post', 'acf' ),
 				),
 				'div',
 				'field'
@@ -687,6 +696,22 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 				'div',
 				'field'
 			);
+
+			acf_render_field_wrap(
+				array(
+					'type'         => 'text',
+					'name'         => 'enter_title_here',
+					'key'          => 'enter_title_here',
+					'prefix'       => 'acf_post_type',
+					'value'        => $acf_post_type['enter_title_here'],
+					'label'        => __( 'Title Placeholder', 'acf' ),
+					'instructions' => __( 'In the editor used as the placeholder of the title.', 'acf' ),
+					'placeholder'  => __( 'Add title', 'acf' ),
+				),
+				'div',
+				'field'
+			);
+
 			break;
 		case 'visibility':
 			acf_render_field_wrap(
@@ -720,15 +745,6 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 						'value'    => 1,
 					),
 				)
-			);
-
-			$acf_dashicon_class_name = __( 'Dashicon class name', 'acf' );
-			$acf_dashicon_link       = '<a href="https://developer.wordpress.org/resource/dashicons/" target="_blank">' . $acf_dashicon_class_name . '</a>';
-
-			$acf_menu_icon_instructions = sprintf(
-				/* translators: %s = "dashicon class name", link to the WordPress dashicon documentation. */
-				__( 'The icon used for the post type menu item in the admin dashboard. Can be a URL or %s to use for the icon.', 'acf' ),
-				$acf_dashicon_link
 			);
 
 			acf_render_field_wrap(
@@ -770,20 +786,52 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 				'field'
 			);
 
+			// Set the default value for the icon field.
+			$acf_default_icon_value = array(
+				'type'  => 'dashicons',
+				'value' => 'dashicons-admin-post',
+			);
+
+			if ( empty( $acf_post_type['menu_icon'] ) ) {
+				$acf_post_type['menu_icon'] = $acf_default_icon_value;
+			}
+
+			// Backwards compatibility for before the icon picker was introduced.
+			if ( is_string( $acf_post_type['menu_icon'] ) ) {
+				// If the old value was a string that starts with dashicons-, assume it's a dashicon.
+				if ( false !== strpos( $acf_post_type['menu_icon'], 'dashicons-' ) ) {
+					$acf_post_type['menu_icon'] = array(
+						'type'  => 'dashicons',
+						'value' => $acf_post_type['menu_icon'],
+					);
+				} else {
+					$acf_post_type['menu_icon'] = array(
+						'type'  => 'url',
+						'value' => $acf_post_type['menu_icon'],
+					);
+				}
+			}
+
 			acf_render_field_wrap(
 				array(
-					'type'         => 'text',
-					'name'         => 'menu_icon',
-					'key'          => 'menu_icon',
-					'prefix'       => 'acf_post_type',
-					'value'        => $acf_post_type['menu_icon'],
-					'label'        => __( 'Menu Icon', 'acf' ),
-					'placeholder'  => 'dashicons-admin-post',
-					'instructions' => $acf_menu_icon_instructions,
-					'conditions'   => array(
-						'field'    => 'show_in_menu',
-						'operator' => '==',
-						'value'    => 1,
+					'type'        => 'icon_picker',
+					'name'        => 'menu_icon',
+					'key'         => 'menu_icon',
+					'prefix'      => 'acf_post_type',
+					'value'       => $acf_post_type['menu_icon'],
+					'label'       => __( 'Menu Icon', 'acf' ),
+					'placeholder' => 'dashicons-admin-post',
+					'conditions'  => array(
+						array(
+							'field'    => 'show_in_menu',
+							'operator' => '==',
+							'value'    => '1',
+						),
+						array(
+							'field'    => 'admin_menu_parent',
+							'operator' => '==',
+							'value'    => '',
+						),
 					),
 				),
 				'div',
@@ -1262,5 +1310,6 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 	}
 
 	do_action( "acf/post_type/render_settings_tab/{$tab_key}", $acf_post_type );
-}
 
+	echo '</div>';
+}
