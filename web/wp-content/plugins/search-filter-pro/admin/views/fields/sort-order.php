@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="widget" data-field-type="<?php echo $values['type']; ?>">
+<div class="widget" data-field-type="<?php echo esc_attr( $values['type'] ); ?>">
 	
 	<div class="widget-top">
         <div class="widget-title-action">
@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<strong><?php _e("Label", $this->plugin_slug); ?> <span class="hint--top hint--info" data-hint="<?php _e("the text label a uses sees when selecting this option", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span></strong>
 			</p>
 			
-			<br class="clear"></span>
+			<br class="clear" />
 			
 			<p class="no_sort_label"><?php _e("<strong>There are no sort options</strong>.", $this->plugin_slug); ?></p>
 			
@@ -98,7 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<br class="clear" />
 		
-		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo $values['type']; ?>">
+		<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" value="<?php echo esc_attr( $values['type'] ); ?>">
 		
 
 		<div class="widget-control-actions">

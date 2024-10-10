@@ -60,7 +60,7 @@
      * Performs an action if it exists. You can pass as many arguments as you want to this function; the only rule is
      * that the first argument must always be the action.
      */
-    function doAction( /* action, arg1, arg2, ... */
+    function doAction(/* action, arg1, arg2, ... */
     ) {
       var args = Array.prototype.slice.call(arguments);
       var action = args.shift();
@@ -103,7 +103,7 @@
      * Performs a filter if it exists. You should only ever pass 1 argument to be filtered. The only rule is that
      * the first argument must always be the filter.
      */
-    function applyFilters( /* filter, filtered arg, arg2, ... */
+    function applyFilters(/* filter, filtered arg, arg2, ... */
     ) {
       var args = Array.prototype.slice.call(arguments);
       var filter = args.shift();
@@ -1238,6 +1238,7 @@
       timeout: 0,
       dismiss: true,
       target: false,
+      location: 'before',
       close: function () {}
     },
     events: {
@@ -1289,8 +1290,13 @@
     },
     show: function () {
       var $target = this.get('target');
+      var location = this.get('location');
       if ($target) {
-        $target.prepend(this.$el);
+        if (location === 'after') {
+          $target.append(this.$el);
+        } else {
+          $target.prepend(this.$el);
+        }
       }
     },
     hide: function () {
@@ -1345,10 +1351,6 @@
     initialize: function () {
       const $notices = $('.acf-admin-notice');
       $notices.each(function () {
-        // Move to avoid WP flicker.
-        if ($(this).length) {
-          $('h1:first').after($(this));
-        }
         if ($(this).data('persisted')) {
           let dismissed = acf.getPreference('dismissed-notices');
           if (dismissed && typeof dismissed == 'object' && dismissed.includes($(this).data('persist-id'))) {
@@ -2097,7 +2099,7 @@
   acf.strSlugify = function (str) {
     return acf.strReplace('_', '-', str.toLowerCase());
   };
-  acf.strSanitize = function (str) {
+  acf.strSanitize = function (str, toLowerCase = true) {
     // chars (https://jsperf.com/replace-foreign-characters)
     var map = {
       À: 'A',
@@ -2342,7 +2344,9 @@
     str = str.replace(nonWord, mapping);
 
     // lowercase
-    str = str.toLowerCase();
+    if (toLowerCase) {
+      str = str.toLowerCase();
+    }
 
     // return
     return str;
@@ -2465,17 +2469,25 @@
   //console.log( acf.escHtml( '<script>js1</script><script>js2</script>' ) );
 
   /**
-   *  acf.decode
+   * Encode a string potentially containing HTML into it's HTML entities equivalent.
    *
-   *  description
+   * @since 6.3.6
    *
-   *  @date	13/1/18
-   *  @since	5.6.5
-   *
-   *  @param	type $var Description. Default.
-   *  @return	type Description.
+   * @param {string} string String to encode.
+   * @return {string} The encoded string
    */
+  acf.encode = function (string) {
+    return $('<textarea/>').text(string).html();
+  };
 
+  /**
+   * Decode a HTML encoded string into it's original form.
+   *
+   * @since 5.6.5
+   *
+   * @param {string} string String to encode.
+   * @return {string} The encoded string
+   */
   acf.decode = function (string) {
     return $('<textarea/>').html(string).text();
   };
@@ -3302,31 +3314,26 @@
   };
 
   /**
-   *  acf.prepareForAjax
+   * Prepares AJAX data prior to being sent.
    *
-   *  description
+   * @since 5.6.5
    *
-   *  @date	4/1/18
-   *  @since	5.6.5
-   *
-   *  @param	type $var Description. Default.
-   *  @return	type Description.
+   * @param Object  data             The data to prepare
+   * @param boolean use_global_nonce Should we ignore any nonce provided in the data object and force ACF's global nonce for this request
+   * @return Object The prepared data.
    */
-
-  acf.prepareForAjax = function (data) {
-    // required
-    data.nonce = acf.get('nonce');
+  acf.prepareForAjax = function (data, use_global_nonce = false) {
+    // Set a default nonce if we don't have one already.
+    if (use_global_nonce || 'undefined' === typeof data.nonce) {
+      data.nonce = acf.get('nonce');
+    }
     data.post_id = acf.get('post_id');
-
-    // language
     if (acf.has('language')) {
       data.lang = acf.get('language');
     }
 
-    // filter for 3rd party customization
+    // Filter for 3rd party customization.
     data = acf.applyFilters('prepare_for_ajax', data);
-
-    // return
     return data;
   };
 
@@ -3871,7 +3878,6 @@
           itemsHtml += '<option value="' + acf.escAttr(id) + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
         }
       });
-
       // return
       return itemsHtml;
     };
@@ -3965,14 +3971,25 @@
    *
    *  Returns true if the Gutenberg editor is being used.
    *
-   *  @date	14/11/18
    *  @since	5.8.0
    *
-   *  @param	vois
    *  @return	bool
    */
   acf.isGutenberg = function () {
     return !!(window.wp && wp.data && wp.data.select && wp.data.select('core/editor'));
+  };
+
+  /**
+   *  acf.isGutenbergPostEditor
+   *
+   *  Returns true if the Gutenberg post editor is being used.
+   *
+   *  @since	6.2.2
+   *
+   *  @return	bool
+   */
+  acf.isGutenbergPostEditor = function () {
+    return !!(window.wp && wp.data && wp.data.select && wp.data.select('core/edit-post'));
   };
 
   /**
@@ -4246,6 +4263,19 @@
     //$el.data('acf.onFocus', true);
   };
 
+  /**
+   * Disable form submit buttons
+   *
+   * @since 6.2.3
+   *
+   * @param event e
+   * @returns void
+   */
+  acf.disableForm = function (e) {
+    // Disable submit button.
+    if (e.submitter) e.submitter.classList.add('disabled');
+  };
+
   /*
    *  exists
    *
@@ -4326,6 +4356,15 @@
     $(window).trigger('acfrefresh');
     acf.doAction('refresh');
   }, 0);
+
+  /**
+   * Log something to console if we're in debug mode.
+   *
+   * @since 6.3
+   */
+  acf.debug = function () {
+    if (acf.get('debug')) console.log.apply(null, arguments);
+  };
 
   // Set up actions from events
   $(document).ready(function () {

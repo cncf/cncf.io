@@ -5,19 +5,16 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 	class acf_field_gallery extends acf_field {
 
 
-		/*
-		*  __construct
-		*
-		*  This function will setup the field type data
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will setup the field type data
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
 		function initialize() {
 
 			// vars
@@ -29,6 +26,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/gallery/', 'docs', 'field-type-selection' );
 			$this->tutorial_url  = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/how-to-use-the-gallery-field/', 'docs', 'field-type-selection' );
 			$this->pro           = true;
+			$this->supports      = array( 'bindings' => false );
 			$this->defaults      = array(
 				'return_format' => 'array',
 				'preview_size'  => 'medium',
@@ -54,22 +52,18 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 
 			add_action( 'wp_ajax_acf/fields/gallery/get_sort_order', array( $this, 'ajax_get_sort_order' ) );
 			add_action( 'wp_ajax_nopriv_acf/fields/gallery/get_sort_order', array( $this, 'ajax_get_sort_order' ) );
-
 		}
 
-		/*
-		*  input_admin_enqueue_scripts
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    16/12/2015
-		*  @since   5.3.2
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    16/12/2015
+		 * @since   5.3.2
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function input_admin_enqueue_scripts() {
 
 			// localize
@@ -81,34 +75,27 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			);
 		}
 
-
-		/*
-		*  ajax_get_attachment
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    13/12/2013
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function ajax_get_attachment() {
-
-			// Validate requrest.
-			if ( ! acf_verify_ajax() ) {
-				die();
-			}
-
+		/**
+		 * AJAX handler for retrieving and rendering an attachment.
+		 *
+		 * @since 5.0.0
+		 *
+		 * @return void
+		 */
+		public function ajax_get_attachment() {
 			// Get args.
 			$args = acf_request_args(
 				array(
 					'id'        => 0,
 					'field_key' => '',
+					'nonce'     => '',
 				)
 			);
+
+			// Validate request.
+			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
+				die();
+			}
 
 			// Cast args.
 			$args['id'] = (int) $args['id'];
@@ -129,34 +116,28 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			die;
 		}
 
+		/**
+		 * AJAX handler for updating an attachment.
+		 *
+		 * @since   5.0.0
+		 *
+		 * @return void
+		 */
+		public function ajax_update_attachment() {
+			$args = acf_request_args(
+				array(
+					'nonce'     => '',
+					'field_key' => '',
+				)
+			);
 
-		/*
-		*  ajax_update_attachment
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    13/12/2013
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function ajax_update_attachment() {
-
-			// validate nonce
-			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'acf_nonce' ) ) {
-
+			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
 				wp_send_json_error();
-
 			}
 
 			// bail early if no attachments
 			if ( empty( $_POST['attachments'] ) ) {
-
 				wp_send_json_error();
-
 			}
 
 			// loop over attachments
@@ -203,32 +184,20 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 
 				// save meta
 				acf_save_post( $id );
-
 			}
 
 			// return
 			wp_send_json_success();
-
 		}
 
-
-		/*
-		*  ajax_get_sort_order
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    13/12/2013
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function ajax_get_sort_order() {
-
-			// vars
-			$r     = array();
+		/**
+		 * AJAX handler for getting the attachment sort order.
+		 *
+		 * @since 5.0.0
+		 *
+		 * @return void
+		 */
+		public function ajax_get_sort_order() {
 			$order = 'DESC';
 			$args  = acf_parse_args(
 				$_POST, // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified below.
@@ -240,29 +209,22 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				)
 			);
 
-			// validate
-			if ( ! wp_verify_nonce( $args['nonce'], 'acf_nonce' ) ) {
-
+			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
 				wp_send_json_error();
-
 			}
 
-			// reverse
-			if ( $args['sort'] == 'reverse' ) {
-
+			// Reverse order.
+			if ( $args['sort'] === 'reverse' ) {
 				$ids = array_reverse( $args['ids'] );
-
 				wp_send_json_success( $ids );
-
 			}
 
-			if ( $args['sort'] == 'title' ) {
-
+			// Ascending order.
+			if ( $args['sort'] === 'title' ) {
 				$order = 'ASC';
-
 			}
 
-			// find attachments (DISTINCT POSTS)
+			// Find attachments (DISTINCT POSTS).
 			$ids = get_posts(
 				array(
 					'post_type'   => 'attachment',
@@ -275,16 +237,11 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				)
 			);
 
-			// success
 			if ( ! empty( $ids ) ) {
-
 				wp_send_json_success( $ids );
-
 			}
 
-			// failure
 			wp_send_json_error();
-
 		}
 
 		/**
@@ -293,8 +250,8 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 * @date    13/12/2013
 		 * @since   5.0.0
 		 *
-		 * @param   int   $id The attachment ID.
-		 * @param   array $field The field array.
+		 * @param   integer $id    The attachment ID.
+		 * @param   array   $field The field array.
 		 * @return  void
 		 */
 		function render_attachment( $id, $field ) {
@@ -332,13 +289,13 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 
 			?>
 		<div class="acf-gallery-side-info">
-			<img src="<?php echo esc_attr( $thumb ); ?>" alt="<?php echo esc_attr( $attachment['alt'] ); ?>" />
+			<img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_attr( $attachment['alt'] ); ?>" />
 			<p class="filename"><strong><?php echo esc_html( $attachment['filename'] ); ?></strong></p>
 			<p class="uploaded"><?php echo esc_html( $attachment['dateFormatted'] ); ?></p>
 			<p class="dimensions"><?php echo esc_html( $dimensions ); ?></p>
 			<p class="actions">
-				<a href="#" class="acf-gallery-edit" data-id="<?php echo esc_attr( $id ); ?>"><?php _e( 'Edit', 'acf' ); ?></a>
-				<a href="#" class="acf-gallery-remove" data-id="<?php echo esc_attr( $id ); ?>"><?php _e( 'Remove', 'acf' ); ?></a>
+				<a href="#" class="acf-gallery-edit" data-id="<?php echo esc_attr( $id ); ?>"><?php esc_html_e( 'Edit', 'acf' ); ?></a>
+				<a href="#" class="acf-gallery-remove" data-id="<?php echo esc_attr( $id ); ?>"><?php esc_html_e( 'Remove', 'acf' ); ?></a>
 			</p>
 		</div>
 		<table class="form-table">
@@ -402,21 +359,18 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			<?php
 
 			// Display compat fields.
-			echo $compat['item'];
+			echo $compat['item']; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside get_compat_media_markup().
 		}
 
-		/*
-		*  render_field()
-		*
-		*  Create the HTML interface for your field
-		*
-		*  @param   $field - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
-
+		/**
+		 * Create the HTML interface for your field
+		 *
+		 * @param   $field - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 */
 		function render_field( $field ) {
 
 			// Enqueue uploader assets.
@@ -433,6 +387,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				'data-mime_types'   => $field['mime_types'],
 				'data-insert'       => $field['insert'],
 				'data-columns'      => 4,
+				'data-nonce'        => wp_create_nonce( $field['key'] ),
 			);
 
 			// Set gallery height with deafult of 400px and minimum of 200px.
@@ -489,11 +444,11 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 								<img src="<?php echo esc_url( $a_thumbnail['url'] ); ?>" alt="" />
 							</div>
 							<?php if ( $a_type !== 'image' ) : ?>
-								<div class="filename"><?php echo acf_get_truncated( $a_filename, 30 ); ?></div>	
+								<div class="filename"><?php echo acf_esc_html( acf_get_truncated( $a_filename, 30 ) ); ?></div>	
 							<?php endif; ?>
 						</div>
 						<div class="actions">
-							<a class="acf-icon -cancel dark acf-gallery-remove" href="#" data-id="<?php echo esc_attr( $a_id ); ?>" title="<?php _e( 'Remove', 'acf' ); ?>"></a>
+							<a class="acf-icon -cancel dark acf-gallery-remove" href="#" data-id="<?php echo esc_attr( $a_id ); ?>" title="<?php esc_html_e( 'Remove', 'acf' ); ?>"></a>
 						</div>
 					</div>
 				<?php endforeach; ?>
@@ -502,15 +457,15 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		<div class="acf-gallery-toolbar">
 			<ul class="acf-hl">
 				<li>
-					<a href="#" class="acf-button button button-primary acf-gallery-add"><?php _e( 'Add to gallery', 'acf' ); ?></a>
+					<a href="#" class="acf-button button button-primary acf-gallery-add"><?php esc_html_e( 'Add to gallery', 'acf' ); ?></a>
 				</li>
 				<li class="acf-fr">
 					<select class="acf-gallery-sort">
-						<option value=""><?php _e( 'Bulk actions', 'acf' ); ?></option>
-						<option value="date"><?php _e( 'Sort by date uploaded', 'acf' ); ?></option>
-						<option value="modified"><?php _e( 'Sort by date modified', 'acf' ); ?></option>
-						<option value="title"><?php _e( 'Sort by title', 'acf' ); ?></option>
-						<option value="reverse"><?php _e( 'Reverse current order', 'acf' ); ?></option>
+						<option value=""><?php esc_html_e( 'Bulk actions', 'acf' ); ?></option>
+						<option value="date"><?php esc_html_e( 'Sort by date uploaded', 'acf' ); ?></option>
+						<option value="modified"><?php esc_html_e( 'Sort by date modified', 'acf' ); ?></option>
+						<option value="title"><?php esc_html_e( 'Sort by title', 'acf' ); ?></option>
+						<option value="reverse"><?php esc_html_e( 'Reverse current order', 'acf' ); ?></option>
 					</select>
 				</li>
 			</ul>
@@ -522,10 +477,10 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			<div class="acf-gallery-toolbar">
 				<ul class="acf-hl">
 					<li>
-						<a href="#" class="acf-button button acf-gallery-close"><?php _e( 'Close', 'acf' ); ?></a>
+						<a href="#" class="acf-button button acf-gallery-close"><?php esc_html_e( 'Close', 'acf' ); ?></a>
 					</li>
 					<li class="acf-fr">
-						<a class="acf-button button button-primary acf-gallery-update" href="#"><?php _e( 'Update', 'acf' ); ?></a>
+						<a class="acf-button button button-primary acf-gallery-update" href="#"><?php esc_html_e( 'Update', 'acf' ); ?></a>
 					</li>
 				</ul>
 			</div>
@@ -533,23 +488,19 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 	</div>
 </div>
 			<?php
-
 		}
 
 
-		/*
-		*  render_field_settings()
-		*
-		*  Create extra options for your field. This is rendered when editing a field.
-		*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field  - an array holding all the field's data
-		*/
-
+		/**
+		 * Create extra options for your field. This is rendered when editing a field.
+		 * The value of $field['name'] can be used (like bellow) to save extra data to the $field
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field  - an array holding all the field's data
+		 */
 		function render_field_settings( $field ) {
 			acf_render_field_setting(
 				$field,
@@ -748,22 +699,19 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			);
 		}
 
-		/*
-		*  format_value()
-		*
-		*  This filter is appied to the $value after it is loaded from the db and before it is returned to the template
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value (mixed) the value which was loaded from the database
-		*  @param   $post_id (mixed) the $post_id from which the value was loaded
-		*  @param   $field (array) the field array holding all the field options
-		*
-		*  @return  $value (mixed) the modified value
-		*/
-
+		/**
+		 * This filter is appied to the $value after it is loaded from the db and before it is returned to the template
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value (mixed) the value which was loaded from the database
+		 * @param   $post_id (mixed) the post_id from which the value was loaded
+		 * @param   $field (array) the field array holding all the field options
+		 *
+		 * @return  $value (mixed) the modified value
+		 */
 		function format_value( $value, $post_id, $field ) {
 
 			// Bail early if no value.
@@ -819,55 +767,44 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		}
 
 
-		/*
-		*  validate_value
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    11/02/2014
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    11/02/2014
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function validate_value( $valid, $value, $field, $input ) {
 
 			if ( empty( $value ) || ! is_array( $value ) ) {
-
 				$value = array();
-
 			}
 
 			if ( count( $value ) < $field['min'] ) {
-
 				$valid = _n( '%1$s requires at least %2$s selection', '%1$s requires at least %2$s selections', $field['min'], 'acf' );
 				$valid = sprintf( $valid, $field['label'], $field['min'] );
-
 			}
 
 			return $valid;
-
 		}
 
 
-		/*
-		*  update_value()
-		*
-		*  This filter is appied to the $value before it is updated in the db
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value - the value which will be saved in the database
-		*  @param   $post_id - the $post_id of which the value will be saved
-		*  @param   $field - the field array holding all the field options
-		*
-		*  @return  $value - the modified value
-		*/
-
+		/**
+		 * This filter is appied to the $value before it is updated in the db
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value - the value which will be saved in the database
+		 * @param   $post_id - the post_id of which the value will be saved
+		 * @param   $field - the field array holding all the field options
+		 *
+		 * @return  $value - the modified value
+		 */
 		function update_value( $value, $post_id, $field ) {
 
 			// Bail early if no value.
@@ -886,17 +823,15 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 
 			// Return value.
 			return $value;
-
 		}
 
 		/**
 		 * Validates file fields updated via the REST API.
 		 *
-		 * @param bool  $valid
-		 * @param int   $value
-		 * @param array $field
-		 *
-		 * @return bool|WP_Error
+		 * @param  boolean $valid The current validity booleean
+		 * @param  integer $value The value of the field
+		 * @param  array   $field The field array
+		 * @return boolean|WP
 		 */
 		public function validate_rest_value( $valid, $value, $field ) {
 			if ( ! $valid || ! is_array( $value ) ) {
@@ -942,9 +877,9 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 
 		/**
 		 * @see \acf_field::get_rest_links()
-		 * @param mixed      $value The raw (unformatted) field value.
-		 * @param int|string $post_id
-		 * @param array      $field
+		 * @param mixed          $value   The raw (unformatted) field value.
+		 * @param integer|string $post_id
+		 * @param array          $field
 		 * @return array
 		 */
 		public function get_rest_links( $value, $post_id, array $field ) {
@@ -968,9 +903,9 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		/**
 		 * Apply basic formatting to prepare the value for default REST output.
 		 *
-		 * @param mixed      $value
-		 * @param string|int $post_id
-		 * @param array      $field
+		 * @param mixed          $value
+		 * @param string|integer $post_id
+		 * @param array          $field
 		 * @return mixed
 		 */
 		public function format_value_for_rest( $value, $post_id, array $field ) {
@@ -981,7 +916,6 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 
 	// initialize
 	acf_register_field_type( 'acf_field_gallery' );
-
 endif; // class_exists check
 
 ?>

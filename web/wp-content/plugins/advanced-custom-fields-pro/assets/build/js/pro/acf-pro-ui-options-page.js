@@ -8,38 +8,69 @@
 /***/ (() => {
 
 (function ($, undefined) {
+  const parentPageSelectTemplate = function (selection) {
+    if ('undefined' === typeof selection.element) {
+      return selection;
+    }
+
+    // Hides the optgroup for the "No Parent" option.
+    if (selection.children && 'None' === selection.text) {
+      return;
+    }
+    if ('acfOptionsPages' === selection.text) {
+      selection.text = acf.__('Options Pages');
+    }
+    return $('<span class="acf-selection"></span>').data('element', selection.element).html(acf.strEscape(selection.text));
+  };
+  const defaultPillTemplate = function (selection) {
+    if ('undefined' === typeof selection.element) {
+      return selection;
+    }
+    const $selection = $('<span class="acf-selection"></span>');
+    $selection.html(acf.strEscape(selection.element.innerHTML));
+    if (selection.id === 'options' || selection.id === 'edit_posts') {
+      $selection.append('<span class="acf-select2-default-pill">' + acf.__('Default') + '</span>');
+    }
+    $selection.data('element', selection.element);
+    return $selection;
+  };
   const UIOptionsPageManager = new acf.Model({
     id: 'UIOptionsPageManager',
     wait: 'ready',
-    events: {},
+    events: {
+      'change .acf-options-page-parent_slug': 'toggleMenuPositionDesc'
+    },
     initialize: function () {
       if ('ui_options_page' !== acf.get('screen')) {
         return;
       }
-
-      // select2
-      const template = function (selection) {
-        if ('undefined' === typeof selection.element) {
-          return selection;
-        }
-        const $selection = $('<span class="acf-selection"></span>');
-        $selection.html(acf.escHtml(selection.element.innerHTML));
-        if (selection.id === 'options' || selection.id === 'edit_posts') {
-          $selection.append('<span class="acf-select2-default-pill">' + acf.__('Default') + '</span>');
-        }
-        $selection.data('element', selection.element);
-        return $selection;
-      };
+      acf.newSelect2($('select.acf-options-page-parent_slug'), {
+        field: false,
+        templateSelection: parentPageSelectTemplate,
+        templateResult: parentPageSelectTemplate,
+        dropdownCssClass: 'field-type-select-results'
+      });
       acf.newSelect2($('select.acf-options-page-capability'), {
         field: false,
-        templateSelection: template,
-        templateResult: template
+        templateSelection: defaultPillTemplate,
+        templateResult: defaultPillTemplate
       });
       acf.newSelect2($('select.acf-options-page-data_storage'), {
         field: false,
-        templateSelection: template,
-        templateResult: template
+        templateSelection: defaultPillTemplate,
+        templateResult: defaultPillTemplate
       });
+      this.toggleMenuPositionDesc();
+    },
+    toggleMenuPositionDesc: function (e, $el) {
+      const parentPage = $('select.acf-options-page-parent_slug').val();
+      if ('none' === parentPage) {
+        $('.acf-menu-position-desc-child').hide();
+        $('.acf-menu-position-desc-parent').show();
+      } else {
+        $('.acf-menu-position-desc-parent').hide();
+        $('.acf-menu-position-desc-child').show();
+      }
     }
   });
   const optionsPageModalManager = new acf.Model({
@@ -56,7 +87,8 @@
       const getForm = function () {
         const fieldGroupTitle = $('.acf-headerbar-title-field').val();
         const ajaxData = {
-          action: 'acf/create_options_page'
+          action: 'acf/create_options_page',
+          acf_parent_page_choices: this.acf.data.optionPageParentOptions ? this.acf.data.optionPageParentOptions : []
         };
         if (fieldGroupTitle.length) {
           ajaxData.field_group_title = fieldGroupTitle;
@@ -81,6 +113,12 @@
         const $pageTitle = popup.$el.find('#acf_ui_options_page-page_title');
         const pageTitleVal = $pageTitle.val();
         $pageTitle.focus().val('').val(pageTitleVal);
+        acf.newSelect2($('#acf_ui_options_page-parent_slug'), {
+          field: false,
+          templateSelection: parentPageSelectTemplate,
+          templateResult: parentPageSelectTemplate,
+          dropdownCssClass: 'field-type-select-results'
+        });
         popup.on('submit', 'form', validateForm);
       };
       const validateForm = function (e) {

@@ -5,7 +5,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ACF_Data' ) ) :
-
 	#[AllowDynamicProperties]
 	class ACF_Data {
 
@@ -18,7 +17,7 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		/** @var array Storage for data aliases. */
 		var $aliases = array();
 
-		/** @var bool Enables unique data per site. */
+		/** @var boolean Enables unique data per site. */
 		var $multisite = false;
 
 		/**
@@ -69,7 +68,7 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		 * @date    9/1/19
 		 * @since   5.7.10
 		 *
-		 * @param   (string|array) $name The data name or an array of data.
+		 * @param   (string|array) $name  The data name or an array of data.
 		 * @param   mixed          $value The data value.
 		 * @return  ACF_Data
 		 */
@@ -175,7 +174,7 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		 * @date    9/1/19
 		 * @since   5.7.10
 		 *
-		 * @param   (string|array) $name The data name or an array of data.
+		 * @param   (string|array) $name  The data name or an array of data.
 		 * @param   mixed          $value The data value.
 		 * @return  ACF_Data
 		 */
@@ -259,7 +258,7 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		 * @since   5.7.10
 		 *
 		 * @param   void
-		 * @return  int
+		 * @return  integer
 		 */
 		function count() {
 			return count( $this->data );
@@ -274,7 +273,7 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		 * @since   5.7.10
 		 *
 		 * @param   void
-		 * @return  int
+		 * @return  integer
 		 */
 		function query( $args, $operator = 'AND' ) {
 			return wp_list_filter( $this->data, $args, $operator );
@@ -314,7 +313,7 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		 * @date    13/2/19
 		 * @since   5.7.11
 		 *
-		 * @param   int                           $site_id New blog ID.
+		 * @param   integer                       $site_id New blog ID.
 		 * @param   int prev_blog_id Prev blog ID.
 		 * @return  void
 		 */

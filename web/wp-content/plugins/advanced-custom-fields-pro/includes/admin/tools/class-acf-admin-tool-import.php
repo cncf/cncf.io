@@ -9,39 +9,36 @@ if ( ! class_exists( 'ACF_Admin_Tool_Import' ) ) :
 	class ACF_Admin_Tool_Import extends ACF_Admin_Tool {
 
 		/**
-		 *  initialize
+		 * initialize
 		 *
-		 *  This function will initialize the admin tool
+		 * This function will initialize the admin tool
 		 *
-		 *  @date    10/10/17
-		 *  @since   5.6.3
+		 * @date    10/10/17
+		 * @since   5.6.3
 		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @param   n/a
+		 * @return  n/a
 		 */
-
 		function initialize() {
 
 			// vars
 			$this->name  = 'import';
 			$this->title = __( 'Import Field Groups', 'acf' );
 			$this->icon  = 'dashicons-upload';
-
 		}
 
 
 		/**
-		 *  html
+		 * html
 		 *
-		 *  This function will output the metabox HTML
+		 * This function will output the metabox HTML
 		 *
-		 *  @date    10/10/17
-		 *  @since   5.6.3
+		 * @date    10/10/17
+		 * @since   5.6.3
 		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @param   n/a
+		 * @return  n/a
 		 */
-
 		function html() {
 
 			?>
@@ -133,21 +130,19 @@ if ( ! class_exists( 'ACF_Admin_Tool_Import' ) ) :
 			?>
 		</div>
 			<?php
-
 		}
 
 		/**
 		 * Imports the selected ACF posts and returns an admin notice on completion.
 		 *
-		 * @date 10/10/17
 		 * @since 5.6.3
 		 *
 		 * @return ACF_Admin_Notice
 		 */
 		public function submit() {
 			//phpcs:disable WordPress.Security.NonceVerification.Missing -- nonce verified before this function is called.
-			if ( 'cptui' === acf_request_arg( 'import_type', '' ) ) {
-				$import = acf_sanitize_request_args( $_POST['acf_import_cptui'] );
+			if ( 'cptui' === acf_request_arg( 'import_type', '' ) && ! empty( $_POST['acf_import_cptui'] ) ) {
+				$import = acf_sanitize_request_args( $_POST['acf_import_cptui'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- unslash not needed.
 				return $this->import_cpt_ui( $import );
 			}
 
@@ -291,12 +286,10 @@ if ( ! class_exists( 'ACF_Admin_Tool_Import' ) ) :
 
 			return acf_add_admin_notice( __( 'Nothing to import', 'acf' ), 'warning' );
 		}
-
 	}
 
 	// Initialize.
 	acf_register_admin_tool( 'ACF_Admin_Tool_Import' );
-
 endif; // class_exists check.
 
 ?>

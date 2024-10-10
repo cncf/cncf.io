@@ -1974,6 +1974,7 @@
 			var $template_table = $('.setup .sf_tab_content_template .template_options_table');
 			var $template_ajax_table = $('.setup .sf_tab_content_template .template_ajax_table');
 			var $template_pagination_table = $('.setup .sf_tab_content_template .template_pagination_table');
+			var $template_infinite_scroll_options = $('.setup .sf_tab_content_template .tpl_pagination_scroll_rows');
 			var $template_sect = $('.setup .sf_tab_content_template .template_options_sect');
 			var $display_result_txt_cont = $('.setup .sf_tab_content_template .display_result_txt_cont');
 			var $tpl_archive_rows = $('.setup .sf_tab_content_template .tpl_archive_rows');
@@ -2015,6 +2016,16 @@
 				} else {
 					$template_pagination_table.hide();
 				}
+
+				
+				if ( real_display_method !== 'elementor_loop_widget' ) {
+					$template_infinite_scroll_options.show();
+					
+				} else {
+					$template_infinite_scroll_options.hide();
+				}
+
+
                 var $labels = $self.parent().parent().parent().find("label");
 				$labels.removeClass("active");
 				$self.parent().addClass("active");

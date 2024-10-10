@@ -28,7 +28,7 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 		 * List of enqueue flags.
 		 *
 		 * @since 5.9.0
-		 * @var bool
+		 * @var boolean
 		 */
 		private $enqueue = array();
 
@@ -51,7 +51,7 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 		 * @date    10/4/20
 		 * @since   5.9.0
 		 *
-		 * @param   string $name The method name.
+		 * @param   string $name      The method name.
 		 * @param   array  $arguments The array of arguments.
 		 * @return  mixed
 		 */
@@ -112,9 +112,10 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 
 			// Register scripts.
 			wp_register_script( 'acf', acf_get_url( 'assets/build/js/acf' . $suffix . '.js' ), array( 'jquery' ), $version );
-			wp_register_script( 'acf-input', acf_get_url( 'assets/build/js/acf-input' . $suffix . '.js' ), array( 'jquery', 'jquery-ui-sortable', 'jquery-ui-resizable', 'acf' ), $version );
+			wp_register_script( 'acf-input', acf_get_url( 'assets/build/js/acf-input' . $suffix . '.js' ), array( 'jquery', 'jquery-ui-sortable', 'jquery-ui-resizable', 'acf', 'wp-a11y' ), $version );
 			wp_register_script( 'acf-field-group', acf_get_url( 'assets/build/js/acf-field-group' . $suffix . '.js' ), array( 'acf-input' ), $version );
 			wp_register_script( 'acf-internal-post-type', acf_get_url( 'assets/build/js/acf-internal-post-type' . $suffix . '.js' ), array( 'acf-input' ), $version );
+			wp_register_script( 'acf-escaped-html-notice', acf_get_url( 'assets/build/js/acf-escaped-html-notice' . $suffix . '.js' ), array( 'jquery' ), $version, true );
 
 			// Register styles.
 			wp_register_style( 'acf-global', acf_get_url( 'assets/build/css/acf-global.css' ), array( 'dashicons' ), $version );
@@ -189,10 +190,10 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 		 * @date    28/4/20
 		 * @since   5.9.0
 		 *
-		 * @param   string $action The action name.
-		 * @param   string $method The method name.
-		 * @param   int    $priority See add_action().
-		 * @param   int    $accepted_args See add_action().
+		 * @param   string  $action        The action name.
+		 * @param   string  $method        The method name.
+		 * @param   integer $priority      See add_action().
+		 * @param   integer $accepted_args See add_action().
 		 * @return  void
 		 */
 		public function add_action( $action, $method, $priority = 10, $accepted_args = 1 ) {
@@ -260,7 +261,7 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 		 * @since   5.9.0
 		 *
 		 * @param   array $args {
-		 *      @type bool $uploader Whether or not to enqueue uploader scripts.
+		 * @type bool $uploader Whether or not to enqueue uploader scripts.
 		 * }
 		 * @return  void
 		 */
@@ -368,6 +369,9 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 						'1 field requires attention'  => __( '1 field requires attention', 'acf' ),
 						'%d fields require attention' => __( '%d fields require attention', 'acf' ),
 
+						// Block Validation
+						'An ACF Block on this page requires attention before you can save.' => __( 'An ACF Block on this page requires attention before you can save.', 'acf' ),
+
 						// Other
 						'Edit field group'            => __( 'Edit field group', 'acf' ),
 					)
@@ -457,23 +461,24 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 			}
 
 			// Localize data.
-			acf_localize_data(
-				array(
-					'admin_url'   => admin_url(),
-					'ajaxurl'     => admin_url( 'admin-ajax.php' ),
-					'nonce'       => wp_create_nonce( 'acf_nonce' ),
-					'acf_version' => acf_get_setting( 'version' ),
-					'wp_version'  => $wp_version,
-					'browser'     => acf_get_browser(),
-					'locale'      => acf_get_locale(),
-					'rtl'         => is_rtl(),
-					'screen'      => acf_get_form_data( 'screen' ),
-					'post_id'     => acf_get_form_data( 'post_id' ),
-					'validation'  => acf_get_form_data( 'validation' ),
-					'editor'      => acf_is_block_editor() ? 'block' : 'classic',
-					'is_pro'      => acf_is_pro(),
-				)
+			$data_to_localize = array(
+				'admin_url'   => admin_url(),
+				'ajaxurl'     => admin_url( 'admin-ajax.php' ),
+				'nonce'       => wp_create_nonce( 'acf_nonce' ),
+				'acf_version' => acf_get_setting( 'version' ),
+				'wp_version'  => $wp_version,
+				'browser'     => acf_get_browser(),
+				'locale'      => acf_get_locale(),
+				'rtl'         => is_rtl(),
+				'screen'      => acf_get_form_data( 'screen' ),
+				'post_id'     => acf_get_form_data( 'post_id' ),
+				'validation'  => acf_get_form_data( 'validation' ),
+				'editor'      => acf_is_block_editor() ? 'block' : 'classic',
+				'is_pro'      => acf_is_pro(),
+				'debug'       => acf_is_beta() || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ),
 			);
+
+			acf_localize_data( $data_to_localize );
 
 			// Print inline script.
 			printf( "<script>\n%s\n</script>\n", 'acf.data = ' . wp_json_encode( $this->data ) . ';' );
@@ -495,9 +500,7 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 				/**
 				 * Fires during "admin_footer" when ACF scripts are enqueued.
 				 *
-				 * @since   5.6.9
-				 *
-				 * @param   void
+				 * @since 5.6.9
 				 */
 				do_action( 'acf/input/admin_footer' );
 				do_action( 'acf/input/admin_print_footer_scripts' );
@@ -547,7 +550,6 @@ if ( ! class_exists( 'ACF_Assets' ) ) :
 
 	// instantiate
 	acf_new_instance( 'ACF_Assets' );
-
 endif; // class_exists check
 
 /**

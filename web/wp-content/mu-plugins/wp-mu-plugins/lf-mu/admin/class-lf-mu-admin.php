@@ -154,6 +154,8 @@ class Lf_Mu_Admin {
 	 */
 	public function validate( $input ) {
 
+		$this->tag_blog_posts_with_projects();
+
 		$options = get_option( $this->plugin_name );
 
 		$options['show_hello_bar'] = ( isset( $input['show_hello_bar'] ) && ! empty( $input['show_hello_bar'] ) ) ? 1 : 0;
@@ -249,6 +251,50 @@ class Lf_Mu_Admin {
 		$options['promotion_cta_link2'] = ( isset( $input['promotion_cta_link2'] ) && ! empty( $input['promotion_cta_link2'] ) ) ? esc_url( $input['promotion_cta_link2'] ) : '';
 
 		return $options;
+	}
+
+	/**
+	 * Get all projects found more than once in the content.
+	 *
+	 * @param string $content The content of the post.
+	 * @param array  $projects The projects to search for.
+	 */
+	private function get_project_tags( $content, $projects ) {
+		$project_tags = array();
+		foreach ( $projects as $project ) {
+			if ( substr_count( $content, $project->name ) > 1 ) {
+				$project_tags[] = $project->name;
+			}
+		}
+		return $project_tags;
+	}
+
+	/**
+	 * Tag blog posts with projects.
+	 * This is a temporary function used once to tag all blog posts by projects that appear in its copy.
+	 */
+	private function tag_blog_posts_with_projects() {
+		$myposts = get_posts(
+			array(
+				'post_type'      => 'post',
+				'posts_per_page' => -1,
+				'category'       => 230,
+			)
+		);
+		$projects = get_terms( 'lf-project' );
+
+		foreach ( $myposts as $post ) {
+			if ( get_the_terms( $post->ID, 'lf-project' ) ) {
+				continue;
+			}
+
+			// only add projects if there are none already assigned.
+			$project_tags = $this->get_project_tags( $post->post_content, $projects );
+			if ( ! empty( $projects ) ) {
+				wp_set_post_terms( $post->ID, $project_tags, 'lf-project' );
+			}
+		}
+		wp_reset_postdata();
 	}
 
 	/**

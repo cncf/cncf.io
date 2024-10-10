@@ -61,12 +61,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 					}
 					
 				?>
-					
-					
-					<label for="{0}[{1}][date_format][0]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][0]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[0] ?>"<?php echo $this->set_radio($values['date_format'], $format[0]); ?>><?php echo date($format[0]) ?></label><br />
-					<label for="{0}[{1}][date_format][1]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][1]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[1] ?>"<?php echo $this->set_radio($values['date_format'], $format[1]); ?>><?php echo date($format[1]) ?></label><br />
-					<label for="{0}[{1}][date_format][2]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][2]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo $format[2] ?>"<?php echo $this->set_radio($values['date_format'], $format[2]); ?>><?php echo date($format[2]) ?></label><br />
-					<!--<label for="{0}[{1}][date_format]"><input class="" id="{0}[{1}][date_format]" name="{0}[{1}][date_format]" type="radio"> Custom: <input type="text" size="10" /></label>-->
+					<label for="{0}[{1}][date_format][0]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][0]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo esc_attr( $format[0] ); ?>"<?php echo $this->set_radio( $values['date_format'], $format[0] ); ?>><?php echo date( $format[0] ); ?></label><br />
+					<label for="{0}[{1}][date_format][1]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][1]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo esc_attr( $format[1] ); ?>"<?php echo $this->set_radio( $values['date_format'], $format[1] ); ?>><?php echo date( $format[1] ); ?></label><br />
+					<label for="{0}[{1}][date_format][2]"><input class="date_format_radio" data-field-template-id="{0}[{1}][date_format][2]" data-field-template-name="{0}[{1}][date_format]" type="radio" value="<?php echo esc_attr( $format[2] ); ?>"<?php echo $this->set_radio( $values['date_format'], $format[2] ); ?>><?php echo date( $format[2] ); ?></label><br />
 				</p>
 			</fieldset>
 			<div class="clear"></div>
@@ -79,19 +76,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<p class="sf_range_min">
 						<label for="{0}[{1}][date_from_prefix]">
 							<?php _e("From Prefix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear before the From field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" data-field-template-id="{0}[{1}][date_from_prefix]" data-field-template-name="{0}[{1}][date_from_prefix]" type="text" size="7" value="<?php echo $values['date_from_prefix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_from_prefix]" data-field-template-name="{0}[{1}][date_from_prefix]" type="text" size="7" value="<?php echo esc_attr( $values['date_from_prefix'] ); ?>">
 						</label>
 					</p>
 					<p class="sf_range_max">
 						<label for="{0}[{1}][date_from_postfix]">
 							<?php _e("From Postfix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear after the From field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" data-field-template-id="{0}[{1}][date_from_postfix]" data-field-template-name="{0}[{1}][date_from_postfix]" type="text" size="7" value="<?php echo $values['date_from_postfix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_from_postfix]" data-field-template-name="{0}[{1}][date_from_postfix]" type="text" size="7" value="<?php echo esc_attr( $values['date_from_postfix'] ); ?>">
 						</label>
 					</p>
 					<p class="sf_range_step">
 						<label for="{0}[{1}][date_from_placeholder]">
 							<?php _e("From Placeholder", $this->plugin_slug); ?><br />
-							<input class="" data-field-template-id="{0}[{1}][date_from_placeholder]" data-field-template-name="{0}[{1}][date_from_placeholder]" type="text" size="7" value="<?php echo $values['date_from_placeholder']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_from_placeholder]" data-field-template-name="{0}[{1}][date_from_placeholder]" type="text" size="7" value="<?php echo esc_attr( $values['date_from_placeholder'] ); ?>">
 						</label>
 					</p>
 				</fieldset>
@@ -100,19 +97,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<p class="sf_range_min">
 						<label for="{0}[{1}][date_to_prefix]">
 							<?php _e("To Prefix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear before the To field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" data-field-template-id="{0}[{1}][date_to_prefix]" data-field-template-name="{0}[{1}][date_to_prefix]" type="text" size="7" value="<?php echo $values['date_to_prefix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_to_prefix]" data-field-template-name="{0}[{1}][date_to_prefix]" type="text" size="7" value="<?php echo esc_attr( $values['date_to_prefix'] ); ?>">
 						</label>
 					</p>
 					<p class="sf_range_max">
 						<label for="{0}[{1}][date_to_postfix]">
 							<?php _e("To Postfix", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("text to appear after the To field", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-							<input class="" data-field-template-id="{0}[{1}][date_to_postfix]" data-field-template-name="{0}[{1}][date_to_postfix]" type="text" size="7" value="<?php echo $values['date_to_postfix']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_to_postfix]" data-field-template-name="{0}[{1}][date_to_postfix]" type="text" size="7" value="<?php echo esc_attr( $values['date_to_postfix'] ); ?>">
 						</label>
 					</p>
 					<p class="sf_range_step">
 						<label for="{0}[{1}][date_to_placeholder]">
 							<?php _e("To Placeholder", $this->plugin_slug); ?><br />
-							<input class="" data-field-template-id="{0}[{1}][date_to_placeholder]" data-field-template-name="{0}[{1}][date_to_placeholder]" type="text" size="7" value="<?php echo $values['date_to_placeholder']; ?>">
+							<input class="" data-field-template-id="{0}[{1}][date_to_placeholder]" data-field-template-name="{0}[{1}][date_to_placeholder]" type="text" size="7" value="<?php echo esc_attr( $values['date_to_placeholder'] ); ?>">
 						</label>
 					</p>
 				</fieldset>

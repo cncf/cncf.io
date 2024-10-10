@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="widget" data-field-type="<?php echo $values['type']; ?>">
+<div class="widget" data-field-type="<?php echo esc_attr( $values['type'] ); ?>">
 	<div class="widget-top">
         <div class="widget-title-action">
             <a class="widget-control-edit hide-if-js">
@@ -121,7 +121,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					<p class="item-container">
 						<label for="{0}[{1}][exclude]"><?php _e("Exclude IDs (only WP 3.9 and above)", $this->plugin_slug); ?><span class="hint--top hint--info" data-hint="<?php _e("comma separated list of author IDs to exclude", $this->plugin_slug); ?>"><i class="dashicons dashicons-info"></i></span><br />
-						<input class="" data-field-template-id="{0}[{1}][exclude]" data-field-template-name="{0}[{1}][exclude]" type="text" value="<?php echo $values['exclude']; ?>"></label>
+						<input class="" data-field-template-id="{0}[{1}][exclude]" data-field-template-name="{0}[{1}][exclude]" type="text" value="<?php echo esc_attr( $values['exclude'] ); ?>"></label>
 					</p>
 					
 				</fieldset>
@@ -131,7 +131,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 			<br class="clear" />
 			
-			<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" data-field-template-id="hidden_type" value="<?php echo $values['type']; ?>">
+			<input type="hidden" data-field-template-name="{0}[{1}][type]" class="widget-id" data-field-template-id="hidden_type" value="<?php echo esc_attr( $values['type'] ); ?>">
 			
 
 			<div class="widget-control-actions">

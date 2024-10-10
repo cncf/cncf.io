@@ -5,19 +5,16 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 	class acf_field_oembed extends acf_field {
 
 
-		/*
-		*  __construct
-		*
-		*  This function will setup the field type data
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will setup the field type data
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
 		function initialize() {
 
 			// vars
@@ -33,27 +30,26 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 			);
 			$this->width         = 640;
 			$this->height        = 390;
+			$this->supports      = array(
+				'escaping_html' => true, // The OEmbed field only produces html safe content from format_value.
+			);
 
 			// extra
 			add_action( 'wp_ajax_acf/fields/oembed/search', array( $this, 'ajax_query' ) );
 			add_action( 'wp_ajax_nopriv_acf/fields/oembed/search', array( $this, 'ajax_query' ) );
-
 		}
 
 
-		/*
-		*  prepare_field
-		*
-		*  This function will prepare the field for input
-		*
-		*  @type    function
-		*  @date    14/2/17
-		*  @since   5.5.8
-		*
-		*  @param   $field (array)
-		*  @return  (int)
-		*/
-
+		/**
+		 * This function will prepare the field for input
+		 *
+		 * @type    function
+		 * @date    14/2/17
+		 * @since   5.5.8
+		 *
+		 * @param   $field (array)
+		 * @return  (int)
+		 */
 		function prepare_field( $field ) {
 
 			// defaults
@@ -66,7 +62,6 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 
 			// return
 			return $field;
-
 		}
 
 		/**
@@ -75,9 +70,9 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		 * @date    24/01/2014
 		 * @since   5.0.0
 		 *
-		 * @param string     $url    The URL that should be embedded.
-		 * @param int|string $width  Optional maxwidth value passed to the provider URL.
-		 * @param int|string $height Optional maxheight value passed to the provider URL.
+		 * @param string         $url    The URL that should be embedded.
+		 * @param integer|string $width  Optional maxwidth value passed to the provider URL.
+		 * @param integer|string $height Optional maxheight value passed to the provider URL.
 		 * @return string|false The embedded HTML on success, false on failure.
 		 */
 		function wp_oembed_get( $url = '', $width = 0, $height = 0 ) {
@@ -100,48 +95,38 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 			return $embed;
 		}
 
-		/*
-		*  ajax_query
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    24/10/13
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
+		/**
+		 * Returns AJAX results for the oEmbed field.
+		 *
+		 * @since 5.0.0
+		 *
+		 * @return void
+		 */
+		public function ajax_query() {
+			$args = acf_request_args(
+				array(
+					'nonce'     => '',
+					'field_key' => '',
+				)
+			);
 
-		function ajax_query() {
-
-			// validate
-			if ( ! acf_verify_ajax() ) {
+			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
 				die();
 			}
 
-			// get choices
-			$response = $this->get_ajax_query( $_POST );
-
-			// return
-			wp_send_json( $response );
-
+			wp_send_json( $this->get_ajax_query( $_POST ) );
 		}
 
-
-		/*
-		*  get_ajax_query
-		*
-		*  This function will return an array of data formatted for use in a select2 AJAX response
-		*
-		*  @type    function
-		*  @date    15/10/2014
-		*  @since   5.0.9
-		*
-		*  @param   $options (array)
-		*  @return  (array)
-		*/
-
+		/**
+		 * This function will return an array of data formatted for use in a select2 AJAX response
+		 *
+		 * @type    function
+		 * @date    15/10/2014
+		 * @since   5.0.9
+		 *
+		 * @param   $options (array)
+		 * @return  (array)
+		 */
 		function get_ajax_query( $args = array() ) {
 
 			// defaults
@@ -170,32 +155,23 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 
 			// return
 			return $response;
-
 		}
 
 
-		/*
-		*  render_field()
-		*
-		*  Create the HTML interface for your field
-		*
-		*  @param   $field - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
-
-		function render_field( $field ) {
-
-			// atts
+		/**
+		 * Renders the oEmbed field.
+		 *
+		 * @since 3.6
+		 *
+		 * @param array $field The field settings array.
+		 * @return void
+		 */
+		public function render_field( $field ) {
 			$atts = array(
-				'class' => 'acf-oembed',
+				'class'      => 'acf-oembed',
+				'data-nonce' => wp_create_nonce( $field['key'] ),
 			);
 
-			// <strong><?php _e("Error.", 'acf'); </strong> _e("No embed found for the given URL.", 'acf');
-
-			// value
 			if ( $field['value'] ) {
 				$atts['class'] .= ' has-value';
 			}
@@ -233,7 +209,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		<div class="canvas-media">
 			<?php
 			if ( $field['value'] ) {
-				echo $this->wp_oembed_get( $field['value'], $field['width'], $field['height'] );
+				echo $this->wp_oembed_get( $field['value'], $field['width'], $field['height'] ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_ombed_get generates HTML safe output.
 			}
 			?>
 		</div>
@@ -242,22 +218,19 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 	
 </div>
 			<?php
-
 		}
 
 
-		/*
-		*  render_field_settings()
-		*
-		*  Create extra options for your field. This is rendered when editing a field.
-		*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-		*
-		*  @param   $field  - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
+		/**
+		 * Create extra options for your field. This is rendered when editing a field.
+		 * The value of $field['name'] can be used (like bellow) to save extra data to the $field
+		 *
+		 * @param   $field  - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 */
 		function render_field_settings( $field ) {
 			acf_render_field_setting(
 				$field,
@@ -286,21 +259,17 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		}
 
 		/**
-		 *  format_value()
+		 * This filter is appied to the $value after it is loaded from the db and before it is returned to the template.
 		 *
-		 *  This filter is appied to the $value after it is loaded from the db and before it is returned to the template
+		 * @type    filter
+		 * @since   3.6
 		 *
-		 *  @type    filter
-		 *  @since   3.6
-		 *  @date    23/01/13
-		 *
-		 *  @param   $value (mixed) the value which was loaded from the database
-		 *  @param   $post_id (mixed) the post_id from which the value was loaded
-		 *  @param   $field (array) the field array holding all the field options
-		 *
-		 *  @return  $value (mixed) the modified value
+		 * @param  mixed $value   The value which was loaded from the database.
+		 * @param  mixed $post_id The $post_id from which the value was loaded.
+		 * @param  array $field   The field array holding all the field options.
+		 * @return mixed the modified value
 		 */
-		function format_value( $value, $post_id, $field ) {
+		public function format_value( $value, $post_id, $field ) {
 			// bail early if no value
 			if ( empty( $value ) ) {
 				return $value;
@@ -333,7 +302,6 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 
 	// initialize
 	acf_register_field_type( 'acf_field_oembed' );
-
 endif; // class_exists check
 
 ?>

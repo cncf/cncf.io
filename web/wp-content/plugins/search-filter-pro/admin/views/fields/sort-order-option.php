@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						echo '<select name="{0}[{1}][sort_options][{2}][meta_key]" class="meta_key" id="{0}[{1}][sort_options][{2}][meta_key]">';
 						foreach($all_meta_keys as $v)
 						{						
-							echo '<option value="'.$v.'"'.$this->set_selected($values['meta_key'], $v, false).'>'.$v."</option>";
+							echo '<option value="'.esc_attr( $v ).'"'.$this->set_selected($values['meta_key'], $v, false).'>'.esc_html( $v )."</option>";
 						}
 						echo '</select>';
 					}

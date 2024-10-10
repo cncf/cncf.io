@@ -175,15 +175,15 @@ body.acf-keydown-shift .acf-repeater .acf-row:hover > .acf-row-handle .acf-icon.
 .acf-repeater.-max .acf-icon[data-event=add-row] {
   display: none !important;
 }
-.acf-repeater .acf-actions .acf-button {
+.acf-repeater > .acf-actions .acf-button {
   float: right;
   pointer-events: auto !important;
 }
-.acf-repeater .acf-actions .acf-tablenav {
+.acf-repeater > .acf-actions .acf-tablenav {
   float: right;
   margin-right: 20px;
 }
-.acf-repeater .acf-actions .acf-tablenav .current-page {
+.acf-repeater > .acf-actions .acf-tablenav .current-page {
   width: auto !important;
 }
 
@@ -660,6 +660,34 @@ html[dir=rtl] .acf-gallery .acf-gallery-side-data th.label {
   position: relative;
 }
 
+.acf-admin-single-options-page .select2-dropdown {
+  border-color: #6BB5D8 !important;
+  margin-top: -5px;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.1);
+}
+.acf-admin-single-options-page .select2-dropdown.select2-dropdown--above {
+  margin-top: 0;
+}
+.acf-admin-single-options-page .select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #F9FAFB !important;
+  color: #667085;
+}
+.acf-admin-single-options-page .select2-container--default .select2-results__option[aria-selected=true]:hover {
+  color: #399CCB;
+}
+.acf-admin-single-options-page .select2-container--default .select2-results__option--highlighted[aria-selected] {
+  color: #fff !important;
+  background-color: #0783BE !important;
+}
+.acf-admin-single-options-page .select2-dropdown .select2-results__option {
+  margin-bottom: 0;
+}
+
+.acf-create-options-page-popup ~ .select2-container {
+  z-index: 999999999;
+}
+
 /*-----------------------------------------------------------------------------
 *
 *	ACF Blocks
@@ -667,6 +695,10 @@ html[dir=rtl] .acf-gallery .acf-gallery-side-data th.label {
 *----------------------------------------------------------------------------*/
 .acf-block-component .components-placeholder {
   margin: 0;
+}
+
+.block-editor .acf-field.acf-error {
+  background-color: rgba(255, 0, 0, 0.05);
 }
 
 .acf-block-component .acf-block-fields {
@@ -694,35 +726,149 @@ html[dir=rtl] .acf-block-component .acf-block-fields {
   line-height: 1.5;
 }
 
-.acf-block-body .acf-block-fields {
+.acf-block-body .acf-block-fields:has(> .acf-error-message),
+.acf-block-fields:has(> .acf-error-message) .acf-block-fields:has(> .acf-error-message) {
+  border: none !important;
+}
+.acf-block-body .acf-error-message,
+.acf-block-fields:has(> .acf-error-message) .acf-error-message {
+  margin-top: 0;
+  border: none;
+}
+.acf-block-body .acf-error-message .acf-notice-dismiss,
+.acf-block-fields:has(> .acf-error-message) .acf-error-message .acf-notice-dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  outline: unset;
+}
+.acf-block-body .acf-error-message .acf-icon.-cancel::before,
+.acf-block-fields:has(> .acf-error-message) .acf-error-message .acf-icon.-cancel::before {
+  margin: 0 !important;
+}
+.acf-block-body.acf-block-has-validation-error,
+.acf-block-fields:has(> .acf-error-message).acf-block-has-validation-error {
+  border: 2px solid #d94f4f;
+}
+.acf-block-body .acf-error .acf-input .acf-notice,
+.acf-block-fields:has(> .acf-error-message) .acf-error .acf-input .acf-notice {
+  background: none !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-left: 0;
+}
+.acf-block-body .acf-error .acf-input .acf-notice p,
+.acf-block-fields:has(> .acf-error-message) .acf-error .acf-input .acf-notice p {
+  margin: 0.5em 0 !important;
+}
+.acf-block-body .acf-error .acf-input .acf-notice::before,
+.acf-block-fields:has(> .acf-error-message) .acf-error .acf-input .acf-notice::before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  background-image: url(../../../images/icons/icon-info-red.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 69%;
+  height: 26px !important;
+  width: 26px !important;
+  box-sizing: border-box;
+}
+.acf-block-body .acf-error .acf-label label,
+.acf-block-fields:has(> .acf-error-message) .acf-error .acf-label label {
+  color: #d94f4f;
+}
+.acf-block-body .acf-error .acf-input input,
+.acf-block-fields:has(> .acf-error-message) .acf-error .acf-input input {
+  border-color: #d94f4f;
+}
+.acf-block-body.acf-block-has-validation-error::before,
+.acf-block-fields:has(> .acf-error-message).acf-block-has-validation-error::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -32px;
+  font-size: 20px;
+  background-color: #d94f4f;
+  background-image: url(../../../images/icons/icon-info-white.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 52%;
+  background-size: 55%;
+  height: 40px;
+  width: 32px;
+  box-sizing: border-box;
+}
+.acf-block-body .acf-block-validation-error,
+.acf-block-fields:has(> .acf-error-message) .acf-block-validation-error {
+  color: #d94f4f;
+  display: flex;
+  align-items: center;
+}
+.acf-block-body .acf-block-fields,
+.acf-block-fields:has(> .acf-error-message) .acf-block-fields {
   border: #adb2ad solid 1px;
 }
-.acf-block-body .acf-block-fields .acf-tab-wrap .acf-tab-group {
+.acf-block-body .acf-block-fields .acf-tab-wrap .acf-tab-group,
+.acf-block-fields:has(> .acf-error-message) .acf-block-fields .acf-tab-wrap .acf-tab-group {
   margin-left: 0;
   padding: 16px 20px 0;
 }
-.acf-block-body .acf-fields > .acf-field {
+.acf-block-body .acf-fields > .acf-field,
+.acf-block-fields:has(> .acf-error-message) .acf-fields > .acf-field {
   padding: 16px 20px;
 }
-.acf-block-body .acf-fields > .acf-field.acf-accordion {
+.acf-block-body .acf-fields > .acf-field.acf-accordion,
+.acf-block-fields:has(> .acf-error-message) .acf-fields > .acf-field.acf-accordion {
   border-color: #adb2ad;
 }
-.acf-block-body .acf-fields > .acf-field.acf-accordion .acf-accordion-title {
+.acf-block-body .acf-fields > .acf-field.acf-accordion .acf-accordion-title,
+.acf-block-fields:has(> .acf-error-message) .acf-fields > .acf-field.acf-accordion .acf-accordion-title {
   padding: 16px 20px;
 }
-.acf-block-body .acf-button, .acf-block-body .acf-link a.button {
+.acf-block-body .acf-button,
+.acf-block-body .acf-link a.button,
+.acf-block-body .acf-add-checkbox,
+.acf-block-fields:has(> .acf-error-message) .acf-button,
+.acf-block-fields:has(> .acf-error-message) .acf-link a.button,
+.acf-block-fields:has(> .acf-error-message) .acf-add-checkbox {
   color: #2271b1 !important;
-  border-color: #2271b1;
-  background: #f6f7f7;
+  border-color: #2271b1 !important;
+  background: #f6f7f7 !important;
   vertical-align: top;
 }
-.acf-block-body .acf-button.button-primary:hover, .acf-block-body .acf-link a.button.button-primary:hover {
+.acf-block-body .acf-button.button-primary:hover,
+.acf-block-body .acf-link a.button.button-primary:hover,
+.acf-block-body .acf-add-checkbox.button-primary:hover,
+.acf-block-fields:has(> .acf-error-message) .acf-button.button-primary:hover,
+.acf-block-fields:has(> .acf-error-message) .acf-link a.button.button-primary:hover,
+.acf-block-fields:has(> .acf-error-message) .acf-add-checkbox.button-primary:hover {
   color: white !important;
+  background: #2271b1 !important;
 }
-.acf-block-body .acf-button:hover, .acf-block-body .acf-link a.button:hover {
+.acf-block-body .acf-button:focus,
+.acf-block-body .acf-link a.button:focus,
+.acf-block-body .acf-add-checkbox:focus,
+.acf-block-fields:has(> .acf-error-message) .acf-button:focus,
+.acf-block-fields:has(> .acf-error-message) .acf-link a.button:focus,
+.acf-block-fields:has(> .acf-error-message) .acf-add-checkbox:focus {
+  outline: none !important;
+  background: #f6f7f7 !important;
+}
+.acf-block-body .acf-button:hover,
+.acf-block-body .acf-link a.button:hover,
+.acf-block-body .acf-add-checkbox:hover,
+.acf-block-fields:has(> .acf-error-message) .acf-button:hover,
+.acf-block-fields:has(> .acf-error-message) .acf-link a.button:hover,
+.acf-block-fields:has(> .acf-error-message) .acf-add-checkbox:hover {
   color: #0a4b78 !important;
 }
-.acf-block-body .acf-block-preview {
+.acf-block-body .acf-block-preview,
+.acf-block-fields:has(> .acf-error-message) .acf-block-preview {
   min-height: 10px;
 }
 

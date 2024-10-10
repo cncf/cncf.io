@@ -30,35 +30,31 @@ class Search_Filter_Activator {
 
 	public function init_new_site_dbs( $new_site ) {
 		if ( is_a( $new_site, 'WP_Site' ) ) {
-			if ( is_plugin_active_for_network( 'search-filter-pro/search-filter-pro.php' ) )
-			{
+			if ( is_plugin_active_for_network( 'search-filter-pro/search-filter-pro.php' ) ) {
 				switch_to_blog( $new_site->blog_id );
 				$this->db_install();
 				restore_current_blog();
 			}
 		}
 	}
-	public function activate($network_wide) {
-		
+	public function activate( $network_wide ) {
+
 		global $wpdb;
 
 		if ( is_multisite() && $network_wide ) {
 			// store the current blog id
-	        $current_blog = $wpdb->blogid;
-	        
-	        // Get all blogs in the network and activate plugin on each one
-	        $blog_ids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
-	        foreach ( $blog_ids as $blog_id ) {
-	            switch_to_blog( $blog_id );
-	            $this->db_install();
-	            restore_current_blog();
-	        }
+			$current_blog = $wpdb->blogid;
 
-		}
-		else
-		{
+			// Get all blogs in the network and activate plugin on each one
+			$blog_ids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
+			foreach ( $blog_ids as $blog_id ) {
+				switch_to_blog( $blog_id );
+				$this->db_install();
+				restore_current_blog();
+			}
+		} else {
 
-			//check for existence of caching database, if not install it
+			// check for existence of caching database, if not install it
 			$this->db_install();
 		}
 	}
@@ -89,11 +85,10 @@ class Search_Filter_Activator {
             KEY sf_c_field_value_num_index (field_value_num)
 		) $charset_collate;";
 
-		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 		dbDelta( $sql );
 
 		$table_name = $wpdb->prefix . 'search_filter_term_results';
-
 
 		$sql = "CREATE TABLE $table_name (
 			id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -107,7 +102,6 @@ class Search_Filter_Activator {
             KEY sf_tr_field_value_num_index (field_value_num)
 
 		) $charset_collate;";
-
 
 		dbDelta( $sql );
 	}

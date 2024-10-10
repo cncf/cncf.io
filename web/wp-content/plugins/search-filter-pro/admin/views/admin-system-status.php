@@ -14,9 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-
-	<!--<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>-->
-
 <?php
 $current_tab = ! empty( $_REQUEST['tab'] ) ? sanitize_title( $_REQUEST['tab'] ) : 'status';
 ?>

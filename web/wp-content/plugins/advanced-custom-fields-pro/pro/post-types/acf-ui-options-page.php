@@ -56,7 +56,7 @@ if ( ! class_exists( 'ACF_UI_Options_Page' ) ) {
 		/**
 		 * Constructs the class and any parent classes.
 		 *
-		 * @since 5.0.0
+		 * @since 6.2
 		 */
 		public function __construct() {
 			$this->register_post_type();
@@ -168,6 +168,7 @@ if ( ! class_exists( 'ACF_UI_Options_Page' ) ) {
 				'position'               => null,
 				'redirect'               => false,
 				'description'            => '',
+				'menu_icon'              => array(),
 				// Labels tab.
 				'update_button'          => __( 'Update', 'acf' ),
 				'updated_message'        => __( 'Options Updated', 'acf' ),
@@ -185,10 +186,14 @@ if ( ! class_exists( 'ACF_UI_Options_Page' ) ) {
 		 *
 		 * @since 6.2
 		 *
-		 * @return bool validity status
+		 * @return boolean validity status
 		 */
 		public function ajax_validate_values() {
-			$to_validate = acf_sanitize_request_args( $_POST['acf_ui_options_page'] ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
+			if ( empty( $_POST['acf_ui_options_page'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
+				return false;
+			}
+
+			$to_validate = acf_sanitize_request_args( wp_unslash( $_POST['acf_ui_options_page'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
 			$post_id     = acf_request_arg( 'post_id' );
 			$valid       = true;
 			$menu_slug   = (string) $to_validate['menu_slug'];
@@ -280,8 +285,6 @@ if ( ! class_exists( 'ACF_UI_Options_Page' ) ) {
 		 * Includes all local JSON options pages.
 		 *
 		 * @since 6.1
-		 *
-		 * @return void
 		 */
 		public function include_json_options_pages() {
 			$local_json = acf_get_instance( 'ACF_Local_JSON' );
@@ -331,6 +334,27 @@ if ( ! class_exists( 'ACF_UI_Options_Page' ) ) {
 			$return .= "acf_add_options_page( {$code} );\r\n";
 
 			return esc_textarea( $return );
+		}
+
+		/**
+		 * This function returns whether the value was saved prior to the icon picker field or not.
+		 *
+		 * @since 6.3
+		 *
+		 * @param mixed $args The args for the icon field.
+		 * @return boolean
+		 */
+		public function value_was_saved_prior_to_icon_picker_field( $args ) {
+			if (
+				! empty( $args['menu_icon'] ) &&
+				is_array( $args['menu_icon'] ) &&
+				! empty( $args['menu_icon']['type'] ) &&
+				! empty( $args['menu_icon']['value'] )
+			) {
+				return false;
+			}
+
+			return true;
 		}
 
 		/**
@@ -395,9 +419,22 @@ if ( ! class_exists( 'ACF_UI_Options_Page' ) ) {
 				$args[ $setting ] = $value;
 			}
 
+			// Override the icon_url if the value was saved after the icon picker was added to ACF in 6.3.
+			if ( ! $this->value_was_saved_prior_to_icon_picker_field( $args ) ) {
+				if ( $args['menu_icon']['type'] === 'url' ) {
+					$args['icon_url'] = $args['menu_icon']['value'];
+				}
+				if ( $args['menu_icon']['type'] === 'media_library' ) {
+					$image_url        = wp_get_attachment_image_url($args['menu_icon']['value']);
+					$args['icon_url'] = $image_url;
+				}
+				if ( $args['menu_icon']['type'] === 'dashicons' ) {
+					$args['icon_url'] = $args['menu_icon']['value'];
+				}
+			}
+
 			return apply_filters( 'acf/ui_options_page/registration_args', $args, $post );
 		}
-
 	}
 
 }
