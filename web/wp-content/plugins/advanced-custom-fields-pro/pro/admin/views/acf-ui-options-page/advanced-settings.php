@@ -11,6 +11,10 @@ foreach ( acf_get_combined_options_page_settings_tabs() as $tab_key => $tab_labe
 		)
 	);
 
+	$wrapper_class = str_replace( '_', '-', $tab_key );
+
+	echo '<div class="acf-ui-options-page-advanced-settings acf-ui-options-page-' . esc_attr( $wrapper_class ) . '-settings">';
+
 	switch ( $tab_key ) {
 		case 'visibility':
 			$acf_dashicon_class_name = __( 'Dashicon class name', 'acf' );
@@ -22,18 +26,46 @@ foreach ( acf_get_combined_options_page_settings_tabs() as $tab_key => $tab_labe
 				$acf_dashicon_link
 			);
 
+			// Set the default value for the icon field.
+			$acf_default_icon_value = array(
+				'type'  => 'dashicons',
+				'value' => 'dashicons-admin-generic',
+			);
+
+			$acf_icon_value = $acf_default_icon_value;
+
+			// Override the value for backwards compatibility, if it was saved with the key 'icon_url' as a string.
+			if ( ! empty( $acf_ui_options_page['icon_url'] ) ) {
+				if ( strpos( $acf_ui_options_page['icon_url'], 'dashicons-' ) === 0 ) {
+					$acf_icon_value = array(
+						'type'  => 'dashicons',
+						'value' => $acf_ui_options_page['icon_url'],
+					);
+				} else {
+					$acf_icon_value = array(
+						'type'  => 'url',
+						'value' => $acf_ui_options_page['icon_url'],
+					);
+				}
+			}
+
+			// Override the above value if a 'menu_icon' key exists, and is not empty, which is the new key for storing the icon.
+			if ( ! empty( $acf_ui_options_page['menu_icon'] ) ) {
+				$acf_icon_value = $acf_ui_options_page['menu_icon'];
+			}
+
 			acf_render_field_wrap(
 				array(
-					'label'        => __( 'Menu Icon', 'acf' ),
-					'type'         => 'text',
-					'name'         => 'icon_url',
-					'key'          => 'icon_url',
-					'class'        => 'acf-options-page-menu_icon',
-					'prefix'       => 'acf_ui_options_page',
-					'value'        => $acf_ui_options_page['icon_url'],
-					'instructions' => $acf_menu_icon_instructions,
-					'placeholder'  => 'dashicons-admin-generic',
-					'conditions'   => array(
+					'label'         => __( 'Menu Icon', 'acf' ),
+					'type'          => 'icon_picker',
+					'name'          => 'menu_icon',
+					'key'           => 'menu_icon',
+					'class'         => 'acf-options-page-menu_icon',
+					'prefix'        => 'acf_ui_options_page',
+					'required'      => false,
+					'value'         => $acf_icon_value,
+					'default_value' => $acf_default_icon_value,
+					'conditions'    => array(
 						'field'    => 'parent_slug',
 						'operator' => '==',
 						'value'    => 'none',
@@ -67,6 +99,17 @@ foreach ( acf_get_combined_options_page_settings_tabs() as $tab_key => $tab_labe
 				$acf_menu_position_link
 			);
 
+			$acf_menu_position_desc_parent = sprintf(
+				/* translators: %s - link to WordPress docs to learn more about menu positions. */
+				__( 'The position in the menu where this page should appear. %s', 'acf' ),
+				$acf_menu_position_link
+			);
+
+			$acf_menu_position_desc_child = __( 'The position in the menu where this child page should appear. The first child page is 0, the next is 1, etc.', 'acf' );
+
+			$acf_menu_position_desc  = '<span class="acf-menu-position-desc-parent">' . $acf_menu_position_desc_parent . '</span>';
+			$acf_menu_position_desc .= '<span class="acf-menu-position-desc-child">' . $acf_menu_position_desc_child . '</span>';
+
 			acf_render_field_wrap(
 				array(
 					'label'        => __( 'Menu Position', 'acf' ),
@@ -76,11 +119,6 @@ foreach ( acf_get_combined_options_page_settings_tabs() as $tab_key => $tab_labe
 					'prefix'       => 'acf_ui_options_page',
 					'value'        => $acf_ui_options_page['position'],
 					'instructions' => $acf_menu_position_desc,
-					'conditions'   => array(
-						'field'    => 'parent_slug',
-						'operator' => '==',
-						'value'    => 'none',
-					),
 				),
 				'div',
 				'field'
@@ -263,4 +301,6 @@ foreach ( acf_get_combined_options_page_settings_tabs() as $tab_key => $tab_labe
 	}
 
 	do_action( "acf/ui_options_page/render_settings_tab/{$tab_key}", $acf_ui_options_page );
+
+	echo '</div>';
 }

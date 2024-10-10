@@ -5,19 +5,16 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 	class acf_field_checkbox extends acf_field {
 
 
-		/*
-		*  __construct
-		*
-		*  This function will setup the field type data
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will setup the field type data
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
 		function initialize() {
 
 			// vars
@@ -37,25 +34,21 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 				'return_format'             => 'value',
 				'custom_choice_button_text' => __( 'Add new choice', 'acf' ),
 			);
-
 		}
 
 
-		/*
-		*  render_field()
-		*
-		*  Create the HTML interface for your field
-		*
-		*  @param   $field (array) the $field being rendered
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field (array) the $field being edited
-		*  @return  n/a
-		*/
-
+		/**
+		 * Create the HTML interface for your field
+		 *
+		 * @param   $field (array) the $field being rendered
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field (array) the $field being edited
+		 * @return  n/a
+		 */
 		function render_field( $field ) {
 
 			// reset vars
@@ -100,45 +93,38 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 			}
 
 			// return
-			echo '<ul ' . acf_esc_attr( $ul ) . '>' . "\n" . $li . '</ul>' . "\n";
-
+			echo '<ul ' . acf_esc_attrs( $ul ) . '>' . "\n" . $li . '</ul>' . "\n"; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped by specific render methods above.
 		}
 
 
-		/*
-		*  render_field_choices
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    15/7/17
-		*  @since   5.6.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    15/7/17
+		 * @since   5.6.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function render_field_choices( $field ) {
 
 			// walk
 			return $this->walk( $field['choices'], $field );
-
 		}
 
 		/**
 		 * Validates values for the checkbox field
 		 *
-		 * @date  09/12/2022
 		 * @since 6.0.0
 		 *
-		 * @param bool   $valid  If the field is valid.
-		 * @param mixed  $value  The value to validate.
-		 * @param array  $field  The main field array.
-		 * @param string $input  The input element's name attribute.
-		 *
-		 * @return bool
+		 * @param  boolean $valid If the field is valid.
+		 * @param  mixed   $value The value to validate.
+		 * @param  array   $field The main field array.
+		 * @param  string  $input The input element's name attribute.
+		 * @return boolean
 		 */
-		function validate_value( $valid, $value, $field, $input ) {
+		public function validate_value( $valid, $value, $field, $input ) {
 			if ( ! is_array( $value ) || empty( $field['allow_custom'] ) ) {
 				return $valid;
 			}
@@ -152,19 +138,16 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 			return $valid;
 		}
 
-		/*
-		*  render_field_toggle
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    15/7/17
-		*  @since   5.6.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    15/7/17
+		 * @since   5.6.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function render_field_toggle( $field ) {
 
 			// vars
@@ -186,23 +169,19 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 			// return
 			return '<li>' . acf_get_checkbox_input( $atts ) . '</li>' . "\n";
-
 		}
 
 
-		/*
-		*  render_field_custom
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    15/7/17
-		*  @since   5.6.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    15/7/17
+		 * @since   5.6.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function render_field_custom( $field ) {
 
 			// vars
@@ -230,7 +209,6 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 				// append
 				$html .= '<li><input class="acf-checkbox-custom" type="checkbox" checked="checked" />' . acf_get_text_input( $text_input ) . '</li>' . "\n";
-
 			}
 
 			// append button
@@ -238,7 +216,6 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 			// return
 			return $html;
-
 		}
 
 
@@ -278,7 +255,6 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 				// optgroup
 				if ( is_array( $label ) ) {
-
 					$html .= '<ul>' . "\n";
 					$html .= $this->walk( $label, $args, $depth + 1 );
 					$html .= '</ul>';
@@ -313,33 +289,28 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 					// append
 					$html .= acf_get_checkbox_input( $atts );
-
 				}
 
 				// close
 				$html .= '</li>' . "\n";
-
 			}
 
 			// return
 			return $html;
-
 		}
 
 
 
-		/*
-		*  render_field_settings()
-		*
-		*  Create extra options for your field. This is rendered when editing a field.
-		*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field  - an array holding all the field's data
-		*/
+		/**
+		 * Create extra options for your field. This is rendered when editing a field.
+		 * The value of $field['name'] can be used (like bellow) to save extra data to the $field
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field  - an array holding all the field's data
+		 */
 		function render_field_settings( $field ) {
 			// Encode choices (convert from array).
 			$field['choices']       = acf_encode_choices( $field['choices'] );
@@ -380,7 +351,6 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 					),
 				)
 			);
-
 		}
 
 		/**
@@ -456,21 +426,18 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 			);
 		}
 
-		/*
-		*  update_field()
-		*
-		*  This filter is appied to the $field before it is saved to the database
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field - the field array holding all the field options
-		*  @param   $post_id - the field group ID (post_type = acf)
-		*
-		*  @return  $field - the modified field
-		*/
-
+		/**
+		 * This filter is appied to the $field before it is saved to the database
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field - the field array holding all the field options
+		 * @param   $post_id - the field group ID (post_type = acf)
+		 *
+		 * @return  $field - the modified field
+		 */
 		function update_field( $field ) {
 
 			// Decode choices (convert to array).
@@ -480,22 +447,19 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 		}
 
 
-		/*
-		*  update_value()
-		*
-		*  This filter is appied to the $value before it is updated in the db
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value - the value which will be saved in the database
-		*  @param   $post_id - the $post_id of which the value will be saved
-		*  @param   $field - the field array holding all the field options
-		*
-		*  @return  $value - the modified value
-		*/
-
+		/**
+		 * This filter is appied to the $value before it is updated in the db
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value - the value which will be saved in the database
+		 * @param   $post_id - the post_id of which the value will be saved
+		 * @param   $field - the field array holding all the field options
+		 *
+		 * @return  $value - the modified value
+		 */
 		function update_value( $value, $post_id, $field ) {
 
 			// bail early if is empty
@@ -538,56 +502,46 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 					// append
 					$field['choices'][ $v ] = $v;
-
 				}
 
 				// save
 				acf_update_field( $field );
-
 			}
 
 			// return
 			return $value;
-
 		}
 
 
-		/*
-		*  translate_field
-		*
-		*  This function will translate field settings
-		*
-		*  @type    function
-		*  @date    8/03/2016
-		*  @since   5.3.2
-		*
-		*  @param   $field (array)
-		*  @return  $field
-		*/
-
+		/**
+		 * This function will translate field settings
+		 *
+		 * @type    function
+		 * @date    8/03/2016
+		 * @since   5.3.2
+		 *
+		 * @param   $field (array)
+		 * @return  $field
+		 */
 		function translate_field( $field ) {
 
 			return acf_get_field_type( 'select' )->translate_field( $field );
-
 		}
 
 
-		/*
-		*  format_value()
-		*
-		*  This filter is appied to the $value after it is loaded from the db and before it is returned to the template
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value (mixed) the value which was loaded from the database
-		*  @param   $post_id (mixed) the $post_id from which the value was loaded
-		*  @param   $field (array) the field array holding all the field options
-		*
-		*  @return  $value (mixed) the modified value
-		*/
-
+		/**
+		 * This filter is appied to the $value after it is loaded from the db and before it is returned to the template
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value (mixed) the value which was loaded from the database
+		 * @param   $post_id (mixed) the post_id from which the value was loaded
+		 * @param   $field (array) the field array holding all the field options
+		 *
+		 * @return  $value (mixed) the modified value
+		 */
 		function format_value( $value, $post_id, $field ) {
 
 			// Bail early if is empty.
@@ -630,13 +584,9 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 			return $schema;
 		}
-
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_checkbox' );
-
 endif; // class_exists check
-
-

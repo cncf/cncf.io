@@ -1,126 +1,96 @@
 <?php
 
-/*
-*  acf_is_array
-*
-*  This function will return true for a non empty array
-*
-*  @type    function
-*  @date    6/07/2016
-*  @since   5.4.0
-*
-*  @param   $array (array)
-*  @return  (boolean)
-*/
-
+/**
+ * This function will return true for a non empty array
+ *
+ * @since   5.4.0
+ *
+ * @param   mixed $array The variable to test.
+ * @return  boolean
+ */
 function acf_is_array( $array ) {
-
 	return ( is_array( $array ) && ! empty( $array ) );
-
 }
 
 /**
- *  acf_has_setting
+ * Alias of acf()->has_setting()
  *
- *  alias of acf()->has_setting()
+ * @since   5.6.5
  *
- *  @date    2/2/18
- *  @since   5.6.5
- *
- *  @param   n/a
- *  @return  n/a
+ * @param   string $name Name of the setting to check for.
+ * @return  boolean
  */
-
 function acf_has_setting( $name = '' ) {
 	return acf()->has_setting( $name );
 }
 
-
 /**
- *  acf_raw_setting
+ * acf_raw_setting
  *
- *  alias of acf()->get_setting()
+ * alias of acf()->get_setting()
  *
- *  @date    2/2/18
- *  @since   5.6.5
+ * @since   5.6.5
  *
- *  @param   n/a
- *  @return  n/a
+ * @param   n/a
+ * @return  n/a
  */
-
 function acf_raw_setting( $name = '' ) {
 	return acf()->get_setting( $name );
 }
 
-
-/*
-*  acf_update_setting
-*
-*  alias of acf()->update_setting()
-*
-*  @type    function
-*  @date    28/09/13
-*  @since   5.0.0
-*
-*  @param   $name (string)
-*  @param   $value (mixed)
-*  @return  n/a
-*/
-
+/**
+ * acf_update_setting
+ *
+ * alias of acf()->update_setting()
+ *
+ * @since   5.0.0
+ *
+ * @param   $name (string)
+ * @param   $value (mixed)
+ * @return  n/a
+ */
 function acf_update_setting( $name, $value ) {
-
-	// validate name
+	// validate name.
 	$name = acf_validate_setting( $name );
 
-	// update
+	// update.
 	return acf()->update_setting( $name, $value );
 }
 
-
 /**
- *  acf_validate_setting
+ * acf_validate_setting
  *
- *  Returns the changed setting name if available.
+ * Returns the changed setting name if available.
  *
- *  @date    2/2/18
- *  @since   5.6.5
+ * @since   5.6.5
  *
- *  @param   n/a
- *  @return  n/a
+ * @param   n/a
+ * @return  n/a
  */
-
 function acf_validate_setting( $name = '' ) {
 	return apply_filters( 'acf/validate_setting', $name );
 }
 
-
-/*
-*  acf_get_setting
-*
-*  alias of acf()->get_setting()
-*
-*  @type    function
-*  @date    28/09/13
-*  @since   5.0.0
-*
-*  @param   n/a
-*  @return  n/a
-*/
-
+/**
+ * Alias of acf()->get_setting()
+ *
+ * @since   5.0.0
+ *
+ * @param   string $name  The name of the setting to test.
+ * @param string $value An optional default value for the setting if it doesn't exist.
+ * @return  n/a
+ */
 function acf_get_setting( $name, $value = null ) {
-
-	// validate name
 	$name = acf_validate_setting( $name );
 
-	// check settings
+	// replace default setting value if it exists.
 	if ( acf_has_setting( $name ) ) {
 		$value = acf_raw_setting( $name );
 	}
 
-	// filter
+	// filter.
 	$value = apply_filters( "acf/settings/{$name}", $value );
 
-	// return
 	return $value;
 }
 
@@ -134,20 +104,17 @@ function acf_get_internal_post_types() {
 	return array( 'acf-field-group', 'acf-post-type', 'acf-taxonomy', 'acf-ui-options-page' );
 }
 
-/*
-*  acf_append_setting
-*
-*  This function will add a value into the settings array found in the acf object
-*
-*  @type    function
-*  @date    28/09/13
-*  @since   5.0.0
-*
-*  @param   $name (string)
-*  @param   $value (mixed)
-*  @return  n/a
-*/
-
+/**
+ * acf_append_setting
+ *
+ * This function will add a value into the settings array found in the acf object
+ *
+ * @since   5.0.0
+ *
+ * @param   $name (string)
+ * @param   $value (mixed)
+ * @return  n/a
+ */
 function acf_append_setting( $name, $value ) {
 
 	// vars
@@ -165,37 +132,31 @@ function acf_append_setting( $name, $value ) {
 	return acf_update_setting( $name, $setting );
 }
 
-
 /**
- *  acf_get_data
+ * acf_get_data
  *
- *  Returns data.
+ * Returns data.
  *
- *  @date    28/09/13
- *  @since   5.0.0
+ * @since   5.0.0
  *
- *  @param   string $name
- *  @return  mixed
+ * @param   string $name
+ * @return  mixed
  */
-
 function acf_get_data( $name ) {
 	return acf()->get_data( $name );
 }
 
-
 /**
- *  acf_set_data
+ * acf_set_data
  *
- *  Sets data.
+ * Sets data.
  *
- *  @date    28/09/13
- *  @since   5.0.0
+ * @since   5.0.0
  *
- *  @param   string $name
- *  @param   mixed  $value
- *  @return  n/a
+ * @param   string $name
+ * @param   mixed  $value
+ * @return  n/a
  */
-
 function acf_set_data( $name, $value ) {
 	return acf()->set_data( $name, $value );
 }
@@ -203,11 +164,10 @@ function acf_set_data( $name, $value ) {
 /**
  * Appends data to an existing key.
  *
- * @date    11/06/2020
  * @since   5.9.0
  *
- * @param   string $name The data name.
- * @return  array $data The data array.
+ * @param string $name The data name.
+ * @param mixed  $data The data to append to name.
  */
 function acf_append_data( $name, $data ) {
 	$prev_data = acf()->get_data( $name );
@@ -217,39 +177,25 @@ function acf_append_data( $name, $data ) {
 	acf()->set_data( $name, $data );
 }
 
-/*
-*  acf_init
-*
-*  alias of acf()->init()
-*
-*  @type    function
-*  @date    28/09/13
-*  @since   5.0.0
-*
-*  @param   n/a
-*  @return  n/a
-*/
-
+/**
+ * Alias of acf()->init() - the core ACF init function.
+ *
+ * @since   5.0.0
+ */
 function acf_init() {
-
 	acf()->init();
-
 }
 
-
-/*
-*  acf_has_done
-*
-*  This function will return true if this action has already been done
-*
-*  @type    function
-*  @date    16/12/2015
-*  @since   5.3.2
-*
-*  @param   $name (string)
-*  @return  (boolean)
-*/
-
+/**
+ * acf_has_done
+ *
+ * This function will return true if this action has already been done
+ *
+ * @since   5.3.2
+ *
+ * @param   $name (string)
+ * @return  (boolean)
+ */
 function acf_has_done( $name ) {
 
 	// return true if already done
@@ -262,153 +208,109 @@ function acf_has_done( $name ) {
 	return false;
 }
 
-
-
-
-/*
-*  acf_get_external_path
-*
-*  This function will return the path to a file within an external folder
-*
-*  @type    function
-*  @date    22/2/17
-*  @since   5.5.8
-*
-*  @param   $file (string)
-*  @param   $path (string)
-*  @return  (string)
-*/
-
+/**
+ * This function will return the path to a file within an external folder
+ *
+ * @since   5.5.8
+ *
+ * @param   string $file Directory path.
+ * @param   string $path Optional file path.
+ * @return  string File path.
+ */
 function acf_get_external_path( $file, $path = '' ) {
-
 	return plugin_dir_path( $file ) . $path;
-
 }
-
-
-/*
-*  acf_get_external_dir
-*
-*  This function will return the url to a file within an external folder
-*
-*  @type    function
-*  @date    22/2/17
-*  @since   5.5.8
-*
-*  @param   $file (string)
-*  @param   $path (string)
-*  @return  (string)
-*/
-
-function acf_get_external_dir( $file, $path = '' ) {
-
-	return acf_plugin_dir_url( $file ) . $path;
-
-}
-
 
 /**
- *  acf_plugin_dir_url
+ * This function will return the url to a file within an internal ACF folder
  *
- *  This function will calculate the url to a plugin folder.
- *  Different to the WP plugin_dir_url(), this function can calculate for urls outside of the plugins folder (theme include).
+ * @since   5.5.8
  *
- *  @date    13/12/17
- *  @since   5.6.8
- *
- *  @param   type $var Description. Default.
- *  @return  type Description.
+ * @param   string $file Directory path.
+ * @param   string $path Optional file path.
+ * @return  string File path.
  */
+function acf_get_external_dir( $file, $path = '' ) {
+	return acf_plugin_dir_url( $file ) . $path;
+}
 
+/**
+ * This function will calculate the url to a plugin folder.
+ * Different to the WP plugin_dir_url(), this function can calculate for urls outside of the plugins folder (theme include).
+ *
+ * @since   5.6.8
+ *
+ * @param   string $file A file path inside the ACF plugin to get the plugin directory path from.
+ * @return  string The plugin directory path.
+ */
 function acf_plugin_dir_url( $file ) {
-
-	// vars
 	$path = plugin_dir_path( $file );
 	$path = wp_normalize_path( $path );
 
-	// check plugins
+	// check plugins.
 	$check_path = wp_normalize_path( realpath( WP_PLUGIN_DIR ) );
 	if ( strpos( $path, $check_path ) === 0 ) {
 		return str_replace( $check_path, plugins_url(), $path );
 	}
 
-	// check wp-content
+	// check wp-content.
 	$check_path = wp_normalize_path( realpath( WP_CONTENT_DIR ) );
 	if ( strpos( $path, $check_path ) === 0 ) {
 		return str_replace( $check_path, content_url(), $path );
 	}
 
-	// check root
+	// check root.
 	$check_path = wp_normalize_path( realpath( ABSPATH ) );
 	if ( strpos( $path, $check_path ) === 0 ) {
 		return str_replace( $check_path, site_url( '/' ), $path );
 	}
 
-	// return
+	// return.
 	return plugin_dir_url( $file );
-
 }
 
-
-/*
-*  acf_parse_args
-*
-*  This function will merge together 2 arrays and also convert any numeric values to ints
-*
-*  @type    function
-*  @date    18/10/13
-*  @since   5.0.0
-*
-*  @param   $args (array)
-*  @param   $defaults (array)
-*  @return  $args (array)
-*/
-
+/**
+ * This function will merge together 2 arrays and also convert any numeric values to ints
+ *
+ * @since   5.0.0
+ *
+ * @param   array $args     The configured arguments array.
+ * @param   array $defaults The default properties for the passed args to inherit.
+ * @return  array $args Parsed arguments with defaults applied.
+ */
 function acf_parse_args( $args, $defaults = array() ) {
-
-	// parse args
 	$args = wp_parse_args( $args, $defaults );
 
 	// parse types
 	$args = acf_parse_types( $args );
 
-	// return
 	return $args;
-
 }
 
-
-/*
-*  acf_parse_types
-*
-*  This function will convert any numeric values to int and trim strings
-*
-*  @type    function
-*  @date    18/10/13
-*  @since   5.0.0
-*
-*  @param   $var (mixed)
-*  @return  $var (mixed)
-*/
-
+/**
+ * acf_parse_types
+ *
+ * This function will convert any numeric values to int and trim strings
+ *
+ * @since   5.0.0
+ *
+ * @param   $var (mixed)
+ * @return  $var (mixed)
+ */
 function acf_parse_types( $array ) {
 	return array_map( 'acf_parse_type', $array );
 }
 
-
-/*
-*  acf_parse_type
-*
-*  description
-*
-*  @type    function
-*  @date    11/11/2014
-*  @since   5.0.9
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_parse_type
+ *
+ * description
+ *
+ * @since   5.0.9
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_parse_type( $v ) {
 
 	// Check if is string.
@@ -427,17 +329,13 @@ function acf_parse_type( $v ) {
 	return $v;
 }
 
-
 /**
- *  This function will load in a file from the 'admin/views' folder and allow variables to be passed through
+ * This function will load in a file from the 'admin/views' folder and allow variables to be passed through
  *
- *  @date    28/09/13
- *  @since   5.0.0
+ * @since   5.0.0
  *
- *  @param string $view_path
- *  @param array  $view_args
- *
- *  @return void
+ * @param string $view_path
+ * @param array  $view_args
  */
 function acf_get_view( $view_path = '', $view_args = array() ) {
 	// allow view file name shortcut
@@ -453,20 +351,16 @@ function acf_get_view( $view_path = '', $view_args = array() ) {
 	}
 }
 
-
-/*
-*  acf_merge_atts
-*
-*  description
-*
-*  @type    function
-*  @date    2/11/2014
-*  @since   5.0.9
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_merge_atts
+ *
+ * description
+ *
+ * @since   5.0.9
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_merge_atts( $atts, $extra = array() ) {
 
 	// bail early if no $extra
@@ -483,142 +377,99 @@ function acf_merge_atts( $atts, $extra = array() ) {
 
 		// append
 		if ( $k == 'class' || $k == 'style' ) {
-
 			$atts[ $k ] .= ' ' . $v;
 
 			// merge
 		} else {
-
 			$atts[ $k ] = $v;
-
 		}
 	}
 
-	// return
 	return $atts;
-
 }
 
-
-/*
-*  acf_nonce_input
-*
-*  This function will create a basic nonce input
-*
-*  @type    function
-*  @date    24/5/17
-*  @since   5.6.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * This function will create and echo a basic nonce input
+ *
+ * @since   5.6.0
+ *
+ * @param string $nonce The nonce parameter string.
+ */
 function acf_nonce_input( $nonce = '' ) {
-
-	echo '<input type="hidden" name="_acf_nonce" value="' . wp_create_nonce( $nonce ) . '" />';
-
+	echo '<input type="hidden" name="_acf_nonce" value="' . esc_attr( wp_create_nonce( $nonce ) ) . '" />';
 }
 
+/**
+ * This function will remove the var from the array, and return the var
+ *
+ * @since   5.0.0
+ *
+ * @param array  $extract_array an array passed as reference to be extracted.
+ * @param string $key           The key to extract from the array.
+ * @param mixed  $default_value The default value if it doesn't exist in the extract array.
+ * @return mixed Extracted var or default.
+ */
+function acf_extract_var( &$extract_array, $key, $default_value = null ) {
+	// check if exists - uses array_key_exists to extract NULL values (isset will fail).
+	if ( is_array( $extract_array ) && array_key_exists( $key, $extract_array ) ) {
 
-/*
-*  acf_extract_var
-*
-*  This function will remove the var from the array, and return the var
-*
-*  @type    function
-*  @date    2/10/13
-*  @since   5.0.0
-*
-*  @param   $array (array)
-*  @param   $key (string)
-*  @return  (mixed)
-*/
+		// store and unset value.
+		$v = $extract_array[ $key ];
+		unset( $extract_array[ $key ] );
 
-function acf_extract_var( &$array, $key, $default = null ) {
-
-	// check if exists
-	// - uses array_key_exists to extract NULL values (isset will fail)
-	if ( is_array( $array ) && array_key_exists( $key, $array ) ) {
-
-		// store value
-		$v = $array[ $key ];
-
-		// unset
-		unset( $array[ $key ] );
-
-		// return
 		return $v;
-
 	}
 
-	// return
-	return $default;
+	return $default_value;
 }
 
-
-/*
-*  acf_extract_vars
-*
-*  This function will remove the vars from the array, and return the vars
-*
-*  @type    function
-*  @date    8/10/13
-*  @since   5.0.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
-function acf_extract_vars( &$array, $keys ) {
-
+/**
+ * This function will remove the vars from the array, and return the vars
+ *
+ * @since   5.0.0
+ *
+ * @param array $extract_array an array passed as reference to be extracted.
+ * @param array $keys          An array of keys to extract from the original array.
+ * @return array An array of extracted values.
+ */
+function acf_extract_vars( &$extract_array, $keys ) {
 	$r = array();
 
 	foreach ( $keys as $key ) {
-
-		$r[ $key ] = acf_extract_var( $array, $key );
-
+		$r[ $key ] = acf_extract_var( $extract_array, $key );
 	}
 
 	return $r;
 }
 
-
-/*
-*  acf_get_sub_array
-*
-*  This function will return a sub array of data
-*
-*  @type    function
-*  @date    15/03/2016
-*  @since   5.3.2
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_get_sub_array
+ *
+ * This function will return a sub array of data
+ *
+ * @since   5.3.2
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_get_sub_array( $array, $keys ) {
 
 	$r = array();
 
 	foreach ( $keys as $key ) {
-
 		$r[ $key ] = $array[ $key ];
-
 	}
 
 	return $r;
-
 }
 
-
 /**
- *  Returns an array of post type names.
+ * Returns an array of post type names.
  *
- *  @date    7/10/13
- *  @since   5.0.0
+ * @since   5.0.0
  *
- *  @param array $args Optional. An array of key => value arguments to match against the post type objects. Default empty array.
- *  @return array A list of post type names.
+ * @param array $args Optional. An array of key => value arguments to match against the post type objects. Default empty array.
+ * @return array A list of post type names.
  */
 function acf_get_post_types( $args = array() ) {
 	$post_types = array();
@@ -659,7 +510,6 @@ function acf_get_pretty_post_types( $post_types = array() ) {
 
 		// get all custom post types
 		$post_types = acf_get_post_types();
-
 	}
 
 	// get labels
@@ -676,12 +526,10 @@ function acf_get_pretty_post_types( $post_types = array() ) {
 
 		// increase counter
 		if ( ! isset( $ref[ $label ] ) ) {
-
 			$ref[ $label ] = 0;
-
 		}
 
-		$ref[ $label ]++;
+		++$ref[ $label ];
 	}
 
 	// get slugs
@@ -691,27 +539,23 @@ function acf_get_pretty_post_types( $post_types = array() ) {
 		$post_type = $r[ $i ];
 
 		if ( $ref[ $post_type ] > 1 ) {
-
 			$r[ $i ] .= ' (' . $i . ')';
-
 		}
 	}
 
 	// return
 	return $r;
-
 }
 
 /**
- *  Function acf_get_post_stati()
+ * Function acf_get_post_stati()
  *
- *  Returns an array of post status names.
+ * Returns an array of post status names.
  *
- *  @date    01/24/23
- *  @since   6.1.0
+ * @since   6.1.0
  *
- *  @param   array $args Optional. An array of key => value arguments to match against the post status objects. Default empty array.
- *  @return  array A list of post status names.
+ * @param   array $args Optional. An array of key => value arguments to match against the post status objects. Default empty array.
+ * @return  array A list of post status names.
  */
 function acf_get_post_stati( $args = array() ) {
 
@@ -726,15 +570,14 @@ function acf_get_post_stati( $args = array() ) {
 	return $post_statuses;
 }
 /**
- *  Function acf_get_pretty_post_statuses()
+ * Function acf_get_pretty_post_statuses()
  *
- *  Returns a clean array of post status names.
+ * Returns a clean array of post status names.
  *
- *  @date    02/16/23
- *  @since   6.1.0
+ * @since   6.1.0
  *
- *  @param   array $post_statuses Optional. An array of post status objects. Default empty array.
- *  @return  array An array of post status names.
+ * @param   array $post_statuses Optional. An array of post status objects. Default empty array.
+ * @return  array An array of post status names.
  */
 function acf_get_pretty_post_statuses( $post_statuses = array() ) {
 
@@ -753,7 +596,7 @@ function acf_get_pretty_post_statuses( $post_statuses = array() ) {
 			$ref[ $label ] = 0;
 		}
 
-		$ref[ $label ]++;
+		++$ref[ $label ];
 	}
 
 	foreach ( array_keys( $result ) as $i ) {
@@ -767,19 +610,16 @@ function acf_get_pretty_post_statuses( $post_statuses = array() ) {
 	return $result;
 }
 
-/*
-*  acf_get_post_type_label
-*
-*  This function will return a pretty label for a specific post_type
-*
-*  @type    function
-*  @date    5/07/2016
-*  @since   5.4.0
-*
-*  @param   $post_type (string)
-*  @return  (string)
-*/
-
+/**
+ * acf_get_post_type_label
+ *
+ * This function will return a pretty label for a specific post_type
+ *
+ * @since   5.4.0
+ *
+ * @param   $post_type (string)
+ * @return  (string)
+ */
 function acf_get_post_type_label( $post_type ) {
 
 	// vars
@@ -788,29 +628,23 @@ function acf_get_post_type_label( $post_type ) {
 	// check that object exists
 	// - case exists when importing field group from another install and post type does not exist
 	if ( post_type_exists( $post_type ) ) {
-
 		$obj   = get_post_type_object( $post_type );
 		$label = $obj->labels->singular_name;
-
 	}
 
 	// return
 	return $label;
-
 }
 
-
 /**
- *  Function acf_get_post_status_label()
+ * Function acf_get_post_status_label()
  *
- *  This function will return a pretty label for a specific post_status
+ * This function will return a pretty label for a specific post_status
  *
- *  @type    function
- *  @date    01/24/2023
- *  @since   6.1.0
+ * @since   6.1.0
  *
- *  @param   string $post_status The post status.
- *  @return  string The post status label.
+ * @param   string $post_status The post status.
+ * @return  string The post status label.
  */
 function acf_get_post_status_label( $post_status ) {
 	$label = $post_status;
@@ -820,20 +654,16 @@ function acf_get_post_status_label( $post_status ) {
 	return $label;
 }
 
-
-/*
-*  acf_verify_nonce
-*
-*  This function will look at the $_POST['_acf_nonce'] value and return true or false
-*
-*  @type    function
-*  @date    15/10/13
-*  @since   5.0.0
-*
-*  @param   $nonce (string)
-*  @return  (boolean)
-*/
-
+/**
+ * acf_verify_nonce
+ *
+ * This function will look at the $_POST['_acf_nonce'] value and return true or false
+ *
+ * @since   5.0.0
+ *
+ * @param   $nonce (string)
+ * @return  (boolean)
+ */
 function acf_verify_nonce( $value ) {
 
 	// vars
@@ -849,52 +679,48 @@ function acf_verify_nonce( $value ) {
 
 	// return
 	return true;
-
 }
 
-
-/*
-*  acf_verify_ajax
-*
-*  This function will return true if the current AJAX request is valid
-*  It's action will also allow WPML to set the lang and avoid AJAX get_posts issues
-*
-*  @type    function
-*  @date    7/08/2015
-*  @since   5.2.3
-*
-*  @param   n/a
-*  @return  (boolean)
-*/
-
-function acf_verify_ajax() {
-
-	// bail early if not acf nonce
-	if ( empty( $_REQUEST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_REQUEST['nonce'] ), 'acf_nonce' ) ) {
+/**
+ * Returns true if the current AJAX request is valid.
+ * It's action will also allow WPML to set the lang and avoid AJAX get_posts issues
+ *
+ * @since   5.2.3
+ *
+ * @param string $nonce  The nonce to check.
+ * @param string $action The action of the nonce.
+ * @return boolean
+ */
+function acf_verify_ajax( $nonce = '', $action = '' ) {
+	// Bail early if we don't have a nonce to check.
+	if ( empty( $nonce ) && empty( $_REQUEST['nonce'] ) ) {
 		return false;
 	}
 
-	// action for 3rd party customization
+	$nonce_to_check = ! empty( $nonce ) ? $nonce : $_REQUEST['nonce']; // phpcs:ignore WordPress.Security -- We're verifying a nonce here.
+	$nonce_action   = ! empty( $action ) ? $action : 'acf_nonce';
+
+	// Bail if nonce can't be verified.
+	if ( ! wp_verify_nonce( sanitize_text_field( $nonce_to_check ), $nonce_action ) ) {
+		return false;
+	}
+
+	// Action for 3rd party customization (WPML).
 	do_action( 'acf/verify_ajax' );
 
-	// return
 	return true;
 }
 
-
-/*
-*  acf_get_image_sizes
-*
-*  This function will return an array of available image sizes
-*
-*  @type    function
-*  @date    23/10/13
-*  @since   5.0.0
-*
-*  @param   n/a
-*  @return  (array)
-*/
-
+/**
+ * acf_get_image_sizes
+ *
+ * This function will return an array of available image sizes
+ *
+ * @since   5.0.0
+ *
+ * @param   n/a
+ * @return  (array)
+ */
 function acf_get_image_sizes() {
 
 	// vars
@@ -909,21 +735,17 @@ function acf_get_image_sizes() {
 
 	// add extra registered sizes
 	if ( ! empty( $all_sizes ) ) {
-
 		foreach ( $all_sizes as $size ) {
 
 			// bail early if already in array
 			if ( isset( $sizes[ $size ] ) ) {
-
 				continue;
-
 			}
 
 			// append to array
 			$label          = str_replace( '-', ' ', $size );
 			$label          = ucwords( $label );
 			$sizes[ $size ] = $label;
-
 		}
 	}
 
@@ -935,9 +757,7 @@ function acf_get_image_sizes() {
 
 		// append
 		if ( $data['width'] && $data['height'] ) {
-
 			$sizes[ $s ] .= ' (' . $data['width'] . ' x ' . $data['height'] . ')';
-
 		}
 	}
 
@@ -949,7 +769,6 @@ function acf_get_image_sizes() {
 
 	// return
 	return $sizes;
-
 }
 
 function acf_get_image_size( $s = '' ) {
@@ -968,7 +787,6 @@ function acf_get_image_size( $s = '' ) {
 
 	// return
 	return $data;
-
 }
 
 /**
@@ -976,13 +794,12 @@ function acf_get_image_size( $s = '' ) {
  *
  * Similar to the version_compare() function but with extra functionality.
  *
- * @date    21/11/16
  * @since   5.5.0
  *
- * @param   string $left The left version number.
+ * @param   string $left    The left version number.
  * @param   string $compare The compare operator.
- * @param   string $right The right version number.
- * @return  bool
+ * @param   string $right   The right version number.
+ * @return  boolean
  */
 function acf_version_compare( $left = '', $compare = '>', $right = '' ) {
 
@@ -996,48 +813,37 @@ function acf_version_compare( $left = '', $compare = '>', $right = '' ) {
 	return version_compare( $left, $right, $compare );
 }
 
-
-/*
-*  acf_get_full_version
-*
-*  This function will remove any '-beta1' or '-RC1' strings from a version
-*
-*  @type    function
-*  @date    24/11/16
-*  @since   5.5.0
-*
-*  @param   $version (string)
-*  @return  (string)
-*/
-
+/**
+ * acf_get_full_version
+ *
+ * This function will remove any '-beta1' or '-RC1' strings from a version
+ *
+ * @since   5.5.0
+ *
+ * @param   $version (string)
+ * @return  (string)
+ */
 function acf_get_full_version( $version = '1' ) {
 
 	// remove '-beta1' or '-RC1'
 	if ( $pos = strpos( $version, '-' ) ) {
-
 		$version = substr( $version, 0, $pos );
-
 	}
 
 	// return
 	return $version;
-
 }
 
-
-/*
-*  acf_get_terms
-*
-*  This function is a wrapper for the get_terms() function
-*
-*  @type    function
-*  @date    28/09/2016
-*  @since   5.4.0
-*
-*  @param   $args (array)
-*  @return  (array)
-*/
-
+/**
+ * acf_get_terms
+ *
+ * This function is a wrapper for the get_terms() function
+ *
+ * @since   5.4.0
+ *
+ * @param   $args (array)
+ * @return  (array)
+ */
 function acf_get_terms( $args ) {
 
 	// defaults
@@ -1050,29 +856,20 @@ function acf_get_terms( $args ) {
 		)
 	);
 
-	// parameters changed in version 4.5
-	if ( acf_version_compare( 'wp', '<', '4.5' ) ) {
-		return get_terms( $args['taxonomy'], $args );
-	}
-
 	// return
 	return get_terms( $args );
 }
 
-
-/*
-*  acf_get_taxonomy_terms
-*
-*  This function will return an array of available taxonomy terms
-*
-*  @type    function
-*  @date    7/10/13
-*  @since   5.0.0
-*
-*  @param   $taxonomies (array)
-*  @return  (array)
-*/
-
+/**
+ * acf_get_taxonomy_terms
+ *
+ * This function will return an array of available taxonomy terms
+ *
+ * @since   5.0.0
+ *
+ * @param   $taxonomies (array)
+ * @return  (array)
+ */
 function acf_get_taxonomy_terms( $taxonomies = array() ) {
 
 	// force array
@@ -1104,9 +901,7 @@ function acf_get_taxonomy_terms( $taxonomies = array() ) {
 
 		// sort into hierachial order!
 		if ( $is_hierarchical ) {
-
 			$terms = _get_term_children( 0, $terms, $taxonomy );
-
 		}
 
 		// add placeholder
@@ -1114,32 +909,25 @@ function acf_get_taxonomy_terms( $taxonomies = array() ) {
 
 		// add choices
 		foreach ( $terms as $term ) {
-
 			$k                 = "{$taxonomy}:{$term->slug}";
 			$r[ $label ][ $k ] = acf_get_term_title( $term );
-
 		}
 	}
 
 	// return
 	return $r;
-
 }
 
-
-/*
-*  acf_decode_taxonomy_terms
-*
-*  This function decodes the $taxonomy:$term strings into a nested array
-*
-*  @type    function
-*  @date    27/02/2014
-*  @since   5.0.0
-*
-*  @param   $terms (array)
-*  @return  (array)
-*/
-
+/**
+ * acf_decode_taxonomy_terms
+ *
+ * This function decodes the $taxonomy:$term strings into a nested array
+ *
+ * @since   5.0.0
+ *
+ * @param   $terms (array)
+ * @return  (array)
+ */
 function acf_decode_taxonomy_terms( $strings = false ) {
 
 	// bail early if no terms
@@ -1160,35 +948,27 @@ function acf_decode_taxonomy_terms( $strings = false ) {
 
 		// create empty array
 		if ( ! isset( $terms[ $taxonomy ] ) ) {
-
 			$terms[ $taxonomy ] = array();
-
 		}
 
 		// append
 		$terms[ $taxonomy ][] = $term;
-
 	}
 
 	// return
 	return $terms;
-
 }
 
-
-/*
-*  acf_decode_taxonomy_term
-*
-*  This function will return the taxonomy and term slug for a given value
-*
-*  @type    function
-*  @date    31/03/2014
-*  @since   5.0.0
-*
-*  @param   $string (string)
-*  @return  (array)
-*/
-
+/**
+ * acf_decode_taxonomy_term
+ *
+ * This function will return the taxonomy and term slug for a given value
+ *
+ * @since   5.0.0
+ *
+ * @param   $string (string)
+ * @return  (array)
+ */
 function acf_decode_taxonomy_term( $value ) {
 
 	// vars
@@ -1199,21 +979,17 @@ function acf_decode_taxonomy_term( $value ) {
 
 	// int
 	if ( is_numeric( $value ) ) {
-
 		$data['term'] = $value;
 
 		// string
 	} elseif ( is_string( $value ) ) {
-
 		$value            = explode( ':', $value );
 		$data['taxonomy'] = isset( $value[0] ) ? $value[0] : '';
 		$data['term']     = isset( $value[1] ) ? $value[1] : '';
 
 		// error
 	} else {
-
 		return false;
-
 	}
 
 	// allow for term_id (Used by ACF v4)
@@ -1224,9 +1000,7 @@ function acf_decode_taxonomy_term( $value ) {
 
 		// find taxonomy
 		if ( ! $data['taxonomy'] ) {
-
 			$data['taxonomy'] = $wpdb->get_var( $wpdb->prepare( "SELECT taxonomy FROM $wpdb->term_taxonomy WHERE term_id = %d LIMIT 1", $data['term'] ) );
-
 		}
 
 		// find term (may have numeric slug '123')
@@ -1245,12 +1019,10 @@ function acf_decode_taxonomy_term( $value ) {
 		// update
 		$data['taxonomy'] = $term->taxonomy;
 		$data['term']     = $term->slug;
-
 	}
 
 	// return
 	return $data;
-
 }
 
 /**
@@ -1258,7 +1030,6 @@ function acf_decode_taxonomy_term( $value ) {
  *
  * Casts the value into an array.
  *
- * @date    9/1/19
  * @since   5.7.10
  *
  * @param   mixed $val The value to cast.
@@ -1271,7 +1042,6 @@ function acf_array( $val = array() ) {
 /**
  * Returns a non-array value.
  *
- * @date    11/05/2020
  * @since   5.8.10
  *
  * @param   mixed $val The value to review.
@@ -1284,19 +1054,16 @@ function acf_unarray( $val ) {
 	return $val;
 }
 
-/*
-*  acf_get_array
-*
-*  This function will force a variable to become an array
-*
-*  @type    function
-*  @date    4/02/2014
-*  @since   5.0.0
-*
-*  @param   $var (mixed)
-*  @return  (array)
-*/
-
+/**
+ * acf_get_array
+ *
+ * This function will force a variable to become an array
+ *
+ * @since   5.0.0
+ *
+ * @param   $var (mixed)
+ * @return  (array)
+ */
 function acf_get_array( $var = false, $delimiter = '' ) {
 
 	// array
@@ -1316,23 +1083,18 @@ function acf_get_array( $var = false, $delimiter = '' ) {
 
 	// place in array
 	return (array) $var;
-
 }
 
-
-/*
-*  acf_get_numeric
-*
-*  This function will return numeric values
-*
-*  @type    function
-*  @date    15/07/2016
-*  @since   5.4.0
-*
-*  @param   $value (mixed)
-*  @return  (mixed)
-*/
-
+/**
+ * acf_get_numeric
+ *
+ * This function will return numeric values
+ *
+ * @since   5.4.0
+ *
+ * @param   $value (mixed)
+ * @return  (mixed)
+ */
 function acf_get_numeric( $value = '' ) {
 
 	// vars
@@ -1341,7 +1103,6 @@ function acf_get_numeric( $value = '' ) {
 
 	// loop
 	foreach ( (array) $value as $v ) {
-
 		if ( is_numeric( $v ) ) {
 			$numbers[] = (int) $v;
 		}
@@ -1359,16 +1120,13 @@ function acf_get_numeric( $value = '' ) {
 
 	// return
 	return $numbers;
-
 }
-
 
 /**
  * acf_get_posts
  *
  * Similar to the get_posts() function but with extra functionality.
  *
- * @date    3/03/15
  * @since   5.1.5
  *
  * @param   array $args The query args.
@@ -1400,7 +1158,7 @@ function acf_get_posts( $args = array() ) {
 		$args['post_status'] = acf_get_post_stati();
 	}
 
-	// Check if specifc post ID's have been provided.
+	// Check if specific post IDs have been provided.
 	if ( $args['post__in'] ) {
 
 		// Clean value into an array of IDs.
@@ -1431,7 +1189,6 @@ function acf_get_posts( $args = array() ) {
 		array_multisort( $order, $posts );
 	}
 
-
 	/**
 	 * Filters the results found in the `acf_get_posts()` function.
 	 *
@@ -1442,21 +1199,17 @@ function acf_get_posts( $args = array() ) {
 	return apply_filters( 'acf/acf_get_posts/results', $posts );
 }
 
-
-/*
-*  _acf_query_remove_post_type
-*
-*  This function will remove the 'wp_posts.post_type' WHERE clause completely
-*  When using 'post__in', this clause is unneccessary and slow.
-*
-*  @type    function
-*  @date    4/03/2015
-*  @since   5.1.5
-*
-*  @param   $sql (string)
-*  @return  $sql
-*/
-
+/**
+ * _acf_query_remove_post_type
+ *
+ * This function will remove the 'wp_posts.post_type' WHERE clause completely
+ * When using 'post__in', this clause is unneccessary and slow.
+ *
+ * @since   5.1.5
+ *
+ * @param   $sql (string)
+ * @return  $sql
+ */
 function _acf_query_remove_post_type( $sql ) {
 
 	// global
@@ -1464,9 +1217,7 @@ function _acf_query_remove_post_type( $sql ) {
 
 	// bail early if no 'wp_posts.ID IN'
 	if ( strpos( $sql, "$wpdb->posts.ID IN" ) === false ) {
-
 		return $sql;
-
 	}
 
 	// get bits
@@ -1475,11 +1226,8 @@ function _acf_query_remove_post_type( $sql ) {
 
 	// loop through $where and remove any post_type queries
 	foreach ( $bits as $i => $bit ) {
-
 		if ( strpos( $bit, "$wpdb->posts.post_type" ) !== false ) {
-
 			unset( $bits[ $i ] );
-
 		}
 	}
 
@@ -1488,24 +1236,19 @@ function _acf_query_remove_post_type( $sql ) {
 
 	// return
 	return $sql;
-
 }
 
-
-/*
-*  acf_get_grouped_posts
-*
-*  This function will return all posts grouped by post_type
-*  This is handy for select settings
-*
-*  @type    function
-*  @date    27/02/2014
-*  @since   5.0.0
-*
-*  @param   $args (array)
-*  @return  (array)
-*/
-
+/**
+ * acf_get_grouped_posts
+ *
+ * This function will return all posts grouped by post_type
+ * This is handy for select settings
+ *
+ * @since   5.0.0
+ *
+ * @param   $args (array)
+ * @return  (array)
+ */
 function acf_get_grouped_posts( $args ) {
 
 	// vars
@@ -1617,36 +1360,33 @@ function acf_get_grouped_posts( $args ) {
 		// group by post type
 		$label          = $post_types_labels[ $post_type ];
 		$data[ $label ] = $this_group;
-
 	}
 
 	// return
 	return $data;
-
 }
 
-
-function _acf_orderby_post_type( $ordeby, $wp_query ) {
-
-	// global
+/**
+ * The internal ACF function to add order by post types for use in `acf_get_grouped_posts`
+ *
+ * @param string $orderby  The current orderby value for a query.
+ * @param object $wp_query The WP_Query.
+ * @return string The potentially modified orderby string.
+ */
+function _acf_orderby_post_type( $orderby, $wp_query ) {
 	global $wpdb;
 
-	// get post types
 	$post_types = $wp_query->get( 'post_type' );
 
-	// prepend SQL
+	// Prepend the SQL.
 	if ( is_array( $post_types ) ) {
-
+		$post_types = array_map( 'esc_sql', $post_types );
 		$post_types = implode( "','", $post_types );
-		$ordeby     = "FIELD({$wpdb->posts}.post_type,'$post_types')," . $ordeby;
-
+		$orderby    = "FIELD({$wpdb->posts}.post_type,'$post_types')," . $orderby;
 	}
 
-	// return
-	return $ordeby;
-
+	return $orderby;
 }
-
 
 function acf_get_post_title( $post = 0, $is_search = false ) {
 
@@ -1666,16 +1406,12 @@ function acf_get_post_title( $post = 0, $is_search = false ) {
 
 	// empty
 	if ( $title === '' ) {
-
 		$title = __( '(no title)', 'acf' );
-
 	}
 
 	// status
 	if ( get_post_status( $post->ID ) != 'publish' ) {
-
 		$append .= ' (' . get_post_status( $post->ID ) . ')';
-
 	}
 
 	// ancestors
@@ -1684,30 +1420,6 @@ function acf_get_post_title( $post = 0, $is_search = false ) {
 		// get ancestors
 		$ancestors = get_ancestors( $post->ID, $post->post_type );
 		$prepend  .= str_repeat( '- ', count( $ancestors ) );
-
-		// add parent
-		/*
-		removed in 5.6.5 as not used by the UI
-		if( $is_search && !empty($ancestors) ) {
-
-			// reverse
-			$ancestors = array_reverse($ancestors);
-
-
-			// convert id's into titles
-			foreach( $ancestors as $i => $id ) {
-
-				$ancestors[ $i ] = get_the_title( $id );
-
-			}
-
-
-			// append
-			$append .= ' | ' . __('Parent', 'acf') . ': ' . implode(' / ', $ancestors);
-
-		}
-		*/
-
 	}
 
 	// merge
@@ -1715,9 +1427,7 @@ function acf_get_post_title( $post = 0, $is_search = false ) {
 
 	// return
 	return $title;
-
 }
-
 
 function acf_order_by_search( $array, $search ) {
 
@@ -1727,9 +1437,7 @@ function acf_order_by_search( $array, $search ) {
 
 	// add key prefix
 	foreach ( array_keys( $array ) as $k ) {
-
 		$array[ '_' . $k ] = acf_extract_var( $array, $k );
-
 	}
 
 	// add search weight
@@ -1748,15 +1456,12 @@ function acf_order_by_search( $array, $search ) {
 
 			// increase weight if match starts at begining of string
 			if ( $strpos == 0 ) {
-
-				$weight++;
-
+				++$weight;
 			}
 		}
 
 		// append to wights
 		$weights[ $k ] = $weight;
-
 	}
 
 	// sort the array with menu_order ascending
@@ -1764,29 +1469,23 @@ function acf_order_by_search( $array, $search ) {
 
 	// remove key prefix
 	foreach ( array_keys( $array ) as $k ) {
-
 		$array[ substr( $k, 1 ) ] = acf_extract_var( $array, $k );
-
 	}
 
 	// return
 	return $array;
 }
 
-
-/*
-*  acf_get_pretty_user_roles
-*
-*  description
-*
-*  @type    function
-*  @date    23/02/2016
-*  @since   5.3.2
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_get_pretty_user_roles
+ *
+ * description
+ *
+ * @since   5.3.2
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_get_pretty_user_roles( $allowed = false ) {
 
 	// vars
@@ -1804,29 +1503,23 @@ function acf_get_pretty_user_roles( $allowed = false ) {
 
 		// append
 		$roles[ $role_name ] = translate_user_role( $role_details['name'] );
-
 	}
 
 	// return
 	return $roles;
-
 }
 
-
-/*
-*  acf_get_grouped_users
-*
-*  This function will return all users grouped by role
-*  This is handy for select settings
-*
-*  @type    function
-*  @date    27/02/2014
-*  @since   5.0.0
-*
-*  @param   $args (array)
-*  @return  (array)
-*/
-
+/**
+ * acf_get_grouped_users
+ *
+ * This function will return all users grouped by role
+ * This is handy for select settings
+ *
+ * @since   5.0.0
+ *
+ * @param   $args (array)
+ * @return  (array)
+ */
 function acf_get_grouped_users( $args = array() ) {
 
 	// vars
@@ -1876,7 +1569,6 @@ function acf_get_grouped_users( $args = array() ) {
 
 		// new WP has role__in
 		if ( version_compare( $wp_version, '4.4', '>=' ) ) {
-
 			$args['role__in'] = $roles;
 
 			// old WP doesn't have role__in
@@ -1888,18 +1580,15 @@ function acf_get_grouped_users( $args = array() ) {
 
 			// loop
 			foreach ( $roles as $role ) {
-
 				$meta_query[] = array(
 					'key'     => $wpdb->get_blog_prefix( $blog_id ) . 'capabilities',
 					'value'   => '"' . $role . '"',
 					'compare' => 'LIKE',
 				);
-
 			}
 
 			// append
 			$args['meta_query'] = $meta_query;
-
 		}
 	}
 
@@ -1925,7 +1614,7 @@ function acf_get_grouped_users( $args = array() ) {
 			$user = acf_extract_var( $users, $key );
 
 			// increase
-			$i++;
+			++$i;
 
 			// bail early if too low
 			if ( $min && $i < $min ) {
@@ -1939,7 +1628,6 @@ function acf_get_grouped_users( $args = array() ) {
 
 			// group by post type
 			$this_users[ $user->ID ] = $user;
-
 		}
 
 		// bail early if no posts for this post type
@@ -1949,12 +1637,10 @@ function acf_get_grouped_users( $args = array() ) {
 
 		// append
 		$r[ $user_role_label ] = $this_users;
-
 	}
 
 	// return
 	return $r;
-
 }
 
 /**
@@ -1962,7 +1648,6 @@ function acf_get_grouped_users( $args = array() ) {
  *
  * Returns json_encode() ready for file / database use.
  *
- * @date    29/4/19
  * @since   5.0.0
  *
  * @param   array $json The array of data to encode.
@@ -1972,122 +1657,77 @@ function acf_json_encode( $json ) {
 	return json_encode( $json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE );
 }
 
-
-/*
-*  acf_str_exists
-*
-*  This function will return true if a sub string is found
-*
-*  @type    function
-*  @date    1/05/2014
-*  @since   5.0.0
-*
-*  @param   $needle (string)
-*  @param   $haystack (string)
-*  @return  (boolean)
-*/
-
+/**
+ * acf_str_exists
+ *
+ * This function will return true if a sub string is found
+ *
+ * @since   5.0.0
+ *
+ * @param   $needle (string)
+ * @param   $haystack (string)
+ * @return  (boolean)
+ */
 function acf_str_exists( $needle, $haystack ) {
 
 	// return true if $haystack contains the $needle
 	if ( is_string( $haystack ) && strpos( $haystack, $needle ) !== false ) {
-
 		return true;
-
 	}
 
 	// return
 	return false;
 }
 
-
-/*
-*  acf_debug
-*
-*  description
-*
-*  @type    function
-*  @date    2/05/2014
-*  @since   5.0.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * A legacy function designed for developer debugging.
+ *
+ * @deprecated 6.2.6 Removed for security, but keeping the definition in case third party devs have it in their code.
+ * @since 5.0.0
+ *
+ * @return false
+ */
 function acf_debug() {
-
-	// vars
-	$args = func_get_args();
-	$s    = array_shift( $args );
-	$o    = '';
-	$nl   = "\r\n";
-
-	// start script
-	$o .= '<script type="text/javascript">' . $nl;
-
-	$o .= 'console.log("' . $s . '"';
-
-	if ( ! empty( $args ) ) {
-
-		foreach ( $args as $arg ) {
-
-			if ( is_object( $arg ) || is_array( $arg ) ) {
-
-				$arg = json_encode( $arg );
-
-			} elseif ( is_bool( $arg ) ) {
-
-				$arg = $arg ? 'true' : 'false';
-
-			} elseif ( is_string( $arg ) ) {
-
-				$arg = '"' . $arg . '"';
-
-			}
-
-			$o .= ', ' . $arg;
-
-		}
-	}
-
-	$o .= ');' . $nl;
-
-	// end script
-	$o .= '</script>' . $nl;
-
-	// echo
-	echo $o;
+	_deprecated_function( __FUNCTION__, '6.2.7' );
+	return false;
 }
 
+/**
+ * A legacy function designed for developer debugging.
+ *
+ * @deprecated 6.2.6 Removed for security, but keeping the definition in case third party devs have it in their code.
+ * @since 5.0.0
+ *
+ * @return false
+ */
 function acf_debug_start() {
-
-	acf_update_setting( 'debug_start', memory_get_usage() );
-
+	_deprecated_function( __FUNCTION__, '6.2.7' );
+	return false;
 }
 
+/**
+ * A legacy function designed for developer debugging.
+ *
+ * @deprecated 6.2.6 Removed for security, but keeping the definition in case third party devs have it in their code.
+ * @since 5.0.0
+ *
+ * @return false
+ */
 function acf_debug_end() {
-
-	$start = acf_get_setting( 'debug_start' );
-	$end   = memory_get_usage();
-
-	return $end - $start;
-
+	_deprecated_function( __FUNCTION__, '6.2.7' );
+	return false;
 }
 
-
-/*
-*  acf_encode_choices
-*
-*  description
-*
-*  @type    function
-*  @date    4/06/2014
-*  @since   5.0.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_encode_choices
+ *
+ * description
+ *
+ * @since   5.0.0
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_encode_choices( $array = array(), $show_keys = true ) {
 
 	// bail early if not array (maybe a single string)
@@ -2116,7 +1756,6 @@ function acf_encode_choices( $array = array(), $show_keys = true ) {
 
 			// show key in the value
 			$array[ $k ] = $k . ' : ' . $v;
-
 		}
 	}
 
@@ -2125,31 +1764,25 @@ function acf_encode_choices( $array = array(), $show_keys = true ) {
 
 	// return
 	return $string;
-
 }
 
 function acf_decode_choices( $string = '', $array_keys = false ) {
 
 	// bail early if already array
 	if ( is_array( $string ) ) {
-
 		return $string;
 
 		// allow numeric values (same as string)
 	} elseif ( is_numeric( $string ) ) {
 
 		// do nothing
-
 		// bail early if not a string
 	} elseif ( ! is_string( $string ) ) {
-
 		return array();
 
 		// bail early if is empty string
 	} elseif ( $string === '' ) {
-
 		return array();
-
 	}
 
 	// vars
@@ -2167,47 +1800,37 @@ function acf_decode_choices( $string = '', $array_keys = false ) {
 
 		// look for ' : '
 		if ( acf_str_exists( ' : ', $line ) ) {
-
 			$line = explode( ' : ', $line );
 
 			$k = trim( $line[0] );
 			$v = trim( $line[1] );
-
 		}
 
 		// append
 		$array[ $k ] = $v;
-
 	}
 
 	// return only array keys? (good for checkbox default_value)
 	if ( $array_keys ) {
-
 		return array_keys( $array );
-
 	}
 
 	// return
 	return $array;
-
 }
 
-
-/*
-*  acf_str_replace
-*
-*  This function will replace an array of strings much like str_replace
-*  The difference is the extra logic to avoid replacing a string that has alread been replaced
-*  This is very useful for replacing date characters as they overlap with eachother
-*
-*  @type    function
-*  @date    21/06/2016
-*  @since   5.3.8
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_str_replace
+ *
+ * This function will replace an array of strings much like str_replace
+ * The difference is the extra logic to avoid replacing a string that has alread been replaced
+ * This is very useful for replacing date characters as they overlap with eachother
+ *
+ * @since   5.3.8
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_str_replace( $string = '', $search_replace = array() ) {
 
 	// vars
@@ -2234,27 +1857,22 @@ function acf_str_replace( $string = '', $search_replace = array() ) {
 
 		// append to ignore
 		$ignore[] = $replace;
-
 	}
 
 	// return
 	return $string;
-
 }
 
-
-/*
-*  date & time formats
-*
-*  These settings contain an association of format strings from PHP => JS
-*
-*  @type    function
-*  @date    21/06/2016
-*  @since   5.3.8
-*
-*  @param   n/a
-*  @return  n/a
-*/
+/**
+* date & time formats
+ *
+ * These settings contain an association of format strings from PHP => JS
+ *
+ * @since   5.3.8
+ *
+ * @param   n/a
+ * @return  n/a
+ */
 
 acf_update_setting(
 	'php_to_js_date_formats',
@@ -2302,19 +1920,16 @@ acf_update_setting(
 );
 
 
-/*
-*  acf_split_date_time
-*
-*  This function will split a format string into seperate date and time
-*
-*  @type    function
-*  @date    26/05/2016
-*  @since   5.3.8
-*
-*  @param   $date_time (string)
-*  @return  $formats (array)
-*/
-
+/**
+ * acf_split_date_time
+ *
+ * This function will split a format string into seperate date and time
+ *
+ * @since   5.3.8
+ *
+ * @param   $date_time (string)
+ * @return  $formats (array)
+ */
 function acf_split_date_time( $date_time = '' ) {
 
 	// vars
@@ -2335,18 +1950,13 @@ function acf_split_date_time( $date_time = '' ) {
 		// find type
 		// - allow misc characters to append to previous type
 		if ( isset( $php_date[ $c ] ) ) {
-
 			$type = 'date';
-
 		} elseif ( isset( $php_time[ $c ] ) ) {
-
 			$type = 'time';
-
 		}
 
 		// append char
 		$data[ $type ] .= $c;
-
 	}
 
 	// trim
@@ -2355,23 +1965,18 @@ function acf_split_date_time( $date_time = '' ) {
 
 	// return
 	return $data;
-
 }
 
-
-/*
-*  acf_convert_date_to_php
-*
-*  This fucntion converts a date format string from JS to PHP
-*
-*  @type    function
-*  @date    20/06/2014
-*  @since   5.0.0
-*
-*  @param   $date (string)
-*  @return  (string)
-*/
-
+/**
+ * acf_convert_date_to_php
+ *
+ * This fucntion converts a date format string from JS to PHP
+ *
+ * @since   5.0.0
+ *
+ * @param   $date (string)
+ * @return  (string)
+ */
 function acf_convert_date_to_php( $date = '' ) {
 
 	// vars
@@ -2380,22 +1985,18 @@ function acf_convert_date_to_php( $date = '' ) {
 
 	// return
 	return acf_str_replace( $date, $js_to_php );
-
 }
 
-/*
-*  acf_convert_date_to_js
-*
-*  This fucntion converts a date format string from PHP to JS
-*
-*  @type    function
-*  @date    20/06/2014
-*  @since   5.0.0
-*
-*  @param   $date (string)
-*  @return  (string)
-*/
-
+/**
+ * acf_convert_date_to_js
+ *
+ * This fucntion converts a date format string from PHP to JS
+ *
+ * @since   5.0.0
+ *
+ * @param   $date (string)
+ * @return  (string)
+ */
 function acf_convert_date_to_js( $date = '' ) {
 
 	// vars
@@ -2403,23 +2004,18 @@ function acf_convert_date_to_js( $date = '' ) {
 
 	// return
 	return acf_str_replace( $date, $php_to_js );
-
 }
 
-
-/*
-*  acf_convert_time_to_php
-*
-*  This fucntion converts a time format string from JS to PHP
-*
-*  @type    function
-*  @date    20/06/2014
-*  @since   5.0.0
-*
-*  @param   $time (string)
-*  @return  (string)
-*/
-
+/**
+ * acf_convert_time_to_php
+ *
+ * This fucntion converts a time format string from JS to PHP
+ *
+ * @since   5.0.0
+ *
+ * @param   $time (string)
+ * @return  (string)
+ */
 function acf_convert_time_to_php( $time = '' ) {
 
 	// vars
@@ -2428,23 +2024,18 @@ function acf_convert_time_to_php( $time = '' ) {
 
 	// return
 	return acf_str_replace( $time, $js_to_php );
-
 }
 
-
-/*
-*  acf_convert_time_to_js
-*
-*  This fucntion converts a date format string from PHP to JS
-*
-*  @type    function
-*  @date    20/06/2014
-*  @since   5.0.0
-*
-*  @param   $time (string)
-*  @return  (string)
-*/
-
+/**
+ * acf_convert_time_to_js
+ *
+ * This fucntion converts a date format string from PHP to JS
+ *
+ * @since   5.0.0
+ *
+ * @param   $time (string)
+ * @return  (string)
+ */
 function acf_convert_time_to_js( $time = '' ) {
 
 	// vars
@@ -2452,23 +2043,18 @@ function acf_convert_time_to_js( $time = '' ) {
 
 	// return
 	return acf_str_replace( $time, $php_to_js );
-
 }
 
-
-/*
-*  acf_update_user_setting
-*
-*  description
-*
-*  @type    function
-*  @date    15/07/2014
-*  @since   5.0.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_update_user_setting
+ *
+ * description
+ *
+ * @since   5.0.0
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_update_user_setting( $name, $value ) {
 
 	// get current user id
@@ -2482,35 +2068,27 @@ function acf_update_user_setting( $name, $value ) {
 
 	// delete setting (allow 0 to save)
 	if ( acf_is_empty( $value ) ) {
-
 		unset( $settings[ $name ] );
 
 		// append setting
 	} else {
-
 		$settings[ $name ] = $value;
-
 	}
 
 	// update user data
 	return update_metadata( 'user', $user_id, 'acf_user_settings', $settings );
-
 }
 
-
-/*
-*  acf_get_user_setting
-*
-*  description
-*
-*  @type    function
-*  @date    15/07/2014
-*  @since   5.0.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_get_user_setting
+ *
+ * description
+ *
+ * @since   5.0.0
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_get_user_setting( $name = '', $default = false ) {
 
 	// get current user id
@@ -2529,23 +2107,18 @@ function acf_get_user_setting( $name = '', $default = false ) {
 
 	// return
 	return $settings[ $name ];
-
 }
 
-
-/*
-*  acf_in_array
-*
-*  description
-*
-*  @type    function
-*  @date    22/07/2014
-*  @since   5.0.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_in_array
+ *
+ * description
+ *
+ * @since   5.0.0
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_in_array( $value = '', $array = false ) {
 
 	// bail early if not array
@@ -2555,23 +2128,18 @@ function acf_in_array( $value = '', $array = false ) {
 
 	// find value in array
 	return in_array( $value, $array );
-
 }
 
-
-/*
-*  acf_get_valid_post_id
-*
-*  This function will return a valid post_id based on the current screen / parameter
-*
-*  @type    function
-*  @date    8/12/2013
-*  @since   5.0.0
-*
-*  @param   $post_id (mixed)
-*  @return  $post_id (mixed)
-*/
-
+/**
+ * acf_get_valid_post_id
+ *
+ * This function will return a valid post_id based on the current screen / parameter
+ *
+ * @since   5.0.0
+ *
+ * @param   $post_id (mixed)
+ * @return  $post_id (mixed)
+ */
 function acf_get_valid_post_id( $post_id = 0 ) {
 
 	// allow filter to short-circuit load_value logic
@@ -2591,9 +2159,7 @@ function acf_get_valid_post_id( $post_id = 0 ) {
 
 		// try for current screen
 		if ( ! $post_id ) {
-
 			$post_id = get_queried_object();
-
 		}
 	}
 
@@ -2603,49 +2169,38 @@ function acf_get_valid_post_id( $post_id = 0 ) {
 
 		// post
 		if ( isset( $post_id->post_type, $post_id->ID ) ) {
-
 			$post_id = $post_id->ID;
 
 			// user
 		} elseif ( isset( $post_id->roles, $post_id->ID ) ) {
-
 			$post_id = 'user_' . $post_id->ID;
 
 			// term
 		} elseif ( isset( $post_id->taxonomy, $post_id->term_id ) ) {
-
 			$post_id = 'term_' . $post_id->term_id;
 
 			// comment
 		} elseif ( isset( $post_id->comment_ID ) ) {
-
 			$post_id = 'comment_' . $post_id->comment_ID;
 
 			// default
 		} else {
-
 			$post_id = 0;
-
 		}
 	}
 
 	// allow for option == options
 	if ( $post_id === 'option' ) {
-
 		$post_id = 'options';
-
 	}
 
 	// append language code
 	if ( $post_id == 'options' ) {
-
 		$dl = acf_get_setting( 'default_language' );
 		$cl = acf_get_setting( 'current_language' );
 
 		if ( $cl && $cl !== $dl ) {
-
 			$post_id .= '_' . $cl;
-
 		}
 	}
 
@@ -2654,24 +2209,20 @@ function acf_get_valid_post_id( $post_id = 0 ) {
 
 	// return
 	return $post_id;
-
 }
 
 
 
-/*
-*  acf_get_post_id_info
-*
-*  This function will return the type and id for a given $post_id string
-*
-*  @type    function
-*  @date    2/07/2016
-*  @since   5.4.0
-*
-*  @param   $post_id (mixed)
-*  @return  $info (array)
-*/
-
+/**
+ * acf_get_post_id_info
+ *
+ * This function will return the type and id for a given $post_id string
+ *
+ * @since   5.4.0
+ *
+ * @param   $post_id (mixed)
+ * @return  $info (array)
+ */
 function acf_get_post_id_info( $post_id = 0 ) {
 
 	// vars
@@ -2688,12 +2239,9 @@ function acf_get_post_id_info( $post_id = 0 ) {
 	// check cache
 	// - this function will most likely be called multiple times (saving loading fields from post)
 	// $cache_key = "get_post_id_info/post_id={$post_id}";
-
 	// if( acf_isset_cache($cache_key) ) return acf_get_cache($cache_key);
-
 	// numeric
 	if ( is_numeric( $post_id ) ) {
-
 		$info['id'] = (int) $post_id;
 
 		// string
@@ -2714,67 +2262,36 @@ function acf_get_post_id_info( $post_id = 0 ) {
 
 		// meta
 		if ( is_numeric( $id ) && in_array( $type, $meta ) ) {
-
 			$info['type'] = $type;
 			$info['id']   = (int) $id;
 
 			// option
 		} else {
-
 			$info['type'] = 'option';
 			$info['id']   = $post_id;
-
 		}
 	}
 
 	// update cache
 	// acf_set_cache($cache_key, $info);
-
 	// filter
 	$info = apply_filters( 'acf/get_post_id_info', $info, $post_id );
 
 	// return
 	return $info;
-
 }
 
-
-/*
-acf_log( acf_get_post_id_info(4) );
-
-acf_log( acf_get_post_id_info('post_4') );
-
-acf_log( acf_get_post_id_info('user_123') );
-
-acf_log( acf_get_post_id_info('term_567') );
-
-acf_log( acf_get_post_id_info('category_204') );
-
-acf_log( acf_get_post_id_info('comment_6') );
-
-acf_log( acf_get_post_id_info('options_lol!') );
-
-acf_log( acf_get_post_id_info('option') );
-
-acf_log( acf_get_post_id_info('options') );
-
-*/
-
-
-/*
-*  acf_isset_termmeta
-*
-*  This function will return true if the termmeta table exists
-*  https://developer.wordpress.org/reference/functions/get_term_meta/
-*
-*  @type    function
-*  @date    3/09/2016
-*  @since   5.4.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_isset_termmeta
+ *
+ * This function will return true if the termmeta table exists
+ * https://developer.wordpress.org/reference/functions/get_term_meta/
+ *
+ * @since   5.4.0
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_isset_termmeta( $taxonomy = '' ) {
 
 	// bail early if no table
@@ -2789,48 +2306,41 @@ function acf_isset_termmeta( $taxonomy = '' ) {
 
 	// return
 	return true;
-
 }
 
 /**
  * This function will walk through the $_FILES data and upload each found.
  *
- * @date    25/10/2014
  * @since   5.0.9
  *
  * @param array $ancestors An internal parameter, not required.
- * @return void
  */
 function acf_upload_files( $ancestors = array() ) {
 
-	$file = acf_sanitize_files_array( $_FILES['acf'] );
+	if ( empty( $_FILES['acf'] ) ) {
+		return;
+	}
 
-	// walk through ancestors
+	$file = acf_sanitize_files_array( $_FILES['acf'] ); // phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified upstream.
+
+	// walk through ancestors.
 	if ( ! empty( $ancestors ) ) {
-
 		foreach ( $ancestors as $a ) {
-
 			foreach ( array_keys( $file ) as $k ) {
-
 				$file[ $k ] = $file[ $k ][ $a ];
-
 			}
 		}
 	}
 
 	// is array?
 	if ( is_array( $file['name'] ) ) {
-
 		foreach ( array_keys( $file['name'] ) as $k ) {
-
 			$_ancestors = array_merge( $ancestors, array( $k ) );
 
 			acf_upload_files( $_ancestors );
-
 		}
 
 		return;
-
 	}
 
 	// Bail early if file has error (no file uploaded).
@@ -2854,22 +2364,18 @@ function acf_upload_files( $ancestors = array() ) {
 	// update $_POST
 	array_unshift( $ancestors, 'acf' );
 	acf_update_nested_array( $_POST, $ancestors, $attachment_id );
-
 }
 
-/*
-*  acf_upload_file
-*
-*  This function will uploade a $_FILE
-*
-*  @type    function
-*  @date    27/10/2014
-*  @since   5.0.9
-*
-*  @param   $uploaded_file (array) array found from $_FILE data
-*  @return  $id (int) new attachment ID
-*/
-
+/**
+ * acf_upload_file
+ *
+ * This function will uploade a $_FILE
+ *
+ * @since   5.0.9
+ *
+ * @param   $uploaded_file (array) array found from $_FILE data
+ * @return  $id (int) new attachment ID
+ */
 function acf_upload_file( $uploaded_file ) {
 
 	// required
@@ -2886,9 +2392,7 @@ function acf_upload_file( $uploaded_file ) {
 
 	// bail early if upload failed
 	if ( isset( $file['error'] ) ) {
-
 		return $file['error'];
-
 	}
 
 	// vars
@@ -2915,35 +2419,28 @@ function acf_upload_file( $uploaded_file ) {
 
 	// return new ID
 	return $id;
-
 }
 
-
-/*
-*  acf_update_nested_array
-*
-*  This function will update a nested array value. Useful for modifying the $_POST array
-*
-*  @type    function
-*  @date    27/10/2014
-*  @since   5.0.9
-*
-*  @param   $array (array) target array to be updated
-*  @param   $ancestors (array) array of keys to navigate through to find the child
-*  @param   $value (mixed) The new value
-*  @return  (boolean)
-*/
-
+/**
+ * acf_update_nested_array
+ *
+ * This function will update a nested array value. Useful for modifying the $_POST array
+ *
+ * @since   5.0.9
+ *
+ * @param   $array (array) target array to be updated
+ * @param   $ancestors (array) array of keys to navigate through to find the child
+ * @param   $value (mixed) The new value
+ * @return  (boolean)
+ */
 function acf_update_nested_array( &$array, $ancestors, $value ) {
 
 	// if no more ancestors, update the current var
 	if ( empty( $ancestors ) ) {
-
 		$array = $value;
 
 		// return
 		return true;
-
 	}
 
 	// shift the next ancestor from the array
@@ -2951,29 +2448,23 @@ function acf_update_nested_array( &$array, $ancestors, $value ) {
 
 	// if exists
 	if ( isset( $array[ $k ] ) ) {
-
 		return acf_update_nested_array( $array[ $k ], $ancestors, $value );
-
 	}
 
 	// return
 	return false;
 }
 
-
-/*
-*  acf_is_screen
-*
-*  This function will return true if all args are matched for the current screen
-*
-*  @type    function
-*  @date    9/12/2014
-*  @since   5.1.5
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_is_screen
+ *
+ * This function will return true if all args are matched for the current screen
+ *
+ * @since   5.1.5
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_is_screen( $id = '' ) {
 
 	// bail early if not defined
@@ -2998,47 +2489,58 @@ function acf_is_screen( $id = '' ) {
 	}
 }
 
+/**
+ * Check if we're in an ACF admin screen
+ *
+ * @since  6.2.2
+ *
+ * @return boolean Returns true if the current screen is an ACF admin screen.
+ */
+function acf_is_acf_admin_screen() {
+	if ( ! is_admin() || ! function_exists( 'get_current_screen' ) ) {
+		return false;
+	}
+	$screen = get_current_screen();
+	if ( $screen && ! empty( $screen->post_type ) && substr( $screen->post_type, 0, 4 ) === 'acf-' ) {
+		return true;
+	}
 
-/*
-*  acf_maybe_get
-*
-*  This function will return a var if it exists in an array
-*
-*  @type    function
-*  @date    9/12/2014
-*  @since   5.1.5
-*
-*  @param   $array (array) the array to look within
-*  @param   $key (key) the array key to look for. Nested values may be found using '/'
-*  @param   $default (mixed) the value returned if not found
-*  @return  $post_id (int)
-*/
+	return false;
+}
 
+/**
+ * acf_maybe_get
+ *
+ * This function will return a var if it exists in an array
+ *
+ * @since   5.1.5
+ *
+ * @param   $array (array) the array to look within
+ * @param   $key (key) the array key to look for. Nested values may be found using '/'
+ * @param   $default (mixed) the value returned if not found
+ * @return  $post_id (int)
+ */
 function acf_maybe_get( $array = array(), $key = 0, $default = null ) {
 
 	return isset( $array[ $key ] ) ? $array[ $key ] : $default;
-
 }
 
 function acf_maybe_get_POST( $key = '', $default = null ) {
 
 	return isset( $_POST[ $key ] ) ? acf_sanitize_request_args( $_POST[ $key ] ) : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing -- Checked elsewhere.
-
 }
 
 function acf_maybe_get_GET( $key = '', $default = null ) {
 
 	return isset( $_GET[ $key ] ) ? acf_sanitize_request_args( $_GET[ $key ] ) : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Checked elsewhere.
-
 }
 
 /**
  * Returns an array of attachment data.
  *
- * @date    05/01/2015
  * @since   5.1.5
  *
- * @param   int|WP_Post The attachment ID or object.
+ * @param   integer|WP_Post The attachment ID or object
  * @return  array|false
  */
 function acf_get_attachment( $attachment ) {
@@ -3096,8 +2598,22 @@ function acf_get_attachment( $attachment ) {
 	// Append filesize data.
 	if ( isset( $meta['filesize'] ) ) {
 		$response['filesize'] = $meta['filesize'];
-	} elseif ( file_exists( $attached_file ) ) {
-		$response['filesize'] = filesize( $attached_file );
+	} else {
+		/**
+		 * Allows shortcutting our ACF's `filesize` call to prevent us making filesystem calls.
+		 * Mostly useful for third party plugins which may offload media to other services, and filesize calls will induce a remote download.
+		 *
+		 * @since 6.2.2
+		 *
+		 * @param int|null The default filesize.
+		 * @param WP_Post $attachment The attachment post object we're looking for the filesize for.
+		 */
+		$shortcut_filesize = apply_filters( 'acf/filesize', null, $attachment );
+		if ( $shortcut_filesize ) {
+			$response['filesize'] = intval( $shortcut_filesize );
+		} elseif ( file_exists( $attached_file ) ) {
+			$response['filesize'] = filesize( $attached_file );
+		}
 	}
 
 	// Restrict the loading of image "sizes".
@@ -3146,7 +2662,6 @@ function acf_get_attachment( $attachment ) {
 	/**
 	 * Filters the attachment $response after it has been loaded.
 	 *
-	 * @date    16/06/2020
 	 * @since   5.9.0
 	 *
 	 * @param   array $response Array of loaded attachment data.
@@ -3156,17 +2671,15 @@ function acf_get_attachment( $attachment ) {
 	return apply_filters( 'acf/load_attachment', $response, $attachment, $meta );
 }
 
-
 /**
- *  This function will truncate and return a string
+ * This function will truncate and return a string
  *
- *  @date    8/08/2014
- *  @since   5.0.0
+ * @since   5.0.0
  *
- *  @param string $text   The text to truncate.
- *  @param int    $length The number of characters to allow in the string.
+ * @param string  $text   The text to truncate.
+ * @param integer $length The number of characters to allow in the string.
  *
- *  @return  string
+ * @return  string
  */
 function acf_get_truncated( $text, $length = 64 ) {
 	$text       = trim( $text );
@@ -3182,46 +2695,61 @@ function acf_get_truncated( $text, $length = 64 ) {
 	return $return;
 }
 
-/*
-*  acf_current_user_can_admin
-*
-*  This function will return true if the current user can administrate the ACF field groups
-*
-*  @type    function
-*  @date    9/02/2015
-*  @since   5.1.5
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_current_user_can_admin
+ *
+ * This function will return true if the current user can administrate the ACF field groups
+ *
+ * @since   5.1.5
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_current_user_can_admin() {
 
 	if ( acf_get_setting( 'show_admin' ) && current_user_can( acf_get_setting( 'capability' ) ) ) {
-
 		return true;
-
 	}
 
 	// return
 	return false;
-
 }
 
+/**
+ * Wrapper function for current_user_can( 'edit_post', $post_id ).
+ *
+ * @since 6.3.4
+ *
+ * @param integer $post_id The post ID to check.
+ * @return boolean
+ */
+function acf_current_user_can_edit_post( int $post_id ): bool {
+	/**
+	 * The `edit_post` capability is a meta capability, which
+	 * gets converted to the correct post type object `edit_post`
+	 * equivalent.
+	 *
+	 * If the post type does not have `map_meta_cap` enabled and the user is
+	 * not manually mapping the `edit_post` capability, this will fail
+	 * unless the role has the `edit_post` capability added to a user/role.
+	 *
+	 * However, more (core) stuff will likely break in this scenario.
+	 */
+	$user_can_edit = current_user_can( 'edit_post', $post_id );
 
-/*
-*  acf_get_filesize
-*
-*  This function will return a numeric value of bytes for a given filesize string
-*
-*  @type    function
-*  @date    18/02/2015
-*  @since   5.1.5
-*
-*  @param   $size (mixed)
-*  @return  (int)
-*/
+	return (bool) apply_filters( 'acf/current_user_can_edit_post', $user_can_edit, $post_id );
+}
 
+/**
+ * acf_get_filesize
+ *
+ * This function will return a numeric value of bytes for a given filesize string
+ *
+ * @since   5.1.5
+ *
+ * @param   $size (mixed)
+ * @return  (int)
+ */
 function acf_get_filesize( $size = 1 ) {
 
 	// vars
@@ -3240,12 +2768,9 @@ function acf_get_filesize( $size = 1 ) {
 		$custom = strtoupper( substr( $size, -2 ) );
 
 		foreach ( $units as $k => $v ) {
-
 			if ( $custom === $k ) {
-
 				$unit = $k;
 				$size = substr( $size, 0, -2 );
-
 			}
 		}
 	}
@@ -3255,23 +2780,18 @@ function acf_get_filesize( $size = 1 ) {
 
 	// return
 	return $bytes;
-
 }
 
-
-/*
-*  acf_format_filesize
-*
-*  This function will return a formatted string containing the filesize and unit
-*
-*  @type    function
-*  @date    18/02/2015
-*  @since   5.1.5
-*
-*  @param   $size (mixed)
-*  @return  (int)
-*/
-
+/**
+ * acf_format_filesize
+ *
+ * This function will return a formatted string containing the filesize and unit
+ *
+ * @since   5.1.5
+ *
+ * @param   $size (mixed)
+ * @return  (int)
+ */
 function acf_format_filesize( $size = 1 ) {
 
 	// convert
@@ -3287,36 +2807,28 @@ function acf_format_filesize( $size = 1 ) {
 
 	// loop through units
 	foreach ( $units as $k => $v ) {
-
 		$result = $bytes / pow( 1024, $v );
 
 		if ( $result >= 1 ) {
-
 			return $result . ' ' . $k;
-
 		}
 	}
 
 	// return
 	return $bytes . ' B';
-
 }
 
-
-/*
-*  acf_get_valid_terms
-*
-*  This function will replace old terms with new split term ids
-*
-*  @type    function
-*  @date    27/02/2015
-*  @since   5.1.5
-*
-*  @param   $terms (int|array)
-*  @param   $taxonomy (string)
-*  @return  $terms
-*/
-
+/**
+ * acf_get_valid_terms
+ *
+ * This function will replace old terms with new split term ids
+ *
+ * @since   5.1.5
+ *
+ * @param   $terms (int|array)
+ * @param   $taxonomy (string)
+ * @return  $terms
+ */
 function acf_get_valid_terms( $terms = false, $taxonomy = 'category' ) {
 
 	// force into array
@@ -3327,44 +2839,34 @@ function acf_get_valid_terms( $terms = false, $taxonomy = 'category' ) {
 
 	// bail early if function does not yet exist or
 	if ( ! function_exists( 'wp_get_split_term' ) || empty( $terms ) ) {
-
 		return $terms;
-
 	}
 
 	// attempt to find new terms
 	foreach ( $terms as $i => $term_id ) {
-
 		$new_term_id = wp_get_split_term( $term_id, $taxonomy );
 
 		if ( $new_term_id ) {
-
 			$terms[ $i ] = $new_term_id;
-
 		}
 	}
 
 	// return
 	return $terms;
-
 }
 
-
-/*
-*  acf_validate_attachment
-*
-*  This function will validate an attachment based on a field's restrictions and return an array of errors
-*
-*  @type    function
-*  @date    3/07/2015
-*  @since   5.2.3
-*
-*  @param   $attachment (array) attachment data. Changes based on context
-*  @param   $field (array) field settings containing restrictions
-*  @param   $context (string) $file is different when uploading / preparing
-*  @return  $errors (array)
-*/
-
+/**
+ * acf_validate_attachment
+ *
+ * This function will validate an attachment based on a field's restrictions and return an array of errors
+ *
+ * @since   5.2.3
+ *
+ * @param   $attachment (array) attachment data. Changes based on context
+ * @param   $field (array) field settings containing restrictions
+ * @param   context (string)                                     $file is different when uploading / preparing
+ * @return  $errors (array)
+ */
 function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 
 	// vars
@@ -3384,16 +2886,13 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 		$file['size'] = filesize( $attachment['tmp_name'] );
 
 		if ( strpos( $attachment['type'], 'image' ) !== false ) {
-
 			$size           = getimagesize( $attachment['tmp_name'] );
 			$file['width']  = acf_maybe_get( $size, 0 );
 			$file['height'] = acf_maybe_get( $size, 1 );
-
 		}
 
 		// prepare
 	} elseif ( $context == 'prepare' ) {
-
 		$use_path       = isset( $attachment['filename'] ) ? $attachment['filename'] : $attachment['url'];
 		$file['type']   = pathinfo( $use_path, PATHINFO_EXTENSION );
 		$file['size']   = acf_maybe_get( $attachment, 'filesizeInBytes', 0 );
@@ -3402,11 +2901,9 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 
 		// custom
 	} else {
-
 		$file         = array_merge( $file, $attachment );
 		$use_path     = isset( $attachment['filename'] ) ? $attachment['filename'] : $attachment['url'];
 		$file['type'] = pathinfo( $use_path, PATHINFO_EXTENSION );
-
 	}
 
 	// image
@@ -3417,17 +2914,14 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 		$max_width = (int) acf_maybe_get( $field, 'max_width', 0 );
 
 		if ( $file['width'] ) {
-
 			if ( $min_width && $file['width'] < $min_width ) {
 
 				// min width
 				$errors['min_width'] = sprintf( __( 'Image width must be at least %dpx.', 'acf' ), $min_width );
-
 			} elseif ( $max_width && $file['width'] > $max_width ) {
 
 				// min width
 				$errors['max_width'] = sprintf( __( 'Image width must not exceed %dpx.', 'acf' ), $max_width );
-
 			}
 		}
 
@@ -3436,24 +2930,20 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 		$max_height = (int) acf_maybe_get( $field, 'max_height', 0 );
 
 		if ( $file['height'] ) {
-
 			if ( $min_height && $file['height'] < $min_height ) {
 
 				// min height
 				$errors['min_height'] = sprintf( __( 'Image height must be at least %dpx.', 'acf' ), $min_height );
-
 			} elseif ( $max_height && $file['height'] > $max_height ) {
 
 				// min height
 				$errors['max_height'] = sprintf( __( 'Image height must not exceed %dpx.', 'acf' ), $max_height );
-
 			}
 		}
 	}
 
 	// file size
 	if ( $file['size'] ) {
-
 		$min_size = acf_maybe_get( $field, 'min_size', 0 );
 		$max_size = acf_maybe_get( $field, 'max_size', 0 );
 
@@ -3461,18 +2951,15 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 
 			// min width
 			$errors['min_size'] = sprintf( __( 'File size must be at least %s.', 'acf' ), acf_format_filesize( $min_size ) );
-
 		} elseif ( $max_size && $file['size'] > acf_get_filesize( $max_size ) ) {
 
 			// min width
 			$errors['max_size'] = sprintf( __( 'File size must not exceed %s.', 'acf' ), acf_format_filesize( $max_size ) );
-
 		}
 	}
 
 	// file type
 	if ( $file['type'] ) {
-
 		$mime_types = acf_maybe_get( $field, 'mime_types', '' );
 
 		// lower case
@@ -3488,30 +2975,26 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 
 			// glue together last 2 types
 			if ( count( $mime_types ) > 1 ) {
-
 				$last1 = array_pop( $mime_types );
 				$last2 = array_pop( $mime_types );
 
 				$mime_types[] = $last2 . ' ' . __( 'or', 'acf' ) . ' ' . $last1;
-
 			}
 
 			$errors['mime_types'] = sprintf( __( 'File type must be %s.', 'acf' ), implode( ', ', $mime_types ) );
-
 		}
 	}
 
 	/**
-	*  Filters the errors for a file before it is uploaded or displayed in the media modal.
+	* Filters the errors for a file before it is uploaded or displayed in the media modal.
 	*
-	*  @date    3/07/2015
-	*  @since   5.2.3
+	* @since   5.2.3
 	*
-	*  @param   array $errors An array of errors.
-	*  @param   array $file An array of data for a single file.
-	*  @param   array $attachment An array of attachment data which differs based on the context.
-	*  @param   array $field The field array.
-	*  @param   string $context The curent context (uploading, preparing)
+	* @param   array $errors An array of errors.
+	* @param   array $file An array of data for a single file.
+	* @param   array $attachment An array of attachment data which differs based on the context.
+	* @param   array $field The field array.
+	* @param   string $context The curent context (uploading, preparing)
 	*/
 	$errors = apply_filters( "acf/validate_attachment/type={$field['type']}", $errors, $file, $attachment, $field, $context );
 	$errors = apply_filters( "acf/validate_attachment/name={$field['_name']}", $errors, $file, $attachment, $field, $context );
@@ -3520,22 +3003,18 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 
 	// return
 	return $errors;
-
 }
 
-
-/*
-*  _acf_settings_uploader
-*
-*  Dynamic logic for uploader setting
-*
-*  @type    function
-*  @date    7/05/2015
-*  @since   5.2.3
-*
-*  @param   $uploader (string)
-*  @return  $uploader
-*/
+/**
+* _acf_settings_uploader
+ *
+ * Dynamic logic for uploader setting
+ *
+ * @since   5.2.3
+ *
+ * @param   $uploader (string)
+ * @return  $uploader
+ */
 
 add_filter( 'acf/settings/uploader', '_acf_settings_uploader' );
 
@@ -3543,70 +3022,24 @@ function _acf_settings_uploader( $uploader ) {
 
 	// if can't upload files
 	if ( ! current_user_can( 'upload_files' ) ) {
-
 		$uploader = 'basic';
-
 	}
 
 	// return
 	return $uploader;
 }
 
-
-/*
-*  acf_translate_keys
-*
-*  description
-*
-*  @type    function
-*  @date    7/12/2015
-*  @since   5.3.2
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
-/*
-function acf_translate_keys( $array, $keys ) {
-
-	// bail early if no keys
-	if( empty($keys) ) return $array;
-
-
-	// translate
-	foreach( $keys as $k ) {
-
-		// bail early if not exists
-		if( !isset($array[ $k ]) ) continue;
-
-
-		// translate
-		$array[ $k ] = acf_translate( $array[ $k ] );
-
-	}
-
-
-	// return
-	return $array;
-
-}
-*/
-
-
-/*
-*  acf_translate
-*
-*  This function will translate a string using the new 'l10n_textdomain' setting
-*  Also works for arrays which is great for fields - select -> choices
-*
-*  @type    function
-*  @date    4/12/2015
-*  @since   5.3.2
-*
-*  @param   $string (mixed) string or array containins strings to be translated
-*  @return  $string
-*/
-
+/**
+ * acf_translate
+ *
+ * This function will translate a string using the new 'l10n_textdomain' setting
+ * Also works for arrays which is great for fields - select -> choices
+ *
+ * @since   5.3.2
+ *
+ * @param   $string (mixed) string or array containins strings to be translated
+ * @return  $string
+ */
 function acf_translate( $string ) {
 
 	// vars
@@ -3625,9 +3058,7 @@ function acf_translate( $string ) {
 
 	// is array
 	if ( is_array( $string ) ) {
-
 		return array_map( 'acf_translate', $string );
-
 	}
 
 	// bail early if not string
@@ -3650,59 +3081,45 @@ function acf_translate( $string ) {
 
 		// return
 		return "!!__(!!'" . $string . "!!', !!'" . $textdomain . "!!')!!";
-
 	}
 
 	// vars
 	return __( $string, $textdomain );
-
 }
 
-
-/*
-*  acf_maybe_add_action
-*
-*  This function will determine if the action has already run before adding / calling the function
-*
-*  @type    function
-*  @date    13/01/2016
-*  @since   5.3.2
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_maybe_add_action
+ *
+ * This function will determine if the action has already run before adding / calling the function
+ *
+ * @since   5.3.2
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_maybe_add_action( $tag, $function_to_add, $priority = 10, $accepted_args = 1 ) {
 
 	// if action has already run, execute it
 	// - if currently doing action, allow $tag to be added as per usual to allow $priority ordering needed for 3rd party asset compatibility
 	if ( did_action( $tag ) && ! doing_action( $tag ) ) {
-
 		call_user_func( $function_to_add );
 
 		// if action has not yet run, add it
 	} else {
-
 		add_action( $tag, $function_to_add, $priority, $accepted_args );
-
 	}
-
 }
 
-
-/*
-*  acf_is_row_collapsed
-*
-*  This function will return true if the field's row is collapsed
-*
-*  @type    function
-*  @date    2/03/2016
-*  @since   5.3.2
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * acf_is_row_collapsed
+ *
+ * This function will return true if the field's row is collapsed
+ *
+ * @since   5.3.2
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_is_row_collapsed( $field_key = '', $row_index = 0 ) {
 
 	// collapsed
@@ -3710,13 +3127,11 @@ function acf_is_row_collapsed( $field_key = '', $row_index = 0 ) {
 
 	// cookie fallback ( version < 5.3.2 )
 	if ( $collapsed === '' ) {
-
 		$collapsed = acf_extract_var( $_COOKIE, "acf_collapsed_{$field_key}", '' );
 		$collapsed = str_replace( '|', ',', $collapsed );
 
 		// update
 		acf_update_user_setting( 'collapsed_' . $field_key, $collapsed );
-
 	}
 
 	// explode
@@ -3725,54 +3140,35 @@ function acf_is_row_collapsed( $field_key = '', $row_index = 0 ) {
 
 	// collapsed class
 	return in_array( $row_index, $collapsed );
-
 }
 
-
-/*
-*  acf_get_attachment_image
-*
-*  description
-*
-*  @type    function
-*  @date    24/10/16
-*  @since   5.5.0
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
-
+/**
+ * Return an image tag for the provided attachment ID
+ *
+ * @since 5.5.0
+ * @deprecated 6.3.2
+ *
+ * @param integer $attachment_id The attachment ID
+ * @param string  $size          The image size to use in the image tag.
+ * @return false
+ */
 function acf_get_attachment_image( $attachment_id = 0, $size = 'thumbnail' ) {
-
-	// vars
-	$url = wp_get_attachment_image_src( $attachment_id, 'thumbnail' );
-	$alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
-
-	// bail early if no url
-	if ( ! $url ) {
-		return '';
-	}
-
-	// return
-	$value = '<img src="' . $url . '" alt="' . $alt . '" />';
-
+	// report function as deprecated
+	_deprecated_function( __FUNCTION__, '6.3.2' );
+	return false;
 }
 
-
-/*
-*  acf_get_post_thumbnail
-*
-*  This function will return a thumbail image url for a given post
-*
-*  @type    function
-*  @date    3/05/2016
-*  @since   5.3.8
-*
-*  @param   $post (obj)
-*  @param   $size (mixed)
-*  @return  (string)
-*/
-
+/**
+ * acf_get_post_thumbnail
+ *
+ * This function will return a thumbail image url for a given post
+ *
+ * @since   5.3.8
+ *
+ * @param   $post (obj)
+ * @param   $size (mixed)
+ * @return  (string)
+ */
 function acf_get_post_thumbnail( $post = null, $size = 'thumbnail' ) {
 
 	// vars
@@ -3799,16 +3195,12 @@ function acf_get_post_thumbnail( $post = null, $size = 'thumbnail' ) {
 
 		// change $thumb_id
 		if ( $mime_type === 'audio' || $mime_type === 'video' ) {
-
 			$thumb_id = get_post_thumbnail_id( $post->ID );
-
 		}
 
 		// post
 	} else {
-
 		$thumb_id = get_post_thumbnail_id( $post->ID );
-
 	}
 
 	// try url
@@ -3817,10 +3209,8 @@ function acf_get_post_thumbnail( $post = null, $size = 'thumbnail' ) {
 
 	// default icon
 	if ( ! $data['url'] && $post->post_type === 'attachment' ) {
-
 		$data['url']  = wp_mime_type_icon( $post->ID );
 		$data['type'] = 'icon';
-
 	}
 
 	// html
@@ -3828,7 +3218,6 @@ function acf_get_post_thumbnail( $post = null, $size = 'thumbnail' ) {
 
 	// return
 	return $data;
-
 }
 
 /**
@@ -3836,7 +3225,6 @@ function acf_get_post_thumbnail( $post = null, $size = 'thumbnail' ) {
  *
  * Returns the name of the current browser.
  *
- * @date    17/01/2014
  * @since   5.0.0
  *
  * @param   void
@@ -3868,20 +3256,16 @@ function acf_get_browser() {
 	return '';
 }
 
-
-/*
-*  acf_is_ajax
-*
-*  This function will reutrn true if performing a wp ajax call
-*
-*  @type    function
-*  @date    7/06/2016
-*  @since   5.3.8
-*
-*  @param   n/a
-*  @return  (boolean)
-*/
-
+/**
+ * acf_is_ajax
+ *
+ * This function will reutrn true if performing a wp ajax call
+ *
+ * @since   5.3.8
+ *
+ * @param   n/a
+ * @return  (boolean)
+ */
 function acf_is_ajax( $action = '' ) {
 
 	// vars
@@ -3889,9 +3273,7 @@ function acf_is_ajax( $action = '' ) {
 
 	// check if is doing ajax
 	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
-
 		$is_ajax = true;
-
 	}
 
 	// phpcs:disable WordPress.Security.NonceVerification.Missing
@@ -3899,84 +3281,58 @@ function acf_is_ajax( $action = '' ) {
 	if ( $action && acf_maybe_get( $_POST, 'action' ) !== $action ) {
 	// phpcs:enable WordPress.Security.NonceVerification.Missing
 		$is_ajax = false;
-
 	}
 
 	// return
 	return $is_ajax;
-
-}
-
-
-
-
-/*
-*  acf_format_date
-*
-*  This function will accept a date value and return it in a formatted string
-*
-*  @type    function
-*  @date    16/06/2016
-*  @since   5.3.8
-*
-*  @param   $value (string)
-*  @return  $format (string)
-*/
-
-function acf_format_date( $value, $format ) {
-
-	// bail early if no value
-	if ( ! $value ) {
-		return $value;
-	}
-
-	// vars
-	$unixtimestamp = 0;
-
-	// numeric (either unix or YYYYMMDD)
-	if ( is_numeric( $value ) && strlen( $value ) !== 8 ) {
-
-		$unixtimestamp = $value;
-
-	} else {
-
-		$unixtimestamp = strtotime( $value );
-
-	}
-
-	// return
-	return date_i18n( $format, $unixtimestamp );
-
 }
 
 /**
- * acf_clear_log
+ * Returns a date value in a formatted string.
  *
- * Deletes the debug.log file.
+ * @since 5.3.8
  *
- * @date    21/1/19
- * @since   5.7.10
- *
- * @param   type $var Description. Default.
- * @return  type Description.
+ * @param string $value  The date value to format.
+ * @param string $format The format to use.
+ * @return string
  */
-function acf_clear_log() {
-	unlink( WP_CONTENT_DIR . '/debug.log' );
+function acf_format_date( $value, $format ) {
+	// Bail early if no value or value is not what we expect.
+	if ( ! $value || ( ! is_string( $value ) && ! is_int( $value ) ) ) {
+		return $value;
+	}
+
+	// Numeric (either unix or YYYYMMDD).
+	if ( is_numeric( $value ) && strlen( $value ) !== 8 ) {
+		$unixtimestamp = $value;
+	} else {
+		$unixtimestamp = strtotime( $value );
+	}
+
+	return date_i18n( $format, $unixtimestamp );
 }
 
-/*
-*  acf_log
-*
-*  description
-*
-*  @type    function
-*  @date    24/06/2016
-*  @since   5.3.8
-*
-*  @param   $post_id (int)
-*  @return  $post_id (int)
-*/
+/**
+ * Previously, deletes the debug.log file.
+ *
+ * @since      5.7.10
+ * @deprecated 6.2.7
+ */
+function acf_clear_log() {
+	_deprecated_function( __FUNCTION__, '6.2.7' );
+	return false;
+}
 
+/**
+ * acf_log
+ *
+ * description
+ *
+ * @since   5.3.8
+ *
+ * @param   $post_id (int)
+ * @return  $post_id (int)
+ */
 function acf_log() {
 
 	// vars
@@ -4003,15 +3359,14 @@ function acf_log() {
 }
 
 /**
- *  acf_dev_log
+ * acf_dev_log
  *
- *  Used to log variables only if ACF_DEV is defined
+ * Used to log variables only if ACF_DEV is defined
  *
- *  @date    25/8/18
- *  @since   5.7.4
+ * @since   5.7.4
  *
- *  @param   mixed
- *  @return  void
+ * @param   mixed
+ * @return  void
  */
 function acf_dev_log() {
 	if ( defined( 'ACF_DEV' ) && ACF_DEV ) {
@@ -4019,42 +3374,34 @@ function acf_dev_log() {
 	}
 }
 
-/*
-*  acf_doing
-*
-*  This function will tell ACF what task it is doing
-*
-*  @type    function
-*  @date    28/06/2016
-*  @since   5.3.8
-*
-*  @param   $event (string)
-*  @param   context (string)
-*  @return  n/a
-*/
-
+/**
+ * acf_doing
+ *
+ * This function will tell ACF what task it is doing
+ *
+ * @since   5.3.8
+ *
+ * @param   $event (string)
+ * @param   context (string)
+ * @return  n/a
+ */
 function acf_doing( $event = '', $context = '' ) {
 
 	acf_update_setting( 'doing', $event );
 	acf_update_setting( 'doing_context', $context );
-
 }
 
-
-/*
-*  acf_is_doing
-*
-*  This function can be used to state what ACF is doing, or to check
-*
-*  @type    function
-*  @date    28/06/2016
-*  @since   5.3.8
-*
-*  @param   $event (string)
-*  @param   context (string)
-*  @return  (boolean)
-*/
-
+/**
+ * acf_is_doing
+ *
+ * This function can be used to state what ACF is doing, or to check
+ *
+ * @since   5.3.8
+ *
+ * @param   $event (string)
+ * @param   context (string)
+ * @return  (boolean)
+ */
 function acf_is_doing( $event = '', $context = '' ) {
 
 	// vars
@@ -4062,39 +3409,29 @@ function acf_is_doing( $event = '', $context = '' ) {
 
 	// task
 	if ( acf_get_setting( 'doing' ) === $event ) {
-
 		$doing = true;
-
 	}
 
 	// context
 	if ( $context && acf_get_setting( 'doing_context' ) !== $context ) {
-
 		$doing = false;
-
 	}
 
 	// return
 	return $doing;
-
 }
 
-
-/*
-*  acf_is_plugin_active
-*
-*  This function will return true if the ACF plugin is active
-*  - May be included within a theme or other plugin
-*
-*  @type    function
-*  @date    13/07/2016
-*  @since   5.4.0
-*
-*  @param   $basename (int)
-*  @return  $post_id (int)
-*/
-
-
+/**
+ * acf_is_plugin_active
+ *
+ * This function will return true if the ACF plugin is active
+ * - May be included within a theme or other plugin
+ *
+ * @since   5.4.0
+ *
+ * @param   $basename (int)
+ * @return  $post_id (int)
+ */
 function acf_is_plugin_active() {
 
 	// vars
@@ -4102,29 +3439,23 @@ function acf_is_plugin_active() {
 
 	// ensure is_plugin_active() exists (not on frontend)
 	if ( ! function_exists( 'is_plugin_active' ) ) {
-
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
-
 	}
 
 	// return
 	return is_plugin_active( $basename );
-
 }
 
-/*
-*  acf_send_ajax_results
-*
-*  This function will print JSON data for a Select2 AJAX query
-*
-*  @type    function
-*  @date    19/07/2016
-*  @since   5.4.0
-*
-*  @param   $response (array)
-*  @return  n/a
-*/
-
+/**
+ * acf_send_ajax_results
+ *
+ * This function will print JSON data for a Select2 AJAX query
+ *
+ * @since   5.4.0
+ *
+ * @param   $response (array)
+ * @return  n/a
+ */
 function acf_send_ajax_results( $response ) {
 
 	// validate
@@ -4146,44 +3477,36 @@ function acf_send_ajax_results( $response ) {
 		foreach ( $response['results'] as $result ) {
 
 			// parent
-			$total++;
+			++$total;
 
 			// children
 			if ( ! empty( $result['children'] ) ) {
-
 				$total += count( $result['children'] );
-
 			}
 		}
 
 		// calc
 		if ( $total >= $response['limit'] ) {
-
 			$response['more'] = true;
-
 		}
 	}
 
 	// return
 	wp_send_json( $response );
-
 }
 
-
-/*
-*  acf_is_sequential_array
-*
-*  This function will return true if the array contains only numeric keys
-*
-*  @source  http://stackoverflow.com/questions/173400/how-to-check-if-php-array-is-associative-or-sequential
-*  @type    function
-*  @date    9/09/2016
-*  @since   5.4.0
-*
-*  @param   $array (array)
-*  @return  (boolean)
-*/
-
+/**
+ * acf_is_sequential_array
+ *
+ * This function will return true if the array contains only numeric keys
+ *
+ * @source  http://stackoverflow.com/questions/173400/how-to-check-if-php-array-is-associative-or-sequential
+ *
+ * @since   5.4.0
+ *
+ * @param   $array (array)
+ * @return  (boolean)
+ */
 function acf_is_sequential_array( $array ) {
 
 	// bail early if not array
@@ -4202,24 +3525,20 @@ function acf_is_sequential_array( $array ) {
 
 	// return
 	return true;
-
 }
 
-
-/*
-*  acf_is_associative_array
-*
-*  This function will return true if the array contains one or more string keys
-*
-*  @source  http://stackoverflow.com/questions/173400/how-to-check-if-php-array-is-associative-or-sequential
-*  @type    function
-*  @date    9/09/2016
-*  @since   5.4.0
-*
-*  @param   $array (array)
-*  @return  (boolean)
-*/
-
+/**
+ * acf_is_associative_array
+ *
+ * This function will return true if the array contains one or more string keys
+ *
+ * @source  http://stackoverflow.com/questions/173400/how-to-check-if-php-array-is-associative-or-sequential
+ *
+ * @since   5.4.0
+ *
+ * @param   $array (array)
+ * @return  (boolean)
+ */
 function acf_is_associative_array( $array ) {
 
 	// bail early if not array
@@ -4238,25 +3557,20 @@ function acf_is_associative_array( $array ) {
 
 	// return
 	return false;
-
 }
 
-
-/*
-*  acf_add_array_key_prefix
-*
-*  This function will add a prefix to all array keys
-*  Useful to preserve numeric keys when performing array_multisort
-*
-*  @type    function
-*  @date    15/09/2016
-*  @since   5.4.0
-*
-*  @param   $array (array)
-*  @param   $prefix (string)
-*  @return  (array)
-*/
-
+/**
+ * acf_add_array_key_prefix
+ *
+ * This function will add a prefix to all array keys
+ * Useful to preserve numeric keys when performing array_multisort
+ *
+ * @since   5.4.0
+ *
+ * @param   $array (array)
+ * @param   $prefix (string)
+ * @return  (array)
+ */
 function acf_add_array_key_prefix( $array, $prefix ) {
 
 	// vars
@@ -4264,33 +3578,26 @@ function acf_add_array_key_prefix( $array, $prefix ) {
 
 	// loop
 	foreach ( $array as $k => $v ) {
-
 		$k2            = $prefix . $k;
 		$array2[ $k2 ] = $v;
-
 	}
 
 	// return
 	return $array2;
-
 }
 
-
-/*
-*  acf_remove_array_key_prefix
-*
-*  This function will remove a prefix to all array keys
-*  Useful to preserve numeric keys when performing array_multisort
-*
-*  @type    function
-*  @date    15/09/2016
-*  @since   5.4.0
-*
-*  @param   $array (array)
-*  @param   $prefix (string)
-*  @return  (array)
-*/
-
+/**
+ * acf_remove_array_key_prefix
+ *
+ * This function will remove a prefix to all array keys
+ * Useful to preserve numeric keys when performing array_multisort
+ *
+ * @since   5.4.0
+ *
+ * @param   $array (array)
+ * @param   $prefix (string)
+ * @return  (array)
+ */
 function acf_remove_array_key_prefix( $array, $prefix ) {
 
 	// vars
@@ -4299,56 +3606,40 @@ function acf_remove_array_key_prefix( $array, $prefix ) {
 
 	// loop
 	foreach ( $array as $k => $v ) {
-
 		$k2            = ( substr( $k, 0, $l ) === $prefix ) ? substr( $k, $l ) : $k;
 		$array2[ $k2 ] = $v;
-
 	}
 
 	// return
 	return $array2;
-
 }
 
-
-/*
-*  acf_strip_protocol
-*
-*  This function will remove the proticol from a url
-*  Used to allow licenses to remain active if a site is switched to https
-*
-*  @type    function
-*  @date    10/01/2017
-*  @since   5.5.4
-*  @author  Aaron
-*
-*  @param   $url (string)
-*  @return  (string)
-*/
-
+/**
+ * This function will remove the proticol from a url
+ * Used to allow licenses to remain active if a site is switched to https
+ *
+ * @since   5.5.4
+ *
+ * @param   string $url The URL to strip the protocol from.
+ * @return  string
+ */
 function acf_strip_protocol( $url ) {
 
-	// strip the protical
+	// strip the protocol
 	return str_replace( array( 'http://', 'https://' ), '', $url );
-
 }
 
-
-/*
-*  acf_connect_attachment_to_post
-*
-*  This function will connect an attacment (image etc) to the post
-*  Used to connect attachements uploaded directly to media that have not been attaced to a post
-*
-*  @type    function
-*  @date    11/01/2017
-*  @since   5.8.0 Added filter to prevent connection.
-*  @since   5.5.4
-*
-*  @param   int $attachment_id The attachment ID.
-*  @param   int $post_id The post ID.
-*  @return  bool True if attachment was connected.
-*/
+/**
+ * This function will connect an attacment (image etc) to the post
+ * Used to connect attachements uploaded directly to media that have not been attaced to a post
+ *
+ * @since   5.8.0 Added filter to prevent connection.
+ * @since   5.5.4
+ *
+ * @param   integer $attachment_id The attachment ID.
+ * @param   integer $post_id       The post ID.
+ * @return  boolean True if attachment was connected.
+ */
 function acf_connect_attachment_to_post( $attachment_id = 0, $post_id = 0 ) {
 
 	// bail early if $attachment_id is not valid.
@@ -4362,14 +3653,13 @@ function acf_connect_attachment_to_post( $attachment_id = 0, $post_id = 0 ) {
 	}
 
 	/**
-	*  Filters whether or not to connect the attachment.
+	* Filters whether or not to connect the attachment.
 	*
-	*  @date    8/11/18
-	*  @since   5.8.0
+	* @since   5.8.0
 	*
-	*  @param   bool $bool Returning false will prevent the connection. Default true.
-	*  @param   int $attachment_id The attachment ID.
-	*  @param   int $post_id The post ID.
+	* @param   bool $bool Returning false will prevent the connection. Default true.
+	* @param   int $attachment_id The attachment ID.
+	* @param   int $post_id The post ID.
 	*/
 	if ( ! apply_filters( 'acf/connect_attachment_to_post', true, $attachment_id, $post_id ) ) {
 		return false;
@@ -4397,22 +3687,17 @@ function acf_connect_attachment_to_post( $attachment_id = 0, $post_id = 0 ) {
 	return true;
 }
 
-
-/*
-*  acf_encrypt
-*
-*  This function will encrypt a string using PHP
-*  https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
-*
-*  @type    function
-*  @date    27/2/17
-*  @since   5.5.8
-*
-*  @param   $data (string)
-*  @return  (string)
-*/
-
-
+/**
+ * acf_encrypt
+ *
+ * This function will encrypt a string using PHP
+ * https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
+ *
+ * @since   5.5.8
+ *
+ * @param   $data (string)
+ * @return  (string)
+ */
 function acf_encrypt( $data = '' ) {
 
 	// bail early if no encrypt function
@@ -4431,24 +3716,19 @@ function acf_encrypt( $data = '' ) {
 
 	// The $iv is just as important as the key for decrypting, so save it with our encrypted data using a unique separator (::)
 	return base64_encode( $encrypted_data . '::' . $iv );
-
 }
 
-
-/*
-*  acf_decrypt
-*
-*  This function will decrypt an encrypted string using PHP
-*  https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
-*
-*  @type    function
-*  @date    27/2/17
-*  @since   5.5.8
-*
-*  @param   $data (string)
-*  @return  (string)
-*/
-
+/**
+ * acf_decrypt
+ *
+ * This function will decrypt an encrypted string using PHP
+ * https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
+ *
+ * @since   5.5.8
+ *
+ * @param   $data (string)
+ * @return  (string)
+ */
 function acf_decrypt( $data = '' ) {
 
 	// bail early if no decrypt function
@@ -4464,21 +3744,18 @@ function acf_decrypt( $data = '' ) {
 
 	// decrypt
 	return openssl_decrypt( $encrypted_data, 'aes-256-cbc', $key, 0, $iv );
-
 }
 
 /**
- *  acf_parse_markdown
+ * acf_parse_markdown
  *
- *  A very basic regex-based Markdown parser function based off [slimdown](https://gist.github.com/jbroadway/2836900).
+ * A very basic regex-based Markdown parser function based off [slimdown](https://gist.github.com/jbroadway/2836900).
  *
- *  @date    6/8/18
- *  @since   5.7.2
+ * @since   5.7.2
  *
- *  @param   string $text The string to parse.
- *  @return  string
+ * @param   string $text The string to parse.
+ * @return  string
  */
-
 function acf_parse_markdown( $text = '' ) {
 
 	// trim
@@ -4510,15 +3787,14 @@ function acf_parse_markdown( $text = '' ) {
 }
 
 /**
- *  acf_get_sites
+ * acf_get_sites
  *
- *  Returns an array of sites for a network.
+ * Returns an array of sites for a network.
  *
- *  @date    29/08/2016
- *  @since   5.4.0
+ * @since   5.4.0
  *
- *  @param   void
- *  @return  array
+ * @param   void
+ * @return  array
  */
 function acf_get_sites() {
 	$results = array();
@@ -4532,16 +3808,15 @@ function acf_get_sites() {
 }
 
 /**
- *  acf_convert_rules_to_groups
+ * acf_convert_rules_to_groups
  *
- *  Converts an array of rules from ACF4 to an array of groups for ACF5
+ * Converts an array of rules from ACF4 to an array of groups for ACF5
  *
- *  @date    25/8/18
- *  @since   5.7.4
+ * @since   5.7.4
  *
- *  @param   array  $rules An array of rules.
- *  @param   string $anyorall The anyorall setting used in ACF4. Defaults to 'any'.
- *  @return  array
+ * @param   array  $rules    An array of rules.
+ * @param   string $anyorall The anyorall setting used in ACF4. Defaults to 'any'.
+ * @return  array
  */
 function acf_convert_rules_to_groups( $rules, $anyorall = 'any' ) {
 
@@ -4562,7 +3837,7 @@ function acf_convert_rules_to_groups( $rules, $anyorall = 'any' ) {
 
 			// use $anyorall to determine if a new group is needed
 			if ( $anyorall == 'any' ) {
-				$index++;
+				++$index;
 			}
 		}
 
@@ -4586,17 +3861,16 @@ function acf_convert_rules_to_groups( $rules, $anyorall = 'any' ) {
 }
 
 /**
- *  acf_register_ajax
+ * acf_register_ajax
  *
- *  Regsiters an ajax callback.
+ * Regsiters an ajax callback.
  *
- *  @date    5/10/18
- *  @since   5.7.7
+ * @since   5.7.7
  *
- *  @param   string $name The ajax action name.
- *  @param   array  $callback The callback function or array.
- *  @param   bool   $public Whether to allow access to non logged in users.
- *  @return  void
+ * @param   string  $name     The ajax action name.
+ * @param   array   $callback The callback function or array.
+ * @param   boolean $public   Whether to allow access to non logged in users.
+ * @return  void
  */
 function acf_register_ajax( $name = '', $callback = false, $public = false ) {
 
@@ -4613,31 +3887,29 @@ function acf_register_ajax( $name = '', $callback = false, $public = false ) {
 }
 
 /**
- *  acf_str_camel_case
+ * acf_str_camel_case
  *
- *  Converts a string into camelCase.
- *  Thanks to https://stackoverflow.com/questions/31274782/convert-array-keys-from-underscore-case-to-camelcase-recursively
+ * Converts a string into camelCase.
+ * Thanks to https://stackoverflow.com/questions/31274782/convert-array-keys-from-underscore-case-to-camelcase-recursively
  *
- *  @date    24/10/18
- *  @since   5.8.0
+ * @since   5.8.0
  *
- *  @param   string $string The string ot convert.
- *  @return  string
+ * @param   string $string The string ot convert.
+ * @return  string
  */
 function acf_str_camel_case( $string = '' ) {
 	return lcfirst( str_replace( ' ', '', ucwords( str_replace( '_', ' ', $string ) ) ) );
 }
 
 /**
- *  acf_array_camel_case
+ * acf_array_camel_case
  *
- *  Converts all aray keys to camelCase.
+ * Converts all aray keys to camelCase.
  *
- *  @date    24/10/18
- *  @since   5.8.0
+ * @since   5.8.0
  *
- *  @param   array $array The array to convert.
- *  @return  array
+ * @param   array $array The array to convert.
+ * @return  array
  */
 function acf_array_camel_case( $array = array() ) {
 	$array2 = array();
@@ -4650,10 +3922,9 @@ function acf_array_camel_case( $array = array() ) {
 /**
  * Returns true if the current screen is using the block editor.
  *
- * @date 13/12/18
  * @since 5.8.0
  *
- * @return bool
+ * @return boolean
  */
 function acf_is_block_editor() {
 	if ( function_exists( 'get_current_screen' ) ) {
@@ -4673,5 +3944,33 @@ function acf_is_block_editor() {
  * @return array The WordPress reserved terms list.
  */
 function acf_get_wp_reserved_terms() {
-	return array( 'action', 'attachment', 'attachment_id', 'author', 'author_name', 'calendar', 'cat', 'category', 'category__and', 'category__in', 'category__not_in', 'category_name', 'comments_per_page', 'comments_popup', 'custom', 'customize_messenger_channel', 'customized', 'cpage', 'day', 'debug', 'embed', 'error', 'exact', 'feed', 'fields', 'hour', 'link_category', 'm', 'minute', 'monthnum', 'more', 'name', 'nav_menu', 'nonce', 'nopaging', 'offset', 'order', 'orderby', 'p', 'page', 'page_id', 'paged', 'pagename', 'pb', 'perm', 'post', 'post__in', 'post__not_in', 'post_format', 'post_mime_type', 'post_status', 'post_tag', 'post_type', 'posts', 'posts_per_archive_page', 'posts_per_page', 'preview', 'robots', 's', 'search', 'second', 'sentence', 'showposts', 'static', 'status', 'subpost', 'subpost_id', 'tag', 'tag__and', 'tag__in', 'tag__not_in', 'tag_id', 'tag_slug__and', 'tag_slug__in', 'taxonomy', 'tb', 'term', 'terms', 'theme', 'title', 'type', 'types', 'w', 'withcomments', 'withoutcomments', 'year' );
+	return array( 'action', 'attachment', 'attachment_id', 'author', 'author_name', 'calendar', 'cat', 'category', 'category__and', 'category__in', 'category__not_in', 'category_name', 'comments_per_page', 'comments_popup', 'custom', 'customize_messenger_channel', 'customized', 'cpage', 'day', 'debug', 'embed', 'error', 'exact', 'feed', 'fields', 'hour', 'link', 'link_category', 'm', 'minute', 'monthnum', 'more', 'name', 'nav_menu', 'nonce', 'nopaging', 'offset', 'order', 'orderby', 'p', 'page', 'page_id', 'paged', 'pagename', 'pb', 'perm', 'post', 'post__in', 'post__not_in', 'post_format', 'post_mime_type', 'post_status', 'post_tag', 'post_type', 'posts', 'posts_per_archive_page', 'posts_per_page', 'preview', 'robots', 's', 'search', 'second', 'sentence', 'showposts', 'static', 'status', 'subpost', 'subpost_id', 'tag', 'tag__and', 'tag__in', 'tag__not_in', 'tag_id', 'tag_slug__and', 'tag_slug__in', 'taxonomy', 'tb', 'term', 'terms', 'theme', 'themes', 'title', 'type', 'types', 'w', 'withcomments', 'withoutcomments', 'year' );
+}
+
+/**
+ * Detect if we're on a multisite subsite.
+ *
+ * @since 6.2.4
+ *
+ * @return boolean true if we're in a multisite install and not on the main site
+ */
+function acf_is_multisite_sub_site() {
+	if ( is_multisite() && ! is_main_site() ) {
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Detect if we're on a multisite main site.
+ *
+ * @since 6.2.4
+ *
+ * @return boolean true if we're in a multisite install and on the main site
+ */
+function acf_is_multisite_main_site() {
+	if ( is_multisite() && is_main_site() ) {
+		return true;
+	}
+	return false;
 }

@@ -5,19 +5,16 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 	class acf_field_number extends acf_field {
 
 
-		/*
-		*  initialize
-		*
-		*  This function will setup the field type data
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
+		/**
+		 * This function will setup the field type data
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
 		function initialize() {
 
 			// vars
@@ -35,22 +32,18 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 				'prepend'       => '',
 				'append'        => '',
 			);
-
 		}
 
 
-		/*
-		*  render_field()
-		*
-		*  Create the HTML interface for your field
-		*
-		*  @param   $field - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
-
+		/**
+		 * Create the HTML interface for your field
+		 *
+		 * @param   $field - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 */
 		function render_field( $field ) {
 
 			// vars
@@ -66,18 +59,14 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 
 			// prepend
 			if ( $field['prepend'] !== '' ) {
-
 				$field['class'] .= ' acf-is-prepended';
 				$html           .= '<div class="acf-input-prepend">' . acf_esc_html( $field['prepend'] ) . '</div>';
-
 			}
 
 			// append
 			if ( $field['append'] !== '' ) {
-
 				$field['class'] .= ' acf-is-appended';
 				$html           .= '<div class="acf-input-append">' . acf_esc_html( $field['append'] ) . '</div>';
-
 			}
 
 			// atts (value="123")
@@ -101,24 +90,20 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 			$html .= '<div class="acf-input-wrap">' . acf_get_text_input( $atts ) . '</div>';
 
 			// return
-			echo $html;
-
+			echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped by individual html functions above.
 		}
 
 
-		/*
-		*  render_field_settings()
-		*
-		*  Create extra options for your field. This is rendered when editing a field.
-		*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field  - an array holding all the field's data
-		*/
-
+		/**
+		 * Create extra options for your field. This is rendered when editing a field.
+		 * The value of $field['name'] can be used (like bellow) to save extra data to the $field
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field  - an array holding all the field's data
+		 */
 		function render_field_settings( $field ) {
 
 			// default_value
@@ -213,26 +198,21 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 			);
 		}
 
-		/*
-		*  validate_value
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    11/02/2014
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    11/02/2014
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function validate_value( $valid, $value, $field, $input ) {
 
 			// remove ','
 			if ( acf_str_exists( ',', $value ) ) {
-
 				$value = str_replace( ',', '', $value );
-
 			}
 
 			// if value is not numeric...
@@ -240,14 +220,11 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 
 				// allow blank to be saved
 				if ( ! empty( $value ) ) {
-
 					$valid = __( 'Value must be a number', 'acf' );
-
 				}
 
 				// return early
 				return $valid;
-
 			}
 
 			// convert
@@ -255,59 +232,46 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 
 			// min
 			if ( is_numeric( $field['min'] ) && $value < floatval( $field['min'] ) ) {
-
 				$valid = sprintf( __( 'Value must be equal to or higher than %d', 'acf' ), $field['min'] );
-
 			}
 
 			// max
 			if ( is_numeric( $field['max'] ) && $value > floatval( $field['max'] ) ) {
-
 				$valid = sprintf( __( 'Value must be equal to or lower than %d', 'acf' ), $field['max'] );
-
 			}
 
 			// return
 			return $valid;
-
 		}
 
 
-		/*
-		*  update_value()
-		*
-		*  This filter is appied to the $value before it is updated in the db
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value - the value which will be saved in the database
-		*  @param   $field - the field array holding all the field options
-		*  @param   $post_id - the $post_id of which the value will be saved
-		*
-		*  @return  $value - the modified value
-		*/
-
+		/**
+		 * This filter is appied to the $value before it is updated in the db
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $value - the value which will be saved in the database
+		 * @param   $field - the field array holding all the field options
+		 * @param   $post_id - the post_id of which the value will be saved
+		 *
+		 * @return  $value - the modified value
+		 */
 		function update_value( $value, $post_id, $field ) {
 
 			// no formatting needed for empty value
 			if ( empty( $value ) ) {
-
 				return $value;
-
 			}
 
 			// remove ','
 			if ( acf_str_exists( ',', $value ) ) {
-
 				$value = str_replace( ',', '', $value );
-
 			}
 
 			// return
 			return $value;
-
 		}
 
 		/**
@@ -340,21 +304,17 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 		/**
 		 * Apply basic formatting to prepare the value for default REST output.
 		 *
-		 * @param mixed      $value
-		 * @param string|int $post_id
-		 * @param array      $field
+		 * @param mixed          $value
+		 * @param string|integer $post_id
+		 * @param array          $field
 		 * @return mixed
 		 */
 		public function format_value_for_rest( $value, $post_id, array $field ) {
 			return acf_format_numerics( $value );
 		}
-
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_number' );
-
 endif; // class_exists check
-
-

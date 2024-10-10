@@ -5,20 +5,17 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 	class acf_field_flexible_content extends acf_field {
 
 
-		/*
-		*  __construct
-		*
-		*  This function will setup the field type data
-		*
-		*  @type    function
-		*  @date    5/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
-		function initialize() {
+		/**
+		 * This function will setup the field type data
+		 *
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   n/a
+		 * @return  n/a
+		 */
+		public function initialize() {
 
 			// vars
 			$this->name          = 'flexible_content';
@@ -29,6 +26,7 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/flexible-content/', 'docs', 'field-type-selection' );
 			$this->tutorial_url  = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/building-layouts-with-the-flexible-content-field-in-a-theme/', 'docs', 'field-type-selection' );
 			$this->pro           = true;
+			$this->supports      = array( 'bindings' => false );
 			$this->defaults      = array(
 				'layouts'      => array(),
 				'min'          => '',
@@ -49,24 +47,20 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			$this->add_field_filter( 'acf/get_sub_field', array( $this, 'get_sub_field' ), 10, 3 );
 			$this->add_field_filter( 'acf/prepare_field_for_export', array( $this, 'prepare_field_for_export' ) );
 			$this->add_field_filter( 'acf/prepare_field_for_import', array( $this, 'prepare_field_for_import' ) );
-
 		}
 
 
-		/*
-		*  input_admin_enqueue_scripts
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    16/12/2015
-		*  @since   5.3.2
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function input_admin_enqueue_scripts() {
+		/**
+		 * Admin scripts enqueue for field.
+		 *
+		 * @type    function
+		 * @date    16/12/2015
+		 * @since   5.3.2
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
+		public function input_admin_enqueue_scripts() {
 
 			// localize
 			acf_localize_text(
@@ -92,19 +86,16 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		}
 
 
-		/*
-		*  get_valid_layout
-		*
-		*  This function will fill in the missing keys to create a valid layout
-		*
-		*  @type    function
-		*  @date    3/10/13
-		*  @since   1.1.0
-		*
-		*  @param   $layout (array)
-		*  @return  $layout (array)
-		*/
-
+		/**
+		 * This function will fill in the missing keys to create a valid layout
+		 *
+		 * @type    function
+		 * @date    3/10/13
+		 * @since   1.1.0
+		 *
+		 * @param   $layout (array)
+		 * @return  $layout (array)
+		 */
 		function get_valid_layout( $layout = array() ) {
 
 			// parse
@@ -126,27 +117,22 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		}
 
 
-		/*
-		*  load_field()
-		*
-		*  This filter is appied to the $field after it is loaded from the database
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field - the field array holding all the field options
-		*
-		*  @return  $field - the field array holding all the field options
-		*/
-
+		/**
+		 * This filter is appied to the $field after it is loaded from the database
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field - the field array holding all the field options
+		 *
+		 * @return  $field - the field array holding all the field options
+		 */
 		function load_field( $field ) {
 
 			// bail early if no field layouts
 			if ( empty( $field['layouts'] ) ) {
-
 				return $field;
-
 			}
 
 			// vars
@@ -163,7 +149,6 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 				// append sub fields
 				if ( ! empty( $sub_fields ) ) {
-
 					foreach ( array_keys( $sub_fields ) as $k ) {
 
 						// check if 'parent_layout' is empty
@@ -171,21 +156,17 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 							// parent_layout did not save for this field, default it to first layout
 							$sub_fields[ $k ]['parent_layout'] = $layout['key'];
-
 						}
 
 						// append sub field to layout,
 						if ( $sub_fields[ $k ]['parent_layout'] == $layout['key'] ) {
-
 							$layout['sub_fields'][] = acf_extract_var( $sub_fields, $k );
-
 						}
 					}
 				}
 
 				// append back to layouts
 				$field['layouts'][ $i ] = $layout;
-
 			}
 
 			// return
@@ -193,20 +174,18 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		}
 
 
-		/*
-		*  get_sub_field
-		*
-		*  This function will return a specific sub field
-		*
-		*  @type    function
-		*  @date    29/09/2016
-		*  @since   5.4.0
-		*
-		*  @param   $sub_field
-		*  @param   $selector (string)
-		*  @param   $field (array)
-		*  @return  $post_id (int)
-		*/
+		/**
+		 * This function will return a specific sub field
+		 *
+		 * @type    function
+		 * @date    29/09/2016
+		 * @since   5.4.0
+		 *
+		 * @param   $sub_field
+		 * @param   $selector (string)
+		 * @param   $field (array)
+		 * @return  $post_id (int)
+		 */
 		function get_sub_field( $sub_field, $id, $field ) {
 
 			// Get active layout.
@@ -236,34 +215,27 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		}
 
 
-		/*
-		*  render_field()
-		*
-		*  Create the HTML interface for your field
-		*
-		*  @param   $field - an array holding all the field's data
-		*
-		*  @type    action
-		*  @since   3.6
-		*  @date    23/01/13
-		*/
-
+		/**
+		 * Create the HTML interface for your field
+		 *
+		 * @param   $field - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
+		 */
 		function render_field( $field ) {
 
 			// defaults
 			if ( empty( $field['button_label'] ) ) {
-
 				$field['button_label'] = $this->defaults['button_label'];
-
 			}
 
 			// sort layouts into names
 			$layouts = array();
 
 			foreach ( $field['layouts'] as $k => $layout ) {
-
 				$layouts[ $layout['name'] ] = $layout;
-
 			}
 
 			// vars
@@ -279,92 +251,79 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			}
 
 			// no value message
+			// translators: %s the button label used for adding a new layout.
 			$no_value_message = __( 'Click the "%s" button below to start creating your layout', 'acf' );
 			$no_value_message = apply_filters( 'acf/fields/flexible_content/no_value_message', $no_value_message, $field );
 			$no_value_message = sprintf( $no_value_message, $field['button_label'] );
 
 			?>
-<div <?php echo acf_esc_attrs( $div ); ?>>
+			<div <?php echo acf_esc_attrs( $div ); ?>>
 
-			<?php acf_hidden_input( array( 'name' => $field['name'] ) ); ?>
+				<?php acf_hidden_input( array( 'name' => $field['name'] ) ); ?>
 
-	<div class="no-value-message">
-			<?php echo acf_esc_html( $no_value_message ); ?>
-	</div>
+				<div class="no-value-message">
+					<?php echo acf_esc_html( $no_value_message ); ?>
+				</div>
 
-	<div class="clones">
-			<?php foreach ( $layouts as $layout ) : ?>
-				<?php $this->render_layout( $field, $layout, 'acfcloneindex', array() ); ?>
-		<?php endforeach; ?>
-	</div>
+				<div class="clones">
+					<?php foreach ( $layouts as $layout ) : ?>
+						<?php $this->render_layout( $field, $layout, 'acfcloneindex', array() ); ?>
+					<?php endforeach; ?>
+				</div>
 
-	<div class="values">
-			<?php
-			if ( ! empty( $field['value'] ) ) :
+				<div class="values">
+					<?php
+					if ( ! empty( $field['value'] ) ) {
+						foreach ( $field['value'] as $i => $value ) {
 
-				foreach ( $field['value'] as $i => $value ) :
+							// validate
+							if ( ! is_array( $value ) ) {
+								continue;
+							}
 
-					// validate
-					if ( ! is_array( $value ) ) {
-						continue;
+							if ( empty( $layouts[ $value['acf_fc_layout'] ] ) ) {
+								continue;
+							}
+
+							// render
+							$this->render_layout( $field, $layouts[ $value['acf_fc_layout'] ], $i, $value );
+						}
 					}
+					?>
+				</div>
 
-					if ( empty( $layouts[ $value['acf_fc_layout'] ] ) ) {
-						continue;
-					}
+				<div class="acf-actions">
+					<a class="acf-button button button-primary" href="#" data-name="add-layout"><?php echo acf_esc_html( $field['button_label'] ); ?></a>
+				</div>
 
-					// render
-					$this->render_layout( $field, $layouts[ $value['acf_fc_layout'] ], $i, $value );
-
-				endforeach;
-
-			endif;
-			?>
-	</div>
-
-	<div class="acf-actions">
-		<a class="acf-button button button-primary" href="#" data-name="add-layout"><?php echo acf_esc_html( $field['button_label'] ); ?></a>
-	</div>
-
-	<script type="text-html" class="tmpl-popup"><ul>
-			<?php
-			foreach ( $layouts as $layout ) :
-
+				<?php
+				echo '<script type="text-html" class="tmpl-popup"><ul>';
+				foreach ( $layouts as $layout ) {
 					$atts = array(
 						'href'        => '#',
 						'data-layout' => $layout['name'],
 						'data-min'    => $layout['min'],
 						'data-max'    => $layout['max'],
 					);
-
-					?>
-			<li><a <?php echo acf_esc_attrs( $atts ); ?>><?php echo acf_esc_html( $layout['label'] ); ?></a></li>
-				<?php
-
-		endforeach;
-			?>
-</ul>
-	</script>
-
-</div>
+					printf( '<li><a %s>%s</a></li>', acf_esc_attrs( $atts ), acf_esc_html( $layout['label'] ) );
+				}
+				echo '</ul></script>';
+				?>
+			</div>
 			<?php
-
 		}
 
 
-		/*
-		*  render_layout
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    19/11/2013
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    19/11/2013
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function render_layout( $field, $layout, $i, $value ) {
 
 			// vars
@@ -379,24 +338,20 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 				'class'       => 'layout',
 				'data-id'     => $id,
 				'data-layout' => $layout['name'],
+				'data-max'    => $layout['max'],
+				'data-label'  => $layout['label'],
 			);
 
 			// clone
 			if ( is_numeric( $i ) ) {
-
 				$order = $i + 1;
-
 			} else {
-
 				$div['class'] .= ' acf-clone';
-
 			}
 
 			// display
 			if ( $layout['display'] == 'table' ) {
-
 				$el = 'td';
-
 			}
 
 			// title
@@ -406,7 +361,7 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			reset_rows();
 
 			?>
-<div <?php echo acf_esc_attr( $div ); ?>>
+<div <?php echo acf_esc_attrs( $div ); ?>>
 
 			<?php
 			acf_hidden_input(
@@ -417,13 +372,13 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			);
 			?>
 
-	<div class="acf-fc-layout-handle" title="<?php _e( 'Drag to reorder', 'acf' ); ?>" data-name="collapse-layout"><?php echo acf_esc_html( $title ); ?></div>
+	<div class="acf-fc-layout-handle" title="<?php esc_attr_e( 'Drag to reorder', 'acf' ); ?>" data-name="collapse-layout"><?php echo acf_esc_html( $title ); ?></div>
 
 	<div class="acf-fc-layout-controls">
-		<a class="acf-icon -plus small light acf-js-tooltip" href="#" data-name="add-layout" title="<?php _e( 'Add layout', 'acf' ); ?>"></a>
-		<a class="acf-icon -duplicate small light acf-js-tooltip" href="#" data-name="duplicate-layout" title="<?php _e( 'Duplicate layout', 'acf' ); ?>"></a>
-		<a class="acf-icon -minus small light acf-js-tooltip" href="#" data-name="remove-layout" title="<?php _e( 'Remove layout', 'acf' ); ?>"></a>
-		<a class="acf-icon -collapse small -clear acf-js-tooltip" href="#" data-name="collapse-layout" title="<?php _e( 'Click to toggle', 'acf' ); ?>"></a>
+		<a class="acf-icon -plus small light acf-js-tooltip" href="#" data-name="add-layout" title="<?php esc_attr_e( 'Add layout', 'acf' ); ?>"></a>
+		<a class="acf-icon -duplicate small light acf-js-tooltip" href="#" data-name="duplicate-layout" title="<?php esc_attr_e( 'Duplicate layout', 'acf' ); ?>"></a>
+		<a class="acf-icon -minus small light acf-js-tooltip" href="#" data-name="remove-layout" title="<?php esc_attr_e( 'Remove layout', 'acf' ); ?>"></a>
+		<a class="acf-icon -collapse small -clear acf-js-tooltip" href="#" data-name="collapse-layout" title="<?php esc_attr_e( 'Click to toggle', 'acf' ); ?>"></a>
 	</div>
 
 			<?php if ( ! empty( $sub_fields ) ) : ?>
@@ -486,12 +441,10 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 							// this is a normal value
 							$sub_field['value'] = $value[ $sub_field['key'] ];
-
 						} elseif ( isset( $sub_field['default_value'] ) ) {
 
 							// no value, but this sub field has a default value
 							$sub_field['value'] = $sub_field['default_value'];
-
 						}
 
 						// update prefix to allow for nested values
@@ -499,7 +452,6 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 						// render input
 						acf_render_field_wrap( $sub_field, $el );
-
 					}
 
 					?>
@@ -516,7 +468,6 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 </div>
 			<?php
-
 		}
 
 		/**
@@ -552,10 +503,14 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 				$layout_prefix = "{$field['prefix']}[layouts][{$layout['key']}]";
 
 				?>
-				<div class="acf-field acf-field-setting-fc_layout" data-name="fc_layout" data-setting="flexible_content" data-layout-label="<?php echo esc_attr( $layout['label'] ); ?>" data-id="<?php echo esc_attr( $layout['key'] ); ?>">
+				<div class="acf-field acf-field-setting-fc_layout" data-name="fc_layout" data-setting="flexible_content" data-layout-label="<?php echo esc_attr( $layout['label'] ); ?>" data-layout-name="<?php echo esc_attr( $layout['name'] ); ?>" data-id="<?php echo esc_attr( $layout['key'] ); ?>">
 					<div class="acf-label acf-field-settings-fc_head">
 						<div class="acf-fc_draggable">
-							<label class="acf-fc-layout-name reorder-layout" ><?php esc_attr_e( 'Layout', 'acf' ); ?></label>
+							<label class="acf-fc-layout-label reorder-layout"><?php esc_attr_e( 'Layout', 'acf' ); ?></label>
+						</div>
+
+						<div class="acf-fc-layout-name copyable">
+							<span class="layout-name"></span>
 						</div>
 
 						<ul class="acf-bl acf-fl-actions">
@@ -579,113 +534,112 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 						);
 
 						?>
-					<ul class="acf-fc-meta acf-bl">
-						<li class="acf-fc-meta-label acf-fc-meta-left">
-							<?php
-
-							acf_render_field(
-								array(
-									'type'    => 'text',
-									'name'    => 'label',
-									'class'   => 'layout-label',
-									'prefix'  => $layout_prefix,
-									'value'   => $layout['label'],
-									'prepend' => __( 'Label', 'acf' ),
-								)
-							);
-
-							?>
-						</li>
-						<li class="acf-fc-meta-name acf-fc-meta-right">
+						<ul class="acf-fc-meta acf-bl">
+							<li class="acf-fc-meta-label acf-fc-meta-left">
 								<?php
 
 								acf_render_field(
 									array(
 										'type'    => 'text',
-										'name'    => 'name',
-										'class'   => 'layout-name',
+										'name'    => 'label',
+										'class'   => 'layout-label',
 										'prefix'  => $layout_prefix,
-										'value'   => $layout['name'],
-										'prepend' => __( 'Name', 'acf' ),
+										'value'   => $layout['label'],
+										'prepend' => __( 'Label', 'acf' ),
 									)
 								);
 
 								?>
-						</li>
-						<li class="acf-fc-meta-display acf-fc-meta-left">
-							<div class="acf-input-prepend"><?php esc_html_e( 'Layout', 'acf' ); ?></div>
-							<div class="acf-input-wrap">
-								<?php
+							</li>
+							<li class="acf-fc-meta-name acf-fc-meta-right copyable input-copyable">
+									<?php
 
-								acf_render_field(
-									array(
-										'type'    => 'select',
-										'name'    => 'display',
-										'prefix'  => $layout_prefix,
-										'value'   => $layout['display'],
-										'class'   => 'acf-is-prepended',
-										'choices' => array(
-											'table' => __( 'Table', 'acf' ),
-											'block' => __( 'Block', 'acf' ),
-											'row'   => __( 'Row', 'acf' ),
-										),
-									)
-								);
+									acf_render_field(
+										array(
+											'type'       => 'text',
+											'name'       => 'name',
+											'class'      => 'layout-name',
+											'input-data' => array( '1p-ignore' => 'true' ),
+											'prefix'     => $layout_prefix,
+											'value'      => $layout['name'],
+											'prepend'    => __( 'Name', 'acf' ),
+										)
+									);
 
-								?>
-							</div>
-						</li>
-						<li class="acf-fc-meta-min">
-								<?php
+									?>
+							</li>
+							<li class="acf-fc-meta-display acf-fc-meta-left">
+								<div class="acf-input-prepend"><?php esc_html_e( 'Layout', 'acf' ); ?></div>
+								<div class="acf-input-wrap">
+									<?php
 
-								acf_render_field(
-									array(
-										'type'    => 'text',
-										'name'    => 'min',
-										'prefix'  => $layout_prefix,
-										'value'   => $layout['min'],
-										'prepend' => __( 'Min', 'acf' ),
-									)
-								);
+									acf_render_field(
+										array(
+											'type'    => 'select',
+											'name'    => 'display',
+											'prefix'  => $layout_prefix,
+											'value'   => $layout['display'],
+											'class'   => 'acf-is-prepended',
+											'choices' => array(
+												'table' => __( 'Table', 'acf' ),
+												'block' => __( 'Block', 'acf' ),
+												'row'   => __( 'Row', 'acf' ),
+											),
+										)
+									);
 
-								?>
-						</li>
-						<li class="acf-fc-meta-max">
-								<?php
+									?>
+								</div>
+							</li>
+							<li class="acf-fc-meta-min">
+									<?php
 
-								acf_render_field(
-									array(
-										'type'    => 'text',
-										'name'    => 'max',
-										'prefix'  => $layout_prefix,
-										'value'   => $layout['max'],
-										'prepend' => __( 'Max', 'acf' ),
-									)
-								);
+									acf_render_field(
+										array(
+											'type'    => 'text',
+											'name'    => 'min',
+											'prefix'  => $layout_prefix,
+											'value'   => $layout['min'],
+											'prepend' => __( 'Min', 'acf' ),
+										)
+									);
 
-								?>
-						</li>
-					</ul>
-					<div class="acf-input-sub">
-					<?php
+									?>
+							</li>
+							<li class="acf-fc-meta-max">
+									<?php
 
-					// vars
-					$args = array(
-						'fields'      => $layout['sub_fields'],
-						'parent'      => $field['ID'],
-						'is_subfield' => true,
-					);
+									acf_render_field(
+										array(
+											'type'    => 'text',
+											'name'    => 'max',
+											'prefix'  => $layout_prefix,
+											'value'   => $layout['max'],
+											'prepend' => __( 'Max', 'acf' ),
+										)
+									);
 
-					acf_get_view( 'acf-field-group/fields', $args );
+									?>
+							</li>
+						</ul>
+						<div class="acf-input-sub">
+						<?php
 
-					?>
+						// vars
+						$args = array(
+							'fields'      => $layout['sub_fields'],
+							'parent'      => $field['ID'],
+							'is_subfield' => true,
+						);
+
+						acf_get_view( 'acf-field-group/fields', $args );
+
+						?>
+						</div>
 					</div>
 				</div>
-			</div>
 				<?php
-
 			}
-			// endforeach
 		}
 
 		/**
@@ -730,32 +684,24 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 					'name'         => 'button_label',
 				)
 			);
-
 		}
 
 
-		/*
-		*  load_value()
-		*
-		*  This filter is applied to the $value after it is loaded from the db
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value (mixed) the value found in the database
-		*  @param   $post_id (mixed) the $post_id from which the value was loaded
-		*  @param   $field (array) the field array holding all the field options
-		*  @return  $value
-		*/
-
-		function load_value( $value, $post_id, $field ) {
-
+		/**
+		 * This filter is applied to the $value after it is loaded from the db
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 *
+		 * @param  mixed $value   The value found in the database
+		 * @param  mixed $post_id The post_id from which the value was loaded
+		 * @param  array $field   The field array holding all the field options
+		 * @return $value
+		 */
+		public function load_value( $value, $post_id, $field ) {
 			// bail early if no value
 			if ( empty( $value ) || empty( $field['layouts'] ) ) {
-
 				return $value;
-
 			}
 
 			// value must be an array
@@ -767,9 +713,7 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			// sort layouts into names
 			$layouts = array();
 			foreach ( $field['layouts'] as $k => $layout ) {
-
 				$layouts[ $layout['name'] ] = $layout['sub_fields'];
-
 			}
 
 			// loop through rows
@@ -781,9 +725,7 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 				// bail early if layout deosnt contain sub fields
 				if ( empty( $layouts[ $l ] ) ) {
-
 					continue;
-
 				}
 
 				// get layout
@@ -808,50 +750,36 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 					// add value
 					$rows[ $i ][ $sub_field['key'] ] = $sub_value;
-
 				}
-				// foreach
-
 			}
-			// foreach
 
-			// return
 			return $rows;
-
 		}
 
 
-		/*
-		*  format_value()
-		*
-		*  This filter is appied to the $value after it is loaded from the db and before it is returned to the template
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value (mixed) the value which was loaded from the database
-		*  @param   $post_id (mixed) the $post_id from which the value was loaded
-		*  @param   $field (array) the field array holding all the field options
-		*
-		*  @return  $value (mixed) the modified value
-		*/
-
-		function format_value( $value, $post_id, $field ) {
+		/**
+		 * This filter is appied to the $value after it is loaded from the db and before it is returned to the template
+		 *
+		 * @type  filter
+		 * @since 3.6
+		 *
+		 * @param  mixed   $value       The value which was loaded from the database.
+		 * @param  mixed   $post_id     The $post_id from which the value was loaded.
+		 * @param  array   $field       The field array holding all the field options.
+		 * @param  boolean $escape_html Should the field return a HTML safe formatted value.
+		 * @return mixed   $value       The modified value.
+		 */
+		public function format_value( $value, $post_id, $field, $escape_html = false ) {
 
 			// bail early if no value
 			if ( empty( $value ) || empty( $field['layouts'] ) ) {
-
 				return false;
-
 			}
 
 			// sort layouts into names
 			$layouts = array();
 			foreach ( $field['layouts'] as $k => $layout ) {
-
 				$layouts[ $layout['name'] ] = $layout['sub_fields'];
-
 			}
 
 			// loop over rows
@@ -886,11 +814,10 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 					$sub_field['name'] = "{$field['name']}_{$i}_{$sub_field['name']}";
 
 					// format value
-					$sub_value = acf_format_value( $sub_value, $post_id, $sub_field );
+					$sub_value = acf_format_value( $sub_value, $post_id, $sub_field, $escape_html );
 
 					// append to $row
 					$value[ $i ][ $sub_field['_name'] ] = $sub_value;
-
 				}
 			}
 
@@ -899,20 +826,17 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		}
 
 
-		/*
-		*  validate_value
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    11/02/2014
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function validate_value( $valid, $value, $field, $input ) {
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    11/02/2014
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
+		public function validate_value( $valid, $value, $field, $input ) {
 
 			// vars
 			$count = 0;
@@ -970,6 +894,10 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 				// loop rows
 				foreach ( $value as $i => $row ) {
+					// ensure row is an array
+					if ( ! is_array( $row ) ) {
+						continue;
+					}
 
 					// get layout
 					$l = $row['acf_fc_layout'];
@@ -980,7 +908,7 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 					}
 
 					// increase count
-					$layouts[ $l ]['count']++;
+					++$layouts[ $l ]['count'];
 
 					// bail if no sub fields
 					if ( empty( $layouts[ $l ]['sub_fields'] ) ) {
@@ -1002,7 +930,6 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 						acf_validate_value( $value[ $i ][ $k ], $sub_field, "{$input}[{$i}][{$k}]" );
 					}
 					// end loop sub fields
-
 				}
 				// end loop rows
 			}
@@ -1039,14 +966,13 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		/**
 		 * This function will return a specific layout by name from a field
 		 *
-		 * @date    15/2/17
 		 * @since   5.5.8
 		 *
-		 * @param   string $name
-		 * @param   array  $field
-		 * @return  array|false
+		 * @param  string $name  The layout name.
+		 * @param  array  $field The field to load the layout from.
+		 * @return array|false
 		 */
-		function get_layout( $name, $field ) {
+		public function get_layout( $name, $field ) {
 
 			// bail early if no layouts
 			if ( ! isset( $field['layouts'] ) ) {
@@ -1064,7 +990,6 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 			// return
 			return false;
-
 		}
 
 
@@ -1074,12 +999,12 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		 * @date    15/2/17
 		 * @since   5.5.8
 		 *
-		 * @param   int   $i
-		 * @param   array $field
-		 * @param   mixed $post_id
-		 * @return  bool
+		 * @param   integer $i
+		 * @param   array   $field
+		 * @param   mixed   $post_id
+		 * @return  boolean
 		 */
-		function delete_row( $i, $field, $post_id ) {
+		public function delete_row( $i, $field, $post_id ) {
 
 			// vars
 			$value = acf_get_metadata( $post_id, $field['name'] );
@@ -1105,12 +1030,10 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 				// delete value
 				acf_delete_value( $post_id, $sub_field );
-
 			}
 
 			// return
 			return true;
-
 		}
 
 		/**
@@ -1119,13 +1042,13 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		 * @date    15/2/17
 		 * @since   5.5.8
 		 *
-		 * @param   array $row
-		 * @param   int   $i
-		 * @param   array $field
-		 * @param   mixed $post_id
-		 * @return  bool
+		 * @param   array   $row
+		 * @param   integer $i
+		 * @param   array   $field
+		 * @param   mixed   $post_id
+		 * @return  boolean
 		 */
-		function update_row( $row, $i, $field, $post_id ) {
+		public function update_row( $row, $i, $field, $post_id ) {
 			// bail early if no layout reference
 			if ( ! is_array( $row ) || ! isset( $row['acf_fc_layout'] ) ) {
 				return false;
@@ -1161,23 +1084,18 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			return true;
 		}
 
-		/*
-		*  update_value()
-		*
-		*  This filter is appied to the $value before it is updated in the db
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $value - the value which will be saved in the database
-		*  @param   $field - the field array holding all the field options
-		*  @param   $post_id - the $post_id of which the value will be saved
-		*
-		*  @return  $value - the modified value
-		*/
-
-		function update_value( $value, $post_id, $field ) {
+		/**
+		 * This filter is appied to the $value before it is updated in the db
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 *
+		 * @param   mixed $value   The value which will be saved in the database
+		 * @param   mixed $post_id The post_id of which the value will be saved
+		 * @param   array $field   The field array holding all the field options
+		 * @return  mixed $value   The modified value
+		 */
+		public function update_value( $value, $post_id, $field ) {
 
 			// bail early if no layouts
 			if ( empty( $field['layouts'] ) ) {
@@ -1195,14 +1113,12 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 				// remove acfcloneindex
 				if ( isset( $value['acfcloneindex'] ) ) {
-
 					unset( $value['acfcloneindex'] );
-
 				}
 
 				// loop through rows
 				foreach ( $value as $row ) {
-					$i++;
+					++$i;
 
 					// bail early if no layout reference
 					if ( ! is_array( $row ) || ! isset( $row['acf_fc_layout'] ) ) {
@@ -1211,9 +1127,7 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 					// delete old row if layout has changed
 					if ( isset( $old_value[ $i ] ) && $old_value[ $i ] !== $row['acf_fc_layout'] ) {
-
 						$this->delete_row( $i, $field, $post_id );
-
 					}
 
 					// update row
@@ -1221,7 +1135,6 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 					// append to order
 					$new_value[] = $row['acf_fc_layout'];
-
 				}
 			}
 
@@ -1234,9 +1147,7 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 				// loop
 				for ( $i = $new_count; $i < $old_count; $i++ ) {
-
 					$this->delete_row( $i, $field, $post_id );
-
 				}
 			}
 
@@ -1247,24 +1158,20 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 			// return
 			return $new_value;
-
 		}
 
 
-		/*
-		*  delete_value
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    1/07/2015
-		*  @since   5.2.3
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function delete_value( $post_id, $key, $field ) {
+		/**
+		 * Deletes a layout from a flexible content field.
+		 *
+		 * @type    function
+		 * @date    1/07/2015
+		 * @since   5.2.3
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
+		public function delete_value( $post_id, $key, $field ) {
 
 			// vars
 			$old_value = acf_get_metadata( $post_id, $field['name'] );
@@ -1277,38 +1184,26 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 			// loop
 			foreach ( array_keys( $old_value ) as $i ) {
-
 				$this->delete_row( $i, $field, $post_id );
-
 			}
-
 		}
 
 
-		/*
-		*  update_field()
-		*
-		*  This filter is appied to the $field before it is saved to the database
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field - the field array holding all the field options
-		*  @param   $post_id - the field group ID (post_type = acf)
-		*
-		*  @return  $field - the modified field
-		*/
-
-		function update_field( $field ) {
+		/**
+		 * This filter is appied to the $field before it is saved to the database
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 *
+		 * @param  array $field The field array holding all the field options
+		 * @return array $field The modified field
+		 */
+		public function update_field( $field ) {
 
 			// loop
 			if ( ! empty( $field['layouts'] ) ) {
-
 				foreach ( $field['layouts'] as &$layout ) {
-
 					unset( $layout['sub_fields'] );
-
 				}
 			}
 
@@ -1317,19 +1212,16 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		}
 
 
-		/*
-		*  delete_field
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    4/04/2014
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    4/04/2014
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
 		function delete_field( $field ) {
 
 			if ( ! empty( $field['layouts'] ) ) {
@@ -1339,39 +1231,30 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 					// loop through sub fields
 					if ( ! empty( $layout['sub_fields'] ) ) {
-
 						foreach ( $layout['sub_fields'] as $sub_field ) {
-
 							acf_delete_field( $sub_field['ID'] );
-
 						}
 						// foreach
-
 					}
 					// if
-
 				}
 				// foreach
-
 			}
 			// if
 		}
 
 
-		/*
-		*  duplicate_field()
-		*
-		*  This filter is appied to the $field before it is duplicated and saved to the database
-		*
-		*  @type    filter
-		*  @since   3.6
-		*  @date    23/01/13
-		*
-		*  @param   $field - the field array holding all the field options
-		*
-		*  @return  $field - the modified field
-		*/
-
+		/**
+		 * This filter is appied to the $field before it is duplicated and saved to the database
+		 *
+		 * @type    filter
+		 * @since   3.6
+		 * @date    23/01/13
+		 *
+		 * @param   $field - the field array holding all the field options
+		 *
+		 * @return  $field - the modified field
+		 */
 		function duplicate_field( $field ) {
 
 			// vars
@@ -1387,15 +1270,11 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 					// merge
 					if ( ! empty( $extra ) ) {
-
 						$sub_fields = array_merge( $sub_fields, $extra );
-
 					}
 				}
 				// foreach
-
 			}
-			// if
 
 			// save field to get ID
 			$field = acf_update_field( $field );
@@ -1403,26 +1282,16 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			// duplicate sub fields
 			acf_duplicate_fields( $sub_fields, $field['ID'] );
 
-			// return
 			return $field;
-
 		}
 
 
-		/*
-		*  ajax_layout_title
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    2/03/2016
-		*  @since   5.3.2
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function ajax_layout_title() {
+		/**
+		 * Output the layout title for an AJAX response.
+		 *
+		 * @since 5.3.2
+		 */
+		public function ajax_layout_title() {
 
 			$options = acf_parse_args(
 				$_POST, // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
@@ -1452,13 +1321,21 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			$title = $this->get_layout_title( $field, $layout, $options['i'], $options['value'] );
 
 			// echo
-			echo $title;
+			echo acf_esc_html( $title );
 			die;
-
 		}
 
 
-		function get_layout_title( $field, $layout, $i, $value ) {
+		/**
+		 * Get a layout title for a field.
+		 *
+		 * @param  array   $field  The field array
+		 * @param  array   $layout The layout array
+		 * @param  integer $i      The order number of the layout
+		 * @param  array   $value  The value of the layout
+		 * @return string The layout title, optionally filtered.
+		 */
+		public function get_layout_title( $field, $layout, $i, $value ) {
 
 			// vars
 			$rows       = array();
@@ -1491,27 +1368,22 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 			$order = is_numeric( $i ) ? $i + 1 : 0;
 			$title = '<span class="acf-fc-layout-order">' . $order . '</span> ' . acf_esc_html( $title );
 
-			// return
 			return $title;
-
 		}
 
 
-		/*
-		*  clone_any_field
-		*
-		*  This function will update clone field settings based on the origional field
-		*
-		*  @type    function
-		*  @date    28/06/2016
-		*  @since   5.3.8
-		*
-		*  @param   $clone (array)
-		*  @param   $field (array)
-		*  @return  $clone
-		*/
-
-		function clone_any_field( $field, $clone_field ) {
+		/**
+		 * This function will update clone field settings based on the origional field
+		 *
+		 * @type    function
+		 * @date    28/06/2016
+		 * @since   5.3.8
+		 *
+		 * @param   $clone (array)
+		 * @param   $field (array)
+		 * @return  $clone
+		 */
+		public function clone_any_field( $field, $clone_field ) {
 
 			// remove parent_layout
 			// - allows a sub field to be rendered as a normal field
@@ -1519,45 +1391,33 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 			// attempt to merger parent_layout
 			if ( isset( $clone_field['parent_layout'] ) ) {
-
 				$field['parent_layout'] = $clone_field['parent_layout'];
-
 			}
 
 			// return
 			return $field;
-
 		}
 
 
-		/*
-		*  prepare_field_for_export
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    11/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function prepare_field_for_export( $field ) {
+		/**
+		 * Handles preparing the layouts for export.
+		 *
+		 * @since   5.0.0
+		 *
+		 * @param  array $field The whole fiel array
+		 * @return array The export ready field array.
+		 */
+		public function prepare_field_for_export( $field ) {
 
 			// loop
 			if ( ! empty( $field['layouts'] ) ) {
-
 				foreach ( $field['layouts'] as &$layout ) {
-
 					$layout['sub_fields'] = acf_prepare_fields_for_export( $layout['sub_fields'] );
-
 				}
 			}
 
 			// return
 			return $field;
-
 		}
 
 		function prepare_any_field_for_export( $field ) {
@@ -1567,24 +1427,20 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 			// return
 			return $field;
-
 		}
 
 
-		/*
-		*  prepare_field_for_import
-		*
-		*  description
-		*
-		*  @type    function
-		*  @date    11/03/2014
-		*  @since   5.0.0
-		*
-		*  @param   $post_id (int)
-		*  @return  $post_id (int)
-		*/
-
-		function prepare_field_for_import( $field ) {
+		/**
+		 * description
+		 *
+		 * @type    function
+		 * @date    11/03/2014
+		 * @since   5.0.0
+		 *
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
+		 */
+		public function prepare_field_for_import( $field ) {
 
 			// Bail early if no layouts
 			if ( empty( $field['layouts'] ) ) {
@@ -1629,47 +1485,38 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		}
 
 
-		/*
-		*  validate_any_field
-		*
-		*  This function will add compatibility for the 'column_width' setting
-		*
-		*  @type    function
-		*  @date    30/1/17
-		*  @since   5.5.6
-		*
-		*  @param   $field (array)
-		*  @return  $field
-		*/
-
+		/**
+		 * This function will add compatibility for the 'column_width' setting
+		 *
+		 * @type    function
+		 * @date    30/1/17
+		 * @since   5.5.6
+		 *
+		 * @param   $field (array)
+		 * @return  $field
+		 */
 		function validate_any_field( $field ) {
 
 			// width has changed
 			if ( isset( $field['column_width'] ) ) {
-
 				$field['wrapper']['width'] = acf_extract_var( $field, 'column_width' );
-
 			}
 
 			// return
 			return $field;
-
 		}
 
 
-		/*
-		*  translate_field
-		*
-		*  This function will translate field settings
-		*
-		*  @type    function
-		*  @date    8/03/2016
-		*  @since   5.3.2
-		*
-		*  @param   $field (array)
-		*  @return  $field
-		*/
-
+		/**
+		 * This function will translate field settings
+		 *
+		 * @type    function
+		 * @date    8/03/2016
+		 * @since   5.3.2
+		 *
+		 * @param   $field (array)
+		 * @return  $field
+		 */
 		function translate_field( $field ) {
 
 			// translate
@@ -1677,27 +1524,22 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 			// loop
 			if ( ! empty( $field['layouts'] ) ) {
-
 				foreach ( $field['layouts'] as &$layout ) {
-
 					$layout['label'] = acf_translate( $layout['label'] );
-
 				}
 			}
 
 			// return
 			return $field;
-
 		}
 
 		/**
 		 * Additional validation for the flexible content field when submitted via REST.
 		 *
-		 * @param bool  $valid
-		 * @param int   $value
-		 * @param array $field
-		 *
-		 * @return bool|WP_Error
+		 * @param  boolean $valid The current validity booleean
+		 * @param  integer $value The value of the field
+		 * @param  array   $field The field array
+		 * @return boolean|WP
 		 */
 		public function validate_rest_value( $valid, $value, $field ) {
 			$param = sprintf( '%s[%s]', $field['prefix'], $field['name'] );
@@ -1805,9 +1647,9 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 		/**
 		 * Apply basic formatting to prepare the value for default REST output.
 		 *
-		 * @param mixed      $value
-		 * @param int|string $post_id
-		 * @param array      $field
+		 * @param mixed          $value
+		 * @param integer|string $post_id
+		 * @param array          $field
 		 * @return array|mixed
 		 */
 		public function format_value_for_rest( $value, $post_id, array $field ) {
@@ -1847,13 +1689,11 @@ if ( ! class_exists( 'acf_field_flexible_content' ) ) :
 
 			return $value;
 		}
-
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_flexible_content' );
-
 endif; // class_exists check
 
 ?>

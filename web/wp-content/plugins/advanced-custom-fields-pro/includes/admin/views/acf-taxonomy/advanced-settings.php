@@ -11,6 +11,10 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 		)
 	);
 
+	$wrapper_class = str_replace( '_', '-', $tab_key );
+
+	echo '<div class="acf-taxonomy-advanced-settings acf-taxonomy-' . esc_attr( $wrapper_class ) . '-settings">';
+
 	switch ( $tab_key ) {
 		case 'general':
 			acf_render_field_wrap(
@@ -133,8 +137,8 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 			break;
 		case 'labels':
 			echo '<div class="acf-field acf-regenerate-labels-bar">';
-			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-regenerate-labels"><i class="acf-icon acf-icon-regenerate"></i>' . __( 'Regenerate', 'acf' ) . '</span>';
-			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-clear-labels"><i class="acf-icon acf-icon-trash"></i>' . __( 'Clear', 'acf' ) . '</span>';
+			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-regenerate-labels"><i class="acf-icon acf-icon-regenerate"></i>' . esc_html__( 'Regenerate', 'acf' ) . '</span>';
+			echo '<span class="acf-btn acf-btn-sm acf-btn-clear acf-clear-labels"><i class="acf-icon acf-icon-trash"></i>' . esc_html__( 'Clear', 'acf' ) . '</span>';
 			echo '<span class="acf-tip acf-labels-tip"><i class="acf-icon acf-icon-help acf-js-tooltip" title="' . esc_attr__( 'Regenerate all labels using the Singular and Plural labels', 'acf' ) . '"></i></span>';
 			echo '</div>';
 
@@ -1030,7 +1034,7 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 					'default'      => 1,
 					'hide_search'  => true,
 					'class'        => 'query_var',
-					'conditions' => array(
+					'conditions'   => array(
 						'field'    => 'publicly_queryable',
 						'operator' => '==',
 						'value'    => 1,
@@ -1219,4 +1223,6 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 	}
 
 	do_action( "acf/taxonomy/render_settings_tab/{$tab_key}", $acf_taxonomy );
+
+	echo '</div>';
 }
