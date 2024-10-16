@@ -154,7 +154,8 @@ class Lf_Mu_Admin {
 	 */
 	public function validate( $input ) {
 
-		$this->tag_blog_posts_with_projects();
+		// This command used to tag all blog posts with projects when you save the settings in the admin.
+		// $this->tag_blog_posts_with_projects(); // phpcs:ignore.
 
 		$options = get_option( $this->plugin_name );
 
