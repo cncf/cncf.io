@@ -13,19 +13,18 @@
 	<div class="container wrap">
 
 <?php
-if ( is_archive() ) :
+if ( is_archive() ) {
 	?>
-
 <div class="is-style-opening-paragraph has-header-3-font-size">
 	<?php echo category_description(); ?>
 </div>
-
-<div class="columns-one">
-
 	<?php
-endif;
+}
+?>
+<div class="columns-one">
+<?php
 
-if ( have_posts() ) :
+if ( have_posts() ) {
 
 	// Setup loop count.
 	$count = 0;
@@ -78,33 +77,39 @@ if ( have_posts() ) :
 		wp_reset_postdata();
 	}
 
-	while ( have_posts() ) {
-		the_post();
+	if ( ! in_category( 'blog' ) ) {
 
-		// skip re-showing the sticky post.
-		if ( isset( $sticky_post_id ) && get_the_ID() === $sticky_post_id ) {
-			continue;
+		while ( have_posts() ) {
+			the_post();
+
+			// skip re-showing the sticky post.
+			if ( isset( $sticky_post_id ) && get_the_ID() === $sticky_post_id ) {
+				continue;
+			}
+			++$count;
+			// If page number 1, count 1, and in blog or announcement, make post featured.
+			// If count = 1 then there is no sticky.
+			$is_featured = ( 1 == $page_number && 1 == $count && ( $is_blog_category || $is_announcements_category ) );
+
+			get_template_part(
+				'components/news-item',
+				null,
+				array(
+					'is_featured'    => $is_featured,
+					'is_sticky'      => null,
+					'is_in_the_news' => $is_in_the_news_category,
+					'is_blog'        => $is_blog_category,
+				)
+			);
 		}
-		++$count;
-		// If page number 1, count 1, and in blog or announcement, make post featured.
-		// If count = 1 then there is no sticky.
-		$is_featured = ( 1 == $page_number && 1 == $count && ( $is_blog_category || $is_announcements_category ) );
-
-		get_template_part(
-			'components/news-item',
-			null,
-			array(
-				'is_featured'    => $is_featured,
-				'is_sticky'      => null,
-				'is_in_the_news' => $is_in_the_news_category,
-				'is_blog'        => $is_blog_category,
-			)
-		);
+	} else {
+		echo do_shortcode( '[searchandfilter id="118558"]' );
+		echo do_shortcode( '[searchandfilter id="118558" show="results"]' );
 	}
-	else :
+} else {
 		echo '<h3>Sorry, there are no posts here.</h3>';
-	endif;
-	?>
+}
+?>
 
 </div>
 		<?php get_template_part( 'components/pagination' ); ?>
