@@ -320,7 +320,7 @@ endif;
 				<div class="wp-block-column is-vertically-aligned-bottom"
 					style="flex-basis:20%">
 					<p class="has-text-align-right is-style-link-cta"><a
-href="<?php echo esc_url( '/?post_type=post&s=' . $project_slug ); ?>">See all news</a></p>
+href="<?php echo esc_url( '/blog?_sft_lf-project=' . $project_slug ); ?>">See all news</a></p>
 				</div>
 			</div>
 			<div style="height:40px" aria-hidden="true"
