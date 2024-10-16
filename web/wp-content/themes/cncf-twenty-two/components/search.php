@@ -118,7 +118,7 @@ get_template_part( 'components/title' );
 
 				<?php
 				if ( isset( $category_author ) && $category_author ) :
-					$category_link = '/lf-author-category/' . $category_author_slug . '/';
+					$category_link = '/blog?_sft_lf-author-category=' . $category_author_slug . '/';
 					?>
 				<a class="author-category has-larger-style" title="See more content from <?php echo esc_attr( $category_author ); ?>" href="<?php echo esc_url( $category_link ); ?>">CNCF
 					<?php
