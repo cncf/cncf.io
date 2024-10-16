@@ -247,18 +247,17 @@ endif;
 			<!-- Project area  -->
 			<?php if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) { ?>
 			<div class="case-study-overview__projects">
-
-				<p
-					class="is-style-spaced-uppercase"><?php echo esc_html( $projects_used ); ?></p>
-
+				<p class="is-style-spaced-uppercase"><?php echo esc_html( $projects_used ); ?></p>
 				<div class="case-study-overview__project-icons">
 					<?php
 					foreach ( $projects as $project ) {
 						?>
 					<div class="case-study-overview__project-icon">
+						<a title="View <?php echo esc_html( $project->name ); ?>" href="/projects/<?php echo esc_html( $project->slug ); ?>">
 						<img loading="lazy"
 							src="<?php echo esc_url( get_template_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-color.svg'; ?>"
 							alt="<?php echo esc_html( $project->name ); ?>">
+							</a>
 					</div>
 						<?php
 					}
