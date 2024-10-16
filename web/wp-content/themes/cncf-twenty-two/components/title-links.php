@@ -116,7 +116,7 @@ else :
 		$category_author      = Lf_Utils::get_term_names( get_the_ID(), 'lf-author-category', true );
 		$category_author_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 		if ( $category_author ) {
-			$category_link = get_home_url() . '/lf-author-category/' . $category_author_slug . '/';
+			$category_link = get_home_url() . '/blog?_sft_lf-author-category=' . $category_author_slug . '/';
 			?>
 		<div class="space-slash">&nbsp;/&nbsp;</div>
 		<span><a class="author-category"
