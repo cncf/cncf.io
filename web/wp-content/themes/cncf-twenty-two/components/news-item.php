@@ -106,7 +106,7 @@ else :
 		<div class="post-archive__text-wrapper">
 		<?php
 		if ( $category_author ) :
-			$category_link = get_home_url() . '/blog?_sft_lf-author-category=' . $category_author_slug . '/';
+			$category_link = get_home_url() . '/blog?_sft_lf-author-category=' . $category_author_slug;
 			?>
 
 		<span><a class="author-category has-larger-style"
