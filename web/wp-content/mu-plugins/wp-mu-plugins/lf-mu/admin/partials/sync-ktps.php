@@ -86,9 +86,9 @@ foreach ( $ktps as $ktp ) {
 // delete any KTP posts which aren't in $synced_ids.
 $query = new WP_Query(
 	array(
-		'post_type'    => 'lf_ktp',
-		'post__not_in' => $synced_ids,
-		'posts_per_page'  => -1,
+		'post_type'      => 'lf_ktp',
+		'post__not_in'   => $synced_ids,
+		'posts_per_page' => -1,
 	)
 );
 while ( $query->have_posts() ) {

@@ -274,7 +274,7 @@ class Lf_Mu_Admin {
 	 * This is a temporary function used once to tag all blog posts by projects that appear in its copy.
 	 */
 	private function tag_blog_posts_with_projects() {
-		$myposts = get_posts(
+		$myposts  = get_posts(
 			array(
 				'post_type'      => 'post',
 				'posts_per_page' => -1,
