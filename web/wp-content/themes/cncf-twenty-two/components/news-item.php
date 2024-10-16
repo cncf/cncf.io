@@ -22,8 +22,7 @@ $classes       = LF_Utils::merge_classes(
 $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 ?>
 
-<hr class="wp-block-separator is-style-shadow-line is-style-section-padding">
-
+<div class="news-item">
 <?php // is-featured-item post-archive__item. ?>
 <div class="<?php echo esc_html( $classes ); ?>">
 <?php
@@ -35,7 +34,6 @@ if ( $is_in_the_news_category ) :
 	if ( ! $link_url ) {
 		$link_url = get_the_permalink();
 	}
-
 	?>
 
 <a class="post-archive__link" href="<?php echo esc_url( $link_url ); ?>" title="<?php the_title_attribute(); ?>">
@@ -146,5 +144,17 @@ else :
 
 	<?php
 endif;
+?>
+</div>
+<?php
+if ( ! $is_featured ) {
+	?>
+<hr class="wp-block-separator is-style-shadow-line is-style-section-padding">
+	<?php
+} else {
+	?>
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer is-style-30-50"></div>
+	<?php
+}
 ?>
 </div>
