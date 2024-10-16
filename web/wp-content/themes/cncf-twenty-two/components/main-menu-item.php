@@ -44,7 +44,7 @@ $sticky_status = is_sticky() ? 'is-sticky-news' : 'not-sticky';
 
 		$category_slug = Lf_Utils::get_term_slugs( get_the_ID(), 'lf-author-category', true );
 
-		$parent_link = get_home_url() . '/lf-author-category/' . $category_slug . '/';
+		$parent_link = get_home_url() . '/blog?_sft_lf-author-category=' . $category_slug . '/';
 
 		$type_of_post = 'Post';
 		// Overwrite if report.
