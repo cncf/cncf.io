@@ -147,7 +147,7 @@ endif;
 ?>
 </div>
 <?php
-if ( ! $is_featured ) {
+if ( ! $is_featured || in_category( 'announcements' ) ) {
 	?>
 <hr class="wp-block-separator is-style-shadow-line is-style-section-padding">
 	<?php
