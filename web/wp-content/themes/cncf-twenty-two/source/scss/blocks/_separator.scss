@@ -1,10 +1,12 @@
 // first reset dumb WordPress default styles.
 .wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
 	height: unset;
+	border-top: 0;
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	width: unset;
+	border-top: 0;
 }
 
 .wp-block-separator {

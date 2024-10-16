@@ -112,7 +112,9 @@ if ( have_posts() ) {
 ?>
 
 </div>
-		<?php get_template_part( 'components/pagination' ); ?>
+		<?php if ( ! is_category( 'blog' ) ) : ?>
+			<?php get_template_part( 'components/pagination' ); ?>
+		<?php endif; ?>
 
 	</div>
 </main>
