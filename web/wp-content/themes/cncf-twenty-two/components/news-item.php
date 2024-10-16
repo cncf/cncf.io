@@ -153,7 +153,7 @@ if ( ! $is_featured || in_category( 'announcements' ) ) {
 	<?php
 } else {
 	?>
-<div style="height:50px" aria-hidden="true" class="wp-block-spacer is-style-30-50"></div>
+<div style="height:60px" aria-hidden="true" class="wp-block-spacer is-style-40-60"></div>
 	<?php
 }
 ?>
