@@ -355,7 +355,7 @@ $args   = array(
 	'show_in_nav_menus' => false,
 	'show_admin_column' => true,
 );
-register_taxonomy( 'lf-industry', array( 'lf_case_study', 'post' ), $args );
+register_taxonomy( 'lf-industry', array( 'lf_case_study' ), $args );
 
 $labels = array(
 	'name'          => __( 'Industries', 'lf-mu' ),
