@@ -303,7 +303,13 @@ endif;
 			'order'              => 'DESC',
 			'orderby'            => 'date',
 			'no_found_rows'      => true,
-			's'                  => $project_slug,
+			'tax_query'          => array(
+				array(
+					'taxonomy' => 'lf-project',
+					'field'    => 'slug',
+					'terms'    => $project_slug,
+				),
+			),
 		);
 
 		$related_query = new WP_Query( $related_args );
