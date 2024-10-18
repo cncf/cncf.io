@@ -27,7 +27,7 @@ $projects_taxonomy = get_the_terms( get_the_ID(), 'lf-project' );
 	if ( $projects_taxonomy && ! is_wp_error( $projects_taxonomy ) ) {
 		?>
 	<p
-		class="post-author__projects_title">CNCF projects mentioned in this post</p>
+		class="post-author__projects_title">CNCF projects in this post</p>
 	<div class="post-author__projects">
 		<?php
 		$project_slugs = wp_list_pluck( $projects_taxonomy, 'slug' );
