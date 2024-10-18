@@ -275,27 +275,28 @@
 			margin-top: 50px;
 		}
 		&__project-icons {
-			margin-top: 40px;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
-		}
-		&__project-icon {
-			margin-right: 30px;
-			margin-bottom: 30px;
+			gap: 30px;
+			margin-top: 30px;
 			@media (min-width: 1000px) {
-				margin-right: 20px;
-				margin-bottom: 20px;
+				margin-top: 40px;
 			}
 			@media (min-width: 1200px) {
-				margin-right: 30px;
-				margin-bottom: 30px;
+				gap: 40px;
 			}
-			img {
-				height: 45px;
-				width: auto;
-				display: block;
-			}
+		}
+		&__project-link {
+			display: flex;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+		}
+		&__project-icon {
+			height: 60px;
+			width: auto;
+			display: block;
 		}
 	}
 }

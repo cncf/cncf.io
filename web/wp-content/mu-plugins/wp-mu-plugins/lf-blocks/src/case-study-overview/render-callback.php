@@ -120,7 +120,7 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 			} else {
 				// Insert spacer to maintain layout.
 				?>
-				<div style="height:5px" aria-hidden="true"
+			<div style="height:5px" aria-hidden="true"
 				class="wp-block-spacer case-study-overview__logo"></div>
 				<?php
 			}
@@ -154,7 +154,7 @@ function lf_case_study_overview_render_callback( $attributes, $content ) {
 					</div>
 				</div>
 					<?php
-endif;
+				endif;
 
 				if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) :
 
@@ -181,7 +181,7 @@ endif;
 					</div>
 				</div>
 					<?php
-endif;
+				endif;
 
 				if ( ! empty( $location ) && ! is_wp_error( $location ) ) :
 					?>
@@ -195,7 +195,7 @@ endif;
 					</div>
 				</div>
 					<?php
-endif;
+				endif;
 
 				if ( ! empty( $cloud_types ) && ! is_wp_error( $cloud_types ) ) :
 
@@ -222,7 +222,7 @@ endif;
 					</div>
 				</div>
 					<?php
-endif;
+				endif;
 
 				if ( ! empty( $product_type ) && ! is_wp_error( $product_type ) ) :
 					?>
@@ -235,7 +235,7 @@ endif;
 					</div>
 				</div>
 					<?php
-endif;
+					endif;
 				?>
 				<div class="row">
 					<div class="col1">
@@ -245,30 +245,50 @@ endif;
 			</div>
 
 			<!-- Project area  -->
-			<?php if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) { ?>
-			<div class="case-study-overview__projects">
-				<p class="is-style-spaced-uppercase"><?php echo esc_html( $projects_used ); ?></p>
-				<div class="case-study-overview__project-icons">
-					<?php
-					foreach ( $projects as $project ) {
-						?>
-					<div class="case-study-overview__project-icon">
-						<a title="View <?php echo esc_html( $project->name ); ?>" href="/projects/<?php echo esc_html( $project->slug ); ?>">
-						<img loading="lazy"
-							src="<?php echo esc_url( get_template_directory_uri() ) . '/images/projects/' . esc_html( $project->slug ) . '-icon-color.svg'; ?>"
-							alt="<?php echo esc_html( $project->name ); ?>">
-							</a>
-					</div>
-						<?php
-					}
+			<?php
+			if ( ! empty( $projects ) && ! is_wp_error( $projects ) ) {
+				$project_slugs = wp_list_pluck( $projects, 'slug' );
+				$args          = array(
+					'post_type'      => 'lf_project',
+					'posts_per_page' => -1,
+					'post_status'    => 'publish',
+					'post_name__in'  => $project_slugs,
+				);
+				$query         = new WP_Query( $args );
+				if ( $query->have_posts() ) {
 					?>
-				</div>
-			</div>
+					<div class="case-study-overview__projects">
+					<p class="is-style-spaced-uppercase"><?php echo esc_html( $projects_used ); ?></p>
+					<div class="case-study-overview__project-icons">
+						<?php
+						while ( $query->have_posts() ) {
+							$query->the_post();
+							$project_title = get_the_title();
+							$project_logo  = get_post_meta( get_the_ID(), 'lf_project_logo', true );
+
+							if ( ! empty( $project_logo ) ) {
+								?>
+								<a class="case-study-overview__project-link" title="<?php echo esc_attr( 'View ' . $project_title ); ?>" href="<?php echo esc_url( '/projects/' . get_post_field( 'post_name', get_the_ID() ) ); ?>">
+									<img class="case-study-overview__project-icon" loading="lazy" decoding="async" height="60" width="70"
+										src="<?php echo esc_url( $project_logo ); ?>"
+										alt="<?php echo esc_attr( $project_title . ' logo' ); ?>">
+								</a>
+								<?php
+							}
+						}
+						?>
+					</div>
+					<?php
+					wp_reset_postdata();
+				}
+				?>
+			</div><!-- end of case-study-overview__projects -->
 				<?php
 			}
 			?>
+			<!-- Project area END -->
 
-		</div>
+		</div><!-- end of case-study-overview__meta -->
 	</div>
 </section>
 	<?php

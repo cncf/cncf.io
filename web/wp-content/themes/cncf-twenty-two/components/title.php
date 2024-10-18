@@ -74,11 +74,12 @@ if ( is_tag() || is_tax() ) :
 		<?php
 		if ( is_singular( 'lf_case_study' ) || is_singular( 'lf_case_study_cn' ) ) {
 			?>
-<!-- // case study title  -->
+<!-- // case study title - not used  -->
 				<?php
 		} else {
 			?>
-	<h1 class="is-style-post-title" itemprop="headline"><?php the_title(); ?>
+	<h1 class="is-style-post-title" itemprop="headline">
+			<?php the_title(); ?>
 	</h1>
 				<?php
 		}
