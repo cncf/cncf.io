@@ -218,10 +218,7 @@ class LF_Utils {
 			return;
 		}
 
-		// Create author byline.
-		$author_byline = 'By ' . $author;
-
-		return $author_byline;
+		return $author;
 	}
 
 	/**

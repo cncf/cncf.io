@@ -1,35 +1,50 @@
 .post-author {
 	margin-bottom: 50px;
-	font-style: italic;
-	letter-spacing: 0.02em;
-	line-height: $line-height;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	&__image {
-		border-radius: 50%;
-		object-fit: cover;
-		width: 60px;
-		height: 60px;
-		margin-right: 30px;
-		@media (min-width: 1200px) {
-			width: 70px;
-			height: 70px;
+	&__date {
+		font-weight: 700;
+		margin: 0;
+		font-size: 14px;
+		@media (min-width: 1000px) {
+			font-size: 18px;
 		}
 	}
 	&__author {
-		display: block;
-		font-weight: 600;
-		font-size: 16px;
-		@media (min-width: 1200px) {
-			font-size: 20px;
+		font-weight: 700;
+		font-style: italic;
+		margin-top: 0 !important;
+		font-size: 14px;
+		@media (min-width: 1000px) {
+			font-size: 18px;
 		}
 	}
-	&__date {
-		display: block;
-		font-size: 12px;
-		@media (min-width: 1200px) {
-			font-size: 16px;
+	&__projects_title {
+		font-weight: 700;
+		font-style: italic;
+		margin-bottom: 5px;
+		margin-top: 0 !important;
+		font-size: 14px;
+		@media (min-width: 1000px) {
+			font-size: 18px;
 		}
+	}
+	&__projects {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		align-items: center;
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+	&__projects_link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-content: center;
+	}
+	&__projects_image {
+		max-height: 50px;
+		min-height: 100%;
+		object-fit: contain;
+		display: block;
 	}
 }
