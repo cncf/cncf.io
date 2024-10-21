@@ -155,7 +155,7 @@ class Lf_Mu_Admin {
 	public function validate( $input ) {
 
 		// This command used to tag all blog posts with projects when you save the settings in the admin.
-		// $this->tag_blog_posts_with_projects(); // phpcs:ignore.
+		$this->tag_blog_posts_with_projects(); // phpcs:ignore.
 
 		$options = get_option( $this->plugin_name );
 
@@ -282,12 +282,16 @@ class Lf_Mu_Admin {
 				'category'       => 230,
 			)
 		);
-		$projects = get_terms( 'lf-project' );
-
+		$projects = get_terms(
+			array(
+				'taxonomy'   => 'lf-project',
+				'hide_empty' => false,
+			)
+		);
 		foreach ( $myposts as $post ) {
-			if ( get_the_terms( $post->ID, 'lf-project' ) ) {
-				continue;
-			}
+			// if ( get_the_terms( $post->ID, 'lf-project' ) ) {
+			// 	continue;
+			// }
 
 			// only add projects if there are none already assigned.
 			$project_tags = $this->get_project_tags( $post->post_content, $projects );
