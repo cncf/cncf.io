@@ -168,6 +168,7 @@ class Lf_Mu {
 		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
 		$this->loader->add_action( 'save_post_lf_case_study_cn', $plugin_admin, 'set_case_study_year', 10, 3 );
 		$this->loader->add_action( 'save_post_lf_report', $plugin_admin, 'set_report_year', 10, 3 );
+		$this->loader->add_action( 'save_post_post', $plugin_admin, 'set_post_year', 10, 3 );
 
 		// Sync projects with landscape.
 		$this->loader->add_action( 'lf_sync_projects', $plugin_admin, 'sync_projects' );
