@@ -157,19 +157,6 @@ class Lf_Mu_Admin {
 		// This command used to tag all blog posts with projects when you save the settings in the admin.
 		// $this->tag_blog_posts_with_projects(); // phpcs:ignore.
 
-		$myposts  = get_posts(
-			array(
-				'post_type'      => 'post',
-				'posts_per_page' => -1,
-				'category'       => 230,
-			)
-		);
-		foreach ( $myposts as $post ) {
-			$year = get_post_time( 'Y', false, $post );
-			update_post_meta( $post->ID, 'lf_post_published_year', $year );
-		}
-		wp_reset_postdata();
-
 		$options = get_option( $this->plugin_name );
 
 		$options['show_hello_bar'] = ( isset( $input['show_hello_bar'] ) && ! empty( $input['show_hello_bar'] ) ) ? 1 : 0;
