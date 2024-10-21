@@ -34,8 +34,8 @@ $slack          = get_post_meta( get_the_ID(), 'lf_project_slack', true );
 $youtube        = get_post_meta( get_the_ID(), 'lf_project_youtube', true );
 $gitter         = get_post_meta( get_the_ID(), 'lf_project_gitter', true );
 
-$project_slug = strtolower( get_the_title() );
-
+global $post;
+$project_slug = strtolower( $post->post_name );
 ?>
 
 <main class="projects-single">
