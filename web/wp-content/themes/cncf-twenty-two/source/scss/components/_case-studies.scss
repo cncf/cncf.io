@@ -282,6 +282,7 @@
 			margin-top: 30px;
 			@media (min-width: 1000px) {
 				margin-top: 40px;
+				margin-left: 10px;
 			}
 			@media (min-width: 1200px) {
 				gap: 40px;
@@ -292,11 +293,13 @@
 			align-items: center;
 			align-content: center;
 			justify-content: center;
+			width: 60px;
 		}
 		&__project-icon {
 			height: 60px;
 			width: auto;
 			display: block;
+			max-width: 60px;
 		}
 	}
 }
