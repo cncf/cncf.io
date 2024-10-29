@@ -14,55 +14,20 @@
  * @return object block_content Output.
  */
 function lf_newsroom_render_callback( $attributes ) {
-	// get the quantity to display, if not default.
 	$quantity = isset( $attributes['numberposts'] ) ? intval( $attributes['numberposts'] ) : 3;
-	// get the classes set from the block if any.
-	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
-	// get the category to display.
 	$category        = isset( $attributes['category'] ) && (int) $attributes['category'] ? $attributes['category'] : '230';
 	$author_category = isset( $attributes['authorCategory'] ) && (int) $attributes['authorCategory'] ? $attributes['authorCategory'] : null;
-	// order of posts.
 	$order = isset( $attributes['order'] ) ? $attributes['order'] : 'DESC';
-
-	// get sticky posts.
-	$sticky_post = null;
-	$sticky      = get_option( 'sticky_posts' );
-
-	if ( $sticky ) {
-		$args        = array(
-			'posts_per_page'      => 1,
-			'post_type'           => array( 'post' ),
-			'post_status'         => array( 'publish' ),
-			'has_password'        => false,
-			'post__in'            => $sticky,
-			'ignore_sticky_posts' => true,
-			'no_found_rows'       => true,
-			'tax_query'           => array(
-				array(
-					'taxonomy' => 'category',
-					'field'    => 'term_id',
-					'terms'    => $category,
-				),
-			),
-		);
-		$stickyquery = new WP_Query( $args );
-
-		if ( $stickyquery->have_posts() ) {
-			$stickyquery->the_post();
-			--$quantity;
-			$sticky_post = get_the_ID();
-		}
-	}
+	$classes = isset( $attributes['className'] ) ? $attributes['className'] : '';
 
 	// setup the arguments.
 	$args = array(
 		'posts_per_page'      => $quantity,
+		'order'               => $order,
 		'post_type'           => array( 'post' ),
 		'post_status'         => array( 'publish' ),
 		'has_password'        => false,
 		'ignore_sticky_posts' => true,
-		'post__not_in'        => array( $sticky_post ),
-		'order'               => $order,
 		'orderby'             => 'date',
 		'no_found_rows'       => true,
 		'tax_query'           => array(

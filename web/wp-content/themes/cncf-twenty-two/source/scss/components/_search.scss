@@ -104,7 +104,8 @@
 		}
 	}
 }
-.search {
+
+main.search {
 	.columns-one {
 		grid-row-gap: 0;
 		// Hide the first divider line.
@@ -112,6 +113,9 @@
 			display: none;
 		}
 	}
+}
+
+.search {
 	&__highlighted {
 		border: 1px solid $black;
 		padding: 2em;
