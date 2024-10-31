@@ -749,8 +749,8 @@ Lf_Utils::get_svg( $report_folder . 'cproject-usage-trends-desktop.svg', true );
 
 			</div>
 		</section>
-
-
+		<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+		<p><strong>翻訳協力：橋本 修太 (Syuta Hashimoto)</strong></p>
 	</article>
 </main>
 <?php
