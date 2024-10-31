@@ -31,17 +31,17 @@ function projectMovesChart() {
       {
         label: 'Incubating',
         data: project_incubating_move_dates,
-        backgroundColor: chart_incubating_background_colors
+        backgroundColor: moves_chart_incubating_background_colors
       },
       {
         label: 'Graduated',
         data: project_graduated_move_dates,
-        backgroundColor: chart_graduated_background_colors
+        backgroundColor: moves_chart_graduated_background_colors
       },
       {
         label: 'Archived',
         data: project_archived_move_dates,
-        backgroundColor: chart_archived_background_colors
+        backgroundColor: moves_chart_archived_background_colors
       },
     ]
   };

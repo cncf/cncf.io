@@ -323,12 +323,12 @@ function add_project_moves_chart_shortcode( $atts ) {
 	<canvas id="projectMovesChart"></canvas>
 </div>
 <script>
-	const project_archived_move_dates     = <?php echo json_encode( $archived_move ); ?>;
-	const project_incubating_move_dates  = <?php echo json_encode( $incubating_move ); ?>;
-	const project_graduated_move_dates   = <?php echo json_encode( $graduated_move ); ?>;
-	const chart_archived_background_colors    = <?php echo json_encode( $archived_background ); ?>;
-	const chart_incubating_background_colors = <?php echo json_encode( $incubating_background ); ?>;
-	const chart_graduated_background_colors  = <?php echo json_encode( $graduated_background ); ?>;
+	const project_archived_move_dates              = <?php echo json_encode( $archived_move ); ?>;
+	const project_incubating_move_dates            = <?php echo json_encode( $incubating_move ); ?>;
+	const project_graduated_move_dates             = <?php echo json_encode( $graduated_move ); ?>;
+	const moves_chart_archived_background_colors   = <?php echo json_encode( $archived_background ); ?>;
+	const moves_chart_incubating_background_colors = <?php echo json_encode( $incubating_background ); ?>;
+	const moves_chart_graduated_background_colors  = <?php echo json_encode( $graduated_background ); ?>;
 </script>
 
 	<?php
