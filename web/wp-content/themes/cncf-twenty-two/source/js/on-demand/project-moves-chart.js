@@ -75,7 +75,7 @@ function projectMovesChart() {
         y: {
           title: {
             display: true,
-            text: 'Project Moves into Tier'
+            text: 'Project Advances'
           },
           stacked: true
         },
