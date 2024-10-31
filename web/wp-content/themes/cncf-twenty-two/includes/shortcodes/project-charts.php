@@ -244,3 +244,91 @@ function add_projects_accepted_chart_shortcode( $atts ) {
 	return $block_content;
 }
 add_shortcode( 'projects-accepted-chart', 'add_projects_accepted_chart_shortcode' );
+
+
+/**
+ * Add Project Moves Each Year chart shortcode.
+ *
+ * @param array $atts Attributes.
+ */
+function add_project_moves_chart_shortcode( $atts ) {
+
+	$maturity_data       = get_maturity_data();
+	$start_year          = 2016;
+	$incubating_move     = array();
+	$graduated_move      = array();
+	$archived_move       = array();
+	$background          = array();
+	$current_year        = (int) gmdate( 'Y' );
+
+	for ( $this_year = $start_year; $this_year <= $current_year; $this_year++ ) {
+		$archived_move[ $this_year ]    = 0;
+		$incubating_move[ $this_year ] = 0;
+		$graduated_move[ $this_year ]  = 0;
+		if ( $current_year == $this_year ) {
+			$graduated_background[]  = 'rgb(193, 96, 220, .4)';
+			$incubating_background[] = 'rgb(240, 188, 0, .4)';
+			$archived_background[]    = 'rgb(116, 116, 116, .4)';
+		} else {
+			$graduated_background[]  = 'rgb(193 96 220)';
+			$incubating_background[] = 'rgb(240, 188, 0)';
+			$archived_background[]    = 'rgb(116, 116, 116)';
+		}
+	}
+
+	foreach ( $maturity_data as $md ) {
+		$md_year = (int) explode( '-', $md['accepted'] )[0];
+		if ( 2016 <= $md_year && $md_year <= $current_year ) {
+			if ( $md['graduated'] == $md['accepted'] ) {
+				$graduated_move[ $md_year ] += 1;
+			} elseif ( $md['incubating'] == $md['accepted'] ) {
+				$incubating_move[ $md_year ] += 1;
+			} else {
+				$archived_move[ $md_year ] += 1;
+			}
+		}
+	}
+
+	// remove current year if project count is 0.
+	if ( 0 == $archived_move[ $current_year ] && 0 == $incubating_move[ $current_year ] && 0 == $graduated_move[ $current_year ] ) {
+		unset( $archived_move[ $current_year ] );
+		unset( $incubating_move[ $current_year ] );
+		unset( $graduated_move[ $current_year ] );
+	}
+
+	ob_start();
+
+	// chart js.
+	wp_enqueue_script(
+		'chart-js',
+		get_template_directory_uri() . '/source/js/libraries/chart-3.9.1.min.js',
+		null,
+		filemtime( get_template_directory() . '/source/js/libraries/chart-3.9.1.min.js' ),
+		true
+	);
+	// custom script.
+	wp_enqueue_script(
+		'project-moves-chart',
+		get_template_directory_uri() . '/source/js/on-demand/project-moves-chart.js',
+		array( 'jquery', 'chart-js' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/project-moves-chart.js' ),
+		true
+	);
+	?>
+<div class="projects-chart-container">
+	<canvas id="projectMovesChart"></canvas>
+</div>
+<script>
+	const project_archived_move_dates     = <?php echo json_encode( $archived_move ); ?>;
+	const project_incubating_move_dates  = <?php echo json_encode( $incubating_move ); ?>;
+	const project_graduated_move_dates   = <?php echo json_encode( $graduated_move ); ?>;
+	const chart_archived_background_colors    = <?php echo json_encode( $archived_background ); ?>;
+	const chart_incubating_background_colors = <?php echo json_encode( $incubating_background ); ?>;
+	const chart_graduated_background_colors  = <?php echo json_encode( $graduated_background ); ?>;
+</script>
+
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+add_shortcode( 'project-moves-chart', 'add_project_moves_chart_shortcode' );
