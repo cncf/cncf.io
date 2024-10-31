@@ -262,30 +262,34 @@ function add_project_moves_chart_shortcode( $atts ) {
 	$current_year        = (int) gmdate( 'Y' );
 
 	for ( $this_year = $start_year; $this_year <= $current_year; $this_year++ ) {
-		$archived_move[ $this_year ]    = 0;
+		$archived_move[ $this_year ]   = 0;
 		$incubating_move[ $this_year ] = 0;
 		$graduated_move[ $this_year ]  = 0;
 		if ( $current_year == $this_year ) {
 			$graduated_background[]  = 'rgb(193, 96, 220, .4)';
 			$incubating_background[] = 'rgb(240, 188, 0, .4)';
-			$archived_background[]    = 'rgb(116, 116, 116, .4)';
+			$archived_background[]   = 'rgb(116, 116, 116, .4)';
 		} else {
 			$graduated_background[]  = 'rgb(193 96 220)';
 			$incubating_background[] = 'rgb(240, 188, 0)';
-			$archived_background[]    = 'rgb(116, 116, 116)';
+			$archived_background[]   = 'rgb(116, 116, 116)';
 		}
 	}
 
 	foreach ( $maturity_data as $md ) {
-		$md_year = (int) explode( '-', $md['accepted'] )[0];
-		if ( 2016 <= $md_year && $md_year <= $current_year ) {
-			if ( $md['graduated'] == $md['accepted'] ) {
-				$graduated_move[ $md_year ] += 1;
-			} elseif ( $md['incubating'] == $md['accepted'] ) {
-				$incubating_move[ $md_year ] += 1;
-			} else {
-				$archived_move[ $md_year ] += 1;
-			}
+		$accepted_year   = (int) explode( '-', $md['accepted'] )[0];
+		$graduated_year  = (int) explode( '-', $md['graduated'] )[0];
+		$incubating_year = (int) explode( '-', $md['incubating'] )[0];
+		$archived_year   = (int) explode( '-', $md['archived'] )[0];
+
+		if ( 2016 <= $graduated_year && $graduated_year != $accepted_year ) {
+			$graduated_move[ $graduated_year ] += 1;
+		}
+		if ( 2016 <= $incubating_year && $incubating_year != $accepted_year ) {
+			$incubating_move[ $incubating_year ] += 1;
+		}
+		if ( 2016 <= $archived_year && $archived_year != $accepted_year ) {
+			$archived_move[ $archived_year ] += 1;
 		}
 	}
 

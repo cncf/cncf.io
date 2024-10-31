@@ -29,19 +29,19 @@ function projectMovesChart() {
   const data = {
     datasets: [
       {
-        label: 'Sandbox',
-        data: project_sandbox_accepted_dates,
-        backgroundColor: chart_sandbox_background_colors
-      },
-      {
         label: 'Incubating',
-        data: project_incubating_accepted_dates,
+        data: project_incubating_move_dates,
         backgroundColor: chart_incubating_background_colors
       },
       {
         label: 'Graduated',
-        data: project_graduated_accepted_dates,
+        data: project_graduated_move_dates,
         backgroundColor: chart_graduated_background_colors
+      },
+      {
+        label: 'Archived',
+        data: project_archived_move_dates,
+        backgroundColor: chart_archived_background_colors
       },
     ]
   };
@@ -75,7 +75,7 @@ function projectMovesChart() {
         y: {
           title: {
             display: true,
-            text: 'Projects Accepted into CNCF'
+            text: 'Projects Moves into Tier'
           },
           stacked: true
         },
