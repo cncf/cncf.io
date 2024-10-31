@@ -29,17 +29,17 @@ function projectMovesChart() {
   const data = {
     datasets: [
       {
-        label: 'Incubating',
+        label: 'Incubating (from Sandbox)',
         data: project_incubating_move_dates,
         backgroundColor: moves_chart_incubating_background_colors
       },
       {
-        label: 'Graduated',
+        label: 'Graduated (from Incubating)',
         data: project_graduated_move_dates,
         backgroundColor: moves_chart_graduated_background_colors
       },
       {
-        label: 'Archived',
+        label: 'Archived (from any other tier)',
         data: project_archived_move_dates,
         backgroundColor: moves_chart_archived_background_colors
       },
