@@ -282,13 +282,13 @@ function add_project_moves_chart_shortcode( $atts ) {
 		$incubating_year = (int) explode( '-', $md['incubating'] )[0];
 		$archived_year   = (int) explode( '-', $md['archived'] )[0];
 
-		if ( 2016 <= $graduated_year && $graduated_year != $accepted_year ) {
+		if ( 2016 <= $graduated_year && $md['graduated'] != $md['accepted'] ) {
 			$graduated_move[ $graduated_year ] += 1;
 		}
-		if ( 2016 <= $incubating_year && $incubating_year != $accepted_year ) {
+		if ( 2016 <= $incubating_year && $md['incubating'] != $md['accepted'] ) {
 			$incubating_move[ $incubating_year ] += 1;
 		}
-		if ( 2016 <= $archived_year && $archived_year != $accepted_year ) {
+		if ( 2016 <= $archived_year && $md['archived'] != $md['accepted'] ) {
 			$archived_move[ $archived_year ] += 1;
 		}
 	}
