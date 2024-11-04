@@ -334,4 +334,31 @@ class Lf_Mu_Public {
 			header( 'Cache-Control: public, max-age=60, s-maxage=43200, stale-while-revalidate=86400, stale-if-error=604800' );
 		}
 	}
+
+	/**
+	 * Filters the author for RSS feeds to use the guest author if appropriate
+	 * or ignore certain other authors.
+	 *
+	 * @param string $display_name Display name.
+	 * 
+	 */
+	public function rss_author_prep( $display_name ) {
+		if ( is_feed() ) {
+			$author = get_post_meta( get_the_ID(), 'lf_post_guest_author', true );
+			if ( $author ) {
+				// Return guest author if there is one.
+				return $author;
+			}
+
+			$authors_to_ignore = array( 'Jessie', 'Katie Meinders' );
+			if ( in_array( $display_name, $authors_to_ignore, false ) ) {
+				// return "CNCF" if the author is in the ignore list.
+				return 'CNCF';
+			} else {
+				return $display_name;
+			}
+		}
+	
+		return $display_name;
+	}
 }
