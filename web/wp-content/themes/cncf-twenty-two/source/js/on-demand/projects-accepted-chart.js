@@ -38,11 +38,6 @@ function projectsAcceptedChart() {
         data: project_incubating_accepted_dates,
         backgroundColor: chart_incubating_background_colors
       },
-      {
-        label: 'Graduated',
-        data: project_graduated_accepted_dates,
-        backgroundColor: chart_graduated_background_colors
-      },
     ]
   };
 
