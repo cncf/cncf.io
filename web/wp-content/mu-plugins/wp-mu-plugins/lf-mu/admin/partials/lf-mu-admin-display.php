@@ -72,7 +72,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$social_slack = ( isset( $options['social_slack'] ) && ! empty( $options['social_slack'] ) ) ? esc_attr( $options['social_slack'] ) : '';
 
-		$social_twitch = ( isset( $options['social_twitch'] ) && ! empty( $options['social_twitch'] ) ) ? esc_attr( $options['social_twitch'] ) : '';
+		$social_bluesky = ( isset( $options['social_bluesky'] ) && ! empty( $options['social_bluesky'] ) ) ? esc_attr( $options['social_bluesky'] ) : '';
 
 		$social_twitter = ( isset( $options['social_twitter'] ) && ! empty( $options['social_twitter'] ) ) ? esc_attr( $options['social_twitter'] ) : '';
 
@@ -491,14 +491,14 @@ if ( ! defined( 'WPINC' ) ) {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="social_twitch">Twitch</label>
+					<th scope="row"><label for="social_bluesky">Bluesky</label>
 					</th>
 					<td>
-						<input type="text" class="social_twitch regular-text"
-							id="<?php echo esc_html( $this->plugin_name ); ?>-social_twitch"
-							name="<?php echo esc_html( $this->plugin_name ); ?>[social_twitch]"
-							value="<?php echo esc_url( $social_twitch ); ?>"
-							placeholder="https://www.twitch.tv/handle" />
+						<input type="text" class="social_bluesky regular-text"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-social_bluesky"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[social_bluesky]"
+							value="<?php echo esc_url( $social_bluesky ); ?>"
+							placeholder="https://bsky.app/profile/handle" />
 					</td>
 				</tr>
 				<tr>

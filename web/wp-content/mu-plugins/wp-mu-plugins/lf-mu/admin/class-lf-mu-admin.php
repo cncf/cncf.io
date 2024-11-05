@@ -203,7 +203,7 @@ class Lf_Mu_Admin {
 
 		$options['social_slack'] = ( isset( $input['social_slack'] ) && ! empty( $input['social_slack'] ) ) ? esc_url( $input['social_slack'] ) : '';
 
-		$options['social_twitch'] = ( isset( $input['social_twitch'] ) && ! empty( $input['social_twitch'] ) ) ? esc_url( $input['social_twitch'] ) : '';
+		$options['social_bluesky'] = ( isset( $input['social_bluesky'] ) && ! empty( $input['social_bluesky'] ) ) ? esc_url( $input['social_bluesky'] ) : '';
 
 		$options['social_twitter'] = ( isset( $input['social_twitter'] ) && ! empty( $input['social_twitter'] ) ) ? esc_url( $input['social_twitter'] ) : '';
 

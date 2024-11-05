@@ -59,9 +59,9 @@ $site_options = get_option( 'lf-mu' );
 			href="<?php echo esc_url( $site_options['social_meetup'] ); ?>"><?php LF_Utils::get_svg( 'social/meetup.svg' ); ?></a></li>
 	<?php endif; ?>
 
-	<?php if ( isset( $site_options['social_twitch'] ) && $site_options['social_twitch'] ) : ?>
-	<li class="social-twitch"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on Twitch'; ?>"
-			href="<?php echo esc_url( $site_options['social_twitch'] ); ?>"><?php LF_Utils::get_svg( 'social/twitch.svg' ); ?></a></li>
+	<?php if ( isset( $site_options['social_bluesky'] ) && $site_options['social_bluesky'] ) : ?>
+	<li class="social-bluesky"><a title="<?php echo esc_html( get_bloginfo( 'name' ) ) . ' on Bluesky'; ?>"
+			href="<?php echo esc_url( $site_options['social_bluesky'] ); ?>"><?php LF_Utils::get_svg( 'social/bluesky.svg' ); ?></a></li>
 	<?php endif; ?>
 
 	<?php if ( isset( $site_options['social_slack'] ) && $site_options['social_slack'] ) : ?>
