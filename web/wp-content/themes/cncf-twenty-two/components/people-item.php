@@ -20,6 +20,7 @@ $gb_role               = get_post_meta( get_the_ID(), 'lf_person_gb_role', true 
 $toc_role              = get_post_meta( get_the_ID(), 'lf_person_toc_role', true );
 $tab_role              = get_post_meta( get_the_ID(), 'lf_person_tab_role', true );
 $linkedin              = get_post_meta( get_the_ID(), 'lf_person_linkedin', true );
+$bluesky               = get_post_meta( get_the_ID(), 'lf_person_bluesky', true );
 $twitter               = get_post_meta( get_the_ID(), 'lf_person_twitter', true );
 $mastodon              = get_post_meta( get_the_ID(), 'lf_person_mastodon', true );
 $github                = get_post_meta( get_the_ID(), 'lf_person_github', true );
@@ -137,7 +138,7 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 		<div class="person__social">
 			<?php
 			// Social Icons.
-			if ( $linkedin || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
+			if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
 				?>
 			<div class="person__social-margin">
 				<?php
@@ -145,6 +146,12 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 					?>
 				<a
 					href="<?php echo esc_url( $linkedin ); ?>"><?php LF_Utils::get_svg( 'social/boxed-linkedin.svg' ); ?></a>
+					<?php
+			endif;
+				if ( $bluesky ) :
+					?>
+				<a
+					href="<?php echo esc_url( $bluesky ); ?>"><?php LF_Utils::get_svg( 'social/boxed-bluesky.svg' ); ?></a>
 					<?php
 			endif;
 				if ( $twitter ) :
@@ -308,7 +315,7 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 					<div class="person__social">
 						<?php
 						// Social Icons.
-						if ( $linkedin || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
+						if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
 							?>
 						<div class="person__social-margin">
 							<?php
@@ -316,6 +323,12 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 								?>
 							<a
 								href="<?php echo esc_url( $linkedin ); ?>"><?php LF_Utils::get_svg( 'social/boxed-linkedin.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $bluesky ) :
+								?>
+							<a
+								href="<?php echo esc_url( $bluesky ); ?>"><?php LF_Utils::get_svg( 'social/boxed-bluesky.svg' ); ?></a>
 								<?php
 								endif;
 							if ( $twitter ) :

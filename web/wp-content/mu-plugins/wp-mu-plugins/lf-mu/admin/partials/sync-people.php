@@ -113,6 +113,9 @@ foreach ( $people as $p ) {
 	if ( property_exists( $p, 'linkedin' ) ) {
 		$params['meta_input']['lf_person_linkedin'] = $p->linkedin;
 	}
+	if ( property_exists( $p, 'bluesky' ) ) {
+		$params['meta_input']['lf_person_bluesky'] = $p->bluesky;
+	}
 	if ( property_exists( $p, 'twitter' ) ) {
 		$params['meta_input']['lf_person_twitter'] = $p->twitter;
 	}
