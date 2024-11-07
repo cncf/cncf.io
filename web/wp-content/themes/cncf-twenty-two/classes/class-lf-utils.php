@@ -476,9 +476,7 @@ class LF_Utils {
 		$query_args = array(
 			'post_type'      => 'lf_project',
 			'post_status'    => array( 'publish' ),
-			'posts_per_page' => 200,
-			'orderby'        => 'title',
-			'order'          => 'ASC',
+			'posts_per_page' => 500,
 		);
 
 		$project_query = new WP_Query( $query_args );
