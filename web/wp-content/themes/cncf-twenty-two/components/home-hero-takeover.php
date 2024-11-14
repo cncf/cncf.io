@@ -51,35 +51,19 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<div class="container wrap">
 
 			<h1 class="home-hero__title">JOIN US IN<br />
-				SALT LAKE CITY<br />
-				<span>NOVEMBER 12-15</span>
+				DELHI, INDIA<br />
+				<span>DECEMBER 11-12</span>
 			</h1>
 
 			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon</strong> is the flagship conference for cloud native.</h2>
-
-			<ul class="home-hero__metric_wrapper" style="margin-bottom: 40px;">
-				<li>10K+
-					<span>Attendees</span>
-				</li>
-				<li>200+
-					<span>Sponsors</span>
-				</li>
-				<li>300+
-					<span>Sessions</span>
-				</li>
-				<li>
-						∞
-					<span>Swag</span>
-				</li>
-			</ul>
+			<div style="height:20px;" aria-hidden="true" class="wp-block-spacer"></div>
 
 			<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-container-core-buttons-is-layout-2 wp-block-buttons-is-layout-flex">
-				<div class="wp-block-button show-over-600"><a class="wp-block-button__link has-text-align-center wp-element-button" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-NA-2024&utm_content=hero" title="Learn more about KubeCon + CloudNativeCon">Learn More</a></div>
-				<div class="wp-block-button"><a class="wp-block-button__link has-text-align-center wp-element-button" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-NA-2024&utm_content=hero" title="Register for KubeCon + CloudNativeCon">Register</a></div>
+				<div class="wp-block-button show-over-600"><a class="wp-block-button__link has-text-align-center wp-element-button" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-india/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-india-2024&utm_content=hero" title="Learn more about KubeCon + CloudNativeCon">Learn More</a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link has-text-align-center wp-element-button" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-india/register/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-india-2024&utm_content=hero" title="Register for KubeCon + CloudNativeCon">Register</a></div>
 			</div>
 
-			<div style="height:70px;" aria-hidden="true" class="wp-block-spacer">
-			</div>
+			<div style="height:140px;" aria-hidden="true" class="wp-block-spacer"></div>
 		</div>
 	</div>
 </section>
