@@ -12,6 +12,13 @@
  */
 error_reporting( E_ALL ^ E_DEPRECATED );
 
+// Intercept requests to .well-known/atproto-did for bluesky validation.
+if ( isset( $_SERVER['REQUEST_URI'] ) && '/.well-known/atproto-did' === $_SERVER['REQUEST_URI'] ) {
+	header( 'Content-Type: text/plain' );
+	echo 'did:plc:rqmijqyq6stfzw5a3jb4hlyl';
+	exit;
+}
+
 /**
  * Set root path
  */
