@@ -77,129 +77,130 @@ if ( ! $people ) {
 $synced_ids = array();
 
 foreach ( $people as $p ) {
+	for ( $i = 0; $i < 3; $i++ ) {
+		$params = array(
+			'post_type'    => 'lf_person',
+			'post_title'   => $p->name . $i,
+			'post_content' => $p->bio,
+			'post_status'  => 'publish',
+			'meta_input'   => array(),
+		);
 
-	$params = array(
-		'post_type'    => 'lf_person',
-		'post_title'   => $p->name,
-		'post_content' => $p->bio,
-		'post_status'  => 'publish',
-		'meta_input'   => array(),
-	);
-
-	if ( property_exists( $p, 'company' ) ) {
-		$params['meta_input']['lf_person_company'] = $p->company;
-	}
-	if ( property_exists( $p, 'company_logo_url' ) ) {
-		$params['meta_input']['lf_person_company_logo_url'] = $p->company_logo_url;
-	}
-	if ( property_exists( $p, 'company_landscape_url' ) ) {
-		$params['meta_input']['lf_person_company_landscape_url'] = $p->company_landscape_url;
-	}
-	if ( property_exists( $p, 'pronouns' ) ) {
-		$params['meta_input']['lf_person_pronouns'] = $p->pronouns;
-	}
-	if ( property_exists( $p, 'location' ) ) {
-		$params['meta_input']['lf_person_location'] = $p->location;
-	}
-	if ( property_exists( $p, 'toc_role' ) ) {
-		$params['meta_input']['lf_person_toc_role'] = $p->toc_role;
-	}
-	if ( property_exists( $p, 'gb_role' ) ) {
-		$params['meta_input']['lf_person_gb_role'] = $p->gb_role;
-	}
-	if ( property_exists( $p, 'tab_role' ) ) {
-		$params['meta_input']['lf_person_tab_role'] = $p->tab_role;
-	}
-	if ( property_exists( $p, 'linkedin' ) ) {
-		$params['meta_input']['lf_person_linkedin'] = $p->linkedin;
-	}
-	if ( property_exists( $p, 'bluesky' ) ) {
-		$params['meta_input']['lf_person_bluesky'] = $p->bluesky;
-	}
-	if ( property_exists( $p, 'twitter' ) ) {
-		$params['meta_input']['lf_person_twitter'] = $p->twitter;
-	}
-	if ( property_exists( $p, 'mastodon' ) ) {
-		$params['meta_input']['lf_person_mastodon'] = $p->mastodon;
-	}
-	if ( property_exists( $p, 'github' ) ) {
-		$params['meta_input']['lf_person_github'] = $p->github;
-	}
-	if ( property_exists( $p, 'wechat' ) ) {
-		$params['meta_input']['lf_person_wechat'] = $p->wechat;
-	}
-	if ( property_exists( $p, 'youtube' ) ) {
-		$params['meta_input']['lf_person_youtube'] = $p->youtube;
-	}
-	if ( property_exists( $p, 'priority' ) ) {
-		$params['meta_input']['lf_person_is_priority'] = $p->priority;
-	} else {
-		$params['meta_input']['lf_person_is_priority'] = 0;
-	}
-	if ( property_exists( $p, 'image' ) ) {
-		if ( strpos( $p->image, 'http' ) !== false ) {
-			$image_url = $p->image;
-		} else {
-			$image_url = $github_images_url . $p->image;
+		if ( property_exists( $p, 'company' ) ) {
+			$params['meta_input']['lf_person_company'] = $p->company;
 		}
-		$params['meta_input']['lf_person_image'] = $image_url;
-	}
-	if ( property_exists( $p, 'website' ) ) {
-		$params['meta_input']['lf_person_website'] = $p->website;
-	}
-
-	$args = array(
-		'post_type'   => 'lf_person',
-		'title'       => $p->name,
-		'post_status' => 'publish',
-		'numberposts' => 1,
-	);
-
-	if ( $image_url ) {
-		$args['meta_value'] = $image_url;
-	}
-
-	$pp = get_posts( $args );
-
-	if ( ! empty( $pp ) ) {
-		$params['ID'] = $pp[0]->ID;
-	}
-
-	$newid = wp_insert_post( $params ); // will insert or update the post as needed.
-
-	if ( $newid ) {
-		if ( property_exists( $p, 'languages' ) ) {
-			wp_set_object_terms( $newid, $p->languages, 'lf-language', false );
+		if ( property_exists( $p, 'company_logo_url' ) ) {
+			$params['meta_input']['lf_person_company_logo_url'] = $p->company_logo_url;
 		}
-		if ( property_exists( $p, 'expertise' ) ) {
-			wp_set_object_terms( $newid, $p->expertise, 'lf-expertise', false );
+		if ( property_exists( $p, 'company_landscape_url' ) ) {
+			$params['meta_input']['lf_person_company_landscape_url'] = $p->company_landscape_url;
 		}
-		$projects_to_add = array();
-		if ( property_exists( $p, 'projects' ) ) {
-			foreach ( $p->projects as $proj ) {
-				if ( term_exists( $proj, 'lf-project' ) ) {
-					// Don't allow any non-CNCF projects to be added.
-					$projects_to_add[] = $proj;
-				}
-			}
-			wp_set_object_terms( $newid, $projects_to_add, 'lf-project', false );
-		}
-		if ( property_exists( $p, 'category' ) ) {
-			wp_set_object_terms( $newid, $p->category, 'lf-person-category', false );
-		} else {
-			wp_set_object_terms( $newid, array(), 'lf-person-category', false );
+		if ( property_exists( $p, 'pronouns' ) ) {
+			$params['meta_input']['lf_person_pronouns'] = $p->pronouns;
 		}
 		if ( property_exists( $p, 'location' ) ) {
-			$country_arr = explode( ',', $params['meta_input']['lf_person_location'] );
-			$country     = trim( end( $country_arr ) );
-			$term_exists = term_exists( $country, 'lf-country' );
-			if ( $term_exists ) {
-				wp_set_object_terms( $newid, (int) $term_exists['term_id'], 'lf-country', false );
+			$params['meta_input']['lf_person_location'] = $p->location;
+		}
+		if ( property_exists( $p, 'toc_role' ) ) {
+			$params['meta_input']['lf_person_toc_role'] = $p->toc_role;
+		}
+		if ( property_exists( $p, 'gb_role' ) ) {
+			$params['meta_input']['lf_person_gb_role'] = $p->gb_role;
+		}
+		if ( property_exists( $p, 'tab_role' ) ) {
+			$params['meta_input']['lf_person_tab_role'] = $p->tab_role;
+		}
+		if ( property_exists( $p, 'linkedin' ) ) {
+			$params['meta_input']['lf_person_linkedin'] = $p->linkedin;
+		}
+		if ( property_exists( $p, 'bluesky' ) ) {
+			$params['meta_input']['lf_person_bluesky'] = $p->bluesky;
+		}
+		if ( property_exists( $p, 'twitter' ) ) {
+			$params['meta_input']['lf_person_twitter'] = $p->twitter;
+		}
+		if ( property_exists( $p, 'mastodon' ) ) {
+			$params['meta_input']['lf_person_mastodon'] = $p->mastodon;
+		}
+		if ( property_exists( $p, 'github' ) ) {
+			$params['meta_input']['lf_person_github'] = $p->github;
+		}
+		if ( property_exists( $p, 'wechat' ) ) {
+			$params['meta_input']['lf_person_wechat'] = $p->wechat;
+		}
+		if ( property_exists( $p, 'youtube' ) ) {
+			$params['meta_input']['lf_person_youtube'] = $p->youtube;
+		}
+		if ( property_exists( $p, 'priority' ) ) {
+			$params['meta_input']['lf_person_is_priority'] = $p->priority;
+		} else {
+			$params['meta_input']['lf_person_is_priority'] = 0;
+		}
+		if ( property_exists( $p, 'image' ) ) {
+			if ( strpos( $p->image, 'http' ) !== false ) {
+				$image_url = $p->image;
+			} else {
+				$image_url = $github_images_url . $p->image;
 			}
-			geocode_location( $newid );
+			$params['meta_input']['lf_person_image'] = $image_url;
+		}
+		if ( property_exists( $p, 'website' ) ) {
+			$params['meta_input']['lf_person_website'] = $p->website;
 		}
 
-		$synced_ids[] = $newid;
+		$args = array(
+			'post_type'   => 'lf_person',
+			'title'       => $p->name . $i,
+			'post_status' => 'publish',
+			'numberposts' => 1,
+		);
+
+		if ( $image_url ) {
+			$args['meta_value'] = $image_url;
+		}
+
+		$pp = get_posts( $args );
+
+		if ( ! empty( $pp ) ) {
+			$params['ID'] = $pp[0]->ID;
+		}
+
+		$newid = wp_insert_post( $params ); // will insert or update the post as needed.
+
+		if ( $newid ) {
+			if ( property_exists( $p, 'languages' ) ) {
+				wp_set_object_terms( $newid, $p->languages, 'lf-language', false );
+			}
+			if ( property_exists( $p, 'expertise' ) ) {
+				wp_set_object_terms( $newid, $p->expertise, 'lf-expertise', false );
+			}
+			$projects_to_add = array();
+			if ( property_exists( $p, 'projects' ) ) {
+				foreach ( $p->projects as $proj ) {
+					if ( term_exists( $proj, 'lf-project' ) ) {
+						// Don't allow any non-CNCF projects to be added.
+						$projects_to_add[] = $proj;
+					}
+				}
+				wp_set_object_terms( $newid, $projects_to_add, 'lf-project', false );
+			}
+			if ( property_exists( $p, 'category' ) ) {
+				wp_set_object_terms( $newid, $p->category, 'lf-person-category', false );
+			} else {
+				wp_set_object_terms( $newid, array(), 'lf-person-category', false );
+			}
+			if ( property_exists( $p, 'location' ) ) {
+				$country_arr = explode( ',', $params['meta_input']['lf_person_location'] );
+				$country     = trim( end( $country_arr ) );
+				$term_exists = term_exists( $country, 'lf-country' );
+				if ( $term_exists ) {
+					wp_set_object_terms( $newid, (int) $term_exists['term_id'], 'lf-country', false );
+				}
+				geocode_location( $newid );
+			}
+
+			$synced_ids[] = $newid;
+		}
 	}
 }
 
