@@ -34,7 +34,7 @@ $projects              = get_the_terms( get_the_ID(), 'lf-project' );
 $content               = get_the_content();
 $current_url           = home_url( 'people/ambassadors' );
 
-$show_modal = isset( $args['show_profile'] ) && ( $args['show_profile'] && strlen( $content ) > 20 ) ? true : false;
+$show_modal = isset( $args['show_profile'] ) && $args['show_profile'] ? true : false;
 $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false;
 ?>
 <div class="person has-animation-scale-2">
