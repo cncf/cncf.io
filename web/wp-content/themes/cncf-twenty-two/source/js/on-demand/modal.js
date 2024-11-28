@@ -95,6 +95,11 @@
 					$modal_code += $modal_content.html();
 					$modal_code += '</div>';
 					$modal_content.empty();
+				} else if ( $modal_slug !== '' ) {
+					// if no modal content but slug is defined, redirect the page to the permalink for this person.
+					var urlWithoutQueryString = window.location.origin + window.location.pathname;
+					window.location.href = urlWithoutQueryString + '?p=' + $modal_slug;
+					return;
 				}
 				$modal_code += '</div></div></' + $modal_tag + '>';
 
