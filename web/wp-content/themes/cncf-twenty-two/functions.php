@@ -131,6 +131,7 @@ require_once 'includes/shortcodes/selected-people.php';
 require_once 'includes/shortcodes/shopify-products.php';
 require_once 'includes/shortcodes/upcoming-webinars.php';
 require_once 'includes/shortcodes/youtube-playlist.php';
+require_once 'includes/shortcodes/banner-ad.php';
 
 /**
  * Make all JS defer onload apart from files specified.
