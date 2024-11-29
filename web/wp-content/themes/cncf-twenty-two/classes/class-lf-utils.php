@@ -264,17 +264,21 @@ class LF_Utils {
 		}
 
 		if ( $image_srcset ) {
+			$fetchpriority = ( 'eager' === $loading ) ? ' fetchpriority="high"' : '';
 
-			$html = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" decoding="async" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '" alt="' . $alt_text . '">';
+			$html = '<img width="' . $size[1] . '" height="' . $size[2] . '" loading="' . $loading . '" decoding="async" class="' . $class_name . '" src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '"' . $fetchpriority . ' alt="' . $alt_text . '">';
 
 		} else {
-
 			$attributes = array(
 				'loading="' . $loading . '"',
 				'class="' . $class_name . '"',
 				'src="' . $image_src . '"',
 				'alt="' . $alt_text . '"',
 			);
+
+			if ( 'eager' === $loading ) {
+				$attributes[] = 'fetchpriority="high"';
+			}
 
 			$width  = (int) $size[1] ?? null;
 			$height = (int) $size[2] ?? null;
@@ -287,7 +291,7 @@ class LF_Utils {
 				$attributes[] = 'height="' . $height . '"';
 			}
 
-			$img           = '<img ' . implode( ' ', $attributes ) . '>';
+			$img           = '<img decoding="async" ' . implode( ' ', $attributes ) . '>';
 			$img_meta      = wp_get_attachment_metadata( $image_id );
 			$attachment_id = $image_id;
 			$html          = wp_image_add_srcset_and_sizes( $img, $img_meta, $attachment_id );
@@ -297,18 +301,19 @@ class LF_Utils {
 			$html,
 			array(
 				'img' => array(
-					'src'     => true,
-					'srcset'  => true,
-					'sizes'   => true,
-					'class'   => true,
-					'id'      => true,
-					'width'   => true,
-					'height'  => true,
-					'alt'     => true,
-					'align'   => true,
-					'style'   => true,
-					'media'   => true,
-					'loading' => true,
+					'src'      => true,
+					'srcset'   => true,
+					'sizes'    => true,
+					'class'    => true,
+					'id'       => true,
+					'width'    => true,
+					'height'   => true,
+					'alt'      => true,
+					'align'    => true,
+					'style'    => true,
+					'media'    => true,
+					'loading'  => true,
+					'decoding' => true,
 				),
 			)
 		);

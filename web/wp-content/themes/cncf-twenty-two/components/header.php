@@ -24,7 +24,7 @@ endif;
 		<?php if ( isset( $site_options['header_image_id'] ) && $site_options['header_image_id'] ) { ?>
 		<div class="logo">
 			<a href="/" title="<?php echo bloginfo( 'name' ); ?>">
-				<img loading="eager"
+				<img loading="eager" decoding="async" fetchpriority="high"
 					src="<?php echo esc_url( wp_get_attachment_url( $site_options['header_image_id'] ) ); ?>"
 					width="210" height="40"
 					alt="<?php echo bloginfo( 'name' ); ?>">
