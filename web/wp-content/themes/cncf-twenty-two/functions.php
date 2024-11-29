@@ -197,7 +197,27 @@ function lf_update_styles_with_filemtime( $styles ) {
 add_action( 'wp_default_styles', 'lf_update_styles_with_filemtime' );
 
 /**
- * Disable OpenVerse from Media. Some dumb change to trigger a new build.
+ * Adjusts the lazy load image threshold based on post type.
+ */
+function lf_lazyload_threshold_by_post_type() {
+	$thresholds = array(
+		'lf_case_study' => 1,
+		'lf_human'      => 1,
+		'lf_kubeweekly' => 0,
+		'lf_project'    => 1,
+		'lf_report'     => 1,
+		'lf_webinar'    => 0,
+		'page'          => 1,
+		'post'          => 0,
+	);
+
+	$post_type = get_post_type();
+	return isset( $thresholds[ $post_type ] ) ? $thresholds[ $post_type ] : 0;
+}
+add_filter( 'wp_omit_loading_attr_threshold', 'lf_lazyload_threshold_by_post_type', 10, 0 );
+
+/**
+ * Disable OpenVerse from Media.
  *
  * @param array $settings Settings.
  */
