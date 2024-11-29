@@ -849,15 +849,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "5.0.6",
+            "version": "5.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/5.0.6"
+                "reference": "tags/5.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.5.0.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.5.1.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1029,15 +1029,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.5.0",
+            "version": "5.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.5.0"
+                "reference": "tags/5.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1047,15 +1047,15 @@
         },
         {
             "name": "wpackagist-plugin/safe-svg",
-            "version": "2.2.6",
+            "version": "2.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-svg/",
-                "reference": "tags/2.2.6"
+                "reference": "tags/2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.2.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.3.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1065,15 +1065,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "6.0.0",
+            "version": "6.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/6.0.0"
+                "reference": "tags/6.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.6.0.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.6.0.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2425,15 +2425,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.16.4",
+            "version": "3.17.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.16.4"
+                "reference": "tags/3.17.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.16.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.17.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
