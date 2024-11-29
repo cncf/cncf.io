@@ -222,6 +222,12 @@ class Lf_Mu_Public {
 
 		// remove application passwords.
 		add_filter( 'wp_is_application_passwords_available', '__return_false' );
+
+		 // Add strict-origin-when-cross-origin referrer policy.
+		 add_action( 'wp_head', 'wp_strict_cross_origin_referrer' );
+
+		 // Add X-Frame-Options SAMEORIGIN.
+		 add_action( 'send_headers', 'send_frame_options_header', 10, 0 );
 	}
 
 	/**
@@ -340,7 +346,7 @@ class Lf_Mu_Public {
 	 * or ignore certain other authors.
 	 *
 	 * @param string $display_name Display name.
-	 * 
+	 *
 	 */
 	public function rss_author_prep( $display_name ) {
 		if ( is_feed() ) {
@@ -358,7 +364,7 @@ class Lf_Mu_Public {
 				return $display_name;
 			}
 		}
-	
+
 		return $display_name;
 	}
 }
