@@ -197,7 +197,7 @@ function lf_update_styles_with_filemtime( $styles ) {
 add_action( 'wp_default_styles', 'lf_update_styles_with_filemtime' );
 
 /**
- * Disable OpenVerse from Media
+ * Disable OpenVerse from Media. Some dumb change to trigger a new build.
  *
  * @param array $settings Settings.
  */
