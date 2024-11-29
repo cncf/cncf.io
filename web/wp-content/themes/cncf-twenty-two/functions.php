@@ -197,18 +197,6 @@ function lf_update_styles_with_filemtime( $styles ) {
 add_action( 'wp_default_styles', 'lf_update_styles_with_filemtime' );
 
 /**
- * Removes the threshold of how many images should be excluded from lazy load.
- *
- * Introduced in WordPress 5.9
- *
- * @return int
- */
-function lf_always_lazyload_images() {
-	return 0;
-}
-add_filter( 'wp_omit_loading_attr_threshold', 'lf_always_lazyload_images', 10, 0 );
-
-/**
  * Disable OpenVerse from Media
  *
  * @param array $settings Settings.
