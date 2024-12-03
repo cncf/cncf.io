@@ -74,6 +74,12 @@ function add_cncf_people_map_shortcode( $atts ) {
 		$lat = get_post_meta( $post->ID, 'lf_person_location_lat' );
 		$lng = get_post_meta( $post->ID, 'lf_person_location_lng' );
 
+		if ( has_term( 'golden-kubestronaut', 'lf-person-category' ) ) {
+			$golden = true;
+		} else {
+			$golden = false;
+		}
+
 		if ( $lat && $lng ) {
 			$people[] = array(
 				'lat'  => $lat,
@@ -81,6 +87,7 @@ function add_cncf_people_map_shortcode( $atts ) {
 				'name' => get_the_title(),
 				'slug' => $post->post_name,
 				'id'   => get_the_ID(),
+				'golden' => $golden,
 			);
 		}
 	}

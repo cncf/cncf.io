@@ -36,8 +36,13 @@ $current_url           = home_url( 'people/ambassadors' );
 
 $show_modal = isset( $args['show_profile'] ) && $args['show_profile'] ? true : false;
 $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false;
+
+$extra_classes = '';
+if ( has_term( 'golden-kubestronaut', 'lf-person-category' ) ) {
+	$extra_classes = 'golden-kubestronaut';
+}
 ?>
-<div class="person has-animation-scale-2">
+<div class="person has-animation-scale-2<?php echo ' ' . esc_html( $extra_classes ); ?>">
 	<?php
 	// Make image link if show_modal.
 	if ( $show_modal ) :
@@ -200,7 +205,7 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 			?>
 		<div class="modal-hide" id="modal-<?php echo esc_html( $person_id ); ?>"
 			aria-hidden="true">
-			<div class="modal-content-wrapper">
+			<div class="modal-content-wrapper<?php echo ' ' . esc_html( $extra_classes ); ?>">
 
 				<figure class="person__image">
 					<img loading="lazy"
