@@ -463,7 +463,24 @@ class LF_Utils {
 			$metrics['contributors']  = $remote_body->contributors;
 			$metrics['contributions'] = $remote_body->contributions;
 			$metrics['countries']     = $remote_body->countries;
-			$metrics['projects']      = wp_count_posts( 'lf_project' )->publish;
+
+			$args = array(
+				'post_type'      => 'lf_project',
+				'posts_per_page' => -1,
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'lf-project-stage',
+						'field'    => 'slug',
+						'terms'    => array( 'graduated', 'incubating', 'sandbox' ),
+						'operator' => 'IN',
+					),
+				),
+				'fields'         => 'ids', // Only retrieve post IDs to minimize memory usage.
+			);
+
+			$query               = new WP_Query( $args );
+			$metrics['projects'] = $query->found_posts;
+			wp_reset_postdata();
 
 			if ( WP_DEBUG === false ) {
 				set_transient( 'cncf_homepage_metrics', $metrics, DAY_IN_SECONDS );
