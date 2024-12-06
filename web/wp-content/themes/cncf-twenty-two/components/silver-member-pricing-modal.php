@@ -21,7 +21,7 @@ wp_enqueue_style( 'wp-block-table' );
 			<h3>Silver Member Pricing Scale</h3>
 
 			<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
-			<p>The Linux Foundation membership is required to participate in CNCF.<br/>
+			<p>The Linux Foundation membership is required to participate in CNCF.<br class="show-over-1000">
 			(CNCF and LF memberships are invoiced separately)</p>
 
 			<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
