@@ -251,7 +251,7 @@ function add_members_pricing_shortcode( $atts ) {
 
 	<div class="lf-membership lf-membership-style show-over-1000">
 		<p>Requires <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a><br/>
-		(CNCF and LF memberships are invoiced separately)</p>
+		<span class="has-small-font-size">(CNCF and LF memberships are invoiced separately)</span></p>
 	</div>
 
 </div><!-- end of wrapper -->
