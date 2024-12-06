@@ -20,8 +20,11 @@ wp_enqueue_style( 'wp-block-table' );
 
 			<h3>Silver Member Pricing Scale</h3>
 
-			<div style="height:50px" aria-hidden="true" class="wp-block-spacer">
-		</div>
+			<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+			<p>The Linux Foundation membership is required to participate in CNCF.<br/>
+			(CNCF and LF memberships are invoiced separately)</p>
+
+			<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
 
 			<figure class="wp-block-table is-style-shaded">
 				<table class="has-fixed-layout">
@@ -30,36 +33,44 @@ wp_enqueue_style( 'wp-block-table' );
 					<thead>
 						<tr>
 							<th>Consolidated employees</th>
-							<th>Price</th>
+							<th>CNCF membership</th>
+							<th>CNCF + LF combined membership</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>5,000 employees +</td>
 							<td>$50,000</td>
+							<td>$70,000</td>
 						</tr>
 						<tr>
 							<td>3,000 – 4,999 employees</td>
-							<td>$45,000</td>
+							<td>$50,000</td>
+							<td>$65,000</td>
 						</tr>
 						<tr>
 							<td>1,000 – 2,999 employees</td>
-							<td>$35,000</td>
+							<td>$30,000</td>
+							<td>$45,000</td>
 						</tr>
 						<tr>
 							<td>500 – 999 employees</td>
+							<td>$10,000</td>
 							<td>$25,000</td>
 						</tr>
 						<tr>
 							<td>100 – 499 employees</td>
+							<td>$5,000</td>
 							<td>$15,000</td>
 						</tr>
 						<tr>
 							<td>50 – 99 employees</td>
+							<td>$5,000</td>
 							<td>$10,000</td>
 						</tr>
 						<tr>
 							<td>Under 50 employees</td>
+							<td>$2,000</td>
 							<td>$7,000</td>
 						</tr>
 					</tbody>
