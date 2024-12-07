@@ -33,7 +33,9 @@ wp_enqueue_style( 'wp-block-table' );
 					<thead>
 						<tr>
 							<th>Consolidated employees</th>
-							<th>CNCF membership</th>
+							<th>CNCF membership<br/>
+							(LF Membership Required)
+							</th>
 							<th>CNCF + LF combined membership</th>
 						</tr>
 					</thead>
