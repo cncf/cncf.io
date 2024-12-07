@@ -146,7 +146,8 @@ function add_members_pricing_shortcode( $atts ) {
 		?>
 
 		<div class="lf-membership-style show-upto-1000">
-		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
+		<p>Requires <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a><br/>
+		(CNCF and LF memberships are invoiced separately)</p>
 		</div>
 	</div>
 	<!-- column 2 ends -->
@@ -186,7 +187,7 @@ function add_members_pricing_shortcode( $atts ) {
 		if ( ! $atts['no_prices'] ) {
 			?>
 		<div class="tfoot">
-			<h4>Up to $120,000 <br class="show-over-1000">annually</h4>
+			<h4>$100,000<br class="show-over-1000">+ LF Membership</h4>
 		</div>
 			<?php
 		}
@@ -194,7 +195,8 @@ function add_members_pricing_shortcode( $atts ) {
 
 
 		<div class="lf-membership-style show-upto-1000">
-		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
+		<p>Requires <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a><br/>
+		(CNCF and LF memberships are invoiced separately)</p>
 		</div>
 	</div>
 	<!-- column 3 ends -->
@@ -230,7 +232,7 @@ function add_members_pricing_shortcode( $atts ) {
 		if ( ! $atts['no_prices'] ) {
 			?>
 		<div class="tfoot">
-			<h4>$370,000</h4>
+			<h4>$350,000 + LF Membership</h4>
 			<span class="has-small-font-size">Minimum 3-year commitment</span>
 		</div>
 			<?php
@@ -239,7 +241,8 @@ function add_members_pricing_shortcode( $atts ) {
 
 
 		<div class="lf-membership-style show-upto-1000">
-		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
+		<p>Requires <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a><br/>
+		(CNCF and LF memberships are invoiced separately)</p>
 		</div>
 	</div>
 	<!-- column 4 ends -->
@@ -247,7 +250,8 @@ function add_members_pricing_shortcode( $atts ) {
 	<div class="blank-cell"></div>
 
 	<div class="lf-membership lf-membership-style show-over-1000">
-		<p>Includes <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a></p>
+		<p>Requires <a href="https://www.linuxfoundation.org/join/#benefits">Linux Foundation Silver Membership</a><br/>
+		(CNCF and LF memberships are invoiced separately)</p>
 	</div>
 
 </div><!-- end of wrapper -->
