@@ -125,6 +125,7 @@ title="">See Silver <br class="show-over-1000">Pricing Scale</button></p>
 			<p>Everything included in Gold, plus:</p>
 			<ul>
 				<li>Board seat on CNCF Governing Board</li>
+				<li>Appoint a representative to the End User Technical Advisory Board</li>
 				<li>Exec invite to join a KubeCon + CloudNativeCon keynote upon joining</li>
 				<li>Personalized executive engagement from CNCF leadership team</li>
 				<li>Guidance on open source strategy - e.g. donating a project, running an open source program office</li>
