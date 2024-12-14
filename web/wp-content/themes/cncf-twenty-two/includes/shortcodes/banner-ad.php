@@ -44,9 +44,17 @@ function add_banner_ad_shortcode( $atts ) {
 				srcset="<?php echo esc_url( wp_get_attachment_image_url( $mobile_image_id, 'full', false ) ); ?>">
 			<source media="(min-width: 500px)"
 				srcset="<?php echo esc_url( wp_get_attachment_image_url( $desktop_image_id, 'full', false ) ); ?>">
-			<img src="<?php echo esc_url( wp_get_attachment_image_url( $desktop_image_id, 'full', false ) ); ?>"
-				alt="<?php echo esc_attr( $alt_txt ); ?>">
-		</picture>
+			<?php
+			LF_Utils::display_responsive_images(
+				$desktop_image_id,
+				'full',
+				'1200px',
+				null,
+				'',
+				$alt_txt,
+			);
+			?>
+			</picture>
 	</a>
 </div>
 <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
