@@ -129,18 +129,6 @@ class Lf_Mu_Public {
 	public function change_to_preconnect_resource_hints( $hints, $relation_type ) {
 
 		if ( 'preconnect' === $relation_type ) {
-			// Used for analytics inserted by insert_google_analytics().
-			$hints[] = array(
-				'crossorigin' => '',
-				'href'        => '//www.googletagmanager.com',
-			);
-			// Used by ReCaptcha.
-			$hints[] = array(
-				'crossorigin' => '',
-				'href'        => '//www.gstatic.com',
-			);
-
-			// used by HubSpot forms.
 			$add_urls = array(
 				'https://js.hscollectedforms.net',
 				'https://js.hs-banner.com',
@@ -150,6 +138,10 @@ class Lf_Mu_Public {
 				'https://landscape.cncf.io',
 				'https://cmp.osano.com',
 				'https://consent.api.osano.com',
+				'//www.googletagmanager.com',
+				'//www.gstatic.com',
+				'https://browser-update.org',
+				'https://js-agent.newrelic.com',
 			);
 			// add crossorigin, remove protocol.
 			foreach ( $add_urls as $url ) {
@@ -159,10 +151,9 @@ class Lf_Mu_Public {
 				);
 				array_push( $hints, $url );
 			}
-		}
-		if ( 'dns-prefetch' === $relation_type ) {
+		} elseif ( 'dns-prefetch' === $relation_type ) {
 			// create array of URLs to remove from prefetch.
-			$url_arr = array( 'code.jquery.com', 's.w.org' );
+			$url_arr = array( 'code.jquery.com', 's.w.org', 'cmp.osano.com' );
 
 			foreach ( $url_arr as $url ) {
 				$key = array_search( $url, $hints, true );
