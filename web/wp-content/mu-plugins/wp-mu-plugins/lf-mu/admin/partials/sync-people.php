@@ -76,11 +76,11 @@ if ( ! $people ) {
 
 $synced_ids = array();
 
+$i = 1;
 foreach ( $people as $p ) {
-
 	$params = array(
 		'post_type'    => 'lf_person',
-		'post_title'   => $p->name,
+		'post_title'   => $p->name . $i,
 		'post_content' => $p->bio,
 		'post_status'  => 'publish',
 		'meta_input'   => array(),
@@ -150,7 +150,7 @@ foreach ( $people as $p ) {
 
 	$args = array(
 		'post_type'   => 'lf_person',
-		'title'       => $p->name,
+		'title'       => $p->name . $i,
 		'post_status' => 'publish',
 		'numberposts' => 1,
 	);
@@ -204,17 +204,17 @@ foreach ( $people as $p ) {
 }
 
 // delete any People posts which aren't in $synced_ids.
-$query = new WP_Query(
-	array(
-		'post_type'      => 'lf_person',
-		'post__not_in'   => $synced_ids,
-		'posts_per_page' => -1,
-	)
-);
-while ( $query->have_posts() ) {
-	$query->the_post();
-	wp_delete_post( get_the_id() );
-}
+// $query = new WP_Query(
+// 	array(
+// 		'post_type'      => 'lf_person',
+// 		'post__not_in'   => $synced_ids,
+// 		'posts_per_page' => -1,
+// 	)
+// );
+// while ( $query->have_posts() ) {
+// 	$query->the_post();
+// 	wp_delete_post( get_the_id() );
+// }
 
 // clear the site cache.
 if ( function_exists( 'pantheon_wp_clear_edge_all' ) ) {
