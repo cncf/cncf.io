@@ -585,9 +585,11 @@
 	padding: 7px 7px;
 	font-family: $font-primary;
 	&__image-wrapper {
-		width: 194px;
-		height: 102px;
-		flex-shrink: 0;
+		flex: 0 0 140px;
+		height: auto;
+		@media screen and (min-width: 360px) {
+			flex: 0 0 194px;
+		}
 	}
 	&__link {
 		display: block;
@@ -598,6 +600,9 @@
 		width: 100%;
 		object-fit: cover;
 		border-radius: 3px;
+		@media screen and (max-width: 359px) {
+			object-position: left;
+		}
 	}
 	&__text-wrapper {
 		padding-left: 20px;
