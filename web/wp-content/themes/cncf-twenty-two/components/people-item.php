@@ -27,6 +27,7 @@ $github                = get_post_meta( get_the_ID(), 'lf_person_github', true )
 $wechat                = get_post_meta( get_the_ID(), 'lf_person_wechat', true );
 $website               = get_post_meta( get_the_ID(), 'lf_person_website', true );
 $youtube               = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
+$certdirectory         = get_post_meta( get_the_ID(), 'lf_person_certdirectory', true );
 $image_url             = get_post_meta( get_the_ID(), 'lf_person_image', true );
 $location              = get_post_meta( get_the_ID(), 'lf_person_location', true );
 $languages             = get_the_terms( get_the_ID(), 'lf-language' );
@@ -138,7 +139,7 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 		<div class="person__social">
 			<?php
 			// Social Icons.
-			if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
+			if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube || $certdirectory ) :
 				?>
 			<div class="person__social-margin">
 				<?php
@@ -188,6 +189,12 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 					?>
 				<a
 					href="<?php echo esc_url( $youtube ); ?>"><?php LF_Utils::get_svg( 'social/boxed-youtube.svg' ); ?></a>
+					<?php
+			endif;
+				if ( $certdirectory ) :
+					?>
+				<a
+					href="<?php echo esc_url( $certdirectory ); ?>"><?php LF_Utils::get_svg( 'social/boxed-certdirectory.svg' ); ?></a>
 					<?php
 			endif;
 				?>
@@ -315,7 +322,7 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 					<div class="person__social">
 						<?php
 						// Social Icons.
-						if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube ) :
+						if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube || $certdirectory) :
 							?>
 						<div class="person__social-margin">
 							<?php
@@ -365,6 +372,12 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 								?>
 							<a
 								href="<?php echo esc_url( $youtube ); ?>"><?php LF_Utils::get_svg( 'social/boxed-youtube.svg' ); ?></a>
+								<?php
+								endif;
+							if ( $certdirectory ) :
+								?>
+							<a
+								href="<?php echo esc_url( $certdirectory ); ?>"><?php LF_Utils::get_svg( 'social/boxed-certdirectory.svg' ); ?></a>
 								<?php
 								endif;
 							?>
