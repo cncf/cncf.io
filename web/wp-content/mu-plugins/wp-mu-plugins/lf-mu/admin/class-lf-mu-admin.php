@@ -356,6 +356,38 @@ class Lf_Mu_Admin {
 	}
 
 	/**
+	 * If post is a Kubestronaut feature then save post ID as a related post on Kubestronaut.
+	 *
+	 * @param int    $post_id Post ID.
+	 * @param object $post Post object.
+	 * @param bool   $update Whether this is an existing post being updated.
+	 */
+	public function set_related_post( $post_id, $post, $update ) {
+
+		$post_title = get_the_title( $post_id );
+		if ( 'publish' !== $post->post_status || strpos( $post_title, 'Kubestronaut in Orbit:' ) === false ) {
+			return;
+		}
+
+		$kubestronaut_name = trim( str_replace( 'Kubestronaut in Orbit:', '', $post_title ) );
+
+		$query = new WP_Query(
+			array(
+				'post_type'      => 'lf_person',
+				'post_status'    => 'publish',
+				'posts_per_page' => 1,
+				'title'          => $kubestronaut_name,
+			)
+		);
+		if ( $query->have_posts() ) {
+			$query->the_post();
+			update_post_meta( get_the_ID(), 'lf_related_post', $post_id );
+		}
+
+		wp_reset_postdata();
+	}
+
+	/**
 	 * Sync programs from https://community.cncf.io/
 	 */
 	public function sync_programs() {

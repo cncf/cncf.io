@@ -30,6 +30,7 @@ $youtube               = get_post_meta( get_the_ID(), 'lf_person_youtube', true 
 $certdirectory         = get_post_meta( get_the_ID(), 'lf_person_certdirectory', true );
 $image_url             = get_post_meta( get_the_ID(), 'lf_person_image', true );
 $location              = get_post_meta( get_the_ID(), 'lf_person_location', true );
+$related_post          = get_post_meta( get_the_ID(), 'lf_related_post', true );
 $languages             = get_the_terms( get_the_ID(), 'lf-language' );
 $projects              = get_the_terms( get_the_ID(), 'lf-project' );
 $content               = get_the_content();
@@ -307,6 +308,17 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 								$comma = ', ';
 							}
 						echo $out; //phpcs:ignore
+							?>
+						</li>
+							<?php
+						}
+
+						if ( $related_post ) {
+							?>
+						<li><strong>Related Post:</strong>
+							<?php
+							// Display related post.
+							echo '<a href="' . esc_url( get_permalink( $related_post ) ) . '">' . esc_html( get_the_title( $related_post ) ) . '</a>';
 							?>
 						</li>
 							<?php

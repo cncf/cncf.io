@@ -163,6 +163,7 @@ class Lf_Mu {
 		$this->loader->add_action( 'admin_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'wp_head', $plugin_admin, 'change_adminbar_colors' );
 		$this->loader->add_action( 'rest_api_init', $plugin_admin, 'register_lf_rest_routes' );
+		$this->loader->add_action( 'save_post_post', $plugin_admin, 'set_related_post', 10, 3 );
 
 		// Hook to save year in a meta fields for filtering.
 		$this->loader->add_action( 'save_post_lf_case_study', $plugin_admin, 'set_case_study_year', 10, 3 );
