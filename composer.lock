@@ -304,16 +304,16 @@
         },
         {
             "name": "pantheon-systems/wordpress-composer",
-            "version": "6.7.1",
+            "version": "6.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "ec3d0bc3626bc85226e74d1615a9c9ac50214bbb"
+                "reference": "9879403ae47364e570b7b5bdcc2382b81dec1d4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/ec3d0bc3626bc85226e74d1615a9c9ac50214bbb",
-                "reference": "ec3d0bc3626bc85226e74d1615a9c9ac50214bbb",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/9879403ae47364e570b7b5bdcc2382b81dec1d4c",
+                "reference": "9879403ae47364e570b7b5bdcc2382b81dec1d4c",
                 "shasum": ""
             },
             "require": {
@@ -331,10 +331,10 @@
             ],
             "description": "WordPress for Pantheon with a composer.json file.",
             "support": {
-                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.7.1",
+                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.7.2",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2024-11-21T21:20:27+00:00"
+            "time": "2025-02-11T20:04:26+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1065,15 +1065,15 @@
         },
         {
             "name": "wpackagist-plugin/shortpixel-image-optimiser",
-            "version": "6.1.1",
+            "version": "6.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
-                "reference": "tags/6.1.1"
+                "reference": "tags/6.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.6.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.6.1.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
