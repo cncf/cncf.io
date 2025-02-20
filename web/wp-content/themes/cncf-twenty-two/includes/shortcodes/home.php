@@ -426,7 +426,7 @@ endif;
 
 	<div class="home-ambassadors__cta">
 		<p
-			class="is-style-link-cta"><a href="/humans-of-cloud-native/">Humans of Cloud Native</a></p>
+			class="is-style-link-cta"><a href="/people/ambassadors/">CNCF Ambassadors</a></p>
 	</div>
 </div>
 
