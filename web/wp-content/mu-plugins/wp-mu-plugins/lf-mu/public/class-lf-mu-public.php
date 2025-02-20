@@ -347,7 +347,7 @@ class Lf_Mu_Public {
 				return $author;
 			}
 
-			$authors_to_ignore = array( 'Jessie', 'Katie Meinders' );
+			$authors_to_ignore = array( 'Jessie', 'Katie Meinders', 'Libby Schulze', 'Valerie' );
 			if ( in_array( $display_name, $authors_to_ignore, false ) ) {
 				// return "CNCF" if the author is in the ignore list.
 				return 'CNCF';
