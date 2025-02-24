@@ -56,7 +56,7 @@ function geocode_location( $id ) {
 }
 
 
-$people_url        = 'https://raw.githubusercontent.com/cncf/people/097a910bcc9b15f207d94b69a98477fca1378954/people.json';
+$people_url        = 'https://raw.githubusercontent.com/cncf/people/main/people.json';
 $github_images_url = 'https://raw.githubusercontent.com/cncf/people/main/images/';
 
 $args = array(
