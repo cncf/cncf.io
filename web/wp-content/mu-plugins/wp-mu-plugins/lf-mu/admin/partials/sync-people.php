@@ -189,6 +189,13 @@ foreach ( $people as $p ) {
 		}
 		if ( property_exists( $p, 'category' ) ) {
 			wp_set_object_terms( $newid, $p->category, 'lf-person-category', false );
+
+			// if category contains element "Golden-Kubestronaut", then set meta field "lf_person_golden" to true.
+			if ( in_array( 'Golden-Kubestronaut', $p->category, true ) ) {
+				update_post_meta( $newid, 'lf_person_golden', true );
+			} else {
+				update_post_meta( $newid, 'lf_person_golden', false );
+			}
 		} else {
 			wp_set_object_terms( $newid, array(), 'lf-person-category', false );
 		}
