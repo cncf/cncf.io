@@ -141,7 +141,7 @@ if ( $query->have_posts() ) : ?>
 							<?php
 						} else {
 							?>
-							<p><strong>Cost: FREE</strong></p>
+							<p><strong>培训费: 免费</strong></p>
 							<?php
 						}
 						?>
