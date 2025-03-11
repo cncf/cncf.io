@@ -334,7 +334,7 @@ $show_logos = isset( $args['show_logos'] ) && $args['show_logos'] ? true : false
 					<div class="person__social">
 						<?php
 						// Social Icons.
-						if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube || $certdirectory) :
+						if ( $linkedin || $bluesky || $twitter || $mastodon || $github || $wechat || $website || $youtube || $certdirectory ) :
 							?>
 						<div class="person__social-margin">
 							<?php
