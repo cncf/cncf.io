@@ -2,9 +2,6 @@
 /**
  * Project Chart Shortcodes
  *
- * Usage:
- * [projects stage="graduated|incubating|sandbox"]
- *
  * @package WordPress
  * @subpackage cncf-theme
  * @since 1.0.0
@@ -336,3 +333,70 @@ function add_project_moves_chart_shortcode( $atts ) {
 	return $block_content;
 }
 add_shortcode( 'project-moves-chart', 'add_project_moves_chart_shortcode' );
+
+
+/**
+ * Add Contributors chart shortcode.
+ *
+ * @param array $atts Attributes.
+ */
+function add_contributors_chart_shortcode( $atts ) {
+	$data = wp_remote_post(
+		'https://devstats.cncf.io/api/v1',
+		array(
+			'headers'     => array( 'Content-Type' => 'application/json; charset=utf-8' ),
+			'body'        => '{"api":"CumulativeCounts","payload":{"project":"all","metric":"contributors"}}',
+			'method'      => 'POST',
+			'data_format' => 'body',
+		)
+	);
+
+	if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) !== 200 ) ) {
+		return;
+	}
+
+	$remote_body = json_decode( wp_remote_retrieve_body( $data ) );
+
+	if ( ! ( isset( $remote_body->timestamps ) && isset( $remote_body->values ) ) ) {
+		return;
+	}
+	$timestamps = $remote_body->timestamps;
+	$contributors_months = array();
+	foreach ( $timestamps as $m ) {
+		$contributors_months[] = gmdate( 'M, Y', strtotime( $m ) );
+	}
+
+	$values     = $remote_body->values;
+
+	ob_start();
+
+	// chart js.
+	wp_enqueue_script(
+		'chart-js',
+		get_template_directory_uri() . '/source/js/libraries/chart-3.9.1.min.js',
+		null,
+		filemtime( get_template_directory() . '/source/js/libraries/chart-3.9.1.min.js' ),
+		true
+	);
+	// custom script.
+	wp_enqueue_script(
+		'contributors-chart',
+		get_template_directory_uri() . '/source/js/on-demand/contributors-chart.js',
+		array( 'jquery', 'chart-js' ),
+		filemtime( get_template_directory() . '/source/js/on-demand/contributors-chart.js' ),
+		true
+	);
+	?>
+<div class="projects-chart-container">
+	<canvas id="contributorsChart"></canvas>
+</div>
+<script>
+	const contributors_months = <?php echo json_encode( $contributors_months ); ?>;
+	const contributors_counts = <?php echo json_encode( $values ); ?>;
+</script>
+
+	<?php
+	$block_content = ob_get_clean();
+	return $block_content;
+}
+add_shortcode( 'contributors-chart', 'add_contributors_chart_shortcode' );
