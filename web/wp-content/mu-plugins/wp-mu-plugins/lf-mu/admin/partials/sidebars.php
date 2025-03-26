@@ -677,7 +677,7 @@ $sidebar    = array(
 						array(
 							'type'          => 'text',
 							'data_type'     => 'meta',
-							'data_key'      => 'book_url',
+							'data_key'      => 'url',
 							'label'         => __( 'Book URL' ),
 							'register_meta' => true,
 							'ui_border_top' => true,
