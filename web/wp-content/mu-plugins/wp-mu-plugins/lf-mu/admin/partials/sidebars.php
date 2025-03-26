@@ -660,6 +660,39 @@ $sidebar    = array(
 $sidebars[] = $sidebar;
 
 $sidebar    = array(
+	'id'              => 'lf-sidebar-book',
+	'id_prefix'       => 'lf_',
+	'label'           => __( 'Book Settings' ),
+	'post_type'       => 'lf_book',
+	'data_key_prefix' => 'lf_book_',
+	'icon_dashicon'   => 'admin-settings',
+	'tabs'            => array(
+		array(
+			'label'  => __( 'Tab label' ),
+			'panels' => array(
+				array(
+					'label'        => __( 'General' ),
+					'initial_open' => true,
+					'settings'     => array(
+						array(
+							'type'          => 'text',
+							'data_type'     => 'meta',
+							'data_key'      => 'book_url',
+							'label'         => __( 'Book URL' ),
+							'register_meta' => true,
+							'ui_border_top' => true,
+							'default_value' => '',
+							'placeholder'   => 'https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/',
+						),
+					),
+				),
+			),
+		),
+	),
+);
+$sidebars[] = $sidebar;
+
+$sidebar    = array(
 	'id'              => 'lf-sidebar-human',
 	'id_prefix'       => 'lf_',
 	'label'           => __( 'Post Settings' ),

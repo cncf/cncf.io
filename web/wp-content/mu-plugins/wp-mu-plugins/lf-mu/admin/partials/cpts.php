@@ -260,3 +260,20 @@ $opts = array(
 	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
 );
 register_post_type( 'lf_report', $opts );
+
+$opts = array(
+	'labels'            => array(
+		'name'          => __( 'Books' ),
+		'singular_name' => __( 'Book' ),
+		'all_items'     => __( 'All Books' ),
+	),
+	'public'            => true,
+	'has_archive'       => false,
+	'show_in_nav_menus' => false,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'menu_icon'         => 'dashicons-text',
+	'rewrite'           => array( 'slug' => 'Books' ),
+	'supports'          => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+);
+register_post_type( 'lf_book', $opts );

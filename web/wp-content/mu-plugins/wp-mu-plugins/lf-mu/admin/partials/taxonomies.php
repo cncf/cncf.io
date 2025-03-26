@@ -495,3 +495,23 @@ $args   = array(
 	'show_admin_column' => true,
 );
 register_taxonomy( 'lf-human-type', 'lf_human', $args );
+
+$labels = array(
+	'name'          => __( 'Book Type', 'lf-mu' ),
+	'singular_name' => __( 'Book Type', 'lf-mu' ),
+	'search_items'  => __( 'Search Book Types', 'lf-mu' ),
+	'all_items'     => __( 'All Book Types', 'lf-mu' ),
+	'edit_item'     => __( 'Edit Book Type', 'lf-mu' ),
+	'update_item'   => __( 'Update Book Type', 'lf-mu' ),
+	'add_new_item'  => __( 'Add New Book Type', 'lf-mu' ),
+	'new_item_name' => __( 'New Book Type', 'lf-mu' ),
+	'menu_name'     => __( 'Book Types', 'lf-mu' ),
+);
+$args   = array(
+	'labels'            => $labels,
+	'show_in_rest'      => true,
+	'hierarchical'      => false,
+	'show_in_nav_menus' => false,
+	'show_admin_column' => true,
+);
+register_taxonomy( 'lf-book-type', 'lf_book', $args );
