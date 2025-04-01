@@ -33,7 +33,7 @@ function add_books_shortcode( $atts ) {
 		'post_status'    => array( 'publish' ),
 		'posts_per_page' => 200,
 		'orderby'        => 'date',
-		'order'          => 'DESC',
+		'order'          => 'ASC',
 	);
 
 	if ( $chosen_type ) {
