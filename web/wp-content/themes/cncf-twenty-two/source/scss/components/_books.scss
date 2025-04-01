@@ -1,0 +1,42 @@
+.book-item {
+	@include tiles2;
+	padding: 25px;
+	@media (min-width: 800px) {
+		padding: 45px;
+	}
+	line-height: 150%;
+	display: flex;
+	flex-direction: column;
+	&__image-link {
+		display: flex;
+		height: 95px;
+		max-width: min(75%, 380px);
+		margin-bottom: 30px;
+	}
+	&__image {
+		object-position: left center;
+		object-fit: contain;
+	}
+	&__link {
+		font-size: 24px;
+		color: $black;
+		margin-bottom: 12px;
+	}
+	&__link:hover {
+		text-decoration: none;
+	}
+	&__country {
+		font-size: 12px;
+	}
+	&__description {
+		font-size: 13px;
+		@media (min-width: 800px) {
+			font-size: 14px;
+		}
+		letter-spacing: 0.02em;
+		margin-top: 20px;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+}

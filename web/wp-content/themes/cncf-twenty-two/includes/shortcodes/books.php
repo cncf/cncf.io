@@ -62,7 +62,7 @@ function add_books_shortcode( $atts ) {
 			?>
 			<div class="book-item has-animation-scale-2">
 			<?php if ( $book_url ) : ?>
-				<a class="book-item__link" href="<?php the_permalink(); ?>"
+				<a class="book-item__link" href="<?php echo esc_url( $book_url ); ?>"
 					title="<?php echo esc_attr( the_title_attribute() ); ?>">
 			<?php endif; ?>
 					<?php
@@ -80,7 +80,7 @@ function add_books_shortcode( $atts ) {
 				<div class="book-item__text-wrapper">
 					<h3 class="book-item__title">
 					<?php if ( $book_url ) : ?>
-						<a class="book-item__link" href="<?php the_permalink(); ?>"
+						<a class="book-item__link" href="<?php echo esc_url( $book_url ); ?>"
 							title="<?php echo esc_attr( the_title_attribute() ); ?>">
 					<?php endif; ?>
 							<?php the_title(); ?>
