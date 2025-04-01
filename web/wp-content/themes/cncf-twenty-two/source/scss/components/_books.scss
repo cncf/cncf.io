@@ -22,6 +22,10 @@
 		color: $black;
 		margin-bottom: 12px;
 	}
+	&__title {
+		line-height: 1.5em;
+		margin: 10px 0 15px;
+	}
 	&__link:hover {
 		text-decoration: none;
 	}
