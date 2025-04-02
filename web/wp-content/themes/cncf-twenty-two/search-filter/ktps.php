@@ -18,10 +18,10 @@ if ( $query->have_posts() ) : ?>
 
 	// if filter matches all.
 	if ( $full_count == $query->found_posts ) {
-		echo 'Found ' . esc_html( $query->found_posts ) . ' KTPs';
+		echo 'Found ' . esc_html( $query->found_posts ) . ' KCNTPs';
 	} else {
 		// else show partial count.
-		echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' KTPs';
+		echo 'Showing ' . esc_html( $query->found_posts ) . ' of ' . esc_html( $full_count ) . ' KCNTPs';
 	}
 	?>
 </p>
