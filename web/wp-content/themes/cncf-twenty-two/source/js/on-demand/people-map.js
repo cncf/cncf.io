@@ -71,10 +71,16 @@
 
 				const latLng = new google.maps.LatLng( lat, lng );
 
+				if ( peopleObj[i]['golden'] ) {
+					iconFile = '/wp-content/themes/cncf-twenty-two/images/map-markers/person-golden.svg';
+				} else {
+					iconFile = '/wp-content/themes/cncf-twenty-two/images/map-markers/person.svg';
+				}
+
 				const marker = new google.maps.Marker(
 					{
 						position: latLng,
-						icon: '/wp-content/themes/cncf-twenty-two/images/map-markers/person.svg',
+						icon: iconFile,
 					}
 				);
 
