@@ -114,6 +114,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</td>
 					</tr>
 				<?php } ?>
+				<tr valign="top">	
+					<th scope="row" valign="top">
+						<?php _e('Test connection'); ?>
+					</th>
+					<td>
+						<?php wp_nonce_field( 'search_filter_nonce', 'search_filter_nonce' ); ?>
+						<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=search-filter-widget&page=search-filter-licence-settings&action=test-connection' ) ); ?>" class="button-tertiary">
+							<?php _e('Test connection'); ?>
+						</a>
+					</td>
+				</tr>
 			</tbody>
 		</table>	
 

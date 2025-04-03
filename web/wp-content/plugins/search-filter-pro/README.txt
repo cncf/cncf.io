@@ -3,8 +3,8 @@ Contributors: DesignsAndCode, CodeAmp
 Donate link:
 Tags: posts, custom posts, products, category, filter, taxonomy, post meta, custom fields, search, wordpress, post type, post date, author
 Requires at least: 5.1
-Tested up to: 6.6
-Stable tag: 2.5.19
+Tested up to: 6.7
+Stable tag: 2.5.21
 
 Search and Filtering for posts, products and custom posts. Allow your users to Search & Filter by taxonomies, custom fields and more.
 
@@ -56,6 +56,18 @@ Great for searching in your online shop, tested with: WooCommerce and WP eCommer
 
 
 == Changelog ==
+
+= 2.5.21 =
+* Compatibility + tested upto WP 6.7
+* Fix - a E_PARSE PHP error in the admin screen.
+
+= 2.5.20 =
+* Important - security fix - prevent subscribers from accessing post meta data (thanks to Tom Broucke for the discovery and Wordfence for disclosure).
+* Important - this update changes the URLs used to receive plugin updates - it is advised to update as soon as possible.
+* Update WooCommerce and WordPress core supported versions.
+* Fix - PHP notice when using meta_date_value_current_date.
+* Fix - change URL for the update server + show an error message if it's not possible to connect.
+* Fix - license status was not reflecting renewals in the dashboard.
 
 = 2.5.19 =
 * Update WooCommerce and WordPress core supported versions.

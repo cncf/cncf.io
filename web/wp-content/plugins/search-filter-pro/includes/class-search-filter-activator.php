@@ -40,7 +40,8 @@ class Search_Filter_Activator {
 	public function activate( $network_wide ) {
 
 		global $wpdb;
-
+		Search_Filter_Admin_License_Server::activate();
+		Search_Filter_Remote_Notices::activate();
 		if ( is_multisite() && $network_wide ) {
 			// store the current blog id
 			$current_blog = $wpdb->blogid;

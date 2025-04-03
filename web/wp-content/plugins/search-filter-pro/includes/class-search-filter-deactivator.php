@@ -25,7 +25,8 @@ class Search_Filter_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+		Search_Filter_Admin_License_Server::deactivate();
+		Search_Filter_Remote_Notices::deactivate();
 	}
 
 }

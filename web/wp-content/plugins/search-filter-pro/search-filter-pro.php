@@ -11,7 +11,7 @@
  * Plugin Name:       Search & Filter Pro
  * Plugin URI:        https://searchandfilter.com
  * Description:       Search & Filtering for posts, products and custom posts. Allow your users to Search & Filter by categories, tags, taxonomies, custom fields, post meta, post dates, post types and authors.
- * Version:           2.5.19
+ * Version:           2.5.21
  * Author:            Code Amp
  * Author URI:        http://www.codeamp.com
  * Developer:         Code Amp
@@ -19,10 +19,11 @@
  * Text Domain:       search-filter
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI:        https://searchandfilter.com
  * Domain Path:       /languages
  * 
  * WC requires at least: 8.1
- * WC tested up to: 9.1
+ * WC tested up to: 9.7
  */
 
 // If this file is called directly, abort.
@@ -38,13 +39,25 @@ if ( ! defined( 'SEARCH_FILTER_QUERY_DEBUG' ) ) {
 }
 
 if ( ! defined( 'SEARCH_FILTER_VERSION' ) ) {
-	define( 'SEARCH_FILTER_VERSION', '2.5.19' );
+	define( 'SEARCH_FILTER_VERSION', '2.5.21' );
 }
 
 if ( ! defined( 'SEARCH_FILTER_PRO_BASE_PATH' ) ) {
 	define( 'SEARCH_FILTER_PRO_BASE_PATH', __FILE__ );
 }
 
+if ( ! class_exists( 'Search_Filter_Admin_License_Server' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'admin/includes/class-search-filter-admin-license-server.php';
+}
+
+// Check to make sure we can connect to the S&F update servers.
+Search_Filter_Admin_License_Server::init();
+
+if ( ! class_exists( 'Search_Filter_Remote_Notices' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'admin/includes/class-search-filter-remote-notices.php';
+}
+
+Search_Filter_Remote_Notices::init();
 /*
 ----------------------------------------------------------------------------*
  * Public-Facing Functionality

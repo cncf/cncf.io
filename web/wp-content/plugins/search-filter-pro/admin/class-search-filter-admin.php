@@ -36,7 +36,7 @@ function search_filter_plugin_updater() {
 
 	// setup the updater
 	$edd_updater = new SF_EDD_SL_Plugin_Updater(
-		SEARCH_FILTER_STORE_URL,
+		Search_Filter_Admin_License_Server::get_endpoint(),
 		SEARCH_FILTER_PRO_BASE_PATH,
 		array(
 			'version'   => SEARCH_FILTER_VERSION, // current version number
@@ -80,7 +80,8 @@ class Search_Filter_Admin {
 	 */
 	protected $widget_screen_admin = null;
 	protected $plugin_slug         = null;
-
+	protected $license_server      = null;
+	
 	private $cache_table_name        = '';
 	private $term_results_table_name = '';
 
@@ -129,6 +130,7 @@ class Search_Filter_Admin {
 
 		add_action( 'admin_notices', array( $this, 'action_display_welcome_header' ) );
 		$this->admin_notices = new Search_Filter_Admin_Notices( $this->plugin_slug );
+		
 
 		add_action( 'admin_head', array( $this, 'action_setup_screens' ) );
 
@@ -488,6 +490,17 @@ class Search_Filter_Admin {
 	}
 
 	public function display_plugin_license_settings_admin_page() {
+
+		// Run the license server test and redirect back to the license page.
+		if ( isset( $_GET['action'] ) ) {
+			if ( $_GET['action'] == 'test-connection' ) {
+				$is_healthy = Search_Filter_Admin_License_Server::check_server_health();
+				$status = $is_healthy ? 'success' : 'error';
+				wp_redirect( admin_url( 'edit.php?post_type=search-filter-widget&page=search-filter-licence-settings&status=' . $status ) );
+				exit;
+			}
+		}
+
 		$license = get_option( 'search_filter_license_key' );
 		$status  = get_option( 'search_filter_license_status' );
 		$expires = get_option( 'search_filter_license_expires' );
@@ -565,8 +578,9 @@ class Search_Filter_Admin {
 			$api_params = array(
 				'edd_action' => 'activate_license',
 				'license'    => $license,
-				'item_name'  => urlencode( SEARCH_FILTER_ITEM_NAME ), // the name of our product in EDD
+				'item_id'    => 615,
 				'url'        => home_url(),
+				'info'         => Search_Filter_Admin_License_Server::get_site_info(),
 			);
 
 			// Call the custom API.
@@ -585,7 +599,7 @@ class Search_Filter_Admin {
 
 			// decode the license data
 			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
+			
 			// $license_data->license will be either "valid" or "invalid"
 			$license_status = 'invalid';
 			if ( property_exists( $license_data, 'license' ) ) {
@@ -633,8 +647,9 @@ class Search_Filter_Admin {
 			$api_params = array(
 				'edd_action' => 'deactivate_license',
 				'license'    => $license,
-				'item_name'  => urlencode( SEARCH_FILTER_ITEM_NAME ), // the name of our product in EDD
+				'item_id'    => 615,
 				'url'        => home_url(),
+				'info'       => Search_Filter_Admin_License_Server::get_site_info(),
 			);
 
 			// Call the custom API.
@@ -645,6 +660,7 @@ class Search_Filter_Admin {
 					'sslverify' => false,
 				)
 			);
+
 
 			// make sure the response came back okay
 			if ( is_wp_error( $response ) ) {
@@ -658,8 +674,9 @@ class Search_Filter_Admin {
 			if ( $license_data->license == 'deactivated' ) {
 				delete_option( 'search_filter_license_status' );
 			}
-				delete_option( 'search_filter_license_error' );
-				delete_option( 'search_filter_license_expires' );
+			
+			delete_option( 'search_filter_license_error' );
+			delete_option( 'search_filter_license_expires' );
 
 		}
 	}
@@ -691,6 +708,9 @@ class Search_Filter_Admin {
 			exit;
 		}
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( __( 'You do not have sufficient permissions to access this page.', 'search-filter-pro' ) );
+		}
 		$run_method = esc_attr( $_GET['method'] );
 
 		$cache_options               = get_option( 'search-filter-cache' );
@@ -766,11 +786,17 @@ class Search_Filter_Admin {
 	}
 
 	function get_meta_values() {
-		// global $woocommerce;
-		global $current_user;
+		
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( __( 'You do not have sufficient permissions to access this page.', 'search-filter-pro' ) );
+		}
 
-		$meta_key = sanitize_text_field( $_POST['meta_key'] );
-		// $meta_key = sanitize_text_field($_GET['meta_key']);
+		$meta_key = '';
+		if ( isset( $_POST['meta_key'] ) ) {
+			$meta_key = sanitize_text_field( $_POST['meta_key'] );
+		} else {
+			wp_die( __( 'No meta key provided.', 'search-filter-pro' ) );
+		}
 
 		global $wpdb;
 		$data = array();
@@ -831,10 +857,11 @@ class Search_Filter_Admin {
 	}
 
 	function get_taxonomy_terms() {
-		 // global $woocommerce;
 		global $current_user;
 
-		// $meta_key = sanitize_key($_GET['meta_key']);
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( __( 'You do not have sufficient permissions to access this page.', 'search-filter-pro' ) );
+		}
 
 		$tax_name = sanitize_key( $_GET['taxonomy_name'] );
 		$tax_ids  = esc_attr( $_GET['taxonomy_ids'] );
