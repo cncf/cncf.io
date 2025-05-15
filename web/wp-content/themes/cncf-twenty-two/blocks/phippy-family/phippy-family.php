@@ -48,7 +48,13 @@ $classes = implode( ' ', $all_classes );
 				class="wp-block-lf-phippy-family__name is-style-spaced-uppercase"><?php the_sub_field( 'name' ); ?></p>
 
 			<p class="wp-block-lf-phippy-family__text">
-			<?php the_sub_field( 'bio' ); ?></p>
+			<?php
+			// strip out only the <p> tags from the bio.
+			$bio = get_sub_field( 'bio' );
+			$bio = preg_replace( '/<p\b[^>]*>|<\/p>/', '', $bio );
+			echo wp_kses_post( $bio );
+			?>
+			</p>
 		</div>
 
 		<?php endwhile; ?>
