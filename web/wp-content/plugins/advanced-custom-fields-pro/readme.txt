@@ -1,10 +1,10 @@
-=== Advanced Custom Fields PRO ===
-Contributors: elliotcondon
+=== Advanced Custom Fields (ACF®) PRO ===
+Contributors: deliciousbrains, wpengine, elliotcondon, mattshaw, lgladdy, antpb, johnstonphilip, dalewilliams, polevaultweb
 Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
-Tested up to: 6.6
+Tested up to: 6.8.1
 Requires PHP: 7.4
-Stable tag: 6.3.8
+Stable tag: 6.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ ACF helps customize WordPress with powerful, professional and intuitive fields. 
 
 == Description ==
 
-Advanced Custom Fields (ACF) turns WordPress sites into a fully-fledged content management system by giving you all the tools to do more with your data.
+Advanced Custom Fields (ACF®) turns WordPress sites into a fully-fledged content management system by giving you all the tools to do more with your data.
 
 Use the ACF plugin to take full control of your WordPress edit screens, custom field data, and more.
 
@@ -93,6 +93,76 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.4.2 =
+*Release Date 20th May 2025*
+
+* New - In ACF PRO, fields can now be added to WooCommerce Subscriptions when using HPOS
+* Security - Changing a field type no longer enables the "Allow Access to Value in Editor UI" setting
+* Fix - Paginated Repeater fields no longer save duplicate values when saving to a WooCommerce Order with HPOS disabled
+* Fix - Blocks registered via acf_register_block_type() with a `parent` value of `null` no longer fail to register
+
+= 6.4.1 =
+*Release Date 8th May 2025*
+
+* New - Select fields can now be configured to allow creating new options when editing the field's value (requires the "Stylized UI" and "Multiple" field settings to be enabled)
+* Enhancement - The "Escaped HTML" warning notice [introduced in ACF 6.2.5](https://www.advancedcustomfields.com/blog/acf-6-2-5-security-release/) is now disabled by default
+* Enhancement - The Icon Picker field now supports supplying an array of icons to a custom tab via a new `acf/fields/icon_picker/{tab_name}/icons` filter
+* Fix - ACF Blocks are now forced into preview mode when editing a synced pattern
+* Fix - The free ACF plugin once again works with the Classic Widgets plugin and the legacy ACF Options Page addon
+* Fix - ACF no longer causes an infinite loop in bbPress when editing replies
+
+= 6.4.0.1 =
+*Release Date 8th April 2025*
+
+* Fix - Calling `acf_get_reference()` with an invalid field name no longer causes a fatal error
+
+= 6.4.0 =
+*Release Date 7th April 2025*
+
+* New - In ACF PRO, fields can now be added to WooCommerce orders when using HPOS
+* Enhancement - ACF now uses Composer to autoload some classes
+* Fix - Repeater pagination now works when the Repeater is inside a Group field
+* Fix - Various translations are no longer called before the WordPress `init` action hook
+* Security - Link field no longer has a minor local XSS vulnerability
+* i18n - Various British English translation strings no longer have a quoting issue breaking links
+* i18n - Added Dutch (formal) translations (props @toineenzo)
+
+= 6.3.12 =
+*Release Date 21st January 2025*
+
+* Enhancement - Error messages that occur when field validation fails due an insufficient security nonce now have additional context
+* Fix - Duplicated ACF blocks no longer lose their field values after the initial save when block preloading is enabled
+* Fix - ACF Blocks containing complex field types now behave correctly when React StrictMode is enabled
+
+= 6.3.11 =
+*Release Date 12th November 2024*
+
+* Enhancement - Field Group keys are now copyable on click
+* Fix - Repeater tables with fields hidden by conditional logic now render correctly
+* Fix - ACF Blocks now behave correctly in React StrictMode
+* Fix - Edit mode is no longer available to ACF Blocks with an WordPress Block API version of 3 as field editing is not supported in the iframe
+
+= 6.3.10.2 =
+*Release Date 29th October 2024*
+*Free Only Release*
+
+* Fix - ACF Free no longer causes a fatal error when any unsupported legacy ACF addons are active
+
+= 6.3.10.1 =
+*Release Date 29th October 2024*
+*Free Only Release*
+
+* Fix - ACF Free no longer causes a fatal error when WPML is active
+
+= 6.3.10 =
+*Release Date 29th October 2024*
+
+* Security - Setting a metabox callback for custom post types and taxonomies now requires being an admin, or super admin for multisite installs
+* Security - Field specific ACF nonces are now prefixed, resolving an issue where third party nonces could be treated as valid for AJAX calls
+* Enhancement - A new “Close and Add Field” option is now available when editing a field group, inserting a new field inline after the field being edited
+* Enhancement - ACF and ACF PRO now share the same plugin updater for improved reliability and performance
+* Fix - Exporting post types and taxonomies containing metabox callbacks now correctly exports the user defined callback
 
 = 6.3.9 =
 *Release Date 15th October 2024*

@@ -93,7 +93,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			);
 
 			// Validate request.
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
+			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'], true ) ) {
 				die();
 			}
 
@@ -131,7 +131,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				)
 			);
 
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
+			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'], true ) ) {
 				wp_send_json_error();
 			}
 
@@ -209,7 +209,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				)
 			);
 
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
+			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'], true ) ) {
 				wp_send_json_error();
 			}
 
@@ -387,7 +387,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				'data-mime_types'   => $field['mime_types'],
 				'data-insert'       => $field['insert'],
 				'data-columns'      => 4,
-				'data-nonce'        => wp_create_nonce( $field['key'] ),
+				'data-nonce'        => wp_create_nonce( 'acf_field_' . $this->name . '_' . $field['key'] ),
 			);
 
 			// Set gallery height with deafult of 400px and minimum of 200px.
