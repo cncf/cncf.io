@@ -100,9 +100,9 @@ foreach ( $events as $event ) {
 }
 
 
-// Temporarily also import KuberTENes events.
+// Temporarily also import cTENcf events.
 
-$data = wp_remote_get( 'https://community.cncf.io/api/search/event?q=KuberTENes' );
+$data = wp_remote_get( 'https://community.cncf.io/api/search/event?q=cTENcf' );
 
 if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 ) ) {
 	return false;
