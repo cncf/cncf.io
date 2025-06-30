@@ -113,6 +113,7 @@ require_once 'includes/shortcodes/home.php';
 require_once 'includes/shortcodes/kubeweeklys.php';
 require_once 'includes/shortcodes/training.php';
 require_once 'includes/shortcodes/eu-newsletters.php';
+require_once 'includes/shortcodes/cncf-newsletter.php';
 require_once 'includes/shortcodes/books.php';
 require_once 'includes/shortcodes/latest-news.php';
 require_once 'includes/shortcodes/members.php';
