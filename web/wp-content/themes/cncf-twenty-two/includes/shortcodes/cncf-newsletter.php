@@ -21,7 +21,7 @@ function add_cncf_newsletter_form_shortcode( $atts ) {
 <div class="wp-block-group is-style-border has-white-background-color has-background kubeweekly-newsletter">
 <h3 class="is-style-spaced-uppercase">SIGN UP FOR THE CNCF NEWSLETTER</h3>
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
-	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=be1b038f-98de-43b5-b211-d5f7bf6510c9]' ); ?>
+	<?php echo do_shortcode( '[hubspot type=form portal=8112310 id=09f362ba-f95c-4f58-9ad7-f879432e0a3d]' ); ?>
 	<div style="height:15px" aria-hidden="true" class="wp-block-spacer is-style-40-responsive"></div>
 </div>
 	<?php
