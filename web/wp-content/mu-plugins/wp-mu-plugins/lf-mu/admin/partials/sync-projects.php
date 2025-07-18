@@ -29,12 +29,6 @@ if ( is_wp_error( $data ) || ( wp_remote_retrieve_response_code( $data ) != 200 
 $projects = json_decode( wp_remote_retrieve_body( $data ) );
 
 foreach ( $projects as $p ) {
-
-	// skip projects in the sub-landscapes.
-	if ( 'Wasm' == $p->category || 'Serverless' == $p->category || 'CNAI' == $p->category ) {
-		continue;
-	}
-
 	$params = array(
 		'post_type'   => 'lf_project',
 		'post_title'  => $p->name,
