@@ -205,8 +205,8 @@ function add_home_ambassadors_shortcode() {
 
 	if ( $teamcloudnative && count( $teamcloudnative ) > 0 ) :
 
-		// Grab first 4 for initial load.
-		$initial_ambassadors = array_slice( $teamcloudnative, 0, 4 );
+		// Grab first 5 for initial load.
+		$initial_ambassadors = array_slice( $teamcloudnative, 12, 5 );
 		?>
 	<div class="home-ambassadors-heptagons">
 		<?php
@@ -224,12 +224,6 @@ function add_home_ambassadors_shortcode() {
 			++$count;
 		}
 		?>
-		<a class="home-ambassadors-heptagons__link home-ambassadors-heptagons__animate home-ambassadors-heptagons__lg05"
-			title="Join the Foundation of Doers - with Priyanka Sharma"
-			href="https://www.youtube.com/watch?v=u71aL6aVDPg">
-			<img alt="Priyanka Sharma" loading="lazy" decoding="async"
-				src="<?php echo esc_url( get_template_directory_uri() . '/images/home-ambassador-priyanka.jpg' ); ?>"
-				class="home-ambassadors-heptagons__image"></a>
 
 		<svg class="home-ambassadors-heptagons__sm01" aria-hidden="true">
 			<use xlink:href="#small-heptagon"
@@ -385,7 +379,7 @@ function add_home_ambassadors_shortcode() {
 				elements.forEach(function(element) {
 					function getDelay() {
 						const displayTimes = ["7000", "4750",
-							"3500", "4000", "15500", "6000"
+							"3500", "4000", "8000", "6000"
 						];
 						return parseInt(
 							displayTimes[$j++]
