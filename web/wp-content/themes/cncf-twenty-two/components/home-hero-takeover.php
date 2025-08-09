@@ -51,8 +51,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<div class="container wrap">
 
 			<h1 class="home-hero__title">JOIN US IN<br />
-				LONDON, ENGLAND<br />
-				<span>1 - 4 April</span>
+				ATLANTA<br />
+				<span>November 10 - 13</span>
 			</h1>
 
 			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon</strong> is the flagship conference for cloud native.</h2>
@@ -62,7 +62,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 			<ul class="home-hero__metric_wrapper">
 				<li>
-					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-EU-2025&utm_content=hero" class="wp-block-button__link wp-element-button" title="Buy Tickets">Buy Tickets</a></div>
+					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=www&utm_medium=homepage&utm_campaign=KubeCon-NA-2025&utm_content=hero" class="wp-block-button__link wp-element-button" title="Buy Tickets">Buy Tickets</a></div>
 				</li>
 				<li class="show-over-600">10K+
 					<span>Attendees</span>
