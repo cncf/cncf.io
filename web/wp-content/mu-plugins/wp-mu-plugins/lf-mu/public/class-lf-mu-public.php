@@ -121,6 +121,24 @@ class Lf_Mu_Public {
 	}
 
 	/**
+	 * Inserts LFX code.
+	 */
+	function lfe_insert_lfx_head() {
+		wp_enqueue_script(
+			'lfx-segment',
+			'https://lfx-segment.platform.linuxfoundation.org/latest/lfx-segment-analytics.min.js',
+			array(),
+			null,
+			false
+		);
+
+		wp_add_inline_script(
+			'lfx-segment',
+			"if(window.LfxAnalytics&&window.LfxAnalytics.LfxSegmentsAnalytics){var analytics=window.LfxAnalytics.LfxSegmentsAnalytics.getInstance();analytics.init().then(function(){}).catch(function(error){console.error('Failed to initialize analytics:',error)});}else{console.warn('LfxAnalytics not found');}"
+		);
+	}
+
+	/**
 	 * Fix preconnect and preload to better optimize loading. Preconnect is priority, must have crossorigin; Prefetch just opens connection.
 	 *
 	 * @param string $hints returns hints.

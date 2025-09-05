@@ -248,6 +248,7 @@ class Lf_Mu {
 		$this->loader->add_action( 'pre_ping', $plugin_public, 'disable_pingback' );
 		$this->loader->add_action( 'wp_default_scripts', $plugin_public, 'dequeue_jquery_migrate' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'wpdocs_dequeue_dashicon' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'lfe_insert_lfx_head' );
 		$this->loader->add_filter( 'pre_get_posts', $plugin_public, 'remove_news_from_rss' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_nhpt_query_args', $plugin_public, 'remove_news_from_sitemap' );
 		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_newsletters_from_sitemap' );
