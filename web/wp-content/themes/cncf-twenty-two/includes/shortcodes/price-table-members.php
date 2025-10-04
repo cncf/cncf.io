@@ -46,25 +46,22 @@ function add_members_pricing_shortcode( $atts ) {
 		</div>
 
 		<div class="tbody">
-			<p>Limited to academic and nonprofit institutions.</p>
-		<ul>
+			<p>Benefits for all members:</p>
+			<ul>
 				<li>Private member and marketing
 					mailing lists</li>
 				<li>Private monthly calls to
 					meet other cloud native marketing experts</li>
-				<li>Receive discounts on
-					KubeCon + CloudNativeCon sponsorship</li>
+				<li>Discounts on KubeCon + CloudNativeCon sponsorship</li>
 				<li>Display <a
 						href="https://github.com/cncf/artwork/blob/master/examples/other.md#cncf-member-logos"
 						title="CNCF member logos">CNCF membership logos</a> on
-					your website. Logo also displayed on the CNCF website and in
-					marketing materials. </li>
-				<li><a
+					your website </li>
+				<li>Display of your company’s logo  on the CNCF website and <a
 						href="https://landscape.cncf.io/"
-						title="CNCF Cloud Native Interactive Landscape">Interactive
-						landscape</a> placement as a member</li>
+						title="CNCF member logos">Interactive landscape</a></li>
 				<li>Apply to be a certified
-					vendor, consulting partner, or training partner via our <a
+					vendor, consulting partner, or training partner via our conformance programs (including <a
 						href="/certification/software-conformance/"
 						title="Certified Kubernetes">Certified Kubernetes</a>,
 					<a href="/certification/kcsp/"
@@ -72,13 +69,27 @@ function add_members_pricing_shortcode( $atts ) {
 						Certified Service Provider</a>, and <a
 						href="/certification/training/#kubernetestrainingpartners"
 						title="Kubernetes Training Partner">Kubernetes Training
-						Partner</a> programs. </li>
-				<li>Announcement in the
-					quarterly CNCF New Member press release</li>
-				<li>Includes LF Associate
-					Membership</li>
-				<li>Programs for deterring patent trolls
-					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
+						Partner</a>)</li>
+			</ul>
+			<div style="height:40px;" aria-hidden="true"
+				class="wp-block-spacer">
+			</div>
+			<p>Additional benefits for End Users<sup><a href="#footnote-2">2</a></sup>:</p>
+			<ul>
+				<li>Eligibility to run for the elected 
+				<a href="/people/end-user-technical-advisory-board/"
+					title="End User Technical Advisory Board">	
+					End User Technical Advisory Board</a></li>
+				<li>End User Recruiting Booth at KubeCon + CloudNativeCon at Startup Level pricing</li>
+				<li>Access to end user-only groups, discussion forums, and special events</li>
+			</ul>
+			<div style="height:40px;" aria-hidden="true"
+				class="wp-block-spacer">
+			</div>
+			<p>Additional benefits for academic / nonprofit institutions:</p>
+			<ul>
+				<li>Discounted nonprofit booth at CNCF events</li>
+				<li>Associate Membership</li>
 			</ul>
 		</div>
 
@@ -86,7 +97,7 @@ function add_members_pricing_shortcode( $atts ) {
 		if ( ! $atts['no_prices'] ) {
 			?>
 		<div class="tfoot">
-			<h4>$1,000 / <br class="show-over-1000">$500 annually</h4>
+			<h4>Academic: $1,000 / Nonprofit: $500</h4>
 		</div>
 			<?php
 		}
@@ -103,32 +114,29 @@ function add_members_pricing_shortcode( $atts ) {
 
 		<div class="tbody">
 		<p>Everything included
-			in nonprofit / academic, plus:</p>
+			academic / nonprofit, plus:</p>
 			<ul>
 				<li>Run for Governing Board</li>
 				<li>2 online programs a quarter to
-					build thought leadership (on-demand, YouTube, live streams)
+					build thought leadership (on-demand, YouTube, live streams, video spotlight)
 				</li>
 				<li>Submit vendor neutral content to
-					CNCF blog, Kubernetes.io blog, & KubeWeekly</li>
-				<li>Receive access to industry
-					analyst reports including Top Analysts by keyword, quotes,
-					and research highlights</li>
+					CNCF blog</li>
 				<li>Submit announcements to
 					KubeCon + CloudNativeCon news packages</li>
-				<li>Support End User Driven open
-					source with end user case studies and referral benefits</li>
-				<li>Host a local Kubernetes
-					Community Day</li>
 				<li>Access to the <a
 						href="https://todogroup.org/" title="TODO Group">TODO Group</a> to meet
 					other open source organizations </li>
-				<li>Ten coupon codes good for any
-					eLearning, certification exam, or eLearning/exam bundle.
-					Additional terms apply. (Part of LF membership)</li>
-				<li>Additional programs for deterring patent trolls
-					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
-
+				<li>Ten LF Education coupon codes for any eLearning, certification exam, or eLearning/exam bundle<sup><a href="#footnote-1">1</a></sup></li>
+				<li><a href="/npe-deterrence-benefits/">Non-Practicing Entity / Patent Troll Deterrence Programs</a></li>
+			</ul>
+			<div style="height:40px;" aria-hidden="true"
+				class="wp-block-spacer">
+			</div>
+			<p>Additional benefits for End Users<sup><a href="#footnote-2">2</a></sup>:</p>
+			<ul>
+				<li>A total of 10 KubeCon + CloudNativeCon in-person tickets per year</li>
+				<li>End Users can choose to substitute the 10 LF Education coupons for a <strong>15-seat annual subscription</strong> to LF Education<sup><a href="#footnote-1">1</a></sup></li>
 			</ul>
 		</div>
 
@@ -167,19 +175,16 @@ function add_members_pricing_shortcode( $atts ) {
 					joining </li>
 				<li>Personalized press release
 					upon joining</li>
-				<li>Quarterly executive
-					engagement with CNCF leadership team</li>
+				<li>Executive engagement with CNCF leadership team</li>
 				<li>A total of 4 online programs a
 					quarter (on-demand, YouTube, live streams) to build thought
 					leadership</li>
 				<li>Increased access to Linux
 					Foundation’s invitation-only Linux Foundation Member Summit
 				</li>
-				<li>50-seat annual Linux Foundation Training subscription OR 10 Linux Foundation Training coupons.
-					Additional terms apply. (Cannot be combined with any other membership training benefits.)
+				<li>50-seat annual Linux Foundation Training subscription OR 10 Linux Foundation Training coupons<sup><a href="#footnote-1">1</a></sup>
 				</li>
-				<li>Additional programs for deterring patent trolls
-					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
+				<li><a href="/npe-deterrence-benefits/">Additional NPE / Patent Troll Deterrence Tools</a> including royalty-free licenses from NPEs</li>
 			</ul>
 		</div>
 
@@ -187,7 +192,7 @@ function add_members_pricing_shortcode( $atts ) {
 		if ( ! $atts['no_prices'] ) {
 			?>
 		<div class="tfoot">
-			<h4>$100,000<br class="show-over-1000">+ LF Membership</h4>
+			<h4>$100,000 <br class="show-over-1000">+ LF Membership</h4>
 		</div>
 			<?php
 		}
@@ -216,14 +221,19 @@ function add_members_pricing_shortcode( $atts ) {
 					Governing Board</li>
 				<li>Exec invite to join a KubeCon
 					keynote upon joining</li>
-				<li>Personalized executive
-					engagement from CNCF and LF leadership teams: <br />- Open
-					source strategy e.g. donating a project, running an open
-					source program office</li>
+				<li>Personalized executive engagement with CNCF leadership teams</li>
+				<li>Guidance on open source strategy - e.g. donating a project, running an open source program office</li>
 				<li>Exclusive live webinars with
 					CNCF online programs</li>
-				<li>Additional programs for deterring patent trolls
-					(see <a href="/npe-deterrence-benefits/">NPE Deterrence for CNCF Members</a>)</li>
+				<li><a href="/npe-deterrence-benefits/">Additional NPE / Patent Troll Deterrence Tools</a> including expanded access to prior art</li>
+			</ul>
+			<div style="height:40px;" aria-hidden="true"
+				class="wp-block-spacer">
+			</div>
+			<p>Additional benefits for End Users<sup><a href="#footnote-2">2</a></sup>:</p>
+			<ul>
+				<li>Appoint a representative to the <a href="/people/end-user-technical-advisory-board/">End User Technical Advisory Board</a></li>
+			</ul>
 
 			</ul>
 		</div>
@@ -254,7 +264,15 @@ function add_members_pricing_shortcode( $atts ) {
 		(CNCF and LF memberships are invoiced separately)</p>
 	</div>
 
+
 </div><!-- end of wrapper -->
+<div style="height:60px;" aria-hidden="true"
+				class="wp-block-spacer">
+			</div>
+<p class="footnotes">
+	<sup id="footnote-1">1</sup> Additional terms apply. Cannot be combined with any other membership training benefits.<br>
+	<sup id="footnote-2">2</sup> These benefits are available only to End User companies that meet the <a href="/enduser/#end-user-definition">End User Definition</a>.
+</p>
 
 	<?php
 	get_template_part( 'components/silver-member-pricing-modal' );
