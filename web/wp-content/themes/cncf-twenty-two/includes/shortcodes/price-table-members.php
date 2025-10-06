@@ -89,7 +89,7 @@ function add_members_pricing_shortcode( $atts ) {
 			<p>Additional benefits for academic / nonprofit institutions:</p>
 			<ul>
 				<li>Discounted nonprofit booth at CNCF events</li>
-				<li>Associate Membership</li>
+				<li>Linux Foundation Associate Membership</li>
 			</ul>
 		</div>
 
