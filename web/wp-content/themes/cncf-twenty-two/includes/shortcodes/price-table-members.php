@@ -48,10 +48,7 @@ function add_members_pricing_shortcode( $atts ) {
 		<div class="tbody">
 			<p>Benefits for all members:</p>
 			<ul>
-				<li>Private member and marketing
-					mailing lists</li>
-				<li>Private monthly calls to
-					meet other cloud native marketing experts</li>
+				<li>Members-only monthly call with other cloud native marketing experts</li>
 				<li>Discounts on KubeCon + CloudNativeCon sponsorship</li>
 				<li>Display <a
 						href="https://github.com/cncf/artwork/blob/master/examples/other.md#cncf-member-logos"
