@@ -39,7 +39,7 @@ if ( $query->have_posts() ) : ?>
 	while ( $query->have_posts() ) :
 		$query->the_post();
 
-		$name         = trim( str_replace( '(KTP)', '', get_the_title() ) );
+		$name         = trim( str_replace( '(KCNTP)', '', get_the_title() ) );
 		$description  = get_post_meta( get_the_id(), 'lf_ktp_description', true );
 		$external_url = get_post_meta( get_the_ID(), 'lf_ktp_external_url', true );
 		$logo         = get_post_meta( get_the_ID(), 'lf_ktp_logo', true );
