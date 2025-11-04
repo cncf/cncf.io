@@ -34,6 +34,17 @@ $slack          = get_post_meta( get_the_ID(), 'lf_project_slack', true );
 $youtube        = get_post_meta( get_the_ID(), 'lf_project_youtube', true );
 $gitter         = get_post_meta( get_the_ID(), 'lf_project_gitter', true );
 
+// LFX stuff.
+$lfx_health_score = get_post_meta( get_the_ID(), 'lfx_health_score', true );
+$lfx_stars_last_365_days = get_post_meta( get_the_ID(), 'lfx_stars_last_365_days', true );
+$lfx_forks_last_365_days = get_post_meta( get_the_ID(), 'lfx_forks_last_365_days', true );
+$lfx_active_contributors_last_365_days = get_post_meta( get_the_ID(), 'lfx_active_contributors_last_365_days', true );
+$lfx_active_organizations_last_365_days = get_post_meta( get_the_ID(), 'lfx_active_organizations_last_365_days', true );
+$lfx_stars_previous_365_days = get_post_meta( get_the_ID(), 'lfx_stars_previous_365_days', true );
+$lfx_forks_previous_365_days = get_post_meta( get_the_ID(), 'lfx_forks_previous_365_days', true );
+$lfx_active_contributors_previous_365_days = get_post_meta( get_the_ID(), 'lfx_active_contributors_previous_365_days', true );
+$lfx_active_organizations_previous_365_days = get_post_meta( get_the_ID(), 'lfx_active_organizations_previous_365_days', true );
+
 global $post;
 $project_slug = strtolower( $post->post_name );
 ?>
@@ -155,6 +166,14 @@ endif;
 
 		<div style="height:120px" aria-hidden="true"
 			class="wp-block-spacer is-style-80-120"></div>
+
+		<?php
+		echo $lfx_health_score;
+
+		?>
+
+		<div style="height:120px" aria-hidden="true"
+		class="wp-block-spacer is-style-80-120"></div>
 
 		<?php
 		// CASE STUDIES.

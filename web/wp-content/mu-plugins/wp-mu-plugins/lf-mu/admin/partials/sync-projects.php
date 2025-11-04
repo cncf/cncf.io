@@ -17,8 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 $projects_url = 'https://landscape.cncf.io/api/projects/all.json';
 
 $args = array(
-	'timeout'   => 100,
-	'sslverify' => false,
+	'timeout' => 5,
 );
 
 $data = wp_remote_get( $projects_url, $args );
@@ -93,6 +92,42 @@ foreach ( $projects as $p ) {
 	}
 	if ( property_exists( $p, 'gitter_url' ) ) {
 		$params['meta_input']['lf_project_gitter'] = $p->gitter_url;
+	}
+
+	// get lfx project data.
+	$project_slug = str_replace( ' ', '-', strtolower( $p->name ) );
+	$lfx_url = 'https://insights.linuxfoundation.org/api/project/' . $project_slug . '/insights';
+	$lfx_data = wp_remote_get( $lfx_url, $args );
+	if ( ! is_wp_error( $data ) && wp_remote_retrieve_response_code( $lfx_data ) == 200 ) {
+		$lfx_stuff = json_decode( wp_remote_retrieve_body( $lfx_data ) );
+
+		if ( property_exists( $lfx_stuff, 'healthScore' ) ) {
+			$params['meta_input']['lfx_health_score'] = $lfx_stuff->healthScore;
+		}
+		if ( property_exists( $lfx_stuff, 'starsLast365Days' ) ) {
+			$params['meta_input']['lfx_stars_last_365_days'] = $lfx_stuff->starsLast365Days;
+		}
+		if ( property_exists( $lfx_stuff, 'forksLast365Days' ) ) {
+			$params['meta_input']['lfx_forks_last_365_days'] = $lfx_stuff->forksLast365Days;
+		}
+		if ( property_exists( $lfx_stuff, 'activeContributorsLast365Days' ) ) {
+			$params['meta_input']['lfx_active_contributors_last_365_days'] = $lfx_stuff->activeContributorsLast365Days;
+		}
+		if ( property_exists( $lfx_stuff, 'activeOrganizationsLast365Days' ) ) {
+			$params['meta_input']['lfx_active_organizations_last_365_days'] = $lfx_stuff->activeOrganizationsLast365Days;
+		}
+		if ( property_exists( $lfx_stuff, 'starsPrevious365Days' ) ) {
+			$params['meta_input']['lfx_stars_previous_365_days'] = $lfx_stuff->starsPrevious365Days;
+		}
+		if ( property_exists( $lfx_stuff, 'forksPrevious365Days' ) ) {
+			$params['meta_input']['lfx_forks_previous_365_days'] = $lfx_stuff->forksPrevious365Days;
+		}
+		if ( property_exists( $lfx_stuff, 'activeContributorsPrevious365Days' ) ) {
+			$params['meta_input']['lfx_active_contributors_previous_365_days'] = $lfx_stuff->activeContributorsPrevious365Days;
+		}
+		if ( property_exists( $lfx_stuff, 'activeOrganizationsPrevious365Days' ) ) {
+			$params['meta_input']['lfx_active_organizations_previous_365_days'] = $lfx_stuff->activeOrganizationsPrevious365Days;
+		}
 	}
 
 	$pp = get_posts(
