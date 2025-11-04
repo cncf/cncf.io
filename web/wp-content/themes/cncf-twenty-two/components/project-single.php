@@ -168,7 +168,27 @@ endif;
 			class="wp-block-spacer is-style-80-120"></div>
 
 		<?php
-		echo $lfx_health_score;
+		if ( $lfx_health_score > 80 ) {
+			// excellent.
+			LF_utils::get_svg( '/project-insights/excellent.svg' );
+			echo 'Health Score Excellent';
+		} elseif ( $lfx_health_score > 60 ) {
+			// healthy.
+			LF_utils::get_svg( '/project-insights/healthy.svg' );
+			echo 'Health Score Healthy';
+		} elseif ( $lfx_health_score > 40 ) {
+			// stable.
+			LF_utils::get_svg( '/project-insights/stable.svg' );
+			echo 'Health Score Stable';
+		} elseif ( $lfx_health_score > 20 ) {
+			// unsteady.
+			LF_utils::get_svg( '/project-insights/unsteady.svg' );
+			echo 'Health Score Unsteady';
+		} else {
+			// critical.
+			LF_utils::get_svg( '/project-insights/critical.svg' );
+			echo 'Health Score Critical';
+		}
 
 		?>
 
