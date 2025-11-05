@@ -98,6 +98,7 @@ foreach ( $projects as $p ) {
 	$project_slug = str_replace( ' ', '-', strtolower( $p->name ) );
 	$lfx_url = 'https://insights.linuxfoundation.org/api/project/' . $project_slug . '/insights';
 	$lfx_data = wp_remote_get( $lfx_url, $args );
+
 	if ( ! is_wp_error( $data ) && wp_remote_retrieve_response_code( $lfx_data ) == 200 ) {
 		$lfx_stuff = json_decode( wp_remote_retrieve_body( $lfx_data ) );
 
@@ -125,8 +126,11 @@ foreach ( $projects as $p ) {
 		if ( property_exists( $lfx_stuff, 'activeContributorsPrevious365Days' ) ) {
 			$params['meta_input']['lfx_active_contributors_previous_365_days'] = $lfx_stuff->activeContributorsPrevious365Days; //phpcs:ignore.
 		}
-		if ( property_exists( $lfx_stuff, 'activeOrganizationsPrevious365Days' ) ) {
-			$params['meta_input']['lfx_active_organizations_previous_365_days'] = $lfx_stuff->activeOrganizationsPrevious365Days; //phpcs:ignore.
+		if ( property_exists( $lfx_stuff, 'softwareValue' ) ) {
+			$params['meta_input']['lfx_software_value'] = $lfx_stuff->softwareValue; //phpcs:ignore.
+		}
+		if ( property_exists( $lfx_stuff, 'firstCommit' ) ) {
+			$params['meta_input']['lfx_first_commit'] = $lfx_stuff->firstCommit; //phpcs:ignore.
 		}
 	}
 
