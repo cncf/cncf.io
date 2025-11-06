@@ -48,9 +48,29 @@ $lfx_software_value = get_post_meta( get_the_ID(), 'lfx_software_value', true );
 $lfx_first_commit = get_post_meta( get_the_ID(), 'lfx_first_commit', true );
 
 $lfx_contributor_increase = ( $lfx_active_contributors_last_365_days - $lfx_active_contributors_previous_365_days ) / max( 1, $lfx_active_contributors_previous_365_days ) * 100;
+if ( $lfx_contributor_increase < 0 ) {
+	$lfx_contributor_increase = '<span class="lfx-decrease">' . number_format( $lfx_contributor_increase, 0 ) . '%</span>';
+} else {
+	$lfx_contributor_increase = '<span class="lfx-increase">+' . number_format( $lfx_contributor_increase, 0 ) . '%</span>';
+}
 $lfx_organizations_increase = ( $lfx_active_organizations_last_365_days - $lfx_active_organizations_previous_365_days ) / max( 1, $lfx_active_organizations_previous_365_days ) * 100;
+if ( $lfx_organizations_increase < 0 ) {
+	$lfx_organizations_increase = '<span class="lfx-decrease">' . number_format( $lfx_organizations_increase, 0 ) . '%</span>';
+} else {
+	$lfx_organizations_increase = '<span class="lfx-increase">+' . number_format( $lfx_organizations_increase, 0 ) . '%</span>';
+}
 $lfx_stars_increase = ( $lfx_stars_last_365_days - $lfx_stars_previous_365_days ) / max( 1, $lfx_stars_previous_365_days ) * 100;
+if ( $lfx_stars_increase < 0 ) {
+	$lfx_stars_increase = '<span class="lfx-decrease">' . number_format( $lfx_stars_increase, 0 ) . '%</span>';
+} else {
+	$lfx_stars_increase = '<span class="lfx-increase">+' . number_format( $lfx_stars_increase, 0 ) . '%</span>';
+}
 $lfx_forks_increase = ( $lfx_forks_last_365_days - $lfx_forks_previous_365_days ) / max( 1, $lfx_forks_previous_365_days ) * 100;
+if ( $lfx_forks_increase < 0 ) {
+	$lfx_forks_increase = '<span class="lfx-decrease">' . number_format( $lfx_forks_increase, 0 ) . '%</span>';
+} else {
+	$lfx_forks_increase = '<span class="lfx-increase">+' . number_format( $lfx_forks_increase, 0 ) . '%</span>';
+}
 
 global $post;
 $project_slug = strtolower( $post->post_name );
@@ -177,7 +197,7 @@ endif;
 <?php if ( $lfx_health_score > 0 ) : ?>
 
 	<h2 class="wp-block-heading has-text-align-center is-style-spaced-uppercase has-large-font-size">Project Insights</h2>
-	<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+	<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 
 	<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-53acd6ed wp-block-group-is-layout-constrained">
 	<p class="has-text-align-center">Key metrics for the Argo project, providing insights into development activity, community engagement, and project health. Powered by <a href="https://insights.linuxfoundation.org/" class="sa-set-id">LFX Insights</a>.</p>
@@ -251,7 +271,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_active_contributors_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html( number_format( $lfx_contributor_increase, 0 ) ); ?>% vs. previous year</p>
+	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_contributor_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
@@ -270,7 +290,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_active_organizations_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html( number_format( $lfx_organizations_increase, 0 ) ); ?>% vs. previous year</p>
+	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_organizations_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
@@ -291,7 +311,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_stars_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html( number_format( $lfx_stars_increase, 0 ) ); ?>% vs. previous year</p>
+	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_stars_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
@@ -310,7 +330,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_forks_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html( number_format( $lfx_forks_increase, 0 ) ); ?>% vs. previous year</p>
+	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_forks_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
@@ -329,7 +349,18 @@ endif;
 	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%">
 	<p class="is-style-spaced-uppercase has-extra-small-font-size">Software Value</p>
 
-	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo '$ ' . esc_html( $lfx_software_value ); ?></strong></p>
+	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong>
+		<?php
+		// output $lfx_software_value by formatting as a currency value; if it's greater than 1 million, show in millions (e.g., $2.5M), if greater than 1 thousand, show in thousands (e.g., $750K), else show full value (e.g., $850).
+		if ( $lfx_software_value >= 1000000 ) {
+			echo '$' . number_format( $lfx_software_value / 1000000, 1 ) . 'M';
+		} elseif ( $lfx_software_value >= 1000 ) {
+			echo '$' . number_format( $lfx_software_value / 1000, 0 ) . 'K';
+		} else {
+			echo '$' . number_format( $lfx_software_value, 0 );
+		}
+		?>
+	</strong></p>
 	</div>
 	</div>
 
@@ -346,7 +377,7 @@ endif;
 	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%">
 	<p class="is-style-spaced-uppercase has-extra-small-font-size">First commit</p>
 
-	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( $lfx_first_commit ); ?></strong></p>
+	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo date( 'F j, Y', strtotime( $lfx_first_commit ) ); ?></strong></p>
 	</div>
 	</div>
 
