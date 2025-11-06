@@ -126,6 +126,9 @@ foreach ( $projects as $p ) {
 		if ( property_exists( $lfx_stuff, 'activeContributorsPrevious365Days' ) ) {
 			$params['meta_input']['lfx_active_contributors_previous_365_days'] = $lfx_stuff->activeContributorsPrevious365Days; //phpcs:ignore.
 		}
+		if ( property_exists( $lfx_stuff, 'activeOrganizationsPrevious365Days' ) ) {
+			$params['meta_input']['lfx_active_organizations_previous_365_days'] = $lfx_stuff->activeOrganizationsPrevious365Days; //phpcs:ignore.
+		}
 		if ( property_exists( $lfx_stuff, 'softwareValue' ) ) {
 			$params['meta_input']['lfx_software_value'] = $lfx_stuff->softwareValue; //phpcs:ignore.
 		}

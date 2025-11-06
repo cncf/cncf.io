@@ -200,7 +200,7 @@ endif;
 	<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 
 	<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-53acd6ed wp-block-group-is-layout-constrained">
-	<p class="has-text-align-center">Key metrics for the Argo project, providing insights into development activity, community engagement, and project health. Powered by <a href="https://insights.linuxfoundation.org/" class="sa-set-id">LFX Insights</a>.</p>
+	<p class="has-text-align-center">Key metrics, providing insights into development activity, community engagement, and project health. Powered by <a href="https://insights.linuxfoundation.org/" class="sa-set-id">LFX Insights</a>.</p>
 	</div>
 
 	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
