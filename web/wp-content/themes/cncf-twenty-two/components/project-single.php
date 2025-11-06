@@ -252,7 +252,7 @@ endif;
 
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer is-style-default"></div>
 
-	<p class="has-gray-700-color has-text-color has-link-color has-small-font-size">Health Score measures a project’s overall trustworthiness across four key areas: contributors, development, popularity, and security.</p>
+	<p class="has-gray-700-color has-text-color has-link-color has-small-font-size health-score">Health Score measures a project’s overall trustworthiness across four key areas: contributors, development, popularity, and security.</p>
 
 	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 	</div>
@@ -271,7 +271,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_active_contributors_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_contributor_increase; //phpcs:ignore ?> vs. previous year</p>
+	<p class="has-small-font-size has-gray-700-color" style="margin-top:0;margin-bottom:0;"><?php echo $lfx_contributor_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
@@ -290,7 +290,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_active_organizations_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_organizations_increase; //phpcs:ignore ?> vs. previous year</p>
+	<p class="has-small-font-size has-gray-700-color" style="margin-top:0;margin-bottom:0"><?php echo $lfx_organizations_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
@@ -311,7 +311,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_stars_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_stars_increase; //phpcs:ignore ?> vs. previous year</p>
+	<p class="has-small-font-size has-gray-700-color" style="margin-top:0;margin-bottom:0"><?php echo $lfx_stars_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
@@ -330,7 +330,7 @@ endif;
 
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( number_format( $lfx_forks_last_365_days ) ); ?></strong></p>
 
-	<p class="has-small-font-size" style="margin-top:0;margin-bottom:0"><?php echo $lfx_forks_increase; //phpcs:ignore ?> vs. previous year</p>
+	<p class="has-small-font-size has-gray-700-color" style="margin-top:0;margin-bottom:0"><?php echo $lfx_forks_increase; //phpcs:ignore ?> vs. previous year</p>
 	</div>
 	</div>
 
