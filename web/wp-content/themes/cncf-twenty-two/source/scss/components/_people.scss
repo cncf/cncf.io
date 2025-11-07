@@ -136,6 +136,11 @@
 	}
 }
 
+// hide company for Kubestronauts page.
+.page-id-103904 .person__company-container {
+	display: none;
+}
+
 // person modal.
 .person-modal {
 	position: fixed;
