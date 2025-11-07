@@ -44,7 +44,7 @@ $lfx_stars_previous_365_days = (int) get_post_meta( get_the_ID(), 'lfx_stars_pre
 $lfx_forks_previous_365_days = (int) get_post_meta( get_the_ID(), 'lfx_forks_previous_365_days', true );
 $lfx_active_contributors_previous_365_days = (int) get_post_meta( get_the_ID(), 'lfx_active_contributors_previous_365_days', true );
 $lfx_active_organizations_previous_365_days = (int) get_post_meta( get_the_ID(), 'lfx_active_organizations_previous_365_days', true );
-$lfx_software_value = get_post_meta( get_the_ID(), 'lfx_software_value', true );
+$lfx_software_value = (float) get_post_meta( get_the_ID(), 'lfx_software_value', true );
 $lfx_first_commit = get_post_meta( get_the_ID(), 'lfx_first_commit', true );
 
 $lfx_contributor_increase = ( $lfx_active_contributors_last_365_days - $lfx_active_contributors_previous_365_days ) / max( 1, $lfx_active_contributors_previous_365_days ) * 100;
@@ -377,7 +377,7 @@ endif;
 	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%">
 	<p class="is-style-spaced-uppercase has-extra-small-font-size">First commit</p>
 
-	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo date( 'F j, Y', strtotime( $lfx_first_commit ) ); ?></strong></p>
+	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0rem"><strong><?php echo esc_html( gmdate( 'F j, Y', strtotime( $lfx_first_commit ) ) ); ?></strong></p>
 	</div>
 	</div>
 
