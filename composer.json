@@ -18,7 +18,7 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
+    "php": ">=8.3",
     "composer/installers": "^1.3.0",
     "pantheon-systems/quicksilver-pushback": "^2.0.1",
     "pantheon-systems/wordpress-composer": "*",
@@ -55,7 +55,7 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "platform": {
-      "php": "7.2"
+      "php": "8.3"
     },
     "allow-plugins": {
       "composer/installers": true,
