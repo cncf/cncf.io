@@ -51,7 +51,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<div class="container wrap">
 
 			<h1 class="home-hero__title">JOIN US IN<br />
-				ATLANTA<br />
+				Amsterdam<br />
 				<span>November 10 - 13</span>
 			</h1>
 
@@ -62,7 +62,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 			<ul class="home-hero__metric_wrapper">
 				<li>
-					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/?utm_source=www&utm_medium=homepage&utm_campaign=10608228-KubeCon-NA-2025&utm_content=hero" class="wp-block-button__link wp-element-button" title="Buy Tickets">Buy Tickets</a></div>
+					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/?utm_source=cncf&utm_medium=homepage&utm_campaign=18269725-KubeCon-EU-2026&utm_content=hero" class="wp-block-button__link wp-element-button" title="Buy Tickets">Buy Tickets</a></div>
 				</li>
 				<li class="show-over-600">10K+
 					<span>Attendees</span>

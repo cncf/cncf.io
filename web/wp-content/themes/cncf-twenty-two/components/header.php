@@ -13,7 +13,7 @@ get_header();
 
 $site_options = get_option( 'lf-mu' );
 
-if ( isset( $site_options['show_hello_bar'] ) && $site_options['show_hello_bar'] ) :
+if ( isset( $site_options['show_hello_bar'] ) && $site_options['show_hello_bar'] && ! is_front_page() ) :
 	get_template_part( 'components/hello-bar' );
 endif;
 ?>
