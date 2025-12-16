@@ -51,8 +51,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<div class="container wrap">
 
 			<h1 class="home-hero__title">JOIN US IN<br />
-				Amsterdam<br />
-				<span>November 10 - 13</span>
+				AMSTERDAM<br />
+				<span>23 - 26 March</span>
 			</h1>
 
 			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon</strong> is the flagship conference for cloud native.</h2>
