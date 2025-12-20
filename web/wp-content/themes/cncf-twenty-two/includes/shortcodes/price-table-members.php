@@ -81,10 +81,6 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>End User Recruiting Booth at KubeCon + CloudNativeCon at Startup Level pricing</li>
 				<li>Access to end user-only groups, discussion forums, and special events</li>
 			</ul>
-			<div style="height:40px;" aria-hidden="true"
-				class="wp-block-spacer">
-			</div>
-
 		</div>
 
 		<?php
