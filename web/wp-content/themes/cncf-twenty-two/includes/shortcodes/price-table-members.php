@@ -69,6 +69,9 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>Discounted nonprofit booth at CNCF events</li>
 				<li>Linux Foundation Associate Membership</li>
 			</ul>
+			<div style="height:40px;" aria-hidden="true"
+				class="wp-block-spacer">
+			</div>
 			<p>Additional benefits for End Users<sup><a href="#footnote-3">3</a></sup>:</p>
 			<ul>
 				<li>Eligibility to run for the elected 
@@ -108,7 +111,7 @@ function add_members_pricing_shortcode( $atts ) {
 			academic / nonprofit, plus:</p>
 			<ul>
 				<li>Run and vote for Governing Board</li>
-				<li>2 online programs a year to
+				<li>2 on-demand online programs a year to
 					build thought leadership hosted on core CNCF channels
 				</li>
 				<li>Submit vendor neutral content to
@@ -182,7 +185,7 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>Increased access to Linux
 					Foundation’s invitation-only Linux Foundation Member Summit
 				</li>
-				<li>Choice of 50-seat annual Linux Foundation Training subscription OR 10 10 LF Education coupons<sup><a href="#footnote-2">2</a></sup>
+				<li>Choice of 50-seat annual Linux Foundation Training subscription OR 10 LF Education coupons<sup><a href="#footnote-2">2</a></sup>
 				</li>
 				<li><a href="/npe-deterrence-benefits/">Additional NPE / Patent Troll Deterrence Tools</a> including royalty-free licenses from NPEs</li>
 			</ul>
