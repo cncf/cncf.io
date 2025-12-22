@@ -126,7 +126,7 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>Access to the <a
 						href="https://todogroup.org/" title="TODO Group">TODO Group</a> to meet
 					other open source organizations </li>
-				<li>Ten LF Education coupon codes for any training course or certification exam (including instructor-led courses, eLearning, & eLearning/exam bundles)<sup><a href="#footnote-2">2</a></sup></li>
+				<li>Ten LF Education coupons for 50% discount on any training course or certification exam (including instructor-led courses, eLearning, & eLearning/exam bundles)<sup><a href="#footnote-2">2</a></sup></li>
 			</ul>
 			<div style="height:40px;" aria-hidden="true"
 				class="wp-block-spacer">
@@ -181,7 +181,7 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>Increased access to Linux
 					Foundation’s invitation-only Linux Foundation Member Summit
 				</li>
-				<li>Choice of 50-seat annual Linux Foundation Training subscription OR 10 LF Education coupons<sup><a href="#footnote-2">2</a></sup>
+				<li>Choice of 50-seat annual Linux Foundation Training subscription OR 10 LF Education 50% discount coupons<sup><a href="#footnote-2">2</a></sup>
 				</li>
 				<li><a href="/npe-deterrence-benefits/">Additional NPE / Patent Troll Deterrence Tools</a> including royalty-free licenses from NPEs</li>
 			</ul>
@@ -272,6 +272,7 @@ function add_members_pricing_shortcode( $atts ) {
 	<sup id="footnote-1">1</sup> Including <a
 						href="/certification/software-conformance/"
 						title="Certified Kubernetes">Certified Kubernetes</a>,
+						<a href="https://github.com/cncf/k8s-ai-conformance">Certified Kubernetes AI Platform</a>,
 					<a href="/certification/kcsp/"
 						title="Kubernetes Certified Service Provider">Kubernetes
 						Certified Service Provider</a>, and <a
