@@ -181,7 +181,7 @@ function add_members_pricing_shortcode( $atts ) {
 				<li>Increased access to Linux
 					Foundation’s invitation-only Linux Foundation Member Summit
 				</li>
-				<li>50 Linux Foundation Education vouchers (1) a one-year <a href="https://training.linuxfoundation.org/learning-solutions/">subscription</a> that includes unlimited e-learning, SkillCreds, and Microlearning content – and up to two certifications; OR (2) a 50% discount coupon off of a <a href="https://training.linuxfoundation.org/instructor-led-training-courses/">Guaranteed-to-run, instructor-led course</a>.
+				<li>50 LF Education vouchers applicable towards (1) a one-year <a href="https://training.linuxfoundation.org/learning-solutions/">subscription</a> that includes unlimited e-learning, SkillCreds, and Microlearning content – and up to two certifications; OR (2) a 50% discount coupon off of a <a href="https://training.linuxfoundation.org/instructor-led-training-courses/">Guaranteed-to-run, instructor-led course</a>.
 				</li>
 				<li><a href="/npe-deterrence-benefits/">Additional NPE / Patent Troll Deterrence Tools</a> including royalty-free licenses from NPEs</li>
 			</ul>
