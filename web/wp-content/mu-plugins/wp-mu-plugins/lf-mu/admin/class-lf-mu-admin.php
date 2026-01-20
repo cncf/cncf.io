@@ -40,6 +40,15 @@ class Lf_Mu_Admin {
 	private $version;
 
 	/**
+	 * The webinar string.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $version    The current version of this plugin.
+	 */
+	private $webinar;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
