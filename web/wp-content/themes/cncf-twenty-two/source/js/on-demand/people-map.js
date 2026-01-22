@@ -84,7 +84,7 @@
 					}
 				);
 
-				const popup = '<button data-modal-content-id="modal-' + peopleObj[i]['id'] + '" data-modal-slug="' + peopleObj[i]['slug'] + '" data-modal-prefix-class="person" class="js-modal button-reset map-button modal-' + peopleObj[i]['slug'] + '" aria-haspopup="dialog">' + peopleObj[i]['name'] + '</button>';
+				const popup = '<button data-modal-content-id="modal-map-' + peopleObj[i]['id'] + '" data-modal-slug="' + peopleObj[i]['slug'] + '" data-modal-prefix-class="person" class="js-modal button-reset map-button modal-map-' + peopleObj[i]['slug'] + '" aria-haspopup="dialog">' + peopleObj[i]['name'] + '</button>';
 				marker.addListener(
 					"click",
 					() => {
