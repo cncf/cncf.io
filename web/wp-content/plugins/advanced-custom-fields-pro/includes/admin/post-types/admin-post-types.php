@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -9,13 +18,11 @@ if ( ! class_exists( 'ACF_Admin_Post_Types' ) ) :
 	/**
 	 * The ACF Post Types admin controller class
 	 */
-	#[AllowDynamicProperties]
 	class ACF_Admin_Post_Types extends ACF_Admin_Internal_Post_Type_List {
 
 		/**
 		 * The slug for the internal post type.
 		 *
-		 * @since 6.1
 		 * @var string
 		 */
 		public $post_type = 'acf-post-type';
@@ -23,7 +30,6 @@ if ( ! class_exists( 'ACF_Admin_Post_Types' ) ) :
 		/**
 		 * The admin body class used for the post type.
 		 *
-		 * @since 6.1
 		 * @var string
 		 */
 		public $admin_body_class = 'acf-admin-post-types';
@@ -100,7 +106,6 @@ if ( ! class_exists( 'ACF_Admin_Post_Types' ) ) :
 			// Set the "no found" label to be our custom HTML for no results.
 			if ( empty( acf_request_arg( 's' ) ) ) {
 				global $wp_post_types;
-				$this->not_found_label                                = $wp_post_types[ $this->post_type ]->labels->not_found;
 				$wp_post_types[ $this->post_type ]->labels->not_found = $this->get_not_found_html();
 			}
 

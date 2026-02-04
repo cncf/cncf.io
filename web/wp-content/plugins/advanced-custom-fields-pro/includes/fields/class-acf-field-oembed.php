@@ -1,7 +1,15 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! class_exists( 'acf_field_oembed' ) ) :
-	#[AllowDynamicProperties]
 	class acf_field_oembed extends acf_field {
 
 
@@ -178,7 +186,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 
 			?>
 <div <?php echo acf_esc_attrs( $atts ); ?>>
-	
+
 			<?php
 			acf_hidden_input(
 				array(
@@ -188,7 +196,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 				)
 			);
 			?>
-	
+
 	<div class="title">
 			<?php
 			acf_text_input(
@@ -204,7 +212,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 			<a data-name="clear-button" href="#" class="acf-icon -cancel grey"></a>
 		</div>
 	</div>
-	
+
 	<div class="canvas">
 		<div class="canvas-media">
 			<?php
@@ -215,7 +223,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		</div>
 		<i class="acf-icon -picture hide-if-value"></i>
 	</div>
-	
+
 </div>
 			<?php
 		}

@@ -1,11 +1,12 @@
 <?php
 /**
- * ACF Admin Field Group Class
+ * @package ACF
+ * @author  WP Engine
  *
- * @class       acf_admin_field_group
- *
- * @package     ACF
- * @subpackage  Admin
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! class_exists( 'acf_admin_field_group' ) ) :
@@ -88,7 +89,6 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 					'Move field group to trash?'        => esc_html__( 'Move field group to trash?', 'acf' ),
 					'No toggle fields available'        => esc_html__( 'No toggle fields available', 'acf' ),
 					'Move Custom Field'                 => esc_html__( 'Move Custom Field', 'acf' ),
-					'Close modal'                       => esc_html__( 'Close modal', 'acf' ),
 					'Field moved to other group'        => esc_html__( 'Field moved to other group', 'acf' ),
 					'Field groups linked successfully.' => esc_html__( 'Field groups linked successfully.', 'acf' ),
 					'Checked'                           => esc_html__( 'Checked', 'acf' ),

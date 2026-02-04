@@ -1,7 +1,15 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! class_exists( 'acf_field_google_map' ) ) :
-	#[AllowDynamicProperties]
 	class acf_field_google_map extends acf_field {
 
 
@@ -133,7 +141,7 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 
 			?>
 <div <?php echo acf_esc_attrs( $attrs ); ?>>
-	
+
 			<?php
 			acf_hidden_input(
 				array(
@@ -142,22 +150,23 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 				)
 			);
 			?>
-	
+
 	<div class="title">
-		
-		<div class="acf-actions -hover">
-			<a href="#" data-name="search" class="acf-icon -search grey" title="<?php esc_attr_e( 'Search', 'acf' ); ?>"></a>
-			<a href="#" data-name="clear" class="acf-icon -cancel grey" title="<?php esc_attr_e( 'Clear location', 'acf' ); ?>"></a>
-			<a href="#" data-name="locate" class="acf-icon -location grey" title="<?php esc_attr_e( 'Find current location', 'acf' ); ?>"></a>
-		</div>
-		
+
 		<input class="search" type="text" placeholder="<?php esc_attr_e( 'Search for address...', 'acf' ); ?>" value="<?php echo esc_attr( $search ); ?>" />
+
+		<div class="acf-actions -hover">
+			<button type="button" data-name="search" class="acf-icon -search grey" aria-label="<?php esc_attr_e( 'Search', 'acf' ); ?>"></button>
+			<button type="button" data-name="clear" class="acf-icon -cancel grey" aria-label="<?php esc_attr_e( 'Clear location', 'acf' ); ?>"></button>
+			<button type="button" data-name="locate" class="acf-icon -location grey" aria-label="<?php esc_attr_e( 'Find current location', 'acf' ); ?>"></button>
+		</div>
+
 		<i class="acf-loading"></i>
-				
+
 	</div>
-	
+
 	<div class="canvas" style="<?php echo esc_attr( 'height: ' . $field['height'] . 'px' ); ?>"></div>
-	
+
 </div>
 			<?php
 		}

@@ -1,12 +1,12 @@
 <?php
 /**
- * ACF Internal Post Type List class
- *
- * Base class to add functionality to ACF internal post type list pages.
- *
  * @package ACF
- * @subpackage Admin
- * @since 6.1
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -549,8 +549,8 @@ if ( ! class_exists( 'ACF_Admin_Internal_Post_Type_List' ) ) :
 				foreach ( $activated as $activated_id ) {
 					$links[] = sprintf(
 						'<a href="%1$s">%2$s</a>',
-						get_edit_post_link( $activated_id ),
-						get_the_title( $activated_id )
+						esc_url( get_edit_post_link( $activated_id ) ),
+						esc_html( get_the_title( $activated_id ) )
 					);
 				}
 
@@ -619,8 +619,8 @@ if ( ! class_exists( 'ACF_Admin_Internal_Post_Type_List' ) ) :
 				foreach ( $deactivated as $deactivated_id ) {
 					$links[] = sprintf(
 						'<a href="%1$s">%2$s</a>',
-						get_edit_post_link( $deactivated_id ),
-						get_the_title( $deactivated_id )
+						esc_url( get_edit_post_link( $deactivated_id ) ),
+						esc_html( get_the_title( $deactivated_id ) )
 					);
 				}
 
@@ -688,8 +688,8 @@ if ( ! class_exists( 'ACF_Admin_Internal_Post_Type_List' ) ) :
 				foreach ( $duplicated as $duplicated_id ) {
 					$links[] = sprintf(
 						'<a href="%1$s">%2$s</a>',
-						get_edit_post_link( $duplicated_id ),
-						get_the_title( $duplicated_id )
+						esc_url( get_edit_post_link( $duplicated_id ) ),
+						esc_html( get_the_title( $duplicated_id ) )
 					);
 				}
 
@@ -755,8 +755,8 @@ if ( ! class_exists( 'ACF_Admin_Internal_Post_Type_List' ) ) :
 				foreach ( $synced as $synced_id ) {
 					$links[] = sprintf(
 						'<a href="%1$s">%2$s</a>',
-						get_edit_post_link( $synced_id ),
-						get_the_title( $synced_id )
+						esc_url( get_edit_post_link( $synced_id ) ),
+						esc_html( get_the_title( $synced_id ) )
 					);
 				}
 

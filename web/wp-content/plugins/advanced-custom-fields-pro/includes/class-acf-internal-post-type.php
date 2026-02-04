@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -165,7 +174,7 @@ if ( ! class_exists( 'ACF_Internal_Post_Type' ) ) {
 		 * @since 6.1
 		 *
 		 * @param integer|string $id The post ID, key, or name.
-		 * @return WP_Post|bool The post object, or false on failure.
+		 * @return WP_Post|boolean The post object, or false on failure.
 		 */
 		public function get_post_object( $id = 0 ) {
 			if ( is_numeric( $id ) ) {
@@ -731,7 +740,12 @@ if ( ! class_exists( 'ACF_Internal_Post_Type' ) ) {
 			// When importing a new field group, insert a temporary post and set the field group's ID.
 			// This allows fields to be updated before the field group (field group ID is needed for field parent setting).
 			if ( ! $post['ID'] ) {
-				$post['ID'] = wp_insert_post( array( 'post_title' => $post['key'] ) );
+				$post['ID'] = wp_insert_post(
+					array(
+						'post_title' => $post['key'],
+						'post_type'  => $this->post_type,
+					)
+				);
 			}
 
 			$post = $this->update_post( $post );

@@ -1,13 +1,26 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
 if ( ! class_exists( 'acf_validation' ) ) :
-	#[AllowDynamicProperties]
 	class acf_validation {
 
+		/**
+		 * An array of validation errors.
+		 * @var array
+		 */
+		public $errors = array();
 
 		/**
 		 * This function will setup the class functionality
@@ -20,9 +33,6 @@ if ( ! class_exists( 'acf_validation' ) ) :
 		 * @return  n/a
 		 */
 		function __construct() {
-
-			// vars
-			$this->errors = array();
 
 			// ajax
 			add_action( 'wp_ajax_acf/validate_save_post', array( $this, 'ajax_validate_save_post' ) );

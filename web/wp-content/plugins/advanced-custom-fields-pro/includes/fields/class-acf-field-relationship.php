@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! class_exists( 'acf_field_relationship' ) ) :
 
@@ -51,7 +60,7 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 				return $choices;
 			}
 			if ( ! empty( $rule_value ) ) {
-				$post_title = get_the_title( $rule_value );
+				$post_title = esc_html( get_the_title( $rule_value ) );
 				$choices    = array( $rule_value => $post_title );
 			}
 			return $choices;
@@ -317,7 +326,7 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 			}
 
 			// vars
-			$title = acf_get_post_title( $post, $is_search );
+			$title = esc_html( acf_get_post_title( $post, $is_search ) );
 
 			// featured_image
 			if ( acf_in_array( 'featured_image', $field['elements'] ) ) {

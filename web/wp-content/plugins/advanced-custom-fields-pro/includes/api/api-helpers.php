@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 /**
  * This function will return true for a non empty array
@@ -1287,8 +1296,19 @@ function acf_get_grouped_posts( $args ) {
 
 	// find array of post_type
 	$post_types          = acf_get_array( $args['post_type'] );
-	$post_types_labels   = acf_get_pretty_post_types( $post_types );
-	$is_single_post_type = ( count( $post_types ) == 1 );
+	$is_single_post_type = ( count( $post_types ) === 1 );
+
+	// WordPress 6.8+ sorts post_type arrays for cache key generation
+	// We need to use the same sorted order when processing results
+	if (
+		! $is_single_post_type &&
+		$args['posts_per_page'] !== -1 &&
+		version_compare( get_bloginfo( 'version' ), '6.8', '>=' )
+	) {
+		sort( $post_types );
+	}
+
+	$post_types_labels = acf_get_pretty_post_types( $post_types );
 
 	// attachment doesn't work if it is the only item in an array
 	if ( $is_single_post_type ) {

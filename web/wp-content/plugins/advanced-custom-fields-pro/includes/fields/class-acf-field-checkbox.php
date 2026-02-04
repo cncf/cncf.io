@@ -1,9 +1,31 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! class_exists( 'acf_field_checkbox' ) ) :
 
 	class acf_field_checkbox extends acf_field {
 
+		/**
+		 * A local store of all values for de-duplication.
+		 *
+		 * @var array
+		 */
+		private array $_values; //phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore -- backwards compatibility.
+
+		/**
+		 * An internal boolean tracking if all checkboxes are checked.
+		 *
+		 * @var boolean
+		 */
+		private bool $_all_checked; //phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore -- backwards compatibility.
 
 		/**
 		 * This function will setup the field type data
@@ -66,7 +88,13 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 			$li = '';
 			$ul = array(
 				'class' => 'acf-checkbox-list',
+				'role'  => 'group',
 			);
+
+			// Add aria-labelledby if field has an ID for proper screen reader announcement
+			if ( ! empty( $field['id'] ) ) {
+				$ul['aria-labelledby'] = $field['id'] . '-label';
+			}
 
 			// append to class
 			$ul['class'] .= ' ' . ( $field['layout'] == 'horizontal' ? 'acf-hl' : 'acf-bl' );

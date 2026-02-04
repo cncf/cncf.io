@@ -160,7 +160,7 @@ function add_cncf_people_map_shortcode( $atts ) {
 
 					if ( $company ) {
 						?>
-			<div class="person__company-container">
+					<div class="person__company-container">
 						<?php
 						if ( $show_logos && $company_logo_url && $company_landscape_url ) {
 							?>

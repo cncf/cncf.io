@@ -1,21 +1,35 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
 if ( ! class_exists( 'acf_admin_tools' ) ) :
-	#[AllowDynamicProperties]
 	class acf_admin_tools {
 
 
-		/** @var array Contains an array of admin tool instances */
-		var $tools = array();
+		/**
+		 * Contains an array of admin tool instances.
+		 *
+		 * @var array
+		 */
+		public $tools = array();
 
-
-		/** @var string The active tool */
-		var $active = '';
-
+		/**
+		 * The active tool.
+		 *
+		 * @var string
+		 */
+		public $active = '';
 
 		/**
 		 * __construct

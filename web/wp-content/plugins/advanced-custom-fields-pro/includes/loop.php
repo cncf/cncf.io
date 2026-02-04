@@ -1,30 +1,26 @@
 <?php
+/**
+ * @package ACF
+ * @author  WP Engine
+ *
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
 if ( ! class_exists( 'acf_loop' ) ) :
-	#[AllowDynamicProperties]
 	class acf_loop {
 
-
 		/**
-		 * This function will setup the class functionality
-		 *
-		 * @type    function
-		 * @date    5/03/2014
-		 * @since   5.0.0
-		 *
-		 * @param   n/a
-		 * @return  n/a
+		 * An array of loops.
+		 * @var array
 		 */
-		function __construct() {
-
-			// vars
-			$this->loops = array();
-		}
-
+		public $loops = array();
 
 		/**
 		 * This function will return true if no loops exist

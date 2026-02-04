@@ -1,10 +1,10 @@
 === Advanced Custom Fields (ACF®) PRO ===
 Contributors: deliciousbrains, wpengine, elliotcondon, mattshaw, lgladdy, antpb, johnstonphilip, dalewilliams, polevaultweb
 Tags: acf, fields, custom fields, meta, repeater
-Requires at least: 6.0
-Tested up to: 6.8.1
+Requires at least: 6.2
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 6.4.2
+Stable tag: 6.7.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,132 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.7.0.2 =
+*Release Date 11th December 2025*
+*PRO Only Release*
+
+* Fix - Posts with V3 blocks can now be saved without clicking the block
+
+= 6.7.0.1 =
+*Release Date 10th December 2025*
+*PRO Only Release*
+
+* Fix - Fields in V3 Blocks used as an InnerBlock are now clickable
+* Fix - V3 Blocks with a script tag in the render template no longer crash in the editor
+* Fix - V3 Blocks with Inline Editing enabled no longer crash the browser tab in some scenarios
+* Fix - V3 Blocks with Inline Editing enabled used as an InnerBlock no longer update the field values of the parent block
+* Fix - Quickly closing the expanded editor for V3 blocks will no longer prevent field values from being updated
+
+= 6.7.0 =
+*Release Date 3rd December 2025*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-7-released/)
+* New - ACF Blocks V3 now supports Inline Editing - edit your block content directly in place, right inside the editor. Just opt in to enable it.
+* Enhancement - Accordion field accessibility improvements
+* Enhancement - Google Maps field accessibility improvements
+* Enhancement - Styling improvements to the V3 Blocks expanded editor
+* Fix - V3 ACF Blocks validation now clears properly when more than one block is in the editor.
+* Fix - Relationship, Post Object, and Page Link fields now sort posts correctly on WordPress 6.8+
+* Fix - List tables now respect the convert_field_name_to_lowercase javascript filter
+* Fix - WYSIWYG field on attachment pages no longer sends ajax on every keystroke
+
+= 6.6.2 =
+*Release Date 29th October 2025*
+
+* Enhancement - Added a new `convert_field_name_to_lowercase` JS filter to allow uppercase letters in ACF field names
+* Enhancement - The form for V3 Blocks can now be optionally hidden from the sidebar via a new `hideFieldsInSidebar` setting in block.json
+* Enhancement - V3 Blocks now display an "Open Expanded Editor" button in the sidebar for easier access to the full edit form
+* Fix - The buttons to reorder ACF metaboxes are no longer hidden for metaboxes in the block editor sidebar
+* Fix - V3 Blocks now display a fallback message when the block preview can't be rendered due to invalid HTML being used in field values
+* Fix - V3 Blocks no longer show a loading spinner when preloaded
+* Fix - V3 Blocks now save default field values even if the block wasn't interacted with before saving
+* Fix - Pressing CMD/CTRL + Z no longer causes the fields to disappear in V3 Blocks
+* Fix - The form for V3 Blocks now opens on the left side in RTL languages
+
+= 6.6.1 =
+*Release Date 16th October 2025*
+
+* Fix - The Color Picker palette now displays correctly with a larger number of custom palette colors
+* Fix - The WYSIWYG field no longer displays an extra textarea in ACF Blocks
+* Fix - The type signature of the ACF Blocks render function now matches prior to 6.6, resolving potential type hinting errors
+* Fix - V3 Blocks now correctly update the block preview when changing text controls
+* Fix - V3 Blocks now work correctly in the Widget block editor
+* Fix - V3 Blocks no longer render an extra hidden div into the block editor
+* Fix - Fields on V3 blocks now consistently render properly when switching between “Post” and “Block” view in the sidebar
+
+= 6.6.0 =
+*Release Date 7th October 2025*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-6-released/)
+* New - ACF Blocks Version 3 supports WordPress Block API Version 3
+* New - ACF now requires WordPress version 6.2 or newer
+* Enhancement - Field Groups can now have a separate Display Title
+* Enhancement - Accessibility improvements for button groups, checkbox, radio, and image field types
+* Enhancement - Color Picker field can now use a custom palette or use theme.json colors as the palette
+* Enhancement - ACF admin notices now use WordPress core styles again
+* Enhancement - The Flexible Content “Delete Layout” and “Rename Layout” modals now display correctly on mobile
+* Fix - Blocks V3: You can now edit ACF blocks in Edit mode inside WP Core's pattern editor
+* Fix - Blocks V3: Validation errors now first appear after you click "Save/publish", as opposed to immediately, while you are typing into a field for the first time
+* Fix - Blocks V3: After fixing a field validation error it shows as fixed immediately as opposed to needing to click out of the block and back into it
+* Fix - Blocks V3: Blocks with radio buttons no longer affect each other's field values
+* Fix - Blocks V3: Blocks with required radio buttons now validate correctly
+* Fix - Blocks V3: ACF field validation now works in the Site Editor
+* Fix - Blocks V3: WYSIWYG fields are no longer affected by typing into other blocks
+* Fix - New field names are lowercase only
+* Fix - Icon Picker now enforces required validation
+* Fix - Calls to jQuery’s deprecated focus function have been updated to use the trigger function
+* Fix - Layouts inside cloned Flexible Content fields can now be disabled and renamed
+* i18n - Updated PRO Japanese translations (props danielkun)
+
+= 6.5.1 =
+*Release Date 10th September 2025*
+
+* Enhancement - The Flexible Content “Expand All” and “Collapse All” button now appear correctly on mobile
+* Enhancement - The Flexible Content delete layout button is now back in the main layout header, making it easier to delete layouts
+* Enhancement - The JSON import tool now limits the selectable files to JSON files
+* Fix - Disabled Flexible Content layouts are no longer counted towards min/max layout validation
+* Fix - The top “Add Row” button for layouts is now disabled when layouts have reached the max layouts validation
+* Fix - The per-layout “Add Row” and “Duplicate Layout” buttons are now disabled when layouts have reached the max layouts validation
+* Fix - Disabling Flexible Content layouts no longer disables layouts in cloned Flexible Content fields using a different post ID on the same page
+* Fix - Flexible Content “Add Layout” menu is no longer hidden by some field types
+* Fix - Flexible Content layout names can now allow some safe HTML
+* Fix - When creating a temporary post type during import, ACF now correctly sets the ACF post type, rather than defaulting to post
+* Fix - ACF PRO updates are now shown even when no other plugins have an update available
+
+= 6.5.0.1 =
+*Release Date 12th August 2025*
+*PRO Only Release*
+
+* Fix - Flexible Content layouts configured with a "Layout" setting of "Table" are now rendered correctly in the post editor
+* Fix - Flexible Content "Add Layout" buttons now insert the new layout in the correct position
+* Fix - Long Flexible Content layout names no longer extend outside of the "Add Layout" dropdown
+
+= 6.5.0 =
+*Release Date 11th August 2025*
+
+* New - Flexible Content layouts can now be renamed in the post editor, giving content editors better clarity when managing layouts
+* New - Flexible Content layouts can now be disabled, preventing them from rendering on the frontend without needing to delete their data
+* New - Flexible Content layouts can now be collapsed and expanded in bulk for faster content editing
+* New - Editing a Flexible Content layout now highlights the layout being edited, making it easier to identify
+* New - The Date and Date Time Picker fields can now be configured to default to the current date
+* Fix - Custom Icon Picker tabs now work correctly when used inside an ACF Block
+* Fix - Duplicating a Field Group no longer causes a fatal error when using Russian translations
+* Fix - ACF classes no longer use dynamic class properties, improving compatibility with PHP 8.2+
+* Fix - ACF PRO no longer shows an update available immediately after updating to the latest version
+* Fix - Field group metabox collapse and expand buttons are no longer misaligned in the post editor
+* Fix - The ACF Site Health section no longer causes a PHP warning when field group location rules are incomplete
+* Security - HTML is now escaped from field validation errors and tooltips
+
+= 6.4.3 =
+*Release Date 22nd July 2025*
+
+* Security - Unsafe HTML in field group labels is now correctly escaped for conditionally loaded field groups, resolving a JS execution vulnerability in the classic editor
+* Security - HTML is now escaped from field group labels when output in the ACF admin
+* Security - Bidirectional and Conditional Logic Select2 elements no longer render HTML in field labels or post titles
+* Security - The `acf.escHtml` function now uses the third party DOMPurify library to ensure all unsafe HTML is removed. A new `esc_html_dompurify_config` JS filter can be used to modify the default behaviour
+* Security - Post titles are now correctly escaped whenever they are output by ACF code. Thanks to Shogo Kumamaru of LAC Co., Ltd. for the responsible disclosure
+* Security - An admin notice is now displayed when version 3 of the Select2 library is used, as it has now been deprecated in favor of version 4
 
 = 6.4.2 =
 *Release Date 20th May 2025*

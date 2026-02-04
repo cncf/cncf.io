@@ -1,8 +1,12 @@
 <?php
 /**
- * This is a PHP file containing the code for the acf_field_icon_picker class.
+ * @package ACF
+ * @author  WP Engine
  *
- * @package Advanced_Custom_Fields_Pro
+ * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * "ACF" is a trademark of WP Engine.
+ * Licensed under the GNU General Public License v2 or later.
+ * https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! class_exists( 'acf_field_icon_picker' ) ) :
@@ -72,9 +76,20 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 		 * @since 6.4
 		 *
 		 * @param string $tab_name The name of the tab being rendered.
+		 * @param array  $field    The Icon Picker field being rendered.
 		 * @return void
 		 */
-		public function render_icon_list_tab( $tab_name ) {
+		public function render_icon_list_tab( $tab_name, $field ) {
+			$custom_icons = '';
+
+			if ( 'dashicons' !== $tab_name ) {
+				$custom_icons = apply_filters( 'acf/fields/icon_picker/' . $tab_name . '/icons', array(), $field );
+
+				// Bail if this is a custom tab and no icons are provided.
+				if ( ! is_array( $custom_icons ) || empty( $custom_icons ) ) {
+					return;
+				}
+			}
 			?>
 			<div class="acf-icon-list-search-wrap">
 				<?php
@@ -87,7 +102,14 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 				);
 				?>
 			</div>
-			<div class="acf-icon-list" role="radiogroup" data-parent-tab="<?php echo esc_attr( $tab_name ); ?>"></div>
+			<div
+				class="acf-icon-list"
+				role="radiogroup"
+				data-parent-tab="<?php echo esc_attr( $tab_name ); ?>"
+				<?php if ( ! empty( $custom_icons ) ) : ?>
+					<?php printf( 'data-icons="%s"', esc_attr( wp_json_encode( $custom_icons ) ) ); ?>
+				<?php endif; ?>
+			></div>
 			<div class="acf-icon-list-empty">
 				<img src="<?php echo esc_url( acf_get_url( 'assets/images/face-sad.svg' ) ); ?>" />
 				<p class="acf-no-results-text">
@@ -172,7 +194,7 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 
 				switch ( $name ) {
 					case 'dashicons':
-						$this->render_icon_list_tab( $name );
+						$this->render_icon_list_tab( $name, $field );
 						break;
 					case 'media_library':
 						?>
@@ -227,18 +249,7 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 						break;
 					default:
 						do_action( 'acf/fields/icon_picker/tab/' . $name, $field );
-
-						$custom_icons = apply_filters( 'acf/fields/icon_picker/' . $name . '/icons', array(), $field );
-
-						if ( is_array( $custom_icons ) && ! empty( $custom_icons ) ) {
-							$this->render_icon_list_tab( $name, $custom_icons );
-
-							acf_localize_data(
-								array(
-									'iconPickerIcons_' . $name  => $custom_icons,
-								)
-							);
-						}
+						$this->render_icon_list_tab( $name, $field );
 				}
 
 				echo '</div>';
@@ -326,9 +337,14 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 		 * @return boolean true If the value is valid, false if not.
 		 */
 		public function validate_value( $valid, $value, $field, $input ) {
-			// If the value is empty, return true. You're allowed to save nothing.
+			// If the value is empty and it's not required, return true. You're allowed to save nothing.
 			if ( empty( $value ) && empty( $field['required'] ) ) {
 				return true;
+			}
+
+			// Validate required.
+			if ( $field['required'] && ( empty( $value ) || empty( $value['value'] ) ) ) {
+				return false;
 			}
 
 			// If the value is not an array, return $valid status.
