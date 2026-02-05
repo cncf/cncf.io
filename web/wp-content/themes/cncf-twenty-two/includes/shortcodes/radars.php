@@ -26,10 +26,11 @@ function add_radars_shortcode( $atts ) {
 		'radars'
 	);
 
-	$count = $atts['count'];
+	// Convert to integer and validate.
+	$count = intval( $atts['count'] );
 
-	// If count is not a number something wrong.
-	if ( ! is_int( $count ) ) {
+	// If count is not a positive number something wrong.
+	if ( $count <= 0 ) {
 		return;
 	}
 

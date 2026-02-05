@@ -44,10 +44,10 @@ function add_home_case_studies_shortcode( $atts ) {
 		if ( ! $logo ) {
 			$logo = get_post_meta( $id, 'lf_case_study_company_logo', true );
 		}
-		$background_image = get_post_meta( $id, 'lf_case_study_homepage_image', true );
+	$background_image = get_post_meta( $id, 'lf_case_study_homepage_image', true );
 		if ( ! $background_image ) {
 			// use the regular listing background image if no homepage image exists.
-			$image = get_post_thumbnail_id( $id );
+			$background_image = get_post_thumbnail_id( $id );
 		}
 		?>
 	<div class="featured-case-studies__item has-animation-scale-2">
@@ -119,7 +119,7 @@ function add_home_intro_boxes_shortcode() {
 			<p
 				class="home-intro-box__text">From coders to creatives, join our welcoming, global community and advance CNCF cloud native projects.</p>
 			<p
-				class="is-style-link-cta"><a href="http://contribute.cncf.io/">Start Contributing</a></p>
+				class="is-style-link-cta"><a href="https://contribute.cncf.io/">Start Contributing</a></p>
 		</div>
 	</div>
 
