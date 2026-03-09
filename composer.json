@@ -26,7 +26,6 @@
     "rvtraveller/qs-composer-installer": "^1.1",
     "vlucas/phpdotenv": "^5.5.0",
     "wpackagist-plugin/autodescription": "^5",
-    "wpackagist-plugin/code-syntax-block": "3.2.1",
     "wpackagist-plugin/flying-pages": "^2.0.8",
     "wpackagist-plugin/flying-scripts": "^1.1.7",
     "wpackagist-plugin/pantheon-advanced-page-cache": "^2",
