@@ -124,6 +124,7 @@ Thumbs.db
 !web/wp-content/plugins/tab-container-block
 web/wp-content/plugins/tab-container-block/node_modules
 web/wp-content/mu-plugins/wp-mu-plugins/lf-blocks/node_modules
+!web/wp-content/plugins/code-syntax-block
 
 # Ignore local VS code settings
 web/wp-content/themes/cncf-twenty-two/.vscode

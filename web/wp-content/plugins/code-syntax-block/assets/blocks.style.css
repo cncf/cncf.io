@@ -1,0 +1,8 @@
+
+/* Fix first item indent.
+   Issue: https://github.com/mkaz/code-syntax-block/issues/54
+   Picks up padding on from code definition.
+*/
+.wp-block-code code {
+    padding-left: 0;
+}
