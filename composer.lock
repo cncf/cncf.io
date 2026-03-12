@@ -304,16 +304,16 @@
         },
         {
             "name": "pantheon-systems/wordpress-composer",
-            "version": "6.9.3",
+            "version": "6.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wordpress-composer.git",
-                "reference": "aa965e6169106c09ccaf773a2abc949c5d1de540"
+                "reference": "43205c9a4b8f6b642e90a7459aac19eb63ec423b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/aa965e6169106c09ccaf773a2abc949c5d1de540",
-                "reference": "aa965e6169106c09ccaf773a2abc949c5d1de540",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-composer/zipball/43205c9a4b8f6b642e90a7459aac19eb63ec423b",
+                "reference": "43205c9a4b8f6b642e90a7459aac19eb63ec423b",
                 "shasum": ""
             },
             "require": {
@@ -331,10 +331,10 @@
             ],
             "description": "WordPress for Pantheon with a composer.json file.",
             "support": {
-                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.9.3",
+                "source": "https://github.com/pantheon-systems/wordpress-composer/tree/6.9.4",
                 "issues": "https://github.com/pantheon-systems/wordpress-composer/issues"
             },
-            "time": "2026-03-11T02:20:23+00:00"
+            "time": "2026-03-11T20:20:28+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -943,15 +943,15 @@
         },
         {
             "name": "wpackagist-plugin/leadin",
-            "version": "11.3.39",
+            "version": "11.3.43",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/leadin/",
-                "reference": "tags/11.3.39"
+                "reference": "tags/11.3.43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/leadin.11.3.39.zip"
+                "url": "https://downloads.wordpress.org/plugin/leadin.11.3.43.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1418,12 +1418,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "4c336cfd0f836275a3ea63a79b5111903f4a8c30"
+                "reference": "8a08058dd09fdd6cc42f420f4cdbf0cac027c82b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/4c336cfd0f836275a3ea63a79b5111903f4a8c30",
-                "reference": "4c336cfd0f836275a3ea63a79b5111903f4a8c30",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/8a08058dd09fdd6cc42f420f4cdbf0cac027c82b",
+                "reference": "8a08058dd09fdd6cc42f420f4cdbf0cac027c82b",
                 "shasum": ""
             },
             "conflict": {
@@ -1566,7 +1566,7 @@
                 "cosenary/instagram": "<=2.3",
                 "couleurcitron/tarteaucitron-wp": "<0.3",
                 "cpsit/typo3-mailqueue": "<0.4.3|>=0.5,<0.5.1",
-                "craftcms/cms": "<4.17.3|>=5,<=5.9.8",
+                "craftcms/cms": "<=4.17.3|>=5,<=5.9.8",
                 "craftcms/commerce": ">=4,<4.11|>=5,<5.6",
                 "craftcms/composer": ">=4.0.0.0-RC1-dev,<=4.10|>=5.0.0.0-RC1-dev,<=5.5.1",
                 "craftcms/craft": ">=3.5,<=4.16.17|>=5.0.0.0-RC1-dev,<=5.8.21",
@@ -1859,7 +1859,7 @@
                 "librenms/librenms": "<26.2",
                 "liftkit/database": "<2.13.2",
                 "lightsaml/lightsaml": "<1.3.5",
-                "limesurvey/limesurvey": "<6.5.12",
+                "limesurvey/limesurvey": "<6.15.4",
                 "livehelperchat/livehelperchat": "<=3.91",
                 "livewire-filemanager/filemanager": "<=1.0.4",
                 "livewire/livewire": "<2.12.7|>=3.0.0.0-beta1,<3.6.4",
@@ -2104,8 +2104,8 @@
                 "setasign/fpdi": "<2.6.4",
                 "sfroemken/url_redirect": "<=1.2.1",
                 "sheng/yiicms": "<1.2.1",
-                "shopware/core": "<6.6.10.9-dev|>=6.7,<6.7.6.1-dev",
-                "shopware/platform": "<6.6.10.7-dev|>=6.7,<6.7.3.1-dev",
+                "shopware/core": "<6.6.10.15-dev|>=6.7,<6.7.8.1-dev",
+                "shopware/platform": "<6.6.10.15-dev|>=6.7,<6.7.8.1-dev",
                 "shopware/production": "<=6.3.5.2",
                 "shopware/shopware": "<=5.7.17|>=6.4.6,<6.6.10.10-dev|>=6.7,<6.7.6.1-dev",
                 "shopware/storefront": "<6.6.10.10-dev|>=6.7,<6.7.5.1-dev",
@@ -2439,7 +2439,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-11T01:36:21+00:00"
+            "time": "2026-03-11T22:08:36+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
