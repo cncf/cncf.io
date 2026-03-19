@@ -126,6 +126,7 @@
 				if ( $modal_slug !== '' ) {
 					const url = new URL( window.location );
 					url.searchParams.set( 'p', $modal_slug );
+					url.searchParams.set( '_sf_s', $modal_slug.replace( /-/g, ' ' ) );
 					window.history.pushState( {}, '', url );
 				}
 
