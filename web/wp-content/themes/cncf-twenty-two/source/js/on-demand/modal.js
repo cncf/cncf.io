@@ -152,6 +152,7 @@
 
 				const url = new URL( window.location );
 				url.searchParams.delete( 'p' );
+				url.searchParams.delete( '_sf_s' );
 				window.history.pushState( {}, '', url );
 
 				let delay = $js_modal.css( 'animation-duration' );
