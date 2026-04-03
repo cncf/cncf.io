@@ -40,8 +40,8 @@ function add_kubeweeklys_shortcode() {
 				}
 
 				// If end of a year, insert a closing div.
-				if ( ( 0 == $y ) || ( $y > (int) get_the_date( 'Y' ) ) ) :
-					if ( 0 != $y ) {
+				if ( ( 0 === $y ) || ( $y > (int) get_the_date( 'Y' ) ) ) :
+					if ( 0 !== $y ) {
 						echo '</div>';
 					}
 					$y = (int) get_the_date( 'Y' );
