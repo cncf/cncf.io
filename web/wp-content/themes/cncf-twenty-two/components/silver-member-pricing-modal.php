@@ -57,21 +57,21 @@ wp_enqueue_style( 'wp-block-table' );
 						</tr>
 						<tr>
 							<td>500 – 999 employees</td>
-							<td>$10,000</td>
-							<td>$25,000</td>
+							<td>$20,000</td>
+							<td>$35,000</td>
 						</tr>
 						<tr>
 							<td>100 – 499 employees</td>
-							<td>$5,000</td>
-							<td>$15,000</td>
+							<td>$10,000</td>
+							<td>$20,000</td>
 						</tr>
 						<tr>
-							<td>50 – 99 employees</td>
+							<td>11 – 99 employees</td>
 							<td>$5,000</td>
 							<td>$10,000</td>
 						</tr>
 						<tr>
-							<td>Under 50 employees</td>
+							<td>1 - 10 employees</td>
 							<td>$2,000</td>
 							<td>$7,000</td>
 						</tr>
