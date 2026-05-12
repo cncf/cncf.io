@@ -150,6 +150,12 @@ foreach ( $people as $p ) {
 	if ( property_exists( $p, 'website' ) ) {
 		$params['meta_input']['lf_person_website'] = $p->website;
 	}
+	if ( property_exists( $p, 'lfid' ) ) {
+		$params['meta_input']['lf_person_lfid'] = $p->lfid;
+	}
+	if ( property_exists( $p, 'mentorships' ) ) {
+		$params['meta_input']['lf_person_mentorships'] = wp_json_encode( $p->mentorships );
+	}
 
 	$args = array(
 		'post_type'   => 'lf_person',
