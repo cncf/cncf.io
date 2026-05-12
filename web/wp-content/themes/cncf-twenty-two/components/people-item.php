@@ -40,6 +40,7 @@ $location              = get_post_meta( get_the_ID(), 'lf_person_location', true
 $related_post          = get_post_meta( get_the_ID(), 'lf_related_post', true );
 $languages             = get_the_terms( get_the_ID(), 'lf-language' );
 $projects              = get_the_terms( get_the_ID(), 'lf-project' );
+$mentorships           = json_decode( get_post_meta( get_the_ID(), 'lf_person_mentorships', true ), true );
 $content               = get_the_content();
 $current_url           = home_url( 'people/ambassadors' );
 
@@ -342,6 +343,56 @@ if ( has_term( 'golden-kubestronaut', 'lf-person-category' ) ) {
 					<div class="person__content">
 						<?php the_content(); ?>
 					</div>
+
+					<?php if ( ! empty( $mentorships ) && is_array( $mentorships ) ) : ?>
+					<div class="person__mentorships">
+						<h4>Mentorships</h4>
+						<?php foreach ( $mentorships as $mentorship ) : ?>
+						<div class="person__mentorship">
+							<ul>
+								<?php if ( ! empty( $mentorship['program'] ) ) : ?>
+									<li><strong>Program:</strong> <?php echo esc_html( $mentorship['program'] ); ?></li>
+								<?php endif; ?>
+								<?php if ( ! empty( $mentorship['project_title'] ) ) : ?>
+									<li><strong>Project:</strong> <?php echo esc_html( $mentorship['project_title'] ); ?></li>
+								<?php endif; ?>
+								<?php if ( ! empty( $mentorship['organization'] ) ) : ?>
+									<li><strong>Organization:</strong> <?php echo esc_html( $mentorship['organization'] ); ?></li>
+								<?php endif; ?>
+								<?php if ( ! empty( $mentorship['start_date'] ) || ! empty( $mentorship['end_date'] ) ) : ?>
+									<li><strong>Dates:</strong>
+										<?php
+										if ( ! empty( $mentorship['start_date'] ) ) {
+											echo esc_html( gmdate( 'M j, Y', strtotime( $mentorship['start_date'] ) ) );
+										}
+										if ( ! empty( $mentorship['end_date'] ) ) {
+											echo ' &ndash; ' . esc_html( gmdate( 'M j, Y', strtotime( $mentorship['end_date'] ) ) );
+										}
+										?>
+									</li>
+								<?php endif; ?>
+								<?php if ( ! empty( $mentorship['idea_url'] ) ) : ?>
+									<li><a href="<?php echo esc_url( $mentorship['idea_url'] ); ?>">Idea</a></li>
+								<?php endif; ?>
+								<?php if ( ! empty( $mentorship['platform_url'] ) ) : ?>
+									<li><a href="<?php echo esc_url( $mentorship['platform_url'] ); ?>">Platform</a></li>
+								<?php endif; ?>
+								<?php if ( ! empty( $mentorship['mentors_github_handles'] ) && is_array( $mentorship['mentors_github_handles'] ) ) : ?>
+									<li><strong>Mentors:</strong>
+										<?php
+										$mentor_links = array();
+										foreach ( $mentorship['mentors_github_handles'] as $handle ) {
+											$mentor_links[] = '<a href="' . esc_url( 'https://github.com/' . $handle ) . '">@' . esc_html( $handle ) . '</a>';
+										}
+										echo implode( ', ', $mentor_links ); // phpcs:ignore
+										?>
+									</li>
+								<?php endif; ?>
+							</ul>
+						</div>
+						<?php endforeach; ?>
+					</div>
+					<?php endif; ?>
 
 					<div class="person__social">
 						<?php

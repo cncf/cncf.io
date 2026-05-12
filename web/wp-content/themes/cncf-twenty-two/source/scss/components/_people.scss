@@ -134,6 +134,32 @@
 	&__content {
 		margin-top: 30px;
 	}
+	&__mentorships {
+		margin-top: 30px;
+
+		h4 {
+			font-size: 18px;
+			margin-bottom: 5px;
+		}
+	}
+	&__mentorship {
+		padding: 15px 0;
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin-bottom: 6px;
+				margin-left: 0;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 }
 
 // hide company for Kubestronauts page.
