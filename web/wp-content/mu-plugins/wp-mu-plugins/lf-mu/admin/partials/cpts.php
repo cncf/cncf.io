@@ -180,7 +180,7 @@ $opts = array(
 		'singular_name' => __( 'Person' ),
 		'all_items'     => __( 'All People' ),
 	),
-	'public'              => false,
+	'public'              => true,
 	'has_archive'         => false,
 	'show_in_nav_menus'   => false,
 	'show_in_rest'        => true,
