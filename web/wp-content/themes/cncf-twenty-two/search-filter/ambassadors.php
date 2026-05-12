@@ -23,6 +23,8 @@ if ( $query->have_posts() ) :
 	$query_term = $query->query['tax_query'][0]['terms'][0];
 	if ( 1513 == $query_term ) {
 		$query_cat = 'Kubestronauts';
+	} elseif ( 1756 == $query_term ) {
+		$query_cat = 'Mentees';
 	} else {
 		$query_cat = 'Ambassadors';
 	}
