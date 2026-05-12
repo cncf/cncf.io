@@ -29,6 +29,13 @@ $website               = get_post_meta( get_the_ID(), 'lf_person_website', true 
 $youtube               = get_post_meta( get_the_ID(), 'lf_person_youtube', true );
 $certdirectory         = get_post_meta( get_the_ID(), 'lf_person_certdirectory', true );
 $image_url             = get_post_meta( get_the_ID(), 'lf_person_image', true );
+if ( 'https://raw.githubusercontent.com/cncf/people/main/images/' === $image_url ) {
+	$options          = get_option( 'lf-mu' );
+	$generic_avatar_id = $options['generic_avatar_id'] ?? '';
+	if ( $generic_avatar_id ) {
+		$image_url = wp_get_attachment_url( $generic_avatar_id );
+	}
+}
 $location              = get_post_meta( get_the_ID(), 'lf_person_location', true );
 $related_post          = get_post_meta( get_the_ID(), 'lf_related_post', true );
 $languages             = get_the_terms( get_the_ID(), 'lf-language' );
