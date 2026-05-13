@@ -346,7 +346,7 @@ if ( has_term( 'golden-kubestronaut', 'lf-person-category' ) ) {
 
 					<?php if ( ! empty( $mentorships ) && is_array( $mentorships ) ) : ?>
 					<div class="person__mentorships">
-						<h4>Mentorships</h4>
+						<h4><?php echo count( $mentorships ) > 1 ? 'Mentorships' : 'Mentorship'; ?></h4>
 						<?php foreach ( $mentorships as $mentorship ) : ?>
 						<div class="person__mentorship">
 							<ul>
