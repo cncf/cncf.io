@@ -51,8 +51,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<div class="container wrap">
 
 			<h1 class="home-hero__title">JOIN US IN<br />
-				AMSTERDAM<br />
-				<span>23 - 26 March</span>
+				Mumbai<br />
+				<span>18 - 19 June</span>
 			</h1>
 
 			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon</strong> is the flagship conference for cloud native.</h2>
@@ -64,13 +64,13 @@ $metrics = LF_Utils::get_homepage_metrics();
 				<li>
 					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/?utm_source=cncf&utm_medium=homepage&utm_campaign=18269725-KubeCon-EU-2026&utm_content=hero" class="wp-block-button__link wp-element-button" title="Buy Tickets">Buy Tickets</a></div>
 				</li>
-				<li class="show-over-600">10K+
+				<li class="show-over-600">4K+
 					<span>Attendees</span>
 				</li>
-				<li class="show-over-600">200+
+				<!-- <li class="show-over-600">200+
 					<span>Sponsors</span>
-				</li>
-				<li class="show-over-600">300+
+				</li> -->
+				<li class="show-over-600">65+
 					<span>Sessions</span>
 				</li>
 				<li class="show-over-800">
