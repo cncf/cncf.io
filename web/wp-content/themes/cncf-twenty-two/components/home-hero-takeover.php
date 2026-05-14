@@ -51,7 +51,7 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<div class="container wrap">
 
 			<h1 class="home-hero__title">JOIN US IN<br />
-				Mumbai<br />
+				MUMBAI<br />
 				<span>18 - 19 June</span>
 			</h1>
 
