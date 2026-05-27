@@ -58,6 +58,16 @@ function lf_theme_support_setup() {
 	// Adds default styles to blocks.
 	add_theme_support( 'wp-block-styles' );
 
+	// Load theme editor styles into the block editor iframe.
+	// The frontend styles bundle is included so the editor matches the rendered site;
+	// editor-only.css layers editor-specific overrides on top.
+	add_editor_style(
+		array(
+			WP_DEBUG === true ? 'build/styles.css' : 'build/styles.min.css',
+			'build/editor-only.css',
+		)
+	);
+
 	// Support Template Parts.
 	add_theme_support( 'block-template-parts' );
 

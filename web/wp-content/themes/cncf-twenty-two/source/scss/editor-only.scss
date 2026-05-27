@@ -13,68 +13,73 @@
 @import 'core/reset';
 
 // import styles over the top of editor styles defaults.
-#editor {
-	.editor-styles-wrapper {
-		@import 'core/buttons';
-		@import 'core/typography';
-		@import 'components/case-studies';
-		@import 'blocks/images';
-		@import 'blocks/separator';
-		@import 'blocks/spacers';
-		@import 'blocks/video';
-		@import 'blocks/stats';
-		@import 'blocks/figcaption';
+// NOTE: In the iframed block editor (WP 6.3+), the iframe <body> itself
+// carries the .editor-styles-wrapper class, so selectors must not require an
+// #editor ancestor (it only exists on the wp-admin parent frame).
+.editor-styles-wrapper {
+	@import 'core/buttons';
+	@import 'core/typography';
+	@import 'components/case-studies';
+	@import 'blocks/images';
+	@import 'blocks/separator';
+	@import 'blocks/spacers';
+	@import 'blocks/video';
+	@import 'blocks/stats';
+	@import 'blocks/figcaption';
 
-		// Reset weird Block Editor margins by default.
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			margin-top: 0;
-			margin-bottom: 0;
-			margin-left: unset !important;
-		}
+	// Small gutter so the editor content isn't flush against the admin sidebar.
+	padding-left: 20px;
+	padding-right: 20px;
 
-		color: $body-text-color;
+	// Reset weird Block Editor margins by default.
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: unset !important;
+	}
 
-		p {
+	color: $body-text-color;
+
+	p {
+		line-height: 1.5;
+		margin-block-start: revert;
+		margin-block-end: revert;
+	}
+
+	// style links same as frontend.
+	a:not(.acf-button) {
+		color: $primary-color;
+		text-decoration: none;
+	}
+
+	a.acf-button {
+		color: #2271b1;
+		border-color: #2271b1;
+		background: #f6f7f7;
+		vertical-align: top;
+		font-weight: 400;
+	}
+
+	ul,
+	ol {
+		list-style-type: revert;
+		padding: revert;
+		margin: revert;
+		li {
+			margin-bottom: 10px;
 			line-height: 1.5;
-			margin-block-start: revert;
-			margin-block-end: revert;
 		}
+	}
 
-		// style links same as frontend.
-		a:not(.acf-button) {
-			color: $primary-color;
-			text-decoration: none;
-		}
-
-		a.acf-button {
-			color: #2271b1;
-			border-color: #2271b1;
-			background: #f6f7f7;
-			vertical-align: top;
-			font-weight: 400;
-		}
-
-		ul,
-		ol {
-			list-style-type: revert;
-			padding: revert;
-			margin: revert;
-			li {
-				margin-bottom: 10px;
-				line-height: 1.5;
-			}
-		}
-
-		// Unset margin on max width styles so they left align.
-		[class*='is-style-max-width'],
-		.wp-block-quote {
-			margin-left: unset !important;
-		}
+	// Unset margin on max width styles so they left align.
+	[class*='is-style-max-width'],
+	.wp-block-quote {
+		margin-left: unset !important;
 	}
 }
 
@@ -86,6 +91,9 @@
 @import 'editor/alignment';
 
 // Blog Post font weights.
+// In the iframed editor, the post-type class sits on the same element as
+// .editor-styles-wrapper, so we need a compound selector. We keep the
+// descendant form too for any non-iframed contexts.
 .post-type-post {
 	.edit-post-visual-editor__post-title-wrapper .editor-post-title {
 		font-family: $font-primary;
@@ -93,120 +101,115 @@
 		line-height: 1.4;
 		font-size: 3rem;
 	}
+}
 
-	#editor {
-		.editor-styles-wrapper {
-			h2,
-			h3,
-			h4,
-			h5,
-			h6 {
-				font-weight: 400 !important;
-			}
+.post-type-post.editor-styles-wrapper,
+.post-type-post .editor-styles-wrapper {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 400 !important;
+	}
 
-			h2 {
-				margin-top: 50px;
-				margin-bottom: 30px;
-				@media (min-width: 1200px) {
-					margin-top: 80px;
-					margin-bottom: 45px;
-				}
-			}
+	h2 {
+		margin-top: 50px;
+		margin-bottom: 30px;
+		@media (min-width: 1200px) {
+			margin-top: 80px;
+			margin-bottom: 45px;
+		}
+	}
 
-			h3 {
-				margin-top: 40px;
-				margin-bottom: 30px;
-				@media (min-width: 1200px) {
-					margin-top: 60px;
-					margin-bottom: 35px;
-				}
-			}
+	h3 {
+		margin-top: 40px;
+		margin-bottom: 30px;
+		@media (min-width: 1200px) {
+			margin-top: 60px;
+			margin-bottom: 35px;
+		}
+	}
 
-			h4,
-			h5,
-			h6 {
-				margin-top: 30px;
-				margin-bottom: 20px;
-				@media (min-width: 1200px) {
-					margin-top: 40px;
-					margin-bottom: 25px;
-				}
-			}
+	h4,
+	h5,
+	h6 {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		@media (min-width: 1200px) {
+			margin-top: 40px;
+			margin-bottom: 25px;
 		}
 	}
 }
 
 // Custom spacing for some Post Types.
-.post-type-lf_report,
-.post-type-lf_case_study,
-.post-type-lf_case_study_cn {
-	#editor {
-		.editor-styles-wrapper {
-			h2,
-			h3,
-			h4 {
-				margin-top: 50px !important;
-			}
-			h4 {
-				font-size: 1.125em;
-			}
+.post-type-lf_report.editor-styles-wrapper,
+.post-type-lf_report .editor-styles-wrapper,
+.post-type-lf_case_study.editor-styles-wrapper,
+.post-type-lf_case_study .editor-styles-wrapper,
+.post-type-lf_case_study_cn.editor-styles-wrapper,
+.post-type-lf_case_study_cn .editor-styles-wrapper {
+	h2,
+	h3,
+	h4 {
+		margin-top: 50px !important;
+	}
+	h4 {
+		font-size: 1.125em;
+	}
 
-			h5,
-			h6 {
-				margin-top: 30px;
-				margin-bottom: 20px;
-				font-size: 1rem;
-			}
+	h5,
+	h6 {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		font-size: 1rem;
+	}
 
-			h3,
-			h4,
-			h5,
-			h6 {
-				+ .wp-block-quote,
-				.wp-block-gallery {
-					margin-top: 0;
-				}
-			}
+	h3,
+	h4,
+	h5,
+	h6 {
+		+ .wp-block-quote,
+		.wp-block-gallery {
+			margin-top: 0;
+		}
+	}
 
-			// .wp-block-quote,
-			.wp-block-image,
-			.wp-block-gallery,
-			.wp-block-embed,
-			.wp-block-lf-youtube-lite {
-				margin-top: 40px;
-				margin-bottom: 40px;
-				@media (min-width: 1000px) {
-					margin-top: 60px;
-					margin-bottom: 60px;
-				}
-			}
+	// .wp-block-quote,
+	.wp-block-image,
+	.wp-block-gallery,
+	.wp-block-embed,
+	.wp-block-lf-youtube-lite {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		@media (min-width: 1000px) {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
 
-			// remove margins from images if inside a column.
-			.wp-block-column {
-				.wp-block-image {
-					margin-top: 0;
-					margin-bottom: 0;
-					@media (min-width: 1000px) {
-						margin-top: 0;
-						margin-bottom: 0;
-					}
-				}
-			}
-
-			p + .wp-block-columns {
-				margin-top: 50px;
+	// remove margins from images if inside a column.
+	.wp-block-column {
+		.wp-block-image {
+			margin-top: 0;
+			margin-bottom: 0;
+			@media (min-width: 1000px) {
+				margin-top: 0;
+				margin-bottom: 0;
 			}
 		}
 	}
+
+	p + .wp-block-columns {
+		margin-top: 50px;
+	}
 }
 
-.post-type-lf_report {
-	#editor {
-		.editor-styles-wrapper {
-			.is-style-post-title {
-				max-width: unset;
-			}
-		}
+.post-type-lf_report.editor-styles-wrapper,
+.post-type-lf_report .editor-styles-wrapper {
+	.is-style-post-title {
+		max-width: unset;
 	}
 }
 
