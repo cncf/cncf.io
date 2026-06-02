@@ -137,7 +137,11 @@ mkdir -p $HOME/.ssh && echo "StrictHostKeyChecking no" >> "$HOME/.ssh/config"
 
 # Configure the GitHub Oauth token if it is available
 if [ -n "$GITHUB_TOKEN" ]; then
-  composer -n config --global github-oauth.github.com $GITHUB_TOKEN
+  # Strip any stray characters (e.g. a trailing carriage return from CRLF or
+  # env injection) so Composer doesn't reject the token as containing invalid
+  # characters. GitHub tokens only ever contain [A-Za-z0-9_].
+  GITHUB_TOKEN="$(printf '%s' "$GITHUB_TOKEN" | tr -cd 'A-Za-z0-9_')"
+  composer -n config --global github-oauth.github.com "$GITHUB_TOKEN"
 fi
 
 # Set up our default git config settings if git is available.
