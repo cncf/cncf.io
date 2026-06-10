@@ -118,6 +118,9 @@ jobs:
       - name: setup-environment-vars
         run: ./.github/workflows/set-environment
 
+      - name: Configure Composer GitHub auth
+        run: composer config -g github-oauth.github.com "${GITHUB_TOKEN}"
+
       - name: run PHP build step
         run: composer -n build-assets
 
