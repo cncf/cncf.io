@@ -220,6 +220,7 @@ function add_members_pricing_shortcode( $atts ) {
 					Governing Board</li>
 				<li>5-minute KubeCon + CloudNativeCon keynote upon joining</li>
 				<li>Personalized executive engagement with CNCF leadership teams</li>
+				<li>KubeCon + CloudNativeCon sponsorship discounts extend to all of the member's affiliated companies<sup><a href="#footnote-4">4</a></sup></li>
 				<li>Promotion of contributed blogs & online programs in newsletter to analysts (in addition to CNCF monthly newsletter)</li>
 				<li>Guidance on open source strategy - e.g. donating a project, running an open source program office</li>
 				<li>Exclusive live webinars with
@@ -280,7 +281,8 @@ function add_members_pricing_shortcode( $atts ) {
 						title="Kubernetes Training Partner">Kubernetes Training
 						Partner</a>.<br>
 	<sup id="footnote-2">2</sup> Additional terms apply. Cannot be combined with any other membership training benefits.<br>
-	<sup id="footnote-3">3</sup> These benefits are available only to End User companies that meet the <a href="/enduser/#end-user-definition">End User Definition</a>.
+	<sup id="footnote-3">3</sup> These benefits are available only to End User companies that meet the <a href="/enduser/#end-user-definition">End User Definition</a>.<br>
+	<sup id="footnote-4">4</sup> This is an exclusive exception to the standard rule that only the member company (and not their affiliates) can utilize event sponsorship discounts.
 </p>
 
 	<?php
