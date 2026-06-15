@@ -25,6 +25,14 @@ env:
   CI_PROJECT_NAME: ${{ github.repository }}
   DEFAULT_BRANCH: "main"
 
+# The default GITHUB_TOKEN is only used for read-only GET calls to
+# api.github.com/repos/*/pulls/* and /repos/*/commits/*/pulls.
+# The "add commit comment" path (scripts/github/add-commit-comment) reads
+# the token from `composer config --global github-oauth.github.com`, not
+# from the workflow's GITHUB_TOKEN. Terminus / Pantheon deploys use
+# TERMINUS_TOKEN + SSH_PRIVATE_KEY.
+permissions:
+  contents: read
 
 jobs:
   configure_env_vars:
