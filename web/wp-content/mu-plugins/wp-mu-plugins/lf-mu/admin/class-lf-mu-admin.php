@@ -715,7 +715,7 @@ class Lf_Mu_Admin {
 	 * @param int   $post_id Post ID.
 	 */
 	public function custom_lf_human_column( $column, $post_id ) {
-		if ( 'lf_human_image' == $column ) {
+		if ( 'lf_human_image' === $column ) {
 			echo get_post_meta( $post_id, 'lf_human_image', true ) ? '<span class="dashicons dashicons-yes-alt" style="color:green"></span>' : '<span class="dashicons dashicons-no-alt" style="color:red"></span>';
 		}
 	}
