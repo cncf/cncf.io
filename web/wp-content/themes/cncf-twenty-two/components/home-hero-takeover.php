@@ -51,8 +51,8 @@ $metrics = LF_Utils::get_homepage_metrics();
 		<div class="container wrap">
 
 			<h1 class="home-hero__title">JOIN US IN<br />
-				MUMBAI<br />
-				<span>18 - 19 June</span>
+				YOKOHAMA<br />
+				<span>July 28 - 30</span>
 			</h1>
 
 			<h2 class="home-hero__description"><strong>KubeCon + CloudNativeCon</strong> is the flagship conference for cloud native.</h2>
@@ -62,21 +62,23 @@ $metrics = LF_Utils::get_homepage_metrics();
 
 			<ul class="home-hero__metric_wrapper">
 				<li>
-					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-india/?utm_source=cncf&utm_medium=homepage&utm_campaign=KubeCon-India-2026&utm_content=hero" class="wp-block-button__link wp-element-button" title="Buy Tickets">Buy Tickets</a></div>
+					<div class="wp-block-button"><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/?utm_source=cncf&utm_medium=homepage&utm_campaign=KubeCon-Japan-2026&utm_content=hero" class="wp-block-button__link wp-element-button" title="Buy Tickets">Buy Tickets</a></div>
 				</li>
-				<li class="show-over-600">4K+
+				<li class="show-over-600">2K+
 					<span>Attendees</span>
 				</li>
 				<!-- <li class="show-over-600">200+
 					<span>Sponsors</span>
 				</li> -->
-				<li class="show-over-600">65+
+				<li class="show-over-600">160+
 					<span>Sessions</span>
 				</li>
-				<li class="show-over-800">
-						∞
-					<span>Swag</span>
+				<li class="show-over-800">12
+					<span>Specialized Tracks</span>
 				</li>
+				<!-- <li class="show-over-800">∞
+					<span>Swag</span>
+				</li> -->
 			</ul>
 		</div>
 	</div>
