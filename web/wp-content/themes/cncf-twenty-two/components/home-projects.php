@@ -23,9 +23,7 @@ wp_enqueue_style( 'wp-block-columns' );
 			<div class="home-projects-intro lf-grid">
 
 				<div class="home-projects-intro__col1">
-					<h2 class="has-extra-extra-large-font-size">CNCF projects
-						are
-						the foundation of cloud native computing </h2>
+					<h2 class="has-extra-extra-large-font-size">CNCF projects are the foundation of cloud and AI native computing</h2>
 				</div>
 				<div class="home-projects-intro__col2">
 					<p>As part of the <a href="https://linuxfoundation.org/">Linux Foundation</a>, we provide support, oversight and direction for fast-growing, <a href="https://github.com/cncf/toc/blob/main/DEFINITION.md">cloud native</a> projects, including Kubernetes, Envoy, and Prometheus.</p>
