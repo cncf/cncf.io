@@ -46,7 +46,7 @@
     "thetwopct/load-media-from-production": "dev-main",
     "wp-coding-standards/wpcs": "^3.0.1",
     "wpackagist-plugin/debug-bar": "^1.0",
-    "wpackagist-plugin/query-monitor": "^3.5.2"
+    "wpackagist-plugin/query-monitor": "^4"
   },
   "config": {
     "vendor-dir": "vendor",
