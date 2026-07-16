@@ -745,6 +745,34 @@ class Lf_Mu_Admin {
 	}
 
 	/**
+	 * Restrict access to the core users REST endpoint to logged-in users only.
+	 *
+	 * Prevents anonymous enumeration of user accounts via /wp-json/wp/v2/users/.
+	 *
+	 * @param mixed           $result  Response to replace the requested version with.
+	 * @param WP_REST_Server  $server  Server instance.
+	 * @param WP_REST_Request $request Request used to generate the response.
+	 * @return mixed WP_Error if access is denied, otherwise the unchanged result.
+	 */
+	public function restrict_users_endpoint( $result, $server, $request ) {
+		if ( ! empty( $result ) ) {
+			return $result;
+		}
+
+		$route = $request->get_route();
+
+		if ( preg_match( '#^/wp/v2/users\b#', $route ) && ! is_user_logged_in() ) {
+			return new WP_Error(
+				'rest_forbidden',
+				__( 'You must be logged in to access this resource.' ),
+				array( 'status' => rest_authorization_required_code() )
+			);
+		}
+
+		return $result;
+	}
+
+	/**
 	 * Sets the post preview link expiry to 7 days in place of the 48 hour default.
 	 */
 	public function set_post_preview_expiry() {
