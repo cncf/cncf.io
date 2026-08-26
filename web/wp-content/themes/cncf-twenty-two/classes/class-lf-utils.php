@@ -819,4 +819,39 @@ class LF_Utils {
 
 		return rtrim( implode( ' ', $classes ) );
 	}
+
+	/**
+	 * Get Health Score band label and icon for a given numeric score.
+	 *
+	 * @param int $score Numeric health score (0–100).
+	 * @return array { label: string, icon: string }
+	 */
+	public static function get_health_band( $score ) {
+		if ( $score >= 85 ) {
+			return array(
+				'label' => 'Excellent',
+				'icon'  => '/project-insights/excellent.svg',
+			);
+		} elseif ( $score >= 70 ) {
+			return array(
+				'label' => 'Healthy',
+				'icon'  => '/project-insights/healthy.svg',
+			);
+		} elseif ( $score >= 50 ) {
+			return array(
+				'label' => 'Fair',
+				'icon'  => '/project-insights/fair.svg',
+			);
+		} elseif ( $score >= 30 ) {
+			return array(
+				'label' => 'Concerning',
+				'icon'  => '/project-insights/concerning.svg',
+			);
+		} else {
+			return array(
+				'label' => 'Critical',
+				'icon'  => '/project-insights/critical.svg',
+			);
+		}
+	}
 }

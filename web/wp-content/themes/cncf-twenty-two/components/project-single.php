@@ -215,17 +215,8 @@ endif;
 	<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 
 	<?php
-	if ( $lfx_health_score > 80 ) {
-		LF_utils::get_svg( '/project-insights/excellent.svg' );
-	} elseif ( $lfx_health_score > 60 ) {
-		LF_utils::get_svg( '/project-insights/healthy.svg' );
-	} elseif ( $lfx_health_score > 40 ) {
-		LF_utils::get_svg( '/project-insights/stable.svg' );
-	} elseif ( $lfx_health_score > 20 ) {
-		LF_utils::get_svg( '/project-insights/unsteady.svg' );
-	} else {
-		LF_utils::get_svg( '/project-insights/critical.svg' );
-	}
+	$health_band = LF_Utils::get_health_band( $lfx_health_score );
+	LF_utils::get_svg( $health_band['icon'] );
 	?>
 	</div>
 
@@ -235,18 +226,7 @@ endif;
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0.24rem"><strong>
 
 	<?php
-	if ( $lfx_health_score > 80 ) {
-		echo 'Excellent';
-	} elseif ( $lfx_health_score > 60 ) {
-		echo 'Healthy';
-	} elseif ( $lfx_health_score > 40 ) {
-		echo 'Stable';
-	} elseif ( $lfx_health_score > 20 ) {
-		echo 'Unsteady';
-	} else {
-		echo 'Critical';
-	}
-	echo ' (' . esc_html( $lfx_health_score ) . ')';
+	echo esc_html( $health_band['label'] ) . ' (' . esc_html( $lfx_health_score ) . ')';
 	?>
 
 	</strong></p>
