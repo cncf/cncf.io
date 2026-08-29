@@ -9,16 +9,27 @@
 	// add padding so it is selectable.
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	@media (min-width: 1200px) {
-		display: flex;
-		flex-direction: row;
-		.case-study-overview-wrapper {
-			margin-left: 30px;
-			flex-basis: 300px;
-			flex-grow: 1;
-			flex-shrink: 0;
-		}
+
+	// The editor canvas is iframed as of WP 7.1, so viewport media queries
+	// resolve against the canvas width rather than the browser window. The
+	// canvas is only ~700-1000px wide on a typical screen, so the previous
+	// `@media (min-width: 1200px)` could effectively never match and the two
+	// columns always stacked. Lay this out intrinsically instead: the columns
+	// sit side by side whenever the canvas has room and wrap when it does not.
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 30px;
+
+	.case-study-intro-wrapper {
+		flex: 1 1 400px;
+		min-width: 0;
 	}
+
+	.case-study-overview-wrapper {
+		flex: 1 1 280px;
+		min-width: 0;
+	}
+
 	.components-placeholder.is-small .components-placeholder__instructions {
 		display: block;
 	}

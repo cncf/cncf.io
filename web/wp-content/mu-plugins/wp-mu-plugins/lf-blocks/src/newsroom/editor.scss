@@ -2,13 +2,13 @@
 	display: grid;
 	grid-column-gap: 3%;
 	grid-row-gap: 30px;
-	grid-template-columns: 1fr;
-	@media (min-width: 600px) {
-		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	}
-	@media (min-width: 1000px) {
-		grid-template-columns: repeat(3, 1fr);
-	}
+
+	// The editor canvas is iframed as of WP 7.1, so viewport media queries
+	// measure the canvas rather than the browser window. Size the tracks against
+	// the container instead: flooring each column at 31.333% — (100% - 2 * 3%
+	// gap) / 3 — caps the grid at 3 columns, and `auto-fit` steps down to 2 and
+	// then 1 column as the canvas narrows past 320px per column.
+	grid-template-columns: repeat(auto-fit, minmax(#{"min(100%, max(320px, 31.333%))"}, 1fr));
 
 	.newsroom-title {
 		margin-top: 0;

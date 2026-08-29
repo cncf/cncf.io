@@ -1,4 +1,8 @@
-#editor .editor-styles-wrapper {
+// NOTE: As of WP 7.1 the post editor canvas is ALWAYS iframed (the
+// `useShouldIframe()` opt-out for apiVersion < 3 blocks was removed). Inside the
+// iframe the <body> itself carries `.editor-styles-wrapper`, and `#editor` only
+// exists in the parent wp-admin frame — so it must not be used as an ancestor.
+.editor-styles-wrapper {
 	.case-study-highlights {
 		margin-top: 30px;
 		margin-bottom: 30px;
@@ -6,11 +10,13 @@
 			display: grid;
 			grid-column-gap: 3%;
 			grid-row-gap: 30px;
-			grid-template-columns: 1fr;
 
-			@media (min-width: 1000px) {
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			}
+			// Iframed canvas (see note above) means viewport media queries measure
+			// the canvas, so the old `min-width: 1000px` query rarely matched.
+			// Floor each column at 31.333% — (100% - 2 * 3% gap) / 3 — to cap the
+			// grid at the 3 columns used on the frontend, while `auto-fit` reduces
+			// the count once 300px per column no longer fits.
+			grid-template-columns: repeat(auto-fit, minmax(#{"min(100%, max(300px, 31.333%))"}, 1fr));
 			background: #ffffff;
 			border: 1px solid #e6e6e6;
 			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);

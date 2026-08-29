@@ -3,11 +3,17 @@
 		display: grid;
 		grid-column-gap: 3%;
 		grid-row-gap: 30px;
-		grid-template-columns: 1fr;
 
-		@media (min-width: 1000px) {
-			grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		}
+		// The editor canvas is iframed as of WP 7.1, so viewport media queries
+		// measure the canvas rather than the browser window and the old
+		// `min-width: 1000px` query rarely matched. Size the tracks against the
+		// container instead: `max()` floors each column at 48.5% — (100% - 3%
+		// gap) / 2 — so the grid never exceeds the 2 columns the frontend uses,
+		// `auto-fit` drops to one column once 400px per column no longer fits,
+		// and `min(100%, …)` keeps a narrow canvas from overflowing.
+		// Interpolated so both dart-sass and libsass emit the CSS math verbatim
+		// instead of trying to evaluate it as a Sass function.
+		grid-template-columns: repeat(auto-fit, minmax(#{"min(100%, max(400px, 48.5%))"}, 1fr));
 	}
 	.case-study-item {
 		&__wrapper {

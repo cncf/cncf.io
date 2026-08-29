@@ -2,14 +2,23 @@
   "name": "lf-blocks",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=17"
+  },
   "scripts": {
-    "start": "cgb-scripts start",
-    "watch": "cgb-scripts start",
-    "build": "cgb-scripts build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider cgb-scripts start",
+    "watch": "NODE_OPTIONS=--openssl-legacy-provider cgb-scripts start",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider cgb-scripts build | tee /dev/stderr | grep 'Built successfully' > /dev/null",
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
     "@justinribeiro/lite-youtube": "^0.9.2",
     "cgb-scripts": "1.23.0"
+  },
+  "devDependencies": {
+    "node-sass": "npm:sass@1.59.3"
+  },
+  "overrides": {
+    "node-sass": "npm:sass@1.59.3"
   }
 }
