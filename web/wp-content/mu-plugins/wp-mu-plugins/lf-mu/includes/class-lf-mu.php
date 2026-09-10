@@ -240,6 +240,7 @@ class Lf_Mu {
 		$plugin_public = new Lf_Mu_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_footer', $plugin_public, 'deregister_scripts' );
+		$this->loader->add_action( 'wp_head', $plugin_public, 'insert_transcend_head', 1 );
 		$this->loader->add_action( 'wp_head', $plugin_public, 'insert_gtm_head' );
 		$this->loader->add_action( 'wp_body_open', $plugin_public, 'insert_gtm_body' );
 		$this->loader->add_filter( 'wp_resource_hints', $plugin_public, 'change_to_preconnect_resource_hints', 10, 2 );

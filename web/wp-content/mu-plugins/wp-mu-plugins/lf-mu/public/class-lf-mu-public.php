@@ -77,6 +77,30 @@ class Lf_Mu_Public {
 	}
 
 	/**
+	 * Inserts <head> Transcend Consent Management code.
+	 *
+	 * Must load before any other tracking scripts so it can gate them.
+	 */
+	public function insert_transcend_head() {
+
+		if ( ! $this->should_load_gtm() ) {
+			return;
+		}
+
+		$transcend_code = <<<EOD
+	<!-- Transcend Consent Management -->
+	<script
+		src="https://transcend-cdn.com/cm/f484e2d0-ad2e-43a9-9d64-d07f6fa20966/airgap.js"
+		data-cfasync="false"
+		data-prompt="auto"
+	></script>
+	<!-- End Transcend Consent Management -->
+
+	EOD;
+		echo $transcend_code; //phpcs:ignore
+	}
+
+	/**
 	 * Inserts <head> Google Tag Manager code.
 	 */
 	public function insert_gtm_head() {
@@ -154,8 +178,6 @@ class Lf_Mu_Public {
 				'https://js.hsforms.net',
 				'https://js.hs-scripts.com',
 				'https://landscape.cncf.io',
-				'https://cmp.osano.com',
-				'https://consent.api.osano.com',
 				'//www.googletagmanager.com',
 				'//www.gstatic.com',
 				'https://browser-update.org',
@@ -171,7 +193,7 @@ class Lf_Mu_Public {
 			}
 		} elseif ( 'dns-prefetch' === $relation_type ) {
 			// create array of URLs to remove from prefetch.
-			$url_arr = array( 'code.jquery.com', 's.w.org', 'cmp.osano.com' );
+			$url_arr = array( 'code.jquery.com', 's.w.org' );
 
 			foreach ( $url_arr as $url ) {
 				$key = array_search( $url, $hints, true );

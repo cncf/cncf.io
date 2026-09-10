@@ -164,7 +164,7 @@ function lf_defer_parsing_of_js( $url ) {
 		return $url;
 	}
 	// List of scripts that should not be deferred.
-	$do_not_defer_scripts = array( 'jquery', 'osano-js', 'lfx-segment' );
+	$do_not_defer_scripts = array( 'jquery', 'lfx-segment' );
 	if ( count( $do_not_defer_scripts ) > 0 ) {
 		foreach ( $do_not_defer_scripts as $script ) {
 			if ( strpos( $url, $script ) ) {

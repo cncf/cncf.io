@@ -21,6 +21,7 @@ $site_options = get_option( 'lf-mu' );
 
 	<p
 		class="footer__issue">
+		<a class="cookie-settings-link" href="#">Cookie Settings</a><br>
 		<?php if ( isset( $site_options['accessibility_cta_text'] ) && isset( $site_options['accessibility_cta_link'] ) ) : ?>
 
 					<a href="<?php echo esc_url( get_permalink( $site_options['accessibility_cta_link'] ) ); ?>"><?php echo esc_html( $site_options['accessibility_cta_text'] ); ?></a><br>
