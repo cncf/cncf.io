@@ -373,6 +373,123 @@ class Lf_Mu_Public {
 	}
 
 	/**
+	 * Serves /llms.txt as plain-text markdown (see https://llmstxt.org).
+	 *
+	 * Hooked on parse_request rather than a rewrite rule because mu-plugins
+	 * cannot flush rewrite rules on activation.
+	 *
+	 * @param WP $wp Current WordPress environment instance.
+	 */
+	public function maybe_serve_llms_txt( $wp ) {
+		if ( 'llms.txt' !== $wp->request ) {
+			return;
+		}
+
+		status_header( 200 );
+		header( 'Content-Type: text/plain; charset=utf-8' );
+		$this->add_header_cache();
+
+		echo $this->build_llms_txt(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Plain-text body; values sanitized in builder.
+		exit;
+	}
+
+	/**
+	 * Builds the llms.txt markdown document.
+	 *
+	 * @return string
+	 */
+	private function build_llms_txt() {
+		$name        = $this->llms_text( get_bloginfo( 'name' ) );
+		$description = $this->llms_text( get_bloginfo( 'description' ) );
+		if ( ! $description ) {
+			$description = 'CNCF is the open source, vendor-neutral hub of cloud native computing, hosting projects like Kubernetes and Prometheus to make cloud native universal and sustainable.';
+		}
+
+		$lines   = array();
+		$lines[] = '# ' . $name;
+		$lines[] = '';
+		$lines[] = '> ' . $description;
+		$lines[] = '';
+		$lines[] = 'The Cloud Native Computing Foundation (CNCF) is part of the Linux Foundation. This site covers CNCF-hosted open source projects, end user case studies, training and certification, events such as KubeCon + CloudNativeCon, research reports, and community programs.';
+		$lines[] = '';
+		$lines[] = 'URL patterns: projects live at /projects/{slug}/, case studies at /case-studies/{slug}/, reports at /reports/{slug}/, blog posts at /blog/YYYY/MM/DD/{slug}/ and press releases at /announcements/YYYY/MM/DD/{slug}/.';
+
+		$sections = include plugin_dir_path( __FILE__ ) . 'partials/llms-txt-sections.php';
+		foreach ( $sections as $heading => $items ) {
+			$lines[] = '';
+			$lines[] = '## ' . $heading;
+			$lines[] = '';
+			foreach ( $items as $item ) {
+				$lines[] = $this->llms_link_line( home_url( $item['path'] ), $item['title'], $item['description'] );
+			}
+		}
+
+		$dynamic = array(
+			'Latest Blog Posts'    => array(
+				'post_type'     => 'post',
+				'category_name' => 'blog',
+			),
+			'Latest Announcements' => array(
+				'post_type'     => 'post',
+				'category_name' => 'announcements',
+			),
+			'Latest Reports'       => array( 'post_type' => 'lf_report' ),
+			'Latest Case Studies'  => array( 'post_type' => 'lf_case_study' ),
+		);
+		foreach ( $dynamic as $heading => $args ) {
+			$posts = get_posts(
+				array_merge(
+					array(
+						'post_status'         => 'publish',
+						'numberposts'         => 5,
+						'no_found_rows'       => true,
+						'ignore_sticky_posts' => true,
+					),
+					$args
+				)
+			);
+			if ( ! $posts ) {
+				continue;
+			}
+			$lines[] = '';
+			$lines[] = '## ' . $heading;
+			$lines[] = '';
+			foreach ( $posts as $post ) {
+				$lines[] = $this->llms_link_line( get_permalink( $post ), get_the_title( $post ), get_the_date( 'Y-m-d', $post ) );
+			}
+		}
+
+		return implode( "\n", $lines ) . "\n";
+	}
+
+	/**
+	 * Formats a single llms.txt list item.
+	 *
+	 * @param string $url         Absolute URL.
+	 * @param string $title       Link text.
+	 * @param string $description Optional trailing description.
+	 * @return string
+	 */
+	private function llms_link_line( $url, $title, $description = '' ) {
+		$line = '- [' . $this->llms_text( $title ) . '](' . esc_url_raw( $url ) . ')';
+		if ( $description ) {
+			$line .= ': ' . $this->llms_text( $description );
+		}
+		return $line;
+	}
+
+	/**
+	 * Normalizes a string for plain-text markdown output.
+	 *
+	 * @param string $text Raw text.
+	 * @return string
+	 */
+	private function llms_text( $text ) {
+		$text = html_entity_decode( wp_strip_all_tags( (string) $text ), ENT_QUOTES, 'UTF-8' );
+		return trim( preg_replace( '/\s+/', ' ', $text ) );
+	}
+
+	/**
 	 * Filters the author for RSS feeds to use the guest author if appropriate
 	 * or ignore certain other authors.
 	 *

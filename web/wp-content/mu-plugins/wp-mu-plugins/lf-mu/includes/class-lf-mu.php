@@ -256,6 +256,7 @@ class Lf_Mu {
 		$this->loader->add_filter( 'the_seo_framework_sitemap_supported_post_types', $plugin_public, 'remove_newsletters_from_sitemap' );
 		$this->loader->add_action( 'send_headers', $plugin_public, 'add_header_cache', 15 );
 		$this->loader->add_filter( 'the_author', $plugin_public, 'rss_author_prep' );
+		$this->loader->add_action( 'parse_request', $plugin_public, 'maybe_serve_llms_txt' );
 	}
 
 	/**
