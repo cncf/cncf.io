@@ -364,6 +364,31 @@ class Lf_Mu_Public {
 	}
 
 	/**
+	 * Adds a Content-Signal directive (see https://contentsignals.org) to robots.txt.
+	 *
+	 * Runs after The SEO Framework so the line lands inside its `User-agent: *` group.
+	 *
+	 * @param string $output robots.txt output.
+	 * @return string
+	 */
+	public function add_content_signal_to_robots( $output ) {
+		$signal = 'Content-Signal: search=yes, ai-input=yes, ai-train=yes';
+
+		if ( false !== stripos( $output, 'Content-Signal:' ) ) {
+			return $output;
+		}
+
+		$count  = 0;
+		$output = preg_replace( '/^(User-agent:\s*\*\s*\R)/mi', '$1' . $signal . "\n", $output, 1, $count );
+
+		if ( 0 === $count ) {
+			$output = rtrim( (string) $output ) . "\n\nUser-agent: *\n" . $signal . "\n";
+		}
+
+		return $output;
+	}
+
+	/**
 	 * Overrides the default cache headers.
 	 */
 	public function add_header_cache() {
