@@ -364,9 +364,10 @@ class Lf_Mu_Public {
 	}
 
 	/**
-	 * Adds a Content-Signal directive (see https://contentsignals.org) to robots.txt.
+	 * Adds Content-Signal directives (see https://contentsignals.org) to robots.txt.
 	 *
-	 * Runs after The SEO Framework so the line lands inside its `User-agent: *` group.
+	 * Runs after The SEO Framework so the line lands inside its `User-agent: *` group,
+	 * then adds an explicit group welcoming known AI crawlers.
 	 *
 	 * @param string $output robots.txt output.
 	 * @return string
@@ -381,8 +382,42 @@ class Lf_Mu_Public {
 		$count  = 0;
 		$output = preg_replace( '/^(User-agent:\s*\*\s*\R)/mi', '$1' . $signal . "\n", $output, 1, $count );
 
+		$groups = 0 === $count ? "User-agent: *\n" . $signal . "\n\n" : '';
+
+		$ai_agents = array(
+			'GPTBot',
+			'OAI-SearchBot',
+			'ChatGPT-User',
+			'ClaudeBot',
+			'Claude-Web',
+			'Claude-User',
+			'Claude-SearchBot',
+			'anthropic-ai',
+			'Google-Extended',
+			'PerplexityBot',
+			'Perplexity-User',
+			'Applebot-Extended',
+			'CCBot',
+			'Bytespider',
+			'Meta-ExternalAgent',
+			'Amazonbot',
+			'cohere-ai',
+			'MistralAI-User',
+			'DuckAssistBot',
+		);
+
+		$groups .= "# Explicitly welcomed AI crawlers\n";
+		foreach ( $ai_agents as $agent ) {
+			$groups .= 'User-agent: ' . $agent . "\n";
+		}
+		$groups .= $signal . "\n";
+
+		// Keep Sitemap lines last; they are not part of any user-agent group.
+		$count  = 0;
+		$output = preg_replace( '/^(?=Sitemap:)/mi', $groups . "\n", $output, 1, $count );
+
 		if ( 0 === $count ) {
-			$output = rtrim( (string) $output ) . "\n\nUser-agent: *\n" . $signal . "\n";
+			$output = ltrim( rtrim( (string) $output ) . "\n\n" . $groups );
 		}
 
 		return $output;
