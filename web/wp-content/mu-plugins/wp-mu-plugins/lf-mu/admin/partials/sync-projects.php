@@ -106,7 +106,7 @@ foreach ( $projects as $p ) {
 	$lfx_url = 'https://insights.linuxfoundation.org/api/project/' . $project_slug . '/insights';
 	$lfx_data = wp_remote_get( $lfx_url, $args );
 
-	if ( ! is_wp_error( $data ) && wp_remote_retrieve_response_code( $lfx_data ) == 200 ) {
+	if ( ! is_wp_error( $lfx_data ) && wp_remote_retrieve_response_code( $lfx_data ) == 200 ) {
 		$lfx_stuff = json_decode( wp_remote_retrieve_body( $lfx_data ) );
 
 		if ( property_exists( $lfx_stuff, 'healthScore' ) ) {
