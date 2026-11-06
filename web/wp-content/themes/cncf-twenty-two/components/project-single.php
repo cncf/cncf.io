@@ -47,6 +47,7 @@ $lfx_active_contributors_previous_365_days = (int) get_post_meta( get_the_ID(), 
 $lfx_active_organizations_previous_365_days = (int) get_post_meta( get_the_ID(), 'lfx_active_organizations_previous_365_days', true );
 $lfx_software_value = (float) get_post_meta( get_the_ID(), 'lfx_software_value', true );
 $lfx_first_commit = get_post_meta( get_the_ID(), 'lfx_first_commit', true );
+$lfx_slug = get_post_meta( get_the_ID(), 'lf_project_lfx_slug', true );
 
 $lfx_contributor_increase = ( $lfx_active_contributors_last_365_days - $lfx_active_contributors_previous_365_days ) / max( 1, $lfx_active_contributors_previous_365_days ) * 100;
 if ( $lfx_contributor_increase < 0 ) {
@@ -370,9 +371,11 @@ endif;
 	</div>
 	</div>
 
+	<?php if ( $lfx_slug ) : ?>
 	<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-16018d1d wp-block-buttons-is-layout-flex"><!-- wp:button -->
-	<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://insights.linuxfoundation.org/project/<?php echo esc_html( $project_slug ); ?>">Explore more insights</a></div>
+	<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'https://insights.linuxfoundation.org/project/' . rawurlencode( $lfx_slug ) ); ?>">Explore more insights</a></div>
 	</div>
+	<?php endif; ?>
 	<div style="height:120px" aria-hidden="true"
 	class="wp-block-spacer is-style-80-120"></div>
 
