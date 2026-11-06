@@ -93,9 +93,16 @@ foreach ( $projects as $p ) {
 	if ( property_exists( $p, 'gitter_url' ) ) {
 		$params['meta_input']['lf_project_gitter'] = $p->gitter_url;
 	}
+	if ( property_exists( $p, 'lfx_slug' ) ) {
+		$params['meta_input']['lf_project_lfx_slug'] = $p->lfx_slug;
+	}
 
 	// get lfx project data.
-	$project_slug = str_replace( ' ', '-', strtolower( $p->name ) );
+	if ( property_exists( $p, 'lfx_slug' ) ) {
+		$project_slug = $p->lfx_slug;
+	} else {
+		$project_slug = str_replace( ' ', '-', strtolower( $p->name ) );
+	}
 	$lfx_url = 'https://insights.linuxfoundation.org/api/project/' . $project_slug . '/insights';
 	$lfx_data = wp_remote_get( $lfx_url, $args );
 
