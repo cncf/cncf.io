@@ -321,6 +321,7 @@ endif;
 	</div>
 
 	<div class="wp-block-column">
+	<?php if ( $lfx_software_value > 0 ) : ?>
 	<div class="wp-block-columns is-not-stacked-on-mobile is-style-0px-gap" style="gap: 0px 15px;">
 	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:70px">
 	<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -348,6 +349,7 @@ endif;
 	</div>
 
 	<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-20-40"></div>
+	<?php endif; ?>
 
 	<div class="wp-block-columns is-not-stacked-on-mobile is-style-0px-gap" style="gap: 0px 15px;">
 	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:70px">
