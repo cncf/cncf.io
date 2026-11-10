@@ -227,7 +227,8 @@ endif;
 	<p class="has-medium-font-size" style="margin-top:0.24rem;margin-bottom:0.24rem"><strong>
 
 	<?php
-	echo esc_html( $health_band['label'] ) . ' (' . esc_html( $lfx_health_score ) . ')';
+	// echo esc_html( $health_band['label'] ) . ' (' . esc_html( $lfx_health_score ) . ')';
+	echo esc_html( $lfx_health_score );
 	?>
 
 	</strong></p>
