@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -696,12 +696,13 @@ function acf_verify_nonce( $value ) {
  *
  * @since   5.2.3
  *
- * @param string  $nonce           The nonce to check.
- * @param string  $action          The action of the nonce.
- * @param boolean $action_is_field If the action is a field, modify the action to match validate the field type.
+ * @param string  $nonce               The nonce to check.
+ * @param string  $action              The action of the nonce.
+ * @param boolean $action_is_field     If the action is a field, modify the action to match validate the field type.
+ * @param string  $expected_field_type Optional field type the resolved field must be when $action_is_field is true. Prevents a nonce minted for one field type from being accepted by an AJAX handler that expects a different one. Defaults to empty (no type validation).
  * @return boolean
  */
-function acf_verify_ajax( $nonce = '', $action = '', $action_is_field = false ) {
+function acf_verify_ajax( $nonce = '', $action = '', $action_is_field = false, $expected_field_type = '' ) {
 	// Bail early if we don't have a nonce to check.
 	if ( empty( $nonce ) && empty( $_REQUEST['nonce'] ) ) {
 		return false;
@@ -716,6 +717,10 @@ function acf_verify_ajax( $nonce = '', $action = '', $action_is_field = false ) 
 		$field = acf_get_field( $action );
 
 		if ( empty( $field['type'] ) ) {
+			return false;
+		}
+
+		if ( ! empty( $expected_field_type ) && $field['type'] !== $expected_field_type ) {
 			return false;
 		}
 
@@ -1271,8 +1276,8 @@ function _acf_query_remove_post_type( $sql ) {
  *
  * @since   5.0.0
  *
- * @param   $args (array)
- * @return  (array)
+ * @param array $args The query arguments.
+ * @return array
  */
 function acf_get_grouped_posts( $args ) {
 
@@ -1293,6 +1298,54 @@ function acf_get_grouped_posts( $args ) {
 			'update_post_meta_cache' => false,
 		)
 	);
+
+	// Narrow anonymous callers to publicly-viewable types/statuses.
+	if ( ! is_user_logged_in() ) {
+		$requested_post_types = acf_get_array( $args['post_type'] );
+
+		if ( in_array( 'any', $requested_post_types, true ) ) {
+			$requested_post_types = get_post_types();
+		}
+
+		$viewable_post_types = array_values( array_filter( $requested_post_types, 'is_post_type_viewable' ) );
+
+		if ( empty( $viewable_post_types ) ) {
+			return $data;
+		}
+
+		$requested_post_statuses = acf_get_array( $args['post_status'] );
+		$public_post_statuses    = array_values( array_filter( get_post_stati(), 'is_post_status_viewable' ) );
+
+		if ( empty( $requested_post_statuses ) ) {
+			return $data;
+		}
+
+		if ( in_array( 'any', $requested_post_statuses, true ) ) {
+			$viewable_post_statuses = $public_post_statuses;
+
+			if ( in_array( 'attachment', $viewable_post_types, true ) ) {
+				$viewable_post_statuses[] = 'inherit';
+			}
+		} else {
+			$viewable_post_statuses = array_values( array_intersect( $requested_post_statuses, $public_post_statuses ) );
+
+			if ( in_array( 'attachment', $viewable_post_types, true ) && in_array( 'inherit', $requested_post_statuses, true ) ) {
+				$viewable_post_statuses[] = 'inherit';
+			}
+		}
+
+		if ( empty( $viewable_post_statuses ) ) {
+			return $data;
+		}
+
+		$args['post_type']   = $viewable_post_types;
+		$args['post_status'] = array_values( array_unique( $viewable_post_statuses ) );
+	}
+
+	// `perm=readable` only covers private posts, so also hide other posts and attachments the user can't read.
+	if ( is_user_logged_in() && isset( $args['perm'] ) && 'readable' === $args['perm'] ) {
+		$args['acf_restrict_unreadable_posts'] = true;
+	}
 
 	// find array of post_type
 	$post_types          = acf_get_array( $args['post_type'] );
@@ -1403,6 +1456,197 @@ function acf_get_grouped_posts( $args ) {
 }
 
 /**
+ * Normalizes an args array so `perm=readable` actually applies inside `WP_Query`.
+ *
+ * WP_Query ignores `perm=readable` when `post_status='any'` (Trac #52094). Callers
+ * that opt into `perm=readable` therefore need `post_status` enumerated. This helper
+ * is idempotent and safe to call before and after the per-field `acf/fields/<type>/query`
+ * filters run — the post-filter call catches callbacks that reset `post_status`
+ * back to 'any' while leaving `perm` untouched.
+ *
+ * @since 6.8.7
+ *
+ * @param array $args WP_Query args.
+ * @return array Args with `post_status` enumerated when `perm=readable` requires it.
+ */
+function acf_ensure_perm_readable_post_status( $args ) {
+	if ( ! isset( $args['perm'] ) || 'readable' !== $args['perm'] ) {
+		return $args;
+	}
+
+	$status = isset( $args['post_status'] ) ? $args['post_status'] : '';
+	$is_any = empty( $status )
+		|| 'any' === $status
+		|| ( is_array( $status ) && in_array( 'any', $status, true ) );
+
+	if ( $is_any ) {
+		$args['post_status'] = get_post_stati( array( 'exclude_from_search' => false ) );
+	}
+
+	return $args;
+}
+
+/**
+ * The internal ACF function to return the statuses of a post type's posts that the current user can't
+ * read when another user wrote them, following how core maps the `read_post` capability.
+ *
+ * Core lets users read other users' draft, pending and scheduled posts only if they can edit them, which
+ * for scheduled posts also requires the capability to edit published posts. Other users' private posts
+ * require the capability to read private posts. Post types that don't map meta capabilities let users
+ * with the post type's read capability read all of its posts.
+ *
+ * Access granted to individual posts can't be known here, so sites that grant it can use the
+ * `acf/fields/relational/unreadable_post_statuses` filter.
+ *
+ * @since 6.8.11
+ *
+ * @param string $post_type The post type.
+ * @return string[]
+ */
+function _acf_get_unreadable_post_statuses( $post_type ) {
+	$post_type_object   = get_post_type_object( $post_type );
+	$protected_statuses = get_post_stati( array( 'protected' => true ) );
+	$private_statuses   = get_post_stati( array( 'private' => true ) );
+
+	if ( ! $post_type_object ) {
+		return array_values( array_merge( $protected_statuses, $private_statuses ) );
+	}
+
+	$statuses = array();
+
+	if ( ! $post_type_object->map_meta_cap ) {
+		// `read_post` and `read_page` are meta capabilities, which can't be checked without a post.
+		$read_cap = $post_type_object->cap->read_post;
+		$can_read = ! in_array( $read_cap, array( 'read_post', 'read_page' ), true ) && current_user_can( $read_cap );
+
+		if ( ! $can_read ) {
+			$statuses = array_merge( $protected_statuses, $private_statuses );
+		}
+	} else {
+		if ( ! current_user_can( $post_type_object->cap->edit_others_posts ) ) {
+			$statuses = $protected_statuses;
+		} elseif ( ! current_user_can( $post_type_object->cap->edit_published_posts ) ) {
+			$statuses = array_intersect( $protected_statuses, array( 'future' ) );
+		}
+
+		if ( ! current_user_can( $post_type_object->cap->read_private_posts ) ) {
+			$statuses = array_merge( $statuses, $private_statuses );
+		}
+	}
+
+	/**
+	 * Filters the statuses of other users' posts that relational field searches hide from the current user.
+	 *
+	 * Posts with a status removed here are included in the search query, and each is then checked with
+	 * `acf_current_user_can_read_post()`, so posts the user can't read are still left out. Use this when
+	 * access to individual posts is granted, such as through the `acf/user_can_read_post` filter
+	 * or a `map_meta_cap` callback. Pages of results may then contain fewer posts, or none, and the next
+	 * page being loaded can show that the search matched posts the user can't read.
+	 *
+	 * @since 6.8.11
+	 *
+	 * @param string[] $statuses  The statuses hidden from the current user.
+	 * @param string   $post_type The post type.
+	 */
+	$statuses = apply_filters( 'acf/fields/relational/unreadable_post_statuses', array_values( $statuses ), $post_type );
+
+	return array_values( array_filter( (array) $statuses, 'is_string' ) );
+}
+
+/**
+ * The internal ACF function to hide posts the current user can't read from `acf_get_grouped_posts()`
+ * queries.
+ *
+ * `WP_Query` only applies `perm=readable` to private posts, and checks an attachment's own `inherit`
+ * status rather than its parent's. This also hides other users' draft, pending and scheduled posts the
+ * current user can't edit, and attachments that inherit a status from a parent the user can't read.
+ *
+ * When the query has the field's post types in `acf_field_post_types`, it also hides other users' posts
+ * of post types that aren't public, unless the field lists them or the user can open their list of posts
+ * in the admin or edit other users' posts, matching `acf_user_can_read_post()`.
+ *
+ * @since 6.8.11
+ *
+ * @param string   $where    The WHERE clause of the query.
+ * @param WP_Query $wp_query The WP_Query.
+ * @return string The potentially modified WHERE clause.
+ */
+function _acf_query_restrict_unreadable_posts( $where, $wp_query ) {
+	global $wpdb;
+
+	if ( ! $wp_query->get( 'acf_restrict_unreadable_posts' ) ) {
+		return $where;
+	}
+
+	$post_types = acf_get_array( $wp_query->get( 'post_type' ) );
+
+	if ( empty( $post_types ) || in_array( 'any', $post_types, true ) ) {
+		$post_types = get_post_types();
+	}
+
+	$field_post_types    = $wp_query->get( 'acf_field_post_types', null );
+	$readable_post_types = array();
+	$conditions          = array( $wpdb->prepare( "{$wpdb->posts}.post_author = %d", get_current_user_id() ) );
+
+	foreach ( $post_types as $post_type ) {
+		// Other users' posts of these post types are left out, so only the user's own posts are found.
+		if ( is_array( $field_post_types ) && _acf_post_type_is_hidden_from_search( $post_type, $field_post_types ) ) {
+			continue;
+		}
+
+		$statuses = _acf_get_unreadable_post_statuses( $post_type );
+
+		if ( empty( $statuses ) ) {
+			$readable_post_types[] = $post_type;
+			continue;
+		}
+
+		$statuses  = implode( "','", array_map( 'esc_sql', $statuses ) );
+		$condition = $wpdb->prepare( "{$wpdb->posts}.post_type = %s", $post_type ) . " AND {$wpdb->posts}.post_status NOT IN ('$statuses')";
+
+		// Attachments inherit their parent's status, so their parent must be readable too.
+		if ( 'attachment' === $post_type ) {
+			$condition .= " AND NOT ( {$wpdb->posts}.post_status = 'inherit' AND EXISTS ( SELECT 1 FROM {$wpdb->posts} AS acf_parent WHERE acf_parent.ID = {$wpdb->posts}.post_parent AND acf_parent.post_status IN ('$statuses') ) )";
+		}
+
+		$conditions[] = "( $condition )";
+	}
+
+	if ( count( $readable_post_types ) === count( $post_types ) ) {
+		return $where;
+	}
+
+	if ( $readable_post_types ) {
+		$readable_post_types = implode( "','", array_map( 'esc_sql', $readable_post_types ) );
+		$conditions[]        = "{$wpdb->posts}.post_type IN ('$readable_post_types')";
+	}
+
+	return $where . ' AND (' . implode( ' OR ', $conditions ) . ')';
+}
+add_filter( 'posts_where', '_acf_query_restrict_unreadable_posts', 10, 2 );
+
+/**
+ * The internal ACF function to check whether relational field searches leave out other users' posts of a
+ * post type, because it isn't public and the current user can't see its posts in the admin.
+ *
+ * @since 6.8.11
+ *
+ * @param string   $post_type        The post type.
+ * @param string[] $field_post_types The post types listed by the field's "Filter by Post Type" setting.
+ * @return boolean
+ */
+function _acf_post_type_is_hidden_from_search( $post_type, $field_post_types ) {
+	if ( is_post_type_viewable( $post_type ) || in_array( $post_type, $field_post_types, true ) ) {
+		return false;
+	}
+
+	$post_type_object = get_post_type_object( $post_type );
+
+	return ! $post_type_object
+		|| ( ! _acf_user_can_list_post_type( wp_get_current_user(), $post_type ) && ! current_user_can( $post_type_object->cap->edit_others_posts ) );
+}
+
+/**
  * The internal ACF function to add order by post types for use in `acf_get_grouped_posts`
  *
  * @param string $orderby  The current orderby value for a query.
@@ -1463,6 +1707,488 @@ function acf_get_post_title( $post = 0, $is_search = false ) {
 
 	// return
 	return $title;
+}
+
+/**
+ * Checks whether a user can read a post referenced by a relational field.
+ *
+ * Matches WordPress core: published posts can be read by anyone (as in the REST API, and as the
+ * relational field search already shows them), and other posts need to be publicly viewable or
+ * need the `read_post` capability (which needs edit access for other users' drafts).
+ *
+ * Posts of post types that aren't public, such as WooCommerce coupons, can only be seen in the admin.
+ * Published ones are readable if the field's "Filter by Post Type" setting lists their post type, or
+ * the user can open the post type's list of posts in the admin, which shows their titles. Others need
+ * the user to be able to edit them. Revisions are never public, so they need edit access, which for a
+ * revision means edit access to its parent.
+ *
+ * Unlike `acf_rest_reference_is_exposable()`, this doesn't require the post type to be shown in the
+ * REST API, because these fields can reference any post type in the editor.
+ *
+ * @since 6.8.11
+ *
+ * @param integer|WP_User $user  The user ID or object. 0 for visitors who aren't logged in.
+ * @param integer|WP_Post $post  The post ID or object.
+ * @param array           $field Optional. The field referencing the post.
+ * @return boolean
+ */
+function acf_user_can_read_post( $user, $post, $field = array() ) {
+	$user = $user instanceof WP_User ? $user : new WP_User( (int) $user );
+	$post = get_post( $post );
+
+	if ( ! $post ) {
+		$can_read = false;
+	} elseif ( 'revision' === $post->post_type ) {
+		$can_read = user_can( $user, 'edit_post', $post->ID );
+	} elseif ( ! is_post_type_viewable( $post->post_type ) && ! in_array( $post->post_type, acf_get_array( $field['post_type'] ?? array() ), true ) ) {
+		$can_read = ( 'publish' === get_post_status( $post ) && _acf_user_can_list_post_type( $user, $post->post_type ) )
+			|| user_can( $user, 'edit_post', $post->ID );
+	} else {
+		$can_read = 'publish' === get_post_status( $post )
+			|| is_post_publicly_viewable( $post )
+			|| user_can( $user, 'read_post', $post->ID );
+	}
+
+	/**
+	 * Filters whether a user can read a post referenced by a relational field.
+	 *
+	 * The user is usually the current user. While an ACF Block saved in a post or synced pattern renders,
+	 * other than in a preview, it's the author of that post, so check `$user` rather than the current user.
+	 *
+	 * Relational field searches leave out other users' posts the user can't read before this filter runs,
+	 * so returning true doesn't add them to search results. Use the
+	 * `acf/fields/relational/unreadable_post_statuses` filter to include them.
+	 *
+	 * @since 6.8.11
+	 *
+	 * @param boolean      $can_read Whether the user can read the post.
+	 * @param WP_Post|null $post     The post object, or null if the post doesn't exist.
+	 * @param array        $field    The field referencing the post, if any.
+	 * @param WP_User      $user     The user.
+	 */
+	return (bool) apply_filters( 'acf/user_can_read_post', $can_read, $post, $field, $user );
+}
+
+/**
+ * Checks whether the current user can read a post referenced by a relational field.
+ *
+ * @since 6.8.11
+ *
+ * @see acf_user_can_read_post()
+ *
+ * @param integer|WP_Post $post  The post ID or object.
+ * @param array           $field Optional. The field referencing the post.
+ * @return boolean
+ */
+function acf_current_user_can_read_post( $post, $field = array() ) {
+	return acf_user_can_read_post( wp_get_current_user(), $post, $field );
+}
+
+/**
+ * The internal ACF function to check whether a user can open a post type's list of posts in the admin,
+ * which shows the titles of all its published posts.
+ *
+ * @since 6.8.11
+ *
+ * @param integer|WP_User $user      The user ID or object.
+ * @param string          $post_type The post type.
+ * @return boolean
+ */
+function _acf_user_can_list_post_type( $user, $post_type ) {
+	$post_type_object = get_post_type_object( $post_type );
+
+	return $post_type_object && $post_type_object->show_ui && user_can( $user, $post_type_object->cap->edit_posts );
+}
+
+/**
+ * Removes posts the current user can't read from a relational field's search results.
+ *
+ * The query already hides posts core doesn't let the user read, but the `acf/user_can_read_post`
+ * filter can deny others. Searches that a site has opted out of `perm=readable` aren't checked.
+ *
+ * @since 6.8.11
+ *
+ * @param array $groups The posts from `acf_get_grouped_posts()`, grouped by post type label.
+ * @param array $args   The query args.
+ * @param array $field  The relational field being searched.
+ * @return array An array with `groups`, the groups without posts the user can't read, and `more`, whether
+ *               there may be more pages of results, judged before any posts were removed.
+ */
+function acf_remove_unreadable_grouped_posts( $groups, $args, $field ) {
+	$groups   = acf_get_array( $groups );
+	$per_page = isset( $args['posts_per_page'] ) ? (int) $args['posts_per_page'] : 0;
+	$more     = $per_page > 0 && array_sum( array_map( 'count', $groups ) ) >= $per_page;
+
+	if ( isset( $args['perm'] ) && 'readable' === $args['perm'] ) {
+		foreach ( array_keys( $groups ) as $label ) {
+			$groups[ $label ] = array_filter(
+				$groups[ $label ],
+				function ( $post ) use ( $field ) {
+					return acf_current_user_can_read_post( $post, $field );
+				}
+			);
+
+			if ( empty( $groups[ $label ] ) ) {
+				unset( $groups[ $label ] );
+			}
+		}
+	}
+
+	return array(
+		'groups' => $groups,
+		'more'   => $more,
+	);
+}
+
+/**
+ * Returns the label shown in place of a selected post the current user can't read.
+ *
+ * @since 6.8.11
+ *
+ * @return string
+ */
+function acf_get_restricted_post_title() {
+	return __( '(Restricted item)', 'acf' );
+}
+
+/**
+ * The internal ACF function to return the object whose stored values a save is compared against.
+ * Revisions don't store values of their own yet, so they're compared against their parent post.
+ *
+ * @since 6.8.11
+ *
+ * @param integer|string $post_id The ACF post ID being saved.
+ * @return integer|string
+ */
+function _acf_get_stored_values_post_id( $post_id ) {
+	$decoded = acf_decode_post_id( $post_id );
+	$parent  = 'post' === $decoded['type'] ? wp_is_post_revision( (int) $decoded['id'] ) : false;
+
+	return $parent ? $parent : $post_id;
+}
+
+/**
+ * The internal ACF function to check whether relational fields should check the post IDs being saved.
+ * That's while ACF saves submitted values. Values code saves with update_field() during that save, such
+ * as back-references written by bidirectional sync, aren't checked.
+ *
+ * @since 6.8.11
+ *
+ * @return boolean
+ */
+function _acf_is_checking_submitted_post_ids() {
+	return (bool) acf_get_data( 'acf_saving_submitted_values' );
+}
+
+/**
+ * The internal ACF function to return whether a field is, or contains, a Relationship, Post Object or
+ * Page Link field, at any depth inside Repeater, Group, Clone and Flexible Content fields.
+ *
+ * @since 6.8.11
+ *
+ * @param array $field The field array.
+ * @return boolean
+ */
+function _acf_field_has_relational_fields( $field ) {
+	static $cache = array();
+
+	$key = isset( $field['key'] ) ? (string) $field['key'] : '';
+
+	if ( '' !== $key && isset( $cache[ $key ] ) ) {
+		return $cache[ $key ];
+	}
+
+	$has_relational = in_array( $field['type'] ?? '', array( 'relationship', 'post_object', 'page_link' ), true );
+	$children       = acf_get_array( $field['sub_fields'] ?? array() );
+
+	foreach ( acf_get_array( $field['layouts'] ?? array() ) as $layout ) {
+		$children = array_merge( $children, acf_get_array( $layout['sub_fields'] ?? array() ) );
+	}
+
+	foreach ( $children as $child ) {
+		if ( $has_relational ) {
+			break;
+		}
+
+		$has_relational = is_array( $child ) && _acf_field_has_relational_fields( $child );
+	}
+
+	if ( '' !== $key ) {
+		$cache[ $key ] = $has_relational;
+	}
+
+	return $has_relational;
+}
+
+/**
+ * The internal ACF function to return the post IDs stored in an object's relational fields before the
+ * current user-submitted save changed them.
+ *
+ * Repeater and Flexible Content rows are saved one at a time, and can be moved, added or removed, so a
+ * selection may be saved to a different row than it was stored in, after that row was already updated.
+ * The IDs are recorded, by field key, before the first relational field is updated, and kept until the
+ * save finishes. A sub field has the same key in every row, so this covers moved rows at any depth.
+ *
+ * @since 6.8.11
+ *
+ * @param integer|string $post_id The ACF post ID being saved.
+ * @return array An array with `ids`, the sets of post IDs stored in each relational field, keyed by field
+ *               key, and `names`, the meta names that have a field key reference.
+ */
+function _acf_get_stored_post_ids_snapshot( $post_id ) {
+	$post_id   = _acf_get_stored_values_post_id( $post_id );
+	$snapshots = (array) acf_get_data( 'acf_stored_post_ids_snapshots' );
+
+	if ( ! isset( $snapshots[ $post_id ] ) ) {
+		$meta       = (array) acf_get_meta( $post_id );
+		$relational = array();
+		$snapshot   = array(
+			'ids'   => array(),
+			'names' => array(),
+		);
+
+		// Each stored value has a reference to the key of the field it belongs to.
+		foreach ( $meta as $name => $value ) {
+			if ( ! isset( $meta[ '_' . $name ] ) ) {
+				continue;
+			}
+
+			$field_key                  = $meta[ '_' . $name ];
+			$snapshot['names'][ $name ] = true;
+
+			if ( ! isset( $relational[ $field_key ] ) ) {
+				$field                    = acf_get_field( $field_key );
+				$relational[ $field_key ] = $field && in_array( $field['type'], array( 'relationship', 'post_object', 'page_link' ), true );
+			}
+
+			if ( ! $relational[ $field_key ] ) {
+				continue;
+			}
+
+			foreach ( acf_get_array( acf_maybe_unserialize( $value ) ) as $id ) {
+				if ( is_numeric( $id ) ) {
+					$snapshot['ids'][ $field_key ][ (string) $id ] = true;
+				}
+			}
+		}
+
+		$snapshots[ $post_id ] = $snapshot;
+		acf_set_data( 'acf_stored_post_ids_snapshots', $snapshots );
+	}
+
+	return $snapshots[ $post_id ];
+}
+
+/**
+ * The internal ACF function to record an object's stored post IDs during a user-submitted save, when the
+ * first field that is, or contains, a relational field is updated, before any of them are changed. Saves
+ * without relational fields don't record anything.
+ *
+ * @since 6.8.11
+ *
+ * @param mixed          $check   The short-circuit value, returned unchanged.
+ * @param mixed          $value   The value being updated.
+ * @param integer|string $post_id The ACF post ID being saved.
+ * @param array          $field   The field being updated.
+ * @return mixed
+ */
+function _acf_snapshot_stored_post_ids( $check, $value, $post_id, $field ) {
+	if ( ! _acf_is_checking_submitted_post_ids() ) {
+		return $check;
+	}
+
+	$snapshots = (array) acf_get_data( 'acf_stored_post_ids_snapshots' );
+
+	if ( ! isset( $snapshots[ _acf_get_stored_values_post_id( $post_id ) ] ) && is_array( $field ) && _acf_field_has_relational_fields( $field ) ) {
+		_acf_get_stored_post_ids_snapshot( $post_id );
+	}
+
+	return $check;
+}
+add_filter( 'acf/pre_update_value', '_acf_snapshot_stored_post_ids', 1, 4 );
+
+/**
+ * The internal ACF function to discard an object's stored post ID snapshot once its save has finished.
+ *
+ * @since 6.8.11
+ *
+ * @param integer|string $post_id The ACF post ID that was saved.
+ * @return void
+ */
+function _acf_clear_stored_post_ids_snapshot( $post_id ) {
+	$snapshots = (array) acf_get_data( 'acf_stored_post_ids_snapshots' );
+	unset( $snapshots[ _acf_get_stored_values_post_id( $post_id ) ] );
+	acf_set_data( 'acf_stored_post_ids_snapshots', $snapshots );
+}
+add_action( 'acf/save_post', '_acf_clear_stored_post_ids_snapshot', 99 );
+
+/**
+ * The internal ACF function to discard stored post ID snapshots after each REST request (including each
+ * request in a batch), which updates fields without firing `acf/save_post`.
+ *
+ * REST requests made while a submitted save is still running, such as with `rest_do_request()` from an
+ * `acf/update_value` callback, leave the snapshots alone, as that save still needs them.
+ *
+ * @since 6.8.11
+ *
+ * @param mixed $response The REST response, returned unchanged.
+ * @return mixed
+ */
+function _acf_clear_rest_stored_post_ids_snapshots( $response ) {
+	if ( _acf_is_checking_submitted_post_ids() ) {
+		return $response;
+	}
+
+	acf_set_data( 'acf_stored_post_ids_snapshots', array() );
+
+	return $response;
+}
+add_filter( 'rest_request_after_callbacks', '_acf_clear_rest_stored_post_ids_snapshots' );
+
+/**
+ * Removes newly selected post IDs that the current user isn't allowed to add to a relational field.
+ *
+ * Only runs while ACF is saving submitted values. A new ID must belong to an existing post that the
+ * current user can read. IDs already stored in the field, in any Repeater or Flexible Content row, are
+ * kept, so a selection the user can't read isn't lost when they save.
+ *
+ * Stored values are matched by field key. A value stored under a different key, such as by a field that
+ * was later recreated or imported with a new key, isn't matched, so a user who can't read its posts drops
+ * them when they save it.
+ *
+ * @since 6.8.11
+ *
+ * @param mixed          $value   The normalized field value: an ID, or an array of IDs.
+ * @param integer|string $post_id The ACF post ID being saved.
+ * @param array          $field   The field array.
+ * @return mixed The value with disallowed IDs removed.
+ */
+function acf_remove_disallowed_post_ids( $value, $post_id, $field ) {
+	if ( empty( $value ) || ! _acf_is_checking_submitted_post_ids() ) {
+		return $value;
+	}
+
+	$snapshot   = _acf_get_stored_post_ids_snapshot( $post_id );
+	$stored_ids = isset( $snapshot['ids'][ $field['key'] ] ) ? $snapshot['ids'][ $field['key'] ] : array();
+
+	// A seamless Clone saved by a form references the cloned field's key, but the REST API saves it under the
+	// Clone's prefixed key.
+	if ( ! empty( $field['__key'] ) && isset( $snapshot['ids'][ $field['__key'] ] ) ) {
+		$stored_ids = $stored_ids + $snapshot['ids'][ $field['__key'] ];
+	}
+
+	// Values saved without a field key reference, such as by an import, can only be found by name. This reads
+	// the stored value directly, before this field is updated, so `acf/load_value` filters can't add to it.
+	if ( ! isset( $snapshot['names'][ $field['name'] ] ) ) {
+		$legacy_ids = acf_get_array( acf_get_metadata_by_field( _acf_get_stored_values_post_id( $post_id ), $field ) );
+		$stored_ids = $stored_ids + array_fill_keys( array_map( 'strval', array_filter( $legacy_ids, 'is_numeric' ) ), true );
+	}
+
+	$is_allowed = function ( $id ) use ( $stored_ids, $field ) {
+		// Page Link URLs aren't post IDs, so they're kept. Other fields only store post IDs, and other code,
+		// such as bidirectional sync, decodes values like `post_42` or `user_3` as objects to update.
+		if ( ! is_numeric( $id ) ) {
+			return 'page_link' === $field['type'];
+		}
+
+		// Other code, such as bidirectional sync, converts negative IDs to the positive post ID.
+		if ( (int) $id <= 0 ) {
+			return false;
+		}
+
+		// Only check new post IDs. Existing selections are kept.
+		if ( isset( $stored_ids[ (string) $id ] ) ) {
+			return true;
+		}
+
+		return acf_current_user_can_read_post( (int) $id, $field );
+	};
+
+	if ( ! is_array( $value ) ) {
+		return $is_allowed( $value ) ? $value : '';
+	}
+
+	$value = array_filter( $value, $is_allowed );
+
+	return acf_is_sequential_array( $value ) ? array_values( $value ) : $value;
+}
+
+/**
+ * Removes posts that can't be read from a relational field's value before it's formatted.
+ *
+ * Applies to values formatted while rendering an ACF Block by default. Block data is stored in the post
+ * content, which anyone who can edit the post controls, and the block editor renders previews from data
+ * that hasn't been saved yet, so selections in it are never checked when they're saved.
+ *
+ * Previews are checked against the current user. Other blocks are checked against the author of the post
+ * or synced pattern they're saved in, so posts that author picked show to every visitor but posts they
+ * couldn't have picked don't. Blocks that aren't saved in either are checked against the current user when
+ * rendered in the admin, by AJAX or by a REST API endpoint, and aren't checked on the front end, where
+ * they're in places like template parts and widgets that only administrators can edit. See
+ * `_acf_get_block_reader()`.
+ *
+ * The `acf/fields/relational/hide_unreadable_posts` filter can apply this to other values too, or turn it
+ * off.
+ *
+ * @since 6.8.11
+ *
+ * @param mixed          $value   The value: an ID, or an array of IDs (and Page Link URLs).
+ * @param integer|string $post_id The ACF post ID the value is formatted for.
+ * @param array          $field   The field array.
+ * @return mixed The value without posts that can't be read.
+ */
+function acf_remove_unreadable_formatted_post_ids( $value, $post_id, $field ) {
+	if ( empty( $value ) ) {
+		return $value;
+	}
+
+	$user = wp_get_current_user();
+	$hide = false;
+
+	if ( is_string( $post_id ) && 0 === strpos( $post_id, 'block_' ) ) {
+		// Set while an ACF Block renders: false when it isn't checked, otherwise the user to check.
+		$reader = acf_get_data( 'acf_block_reader' );
+		$hide   = false !== $reader;
+		$user   = $reader instanceof WP_User ? $reader : $user;
+	}
+
+	/**
+	 * Filters whether a relational field's formatted value leaves out posts that can't be read.
+	 *
+	 * True by default for values formatted while rendering an ACF Block, such as by get_field() in a block
+	 * template, except for blocks on the front end that aren't saved in a post or synced pattern. Return
+	 * true to also leave them out elsewhere, such as from get_field() in theme templates, or false to show
+	 * them in blocks again. Values other than those of blocks are checked against the current user.
+	 * Visitors who aren't logged in can only read published posts and posts with a public status.
+	 *
+	 * @since 6.8.11
+	 *
+	 * @param boolean        $hide    Whether to leave out posts that can't be read.
+	 * @param integer|string $post_id The ACF post ID the value is formatted for.
+	 * @param array          $field   The field array.
+	 */
+	if ( ! apply_filters( 'acf/fields/relational/hide_unreadable_posts', $hide, $post_id, $field ) ) {
+		return $value;
+	}
+
+	$is_readable = function ( $id ) use ( $user, $field ) {
+		// Page Link URLs aren't post IDs, so they're kept. Other fields convert values like `123x` to post IDs.
+		if ( ! is_numeric( $id ) ) {
+			return 'page_link' === $field['type'];
+		}
+
+		return acf_user_can_read_post( $user, (int) $id, $field );
+	};
+
+	if ( ! is_array( $value ) ) {
+		return $is_readable( $value ) ? $value : '';
+	}
+
+	_prime_post_caches( array_map( 'intval', array_filter( $value, 'is_numeric' ) ), false, false );
+
+	$value = array_filter( $value, $is_readable );
+
+	return acf_is_sequential_array( $value ) ? array_values( $value ) : $value;
 }
 
 function acf_order_by_search( $array, $search ) {
@@ -2247,6 +2973,21 @@ function acf_get_valid_post_id( $post_id = 0 ) {
 	return $post_id;
 }
 
+/**
+ * Checks whether field values stored on an ACF post ID belong to a password-protected
+ * post whose password has not been entered yet.
+ *
+ * @since 6.8.11
+ *
+ * @param integer|string $post_id ACF encoded post ID.
+ * @return boolean
+ */
+function acf_post_password_required( $post_id ) {
+	$decoded = acf_decode_post_id( $post_id );
+
+	return 'post' === $decoded['type'] && (int) $decoded['id'] > 0 && post_password_required( (int) $decoded['id'] );
+}
+
 
 
 /**
@@ -2348,12 +3089,14 @@ function acf_isset_termmeta( $taxonomy = '' ) {
  * This function will walk through the $_FILES data and upload each found.
  *
  * @since   5.0.9
+ * @since   6.8.11 Uploader nonces are verified against the render IDs set by acf_set_upload_render_ids() for
+ *                 this save, or the post ID being saved. See _acf_verify_file_uploader_nonce().
  *
  * @param array $ancestors An internal parameter, not required.
  */
 function acf_upload_files( $ancestors = array() ) {
 
-	if ( empty( $_FILES['acf'] ) ) {
+	if ( empty( $_FILES['acf'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Each file's uploader nonce is verified below.
 		return;
 	}
 
@@ -2384,10 +3127,9 @@ function acf_upload_files( $ancestors = array() ) {
 		return;
 	}
 
-	$field_key  = end( $ancestors );
-	$nonce_name = $field_key . '_file_nonce';
+	$field_key = end( $ancestors );
 
-	if ( empty( $_REQUEST['acf'][ $nonce_name ] ) || ! wp_verify_nonce( sanitize_text_field( $_REQUEST['acf'][ $nonce_name ] ), 'acf/file_uploader_nonce/' . $field_key ) ) {
+	if ( ! _acf_verify_file_uploader_nonce( $field_key ) ) {
 		return;
 	}
 
@@ -2400,6 +3142,51 @@ function acf_upload_files( $ancestors = array() ) {
 	// update $_POST
 	array_unshift( $ancestors, 'acf' );
 	acf_update_nested_array( $_POST, $ancestors, $attachment_id );
+}
+
+/**
+ * Returns true if the basic uploader nonce submitted for a field verifies for the object being saved.
+ *
+ * The nonce is verified against the render IDs set by acf_set_upload_render_ids() for this save, or
+ * the post ID being saved. Saves that never set render IDs, such as other plugins' form handlers,
+ * also accept the render IDs of the field lists in the request. The nonce itself is signed for the
+ * current user and render, so this only accepts nonces the user was served.
+ *
+ * @since 6.8.11
+ * @access private
+ *
+ * @param string $field_key The field key.
+ * @return boolean
+ */
+function _acf_verify_file_uploader_nonce( $field_key ) {
+	$nonce_name = $field_key . '_file_nonce';
+
+	if ( empty( $_REQUEST['acf'][ $nonce_name ] ) || ! is_string( $_REQUEST['acf'][ $nonce_name ] ) ) {
+		return false;
+	}
+
+	$nonce = sanitize_text_field( wp_unslash( $_REQUEST['acf'][ $nonce_name ] ) );
+
+	$upload_render_ids = acf_get_form_data( 'upload_render_ids' );
+	$render_ids        = is_array( $upload_render_ids ) && $upload_render_ids ? $upload_render_ids : array( (string) acf_get_form_data( 'post_id' ) );
+
+	foreach ( $render_ids as $render_id ) {
+		if ( '' !== (string) $render_id && wp_verify_nonce( $nonce, acf_get_file_uploader_nonce_action( (string) $render_id, $field_key ) ) ) {
+			return true;
+		}
+	}
+
+	if ( null !== $upload_render_ids || ! isset( $_POST['_acf_fields'] ) || ! is_array( $_POST['_acf_fields'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Only the keys are read, as render IDs to verify the uploader nonce against.
+		return false;
+	}
+
+	foreach ( array_map( 'strval', array_keys( $_POST['_acf_fields'] ) ) as $render_id ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Only the keys are read.
+		if ( '' !== $render_id && wp_verify_nonce( $nonce, acf_get_file_uploader_nonce_action( $render_id, $field_key ) ) ) {
+			return true;
+		}
+	}
+
+	return false;
 }
 
 /**
@@ -2423,6 +3210,16 @@ function acf_upload_file( $uploaded_file ) {
 	// required for wp_handle_upload() to upload the file
 	$upload_overrides = array( 'test_form' => false );
 
+	// Restrict uploads to image MIME types for image and gallery fields.
+	// phpcs:disable WordPress.Security.NonceVerification.Missing -- Field key is used for validation context only.
+	if ( ! empty( $_POST['_acfuploader'] ) ) {
+		$field = acf_get_field( sanitize_text_field( wp_unslash( $_POST['_acfuploader'] ) ) );
+		if ( acf_is_image_field( $field ) ) {
+			$upload_overrides['mimes'] = acf_get_image_mime_types( $field );
+		}
+	}
+	// phpcs:enable WordPress.Security.NonceVerification.Missing
+
 	// upload
 	$file = wp_handle_upload( $uploaded_file, $upload_overrides );
 
@@ -2437,6 +3234,15 @@ function acf_upload_file( $uploaded_file ) {
 	$file     = $file['file'];
 	$filename = basename( $file );
 
+	// Reject any PDF without a %PDF- header.
+	if ( 'application/pdf' === $type ) {
+		$head = file_get_contents( $file, false, null, 0, 1024 );
+		if ( false === $head || 0 !== strpos( ltrim( $head, "\x00..\x20" ), '%PDF-' ) ) {
+			wp_delete_file( $file );
+			return __( 'Sorry, this file could not be uploaded.', 'acf' );
+		}
+	}
+
 	// Construct the object array
 	$object = array(
 		'post_title'     => $filename,
@@ -2447,8 +3253,49 @@ function acf_upload_file( $uploaded_file ) {
 	// Save the data
 	$id = wp_insert_attachment( $object, $file );
 
-	// Add the meta-data
-	wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $file ) );
+	/**
+	 * Filters whether a file uploaded through a basic uploader gets preview images.
+	 *
+	 * Applies to File, Image and Gallery fields using the basic uploader, such as in
+	 * front-end forms. When false, WordPress won't render PDF previews or save cover
+	 * art embedded in audio and video files while generating the attachment metadata.
+	 *
+	 * @since 6.8.11
+	 *
+	 * @param boolean $generate_previews Whether to generate preview images. Default true only for users who can upload files.
+	 * @param string  $file              Path to the uploaded file.
+	 * @param integer $id                Attachment ID.
+	 */
+	$skip_previews = ! apply_filters( 'acf/upload/generate_previews', current_user_can( 'upload_files' ), $file, $id );
+
+	if ( $skip_previews ) {
+		// Dedicated callbacks, so removing them can't also remove a matching filter added by a site.
+		$no_preview_sizes = static function () {
+			return array();
+		};
+		$no_cover_art     = static function ( $metadata ) {
+			if ( is_array( $metadata ) ) {
+				unset( $metadata['image'] );
+			}
+			return $metadata;
+		};
+
+		add_filter( 'fallback_intermediate_image_sizes', $no_preview_sizes, PHP_INT_MAX );
+		add_filter( 'wp_read_audio_metadata', $no_cover_art, PHP_INT_MAX );
+		add_filter( 'wp_read_video_metadata', $no_cover_art, PHP_INT_MAX );
+	}
+
+	try {
+		// Add the meta-data
+		wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $file ) );
+	} finally {
+		// Always detach the temporary filters so they can't affect anything else in this request.
+		if ( $skip_previews ) {
+			remove_filter( 'fallback_intermediate_image_sizes', $no_preview_sizes, PHP_INT_MAX );
+			remove_filter( 'wp_read_audio_metadata', $no_cover_art, PHP_INT_MAX );
+			remove_filter( 'wp_read_video_metadata', $no_cover_art, PHP_INT_MAX );
+		}
+	}
 
 	/** This action is documented in wp-admin/custom-header.php */
 	do_action( 'wp_create_file_in_uploads', $file, $id ); // For replication
@@ -2777,6 +3624,61 @@ function acf_current_user_can_edit_post( int $post_id ): bool {
 }
 
 /**
+ * Checks if the current user can edit a given ACF context.
+ *
+ * Handles post, user, term, comment, woo_order, block, and option contexts returned by acf_decode_post_id().
+ *
+ * @since 6.7.2
+ *
+ * @param array  $post_id_info      The result of acf_decode_post_id(), containing 'type' and 'id'.
+ * @param string $options_page_slug Optional. The options page menu slug, used to look up the page's capability.
+ * @return boolean
+ */
+function acf_current_user_can_edit_in_context( array $post_id_info, string $options_page_slug = '' ): bool {
+	$type = $post_id_info['type'] ?? '';
+	$id   = $post_id_info['id'] ?? 0;
+
+	switch ( $type ) {
+		case 'post':
+			return acf_current_user_can_edit_post( (int) $id );
+
+		case 'user':
+			return current_user_can( 'edit_user', (int) $id );
+
+		case 'term':
+			return current_user_can( 'edit_term', (int) $id );
+
+		case 'comment':
+			return current_user_can( 'edit_comment', (int) $id );
+
+		case 'woo_order':
+			return current_user_can( 'edit_shop_orders' ); // phpcs:ignore
+
+		case 'block':
+			return current_user_can( 'edit_posts' );
+
+		case 'option':
+			if ( ! empty( $options_page_slug ) && function_exists( 'acf_get_options_page' ) ) {
+				$page = acf_get_options_page( $options_page_slug );
+
+				if ( ! empty( $page['capability'] ) && ! empty( $page['post_id'] ) ) {
+					// Ensure the page's post_id matches the requested post_id.
+					if ( acf_get_valid_post_id( $page['post_id'] ) !== $id ) {
+						return false;
+					}
+
+					return current_user_can( $page['capability'] );
+				}
+			}
+
+			return current_user_can( 'manage_options' );
+
+		default:
+			return (bool) apply_filters( 'acf/current_user_can_edit_in_context', false, $post_id_info );
+	}
+}
+
+/**
  * acf_get_filesize
  *
  * This function will return a numeric value of bytes for a given filesize string
@@ -2892,6 +3794,287 @@ function acf_get_valid_terms( $terms = false, $taxonomy = 'category' ) {
 }
 
 /**
+ * Returns true when the field only accepts image uploads.
+ *
+ * @since 6.8.7
+ *
+ * @param array $field The field array.
+ * @return boolean
+ */
+function acf_is_image_field( $field ) {
+	if ( ! is_array( $field ) ) {
+		/**
+		 * Filters whether the supplied field should be treated as an image field.
+		 *
+		 * @since 6.8.7
+		 *
+		 * @param bool  $is_image_field Whether the field only accepts image uploads.
+		 * @param array $field          The field array.
+		 */
+		return (bool) apply_filters( 'acf/is_image_field', false, $field );
+	}
+
+	$is_image_field = in_array( acf_maybe_get( $field, 'type', '' ), array( 'image', 'gallery' ), true );
+
+	/**
+	 * Filters whether the supplied field should be treated as an image field.
+	 *
+	 * @since 6.8.7
+	 *
+	 * @param bool  $is_image_field Whether the field only accepts image uploads.
+	 * @param array $field          The field array.
+	 */
+	$field_type = acf_maybe_get( $field, 'type', '' );
+	$field_name = acf_maybe_get( $field, '_name', '' );
+	$field_key  = acf_maybe_get( $field, 'key', '' );
+
+	$is_image_field = apply_filters( "acf/is_image_field/type={$field_type}", $is_image_field, $field );
+	$is_image_field = apply_filters( "acf/is_image_field/name={$field_name}", $is_image_field, $field );
+	$is_image_field = apply_filters( "acf/is_image_field/key={$field_key}", $is_image_field, $field );
+	$is_image_field = apply_filters( 'acf/is_image_field', $is_image_field, $field );
+
+	return $is_image_field;
+}
+
+/**
+ * Returns allowed MIME types restricted to images.
+ *
+ * @since 6.8.7
+ *
+ * @param array|false $field Optional field array for field-specific filtering.
+ * @return array
+ */
+function acf_get_image_mime_types( $field = false ) {
+	static $image_mimes = null;
+
+	if ( null === $image_mimes ) {
+		$image_mimes   = array();
+		$allowed_mimes = get_allowed_mime_types();
+
+		foreach ( $allowed_mimes as $ext => $mime ) {
+			if ( wp_match_mime_types( 'image', $mime ) ) {
+				$image_mimes[ $ext ] = $mime;
+			}
+		}
+
+		/**
+		 * Filters the image MIME types allowed for image and gallery fields.
+		 *
+		 * @since 6.8.7
+		 *
+		 * @param array $image_mimes The allowed image MIME types keyed by extension.
+		 */
+		$image_mimes = apply_filters( 'acf/get_image_mime_types', $image_mimes );
+	}
+
+	if ( ! is_array( $field ) || empty( $field['type'] ) ) {
+		return $image_mimes;
+	}
+
+	/**
+	 * Filters the image MIME types allowed for a specific field.
+	 *
+	 * @since 6.8.7
+	 *
+	 * @param array $image_mimes The allowed image MIME types keyed by extension.
+	 * @param array $field         The field array.
+	 */
+	$field_type = acf_maybe_get( $field, 'type', '' );
+	$field_name = acf_maybe_get( $field, '_name', '' );
+	$field_key  = acf_maybe_get( $field, 'key', '' );
+
+	$field_mimes = apply_filters( "acf/get_image_mime_types/type={$field_type}", $image_mimes, $field );
+	$field_mimes = apply_filters( "acf/get_image_mime_types/name={$field_name}", $field_mimes, $field );
+	$field_mimes = apply_filters( "acf/get_image_mime_types/key={$field_key}", $field_mimes, $field );
+
+	return $field_mimes;
+}
+
+/**
+ * Applies filters to image attachment validation errors.
+ *
+ * @since 6.8.7
+ *
+ * @param array  $errors     Validation errors.
+ * @param array  $file       Normalized file data.
+ * @param array  $attachment Raw attachment data for the current context.
+ * @param array  $field      The field array.
+ * @param string $context    The validation context.
+ * @return array
+ */
+function acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context ) {
+	/**
+	 * Filters the errors for image attachment validation.
+	 *
+	 * @since 6.8.7
+	 *
+	 * @param array  $errors     An array of errors.
+	 * @param array  $file       An array of data for a single file.
+	 * @param array  $attachment An array of attachment data which differs based on the context.
+	 * @param array  $field      The field array.
+	 * @param string $context    The current context (uploading, preparing, basic_upload).
+	 */
+	$field_type = acf_maybe_get( $field, 'type', '' );
+	$field_name = acf_maybe_get( $field, '_name', '' );
+	$field_key  = acf_maybe_get( $field, 'key', '' );
+
+	$errors = apply_filters( "acf/validate_is_image_attachment/type={$field_type}", $errors, $file, $attachment, $field, $context );
+	$errors = apply_filters( "acf/validate_is_image_attachment/name={$field_name}", $errors, $file, $attachment, $field, $context );
+	$errors = apply_filters( "acf/validate_is_image_attachment/key={$field_key}", $errors, $file, $attachment, $field, $context );
+	$errors = apply_filters( 'acf/validate_is_image_attachment', $errors, $file, $attachment, $field, $context );
+
+	return $errors;
+}
+
+/**
+ * Validates image attachment data during upload.
+ *
+ * @since 6.8.7
+ *
+ * @param array  $errors        Validation errors.
+ * @param array  $file          Normalized file data.
+ * @param array  $attachment    Raw attachment data for the current context.
+ * @param array  $field         The field array.
+ * @param string $context       The validation context.
+ * @param string $error_message The error message to use when validation fails.
+ * @return array
+ */
+function acf_validate_is_image_attachment_upload( $errors, $file, $attachment, $field, $context, $error_message ) {
+	if ( empty( $attachment['tmp_name'] ) || ! file_exists( $attachment['tmp_name'] ) ) {
+		$errors['invalid_image'] = $error_message;
+
+		return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
+	}
+
+	$checked = wp_check_filetype_and_ext( $attachment['tmp_name'], $attachment['name'], acf_get_image_mime_types( $field ) );
+
+	if ( empty( $checked['ext'] ) || empty( $checked['type'] ) || empty( wp_match_mime_types( 'image', $checked['type'] ) ) ) {
+		$errors['invalid_image'] = $error_message;
+
+		return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
+	}
+
+	/**
+	 * Filters the list of image MIME types that cannot be validated by
+	 * wp_get_image_mime(), which reads a binary magic number and only
+	 * recognizes raster formats. Vector / XML image types (e.g. SVG)
+	 * always fail that check by design and must be excluded from it.
+	 *
+	 * @since 6.8.8
+	 *
+	 * @param array $vector_mime_types MIME types to skip the binary magic-number check for.
+	 */
+	$vector_mime_types = (array) apply_filters( 'acf/validate_is_image_attachment/vector_mime_types', array( 'image/svg+xml' ) );
+
+	if ( ! in_array( $checked['type'], $vector_mime_types, true ) ) {
+		$real_mime = wp_get_image_mime( $attachment['tmp_name'] );
+
+		if ( ! $real_mime || empty( wp_match_mime_types( 'image', $real_mime ) ) ) {
+			$errors['invalid_image'] = $error_message;
+		}
+	}
+
+	return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
+}
+
+/**
+ * Validates image attachment data when preparing for the media library.
+ *
+ * @since 6.8.7
+ *
+ * @param array  $errors        Validation errors.
+ * @param array  $file          Normalized file data.
+ * @param array  $attachment    Raw attachment data for the current context.
+ * @param array  $field         The field array.
+ * @param string $context       The validation context.
+ * @param string $error_message The error message to use when validation fails.
+ * @return array
+ */
+function acf_validate_is_image_attachment_prepare( $errors, $file, $attachment, $field, $context, $error_message ) {
+	$attachment_id = (int) acf_maybe_get( $attachment, 'id', 0 );
+
+	if ( $attachment_id ) {
+		if ( ! wp_attachment_is_image( $attachment_id ) ) {
+			$errors['invalid_image'] = $error_message;
+		}
+
+		return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
+	}
+
+	$mime = acf_maybe_get( $attachment, 'mime', acf_maybe_get( $attachment, 'type', '' ) );
+
+	if ( $mime && empty( wp_match_mime_types( 'image', $mime ) ) ) {
+		$errors['invalid_image'] = $error_message;
+	}
+
+	return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
+}
+
+/**
+ * Validates image attachment data during basic uploader pre-save checks.
+ *
+ * @since 6.8.7
+ *
+ * @param array  $errors        Validation errors.
+ * @param array  $file          Normalized file data.
+ * @param array  $attachment    Raw attachment data for the current context.
+ * @param array  $field         The field array.
+ * @param string $context       The validation context.
+ * @param string $error_message The error message to use when validation fails.
+ * @return array
+ */
+function acf_validate_is_image_attachment_basic_upload( $errors, $file, $attachment, $field, $context, $error_message ) {
+	$mime = acf_maybe_get( $attachment, 'type', '' );
+
+	if ( $mime && empty( wp_match_mime_types( 'image', $mime ) ) ) {
+		$errors['invalid_image'] = $error_message;
+	}
+
+	return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
+}
+
+/**
+ * Validates that an attachment is an image for image and gallery fields.
+ *
+ * @since 6.8.7
+ *
+ * @param array  $errors     Existing validation errors.
+ * @param array  $file       Normalized file data.
+ * @param array  $attachment Raw attachment data for the current context.
+ * @param array  $field      The field array.
+ * @param string $context    The validation context.
+ * @return array
+ */
+function acf_validate_is_image_attachment( $errors, $file, $attachment, $field, $context ) {
+	if ( ! acf_is_image_field( $field ) ) {
+		return $errors;
+	}
+
+	/**
+	 * Filters the error message used when an attachment is not a valid image.
+	 *
+	 * @since 6.8.7
+	 *
+	 * @param string $error_message The default error message.
+	 * @param array  $field         The field array.
+	 * @param string $context       The current context (uploading, preparing, basic_upload).
+	 * @param array  $file          An array of data for a single file.
+	 * @param array  $attachment    An array of attachment data which differs based on the context.
+	 */
+	$error_message = apply_filters( 'acf/validate_is_image_attachment/error_message', __( 'File must be a valid image.', 'acf' ), $field, $context, $file, $attachment );
+
+	if ( 'upload' === $context ) {
+		return acf_validate_is_image_attachment_upload( $errors, $file, $attachment, $field, $context, $error_message );
+	}
+
+	if ( 'prepare' === $context ) {
+		return acf_validate_is_image_attachment_prepare( $errors, $file, $attachment, $field, $context, $error_message );
+	}
+
+	return acf_validate_is_image_attachment_basic_upload( $errors, $file, $attachment, $field, $context, $error_message );
+}
+
+/**
  * acf_validate_attachment
  *
  * This function will validate an attachment based on a field's restrictions and return an array of errors
@@ -2921,10 +4104,13 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 		$file['type'] = pathinfo( $attachment['name'], PATHINFO_EXTENSION );
 		$file['size'] = filesize( $attachment['tmp_name'] );
 
-		if ( strpos( $attachment['type'], 'image' ) !== false ) {
-			$size           = getimagesize( $attachment['tmp_name'] );
-			$file['width']  = acf_maybe_get( $size, 0 );
-			$file['height'] = acf_maybe_get( $size, 1 );
+		if ( acf_is_image_field( $field ) || strpos( $attachment['type'], 'image' ) !== false ) {
+			$size = function_exists( 'wp_getimagesize' ) ? wp_getimagesize( $attachment['tmp_name'] ) : getimagesize( $attachment['tmp_name'] );
+
+			if ( $size ) {
+				$file['width']  = acf_maybe_get( $size, 0 );
+				$file['height'] = acf_maybe_get( $size, 1 );
+			}
 		}
 
 		// prepare
@@ -3724,61 +4910,99 @@ function acf_connect_attachment_to_post( $attachment_id = 0, $post_id = 0 ) {
 }
 
 /**
- * acf_encrypt
- *
- * This function will encrypt a string using PHP
+ * Encrypts a string using PHP.
  * https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
  *
- * @since   5.5.8
+ * @since 5.5.8
  *
- * @param   $data (string)
- * @return  (string)
+ * @param string $data    The data to encrypt.
+ * @param string $context Optional domain-separation label. When non-empty, the key derivation
+ *                        and HMAC input are bound to this label so a token minted for one
+ *                        context cannot be verified as belonging to another. When empty, the
+ *                        legacy key derivation is used for back-compat with existing callers.
+ * @return string|false Encrypted string, or false if encryption fails.
  */
-function acf_encrypt( $data = '' ) {
+function acf_encrypt( $data = '', string $context = '' ) {
 
-	// bail early if no encrypt function
 	if ( ! function_exists( 'openssl_encrypt' ) ) {
-		return base64_encode( $data );
+		return false;
 	}
 
-	// generate a key
-	$key = wp_hash( 'acf_encrypt' );
+	if ( '' === $context ) {
+		$key     = wp_hash( 'acf_encrypt' );
+		$mac_key = wp_hash( 'acf_encrypt_mac' );
+	} else {
+		$key     = wp_hash( 'acf_encrypt|' . $context );
+		$mac_key = wp_hash( 'acf_encrypt_mac|' . $context );
+	}
 
-	// Generate an initialization vector
 	$iv = openssl_random_pseudo_bytes( openssl_cipher_iv_length( 'aes-256-cbc' ) );
+	if ( false === $iv ) {
+		return false;
+	}
 
-	// Encrypt the data using AES 256 encryption in CBC mode using our encryption key and initialization vector.
 	$encrypted_data = openssl_encrypt( $data, 'aes-256-cbc', $key, 0, $iv );
+	if ( false === $encrypted_data ) {
+		return false;
+	}
 
-	// The $iv is just as important as the key for decrypting, so save it with our encrypted data using a unique separator (::)
-	return base64_encode( $encrypted_data . '::' . $iv );
+	$payload  = $encrypted_data . '::' . $iv;
+	$mac_data = '' === $context ? $payload : ( $context . '|' . $payload );
+	$hmac     = hash_hmac( 'sha256', $mac_data, $mac_key, true );
+
+	return base64_encode( $payload . $hmac );
 }
 
 /**
- * acf_decrypt
- *
- * This function will decrypt an encrypted string using PHP
+ * Decrypts an encrypted string using PHP.
  * https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
  *
- * @since   5.5.8
+ * @since 5.5.8
  *
- * @param   $data (string)
- * @return  (string)
+ * @param string $data    The string to decrypt.
+ * @param string $context Optional domain-separation label. Must match the context passed to
+ *                        acf_encrypt() at mint time. When empty, the legacy key derivation is
+ *                        used for back-compat with existing callers.
+ * @return string|false Decrypted string, or false if the payload is malformed or decryption fails.
  */
-function acf_decrypt( $data = '' ) {
+function acf_decrypt( $data = '', string $context = '' ) {
 
-	// bail early if no decrypt function
 	if ( ! function_exists( 'openssl_decrypt' ) ) {
-		return base64_decode( $data );
+		return false;
 	}
 
-	// generate a key
-	$key = wp_hash( 'acf_encrypt' );
+	$raw = base64_decode( (string) $data, true );
+	if ( false === $raw ) {
+		return false;
+	}
 
-	// To decrypt, split the encrypted data from our IV - our unique separator used was "::"
-	list($encrypted_data, $iv) = explode( '::', base64_decode( $data ), 2 );
+	if ( strlen( $raw ) <= 32 ) {
+		return false;
+	}
 
-	// decrypt
+	if ( '' === $context ) {
+		$key     = wp_hash( 'acf_encrypt' );
+		$mac_key = wp_hash( 'acf_encrypt_mac' );
+	} else {
+		$key     = wp_hash( 'acf_encrypt|' . $context );
+		$mac_key = wp_hash( 'acf_encrypt_mac|' . $context );
+	}
+
+	$hmac    = substr( $raw, -32 );
+	$payload = substr( $raw, 0, -32 );
+
+	$mac_data = '' === $context ? $payload : ( $context . '|' . $payload );
+	$expected = hash_hmac( 'sha256', $mac_data, $mac_key, true );
+	if ( ! hash_equals( $expected, $hmac ) ) {
+		return false;
+	}
+
+	if ( strpos( $payload, '::' ) === false ) {
+		return false;
+	}
+
+	list( $encrypted_data, $iv ) = explode( '::', $payload, 2 );
+
 	return openssl_decrypt( $encrypted_data, 'aes-256-cbc', $key, 0, $iv );
 }
 

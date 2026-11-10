@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -222,7 +222,8 @@ function acf_upgrade_500_field_group( $ofg ) {
 
 	// save field group
 	// acf_upgrade_field_group will call the acf_get_valid_field_group function and apply 'compatibility' changes
-	$nfg = acf_update_field_group( $nfg );
+	// Upgrading data already in the database, so skip sanitization.
+	$nfg = acf_skip_internal_post_sanitization( 'acf_update_field_group', $nfg );
 
 	// log
 	acf_dev_log( '> Complete.', $nfg );
@@ -357,8 +358,8 @@ function acf_upgrade_500_field( $field ) {
 		}
 	}
 
-	// save field
-	$field = acf_update_field( $field );
+	// save field, skipping sanitization since it's upgrading data already in the database
+	$field = acf_skip_internal_post_sanitization( 'acf_update_field', $field );
 
 	// log
 	acf_dev_log( '> Complete.', $field );
@@ -478,13 +479,8 @@ function acf_upgrade_550_taxonomy( $taxonomy ) {
 	global $wpdb;
 
 	// vars
-	$search  = $taxonomy . '_%';
-	$_search = '_' . $search;
-
-	// escape '_'
-	// http://stackoverflow.com/questions/2300285/how-do-i-escape-in-sql-server
-	$search  = str_replace( '_', '\_', $search );
-	$_search = str_replace( '_', '\_', $_search );
+	$search  = $wpdb->esc_like( $taxonomy . '_' ) . '%';
+	$_search = $wpdb->esc_like( '_' . $taxonomy . '_' ) . '%';
 
 	// search
 	// results show faster query times using 2 LIKE vs 2 wildcards

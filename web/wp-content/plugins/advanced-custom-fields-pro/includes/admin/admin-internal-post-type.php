@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -270,7 +270,8 @@ if ( ! class_exists( 'ACF_Admin_Internal_Post_Type' ) ) :
 						),
 					);
 
-					acf_update_field_group( $field_group );
+					// The field group comes from the database, so skip sanitization.
+					acf_skip_internal_post_sanitization( 'acf_update_field_group', $field_group );
 				}
 
 				ob_start();

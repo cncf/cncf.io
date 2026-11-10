@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -501,6 +501,7 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 
 				do_action( "acf/field_group/render_field_settings_tab/{$tab}/type={$field['type']}", $field );
 				do_action( "acf/render_field_{$tab}_settings/type={$field['type']}", $field );
+				do_action( "acf/render_field_{$tab}_settings", $field );
 
 				$sections[ $tab ] = ob_get_clean();
 			}
@@ -551,8 +552,8 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 				$field['parent']            = $new_field_group['ID'];
 				$field['conditional_logic'] = 0;
 
-				// Update the field in the database.
-				acf_update_field( $field );
+				// Update the field in the database. Its settings come from the database, so skip sanitization.
+				acf_skip_internal_post_sanitization( 'acf_update_field', $field );
 
 				// Fire `acf/update_field_group` action hook so JSON can sync if necessary.
 				do_action( 'acf/update_field_group', $old_field_group );

@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,6 +12,13 @@
 if ( ! class_exists( 'acf_form_comment' ) ) :
 
 	class acf_form_comment {
+
+		/**
+		 * The post the comment form being rendered is for, from comments_open().
+		 *
+		 * @var integer
+		 */
+		private $comment_form_post_id = 0;
 
 
 		/**
@@ -30,6 +37,7 @@ if ( ! class_exists( 'acf_form_comment' ) ) :
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 
 			// render
+			add_filter( 'comments_open', array( $this, 'remember_comment_form_post' ), PHP_INT_MAX, 2 );
 			add_filter( 'comment_form_field_comment', array( $this, 'comment_form_field_comment' ), 999, 1 );
 
 			// add_action( 'comment_form_logged_in_after',       array( $this, 'add_comment') );
@@ -175,8 +183,12 @@ if ( ! class_exists( 'acf_form_comment' ) ) :
 		 */
 		function comment_form_field_comment( $html ) {
 
-			// global
-			global $post;
+			// The post the form is for, which comment_form() can be given instead of the global post.
+			$post = get_post( $this->comment_form_post_id ? $this->comment_form_post_id : null );
+
+			if ( ! $post ) {
+				return $html;
+			}
 
 			// vars
 			$post_id = false;
@@ -212,7 +224,8 @@ if ( ! class_exists( 'acf_form_comment' ) ) :
 			foreach ( $field_groups as $field_group ) {
 				$fields = acf_get_fields( $field_group );
 
-				acf_render_fields( $fields, $post_id, 'p', $field_group['instruction_placement'] );
+				// New comments are rendered for the post they are posted on.
+				acf_render_fields( $fields, $post_id, 'p', $field_group['instruction_placement'], array( 'render_id' => 'comment_new/' . $post->ID ) );
 			}
 
 				echo '</div>';
@@ -225,26 +238,50 @@ if ( ! class_exists( 'acf_form_comment' ) ) :
 			return $html;
 		}
 
+		/**
+		 * Records the post comment_form() checks comments are open for, which is the post its form is for.
+		 *
+		 * comment_form() can be given a post other than the global one, and its comment field filter
+		 * isn't passed the post.
+		 *
+		 * @since 6.8.11
+		 *
+		 * @param boolean $open    Whether comments are open.
+		 * @param integer $post_id The post ID.
+		 * @return boolean
+		 */
+		public function remember_comment_form_post( $open, $post_id ) {
+			$this->comment_form_post_id = (int) $post_id;
+
+			return $open;
+		}
 
 		/**
-		 * This function will save the comment data
+		 * Saves ACF field values to a comment.
 		 *
-		 * @type    function
-		 * @date    19/10/13
-		 * @since   5.0.0
+		 * @since 5.0.0
 		 *
-		 * @param   comment_id (int)
-		 * @return  n/a
+		 * @param integer $comment_id The ID of the comment being saved to.
+		 * @return integer|void
 		 */
-		function save_comment( $comment_id ) {
-
+		public function save_comment( $comment_id ) {
 			// bail early if not valid nonce
 			if ( ! acf_verify_nonce( 'comment' ) ) {
 				return $comment_id;
 			}
 
-			// kses
-			if ( isset( $_POST['acf'] ) ) {
+			if ( isset( $_POST['acf'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified above.
+				if ( ! is_array( $_POST['acf'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified above.
+					return $comment_id;
+				}
+
+				// Restrict $_POST['acf'] to fields rendered for this comment, or belonging to field groups that apply to it.
+				$this->restrict_save_input( $comment_id );
+
+				if ( empty( $_POST['acf'] ) ) {
+					return $comment_id;
+				}
+
 				$_POST['acf'] = wp_kses_post_deep( $_POST['acf'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized with wp_kses_post_deep().
 			}
 
@@ -252,6 +289,38 @@ if ( ! class_exists( 'acf_form_comment' ) ) :
 			if ( acf_validate_save_post( true ) ) {
 				acf_save_post( "comment_{$comment_id}" );
 			}
+		}
+
+		/**
+		 * Restricts the submitted values to fields rendered for the comment, or belonging to field groups
+		 * whose comment location rules match the comment's post type.
+		 *
+		 * New comments are rendered for the post they are posted on; existing comments for themselves.
+		 *
+		 * @since 6.8.11
+		 *
+		 * @param integer $comment_id The ID of comment being saved.
+		 * @return void
+		 */
+		private function restrict_save_input( $comment_id ) {
+			$comment    = get_comment( $comment_id );
+			$render_ids = array();
+			$screen     = array();
+
+			if ( $comment ) {
+				$render_ids = array( current_action() === 'comment_post' ? 'comment_new/' . $comment->comment_post_ID : 'comment_' . $comment->comment_ID );
+				$screen     = array( 'comment' => get_post_type( $comment->comment_post_ID ) );
+			}
+
+			acf_restrict_save_input(
+				array(
+					'context'    => 'comment',
+					'post_id'    => 'comment_' . $comment_id,
+					'render_ids' => $render_ids,
+					'screen'     => $screen,
+					'filter_arg' => $comment_id,
+				)
+			);
 		}
 
 

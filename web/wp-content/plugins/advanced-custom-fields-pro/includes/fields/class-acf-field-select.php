@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -130,7 +130,7 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 				$key   = '';
 			}
 
-			if ( ! acf_verify_ajax( $nonce, $key, $is_field_key ) ) {
+			if ( ! acf_verify_ajax( $nonce, $key, $is_field_key, 'select' ) ) {
 				die();
 			}
 
@@ -580,24 +580,104 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 					return $value;
 				}
 
-				foreach ( $value as $v ) {
-					// Ignore if the option already exists.
-					if ( isset( $field['choices'][ $v ] ) ) {
-						continue;
-					}
-
-					// Unslash (fixes serialize single quote issue) and sanitize.
-					$v = wp_unslash( $v );
-					$v = sanitize_text_field( $v );
-
-					// Append to the field choices.
-					$field['choices'][ $v ] = $v;
-				}
-
-				acf_update_field( $field );
+				$this->append_user_choices_to_field( $value, $post_id, $field );
 			}
 
 			return $value;
+		}
+
+		/**
+		 * Appends submitter-contributed values to a persisted field's `choices`
+		 * array, subject to the `acf/fields/max_appended_choices` cap. Used by
+		 * checkbox `save_custom` and select `save_options`. Callers must have
+		 * already verified that the setting is enabled and that the field has
+		 * an ID (i.e. it's not local/JSON-only).
+		 *
+		 * @internal Helper for ACF's choice field types; not intended for
+		 *           external callers. Signature may change without notice.
+		 *
+		 * @since 6.8.5
+		 *
+		 * @param array          $value   Submitted values.
+		 * @param integer|string $post_id The post_id of which the value will be saved.
+		 * @param array          $field   The persisted field array. Must have an ID.
+		 * @return void
+		 */
+		public function append_user_choices_to_field( $value, $post_id, $field ) {
+			/**
+			 * Filters whether submitted values may be appended to a field's choices
+			 * via the checkbox `save_custom`, radio `save_other_choice`, and select
+			 * `save_options` settings. When false, the field definition is left
+			 * unchanged. The submitter's own field value still saves to their post.
+			 *
+			 * For example, to only allow users who can edit posts to add choices:
+			 *
+			 *     add_filter( 'acf/fields/allow_append_choices', function () {
+			 *         return current_user_can( 'edit_posts' );
+			 *     } );
+			 *
+			 * @since 6.8.11
+			 *
+			 * @param boolean        $allow   Whether to append submitted values. Default true.
+			 * @param array          $field   The field array holding all the field options.
+			 * @param integer|string $post_id The post_id of which the value will be saved.
+			 */
+			if ( ! apply_filters( 'acf/fields/allow_append_choices', true, $field, $post_id ) ) {
+				return;
+			}
+
+			/**
+			 * Filters the maximum number of choices that may be stored on a field
+			 * via the checkbox `save_custom`, radio `save_other_choice`, and select
+			 * `save_options` settings. Once reached, additional submitter-contributed
+			 * values are not appended to the field definition. The submitter's own
+			 * field value still saves to their post.
+			 *
+			 * @since 6.8.5
+			 *
+			 * @param int            $max     Maximum number of choices. Default 1000.
+			 * @param array          $field   The field array holding all the field options.
+			 * @param integer|string $post_id The post_id of which the value will be saved.
+			 */
+			$max = (int) apply_filters( 'acf/fields/max_appended_choices', 1000, $field, $post_id );
+
+			$appended = false;
+
+			foreach ( $value as $v ) {
+				// Skip if the raw submitted value matches an existing key,
+				// preserving back-compat for fields whose choices contain
+				// un-normalized keys (e.g. developer-registered with HTML).
+				if ( isset( $field['choices'][ $v ] ) ) {
+					continue;
+				}
+
+				// Unslash (fixes serialize single quote issue) and sanitize.
+				$v = wp_unslash( $v );
+				$v = sanitize_text_field( $v );
+
+				// Skip if the normalized value is empty or already exists.
+				if ( $v === '' || isset( $field['choices'][ $v ] ) ) {
+					continue;
+				}
+
+				// Stop appending once the cap is reached.
+				if ( count( $field['choices'] ) >= $max ) {
+					break;
+				}
+
+				// Append to the field choices.
+				$field['choices'][ $v ] = $v;
+				$appended               = true;
+			}
+
+			// Save only if we actually appended a new choice.
+			// The field is already unslashed, and acf_update_field() unslashes values
+			// (but not keys) again, so slash it first to keep choice keys and values identical.
+			// The other settings are already stored and the new choices are sanitized above,
+			// so skip sanitization to leave the field's existing HTML alone.
+			if ( $appended ) {
+				acf_skip_internal_post_sanitization( 'acf_update_field', wp_slash( $field ) );
+			}
 		}
 
 		/**
@@ -769,6 +849,17 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			}
 
 			return $schema;
+		}
+
+		/**
+		 * Returns an array of JSON-LD Property output types that are supported by this field type.
+		 *
+		 * @since 6.8
+		 *
+		 * @return string[]
+		 */
+		public function get_jsonld_output_types(): array {
+			return array( 'Text' );
 		}
 	}
 

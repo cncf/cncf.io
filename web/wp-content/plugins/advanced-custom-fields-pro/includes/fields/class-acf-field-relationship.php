@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -111,7 +111,7 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 				$key   = '';
 			}
 
-			if ( ! acf_verify_ajax( $nonce, $key, ! $conditional_logic ) ) {
+			if ( ! acf_verify_ajax( $nonce, $key, ! $conditional_logic, 'relationship' ) ) {
 				die();
 			}
 
@@ -119,12 +119,12 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 		}
 
 		/**
-		 * This function will return an array of data formatted for use in a select2 AJAX response
+		 * Returns an array of data formatted for use in a select2 AJAX response.
 		 *
-		 * @since   5.0.9
+		 * @since 5.0.9
 		 *
 		 * @param array $options An array of options for the query.
-		 * @return array
+		 * @return array|false
 		 */
 		public function get_ajax_query( $options = array() ) {
 			// defaults
@@ -155,7 +155,7 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 
 			// paged
 			$args['posts_per_page'] = 20;
-			$args['paged']          = intval( $options['paged'] );
+			$args['paged']          = (int) $options['paged'];
 
 			// search
 			if ( $options['s'] !== '' && empty( $options['include'] ) ) {
@@ -167,73 +167,116 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 				$is_search = true;
 			}
 
-			// post_type
-			if ( ! empty( $options['post_type'] ) ) {
+			// post_type - validate user input against field config to prevent bypass.
+			if ( ! empty( $field['post_type'] ) ) {
+				$allowed_post_types = acf_get_array( $field['post_type'] );
+
+				if ( ! empty( $options['post_type'] ) ) {
+					// User is filtering - only allow post types within field config.
+					$requested_types   = acf_get_array( $options['post_type'] );
+					$args['post_type'] = array_intersect( $requested_types, $allowed_post_types );
+
+					if ( empty( $args['post_type'] ) ) {
+						// Requested types not allowed, fall back to field config.
+						$args['post_type'] = $allowed_post_types;
+					}
+				} else {
+					$args['post_type'] = $allowed_post_types;
+				}
+			} elseif ( ! empty( $options['post_type'] ) ) {
+				// No field restriction, allow user filter.
 				$args['post_type'] = acf_get_array( $options['post_type'] );
-			} elseif ( ! empty( $field['post_type'] ) ) {
-				$args['post_type'] = acf_get_array( $field['post_type'] );
 			} else {
 				$args['post_type'] = acf_get_post_types();
 			}
 
-			// post status
-			if ( ! empty( $options['post_status'] ) ) {
-				$args['post_status'] = acf_get_array( $options['post_status'] );
-			} elseif ( ! empty( $field['post_status'] ) ) {
+			// Post status - use field config only, don't accept from user input.
+			if ( ! empty( $field['post_status'] ) ) {
 				$args['post_status'] = acf_get_array( $field['post_status'] );
 			}
 
-			// taxonomy
-			if ( ! empty( $options['taxonomy'] ) ) {
+			// taxonomy - validate user input against field config to prevent bypass.
+			if ( ! empty( $field['taxonomy'] ) ) {
+				// Field has taxonomy restrictions.
+				$allowed_terms = acf_decode_taxonomy_terms( $field['taxonomy'] );
 
-				// vars
+				if ( ! empty( $options['taxonomy'] ) ) {
+					// User is filtering - validate both taxonomy AND term are allowed.
+					$term = acf_decode_taxonomy_term( $options['taxonomy'] );
+
+					if ( $term && isset( $allowed_terms[ $term['taxonomy'] ] ) && in_array( $term['term'], $allowed_terms[ $term['taxonomy'] ], true ) ) {
+						// Taxonomy:term combination is allowed.
+						$args['tax_query']   = array();
+						$args['tax_query'][] = array(
+							'taxonomy' => $term['taxonomy'],
+							'field'    => 'slug',
+							'terms'    => $term['term'],
+						);
+					} else {
+						// Requested taxonomy:term not allowed, fall back to field config.
+						$args['tax_query'] = array( 'relation' => 'OR' );
+
+						foreach ( $allowed_terms as $k => $v ) {
+							$args['tax_query'][] = array(
+								'taxonomy' => $k,
+								'field'    => 'slug',
+								'terms'    => $v,
+							);
+						}
+					}
+				} else {
+					// No user filter, use field config.
+					$args['tax_query'] = array( 'relation' => 'OR' );
+
+					foreach ( $allowed_terms as $k => $v ) {
+						$args['tax_query'][] = array(
+							'taxonomy' => $k,
+							'field'    => 'slug',
+							'terms'    => $v,
+						);
+					}
+				}
+			} elseif ( ! empty( $options['taxonomy'] ) ) {
+				// No field restriction, allow user filter.
 				$term = acf_decode_taxonomy_term( $options['taxonomy'] );
 
-				// tax query
-				$args['tax_query'] = array();
-
-				// append
-				$args['tax_query'][] = array(
-					'taxonomy' => $term['taxonomy'],
-					'field'    => 'slug',
-					'terms'    => $term['term'],
-				);
-			} elseif ( ! empty( $field['taxonomy'] ) ) {
-
-				// vars
-				$terms = acf_decode_taxonomy_terms( $field['taxonomy'] );
-
-				// append to $args
-				$args['tax_query'] = array(
-					'relation' => 'OR',
-				);
-
-				// now create the tax queries
-				foreach ( $terms as $k => $v ) {
+				if ( $term ) {
+					$args['tax_query']   = array();
 					$args['tax_query'][] = array(
-						'taxonomy' => $k,
+						'taxonomy' => $term['taxonomy'],
 						'field'    => 'slug',
-						'terms'    => $v,
+						'terms'    => $term['term'],
 					);
 				}
 			}
 
 			if ( ! empty( $options['include'] ) ) {
 				// If we have an include, we need to return only the selected posts.
-				$args['post__in'] = array( $options['include'] );
+				$args['post__in'] = array( (int) $options['include'] );
 			}
+
+			$args['perm']                 = 'readable';
+			$args['acf_field_post_types'] = acf_get_array( $field['post_type'] );
+			$args                         = acf_ensure_perm_readable_post_status( $args );
 
 			// filters
 			$args = apply_filters( 'acf/fields/relationship/query', $args, $field, $options['post_id'] );
 			$args = apply_filters( 'acf/fields/relationship/query/name=' . $field['name'], $args, $field, $options['post_id'] );
 			$args = apply_filters( 'acf/fields/relationship/query/key=' . $field['key'], $args, $field, $options['post_id'] );
 
-			// get posts grouped by post type
-			$groups = acf_get_grouped_posts( $args );
+			// Re-normalize in case a filter reset `post_status` to 'any' while leaving `perm=readable`.
+			$args = acf_ensure_perm_readable_post_status( $args );
 
-			// bail early if no posts
+			// get posts grouped by post type
+			$readable = acf_remove_unreadable_grouped_posts( acf_get_grouped_posts( $args ), $args, $field );
+			$groups   = $readable['groups'];
+
+			// bail early if no posts, but keep paging if this page's posts were all removed
 			if ( empty( $groups ) ) {
-				return false;
+				return $readable['more'] ? array(
+					'results' => array(),
+					'more'    => true,
+				) : false;
 			}
 
 			// loop
@@ -268,18 +311,15 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 			}
 
 			// add as optgroup or results
-			if ( count( $args['post_type'] ) == 1 ) {
+			if ( count( $args['post_type'] ) === 1 ) {
 				$results = $results[0]['children'];
 			}
 
-			// vars
-			$response = array(
+			return array(
 				'results' => $results,
+				'more'    => $readable['more'],
 				'limit'   => $args['posts_per_page'],
 			);
-
-			// return
-			return $response;
 		}
 
 		/**
@@ -528,7 +568,7 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 							);
 						?>
 						<span tabindex="0" data-id="<?php echo esc_attr( $post->ID ); ?>" class="acf-rel-item acf-rel-item-remove">
-								<?php echo acf_esc_html( $this->get_post_title( $post, $field ) ); ?>
+								<?php echo acf_esc_html( acf_current_user_can_read_post( $post, $field ) ? $this->get_post_title( $post, $field ) : acf_get_restricted_post_title() ); ?>
 							<a href="#" class="acf-icon -minus small dark" data-name="remove_item"></a>
 						</span>
 					</li>
@@ -711,6 +751,7 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 		 * @return  $value (mixed) the modified value
 		 */
 		function format_value( $value, $post_id, $field ) {
+			$value = acf_remove_unreadable_formatted_post_ids( $value, $post_id, $field );
 
 			// bail early if no value
 			if ( empty( $value ) ) {
@@ -799,6 +840,8 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 				$value = acf_idval( $value );
 			}
 
+			$value = acf_remove_disallowed_post_ids( $value, $post_id, $field );
+
 			acf_update_bidirectional_values( acf_get_array( $value ), $post_id, $field );
 
 			// Return value.
@@ -886,6 +929,46 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 		 */
 		public function format_value_for_rest( $value, $post_id, array $field ) {
 			return acf_format_numerics( $value );
+		}
+
+		/**
+		 * Formats the field value for JSON-LD output.
+		 *
+		 * @since 6.8.0
+		 *
+		 * @param mixed          $value   The value of the field.
+		 * @param integer|string $post_id The ID of the post.
+		 * @param array          $field   The field array.
+		 * @return mixed
+		 */
+		public function format_value_for_jsonld( $value, $post_id, $field ) {
+			$value = acf_format_numerics( $value );
+
+			if ( ! $value ) {
+				return $value;
+			}
+
+			if ( is_array( $value ) ) {
+				return array_map(
+					function ( $post_id ) {
+						return get_permalink( $post_id );
+					},
+					$value
+				);
+			}
+
+			return get_permalink( $value );
+		}
+
+		/**
+		 * Returns an array of JSON-LD Property output types that are supported by this field type.
+		 *
+		 * @since 6.8
+		 *
+		 * @return string[]
+		 */
+		public function get_jsonld_output_types(): array {
+			return array( 'Thing', 'URL' );
 		}
 	}
 

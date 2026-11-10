@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -207,6 +207,9 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 			// vars
 			$post_id = 'user_' . $args['user_id'];
 
+			// New users are rendered for the form they are created with, so a list from one form isn't accepted by the other.
+			$render_id = $args['user_id'] ? $post_id : 'user_0/' . $args['view'];
+
 			// get field groups
 			$field_groups = acf_get_field_groups(
 				array(
@@ -251,7 +254,7 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 
 				// render
 				echo $before; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- safe HTML string.
-				acf_render_fields( $fields, $post_id, $args['el'], $field_group['instruction_placement'] );
+				acf_render_fields( $fields, $post_id, $args['el'], $field_group['instruction_placement'], array( 'render_id' => $render_id ) );
 				echo $after; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- safe HTML string.
 			}
 
@@ -291,28 +294,92 @@ if ( ! class_exists( 'ACF_Form_User' ) ) :
 			<?php
 		}
 
-
 		/**
-		 * description
+		 * Saves ACF field values to a user.
 		 *
-		 * @type    function
-		 * @date    8/10/13
 		 * @since   5.0.0
 		 *
-		 * @param   $post_id (int)
-		 * @return  $post_id (int)
+		 * @param integer $user_id The ID of the user being saved.
+		 * @return integer|void
 		 */
-		function save_user( $user_id ) {
-
-			// verify nonce
+		public function save_user( $user_id ) {
 			if ( ! acf_verify_nonce( 'user' ) ) {
 				return $user_id;
+			}
+
+			if ( isset( $_POST['acf'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified above.
+				if ( ! is_array( $_POST['acf'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified above.
+					return $user_id;
+				}
+
+				// Restrict $_POST['acf'] to fields rendered for this user, or belonging to field groups that apply to them.
+				$this->restrict_save_input( $user_id );
+
+				if ( empty( $_POST['acf'] ) ) {
+					return $user_id;
+				}
 			}
 
 			// save
 			if ( acf_validate_save_post( true ) ) {
 				acf_save_post( "user_$user_id" );
 			}
+		}
+
+		/**
+		 * Restricts the submitted values to fields rendered for the user, or belonging to field groups
+		 * that apply to them in the current save context.
+		 *
+		 * On user_register the new user was created with either the public register form or the admin
+		 * Add User form, which are rendered and matched separately. On profile_update the user was
+		 * rendered with the edit form (self-edit or admin-edit-other).
+		 *
+		 * @since 6.8.11
+		 *
+		 * @param integer $user_id The user being saved.
+		 * @return void
+		 */
+		private function restrict_save_input( $user_id ) {
+			if ( current_action() === 'user_register' ) {
+				$view       = $this->is_add_user_request() ? 'add' : 'register';
+				$render_ids = array( 'user_0/' . $view );
+				$screen     = array(
+					'user_id'   => 'new',
+					'user_form' => $view,
+				);
+
+				// Extensions such as ACF Extended render the admin Add User form's fields for the `user_0` post ID.
+				if ( 'add' === $view ) {
+					$render_ids[] = 'user_0';
+				}
+			} else {
+				$render_ids = array( 'user_' . $user_id );
+				$screen     = array(
+					'user_id'   => $user_id,
+					'user_form' => 'edit',
+				);
+			}
+
+			acf_restrict_save_input(
+				array(
+					'context'    => 'user',
+					'post_id'    => 'user_' . $user_id,
+					'render_ids' => $render_ids,
+					'screen'     => $screen,
+					'filter_arg' => $user_id,
+				)
+			);
+		}
+
+		/**
+		 * Returns true if the current request is the admin Add User form, rather than registration.
+		 *
+		 * @since 6.8.11
+		 *
+		 * @return boolean
+		 */
+		private function is_add_user_request() {
+			return is_admin() && 'createuser' === acf_maybe_get_POST( 'action' );
 		}
 
 		/**

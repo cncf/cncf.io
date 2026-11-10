@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -139,7 +139,7 @@ if ( ! class_exists( 'acf_form_taxonomy' ) ) :
 				// loop
 				foreach ( $field_groups as $field_group ) {
 						$fields = acf_get_fields( $field_group );
-						acf_render_fields( $fields, $post_id, 'div', 'field' );
+						acf_render_fields( $fields, $post_id, 'div', 'field', array( 'render_id' => $post_id . '/' . $taxonomy ) );
 				}
 
 				// wrap
@@ -312,6 +312,16 @@ if ( ! class_exists( 'acf_form_taxonomy' ) ) :
 				return $term_id;
 			}
 
+			// Only accept fields rendered for this term (or the taxonomy's Add form), or from field groups located on the taxonomy.
+			acf_restrict_save_input(
+				array(
+					'context'    => 'taxonomy',
+					'post_id'    => $post_id,
+					'render_ids' => array( current_action() === 'create_term' ? 'term_0/' . $taxonomy : $post_id ),
+					'screen'     => array( 'taxonomy' => $taxonomy ),
+				)
+			);
+
 			// valied and show errors
 			acf_validate_save_post( true );
 
@@ -341,13 +351,8 @@ if ( ! class_exists( 'acf_form_taxonomy' ) ) :
 			global $wpdb;
 
 			// vars
-			$search  = $taxonomy . '_' . $term . '_%';
-			$_search = '_' . $search;
-
-			// escape '_'
-			// http://stackoverflow.com/questions/2300285/how-do-i-escape-in-sql-server
-			$search  = str_replace( '_', '\_', $search );
-			$_search = str_replace( '_', '\_', $_search );
+			$search  = $wpdb->esc_like( $taxonomy . '_' . $term . '_' ) . '%';
+			$_search = $wpdb->esc_like( '_' . $taxonomy . '_' . $term . '_' ) . '%';
 
 			// delete
 			$result = $wpdb->query(

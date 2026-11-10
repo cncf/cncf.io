@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -344,35 +344,45 @@ if ( ! class_exists( 'acf_field_radio' ) ) :
 				return $value;
 			}
 
-			// save_other_choice
-			if ( $field['save_other_choice'] ) {
-
-				// value isn't in choices yet
-				if ( ! isset( $field['choices'][ $value ] ) ) {
-
-					// get raw $field (may have been changed via repeater field)
-					// if field is local, it won't have an ID
-					$selector = $field['ID'] ? $field['ID'] : $field['key'];
-					$field    = acf_get_field( $selector );
-
-					// bail early if no ID (JSON only)
-					if ( ! $field['ID'] ) {
-						return $value;
-					}
-
-					// unslash (fixes serialize single quote issue)
-					$value = wp_unslash( $value );
-
-					// sanitize (remove tags)
-					$value = sanitize_text_field( $value );
-
-					// update $field
-					$field['choices'][ $value ] = $value;
-
-					// save
-					acf_update_field( $field );
-				}
+			// bail early if not saving other choices, or the value is already a choice
+			if ( ! $field['save_other_choice'] || isset( $field['choices'][ $value ] ) ) {
+				return $value;
 			}
+
+			// get raw $field (may have been changed via repeater field)
+			// if field is local, it won't have an ID
+			$selector = $field['ID'] ? $field['ID'] : $field['key'];
+			$field    = acf_get_field( $selector );
+
+			// bail early if no ID (JSON only)
+			if ( ! $field['ID'] ) {
+				return $value;
+			}
+
+			// unslash (fixes serialize single quote issue)
+			$value = wp_unslash( $value );
+
+			// sanitize (remove tags)
+			$value = sanitize_text_field( $value );
+
+			/** This filter is documented in includes/fields/class-acf-field-select.php */
+			if ( ! apply_filters( 'acf/fields/allow_append_choices', true, $field, $post_id ) ) {
+				return $value;
+			}
+
+			/** This filter is documented in includes/fields/class-acf-field-select.php */
+			$max = (int) apply_filters( 'acf/fields/max_appended_choices', 1000, $field, $post_id );
+
+			// bail if the cap is reached; the normalized value still saves
+			if ( count( $field['choices'] ) >= $max ) {
+				return $value;
+			}
+
+			// update $field
+			$field['choices'][ $value ] = $value;
+
+			// save, see acf_field_select::append_user_choices_to_field() for why
+			acf_skip_internal_post_sanitization( 'acf_update_field', wp_slash( $field ) );
 
 			// return
 			return $value;
@@ -463,6 +473,17 @@ if ( ! class_exists( 'acf_field_radio' ) ) :
 			}
 
 			return $schema;
+		}
+
+		/**
+		 * Returns an array of JSON-LD Property output types that are supported by this field type.
+		 *
+		 * @since 6.8
+		 *
+		 * @return string[]
+		 */
+		public function get_jsonld_output_types(): array {
+			return array( 'Text' );
 		}
 	}
 

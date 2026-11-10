@@ -3,7 +3,7 @@
  * @package ACF
  * @author  WP Engine
  *
- * © 2025 Advanced Custom Fields (ACF®). All rights reserved.
+ * © 2026 Advanced Custom Fields (ACF®). All rights reserved.
  * "ACF" is a trademark of WP Engine.
  * Licensed under the GNU General Public License v2 or later.
  * https://www.gnu.org/licenses/gpl-2.0.html
@@ -89,6 +89,10 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 		 * @return boolean
 		 */
 		public function check_acf_fields_have_changed( $post_has_changed, $last_revision, $post ) {
+			if ( apply_filters( 'acf/revisions/skip_legacy_metabox_handling', false ) ) {
+				return $post_has_changed;
+			}
+
 			if ( acf_maybe_get_GET( 'meta-box-loader', false ) ) {
 				// We're in a legacy AJAX request, so we copy fields over to the latest revision.
 				$this->maybe_save_revision( $last_revision->ID, $post->ID );
@@ -111,6 +115,10 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 		 * @return void
 		 */
 		public function maybe_save_revision( $revision_id, $post_id ) {
+			if ( apply_filters( 'acf/revisions/skip_legacy_metabox_handling', false ) ) {
+				return;
+			}
+
 			// We don't have anything to copy over yet.
 			if ( ! did_action( 'acf/save_post' ) ) {
 				delete_metadata( 'post', $post_id, '_acf_changed' );
@@ -362,38 +370,38 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 
 
 		/**
-		 * This function will modify the $post_id and allow loading values from a revision
+		 * Modifies the $post_id to allow loading values from a revision.
 		 *
-		 * @type    function
-		 * @date    6/3/17
-		 * @since   5.5.10
+		 * @since 5.5.10
 		 *
-		 * @param   $post_id (int)
-		 * @param   $_post_id (int)
-		 * @return  $post_id (int)
+		 * @param mixed $post_id  The post ID after being processed by acf_get_valid_post_id().
+		 * @param mixed $_post_id The post ID before being processed by acf_get_valid_post_id().
+		 * @return mixed
 		 */
-		function acf_validate_post_id( $post_id, $_post_id ) {
-
-			// phpcs:disable WordPress.Security.NonceVerification.Recommended
-			// bail early if no preview in URL
-			if ( ! isset( $_GET['preview'] ) ) {
+		public function acf_validate_post_id( $post_id, $_post_id ) {
+			// Bail early if not a well-formed WordPress preview context.
+			if ( ! is_preview() ) {
 				return $post_id;
 			}
 
-			// bail early if $post_id is not numeric
+			// Bail early if $post_id is not numeric.
 			if ( ! is_numeric( $post_id ) ) {
 				return $post_id;
 			}
 
-			// vars
+			// Bail early if current user cannot edit this post.
+			if ( ! current_user_can( 'edit_post', (int) $post_id ) ) {
+				return $post_id;
+			}
+
 			$k          = $post_id;
 			$preview_id = 0;
 
-			// check cache
 			if ( isset( $this->cache[ $k ] ) ) {
 				return $this->cache[ $k ];
 			}
 
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			// validate
 			if ( isset( $_GET['preview_id'] ) ) {
 				$preview_id = (int) $_GET['preview_id'];
@@ -404,23 +412,20 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 			}
 			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
-			// bail early id $preview_id does not match $post_id
+			// Bail early if $preview_id does not match $post_id.
 			if ( $preview_id != $post_id ) {
 				return $post_id;
 			}
 
-			// attempt find revision
+			// Attempt to find the revision.
 			$revision = acf_get_post_latest_revision( $post_id );
 
-			// save
 			if ( $revision && $revision->post_parent == $post_id ) {
 				$post_id = (int) $revision->ID;
 			}
 
-			// set cache
 			$this->cache[ $k ] = $post_id;
 
-			// return
 			return $post_id;
 		}
 	}
