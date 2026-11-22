@@ -95,3 +95,4 @@ while ( $query->have_posts() ) {
 	$query->the_post();
 	wp_delete_post( get_the_id() );
 }
+wp_reset_postdata();
