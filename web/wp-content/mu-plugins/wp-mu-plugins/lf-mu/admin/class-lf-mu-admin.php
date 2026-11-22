@@ -400,28 +400,37 @@ class Lf_Mu_Admin {
 	 * Sync programs from https://community.cncf.io/
 	 */
 	public function sync_programs() {
+		remove_action( 'post_updated', 'wp_check_for_changed_dates', 12 );
 		include_once 'partials/sync-programs.php';
+		add_action( 'post_updated', 'wp_check_for_changed_dates', 12, 3 );
 	}
 
 	/**
 	 * Sync projects data from landscape.
 	 */
 	public function sync_projects() {
+		remove_action( 'post_updated', 'wp_check_for_changed_dates', 12 );
 		include_once 'partials/sync-projects.php';
+		add_action( 'post_updated', 'wp_check_for_changed_dates', 12, 3 );
 	}
 
 	/**
 	 * Sync people data from https://github.com/cncf/people
 	 */
 	public function sync_people() {
+		// Each sync resets post_date, which would otherwise add an _wp_old_date row per post per run.
+		remove_action( 'post_updated', 'wp_check_for_changed_dates', 12 );
 		include_once 'partials/sync-people.php';
+		add_action( 'post_updated', 'wp_check_for_changed_dates', 12, 3 );
 	}
 
 	/**
 	 * Sync KTP data from landscape.
 	 */
 	public function sync_ktps() {
+		remove_action( 'post_updated', 'wp_check_for_changed_dates', 12 );
 		include_once 'partials/sync-ktps.php';
+		add_action( 'post_updated', 'wp_check_for_changed_dates', 12, 3 );
 	}
 
 	/**
