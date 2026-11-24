@@ -170,6 +170,8 @@ class Lf_Mu_Admin {
 
 		$options['show_hello_bar'] = ( isset( $input['show_hello_bar'] ) && ! empty( $input['show_hello_bar'] ) ) ? 1 : 0;
 
+		$options['hide_hello_bar_on_homepage'] = ( isset( $input['hide_hello_bar_on_homepage'] ) && ! empty( $input['hide_hello_bar_on_homepage'] ) ) ? 1 : 0;
+
 		$options['hello_bar_content'] = ( isset( $input['hello_bar_content'] ) && ! empty( $input['hello_bar_content'] ) ) ? $input['hello_bar_content'] : '';
 
 		$options['hello_bar_bg'] = ( isset( $input['hello_bar_bg'] ) && ! empty( $input['hello_bar_bg'] ) ) ? esc_attr( $input['hello_bar_bg'] ) : '';

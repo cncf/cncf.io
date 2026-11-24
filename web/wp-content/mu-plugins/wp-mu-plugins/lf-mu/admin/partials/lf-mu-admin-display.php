@@ -30,6 +30,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 		$show_hello_bar = ( isset( $options['show_hello_bar'] ) && ! empty( $options['show_hello_bar'] ) ) ? 1 : 0;
 
+		$hide_hello_bar_on_homepage = ( isset( $options['hide_hello_bar_on_homepage'] ) && ! empty( $options['hide_hello_bar_on_homepage'] ) ) ? 1 : 0;
+
 		$hello_bar_content = ( isset( $options['hello_bar_content'] ) && ! empty( $options['hello_bar_content'] ) ) ? $options['hello_bar_content'] : '';
 
 		$hello_bar_bg = ( isset( $options['hello_bar_bg'] ) && ! empty( $options['hello_bar_bg'] ) ) ? esc_attr( $options['hello_bar_bg'] ) : '';
@@ -147,6 +149,18 @@ if ( ! defined( 'WPINC' ) ) {
 								value="1"
 								<?php checked( $show_hello_bar, 1 ); ?> />
 						</label>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="<?php echo esc_html( $this->plugin_name ); ?>-hide_hello_bar_on_homepage">Hide on
+							Homepage</label>
+					</th>
+					<td>
+						<input type="checkbox"
+							id="<?php echo esc_html( $this->plugin_name ); ?>-hide_hello_bar_on_homepage"
+							name="<?php echo esc_html( $this->plugin_name ); ?>[hide_hello_bar_on_homepage]"
+							value="1"
+							<?php checked( $hide_hello_bar_on_homepage, 1 ); ?> />
 					</td>
 				</tr>
 				<tr>
